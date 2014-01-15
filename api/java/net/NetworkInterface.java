@@ -222,6 +222,8 @@ public static NetworkInterface getByIndex(int index) throws SocketException {
      *             if an error occurs while getting the network interface
      *             information.
      */
+    @DSComment("Network interface accessing")
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.664 -0500", hash_original_method = "5454C5CAD241A70EC9EE91DB383A2F54", hash_generated_method = "0CEDC7EDC80F26805703027D51D30853")
     
@@ -320,6 +322,8 @@ public String getName() {
     /**
      * Returns an enumeration of the addresses bound to this network interface.
      */
+    @DSComment("Network interface accessing")
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.636 -0500", hash_original_method = "8FEC8BEDC3DD9B76E3DD04718D2DB944", hash_generated_method = "30C46E758838E31C55A96F50F7CEE90F")
     

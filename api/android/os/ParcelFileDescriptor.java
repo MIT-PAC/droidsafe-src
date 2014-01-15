@@ -31,6 +31,8 @@ public class ParcelFileDescriptor implements Parcelable {
      * @throws FileNotFoundException Throws FileNotFoundException if the given
      * file does not exist or can not be opened with the requested mode.
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.028 -0500", hash_original_method = "6C139DF2C99367764164B889BB05F5C6", hash_generated_method = "A4FC67A1E0EC81E84D832D0DE58F7F12")
     
@@ -279,6 +281,8 @@ public ParcelFileDescriptor dup() throws IOException {
      *
      * @return Returns the FileDescriptor associated with this object.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.061 -0500", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "E5BF1F22A9EE48D78F7BADE5BB998512")
     

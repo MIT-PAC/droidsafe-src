@@ -14,6 +14,8 @@ public abstract class Writer implements Appendable, Closeable, Flushable {
      * Constructs a new {@code Writer} with {@code this} as the object used to
      * synchronize critical sections.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.980 -0500", hash_original_method = "673B7AADE5290DAEA83488F65491132B", hash_generated_method = "A127FC3D7486266B886A0A3E8AB5F70C")
     
 protected Writer() {
@@ -45,6 +47,8 @@ protected Writer(Object lock) {
      * @throws IOException
      *             if an error occurs while closing this writer.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.985 -0500", hash_original_method = "4E507319564A7E0BFD2A58D57A800811", hash_generated_method = "2228FF14FE1AFC53EB7399AA035D1509")
     
 public abstract void close() throws IOException;
@@ -56,6 +60,8 @@ public abstract void close() throws IOException;
      * @throws IOException
      *             if an error occurs while flushing this writer.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.988 -0500", hash_original_method = "19CA02765A6BC90E1BC39264DF2DA8FE", hash_generated_method = "39634ABBFA297A919A191B73454200E1")
     
 public abstract void flush() throws IOException;
@@ -68,6 +74,8 @@ public abstract void flush() throws IOException;
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.991 -0500", hash_original_method = "3613EF644BBA13BB917F4671227467C0", hash_generated_method = "2208C03B9A25BFF9A5B9BAA905622943")
     
@@ -91,6 +99,8 @@ public void write(char[] buf) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.993 -0500", hash_original_method = "FA39B0B4ACD833F007B6A5EFA706DF90", hash_generated_method = "1F14AD35BDAC531FAF76D6C9A1E9B3E0")
     
 public abstract void write(char[] buf, int offset, int count) throws IOException;
@@ -104,6 +114,8 @@ public abstract void write(char[] buf, int offset, int count) throws IOException
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.996 -0500", hash_original_method = "8F6AF6BA5D86D88C527DBF804753FF5E", hash_generated_method = "C859C0025341C99F461E09BD67095F70")
     
 public void write(int oneChar) throws IOException {
@@ -122,6 +134,8 @@ public void write(int oneChar) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.998 -0500", hash_original_method = "2CB0ACB6DB74A20D3FAA9874B0AAEB97", hash_generated_method = "56B10BCA62907989A5623B6EAB45E393")
     
@@ -145,6 +159,8 @@ public void write(String str) throws IOException {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the length of {@code str}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.000 -0500", hash_original_method = "2D3658401DD29E26DBD40724F9EE6A10", hash_generated_method = "2978E341BDA8E299BF1EDFE8C666FC03")
     
 public void write(String str, int offset, int count) throws IOException {
@@ -168,6 +184,8 @@ public void write(String str, int offset, int count) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.003 -0500", hash_original_method = "9D99658000F160BDAECAED91EC9BFB5D", hash_generated_method = "022A80F08D04342A5DF811349E2DCDBA")
     
@@ -188,6 +206,8 @@ public Writer append(char c) throws IOException {
      * @throws IOException
      *             if this writer is closed or another I/O error occurs.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.006 -0500", hash_original_method = "D993D81DE6953743EFA25FF281FB0E15", hash_generated_method = "67EEA4752C6409E1426DEAE33FD9BE03")
     
 public Writer append(CharSequence csq) throws IOException {
@@ -221,6 +241,8 @@ public Writer append(CharSequence csq) throws IOException {
      *             either {@code start} or {@code end} are greater or equal than
      *             the length of {@code csq}.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.008 -0500", hash_original_method = "44B7413EC481F793F1919C886AE2AD0E", hash_generated_method = "A43CF055AB530ECD1E514ED408FF5339")
     

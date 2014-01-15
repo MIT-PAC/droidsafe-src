@@ -27,7 +27,9 @@ public class Handler {
 
     IMessenger mMessenger;
     
-	public Handler(){
+	@DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    public Handler(){
 		mLooper = Looper.myLooper();
 		//mQueue = mLooper.mQueue;
 		mCallback = null;
@@ -73,7 +75,9 @@ public class Handler {
 		*/
 	}
     
-	public Handler(Looper looper){
+	@DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    public Handler(Looper looper){
 		mLooper = looper;
 		//mQueue = looper.mQueue;
 		mCallback = null;
@@ -88,6 +92,8 @@ public class Handler {
     /**
      * Subclasses must implement this to receive messages.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.014 -0500", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "C6FC13FE8E92DCBE16F162867E28E817")
     
 public void handleMessage(Message msg) {
@@ -138,6 +144,8 @@ public final Message obtainMessage()
         return Message.obtain(this);
     }
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final Message obtainMessage(int what){
 		// Original method
 		/*
@@ -149,6 +157,8 @@ public final Message obtainMessage()
     	return Message.obtain(this, what);
 	}
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final Message obtainMessage(int what, Object obj){
 		// Original method
 		/*
@@ -188,7 +198,9 @@ public final Message obtainMessage()
     	return Message.obtain(this, what, arg1, arg2, obj);
 	}
     
-	public final boolean post(Runnable r){
+	@DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    public final boolean post(Runnable r){
 		// Original method
 		/*
 		{
@@ -199,6 +211,8 @@ public final Message obtainMessage()
        return  sendMessageDelayed(getPostMessage(r), 0);
 	}
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean postAtTime(Runnable r, long uptimeMillis){
 		// Original method
 		/*
@@ -224,6 +238,8 @@ public final Message obtainMessage()
     	return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
 	}
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean postDelayed(Runnable r, long delayMillis){
 		// Original method
 		/*
@@ -247,6 +263,8 @@ public final Message obtainMessage()
     	return sendMessageAtFrontOfQueue(getPostMessage(r));
 	}
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final void removeCallbacks(Runnable r){
 		// Original method
 		/*
@@ -272,7 +290,9 @@ public final Message obtainMessage()
     	mQueue.removeMessages(this, r, token);
 	}
     
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final boolean sendMessage(Message msg){
 		// Original method
 		/*
@@ -284,7 +304,9 @@ public final Message obtainMessage()
         return sendMessageDelayed(msg, 0);
 	}
     
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final boolean sendEmptyMessage(int what){
 		// Original method
 		/*
@@ -296,7 +318,9 @@ public final Message obtainMessage()
         return sendEmptyMessageDelayed(what, 0);
 	}
     
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final boolean sendEmptyMessageDelayed(int what, long delayMillis){
 		// Original method
 		/*
@@ -313,7 +337,9 @@ public final Message obtainMessage()
         return sendMessageDelayed(msg, delayMillis);
 	}
     
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis){
 		// Original method
 		/*
@@ -330,7 +356,9 @@ public final Message obtainMessage()
         return sendMessageAtTime(msg, uptimeMillis);
 	}
     
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final boolean sendMessageDelayed(Message msg, long delayMillis){
 		// Original method
 		/*
@@ -403,6 +431,8 @@ public final Message obtainMessage()
 		return getTaintBoolean();
 	}
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final void removeMessages(int what){
 		// Original method
 		/*
@@ -428,6 +458,8 @@ public final Message obtainMessage()
     	mQueue.removeMessages(this, what, object, true);
 	}
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final void removeCallbacksAndMessages(Object token){
 		// Original method
 		/*
@@ -440,6 +472,8 @@ public final Message obtainMessage()
     	mQueue.removeCallbacksAndMessages(this, token);
 	}
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final boolean hasMessages(int what){
 		// Original method
 		/*
@@ -464,6 +498,8 @@ public final Message obtainMessage()
 
     // if we can get rid of this method, the handler need not remember its loop
     // we could instead export a getMessageQueue() method... 
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.087 -0500", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "98064444349E07D7BAA3C9B4FAC15DC7")
     

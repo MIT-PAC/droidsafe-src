@@ -97,6 +97,8 @@ public void toggle() {
         return super.performClick();
     }
 
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.506 -0500", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "6384B5CB9EB85B7EDD0B1D464AE9B509")
     
 @ViewDebug.ExportedProperty
@@ -109,6 +111,8 @@ public void toggle() {
      *
      * @param checked true to check the button, false to uncheck it
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.508 -0500", hash_original_method = "CA54800DCB28AE61300AD40B91914282", hash_generated_method = "BF57FD9BFBC7DE9244EEAE833AD837D1")
     
 public void setChecked(boolean checked) {

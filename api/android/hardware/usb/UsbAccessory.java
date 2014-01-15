@@ -95,6 +95,8 @@ public UsbAccessory(String[] strings) {
      *
      * @return the accessory manufacturer
      */
+    @DSComment("Harvesting information")
+    @DSSpec(DSCat.SECURITY)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.599 -0500", hash_original_method = "EECC97019E28DA07B84EC558152DCFEE", hash_generated_method = "7CCE616C67D625A2F8B03A75DB370317")
     
@@ -107,6 +109,8 @@ public String getManufacturer() {
      *
      * @return the accessory model
      */
+    @DSComment("Harvesting information")
+    @DSSpec(DSCat.SECURITY)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.602 -0500", hash_original_method = "375C14568C2F8D8E7E614D0D011D7B99", hash_generated_method = "752E2DA19C07CEE5F9299D0BA677AA36")
     
@@ -119,6 +123,8 @@ public String getModel() {
      *
      * @return the accessory description
      */
+    @DSComment("Harvesting information")
+    @DSSpec(DSCat.SECURITY)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.605 -0500", hash_original_method = "177DD147D2F75620FD2B154278EC57FA", hash_generated_method = "C24A704C1B7693A32CE618B690D2C768")
     
@@ -194,6 +200,8 @@ public String getSerial() {
                 (mSerial == null ? 0 : mSerial.hashCode()));
     }
 
+    @DSComment("Harvesting information")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.625 -0500", hash_original_method = "95290F8A4A72A3956B1D8FB9C7186754", hash_generated_method = "1C0C4DEDC2B1D558B41C1B01F2E7B4B1")
     
 @Override

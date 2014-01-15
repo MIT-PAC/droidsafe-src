@@ -21,6 +21,8 @@ public class GZIPOutputStream extends DeflaterOutputStream {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
+    @DSComment("IO/Stream accessing")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.925 -0500", hash_original_method = "2B29886F93DAD97985C1121E7A12F1EB", hash_generated_method = "4EBA3666AEC6F4D602136FF2FC083F36")
     
 public GZIPOutputStream(OutputStream os) throws IOException {
@@ -71,6 +73,8 @@ public GZIPOutputStream(OutputStream os, int size) throws IOException {
      * Write up to nbytes of data from the given buffer, starting at offset off,
      * to the underlying stream in GZIP format.
      */
+    @DSComment("IO/Stream accessing")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.933 -0500", hash_original_method = "3845FBBF6C0965A8BD527CE35C72F9CE", hash_generated_method = "FBEDB0427C9F5135E9A7874A797C5A41")
     

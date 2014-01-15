@@ -124,6 +124,8 @@ private static Object await(Node node, Slot slot) {
     /**
      * Creates a new Exchanger.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.309 -0500", hash_original_method = "7EAF111F5AA6799458B5BA4ED6EF193C", hash_generated_method = "F3DE1CB784C5627EDBD69D821D89A075")
     
 public Exchanger() {
@@ -425,6 +427,8 @@ private Object scanOnTimeout(Node node) {
      * @throws InterruptedException if the current thread was
      *         interrupted while waiting
      */
+    @DSComment("General android/java operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.312 -0500", hash_original_method = "01BD898C994460F5196927F0C5114F9E", hash_generated_method = "43B9B19E5F9A3C4248EA65E9663E2CE1")
     
 public V exchange(V x) throws InterruptedException {

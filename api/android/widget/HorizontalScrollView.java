@@ -91,12 +91,16 @@ public class HorizontalScrollView extends FrameLayout {
 
     private int mActivePointerId = INVALID_POINTER;
 
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.276 -0500", hash_original_method = "D579CCE5E39252987369F5EF7BC67FC0", hash_generated_method = "D2A1ED907989CB8AE7E671C6AA739D41")
     
 public HorizontalScrollView(Context context) {
         this(context, null);
     }
 
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.279 -0500", hash_original_method = "7F7EA51B0CF52F1D171B225CFAE9439C", hash_generated_method = "2B72C29D39762F5873CF99AA0C283574")
     
 public HorizontalScrollView(Context context, AttributeSet attrs) {
@@ -260,6 +264,8 @@ public boolean isFillViewport() {
      *
      * @attr ref android.R.styleable#HorizontalScrollView_fillViewport
      */
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.308 -0500", hash_original_method = "D2588C7F74D0E18DF5DFA629FE7BF270", hash_generated_method = "A64DADFD660136638B7F706FF35E5E5A")
     
 public void setFillViewport(boolean fillViewport) {
@@ -288,6 +294,8 @@ public void setSmoothScrollingEnabled(boolean smoothScrollingEnabled) {
         mSmoothScrollingEnabled = smoothScrollingEnabled;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.315 -0500", hash_original_method = "1306D2831DF4DA9A5EDAD3DA6127274D", hash_generated_method = "50396C5A815C0E92BC03BEF384D611DA")
     
 @Override
@@ -1141,6 +1149,8 @@ public final void smoothScrollBy(int dx, int dy) {
      * @param x the position where to scroll on the X axis
      * @param y the position where to scroll on the Y axis
      */
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.388 -0500", hash_original_method = "EED648F6788EFF0F67B65ABAA0DE4CF2", hash_generated_method = "100B355DE0AE23DDEE74EF5E482D3B12")
     
 public final void smoothScrollTo(int x, int y) {
@@ -1438,6 +1448,8 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         return scrollToChildRect(rectangle, immediate);
     }
 
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.419 -0500", hash_original_method = "31751D7E496E2D7BD9B4D4E94AD28515", hash_generated_method = "B7E248DB0C1A99B91CE46EBF969ED5CA")
     
 @Override

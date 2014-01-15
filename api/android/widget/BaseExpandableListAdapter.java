@@ -12,6 +12,8 @@ public abstract class BaseExpandableListAdapter implements ExpandableListAdapter
 
     private final DataSetObservable mDataSetObservable = new DataSetObservable();
     
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.720 -0400", hash_original_method = "7B80614A139C618C091804954249D80D", hash_generated_method = "7B80614A139C618C091804954249D80D")
     public BaseExpandableListAdapter ()
     {
@@ -42,6 +44,8 @@ public void notifyDataSetInvalidated() {
     /**
      * @see DataSetObservable#notifyChanged()
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.182 -0500", hash_original_method = "6B5DF5B4CDDD51D923DE488520E93535", hash_generated_method = "782276BFD026F517836F431E691733F0")
     
 public void notifyDataSetChanged() {

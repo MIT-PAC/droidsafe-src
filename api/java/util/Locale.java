@@ -28,6 +28,8 @@ public final class Locale implements Cloneable, Serializable {
      * @see java.text.NumberFormat#getAvailableLocales()
      * @see java.util.Calendar#getAvailableLocales()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.117 -0500", hash_original_method = "5568C13FBF0303E2B45FB831CBD412FF", hash_generated_method = "2AC3CF3C68E65229DEC68E9B7601D499")
     
@@ -42,6 +44,8 @@ public static Locale[] getAvailableLocales() {
      * <p>Since the user's locale changes dynamically, avoid caching this value.
      * Instead, use this method to look it up for each use.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.122 -0500", hash_original_method = "78E4BA42BD949FF8F2A8F4719503FD6E", hash_generated_method = "5528E88B167B739C2F2D3F547188BFC8")
     
@@ -79,6 +83,8 @@ public static String[] getISOLanguages() {
      * passing the appropriate locale to each locale-sensitive method that's
      * called.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.164 -0500", hash_original_method = "4AE56FD65BC36355DD6ADDF31AE9381B", hash_generated_method = "D344223857F8797D194B4DB5FFFA3F96")
     
 public synchronized static void setDefault(Locale locale) {
@@ -198,6 +204,8 @@ private Locale(boolean unused, String lowerCaseLanguageCode, String upperCaseCou
     /**
      * Constructs a new {@code Locale} using the specified language.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.102 -0500", hash_original_method = "95F62AD785CE7F14018E0D0D1E27B00E", hash_generated_method = "A96F2B7C3EC9EA494AAA086887AA5806")
     
 public Locale(String language) {
@@ -207,6 +215,8 @@ public Locale(String language) {
     /**
      * Constructs a new {@code Locale} using the specified language and country codes.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.105 -0500", hash_original_method = "37BC67CA8C45857B55D0F669E159529A", hash_generated_method = "127917F6C0A60B48C74F456651F93671")
     
 public Locale(String language, String country) {
@@ -217,6 +227,8 @@ public Locale(String language, String country) {
      * Constructs a new {@code Locale} using the specified language, country,
      * and variant codes.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.108 -0500", hash_original_method = "C07F4523516B5D8C3B044DC468C2EE3F", hash_generated_method = "0E3861966B3341EE23DBF47DDB2EF19C")
     
 public Locale(String language, String country, String variant) {
@@ -261,6 +273,8 @@ public Locale(String language, String country, String variant) {
      * Returns true if {@code object} is a locale with the same language,
      * country and variant.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.113 -0500", hash_original_method = "B2DF95EC92791D38C85586E37BBFDFD0", hash_generated_method = "2A835280D4E5E6F50D1CBDDA6646FDF6")
     
 @Override public boolean equals(Object object) {
@@ -280,6 +294,8 @@ public Locale(String language, String country, String variant) {
      * Returns the country code for this locale, or {@code ""} if this locale
      * doesn't correspond to a specific country.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.119 -0500", hash_original_method = "40EA1D1DD90B3BAB3C58BE2B6A46A98D", hash_generated_method = "7C96061093369960A16CB5146C11B315")
     
@@ -347,6 +363,8 @@ public String getDisplayLanguage(Locale locale) {
     /**
      * Equivalent to {@code getDisplayName(Locale.getDefault())}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.133 -0500", hash_original_method = "CBF375FE343ED989DA3B5B8CCC8BE7E0", hash_generated_method = "07D062CF9B5F1AE1AE52E8FEE2B14627")
     
@@ -439,6 +457,8 @@ public String getDisplayVariant(Locale locale) {
      * Returns the three letter ISO country code which corresponds to the country
      * code for this {@code Locale}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.146 -0500", hash_original_method = "E7148683E6358C89AEF160E990AAEE93", hash_generated_method = "2B1D44748D1C9707685AE61223BC5491")
     
@@ -467,6 +487,8 @@ public String getISO3Language() {
      * Returns the language code for this {@code Locale} or the empty string if no language
      * was set.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.155 -0500", hash_original_method = "1C720E5AEB210852D4C515195DCC49D3", hash_generated_method = "139391AFF317C1270C7570989BBC8F6D")
     
@@ -478,6 +500,8 @@ public String getLanguage() {
      * Returns the variant code for this {@code Locale} or an empty {@code String} if no variant
      * was set.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.157 -0500", hash_original_method = "A8C86ADBDB8FE1FD75DA90D3A9B92BDE", hash_generated_method = "DF1B458B9A1CE362841A5DD6F2CA96A3")
     
@@ -485,6 +509,8 @@ public String getVariant() {
         return variantCode;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.160 -0500", hash_original_method = "206F92E8CAE7869CD0834AB1BBCCF6BE", hash_generated_method = "E18CDAE08D076A97384A43E6BB2ACF8B")
     
 @Override
@@ -504,6 +530,8 @@ public String getVariant() {
      *
      * <p>Examples: "en", "en_US", "_US", "en__POSIX", "en_US_POSIX"
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.166 -0500", hash_original_method = "8023BB72D2CCCB0AE8421793FA5DB667", hash_generated_method = "1E3120AD0D5C058834A31D770939D1DE")
     
 @Override

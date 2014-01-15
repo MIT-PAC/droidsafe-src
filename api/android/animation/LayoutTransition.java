@@ -134,6 +134,8 @@ public class LayoutTransition {
      * events on any ViewGroup that it is set on and will run default animations for each
      * type of layout event.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.034 -0500", hash_original_method = "52DB630B34835349C84181A9ADA45542", hash_generated_method = "D6FD60071C2464339504599926CC4579")
     
 public LayoutTransition() {

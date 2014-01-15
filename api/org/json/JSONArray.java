@@ -16,6 +16,8 @@ public class JSONArray {
     /**
      * Creates a {@code JSONArray} with no values.
      */
+    @DSComment("no input, no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.121 -0500", hash_original_method = "1427CA478AAC933787CA982EEEA58E55", hash_generated_method = "2ECBE9A720E52DB096754778C599BC2A")
     
 public JSONArray() {
@@ -79,6 +81,8 @@ public JSONArray(String json) throws JSONException {
     /**
      * Returns the number of values in this array.
      */
+    @DSComment("no input, no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.131 -0500", hash_original_method = "2C5D59A27A6C313C8872AC341D9D75C0", hash_generated_method = "3AACFABE68E73FA43986B37F3043990F")
     
 public int length() {
@@ -145,6 +149,8 @@ public JSONArray put(long value) {
      *     array to be in an inconsistent state.
      * @return this array.
      */
+    @DSComment("nothing useful in object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.142 -0500", hash_original_method = "1D7645A229713F67337A58F8FF42D21C", hash_generated_method = "82437EE5156066785EE68B7C3A2264D7")
     
 public JSONArray put(Object value) {
@@ -254,6 +260,8 @@ public boolean isNull(int index) {
      *     that value is the {@code null} reference. This method returns
      *     normally if the value is {@code JSONObject#NULL}.
      */
+    @DSComment("nothing useful in int")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.159 -0500", hash_original_method = "2917FB45D7E32294FB2932AB5B08992C", hash_generated_method = "5EED0C1B528791A5B50CA8E6FBD90F09")
     
@@ -451,6 +459,8 @@ public long optLong(int index, long fallback) {
      *
      * @throws JSONException if no such value exists.
      */
+    @DSComment("nothing useful in int")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.190 -0500", hash_original_method = "7F7D1138F84D636CF19BD9329533631C", hash_generated_method = "0365BDA66A795FC988F6F320537F1441")
     
@@ -467,6 +477,8 @@ public String getString(int index) throws JSONException {
      * Returns the value at {@code index} if it exists, coercing it if
      * necessary. Returns the empty string if no such value exists.
      */
+    @DSComment("nothing useful in int")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.192 -0500", hash_original_method = "C31202553EDC4F0A1E4B21CAD06ABEC4", hash_generated_method = "544153A500274940BF25956F852239DC")
     
 public String optString(int index) {
@@ -522,6 +534,8 @@ public JSONArray optJSONArray(int index) {
      * @throws JSONException if the value doesn't exist or is not a {@code
      *     JSONObject}.
      */
+    @DSComment("nothing useful in int")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.202 -0500", hash_original_method = "EA5692C9D71198B472B917468564A78A", hash_generated_method = "41FD830A311E39BCE38061C86149FC0E")
     

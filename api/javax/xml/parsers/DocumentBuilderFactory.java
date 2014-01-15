@@ -17,6 +17,8 @@ public abstract class DocumentBuilderFactory {
      *
      * @return a new DocumentBuilderFactory.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.033 -0500", hash_original_method = "A299BC4F50290936C6E9B976A12D85C4", hash_generated_method = "88A6006A7BD6774B22C77C0E457E635C")
     
 public static DocumentBuilderFactory newInstance() {

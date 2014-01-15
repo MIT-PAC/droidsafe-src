@@ -8,6 +8,8 @@ import java.io.Serializable;
 
 public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implements Cloneable, Serializable {
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
         if (!elementType.isEnum()) {
             throw new ClassCastException(elementType.getClass().getName() + " is not an Enum");
@@ -31,6 +33,8 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
         return set;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <E extends Enum<E>> EnumSet<E> copyOf(Collection<E> c) {
         if (c instanceof EnumSet) {
             return copyOf((EnumSet<E>) c);

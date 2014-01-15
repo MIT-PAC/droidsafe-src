@@ -195,6 +195,8 @@ public ThreadPoolExecutor(int corePoolSize,
      * @throws NullPointerException if {@code workQueue}
      *         or {@code threadFactory} is null
      */
+    @DSComment("only execute will submit runnable to thread pool")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.872 -0500", hash_original_method = "472CB7CD686E5ED3EB32346C564DBF00", hash_generated_method = "84605A73D25D02739CD88A6A5A91E213")
     
 public ThreadPoolExecutor(int corePoolSize,
@@ -985,6 +987,8 @@ public boolean isShutdown() {
      *
      * @return true if terminating but not yet terminated
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.891 -0500", hash_original_method = "1B50F454F3FDC6963CA79768BA657116", hash_generated_method = "12E22D5A6AD32EA95167B56E6F0AAD3C")
     
 public boolean isTerminating() {
@@ -998,6 +1002,8 @@ public boolean isTerminated() {
         return runStateAtLeast(ctl.get(), TERMINATED);
     }
 
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:09.896 -0500", hash_original_method = "D4E88A24481EFB5D05D58739D7C6B24D", hash_generated_method = "285C3A629BCBC28461A60C9C13908699")
     
 public boolean awaitTermination(long timeout, TimeUnit unit)

@@ -103,6 +103,8 @@ public static void setDefaultExecutor(Executor exec) {
 	
 	private Result result;
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.588 -0400", hash_original_method = "8B3C3F162E88495B3198046B04CCAD12", hash_generated_method = "717DB90AF8B9D7E6F5C69DCC8BADBDB4")
     public  AsyncTask() {
         // ---------- Original Method ----------
@@ -164,6 +166,8 @@ protected abstract Result doInBackground(Params... params);
      * @see #onPostExecute
      * @see #doInBackground
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.259 -0500", hash_original_method = "D1C6308395AB600921F20543E51EAD98", hash_generated_method = "19E203C96602819786512F2B26D8C26C")
     
 protected void onPreExecute() {
@@ -338,11 +342,15 @@ AsyncTaskResult(AsyncTask task, Data... data) {
      * @see #cancel(boolean)
      * @see #isCancelled()
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:37.268 -0500", hash_original_method = "50EA6C215817530416AC66D7F05F78C0", hash_generated_method = "D07A2E6060CD99151CC30F4F6E6B6769")
     
 protected void onCancelled() {
     }
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.602 -0400", hash_original_method = "DB46851A4B24FCF8A49F880359D5B78C", hash_generated_method = "7429E399886A985919F57383107CAFFB")
     public final boolean isCancelled() {
     	return cancelled;
@@ -350,6 +358,8 @@ protected void onCancelled() {
         //return mFuture.isCancelled();
     }
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:25.603 -0400", hash_original_method = "79A634F40CF588E281325883FCE2C51B", hash_generated_method = "F2B9735A675310C684553A57E2E3C5AE")
     public final boolean cancel(boolean mayInterruptIfRunning) {
     	if ((mStatus == Status.RUNNING && mayInterruptIfRunning) || mStatus == Status.PENDING) {

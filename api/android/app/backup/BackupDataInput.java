@@ -58,6 +58,8 @@ protected void finalize() throws Throwable {
      *    restore stream, <code>false</code> if the restore stream has been fully consumed.
      * @throws IOException if an error occurred while reading the restore stream
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.906 -0500", hash_original_method = "8876EC04BE968489185903B1495A889A", hash_generated_method = "1BFE0A1BA71649A1AF47D5AC3D94240F")
     
 public boolean readNextHeader() throws IOException {
@@ -82,6 +84,8 @@ public boolean readNextHeader() throws IOException {
      * @return the current entity's key string
      * @throws IllegalStateException if the next record header has not yet been read
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.909 -0500", hash_original_method = "32914A2DCD27EDE5CD7416010D683812", hash_generated_method = "94A49A84F5FA78DF906CF35F12E563B5")
     
@@ -100,6 +104,8 @@ public String getKey() {
      * @return The size of the record's raw data, in bytes
      * @throws IllegalStateException if the next record header has not yet been read
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.911 -0500", hash_original_method = "98B39A84BCE4F82002DB111D375A2105", hash_generated_method = "B05050FF734E888147555784F56BEBCB")
     
@@ -126,6 +132,8 @@ public int getDataSize() {
      *    has been read, further calls to this method will return zero.
      * @throws IOException if an error occurred when trying to read the restore data stream
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.914 -0500", hash_original_method = "E6FF3430BADFF1BEAFD149782FA6CB07", hash_generated_method = "59C9B714AA6091C6C9DF5F1E9D70EE88")
     
 public int readEntityData(byte[] data, int offset, int size) throws IOException {
@@ -149,6 +157,8 @@ public int readEntityData(byte[] data, int offset, int size) throws IOException 
      * 
      * @throws IOException if an error occurred when trying to read the restore data stream
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.916 -0500", hash_original_method = "785DF45E42B32B78A3E788F04C2081B3", hash_generated_method = "81CAA9E1074A9F87741022D5401C5DA3")
     
 public void skipEntityData() throws IOException {

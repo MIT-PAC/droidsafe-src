@@ -313,6 +313,8 @@ public NdefRecord[] newArray(int size) {
      * @param payload byte array, containing zero to (2 ** 32 - 1) bytes,
      *                must not be null
      */
+    @DSComment("data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.189 -0500", hash_original_method = "FB48E937FC56CBD69B2A6F082227DD21", hash_generated_method = "DE7D3367A8D67D13F8EFFB1D24B2E12A")
     
 public NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload) {
@@ -384,6 +386,8 @@ public NdefRecord(byte[] data) throws FormatException {
      * <p>
      * TNF is the top-level type.
      */
+    @DSComment("data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.198 -0500", hash_original_method = "57FC26158D8D678057BEA3A3771FCDE7", hash_generated_method = "22099949C0FAB7BEF77A26E027911AEC")
     
@@ -397,6 +401,8 @@ public short getTnf() {
      * This should be used in conjunction with the TNF field to determine the
      * payload format.
      */
+    @DSComment("data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.200 -0500", hash_original_method = "4BBEB3385EB023476A7C83C1132C6B8B", hash_generated_method = "D8BB2EC57A2C6F99A2F5BCBDBE2BFCC7")
     
@@ -417,6 +423,8 @@ public byte[] getId() {
     /**
      * Returns the variable length payload.
      */
+    @DSComment("data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.204 -0500", hash_original_method = "1327F8BA6EFB58D178B7F3819A329700", hash_generated_method = "3209572B1428FC77D1ED81F46732F85B")
     

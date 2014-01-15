@@ -25,6 +25,8 @@ public class AlgorithmParameters {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}.
      */
+    @DSComment("no suspicious activity, just creating an object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.942 -0500", hash_original_method = "DC5D93AFAABA216D2504A813B834D6CA", hash_generated_method = "AFA69B810C3CBBDCFED9F1B8680D5F5B")
     
@@ -175,6 +177,8 @@ public final String getAlgorithm() {
      *             initialized or the given {@code paramSpec} is not appropriate
      *             for initializing this {@code AlgorithmParameters}.
      */
+    @DSComment("no suspicious activity, just creating an object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.955 -0500", hash_original_method = "7E6C59119732596BEFEB2E6E8A90EC10", hash_generated_method = "44D0FA33002C5953CDB40B19856ABC88")
     
 public final void init(AlgorithmParameterSpec paramSpec)

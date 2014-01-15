@@ -530,6 +530,8 @@ public IOException ioException() {
      * @throws FormatterClosedException
      *             if the {@code Formatter} has been closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.928 -0500", hash_original_method = "EE9FCF62B0D200225753D8BA586AA3F5", hash_generated_method = "C4D83BBCFDE4A21103D799255677161F")
     
 public Formatter format(String format, Object... args) {

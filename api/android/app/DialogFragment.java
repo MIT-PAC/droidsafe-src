@@ -74,6 +74,8 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
 
     boolean mShownByMe;
 
+    @DSComment("GUI, dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.483 -0500", hash_original_method = "0534DFBA1BDB91809702979D0F5FEACD", hash_generated_method = "CFA527E8B5A5174F7A9660414809174D")
     
 public DialogFragment() {
@@ -116,6 +118,8 @@ public void setStyle(int style, int theme) {
      * @param tag The tag for this fragment, as per
      * {@link FragmentTransaction#add(Fragment, String) FragmentTransaction.add}.
      */
+    @DSComment("GUI, dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.487 -0500", hash_original_method = "8FAA759F9028DD0FC2323799369D6711", hash_generated_method = "5C6D90FF7F0EA4F4D76354EF83F7E041")
     
 public void show(FragmentManager manager, String tag) {
@@ -152,6 +156,8 @@ public int show(FragmentTransaction transaction, String tag) {
      * be popped.  Otherwise, a new transaction will be committed to remove
      * the fragment.
      */
+    @DSComment("GUI, dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.491 -0500", hash_original_method = "DB04742794ECD07699F134042784BBAE", hash_generated_method = "995FB47B2ED1ADE79D1CFC3C7747B4D2")
     
 public void dismiss() {
@@ -198,6 +204,8 @@ void dismissInternal(boolean allowStateLoss) {
         }
     }
     
+    @DSComment("GUI, dialog")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.498 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
     
@@ -295,6 +303,8 @@ public boolean getShowsDialog() {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.517 -0500", hash_original_method = "B4FC504618F0AC1ACE07BF1B45E5B9CF", hash_generated_method = "9347B65955CA212EDA6B1AB62C4BBD9E")
     
 @Override

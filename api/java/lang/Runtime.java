@@ -26,6 +26,8 @@ public class Runtime {
      *
      * @return the {@code Runtime} object for the current application.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.119 -0500", hash_original_method = "CF79B4C7AE45CC6197E4369ECF161253", hash_generated_method = "7F8C2B8A85E75003A22377212FF0E3F4")
     
@@ -113,6 +115,8 @@ private Runtime(){
      * @throws IOException
      *             if the requested program can not be executed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.092 -0500", hash_original_method = "CFCE84E7C9BE3630A08A3A7BB73629F7", hash_generated_method = "EC26FFA88B4CEA2BA30D31207670970A")
     
 public Process exec(String[] progArray) throws java.io.IOException {
@@ -181,6 +185,8 @@ public Process exec(String[] progArray, String[] envp, File directory) throws IO
      * @throws IOException
      *             if the requested program can not be executed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.100 -0500", hash_original_method = "06266E096A96F3360CE9E0923017372F", hash_generated_method = "69302971750C4DE1739C01F52A54BD9E")
     
 public Process exec(String prog) throws java.io.IOException {
@@ -304,6 +310,8 @@ public void exit(int code) {
      *
      * @return the approximate amount of free memory, measured in bytes.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.113 -0500", hash_original_method = "67196F5597F9CC48251D355499CA1423", hash_generated_method = "03B1D8FA42088D9DFFDBC0D65350C21D")
     
     public long freeMemory(){
@@ -430,6 +438,8 @@ public void runFinalization() {
      *
      * @return the total amount of memory, measured in bytes.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.147 -0500", hash_original_method = "4EB2522F808EA94D0A66B66F863EF421", hash_generated_method = "02A74D4A84EFA9230F4E805F6BC04E85")
     
     public long totalMemory(){
@@ -634,6 +644,8 @@ public int availableProcessors() {
      * @return the maximum amount of memory that the VM will try to
      *         allocate, measured in bytes.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.172 -0500", hash_original_method = "2D7CF54D0F59DA12C2E5D19C64B23A09", hash_generated_method = "64D18F4F671EB170201CCA8A1F55D3C5")
     
     public long maxMemory(){

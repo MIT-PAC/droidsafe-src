@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SoundEffectConstants {
 
     /**
@@ -19,6 +15,8 @@ public class SoundEffectConstants {
 
      * @return The appropriate sonification constant.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.109 -0500", hash_original_method = "975CB3430388B53E2334113DC7870A4A", hash_generated_method = "1809AE194BC69154A7C4FD122CC41E61")
     
 public static int getContantForFocusDirection(int direction) {
@@ -39,10 +37,8 @@ public static int getContantForFocusDirection(int direction) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.095 -0500", hash_original_field = "C16599C87D20CC8B2C34D6DC122791AA", hash_generated_field = "842011BA204767E970B6FF04330AC6F7")
 
-
     public static final int CLICK = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.098 -0500", hash_original_field = "E020AF1279A153FF33B8371B47D5A756", hash_generated_field = "46B8495A67E10249C4EEB9EC55DBA5FB")
-
 
     public static final int NAVIGATION_LEFT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:29.100 -0500", hash_original_field = "5A92B619A037ABC84211CE0F778BC77C", hash_generated_field = "D84D0C65CA4D7F96B230BC929FB4712A")

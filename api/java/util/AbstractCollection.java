@@ -41,7 +41,9 @@ protected AbstractCollection() {
         addTaint(capacity);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.345 -0400", hash_original_method = "1E7EFCC2BAD401EE702FAECD906F0B57", hash_generated_method = "8275414EBF339E8E1A38339518310828")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.345 -0400", hash_original_method = "1E7EFCC2BAD401EE702FAECD906F0B57", hash_generated_method = "8275414EBF339E8E1A38339518310828")
     public boolean add(E object) {
         if (DroidSafeAndroidRuntime.control) {
             UnsupportedOperationException ex = new UnsupportedOperationException();
@@ -58,6 +60,8 @@ protected AbstractCollection() {
         //throw new UnsupportedOperationException();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.346 -0400", hash_original_method = "906569C65C760B9885981A6BAAEC834D", hash_generated_method = "3A9BC82846A9A65648AEDC64EA165A5D")
     public boolean addAll(Collection<? extends E> collection) {
         addTaint(collection.getTaint());
@@ -75,16 +79,22 @@ protected AbstractCollection() {
         len = 0;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.347 -0400", hash_original_method = "9D755B12CFAC53130BB68496AAAEDB9E", hash_generated_method = "AB29316BF38F2A7F7FF285294AD0586B")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.347 -0400", hash_original_method = "9D755B12CFAC53130BB68496AAAEDB9E", hash_generated_method = "AB29316BF38F2A7F7FF285294AD0586B")
     public boolean contains(Object object) {
         return getTaintBoolean();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.348 -0400", hash_original_method = "5E0F818F4852B6FE376F87B40084BB49", hash_generated_method = "D9488CE0E9092353E75E56A47831CB4C")
     public boolean containsAll(Collection<?> collection) {
         return getTaintBoolean();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.348 -0400", hash_original_method = "296240B68F4A866C698190CF33710ED8", hash_generated_method = "8CE042654B5192EFCE000048B14B8C75")
     public boolean isEmpty() {
         if (len == 0)
@@ -105,6 +115,8 @@ protected AbstractCollection() {
      *
      * @return an iterator for accessing the {@code Collection} contents.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:55.278 -0500", hash_original_method = "38DA4AD00F2312AF1AD3CD50855F4F5F", hash_generated_method = "04D077BF385AFE862B82A3802F213294")
     
 public abstract Iterator<E> iterator();
@@ -118,6 +130,8 @@ public abstract Iterator<E> iterator();
         return getTaintBoolean();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.351 -0400", hash_original_method = "5FB46A3D49E2925CCD326CF5A4A19DE1", hash_generated_method = "F4694D15E6EF1ADFE917C25C5B193155")
     public boolean removeAll(Collection<?> collection) {
         addTaint(collection.getTaint());
@@ -128,6 +142,8 @@ public abstract Iterator<E> iterator();
         return getTaintBoolean();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.352 -0400", hash_original_method = "AD8A452252ABBE37E452278A3F0D2AEC", hash_generated_method = "750649923756B11C00466003C8100284")
     public boolean retainAll(Collection<?> collection) {
         clear();
@@ -142,7 +158,9 @@ public abstract Iterator<E> iterator();
         return len;
     }
         
-@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.354 -0400", hash_original_method = "678F4AFF67E7BF51A720327536D164F3", hash_generated_method = "C6CD7F0B998F77F8945194CAF8E4BBFE")
     public Object[] toArray() {
         int size = size();
@@ -153,7 +171,9 @@ public abstract Iterator<E> iterator();
         return array;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.356 -0400", hash_original_method = "A29AB27B8881BCEC42B6770CA33A7C59", hash_generated_method = "97B4512438CD40845A961D9D17114AEE")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.356 -0400", hash_original_method = "A29AB27B8881BCEC42B6770CA33A7C59", hash_generated_method = "97B4512438CD40845A961D9D17114AEE")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] contents) {
 
@@ -336,7 +356,9 @@ public abstract Iterator<E> iterator();
         return retEnum;
     }
         
-@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.357 -0400", hash_original_method = "A06C3538162F748E28317896970387BE", hash_generated_method = "22C4F41EBA3A6ACE287F6D60148ADCF8")
     @Override
     public String toString() {

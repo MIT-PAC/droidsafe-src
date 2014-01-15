@@ -38,7 +38,9 @@ public class Vibrator {
         //return false;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "923B04A13431F62D932999C01EF768BD")
+@DSComment("only vibrating the device")
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "923B04A13431F62D932999C01EF768BD")
     public void vibrate(long milliseconds) {
         //End block
         // ---------- Original Method ----------
@@ -53,6 +55,8 @@ public class Vibrator {
         //}
     }
     
+    @DSComment("only vibrating the device")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7A7D54B587DD258FAC49023E7C932C75", hash_generated_method = "4FEC1D25C674D0C4EBF3B684610D737E")
     public void vibrate(long[] pattern, int repeat) {
     	//End block

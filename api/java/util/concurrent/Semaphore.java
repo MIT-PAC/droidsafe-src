@@ -23,6 +23,8 @@ public class Semaphore implements java.io.Serializable {
      *        This value may be negative, in which case releases
      *        must occur before any acquires will be granted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.482 -0500", hash_original_method = "1D09FBBC41D290488B50FAB01D9EE120", hash_generated_method = "C04686D0D19E5E671D3B80A0912BCDBD")
     
 public Semaphore(int permits) {
@@ -40,6 +42,8 @@ public Semaphore(int permits) {
      *        first-in first-out granting of permits under contention,
      *        else {@code false}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.485 -0500", hash_original_method = "EDA1419EB058A316E989F6F201EF4313", hash_generated_method = "A1A0BA6EC5BC5C6538BBAE2E2744E06F")
     
 public Semaphore(int permits, boolean fair) {
@@ -74,6 +78,8 @@ public Semaphore(int permits, boolean fair) {
      *
      * @throws InterruptedException if the current thread is interrupted
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.487 -0500", hash_original_method = "36195816327B5FFC3BDF4AB88B23D805", hash_generated_method = "0879DE2D2AB95600C627F707F4C94E6D")
     
 public void acquire() throws InterruptedException {
@@ -129,6 +135,8 @@ public void acquireUninterruptibly() {
      * @return {@code true} if a permit was acquired and {@code false}
      *         otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.492 -0500", hash_original_method = "81DB55A43E3FEF36A7D7A44C596F2527", hash_generated_method = "1644C4714DD0E21602763EB12FAA9231")
     
 public boolean tryAcquire() {
@@ -196,6 +204,8 @@ public boolean tryAcquire(long timeout, TimeUnit unit)
      * Correct usage of a semaphore is established by programming convention
      * in the application.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.497 -0500", hash_original_method = "A31CF20052BB7332FF63483E272EE6FB", hash_generated_method = "016B3CE7EBD7F76ED8157DCE4AF6A4C2")
     
 public void release() {

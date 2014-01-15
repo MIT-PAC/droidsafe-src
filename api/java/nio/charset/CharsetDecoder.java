@@ -62,6 +62,8 @@ public abstract class CharsetDecoder {
      *             if <code>averageCharsPerByte</code> or
      *             <code>maxCharsPerByte</code> is negative.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.864 -0500", hash_original_method = "8CF9EF6BF1CF308B9A895B171C1AF9B5", hash_generated_method = "4FF9BD66A6DC43288D75AA41F9B7BB87")
     
 protected CharsetDecoder(Charset charset, float averageCharsPerByte, float maxCharsPerByte) {
@@ -262,6 +264,8 @@ private CharBuffer allocateMore(CharBuffer output) {
      *             method threw an <code>BufferUnderflowException</code> or
      *             <code>BufferOverflowException</code>.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.881 -0500", hash_original_method = "40037F62CA1EB410AEAF236C6BDF7EBA", hash_generated_method = "8696A9EA77812DC900E306EDA0974CF9")
     
@@ -578,6 +582,8 @@ public final float maxCharsPerByte() {
      * @throws IllegalArgumentException
      *             if {@code newAction} is {@code null}.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.912 -0500", hash_original_method = "34F534C82C11F1FDAA0DD59455B931CF", hash_generated_method = "CB640B46E428E18A59A6CE6A5A17B083")
     
 public final CharsetDecoder onMalformedInput(CodingErrorAction newAction) {
@@ -602,6 +608,8 @@ public final CharsetDecoder onMalformedInput(CodingErrorAction newAction) {
      * @throws IllegalArgumentException
      *             if {@code newAction} is {@code null}.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.915 -0500", hash_original_method = "652123D755D0FEE6B30AA61176E436F9", hash_generated_method = "1C907D67377A59EFD818A4E43E32488C")
     
 public final CharsetDecoder onUnmappableCharacter(CodingErrorAction newAction) {
@@ -639,6 +647,8 @@ public final String replacement() {
      *             if the given replacement cannot satisfy the requirement
      *             mentioned above.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.920 -0500", hash_original_method = "B18C28BF3814F00BA79DEB9A20AA9835", hash_generated_method = "FED7B2ED5D480DFDBF7CF3E25C57F8FF")
     
 public final CharsetDecoder replaceWith(String replacement) {

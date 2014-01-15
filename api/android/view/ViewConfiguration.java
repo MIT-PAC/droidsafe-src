@@ -22,6 +22,8 @@ public class ViewConfiguration {
      *
      * @param context The application context used to initialize the view configuration.
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.372 -0500", hash_original_method = "EAB98871E057FCDFFF813B18E6EC4641", hash_generated_method = "65D047D00C018AF4F4B8E7987373C246")
     
@@ -100,6 +102,8 @@ public static int getPressedStateDuration() {
      * @return the duration in milliseconds before a press turns into
      * a long press
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.392 -0500", hash_original_method = "4FEA2532A879AC8499A02B1497AE3156", hash_generated_method = "5BDFE3F6B4823EA868E8FC12A1E27412")
     
@@ -133,6 +137,8 @@ public static int getKeyRepeatDelay() {
      * is a tap or a scroll. If the user does not move within this interval, it is
      * considered to be a tap. 
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.399 -0500", hash_original_method = "2054B3BE796FC76059006CC8B92F3425", hash_generated_method = "5AD9BFA0A5FAC59C26025C95AC442E44")
     
@@ -157,6 +163,8 @@ public static int getJumpTapTimeout() {
      * the second tap's down event for an interaction to be considered a
      * double-tap.
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.404 -0500", hash_original_method = "C6977CF707F5347B0F237AB856D16490", hash_generated_method = "2CBE85464FBF2DA33E26EE594A400A04")
     
@@ -209,6 +217,8 @@ public static int getHoverTapSlop() {
      *
      * @deprecated Use {@link #getScaledTouchSlop()} instead.
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.416 -0500", hash_original_method = "B61AC12A34EFA6AB10E7C5F3FBA1C69E", hash_generated_method = "FF1EC43C2C2F4503BA634627B550A9DB")
     
@@ -268,6 +278,8 @@ public static long getSendRecurringAccessibilityEventsInterval() {
      *
      * @deprecated Use {@link #getScaledMinimumFlingVelocity()} instead.
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.437 -0500", hash_original_method = "546B6EB3FB7821963DFBB7988B40EAE1", hash_generated_method = "47EC8BFCFE253501827EF425964422BE")
     
@@ -339,6 +351,8 @@ public static long getGlobalActionKeyTimeout() {
      * @return A scalar dimensionless value representing the coefficient of
      *         friction.
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.460 -0500", hash_original_method = "91748064AA7D196E0821A0CDB0FFFE72", hash_generated_method = "0793C6AAAD831A0F9B0498382432C7C6")
     
@@ -607,6 +621,8 @@ public int getScaledEdgeSlop() {
     /**
      * @return Distance a touch can wander before we think the user is scrolling in pixels
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.418 -0500", hash_original_method = "60BD37725F7CBB3A1C18E0C12D7EC92F", hash_generated_method = "E802D556E6ABBEE6F96FBE3BE1B8413A")
     
@@ -618,6 +634,8 @@ public int getScaledTouchSlop() {
      * @return Distance a touch can wander before we think the user is scrolling a full page
      *         in dips
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.420 -0500", hash_original_method = "4AE776F4126E41D66D9D9E5C3DD06CAD", hash_generated_method = "9E7AEC3E9084B4301C8E6EFAB2887388")
     
@@ -629,6 +647,8 @@ public int getScaledPagingTouchSlop() {
      * @return Distance between the first touch and second touch to still be
      *         considered a double tap
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.425 -0500", hash_original_method = "6B30BD1A6859DBFC35C31996D22D0A66", hash_generated_method = "1B58B94371B51D3B39CAAF7010CA5769")
     
@@ -664,6 +684,8 @@ public int getScaledWindowTouchSlop() {
     /**
      * @return Minimum velocity to initiate a fling, as measured in pixels per second.
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.439 -0500", hash_original_method = "0486ED6F0D874BB9D1C234D99788A23A", hash_generated_method = "1F4D3A154C5ECE9F6A3AA812BF168D34")
     
@@ -674,6 +696,8 @@ public int getScaledMinimumFlingVelocity() {
     /**
      * @return Maximum velocity to initiate a fling, as measured in pixels per second.
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.443 -0500", hash_original_method = "FB70B19A53E289FD25C6D1F0C8994CAD", hash_generated_method = "5D95E56454A0B57E4EA671E692E22083")
     
@@ -725,6 +749,8 @@ public int getScaledOverflingDistance() {
      *
      * @return true if a permanent menu key is present, false otherwise.
      */
+    @DSComment("View configuration")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.462 -0500", hash_original_method = "545A02CAD62F49742EF9C21476AFC78D", hash_generated_method = "6C956466F8F18FEFA6F27CCAA6695F8A")
     
 public boolean hasPermanentMenuKey() {

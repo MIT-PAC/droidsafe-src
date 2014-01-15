@@ -44,6 +44,8 @@ public static synchronized String[] getAvailableIDs(int offsetMillis) {
      * <p>Since the user's time zone changes dynamically, avoid caching this
      * value. Instead, use this method to look it up for each use.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.873 -0500", hash_original_method = "F29CAD391A0A89C41D5BB954A59648B5", hash_generated_method = "88A3AEA543AA75FA7DE1F47D0D254B83")
     
@@ -71,6 +73,8 @@ public static synchronized TimeZone getDefault() {
      * both corresponding to UTC), Android does not support the deprecated three-letter time
      * zone IDs used in Java 1.1.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.901 -0500", hash_original_method = "A9702CAFEC1BDFDDFFC4258E6C6ABF00", hash_generated_method = "65D278D3A5C10E4945F47E0E9E8E83E2")
     
@@ -226,6 +230,8 @@ public TimeZone() {}
      * Equivalent to {@code getDisplayName(false, TimeZone.LONG, Locale.getDefault())}.
      * <a href="../util/Locale.html#default_locale">Be wary of the default locale</a>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.876 -0500", hash_original_method = "E1D5D6F100BA788FCF57724352534F76", hash_generated_method = "855AF36B6D2FA6CA483A7086CB98DED2")
     
@@ -264,6 +270,8 @@ public final String getDisplayName(boolean daylightTime, int style) {
      * @param style either {@link TimeZone#LONG} or {@link TimeZone#SHORT}.
      * @param locale the display locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.883 -0500", hash_original_method = "4F4A34040AF2984EDE789FC8C17113CE", hash_generated_method = "6B54818216DAAD424943547CF1F765CD")
     
@@ -315,6 +323,8 @@ private void appendNumber(StringBuilder builder, int count, int value) {
      * Returns the ID of this {@code TimeZone}, such as
      * {@code America/Los_Angeles}, {@code GMT-08:00} or {@code UTC}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.888 -0500", hash_original_method = "6351E64C485F9179F5E10C6B44486847", hash_generated_method = "EB1B7670C3C3A36B39FD469014CCC913")
     
@@ -334,6 +344,8 @@ public String getID() {
      * you're interested in. If this method returns a non-zero offset, that only
      * tells you that this {@code TimeZone} sometimes observes daylight savings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.891 -0500", hash_original_method = "88FDDC2A48FC14F19CA7C51175C63814", hash_generated_method = "3E1EE466382C8D0B5B2151752343B060")
     
@@ -348,6 +360,8 @@ public int getDSTSavings() {
      *
      * @param time the date in milliseconds since January 1, 1970 00:00:00 UTC
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.894 -0500", hash_original_method = "C756709CC23E72027C31097576D8FC0B", hash_generated_method = "520706B60A3BF9919148A261F825584B")
     
@@ -443,6 +457,8 @@ public abstract void setRawOffset(int offsetMillis);
      *
      * <p>Most applications should not use this method.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.925 -0500", hash_original_method = "21C3C508C0D0784BDA8C6C77AEEDE939", hash_generated_method = "AEA202CA3554582325612E76986178DB")
     
 public abstract boolean useDaylightTime();

@@ -294,6 +294,8 @@ private void dispatchOnInit(int result) {
      * It is good practice for instance to call this method in the onDestroy() method of an Activity
      * so the TextToSpeech engine can be cleanly stopped.
      */
+    @DSComment("not sensitive on info")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.817 -0500", hash_original_method = "EAB786CB351424B1FA3879678813021A", hash_generated_method = "DAB730F25E13AEC80174B05AB6A2CEF3")
     
 public void shutdown() {
@@ -606,6 +608,8 @@ public boolean isSpeaking() {
      *
      * @return {@link #ERROR} or {@link #SUCCESS}.
      */
+    @DSComment("not sensitive on info")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.862 -0500", hash_original_method = "1B011279D3385FBEA81C0EEE9DDE31E7", hash_generated_method = "6D0891E8C63E8A15A192B1A3A8F8ED83")
     
 public int stop() {
@@ -655,6 +659,8 @@ public int setSpeechRate(float speechRate) {
      *
      * @return {@link #ERROR} or {@link #SUCCESS}.
      */
+    @DSComment("not sensitive on info")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.868 -0500", hash_original_method = "7DADB23AB82E5180649E2697B1338160", hash_generated_method = "F4F362DE2FFFF4DF81E98DAB385C789C")
     

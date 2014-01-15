@@ -17,6 +17,8 @@ public class StringWriter extends Writer {
      * StringBuffer} is also the {@code lock} used to synchronize access to this
      * writer.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.091 -0500", hash_original_method = "70E0091DAD5CA0CE69DCEADFA1D1533C", hash_generated_method = "7E2C64E64DC268AFCDD2C66951952544")
     
 public StringWriter() {
@@ -33,6 +35,8 @@ public StringWriter() {
      * @param initialSize
      *            the intial size of the target string buffer.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.094 -0500", hash_original_method = "9AACBAF662EC7E043DE68391EFC0EC82", hash_generated_method = "C2FFDDB811278DE495C1C31F5BEAB90C")
     
 public StringWriter(int initialSize) {
@@ -74,6 +78,8 @@ public StringWriter(int initialSize) {
      *
      * @return a reference to this writer's internal {@code StringBuffer}.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.101 -0500", hash_original_method = "A7A377F1952FAEFB7BC2FB8A1C51454F", hash_generated_method = "9DACA42F3BBA428D705F71B19D733A93")
     
@@ -86,6 +92,8 @@ public StringBuffer getBuffer() {
      *
      * @return this writer's contents as a string.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.104 -0500", hash_original_method = "B210C316A5935A34586C62D959011891", hash_generated_method = "1774137BABF77D6332E3E77ADE4EE85A")
     
 @Override
@@ -107,6 +115,8 @@ public StringBuffer getBuffer() {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the size of {@code buf}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.106 -0500", hash_original_method = "B574F1A893A28468E9B79E59C4419CC6", hash_generated_method = "9CDF0FF8BCA96E90FC2C10775DCA5372")
     
 @Override

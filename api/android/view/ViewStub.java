@@ -204,6 +204,8 @@ public void setLayoutResource(int layoutResource) {
      * @return The inflated layout resource.
      *
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.968 -0500", hash_original_method = "FA523E28924F274233340119C3A40101", hash_generated_method = "BD9E8BCBEC1864F20E904F304653A7C6")
     
 public View inflate() {

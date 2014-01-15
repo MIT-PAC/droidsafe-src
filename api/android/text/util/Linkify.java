@@ -87,6 +87,8 @@ public static final boolean addLinks(Spannable text, int mask) {
      *  are found the movement method for the TextView is set to
      *  LinkMovementMethod.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.772 -0500", hash_original_method = "D4023CCAA6FDAA3E9FB26AE7253D5FC2", hash_generated_method = "A5F616A48879E1E66C24E798A9C82B2A")
     
 public static final boolean addLinks(TextView text, int mask) {

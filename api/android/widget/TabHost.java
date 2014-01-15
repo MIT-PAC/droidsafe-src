@@ -61,6 +61,8 @@ public TabHost(Context context) {
         initTabHost();
     }
 
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.570 -0500", hash_original_method = "6A9D0785655056C88014FFCBE8AF5DF8", hash_generated_method = "C057BB56C35A71EA0AE296190D007541")
     
 public TabHost(Context context, AttributeSet attrs) {
@@ -111,6 +113,8 @@ public TabSpec newTabSpec(String tag) {
 mTabHost.setup();
 mTabHost.addTab(TAB_TAG_1, "Hello, world!", "Tab 1");
       */
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.583 -0500", hash_original_method = "11DAEE90670B382AFFC7A5048665264E", hash_generated_method = "374CEFE29F9971D694CA48BB7801411A")
     
 public void setup() {
@@ -172,6 +176,8 @@ public void setup() {
      * This is done for you if you extend {@link android.app.TabActivity}.
      * @param activityGroup Used to launch activities for tab content.
      */
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.587 -0500", hash_original_method = "7224354A386E6E21E9006426BE4B5FE4", hash_generated_method = "FF0C2418470E83B5D3CE17E1B5910722")
     
 public void setup(LocalActivityManager activityGroup) {
@@ -179,6 +185,8 @@ public void setup(LocalActivityManager activityGroup) {
         mLocalActivityManager = activityGroup;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.589 -0500", hash_original_method = "1749A697E4E6C7318205DA9AE02BC223", hash_generated_method = "1AF86CC162390F94E1650FCDAF567B2A")
     
 @Override
@@ -188,6 +196,8 @@ public void setup(LocalActivityManager activityGroup) {
         treeObserver.addOnTouchModeChangeListener(this);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.591 -0500", hash_original_method = "56196D931FB093B5A1146C07A075CA12", hash_generated_method = "34C0FFC8212596F5B35A5046055DAE23")
     
 @Override
@@ -272,6 +282,8 @@ public int getCurrentTab() {
         return mCurrentTab;
     }
 
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.606 -0500", hash_original_method = "4BF4FAE03E9E8C0B1DA1E933710D00F0", hash_generated_method = "A6FB86ECEB48E046478F1C51BFB94634")
     
@@ -299,6 +311,8 @@ public View getCurrentView() {
         return mCurrentView;
     }
 
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.612 -0500", hash_original_method = "8C15D02B8DC442237A4CA8C57AA1B8BD", hash_generated_method = "FB2B46C880E73551097555E51328B111")
     
@@ -353,6 +367,8 @@ public FrameLayout getTabContentView() {
         }
     }
 
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.622 -0500", hash_original_method = "E2648DF1C44758803127AAF509A8077D", hash_generated_method = "F8A7159B9E24FFC79BACDC551729E18F")
     
 public void setCurrentTab(int index) {
@@ -497,6 +513,8 @@ public TabSpec setContent(Intent intent) {
             return this;
         }
 
+        @DSComment("not sensitive/not an action")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.657 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "0B538D6B7E10340EACEB66882A3752E4")
         

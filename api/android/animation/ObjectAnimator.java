@@ -53,6 +53,8 @@ public static ObjectAnimator ofInt(Object target, String propertyName, int... va
      * @param values A set of values that the animation will animate between over time.
      * @return An ObjectAnimator object that is set up to animate between the given values.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.564 -0500", hash_original_method = "7A2DAA3629AD92EDC2DFD0D78B3421C9", hash_generated_method = "13FDA7CA700C3F2B682BF97543D98984")
     
 public static ObjectAnimator ofFloat(Object target, String propertyName, float... values) {
@@ -374,6 +376,8 @@ public String getPropertyName() {
      * duration, as in
      * <code>ObjectAnimator.ofInt(target, propertyName, 0, 10).setDuration(500).start()</code>.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.588 -0500", hash_original_method = "954A06F8CA33C0A594F77D3B920078B4", hash_generated_method = "1B4CF989E6D7E3414ECFC36FFDB9F01F")
     
 @Override

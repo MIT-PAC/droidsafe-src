@@ -108,6 +108,8 @@ public BitSet() {
      *
      * @throws NegativeArraySizeException if {@code bitCount < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.866 -0500", hash_original_method = "12ED281EDA73627C34F706B1E8393C0F", hash_generated_method = "CCA75D20C978B5242794FB978FDBC8AB")
     
 public BitSet(int bitCount) {
@@ -211,6 +213,8 @@ private void ensureCapacity(int desiredLongCount) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.885 -0500", hash_original_method = "95B4B3127159370AD2A9AF3A9CB73F00", hash_generated_method = "0C9AC5C908057F8168D7843E21A6DF08")
     
 public boolean get(int index) {
@@ -229,6 +233,8 @@ public boolean get(int index) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.888 -0500", hash_original_method = "3D2EC51930163E4AB4304E4F9059CB5F", hash_generated_method = "8185EA4AEDBA7BDE7BA26A57910FD132")
     
@@ -249,6 +255,8 @@ public void set(int index) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.890 -0500", hash_original_method = "D4755629803CE3870851808B06FB6C2C", hash_generated_method = "E4EF3C3547190AAB68250E8985CC28B6")
     
 public void clear(int index) {
@@ -620,6 +628,8 @@ public int size() {
      * Returns the number of bits up to and including the highest bit set. This is unrelated to
      * the {@link #size} of the {@code BitSet}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.934 -0500", hash_original_method = "6F3396C6D4F506441C95587742A4BBC3", hash_generated_method = "554038216182ED28D763275A8FC1C890")
     
 public int length() {

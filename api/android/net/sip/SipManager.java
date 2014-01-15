@@ -23,6 +23,8 @@ public class SipManager {
      * @param context application context for creating the manager object
      * @return the manager instance or null if SIP API is not supported
      */
+    @DSComment("Sip Manager")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.176 -0500", hash_original_method = "66F422A1F07B1EF61355B4A646F6CF3A", hash_generated_method = "652CF5553FF8C8C60050A97610D1CFC0")
     
 public static SipManager newInstance(Context context) {
@@ -230,6 +232,8 @@ public void open(SipProfile localProfile) throws SipException {
      * @see #getCallId
      * @see #getOfferSessionDescription
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.193 -0500", hash_original_method = "BDC8C921966B306282AD779760136C05", hash_generated_method = "8527A1D79853591CE7E52EC29C824448")
     
@@ -257,6 +261,8 @@ public void open(SipProfile localProfile,
      * @param listener to listen to registration events; can be null
      * @throws SipException if calling the SIP service results in an error
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.195 -0500", hash_original_method = "CFF28AE1062695240C0119F8DCC4A5F5", hash_generated_method = "F1C8ECE543E5B0202CFE7BEF1EEE182D")
     
@@ -277,6 +283,8 @@ public void setRegistrationListener(String localProfileUri,
      * @param localProfileUri the URI of the profile to close
      * @throws SipException if calling the SIP service results in an error
      */
+    @DSComment("Sip Manager")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.197 -0500", hash_original_method = "44B0A789C05B858CACCF674C81E7AABD", hash_generated_method = "CBA5F72A5B5D57CF9151840D5B14FC5C")
     
 public void close(String localProfileUri) throws SipException {
@@ -383,6 +391,8 @@ private String getUri(ISipSession session) {
      *        provider
      * @throws SipException if calling the SIP service results in an error
      */
+    @DSComment("Sip Manager")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:28.201 -0500", hash_original_method = "5A38205B94FE9DB78D17F700EB0D1FB0", hash_generated_method = "81A6B6372084AE54793B63AF5FF9FA54")
     

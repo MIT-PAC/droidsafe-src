@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class Short extends Number implements Comparable<Short> {
 
     /**
@@ -57,6 +53,8 @@ public static Short decode(String string) throws NumberFormatException {
      * @throws NumberFormatException
      *             if {@code string} cannot be parsed as a short value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.139 -0500", hash_original_method = "1786D2BB317EEE60820821018E6A39A2", hash_generated_method = "092E6E17D3E94A3774E469ED31E8F789")
     
 public static short parseShort(String string) throws NumberFormatException {
@@ -168,13 +166,14 @@ public static short reverseBytes(short s) {
      * @return a {@code Short} instance containing {@code s}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.159 -0500", hash_original_method = "35082CB91401B94EAC986E5B2FF0266B", hash_generated_method = "7296C5697BB66FEC2AC94F5102A69D0E")
     
 public static Short valueOf(short s) {
         return s < -128 || s >= 128 ? new Short(s) : SMALL_VALUES[s + 128];
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.093 -0500", hash_original_field = "A8778D06FF83BAF5C55E40DEE84ED89F", hash_generated_field = "AC22C2D7B4371C5B3354C8DF803452A1")
-
 
     private static final long serialVersionUID = 7515723908773894738L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.098 -0500", hash_original_field = "972AAA33FA1E17367038C7B11B4CE501", hash_generated_field = "2E8990EE4BCAF51ABAF9910FEA47E327")
@@ -209,6 +208,8 @@ public static Short valueOf(short s) {
      *             if {@code string} cannot be parsed as a short value.
      * @see #parseShort(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.109 -0500", hash_original_method = "929EA7C7B9F688B1FB918E42E094A176", hash_generated_method = "E48305ACBB0A4408E27E3B9E599A8961")
     
 public Short(String string) throws NumberFormatException {
@@ -312,6 +313,8 @@ public int compareTo(Short object) {
      *
      * @return this object's primitive value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.144 -0500", hash_original_method = "C4526A740A626A32E8FE5B0C1E7B83A6", hash_generated_method = "A82042D96E725949B732B712BE4A645E")
     
 @Override

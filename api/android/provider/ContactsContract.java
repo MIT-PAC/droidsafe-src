@@ -566,6 +566,8 @@ public static void markAsContacted(ContentResolver resolver, long contactId) {
          * available, it is returned. If false, this function always tries to get the thumbnail
          * @return an InputStream of the photo, or null if no photo is present
          */
+        @DSComment("IO movement methodName")
+        @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.930 -0500", hash_original_method = "39CCF57C11710ED9D7B06C24BDE6652B", hash_generated_method = "81B22971803C149D0C82E0B6074B8933")
         
@@ -617,6 +619,8 @@ public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri co
          * @see #openContactPhotoInputStream(ContentResolver, Uri, boolean), if instead
          * of the thumbnail the high-res picture is preferred
          */
+        @DSComment("IO movement methodName")
+        @DSSpec(DSCat.IO_ACTION_METHOD)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:45.932 -0500", hash_original_method = "38D81F9B93E07ADE0E2E072FADEAEAB2", hash_generated_method = "366EB5E49CE660D34F00F358317E4C64")
         
 public static InputStream openContactPhotoInputStream(ContentResolver cr, Uri contactUri) {
@@ -1500,6 +1504,8 @@ public static final int getTypeLabelResource(int type) {
              * possibly substituting the given {@link #LABEL} value
              * for {@link #TYPE_CUSTOM}.
              */
+            @DSComment("data structure only")
+            @DSSafe(DSCat.DATA_STRUCTURE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.377 -0500", hash_original_method = "DB726CF4AF0A68CE45AE4CC8697A8990", hash_generated_method = "16C263C0668F5C7F953A2DE5737E1ECD")
             
 public static final CharSequence getTypeLabel(Resources res, int type,
@@ -1622,6 +1628,8 @@ public static final int getTypeLabelResource(int type) {
              * possibly substituting the given {@link #LABEL} value
              * for {@link #TYPE_CUSTOM}.
              */
+            @DSComment("data structure only")
+            @DSSafe(DSCat.DATA_STRUCTURE)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:46.420 -0500", hash_original_method = "139D7841F98AAFAD137DC9F312A6888E", hash_generated_method = "EFE05700DC3AFF7BDD17577F45ECCDA9")
             
 public static final CharSequence getTypeLabel(Resources res, int type,

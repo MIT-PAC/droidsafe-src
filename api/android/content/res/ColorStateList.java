@@ -297,6 +297,8 @@ public int getColorForState(int[] stateSet, int defaultColor) {
      *
      * @return the default color in this {@link ColorStateList}.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.594 -0500", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "BD5C97F2F8B496BA1D776C974B2636D0")
     

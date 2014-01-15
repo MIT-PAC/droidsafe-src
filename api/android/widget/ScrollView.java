@@ -100,12 +100,16 @@ public class ScrollView extends FrameLayout {
 
     private StrictMode.Span mFlingStrictSpan = null;
 
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.496 -0500", hash_original_method = "4713E1355E9C805E185DB05E4B4B9810", hash_generated_method = "5052070C631A712E44E5380A0FCF7A04")
     
 public ScrollView(Context context) {
         this(context, null);
     }
 
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.499 -0500", hash_original_method = "D709104905B863FC98F9383546426518", hash_generated_method = "EB37E6BB4BEA7A68E2A5672B3FF621CF")
     
 public ScrollView(Context context, AttributeSet attrs) {
@@ -195,6 +199,8 @@ private void initScrollView() {
         mOverflingDistance = configuration.getScaledOverflingDistance();
     }
 
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.517 -0500", hash_original_method = "C2B46C856A31C41C5B4609404338EFA0", hash_generated_method = "9987C85F19F47E670CB55B48F8F89207")
     
 @Override
@@ -447,6 +453,8 @@ private void recycleVelocityTracker() {
         super.requestDisallowInterceptTouchEvent(disallowIntercept);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.558 -0500", hash_original_method = "A618CDF234D118EA8A225B0CD965AEA3", hash_generated_method = "9D234685BE993702B58F556422EA1590")
     
 @Override
@@ -1575,6 +1583,8 @@ private void endDrag() {
      *
      * <p>This version also clamps the scrolling to the bounds of our child.
      */
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.653 -0500", hash_original_method = "748C5914370A5F8CDD8109B6F4611B5B", hash_generated_method = "3A1797599400A01D35584D2148E07111")
     
 @Override

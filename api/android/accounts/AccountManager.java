@@ -65,6 +65,8 @@ public static Bundle sanitizeResult(Bundle result) {
      * @param context The {@link Context} to use when necessary
      * @return An {@link AccountManager} instance
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.973 -0500", hash_original_method = "5160F1A7A4EC859C57D4D0FFF150F671", hash_generated_method = "5EF3D5664AA350D0DC486554FEE23BDB")
     
@@ -922,6 +924,8 @@ public Account[] getAccounts() {
      * @return An array of {@link Account}, one per matching account.  Empty
      *     (never null) if no accounts of the specified type have been added.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.987 -0500", hash_original_method = "182706774272102452F63339D769DBB2", hash_generated_method = "3E5A9E7DA6686259CE7A37D9087EAE06")
     

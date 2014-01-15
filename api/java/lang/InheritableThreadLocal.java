@@ -5,14 +5,13 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class InheritableThreadLocal<T> extends ThreadLocal<T> {
 
     /**
      * Creates a new inheritable thread-local variable.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.537 -0500", hash_original_method = "013FA75455B3B99BD273198992B6DC3D", hash_generated_method = "E13EE25F4E019254954C6350304C79AC")
     
 public InheritableThreadLocal() {
@@ -46,7 +45,6 @@ protected T childValue(T parentValue) {
     Values initializeValues(Thread current) {
         return current.inheritableValues = new Values();
     }
-
     
 }
 

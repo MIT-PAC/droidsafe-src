@@ -305,6 +305,8 @@ public boolean isSynthetic() {
      *
      * @return the declaring class
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.899 -0500", hash_original_method = "CE10C7360422171346CFCFE4390D0CD4", hash_generated_method = "90E9BF83F1779E241EBB0A05FEA9321D")
     
@@ -363,6 +365,8 @@ public String getName() {
      *
      * @return the parameter types
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.909 -0500", hash_original_method = "860AC8CD4E2F5F390A65618A1941DEDE", hash_generated_method = "0845E4F05C4F8FB178489C01FC4EE8B5")
     
@@ -454,6 +458,8 @@ public Class<?>[] getParameterTypes() {
      *
      * @see AccessibleObject
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.917 -0500", hash_original_method = "E7355AF509FB0F598B5C977468B592C4", hash_generated_method = "63FEE1322FA0BC46765B9AB7FCBF68AC")
     
 public T newInstance(Object... args) throws InstantiationException, IllegalAccessException,

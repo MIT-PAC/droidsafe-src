@@ -32,16 +32,22 @@ public class ETC1 {
     public static void formatHeader(Buffer header, int width, int height) {
     }
     
+    @DSComment("OpenGL ETC1")
+    @DSSafe(DSCat.GRAPHICS)
     public static boolean isValid(Buffer header) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1742416740 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1742416740;
     }
     
+    @DSComment("OpenGL ETC1")
+    @DSSafe(DSCat.GRAPHICS)
     public static int getWidth(Buffer header) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382514895 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_382514895;
     }
     
+    @DSComment("OpenGL ETC1")
+    @DSSafe(DSCat.GRAPHICS)
     public static int getHeight(Buffer header) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567929593 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_567929593;

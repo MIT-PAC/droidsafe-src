@@ -14,7 +14,9 @@ public abstract class BaseAdapter implements ListAdapter, SpinnerAdapter {
 
     private final DataSetObservable mDataSetObservable = new DataSetObservable();
 
-	public BaseAdapter() {
+	@DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
+    public BaseAdapter() {
 		//Not in the initial implementation, generated for specdump
 	}
 
@@ -24,6 +26,8 @@ public boolean hasStableIds() {
         return false;
     }
     
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.481 -0500", hash_original_method = "5BE178AB760CC925EF7E1111F1B4915D", hash_generated_method = "6A22BA8F56D7F69EA0195E58760DC1E9")
     
 public void registerDataSetObserver(DataSetObserver observer) {
@@ -40,6 +44,8 @@ public void unregisterDataSetObserver(DataSetObserver observer) {
      * Notifies the attached observers that the underlying data has been changed
      * and any View reflecting the data set should refresh itself.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.485 -0500", hash_original_method = "6B5DF5B4CDDD51D923DE488520E93535", hash_generated_method = "782276BFD026F517836F431E691733F0")
     
 public void notifyDataSetChanged() {
@@ -51,6 +57,8 @@ public void notifyDataSetChanged() {
      * or available. Once invoked this adapter is no longer valid and should
      * not report further data set changes.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.487 -0500", hash_original_method = "733D96117EC068A88A560CFA24913D79", hash_generated_method = "9039EDC909D1B84EC6F4A43479C7428B")
     
 public void notifyDataSetInvalidated() {

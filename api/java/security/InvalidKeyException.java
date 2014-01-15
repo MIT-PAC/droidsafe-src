@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class InvalidKeyException extends KeyException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.074 -0500", hash_original_field = "7D02BB54068F6E8190B642ABA2FFE661", hash_generated_field = "AE7F6B4A6D2DED1A2EC0CFA8D091C8F7")
-
 
     private static final long serialVersionUID = 5698479920593359816L;
 
@@ -22,6 +17,8 @@ public class InvalidKeyException extends KeyException {
      * @param msg
      *            the detail message for this exception.
      */
+    @DSComment("no suspicious activity, just creating an object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.077 -0500", hash_original_method = "BC12CDCCA39AEA87BF36441977671D95", hash_generated_method = "62FC9239100455C6FBFDC2B11C764A5C")
     
 public InvalidKeyException(String msg) {

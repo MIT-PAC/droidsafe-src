@@ -86,15 +86,21 @@ public class ListView extends AbsListView {
 
     private FocusSelector mFocusSelector;
     
-	public ListView(Context context) {
+	@DSComment("ListView")
+    @DSSafe(DSCat.GUI)
+    public ListView(Context context) {
 		super(context);
 	}
     
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     public ListView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		// TODO Auto-generated constructor stub
 	}
     
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     public ListView(Context context, AttributeSet attrs, int defStyle) {
 		super(context, attrs, defStyle);
 		// TODO Auto-generated constructor stub
@@ -173,6 +179,8 @@ private void adjustViewsUpOrDown() {
      * @param data Data to associate with this view
      * @param isSelectable whether the item is selectable
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.192 -0500", hash_original_method = "52D3689EBA08A028E74C350405FC2CA4", hash_generated_method = "045363224276C4854AF4CA32ED4639D7")
     
 public void addHeaderView(View v, Object data, boolean isSelectable) {
@@ -206,6 +214,8 @@ public void addHeaderView(View v, Object data, boolean isSelectable) {
      *
      * @param v The view to add.
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.194 -0500", hash_original_method = "9CDB9BC1941825D09F579B09BA5203C8", hash_generated_method = "4DF54523D3EC1F125E11DDC6B52B4BA2")
     
 public void addHeaderView(View v) {
@@ -302,6 +312,8 @@ public void addFooterView(View v, Object data, boolean isSelectable) {
      *
      * @param v The view to add.
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.206 -0500", hash_original_method = "06A7CBCF71002E57CE516EE24D5E8CDC", hash_generated_method = "670DAD95C314A4774458F5AE45462EEF")
     
 public void addFooterView(View v) {
@@ -340,6 +352,8 @@ public boolean removeFooterView(View v) {
         return false;
     }
     
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @Override
 	public ListAdapter getAdapter() {
 		// TODO Auto-generated method stub
@@ -359,6 +373,8 @@ public boolean removeFooterView(View v) {
         super.setRemoteViewsAdapter(intent);
     }
     
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @Override
 	
 	public void setAdapter(ListAdapter adapter) {
@@ -1365,6 +1381,8 @@ private void correctTooLow(int childCount) {
         }
     }
 
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.309 -0500", hash_original_method = "9877500E639FE4AE4AB75D2F74BF2E4E", hash_generated_method = "BE141D66304C05E2B31D160C3ED88E85")
     
 @Override
@@ -1798,6 +1816,8 @@ private void setupChild(View child, int position, int y, boolean flowDown, int c
         return super.canAnimate() && mItemCount > 0;
     }
     
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public void setSelection(int position) {
@@ -1813,6 +1833,8 @@ private void setupChild(View child, int position, int y, boolean flowDown, int c
      * @param y The distance from the top edge of the ListView (plus padding) that the
      *        item will be positioned.
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.325 -0500", hash_original_method = "04FF3361CA0379851E7CD86AE0D8A950", hash_generated_method = "C2FDCD225F78F612479AF40759D4F085")
     
 public void setSelectionFromTop(int position, int y) {
@@ -2902,6 +2924,8 @@ private View addViewBelow(View theView, int position) {
      *
      * @param itemsCanFocus true if items can get focus, false otherwise
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.420 -0500", hash_original_method = "B028681B6F4AF7B56D2E022B96A1F853", hash_generated_method = "4E30DA1E9D79AFFADBD6C2DC03EEA463")
     
 public void setItemsCanFocus(boolean itemsCanFocus) {
@@ -2945,6 +2969,8 @@ public boolean getItemsCanFocus() {
         return retValue;
     }
 
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.428 -0500", hash_original_method = "465D449366429949FD8ADA654918A0E2", hash_generated_method = "342E58F6677C3BA7760B7791A690FB25")
     
@@ -3190,6 +3216,8 @@ void drawDivider(Canvas canvas, Rect bounds, int childIndex) {
      *
      * @return the current drawable drawn between list elements
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.446 -0500", hash_original_method = "7B5403D1FD6AC98A776FCB41ADD8E487", hash_generated_method = "6D7015A0035B7E7E6FFBA1DFBEFC56D9")
     
@@ -3203,6 +3231,8 @@ public Drawable getDivider() {
      *
      * @param divider The drawable to use.
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.448 -0500", hash_original_method = "7913B276C2BDCD5302E597BC9A4CB654", hash_generated_method = "B4700849B7DAB56CBE38DDAC5F26ACE3")
     
 public void setDivider(Drawable divider) {
@@ -3220,6 +3250,8 @@ public void setDivider(Drawable divider) {
     /**
      * @return Returns the height of the divider that will be drawn between each item in the list.
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.450 -0500", hash_original_method = "229663AAAB1BC0B50485AD0B5CC199F3", hash_generated_method = "2F62CF391761700AD78489304D8DCE6B")
     
@@ -3233,6 +3265,8 @@ public int getDividerHeight() {
      *
      * @param height The new height of the divider in pixels.
      */
+    @DSComment("ListView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:18.452 -0500", hash_original_method = "D3D08555D2F9E637F163A09E680CBA08", hash_generated_method = "472E617F01D7984751BF56DF1247B0F2")
     
 public void setDividerHeight(int height) {

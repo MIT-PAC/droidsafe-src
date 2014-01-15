@@ -224,6 +224,8 @@ static String[] getWhereArgsForIds(long[] ids) {
         /**
          * @param uri the HTTP URI to download.
          */
+        @DSComment("Formulating request to download")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.202 -0500", hash_original_method = "38AB51743560DA4EF393F63C39D43853", hash_generated_method = "096BB787554DF617318716F9A3074D79")
         
 public Request(Uri uri) {
@@ -586,6 +588,8 @@ private void putIfNonNull(ContentValues contentValues, String key, Object value)
 
         private boolean mOnlyIncludeVisibleInDownloadsUi = false;
         
+        @DSComment("Formulating request to download")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.054 -0400", hash_original_method = "EFCA8790A91D69466A874AF6524F8E69", hash_generated_method = "EFCA8790A91D69466A874AF6524F8E69")
         public Query ()
         {
@@ -1134,6 +1138,8 @@ public ParcelFileDescriptor openDownloadedFile(long id) throws FileNotFoundExcep
      * @return the {@link Uri} for the given downloaded file id, if download was successful. null
      * otherwise.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:27.314 -0500", hash_original_method = "82FD0DABBA6B80B8B4BA3DF76B66A3D1", hash_generated_method = "5267155AA394E91A4D5F97C5C7CD51C4")
     

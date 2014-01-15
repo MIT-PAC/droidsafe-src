@@ -14,7 +14,9 @@ public class ForegroundColorSpan extends CharacterStyle implements UpdateAppeara
 
     private  int mColor;
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.725 -0500", hash_original_method = "CCAF801A87F70F53C246D8BAD4668254", hash_generated_method = "45EC880AE53DCB2510F24924B0275E08")
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.725 -0500", hash_original_method = "CCAF801A87F70F53C246D8BAD4668254", hash_generated_method = "45EC880AE53DCB2510F24924B0275E08")
     
 public ForegroundColorSpan(int color) {
 		mColor = color;

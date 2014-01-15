@@ -58,6 +58,8 @@ public class Spinner extends AbsSpinner implements OnClickListener {
      * @param context The Context the view is running in, through which it can
      *        access the current theme, resources, etc.
      */
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.023 -0500", hash_original_method = "B5C06F1AC4F38C2FF014EC091685338D", hash_generated_method = "9633135D3E212869BBD31A4116325EE4")
     
 public Spinner(Context context) {
@@ -190,6 +192,8 @@ public Spinner(Context context, AttributeSet attrs, int defStyle, int mode) {
         }
     }
 
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.037 -0500", hash_original_method = "E89DC933CAA3948ECC7191CDEBCA4F7F", hash_generated_method = "F0FBAB05DA6BEA4CE4204261FC3F4E56")
     
@@ -224,6 +228,8 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.042 -0500", hash_original_method = "60241601236C86A9296272064A15234D", hash_generated_method = "C3B2D6E860B82141D2CA77EF0BF7E624")
     
 @Override

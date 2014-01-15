@@ -61,6 +61,8 @@ public static int indexOf(CharSequence s, char ch) {
         return indexOf(s, ch, 0);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.822 -0500", hash_original_method = "6B7A92B1181B966A44F83BF97D86A71F", hash_generated_method = "D701A239AF1BE6077A8716C4E83171B7")
     
 public static int indexOf(CharSequence s, char ch, int start) {
@@ -281,6 +283,8 @@ public static CharSequence join(Iterable<CharSequence> list) {
      * @param tokens an array objects to be joined. Strings will be formed from
      *     the objects by calling object.toString().
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.855 -0500", hash_original_method = "30F8C3035802E985549014BC8C1FC857", hash_generated_method = "BCBB36CA6A56C6DC3005FD0730023358")
     
 public static String join(CharSequence delimiter, Object[] tokens) {
@@ -302,6 +306,8 @@ public static String join(CharSequence delimiter, Object[] tokens) {
      * @param tokens an array objects to be joined. Strings will be formed from
      *     the objects by calling object.toString().
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.858 -0500", hash_original_method = "DC7AF5364772F9FC890BC57B4AE1F82F", hash_generated_method = "7DEC1574CB917C477B50C58627F70E8E")
     
 public static String join(CharSequence delimiter, Iterable tokens) {
@@ -328,6 +334,8 @@ public static String join(CharSequence delimiter, Iterable tokens) {
      *
      * @throws NullPointerException if expression or text is null
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.861 -0500", hash_original_method = "9706658E9A67690C95EF953ED2AFD2D4", hash_generated_method = "05FF8A488F3493254F9474270D9C6B5E")
     
 public static String[] split(String text, String expression) {
@@ -375,6 +383,8 @@ public static CharSequence stringOrSpannedString(CharSequence source) {
      * @param str the string to be examined
      * @return true if str is null or zero length
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:05.902 -0500", hash_original_method = "87E1A34C0995DE779A857B80EB9CE27A", hash_generated_method = "39933546042860768A7564846E63D2DC")
     
 public static boolean isEmpty(CharSequence str) {
@@ -446,6 +456,8 @@ public static CharSequence getReverse(CharSequence source,
      * Flatten a CharSequence and whatever styles can be copied across processes
      * into the parcel.
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.005 -0500", hash_original_method = "3AB99D64EE2B077E31675DCB4E265A32", hash_generated_method = "42EA47F81EED8389C6DC4542452E1EDA")
     
 public static void writeToParcel(CharSequence cs, Parcel p,
@@ -1052,6 +1064,8 @@ static void recycle(char[] temp) {
      * @param s the string to be encoded
      * @return the encoded string
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.085 -0500", hash_original_method = "8B7144A918649FDB8BF62121E595E8DB", hash_generated_method = "754F2C23B97790CE62FD2FD0C262EC70")
     
 public static String htmlEncode(String s) {
@@ -1170,6 +1184,8 @@ public static boolean isGraphic(char c) {
     /**
      * Returns whether the given CharSequence contains only digits.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:06.098 -0500", hash_original_method = "38604D56402004A8D37D280CF149D3A8", hash_generated_method = "16141365812CE98C9D78BECC3192FC5D")
     
 public static boolean isDigitsOnly(CharSequence str) {

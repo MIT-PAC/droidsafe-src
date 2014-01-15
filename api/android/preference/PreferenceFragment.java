@@ -87,12 +87,16 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         
 };
     
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.553 -0400", hash_original_method = "7AC8446BD8400B4FB28876E58FD0C82C", hash_generated_method = "7AC8446BD8400B4FB28876E58FD0C82C")
     public PreferenceFragment ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.193 -0500", hash_original_method = "14584F9C5C89DF812017D65CA10140CA", hash_generated_method = "99748259059AAD72599BC1E0DB18050A")
     
 @Override
@@ -111,6 +115,8 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
                 false);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.198 -0500", hash_original_method = "428378000E0F8A164C3A97E3B49B3453", hash_generated_method = "4246A9548633178E9033B1ECDDC8FA26")
     
 @Override
@@ -161,6 +167,8 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         super.onDestroyView();
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.207 -0500", hash_original_method = "A8BE499835A02B140E34CDE8D21019C1", hash_generated_method = "8489DC7489CAAD8773F0E4E9C520916D")
     
 @Override
@@ -183,6 +191,8 @@ public abstract class PreferenceFragment extends Fragment implements PreferenceM
         }
     }
 
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.212 -0500", hash_original_method = "ED65E8315019E6E9FED78D8EFC0AFB01", hash_generated_method = "C533AE0F68DA8D9BE6AC196831165320")
     
 @Override
@@ -252,6 +262,8 @@ public void addPreferencesFromIntent(Intent intent) {
      *
      * @param preferencesResId The XML resource ID to inflate.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.223 -0500", hash_original_method = "730912206D2245A2DDEB83331D1CD295", hash_generated_method = "B75AB1BBCBA24240A5D2F84A1C366958")
     
 public void addPreferencesFromResource(int preferencesResId) {
@@ -283,6 +295,8 @@ public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen,
      * @return The {@link Preference} with the key, or null.
      * @see PreferenceGroup#findPreference(CharSequence)
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.227 -0500", hash_original_method = "0C794FFD7CBFBB35093DF6CE24875508", hash_generated_method = "4DE203501698157E66A7E2A9CF00A3B6")
     
 public Preference findPreference(CharSequence key) {

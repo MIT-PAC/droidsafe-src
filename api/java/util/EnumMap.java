@@ -35,6 +35,8 @@ public class EnumMap<K extends Enum<K>, V> extends AbstractMap<K, V> implements 
 
     private transient int mappingsCount;
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.591 -0400", hash_original_method = "357B463561F8F38F36CCB594B2B44169", hash_generated_method = "D728EB7714A45C35A27862A2389C889E")
     public  EnumMap(Class<K> keyType) {
         addTaint(keyType.getTaint());

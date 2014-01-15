@@ -101,6 +101,8 @@ public class SearchRecentSuggestions {
 
     private  Uri mSuggestionsUri;
     
+    @DSComment("accessing search suggestion DB")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.504 -0400", hash_original_method = "8094D07E48B5062E08836B26658019CD", hash_generated_method = "42BF0D6891589DF34793D10264472060")
     public  SearchRecentSuggestions(Context context, String authority, int mode) {
         if(TextUtils.isEmpty(authority) ||
@@ -202,6 +204,8 @@ private void saveRecentQueryBlocking(String queryString, String line2) {
      * history.  This gives the user a measure of privacy, if they do not wish for their recent
      * searches to be replayed by other users of the device (via suggestions).
      */
+    @DSComment("clear history, could be the hidden one")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:03.021 -0500", hash_original_method = "9379C31AF46289752B20FFA616A8CEEF", hash_generated_method = "61FE23FE6BF777E9A110DE8EC3BB1869")
     
 public void clearHistory() {

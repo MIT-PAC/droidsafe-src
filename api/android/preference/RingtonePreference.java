@@ -45,6 +45,8 @@ public RingtonePreference(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.723 -0500", hash_original_method = "AC92DB267D2F88D8705E896D57E3E92B", hash_generated_method = "04CF2FA73D484A47A33A7546CDEE1CEF")
     
 public RingtonePreference(Context context, AttributeSet attrs) {

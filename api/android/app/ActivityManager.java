@@ -393,6 +393,8 @@ public List<RunningTaskInfo> getRunningTasks(int maxNum, int flags, IThumbnailRe
      * @throws SecurityException Throws SecurityException if the caller does
      * not hold the {@link android.Manifest.permission#GET_TASKS} permission.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.624 -0500", hash_original_method = "048E08D6499B0F81FA41B243F96225CE", hash_generated_method = "9EA36A3CB742AACDBA1BFA26BA5542A6")
     
@@ -490,6 +492,8 @@ public void moveTaskToFront(int taskId, int flags) {
      * @return Returns a list of RunningServiceInfo records describing each of
      * the running tasks.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.741 -0500", hash_original_method = "93643A575557EDD801C5647B318BA97A", hash_generated_method = "730538D1525354C0CB955120CEF75E1F")
     
@@ -1001,6 +1005,8 @@ public MemoryInfo[] newArray(int size) {
 
         public long foregroundAppThreshold;
 
+        @DSComment("no impact")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.762 -0500", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "1FF0633BAB808AAABE7DEEC0DAD3D78E")
         
 public MemoryInfo() {
@@ -1354,6 +1360,8 @@ public List<ApplicationInfo> getRunningExternalApplications() {
      * running processes (it will not return an empty list).  This list ordering is not
      * specified.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.928 -0500", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "9EC32489CD95F6B4ED507EAF40FA8F6E")
     

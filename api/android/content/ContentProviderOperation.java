@@ -284,6 +284,8 @@ private Builder(int type, Uri uri) {
         }
 
         /** Create a ContentProviderOperation from this {@link Builder}. */
+        @DSComment("only building the operation, no action")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.191 -0500", hash_original_method = "52DF5CD1F3EDB944F65D1FF1857828C4", hash_generated_method = "81B910F5CAF6435070D9D9A1339D1692")
         
 public ContentProviderOperation build() {

@@ -100,6 +100,8 @@ public class Collections {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> Enumeration<T> enumeration(Collection<T> collection) {
         final Collection<T> c = collection;
         return new Enumeration<T>() {
@@ -129,6 +131,8 @@ public class Collections {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T extends Object & Comparable<? super T>> T max(
             Collection<? extends T> collection) {
         Iterator<? extends T> it = collection.iterator();
@@ -142,6 +146,8 @@ public class Collections {
         return max;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> T max(Collection<? extends T> collection,
             Comparator<? super T> comparator) {
         if (comparator == null) {
@@ -204,6 +210,8 @@ public class Collections {
      * @throws UnsupportedOperationException
      *             when replacing an element in the List is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.673 -0500", hash_original_method = "EB5699B10E68EAD14DB0C0B8758D3718", hash_generated_method = "31349AC10D0052A7E2BC814BABCA0E6F")
     
 @SuppressWarnings("unchecked")
@@ -244,6 +252,8 @@ public class Collections {
      * @throws UnsupportedOperationException
      *             when replacing an element in the List is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.680 -0500", hash_original_method = "E5AF799D5D5F28A5FEBFEE44EB734D28", hash_generated_method = "10BF5CB2E01C600AD89E7CF99F3834F5")
     
 public static void shuffle(List<?> list) {
@@ -290,6 +300,8 @@ public static void shuffle(List<?> list, Random random) {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <E> Set<E> singleton(E object) {
         return new SingletonSet<E>(object);
     }
@@ -302,6 +314,8 @@ public static void shuffle(List<?> list, Random random) {
         return new SingletonMap<K, V>(key, value);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static <T extends Comparable<? super T>> void sort(List<T> list) {
         Object[] array = list.toArray();
@@ -314,6 +328,8 @@ public static void shuffle(List<?> list, Random random) {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static <T> void sort(List<T> list, Comparator<? super T> comparator) {
         T[] array = list.toArray((T[]) new Object[list.size()]);
@@ -342,6 +358,8 @@ public static void shuffle(List<?> list, Random random) {
      *             if index1 or index2 is out of range of this list.
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:50.698 -0500", hash_original_method = "7B4D18FE971E4DCC6A75CEB3B4EFC148", hash_generated_method = "A7F77A42132916904B9DB826B455D271")
     
 @SuppressWarnings("unchecked")
@@ -581,6 +599,8 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         return new SynchronizedCollection<T>(collection);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> List<T> synchronizedList(List<T> list) {
         if (list == null) {
             throw new NullPointerException();
@@ -591,6 +611,8 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         return new SynchronizedList<T>(list);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <K, V> Map<K, V> synchronizedMap(Map<K, V> map) {
         if (map == null) {
             throw new NullPointerException();
@@ -598,6 +620,8 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         return new SynchronizedMap<K, V>(map);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <E> Set<E> synchronizedSet(Set<E> set) {
         if (set == null) {
             throw new NullPointerException();
@@ -629,6 +653,8 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         return new UnmodifiableCollection<E>((Collection<E>) collection);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static <E> List<E> unmodifiableList(List<? extends E> list) {
         if (list == null) {
@@ -640,6 +666,8 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         return new UnmodifiableList<E>((List<E>) list);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static <K, V> Map<K, V> unmodifiableMap(
             Map<? extends K, ? extends V> map) {
@@ -649,6 +677,8 @@ public static int lastIndexOfSubList(List<?> list, List<?> sublist) {
         return new UnmodifiableMap<K, V>((Map<K, V>) map);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static <E> Set<E> unmodifiableSet(Set<? extends E> set) {
         if (set == null) {
@@ -707,6 +737,8 @@ public static int frequency(Collection<?> c, Object o) {
         return result;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static final <T> List<T> emptyList() {
         return EMPTY_LIST;
@@ -717,6 +749,8 @@ public static int frequency(Collection<?> c, Object o) {
         return EMPTY_SET;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked")
     public static final <K, V> Map<K, V> emptyMap() {
         return EMPTY_MAP;
@@ -767,6 +801,8 @@ public static int frequency(Collection<?> c, Object o) {
         return new CheckedSortedSet<E>(s, type);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <T> boolean addAll(Collection<? super T> c, T... a) {
         boolean modified = false;
         for (int i = 0; i < a.length; i++) {

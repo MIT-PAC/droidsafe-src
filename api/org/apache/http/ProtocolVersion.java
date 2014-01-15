@@ -230,6 +230,8 @@ public final boolean greaterEquals(ProtocolVersion version) {
      *          and {@link #compareToVersion compares} as less or equal,
      *          <code>false</code> otherwise
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.473 -0500", hash_original_method = "251CBAD879CC81CB8B0B43DA249F7406", hash_generated_method = "BFCB6019F74FF0DB7DAA3F0B6215B3B1")
     
 public final boolean lessEquals(ProtocolVersion version) {

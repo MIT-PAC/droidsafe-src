@@ -67,18 +67,24 @@ public class FrameLayout extends ViewGroup {
     
     private final ArrayList<View> mMatchParentChildren = new ArrayList<View>(1);
     
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.226 -0500", hash_original_method = "C65968E2416D9A27DB8533C5F0C75B69", hash_generated_method = "56CE05F95766EDEA6C59829992E21F3F")
     
 public FrameLayout(Context context) {
         super(context);
     }
     
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.228 -0500", hash_original_method = "874EEAD1D73BF9A0D133CBC5B921EDD8", hash_generated_method = "FF55F416DA7E947AAABEB5F1EE958BA3")
     
 public FrameLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
 
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.231 -0500", hash_original_method = "CEC811F1E2979D1B9B78B672C02AD5D3", hash_generated_method = "2876C720C009F1994502A44CB01D12FF")
     
 public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
@@ -112,6 +118,8 @@ public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
      *
      * @attr ref android.R.styleable#FrameLayout_foregroundGravity
      */
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.233 -0500", hash_original_method = "8BC875BA00D5710711DB00A919CACCE0", hash_generated_method = "0F71A9ECB7CAE98192D6DEE3DEEC3003")
     
 @android.view.RemotableViewMethod
@@ -156,6 +164,8 @@ public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
         return super.verifyDrawable(who) || (who == mForeground);
     }
 
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.238 -0500", hash_original_method = "583607554001D9F198CD54104E44B797", hash_generated_method = "F80F39CA9334FBBF992A837FB306DE61")
     
 @Override
@@ -199,6 +209,8 @@ public FrameLayout(Context context, AttributeSet attrs, int defStyle) {
      * 
      * @attr ref android.R.styleable#FrameLayout_foreground
      */
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.245 -0500", hash_original_method = "9754375AE3C405E0761F3FE1F1DE65D9", hash_generated_method = "B5826E0BC4CB4DE4E2556EA4F533EE48")
     
 public void setForeground(Drawable drawable) {
@@ -243,6 +255,8 @@ public void setForeground(Drawable drawable) {
      *
      * @return A Drawable or null if no foreground was set.
      */
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.248 -0500", hash_original_method = "8DDBBCB9F2E6942D000521EEF66C0D86", hash_generated_method = "B8836093CA85C1BE27579C5E3631457B")
     
@@ -281,6 +295,8 @@ private int getPaddingBottomWithForeground() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.261 -0500", hash_original_method = "5535255FB97D5EBC35FC058E1C30F774", hash_generated_method = "C21EB1396DF9DAB9EB7F658ABB029C9C")
     
 @Override
@@ -375,6 +391,8 @@ private int getPaddingBottomWithForeground() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.265 -0500", hash_original_method = "E7FA69BF1895927226A22DFF32FA5B4F", hash_generated_method = "7D1AF926E83B8728A0E4B048BAB4C51D")
     
 @Override
@@ -447,6 +465,8 @@ private int getPaddingBottomWithForeground() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.267 -0500", hash_original_method = "4AC6B20E904606B8A51AEBBB15006C72", hash_generated_method = "8FF8EF22EB12948F745B962F7B5EBFF3")
     
 @Override
@@ -458,6 +478,8 @@ private int getPaddingBottomWithForeground() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.270 -0500", hash_original_method = "6D753914B55367AEDC866ACE8B2692D8", hash_generated_method = "3F08B8E47FEEEE197D9440EEA9077882")
     
 @Override
@@ -495,6 +517,8 @@ private int getPaddingBottomWithForeground() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.272 -0500", hash_original_method = "89E57DF442BD7C3C4F7FCB93934115A6", hash_generated_method = "B2C91ED4D4FABE7DFB474A8C9CA23BA0")
     
 @Override
@@ -515,6 +539,8 @@ private int getPaddingBottomWithForeground() {
      *
      * @attr ref android.R.styleable#FrameLayout_measureAllChildren
      */
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.275 -0500", hash_original_method = "F157652BCC07DCD3C1A1E63F95BA7504", hash_generated_method = "F93C1EB7BB08DA8FFA2FD9969CB892CD")
     
 @android.view.RemotableViewMethod
@@ -533,6 +559,8 @@ private int getPaddingBottomWithForeground() {
      * renamed for consistency with
      * {@link #setMeasureAllChildren(boolean) setMeasureAllChildren()}.
      */
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.277 -0500", hash_original_method = "E2FDB5CCBB08727222AD77E37CF74AF8", hash_generated_method = "B5055E338253FEF06E8446C66C57834E")
     
@@ -547,6 +575,8 @@ private int getPaddingBottomWithForeground() {
      *
      * @return Whether all children are considered when measuring.
      */
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.279 -0500", hash_original_method = "52ECFF8459DAA24A15017A3D3C6FE0BF", hash_generated_method = "EEFAB5EBB55BEF305B915C7C7FF71CCE")
     
@@ -564,6 +594,8 @@ public boolean getMeasureAllChildren() {
         return new FrameLayout.LayoutParams(getContext(), attrs);        
     }
 
+    @DSComment("GUI/FrameLayout, check callbacks")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.283 -0500", hash_original_method = "9DA99B4E01A506E72BA59AF598A3C38D", hash_generated_method = "FF1288C9953DCFF93F8070857A51FACB")
     
 @Override
@@ -602,6 +634,8 @@ public LayoutParams(Context c, AttributeSet attrs) {
         /**
          * {@inheritDoc}
          */
+        @DSComment("Layout parameters")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.296 -0500", hash_original_method = "B179862558DB9232A546423CE2E9C45B", hash_generated_method = "5618D547D1ACB51021D28AF4BAF9972B")
         
 public LayoutParams(int width, int height) {
@@ -620,6 +654,8 @@ public LayoutParams(int width, int height) {
          *
          * @see android.view.Gravity
          */
+        @DSComment("Layout parameters")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:14.299 -0500", hash_original_method = "DAE5F643078D3DA273ACC6BEF5E44EF2", hash_generated_method = "310A384600384362731FCC25D2DE3D0C")
         
 public LayoutParams(int width, int height, int gravity) {

@@ -34,6 +34,8 @@ public abstract class ResourceCursorAdapter extends CursorAdapter {
      *            for this list item.  Unless you override them later, this will
      *            define both the item views and the drop down views.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.400 -0500", hash_original_method = "64F07E8E3FA816788C81269041C7BE2C", hash_generated_method = "257374666F478F88D8CC80372ECE2E46")
     
 @Deprecated
@@ -92,6 +94,8 @@ public ResourceCursorAdapter(Context context, int layout, Cursor c, int flags) {
      * @see android.widget.CursorAdapter#newView(android.content.Context,
      *      android.database.Cursor, ViewGroup)
      */
+    @DSComment("View to hold data at cursor, no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.408 -0500", hash_original_method = "E86C9DC4408CF260B8E6AACF31CF8025", hash_generated_method = "CF872DAE47252191A5AA057CAEF11C5C")
     
@@ -124,6 +128,8 @@ public void setViewResource(int layout) {
      *
      * @param dropDownLayout the layout resources used to create drop down views
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.414 -0500", hash_original_method = "62C4D5A7D859DBC1B997DA83ECA5AEBB", hash_generated_method = "FC88CA115289FA083E96B2DB0EBA9FF6")
     
 public void setDropDownViewResource(int dropDownLayout) {

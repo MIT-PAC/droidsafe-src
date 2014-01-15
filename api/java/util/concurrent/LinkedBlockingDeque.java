@@ -49,6 +49,8 @@ public class LinkedBlockingDeque<E> extends AbstractQueue<E> implements Blocking
      * Creates a {@code LinkedBlockingDeque} with a capacity of
      * {@link Integer#MAX_VALUE}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:17.037 -0500", hash_original_method = "249100E9D6D687E7D39D2C34E44C91A8", hash_generated_method = "0E969802D4C2AA199D566860C788FF9E")
     
 public LinkedBlockingDeque() {

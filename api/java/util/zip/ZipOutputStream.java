@@ -62,6 +62,8 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
      * @param p1
      *            the {@code OutputStream} to write the data to.
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.717 -0500", hash_original_method = "8A42A56E156B97294BE7CC83201EADCF", hash_generated_method = "F421FE5C883001A63E02AD136DB20949")
     
 public ZipOutputStream(OutputStream p1) {
@@ -75,6 +77,8 @@ public ZipOutputStream(OutputStream p1) {
      * @throws IOException
      *             If an error occurs closing the stream.
      */
+    @DSComment("no impacts")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.720 -0500", hash_original_method = "96C568DC9FCDB3D53590F6DD994D0456", hash_generated_method = "29AA042CE63E9348EE8728FB9A5169DB")
     
 @Override
@@ -95,6 +99,8 @@ public ZipOutputStream(OutputStream p1) {
      * @throws IOException
      *             If an error occurs closing the entry.
      */
+    @DSComment("no impacts")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.724 -0500", hash_original_method = "7ED55E9CAB55F4762479C264D19A0A1A", hash_generated_method = "D2E42844E675B45C0508617ED084D17F")
     
 public void closeEntry() throws IOException {
@@ -234,6 +240,8 @@ public void closeEntry() throws IOException {
      *             If an error occurs storing the entry.
      * @see #write
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.731 -0500", hash_original_method = "B67EF5B3649AC60448D5855D166716A9", hash_generated_method = "6577F6E7EF0A9824426666CBE3AAA8F0")
     
 public void putNextEntry(ZipEntry ze) throws IOException {

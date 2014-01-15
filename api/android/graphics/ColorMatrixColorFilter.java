@@ -40,6 +40,8 @@ public ColorMatrixColorFilter(ColorMatrix matrix) {
      *              matrix. The first 20 entries of the array are copied into
      *              the filter. See ColorMatrix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.297 -0500", hash_original_method = "2D0E3EA51658F535A9A5BDBE5AE078D8", hash_generated_method = "CE89804102EE885972F99614C40A8362")
     
 public ColorMatrixColorFilter(float[] array) {

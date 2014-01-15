@@ -67,6 +67,8 @@ public class DeviceAdminReceiver extends BroadcastReceiver {
 
     private ComponentName mWho;
     
+    @DSComment("device administration")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.610 -0400", hash_original_method = "D22D7983747EBDA5D1157714B0E9C778", hash_generated_method = "D22D7983747EBDA5D1157714B0E9C778")
     public DeviceAdminReceiver ()
     {
@@ -112,6 +114,8 @@ public ComponentName getWho(Context context) {
      * @param context The running context as per {@link #onReceive}.
      * @param intent The received intent as per {@link #onReceive}.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.480 -0500", hash_original_method = "B5AB3987ECA0392723BA81C8F9C984A4", hash_generated_method = "8B5EE3325DE226B338C2FD08481371E1")
     
 public void onEnabled(Context context, Intent intent) {
@@ -142,6 +146,8 @@ public CharSequence onDisableRequested(Context context, Intent intent) {
      * @param context The running context as per {@link #onReceive}.
      * @param intent The received intent as per {@link #onReceive}.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.485 -0500", hash_original_method = "3AE73024A5AE1632BF7BF3FF39ABC61B", hash_generated_method = "F87BC4D3C872A59388EE472A15BF5243")
     
 public void onDisabled(Context context, Intent intent) {

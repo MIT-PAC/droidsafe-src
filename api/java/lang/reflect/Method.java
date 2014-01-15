@@ -472,6 +472,8 @@ public Object getDefaultValue() {
      *
      * @return the declaring class
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.553 -0500", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "574997FEB7F01E0808800855819F513A")
     
@@ -503,6 +505,8 @@ public Class<?>[] getExceptionTypes() {
      *
      * @see Modifier
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.559 -0500", hash_original_method = "D61CFE217686483C8FB69E9FFDF592A9", hash_generated_method = "48830EE19AB9C2BBC366A2463FB5A641")
     
@@ -516,6 +520,8 @@ public int getModifiers() {
      *
      * @return the name of this method
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.566 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
@@ -530,6 +536,8 @@ public String getName() {
      *
      * @return the parameter types
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.568 -0500", hash_original_method = "860AC8CD4E2F5F390A65618A1941DEDE", hash_generated_method = "0845E4F05C4F8FB178489C01FC4EE8B5")
     
@@ -543,6 +551,8 @@ public Class<?>[] getParameterTypes() {
      *
      * @return the return type
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.571 -0500", hash_original_method = "952CC59854183D9751F85A9597A378CE", hash_generated_method = "F8F970361961EA482B13AE142C333181")
     
@@ -606,6 +616,8 @@ public Class<?> getReturnType() {
      * @throws InvocationTargetException
      *             if an exception was thrown by the invoked method
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.576 -0500", hash_original_method = "4A7D773CBB2CABEB3FBD24437D2F9CE8", hash_generated_method = "2FD521E61FBF204709DD6167E6F69FD0")
     
 public Object invoke(Object receiver, Object... args)

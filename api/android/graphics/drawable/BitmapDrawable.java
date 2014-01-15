@@ -84,6 +84,8 @@ public class BitmapDrawable extends Drawable {
      * @deprecated Use {@link #BitmapDrawable(Resources, Bitmap)} to ensure
      * that the drawable has correctly set its target density.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.027 -0500", hash_original_method = "EDF3772DB206CC7034C0B4AE87D72F1A", hash_generated_method = "2A24C773588AAE50B0BEBB88EBB18FAE")
     
 @Deprecated
@@ -95,6 +97,8 @@ public class BitmapDrawable extends Drawable {
      * Create drawable from a bitmap, setting initial target density based on
      * the display metrics of the resources.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.030 -0500", hash_original_method = "0FA3F000A20BF5722D4983CAD4B48A6A", hash_generated_method = "0098083302FD036F72DFABFE27F96262")
     
 public BitmapDrawable(Resources res, Bitmap bitmap) {
@@ -185,6 +189,8 @@ public final Paint getPaint() {
     /**
      * Returns the bitmap used by this drawable to render. May be null.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.045 -0500", hash_original_method = "CDEEA354B6732B0C95C918F7ECA77F64", hash_generated_method = "6FC2F538D34A5C21D9536C0D23FAE615")
     
@@ -280,6 +286,8 @@ public int getGravity() {
         See android.view.Gravity
      * @param gravity the gravity
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.061 -0500", hash_original_method = "4FFB5FF85BF6BE29F34E4951AEB6D83F", hash_generated_method = "A272C91539BBD9EF9B0425AF81AE32F0")
     
 public void setGravity(int gravity) {

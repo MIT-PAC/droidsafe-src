@@ -357,6 +357,8 @@ public String getDeviceSoftwareVersion() {
      * <p>Requires Permission:
      *   {@link android.Manifest.permission#READ_PHONE_STATE READ_PHONE_STATE}
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.846 -0500", hash_original_method = "D15182A782B2311FD9923C2371701B25", hash_generated_method = "EC5736B5E669E36CBA199401F68D88A2")
     
@@ -497,6 +499,8 @@ public int getCurrentPhoneType() {
      * @see #PHONE_TYPE_CDMA
      * @see #PHONE_TYPE_SIP
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.912 -0500", hash_original_method = "0A507D7BB3876FB6AE8B7F4B411CB7D0", hash_generated_method = "209F232F05BC666F99D63133A53C0273")
     
@@ -540,6 +544,8 @@ private int getPhoneTypeFromNetworkType() {
      * unreliable on CDMA networks (use {@link #getPhoneType()} to determine if
      * on a CDMA network).
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.935 -0500", hash_original_method = "832612984320BCC9B2F167CB90709724", hash_generated_method = "672EA881CE48DF4044DDF5A0EF8FB5E1")
     
@@ -744,6 +750,8 @@ public String getSimCountryIso() {
      * Requires Permission:
      *   {@link android.Manifest.permission#READ_PHONE_STATE READ_PHONE_STATE}
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.166 -0500", hash_original_method = "2017CBA66707D72E2F76A9954FAEDD18", hash_generated_method = "E95EBC17FC14D391B501F19C429D7A92")
     
@@ -817,6 +825,8 @@ public String getSubscriberId() {
      * Requires Permission:
      *   {@link android.Manifest.permission#READ_PHONE_STATE READ_PHONE_STATE}
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.181 -0500", hash_original_method = "EE92449D081C56B70CB6173E1BAAB538", hash_generated_method = "614F1ED5FB9AEA69175D3301C79A05B3")
     
@@ -1029,6 +1039,8 @@ private IPhoneSubInfo getSubscriberInfo() {
     /**
      * Returns a constant indicating the call state (cellular) on the device.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.256 -0500", hash_original_method = "74E55F6F5CD1551C04A2C40DCD1EBD15", hash_generated_method = "948CE01916B7B2925AC03958AADAA000")
     
@@ -1078,6 +1090,8 @@ public int getDataActivity() {
      * @see #DATA_CONNECTED
      * @see #DATA_SUSPENDED
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:45.323 -0500", hash_original_method = "37205A4CB7441E0871F6B86EF9BDA019", hash_generated_method = "03295D49837EC74F2BB726B50B6F324F")
     
@@ -1098,6 +1112,8 @@ private ITelephony getITelephony() {
         return ITelephony.Stub.asInterface(ServiceManager.getService(Context.TELEPHONY_SERVICE));
     }
     
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     public void listen(PhoneStateListener listener, int events) {/* removed for compilation
         String pkgForDebug = sContext != null ? sContext.getPackageName() : "<unknown>";
         try {

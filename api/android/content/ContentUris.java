@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.net.Uri;
 
-
-
-
 public class ContentUris {
 
     /**
@@ -23,6 +20,8 @@ public class ContentUris {
      * @return the long conversion of the last segment or -1 if the path is
      *  empty
      */
+    @DSComment("Content uri manipulation utility")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.696 -0500", hash_original_method = "E7C08F28E029230A0C776D88B5A5BA54", hash_generated_method = "362181E19A81B88A5331260D007E8420")
     
 public static long parseId(Uri contentUri) {
@@ -52,6 +51,8 @@ public static Uri.Builder appendId(Uri.Builder builder, long id) {
      *
      * @return a new URI with the given ID appended to the end of the path
      */
+    @DSComment("Content uri manipulation utility")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.700 -0500", hash_original_method = "C70CD309A79900820DE9DAE7972FEBC6", hash_generated_method = "89F7743D876391CFF6AA77061F69F3F3")
     
 public static Uri withAppendedId(Uri contentUri, long id) {
@@ -63,7 +64,6 @@ public static Uri withAppendedId(Uri contentUri, long id) {
     {
         //Synthesized constructor
     }
-
     
 }
 

@@ -50,6 +50,8 @@ public class Html {
      *
      * <p>This uses TagSoup to handle real HTML, including all of the brokenness found in the wild.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.457 -0500", hash_original_method = "2170F2D984B5CE2ED3159C43C15AA321", hash_generated_method = "63BED86CB6FEA06941CEE8D4AD7409D4")
     
 public static Spanned fromHtml(String source) {
@@ -89,6 +91,8 @@ public static Spanned fromHtml(String source, ImageGetter imageGetter,
     /**
      * Returns an HTML representation of the provided Spanned text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.469 -0500", hash_original_method = "55061C70DD51EC053B0AA41C4CB33E42", hash_generated_method = "0BF18BF8D881A0BF9F0DF169B9377AEC")
     
 public static String toHtml(Spanned text) {

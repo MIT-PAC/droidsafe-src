@@ -16,6 +16,8 @@ public class Selection {
      * Return the offset of the selection anchor or cursor, or -1 if
      * there is no selection or cursor.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.409 -0500", hash_original_method = "AE65575D1ABDE1468485A6F2E77003DF", hash_generated_method = "25B05716B0D487078AAC70698DB0BA65")
     
 public static final int getSelectionStart(CharSequence text) {
@@ -29,6 +31,8 @@ public static final int getSelectionStart(CharSequence text) {
      * Return the offset of the selection edge or cursor, or -1 if
      * there is no selection or cursor.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.412 -0500", hash_original_method = "C524353125947C233CA15DF73D6EE511", hash_generated_method = "851A86FBF7D5056402BF1421167A187F")
     
 public static final int getSelectionEnd(CharSequence text) {
@@ -71,6 +75,8 @@ public static void setSelection(Spannable text, int start, int stop) {
     /**
      * Move the cursor to offset <code>index</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.417 -0500", hash_original_method = "3915D6810DC93FECF1A478B2D9E7D4AB", hash_generated_method = "1FB3050D4C3B69ED05E56D2A516E307D")
     
 public static final void setSelection(Spannable text, int index) {

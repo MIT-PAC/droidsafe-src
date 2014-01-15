@@ -16,6 +16,8 @@ public static SpannableString valueOf(CharSequence source) {
             return new SpannableString(source);
         }
     }
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.061 -0500", hash_original_method = "E921164C349820CE913ADCB9FC3ECE8D", hash_generated_method = "E7827C9A51F3947C52363F7F7A63868F")
     
 public SpannableString(CharSequence source) {
@@ -28,6 +30,8 @@ private SpannableString(CharSequence source, int start, int end) {
         super(source, start, end);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.069 -0500", hash_original_method = "703A4E3A5DC432A077E52C12DF31C39D", hash_generated_method = "981E2E06E7D4115A0BFC2D189CC2436C")
     
@@ -35,6 +39,8 @@ public void setSpan(Object what, int start, int end, int flags) {
         super.setSpan(what, start, end, flags);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.072 -0500", hash_original_method = "A032FB453304A8E0F8BC7978F037ECF6", hash_generated_method = "AAC83A74F207840707B5FE26AE6DE953")
     
 public void removeSpan(Object what) {

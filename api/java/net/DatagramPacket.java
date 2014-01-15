@@ -34,6 +34,8 @@ public final class DatagramPacket {
      * @param length
      *            the length of the data buffer.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.348 -0500", hash_original_method = "28D366BE99A6BECEEC6B0BD286389E83", hash_generated_method = "0540F8CFBE8C783DBBBA4EAC64FD0D4C")
     
 public DatagramPacket(byte[] data, int length) {
@@ -98,6 +100,8 @@ public DatagramPacket(byte[] data, int offset, int length,
      * @param port
      *            the port of the target host.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.356 -0500", hash_original_method = "2604ABB8A21562C349D5EE8B9E092E22", hash_generated_method = "D61F101FB212FF8FE9898A2F74A92CA8")
     
 public DatagramPacket(byte[] data, int length, InetAddress host, int port) {
@@ -119,6 +123,8 @@ public DatagramPacket(byte[] data, int length, InetAddress host, int port) {
      * @throws SocketException
      *             if an error in the underlying protocol occurs.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.390 -0500", hash_original_method = "5A348CBDEF8E4CCB182CB7D327F8975B", hash_generated_method = "D3A41011ED854179B274A712081CE540")
     
 public DatagramPacket(byte[] data, int length, SocketAddress sockAddr) throws SocketException {
@@ -157,6 +163,8 @@ public DatagramPacket(byte[] data, int offset, int length,
      * @return the address from where the datagram was received or to which it
      *         is sent.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.359 -0500", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "C1DC99F69AF6376A7FC069FBD1826D41")
     
@@ -169,6 +177,8 @@ public synchronized InetAddress getAddress() {
      *
      * @return the received data or the data to be sent.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.361 -0500", hash_original_method = "B9E74D06348E60D6DDB9FA9E07D464F9", hash_generated_method = "A16CB4E41E808ED016EB88BE01DF9A6C")
     
@@ -181,6 +191,8 @@ public synchronized byte[] getData() {
      *
      * @return the length of the received data or the data to be sent.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.364 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "2DB509520BC98A42BC7C0D8F720E796A")
     
@@ -206,6 +218,8 @@ public synchronized int getOffset() {
      *
      * @return the port number of the origin or target host.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.369 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "FDD2B2E226295EB6A09A09D12ED55358")
     
@@ -219,6 +233,8 @@ public synchronized int getPort() {
      * @param addr
      *            the target host address.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.372 -0500", hash_original_method = "C8080B968BD32815251343303FD7866E", hash_generated_method = "49236674C02A8A8DC3D9405507855A3C")
     
 public synchronized void setAddress(InetAddress addr) {
@@ -274,6 +290,8 @@ synchronized int getCapacity() {
      * @param length
      *            the length of this datagram packet.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.382 -0500", hash_original_method = "A9C966E60C597F426105F63D3A989F4F", hash_generated_method = "5093D4306BE47F048B868A1A46851AAD")
     
 public synchronized void setLength(int length) {
@@ -303,6 +321,8 @@ synchronized void setLengthOnly(int length) {
      * @param aPort
      *            the target host port number.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.387 -0500", hash_original_method = "CC3AA0BB5DF3EE4831739014FCB197DF", hash_generated_method = "14D0D4C0E504C45EE17EF675E5057C05")
     
 public synchronized void setPort(int aPort) {

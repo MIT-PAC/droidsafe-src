@@ -848,6 +848,8 @@ public void setFormatter(Formatter formatter) {
      * @see #setMinValue(int)
      * @see #setMaxValue(int)
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.168 -0500", hash_original_method = "27A138A3602AD1BB9BCFA8883739C2F3", hash_generated_method = "893E9699FA71383E5011E5628D2A71A2")
     
@@ -973,6 +975,8 @@ public void setOnLongPressUpdateInterval(long intervalMillis) {
      *
      * @return The value.
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.179 -0500", hash_original_method = "873C7D38131A035B7F6055170D432634", hash_generated_method = "612E588787E3A1FC08CE2E1A6D34D03A")
     
@@ -997,6 +1001,8 @@ public int getMinValue() {
      *
      * @param minValue The min value.
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.184 -0500", hash_original_method = "661BFF8A6967E0A91919CA7BDDDCFF35", hash_generated_method = "0338F44D18DDB51B5FD43C86081D4560")
     
 public void setMinValue(int minValue) {
@@ -1034,6 +1040,8 @@ public int getMaxValue() {
      *
      * @param maxValue The max value.
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.188 -0500", hash_original_method = "1C3BC534ADC5B8B2FC50C2F4D93BA1C9", hash_generated_method = "C6D513856698137C57403435D5F031D3")
     
 public void setMaxValue(int maxValue) {
@@ -1071,6 +1079,8 @@ public String[] getDisplayedValues() {
      *
      * @param displayedValues The displayed values.
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.193 -0500", hash_original_method = "0435EA5A97E8A7F818A581EB86B2390D", hash_generated_method = "94AEBEA8E7AEAF521D2FBBE7422FC808")
     
 public void setDisplayedValues(String[] displayedValues) {

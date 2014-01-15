@@ -143,6 +143,8 @@ public Address[] newArray(int size) {
      * Constructs a new Address object set to the given Locale and with all
      * other fields initialized to null or false.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.944 -0500", hash_original_method = "8C8D8A006008D0E9588030A46EE6B5B9", hash_generated_method = "8A3393F2730E42F7A1FEBCB27514EF12")
     
 public Address(Locale locale) {
@@ -152,6 +154,8 @@ public Address(Locale locale) {
     /**
      * Returns the Locale associated with this address.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.947 -0500", hash_original_method = "95F8746C49CE2A7FBF7EA83DF206E003", hash_generated_method = "A1D784B67B002754E37DDB902EBC5ECA")
     
@@ -163,6 +167,8 @@ public Locale getLocale() {
      * Returns the largest index currently in use to specify an address line.
      * If no address lines are specified, -1 is returned.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.949 -0500", hash_original_method = "E1E6237F606789C7A5294059179DF025", hash_generated_method = "B30732385F679D009FA9475F8F07188B")
     
@@ -176,6 +182,8 @@ public int getMaxAddressLineIndex() {
      *
      * @throws IllegalArgumentException if index < 0
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.951 -0500", hash_original_method = "D824FE2CFE40DB25058DC1465F2D4439", hash_generated_method = "E07AE75D76B73CCF005AADE236B3948A")
     
@@ -192,6 +200,8 @@ public String getAddressLine(int index) {
      *
      * @throws IllegalArgumentException if index < 0
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.953 -0500", hash_original_method = "5C23144E8A22EAB5D8930884A1255DAC", hash_generated_method = "4D3DF28EF6A597356077D2CF7605F2A4")
     
@@ -219,6 +229,8 @@ public void setAddressLine(int index, String line) {
      * Returns the feature name of the address, for example, "Golden Gate Bridge", or null
      * if it is unknown
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.955 -0500", hash_original_method = "D108F727B4ED1E44A68F4DDDAA8864A4", hash_generated_method = "FB47B831AC1CCB642EA8CD38A1FB24D4")
     
@@ -239,6 +251,8 @@ public void setFeatureName(String featureName) {
      * Returns the administrative area name of the address, for example, "CA", or null if
      * it is unknown
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.959 -0500", hash_original_method = "EDE4D65E7936029E84B8376D150F4DDE", hash_generated_method = "AFCAB53B8CC6CE56AE2B9E8199BA7D7B")
     
@@ -249,6 +263,8 @@ public String getAdminArea() {
     /**
      * Sets the administrative area name of the address to the given String, which may be null
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.962 -0500", hash_original_method = "C8D449D9A4FBB2AF83806F488A8CAC1C", hash_generated_method = "C2C7957A29EA2B57C87DD7CA0274CC40")
     
 public void setAdminArea(String adminArea) {
@@ -278,6 +294,8 @@ public void setSubAdminArea(String subAdminArea) {
     /**
      * Returns the locality of the address, for example "Mountain View", or null if it is unknown.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.968 -0500", hash_original_method = "3743C626E0A5809CC359BBE60C0BEF8D", hash_generated_method = "73AFC5AD3CD0A46E156C307263BEDE45")
     
@@ -298,6 +316,8 @@ public void setLocality(String locality) {
      * Returns the sub-locality of the address, or null if it is unknown.
      * For example, this may correspond to the neighborhood of the locality.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.973 -0500", hash_original_method = "4565445A715D9E082E3330822780EE14", hash_generated_method = "0F1DA46038847C235A541B3BE19AD8AC")
     
@@ -377,6 +397,8 @@ public void setPremises(String premises) {
      * Returns the postal code of the address, for example "94110",
      * or null if it is unknown.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.990 -0500", hash_original_method = "9B5379769D21EFABDDB2785674C4DE4D", hash_generated_method = "807D83B90E9CDF129CBC03CA17E8BD00")
     
@@ -388,6 +410,8 @@ public String getPostalCode() {
      * Sets the postal code of the address to the given String, which may
      * be null.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.992 -0500", hash_original_method = "21CF31250DB9EF4FD9B8F171A3FE8B16", hash_generated_method = "4FC43757748A3C5B6DE81CD260A930C4")
     
 public void setPostalCode(String postalCode) {
@@ -398,6 +422,8 @@ public void setPostalCode(String postalCode) {
      * Returns the country code of the address, for example "US",
      * or null if it is unknown.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.994 -0500", hash_original_method = "E8D66F74FB4E1AF79CCB258931950FBE", hash_generated_method = "97553366601A44B32E9FBEBAF3F0CAE5")
     
@@ -409,6 +435,8 @@ public String getCountryCode() {
      * Sets the country code of the address to the given String, which may
      * be null.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.996 -0500", hash_original_method = "DD5F97427C040B47F9123BA4F8DC93A2", hash_generated_method = "C1A18211AF5B9DD8FA0581C4C10C0A3D")
     
 public void setCountryCode(String countryCode) {
@@ -419,6 +447,8 @@ public void setCountryCode(String countryCode) {
      * Returns the localized country name of the address, for example "Iceland",
      * or null if it is unknown.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.998 -0500", hash_original_method = "A82A5DCEE67796EF014C1F79656EFD25", hash_generated_method = "9CF145F0ECFD07227D18E7F299E97839")
     
@@ -452,6 +482,8 @@ public boolean hasLatitude() {
      * @throws IllegalStateException if this Address has not been assigned
      * a latitude.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.004 -0500", hash_original_method = "74A963FE4AC8482F316E1B3E19ABA2D8", hash_generated_method = "4A3E9D32F12678BE5FC881662775EF32")
     
@@ -498,6 +530,8 @@ public boolean hasLongitude() {
      * @throws IllegalStateException if this Address has not been assigned
      * a longitude.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:57.014 -0500", hash_original_method = "90E38F72A8C0EDFD5CFCC6EABD3BD432", hash_generated_method = "32D9DFBF78F14745340DA7BDD1496829")
     

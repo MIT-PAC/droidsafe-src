@@ -84,6 +84,8 @@ private static SparseBooleanArray parseColumns(String sequence) {
      *
      * @param context the application environment
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.439 -0500", hash_original_method = "2DBA50ED74E78B2838BC7527149D5669", hash_generated_method = "DB53A452C8765AE47CA428268C2E64C8")
     
 public TableLayout(Context context) {
@@ -98,6 +100,8 @@ public TableLayout(Context context) {
      * @param context the application environment
      * @param attrs a collection of attributes
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.442 -0500", hash_original_method = "959C37211929CCCB2D56BECF55A0682A", hash_generated_method = "2BE76C86A36FE34A2D756B4BA1850375")
     
 public TableLayout(Context context, AttributeSet attrs) {
@@ -239,6 +243,8 @@ public boolean isStretchAllColumns() {
      *
      * @attr ref android.R.styleable#TableLayout_stretchColumns
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.464 -0500", hash_original_method = "276589380DE193D6AFC8DA7EB773135F", hash_generated_method = "544969475238EE598049D5CD6FE216B6")
     
 public void setStretchAllColumns(boolean stretchAllColumns) {
@@ -300,6 +306,8 @@ public boolean isColumnCollapsed(int columnIndex) {
      *
      * @attr ref android.R.styleable#TableLayout_stretchColumns
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.472 -0500", hash_original_method = "62253048F5CA87D307E8714AA1DE21F0", hash_generated_method = "808CA8CC5F13F77F48F338B623EFC98D")
     
@@ -385,6 +393,8 @@ private void trackCollapsedColumns(View child) {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.483 -0500", hash_original_method = "13A96A4A6DDFEE3010E840F1100E091C", hash_generated_method = "18287C39B44E85271EE2348EA638929D")
     
 @Override
@@ -396,6 +406,8 @@ private void trackCollapsedColumns(View child) {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.485 -0500", hash_original_method = "0A8A998DCFADFBF06AD3633B7F78F767", hash_generated_method = "8BFAB0735EF1E25B153AAF8F3E4D5096")
     
 @Override
@@ -429,6 +441,8 @@ private void trackCollapsedColumns(View child) {
     /**
      * {@inheritDoc}
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.492 -0500", hash_original_method = "8CCC700F8795467ABA2DD388545C44C0", hash_generated_method = "D67B8B42057F961DD7DA8C68BB140FB9")
     
 @Override
@@ -706,6 +720,8 @@ public LayoutParams(int w, int h) {
         /**
          * {@inheritDoc}
          */
+        @DSComment("Layout parameters")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.528 -0500", hash_original_method = "A4AECF432693F8EEB49EF2243FEC276D", hash_generated_method = "FBBED945DC79E84DF55272126BE86AAF")
         
 public LayoutParams(int w, int h, float initWeight) {

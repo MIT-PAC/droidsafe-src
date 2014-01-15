@@ -109,6 +109,8 @@ private LocationProvider createProvider(String name, Bundle info) {
      *
      * @return list of Strings containing names of the providers
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.058 -0500", hash_original_method = "4EC410201344BFF6367B3FC4DEB2ECDD", hash_generated_method = "743109C465594858F9765AFB2A2594A5")
     
@@ -221,6 +223,8 @@ public List<String> getProviders(Criteria criteria, boolean enabledOnly) {
      * @param enabledOnly if true then only a provider that is currently enabled is returned
      * @return name of the provider that best matches the requirements
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.067 -0500", hash_original_method = "E63BBD2716EE0B4343F6D6F30C802349", hash_generated_method = "530A21AD4FE12EA44349E10E88F47DC1")
     
@@ -280,6 +284,8 @@ public String getBestProvider(Criteria criteria, boolean enabledOnly) {
      * @throws RuntimeException if the calling thread has no Looper
      * @throws SecurityException if no suitable permission is present for the provider.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.070 -0500", hash_original_method = "79B0FCFC5B63DF5D944678DA62AFE363", hash_generated_method = "3B5D5B85B1DA5C9AC21655D8FDFF0796")
     
 public void requestLocationUpdates(String provider,
@@ -768,6 +774,8 @@ public void requestSingleUpdate(Criteria criteria, PendingIntent intent) {
      * @param listener {#link LocationListener} object that no longer needs location updates
      * @throws IllegalArgumentException if listener is null
      */
+    @DSComment("no action when removing callback")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.099 -0500", hash_original_method = "C6393138E31F9EAAF3B1058E5B49E67E", hash_generated_method = "5CC997F28F688299E6A370A6AB8EBED4")
     
 public void removeUpdates(LocationListener listener) {
@@ -854,6 +862,8 @@ public void removeUpdates(PendingIntent intent) {
      * @throws SecurityException if no permission exists for the required
      * providers.
      */
+    @DSComment("Location manager")
+    @DSSpec(DSCat.LOCATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.104 -0500", hash_original_method = "8F5138780FDD6FE26D92FDF1DF02DE4E", hash_generated_method = "4AB5041FA070929F9F6E7D36DF839ECA")
     
 public void addProximityAlert(double latitude, double longitude,
@@ -902,6 +912,8 @@ public void removeProximityAlert(PendingIntent intent) {
      * @throws SecurityException if no suitable permission is present for the provider.
      * @throws IllegalArgumentException if provider is null
      */
+    @DSComment("Location manager")
+    @DSSpec(DSCat.LOCATION)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.108 -0500", hash_original_method = "A73A17F882D5C0CB78BFCF12E6BF5D56", hash_generated_method = "661252561785095187961056FE5269CA")
     
@@ -917,6 +929,8 @@ public boolean isProviderEnabled(String provider) {
         }
     }
     
+    @DSComment("Location/GPS access")
+    @DSSpec(DSCat.LOCATION)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:36.993 -0400", hash_original_method = "C11453A15D8C96574C829BE27A4B0DFD", hash_generated_method = "7B70CBDE081B95E75A69268514229255")
     
@@ -1501,6 +1515,8 @@ public void removeNmeaListener(GpsStatus.NmeaListener listener) {
      * @param status object containing GPS status details, or null.
      * @return status object containing updated GPS status.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:58.193 -0500", hash_original_method = "58632EF952FC4DB3D625E7340D0B4D49", hash_generated_method = "946F1B5F569EDD5FFF9500D0E41B562A")
     

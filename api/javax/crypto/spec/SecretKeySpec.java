@@ -35,6 +35,8 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
      *             if the key data or the algorithm name is null or if the key
      *             data is empty.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.348 -0500", hash_original_method = "46BCBD91E8C2018C32B65BFBDD14DAE3", hash_generated_method = "94EDA31E0B802545D5ED76E97A38F3EB")
     
 public SecretKeySpec(byte[] key, String algorithm) {
@@ -73,6 +75,8 @@ public SecretKeySpec(byte[] key, String algorithm) {
      * @throws ArrayIndexOutOfBoundsException
      *             if <code>offset</code> or <code>len</code> is negative.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.351 -0500", hash_original_method = "97539A44FE944982691962B490B5A049", hash_generated_method = "CBFA8797FEE471D07D72810BCB736253")
     
 public SecretKeySpec(byte[] key, int offset, int len, String algorithm) {

@@ -266,6 +266,8 @@ public static boolean needNewResources(int configChanges, int interestingChanges
      * Construct an invalid Configuration.  You must call {@link #setToDefaults}
      * for this object to be valid.  {@more}
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.461 -0500", hash_original_method = "7E58BC7E066573DB3913F9DCCD9EE638", hash_generated_method = "BC67040AAA8A5290C3245C58F180ACA4")
     
 public Configuration() {

@@ -50,6 +50,8 @@ public final class AnimatorSet extends Animator {
     // set, it is passed along to the child animations.
     private long mDuration = -1;
     
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.245 -0400", hash_original_method = "A9DDD8ED58932E64D4F5BE029FA05ABF", hash_generated_method = "A9DDD8ED58932E64D4F5BE029FA05ABF")
     
     public AnimatorSet ()
@@ -79,6 +81,8 @@ public void playTogether(Animator... items) {
      *
      * @param items The animations that will be started simultaneously.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.659 -0500", hash_original_method = "D25B7AF36D80C3FC72EA4BF2A0177D1E", hash_generated_method = "064165BD6D85884EDB47418B01A2DFE7")
     
 public void playTogether(Collection<Animator> items) {
@@ -122,6 +126,8 @@ public void playSequentially(Animator... items) {
      *
      * @param items The animations that will be started one after another.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.663 -0500", hash_original_method = "2D5A2EE93DC881BBD9D776B2A4798185", hash_generated_method = "9EDBF079BDA4DB6789DFE0B6F4168013")
     
 public void playSequentially(List<Animator> items) {
@@ -419,6 +425,8 @@ public Builder play(Animator anim) {
         }
     }
     
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.352 -0400", hash_original_method = "BC0D581AF5A0D28CE21AB6B82F02A4C9", hash_generated_method = "9F6799C08C8007AC04C3BA424C228110")
     @SuppressWarnings("unchecked")
     @Override

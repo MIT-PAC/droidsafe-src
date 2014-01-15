@@ -18,6 +18,8 @@ public class AndroidCharacter {
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1166295311;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static void getEastAsianWidths(char[] src, int start,
                                                  int count, byte[] dest) {
     }

@@ -13,6 +13,8 @@ public class Stack<E> extends Vector<E> {
     /**
      * Constructs a stack with the default size of {@code Vector}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.934 -0500", hash_original_method = "625E2B3812BBF73AC690F7D19F4288A9", hash_generated_method = "929D9277DEEF374CC6B17326832CDE90")
     
 public Stack() {
@@ -25,6 +27,8 @@ public Stack() {
         //return isEmpty();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.606 -0400", hash_original_method = "FF35E7A3F40F4BCE3A9B7A35AFC11586", hash_generated_method = "EAE9722EE9383D5958156EB7C1DF1FAB")
     @SuppressWarnings("unchecked")
     public synchronized E peek() {
@@ -36,6 +40,8 @@ public Stack() {
         return getLastElement();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.606 -0400", hash_original_method = "47AB8756F2D7E98B3A47AFF9902921A8", hash_generated_method = "86A6868C7D8AEBB6A709DB23A19CCF42")
     @SuppressWarnings("unchecked")
     public synchronized E pop() {
@@ -56,6 +62,8 @@ public Stack() {
      * @see #peek
      * @see #pop
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.944 -0500", hash_original_method = "FB7AFAD158F104C5EE0D062F7452B9D0", hash_generated_method = "F0F6FE2D7660908EBD9C2CBA85446EC1")
     
 public E push(E object) {

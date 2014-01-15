@@ -61,6 +61,8 @@ public static Bitmap decodeFile(String pathName, Options opts) {
      * @param pathName complete path name for the file to be decoded.
      * @return the resulting decoded bitmap, or null if it could not be decoded.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.752 -0500", hash_original_method = "7D28734FCE7370D8FDCC234164691F4C", hash_generated_method = "F2CD77CABB152658A32F315E702CC3F9")
     
 public static Bitmap decodeFile(String pathName) {
@@ -147,6 +149,8 @@ public static Bitmap decodeResource(Resources res, int id, Options opts) {
      * @param id The resource id of the image data
      * @return The decoded bitmap, or null if the image could not be decode.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.760 -0500", hash_original_method = "1FD108E128E9B3F5B5DC3826EDC33E9E", hash_generated_method = "4EF628CBC4DD8FE30F8240AEA76D08E5")
     
 public static Bitmap decodeResource(Resources res, int id) {
@@ -302,6 +306,8 @@ private static Bitmap finishDecode(Bitmap bm, Rect outPadding, Options opts) {
      *           bitmap.
      * @return The decoded bitmap, or null if the image data could not be decoded.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.787 -0500", hash_original_method = "B1B6242CCE1D87F8A8E3C9512E1007D6", hash_generated_method = "5E7A8D8150BC51025C552D5F98850988")
     
 public static Bitmap decodeStream(InputStream is) {
@@ -477,6 +483,8 @@ public static void setDefaultConfig(Bitmap.Config config) {
          * Create a default Options object, which if left unchanged will give
          * the same result from the decoder as if null were passed.
          */
+        @DSComment("not sensitive/not an action")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.697 -0500", hash_original_method = "1E2502131AFAFEE705D62EA28BD1E532", hash_generated_method = "476BB4A6DF32CC0368C94A292A50B98B")
         
 public Options() {

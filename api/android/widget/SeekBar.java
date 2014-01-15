@@ -7,16 +7,13 @@ import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
 
-
-
-
-
 public class SeekBar extends AbsSeekBar {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.977 -0500", hash_original_field = "3CC4BBF74E8555C1C6891B0F08414724", hash_generated_field = "C83474F838E540BD5E50F97536CB12F2")
 
-
     private OnSeekBarChangeListener mOnSeekBarChangeListener;
     
+    @DSComment("SeekBar")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.980 -0500", hash_original_method = "900EA85C51BB335BDEEF50874B73DABB", hash_generated_method = "364330E930214DB540F99C79E2A1A3EC")
     
 public SeekBar(Context context) {
@@ -79,16 +76,12 @@ public void setOnSeekBarChangeListener(OnSeekBarChangeListener l) {
             mOnSeekBarChangeListener.onStopTrackingTouch(this);
         }
     }
-
     
     public interface OnSeekBarChangeListener {
         
-        
         void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser);
-    
         
         void onStartTrackingTouch(SeekBar seekBar);
-        
         
         void onStopTrackingTouch(SeekBar seekBar);
     }

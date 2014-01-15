@@ -111,6 +111,8 @@ WakeLock(int flags, String tag)
          *
          * @param value true for ref counted, false for not ref counted.
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.657 -0500", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "6748BB7750DA0EB9305F3FBD73636CFB")
         
 public void setReferenceCounted(boolean value)
@@ -122,6 +124,8 @@ public void setReferenceCounted(boolean value)
          * Makes sure the device is on at the level you asked when you created
          * the wake lock.
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.660 -0500", hash_original_method = "60F8C5E408EB104B9A6B83E1C96AB086", hash_generated_method = "6CBB7F30A9B24D66F901470838801880")
         
 public void acquire()
@@ -137,6 +141,8 @@ public void acquire()
          * 
          * @param timeout Release the lock after the give timeout in milliseconds.
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.662 -0500", hash_original_method = "557ADDA01C2A32642A34A73D3A75D3D5", hash_generated_method = "82D4DE857663CEA5A041286E314C40BF")
         
 public void acquire(long timeout) {
@@ -166,6 +172,8 @@ private void acquireLocked() {
          * It may turn off shortly after you release it, or it may not if there
          * are other wake locks held.
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.667 -0500", hash_original_method = "4304724C92023C406072B166ABF56DE4", hash_generated_method = "6AA21D14C5EDE1271ACE8C5C9841CF80")
         
 public void release() {
@@ -201,6 +209,8 @@ public void release(int flags) {
             }
         }
 
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.672 -0500", hash_original_method = "B8CE240AF6103639736D7EE1F34595B3", hash_generated_method = "58A0667DBE8EA8514F1D4E4A3BE4A4DD")
         
 public boolean isHeld()

@@ -28,6 +28,8 @@ public abstract class TimerTask implements Runnable {
     /**
      * Creates a new {@code TimerTask}.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.676 -0500", hash_original_method = "41AFEAE31E9AFC51442EB32F1B803F09", hash_generated_method = "878D1D0189BFD255ECF89AA7A788F34D")
     
 protected TimerTask() {

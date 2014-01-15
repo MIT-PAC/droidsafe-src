@@ -26,6 +26,8 @@ public abstract class LayoutInflater {
     /**
      * Obtains the LayoutInflater from the given context.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.767 -0500", hash_original_method = "AFFD098D4A16258CBADF0A2E61B5AB7C", hash_generated_method = "915AC053BFDCDE5D7ACF4530BF35E466")
     
 public static LayoutInflater from(Context context) {
@@ -135,6 +137,8 @@ protected LayoutInflater(LayoutInflater original, Context newContext) {
      * @return Returns a brand spanking new LayoutInflater object associated with
      * the given Context.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.769 -0500", hash_original_method = "3D202F2528926E0CC64A1F0FA507E4F3", hash_generated_method = "429FCA58C8A9A2CC82E1644446569CE4")
     
 public abstract LayoutInflater cloneInContext(Context newContext);
@@ -269,6 +273,8 @@ public void setFilter(Filter filter) {
      *         this is the root View; otherwise it is the root of the inflated
      *         XML file.
      */
+    @DSComment("Proper view needs to be created/instantiated")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.792 -0500", hash_original_method = "33D0E6277D03283945C33D82FE1E07F8", hash_generated_method = "73A7EB7DA3644F58C6A3248C4944CDDE")
     
 public View inflate(int resource, ViewGroup root) {
@@ -297,7 +303,9 @@ public View inflate(XmlPullParser parser, ViewGroup root) {
         return inflate(parser, root, root != null);
     }
     
-	 public View inflate(int resource, ViewGroup root, boolean attachToRoot) {
+	 @DSComment("Proper view needs to be created/instantiated")
+    @DSSpec(DSCat.TO_MODEL)
+    public View inflate(int resource, ViewGroup root, boolean attachToRoot) {
 		View newView = new View();
 		return newView;	
 	}
@@ -447,6 +455,8 @@ public View inflate(XmlPullParser parser, ViewGroup root, boolean attachToRoot) 
      * 
      * @return View The newly instantiated view, or null.
      */
+    @DSComment("Proper view needs to be created/instantiated")
+    @DSSpec(DSCat.TO_MODEL)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:25.806 -0500", hash_original_method = "9249249C6DEB7757C8882D406CD78B4B", hash_generated_method = "D9DD31C509C78EF24376145F9807B128")
     

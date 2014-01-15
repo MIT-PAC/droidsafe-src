@@ -5,19 +5,16 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class AssertionError extends Error {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.872 -0500", hash_original_field = "23DC8363492CC647937818C0E00407BE", hash_generated_field = "A3497D23B93DF9E4AA64EF083CEEBD5B")
-
 
     private static final long serialVersionUID = -5013299493970297370L;
 
     /**
      * Constructs a new {@code AssertionError} with no message.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.875 -0500", hash_original_method = "632C9A91920500ECFBFF7CDB1241885E", hash_generated_method = "693B1D496B276CC308C2F45C99B919C6")
     
 public AssertionError() {
@@ -44,6 +41,8 @@ public AssertionError(String detailMessage, Throwable cause) {
      *            the object to be converted into the detail message and
      *            optionally the cause.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.881 -0500", hash_original_method = "CD7903E922C4B27895502309BFA5EB07", hash_generated_method = "49E2E05E2EBA3C339CD09977A491E7B5")
     
 public AssertionError(Object detailMessage) {

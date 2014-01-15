@@ -37,6 +37,8 @@ public abstract class AsyncTaskLoader<D> extends Loader<D> {
 
     Handler mHandler;
 
+    @DSComment("Loading android component dynamically")
+    @DSSpec(DSCat.ANDROID_LOADER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.507 -0500", hash_original_method = "D12030B6AB606C68B1075214300CB0F6", hash_generated_method = "96C9B7975FBAAEAD2973F88F4D729C01")
     
 public AsyncTaskLoader(Context context) {
@@ -86,6 +88,8 @@ public void setUpdateThrottle(long delayMS) {
      *         because {@link #startLoading()} hasn't been called; returns
      *         <tt>true</tt> otherwise.
      */
+    @DSComment("no impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.516 -0500", hash_original_method = "D61160F50878CF3D95A0B223A0044CD3", hash_generated_method = "154D154DC32BA2A5A0D3464A2BE0C207")
     
 public boolean cancelLoad() {

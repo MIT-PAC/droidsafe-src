@@ -287,6 +287,8 @@ void recycleAllViews() {
     /**
      * Jump directly to a specific item in the adapter data.
      */
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.367 -0500", hash_original_method = "D2708A7FDB907C7B6958E15DD672DA8E", hash_generated_method = "C3A5D610F87F4D3CECAE59DEBB9EE18C")
     
@@ -297,6 +299,8 @@ public void setSelection(int position, boolean animate) {
         setSelectionInt(position, shouldAnimate);
     }
 
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.369 -0500", hash_original_method = "7E33360CBDBF59A4E473BBC01C4A9D09", hash_generated_method = "5A7C3B76C3326CF67657E51BD1F90B58")
     
@@ -358,6 +362,8 @@ abstract void layout(int delta, boolean animate);
         }
     }
 
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.381 -0500", hash_original_method = "0B2662100CCA74662649DCCD28954A76", hash_generated_method = "B2AD20E240F1F5A7AD66020C9F08265C")
     
 @Override
@@ -365,6 +371,8 @@ abstract void layout(int delta, boolean animate);
         return mAdapter;
     }
 
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:31.383 -0500", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "01AD3C9DE5F33E89331C2C38A4EFAE12")
     

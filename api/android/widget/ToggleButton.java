@@ -51,12 +51,16 @@ public ToggleButton(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.buttonStyleToggle);
     }
 
+    @DSComment("ToggleButton, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.763 -0500", hash_original_method = "5CB14A1EE33B76662B7844E5CB0658A9", hash_generated_method = "A11DD048AF6262095524458032C5CDE2")
     
 public ToggleButton(Context context) {
         this(context, null);
     }
 
+    @DSComment("ToggleButton, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.765 -0500", hash_original_method = "114EA4FC41B05DCC13D832240123F1AB", hash_generated_method = "2032E16A48DAE7A8FAA1E2F794EDFD08")
     
@@ -95,6 +99,8 @@ public CharSequence getTextOn() {
      *  
      * @param textOn The text.
      */
+    @DSComment("ToggleButton, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.771 -0500", hash_original_method = "ACAEE36BE44A4D8B24B7AB5EAF55367A", hash_generated_method = "E688A4165DB1F6ECABE48950BD4DBECB")
     
 public void setTextOn(CharSequence textOn) {
@@ -118,6 +124,8 @@ public CharSequence getTextOff() {
      * 
      * @param textOff The text.
      */
+    @DSComment("ToggleButton, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:32.775 -0500", hash_original_method = "60B041A4AF8BC6B9E7C69B28CDF70955", hash_generated_method = "45EC2AD392ED2DF9424460B0AC6A1211")
     
 public void setTextOff(CharSequence textOff) {

@@ -38,6 +38,8 @@ public class WeakHashMap<K, V> extends AbstractMap<K, V> implements Map<K, V> {
     /**
      * Constructs a new empty {@code WeakHashMap} instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.617 -0500", hash_original_method = "B976885DE3CF2C49EC1331AC2786A4B5", hash_generated_method = "16A7169736FF430365004AC4125002EC")
     
 public WeakHashMap() {
@@ -113,6 +115,8 @@ public WeakHashMap(Map<? extends K, ? extends V> map) {
      * @see #isEmpty()
      * @see #size()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.638 -0500", hash_original_method = "C690E441FDF499DD7829AA3D638ADE28", hash_generated_method = "87106446D54E5996CA5D5947A9A32982")
     
 @Override
@@ -141,6 +145,8 @@ private void computeMaxSize() {
      * @return {@code true} if this map contains the specified key,
      *         {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.657 -0500", hash_original_method = "7C0BA359573790AC71E46CA35F3B3C5D", hash_generated_method = "3A533A1E3B5EF2AF662A06C62B53947C")
     
 @Override
@@ -345,6 +351,8 @@ void removeEntry(Entry<K, V> toRemove) {
      * @return the value of any previous mapping with the specified key or
      *         {@code null} if there was no mapping.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.808 -0500", hash_original_method = "E298E65486168CC370356B38BEF7AC1C", hash_generated_method = "F72FA88B2EDEA35C5229B35E73BA76C0")
     
 @Override
@@ -429,6 +437,8 @@ private void rehash() {
      * @return the value of the removed mapping or {@code null} if no mapping
      *         for the specified key was found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:54.822 -0500", hash_original_method = "FE1A1739C961B2012661CB8735C428AE", hash_generated_method = "96E059F7F14F6D116320374B370EFB07")
     
 @Override

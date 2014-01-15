@@ -380,6 +380,8 @@ public static final int getParentPid(int pid) {
     public static final void setProcessGroup(int pid, int group) throws IllegalArgumentException, SecurityException {
     }
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static final void setThreadPriority(int priority) throws IllegalArgumentException, SecurityException {
     }
     

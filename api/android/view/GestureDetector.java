@@ -258,6 +258,8 @@ private void init(Context context, boolean ignoreMultitouch) {
     
     public static class SimpleOnGestureListener implements OnGestureListener, OnDoubleTapListener {
         
+        @DSComment("potential callback called inside method")
+        @DSSpec(DSCat.TO_MODEL)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.349 -0400", hash_original_method = "6EE8AB65667171335D0E5E557D623FF3", hash_generated_method = "6EE8AB65667171335D0E5E557D623FF3")
         public SimpleOnGestureListener ()
         {
@@ -269,6 +271,8 @@ public boolean onSingleTapUp(MotionEvent e) {
             return false;
         }
 
+        @DSComment("normal android callback")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.684 -0500", hash_original_method = "E609FB951BEBFF493B5A5F179A09A7F5", hash_generated_method = "1427813CB8FD0FECD33CD789FA773A1E")
         
 public void onLongPress(MotionEvent e) {
@@ -281,6 +285,8 @@ public boolean onScroll(MotionEvent e1, MotionEvent e2,
             return false;
         }
 
+        @DSComment("normal android callback")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.690 -0500", hash_original_method = "BDBE517451C02C6DD8B1C60030C3C43A", hash_generated_method = "A7CC59BCECD4BCD630D07EC7C1E9E0D4")
         
 public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX,
@@ -311,6 +317,8 @@ public boolean onDoubleTapEvent(MotionEvent e) {
             return false;
         }
 
+        @DSComment("normal android callback")
+        @DSSafe(DSCat.ANDROID_CALLBACK)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.701 -0500", hash_original_method = "5E9F34FF920329D07D248580C4BBB180", hash_generated_method = "8A1688630F94AC9659A2A1B9905B0947")
         
 public boolean onSingleTapConfirmed(MotionEvent e) {
@@ -392,6 +400,8 @@ GestureHandler(Handler handler) {
      *
      * @param isLongpressEnabled whether longpress should be enabled.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.797 -0500", hash_original_method = "14829325F18703625EF98BC2472601E3", hash_generated_method = "51336A8A06442CD62CB3C2FE846AC26F")
     
 public void setIsLongpressEnabled(boolean isLongpressEnabled) {
@@ -401,6 +411,8 @@ public void setIsLongpressEnabled(boolean isLongpressEnabled) {
     /**
      * @return true if longpress is enabled, else false.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.800 -0500", hash_original_method = "880D3BB55D8069819877BA46CC6F055B", hash_generated_method = "66E0EA8C34A58B1875D8A044AC247580")
     
 public boolean isLongpressEnabled() {
@@ -415,6 +427,8 @@ public boolean isLongpressEnabled() {
      * @return true if the {@link OnGestureListener} consumed the event,
      *              else false.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:03.805 -0500", hash_original_method = "83C7BED09A17CDEA8B0FB9700395D72F", hash_generated_method = "E33AC3F11292615C5E27A92B5D08A42F")
     
 public boolean onTouchEvent(MotionEvent ev) {

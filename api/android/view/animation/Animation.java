@@ -130,6 +130,8 @@ public abstract class Animation implements Cloneable {
      * Creates a new animation with a duration of 0ms, the default interpolator, with
      * fillBefore set to true and fillAfter set to false
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.808 -0500", hash_original_method = "F5207BDCC3F51BB57C76C57DBA5A0AD4", hash_generated_method = "A0EB6EA81A29ED824D2AB6EBD330F031")
     
 public Animation() {
@@ -298,6 +300,8 @@ public void setInterpolator(Context context, int resID) {
      * @param i The interpolator which defines the acceleration curve
      * @attr ref android.R.styleable#Animation_interpolator
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.830 -0500", hash_original_method = "4EEF3DF2F4BA4D9B865A07AD850625E7", hash_generated_method = "9B5D95C6D52CF58DE3C89639A08894AB")
     
 public void setInterpolator(Interpolator i) {
@@ -313,6 +317,8 @@ public void setInterpolator(Interpolator i) {
      *                    the start time of the root AnimationSet.
      * @attr ref android.R.styleable#Animation_startOffset
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.833 -0500", hash_original_method = "BF0ACB3E237AAE7044714380D4DED735", hash_generated_method = "5F56E7CC5787995BF0DE06CEBCE5293E")
     
 public void setStartOffset(long startOffset) {
@@ -328,6 +334,8 @@ public void setStartOffset(long startOffset) {
      *
      * @attr ref android.R.styleable#Animation_duration
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.835 -0500", hash_original_method = "C4FADDE7E113E13802025E54418B7E99", hash_generated_method = "0DE5BF6C734EE0CBAE9EDCCF7A31B7BC")
     
 public void setDuration(long durationMillis) {
@@ -404,6 +412,8 @@ public void scaleCurrentDuration(float scale) {
      *
      * @param startTimeMillis the start time in milliseconds
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.843 -0500", hash_original_method = "C5F2E1E5B86432971DA671FBAF722042", hash_generated_method = "1367442DC0E8BEF435895BF3EBFA875E")
     
 public void setStartTime(long startTimeMillis) {
@@ -442,6 +452,8 @@ public void startNow() {
      * @param repeatMode {@link #RESTART} or {@link #REVERSE}
      * @attr ref android.R.styleable#Animation_repeatMode
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.850 -0500", hash_original_method = "DDD317A37915E8A65D2BE1E304EF578A", hash_generated_method = "CCA7F75AF93485A9A05519CC0E21F5DD")
     
 public void setRepeatMode(int repeatMode) {
@@ -457,6 +469,8 @@ public void setRepeatMode(int repeatMode) {
      * @param repeatCount the number of times the animation should be repeated
      * @attr ref android.R.styleable#Animation_repeatCount
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.852 -0500", hash_original_method = "A134D6BEB9FF1047810E15F38A519E7E", hash_generated_method = "34C8A0FFE6904A906F56F967950A9EC1")
     
 public void setRepeatCount(int repeatCount) {
@@ -527,6 +541,8 @@ public void setFillBefore(boolean fillBefore) {
      *
      * @see #setFillEnabled(boolean) 
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.861 -0500", hash_original_method = "4CCE59DDFB007D2C725E384A84210333", hash_generated_method = "D067159FD9979BCD4C8DCA55B54D9A6D")
     
 public void setFillAfter(boolean fillAfter) {
@@ -880,6 +896,8 @@ public long computeDurationHint() {
      *        caller and will be filled in by the animation.
      * @return True if the animation is still running
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.910 -0500", hash_original_method = "1D66EEFFAD10DF7675973FFD0CA72C11", hash_generated_method = "AF8652057DAD4A8F9C8E0866DE608D21")
     

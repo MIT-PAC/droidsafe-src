@@ -135,6 +135,8 @@ public static void appendColumns(StringBuilder s, String[] columns) {
 
     private boolean mStrict;
 
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.110 -0500", hash_original_method = "841FC2D35CC9552E307358F36A673D72", hash_generated_method = "2AEC253E7142AD2F66BF83F76E98F9AA")
     
 public SQLiteQueryBuilder() {
@@ -173,6 +175,8 @@ public String getTables() {
      *
      * @param inTables the list of tables to query on
      */
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.118 -0500", hash_original_method = "3D5C8D5A2DF23857F8B36CBC126449F5", hash_generated_method = "6D71291B909000BAACAB49C5B7A12499")
     
 public void setTables(String inTables) {
@@ -188,6 +192,8 @@ public void setTables(String inTables) {
      *
      * @param inWhere the chunk of text to append to the WHERE clause.
      */
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.123 -0500", hash_original_method = "4066C27D90FD6AEEDB747E2D0A255B82", hash_generated_method = "AE5516F5F592B31E19612BE6B9DC745C")
     
 public void appendWhere(CharSequence inWhere) {
@@ -210,6 +216,8 @@ public void appendWhere(CharSequence inWhere) {
      * @param inWhere the chunk of text to append to the WHERE clause. it will be escaped
      * to avoid SQL injection attacks
      */
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.127 -0500", hash_original_method = "CD89033A6A424354FBAEE4A7B7BB0312", hash_generated_method = "F2E378748E2C287D92424CD85C2A7EE1")
     
 public void appendWhereEscapeString(String inWhere) {
@@ -233,6 +241,8 @@ public void appendWhereEscapeString(String inWhere) {
      *
      * @param columnMap maps from the user column names to the database column names
      */
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.129 -0500", hash_original_method = "DDD8D9F6C39192C696789E3C5816355A", hash_generated_method = "242D53A391A616E52B1C81C51E3570BE")
     
 public void setProjectionMap(Map<String, String> columnMap) {
@@ -308,6 +318,8 @@ public void setStrict(boolean flag) {
      * @see android.content.ContentResolver#query(android.net.Uri, String[],
      *      String, String[], String)
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.146 -0500", hash_original_method = "C851DFBDB6501381AF55260B14586647", hash_generated_method = "60B42FCF91B7DAFA84B5EEAB5AFFEF11")
     

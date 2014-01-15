@@ -69,6 +69,8 @@ public class KeyguardManager {
         //}
     }
     
+    @DSComment("device control")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.548 -0400", hash_original_method = "4D76893BACDA286FED51AB2B592BACEE", hash_generated_method = "35AC64A1ADCA8D6D4F4AC5E9F5EA7C98")
     public boolean inKeyguardRestrictedInputMode() {
         return getTaintBoolean();

@@ -81,6 +81,8 @@ public InetSocketAddress(int port) {
      * @param address
      *            the specified address to which this socket is bound.
      */
+    @DSComment("no suspicious activity, just sets class variable")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.632 -0500", hash_original_method = "9F6BF484BF454F89FD6A310ADFCD9122", hash_generated_method = "A3FF0FE93DD89D7DDA0D00CCF9EE59E9")
     
 public InetSocketAddress(InetAddress address, int port) {
@@ -103,6 +105,8 @@ public InetSocketAddress(InetAddress address, int port) {
      * @param host
      *            the specified hostname to which this socket is bound.
      */
+    @DSComment("no suspicious activity, just sets class variable")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.635 -0500", hash_original_method = "6C9F5B77CD6EF4C5F038F88B12F1FECD", hash_generated_method = "71E9E971E7D0422D05092181F52B89E1")
     
 public InetSocketAddress(String host, int port) {

@@ -80,6 +80,8 @@ public RemoteViews[] newArray(int size) {
      * @param packageName Name of the package that contains the layout resource
      * @param layoutId The id of the layout resource
      */
+    @DSComment("check setOnClickPendingIntent")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:50.997 -0500", hash_original_method = "7ADC44A8B9BDF8C00FB4776840C5552D", hash_generated_method = "CCC49EDBEBEE8FE5F22E011E1EB338ED")
     
 public RemoteViews(String packageName, int layoutId) {
@@ -300,6 +302,8 @@ public void setDisplayedChild(int viewId, int childIndex) {
      * @param viewId The id of the view whose visibility should change
      * @param visibility The new visibility for the view
      */
+    @DSComment("check setOnClickPendingIntent")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.028 -0500", hash_original_method = "DEE52A50DF8AF905161D8440F9C7FD6B", hash_generated_method = "D35680D2C11D87B825D492B72945A47A")
     
@@ -313,6 +317,8 @@ public void setViewVisibility(int viewId, int visibility) {
      * @param viewId The id of the view whose text should change
      * @param text The new text for the view
      */
+    @DSComment("check setOnClickPendingIntent")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.030 -0500", hash_original_method = "5F8A789C1791A65B082D971694A97107", hash_generated_method = "775D8E18D63705C8DCFC41111F9CBAE4")
     
@@ -326,6 +332,8 @@ public void setTextViewText(int viewId, CharSequence text) {
      * @param viewId The id of the view whose drawable should change
      * @param srcId The new resource id for the drawable
      */
+    @DSComment("check setOnClickPendingIntent")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.032 -0500", hash_original_method = "BA7406E13895A91025A0507F41BF6313", hash_generated_method = "DBB6736C78776F4BCF9F89E2FEF0F799")
     
@@ -408,6 +416,8 @@ public void setChronometer(int viewId, long base, String format, boolean started
      * @param indeterminate True if the progress bar is indeterminate, 
      *                false if not.
      */
+    @DSComment("check setOnClickPendingIntent")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.045 -0500", hash_original_method = "A929EFC8DD62C6A3F9A2F8FB0663D928", hash_generated_method = "46BB40528ECA49B60180D5C9534CCFF3")
     
@@ -433,6 +443,8 @@ public void setProgressBar(int viewId, int max, int progress,
      * @param viewId The id of the view that will trigger the {@link PendingIntent} when clicked
      * @param pendingIntent The {@link PendingIntent} to send when user clicks
      */
+    @DSComment("check setOnClickPendingIntent")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.047 -0500", hash_original_method = "84C6A4280B6852D03015FA2AE8D65E64", hash_generated_method = "927278201C3266DF8CCC1D5611BF65BC")
     
@@ -526,6 +538,8 @@ public void setDrawableParameters(int viewId, boolean targetBackground, int alph
      * @param color Sets the text color for all the states (normal, selected,
      *            focused) to be this color.
      */
+    @DSComment("check setOnClickPendingIntent")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:51.056 -0500", hash_original_method = "F51B3B3FB58685A967056786739D5D5A", hash_generated_method = "58D578553E8BA2ACCE636D9C5DD9CE31")
     

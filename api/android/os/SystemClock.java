@@ -18,6 +18,8 @@ public final class SystemClock {
      *
      * @param ms to sleep before returning, in milliseconds of uptime.
      */
+    @DSComment("SystemClock only allows reading time")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.628 -0500", hash_original_method = "D4BA21E42781D683EDE66760B12EFE55", hash_generated_method = "7BE0E448310CD35EBF03CDB3833013C9")
     
 public static void sleep(long ms)
@@ -47,10 +49,14 @@ public static void sleep(long ms)
         return DSUtils.UNKNOWN_BOOLEAN;
     }
     
+    @DSComment("SystemClock only allows reading time")
+    @DSSafe(DSCat.OS_GENERAL)
     public static long uptimeMillis() {
         return DSUtils.UNKNOWN_LONG;
     }
     
+    @DSComment("SystemClock only allows reading time")
+    @DSSafe(DSCat.OS_GENERAL)
     public static long elapsedRealtime() {
         return DSUtils.UNKNOWN_LONG;
     }

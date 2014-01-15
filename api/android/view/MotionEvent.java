@@ -407,6 +407,8 @@ static public MotionEvent obtain(long downTime, long eventTime, int action,
      * @param metaState The state of any meta / modifier keys that were in effect when
      * the event was generated.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.770 -0500", hash_original_method = "C4E1548FEFF7CE0FD853413E91CFBE59", hash_generated_method = "BB84597C158113D132EC190F62F58E4F")
     
 static public MotionEvent obtain(long downTime, long eventTime, int action,
@@ -418,6 +420,8 @@ static public MotionEvent obtain(long downTime, long eventTime, int action,
     /**
      * Create a new MotionEvent, copying from an existing one.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.772 -0500", hash_original_method = "A056A38EFEDA7A73CC0FCCF73A42E3E9", hash_generated_method = "EF7246B441D70BC6654A3D23D2C639CD")
     
 static public MotionEvent obtain(MotionEvent other) {
@@ -1309,6 +1313,8 @@ public MotionEvent[] newArray(int size) {
      * Recycle the MotionEvent, to be re-used by a later caller.  After calling
      * this function you must not ever touch the event again.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.780 -0500", hash_original_method = "187F7D3A42078A42C8212C3EFE0E8B16", hash_generated_method = "DDB1558C76E1712D2A8FA62A70F35900")
     
 public final void recycle() {
@@ -1380,6 +1386,8 @@ public final void scale(float scale) {
      * @return The action, such as {@link #ACTION_DOWN} or
      * the combination of {@link #ACTION_POINTER_DOWN} with a shifted pointer index.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.794 -0500", hash_original_method = "FA5880EB8F61D955AC5922ACE620FCE2", hash_generated_method = "0179DCDBED0C80F6D103A239F3884634")
     
@@ -1468,6 +1476,8 @@ public final int getFlags() {
      * Returns the time (in ms) when the user originally pressed down to start
      * a stream of position events.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.811 -0500", hash_original_method = "5F4C05CD4E223E38846D15A6EA0DF305", hash_generated_method = "BFCB5E2E7AFD8EDA5624FBFBB70790A2")
     
@@ -1491,6 +1501,8 @@ public final void setDownTime(long downTime) {
     /**
      * Returns the time (in ms) when this specific event was generated.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.816 -0500", hash_original_method = "CCF6A1C7FFBA398090457272FB07E7C9", hash_generated_method = "88BA2C3FDA0F218BB6D1E6E0DAFA6CAD")
     
@@ -1517,6 +1529,8 @@ public final long getEventTimeNano() {
      *
      * @see #AXIS_X
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.820 -0500", hash_original_method = "4BF6642E766343B332FD98949BC6C582", hash_generated_method = "E774E1D7846DB35D7F1CB7A3E088FA67")
     
@@ -1530,6 +1544,8 @@ public final float getX() {
      *
      * @see #AXIS_Y
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.823 -0500", hash_original_method = "91A63DEAB3A8AC7438EA04466792BD82", hash_generated_method = "EC2C2BD98A3263DC8F891D4B3BDEE4E1")
     
@@ -1648,6 +1664,8 @@ public final float getAxisValue(int axis) {
      * The number of pointers of data contained in this event.  Always
      * >= 1.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.845 -0500", hash_original_method = "2050CCC0293D52B162C880AD9BC3C6F6", hash_generated_method = "47EC7AB67BCA05539C0F93193D87B8C3")
     
@@ -1663,6 +1681,8 @@ public final int getPointerCount() {
      * @param pointerIndex Raw index of pointer to retrieve.  Value may be from 0
      * (the first pointer that is down) to {@link #getPointerCount()}-1.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.847 -0500", hash_original_method = "43D465AFB7AC0153BC6ACD556C5FF613", hash_generated_method = "B99662569C98F0E25C05C1CC7A03F83D")
     
@@ -1701,6 +1721,8 @@ public final int getToolType(int pointerIndex) {
      * {@link #getX(int)} et al.), or -1 if there is no data available for
      * that pointer identifier.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.852 -0500", hash_original_method = "396B4C03ADE41E49E928286EB7438AA9", hash_generated_method = "21872CD12D012F1BD1E94365B6D0FDDB")
     
 public final int findPointerIndex(int pointerId) {
@@ -1718,6 +1740,8 @@ public final int findPointerIndex(int pointerId) {
      *
      * @see #AXIS_X
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.855 -0500", hash_original_method = "13E56CEAC1D2714A9A1790EF5117F935", hash_generated_method = "D7BF3F326723077266BC957BEF7B8FFD")
     
@@ -1736,6 +1760,8 @@ public final float getX(int pointerIndex) {
      *
      * @see #AXIS_Y
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.857 -0500", hash_original_method = "9A0C47F653E064961B232F3274CD29C9", hash_generated_method = "71BE84DA9B597D86FE06FCA23AC26688")
     
@@ -1974,6 +2000,8 @@ public final int getButtonState() {
      * @see getX()
      * @see #AXIS_X
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.888 -0500", hash_original_method = "6E457CC599C66DF6B9AC57A3DF3B8E7E", hash_generated_method = "597CB69258293954DEE2444596EE378C")
     
@@ -1990,6 +2018,8 @@ public final float getRawX() {
      * @see getY()
      * @see #AXIS_Y
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.891 -0500", hash_original_method = "C18C1837908CE668DE325D32328DA600", hash_generated_method = "8E785BFC8053CFC68155ADB53AB44608")
     
@@ -2035,6 +2065,8 @@ public final float getYPrecision() {
      *
      * @return Returns the number of historical points in the event.
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.899 -0500", hash_original_method = "B4D273F4D2084C890DE19B631E3ED869", hash_generated_method = "7FDD08FA1737D3C8FF76FE80EEAFAB72")
     
@@ -2052,6 +2084,8 @@ public final int getHistorySize() {
      * @see #getHistorySize
      * @see #getEventTime
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.902 -0500", hash_original_method = "4F37DFE9294EB232F86D1F83C2ADDC74", hash_generated_method = "A851AF9B1BB802307F420B87ED8B7DBC")
     
@@ -2070,6 +2104,8 @@ public final long getHistoricalEventTime(int pos) {
      * @see #getX()
      * @see #AXIS_X
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.904 -0500", hash_original_method = "52641DCD8C1505610834B8CDD1492B06", hash_generated_method = "19AAD43E5A94488E256744F678A25D41")
     
@@ -2088,6 +2124,8 @@ public final float getHistoricalX(int pos) {
      * @see #getY()
      * @see #AXIS_Y
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.906 -0500", hash_original_method = "456D8725235AB4DBC45E47B4ADD23013", hash_generated_method = "D1C5BB213D8A282F9C2588371E83EE1E")
     
@@ -2532,6 +2570,8 @@ public final void getHistoricalPointerCoords(int pointerIndex, int pos,
      * @see #EDGE_RIGHT
      * @see #EDGE_BOTTOM
      */
+    @DSComment("Event associated with motion")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:10.956 -0500", hash_original_method = "26EA400A9751805DFF1D4CEEB005645B", hash_generated_method = "07DFB8FE2306569E4B60247444B66A8A")
     

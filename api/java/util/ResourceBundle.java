@@ -51,6 +51,8 @@ public static ResourceBundle getBundle(String bundleName) throws MissingResource
      * @throws MissingResourceException
      *                if the resource bundle cannot be found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.233 -0500", hash_original_method = "04CC2E12096D8B439249FDE366F3564E", hash_generated_method = "462C3465B2894C59D0D7298104991FD4")
     
@@ -542,6 +544,8 @@ public final Object getObject(String key) {
      *                if the resource found is not a string.
      * @see #getObject(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.263 -0500", hash_original_method = "BF93FB2083E0950C32E8F3481E34A9FB", hash_generated_method = "5A6EDD64E7AC080B92BCD0179FDDA64F")
     

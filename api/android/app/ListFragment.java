@@ -69,6 +69,8 @@ public class ListFragment extends Fragment {
 
     boolean mListShown;
 
+    @DSComment("GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.072 -0500", hash_original_method = "EF57861318B397409B17ABF77AE47B37", hash_generated_method = "B81266A0FA43BBE0A70682BF3A3618B6")
     
 public ListFragment() {
@@ -88,6 +90,8 @@ public ListFragment() {
      * behavior of ListFragment.  In particular, this is currently the only
      * way to have the built-in indeterminant progress state be shown.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.075 -0500", hash_original_method = "BEDEF1303F07526C038707780C2D3CB6", hash_generated_method = "32569A28687D4A3C8ED5E30F4B91B64A")
     
 @Override
@@ -134,6 +138,8 @@ public ListFragment() {
      * @param position The position of the view in the list
      * @param id The row id of the item that was clicked
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.081 -0500", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "CB4D791D7A70B359EC627916815866E7")
     
 public void onListItemClick(ListView l, View v, int position, long id) {
@@ -142,6 +148,8 @@ public void onListItemClick(ListView l, View v, int position, long id) {
     /**
      * Provide the cursor for the list view.
      */
+    @DSComment("GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.083 -0500", hash_original_method = "B9F859547BD6410EA28F34027A6366BE", hash_generated_method = "24360340D52FA8A6C6E50D86154E3782")
     
 public void setListAdapter(ListAdapter adapter) {
@@ -196,6 +204,8 @@ public long getSelectedItemId() {
     /**
      * Get the activity's list view widget.
      */
+    @DSComment("GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.092 -0500", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "F390A30877A55CE39C88D546BF9EAE07")
     
@@ -209,6 +219,8 @@ public ListView getListView() {
      * be shown when the list is empty.  If you would like to have it
      * shown, call this method to supply the text it should use.
      */
+    @DSComment("GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.095 -0500", hash_original_method = "BDE8F4E2DF99E8DBF624FF236090A0E2", hash_generated_method = "5E065A93894B457E8400200A9E3EEBAD")
     
 public void setEmptyText(CharSequence text) {
@@ -237,6 +249,8 @@ public void setEmptyText(CharSequence text) {
      * @param shown If true, the list view is shown; if false, the progress
      * indicator.  The initial value is true.
      */
+    @DSComment("GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.097 -0500", hash_original_method = "58A7D31C5F755970E32BD1449250481A", hash_generated_method = "4472EC2324E425D9EB5857C25B77A122")
     
@@ -248,6 +262,8 @@ public void setListShown(boolean shown) {
      * Like {@link #setListShown(boolean)}, but no animation is used when
      * transitioning from the previous state.
      */
+    @DSComment("GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:35.099 -0500", hash_original_method = "9A20C5F20729EB8F1D1E26962B6A5257", hash_generated_method = "DB7E0C9414E9CD473D33ECCDC493220B")
     

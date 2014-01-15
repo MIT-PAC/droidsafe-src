@@ -166,6 +166,8 @@ public class Path {
 
     private Direction mLastDirection = null;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public Path() {}
     
     public Path(Path src) {
@@ -180,6 +182,8 @@ public class Path {
      * Clear any lines and curves from the path, making it empty.
      * This does NOT change the fill-type setting.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.167 -0500", hash_original_method = "2D6F810980DCFBBC547D7B9A11965950", hash_generated_method = "832A9429C16C86298C91242E8C17B8AB")
     
 public void reset() {
@@ -324,6 +328,8 @@ public void incReserve(int extraPtCount) {
      * @param x The x-coordinate of the start of a new contour
      * @param y The y-coordinate of the start of a new contour
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.201 -0500", hash_original_method = "732AD0D6CB11A9ADE203372D23E48872", hash_generated_method = "D02CEE4CBF36DAA6F8F680D2D5C12B04")
     
 public void moveTo(float x, float y) {
@@ -354,6 +360,8 @@ public void rMoveTo(float dx, float dy) {
      * @param x The x-coordinate of the end of a line
      * @param y The y-coordinate of the end of a line
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.205 -0500", hash_original_method = "58E5C3E4C7F046934AC91F8FDFBACD2C", hash_generated_method = "E0070DBC57868727B629F1FD39E2DF76")
     
 public void lineTo(float x, float y) {
@@ -480,6 +488,8 @@ public void arcTo(RectF oval, float startAngle, float sweepAngle,
      * Close the current contour. If the current point is not equal to the
      * first point of the contour, a line segment is automatically added.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.222 -0500", hash_original_method = "E16C5D29E703AEBAB6CAF17A68A08F6B", hash_generated_method = "9EB7EFD517B4F19AFC5BCF612FA2F8F9")
     
 public void close() {

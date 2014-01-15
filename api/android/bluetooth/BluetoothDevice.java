@@ -361,6 +361,8 @@ public void writeToParcel(Parcel out, int flags) {
      * <p> For example, "00:11:22:AA:BB:CC".
      * @return Bluetooth hardware address as string
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.753 -0500", hash_original_method = "BD85A48E5B7DC741C80D75F9CC9D3A4A", hash_generated_method = "B33AAC87BF1F03A01C58BBB4B9D198BA")
     
@@ -378,6 +380,8 @@ public String getAddress() {
      *
      * @return the Bluetooth name, or null if there was a problem.
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.756 -0500", hash_original_method = "027728A71FD2E55E5703A638CB89EB2E", hash_generated_method = "03266511763C6208D924449D71AFD630")
     
@@ -808,6 +812,8 @@ public BluetoothSocket createRfcommSocket(int channel) throws IOException {
      * @throws IOException on error, for example Bluetooth not available, or
      *                     insufficient permissions
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:31.807 -0500", hash_original_method = "673893485928B830B2C44FE0F9C84083", hash_generated_method = "5BE9B56F4BC1B1370A02B6C0D91EC204")
     
 public BluetoothSocket createRfcommSocketToServiceRecord(UUID uuid) throws IOException {

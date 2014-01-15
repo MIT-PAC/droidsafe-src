@@ -70,6 +70,8 @@ public class GridView extends AbsListView {
 
     private final Rect mTempRect = new Rect();
 
+    @DSComment("GUI GridView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.410 -0500", hash_original_method = "6B9AD93D67DF35D03ADA1536C0A58FBF", hash_generated_method = "ABE07628F01D694A867DBF39CAE0DF48")
     
 public GridView(Context context) {
@@ -144,6 +146,8 @@ public GridView(Context context, AttributeSet attrs, int defStyle) {
      *
      * @param adapter the adapter providing the grid's data
      */
+    @DSComment("GUI GridView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.423 -0500", hash_original_method = "3B0F7EFF2AD6466D19A6F404E2E1BAAD", hash_generated_method = "95DC0512BE57B2D786ABF045066D9B37")
     
 @Override
@@ -1493,6 +1497,8 @@ private void setupChild(View child, int position, int y, boolean flow, int child
      * If in touch mode, the item will not be selected but it will still be positioned
      * appropriately.
      */
+    @DSComment("GUI GridView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.561 -0500", hash_original_method = "F036989DC17B53D064E56E9048AF8088", hash_generated_method = "746F894122617A5FC5CDD581A3E19301")
     
 @Override
@@ -2069,6 +2075,8 @@ public void setColumnWidth(int columnWidth) {
      *
      * @attr ref android.R.styleable#GridView_numColumns
      */
+    @DSComment("GUI GridView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:30.607 -0500", hash_original_method = "EB843153C85390AE48F1C91EE0B42CDB", hash_generated_method = "32237D441F88BBE7A70E783E7A6D387A")
     
 public void setNumColumns(int numColumns) {

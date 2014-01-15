@@ -8,15 +8,14 @@ import java.util.Arrays;
 
 import libcore.io.Streams;
 
-
-
-
 public abstract class InputStream extends Object implements Closeable {
 
     /**
      * This constructor does nothing. It is provided for signature
      * compatibility.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.127 -0500", hash_original_method = "24B6F89B4CF6382DB2E4A4E334B70B5D", hash_generated_method = "2EECC1A76387BD601C031B035C776EDD")
     
 public InputStream() {
@@ -60,6 +59,8 @@ public InputStream() {
      * @return the estimated number of bytes available
      * @throws IOException if this stream is closed or an error occurs
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.129 -0500", hash_original_method = "1AA324AC6812BCD54DB71C20D6BA0F20", hash_generated_method = "535A5456B7E25E9CEFB3AEC7B0E3E811")
     
 public int available() throws IOException {
@@ -73,6 +74,8 @@ public int available() throws IOException {
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.131 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "BDB80A0BA0CE964F390B74B4F78F39D0")
     
 public void close() throws IOException {
@@ -94,6 +97,8 @@ public void close() throws IOException {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.133 -0500", hash_original_method = "99EDC8CF58ACEFC383E40E1B1F253896", hash_generated_method = "E9F32110B83BB9B2385CC635953159DA")
     
 public void mark(int readlimit) {
@@ -108,6 +113,8 @@ public void mark(int readlimit) {
      * @see #mark(int)
      * @see #reset()
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.136 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "68CB0655189E46325916378CAE21EACC")
     
 public boolean markSupported() {
@@ -124,6 +131,8 @@ public boolean markSupported() {
      * @throws IOException
      *             if the stream is closed or another IOException occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.138 -0500", hash_original_method = "F11529017A51516EAF2106297C9899F8", hash_generated_method = "BB7CD99365BF090BE44CD77DA108B2A5")
     
 public abstract int read() throws IOException;
@@ -131,6 +140,8 @@ public abstract int read() throws IOException;
     /**
      * Equivalent to {@code read(buffer, 0, buffer.length)}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.141 -0500", hash_original_method = "73C43862A3B640F09D97EB0273F5287B", hash_generated_method = "6E5D00FFA2D494E6084FF31B9747697A")
     
 public int read(byte[] buffer) throws IOException {
@@ -157,6 +168,8 @@ public int read(byte[] buffer) throws IOException {
      * @throws IOException
      *             if the stream is closed or another IOException occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.143 -0500", hash_original_method = "287E8AA63F5F0E35884524D6430753F1", hash_generated_method = "3E33A9206B048B67D482B00E90537C7C")
     
 public int read(byte[] buffer, int offset, int length) throws IOException {
@@ -190,6 +203,8 @@ public int read(byte[] buffer, int offset, int length) throws IOException {
      * @throws IOException
      *             if this stream is closed or another IOException occurs.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.146 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "14F37672E3E44D0271E8544379E8C805")
     
 public synchronized void reset() throws IOException {
@@ -211,12 +226,13 @@ public synchronized void reset() throws IOException {
      * @throws IOException
      *             if this stream is closed or another IOException occurs.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.148 -0500", hash_original_method = "B0B2C5ABB0F3ADBF684B825EB14D5721", hash_generated_method = "49A9DBDBFE5E6C68C4E21B5D436733ED")
     
 public long skip(long byteCount) throws IOException {
         return Streams.skipByReading(this, byteCount);
     }
-
     
 }
 

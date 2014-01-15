@@ -82,6 +82,8 @@ public abstract class Enum<E extends Enum<E>> implements Serializable, Comparabl
      *            the enum constant's ordinal, which corresponds to its position
      *            in the enum declaration, starting at zero.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.922 -0500", hash_original_method = "2DD8D404884977C1C225DE3C5244FDA0", hash_generated_method = "1887E501CA6B8019D2032FB3139B9377")
     
 protected Enum(String name, int ordinal) {
@@ -96,6 +98,8 @@ protected Enum(String name, int ordinal) {
      * @return the name of this enum constant.
      * @see #toString()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.924 -0500", hash_original_method = "B829A2DCF2B6B038F9421827E4B40BDF", hash_generated_method = "45DBC829FBEEC28B377967506702788C")
     
@@ -109,6 +113,8 @@ public final String name() {
      *
      * @return the ordinal value of this enum constant.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.927 -0500", hash_original_method = "F85866CCC5D845B1D53CAF0C5BA97CF5", hash_generated_method = "B40243DEA0D5F5AC565137554CC28EF5")
     
 public final int ordinal() {
@@ -121,6 +127,8 @@ public final int ordinal() {
      *
      * @return a printable representation of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.930 -0500", hash_original_method = "0EB66BA5E965B83E191719250E0A82FF", hash_generated_method = "0D841C721535905DD0E9F7FAE6757EB9")
     
@@ -139,6 +147,8 @@ public final int ordinal() {
      * @return {@code true} if the specified object is equal to this
      *         {@code Enum}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.933 -0500", hash_original_method = "75011B979FEDB2DAAF1F1F1C2C24B4BF", hash_generated_method = "49333CCC66E5984AFB70D1F9628F7838")
     
 @Override

@@ -16,14 +16,8 @@ import android.view.accessibility.AccessibilityNodeInfo;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class CheckedTextView extends TextView implements Checkable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.345 -0500", hash_original_field = "73791D998AED7A27216E6912B00269F9", hash_generated_field = "648B080756031EA789B9ECD9F36CC170")
-
 
     private static final int[] CHECKED_STATE_SET = {
         R.attr.state_checked
@@ -53,6 +47,8 @@ public CheckedTextView(Context context) {
         this(context, null);
     }
 
+    @DSComment("CheckedTextView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.351 -0500", hash_original_method = "36596E5D7755B07B6F1DB63ABEA718CD", hash_generated_method = "1D0CEB24B3000B72361CD7EB9709FE25")
     
 public CheckedTextView(Context context, AttributeSet attrs) {
@@ -84,6 +80,8 @@ public void toggle() {
         setChecked(!mChecked);
     }
 
+    @DSComment("CheckedTextView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.358 -0500", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "6384B5CB9EB85B7EDD0B1D464AE9B509")
     
 @ViewDebug.ExportedProperty
@@ -96,6 +94,8 @@ public void toggle() {
      *
      * @param checked true to check the text, false to uncheck it
      */
+    @DSComment("CheckedTextView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.360 -0500", hash_original_method = "F58397C66404D0D65BC532CFA70D8C12", hash_generated_method = "9CAEA12A6EBD7CB2BE19312A12A237AC")
     
 public void setChecked(boolean checked) {
@@ -104,7 +104,6 @@ public void setChecked(boolean checked) {
             refreshDrawableState();
         }
     }
-
 
     /**
      * Set the checkmark to a given Drawable, identified by its resourece id. This will be drawn
@@ -133,6 +132,8 @@ public void setCheckMarkDrawable(int resid) {
      *
      * @param d The Drawable to use for the checkmark.
      */
+    @DSComment("CheckedTextView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.365 -0500", hash_original_method = "93DA6C15D035807E73845CA0E25952EE", hash_generated_method = "8FC52121B0E09B5222D817EAA98458BD")
     
 public void setCheckMarkDrawable(Drawable d) {
@@ -175,6 +176,8 @@ public void setCheckMarkDrawable(Drawable d) {
         }
     }
     
+    @DSComment("CheckedTextView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.370 -0500", hash_original_method = "7A1CD8A3A060B0E646E3DFF2DD87386A", hash_generated_method = "6BE7CB3B07281F5F2E48813DA5A8CE9F")
     
 @Override
@@ -183,6 +186,8 @@ public void setCheckMarkDrawable(Drawable d) {
         mBasePadding = mPaddingRight;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.372 -0500", hash_original_method = "B19E130BF4CF411642FF2978EAC8260B", hash_generated_method = "5283734485D27F5C9072751F8356F5BA")
     
 @Override

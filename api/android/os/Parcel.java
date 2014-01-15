@@ -17,6 +17,8 @@ import android.util.SparseBooleanArray;
 
 public final class Parcel {
     
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     public static Parcel obtain(){
 		return new Parcel(0);
 		// Original method
@@ -327,6 +329,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void recycle(){
 		// Original method
 		/*
@@ -422,18 +426,24 @@ public String[] newArray(int size) {
 		return getTaintBoolean();
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeInterfaceToken(String interfaceName){
 		//Formerly a native function
 		//Return nothing
 		addTaint(interfaceName.getTaint());
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void enforceInterface(String interfaceName){
 		//Formerly a native function
 		//Return nothing
 		addTaint(interfaceName.getTaint());
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeByteArray(byte[] b){
 		mValueByteArray = b;
@@ -468,12 +478,16 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeInt(int val){
 		//Formerly a native function
 		//Return nothing
 		addTaint(val);
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeLong(long val){
 		//Formerly a native function
 		//Return nothing
@@ -486,12 +500,16 @@ public String[] newArray(int size) {
 		addTaint(val);
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeDouble(double val){
 		//Formerly a native function
 		//Return nothing
 		addTaint((float)val);
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeString(String val){
 		//Formerly a native function
 		//Return nothing
@@ -532,6 +550,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeByte(byte val){
 		addTaint(val);
@@ -544,6 +564,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeMap(Map val){
 		mValueMap = val;
 		// Original method
@@ -575,6 +597,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeBundle(Bundle val){
 		mValueBundle = val;
 		// Original method
@@ -590,6 +614,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeList(List val){
 		mValueList = val;
 		// Original method
@@ -611,6 +637,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeArray(Object[] val){
 		mValueObjectArray = val;
@@ -792,6 +820,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeIntArray(int[] val){
 		mValueIntArray = val;
@@ -812,6 +842,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final int[] createIntArray(){
 		return mValueIntArray;
 		// Original method
@@ -1020,6 +1052,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeStringArray(String[] val){
 		mValueStringArray = val;
@@ -1040,6 +1074,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final String[] createStringArray(){
 		return mValueStringArray;
 		// Original method
@@ -1154,6 +1190,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final <T extends Parcelable> void writeTypedList(List<T> val) {
 		mValueTypedList = (List<Parcelable>) val;
 		// Original method
@@ -1249,6 +1287,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void writeValue(Object v){
 		mValueObject = v;
@@ -1257,6 +1297,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     public final void writeParcelable(Parcelable p, int parcelableFlags){
 		mValueParcelable = p;
 		// Original method
@@ -1333,6 +1375,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void writeNoException(){
 		// Original method
 		/*
@@ -1354,6 +1398,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final void readException(){
 		// Original method
 		/*
@@ -1411,11 +1457,15 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final int readInt(){
 		//Formerly a native function
 		return getTaintInt();
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final long readLong(){
 		//Formerly a native function
 		return getTaintInt();
@@ -1426,11 +1476,15 @@ public String[] newArray(int size) {
 		return getTaintFloat();
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final double readDouble(){
 		//Formerly a native function
 		return getTaintDouble();
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final String readString(){
 		//Formerly a native function
 		return mValueString;
@@ -1468,6 +1522,8 @@ public String[] newArray(int size) {
 		return mValueFileDescriptor;
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final byte readByte(){
 		return (byte)getTaintInt();
 		// Original method
@@ -1493,6 +1549,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     public final void readList(List outVal, ClassLoader loader){
 		outVal.addAll(mValueList);
 		// Original method
@@ -1505,6 +1563,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     public final HashMap readHashMap(ClassLoader loader){
 		return (HashMap)mValueMap;
 		// Original method
@@ -1521,6 +1581,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public final Bundle readBundle(){
 		return mValueBundle;
 		// Original method
@@ -1549,6 +1611,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSComment("check any serialization")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final byte[] createByteArray(){
 		//Formerly a native function
@@ -1627,6 +1691,8 @@ public String[] newArray(int size) {
 		*/
 	}
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     public final Object[] readArray(ClassLoader loader){
 		return mValueObjectArray;
 		// Original method
@@ -1882,6 +1948,8 @@ public String[] newArray(int size) {
 		//Return nothing
 	}
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final Object readValue(ClassLoader loader){
 		return mValueObject;

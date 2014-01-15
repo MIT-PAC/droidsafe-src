@@ -19,6 +19,8 @@ public class XmlPullParserException extends Exception {
     /*    public XmlPullParserException() {
           }*/
 
+    @DSComment("just an exception, nothing useful in input string")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.943 -0500", hash_original_method = "81C346207A813FD28C849879E7041B6E", hash_generated_method = "8AEBC415188C2414825B6975462CB6B6")
     
 public XmlPullParserException(String s) {
@@ -77,6 +79,8 @@ public int getColumnNumber() { return column; }
     */
 
     //NOTE: code that prints this and detail is difficult in J2ME
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.959 -0500", hash_original_method = "5154476310B69FA819C717F88BC0BDF0", hash_generated_method = "66964249575538104583078C803F14FE")
     
 public void printStackTrace() {

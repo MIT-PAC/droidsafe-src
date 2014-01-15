@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public abstract class FilterReader extends Reader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.732 -0500", hash_original_field = "905D4A99F191C55F09924512539E6D8F", hash_generated_field = "F15B9A182F31EEA4A8B216C74398FC35")
 
@@ -18,6 +16,8 @@ public abstract class FilterReader extends Reader {
      * @param in
      *            The non-null Reader to filter reads on.
      */
+    @DSComment("IO reader/writer construtor")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.735 -0500", hash_original_method = "F3D1BE373A56A0B558A4F2E00F8B10E0", hash_generated_method = "BFBF6AB2757D6E74C4636A913F75AC99")
     
 protected FilterReader(Reader in) {
@@ -193,7 +193,6 @@ protected FilterReader(Reader in) {
             return in.skip(charCount);
         }
     }
-
     
 }
 

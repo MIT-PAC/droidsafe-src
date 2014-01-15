@@ -21,6 +21,8 @@ import android.view.accessibility.AccessibilityManager;
 
 public class Toast {
     
+    @DSComment("Toast")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SCREEN})
     public static Toast makeText(Context context, CharSequence text, int duration) {
         Toast result = new Toast(context);
@@ -49,6 +51,8 @@ public class Toast {
      *
      * @throws Resources.NotFoundException if the resource can't be found.
      */
+    @DSComment("Toast")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SCREEN})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.698 -0500", hash_original_method = "DED4BD06169F84224562F0B1604E2BF3", hash_generated_method = "130DA15736FD2AED20E191F76300EB40")
     
@@ -98,6 +102,8 @@ static private INotificationManager getService() {
 
     View mNextView;
     
+    @DSComment("Toast")
+    @DSSafe(DSCat.GUI)
     public Toast(Context context) {
         mContext = context;
         /*
@@ -107,6 +113,8 @@ static private INotificationManager getService() {
          */
     }
     
+    @DSComment("Toast")
+    @DSSafe(DSCat.GUI)
     public void show() {
     	/*  DSModel: nothing
         if (mNextView == null) {
@@ -131,6 +139,8 @@ static private INotificationManager getService() {
      * Set the view to show.
      * @see #getView
      */
+    @DSComment("Toast")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.671 -0500", hash_original_method = "A152CAEDF892AE03EF7992276FE51073", hash_generated_method = "7A1335C4EBD21EC5DD94AA3AB645FF1E")
     
 public void setView(View view) {
@@ -153,6 +163,8 @@ public View getView() {
      * @see #LENGTH_SHORT
      * @see #LENGTH_LONG
      */
+    @DSComment("Toast")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.676 -0500", hash_original_method = "CFB561A2B5CB71F6E4A1F9C7A12A3738", hash_generated_method = "D51008122D27A2464E436EFAFCAD6803")
     
 public void setDuration(int duration) {
@@ -189,6 +201,8 @@ public int getDuration() {
     }
     
     //just spread around 
+    @DSComment("Toast")
+    @DSSafe(DSCat.GUI)
     public void setGravity(int gravity, int xOffset, int yOffset) {
     	addTaint(gravity);
     	addTaint(xOffset);
@@ -375,6 +389,8 @@ public void handleHide() {
         addTaint(resId);
     }
     
+    @DSComment("Toast")
+    @DSSafe(DSCat.GUI)
     public void setText(CharSequence s) {
     	addTaint(s.toString().getTaint());
     	/*

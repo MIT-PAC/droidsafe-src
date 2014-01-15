@@ -111,12 +111,16 @@ public DatabaseHelper(Context context, int newVersion) {
 
     private String[] mSuggestionProjection;
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.785 -0400", hash_original_method = "0A26B49425F8122D436D3AFA62ACEDE1", hash_generated_method = "0A26B49425F8122D436D3AFA62ACEDE1")
     public SearchRecentSuggestionsProvider ()
     {
         //Synthesized constructor
     }
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.789 -0400", hash_original_method = "E16CA3DFE54EBEC32586C921FDE66A1B", hash_generated_method = "9FEFF2961B2F4BBD03A4AA7D913329B1")
     protected void setupSuggestions(String authority, int mode) {
         if(TextUtils.isEmpty(authority) || 

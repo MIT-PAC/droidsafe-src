@@ -600,6 +600,8 @@ public void updateExtractedText(View view, int token, ExtractedText text) {
      * @param flags Provides additional operating flags.  Currently may be
      * 0 or have the {@link #SHOW_IMPLICIT} bit set.
      */
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.697 -0500", hash_original_method = "8D2F613F92BFA1616CD527BE18090765", hash_generated_method = "8B69D752E6300569DF8BE9839965005B")
     
 public boolean showSoftInput(View view, int flags) {
@@ -661,6 +663,8 @@ public void showSoftInputUnchecked(int flags, ResultReceiver resultReceiver) {
      * @param flags Provides additional operating flags.  Currently may be
      * 0 or have the {@link #HIDE_IMPLICIT_ONLY} bit set.
      */
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.720 -0500", hash_original_method = "4391301CC9B8F998B7CF2FBAB148B8AA", hash_generated_method = "F0D9750483C2385989EDC41B5E340D15")
     
 public boolean hideSoftInputFromWindow(IBinder windowToken, int flags) {
@@ -742,6 +746,8 @@ public void toggleSoftInputFromWindow(IBinder windowToken, int showFlags, int hi
      * {@link #HIDE_NOT_ALWAYS} bit set.
      * @hide
      */
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.727 -0500", hash_original_method = "79211245E8E42CAB1585D75CD7067652", hash_generated_method = "6E47BC4561ACF73C9EAAD7DCD0628FB9")
     
 public void toggleSoftInput(int showFlags, int hideFlags) {
@@ -1495,6 +1501,8 @@ public void showInputMethodAndSubtypeEnabler(String imiId) {
      * the current input method. This method returns null when the current input method doesn't
      * have any input method subtype.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.798 -0500", hash_original_method = "FD9F276F6D40BEB379032073F0CE055D", hash_generated_method = "B0AAE5461AF9B5346EE89377D430A6FF")
     

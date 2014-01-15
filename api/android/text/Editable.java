@@ -56,6 +56,8 @@ public static Editable.Factory getInstance() {
          * CharSequence.  You can override this to provide
          * a different kind of Spanned.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.817 -0500", hash_original_method = "94DC09761C02587DB61BD4F9F3F80E82", hash_generated_method = "65F50A661763606C8326FD0B68BE9239")
         
 public Editable newEditable(CharSequence source) {

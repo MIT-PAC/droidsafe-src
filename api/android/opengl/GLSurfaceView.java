@@ -105,6 +105,8 @@ public class GLSurfaceView extends SurfaceView implements SurfaceHolder.Callback
      * Standard View constructor. In order to render something, you
      * must call {@link #setRenderer} to register a renderer.
      */
+    @DSComment("OpenGL Viewer")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.479 -0500", hash_original_method = "2049D028AED77772C0EF08D2BBAE876F", hash_generated_method = "0B9876CB69076368282CCF3E5F778061")
     
 public GLSurfaceView(Context context) {
@@ -116,6 +118,8 @@ public GLSurfaceView(Context context) {
      * Standard View constructor. In order to render something, you
      * must call {@link #setRenderer} to register a renderer.
      */
+    @DSComment("OpenGL Viewer")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.482 -0500", hash_original_method = "93DD44BF6C3B90D77E42FC0AB73B1708", hash_generated_method = "88C0E6A2ABE0F69B7804229BCC880863")
     
 public GLSurfaceView(Context context, AttributeSet attrs) {
@@ -1629,6 +1633,8 @@ public void setEGLConfigChooser(int redSize, int greenSize, int blueSize,
      * EGLConfigChooser is responsible for choosing an OpenGL ES 2.0-compatible config.
      * @param version The EGLContext client version to choose. Use 2 for OpenGL ES 2.0
      */
+    @DSComment("OpenGL Viewer")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.515 -0500", hash_original_method = "50689A18B452A2797F4096E269807A99", hash_generated_method = "5092F2744009E50C24A10025D45C3888")
     
 public void setEGLContextClientVersion(int version) {
@@ -1723,6 +1729,8 @@ public void surfaceChanged(SurfaceHolder holder, int format, int w, int h) {
      * pause the rendering thread.
      * Must not be called before a renderer has been set.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.531 -0500", hash_original_method = "0214E3A2798E907A5B7DAC32A4EC375B", hash_generated_method = "AC35EA4EB7E4739DCF7C0D3E3C4344FE")
     
 public void onPause() {
@@ -1736,6 +1744,8 @@ public void onPause() {
      * thread.
      * Must not be called before a renderer has been set.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:02.533 -0500", hash_original_method = "FF9EAD78F8E3B3945B5E32D8491EF212", hash_generated_method = "2041042B986B68EBD4503ECF6F9F5FE9")
     
 public void onResume() {

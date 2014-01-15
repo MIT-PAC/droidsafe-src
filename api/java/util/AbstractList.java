@@ -18,6 +18,8 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
     /**
      * Constructs a new instance of this AbstractList.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:24.970 -0500", hash_original_method = "AFDDADD59FA06C48A3131F90ADCD1B27", hash_generated_method = "D2CD754E0F115F288E42249DC6A8FBE4")
     
 protected AbstractList() {
@@ -28,6 +30,8 @@ protected AbstractList() {
         super.addElementAt(location, object);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.421 -0400", hash_original_method = "35A5EA4215B8229218ACFA970E186418", hash_generated_method = "0127629B0B8F67B14192AFA72258FAC0")
     public boolean addAll(int location, Collection<? extends E> collection) {
         addTaint(location);
@@ -38,13 +42,17 @@ protected AbstractList() {
         return true;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.422 -0400", hash_original_method = "5B9E7BA75E1ADB49B9D7BF05321EEAAC", hash_generated_method = "C69094AE531324E916D6ECED92924926")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.422 -0400", hash_original_method = "5B9E7BA75E1ADB49B9D7BF05321EEAAC", hash_generated_method = "C69094AE531324E916D6ECED92924926")
     @Override
     public void clear() {
         super.clear();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.423 -0400", hash_original_method = "FBFDCAC8150A508191130E5D508BCC64", hash_generated_method = "204F4D2CFDFE31B104EBE1269CE6D370")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.423 -0400", hash_original_method = "FBFDCAC8150A508191130E5D508BCC64", hash_generated_method = "204F4D2CFDFE31B104EBE1269CE6D370")
     @Override
     public boolean equals(Object object) {
         return super.isEqualTo(object);
@@ -69,11 +77,15 @@ public abstract E get(int location);
         return getTaintInt();
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.426 -0400", hash_original_method = "33CCCA11E9065665C3CB5AA775E1CF23", hash_generated_method = "5A11134C6788D386CFD7B275F903E2FC")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.426 -0400", hash_original_method = "33CCCA11E9065665C3CB5AA775E1CF23", hash_generated_method = "5A11134C6788D386CFD7B275F903E2FC")
     public int indexOf(Object object) {
         return super.getIndexOf(object);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.427 -0400", hash_original_method = "20CA001488534933B2DD59F566742F0C", hash_generated_method = "FC74168216C4ED32DCE073889FCFFA54")
     @Override
@@ -90,12 +102,16 @@ public abstract E get(int location);
         return getLastIndexOf(object);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.429 -0400", hash_original_method = "DF7BE0B13ABC5A9B1C74313BD06FB64C", hash_generated_method = "0DFFD4ED180C1039DAC197DE7ED416B7")
     public ListIterator<E> listIterator() {
         return listIterator(0);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.430 -0400", hash_original_method = "E1D07920E5A846C0C2E714EA3D018977", hash_generated_method = "A397E522795A04A37957E6B7762430ED")
     public ListIterator<E> listIterator(int location) {
         ListIterator<E> varA850735745ADA094DBCC6D2BBBE0CA4F_935962105 = getListIterator(location);
@@ -126,6 +142,8 @@ public abstract E get(int location);
         //throw new UnsupportedOperationException();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.432 -0400", hash_original_method = "016990D4D05A63F7A0209311563DE785", hash_generated_method = "62FDF1A14BB0C18C80410F837219FFFC")
     public List<E> subList(int start, int end) {

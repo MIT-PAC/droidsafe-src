@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
-
-
-
 public class DSAPublicKeySpec implements KeySpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.254 -0500", hash_original_field = "7C667BA619B926582BFC8401F882439D", hash_generated_field = "E87E2F8BC9A92B0C676B9ECF48E707BE")
 
@@ -38,6 +33,8 @@ public class DSAPublicKeySpec implements KeySpec {
      * @param g
      *            the base {@code g}.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.264 -0500", hash_original_method = "59DD68ABED9CC2F6FAC8589709FFB9BA", hash_generated_method = "568471783CE3F66ED40D4B57A13AA565")
     
 public DSAPublicKeySpec(BigInteger y, BigInteger p,
@@ -91,7 +88,6 @@ public BigInteger getQ() {
 public BigInteger getY() {
         return y;
     }
-
     
 }
 

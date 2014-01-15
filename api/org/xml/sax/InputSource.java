@@ -81,6 +81,8 @@ public InputSource (String systemId)
      * @see #setByteStream
      * @see #setCharacterStream
      */
+    @DSComment("parameter is from IO")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.619 -0500", hash_original_method = "7C3B72CDCF95023F438211CC038E601E", hash_generated_method = "B633A9743DD0CC7151290BD357306BDA")
     
 public InputSource (InputStream byteStream)
@@ -103,6 +105,8 @@ public InputSource (InputStream byteStream)
      * @see #setByteStream
      * @see #setCharacterStream
      */
+    @DSComment("parameter is from IO")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:47.621 -0500", hash_original_method = "F589E4069755916CEDC29D447D78E1F5", hash_generated_method = "00DC1AEE141141E3911D24487E76D6D2")
     
 public InputSource (Reader characterStream)

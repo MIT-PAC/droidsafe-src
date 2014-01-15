@@ -28,6 +28,8 @@ public class ClipData implements Parcelable {
      * @param text The actual text in the clip.
      * @return Returns a new ClipData containing the specified data.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.666 -0500", hash_original_method = "6CB00F4121B4A367251983F994C76576", hash_generated_method = "1E4CE54ECA8AC843024EDE9ABED5CE43")
     
 static public ClipData newPlainText(CharSequence label, CharSequence text) {

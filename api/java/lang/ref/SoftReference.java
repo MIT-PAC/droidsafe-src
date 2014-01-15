@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public class SoftReference<T> extends Reference<T> {
 
     /**
@@ -14,6 +13,8 @@ public class SoftReference<T> extends Reference<T> {
      *
      * @param r the referent to track
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.957 -0500", hash_original_method = "580748AA620617AA151344F4D11AC7C2", hash_generated_method = "150253DAD26A10AB954083587CB2FFDD")
     
 public SoftReference(T r) {
@@ -34,7 +35,6 @@ public SoftReference(T r) {
 public SoftReference(T r, ReferenceQueue<? super T> q) {
         super(r, q);
     }
-
     
 }
 

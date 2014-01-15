@@ -10,6 +10,8 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 
 public class StrikethroughSpan extends CharacterStyle implements UpdateAppearance, ParcelableSpan {
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.541 -0500", hash_original_method = "70702F8DA78154CC84DD659B0C371894", hash_generated_method = "C977F971DFA9B70EA5AE0BAB05208620")
     
 public StrikethroughSpan() {

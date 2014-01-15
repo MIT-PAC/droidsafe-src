@@ -29,6 +29,8 @@ public class SecureRandom extends Random {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.241 -0500", hash_original_method = "4857474807562CBFBD7813A9B58F56F0", hash_generated_method = "FDEBE827545D7E04D2A1C0D6CBDBD07B")
     
@@ -149,6 +151,8 @@ public static byte[] getSeed(int numBytes) {
     /**
      * Constructs a new {@code SecureRandom} that uses the default algorithm.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.230 -0500", hash_original_method = "33F8886B5EAC6FEC4DE9DFB0ACBA3485", hash_generated_method = "252724BA8862B8C576B1F1E26130777D")
     
 public SecureRandom() {
@@ -239,6 +243,8 @@ public String getAlgorithm() {
      * seed}. <a href="#insecure_seed">Seeding {@code SecureRandom} may be
      * insecure</a>.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.255 -0500", hash_original_method = "8CEEFEAA85939144164B3CD7D68FA666", hash_generated_method = "6FF2926EB5B9780E8AC4BC4B5C744C2E")
     
@@ -271,6 +277,8 @@ public synchronized void setSeed(byte[] seed) {
      * @param bytes
      *            the {@code byte[]} to be filled with random bytes.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.260 -0500", hash_original_method = "AD0BFB52D4FF32A1ADE4FBCCEAA68479", hash_generated_method = "4DBBCF564FF0BC95B21F356DF0A5EC03")
     
 @Override

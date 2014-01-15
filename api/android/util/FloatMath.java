@@ -9,22 +9,32 @@ import droidsafe.helpers.DSUtils;
 
 public class FloatMath {
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static float floor(float value) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static float ceil(float value) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static float sin(float angle) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static float cos(float angle) {
         return DSUtils.UNKNOWN_FLOAT;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static float sqrt(float value) {
         return DSUtils.UNKNOWN_FLOAT;
     }

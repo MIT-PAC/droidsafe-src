@@ -13,6 +13,8 @@ public abstract class Number implements java.io.Serializable {
     /**
      * Empty default constructor.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.884 -0500", hash_original_method = "AF006D3372C503951E85770849BA1AA0", hash_generated_method = "0DDED80C3C18CBC71A1EC7B1DDA781D2")
     
 public Number() {
@@ -24,6 +26,8 @@ public Number() {
      *
      * @return the primitive byte value of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.886 -0500", hash_original_method = "CE1931476457BE311793F2D350973D7B", hash_generated_method = "CB98D0F615F6DB83A9C991B104749D4A")
     
@@ -36,6 +40,8 @@ public byte byteValue() {
      *
      * @return the primitive double value of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.888 -0500", hash_original_method = "ECE731968B529334C266D08292398822", hash_generated_method = "7EA53A2B2C1AC2DDAC0C53F7D9305ADA")
     
 public abstract double doubleValue();
@@ -45,6 +51,8 @@ public abstract double doubleValue();
      *
      * @return the primitive float value of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.891 -0500", hash_original_method = "28E8B58AB2C6301549A92ED9F41DD2A2", hash_generated_method = "D6B00E764949C7A1379BB92339FD15E8")
     
 public abstract float floatValue();
@@ -55,6 +63,8 @@ public abstract float floatValue();
      *
      * @return the primitive int value of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.893 -0500", hash_original_method = "A286406E26D7EBC018CE3A50287F7A12", hash_generated_method = "6DD28E435B306FA7438646E7A81055B0")
     
 public abstract int intValue();
@@ -65,6 +75,8 @@ public abstract int intValue();
      *
      * @return the primitive long value of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.896 -0500", hash_original_method = "B671F368853851977CE77CF906828C6B", hash_generated_method = "BD142D8A949784DEE3CDE89C2828F00A")
     
 public abstract long longValue();
@@ -75,6 +87,8 @@ public abstract long longValue();
      *
      * @return the primitive short value of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:21.898 -0500", hash_original_method = "C1E7C69DF6DC74A923544E16C9C68CB8", hash_generated_method = "E060B506A3D8C38BFF0347DB2D1D55DB")
     

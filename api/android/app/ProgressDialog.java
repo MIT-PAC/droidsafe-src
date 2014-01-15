@@ -24,6 +24,8 @@ import com.android.internal.R;
 
 public class ProgressDialog extends AlertDialog {
     
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.857 -0500", hash_original_method = "735A07E8EA3FECB061EA4EDEB18A0EB9", hash_generated_method = "F5477D72941826039516E31C68F358E3")
     
 public static ProgressDialog show(Context context, CharSequence title,
@@ -31,6 +33,8 @@ public static ProgressDialog show(Context context, CharSequence title,
         return show(context, title, message, false);
     }
 
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.859 -0500", hash_original_method = "82C9FB373B0183F4E1F162584F9FBDE1", hash_generated_method = "2ED142F3AE45F2F88589B5AB5E2AE110")
     
 public static ProgressDialog show(Context context, CharSequence title,
@@ -38,6 +42,8 @@ public static ProgressDialog show(Context context, CharSequence title,
         return show(context, title, message, indeterminate, false, null);
     }
 
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.861 -0500", hash_original_method = "D9B389952ED9A81378FC79549F38BFBD", hash_generated_method = "20653E99A704CEEC6391592E99401A0E")
     
 public static ProgressDialog show(Context context, CharSequence title,
@@ -120,6 +126,8 @@ public static ProgressDialog show(Context context, CharSequence title,
 
     private Handler mViewUpdateHandler;
     
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.850 -0500", hash_original_method = "92C5111B01C2F7487094F131EFA7D9CD", hash_generated_method = "AB3F338B4B6D93EA8D10AB9E027B4C64")
     
 public ProgressDialog(Context context) {
@@ -241,6 +249,8 @@ private void initFormats() {
         mHasStarted = false;
     }
 
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.878 -0500", hash_original_method = "23FC1AAA73A8AF68F967E7C4900FBF4D", hash_generated_method = "05F98110A99D6346FA890CEA32E6E9A3")
     
 public void setProgress(int value) {
@@ -293,6 +303,8 @@ public int getMax() {
         return mMax;
     }
 
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.889 -0500", hash_original_method = "823B39538AFD9A862BBB0CFD9EF1E653", hash_generated_method = "BDCC61E9C0CE4E6A02EC03E9E27B9042")
     
 public void setMax(int max) {
@@ -346,6 +358,8 @@ public void setIndeterminateDrawable(Drawable d) {
         }
     }
 
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.899 -0500", hash_original_method = "87844978D06A223987B222FFA166DFBA", hash_generated_method = "50465A8C6BC7AD3AA2D89E2C54ABAEF0")
     
 public void setIndeterminate(boolean indeterminate) {
@@ -365,6 +379,8 @@ public boolean isIndeterminate() {
         return mIndeterminate;
     }
     
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.905 -0500", hash_original_method = "AFD34C008702B9F6492C001F2A71B115", hash_generated_method = "653FAFF7F47E464FDECDD114561CC10B")
     
 @Override
@@ -380,6 +396,8 @@ public boolean isIndeterminate() {
         }
     }
     
+    @DSComment("GUI, progress dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.907 -0500", hash_original_method = "85F4612555E33B447C725C49965B14D6", hash_generated_method = "4A0A32BC4C602AA73094B9828B823181")
     
 public void setProgressStyle(int style) {

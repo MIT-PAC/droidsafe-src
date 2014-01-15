@@ -145,6 +145,8 @@ public int getDisplayId() {
      *
      * @param outSize A {@link Point} object to receive the size information.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.252 -0500", hash_original_method = "17F24EABE37BDCE44DDE55CD705BD7B9", hash_generated_method = "BC8EF3BA048941B41AD13CC2332CDB1B")
     
 public void getSize(Point outSize) {
@@ -223,6 +225,8 @@ public int getMaximumSizeDimension() {
     /**
      * @deprecated Use {@link #getSize(Point)} instead.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.263 -0500", hash_original_method = "2F7FD849240377F4AD58DDE704C1CFAA", hash_generated_method = "BA73A9C9C8FCBA8528451F8212BABE9D")
     
@@ -241,6 +245,8 @@ public int getMaximumSizeDimension() {
     /**
      * @deprecated Use {@link #getSize(Point)} instead.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.265 -0500", hash_original_method = "60FBCC92DE8F9EC729264DB15D46C4E8", hash_generated_method = "5643E07DE3A1DF429C96D173AA292F28")
     
@@ -348,6 +354,8 @@ public int getRawHeight() {
      * 90 degrees clockwise and thus the returned value here will be
      * {@link Surface#ROTATION_90 Surface.ROTATION_90}.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.283 -0500", hash_original_method = "0627945D4A6FEA5F8EF1880CC4DB952B", hash_generated_method = "9F82DC778CFEFA13C888B6C1F98A1C59")
     
@@ -359,6 +367,8 @@ public int getRotation() {
      * @deprecated use {@link #getRotation}
      * @return orientation of this display.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.287 -0500", hash_original_method = "6E125A4EC20477CEC647612C37C0ECFE", hash_generated_method = "579A0203D6236D81664B553F26B2711E")
     
@@ -372,6 +382,8 @@ public int getRotation() {
      * Return the native pixel format of the display.  The returned value
      * may be one of the constants int {@link android.graphics.PixelFormat}.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.289 -0500", hash_original_method = "441029F9FCB9AB0438A81D4AE48234F0", hash_generated_method = "113D6BD2144B8B471B058272F811664F")
     
@@ -382,6 +394,8 @@ public int getPixelFormat() {
     /**
      * Return the refresh rate of this display in frames per second.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.292 -0500", hash_original_method = "79009E426290AE6AA1C61D7B07738692", hash_generated_method = "915A0C2921F8E445C8BBB81C6178EFF8")
     
@@ -403,6 +417,8 @@ public float getRefreshRate() {
      *
      * @param outMetrics A {@link DisplayMetrics} object to receive the metrics.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.294 -0500", hash_original_method = "81980A722EF93A85BC60465488AFFEA3", hash_generated_method = "127EAF7824B13820ADCF3A73223C6D4F")
     
 public void getMetrics(DisplayMetrics outMetrics) {

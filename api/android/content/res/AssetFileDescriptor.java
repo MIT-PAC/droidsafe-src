@@ -87,6 +87,8 @@ public ParcelFileDescriptor getParcelFileDescriptor() {
      * Returns the FileDescriptor that can be used to read the data in the
      * file.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.741 -0500", hash_original_method = "44C1CE26DE6098783D46BD5B3EB1BDD6", hash_generated_method = "AAD5723250B4FD2A2C783AFDFFD1F5F0")
     
@@ -97,6 +99,8 @@ public FileDescriptor getFileDescriptor() {
     /**
      * Returns the byte offset where this asset entry's data starts.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.743 -0500", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "8D97620EF9AD25B7CC0B648BD738E0E0")
     
@@ -115,6 +119,8 @@ public long getStartOffset() {
      * 
      * @see #getDeclaredLength()
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.745 -0500", hash_original_method = "CF0C8205090CB57B9B1EACE80CFEFFE6", hash_generated_method = "F1D872A0D86B7EF8F27AE8B5C27ED7A5")
     
@@ -144,6 +150,8 @@ public long getDeclaredLength() {
     /**
      * Convenience for calling <code>getParcelFileDescriptor().close()</code>.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.750 -0500", hash_original_method = "491F69AA4FD12992599C16C8B0915773", hash_generated_method = "96F1DAB79A4CAC2E01C61FFEE8C1D882")
     
 public void close() throws IOException {

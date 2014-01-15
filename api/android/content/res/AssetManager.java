@@ -360,6 +360,8 @@ final CharSequence getPooledString(int block, int id) {
      * @see #open(String, int)
      * @see #list
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.900 -0500", hash_original_method = "7E1B14522C484E4F1B470AEA16F877D6", hash_generated_method = "30526FA7EE5BA7ADC855EA97F46AE7D4")
     
@@ -403,6 +405,8 @@ public final InputStream open(String fileName, int accessMode)
         throw new FileNotFoundException("Asset file: " + fileName);
     }
 
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.904 -0500", hash_original_method = "66D3D468B1706A8E526F268E61D6D3C7", hash_generated_method = "ECB3AB95CCCC59180AB77038F82E2B1F")
     
@@ -420,6 +424,8 @@ public final AssetFileDescriptor openFd(String fileName)
         throw new FileNotFoundException("Asset file: " + fileName);
     }
     
+    @DSComment("Low level access to application asset")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.101 -0400", hash_original_method = "BFE0DD4127D11EE8C7DC2AF7F1625EB3", hash_generated_method = "5671ABB042797CD529E276FD90C5DEDA")
     
     public final String[] list(String path) throws IOException {
@@ -533,6 +539,8 @@ public final AssetFileDescriptor openNonAssetFd(int cookie,
      * 
      * @param fileName The name of the file to retrieve.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.924 -0500", hash_original_method = "602B0A8D272774ACD0101F14F2575F17", hash_generated_method = "24AC78525D5C95BFCD6A262F72B1E55A")
     

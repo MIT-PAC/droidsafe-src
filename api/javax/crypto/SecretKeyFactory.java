@@ -28,6 +28,8 @@ public class SecretKeyFactory {
      * @throws NullPointerException
      *             if the specified algorithm is {@code null}.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.799 -0500", hash_original_method = "FA63063C6C30A15E13C0EA2583409D62", hash_generated_method = "F47579F88A935F5E8E05DA5C06601FD6")
     
 public static final SecretKeyFactory getInstance(String algorithm)
@@ -170,6 +172,8 @@ public final Provider getProvider() {
      *             if the specified key specification cannot be used to generate
      *             a secret key.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.811 -0500", hash_original_method = "F35C5482AA0FDE82A0C15F5E475C73A0", hash_generated_method = "7124C9FED05E541D0F774F22C9866D10")
     
 public final SecretKey generateSecret(KeySpec keySpec)

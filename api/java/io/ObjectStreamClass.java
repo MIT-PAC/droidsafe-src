@@ -1043,6 +1043,8 @@ byte getFlags() {
      *
      * @return the fully qualified name of the class this descriptor represents.
      */
+    @DSComment("class serialization")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:48.344 -0500", hash_original_method = "4A271A070FBC29EF826D1B50170E00D2", hash_generated_method = "A2E949B0EE53973533E1D165657305B6")
     

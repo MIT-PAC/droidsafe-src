@@ -26,6 +26,8 @@ public final class KeyPair implements Serializable {
      * @param privateKey
      *            the private key.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.988 -0500", hash_original_method = "283304EE488E7CC511471A1BB564958E", hash_generated_method = "86C254513ECA923A9F08846838AF5892")
     
 public KeyPair(PublicKey publicKey, PrivateKey privateKey) {
@@ -38,6 +40,8 @@ public KeyPair(PublicKey publicKey, PrivateKey privateKey) {
      *
      * @return the private key.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.990 -0500", hash_original_method = "3FFC913C725561B27B9684931E08C69F", hash_generated_method = "84368FE1E2A592A7742CA323B46771F5")
     
@@ -50,6 +54,8 @@ public PrivateKey getPrivate() {
      *
      * @return the public key.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.993 -0500", hash_original_method = "6C6DB8409915627C7F2AEC2B5C46974F", hash_generated_method = "96498FAE112785B7A14D5367EC416CAF")
     

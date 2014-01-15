@@ -136,6 +136,8 @@ public void setContentEncoding(final String ceString) {
      *
      * @param b         the new 'chunked' flag
      */
+    @DSComment("possibly edits networking data")
+    @DSSpec(DSCat.NETWORKING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.936 -0500", hash_original_method = "1B88FA65FDF60169F373F298E33E777E", hash_generated_method = "257FDFC86D61A9133D77F54CD71C658D")
     
 public void setChunked(boolean b) {

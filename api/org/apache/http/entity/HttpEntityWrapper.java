@@ -21,6 +21,8 @@ public class HttpEntityWrapper implements HttpEntity {
      *
      * @param wrapped   the entity to wrap
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.818 -0500", hash_original_method = "33160DF8469148C6436960E1E1B046E8", hash_generated_method = "3B463090CD85133EA75742B90CB4B38A")
     
 public HttpEntityWrapper(HttpEntity wrapped) {

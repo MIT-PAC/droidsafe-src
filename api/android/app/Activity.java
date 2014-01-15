@@ -263,12 +263,16 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     final Handler mHandler = new Handler();
     
-	public Activity() {
+	@DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    public Activity() {
 		super();
 		mWindow = PolicyManager.makeNewWindow((Context)this);
 	}
 
     /** Return the intent that started this activity. */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.433 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
     
@@ -286,6 +290,8 @@ public Intent getIntent() {
      * @see #getIntent
      * @see #onNewIntent
      */ 
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.438 -0500", hash_original_method = "CC61C883982068788EAC9DED2F81C9E5", hash_generated_method = "4FCD5B90D6018F4246EC2AA6BF36143F")
     
 public void setIntent(Intent newIntent) {
@@ -293,6 +299,8 @@ public void setIntent(Intent newIntent) {
     }
 
     /** Return the application that owns this activity. */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.444 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "63791FE33C4BA47B317000A8E62CC095")
     
@@ -300,6 +308,8 @@ public final Application getApplication() {
         return mApplication;
     }
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public final boolean isChild(){
 		return getTaintBoolean();
 		// Original method
@@ -311,6 +321,8 @@ public final Application getApplication() {
 	}
     
     /** Return the parent activity if this view is an embedded child. */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.456 -0500", hash_original_method = "9F036901744EF56469FFF11C0925658F", hash_generated_method = "F6946DC3F22C892A127414944808F1FB")
     
@@ -319,6 +331,8 @@ public final Activity getParent() {
     }
 
     /** Retrieve the window manager for showing custom windows. */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.462 -0500", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "0C79B12DA4736ABBDC4EC55B1426644A")
     
@@ -334,6 +348,8 @@ public WindowManager getWindowManager() {
      * @return Window The current window, or null if the activity is not
      *         visual.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.468 -0500", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "331876D44C3CE896E388411794B32F6E")
     
@@ -394,7 +410,9 @@ public Window getWindow() {
 		*/
 	}
     
-	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
 		Parcelable p = savedInstanceState.getParcelable(FRAGMENTS_TAG);
@@ -435,6 +453,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
         restoreManagedDialogs(savedInstanceState);
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
@@ -476,6 +496,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onPostCreate(Bundle savedInstanceState){
 		onTitleChanged(getTitle(), getTitleColor());
 		// Original method
@@ -491,6 +513,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onStart(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, false);
 		mLoaderManager.doStart();
@@ -514,6 +538,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onRestart(){
 		// Original method
 		/*
@@ -524,7 +550,9 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
-	protected void onResume(){
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    protected void onResume(){
 		getApplication().dispatchActivityResumed(this);
 		// Original method
 		/*
@@ -536,6 +564,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onPostResume(){
 		final Window win = getWindow();
 		win.makeActive();
@@ -573,6 +603,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
      * @see #setIntent 
      * @see #onResume 
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.580 -0500", hash_original_method = "ECA12E6FCFF6C8E6301C9A23FD34F5BD", hash_generated_method = "4ADDCDE3CE740D4C5E6F0A8FD5893823")
     
 protected void onNewIntent(Intent intent) {
@@ -593,6 +625,8 @@ final void performSaveInstanceState(Bundle outState) {
         saveManagedDialogs(outState);
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onSaveInstanceState(Bundle outState){
 		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
@@ -618,6 +652,8 @@ final void performSaveInstanceState(Bundle outState) {
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onPause(){
 		getApplication().dispatchActivityPaused(this);
 		// Original method
@@ -699,7 +735,9 @@ public CharSequence onCreateDescription() {
         return null;
     }
     
-	protected void onStop(){
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    protected void onStop(){
 		mActionBar.setShowHideAnimationEnabled(false);
 		getApplication().dispatchActivityStopped(this);
 		// Original method
@@ -713,12 +751,16 @@ public CharSequence onCreateDescription() {
 		//Return nothing
 	}
     
-	protected void onDestroy(){
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    protected void onDestroy(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onConfigurationChanged(Configuration newConfig){
 		mFragments.dispatchConfigurationChanged(newConfig);
 		mWindow.onConfigurationChanged(newConfig);
@@ -750,6 +792,8 @@ public CharSequence onCreateDescription() {
 		*/
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public Object getLastNonConfigurationInstance(){
 		return mLastNonConfigurationInstances.activity;
@@ -851,6 +895,8 @@ HashMap<String,Object> onRetainNonConfigurationChildInstances() {
 		return null;
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onLowMemory(){
 		mFragments.dispatchLowMemory();
 		// Original method
@@ -879,6 +925,8 @@ HashMap<String,Object> onRetainNonConfigurationChildInstances() {
      * Return the FragmentManager for interacting with fragments associated
      * with this activity.
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.686 -0500", hash_original_method = "C5EB33D6873EE026D87972F02E8EBD4B", hash_generated_method = "564609F83A847B122B44871EAAC2C081")
     
@@ -933,6 +981,8 @@ public void onAttachFragment(Fragment fragment) {
 		*/
 	}
     
+    @DSComment("returned DB object")
+    @DSSpec(DSCat.DATABASE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String[] selectionArgs, String sortOrder){
@@ -951,6 +1001,8 @@ public void onAttachFragment(Fragment fragment) {
 		*/
 	}
     
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @Deprecated public void startManagingCursor(Cursor c){
 		// Original method
 		/*
@@ -963,6 +1015,8 @@ public void onAttachFragment(Fragment fragment) {
 		//Return nothing
 	}
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Deprecated public void stopManagingCursor(Cursor c){
 		ManagedCursor mc = mManagedCursors.get(0);
 		mManagedCursors.remove(0);
@@ -1002,6 +1056,8 @@ public void onAttachFragment(Fragment fragment) {
      *
      * @return The view if found or null otherwise.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.731 -0500", hash_original_method = "6A267AF8CD8DFD046F9AA4A840E0F1F1", hash_generated_method = "755E2CA99C821360ADFBADF6E41C3E62")
     
 public View findViewById(int id) {
@@ -1013,6 +1069,8 @@ public View findViewById(int id) {
      *
      * @return The Activity's ActionBar, or null if it does not have one.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.736 -0500", hash_original_method = "EC6DC7C8BFDE6FF47CE21F97E3274EE5", hash_generated_method = "E5E94BEBC452D594395C0CA7D5A6B868")
     
@@ -1049,6 +1107,8 @@ public ActionBar getActionBar() {
      * @see #setContentView(android.view.View)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.747 -0500", hash_original_method = "FC4CFA409E0DBC3CD2C86D908686341E", hash_generated_method = "8A18F956B194A0C371BE43C50E45248B")
     
@@ -1072,6 +1132,8 @@ public void setContentView(int layoutResID) {
      * @see #setContentView(int)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.752 -0500", hash_original_method = "6143DA20A0E63D3DD26D6D6CC3A0350F", hash_generated_method = "68042BCA2A6984D357903A5C198D5CDB")
     
@@ -1123,6 +1185,8 @@ public void setFinishOnTouchOutside(boolean finish) {
         mWindow.setCloseOnTouchOutside(finish);
     }
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public final void setDefaultKeyMode(int mode){
 		addTaint(mode);
 		mDefaultKeySsb = new SpannableStringBuilder();
@@ -1167,6 +1231,8 @@ public void setFinishOnTouchOutside(boolean finish) {
         onGenericMotionEvent(motionEv);
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
@@ -1179,12 +1245,16 @@ public void setFinishOnTouchOutside(boolean finish) {
      * KeyEvent.Callback.onKeyLongPress()}: always returns false (doesn't handle
      * the event).
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.819 -0500", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "DCA1BD8CD57F309EE5CB42ADAEA0EA5E")
     
 public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         return false;
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onKeyUp(int keyCode, KeyEvent event){
 		getApplicationInfo();
 		onBackPressed();
@@ -1216,6 +1286,8 @@ public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         return false;
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onBackPressed(){
 		mFragments.popBackStackImmediate();
 		finish();
@@ -1385,6 +1457,8 @@ public void onContentChanged() {
      * @see #onResume
      * @see View#onWindowFocusChanged(boolean)
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.875 -0500", hash_original_method = "C7622FC561A602386C2112BC0445F7C6", hash_generated_method = "A78A7C6B763B8F194C5AA376EFC516AD")
     
 public void onWindowFocusChanged(boolean hasFocus) {
@@ -1409,6 +1483,8 @@ public void onAttachedToWindow() {
      * for more information.
      * @see View#onDetachedFromWindow
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.885 -0500", hash_original_method = "E592299EBB4DE1D6696EB8C4009A9EF4", hash_generated_method = "2C686A74CA98AB92B59E2086FB62185D")
     
 public void onDetachedFromWindow() {
@@ -1433,6 +1509,8 @@ public void onDetachedFromWindow() {
 		*/
 	}
     
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchKeyEvent(KeyEvent event){
 		onUserInteraction();
 		Window win = getWindow();
@@ -1470,6 +1548,8 @@ public void onDetachedFromWindow() {
 		*/
 	}
     
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchTouchEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev));
@@ -1556,6 +1636,8 @@ public View onCreatePanelView(int featureId) {
         return null;
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onCreatePanelMenu(int featureId, Menu menu){
 		return (onCreateOptionsMenu(menu) || mFragments.dispatchCreateOptionsMenu(menu, getMenuInflater()));
 		// Original method
@@ -1571,6 +1653,8 @@ public View onCreatePanelView(int featureId) {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
 		return (onPrepareOptionsMenu(menu) || mFragments.dispatchPrepareOptionsMenu(menu) && menu.hasVisibleItems());
 		// Original method
@@ -1586,6 +1670,8 @@ public View onCreatePanelView(int featureId) {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onMenuOpened(int featureId, Menu menu){
 		initActionBar();
 		mActionBar.dispatchMenuVisibilityChanged(true);
@@ -1607,6 +1693,8 @@ public View onCreatePanelView(int featureId) {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onMenuItemSelected(int featureId, MenuItem item){
 		EventLog.writeEvent(50000, 0, item.getTitleCondensed());
 		return (onOptionsItemSelected(item) || mFragments.dispatchContextItemSelected(item));
@@ -1633,6 +1721,8 @@ public View onCreatePanelView(int featureId) {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onPanelClosed(int featureId, Menu menu){
 		mFragments.dispatchOptionsMenuClosed(menu);
 		onOptionsMenuClosed(menu);
@@ -1664,12 +1754,16 @@ public View onCreatePanelView(int featureId) {
      * The {@link #onCreateOptionsMenu(Menu)} method will be called the next
      * time it needs to be displayed.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.957 -0500", hash_original_method = "319389EBA801B290FB41D02473EB2E9E", hash_generated_method = "D884060298BD2094521858E602829233")
     
 public void invalidateOptionsMenu() {
         mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onCreateOptionsMenu(Menu menu){
 		return mParent.onCreateOptionsMenu(menu);
 		// Original method
@@ -1683,6 +1777,8 @@ public void invalidateOptionsMenu() {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPrepareOptionsMenu(Menu menu){
 		return mParent.onPrepareOptionsMenu(menu);
 		// Original method
@@ -1696,6 +1792,8 @@ public void invalidateOptionsMenu() {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onOptionsItemSelected(MenuItem item){
 		return mParent.onOptionsItemSelected(item);
 		// Original method
@@ -1709,6 +1807,8 @@ public void invalidateOptionsMenu() {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onOptionsMenuClosed(Menu menu){
 		mParent.onOptionsMenuClosed(menu);
 		// Original method
@@ -1726,12 +1826,16 @@ public void invalidateOptionsMenu() {
      * Programmatically opens the options menu. If the options menu is already
      * open, this method does nothing.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.982 -0500", hash_original_method = "756759165F6AB2C8C6E469E63BE14186", hash_generated_method = "3C023A20572EFC197D0EAE2E2611F4F2")
     
 public void openOptionsMenu() {
         mWindow.openPanel(Window.FEATURE_OPTIONS_PANEL, null);
     }
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void closeOptionsMenu(){
 		// Original method
 		/*
@@ -1760,6 +1864,8 @@ public void openOptionsMenu() {
 public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
     }
     
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     public void registerForContextMenu(View view){
         // model the callbacks.  This code is sure to be missing things
         // There are many other types of views and adapters
@@ -1788,6 +1894,8 @@ public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuIn
      * @see #registerForContextMenu(View)
      * @param view The view that should stop showing a context menu.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.002 -0500", hash_original_method = "6A7E2B106BB1CEE7C3B668A773DE5A5B", hash_generated_method = "75D2DB67C93B9FA99A912C90753A67CE")
     
 public void unregisterForContextMenu(View view) {
@@ -1801,6 +1909,8 @@ public void unregisterForContextMenu(View view) {
      * 
      * @param view The view to show the context menu for.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.006 -0500", hash_original_method = "D1451DBD5DFD14FAE397660897192E3C", hash_generated_method = "320EBE9DAC491AFFCE2D5802170E7386")
     
@@ -1817,6 +1927,8 @@ public void closeContextMenu() {
         mWindow.closePanel(Window.FEATURE_CONTEXT_MENU);
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
@@ -1830,6 +1942,8 @@ public void closeContextMenu() {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onContextMenuClosed(Menu menu){
 		mParent.onContextMenuClosed(menu);
 		// Original method
@@ -1846,6 +1960,8 @@ public void closeContextMenu() {
     /**
      * @deprecated Old no-arguments version of {@link #onCreateDialog(int, Bundle)}.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.026 -0500", hash_original_method = "5C4ABBE5E4F27E10ACC00467798D80D8", hash_generated_method = "9BF122C6459667CD41B62EBC07FD4E1C")
     
 @Deprecated
@@ -1897,6 +2013,8 @@ public void closeContextMenu() {
      * @deprecated Old no-arguments version of
      * {@link #onPrepareDialog(int, Dialog, Bundle)}.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.036 -0500", hash_original_method = "7779942926F36CBECCFB305682D0E188", hash_generated_method = "C3F52CD22FCD74D322864C49F353283D")
     
 @Deprecated
@@ -1944,6 +2062,8 @@ public void closeContextMenu() {
      * {@link FragmentManager} instead; this is also
      * available on older platforms through the Android compatibility package.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.047 -0500", hash_original_method = "C69337B465910082B7749F46A60AEA22", hash_generated_method = "A523825C3D07C3A197C2A716CB3C1348")
     
 @Deprecated
@@ -1984,6 +2104,8 @@ public void closeContextMenu() {
 		*/
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @Deprecated public final void dismissDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
@@ -2015,6 +2137,8 @@ public void closeContextMenu() {
 		*/
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @Deprecated public final void removeDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
@@ -2034,6 +2158,8 @@ public void closeContextMenu() {
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onSearchRequested(){
 		startSearch(null, false, null, false); 
         return getTaintBoolean();
@@ -2046,6 +2172,8 @@ public void closeContextMenu() {
 		*/
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void startSearch(String initialQuery, boolean selectInitialQuery, 
             Bundle appSearchData, boolean globalSearch){
@@ -2108,6 +2236,8 @@ public void takeKeyEvents(boolean get) {
      * 
      * @see android.view.Window#requestFeature
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.093 -0500", hash_original_method = "3CDF417FCD4F33EAE6CFCF0FB6D583A8", hash_generated_method = "881FBD2BDEED0015ADB64FC143BF0105")
     
 public final boolean requestWindowFeature(int featureId) {
@@ -2161,6 +2291,8 @@ public final void setFeatureDrawableAlpha(int featureId, int alpha) {
      * Convenience for calling
      * {@link android.view.Window#getLayoutInflater}.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.117 -0500", hash_original_method = "2F200E491A9F2CDC38C392035D21ED48", hash_generated_method = "3A16D6A7B6ED88109371E767B4893157")
     
@@ -2168,6 +2300,8 @@ public LayoutInflater getLayoutInflater() {
         return getWindow().getLayoutInflater();
     }
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public MenuInflater getMenuInflater(){
 		initActionBar();
@@ -2212,7 +2346,9 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
-	@DSSink({DSSinkKind.START_ACTIVITY})
+	@DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startActivityForResult(Intent intent, int requestCode){
 		/*
         The modeling required here will create the call to onActivityResult that 
@@ -2278,6 +2414,8 @@ public LayoutInflater getLayoutInflater() {
 		//Return nothing
 	}
     
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.START_ACTIVITY})
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
@@ -2457,6 +2595,8 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
         }
     }
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public final void setResult(int resultCode){
 		addTaint(resultCode);
 		// Original method
@@ -2471,6 +2611,8 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
 		//Return nothing
 	}
     
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     public final void setResult(int resultCode, Intent data){
 		addTaint(resultCode);
 		mResultData = data;
@@ -2500,6 +2642,8 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
      * @return The package of the activity that will receive your
      *         reply, or null if none.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.207 -0500", hash_original_method = "88476E01B039440C5805C3F210A00F20", hash_generated_method = "58BEC1DE13ECDF0590CAF7A4888B9BD6")
     
@@ -2525,6 +2669,8 @@ public String getCallingPackage() {
      * @return String The full name of the activity that will receive your
      *         reply, or null if none.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.212 -0500", hash_original_method = "BA5844B2C9F3C6D12393731B7AECDFB9", hash_generated_method = "7A4424A9746EA476713AFC880E62344D")
     
@@ -2573,6 +2719,8 @@ public ComponentName getCallingActivity() {
 		//Return nothing
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public boolean isFinishing(){
 		return getTaintBoolean();
 		// Original method
@@ -2610,6 +2758,8 @@ public ComponentName getCallingActivity() {
 		//Return nothing
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void finish(){
 		Log.v(TAG, "Finishing self: token=" + mToken);
 		mResultData.setAllowFds(false);
@@ -2663,6 +2813,8 @@ public void finishFromChild(Activity child) {
         finish();
     }
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void finishActivity(int requestCode){
 		try {
             ActivityManagerNative.getDefault()
@@ -2728,6 +2880,8 @@ public void finishActivityFromChild(Activity child, int requestCode) {
      * @see #createPendingResult
      * @see #setResult(int)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.263 -0500", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "62DF0F5F92A373B4F8B7952D89BB1F57")
     
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -2766,6 +2920,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		*/
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRequestedOrientation(int requestedOrientation){
 		try {
@@ -2791,6 +2947,8 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		//Return nothing
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getRequestedOrientation(){
 		int retval = 0;
@@ -2862,6 +3020,8 @@ public boolean isTaskRoot() {
      * @return If the task was moved (or it was already at the
      *         back) true is returned, else false.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.293 -0500", hash_original_method = "9A59EFD62BA4B2B1BB27D9BF60C81F37", hash_generated_method = "9A63345DB58A1324761EA6E89EC078E6")
     
 public boolean moveTaskToBack(boolean nonRoot) {
@@ -2874,6 +3034,8 @@ public boolean moveTaskToBack(boolean nonRoot) {
         return false;
     }
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getLocalClassName(){
 		return mComponent.getClassName();
@@ -2897,6 +3059,8 @@ public boolean moveTaskToBack(boolean nonRoot) {
      * 
      * @return Returns the complete component name for this activity
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.304 -0500", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "0218C20A36476A71EF5D80D906810879")
     
@@ -2918,6 +3082,8 @@ public ComponentName getComponentName()
      * @return Returns the single SharedPreferences instance that can be used
      *         to retrieve and modify the preference values.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.308 -0500", hash_original_method = "8FF11253989B916424A8F19A417B9894", hash_generated_method = "6A7862010CB94E91BABA8CAE44E8E9B2")
     
@@ -2939,7 +3105,9 @@ public SharedPreferences getPreferences(int mode) {
 		//Return nothing
 	}
     
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override public Object getSystemService(String name){
        
         if (DroidSafeAndroidRuntime.control || getBaseContext()==null) {
@@ -2977,6 +3145,8 @@ public SharedPreferences getPreferences(int mode) {
 		*/
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void setTitle(CharSequence title){
 		mTitle = title;  //Preserved
 		onTitleChanged(title, mTitleColor);
@@ -3000,6 +3170,8 @@ public SharedPreferences getPreferences(int mode) {
      * is an embedded activity, the parent can do whatever it wants
      * with it.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.328 -0500", hash_original_method = "A39F8277E51A7F6BD4A471D6255FEBC5", hash_generated_method = "7A9BBE5713B6FFC0915F0D939CBD832F")
     
@@ -3020,6 +3192,8 @@ public void setTitle(int titleId) {
 		//Return nothing
 	}
 
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.337 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "8E68CAEF2DE68CDDD808B8D3534F95EE")
     
@@ -3038,6 +3212,8 @@ public final CharSequence getTitle() {
 		*/
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onTitleChanged(CharSequence title, int color){
 		final Window win = getWindow();
 		win.setTitle(title);
@@ -3064,6 +3240,8 @@ public final CharSequence getTitle() {
 protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
     }
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
@@ -3077,6 +3255,8 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarIndeterminateVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_INDETERMINATE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
@@ -3090,6 +3270,8 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarIndeterminate(boolean indeterminate){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_INDETERMINATE_ON);
@@ -3103,6 +3285,8 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgress(int progress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_START);
@@ -3115,6 +3299,8 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setSecondaryProgress(int secondaryProgress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_SECONDARY_START);
@@ -3128,6 +3314,8 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		//Return nothing
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setVolumeControlStream(int streamType){
 		getWindow().setVolumeControlStream(0);
@@ -3155,7 +3343,9 @@ public final int getVolumeControlStream() {
         return getWindow().getVolumeControlStream();
     }
     
-	public final void runOnUiThread(Runnable action){
+	@DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    public final void runOnUiThread(Runnable action){
 		mHandler.post(action);
 		action.run();
 		// Original method
@@ -3171,6 +3361,8 @@ public final int getVolumeControlStream() {
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public View onCreateView(String name, Context context, AttributeSet attrs){
 		// Original method
 		/*
@@ -3188,6 +3380,8 @@ public final int getVolumeControlStream() {
 		return new View(context);
 	}
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.FILE})
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){
 		// Original method

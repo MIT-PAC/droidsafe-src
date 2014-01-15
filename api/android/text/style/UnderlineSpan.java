@@ -10,6 +10,8 @@ import android.text.TextPaint;
 import android.text.TextUtils;
 
 public class UnderlineSpan extends CharacterStyle implements UpdateAppearance, ParcelableSpan {
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.698 -0500", hash_original_method = "0961EBA9EB7C20D52B677528162BDFE2", hash_generated_method = "65F63C6B3B84B4696FABA57EF724E21D")
     
 public UnderlineSpan() {

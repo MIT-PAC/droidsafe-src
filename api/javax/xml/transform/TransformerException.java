@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class TransformerException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.391 -0500", hash_original_field = "5558AD85FB938A7671619C5EC4E7AF73", hash_generated_field = "FAB3AA9E21148B68815314C0C638BF27")
 
@@ -287,6 +283,8 @@ public String getLocationAsString() {
      * originated.  This will trace all nested exception
      * objects, as well as this object.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.427 -0500", hash_original_method = "BFEE5D773C8C1A637BA8549A5548CE5E", hash_generated_method = "E341FECD54C25953BA09A90E6F690069")
     
 public void printStackTrace() {

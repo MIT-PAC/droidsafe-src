@@ -588,6 +588,8 @@ private boolean getTargetCheckedState() {
         return mThumbPosition >= getThumbScrollRange() / 2;
     }
 
+    @DSComment("Switch, UI only")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:39.005 -0500", hash_original_method = "523B4C6A0F0C2AD264BC263A9EEF64F2", hash_generated_method = "FDD4E576576EBC4CBE518A8A70E671CF")
     

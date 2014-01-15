@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class InterruptedIOException extends IOException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.620 -0500", hash_original_field = "D1BB675B1635CBE9F0E1026ABD5ABCD7", hash_generated_field = "00B7350ACE79265F1BE5866C28B5A783")
-
 
     private static final long serialVersionUID = 4020568460727500567L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.622 -0500", hash_original_field = "BD85AB55237C037827FEDC1A9DD400CE", hash_generated_field = "ADADEC4FF5BBED2ACE9FA0E36B78EE7E")
@@ -29,6 +24,8 @@ public InterruptedIOException() {
     /**
      * Constructs a new instance with the given detail message.
      */
+    @DSComment("exception message, is only a data structure")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.628 -0500", hash_original_method = "9DCF8CB18681541ED5194D8FB0295B7F", hash_generated_method = "837332240A809019E15EECCF3637FEBC")
     
 public InterruptedIOException(String detailMessage) {

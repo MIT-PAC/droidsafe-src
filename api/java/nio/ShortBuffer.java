@@ -36,6 +36,8 @@ public static ShortBuffer allocate(int capacity) {
      *            the short array which the new buffer will be based on.
      * @return the created short buffer.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.368 -0500", hash_original_method = "8B4AACC8CC10C13D135A06929763BDF6", hash_generated_method = "509E98722C673CDBAA01B76811FD1BC5")
     
 public static ShortBuffer wrap(short[] array) {

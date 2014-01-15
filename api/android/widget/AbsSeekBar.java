@@ -180,6 +180,8 @@ public int getKeyProgressIncrement() {
         return mKeyProgressIncrement;
     }
     
+    @DSComment("Abstract SeekBar")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.428 -0500", hash_original_method = "B86F9FD250EB4E355A6234A6154554E5", hash_generated_method = "CA2AA6C75D79CE639A6D579C54BBA41C")
     

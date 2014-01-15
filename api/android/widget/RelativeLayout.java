@@ -126,12 +126,16 @@ public class RelativeLayout extends ViewGroup {
 
     private final DependencyGraph mGraph = new DependencyGraph();
 
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.820 -0500", hash_original_method = "88251BE26FFBF8D7F97872F9366B970C", hash_generated_method = "BA05857430E8CEE496EDF9209AE2C671")
     
 public RelativeLayout(Context context) {
         super(context);
     }
 
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.822 -0500", hash_original_method = "9502583C8FA8687465E0A06E15614A2F", hash_generated_method = "47D2CAF223A3954AE429BCD5431860B7")
     
 public RelativeLayout(Context context, AttributeSet attrs) {
@@ -139,6 +143,8 @@ public RelativeLayout(Context context, AttributeSet attrs) {
         initFromAttributes(context, attrs);
     }
 
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.825 -0500", hash_original_method = "4BEC7267CBAB87A927F52EE3092CF249", hash_generated_method = "A841B418971C03DC56CB5B1F78E892E2")
     
 public RelativeLayout(Context context, AttributeSet attrs, int defStyle) {
@@ -440,6 +446,8 @@ public LayoutParams(Context c, AttributeSet attrs) {
             a.recycle();
         }
 
+        @DSComment("Layout info")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.926 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
         
 public LayoutParams(int w, int h) {
@@ -484,6 +492,8 @@ public LayoutParams(ViewGroup.MarginLayoutParams source) {
          *        ALIGN_WITH_PARENT_LEFT.
          * @see #addRule(int, int)
          */
+        @DSComment("Layout info")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.935 -0500", hash_original_method = "F14B7CDC14D112CF9F86D0C64F4D29ED", hash_generated_method = "F888C197D33A9DD27F819D40D54B028F")
         
 public void addRule(int verb) {
@@ -504,6 +514,8 @@ public void addRule(int verb) {
          *        (for example, ALIGN_WITH_PARENT_BOTTOM) just use -1.
          * @see #addRule(int)
          */
+        @DSComment("Layout info")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.937 -0500", hash_original_method = "E6336A158C939972C1CFCFE234B123CF", hash_generated_method = "77CD180C6E32DEBAEFF64B715469A756")
         
 public void addRule(int verb, int anchor) {
@@ -859,6 +871,8 @@ void release() {
 
     // TODO: we need to find another way to implement RelativeLayout
     // This implementation cannot handle every case
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.854 -0500", hash_original_method = "E2AF18A4E301BF9A8D0B175790671ACC", hash_generated_method = "182B860CF816F14578C0BA51E4345437")
     
 @Override
@@ -1491,6 +1505,8 @@ private void centerVertical(View child, LayoutParams params, int myHeight) {
         params.mBottom = top + childHeight;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:46.891 -0500", hash_original_method = "05FEBBF616C51C2D421358B4A05D22CE", hash_generated_method = "C8BD01794E72F9D0106426EDAF308952")
     
 @Override

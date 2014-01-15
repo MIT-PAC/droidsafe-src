@@ -524,6 +524,8 @@ public static boolean isModifierKey(int keyCode) {
      * @param metaState The meta state.
      * @return The normalized meta state.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.214 -0500", hash_original_method = "FF10B1355184AC33BC9231DF2B9CE844", hash_generated_method = "70396B0C1D137396605B4EA5F4340D54")
     
 public static int normalizeMetaState(int metaState) {
@@ -566,6 +568,8 @@ public static int normalizeMetaState(int metaState) {
      * @return True if no modifier keys are pressed.
      * @see #hasNoModifiers()
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.217 -0500", hash_original_method = "39D9C16C68B6F41FF034537B98CA7050", hash_generated_method = "6ED68D3D6D1147E4BF5835F1709BF84F")
     
 public static boolean metaStateHasNoModifiers(int metaState) {
@@ -601,6 +605,8 @@ public static boolean metaStateHasNoModifiers(int metaState) {
      * @throws IllegalArgumentException if the modifiers parameter contains invalid modifiers
      * @see #hasModifiers
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.219 -0500", hash_original_method = "D72AA7105D31CF87A5590A7971CE1BB6", hash_generated_method = "BC6A634685E84C95F80919A71C2522FF")
     
 public static boolean metaStateHasModifiers(int metaState, int modifiers) {
@@ -1828,6 +1834,8 @@ public KeyEvent[] newArray(int size) {
      * {@link #ACTION_UP}, or {@link #ACTION_MULTIPLE}.
      * @param code The key code.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.105 -0500", hash_original_method = "CD3F04ECBB2EC92C58F1141FB07383F6", hash_generated_method = "7509218E07DB23DEEBB2B9ADF8607D42")
     
 public KeyEvent(int action, int code) {
@@ -1876,6 +1884,8 @@ public KeyEvent(long downTime, long eventTime, int action,
      * initial down) or event count for multiple events.
      * @param metaState Flags indicating which meta keys are currently pressed.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.111 -0500", hash_original_method = "25AD2761B1583202D71C2F5EBFFC872D", hash_generated_method = "69582AB8397B519D69D2F4FAB99E0C11")
     
 public KeyEvent(long downTime, long eventTime, int action,
@@ -2243,6 +2253,8 @@ public final boolean hasDefaultAction() {
      * @see #META_SCROLL_LOCK_ON
      * @see #getModifiers
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.185 -0500", hash_original_method = "8A0F7162152E6ECED85F47A14B4B5FFC", hash_generated_method = "78D86D905B6385129B1C9EEB9CFA8449")
     
@@ -2347,6 +2359,8 @@ public final boolean hasModifiers(int modifiers) {
      * @see #KEYCODE_ALT_RIGHT
      * @see #META_ALT_ON
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.230 -0500", hash_original_method = "97586FBB5F886A3B61BF136A6C082407", hash_generated_method = "7B0913A521E93CC952C8B98D17B0A583")
     
 public final boolean isAltPressed() {
@@ -2362,6 +2376,8 @@ public final boolean isAltPressed() {
      * @see #KEYCODE_SHIFT_RIGHT
      * @see #META_SHIFT_ON
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.233 -0500", hash_original_method = "CCAFE012B2273AEF4F41D4D6D0D204B5", hash_generated_method = "1CCA673789072683B3CF10664704A170")
     
 public final boolean isShiftPressed() {
@@ -2474,6 +2490,8 @@ public final boolean isScrollLockOn() {
      * 
      * @return The event action: ACTION_DOWN, ACTION_UP, or ACTION_MULTIPLE.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.251 -0500", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "76861B724DE778DC880D3D0375E21B8D")
     
@@ -2519,6 +2537,8 @@ public final boolean isTracking() {
      * For {@link #ACTION_DOWN} events, indicates that the event has been
      * canceled as per {@link #FLAG_LONG_PRESS}.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.262 -0500", hash_original_method = "AC7740C0A8B7B97C4388CB1808E16854", hash_generated_method = "D9615C8625B57D85D394106FAA71C912")
     
 public final boolean isLongPress() {
@@ -2531,6 +2551,8 @@ public final boolean isLongPress() {
      * 
      * @return The key code of the event.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.265 -0500", hash_original_method = "AA2A4756B9F9E3EBD53F7A185B310C03", hash_generated_method = "5529A683B3D9F1E49CF91B4CB6E54CBC")
     
@@ -2546,6 +2568,8 @@ public final int getKeyCode() {
      * @return Returns a String of 1 or more characters associated with
      * the event.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.267 -0500", hash_original_method = "E7E0F27294714D41CE9B0DB8FACE7352", hash_generated_method = "7EEF7FA6F099A474C3BC1AD761880753")
     
@@ -2575,6 +2599,8 @@ public final int getScanCode() {
      * 
      * @return The number of times the key has repeated.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.272 -0500", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "BF1FFFF7864A26F75F1F53545CCD4C5A")
     
@@ -2607,6 +2633,8 @@ public final long getDownTime() {
      * @return Returns the time this event occurred, 
      * in the {@link android.os.SystemClock#uptimeMillis} time base.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.277 -0500", hash_original_method = "9909149D86C7172035BFD4D31C880F99", hash_generated_method = "FFD024D4791F2C5768014ED38CE2494E")
     
@@ -2713,6 +2741,8 @@ public int getUnicodeChar() {
      * @param metaState The meta key modifier state.
      * @return The associated character or combining accent, or 0 if none.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.291 -0500", hash_original_method = "BE11FB783D347EE88A5E4A6075D1C256", hash_generated_method = "DF5709942362126343272935B1D1CC5E")
     

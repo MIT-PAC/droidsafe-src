@@ -22,6 +22,8 @@ public abstract class AbstractMap<K, V> implements Map<K, V> {
     HashSet<Entry<K,V>> backingEntrySet = new HashSet<Entry<K,V>>();
     protected int capacity = DEF_MAP_SIZE;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.235 -0500", hash_original_method = "38C8E9EBD98120A2B6A13CBC6F342ADF", hash_generated_method = "B1D961F5E0533851507A1609E87B76A2")
     
 protected AbstractMap() {
@@ -309,6 +311,8 @@ public void putAll(Map<? extends K, ? extends V> map) {
      * this map contains itself as a key or a value, the string "(this Map)"
      * will appear in its place.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.293 -0500", hash_original_method = "03506E32B26B17661064F3FFDE4F185F", hash_generated_method = "FE18E3871177E49857452EE0E11F67D8")
     
@@ -343,6 +347,8 @@ public void putAll(Map<? extends K, ? extends V> map) {
         return buffer.toString();
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:55.248 -0400", hash_original_method = "BE68DB72EA44A9864EFB8085A73DD13D", hash_generated_method = "FFF60DD0BB73731BB57AABB5E433364A")
     public Collection<V> values() {

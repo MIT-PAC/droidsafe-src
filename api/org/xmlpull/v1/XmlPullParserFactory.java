@@ -17,6 +17,8 @@ public class XmlPullParserFactory {
      *
      * @return a new instance of a PullParserFactory, as returned by newInstance (null, null);
      */
+    @DSComment("no input, no suspicious activity to abstract method")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.125 -0500", hash_original_method = "FDB67D996B87AFA9828831030DD04774", hash_generated_method = "CF201CA93963A12DA7AA2B504A495C37")
     
 public static XmlPullParserFactory newInstance () throws XmlPullParserException {
@@ -260,6 +262,8 @@ public boolean isValidating() {
      * requested configuration.
      */
 
+    @DSComment("no input, no suspicious activity and output is just an instance of a parser")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.119 -0500", hash_original_method = "0194E8A94417A2CEABB2D1EB1F726482", hash_generated_method = "C0016DE88A673311BBA5B3D10DAC16C8")
     
 public XmlPullParser newPullParser() throws XmlPullParserException {

@@ -76,6 +76,8 @@ private static String region(int start, int end) {
     /**
      * Create a new SpannableStringBuilder with empty contents
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.768 -0500", hash_original_method = "FC61BFC3FC94A92F6E91F05B84386B00", hash_generated_method = "EE7A28C6AC161E3A60759D67AD59E395")
     
 public SpannableStringBuilder() {
@@ -86,6 +88,8 @@ public SpannableStringBuilder() {
      * Create a new SpannableStringBuilder containing a copy of the
      * specified text, including its spans if any.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.771 -0500", hash_original_method = "9676D8694A6D1EC55F8FB5E1D9DC6D95", hash_generated_method = "03BD07DEFCF254DA0DD3FE825F1CB381")
     
 public SpannableStringBuilder(CharSequence text) {
@@ -162,6 +166,8 @@ public char charAt(int where) {
             return mText[where];
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	public int length() {
 		// TODO Auto-generated method stub
@@ -463,6 +469,8 @@ private void removeSpan(int i) {
     }
 
     // Documentation from interface
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.823 -0500", hash_original_method = "F007284EC0E266D0B466C6FB60440DED", hash_generated_method = "77C79B68B302FE1DE97B168BF29FC276")
     
 public SpannableStringBuilder replace(int start, int end, CharSequence tb) {
@@ -562,6 +570,8 @@ public SpannableStringBuilder replace(final int start, final int end,
         return this; 
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public void setSpan(Object what, int start, int end, int flags) {
@@ -673,6 +683,8 @@ private void setSpan(boolean send, Object what, int start, int end, int flags) {
      * Return the buffer offset of the beginning of the specified
      * markup object, or -1 if it is not attached to this buffer.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.839 -0500", hash_original_method = "DD4C166AC7D5C475EE46AC767DBD33EB", hash_generated_method = "D57039BB89705C38EEC76A5F0188763A")
     
@@ -698,6 +710,8 @@ public int getSpanStart(Object what) {
      * Return the buffer offset of the end of the specified
      * markup object, or -1 if it is not attached to this buffer.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.842 -0500", hash_original_method = "1CAC5A6045B202B1FC928510B17AEEDD", hash_generated_method = "37B0998B57691BB4CF884757474F4BED")
     
@@ -739,6 +753,8 @@ public int getSpanFlags(Object what) {
         return 0; 
     }
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.053 -0400", hash_original_method = "5CF7F75C8FAF8266A003E04C7C47A211", hash_generated_method = "F368E210A8A158B84C6EA5269A715CDD")
     @SuppressWarnings("unchecked")
@@ -859,6 +875,8 @@ T[] var785F7C6C4DBBD240B854AFDE8D881E30_290589019 =         nret;
      * equal to <code>limit</code> where a span of the specified type
      * begins or ends.
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:19.851 -0500", hash_original_method = "AC3B57A902A92307655B10B6A320F4FA", hash_generated_method = "08EF0D2A48EFF10756158651773C6BD1")
     
 public int nextSpanTransition(int start, int limit, Class kind) {
@@ -891,6 +909,8 @@ public int nextSpanTransition(int start, int limit, Class kind) {
         return limit;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
@@ -902,6 +922,8 @@ public int nextSpanTransition(int start, int limit, Class kind) {
 		// TODO Auto-generated method stub
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
 	
 	public String toString() {

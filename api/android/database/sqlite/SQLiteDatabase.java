@@ -793,6 +793,8 @@ private void checkLockHoldTime() {
      *   }
      * </pre>
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.089 -0500", hash_original_method = "36B8D50340D02900F098E44F066CFF12", hash_generated_method = "A6184A05F618D1808B44159CDC4ECD60")
     
 public void beginTransaction() {
@@ -956,6 +958,8 @@ public void beginTransactionWithListenerNonExclusive(
      * End a transaction. See beginTransaction for notes about how to use this and when transactions
      * are committed and rolled back.
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.103 -0500", hash_original_method = "94F2931FC5A304B6FE8748C95A17E4E3", hash_generated_method = "64FA759270A3DC58F469CF8706A639DD")
     
 public void endTransaction() {
@@ -1032,6 +1036,8 @@ public void endTransaction() {
      * @throws IllegalStateException if the current thread is not in a transaction or the
      * transaction is already marked as successful.
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.106 -0500", hash_original_method = "CAD10DEB5A167AB4D97D078F2E23C48E", hash_generated_method = "11423CA2AB953135C722FCDBA12D61D5")
     
 public void setTransactionSuccessful() {
@@ -1246,6 +1252,8 @@ private void setJournalMode(final String dbPath, final String mode) {
     /**
      * Close the database.
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.160 -0500", hash_original_method = "F057ECACA47F2E639159F91F6FF25AA8", hash_generated_method = "BC9E75A207746F095F3747302163154C")
     
 public void close() {
@@ -1539,6 +1547,8 @@ public void setPageSize(long numBytes) {
      * @return A pre-compiled {@link SQLiteStatement} object. Note that
      * {@link SQLiteStatement}s are not synchronized, see the documentation for more details.
      */
+    @DSComment("returned DB object")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.211 -0500", hash_original_method = "C05C583B39FD005C236783082CBB4E55", hash_generated_method = "A1E3106D38FC0C0A02CB8FBC096B7941")
     
 public SQLiteStatement compileStatement(String sql) throws SQLException {
@@ -1577,6 +1587,8 @@ public SQLiteStatement compileStatement(String sql) throws SQLException {
      * {@link Cursor}s are not synchronized, see the documentation for more details.
      * @see Cursor
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.214 -0500", hash_original_method = "5E1B6C3D7A97420E0A4D0244321FA1D0", hash_generated_method = "929CBBED5277B13A2B69F28022B581F4")
     
@@ -1661,6 +1673,8 @@ public Cursor queryWithFactory(CursorFactory cursorFactory,
      * {@link Cursor}s are not synchronized, see the documentation for more details.
      * @see Cursor
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.219 -0500", hash_original_method = "823CC97B8BCC24B1EEF8A14CAC46F9D2", hash_generated_method = "33B19BE5321EBE883516789006AFBE2B")
     
@@ -1702,6 +1716,8 @@ public Cursor query(String table, String[] columns, String selection,
      * {@link Cursor}s are not synchronized, see the documentation for more details.
      * @see Cursor
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.221 -0500", hash_original_method = "C821013CE8C43126ED02ADCC7264C8CF", hash_generated_method = "AED839395EA89BCFAD47AF44D0DAF931")
     
@@ -1723,6 +1739,8 @@ public Cursor query(String table, String[] columns, String selection,
      * @return A {@link Cursor} object, which is positioned before the first entry. Note that
      * {@link Cursor}s are not synchronized, see the documentation for more details.
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.224 -0500", hash_original_method = "76B8F97A589187A4837E14E72F2396A8", hash_generated_method = "65A12FD6153DC4A6ABBCE28A6BA06DA3")
     
@@ -1780,6 +1798,8 @@ public Cursor rawQueryWithFactory(
      *            column values
      * @return the row ID of the newly inserted row, or -1 if an error occurred
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.229 -0500", hash_original_method = "7C0142B65481E16DCFB76B6C0BD0AF64", hash_generated_method = "B95E58E579B5A6D9594C3B5AF493AAD3")
     
 public long insert(String table, String nullColumnHack, ContentValues values) {
@@ -1808,6 +1828,8 @@ public long insert(String table, String nullColumnHack, ContentValues values) {
      * @throws SQLException
      * @return the row ID of the newly inserted row, or -1 if an error occurred
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.231 -0500", hash_original_method = "2F31CF2160A369C3FFDDD251C32C2819", hash_generated_method = "F605A67F6DEF3B004B61DFD6347CBF40")
     
 public long insertOrThrow(String table, String nullColumnHack, ContentValues values)
@@ -1830,6 +1852,8 @@ public long insertOrThrow(String table, String nullColumnHack, ContentValues val
      *   the row.
      * @return the row ID of the newly inserted row, or -1 if an error occurred
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.233 -0500", hash_original_method = "4277B606CBD58106C26DEC9C427B6DC5", hash_generated_method = "D93C3A5FF6004870E4D48B8BE0C8E3BD")
     
 public long replace(String table, String nullColumnHack, ContentValues initialValues) {
@@ -1938,6 +1962,8 @@ public long insertWithOnConflict(String table, String nullColumnHack,
      *         otherwise. To remove all rows and get a count pass "1" as the
      *         whereClause.
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.243 -0500", hash_original_method = "D469CE4575675C51277223F3405EF96C", hash_generated_method = "D0BCB9EE048794547343EB781D55E762")
     
 public int delete(String table, String whereClause, String[] whereArgs) {
@@ -1963,6 +1989,8 @@ public int delete(String table, String whereClause, String[] whereArgs) {
      *            Passing null will update all rows.
      * @return the number of rows affected
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.245 -0500", hash_original_method = "1314F51B10A849824DA60B76F1896857", hash_generated_method = "46D3DA0A1268F6E19F89D81DC65B48FD")
     
@@ -2053,6 +2081,8 @@ for(i = setValuesSize;i < bindArgsSize;i++)
      * not supported.
      * @throws SQLException if the SQL string is invalid
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.250 -0500", hash_original_method = "25D536EB53093A036E9DAE961A0D97E6", hash_generated_method = "D29CB13B2063DDA1D0AA901FD0386254")
     
 public void execSQL(String sql) throws SQLException {
@@ -2170,6 +2200,8 @@ public boolean isReadOnly() {
     /**
      * @return true if the DB is currently open (has not been closed)
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:41.266 -0500", hash_original_method = "61E254D128D08D9B7DD7C5EEB86B883E", hash_generated_method = "A1637FC4A8E8E14962FA82A2C62D9651")
     
 public boolean isOpen() {

@@ -106,6 +106,8 @@ public static ValueAnimator ofObject(TypeEvaluator evaluator, Object... values) 
      *
      * @return the requested time between frames, in milliseconds
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.718 -0500", hash_original_method = "07F990A9818D41589C4C2DC1FA0032A4", hash_generated_method = "2E8CE722FBAD7FDECF44ADD41AB08358")
     
@@ -901,6 +903,8 @@ public void removeUpdateListener(AnimatorUpdateListener listener) {
      * @param value the interpolator to be used by this animation. A value of <code>null</code>
      * will result in linear interpolation.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:32.743 -0500", hash_original_method = "AF77FCDF6C80D02141639AFD7587863F", hash_generated_method = "4F62FE38115F24E7CC56E815655E53F2")
     
 @Override

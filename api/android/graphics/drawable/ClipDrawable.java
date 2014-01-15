@@ -40,6 +40,8 @@ ClipDrawable() {
     /**
      * @param orientation Bitwise-or of {@link #HORIZONTAL} and/or {@link #VERTICAL}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.838 -0500", hash_original_method = "5201E74D3B1AF986B1DE2C301B497FD9", hash_generated_method = "CC0C7583D1B4ABD557AEAD7FABEE0988")
     
 public ClipDrawable(Drawable drawable, int gravity, int orientation) {

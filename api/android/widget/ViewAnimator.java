@@ -88,6 +88,8 @@ private void initViewAnimator(Context context, AttributeSet attrs) {
      *
      * @param whichChild the index of the child view to display
      */
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.363 -0500", hash_original_method = "886E9E30E7E0F1B550AD6251245A0536", hash_generated_method = "85CFFD1038B757B608DC791E7423D275")
     
 @android.view.RemotableViewMethod
@@ -110,6 +112,8 @@ private void initViewAnimator(Context context, AttributeSet attrs) {
     /**
      * Returns the index of the currently displayed child view.
      */
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.365 -0500", hash_original_method = "EEFA4D3ABF985412351A1BD0CB5D6161", hash_generated_method = "7CCCB2C258F137F09749CB31D2CA0D0D")
     
@@ -120,6 +124,8 @@ public int getDisplayedChild() {
     /**
      * Manually shows the next child.
      */
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.367 -0500", hash_original_method = "EFCC34AA69F6F34103211EDFAD5FB56A", hash_generated_method = "C8057A111EAE9FF161EAC71A04735053")
     
 @android.view.RemotableViewMethod
@@ -130,6 +136,8 @@ public int getDisplayedChild() {
     /**
      * Manually shows the previous child.
      */
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.369 -0500", hash_original_method = "F846DD3340718784FB63764FD5BBF0F3", hash_generated_method = "F7A27E564FD03DC11A20DB63764AFE91")
     
 @android.view.RemotableViewMethod
@@ -194,6 +202,8 @@ void showOnly(int childIndex) {
         }
     }
 
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.379 -0500", hash_original_method = "2876DED6BDEBD13B29080CE11E9063E4", hash_generated_method = "5B940171BCBCAC8BFBD354C9728A6728")
     
 @Override
@@ -213,6 +223,8 @@ void showOnly(int childIndex) {
         }
     }
 
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.384 -0500", hash_original_method = "39615E53633A229D459BCD129C9447D8", hash_generated_method = "0E14CC5B03390920FF44255802561C36")
     
 @Override
@@ -263,6 +275,8 @@ public void removeViewsInLayout(int start, int count) {
      *
      * @see #getDisplayedChild()
      */
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.393 -0500", hash_original_method = "844041B2553847C9CC4B36B79F20B7EC", hash_generated_method = "34E1EA694076F22BBF84C85C43E13FE8")
     
@@ -293,6 +307,8 @@ public Animation getInAnimation() {
      * @see #getInAnimation()
      * @see #setInAnimation(android.content.Context, int)
      */
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.398 -0500", hash_original_method = "3A3CF51D7EEDC43DA48CCA94EBF1692F", hash_generated_method = "615FE56B69AD0C06A3BDDB2BA5A7DC92")
     
 public void setInAnimation(Animation inAnimation) {
@@ -322,6 +338,8 @@ public Animation getOutAnimation() {
      * @see #getOutAnimation()
      * @see #setOutAnimation(android.content.Context, int)
      */
+    @DSComment("ViewAnimator, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.402 -0500", hash_original_method = "E7C95EC2E63D184B364637DD8AD18F73", hash_generated_method = "2750236BB1A6DFD678E483DE660F74A1")
     
 public void setOutAnimation(Animation outAnimation) {

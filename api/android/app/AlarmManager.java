@@ -52,6 +52,8 @@ AlarmManager(IAlarmManager service) {
         
     }
     
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.886 -0400", hash_original_method = "62DAF5BCFF42E7C3B71DA4EC3FF03273", hash_generated_method = "00637051DDD716CB394E09B323080F9C")
     public void set(int type, long triggerAtTime, PendingIntent operation) {
@@ -80,6 +82,8 @@ AlarmManager(IAlarmManager service) {
         //}
     }
     
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.887 -0400", hash_original_method = "B76B6BC989D8817E7D8138A521E8EB08", hash_generated_method = "1F883AD2D5B31B8D04A551F102467DCA")
     public void setRepeating(int type, long triggerAtTime, long interval,
@@ -110,6 +114,8 @@ AlarmManager(IAlarmManager service) {
         //}
     }
     
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.888 -0400", hash_original_method = "BA6CD3CD848F31D3C4801F13BE104684", hash_generated_method = "40BDCE1F7737607563795EC245C2DF50")
     public void setInexactRepeating(int type, long triggerAtTime, long interval,
@@ -134,6 +140,8 @@ AlarmManager(IAlarmManager service) {
         //}
     }
     
+    @DSComment("IPC activity")
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:50.889 -0400", hash_original_method = "201C17E876772752E3C1FB6083A5FC0F", hash_generated_method = "C077AA8A887A89A055EBE697EB5271ED")
     public void cancel(PendingIntent operation) {
         addTaint(operation.getTaint());

@@ -39,6 +39,8 @@ private static int modulateAlpha(int paintAlpha, int alpha) {
     /**
      * ShapeDrawable constructor.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.630 -0500", hash_original_method = "0D9B9D363D3461B1F66ABDB4BD10ADF4", hash_generated_method = "17FB7767631FA7F832472B17C1CEE3CA")
     
 public ShapeDrawable() {
@@ -50,6 +52,8 @@ public ShapeDrawable() {
      * 
      * @param s the Shape that this ShapeDrawable should be
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.632 -0500", hash_original_method = "F897BE84D7E0CD5527DF62F0C124D538", hash_generated_method = "C164D286312FCAC2934B216E95CD94BA")
     
 public ShapeDrawable(Shape s) {
@@ -67,6 +71,8 @@ private ShapeDrawable(ShapeState state) {
     /**
      * Returns the Shape of this ShapeDrawable.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.637 -0500", hash_original_method = "93DF953391DA58A2026A871408A81498", hash_generated_method = "737BC6EBDFDD70AFFDB3FDB0CB181E1E")
     
@@ -109,6 +115,8 @@ public ShaderFactory getShaderFactory() {
     /**
      * Returns the Paint used to draw the shape.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.646 -0500", hash_original_method = "F97BA42DC4507A8A136D2774D1D1BA0E", hash_generated_method = "068B430F7B4C53C726FFF413D2F3A531")
     
@@ -163,6 +171,8 @@ public void setPadding(Rect padding) {
      * 
      * @param width the intrinsic width (in pixels)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.653 -0500", hash_original_method = "0038E10CC04EA446FBCFE7542F8A245A", hash_generated_method = "20440F4623A1428B535E4C42E9FFF03A")
     
 public void setIntrinsicWidth(int width) {
@@ -175,6 +185,8 @@ public void setIntrinsicWidth(int width) {
      * 
      * @param height the intrinsic height (in pixels)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.655 -0500", hash_original_method = "0D195260E9CE84B5EB7D22342052E56D", hash_generated_method = "EFB6D5AB629660A42C5D27E55F0E31B7")
     
 public void setIntrinsicHeight(int height) {
@@ -221,6 +233,8 @@ protected void onDraw(Shape shape, Canvas canvas, Paint paint) {
         shape.draw(canvas, paint);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.668 -0500", hash_original_method = "2D289F2C5870F3B95565E05840E163B8", hash_generated_method = "1364F2E2B8E64B241E35587E8A217814")
     
@@ -263,6 +277,8 @@ protected void onDraw(Shape shape, Canvas canvas, Paint paint) {
      * the combined alpha that will be used during drawing will be 37.5%
      * (i.e. 96).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.673 -0500", hash_original_method = "6237C1F5A576324C3E69C30154E7DEFA", hash_generated_method = "3FFBA91E5BE03B41ADCDE66CA52608AD")
     
 @Override public void setAlpha(int alpha) {

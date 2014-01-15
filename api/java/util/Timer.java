@@ -31,6 +31,8 @@ private synchronized static long nextId() {
      * @param isDaemon true if {@code Timer}'s thread should be a daemon thread.
      * @throws NullPointerException is {@code name} is {@code null}
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.165 -0500", hash_original_method = "CCBAE4C218CB3D4968980BC5ABE4FF3C", hash_generated_method = "4F4050F2B2137BAFABE65E241132CEDE")
     
 public Timer(String name, boolean isDaemon) {
@@ -67,6 +69,8 @@ public Timer(boolean isDaemon) {
     /**
      * Creates a new non-daemon {@code Timer}.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.174 -0500", hash_original_method = "0270210C5FDC4EA43E305D84D4C8B476", hash_generated_method = "499A560DBC0C5BDE6B1755B6E5AC6650")
     
 public Timer() {
@@ -78,6 +82,8 @@ public Timer() {
      * currently running task it is not affected. No more tasks may be scheduled
      * on this {@code Timer}. Subsequent calls do nothing.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.176 -0500", hash_original_method = "4F9571F346BBFC93F458CCCC1BA285E2", hash_generated_method = "D6F90BEE6A18F57B30D55128B8FFAEB3")
     
 public void cancel() {
@@ -137,6 +143,8 @@ public void schedule(TimerTask task, Date when) {
      *                if the {@code Timer} has been canceled, or if the task has been
      *                scheduled or canceled.
      */
+    @DSComment("callback needs to be called")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.184 -0500", hash_original_method = "C70A5270C6C8A079FCAADE9A65184BCF", hash_generated_method = "A193FECA312B4466BB2570207EDE17A7")
     
 public void schedule(TimerTask task, long delay) {
@@ -212,6 +220,8 @@ public void schedule(TimerTask task, Date when, long period) {
      *                if the {@code Timer} has been canceled, or if the task has been
      *                scheduled or canceled.
      */
+    @DSComment("callback needs to be called")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.192 -0500", hash_original_method = "5346126CCA7833D0BFEF2BABD1293D7B", hash_generated_method = "834C458F3EDB574F1E7D5FF6A1B3C05A")
     
 public void scheduleAtFixedRate(TimerTask task, long delay, long period) {

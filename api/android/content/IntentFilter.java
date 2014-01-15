@@ -236,6 +236,8 @@ public IntentFilter[] newArray(int size) {
     /**
      * New empty IntentFilter.
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.768 -0500", hash_original_method = "E570235BD10D63A46D952627D4823B55", hash_generated_method = "873E5D48980AE16EC4645A8878C78F5B")
     
 public IntentFilter() {
@@ -250,6 +252,8 @@ public IntentFilter() {
      *
      * @param action The action to match, i.e. Intent.ACTION_MAIN.
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.771 -0500", hash_original_method = "6BE32B941606799E1C4582399143D6DE", hash_generated_method = "9D26B14C7A6A2DAA4F9CFE07029C4107")
     
 public IntentFilter(String action) {
@@ -360,6 +364,8 @@ private IntentFilter(Parcel source) {
      * @see #SYSTEM_LOW_PRIORITY
      * @see #SYSTEM_HIGH_PRIORITY
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.779 -0500", hash_original_method = "1AF904ED06333BC0001A5A8D0FC8E3CC", hash_generated_method = "F821DA72088707AF3D4A2AB2E00A960A")
     
 public final void setPriority(int priority) {
@@ -387,6 +393,8 @@ public final int getPriority() {
      *
      * @param action Name of the action to match, i.e. Intent.ACTION_VIEW.
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.784 -0500", hash_original_method = "FFF5B803FCB58F324812D605B6C9CE62", hash_generated_method = "3CBB35A7E6A8533169E7E4AFDAFF741D")
     
 public final void addAction(String action) {
@@ -398,6 +406,8 @@ public final void addAction(String action) {
     /**
      * Return the number of actions in the filter.
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.786 -0500", hash_original_method = "77921182B442B1D522A9772E07DC4CA3", hash_generated_method = "0D6591890E76CE60B3E65B000F6BC744")
     
 public final int countActions() {
@@ -407,6 +417,8 @@ public final int countActions() {
     /**
      * Return an action in the filter.
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.788 -0500", hash_original_method = "50CEFE8EA652B37B9EBFC8EA367BBC71", hash_generated_method = "CCCD1EB514435FFA0F2B8D27E682ABE9")
     
@@ -471,6 +483,8 @@ public final Iterator<String> actionsIterator() {
      *
      * @see #matchData
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.798 -0500", hash_original_method = "B72DE1FACB480BB8E2AD802A23898A2F", hash_generated_method = "F9B59F41521F6B52295E07D850A64989")
     
 public final void addDataType(String type)
@@ -554,6 +568,8 @@ public final Iterator<String> typesIterator() {
      *
      * @see #matchData
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.808 -0500", hash_original_method = "5610D5819C8C8974F702B3F76798B195", hash_generated_method = "1F9003E68C7D13469DB1AA0AEBE99964")
     
 public final void addDataScheme(String scheme) {
@@ -1012,6 +1028,8 @@ public final int matchData(String type, String scheme, Uri data) {
      *
      * @param category Name of category to match, i.e. Intent.CATEGORY_EMBED.
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.877 -0500", hash_original_method = "740A58E186A747CF3BBDAB4A3568B004", hash_generated_method = "D6155558240F18D428AF03627444830B")
     
 public final void addCategory(String category) {
@@ -1157,6 +1175,8 @@ public final int match(ContentResolver resolver, Intent intent,
      * @see Intent#getData
      * @see Intent#getCategories
      */
+    @DSComment("movement of Intent is spec")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:35.894 -0500", hash_original_method = "80E2BB7D6EA3B343C7B82810FBA9B369", hash_generated_method = "8C8258AC41C91D5DE5470DD30A2BC4DD")
     
 public final int match(String action, String type, String scheme,

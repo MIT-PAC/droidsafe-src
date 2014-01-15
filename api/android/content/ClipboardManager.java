@@ -89,6 +89,8 @@ static private IClipboard getService() {
      *
      * @param clip The clipped data item to set.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.358 -0500", hash_original_method = "9758ADBACC2D859F954394BF2EAF123A", hash_generated_method = "7679C6F41286656564D6FD1432FC95FC")
     

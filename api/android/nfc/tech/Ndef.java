@@ -30,6 +30,8 @@ public final class Ndef extends BasicTagTechnology {
      * @param tag an MIFARE Classic compatible tag
      * @return MIFARE Classic object
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.593 -0500", hash_original_method = "9C172D84504D1F2289AFEC693534C0B9", hash_generated_method = "024D199E5AEB40D6B24B47FD7F5756CC")
     
@@ -282,6 +284,8 @@ public NdefMessage getNdefMessage() throws IOException, FormatException {
      * @throws IOException if there is an I/O failure, or the operation is canceled
      * @throws FormatException if the NDEF Message to write is malformed
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.611 -0500", hash_original_method = "A66DE5F0B266681092CD198588C2EDA0", hash_generated_method = "FA8A3743106487F592FE97626C6536EC")
     
 public void writeNdefMessage(NdefMessage msg) throws IOException, FormatException {

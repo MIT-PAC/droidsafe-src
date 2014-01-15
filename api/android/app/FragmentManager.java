@@ -66,6 +66,8 @@ public static void enableDebugLogging(boolean enabled) {
      * in the state, and if changes are made after the state is saved then they
      * will be lost.</p>
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.282 -0500", hash_original_method = "BE048CD13A2D9177864E9AE5CA89385C", hash_generated_method = "179BF9392A437EED545CF6A3F093EC20")
     
 public abstract FragmentTransaction beginTransaction();
@@ -91,6 +93,8 @@ public abstract FragmentTransaction beginTransaction();
      * @return Returns true if there were any pending transactions to be
      * executed.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.287 -0500", hash_original_method = "5B9A3D87E7345C957FA5717C0C10C635", hash_generated_method = "66BAE45C691B1AB5E9BB1A84AE41D8A2")
     
 public abstract boolean executePendingTransactions();
@@ -103,6 +107,8 @@ public abstract boolean executePendingTransactions();
      * on the back stack associated with this ID are searched.
      * @return The fragment if found or null otherwise.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.289 -0500", hash_original_method = "F331A49B0DAC9D1709118DA3B3769DC9", hash_generated_method = "4C6F6CF41EE287D45A81567EBA8CB5D6")
     
 public abstract Fragment findFragmentById(int id);
@@ -115,6 +121,8 @@ public abstract Fragment findFragmentById(int id);
      * on the back stack are searched.
      * @return The fragment if found or null otherwise.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.291 -0500", hash_original_method = "06F2C60B02B6436122252A9A18FF6B5B", hash_generated_method = "8A748374863BCFCFE22454ABCA2FE261")
     
 public abstract Fragment findFragmentByTag(String tag);
@@ -124,6 +132,8 @@ public abstract Fragment findFragmentByTag(String tag);
      * enqueues the request to pop, but the action will not be performed until the
      * application returns to its event loop.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.296 -0500", hash_original_method = "8DD8850C5659D39934906ED127571123", hash_generated_method = "06152C82F0BE43992BE41413F4D5A3F1")
     
 public abstract void popBackStack();
@@ -134,6 +144,8 @@ public abstract void popBackStack();
      * afterwards.
      * @return Returns true if there was something popped, else false.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.298 -0500", hash_original_method = "7B6675A0CB9AF3263371BDE096DAF2A9", hash_generated_method = "2C3F7FF8856F557CE69F0CF46B2F4937")
     
 public abstract boolean popBackStackImmediate();
@@ -151,6 +163,8 @@ public abstract boolean popBackStackImmediate();
      * the named state itself is popped. If null, only the top state is popped.
      * @param flags Either 0 or {@link #POP_BACK_STACK_INCLUSIVE}.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.300 -0500", hash_original_method = "7371282EB954218CB5BB647DBEFB9C4D", hash_generated_method = "DA4FB7A38FD1A9723E0C9FB977608D32")
     
 public abstract void popBackStack(String name, int flags);
@@ -161,6 +175,8 @@ public abstract void popBackStack(String name, int flags);
      * afterwards.
      * @return Returns true if there was something popped, else false.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.302 -0500", hash_original_method = "E1C9735BC76D749F9AAB42E9F89374F3", hash_generated_method = "ADFC94D0AAB8081D7BCE139575F65351")
     
 public abstract boolean popBackStackImmediate(String name, int flags);
@@ -179,6 +195,8 @@ public abstract boolean popBackStackImmediate(String name, int flags);
      * the named state itself is popped.
      * @param flags Either 0 or {@link #POP_BACK_STACK_INCLUSIVE}.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.304 -0500", hash_original_method = "5DFB5C2F3CB06A536CC67665FD5A1850", hash_generated_method = "AFB34329D29F80428B05B6ACD88A1183")
     
 public abstract void popBackStack(int id, int flags);
@@ -189,6 +207,8 @@ public abstract void popBackStack(int id, int flags);
      * afterwards.
      * @return Returns true if there was something popped, else false.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.306 -0500", hash_original_method = "4468A20E5A85CF532490B1BC373EE3E6", hash_generated_method = "B7D3372DC7597245DDCCDC11FB8C5F74")
     
 public abstract boolean popBackStackImmediate(int id, int flags);
@@ -196,6 +216,8 @@ public abstract boolean popBackStackImmediate(int id, int flags);
     /**
      * Return the number of entries currently in the back stack.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.309 -0500", hash_original_method = "8EAEBBF64A73FEF70E3B2DC6C5497EE9", hash_generated_method = "F5E4FA5B0AAD9A1C436033C01C3AAABD")
     
 public abstract int getBackStackEntryCount();
@@ -233,6 +255,8 @@ public abstract void removeOnBackStackChangedListener(OnBackStackChangedListener
      * @param key The name of the entry in the bundle.
      * @param fragment The Fragment whose reference is to be stored.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.318 -0500", hash_original_method = "8451101D4DDA3AE9BA2F091778F6ACC9", hash_generated_method = "C529CCC132EFEB14EBA38652ABAFD702")
     
 public abstract void putFragment(Bundle bundle, String key, Fragment fragment);
@@ -246,6 +270,8 @@ public abstract void putFragment(Bundle bundle, String key, Fragment fragment);
      * @return Returns the current Fragment instance that is associated with
      * the given reference.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.320 -0500", hash_original_method = "1FBEC41A2754AD4627511B440BD8CDF6", hash_generated_method = "0F634E6958A473C8D2E8404CF8C8DB24")
     
 public abstract Fragment getFragment(Bundle bundle, String key);
@@ -284,6 +310,8 @@ public abstract Fragment.SavedState saveFragmentInstanceState(Fragment f);
      * @param writer A PrintWriter to which the dump is to be set.
      * @param args Additional arguments to the dump request.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.325 -0500", hash_original_method = "9309E77AA4047B9B8316706781ED0A27", hash_generated_method = "3FF3D3380483C9ADF611F5CA2E5A6D00")
     
 public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args);
@@ -312,6 +340,8 @@ public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, 
      * Invalidate the attached activity's options menu as necessary.
      * This may end up being deferred until we move to the resumed state.
      */
+    @DSComment("GUI, Fragment Manager")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:25.330 -0500", hash_original_method = "15ED404039200ACA8749491C77846D3D", hash_generated_method = "DE6B424A8F77F63D6BB0CDF1DD7295F2")
     
 public void invalidateOptionsMenu() { }

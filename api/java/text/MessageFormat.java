@@ -31,6 +31,8 @@ public class MessageFormat extends Format {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.056 -0500", hash_original_method = "028A0A610E31197643C52E1AA7424EFD", hash_generated_method = "1A432DCE8A1D9FDC87F89E0825D717EC")
     
 public static String format(String format, Object... args) {
@@ -102,6 +104,8 @@ public MessageFormat(String template, Locale locale) {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.013 -0500", hash_original_method = "BAA918AD1B6BB7758E580E5A4864BDBA", hash_generated_method = "4E40857C718EFBC3ADDFDFD00CC1B9D9")
     
 public MessageFormat(String template) {
@@ -116,6 +120,8 @@ public MessageFormat(String template) {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.018 -0500", hash_original_method = "20F481C3B4FB7D239D889AD1AE3136D7", hash_generated_method = "BD92F01FABE93B475B84627EAB102842")
     
 public void applyPattern(String template) {
@@ -203,6 +209,8 @@ public void applyPattern(String template) {
      *         {@code MessageFormat}; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.024 -0500", hash_original_method = "2E70B47400B10858E99F75E16A06D539", hash_generated_method = "72FD03440AA98A2EBBBBE6A2972227C4")
     
 @Override
@@ -439,6 +447,8 @@ private void handleFormat(Format format, Object arg, int begin, List<FieldContai
      *
      * @return an array of {@code Format} instances.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.058 -0500", hash_original_method = "7EB79515AF02A4588C0D82DEFC2945FA", hash_generated_method = "7EFEE9D91FE14B594D203FA10FB1BCC1")
     
@@ -509,6 +519,8 @@ public void setFormatsByArgumentIndex(Format[] formats) {
      *
      * @return the locale used to create formats.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.080 -0500", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "424B5570E26DE121275BC9C58AD53C4D")
     
@@ -516,6 +528,8 @@ public Locale getLocale() {
         return locale;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.085 -0500", hash_original_method = "C3648461AA348ABE73C14E89998C9B55", hash_generated_method = "42842E44531261FB5273C00ABBA16DEA")
     
 @Override
@@ -787,6 +801,8 @@ public void setFormat(int offset, Format format) {
      * @param formats
      *            an array of {@code Format}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.123 -0500", hash_original_method = "F9E7D69C4CD5EB0783A6761389D5E01C", hash_generated_method = "FD117B80C69E8A4F820A18E6F08B47EA")
     
@@ -808,6 +824,8 @@ public void setFormats(Format[] formats) {
      * @param locale
      *            the new locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.128 -0500", hash_original_method = "2EE5DAE8254A09BA3EE14891BDB8B487", hash_generated_method = "11A2FAE11FC1A5D597923FE104A96F38")
     
 public void setLocale(Locale locale) {
@@ -891,6 +909,8 @@ private String decodeSimpleDateFormat(StringBuffer buffer, Format format) {
      *
      * @return the pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.140 -0500", hash_original_method = "0A7E6003101ED48A94DA0D4F2E79183E", hash_generated_method = "5A29D53EB005C97126A1E9F2282E7B30")
     
 public String toPattern() {

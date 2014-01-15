@@ -24,6 +24,8 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
      * @param eventType The event type.
      * @return An instance.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.461 -0500", hash_original_method = "A7145B8906EC48103C63737E7936B464", hash_generated_method = "DECD9BD2A2F1267D265C497B5EE21ED5")
     
 public static AccessibilityEvent obtain(int eventType) {
@@ -62,6 +64,8 @@ public static AccessibilityEvent obtain(AccessibilityEvent event) {
      *
      * @return An instance.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.467 -0500", hash_original_method = "10F3069F21F3E55AED4FC89118BF5C5A", hash_generated_method = "E3D01B2B9125EFEB96BBDB3B34AEDE01")
     
 public static AccessibilityEvent obtain() {
@@ -273,6 +277,8 @@ void init(AccessibilityEvent event) {
      *
      * @return The number of records.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.441 -0500", hash_original_method = "E3578B8B8EBF3C6DE3B4CEB5DF2FD3A0", hash_generated_method = "45AE797C926A97FF4238FE89EE498366")
     
@@ -287,6 +293,8 @@ public int getRecordCount() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Potenitally can fake other event")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.443 -0500", hash_original_method = "65BE24FB8BF3EB0B7B54A7C4AA9FE110", hash_generated_method = "A9E8D5291D5D0B74598ADA13EEC3447F")
     
 public void appendRecord(AccessibilityRecord record) {
@@ -300,6 +308,8 @@ public void appendRecord(AccessibilityRecord record) {
      * @param index The index.
      * @return The record at the specified index.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.445 -0500", hash_original_method = "9E2314A76EC6019735F4372CBF34D41F", hash_generated_method = "16B8C87E554CC89ED26CAC1F3B820131")
     
@@ -312,6 +322,8 @@ public AccessibilityRecord getRecord(int index) {
      *
      * @return The event type.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.447 -0500", hash_original_method = "4F017DE4F3DB5F93E271E04CA9550DB1", hash_generated_method = "01F97DA7B4B424BFB276760D3ABE3C6A")
     
@@ -378,6 +390,8 @@ public CharSequence getPackageName() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Can spoof the source")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.459 -0500", hash_original_method = "D35D1C42C7BD5A2BDF03FC6BDBDF64EE", hash_generated_method = "194D21D70E7FE29679C690B456C3D46C")
     
 public void setPackageName(CharSequence packageName) {

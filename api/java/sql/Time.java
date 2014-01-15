@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Date;
 
-
-
-
-
-
 public class Time extends Date {
 
     /**
@@ -54,10 +49,8 @@ public static Time valueOf(String timeString) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.395 -0500", hash_original_field = "566E16E9A1BEC2B21274067FBF29DFFA", hash_generated_field = "4135C293268358DD66284F75791C870B")
 
-
     private static final long serialVersionUID = 8397324403548013681L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.429 -0500", hash_original_field = "497A72B691A0ED83978226EE6DC45FA0", hash_generated_field = "87ECBDD5C24F81CDDFA22805D091687F")
-
 
     private static final String PADDING = "00";
 
@@ -97,6 +90,8 @@ public static Time valueOf(String timeString) {
      *            a {@code Time} specified in milliseconds since the
      *            <i>Epoch</i> (January 1st 1970, 00:00:00.000).
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.401 -0500", hash_original_method = "B92128F71421A4A6F232F0ACA6BED466", hash_generated_method = "A7E8C95BC20E27D3316018E3FD76067B")
     
 public Time(long theTime) {

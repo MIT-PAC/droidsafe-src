@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class ByteArrayInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.611 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
@@ -32,6 +27,8 @@ public class ByteArrayInputStream extends InputStream {
      * @param buf
      *            the byte array to stream over.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.621 -0500", hash_original_method = "CF1B6A0EB8AC88640F4210354AA3396D", hash_generated_method = "22ECD6164ED993D37BCA3A52212F68AE")
     
 public ByteArrayInputStream(byte[] buf) {
@@ -52,6 +49,8 @@ public ByteArrayInputStream(byte[] buf) {
      * @param length
      *            the number of bytes available for streaming.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.624 -0500", hash_original_method = "CF3AD622E6B16C040D235FE2C3A31C84", hash_generated_method = "002D6764A0F21990A33FD29DEB63DF23")
     
 public ByteArrayInputStream(byte[] buf, int offset, int length) {
@@ -66,6 +65,8 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
      *
      * @return {@code count - pos}
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.627 -0500", hash_original_method = "60B3E89517A58F980CEC13EE6BBDFCDA", hash_generated_method = "F83D86E173E2EE8747B4A5BEAFCB1DC1")
     
 @Override
@@ -79,6 +80,8 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
      * @throws IOException
      *             if an I/O error occurs while closing this stream.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.629 -0500", hash_original_method = "403A1214A00C2300123B494982A31042", hash_generated_method = "558F8491AE877DB6C3CABF8605DAD589")
     
 @Override
@@ -207,7 +210,6 @@ public ByteArrayInputStream(byte[] buf, int offset, int length) {
         pos = this.count - pos < byteCount ? this.count : (int) (pos + byteCount);
         return pos - temp;
     }
-
     
 }
 

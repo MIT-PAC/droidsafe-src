@@ -1110,6 +1110,8 @@ public void setOnDateChangeListener(OnDateChangeListener listener) {
      *
      * @return The selected date.
      */
+    @DSComment("just calendar view")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:42.050 -0500", hash_original_method = "1C8908BABBBBE904441B712A0F71BAD8", hash_generated_method = "79AEBEC017161384AB6FF18EC851F2B0")
     

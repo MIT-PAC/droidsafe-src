@@ -214,6 +214,8 @@ public ThreadGroup getThreadGroup() {
     
 public Object getSecurityContext() { return null; }
 
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.884 -0500", hash_original_method = "F83ED49980C30C3CF74F8E7C00892337", hash_generated_method = "397ACC17961D7E70D2DEEECAAE7DE9F6")
     
 public void checkPermission(Permission permission) { }

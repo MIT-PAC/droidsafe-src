@@ -107,6 +107,8 @@ Sensor() {
         //return mVendor;
     }
     
+    @DSComment("Harvesting information")
+    @DSSpec(DSCat.SECURITY)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getType() {
     	return getTaintInt();
@@ -119,6 +121,8 @@ Sensor() {
         //return mVersion;
     }
     
+    @DSComment("Harvesting information")
+    @DSSpec(DSCat.SECURITY)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getMaximumRange() {
     	return getTaintFloat();

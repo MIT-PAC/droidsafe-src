@@ -311,6 +311,8 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.294 -0500", hash_original_method = "7AE3BC00249CC99885BB0445C93FB18A", hash_generated_method = "81AB090C4B0E06E8EAE64B54F604EA2C")
     
@@ -503,6 +505,8 @@ public float getFloat(Object object) throws IllegalAccessException, IllegalArgum
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.312 -0500", hash_original_method = "5CB83BC53ADA020FA0FD37C15AAD9E62", hash_generated_method = "9D7296B3392D54E0B4B59D734A1FEECF")
     
@@ -547,6 +551,8 @@ public long getLong(Object object) throws IllegalAccessException, IllegalArgumen
      * @return the modifiers for this field
      * @see Modifier
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.317 -0500", hash_original_method = "5A676A538E8952F6729F0D8423178A33", hash_generated_method = "1327A747177D4EE276A0F6E14A311D56")
     
@@ -568,6 +574,8 @@ public int getModifiers() {
      *
      * @return the name of this field
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.322 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
@@ -624,6 +632,8 @@ public short getShort(Object object) throws IllegalAccessException, IllegalArgum
      *
      * @return the type of this field
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.330 -0500", hash_original_method = "21C93A7CC51FD6114C8D944747F943F4", hash_generated_method = "0EEEE4F02A27E714D03E663A59C6B204")
     
@@ -678,6 +688,8 @@ public Class<?> getType() {
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.335 -0500", hash_original_method = "6D24AA0F6B01F01D922DBBA93FD91F81", hash_generated_method = "30D8F62F862AD3637A8B07C21E9E5524")
     
@@ -714,6 +726,8 @@ public void set(Object object, Object value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.337 -0500", hash_original_method = "25FFB4639E444F2A9FD12AF0E909B7A5", hash_generated_method = "50D46A62976E2A32D29DFB63C6D79FD9")
     

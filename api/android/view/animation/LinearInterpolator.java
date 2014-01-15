@@ -9,6 +9,8 @@ import android.util.AttributeSet;
 
 public class LinearInterpolator implements Interpolator {
 
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.546 -0500", hash_original_method = "13E92F18FAEF7A23B3FECE76D3743C4D", hash_generated_method = "D97DB0409FE17B256914BC53C86F250C")
     
 public LinearInterpolator() {

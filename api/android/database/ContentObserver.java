@@ -21,6 +21,8 @@ public abstract class ContentObserver {
      *
      * @param handler The handler to run {@link #onChange} on.
      */
+    @DSComment("Observer setup, no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.940 -0500", hash_original_method = "DEDF781BC2901F5DB53B414F0A999CAB", hash_generated_method = "BD3934C133084C4C709DEBF2A7930A64")
     
 public ContentObserver(Handler handler) {
@@ -81,6 +83,8 @@ public boolean deliverSelfNotifications() {
      * @param selfChange true if the update was caused by a call to <code>commit</code> on the
      *  cursor that is being observed.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.949 -0500", hash_original_method = "6EAEE94A5AFBBE3CB405FFF6432059B8", hash_generated_method = "95284BF4A594F05C5AB99E7B8C5A943E")
     
 public void onChange(boolean selfChange) {}

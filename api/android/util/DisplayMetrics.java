@@ -71,6 +71,8 @@ public class DisplayMetrics {
 
     public float noncompatYdpi;
 
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.956 -0500", hash_original_method = "72B3D95037FCF3814777C19051FFD99D", hash_generated_method = "29C6DAE2839B5BA5C8B8A981B32ADBD1")
     
 public DisplayMetrics() {

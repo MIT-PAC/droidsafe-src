@@ -41,6 +41,8 @@ public class SweepGradient extends Shader {
      *                 If positions is NULL, then the colors are automatically
      *                 spaced evenly.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.021 -0500", hash_original_method = "64A53BB5A652BD9568EA8C5A648F5375", hash_generated_method = "5BEBAF1A7FAB96AAD815EDC1971E51C1")
     
 public SweepGradient(float cx, float cy,

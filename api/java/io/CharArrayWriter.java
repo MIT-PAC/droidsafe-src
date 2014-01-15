@@ -19,6 +19,8 @@ public class CharArrayWriter extends Writer {
      * with the default size of 32 characters. This buffer is also used as the
      * {@code lock} to synchronize access to this writer.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.952 -0500", hash_original_method = "C9452FB9491532C2A6C52BB5B3D25E39", hash_generated_method = "AC61405EE6F47B88139B96681DCA2767")
     
 public CharArrayWriter() {
@@ -36,6 +38,8 @@ public CharArrayWriter() {
      * @throws IllegalArgumentException
      *             if {@code initialSize < 0}.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.956 -0500", hash_original_method = "71C0EC52128D22FED2D8659A81B00E37", hash_generated_method = "8B3FDA113EAC363886398798A426D69C")
     
 public CharArrayWriter(int initialSize) {
@@ -115,6 +119,8 @@ public int size() {
      *
      * @return this CharArrayWriter's contents as a new char array.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.970 -0500", hash_original_method = "A3DCAA229974F9979554B7E0F1F4EF9F", hash_generated_method = "BD6D76D575FBB2C104F30D78DCB06376")
     
 public char[] toCharArray() {
@@ -155,6 +161,8 @@ public char[] toCharArray() {
      *             if {@code offset < 0} or {@code len < 0}, or if
      *             {@code offset + len} is bigger than the size of {@code c}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.975 -0500", hash_original_method = "17F94D6158075BE971F02096E85AEF33", hash_generated_method = "D05819EC49701A68141E334F53010F6E")
     
 @Override
@@ -175,6 +183,8 @@ public char[] toCharArray() {
      * @param oneChar
      *            the character to write.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.978 -0500", hash_original_method = "F6D5648087F216C6BFDCFB078373F01B", hash_generated_method = "BEB90F0F1A4B1BFB1C416DEF88CD5B71")
     
 @Override

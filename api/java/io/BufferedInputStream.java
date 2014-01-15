@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class BufferedInputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.139 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "C53666C61D704ACE793D3D98401D06E0")
 
@@ -38,6 +33,8 @@ public class BufferedInputStream extends FilterInputStream {
      *
      * @param in the {@code InputStream} the buffer reads from.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.150 -0500", hash_original_method = "21B504722C790213175AE0F5E25EEBB8", hash_generated_method = "372D73774F2BD015B118B47B81AE2714")
     
 public BufferedInputStream(InputStream in) {
@@ -56,6 +53,8 @@ public BufferedInputStream(InputStream in) {
      * @param size the size of buffer in bytes.
      * @throws IllegalArgumentException if {@code size <= 0}.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.153 -0500", hash_original_method = "4F467422085302825BDB985C2FDC72F9", hash_generated_method = "E76DA12E1EAECD7C410B08708D171821")
     
 public BufferedInputStream(InputStream in, int size) {
@@ -99,6 +98,8 @@ private IOException streamClosed() throws IOException {
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.162 -0500", hash_original_method = "9458B5514F81355F9A651152E456CAE7", hash_generated_method = "98FD5980451359CE86D0EDE2C1BE1722")
     
 @Override
@@ -246,6 +247,8 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
      *             if the stream is already closed or another IOException
      *             occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.177 -0500", hash_original_method = "61DEF23C4EC5BF0BA1725AB1A56B4C17", hash_generated_method = "0D02395DDFF6896AF352C79259C47479")
     
 @Override
@@ -394,7 +397,6 @@ private int fillbuf(InputStream localIn, byte[] localBuf)
         }
         return read + localIn.skip(byteCount - read);
     }
-
     
 }
 

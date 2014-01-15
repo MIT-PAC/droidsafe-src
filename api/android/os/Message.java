@@ -8,6 +8,8 @@ import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public final class Message implements Parcelable {
     
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public static Message obtain(){
 		// Original method
 		/*
@@ -89,6 +91,8 @@ public static Message obtain(Handler h, Runnable callback) {
      * @param what  Value to assign to the <em>what</em> member.
      * @return A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.324 -0500", hash_original_method = "E26B7D4E6B35F5234F7DF4974522919A", hash_generated_method = "735878BCF4D4D13F8EC3A8CC8DF1B845")
     
 public static Message obtain(Handler h, int what) {
@@ -107,6 +111,8 @@ public static Message obtain(Handler h, int what) {
      * @param obj  The <em>object</em> method to set.
      * @return  A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.326 -0500", hash_original_method = "DD09B29D12E38FF7883BAB5D6B58243F", hash_generated_method = "48467203DADCBADA8EFADA7691CEBF70")
     
 public static Message obtain(Handler h, int what, Object obj) {
@@ -128,6 +134,8 @@ public static Message obtain(Handler h, int what, Object obj) {
      * @param arg2  The <em>arg2</em> value to set.
      * @return  A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.329 -0500", hash_original_method = "4DCC15A1D3B41D0AD35502FBE5B811FF", hash_generated_method = "F3CC485A508121FCA56CF2574BB30B5D")
     
 public static Message obtain(Handler h, int what, int arg1, int arg2) {
@@ -219,6 +227,8 @@ public Message[] newArray(int size) {
 
     /** Constructor (but the preferred way to get a Message is to call {@link #obtain() Message.obtain()}).
     */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.362 -0500", hash_original_method = "07161C5E5BFC528DA3FC2F6017B16172", hash_generated_method = "C388122C31305A6494A3C73AA60B75A9")
     
 public Message() {
@@ -309,7 +319,9 @@ public Runnable getCallback() {
         return callback;
     }
     
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Bundle getData(){
         return data = new Bundle();
 	}
@@ -333,6 +345,8 @@ public Bundle peekData() {
      * @see #getData() 
      * @see #peekData()
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.351 -0500", hash_original_method = "2A3AF1BEE5D39047FC40D7968EE3828B", hash_generated_method = "E6DE205F5507518F4C757F398D9B9FC5")
     
 public void setData(Bundle data) {
@@ -343,6 +357,8 @@ public void setData(Bundle data) {
      * Sends this Message to the Handler specified by {@link #getTarget}.
      * Throws a null pointer exception if this field has not been set.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.353 -0500", hash_original_method = "2D3F3759D60A7A1CBA79B8F487061097", hash_generated_method = "35E9C435AC941949A3E301FED5BE4231")
     
 public void sendToTarget() {

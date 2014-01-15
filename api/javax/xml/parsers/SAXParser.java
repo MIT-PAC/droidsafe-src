@@ -19,14 +19,8 @@ import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.helpers.DefaultHandler;
 
-
-
-
-
-
 public abstract class SAXParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.670 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
-
 
     private static final boolean DEBUG = false;
 
@@ -142,6 +136,8 @@ public void parse(
      *
      * @see org.xml.sax.DocumentHandler
      */
+    @DSComment("input is io InputSource")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.683 -0500", hash_original_method = "F19248E94372C80DC5D37D9D6B998C8A", hash_generated_method = "85E07A63C210923C558596017081C361")
     
 public void parse(InputStream is, DefaultHandler dh)
@@ -353,6 +349,8 @@ public void parse(InputSource is, HandlerBase hb)
      *
      * @see org.xml.sax.DocumentHandler
      */
+    @DSComment("input is io InputSource")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.699 -0500", hash_original_method = "8F425B137DCEBCB18BE581A6911D8EA7", hash_generated_method = "E6927473C62A9031C3B8A4697416E78F")
     
 public void parse(InputSource is, DefaultHandler dh)
@@ -394,6 +392,8 @@ public abstract org.xml.sax.Parser getParser() throws SAXException;
      * @throws SAXException If any SAX errors occur during processing.
      */
 
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.704 -0500", hash_original_method = "B62E96B0118EEB0E23EC3778F736AAE1", hash_generated_method = "388CF7B5AAE047FFAF40E11D2B1A57CC")
     
 public abstract org.xml.sax.XMLReader getXMLReader() throws SAXException;

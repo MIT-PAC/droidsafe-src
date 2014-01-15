@@ -32,7 +32,9 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
 
     transient Object[] array;
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.819 -0400", hash_original_method = "3E3801877D646C78E965A019C35437FB", hash_generated_method = "E5A14EE03FC08BF10B9F1780BA42710D")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.819 -0400", hash_original_method = "3E3801877D646C78E965A019C35437FB", hash_generated_method = "E5A14EE03FC08BF10B9F1780BA42710D")
     public  ArrayList(int capacity) {
         if(capacity < 0)        
         {
@@ -53,13 +55,17 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         //array = (capacity == 0 ? EmptyArray.OBJECT : new Object[capacity]);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.820 -0400", hash_original_method = "A7503C07B95C656689F43518416554F0", hash_generated_method = "A3AEAA024802F16BF2F719D937C47F2E")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.820 -0400", hash_original_method = "A7503C07B95C656689F43518416554F0", hash_generated_method = "A3AEAA024802F16BF2F719D937C47F2E")
     public  ArrayList() {
         array = collectionData;
         // ---------- Original Method ----------
         //array = EmptyArray.OBJECT;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.820 -0400", hash_original_method = "AE7C60C91D4192AC5637CB5677158233", hash_generated_method = "D918CF514940FBDA5D9A59D94625E26F")
     public  ArrayList(Collection<? extends E> collection) {
         addTaint(collection.getTaint());
@@ -83,6 +89,8 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
      * @return a shallow copy of this {@code ArrayList}
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.928 -0500", hash_original_method = "B3DA051C4891B8092C007B9652169D27", hash_generated_method = "A66D91953438B3767055934DA3E96394")
     
 @Override public Object clone() {
@@ -95,7 +103,9 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         }
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.827 -0400", hash_original_method = "0AF2E3B013DB3C28C26CEAAD130BA61A", hash_generated_method = "8998FC02A06EB07E3D275DF69BC11A86")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.827 -0400", hash_original_method = "0AF2E3B013DB3C28C26CEAAD130BA61A", hash_generated_method = "8998FC02A06EB07E3D275DF69BC11A86")
     public void ensureCapacity(int minimumCapacity) {
         addTaint(minimumCapacity);
         Object[] a = collectionData;
@@ -115,16 +125,22 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         //}
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.828 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "0ABC8B8351EE3042A7F1E1EBEB6EC6D1")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.828 -0400", hash_original_method = "186376BCBF1440029A4A8EF9D3327AB7", hash_generated_method = "0ABC8B8351EE3042A7F1E1EBEB6EC6D1")
     @Override
     public boolean isEmpty() {
         return (size() == 0);
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.835 -0400", hash_original_method = "7330C01325C25FBEA000A4F3E32D26DF", hash_generated_method = "35C199892565BFAF814A1B11E3CF926D")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.835 -0400", hash_original_method = "7330C01325C25FBEA000A4F3E32D26DF", hash_generated_method = "35C199892565BFAF814A1B11E3CF926D")
     public void trimToSize() {
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.836 -0400", hash_original_method = "5DBD6A40EED7E4F643FF32288E994D2A", hash_generated_method = "0AAE6C1E71A08E82CD075C5ACA4F4AC3")
     @Override
     public int hashCode() {
@@ -148,7 +164,9 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         //return hashCode;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.837 -0400", hash_original_method = "B6BBD42460E139DEDE8E165726366EA3", hash_generated_method = "D4C09056C6EE738803BED4E24FA86358")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.837 -0400", hash_original_method = "B6BBD42460E139DEDE8E165726366EA3", hash_generated_method = "D4C09056C6EE738803BED4E24FA86358")
     @Override
     public boolean equals(Object o) {
         addTaint(o.getTaint());
@@ -196,7 +214,9 @@ static IndexOutOfBoundsException throwIndexOutOfBoundsException(int index, int s
         // ---------- Original Method ----------
     }
 
-   @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+   @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     
     public E get(int location) {

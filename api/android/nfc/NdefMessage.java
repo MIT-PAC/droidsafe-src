@@ -57,6 +57,8 @@ public NdefMessage(byte[] data) throws FormatException {
     /**
      * Create an NDEF message from NDEF records.
      */
+    @DSComment("data structure, except writeToParcel")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.058 -0500", hash_original_method = "E87B5EF1F7D5816785326D2A488F5505", hash_generated_method = "869C49A1D3186925B00FD1E1E8A1AABE")
     
 public NdefMessage(NdefRecord[] records) {
@@ -69,6 +71,8 @@ public NdefMessage(NdefRecord[] records) {
      *
      * @return array of zero or more NDEF records.
      */
+    @DSComment("data structure, except writeToParcel")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.060 -0500", hash_original_method = "482F2AD23FF4C5B364DE9FB97EDDBB64", hash_generated_method = "C7BB5CEF292B3E7C1A8B4DC36219E098")
     

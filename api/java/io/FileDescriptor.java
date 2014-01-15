@@ -37,6 +37,8 @@ public FileDescriptor() {
      * Ensures that data which is buffered within the underlying implementation
      * is written out to the appropriate device before returning.
      */
+    @DSComment("Syncing file with storage")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.711 -0500", hash_original_method = "84EEC9A137856593BBF0A90E4A96E319", hash_generated_method = "C8E75F8E8502693FBE5612B9F636D819")
     
 public void sync() throws SyncFailedException {

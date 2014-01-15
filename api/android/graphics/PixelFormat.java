@@ -10,6 +10,8 @@ public class PixelFormat {
     private static void nativeClassInit() {
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static void getPixelFormatInfo(int format, PixelFormat info) {
     }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.036 -0500", hash_original_method = "E67B3D46F0CB30A9037255CD015EB158", hash_generated_method = "89212E037F92B615AEC1D7571C8E0B36")
@@ -92,6 +94,8 @@ public static boolean formatHasAlpha(int format) {
 
     public int  bitsPerPixel;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.631 -0400", hash_original_method = "0A480F0344E4C89067BA9E346BA03813", hash_generated_method = "0A480F0344E4C89067BA9E346BA03813")
     public PixelFormat ()
     {

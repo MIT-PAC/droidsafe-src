@@ -23,6 +23,8 @@ public final class UUID implements Serializable, Comparable<UUID> {
      *
      * @return an UUID instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.038 -0500", hash_original_method = "062E55715164230436BF863A3994A273", hash_generated_method = "29D0A8B9D260A09CC32C49AB2CD937C9")
     
 public static UUID randomUUID() {
@@ -87,6 +89,8 @@ private static UUID makeUuid(byte[] hash, int version) {
      * @throws IllegalArgumentException
      *             if {@code uuid} is not formatted correctly.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.048 -0500", hash_original_method = "91976DDD0DF6E7445909995B535A77C8", hash_generated_method = "A51362772C45D6E1A99F12EB4EFB1AE6")
     
 public static UUID fromString(String uuid) {
@@ -440,6 +444,8 @@ public int compareTo(UUID uuid) {
      *
      * @return a String instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.076 -0500", hash_original_method = "2C7CA3FB1758723F3B30AD693E280579", hash_generated_method = "279F062792C198058C3199DAE4C411FA")
     
 @Override

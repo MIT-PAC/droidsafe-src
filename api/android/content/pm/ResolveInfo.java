@@ -119,6 +119,8 @@ private ResolveInfo(Parcel source) {
      * @return Returns a CharSequence containing the resolutions's label.  If the
      * item does not have a label, its name is returned.
      */
+    @DSComment("get string associated resolution")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.595 -0500", hash_original_method = "A33400D9D27D1859CAE2B97E545C2635", hash_generated_method = "42C3E3BCE3653378560C9036E33DF328")
     
 public CharSequence loadLabel(PackageManager pm) {
@@ -158,6 +160,8 @@ public CharSequence loadLabel(PackageManager pm) {
      * @return Returns a Drawable containing the resolution's icon.  If the
      * item does not have an icon, the default activity icon is returned.
      */
+    @DSComment("Accessing App Resource")
+    @DSSpec(DSCat.APP_RESOURCE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.598 -0500", hash_original_method = "D0D8D8B431D77A14F0DBD9F876D36006", hash_generated_method = "FB44EDEB4A97D53F1E4B44FF2793ABA6")
     
 public Drawable loadIcon(PackageManager pm) {
@@ -226,6 +230,8 @@ public void dump(Printer pw, String prefix) {
         }
     }
 
+    @DSComment("string out of intent resolution, safe")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.608 -0500", hash_original_method = "E9277D5F5F8618A42CE604147E3605E2", hash_generated_method = "0D2A4E70211D71BA8C1449AEED9CBAE2")
     
 public String toString() {
@@ -249,6 +255,8 @@ public int describeContents() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.635 -0500", hash_original_field = "D7E1102720CC9E76648EB86B25CA5216", hash_generated_field = "B9590FAB3CF140F08C9CD4E0309ED58A")
 
         private PackageManager   mPM;
+        @DSComment("only compare method available, not too useful")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.626 -0500", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "93A18F8F07DA31EBC88951995E1C514A")
         
 public DisplayNameComparator(PackageManager pm) {

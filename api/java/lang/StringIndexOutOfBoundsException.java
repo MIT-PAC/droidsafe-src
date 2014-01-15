@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class StringIndexOutOfBoundsException extends IndexOutOfBoundsException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.303 -0500", hash_original_field = "7EA43E41A744677334DE8C1359FD2961", hash_generated_field = "AC3AE2C28E52C0DAB3994D3DB41195D6")
-
 
     private static final long serialVersionUID = -6762910422159637258L;
 
@@ -32,6 +27,8 @@ public StringIndexOutOfBoundsException() {
      * @param index
      *            the index which is out of bounds.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.309 -0500", hash_original_method = "7844EE32C07F0B5F2D2D2CE3133A8CE2", hash_generated_method = "69E728882E16FEC90BE86EE9741ABE2A")
     
 public StringIndexOutOfBoundsException(int index) {
@@ -45,6 +42,8 @@ public StringIndexOutOfBoundsException(int index) {
      * @param detailMessage
      *            the detail message for this exception.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.311 -0500", hash_original_method = "2720998883F0FDFEFA87A6BF1A5B67C6", hash_generated_method = "FD386D30AADE4B846F870C3EBD2DE165")
     
 public StringIndexOutOfBoundsException(String detailMessage) {

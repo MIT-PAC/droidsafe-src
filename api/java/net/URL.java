@@ -93,6 +93,8 @@ public static synchronized void setURLStreamHandlerFactory(URLStreamHandlerFacto
      * @throws MalformedURLException if {@code spec} could not be parsed as a
      *     URL.
      */
+    @DSComment("no suspicious activity, just chanegs object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.776 -0500", hash_original_method = "121BE8263BD1C356B2FE90A678407E92", hash_generated_method = "957AACC1D575B1FFFB563B71D8404E20")
     
 public URL(String spec) throws MalformedURLException {
@@ -192,6 +194,8 @@ public URL(String protocol, String host, String file) throws MalformedURLExcepti
      * @throws MalformedURLException if the combination of all arguments do not
      *     represent a valid URL or if the protocol is invalid.
      */
+    @DSComment("no suspicious activity, just URL data structure building")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.787 -0500", hash_original_method = "9AD76E183D70EDC4767A9EAC128427AE", hash_generated_method = "7F84BB36FF6A492699D9A50DEDC1FED1")
     
 public URL(String protocol, String host, int port, String file) throws MalformedURLException {
@@ -437,6 +441,8 @@ void setupStreamHandler() {
      * default this returns an {@code InputStream}, or null if the content type
      * of the response is unknown.
      */
+    @DSComment("opening connection/getting data")
+    @DSSpec(DSCat.NETWORKING)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.809 -0500", hash_original_method = "D20F85DA45DCC6A1B9E0395104EBE2B6", hash_generated_method = "87CD5158EDA208789878ECB26921E749")
     
@@ -458,6 +464,8 @@ public final Object getContent() throws IOException {
     /**
      * Equivalent to {@code openConnection().getInputStream(types)}.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.814 -0500", hash_original_method = "EA6B256CF4DB87F83CFE1379BEA78831", hash_generated_method = "20204A59BCA9CBCE334EE2309DE1C2D7")
     
@@ -470,6 +478,8 @@ public final InputStream openStream() throws IOException {
      *
      * @throws IOException if an error occurs while opening the connection.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.817 -0500", hash_original_method = "DDCF57687ACF51357E563F1083DC4261", hash_generated_method = "28C15B77EC7816C10902E4F13397C53B")
     
@@ -527,12 +537,16 @@ public URI toURILenient() throws URISyntaxException {
      * this URL. The returned string is the same as the result of the method
      * {@code toExternalForm()}.
      */
+    @DSComment("no suspicious activity, just calls class function")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.827 -0500", hash_original_method = "9D75BD75136BEBAB4AE2F806E85803AD", hash_generated_method = "F41EB6D03A99F60D56FE9D7C7FCBDF03")
     
 @Override public String toString() {
         return toExternalForm();
     }
     
+    @DSComment("accesses networking information")
+    @DSSpec(DSCat.NETWORKING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.975 -0400", hash_original_method = "6763BB94BC9C65378EF7195BF94F5BED", hash_generated_method = "ACF3E5B31DE51D0A38B73B367D8CC436")
     public String toExternalForm() {
         if(streamHandler == null)        
@@ -598,6 +612,8 @@ public int getEffectivePort() {
      * Returns the protocol of this URL like "http" or "file". This is also
      * known as the scheme. The returned string is lower case.
      */
+    @DSComment("no suspicious activity, just gets string")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.839 -0500", hash_original_method = "A74773FBD6292704847794FB8A3C1AB0", hash_generated_method = "777D707579F7653F7954BDBD83E0BBF8")
     
@@ -629,6 +645,8 @@ public String getUserInfo() {
     /**
      * Returns the host name or IP address of this URL.
      */
+    @DSComment("no suspicious activity, just gets string")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.846 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
     
@@ -643,6 +661,8 @@ public String getHost() {
      * <p>If this URL has no explicit port, connections opened using this URL
      * will use its {@link #getDefaultPort() default port}.
      */
+    @DSComment("getting networking information")
+    @DSSpec(DSCat.NETWORKING)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.848 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "8D4984D37D0017078DF4701090E35F25")
     
@@ -667,6 +687,8 @@ public int getDefaultPort() {
     /**
      * Returns the file of this URL.
      */
+    @DSComment("no suspicious activity, just gets string")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.853 -0500", hash_original_method = "D4C7450F6A022BC4DF89D66487C9A55A", hash_generated_method = "D8CD1E2528FA75545C0B44B1301B41F0")
     

@@ -12,24 +12,36 @@ public class GLES20 {
     private static void _nativeClassInit() {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glActiveTexture(int texture) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glAttachShader(int program, int shader) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glBindAttribLocation(int program, int index, String name) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glBindBuffer(int target, int buffer) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glBindFramebuffer(int target, int framebuffer) {
 	}
     
     public static void glBindRenderbuffer(int target, int renderbuffer) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glBindTexture(int target, int texture) {
 	}
     
@@ -42,26 +54,36 @@ public class GLES20 {
     public static void glBlendEquationSeparate(int modeRGB, int modeAlpha) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glBlendFunc(int sfactor, int dfactor) {
 	}
     
     public static void glBlendFuncSeparate(int srcRGB, int dstRGB, int srcAlpha, int dstAlpha) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glBufferData(int target, int size, java.nio.Buffer data, int usage) {
 	}
     
     public static void glBufferSubData(int target, int offset, int size, java.nio.Buffer data) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static int glCheckFramebufferStatus(int target) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143838249 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2143838249;
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glClear(int mask) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glClearColor(float red, float green, float blue, float alpha) {
 	}
     
@@ -74,6 +96,8 @@ public class GLES20 {
     public static void glColorMask(boolean red, boolean green, boolean blue, boolean alpha) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glCompileShader(int shader) {
 	}
     
@@ -89,11 +113,15 @@ public class GLES20 {
     public static void glCopyTexSubImage2D(int target, int level, int xoffset, int yoffset, int x, int y, int width, int height) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static int glCreateProgram() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519833282 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_519833282;
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static int glCreateShader(int type) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1748292391 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1748292391;
@@ -102,18 +130,24 @@ public class GLES20 {
     public static void glCullFace(int mode) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDeleteBuffers(int n, int[] buffers, int offset) {
 	}
     
     public static void glDeleteBuffers(int n, java.nio.IntBuffer buffers) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDeleteFramebuffers(int n, int[] framebuffers, int offset) {
 	}
     
     public static void glDeleteFramebuffers(int n, java.nio.IntBuffer framebuffers) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDeleteProgram(int program) {
 	}
     
@@ -123,9 +157,13 @@ public class GLES20 {
     public static void glDeleteRenderbuffers(int n, java.nio.IntBuffer renderbuffers) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDeleteShader(int shader) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDeleteTextures(int n, int[] textures, int offset) {
 	}
     
@@ -144,42 +182,62 @@ public class GLES20 {
     public static void glDetachShader(int program, int shader) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDisable(int cap) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDisableVertexAttribArray(int index) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDrawArrays(int mode, int first, int count) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glDrawElements(int mode, int count, int type, int offset) {
 	}
     
     public static void glDrawElements(int mode, int count, int type, java.nio.Buffer indices) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glEnable(int cap) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glEnableVertexAttribArray(int index) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glFinish() {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glFlush() {
 	}
     
     public static void glFramebufferRenderbuffer(int target, int attachment, int renderbuffertarget, int renderbuffer) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glFramebufferTexture2D(int target, int attachment, int textarget, int texture, int level) {
 	}
     
     public static void glFrontFace(int mode) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGenBuffers(int n, int[] buffers, int offset) {
 	}
     
@@ -189,6 +247,8 @@ public class GLES20 {
     public static void glGenerateMipmap(int target) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGenFramebuffers(int n, int[] framebuffers, int offset) {
 	}
     
@@ -201,12 +261,16 @@ public class GLES20 {
     public static void glGenRenderbuffers(int n, java.nio.IntBuffer renderbuffers) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGenTextures(int n, int[] textures, int offset) {
 	}
     
     public static void glGenTextures(int n, java.nio.IntBuffer textures) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGetActiveAttrib(int program, int index, int bufsize, int[] length, int lengthOffset, int[] size, int sizeOffset, int[] type, int typeOffset, byte[] name,
 			int nameOffset) {
 	}
@@ -214,6 +278,8 @@ public class GLES20 {
     public static void glGetActiveAttrib(int program, int index, int bufsize, java.nio.IntBuffer length, java.nio.IntBuffer size, java.nio.IntBuffer type, byte name) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGetActiveUniform(int program, int index, int bufsize, int[] length, int lengthOffset, int[] size, int sizeOffset, int[] type, int typeOffset, byte[] name,
 			int nameOffset) {
 	}
@@ -227,6 +293,8 @@ public class GLES20 {
     public static void glGetAttachedShaders(int program, int maxcount, java.nio.IntBuffer count, java.nio.IntBuffer shaders) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static int glGetAttribLocation(int program, String name) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250723517 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1250723517;
@@ -244,11 +312,15 @@ public class GLES20 {
     public static void glGetBufferParameteriv(int target, int pname, java.nio.IntBuffer params) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static int glGetError() {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117972472 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_117972472;
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGetFloatv(int pname, float[] params, int offset) {
 	}
     
@@ -261,18 +333,24 @@ public class GLES20 {
     public static void glGetFramebufferAttachmentParameteriv(int target, int attachment, int pname, java.nio.IntBuffer params) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGetIntegerv(int pname, int[] params, int offset) {
 	}
     
     public static void glGetIntegerv(int pname, java.nio.IntBuffer params) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGetProgramiv(int program, int pname, int[] params, int offset) {
 	}
     
     public static void glGetProgramiv(int program, int pname, java.nio.IntBuffer params) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static String glGetProgramInfoLog(int program) {
 		return new String();
 	}
@@ -283,12 +361,16 @@ public class GLES20 {
     public static void glGetRenderbufferParameteriv(int target, int pname, java.nio.IntBuffer params) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glGetShaderiv(int shader, int pname, int[] params, int offset) {
 	}
     
     public static void glGetShaderiv(int shader, int pname, java.nio.IntBuffer params) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static String glGetShaderInfoLog(int shader) {
 		return new String();
 	}
@@ -305,6 +387,8 @@ public class GLES20 {
     public static void glGetShaderSource(int shader, int bufsize, java.nio.IntBuffer length, byte source) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static String glGetString(int name) {
 		return new String();
 	}
@@ -333,6 +417,8 @@ public class GLES20 {
     public static void glGetUniformiv(int program, int location, java.nio.IntBuffer params) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static int glGetUniformLocation(int program, String name) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214476555 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_214476555;
@@ -383,23 +469,33 @@ public class GLES20 {
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_504045245;
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static boolean glIsTexture(int texture) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1683324650 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1683324650;
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glLineWidth(float width) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glLinkProgram(int program) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glPixelStorei(int pname, int param) {
 	}
     
     public static void glPolygonOffset(float factor, float units) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glReadPixels(int x, int y, int width, int height, int format, int type, java.nio.Buffer pixels) {
 	}
     
@@ -412,6 +508,8 @@ public class GLES20 {
     public static void glSampleCoverage(float value, boolean invert) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glScissor(int x, int y, int width, int height) {
 	}
     
@@ -421,6 +519,8 @@ public class GLES20 {
     public static void glShaderBinary(int n, java.nio.IntBuffer shaders, int binaryformat, java.nio.Buffer binary, int length) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glShaderSource(int shader, String string) {
 	}
     
@@ -442,9 +542,13 @@ public class GLES20 {
     public static void glStencilOpSeparate(int face, int fail, int zfail, int zpass) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glTexImage2D(int target, int level, int internalformat, int width, int height, int border, int format, int type, java.nio.Buffer pixels) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glTexParameterf(int target, int pname, float param) {
 	}
     
@@ -463,9 +567,13 @@ public class GLES20 {
     public static void glTexParameteriv(int target, int pname, java.nio.IntBuffer params) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glTexSubImage2D(int target, int level, int xoffset, int yoffset, int width, int height, int format, int type, java.nio.Buffer pixels) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glUniform1f(int location, float x) {
 	}
     
@@ -475,6 +583,8 @@ public class GLES20 {
     public static void glUniform1fv(int location, int count, java.nio.FloatBuffer v) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glUniform1i(int location, int x) {
 	}
     
@@ -484,6 +594,8 @@ public class GLES20 {
     public static void glUniform1iv(int location, int count, java.nio.IntBuffer v) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glUniform2f(int location, float x, float y) {
 	}
     
@@ -502,6 +614,8 @@ public class GLES20 {
     public static void glUniform2iv(int location, int count, java.nio.IntBuffer v) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glUniform3f(int location, float x, float y, float z) {
 	}
     
@@ -520,6 +634,8 @@ public class GLES20 {
     public static void glUniform3iv(int location, int count, java.nio.IntBuffer v) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glUniform4f(int location, float x, float y, float z, float w) {
 	}
     
@@ -550,12 +666,16 @@ public class GLES20 {
     public static void glUniformMatrix3fv(int location, int count, boolean transpose, java.nio.FloatBuffer value) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glUniformMatrix4fv(int location, int count, boolean transpose, float[] value, int offset) {
 	}
     
     public static void glUniformMatrix4fv(int location, int count, boolean transpose, java.nio.FloatBuffer value) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glUseProgram(int program) {
 	}
     
@@ -598,6 +718,8 @@ public class GLES20 {
     public static void glVertexAttrib4fv(int indx, java.nio.FloatBuffer values) {
 	}
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glVertexAttribPointer(int indx, int size, int type, boolean normalized, int stride, int offset) {
 	}
     
@@ -625,6 +747,8 @@ public static void glVertexAttribPointer(
         );
     }
     
+    @DSComment("OpenGL Graphics Manipulation")
+    @DSSafe(DSCat.GRAPHICS)
     public static void glViewport(int x, int y, int width, int height) {
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:11.128 -0500", hash_original_field = "4108D2E908495B9D3DBDA59F2E00A327", hash_generated_field = "43604D5B9BADECF82E5DC08A6A6E973D")

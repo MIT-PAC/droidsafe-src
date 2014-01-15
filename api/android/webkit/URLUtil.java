@@ -268,6 +268,8 @@ public static boolean isContentUrl(String url) {
     /**
      * @return True iff the url is valid.
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.712 -0500", hash_original_method = "2527411CED96FFEC1D8C9EE305F559EE", hash_generated_method = "E404149FB48C572109BCE8D35AB2AA48")
     
 public static boolean isValidUrl(String url) {

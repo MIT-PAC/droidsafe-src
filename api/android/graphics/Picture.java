@@ -119,6 +119,8 @@ public void endRecording() {
      * Get the width of the picture as passed to beginRecording. This
      * does not reflect (per se) the content of the picture.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.323 -0500", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "119E6F88A6022FFF8C0BCF10E5D283FB")
     
     public int getWidth(){
@@ -130,6 +132,8 @@ public void endRecording() {
      * Get the height of the picture as passed to beginRecording. This
      * does not reflect (per se) the content of the picture.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.327 -0500", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "A50AB7B99158205015AA04248040D6D3")
     
     public int getHeight(){
@@ -143,6 +147,8 @@ public void endRecording() {
      * 
      * @param canvas  The picture is drawn to this canvas 
      */
+    @DSComment("Unintended picture could be put here")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.329 -0500", hash_original_method = "DC7CFB067EE80684132B2B92372F3B79", hash_generated_method = "5B34C796B6326931CE918675C2735673")
     
 public void draw(Canvas canvas) {

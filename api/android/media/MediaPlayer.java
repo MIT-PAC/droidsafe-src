@@ -39,6 +39,8 @@ public class MediaPlayer {
      * @param uri the Uri from which to get the datasource
      * @return a MediaPlayer object, or null if creation failed
      */
+    @DSComment("Media source is remote")
+    @DSSpec(DSCat.INTERNET)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.637 -0500", hash_original_method = "88A45C64C97A87F55B3C35AEDBC4AEE9", hash_generated_method = "54928E1D9B77BF22D6A2D9FC63E0FB4A")
     
@@ -98,6 +100,8 @@ public static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder)
      *              the resource to use as the datasource
      * @return a MediaPlayer object, or null if creation failed
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.643 -0500", hash_original_method = "1847FF960BCBE3D985D6E04CB323491E", hash_generated_method = "DF793324D9BE34784BB9E5DC61A87520")
     
 public static MediaPlayer create(Context context, int resid) {
@@ -307,6 +311,8 @@ private static void postEventFromNative(Object mediaplayer_ref,
      * to free the resources. If not released, too many MediaPlayer instances may
      * result in an exception.</p>
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.620 -0500", hash_original_method = "2C929CFD6011D1A8428ADCC5A270A92B", hash_generated_method = "16B7B2D5FA47F9A8C49D18D274F85689")
     
 public MediaPlayer() {
@@ -504,6 +510,8 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      * @param path the path of the file, or the http/rtsp URL of the stream you want to play
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("Reaching to files/URI")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.652 -0500", hash_original_method = "70B5385C7A556D37595F97E42F2F2DFE", hash_generated_method = "6626A2BDF4397DFEA415ACCA7CB59089")
     
@@ -562,6 +570,8 @@ public void setDataSource(String path, Map<String, String> headers)
      * @param fd the FileDescriptor for the file you want to play
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("Reaching to files/URI")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.662 -0500", hash_original_method = "67ED0EB071685F0AFDAFB2EFB1BC8776", hash_generated_method = "E3CC19B9EAB5FBB628ECA65729102A6F")
     
@@ -581,6 +591,8 @@ public void setDataSource(FileDescriptor fd)
      * @param length the length in bytes of the data to be played
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("Reaching to files/URI")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.666 -0500", hash_original_method = "CF807E4C5554BB2848F7651782391DCD", hash_generated_method = "ABE27D0C9FE0AA103EA081E4FA884B12")
     
     public void setDataSource(FileDescriptor fd, long offset, long length)
@@ -600,6 +612,8 @@ public void setDataSource(FileDescriptor fd)
      *
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.669 -0500", hash_original_method = "BE634EB7B5A47DD549B3D4698CE7CD0F", hash_generated_method = "972B65EE06DAE4FE0CB9C8995A2A0788")
     
     public void prepare() throws IOException, IllegalStateException{
@@ -630,6 +644,8 @@ public void setDataSource(FileDescriptor fd)
      *
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.676 -0500", hash_original_method = "40DE58868CCCFC32104AEA08DBC3B0CD", hash_generated_method = "DFF14EA76743D54BC360A3F44818B943")
     
 public  void start() throws IllegalStateException {
@@ -649,6 +665,8 @@ public  void start() throws IllegalStateException {
      * @throws IllegalStateException if the internal player engine has not been
      * initialized.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.681 -0500", hash_original_method = "09E3A57706D9EF8F79E07C48FA7F3A4D", hash_generated_method = "F22CE3D6933C89833361E940C5BF78A8")
     
 public void stop() throws IllegalStateException {
@@ -668,6 +686,8 @@ public void stop() throws IllegalStateException {
      * @throws IllegalStateException if the internal player engine has not been
      * initialized.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.688 -0500", hash_original_method = "857D1517B1757951DF038ED3088FF3B2", hash_generated_method = "03A1A3D932EC3E3AE69969FBABFA6F3C")
     
 public void pause() throws IllegalStateException {
@@ -800,6 +820,8 @@ private void updateSurfaceScreenOn() {
      *
      * @return true if currently playing, false otherwise
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.712 -0500", hash_original_method = "F383FE244E24C0C545B5D975B4462316", hash_generated_method = "AE8AFBA8F320061FEDF7FC75CB1400FF")
     
     public boolean isPlaying(){
@@ -814,6 +836,8 @@ private void updateSurfaceScreenOn() {
      * @throws IllegalStateException if the internal player engine has not been
      * initialized
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.717 -0500", hash_original_method = "97A3BCAAD25A5F0CCA6DBA135F05FFD4", hash_generated_method = "619D78BA95B04D04B7764ECEACAE3BF8")
     
     public void seekTo(int msec) throws IllegalStateException{
@@ -826,6 +850,8 @@ private void updateSurfaceScreenOn() {
      *
      * @return the current position in milliseconds
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.721 -0500", hash_original_method = "540585A22AA6C1E9C18EA05D71ACEBDE", hash_generated_method = "BF21B840E4AAAC6665C172E56A7F131C")
     
     public int getCurrentPosition(){
@@ -838,6 +864,8 @@ private void updateSurfaceScreenOn() {
      *
      * @return the duration in milliseconds
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.725 -0500", hash_original_method = "5FCC06EDC9BF2D1AEA92A44CF2A2F31E", hash_generated_method = "2FC17533677ADF0C26434C75FB5C9069")
     
     public int getDuration(){
@@ -950,6 +978,8 @@ public int setMetadataFilter(Set<Integer> allow, Set<Integer> block) {
      * may be expected when unnecessary multiple instances are used
      * at the same time.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.733 -0500", hash_original_method = "40ADFE91226CE43AA5B2CBEBA3591229", hash_generated_method = "3B1709695F4492C6A125DDC174E4F177")
     
 public void release() {
@@ -977,6 +1007,8 @@ public void release() {
      * this method, you will have to initialize it again by setting the
      * data source and calling prepare().
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.739 -0500", hash_original_method = "0163217153F6E824039D5121A760EBE0", hash_generated_method = "469D9FA20EF1D0738AB1606E178B89CF")
     
 public void reset() {
@@ -1001,6 +1033,8 @@ public void reset() {
      * @param streamtype the audio stream type
      * @see android.media.AudioManager
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.747 -0500", hash_original_method = "7EA0CD9F896B971C851CD4CA96BFE5FA", hash_generated_method = "CD4A30775F2D640F0E5D728EB6B56B0A")
     
     public void setAudioStreamType(int streamtype){
@@ -1013,6 +1047,8 @@ public void reset() {
      *
      * @param looping whether to loop or not
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.750 -0500", hash_original_method = "4C3A78CA2E07F71A05B213D4CFF64128", hash_generated_method = "9A99D137708EEDC801722D00FF2A4F76")
     
     public void setLooping(boolean looping){
@@ -1044,6 +1080,8 @@ public void reset() {
      * @param leftVolume left volume scalar
      * @param rightVolume right volume scalar
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.758 -0500", hash_original_method = "BE4EAA7A7DB479C280C8B84C90E58238", hash_generated_method = "89EBEFD4DBA8777486B4ED42D974F9F4")
     
     public void setVolume(float leftVolume, float rightVolume){

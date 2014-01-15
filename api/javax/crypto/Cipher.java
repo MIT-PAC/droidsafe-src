@@ -43,6 +43,8 @@ public class Cipher {
      *             if no installed provider can provide the padding scheme in
      *             the <i>transformation</i>.
      */
+    @DSComment("not data related")
+    @DSSpec(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.176 -0500", hash_original_method = "47D9CD504ED20085CFDD80DDD8609D02", hash_generated_method = "7A7BA9C960480382009236B5807FDC04")
     
 public static final Cipher getInstance(String transformation)
@@ -497,6 +499,8 @@ public final ExemptionMechanism getExemptionMechanism() {
      *             if the specified key can not be used to initialize this
      *             cipher instance.
      */
+    @DSComment("not data related")
+    @DSSpec(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.212 -0500", hash_original_method = "429E4D2BD5B61AF47430304468140423", hash_generated_method = "521DA08B31618FB4D102310808011570")
     
 public final void init(int opmode, Key key) throws InvalidKeyException {
@@ -592,6 +596,8 @@ private void checkMode(int mode) {
      *             it the specified parameters are inappropriate for this
      *             cipher.
      */
+    @DSComment("not data related")
+    @DSSpec(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.219 -0500", hash_original_method = "BBC8C1A41A2EA4CA6303B616FCC7D14B", hash_generated_method = "F0AD7A3188CC71BBE28E7C61DB009F54")
     
 public final void init(int opmode, Key key, AlgorithmParameterSpec params)
@@ -688,6 +694,8 @@ public final void init(int opmode, Key key, AlgorithmParameterSpec params,
      *             it the specified parameters are inappropriate for this
      *             cipher.
      */
+    @DSComment("not data related")
+    @DSSpec(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.223 -0500", hash_original_method = "BF9CD5FCB5A2729A943C192A3430B212", hash_generated_method = "65FB7F143990D8CDB9814002FF8745AC")
     
 public final void init(int opmode, Key key, AlgorithmParameters params)
@@ -1161,6 +1169,8 @@ public final int doFinal(byte[] output, int outputOffset)
      *             if this cipher instance is not initialized for encryption or
      *             decryption.
      */
+    @DSComment("IO/cryptographic transformation")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.254 -0500", hash_original_method = "ED0F518E6798AF2EE42518F6A3E77904", hash_generated_method = "2B362B7F94558CDBD22CAC4F5C37AC52")
     
@@ -1352,6 +1362,8 @@ public final int doFinal(ByteBuffer input, ByteBuffer output)
      * @throws IllegalStateException
      *             if this cipher instance is not initialized for wrapping.
      */
+    @DSComment("Only wrap key, not a potential data leak")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.266 -0500", hash_original_method = "6E0DA752A02639D8B96D35F2A60D917D", hash_generated_method = "6A8137C15B985EDA25A40EAE7F2F579A")
     
 public final byte[] wrap(Key key) throws IllegalBlockSizeException,

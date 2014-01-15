@@ -37,6 +37,8 @@ public final class DexFile {
      * @throws IOException
      *  If unable to open the source or output file.
      */
+    @DSComment("Dalvik class method")
+    @DSBan(DSCat.DALVIK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.716 -0500", hash_original_method = "1EDCA09AD4C3913C3E18CC3064C22C6C", hash_generated_method = "BEC005FC12BA681CE5CAC96FCB71CC2A")
     
 static public DexFile loadDex(String sourcePathName, String outputPathName,
@@ -240,6 +242,8 @@ public Class loadClassBinaryName(String name, ClassLoader loader) {
      * @return an enumeration of names of classes contained in the DEX file, in
      *         the usual internal form (like "java/lang/String").
      */
+    @DSComment("Dalvik class method")
+    @DSBan(DSCat.DALVIK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.732 -0500", hash_original_method = "51AB769B18373F25E42ACAB5FC64B8CC", hash_generated_method = "2F173EE517FB3C5BC94167DFC70EE753")
     
 public Enumeration<String> entries() {

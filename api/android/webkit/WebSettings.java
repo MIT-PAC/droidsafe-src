@@ -489,6 +489,8 @@ public boolean supportZoom() {
     /**
      * Sets whether the zoom mechanism built into WebView is used.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.317 -0500", hash_original_method = "16CDF55EE98C899167571FFC15609D2B", hash_generated_method = "453D17A868C2DCA7A2E28D62ACBA5A60")
     
@@ -579,6 +581,8 @@ public boolean getAllowContentAccess() {
     /**
      * Set whether the WebView loads a page with overview mode.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.334 -0500", hash_original_method = "E0C53B0ABBE8903B8C2E5235B7766B9A", hash_generated_method = "7B1D9F67211909D027A50F5CB000A22C")
     
@@ -909,6 +913,8 @@ public boolean getLightTouchEnabled() {
     /**
      * Tell the WebView to use the wide viewport
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.390 -0500", hash_original_method = "6232B93EE163514DA7A8F2A20C0E8296", hash_generated_method = "BD81717A1BA5C3C98CA5A5EEAC0936CC")
     
@@ -1193,6 +1199,8 @@ public synchronized int getMinimumLogicalFontSize() {
      * @param size A non-negative integer between 1 and 72.
      * Any number outside the specified range will be pinned.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.442 -0500", hash_original_method = "F015D29DAD166EF30FCB62EA8F22BD34", hash_generated_method = "D70ABF734D51BE470D682320EB40CA12")
     
@@ -1363,6 +1371,8 @@ private void verifyNetworkAccess() {
      * Tell the WebView to enable javascript execution.
      * @param flag True if the WebView should execute javascript.
      */
+    @DSComment("enable javascript setting")
+    @DSSpec(DSCat.SECURITY)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:04.470 -0500", hash_original_method = "0BBFCDC224ADE5D71512B3B9C5FED4DC", hash_generated_method = "524201A68D16D11518F913CE7AD4EBEF")
     

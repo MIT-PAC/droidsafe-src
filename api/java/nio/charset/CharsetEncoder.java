@@ -58,6 +58,8 @@ public abstract class CharsetEncoder {
      * Constructs a new {@code CharsetEncoder} using the given parameters and
      * the replacement byte array {@code { (byte) '?' }}.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.270 -0500", hash_original_method = "5E9CA4841A80C315BA24674061FE2949", hash_generated_method = "D723EDBE48CACC50A9409DF44DC42EAC")
     
 protected CharsetEncoder(Charset cs, float averageBytesPerChar, float maxBytesPerChar) {
@@ -378,6 +380,8 @@ private ByteBuffer allocateMore(ByteBuffer output) {
      *             method threw an <code>BufferUnderflowException</code> or
      *             <code>BufferUnderflowException</code>.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.300 -0500", hash_original_method = "F53B4856D46D71BB987D9EC6F2ED08EE", hash_generated_method = "708ABAF1F51A81A7CA9ECE00BF14A3A2")
     
@@ -627,6 +631,8 @@ public CodingErrorAction malformedInputAction() {
      * Returns the maximum number of bytes which can be created by this encoder for
      * one input character, must be positive.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.326 -0500", hash_original_method = "F4624CD8E2F5B5C085387046C0856D44", hash_generated_method = "0EE4AAAF4A83FB7CE34D8002046C29C5")
     
@@ -647,6 +653,8 @@ public final float maxBytesPerChar() {
      * @throws IllegalArgumentException
      *             if the given newAction is null.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.328 -0500", hash_original_method = "9AA0403DB22EF3A510B565026DCE2424", hash_generated_method = "0011EC96FF5543956D12364517834E9A")
     
 public final CharsetEncoder onMalformedInput(CodingErrorAction newAction) {
@@ -671,6 +679,8 @@ public final CharsetEncoder onMalformedInput(CodingErrorAction newAction) {
      * @throws IllegalArgumentException
      *             if the given newAction is null.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:00.331 -0500", hash_original_method = "8F9E9A5BA6AED0663F62AB88ADE1A1B8", hash_generated_method = "92C50D049871AEE37000E49D171DBEFA")
     
 public final CharsetEncoder onUnmappableCharacter(CodingErrorAction newAction) {

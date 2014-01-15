@@ -590,6 +590,8 @@ public BigDecimal(char[] in, MathContext mc) {
      *             if {@code val} does not contain a valid string representation
      *             of a big decimal.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.181 -0500", hash_original_method = "97883F5F25D8C2D5B9EC2501AC7ECDA2", hash_generated_method = "8A7E2F1E0BA78CDD4F6AE32E1A77DAE9")
     
 public BigDecimal(String val) {
@@ -636,6 +638,8 @@ public BigDecimal(String val, MathContext mc) {
      * @throws NumberFormatException
      *             if {@code val} is infinity or not a number.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.188 -0500", hash_original_method = "A550123107439183BDAF78BFBC33380D", hash_generated_method = "21F06AAA0AAC6CA3F389A18FE466D483")
     
 public BigDecimal(double val) {

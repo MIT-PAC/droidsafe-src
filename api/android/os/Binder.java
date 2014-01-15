@@ -67,6 +67,8 @@ public class Binder implements IBinder {
     /**
      * Default constructor initializes the object.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.148 -0500", hash_original_method = "E9C0CAF28240B0B259339EF455808C3F", hash_generated_method = "3D5C65FE180F867DB2040729AD77C600")
     
 public Binder() {
@@ -88,6 +90,8 @@ public Binder() {
      * to return the given owner IInterface when the corresponding
      * descriptor is requested.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.150 -0500", hash_original_method = "FF7CD905415FB665DAB37EF33B177901", hash_generated_method = "EA06BD2476989BF4DB475E54AC02F660")
     
 public void attachInterface(IInterface owner, String descriptor) {
@@ -147,6 +151,8 @@ public IInterface queryLocalInterface(String descriptor) {
      *
      * <p>If you want to call this, call transact().
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.161 -0500", hash_original_method = "0CF6D9F1E08225F80F6CBB6DE559E3A9", hash_generated_method = "1C003B722C02AF5B148F4AC3DEDD3455")
     
 protected boolean onTransact(int code, Parcel data, Parcel reply,

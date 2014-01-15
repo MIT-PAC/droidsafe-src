@@ -47,6 +47,8 @@ public class TabWidget extends LinearLayout implements OnFocusChangeListener {
 
     private int[] mImposedTabWidths;
 
+    @DSComment("Tab Widget")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.799 -0500", hash_original_method = "BAD8053A139C3B2472C278F997D22869", hash_generated_method = "F03AF98FF889585319AC016EC76F6657")
     
 public TabWidget(Context context) {

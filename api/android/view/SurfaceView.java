@@ -400,6 +400,8 @@ public class SurfaceView extends View {
         private static final String LOG_TAG = "SurfaceHolder";
 };
 
+    @DSComment("Dedicated drawing surface")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.316 -0500", hash_original_method = "36676A10DA9FEB0757A9258740A87950", hash_generated_method = "A255D2F26C979B06132201DF48675A41")
     
 public SurfaceView(Context context) {
@@ -407,6 +409,8 @@ public SurfaceView(Context context) {
         init();
     }
     
+    @DSComment("Dedicated drawing surface")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.319 -0500", hash_original_method = "AC0FAD92FEC32BF55C39DC93EF8576EF", hash_generated_method = "FE366B161C66A6AFC530ABCACA3BED3A")
     
 public SurfaceView(Context context, AttributeSet attrs) {
@@ -433,6 +437,8 @@ private void init() {
      * 
      * @return SurfaceHolder The holder of the surface.
      */
+    @DSComment("Dedicated drawing surface")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.325 -0500", hash_original_method = "11B3726B61DA4E45A86A0978E3D5B1EE", hash_generated_method = "58FC46A9E0D6EACC68242F9E95DD21CD")
     
@@ -469,6 +475,8 @@ public SurfaceHolder getHolder() {
         updateWindow(false, false);
     }
 
+    @DSComment("Dedicated drawing surface")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.333 -0500", hash_original_method = "644621127059D6B23356D81576DC6A8B", hash_generated_method = "62E82B7696931E2AE444CFAC3B347A50")
     
@@ -532,6 +540,8 @@ public SurfaceHolder getHolder() {
         return result;
     }
 
+    @DSComment("Dedicated drawing surface")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.344 -0500", hash_original_method = "41B5D508388526C331B138172391BB1E", hash_generated_method = "873D27504319B774EF13CEACA2326F59")
     
 @Override
@@ -561,6 +571,8 @@ public SurfaceHolder getHolder() {
         return opaque;
     }
 
+    @DSComment("Dedicated drawing surface")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.347 -0500", hash_original_method = "B44BAC95FDBF1A2D6C6E955BD515D9FE", hash_generated_method = "97DE4A6D3543F02FB257F594A425585B")
     
 @Override
@@ -600,6 +612,8 @@ public SurfaceHolder getHolder() {
      * 
      * <p>Calling this overrides any previous call to {@link #setZOrderOnTop}.
      */
+    @DSComment("Dedicated drawing surface")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.351 -0500", hash_original_method = "FB26E6D2AB831E35DDA7A9ED4DEF2DCC", hash_generated_method = "DBA5C15CDD3EF8CF9CB4AA861D493175")
     
@@ -622,6 +636,8 @@ public void setZOrderMediaOverlay(boolean isMediaOverlay) {
      * 
      * <p>Calling this overrides any previous call to {@link #setZOrderMediaOverlay}.
      */
+    @DSComment("Dedicated drawing surface")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:49.354 -0500", hash_original_method = "001C3D591DD99644CBE6444F60EBCCA2", hash_generated_method = "BD86D3EEB2C88766840B4730D205088A")
     

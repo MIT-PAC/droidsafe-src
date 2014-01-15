@@ -136,6 +136,8 @@ public int getMode() {
      * @throws IllegalStateException if the stream is busy.
      * @see #isBusy()
      */
+    @DSComment("can change to send/receive only mode")
+    @DSSpec(DSCat.RTP_CALL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.469 -0500", hash_original_method = "343CDE7B48421898D79FEBC0BB9BBA38", hash_generated_method = "28774BF3C6064DA12FC00B4CBCCC590C")
     
 public void setMode(int mode) {

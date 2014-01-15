@@ -59,6 +59,8 @@ public class ZipFile implements ZipConstants {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.331 -0500", hash_original_method = "E5AF570B733F2A8A2A3B06248A7E8835", hash_generated_method = "A59FE118065A3FA0C7A5ABC70B304A1F")
     
 public ZipFile(File file) throws ZipException, IOException {
@@ -204,6 +206,8 @@ public ZipEntry nextElement() {
      *         exist in the ZIP file.
      * @throws IllegalStateException if this ZIP file has been closed.
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.354 -0500", hash_original_method = "D382D29E599C910662BB0F89A97F218A", hash_generated_method = "955202DE1AF533EEDFC3BBFC49E0D4E8")
     
@@ -333,6 +337,8 @@ public ZipInflaterInputStream(InputStream is, Inflater inf, int bsize, ZipEntry 
      *             if an {@code IOException} occurs.
      * @throws IllegalStateException if this ZIP file has been closed.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.358 -0500", hash_original_method = "B69421FB9318C1ABE9ECEEB1DD311069", hash_generated_method = "8EAC736ACC17C5ECCFFF65C0A3EE6FFC")
     

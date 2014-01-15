@@ -404,6 +404,8 @@ public abstract FloatBuffer put(float f);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.937 -0500", hash_original_method = "5B7E9D4E0A0B3CF72C892C67E2CB78B1", hash_generated_method = "364B08C6990445194E4D43237CB05BC7")
     
 public final FloatBuffer put(float[] src) {
@@ -490,6 +492,8 @@ public FloatBuffer put(FloatBuffer src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.946 -0500", hash_original_method = "E055474EFA3FA7B3EA940C5865B7DADC", hash_generated_method = "FF72BFC456E313F487B3F4301D2E435E")
     
 public abstract FloatBuffer put(int index, float f);

@@ -369,6 +369,8 @@ public synchronized void setCookieStore(final CookieStore cookieStore) {
         this.cookieStore = cookieStore;
     }
 
+    @DSComment("possible networking data collection")
+    @DSSpec(DSCat.NETWORKING)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.096 -0500", hash_original_method = "98E8D6F59FD454CB3C7069127AA5844B", hash_generated_method = "2F6355DE373428EEE930FF676F6316CB")
     
@@ -504,6 +506,8 @@ public void removeRequestInterceptorByClass(Class<? extends HttpRequestIntercept
     }
 
     // non-javadoc, see interface HttpClient
+    @DSComment("sends data through network")
+    @DSSpec(DSCat.NETWORKING)
     @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:41.140 -0500", hash_original_method = "8C5414A352E96D69F8672C617A799B3F", hash_generated_method = "8579099BD17E76C7F736CB1EA0112BCF")
     

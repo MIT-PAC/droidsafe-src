@@ -52,6 +52,8 @@ public class ShareActionProvider extends ActionProvider {
      *
      * @param context Context for accessing resources.
      */
+    @DSComment("Sharing request")
+    @DSSpec(DSCat.SHARING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.252 -0500", hash_original_method = "D37DD9362CC0C7C9F17F614AA422CDA5", hash_generated_method = "EB12F0C179FF5049530FB71B65E2D7EF")
     
 public ShareActionProvider(Context context) {
@@ -166,6 +168,8 @@ public void setOnShareTargetSelectedListener(OnShareTargetSelectedListener liste
      *
      * @param shareHistoryFile The share history file name.
      */
+    @DSComment("Sharing request")
+    @DSSpec(DSCat.SHARING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.264 -0500", hash_original_method = "55B9AB4A16F0F7764FD2AA524BC9ED0A", hash_generated_method = "03E0DA1D52ECA62A54D2669894C69150")
     
 public void setShareHistoryFileName(String shareHistoryFile) {
@@ -240,6 +244,8 @@ public void setShareHistoryFileName(String shareHistoryFile) {
      * @see Intent#ACTION_SEND
      * @see Intent#ACTION_SEND_MULTIPLE
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.267 -0500", hash_original_method = "0DAF31F3B630D54C36D98C14F5BC8D8F", hash_generated_method = "CC784081647578CB91B85D7C5DF7179C")
     

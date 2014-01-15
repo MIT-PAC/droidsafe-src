@@ -77,6 +77,8 @@ public Bundle[] newArray(int size) {
     /**
      * Constructs a new, empty Bundle.
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.405 -0500", hash_original_method = "40BE022BD5AEEE3B1F4C24A599FDBBB4", hash_generated_method = "2E4F8DD9FFAB812A4C4E1772928E04E9")
     
 public Bundle() {
@@ -193,6 +195,8 @@ Bundle(Parcel parcelledData, int length) {
         //}
     }
     
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.110 -0400", hash_original_method = "98C9A117007F79899B5BBD029ABFD6B8", hash_generated_method = "1DFA79725EDD590714D0602080EA4C5B")
     public void setClassLoader(ClassLoader loader) {
         mClassLoader = loader;
@@ -259,6 +263,8 @@ synchronized void unparcel() {
         mParcelledData = null;
     }
     
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.146 -0400", hash_original_method = "89E974D778C485ED4A98439CDF5961E3", hash_generated_method = "2589B20E3DA759F2944F86B92C96601F")
     public int size() {
         unparcel();
@@ -269,6 +275,8 @@ synchronized void unparcel() {
         //return mMap.size();
     }
     
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.152 -0400", hash_original_method = "8B93AFDE665AAAFE98B5EE9FD5355D4B", hash_generated_method = "3DE10A26149EEB2E3D91D31D57ADFD12")
     public boolean isEmpty() {
         unparcel();
@@ -298,6 +306,8 @@ public void clear() {
      * @param key a String key
      * @return true if the key is part of the mapping, false otherwise
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.442 -0500", hash_original_method = "F5C0B952F7E6EDB282A82D73FA397DBD", hash_generated_method = "B78738A491B15050745DD41B2D9BECE8")
     
 public boolean containsKey(String key) {
@@ -311,6 +321,8 @@ public boolean containsKey(String key) {
      * @param key a String key
      * @return an Object, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.444 -0500", hash_original_method = "E6C9158A697ED4C4296ED4A1595BA584", hash_generated_method = "E7E26841E84A6B6A9D5EC9D7CD01763B")
     
@@ -354,6 +366,8 @@ public void putAll(Bundle map) {
      *
      * @return a Set of String keys
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.450 -0500", hash_original_method = "00E2D8861948F8DB601BFD39768039D0", hash_generated_method = "BE31F1C699094CF6E6C11BAADEFB05F1")
     
 public Set<String> keySet() {
@@ -375,6 +389,8 @@ public Set<String> keySet() {
      * @param key a String, or null
      * @param value a Boolean, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.457 -0500", hash_original_method = "94490DFEC498722DA435B9597CF0EDDE", hash_generated_method = "D06CBF81F2867BB687F3C98679973161")
     
@@ -420,6 +436,8 @@ public void putChar(String key, char value) {
      * @param key a String, or null
      * @param value a short
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.463 -0500", hash_original_method = "48338BC49C4A94D5C3F73368CEF11822", hash_generated_method = "40E5D56C660E674AEAC1983F06C125A3")
     
@@ -435,6 +453,8 @@ public void putShort(String key, short value) {
      * @param key a String, or null
      * @param value an int, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.465 -0500", hash_original_method = "C2DD503B984E96C46288CB6F7C364E09", hash_generated_method = "4AC8318C015B20964426413A31217551")
     
@@ -450,6 +470,8 @@ public void putInt(String key, int value) {
      * @param key a String, or null
      * @param value a long
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.467 -0500", hash_original_method = "32D4E331D0F655A9205640C19ABF2B58", hash_generated_method = "8F57D9890D036571C1D1866F6CF386C5")
     
@@ -465,6 +487,8 @@ public void putLong(String key, long value) {
      * @param key a String, or null
      * @param value a float
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.469 -0500", hash_original_method = "292C24CEC676EE3F6A373A1AE7371B82", hash_generated_method = "2FACA41C84A2478691CF5236461898B1")
     
@@ -480,6 +504,8 @@ public void putFloat(String key, float value) {
      * @param key a String, or null
      * @param value a double
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.471 -0500", hash_original_method = "1F6C5CEB9374270482ED4835594D6EF1", hash_generated_method = "877978322BA244A0BEA7112AEE13C2F5")
     
@@ -495,6 +521,8 @@ public void putDouble(String key, double value) {
      * @param key a String, or null
      * @param value a String, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.474 -0500", hash_original_method = "E7336EB9055C9F862A0B8D336BB5AE0F", hash_generated_method = "9B77596588C53FA62A7F6A9D3F01E4F8")
     
@@ -510,6 +538,8 @@ public void putString(String key, String value) {
      * @param key a String, or null
      * @param value a CharSequence, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.476 -0500", hash_original_method = "23A8E01E039C76712F2C134222EAC45B", hash_generated_method = "EA68455D0713862A2AE3E437A935F177")
     
@@ -525,6 +555,8 @@ public void putCharSequence(String key, CharSequence value) {
      * @param key a String, or null
      * @param value a Parcelable object, or null
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.478 -0500", hash_original_method = "F17082A305780CE778B93F20A20D0318", hash_generated_method = "328E649DB95D7BCD75AD520B7DB513E8")
     
@@ -542,6 +574,8 @@ public void putParcelable(String key, Parcelable value) {
      * @param key a String, or null
      * @param value an array of Parcelable objects, or null
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.480 -0500", hash_original_method = "1666E21FDEAC3D0C57D8E38C022A7AD2", hash_generated_method = "2400F64B7D1A1D47FB478A0CEC8DD502")
     
@@ -559,6 +593,8 @@ public void putParcelableArray(String key, Parcelable[] value) {
      * @param key a String, or null
      * @param value an ArrayList of Parcelable objects, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.482 -0500", hash_original_method = "C07428EAC6D62CA3DF6F67489B512A7E", hash_generated_method = "D4F0BB866FF91AE238790A8A6EE5AF88")
     
@@ -577,6 +613,8 @@ public void putParcelableArrayList(String key,
      * @param key a String, or null
      * @param value a SparseArray of Parcelable objects, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.485 -0500", hash_original_method = "93FD4CBDA1682EAF0E9F2535BF397F65", hash_generated_method = "650875F4F65C3A61BA4CCCBEFD84BCF5")
     
@@ -639,6 +677,8 @@ public void putCharSequenceArrayList(String key, ArrayList<CharSequence> value) 
      * @param key a String, or null
      * @param value a Serializable object, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.494 -0500", hash_original_method = "C647C81034119067E2383CA02CF65D5F", hash_generated_method = "4BA2962153220EE5043BE8A4597C831E")
     
@@ -669,6 +709,8 @@ public void putBooleanArray(String key, boolean[] value) {
      * @param key a String, or null
      * @param value a byte array object, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.498 -0500", hash_original_method = "1C56E40FECAB1AC7C31C1D64DCBF74F0", hash_generated_method = "0206D8B9EEFAE3F5D1FE5F44A497BC16")
     
@@ -714,6 +756,8 @@ public void putCharArray(String key, char[] value) {
      * @param key a String, or null
      * @param value an int array object, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.505 -0500", hash_original_method = "6E03156089AB80D54004D251F8CBA9A8", hash_generated_method = "C0C3A6D4334E11C7E7E55FB20260433D")
     
@@ -774,6 +818,8 @@ public void putDoubleArray(String key, double[] value) {
      * @param key a String, or null
      * @param value a String array object, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.514 -0500", hash_original_method = "3F318C6E0F37B53192FF4A33987FF921", hash_generated_method = "FE79E8BA5AF6257B211C93119EFF9427")
     
@@ -804,6 +850,8 @@ public void putCharSequenceArray(String key, CharSequence[] value) {
      * @param key a String, or null
      * @param value a Bundle object, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.518 -0500", hash_original_method = "8FC0D5E8787A84A268AF6F8743FC18A2", hash_generated_method = "6F7D480D452EFF0784927D78F4534B62")
     
@@ -838,6 +886,8 @@ public void putBundle(String key, Bundle value) {
      * @param key a String
      * @return a boolean value
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.522 -0500", hash_original_method = "44491868325766EC5AED04910C3A4D05", hash_generated_method = "D1979B14E028B71AE1D6B9674428E0B1")
     
 public boolean getBoolean(String key) {
@@ -871,6 +921,8 @@ private void typeWarning(String key, Object value, String className,
         typeWarning(key, value, className, "<null>", e);
     }
     
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.445 -0400", hash_original_method = "62E0EA051DB8CF7BEF8CA2ACB88171F1", hash_generated_method = "85B0E924776CDCBCD46F75FE8DDED70C")
     public boolean getBoolean(String key, boolean defaultValue) {
@@ -1010,6 +1062,8 @@ public short getShort(String key, short defaultValue) {
      * @param key a String
      * @return an int value
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.545 -0500", hash_original_method = "E147114FE6EABC6FAB98EAC3907FD421", hash_generated_method = "CB945A82DA2C8ED3356E82972EDE1C4A")
     
@@ -1025,6 +1079,8 @@ public int getInt(String key) {
      * @param key a String
      * @return an int value
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.547 -0500", hash_original_method = "83073F806AC00C1E2EC4E710A5472BFA", hash_generated_method = "B4328D17C93F2CA0559B5562F5AC19F6")
     
@@ -1049,6 +1105,8 @@ public int getInt(String key, int defaultValue) {
      * @param key a String
      * @return a long value
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.549 -0500", hash_original_method = "0CFFDE7713416A17E206C69E138AC0FF", hash_generated_method = "280B3B770C86AAD43B0180F3944619B2")
     
@@ -1064,6 +1122,8 @@ public long getLong(String key) {
      * @param key a String
      * @return a long value
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.552 -0500", hash_original_method = "84BBB1371E3F4460B78F31822950EAAA", hash_generated_method = "C6EB7F9E11C719D6CA244BE7991CFEB6")
     
@@ -1088,6 +1148,8 @@ public long getLong(String key, long defaultValue) {
      * @param key a String
      * @return a float value
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.555 -0500", hash_original_method = "0D69D7EB25C8E886B27D28B7A30E217C", hash_generated_method = "5DA71DD50FB35EB08C4A643AD592C4BA")
     
@@ -1127,6 +1189,8 @@ public float getFloat(String key, float defaultValue) {
      * @param key a String
      * @return a double value
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.559 -0500", hash_original_method = "F5086ED2941BC7C3CB9930D22842FA44", hash_generated_method = "6B14D80610B6A994D1F454669DF16088")
     
@@ -1167,6 +1231,8 @@ public double getDouble(String key, double defaultValue) {
      * @param key a String, or null
      * @return a String value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.563 -0500", hash_original_method = "51BC83F6E10D252B7C417A14343A53BE", hash_generated_method = "DC94B211C8F775E38F2099A496DDDDAB")
     
@@ -1192,6 +1258,8 @@ public String getString(String key) {
      * @param defaultValue Value to return if key does not exist
      * @return a String value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.566 -0500", hash_original_method = "BC80281EBAB10986EFB226B5D89A6368", hash_generated_method = "17A1039E666A7650DA2AF0A5672C697D")
     
@@ -1217,6 +1285,8 @@ public String getString(String key, String defaultValue) {
      * @param key a String, or null
      * @return a CharSequence value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.568 -0500", hash_original_method = "4D51A99620432005EDE9794C44D49E24", hash_generated_method = "C749D871CDC137BBDCB4798223006DD3")
     
@@ -1267,6 +1337,8 @@ public CharSequence getCharSequence(String key, CharSequence defaultValue) {
      * @param key a String, or null
      * @return a Bundle value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.572 -0500", hash_original_method = "7BDB21170493B124DD321ED35C766BAB", hash_generated_method = "C59829BF8BA797DC02E79C321DAD4ECD")
     
@@ -1330,6 +1402,8 @@ T var540C13E9E156B687226421B24F2DF178_1182490752 =             null;
      * @param key a String, or null
      * @return a Parcelable[] value, or null
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.577 -0500", hash_original_method = "ACB5B2AD81C8600B2F6954C0DE15936B", hash_generated_method = "45FD4581CE7E9024FA7FADC100EE838C")
     
@@ -1347,6 +1421,8 @@ public Parcelable[] getParcelableArray(String key) {
         }
     }
     
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.604 -0400", hash_original_method = "4066E862ACF29CBEB786556AAFBFC58D", hash_generated_method = "000888949C0E1171C26D37E7DD90846A")
     public <T extends Parcelable> ArrayList<T> getParcelableArrayList(String key) {
@@ -1386,6 +1462,8 @@ ArrayList<T> var540C13E9E156B687226421B24F2DF178_763858156 =             null;
         //}
     }
     
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-23 19:32:55.611 -0400", hash_original_method = "F3D4EB475C3465E3892E6091F83F5D92", hash_generated_method = "BCE849B03B3DED85ECE99E857AB69DEB")
     public <T extends Parcelable> SparseArray<T> getSparseParcelableArray(String key) {
@@ -1433,6 +1511,8 @@ SparseArray<T> var540C13E9E156B687226421B24F2DF178_1931449992 =             null
      * @param key a String, or null
      * @return a Serializable value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.583 -0500", hash_original_method = "3E1FB271E8FDF7CD375ECA97D496DB8C", hash_generated_method = "B0217288359245D82FE428677F8F5FF2")
     
@@ -1483,6 +1563,8 @@ public ArrayList<Integer> getIntegerArrayList(String key) {
      * @param key a String, or null
      * @return an ArrayList<String> value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.588 -0500", hash_original_method = "2869BDF5623DD5162F6A69DFD2D1F8AB", hash_generated_method = "A38B3BACEDB6F26ECC5AC23BAEDFF3E0")
     
@@ -1558,6 +1640,8 @@ public boolean[] getBooleanArray(String key) {
      * @param key a String, or null
      * @return a byte[] value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.595 -0500", hash_original_method = "61BA553FC99180BEC5D34878EFD2124D", hash_generated_method = "E14823F73517A05703F9457CFF4AF591")
     
@@ -1633,6 +1717,8 @@ public char[] getCharArray(String key) {
      * @param key a String, or null
      * @return an int[] value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.602 -0500", hash_original_method = "85622F3A5EF64119863AB7B7CCBF9703", hash_generated_method = "31EEEB18F7D9BB9C51649185024522F8")
     
@@ -1658,6 +1744,8 @@ public int[] getIntArray(String key) {
      * @param key a String, or null
      * @return a long[] value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.605 -0500", hash_original_method = "27B2CD54F5F69E8E74D59A821000C81A", hash_generated_method = "BE88D5C92732324A1681CD39A146DC06")
     
@@ -1733,6 +1821,8 @@ public double[] getDoubleArray(String key) {
      * @param key a String, or null
      * @return a String[] value, or null
      */
+    @DSComment("OS Bundle data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.612 -0500", hash_original_method = "00D6B9CB5DC261567748885D1CE89780", hash_generated_method = "A5D3472959DEE1DD04513F9A01144F61")
     
@@ -1822,6 +1912,8 @@ public int describeContents() {
      * it to be passed through an IBinder connection.
      * @param parcel The parcel to copy this bundle to.
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:36.628 -0500", hash_original_method = "90A94F467F11AD2B1AEECA4B5BC07A1D", hash_generated_method = "13FC4A3A2DEAA47DAD8328A7A3631F3B")
     

@@ -18,6 +18,8 @@ public class CamcorderProfile {
      * @param quality the target quality level for the camcorder profile
      * @see #get(int, int)
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.192 -0500", hash_original_method = "5E5331AEC013D39A506E19EAE2F37AD8", hash_generated_method = "579756CAB675A5F5EA6467434B34CB80")
     
@@ -91,6 +93,8 @@ public static CamcorderProfile get(int cameraId, int quality) {
      * camera at the given quality level.
      * @param quality the target quality level for the camcorder profile
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.197 -0500", hash_original_method = "8C5F759C4AF4AEC08D993539B9258E9A", hash_generated_method = "B47E30D69F5477AD7A446E48D70712A0")
     
 public static boolean hasProfile(int quality) {

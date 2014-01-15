@@ -35,6 +35,8 @@ public class TableRow extends LinearLayout {
      *
      * @param context the application environment
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.201 -0500", hash_original_method = "F9A2694D9D8F1C73F4893642416A48B8", hash_generated_method = "F30432BF67CDBC71F94AD1152C117E44")
     
 public TableRow(Context context) {
@@ -466,6 +468,8 @@ public LayoutParams(int w, int h) {
          * @param h the desired height
          * @param initWeight the desired weight
          */
+        @DSComment("Layout parameters")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:06.269 -0500", hash_original_method = "AC2D690BD2E1EA15E67B11BD37629B19", hash_generated_method = "BDCFB1C39D92852469B62C81C5EE92DE")
         
 public LayoutParams(int w, int h, float initWeight) {

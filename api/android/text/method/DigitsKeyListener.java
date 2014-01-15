@@ -13,6 +13,8 @@ public class DigitsKeyListener extends NumberKeyListener {
     /**
      * Returns a DigitsKeyListener that accepts the digits 0 through 9.
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.064 -0500", hash_original_method = "196C44AF0E4E6E9F7A5ABEBEF1B89855", hash_generated_method = "9C92B0FB155A6AF9255A3D0C67209ECD")
     

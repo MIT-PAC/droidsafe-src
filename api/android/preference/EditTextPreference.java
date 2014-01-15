@@ -25,6 +25,8 @@ public class EditTextPreference extends DialogPreference {
     
     private String mText;
     
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.689 -0500", hash_original_method = "1B48EB5F8CF3DC4D984298B6B0C90D10", hash_generated_method = "EC83FFC623BCAF07BB1299D8A9A0BF9D")
     
 public EditTextPreference(Context context, AttributeSet attrs, int defStyle) {
@@ -44,12 +46,16 @@ public EditTextPreference(Context context, AttributeSet attrs, int defStyle) {
         mEditText.setEnabled(true);
     }
 
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.691 -0500", hash_original_method = "494CFEDBEF358096AFA1B35C2A3DFF6C", hash_generated_method = "B52031657C6FBCA2718CF1E7C2477B6C")
     
 public EditTextPreference(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.editTextPreferenceStyle);
     }
 
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.694 -0500", hash_original_method = "204E2C5BC38780F40E54ECF3FAD0BB5A", hash_generated_method = "9016449D056F9E4AD532EC1E9337FFE1")
     
 public EditTextPreference(Context context) {
@@ -61,6 +67,8 @@ public EditTextPreference(Context context) {
      * 
      * @param text The text to save
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.696 -0500", hash_original_method = "CEF16EBC31082C193A3B95CCEE8E6067", hash_generated_method = "61C2AD4A3938034FD3E8FC91B0853EB0")
     
 public void setText(String text) {
@@ -81,6 +89,8 @@ public void setText(String text) {
      * 
      * @return The current preference value.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.698 -0500", hash_original_method = "2FFFCC59A442EF1196B854805331F3A7", hash_generated_method = "7675B56A832FA6E1A4872CB2A7C75222")
     
@@ -162,6 +172,8 @@ protected void onAddEditTextToDialogView(View dialogView, EditText editText) {
      * 
      * @return The {@link EditText} widget that will be shown in the dialog.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.714 -0500", hash_original_method = "25F3ADCBABEE77EF933107206F4A63FB", hash_generated_method = "599AA86E6466590D2AF3F8CF2247EF7E")
     

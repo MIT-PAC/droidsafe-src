@@ -83,6 +83,8 @@ private static void checkWidthHeight(int width, int height) {
      * @param filter    true if the source should be filtered.
      * @return the new scaled bitmap.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.785 -0500", hash_original_method = "9B9D815856FF54261FC90101B85ADFB3", hash_generated_method = "C9E1186290E6D03B836F1EEEF07AEE04")
     
 public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
@@ -120,6 +122,8 @@ public static Bitmap createScaledBitmap(Bitmap src, int dstWidth,
      * be the same object as source, or a copy may have been made.  It is
      * initialized with the same density as the original bitmap.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.787 -0500", hash_original_method = "06B3F44E32866DFBBA409CE7EBE78C90", hash_generated_method = "69140569706508A2D71FA6D606AC28D8")
     
 public static Bitmap createBitmap(Bitmap src) {
@@ -138,6 +142,8 @@ public static Bitmap createBitmap(Bitmap src) {
      * @param width    The number of pixels in each row
      * @param height   The number of rows
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.789 -0500", hash_original_method = "FDCB5D0AAFA9E01A4FEEBED763708DF4", hash_generated_method = "0310C45601B1271997169FB3A2B77AE7")
     
@@ -163,6 +169,8 @@ public static Bitmap createBitmap(Bitmap source, int x, int y, int width, int he
      * @throws IllegalArgumentException if the x, y, width, height values are
      *         outside of the dimensions of the source bitmap.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.792 -0500", hash_original_method = "2890F109635B7BA47A6C3B31AD4C0C33", hash_generated_method = "5E5AAE5AD4DB8799AE28E84D198E7FB9")
     
@@ -594,7 +602,9 @@ Bitmap(int nativeBitmap, byte[] buffer, boolean isMutable, byte[] ninePatchChunk
         //return mDensity;
     }
     
-	public void setDensity(int density) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void setDensity(int density) {
 		addTaint(density);
         //mDensity = density;
     }
@@ -623,6 +633,8 @@ public void setNinePatchChunk(byte[] chunk) {
      * not be called, since the normal GC process will free up this memory when
      * there are no more references to this bitmap.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.736 -0500", hash_original_method = "F143F03043BA4507E1E78FA3303F668C", hash_generated_method = "E01AC0430679ABAA5EC7EB2A86CE700F")
     
 public void recycle() {
@@ -640,6 +652,8 @@ public void recycle() {
      *
      * @return true if the bitmap has been recycled
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.739 -0500", hash_original_method = "B80D9A696720D276C6AF21D39513741E", hash_generated_method = "3B7D242B0C48B41C862F19CA428991BF")
     
 public final boolean isRecycled() {
@@ -812,19 +826,25 @@ public boolean compress(CompressFormat format, int quality, OutputStream stream)
     /**
      * Returns true if the bitmap is marked as mutable (i.e. can be drawn into)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.818 -0500", hash_original_method = "AC5E4B63287018AAA83AB6875AD71BA5", hash_generated_method = "38CA8B036CBBB3AD7D2A23EA40E8CEEF")
     
 public final boolean isMutable() {
         return mIsMutable;
     }
     
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getWidth() {
 		//Synthetic method in order to track width taints, which are managed in native code
 		return getTaintInt();
 	}
     
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getHeight() {
 		//Synthetic method in order to track height taints, which are managed in native code
 		return getTaintInt();
@@ -1004,6 +1024,8 @@ public int getPixel(int x, int y) {
      * @throws ArrayIndexOutOfBoundsException if the pixels array is too small
      *         to receive the specified number of pixels.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:22.857 -0500", hash_original_method = "2EE219697E28A03CE1E0A040D289D28E", hash_generated_method = "34D0ECB1DC18EA65D31355C5E9F2E98D")
     
 public void getPixels(int[] pixels, int offset, int stride,

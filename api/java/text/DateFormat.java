@@ -33,6 +33,8 @@ public static Locale[] getAvailableLocales() {
      *
      * @return the {@code DateFormat} instance for the default style and locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.056 -0500", hash_original_method = "492FD3DDCD551887FA928B87F9CDC015", hash_generated_method = "1584BAADDCCEE1FD6566ABD02B67F340")
     
@@ -74,6 +76,8 @@ public static final DateFormat getDateInstance(int style) {
      * @return the {@code DateFormat} instance for {@code style} and
      *         {@code locale}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.061 -0500", hash_original_method = "2C09A4D27D27084B3D92D338508BC4B1", hash_generated_method = "0A3BDC25EFBB4AF2B4D924801B40054C")
     
@@ -88,6 +92,8 @@ public static final DateFormat getDateInstance(int style, Locale locale) {
      *
      * @return the {@code DateFormat} instance for the default style and locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.064 -0500", hash_original_method = "83705E0AAFF633A246DC83A01D518F12", hash_generated_method = "E8401EC0A796A90AF72EB9263851C999")
     
@@ -134,6 +140,8 @@ public static final DateFormat getDateTimeInstance(int dateStyle, int timeStyle)
      *             if {@code dateStyle} or {@code timeStyle} is not one of
      *             SHORT, MEDIUM, LONG, FULL, or DEFAULT.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.071 -0500", hash_original_method = "2285EB3463305C879C637226A064045A", hash_generated_method = "FF7CBCCFC8E13A430AD369002279FC0F")
     
@@ -152,6 +160,8 @@ public static final DateFormat getDateTimeInstance(int dateStyle, int timeStyle,
      * @return the {@code DateFormat} instance for the SHORT style and default
      *         locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.073 -0500", hash_original_method = "328D72CCC3CD1DC2B99E83C7AF31E8C0", hash_generated_method = "125F5E29A0A8C131F8DEC3BC1D902C43")
     
@@ -165,6 +175,8 @@ public static final DateFormat getInstance() {
      *
      * @return the {@code DateFormat} instance for the default style and locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.079 -0500", hash_original_method = "90581B7473F3E36379FBAEEBE90EB2FE", hash_generated_method = "5D6C0507FCEE4BAF6C384DE19C749A51")
     
@@ -206,6 +218,8 @@ public static final DateFormat getTimeInstance(int style) {
      * @return the {@code DateFormat} instance for {@code style} and
      *         {@code locale}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.085 -0500", hash_original_method = "694861B989ADA6B38BBA026408A73346", hash_generated_method = "0458389C40354284B85DBE0DD3EC5238")
     
@@ -536,6 +550,8 @@ protected DateFormat() {
      *            the date to format.
      * @return the formatted string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.044 -0500", hash_original_method = "2A35FD3F5DCDDD81B439EA4274C41413", hash_generated_method = "EEB1197F390F746EAF296F0CBA3BE616")
     
@@ -572,6 +588,8 @@ public abstract StringBuffer format(Date date, StringBuffer buffer,
      *
      * @return the calendar used by this date format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.053 -0500", hash_original_method = "AC2D491D0E9EF49D1E9DF4E35BBACC3B", hash_generated_method = "9CCA2A38B21AEC6F62F360BFF7610E34")
     
@@ -635,6 +653,8 @@ public boolean isLenient() {
      * @throws ParseException
      *         if an error occurs during parsing.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.097 -0500", hash_original_method = "CB060FB8FCF7D6D5A12D02C797F79FD4", hash_generated_method = "AB750F8D4A9AEF735FB2E2BFCAC75CE4")
     
@@ -712,6 +732,8 @@ public abstract Date parse(String string, ParsePosition position);
      * @param cal
      *            the new calendar.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.105 -0500", hash_original_method = "6C57FEC8F5EF28EFDF88DCA370317E90", hash_generated_method = "E18AF8A914833DDBE3D602C2454CC930")
     
 public void setCalendar(Calendar cal) {
@@ -728,6 +750,8 @@ public void setCalendar(Calendar cal) {
      *            {@code true} to set the calendar to be lenient, {@code false}
      *            otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.107 -0500", hash_original_method = "C0CD4ED6DB9107DF0F000BE04B2DBCDB", hash_generated_method = "77C364A8166B57DB585E631363560368")
     
@@ -753,6 +777,8 @@ public void setNumberFormat(NumberFormat format) {
      * @param timezone
      *            the new time zone.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:05.112 -0500", hash_original_method = "21956223404148B0DA41DA5118D6AFF3", hash_generated_method = "7D12735F5FACD641C52739A935BD1364")
     

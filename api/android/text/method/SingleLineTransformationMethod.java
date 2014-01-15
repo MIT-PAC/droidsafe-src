@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 
 public class SingleLineTransformationMethod extends ReplacementTransformationMethod {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.567 -0500", hash_original_method = "4853BBC3FBC3CF589EEA47536237EC37", hash_generated_method = "B201543D46DD84421BE8C9D74F2BA21C")
     
@@ -27,6 +29,8 @@ public static SingleLineTransformationMethod getInstance() {
 
     private static SingleLineTransformationMethod sInstance;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.728 -0400", hash_original_method = "D4568A7EAB6F00728EAF3C3E423FA0FE", hash_generated_method = "D4568A7EAB6F00728EAF3C3E423FA0FE")
     public SingleLineTransformationMethod ()
     {

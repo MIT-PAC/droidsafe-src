@@ -43,6 +43,8 @@ public class ThreadSafeClientConnManager implements ClientConnectionManager {
      * @param schreg    the scheme registry, or
      *                  <code>null</code> for the default registry
      */
+    @DSComment("internet access")
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.999 -0500", hash_original_method = "CE8305B2F50479AC170D47319F9570C8", hash_generated_method = "3017661F6403C8D54CDAF2BA856FA17A")
     
 public ThreadSafeClientConnManager(HttpParams params,
@@ -250,6 +252,8 @@ public int getConnectionsInPool(HttpRoute route) {
      * 
      * @return the total number of pooled connections
      */
+    @DSComment("not network data manipulation")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.027 -0500", hash_original_method = "A7E68EC885457C399BA150A4DD387F90", hash_generated_method = "AE043477A09E5726953EC376CD87E313")
     
@@ -260,6 +264,8 @@ public int getConnectionsInPool() {
     }
 
     // non-javadoc, see interface ClientConnectionManager
+    @DSComment("not network data manipulation")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.029 -0500", hash_original_method = "614803CEB018564B6D4B8085A3E1BC4F", hash_generated_method = "9701D873AA485CC59CEAB1483AA16E3C")
     
 public void closeIdleConnections(long idleTimeout, TimeUnit tunit) {
@@ -268,6 +274,8 @@ public void closeIdleConnections(long idleTimeout, TimeUnit tunit) {
         connectionPool.deleteClosedConnections();
     }
     
+    @DSComment("not network data manipulation")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.032 -0500", hash_original_method = "3CBEAD5C5E5FD142C35EE66C6F0AAE4C", hash_generated_method = "CA70EE0AA50EB205DCE5EB4409E500DE")
     
 public void closeExpiredConnections() {

@@ -98,6 +98,8 @@ public int getPosition() {
      * Return the actual text associated with this completion.  This is the
      * real text that will be inserted into the editor if the user selects it.
      */
+    @DSComment("no actions")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.122 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "3C5AE00E10DCE5E04049FCC58EEF7C48")
     

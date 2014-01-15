@@ -74,6 +74,8 @@ public static boolean is24HourFormat(Context context) {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that properly formats the time.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.147 -0500", hash_original_method = "71FE993D45AFD9417B89B7CB5C26B27B", hash_generated_method = "CBEC912AD7610BF8D67E68424199304C")
     
@@ -97,6 +99,8 @@ public static final java.text.DateFormat getTimeFormat(Context context) {
      * @param context the application context
      * @return the {@link java.text.DateFormat} object that properly formats the date.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.149 -0500", hash_original_method = "31DB25FCF5E17D5BA39D40A6AB758B79", hash_generated_method = "5AEC6419123B2A4BF329169CFA1989C5")
     
@@ -253,6 +257,8 @@ private static String getDateFormatString(Context context) {
      * @param inTimeInMillis in milliseconds since Jan 1, 1970 GMT
      * @return a {@link CharSequence} containing the requested text
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.172 -0500", hash_original_method = "DB5E1435497B50A83BF83DDB6082161C", hash_generated_method = "FDB2FAFA7D11C2731B9585F51D9312E1")
     
 public static final CharSequence format(CharSequence inFormat, long inTimeInMillis) {
@@ -266,6 +272,8 @@ public static final CharSequence format(CharSequence inFormat, long inTimeInMill
      * @param inDate the date to format
      * @return a {@link CharSequence} containing the requested text
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.174 -0500", hash_original_method = "E0419C3C471C7E345983AE259311718A", hash_generated_method = "3F9D986BBECCB6EB224C8C601A3AFC67")
     
 public static final CharSequence format(CharSequence inFormat, Date inDate) {

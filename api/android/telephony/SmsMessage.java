@@ -30,6 +30,8 @@ public class SmsMessage {
      * devices that require support for both 3GPP and 3GPP2 formats at the same time,
      * such as dual-mode GSM/CDMA and CDMA/LTE phones.
      */
+    @DSComment("SMS message creation from raw data")
+    @DSSpec(DSCat.TELEPHONY)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.603 -0500", hash_original_method = "CF7F94C2BDE173AF6CC483B3F8BE19B9", hash_generated_method = "D130F6B0A70B67E3ACC0B0A502946CA3")
     
@@ -171,6 +173,8 @@ public static int getTPLayerLengthForPDU(String pdu) {
      *         code unit size (see the ENCODING_* definitions in this
      *         class).
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.627 -0500", hash_original_method = "13E7FC3E1B070CE7A770D3168E7D6A0F", hash_generated_method = "7EA1B99EDFDED904417122D334B7E3DF")
     
 public static int[] calculateLength(CharSequence msgBody, boolean use7bitOnly) {
@@ -413,6 +417,8 @@ private SmsMessage(SmsMessageBase smb) {
      * Returns the address of the SMS service center that relayed this message
      * or null if there is none.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.650 -0500", hash_original_method = "918A2835DDADF3191B8B6CF8127F286C", hash_generated_method = "D2BBE7103262E98ECE08E23E782B26CE")
     
@@ -424,6 +430,8 @@ public String getServiceCenterAddress() {
      * Returns the originating address (sender) of this SMS message in String
      * form or null if unavailable
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.653 -0500", hash_original_method = "E9EFC86835C6B2F047600D750A41AA1C", hash_generated_method = "93AAA0AA1B2814015145729AEFBD57FD")
     
@@ -436,6 +444,8 @@ public String getOriginatingAddress() {
      * was from an email gateway. Returns null if originating address
      * unavailable.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.657 -0500", hash_original_method = "A66BB5C1A20948050FC14BD05462FCCC", hash_generated_method = "1FF8B5A61361428A910FF4BE7EF44F5F")
     
@@ -447,6 +457,8 @@ public String getDisplayOriginatingAddress() {
      * Returns the message body as a String, if it exists and is text based.
      * @return message body is there is one, otherwise null
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.660 -0500", hash_original_method = "11C71A7ADD8F40537023F3C9896D9F41", hash_generated_method = "7774CA66961BBDA3065A3890C914D58B")
     
@@ -467,6 +479,8 @@ public MessageClass getMessageClass() {
      * Returns the message body, or email message body if this message was from
      * an email gateway. Returns null if message body unavailable.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.666 -0500", hash_original_method = "DDB62DAFB6CA28A8B02386170905555B", hash_generated_method = "4A92242B5D1C975FE9D1D846D52F61BD")
     
@@ -478,6 +492,8 @@ public String getDisplayMessageBody() {
      * Unofficial convention of a subject line enclosed in parens empty string
      * if not present
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.669 -0500", hash_original_method = "A55B37ECD2D988C3EC358C7240F7EDE2", hash_generated_method = "3077F9E9A5D9D5EBCFF44F791CF0E538")
     
@@ -488,6 +504,8 @@ public String getPseudoSubject() {
     /**
      * Returns the service centre timestamp in currentTimeMillis() format
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.674 -0500", hash_original_method = "A397C7F820656CEADBC57751F7E32997", hash_generated_method = "F1C1819DA2E5CEC79CA8EE20AEF6B5DB")
     
@@ -501,6 +519,8 @@ public long getTimestampMillis() {
      * @return true if this message came through an email gateway and email
      *         sender / subject / parsed body are available
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.677 -0500", hash_original_method = "A5B6E1F6D425F99E0AE9246791CF1B08", hash_generated_method = "B309F6487EC0084BAC11E56A87B00298")
     
 public boolean isEmail() {
@@ -511,6 +531,8 @@ public boolean isEmail() {
      * @return if isEmail() is true, body of the email sent through the gateway.
      *         null otherwise
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.681 -0500", hash_original_method = "1B76815865383567D84D772FA102258B", hash_generated_method = "64676D1234D53B5BF7E74543FA25CFB8")
     
@@ -522,6 +544,8 @@ public String getEmailBody() {
      * @return if isEmail() is true, email from address of email sent through
      *         the gateway. null otherwise
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.684 -0500", hash_original_method = "CF41F1C32C92AADB2191A6AB99FD49D6", hash_generated_method = "3D47F8BD991072AD2EA7E10922210673")
     
@@ -543,6 +567,8 @@ public int getProtocolIdentifier() {
      * See TS 23.040 9.2.3.9 returns true if this is a "replace short message"
      * SMS
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:49.691 -0500", hash_original_method = "36F360B7C447980FEF01C7653F551835", hash_generated_method = "6A1F95A295531C17D734D7B8172E25FC")
     
 public boolean isReplace() {

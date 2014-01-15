@@ -19,6 +19,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
      * Creates an instance of {@code ReentrantLock}.
      * This is equivalent to using {@code ReentrantLock(false)}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.124 -0500", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "AEC11EC0D4BB362F107A8D68598F3A34")
     
 public ReentrantLock() {
@@ -31,6 +33,8 @@ public ReentrantLock() {
      *
      * @param fair {@code true} if this lock should use a fair ordering policy
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.127 -0500", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "351877AD8EA12CDBB8C7B872FE29D59C")
     
 public ReentrantLock(boolean fair) {
@@ -51,6 +55,8 @@ public ReentrantLock(boolean fair) {
      * purposes and lies dormant until the lock has been acquired,
      * at which time the lock hold count is set to one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.129 -0500", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "A5139769638ADB3A94F8F9B0BCDCD0D7")
     
 public void lock() {
@@ -229,6 +235,8 @@ public boolean tryLock(long timeout, TimeUnit unit)
      * @throws IllegalMonitorStateException if the current thread does not
      *         hold this lock
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.138 -0500", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "B39A8E8B3E8EC93EC8CE2E174E9F2264")
     
 public void unlock() {
@@ -274,6 +282,8 @@ public void unlock() {
      *
      * @return the Condition object
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.141 -0500", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "9A27C3A2232E4D573B7235B3026E7892")
     
 public Condition newCondition() {

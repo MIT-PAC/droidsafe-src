@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class BufferedReader extends Reader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.770 -0500", hash_original_field = "905D4A99F191C55F09924512539E6D8F", hash_generated_field = "D82948BDB5B1A4AE5A3AFAB6DC9986E6")
-
 
     private Reader in;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.772 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "29466223C47F8B8BB1DFDB9869023C70")
@@ -21,18 +15,14 @@ public class BufferedReader extends Reader {
     private char[] buf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.775 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
-
     private int pos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.777 -0500", hash_original_field = "302E5A3147803830441A79AED31F4022", hash_generated_field = "BDD622074D0B9CD7867B17F38BB0017C")
-
 
     private int end;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.780 -0500", hash_original_field = "0000817AC2603B47AF2835983C585870", hash_generated_field = "7486F438FD6BACD8803ADD46E32EFC8C")
 
-
     private int mark = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.782 -0500", hash_original_field = "75A2423C827798DC27E81DD12A7578BB", hash_generated_field = "D78FB5CB883E6ED18FF304428EA74785")
-
 
     private int markLimit = -1;
 
@@ -42,6 +32,8 @@ public class BufferedReader extends Reader {
      *
      * @param in the {@code Reader} the buffer reads from.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.785 -0500", hash_original_method = "942CB30D704BB0D453BC7285AF3F8F63", hash_generated_method = "C875FF71AF33FE067958C813F8D30031")
     
 public BufferedReader(Reader in) {
@@ -56,6 +48,8 @@ public BufferedReader(Reader in) {
      * @param size the size of buffer in characters.
      * @throws IllegalArgumentException if {@code size <= 0}.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.788 -0500", hash_original_method = "14FDA92282030C83FA853ED51BF21EF3", hash_generated_method = "606113C73DB54594A0B938E27DBC855E")
     
 public BufferedReader(Reader in, int size) {
@@ -75,6 +69,8 @@ public BufferedReader(Reader in, int size) {
      * @throws IOException
      *             if an error occurs while closing this reader.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.790 -0500", hash_original_method = "B09EB233D31BD7460B333EC44F947FB5", hash_generated_method = "E7CB9BC1806291A715CC7DD98DB83FD9")
     
 @Override
@@ -163,6 +159,8 @@ private boolean isClosed() {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.799 -0500", hash_original_method = "EDD7C6600C30549E606135C51354C55D", hash_generated_method = "CAABEFE942DFA274FF2672C1771C1A9C")
     
 @Override
@@ -335,6 +333,8 @@ final void chompNewline() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.816 -0500", hash_original_method = "2E7624AE82CF066587D6991C8B167359", hash_generated_method = "4EED909B4B3AA6607F4DB5B32DA059E8")
     
 public String readLine() throws IOException {
@@ -444,6 +444,8 @@ public String readLine() throws IOException {
      * @see #mark(int)
      * @see #markSupported()
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.822 -0500", hash_original_method = "CFE9F55B11CEBEA9E9DFCD46210902F2", hash_generated_method = "5A668F668B96C14B8161823E07BB19C4")
     
 @Override
@@ -509,7 +511,6 @@ public String readLine() throws IOException {
             return byteCount;
         }
     }
-
     
 }
 

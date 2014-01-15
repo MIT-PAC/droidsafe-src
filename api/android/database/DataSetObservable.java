@@ -7,7 +7,9 @@ import droidsafe.annotations.*;
 
 public class DataSetObservable extends Observable<DataSetObserver> {
 
-	public DataSetObservable() {
+	@DSComment("no concerns")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    public DataSetObservable() {
 		super();
 		//Does not exist in original model
 	}
@@ -15,6 +17,8 @@ public class DataSetObservable extends Observable<DataSetObserver> {
      * Invokes onChanged on each observer. Called when the data set being observed has
      * changed, and which when read contains the new state of the data.
      */
+    @DSComment("callback will be invoked")
+    @DSSpec(DSCat.CALLBACK_INVOKE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.895 -0500", hash_original_method = "FCDAC37DCBE00C8E72E2289D698E0B3F", hash_generated_method = "BB4CEAAC9B3708D7274C54F7C0920423")
     
 public void notifyChanged() {

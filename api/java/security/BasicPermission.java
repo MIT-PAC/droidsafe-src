@@ -7,6 +7,8 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 
 public abstract class BasicPermission extends Permission implements Serializable {
+    @DSComment("not recommended as a practice any more")
+    @DSBan(DSCat.BAN_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.604 -0500", hash_original_method = "D7C15085897CB0E8D87B48429476636B", hash_generated_method = "B21B962C1FCC4638F2D3202B0E26235B")
     
 public BasicPermission(String name) { super(""); }

@@ -53,6 +53,8 @@ public PointF[] newArray(int size) {
     
 public PointF() {}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public PointF(float x, float y){
         addTaint(x);
         addTaint(y);
@@ -66,6 +68,8 @@ public PointF() {}
         */
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void set(float x, float y){
         addTaint(x);
         addTaint(y);

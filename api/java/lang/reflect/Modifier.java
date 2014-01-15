@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Modifier {
 
     /**
@@ -75,6 +71,8 @@ public static int methodModifiers() {
      * @return {@code true} if the specified modifiers contain the {@code
      *         abstract} modifier, {@code false} otherwise
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.596 -0500", hash_original_method = "4393F5C84F1A6C20484EB804711F0AF9", hash_generated_method = "3CF1C591AE7F3113A85B2A4E0D9D09C9")
     
 public static boolean isAbstract(int modifiers) {
@@ -165,6 +163,8 @@ public static boolean isProtected(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         public} modifier, {@code false} otherwise
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.611 -0500", hash_original_method = "F32A5C6A60F6D3AE4E2798FB3C917182", hash_generated_method = "17A09D042FE469EEA8A7D832BFCD0E80")
     
 public static boolean isPublic(int modifiers) {
@@ -180,6 +180,8 @@ public static boolean isPublic(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         static} modifier, {@code false} otherwise
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.613 -0500", hash_original_method = "F73282A82DE53F4E8602A983F3FBD929", hash_generated_method = "4F839491C85D91B0C9553754D6711D11")
     
 public static boolean isStatic(int modifiers) {
@@ -225,6 +227,8 @@ public static boolean isSynchronized(int modifiers) {
      * @return {@code true} if the specified modifiers contain the {@code
      *         transient} modifier, {@code false} otherwise
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.621 -0500", hash_original_method = "57209F613683B2F4AD04C6D317C5C05F", hash_generated_method = "43B1846810DDC077F366CAA38168D506")
     
 public static boolean isTransient(int modifiers) {
@@ -345,18 +349,14 @@ public static java.lang.String toString(int modifiers) {
     static final int BRIDGE = 0x40;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.569 -0500", hash_original_field = "9B810AD6F12FF86CC24642D5BDEDE96E", hash_generated_field = "6D6FEFEBFBA3A07606D9A0FE2D3164F4")
 
-
     static final int VARARGS = 0x80;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.572 -0500", hash_original_field = "F1FF292D2C8E0F83E85874578AF0CB71", hash_generated_field = "38828713573E11AB3F4DEBAF0823E500")
-
 
     static final int SYNTHETIC = 0x1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.575 -0500", hash_original_field = "D76A26FE61302C8C86A0C69E0C2CB435", hash_generated_field = "20555738D31EC19F3DFAE3E6C8C1F355")
 
-
     static final int ANNOTATION = 0x2000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.578 -0500", hash_original_field = "0864BD8018E11B4EB27219D562A94ECF", hash_generated_field = "BB2F637D890B852567DDEF14CF0D700C")
-
 
     static final int ENUM = 0x4000;
 

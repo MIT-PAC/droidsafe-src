@@ -171,6 +171,8 @@ public class Fragment implements ComponentCallbacks2, OnCreateContextMenuListene
      * Like {@link #instantiate(Context, String, Bundle)} but with a null
      * argument Bundle.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.996 -0500", hash_original_method = "0190F1BB85D8CE10E66B5514A394ABC5", hash_generated_method = "70A477C537313AA7A65AA778A77FFE25")
     
 public static Fragment instantiate(Context context, String fname) {
@@ -191,6 +193,8 @@ public static Fragment instantiate(Context context, String fname) {
      * the given fragment class.  This is a runtime exception; it is not
      * normally expected to happen.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.999 -0500", hash_original_method = "DD532F08670F8F66F3144923B381A393", hash_generated_method = "502B97B751650EA555BDAFC8D8187866")
     
@@ -391,6 +395,8 @@ public static Fragment instantiate(Context context, String fname, Bundle args) {
      * layout resource, though should take care here because this happens for
      * the fragment is attached to its activity.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.994 -0500", hash_original_method = "450DCF9C44ABD4359E904BF858920888", hash_generated_method = "CF5FF4F149C6CF2D53AA15104CFBDB03")
     
 public Fragment() {
@@ -487,6 +493,8 @@ final public String getTag() {
      * arguments supplied here will be retained across fragment destroy and
      * creation.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.019 -0500", hash_original_method = "2D5CF4DC8DE7FCC73C8073BFA7412800", hash_generated_method = "59F92EEADE1B17A1D49D335C8A42536E")
     
 public void setArguments(Bundle args) {
@@ -500,6 +508,8 @@ public void setArguments(Bundle args) {
      * Return the arguments supplied when the fragment was instantiated,
      * if any.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.022 -0500", hash_original_method = "AD916C2ECBF1A5C9327A86449330505D", hash_generated_method = "41574A398FEEB791A1D529AFBDB0AB63")
     
@@ -566,6 +576,8 @@ final public int getTargetRequestCode() {
     /**
      * Return the Activity this fragment is currently associated with.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.033 -0500", hash_original_method = "3F17133E8D63AE8C7414DC58966291E3", hash_generated_method = "325AD2BF1D0A0B24371BA04573D4605C")
     
@@ -576,6 +588,8 @@ final public Activity getActivity() {
     /**
      * Return <code>getActivity().getResources()</code>.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.036 -0500", hash_original_method = "A8E18DB36BC334E1CF5901C727187C18", hash_generated_method = "E4C0928E700635ED038F7599AF52D3F4")
     
@@ -605,6 +619,8 @@ public final CharSequence getText(int resId) {
      *
      * @param resId Resource id for the string
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.040 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
     
@@ -635,6 +651,8 @@ public final String getString(int resId, Object... formatArgs) {
      * placed in a {@link FragmentTransaction} until it is committed and
      * attached to its activity.
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.044 -0500", hash_original_method = "ED1BD18F392C2062694622C1FF4A3A44", hash_generated_method = "9FB618358C5CDB15EFE3334E40CE4E04")
     
@@ -656,6 +674,8 @@ final public boolean isAdded() {
      * That is, {@link FragmentTransaction#detach(Fragment)
      * FragmentTransaction.detach(Fragment)} has been used on it.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.049 -0500", hash_original_method = "2F8509F8C4A8638224A8FC9748BC6275", hash_generated_method = "A3DAB4791D78BFADFFEB813492AD2568")
     
 final public boolean isDetached() {
@@ -690,6 +710,8 @@ final public boolean isInLayout() {
      * Return true if the fragment is in the resumed state.  This is true
      * for the duration of {@link #onResume()} and {@link #onPause()} as well.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.055 -0500", hash_original_method = "58811A32FF0FF231CA3DA7AD72F98B09", hash_generated_method = "455292EC01D784DABC1B1D173C232A3F")
     
 final public boolean isResumed() {
@@ -767,6 +789,8 @@ final public boolean getRetainInstance() {
      * 
      * @param hasMenu If true, the fragment has menu items to contribute.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.069 -0500", hash_original_method = "A6D768E437C7421B050650CBF4A7B137", hash_generated_method = "33B2D2DF136C59516275F54EDA09740F")
     
 public void setHasOptionsMenu(boolean hasMenu) {
@@ -835,6 +859,8 @@ public boolean getUserVisibleHint() {
     /**
      * Return the LoaderManager for this fragment, creating it if needed.
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.077 -0500", hash_original_method = "71C5851113530E9E497DE6FFC60D128C", hash_generated_method = "D633F92B490ADBE12B8C6B78AA25CB20")
     
@@ -854,6 +880,8 @@ public LoaderManager getLoaderManager() {
      * Call {@link Activity#startActivity(Intent)} on the fragment's
      * containing Activity.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.079 -0500", hash_original_method = "B68B30EDC5AB3BE8EF657FB7051C7F7E", hash_generated_method = "2653C537061CAA70FE618F1495F7C4F1")
     
@@ -868,6 +896,8 @@ public void startActivity(Intent intent) {
      * Call {@link Activity#startActivityForResult(Intent, int)} on the fragment's
      * containing Activity.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.083 -0500", hash_original_method = "849399EB62F8B6EE6A6E550D7989B87C", hash_generated_method = "8768E2B6EA85361E6FA51CBF490464A9")
     
@@ -972,6 +1002,8 @@ public void onInflate(Activity activity, AttributeSet attrs, Bundle savedInstanc
      * Called when a fragment is first attached to its activity.
      * {@link #onCreate(Bundle)} will be called after this.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.093 -0500", hash_original_method = "7FCB8118913FF635CB1CDE717E61023E", hash_generated_method = "B80B37A37F384FB495394FF2DE913216")
     
 public void onAttach(Activity activity) {
@@ -1001,6 +1033,8 @@ public Animator onCreateAnimator(int transit, boolean enter, int nextAnim) {
      * @param savedInstanceState If the fragment is being re-created from
      * a previous saved state, this is the state.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.097 -0500", hash_original_method = "00494AECA41C1730DF6E82548FC2C3D5", hash_generated_method = "16BC96174FF1001ACAD87A7C411E6383")
     
 public void onCreate(Bundle savedInstanceState) {
@@ -1022,7 +1056,9 @@ public void onCreate(Bundle savedInstanceState) {
 public void onViewCreated(View view, Bundle savedInstanceState) {
     }
     
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		//return null;
 		return new View(container.getContext());
@@ -1034,6 +1070,8 @@ public void onViewCreated(View view, Bundle savedInstanceState) {
      * 
      * @return The fragment's root view, or null if it has no layout.
      */
+    @DSComment("GUI, Fragment")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.103 -0500", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "08E70AA8D2F1647EC2EEAF8AC8218386")
     
@@ -1054,6 +1092,8 @@ public View getView() {
      * @param savedInstanceState If the fragment is being re-created from
      * a previous saved state, this is the state.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.105 -0500", hash_original_method = "C52625884C98429BE8DE42F4FBFE7367", hash_generated_method = "98A4E1BEF43B96D6CA75F281B713F100")
     
 public void onActivityCreated(Bundle savedInstanceState) {
@@ -1065,6 +1105,8 @@ public void onActivityCreated(Bundle savedInstanceState) {
      * tied to {@link Activity#onStart() Activity.onStart} of the containing
      * Activity's lifecycle.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.108 -0500", hash_original_method = "4BDF3B44AFE0C3B519B659689A5EE977", hash_generated_method = "21A0B779E04621D46D7CA82798BED555")
     
 public void onStart() {
@@ -1088,6 +1130,8 @@ public void onStart() {
      * tied to {@link Activity#onResume() Activity.onResume} of the containing
      * Activity's lifecycle.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.111 -0500", hash_original_method = "3B8608ED59C2663D271D57F8D8F534C0", hash_generated_method = "4D7A6260998C4FCE09C9F7547BB0088D")
     
 public void onResume() {
@@ -1129,6 +1173,8 @@ public void onConfigurationChanged(Configuration newConfig) {
      * tied to {@link Activity#onPause() Activity.onPause} of the containing
      * Activity's lifecycle.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.117 -0500", hash_original_method = "CEF2FF1DA31E7EE9D761807A037B37B2", hash_generated_method = "51C6B5EC7B1D9F940C577FFB2B442418")
     
 public void onPause() {
@@ -1140,6 +1186,8 @@ public void onPause() {
      * tied to {@link Activity#onStop() Activity.onStop} of the containing
      * Activity's lifecycle.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.119 -0500", hash_original_method = "FC062A9ECA017F6E5D455E8C973942F9", hash_generated_method = "74B942254A2EEF5C3A13F16A340184BC")
     
 public void onStop() {
@@ -1176,6 +1224,8 @@ public void onDestroyView() {
      * Called when the fragment is no longer in use.  This is called
      * after {@link #onStop()} and before {@link #onDetach()}.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:15.128 -0500", hash_original_method = "AA4E137E24C2C382652C9FBA94B1ED31", hash_generated_method = "E78CE25D23DD6E4B0B09558D826A177A")
     
 public void onDestroy() {

@@ -255,6 +255,8 @@ public void setImageToDefault() {
      * @param contactUri Either a {@link Contacts#CONTENT_URI} or
      *            {@link Contacts#CONTENT_LOOKUP_URI} style URI.
      */
+    @DSComment("Contact manipulation UI")
+    @DSSpec(DSCat.CONTACT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.390 -0500", hash_original_method = "F07B10D1C60A4CC654BA1655A0E456BD", hash_generated_method = "E2C6A43B359882336153206DBEED5B85")
     
 public void assignContactUri(Uri contactUri) {
@@ -296,6 +298,8 @@ public void assignContactFromEmail(String emailAddress, boolean lazyLookup) {
      * @param lazyLookup If this is true, the lookup query will not be performed
      * until this view is clicked.
      */
+    @DSComment("Contact manipulation UI")
+    @DSSpec(DSCat.CONTACT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.395 -0500", hash_original_method = "615886346605DCC8A37347200BE80EDB", hash_generated_method = "1929BA143A9C517068A4599A02DEEDF6")
     
 public void assignContactFromPhone(String phoneNumber, boolean lazyLookup) {

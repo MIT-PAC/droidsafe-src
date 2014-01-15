@@ -327,7 +327,9 @@ protected static void checkRange(int length, int offset, int count) {
     @SuppressWarnings({"UnusedDeclaration"})
     private  CanvasFinalizer mFinalizer;
     
-	public Canvas() {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public Canvas() {
 		//Do Nothing
 	}
 
@@ -340,6 +342,8 @@ protected static void checkRange(int length, int offset, int count) {
      *
      * @param bitmap Specifies a mutable bitmap for the canvas to draw into.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.068 -0500", hash_original_method = "57E1F1C357DC29B7A94C226F5C3B5C9B", hash_generated_method = "9BFED6DEC7FF5091C599E38FA68AFF9D")
     
 public Canvas(Bitmap bitmap) {
@@ -395,7 +399,9 @@ public boolean isHardwareAccelerated() {
         return false;
     }
     
-	public void setBitmap(Bitmap bitmap) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void setBitmap(Bitmap bitmap) {
 		addTaint(bitmap.getTaint());
 		addTaint(bitmap.getDensity()); //getDensity will return a tainted value
 		/*
@@ -449,6 +455,8 @@ public void setViewport(int width, int height) {
      *
      * @return the width of the current drawing layer
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.086 -0500", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "119E6F88A6022FFF8C0BCF10E5D283FB")
     
     public int getWidth(){
@@ -461,6 +469,8 @@ public void setViewport(int width, int height) {
      *
      * @return the height of the current drawing layer
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.090 -0500", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "A50AB7B99158205015AA04248040D6D3")
     
     public int getHeight(){
@@ -529,6 +539,8 @@ public int getMaximumBitmapHeight() {
      *
      * @return The value to pass to restoreToCount() to balance this save()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.119 -0500", hash_original_method = "F3B8683979D1D489E213BCC22FA3BBF8", hash_generated_method = "2B849F705D66B3344BB858C062FCF030")
     
     public int save(){
@@ -547,6 +559,8 @@ public int getMaximumBitmapHeight() {
      *                  to save/restore
      * @return The value to pass to restoreToCount() to balance this save()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.123 -0500", hash_original_method = "B3EA192DB08CDE7F222599E8EB46FFD6", hash_generated_method = "78CD894CA5CA8D178BBE65B05D1E4F9A")
     
     public int save(int saveFlags){
@@ -625,6 +639,8 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
                                      alpha, saveFlags);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void restore() {
 	}
 
@@ -652,6 +668,8 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
      *
      * @param saveCount The save level to restore to.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.143 -0500", hash_original_method = "5559D0B771CBEE6A1A38BCD3A9AC5162", hash_generated_method = "FFDE58BDE0F4E8A7BB6CEACB56352E98")
     
     public void restoreToCount(int saveCount){
@@ -659,12 +677,16 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
     	addTaint(saveCount);
     }
     
-	public void translate(float dx, float dy) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void translate(float dx, float dy) {
 		addTaint(dx);
 		addTaint(dy);
 	}
     
-	public void scale(float sx, float sy) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void scale(float sx, float sy) {
 		addTaint(sx);
 		addTaint(sy);
 	}
@@ -677,6 +699,8 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
      * @param px The x-coord for the pivot point (unchanged by the scale)
      * @param py The y-coord for the pivot point (unchanged by the scale)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.152 -0500", hash_original_method = "FBE272FA12218448E57FDD0F51163D2E", hash_generated_method = "A90714BC8F2D627F45F2D7B13B278A01")
     
 public final void scale(float sx, float sy, float px, float py) {
@@ -685,7 +709,9 @@ public final void scale(float sx, float sy, float px, float py) {
         translate(-px, -py);
     }
     
-	public void rotate(float degrees) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void rotate(float degrees) {
 		addTaint(degrees);
 	}
 
@@ -696,6 +722,8 @@ public final void scale(float sx, float sy, float px, float py) {
      * @param px The x-coord for the pivot point (unchanged by the rotation)
      * @param py The y-coord for the pivot point (unchanged by the rotation)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.158 -0500", hash_original_method = "96E9024A0524487F4C2E52375F89DAF2", hash_generated_method = "61DCE9732DA02773D3D2939E3FB0D6DE")
     
 public final void rotate(float degrees, float px, float py) {
@@ -718,7 +746,9 @@ public final void rotate(float degrees, float px, float py) {
     	addTaint(sy);
     }
     
-	public void concat(Matrix matrix) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void concat(Matrix matrix) {
 		addTaint(matrix.native_instance);
     }
     
@@ -882,6 +912,8 @@ public boolean clipRect(float left, float top, float right, float bottom,
      *               clip
      * @return       true if the resulting clip is non-empty
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.192 -0500", hash_original_method = "C42EF88CC3B7717E7A29DDD6EED6CD2B", hash_generated_method = "D3A89CF00F564A9CFE02EBD6D8219414")
     
     public boolean clipRect(int left, int top,
@@ -959,6 +991,8 @@ public DrawFilter getDrawFilter() {
         return mDrawFilter;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.205 -0500", hash_original_method = "68F6BB80C574F9A67A1BF360B92238CB", hash_generated_method = "CFC18FCAFAB562E5E19EA145E4E09CFB")
     
 public void setDrawFilter(DrawFilter filter) {
@@ -1087,6 +1121,8 @@ public void drawRGB(int r, int g, int b) {
      * @param g green component (0..255) of the color to draw onto the canvas
      * @param b blue component (0..255) of the color to draw onto the canvas
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.227 -0500", hash_original_method = "9BFD91E842A11577904B0CB6F2A3F2B4", hash_generated_method = "25A3A58DABAB0A14F7BA58894D4CE78B")
     
 public void drawARGB(int a, int r, int g, int b) {
@@ -1099,6 +1135,8 @@ public void drawARGB(int a, int r, int g, int b) {
      *
      * @param color the color to draw onto the canvas
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.229 -0500", hash_original_method = "BF5E846D1EF3BCCEA205827104DDB3E8", hash_generated_method = "EE06CAAE9D24DA5976CF89E841300FAB")
     
 public void drawColor(int color) {
@@ -1125,6 +1163,8 @@ public void drawColor(int color, PorterDuff.Mode mode) {
      *
      * @param paint The paint used to draw onto the canvas
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.233 -0500", hash_original_method = "774CA3D90C36917005A085F0E322036A", hash_generated_method = "842D690B248E8ADCC5125F903224E558")
     
 public void drawPaint(Paint paint) {
@@ -1179,7 +1219,9 @@ public void drawPoints(float[] pts, Paint paint) {
     	addTaint(paint.getTaint());
     }
     
-	public void drawLine(float startX, float startY, float stopX, float stopY,
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void drawLine(float startX, float startY, float stopX, float stopY,
             Paint paint) {
 		/*
 		 * This method calls a native method that draws to a native canvas which
@@ -1250,6 +1292,8 @@ public void drawRect(RectF rect, Paint paint) {
      * @param r        The rectangle to be drawn.
      * @param paint    The paint used to draw the rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.257 -0500", hash_original_method = "9CB801DBEAF645326E64FD8725588653", hash_generated_method = "ADA6219B535C173D2ADD2608EB80D68B")
     
 public void drawRect(Rect r, Paint paint) {
@@ -1266,6 +1310,8 @@ public void drawRect(Rect r, Paint paint) {
      * @param bottom The bottom side of the rectangle to be drawn
      * @param paint  The paint used to draw the rect
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.259 -0500", hash_original_method = "CDE86729C0DE5B687E9F3D6C62C89CBA", hash_generated_method = "F9406D975293ED3CE5ED28AC7966047F")
     
 public void drawRect(float left, float top, float right, float bottom,
@@ -1274,6 +1320,8 @@ public void drawRect(float left, float top, float right, float bottom,
                         paint.mNativePaint);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void drawOval(RectF oval, Paint paint) {
 		addTaint(oval.getTaint());
 		addTaint(paint.getTaint());
@@ -1295,6 +1343,8 @@ public void drawRect(float left, float top, float right, float bottom,
      * @param radius The radius of the cirle to be drawn
      * @param paint  The paint used to draw the circle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.263 -0500", hash_original_method = "6EC335AEB28EA1E608617532103E031D", hash_generated_method = "692344834A58C7F02E5722238C227FDE")
     
 public void drawCircle(float cx, float cy, float radius, Paint paint) {
@@ -1325,6 +1375,8 @@ public void drawCircle(float cx, float cy, float radius, Paint paint) {
                         close it if it is being stroked. This will draw a wedge
      * @param paint      The paint used to draw the arc
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.265 -0500", hash_original_method = "5411F007DFA413B9921CB5C131E7CB3B", hash_generated_method = "CE118D9220FDE4CED8F2CCAF3528CA51")
     
 public void drawArc(RectF oval, float startAngle, float sweepAngle,
@@ -1345,6 +1397,8 @@ public void drawArc(RectF oval, float startAngle, float sweepAngle,
      * @param ry    The y-radius of the oval used to round the corners
      * @param paint The paint used to draw the roundRect
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.267 -0500", hash_original_method = "41C1A121517CD12760C521BBD9AF1967", hash_generated_method = "AF18146D80DB438DD0A2F77C34F0CB67")
     
 public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
@@ -1355,6 +1409,8 @@ public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
                              paint.mNativePaint);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void drawPath(Path path, Paint paint) {
 		addTaint(path.getTaint());
 		addTaint(paint.getTaint());
@@ -1380,6 +1436,8 @@ public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
 public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
 		addTaint(bitmap.getTaint());
 		addTaint(left);
@@ -1393,7 +1451,9 @@ public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
         */
     }
     
-	public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
 		addTaint(bitmap.getTaint());
 		addTaint(src.getTaint());
 		addTaint(dst.getTaint());
@@ -1502,6 +1562,8 @@ public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
      * @param matrix The matrix used to transform the bitmap when it is drawn
      * @param paint  May be null. The paint used to draw the bitmap
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.289 -0500", hash_original_method = "EB6FF8B38000E2AA8E5468782EF53260", hash_generated_method = "E0067301BC4D95F1F82B6EFF8CAC0C89")
     
 public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
@@ -1620,6 +1682,8 @@ public void drawVertices(VertexMode mode, int vertexCount,
      * @param y     The y-coordinate of the origin of the text being drawn
      * @param paint The paint used for the text (e.g. color, size, style)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.306 -0500", hash_original_method = "B53D951EA30645908EAA0D773F3CD0B1", hash_generated_method = "CE07C6E1BD5141BE415BFA895FDEDA11")
     
 public void drawText(char[] text, int index, int count, float x, float y,
@@ -1641,6 +1705,8 @@ public void drawText(char[] text, int index, int count, float x, float y,
      * @param y     The y-coordinate of the origin of the text being drawn
      * @param paint The paint used for the text (e.g. color, size, style)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.308 -0500", hash_original_method = "5AF5477506B1C1EE3856DD0F624B5874", hash_generated_method = "A9F3EEEB2A8415737D8887B2A209059C")
     
 public void drawText(String text, float x, float y, Paint paint) {
@@ -1683,6 +1749,8 @@ public void drawText(String text, int start, int end, float x, float y,
      * @param y        The y-coordinate of origin for where to draw the text
      * @param paint The paint used for the text (e.g. color, size, style)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.313 -0500", hash_original_method = "6FEFF94D9E21F991F21729F6F5F461A6", hash_generated_method = "31282EAB2BB247C7F5C281A556545124")
     
 public void drawText(CharSequence text, int start, int end, float x,

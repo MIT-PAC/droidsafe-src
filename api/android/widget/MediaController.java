@@ -295,12 +295,16 @@ public MediaController(Context context, boolean useFastForward) {
         initFloatingWindow();
     }
 
+    @DSComment("No action.  Check callbacks modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.803 -0500", hash_original_method = "7386C8F43CBDAAD1A4C1AD10A9F3EB18", hash_generated_method = "5878467175AF151BABDCB88E896C5161")
     
 public MediaController(Context context) {
         this(context, true);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.798 -0500", hash_original_method = "73B20F41AD38A9B689CAB773B229DC2D", hash_generated_method = "81F5B3FB48311147DEAF28062695C8DE")
     
 @Override
@@ -376,6 +380,8 @@ public void setMediaPlayer(MediaPlayerControl player) {
      * This can for example be a VideoView, or your Activity's main view.
      * @param view The view to which to anchor the controller when it is visible.
      */
+    @DSComment("No action.  Check callbacks modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.826 -0500", hash_original_method = "A3367E3EA3926FFA5E8601886A545624", hash_generated_method = "5D5DD9F35E968A796296290E4C8D59CB")
     
 public void setAnchorView(View view) {
@@ -470,6 +476,8 @@ private void initControllerView(View v) {
      * Show the controller on screen. It will go away
      * automatically after 3 seconds of inactivity.
      */
+    @DSComment("No action.  Check callbacks modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.834 -0500", hash_original_method = "F96F3B42B5EBC38D2746BE6361617E40", hash_generated_method = "140794B7EAECBBF51C26F18398A659C9")
     
 public void show() {
@@ -507,6 +515,8 @@ private void disableUnsupportedButtons() {
      * @param timeout The timeout in milliseconds. Use 0 to show
      * the controller until hide() is called.
      */
+    @DSComment("No action.  Check callbacks modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.838 -0500", hash_original_method = "C16367489FF99029DA16F545FE506814", hash_generated_method = "2EAD8E95074DF4774208EB90B56F5723")
     
 public void show(int timeout) {
@@ -534,6 +544,8 @@ public void show(int timeout) {
         }
     }
     
+    @DSComment("No action.  Check callbacks modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.841 -0500", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "C14BB39171429278E5F75B94242D6C8F")
     
 public boolean isShowing() {
@@ -543,6 +555,8 @@ public boolean isShowing() {
     /**
      * Remove the controller from the screen.
      */
+    @DSComment("No action.  Check callbacks modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.843 -0500", hash_original_method = "AF640FD924E8B1DADC076D8A3DA6C51B", hash_generated_method = "69B433B4EACB3A44B33996239DA58F38")
     
 public void hide() {
@@ -603,6 +617,8 @@ private int setProgress() {
         return position;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.856 -0500", hash_original_method = "804998442429040CE8E4A7C248858770", hash_generated_method = "E258894509A40CA91A0B4BF9C8755959")
     
 @Override
@@ -611,6 +627,8 @@ private int setProgress() {
         return true;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.858 -0500", hash_original_method = "294FBCC6A05258601D3163C3FD371667", hash_generated_method = "7DC3178355669E7D4254623572CFB246")
     
 @Override
@@ -619,6 +637,8 @@ private int setProgress() {
         return false;
     }
 
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.861 -0500", hash_original_method = "F0666CB3DD2163E885B9F12838A0406B", hash_generated_method = "16B3406BD82DE95CED7F371746D659BE")
     
 @Override
@@ -705,6 +725,8 @@ private void doPauseResume() {
         boolean canSeekForward();
     }
 
+    @DSComment("No action.  Check callbacks modeling")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:56.885 -0500", hash_original_method = "E14B391343AAAAC9B9A5DC8FE6A0AD92", hash_generated_method = "0B071800A736A98EA4E171A302438D8B")
     

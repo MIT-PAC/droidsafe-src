@@ -127,6 +127,8 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
 
     private boolean mBaselineAlignBottom = false;
 
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.852 -0500", hash_original_method = "3103DD3B06C95633A5076C8A302A640B", hash_generated_method = "A9312934B320F52AF3B76BC1947F3486")
     
 public ImageView(Context context) {
@@ -134,12 +136,16 @@ public ImageView(Context context) {
         initImageView();
     }
     
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.854 -0500", hash_original_method = "67FF47760B585BF8195A474475D955DB", hash_generated_method = "97AB01D65DE1CF05D3F3DCCA4747DE30")
     
 public ImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
     
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.857 -0500", hash_original_method = "8CC4CE610519C30A909B4E591A3E5936", hash_generated_method = "7733C97D46F188090692509C5C8D271A")
     
 public ImageView(Context context, AttributeSet attrs, int defStyle) {
@@ -279,6 +285,8 @@ private void initImageView() {
      * 
      * @attr ref android.R.styleable#ImageView_adjustViewBounds
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.877 -0500", hash_original_method = "3F8BE319328C68420F5075492EAAB722", hash_generated_method = "F0B36AE7E464DFD8ACED97C2ACB4F0AF")
     
 @android.view.RemotableViewMethod
@@ -307,6 +315,8 @@ private void initImageView() {
      * 
      * @attr ref android.R.styleable#ImageView_maxWidth
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.879 -0500", hash_original_method = "EB73857FE18ECB168F084B0FAC346FEA", hash_generated_method = "2CE7E42FFE2C31E1A22305F9A1E43AE0")
     
 @android.view.RemotableViewMethod
@@ -332,6 +342,8 @@ private void initImageView() {
      * 
      * @attr ref android.R.styleable#ImageView_maxHeight
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.881 -0500", hash_original_method = "9473C5CB1AE9899AEC7CB726EABA77F7", hash_generated_method = "A002710690767296259F2CD92EF811D6")
     
 @android.view.RemotableViewMethod
@@ -342,6 +354,8 @@ private void initImageView() {
     /** Return the view's drawable, or null if no drawable has been
         assigned.
     */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.883 -0500", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "DF96164158117DC7A0136AF51CE8F171")
     
@@ -362,6 +376,8 @@ public Drawable getDrawable() {
      *
      * @attr ref android.R.styleable#ImageView_src
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.885 -0500", hash_original_method = "FEA329647011282E5AA15854AC819C8B", hash_generated_method = "1B3E5E42D142B65A1EE79330B36AB68D")
     
 @android.view.RemotableViewMethod
@@ -387,6 +403,8 @@ public Drawable getDrawable() {
      *
      * @param uri The Uri of an image
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.888 -0500", hash_original_method = "796039DEA15F6465B0D947F27F5B4F32", hash_generated_method = "B77D6E63EE3023176451D7CD68FF83F3")
     
 @android.view.RemotableViewMethod
@@ -408,6 +426,8 @@ public Drawable getDrawable() {
      * 
      * @param drawable The drawable to set
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.891 -0500", hash_original_method = "5426F5FAF3C8635D29ADE0169269A6F9", hash_generated_method = "37AAC6991023BB22E48327E3EA2C66CF")
     
@@ -433,6 +453,8 @@ public void setImageDrawable(Drawable drawable) {
      * 
      * @param bm The bitmap to set
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.893 -0500", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "02829D3E86CB5FA2EC39813FBB35490C")
     
@@ -443,6 +465,8 @@ public void setImageDrawable(Drawable drawable) {
         setImageDrawable(new BitmapDrawable(mContext.getResources(), bm));
     }
 
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.895 -0500", hash_original_method = "B00DD17D168377A844733E90ECCFE75B", hash_generated_method = "CEDF11FC1C80235ABD6BE1A8080A67AA")
     
 public void setImageState(int[] state, boolean merge) {
@@ -907,6 +931,8 @@ private void configureBounds() {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.949 -0500", hash_original_method = "355C7834E61DDE917A6F527556974749", hash_generated_method = "1C9D798A9510D9155570D002AE5DB66C")
     
 @Override 
@@ -1093,6 +1119,8 @@ private void applyColorMod() {
         }
     }
 
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.975 -0500", hash_original_method = "C6B07741C64FD260DDE5C02AC0455E05", hash_generated_method = "AFDD61839AA6E68F5AC2CEE81161A784")
     
@@ -1125,6 +1153,8 @@ ScaleType(int ni) {
          int nativeInt;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.977 -0500", hash_original_method = "3717E0990FC85EED7B1343A97507698D", hash_generated_method = "E9CFEA04097042E9FE4E2353AE312A91")
     
 @Override
@@ -1135,6 +1165,8 @@ ScaleType(int ni) {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.979 -0500", hash_original_method = "66E6E711A91B2172E1C35BB591AC6445", hash_generated_method = "1DC3531588F772DCE2F68275AE751A24")
     
 @Override

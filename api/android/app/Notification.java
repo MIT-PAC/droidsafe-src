@@ -210,6 +210,8 @@ public Notification[] newArray(int size)
          *      RemoteViews. The Context will not be held past the lifetime of this
          *      Builder object.
          */
+        @DSComment("Building Notification")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.407 -0500", hash_original_method = "A0705CD8F7169475619B80AC2CAED080", hash_generated_method = "31183F4BFEB771758826DC42A3BB6B50")
         
 public Builder(Context context) {
@@ -613,6 +615,8 @@ private RemoteViews makeTickerView() {
          * Combine all of the options that have been set and return a new {@link Notification}
          * object.
          */
+        @DSComment("Building Notification")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.475 -0500", hash_original_method = "ACBCD2459BD592E66E9A1B94FF396B6B", hash_generated_method = "9E9159152B42F42893112012D9565859")
         
@@ -667,6 +671,8 @@ public Notification getNotification() {
      * Constructs a Notification object with everything set to 0.
      * You might want to consider using {@link Builder} instead.
      */
+    @DSComment("no impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.312 -0500", hash_original_method = "1CE373DE78E11DB8401FDC6F724116BB", hash_generated_method = "79DCC7BC767E8F085FFC072842DC4C08")
     
 public Notification()
@@ -701,6 +707,8 @@ public Notification(Context context, int icon, CharSequence tickerText, long whe
      *
      * @deprecated Use {@link Builder} instead.
      */
+    @DSComment("no impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.317 -0500", hash_original_method = "CC2BF19BEFE3DF69C00F83DC5FB8C9D2", hash_generated_method = "024900C64796E7D706CC036A6F0BE7A3")
     
 @Deprecated
@@ -905,6 +913,8 @@ public void writeToParcel(Parcel parcel, int flags)
      * 
      * @deprecated Use {@link Builder} instead.
      */
+    @DSComment("IPC activity")
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.340 -0500", hash_original_method = "15C64B5C143E30BF8DB14A898F7C5E53", hash_generated_method = "D323371ED817368FE42627BAC8C1A842")
     
 @Deprecated

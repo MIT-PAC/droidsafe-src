@@ -22,6 +22,8 @@ public class KeyFactory {
      * @throws NoSuchAlgorithmException
      *             if no provider provides the requested algorithm.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.721 -0500", hash_original_method = "882DD4EE2378CFA4943241FF4B933992", hash_generated_method = "10B19BA66738F202BDDE27A56E3667FC")
     
@@ -166,6 +168,8 @@ public final String getAlgorithm() {
      * @throws InvalidKeySpecException
      *             if the specified {@code keySpec} is invalid
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.733 -0500", hash_original_method = "D16F4EDBCE8E03F680EB7C937E0DCCC9", hash_generated_method = "102444EC2B52369C13232B3079E12538")
     
 public final PublicKey generatePublic(KeySpec keySpec)
@@ -183,6 +187,8 @@ public final PublicKey generatePublic(KeySpec keySpec)
      * @throws InvalidKeySpecException
      *             if the specified {@code keySpec} is invalid.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.736 -0500", hash_original_method = "56D108179E38B3C9859C6FCAEB589129", hash_generated_method = "5F9FEBC8492D7B5FA3559058A80AC133")
     
 public final PrivateKey generatePrivate(KeySpec keySpec)

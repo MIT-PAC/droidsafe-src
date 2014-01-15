@@ -136,6 +136,8 @@ private static void postEventFromNative(Object mediarecorder_ref,
     /**
      * Default constructor.
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.569 -0500", hash_original_method = "506D5AE1E4700103A96E723E2F623CDF", hash_generated_method = "13BF1EBB65DB4371328F028432A43C99")
     
 public MediaRecorder() {
@@ -163,6 +165,8 @@ public MediaRecorder() {
      *
      * @param c the Camera to use for recording
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.572 -0500", hash_original_method = "ABDAB49B7FE2D6558157D548CA69CDD8", hash_generated_method = "E9418463AED0C2A483AB8E4400CE5C82")
     
     public void setCamera(Camera c){
@@ -177,6 +181,8 @@ public MediaRecorder() {
      *
      * @param sv the Surface to use for the preview
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.575 -0500", hash_original_method = "9D12D44BFB2D2426E5261AD40C8A6399", hash_generated_method = "2055335BBC888EB71DF7ABAEF1C7874E")
     
 public void setPreviewDisplay(Surface sv) {
@@ -193,6 +199,8 @@ public void setPreviewDisplay(Surface sv) {
      * @throws IllegalStateException if it is called after setOutputFormat()
      * @see android.media.MediaRecorder.AudioSource
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.692 -0500", hash_original_method = "A371021B9F589CE697BF3A2D834DE3D5", hash_generated_method = "8D6A5BBBF1E8F6463F169491C01E9C02")
     
     public void setAudioSource(int audio_source)
@@ -211,6 +219,8 @@ public void setPreviewDisplay(Surface sv) {
      * @throws IllegalStateException if it is called after setOutputFormat()
      * @see android.media.MediaRecorder.VideoSource
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.698 -0500", hash_original_method = "95828B107E82D883B2C1CA5CFF39AF89", hash_generated_method = "E96565FB9BF347FE9A321AF4A60EE43E")
     
     public void setVideoSource(int video_source)
@@ -226,6 +236,8 @@ public void setPreviewDisplay(Surface sv) {
      * @param profile the CamcorderProfile to use
      * @see android.media.CamcorderProfile
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.701 -0500", hash_original_method = "C41941EDDC1BA172E48D383432866025", hash_generated_method = "DBA2E76270F6FBE67F68B62F5122F887")
     
@@ -348,6 +360,8 @@ public void setLocation(float latitude, float longitude) {
      * setAudioSource()/setVideoSource().
      * @see android.media.MediaRecorder.OutputFormat
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.713 -0500", hash_original_method = "16B1291E62A33A134EF60F37C7D2CCB8", hash_generated_method = "D980BF01D82197C5CCD2F6C89D0437DA")
     
     public void setOutputFormat(int output_format)
@@ -445,6 +459,8 @@ public void setLocation(float latitude, float longitude) {
      * setOutputFormat() or after prepare().
      * @see android.media.MediaRecorder.AudioEncoder
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.733 -0500", hash_original_method = "1CF1181ABC96941035EF958A99727050", hash_generated_method = "6438AF6C2C7E41BBA63EFDD117B77299")
     
     public void setAudioEncoder(int audio_encoder)
@@ -463,6 +479,8 @@ public void setLocation(float latitude, float longitude) {
      * setOutputFormat() or after prepare()
      * @see android.media.MediaRecorder.VideoEncoder
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.737 -0500", hash_original_method = "ABD82A110412540080E22D800F212AD9", hash_generated_method = "EFB205858D726411929D01957784679E")
     
     public void setVideoEncoder(int video_encoder)
@@ -824,6 +842,8 @@ public void setOutputFile(FileDescriptor fd) throws IllegalStateException
      * @throws IllegalStateException if it is called before
      * setOutputFormat() or after prepare()
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.756 -0500", hash_original_method = "6471C594BC35F434C75030DABF9E1236", hash_generated_method = "F163D610DEC881F8C19F64DA9DD9F649")
     
 public void setOutputFile(String path) throws IllegalStateException
@@ -858,6 +878,8 @@ public void setOutputFile(String path) throws IllegalStateException
      * start() or before setOutputFormat().
      * @throws IOException if prepare fails otherwise.
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.766 -0500", hash_original_method = "7733A0B67510DBD5B4C9708918E65D9C", hash_generated_method = "119195F284072448E9B84AEEE88AFDF9")
     
 public void prepare() throws IllegalStateException, IOException
@@ -891,6 +913,8 @@ public void prepare() throws IllegalStateException, IOException
      * @throws IllegalStateException if it is called before
      * prepare().
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.770 -0500", hash_original_method = "90417EDC9CEDC2FF729AF34E20BAF720", hash_generated_method = "E1969946DB5A9D768E401BA7A78BBDBA")
     
     public void start() throws IllegalStateException{
@@ -909,6 +933,8 @@ public void prepare() throws IllegalStateException, IOException
      *
      * @throws IllegalStateException if it is called before start()
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.774 -0500", hash_original_method = "1A5D84AB4E95B4764520ADCE25158630", hash_generated_method = "385DEB438D351260B720EB353DA8EA98")
     
     public void stop() throws IllegalStateException{
@@ -920,6 +946,8 @@ public void prepare() throws IllegalStateException, IOException
      * this method, you will have to configure it again as if it had just been
      * constructed.
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.777 -0500", hash_original_method = "67287397491424481E1944D5BA3B8E5C", hash_generated_method = "388AF94EBCD41EBAAA15B5C85A60D9C0")
     
 public void reset() {
@@ -995,6 +1023,8 @@ public void setOnInfoListener(OnInfoListener listener)
      * may be expected when unnecessary multiple instances are used
      * at the same time.
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.874 -0500", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "278A7E53643DE73F8A80E1A85A107DD5")
     
     public void release(){

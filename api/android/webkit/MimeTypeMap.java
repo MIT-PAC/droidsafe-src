@@ -62,6 +62,8 @@ private static String mimeTypeFromExtension(String extension) {
      * Get the singleton instance of MimeTypeMap.
      * @return The singleton instance of the MIME-type map.
      */
+    @DSComment("Data structure factory")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.167 -0500", hash_original_method = "73A67A406B5A25034635E2FEA1819640", hash_generated_method = "169C199BAED4B582FF1B5FA6B4FA7742")
     
@@ -93,6 +95,8 @@ public boolean hasMimeType(String mimeType) {
      * @param extension A file extension without the leading '.'
      * @return The MIME type for the given extension or null iff there is none.
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.156 -0500", hash_original_method = "9405A52065BBD485ABF37D1CA921E56B", hash_generated_method = "EDD49E0F199A255FBC119868328FE566")
     

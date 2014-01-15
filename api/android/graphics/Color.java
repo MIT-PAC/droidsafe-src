@@ -17,6 +17,8 @@ public class Color {
      * Return the alpha component of a color int. This is the same as saying
      * color >>> 24
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.581 -0500", hash_original_method = "186E870C2FD55DFF0EBE6B8A51AF560E", hash_generated_method = "89AA4190DA2CB715B8B22E620ECCBFCD")
     
 public static int alpha(int color) {
@@ -27,6 +29,8 @@ public static int alpha(int color) {
      * Return the red component of a color int. This is the same as saying
      * (color >> 16) & 0xFF
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.583 -0500", hash_original_method = "4DD589701E4616BA47B948814EEFA62E", hash_generated_method = "CDAFBC587B77D8A86F03744E5A7B44EE")
     
 public static int red(int color) {
@@ -37,6 +41,8 @@ public static int red(int color) {
      * Return the green component of a color int. This is the same as saying
      * (color >> 8) & 0xFF
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.591 -0500", hash_original_method = "5809CEAF07E4362D00D2201A47AD6598", hash_generated_method = "4396A6EB8ADD6B1AE76CDB68A0E576C4")
     
 public static int green(int color) {
@@ -47,6 +53,8 @@ public static int green(int color) {
      * Return the blue component of a color int. This is the same as saying
      * color & 0xFF
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.594 -0500", hash_original_method = "F7EE0AD6B5FEC8E1C17A6ECF2237A359", hash_generated_method = "530EE26BE2899B5E67FC33DA1E821FC4")
     
 public static int blue(int color) {
@@ -63,13 +71,17 @@ public static int blue(int color) {
      * @param green Green component [0..255] of the color
      * @param blue  Blue component [0..255] of the color
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.596 -0500", hash_original_method = "7F1A78AF2C66358AFEB07F450298B658", hash_generated_method = "A9D55D095326FAFCC942AC8A70FD058E")
     
 public static int rgb(int red, int green, int blue) {
         return (0xFF << 24) | (red << 16) | (green << 8) | blue;
     }
     
-	public static int argb(int alpha, int red, int green, int blue) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public static int argb(int alpha, int red, int green, int blue) {
 		return 0;  //Value doesn't really matter
         //return (alpha << 24) | (red << 16) | (green << 8) | blue;
     }
@@ -174,6 +186,8 @@ public static float brightness(int color) {
      * 'red', 'blue', 'green', 'black', 'white', 'gray', 'cyan', 'magenta',
      * 'yellow', 'lightgray', 'darkgray'
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.875 -0500", hash_original_method = "5CE0C2D7CC9A97F7407CFA85151EC53E", hash_generated_method = "28B6A49374B219A22FA475188B5E8A2E")
     
 public static int parseColor(String colorString) {
@@ -308,6 +322,8 @@ public static void RGBToHSV(int red, int green, int blue, float hsv[]) {
      * @param color the argb color to convert. The alpha component is ignored.
      * @param hsv  3 element array which holds the resulting HSV components.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.887 -0500", hash_original_method = "05D5BF6DA908F496FD007CC1987325E5", hash_generated_method = "73F79E924F5B25AEE8C8D14FE95F1BA2")
     
 public static void colorToHSV(int color, float hsv[]) {
@@ -323,6 +339,8 @@ public static void colorToHSV(int color, float hsv[]) {
      * @param hsv  3 element array which holds the input HSV components.
      * @return the resulting argb color
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:23.889 -0500", hash_original_method = "C941C94EC2830D733291C7020E6CF834", hash_generated_method = "36A1A9638D239C97D62615392477B6E6")
     
 public static int HSVToColor(float hsv[]) {

@@ -29,6 +29,8 @@ public class PBEKeySpec implements KeySpec {
      * @param password
      *            the password.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.951 -0500", hash_original_method = "2E3022EA9F0D00958A95EEBC25ADD120", hash_generated_method = "6FBFE97612C133168C998DD2B51C9462")
     
 public PBEKeySpec(char[] password) {
@@ -61,6 +63,8 @@ public PBEKeySpec(char[] password) {
      *             if the salt is empty, iteration count is zero or negative or
      *             the key length is zero or negative.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.954 -0500", hash_original_method = "3A4DB6943FB30203AAE55BF43F989AF0", hash_generated_method = "58A36CBF0329AE3E528072CFA778039D")
     
 public PBEKeySpec(char[] password, byte[] salt, int iterationCount,

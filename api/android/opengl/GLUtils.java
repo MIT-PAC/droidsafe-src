@@ -134,6 +134,8 @@ public static void texImage2D(int target, int level, int internalformat,
      * @param bitmap
      * @param border
      */
+    @DSComment("OpenGL Utils")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.460 -0500", hash_original_method = "54245E5C92D815A48A8550C075E1277A", hash_generated_method = "05D189ABED035A5E95EAE8A96DBA368D")
     
 public static void texImage2D(int target, int level, Bitmap bitmap,
@@ -171,6 +173,8 @@ public static void texImage2D(int target, int level, Bitmap bitmap,
      * @param yoffset
      * @param bitmap
      */
+    @DSComment("OpenGL Utils")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.463 -0500", hash_original_method = "8C0A16DEFCA17DC4A60E066564CB56D3", hash_generated_method = "024FF416E0F94E29C981CA21E5CEAFB9")
     
 public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
@@ -198,6 +202,8 @@ public static void texSubImage2D(int target, int level, int xoffset, int yoffset
      * @param bitmap
      * @param type
      */
+    @DSComment("OpenGL Utils")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.466 -0500", hash_original_method = "F6FE0C69971F26CF832691677B050FE2", hash_generated_method = "2161DDDE7E6B631F673E5960EC2F3860")
     
 public static void texSubImage2D(int target, int level, int xoffset, int yoffset,

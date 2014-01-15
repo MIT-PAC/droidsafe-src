@@ -26,7 +26,9 @@ import droidsafe.helpers.DSUtils;
 
 public class Uri implements Parcelable, Comparable<Uri> {
     
-        public static Uri parse(String uriString) {
+        @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public static Uri parse(String uriString) {
             return new Uri(uriString);
         }
 
@@ -40,6 +42,8 @@ public class Uri implements Parcelable, Comparable<Uri> {
      * @throws NullPointerException if file is null
      * @return a Uri for the given file
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.971 -0500", hash_original_method = "C8E1BC520600654AF7D7DBB518285820", hash_generated_method = "06EDC206A38F612490541C35EAB729B0")
     
 public static Uri fromFile(File file) {
@@ -68,6 +72,8 @@ public static Uri fromFile(File file) {
      *
      * @see Builder if you don't want the ssp and fragment to be encoded
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.083 -0500", hash_original_method = "0AD237FFD29D45E9689601598F4FC92E", hash_generated_method = "9D21685D66E36BC775C6163A2712CC60")
     
 public static Uri fromParts(String scheme, String ssp,
@@ -109,6 +115,8 @@ public static void writeToParcel(Parcel out, Uri uri) {
      * @return an encoded version of s suitable for use as a URI component,
      *  or null if s is null
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.396 -0500", hash_original_method = "49BB482E96A859715BC5C61306FD74C0", hash_generated_method = "C724103AB538903E19E5DE37C9B2FBE9")
     
 public static String encode(String s) {
@@ -236,6 +244,8 @@ private static boolean isAllowed(char c, String allow) {
      * @return the given string with escaped octets decoded, or null if
      *  s is null
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.408 -0500", hash_original_method = "8CA7F37205DBA3826558AF549D47A0C3", hash_generated_method = "CC309B2D382E2C1002242B4B0583B5AD")
     
 public static String decode(String s) {
@@ -349,6 +359,8 @@ public static String decode(String s) {
      *  the path
      * @throws NullPointerException if baseUri is null
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.507 -0500", hash_original_method = "39777FDE2593A579E76592A008126365", hash_generated_method = "F04C9A83020F5098114C752E2F7E0883")
     
 public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
@@ -450,7 +462,9 @@ private Uri() {}
         return getTaintBoolean();
     }
     
-	public String getScheme() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getScheme() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
@@ -472,7 +486,9 @@ private Uri() {}
 		return uriString;
 	}
     
-	public String getUserInfo() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getUserInfo() {
 		// TODO Auto-generated method stub
 		return DSUtils.UNKNOWN_STRING;
 	}
@@ -482,16 +498,22 @@ private Uri() {}
 		return null;
 	}
     
-	public String getHost() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getHost() {
 		// TODO Auto-generated method stub
 		return null;
 	}
     
-	public int getPort() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public int getPort() {
 		return getTaintInt();
 	}
     
-	public String getPath() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getPath() {
 		return uriString;
 	}
     
@@ -1858,6 +1880,8 @@ public Builder clearQuery() {
          * @throws UnsupportedOperationException if the URI is opaque and the
          *  scheme is null
          */
+        @DSComment("URI exchange is more important")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.359 -0500", hash_original_method = "C36CE5067F02DA1F1C7276BF67665A1B", hash_generated_method = "49E0BB8D44C8E87C84F7CDE7E9DE5DF1")
         
 public Uri build() {
@@ -2273,7 +2297,9 @@ PathSegments getPathSegments() {
         }
     }
     
-	public String getFragment() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getFragment() {
 		return uriString;
 	}
     
@@ -2281,14 +2307,18 @@ PathSegments getPathSegments() {
 		return uriString;
 	}
     
-	public List<String> getPathSegments() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public List<String> getPathSegments() {
 		// TODO Auto-generated method stub
 		LinkedList<String> list = new LinkedList<String>();
 		list.add(uriString);
 		return list;
 	}
     
-	public String getLastPathSegment() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getLastPathSegment() {
 		return uriString;
 	}
     
@@ -2306,7 +2336,9 @@ public int hashCode() {
         return toString().hashCode();
     }
     
-	public String toString() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String toString() {
                 String str = new String();
                 str.addTaint(this.getTaint());
 		return str;
@@ -2475,6 +2507,8 @@ public List<String> getQueryParameters(String key) {
      * @throws NullPointerException if key is null
      * @return the decoded value or null if no parameter is found
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.377 -0500", hash_original_method = "72F6B0777F298E12957F6498D8B3E8F1", hash_generated_method = "DE3A435133C1A354744AD6E94234BDA2")
     

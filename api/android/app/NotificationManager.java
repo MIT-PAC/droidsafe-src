@@ -61,6 +61,8 @@ NotificationManager(Context context, Handler handler)
      * @param notification A {@link Notification} object describing what to show the user. Must not
      *        be null.
      */
+    @DSComment("Notification can only go to screen")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.194 -0500", hash_original_method = "8A4CA4E7E43847BF1836AE50422D1EC2", hash_generated_method = "11BB02842F74EFA0B750E0E2DC061F0E")
     
@@ -103,6 +105,8 @@ public void notify(String tag, int id, Notification notification)
      * will be hidden.  If it's persistent, it will be removed from the status
      * bar.
      */
+    @DSComment("Notification can only go to screen")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.198 -0500", hash_original_method = "C3E2CA3977B6A0DFE40EA0B5D969CEEE", hash_generated_method = "90EF31815973B3B19C436849AC0958EC")
     
 public void cancel(int id)
@@ -132,6 +136,8 @@ public void cancel(String tag, int id)
      * Cancel all previously shown notifications. See {@link #cancel} for the
      * detailed behavior.
      */
+    @DSComment("Notification can only go to screen")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.203 -0500", hash_original_method = "755B5F96474649FA97E86F2D74D1F0A8", hash_generated_method = "2717E11980BDDD051D19092201B56ACE")
     
 public void cancelAll()

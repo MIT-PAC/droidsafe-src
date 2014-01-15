@@ -541,6 +541,8 @@ private void reorderSpinners() {
      * @param month The month which is <strong>starting from zero</strong>.
      * @param dayOfMonth The day of the month.
      */
+    @DSComment("GUI/Date Picker")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.366 -0500", hash_original_method = "4C1492E37715D23031DBB004E3447195", hash_generated_method = "1AF5CC187F6B38A39E57E1A57802103F")
     
 public void updateDate(int year, int month, int dayOfMonth) {
@@ -762,6 +764,8 @@ private SavedState(Parcel in) {
     /**
      * @return The selected year.
      */
+    @DSComment("GUI/Date Picker")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.390 -0500", hash_original_method = "3B3D6844E7A836293DFA1A3CC86782AF", hash_generated_method = "DD341252CD551E4373C2459CBB155055")
     
@@ -772,6 +776,8 @@ public int getYear() {
     /**
      * @return The selected month.
      */
+    @DSComment("GUI/Date Picker")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.392 -0500", hash_original_method = "38D3E39BF141F42FF09C6079CAB15EDC", hash_generated_method = "BCC5269CEB2B4BEF16D7C70CB3E9CE5C")
     
@@ -782,6 +788,8 @@ public int getMonth() {
     /**
      * @return The selected day of month.
      */
+    @DSComment("GUI/Date Picker")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.394 -0500", hash_original_method = "8FBF5DD56EFFBE6D332AE82BD8F4BBB9", hash_generated_method = "36944E655057A73626616DEC6406B85E")
     

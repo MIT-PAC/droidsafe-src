@@ -56,7 +56,9 @@ private static void apply(Paint paint, int style) {
 	 * include bold, italic, and normal. Values are constants defined 
 	 * in {@link android.graphics.Typeface}.
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.178 -0500", hash_original_method = "CB9EF90D73212D1B02A5528CB9665E4D", hash_generated_method = "1A3F07DA3D717E13281805DCEB7FE7E0")
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.178 -0500", hash_original_method = "CB9EF90D73212D1B02A5528CB9665E4D", hash_generated_method = "1A3F07DA3D717E13281805DCEB7FE7E0")
     
 public StyleSpan(int style) {
 		mStyle = style;
@@ -90,7 +92,9 @@ public void writeToParcel(Parcel dest, int flags) {
 	/**
 	 * Returns the style constant defined in {@link android.graphics.Typeface}. 
 	 */
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.190 -0500", hash_original_method = "6995AD72D9F4DF103A9CB7EC694D7036", hash_generated_method = "0483C07B81F11407B89CC2952582DCF6")
     
 public int getStyle() {

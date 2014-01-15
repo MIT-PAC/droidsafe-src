@@ -19,6 +19,8 @@ public final class SchemeRegistry {
     /**
      * Creates a new, empty scheme registry.
      */
+    @DSComment("creates data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.025 -0500", hash_original_method = "783AF87541D2DBDBA1743DA12D81CD53", hash_generated_method = "74AB894C18300FE3B23DF04436CBD8A2")
     
 public SchemeRegistry() {
@@ -100,6 +102,8 @@ public synchronized final Scheme get(String name) {
      * @return  the scheme previously registered with that name, or
      *          <code>null</code> if none was registered
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.038 -0500", hash_original_method = "BF6DF8E3D28698AF7FF4E9FD5B4A484C", hash_generated_method = "254C69213B5D4D2353215375DE7E6B2C")
     

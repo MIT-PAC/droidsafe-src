@@ -58,6 +58,8 @@ public class SimpleAdapter extends BaseAdapter implements Filterable {
      *        TextViews. The first N views in this list are given the values of the first N columns
      *        in the from parameter.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:44.331 -0500", hash_original_method = "69327F085AF9DF0CBB2A648A26326E3D", hash_generated_method = "6ADEBFD33F3773261F6FEF165F166053")
     
 public SimpleAdapter(Context context, List<? extends Map<String, ?>> data,

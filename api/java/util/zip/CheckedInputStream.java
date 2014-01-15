@@ -27,6 +27,8 @@ public class CheckedInputStream extends java.io.FilterInputStream {
      * @param csum
      *            an entity implementing the checksum algorithm.
      */
+    @DSComment("IO/Stream accessing")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.615 -0500", hash_original_method = "7E1EA825FE47CC59E068EE04C6081636", hash_generated_method = "D6F3C69C6C1E49B6A76D5C3044EBA8A4")
     
 public CheckedInputStream(InputStream is, Checksum csum) {

@@ -146,6 +146,8 @@ public char[] toChars(char[] existingArray, int[] outLen) {
     /**
      * Return the result of {@link #toChars()} as a String.
      */
+    @DSComment("nothing useful out of signature")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.810 -0500", hash_original_method = "29DBF4766A3C463CDC6A362C590D645B", hash_generated_method = "CF08BA09345112F19780B30497196162")
     
 public String toCharsString() {

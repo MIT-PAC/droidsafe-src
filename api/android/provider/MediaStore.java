@@ -434,6 +434,8 @@ public static final Bitmap getBitmap(ContentResolver cr, Uri url)
              * @return The URL to the newly created image
              * @throws FileNotFoundException
              */
+            @DSComment("Insert an image and create a thumbnail")
+            @DSSpec(DSCat.IO)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.510 -0500", hash_original_method = "7EDFE27F4065D73B827ECCB92823E704", hash_generated_method = "F4811B325135D139327C3CD84EF94612")
             
 public static final String insertImage(ContentResolver cr, String imagePath,
@@ -1010,6 +1012,8 @@ public static Uri getContentUri(String volumeName) {
                     getContentUri("internal");
             
             public static final class Members implements AudioColumns {
+                @DSComment("URI moving around")
+                @DSSpec(DSCat.URI_EXCHANGE)
                 @DSSource({DSSourceKind.FILE_INFORMATION})
                 @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:57.707 -0500", hash_original_method = "96BDCFD6E7CB52F7223465A2D6EE9A74", hash_generated_method = "9010678E8195591DFDC953DE2DED9116")
                 

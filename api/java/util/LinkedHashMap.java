@@ -10,7 +10,9 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
 
     private static final long serialVersionUID = 3801124242820219131L;
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.728 -0400", hash_original_method = "BC14FA557BD7B0B9C577C3EA20F65BB1", hash_generated_method = "841BDE13C0D724F59D7372319DB3BC68")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.728 -0400", hash_original_method = "BC14FA557BD7B0B9C577C3EA20F65BB1", hash_generated_method = "841BDE13C0D724F59D7372319DB3BC68")
     public  LinkedHashMap() {
         init();
         // ---------- Original Method ----------
@@ -31,7 +33,9 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         // ---------- Original Method ----------
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.729 -0400", hash_original_method = "40A72D68B61D12122A849997E9E4FA74", hash_generated_method = "D77757EB06EAB7C9CBF5A87B44178E77")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.729 -0400", hash_original_method = "40A72D68B61D12122A849997E9E4FA74", hash_generated_method = "D77757EB06EAB7C9CBF5A87B44178E77")
     public  LinkedHashMap(
             int initialCapacity, float loadFactor, boolean accessOrder) {
         super(initialCapacity, loadFactor);
@@ -43,6 +47,8 @@ public class LinkedHashMap<K, V> extends HashMap<K, V> {
         //this.accessOrder = accessOrder;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.729 -0400", hash_original_method = "D1B0A8129B2843C851AD81FABBEE8B92", hash_generated_method = "F3C1A40CECC0CD85D317FD2AB157DBCF")
     public  LinkedHashMap(Map<? extends K, ? extends V> map) {
         this(map.size());

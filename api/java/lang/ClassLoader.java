@@ -51,6 +51,8 @@ private static ClassLoader createSystemClassLoader() {
      * {@code ClassLoader} instances and is typically the class loader used to
      * start the application.
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.701 -0500", hash_original_method = "FA9BEFC0F6AFD8951E8DF1C896E1649A", hash_generated_method = "8DD818B5EED80F9656CDF38361BE49F8")
     
@@ -105,6 +107,8 @@ public static Enumeration<URL> getSystemResources(String resName) throws IOExcep
      *            the name of the resource to find.
      * @see Class#getResourceAsStream
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.709 -0500", hash_original_method = "05C330432267C3CB2D525AEB5E4DBFBC", hash_generated_method = "A33A37C69D674218736BA9B9695F3584")
     
@@ -412,6 +416,8 @@ public URL getResource(String resName) {
      *            the name of the resource to find.
      * @see Class#getResourceAsStream
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.747 -0500", hash_original_method = "D8955CCF86190424763C439F9FDF42B6", hash_generated_method = "23CB9B395B84F49B6BEEC8C70F6D582B")
     
@@ -443,6 +449,8 @@ public InputStream getResourceAsStream(String resName) {
      * @throws ClassNotFoundException
      *             if the class can not be found.
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.750 -0500", hash_original_method = "B81E0F32DC432F0B3276D4B4E41F12D0", hash_generated_method = "2C14505DFAF9AA253FE895FDE3C6A4AA")
     

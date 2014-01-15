@@ -101,6 +101,8 @@ private static String convertPattern(String template, String fromChars, String t
      * dates and times in the {@code SHORT} style for the user's default locale.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.046 -0500", hash_original_method = "55288B23256ED63825B1D49B41027576", hash_generated_method = "39B68D1F56D4EBE9F4B1205B0CE3AF97")
     
 public SimpleDateFormat() {
@@ -123,6 +125,8 @@ public SimpleDateFormat() {
      *            if {@code pattern} is not considered to be usable by this
      *            formatter.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.048 -0500", hash_original_method = "DF79561AB8D44B187C9CA04B354315AC", hash_generated_method = "F3014B31121A74282CEB26A187F51EA5")
     
 public SimpleDateFormat(String pattern) {
@@ -167,6 +171,8 @@ public SimpleDateFormat(String template, DateFormatSymbols value) {
      * @throws IllegalArgumentException
      *            if the pattern is invalid.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.074 -0500", hash_original_method = "1BCD123DF2A5414BB2A2ECF5D3357D25", hash_generated_method = "D1932A3E010E48695122576E5363C257")
     
 public SimpleDateFormat(String template, Locale locale) {
@@ -291,6 +297,8 @@ public void applyLocalizedPattern(String template) {
      * @throws IllegalArgumentException
      *                if the pattern is invalid.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.081 -0500", hash_original_method = "3EFD18F746D60C3172C5216CCD625C1E", hash_generated_method = "F2F9C2909A53DF682B6C07C7CC473170")
     
 public void applyPattern(String template) {
@@ -921,6 +929,8 @@ private int parseMonth(String string, int offset, int count, int absolute, Strin
      * @throws IllegalArgumentException
      *             if there are invalid characters in the pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.144 -0500", hash_original_method = "7359DD4332D8271AC0BCC2D6C59D8B62", hash_generated_method = "EB55FA63405C87E1036FE69E8D3600F0")
     
@@ -1190,6 +1200,8 @@ public String toLocalizedPattern() {
      *
      * @return the non-localized pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.169 -0500", hash_original_method = "35D638E960413F452190EF441C98A34C", hash_generated_method = "5CD84E1ED88608B4AC68B8A630BD6A44")
     
 public String toPattern() {

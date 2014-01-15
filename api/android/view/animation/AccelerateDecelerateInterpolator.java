@@ -8,6 +8,8 @@ import android.content.Context;
 import android.util.AttributeSet;
 
 public class AccelerateDecelerateInterpolator implements Interpolator {
+    @DSComment("no action/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.452 -0500", hash_original_method = "9170BAC272EC23921BC06B3298E3C672", hash_generated_method = "65309E801988EB5B5C1DA6EA7DC295CB")
     
 public AccelerateDecelerateInterpolator() {

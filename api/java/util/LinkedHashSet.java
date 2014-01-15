@@ -11,7 +11,9 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
 
     private static final long serialVersionUID = -2851667679971038690L;
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.760 -0400", hash_original_method = "FA64C9B63CE04BA03B3070651E56EFED", hash_generated_method = "B99E3A755713053C1BCF05A2186909D1")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.760 -0400", hash_original_method = "FA64C9B63CE04BA03B3070651E56EFED", hash_generated_method = "B99E3A755713053C1BCF05A2186909D1")
     public  LinkedHashSet() {
         super();
         // ---------- Original Method ----------
@@ -29,6 +31,8 @@ public class LinkedHashSet<E> extends HashSet<E> implements Set<E>, Cloneable, S
         // ---------- Original Method ----------
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.761 -0400", hash_original_method = "04F711D7424A0EA0A6EA304747ABA554", hash_generated_method = "8B59B2B9DCF36FC27AA99B0F9BADC9B8")
     public  LinkedHashSet(Collection<? extends E> collection) {
         super(collection);

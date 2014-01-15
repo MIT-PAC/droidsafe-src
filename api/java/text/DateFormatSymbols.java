@@ -147,6 +147,8 @@ public DateFormatSymbols() {
      * @param locale
      *            the locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.819 -0500", hash_original_method = "10456A2571D0B6BA1CAC9BF624A7CB6F", hash_generated_method = "66A899D7DC9685B14752F7E4AE7BE51A")
     
 public DateFormatSymbols(Locale locale) {
@@ -270,6 +272,8 @@ private void writeObject(ObjectOutputStream oos) throws IOException {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.846 -0500", hash_original_method = "72991BA97E8B1C753B319ABB9AE6A911", hash_generated_method = "A9856D8B6C989DDF059928D8717607F5")
     
@@ -284,6 +288,8 @@ public String[] getAmPmStrings() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.848 -0500", hash_original_method = "BB9FAB8B89491AAFEBAE987DB8D7ADC9", hash_generated_method = "94B4266AAF8B96068E6A4428AD166AE1")
     
@@ -311,6 +317,8 @@ public String getLocalPatternChars() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.853 -0500", hash_original_method = "7E7D6ABDEA9D17B1FB9A10690E51D2C0", hash_generated_method = "E6F7C6F7EDCFF21CD9EC9705A9997081")
     
@@ -325,6 +333,8 @@ public String[] getMonths() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.855 -0500", hash_original_method = "B159D6A758F880417EB3F558245AB4C8", hash_generated_method = "23228701839B041BE35E570066BA5B82")
     
@@ -339,6 +349,8 @@ public String[] getShortMonths() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.858 -0500", hash_original_method = "22143FF136703407DD6E3A76253CFCD4", hash_generated_method = "E21790038F6B6114BA0E3C8BF9C72EF2")
     
@@ -353,6 +365,8 @@ public String[] getShortWeekdays() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.860 -0500", hash_original_method = "9B40AAE5B3ACDD77762A9FF02C898A9B", hash_generated_method = "347ECB5FA9861F1CA81E7F26A2A506DC")
     
@@ -376,6 +390,8 @@ public String[] getWeekdays() {
      *     "CST" for "Canada/Saskatchewan".
      * </ul>
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.862 -0500", hash_original_method = "BCD39B9ED22174061A8487583A862B84", hash_generated_method = "563FAAFCA0308CDEF53A5C45612E3C9C")
     

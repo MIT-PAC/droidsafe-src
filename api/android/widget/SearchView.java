@@ -402,6 +402,8 @@ static boolean isLandscapeMode(Context context) {
         
 };
 
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.740 -0500", hash_original_method = "C1ED4F339F78000C40B1DF7945901DEA", hash_generated_method = "5E808D3C82C90AF1D2E0DF44FC1C629D")
     
 public SearchView(Context context) {
@@ -511,6 +513,8 @@ public SearchView(Context context, AttributeSet attrs) {
      * @param searchable a SearchableInfo can be retrieved from the SearchManager, for a specific
      * activity or a global search provider.
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.753 -0500", hash_original_method = "D9A30BFA849ECE06409E134B6DE5C1F0", hash_generated_method = "645DBFC6428E88C8ECB5E97434D6A9CB")
     
 public void setSearchableInfo(SearchableInfo searchable) {
@@ -549,6 +553,8 @@ public void setAppSearchData(Bundle appSearchData) {
      *
      * @attr ref android.R.styleable#SearchView_imeOptions
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.758 -0500", hash_original_method = "A9C55FF5F962662498ECAD2C137876AF", hash_generated_method = "CD89AF8E515C0184BE23683937420891")
     
@@ -564,6 +570,8 @@ public void setImeOptions(int imeOptions) {
      *
      * @attr ref android.R.styleable#SearchView_inputType
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.760 -0500", hash_original_method = "48CC06180C89621288EE9E924CBC5764", hash_generated_method = "346C2C21BCF3B3A413D45389660087CA")
     
@@ -668,6 +676,8 @@ public void setOnSearchClickListener(OnClickListener listener) {
      *
      * @return the query string
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.778 -0500", hash_original_method = "BDCF19F1BD9841AC2C41BDBA087D55A0", hash_generated_method = "6AB3F6E16C358175AE4C893210CE3A7A")
     
@@ -683,6 +693,8 @@ public CharSequence getQuery() {
      * @param submit whether to submit the query right now or only update the contents of
      * text field.
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.781 -0500", hash_original_method = "5407FC5F92134D6A89C79A4C1515F538", hash_generated_method = "3AD312454081B2E3ED1E6DDDAB1FEE3D")
     
 public void setQuery(CharSequence query, boolean submit) {
@@ -706,6 +718,8 @@ public void setQuery(CharSequence query, boolean submit) {
      *
      * @attr ref android.R.styleable#SearchView_queryHint
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.783 -0500", hash_original_method = "E72A59E6C313C94D91D305DFD6AC06A2", hash_generated_method = "A6C99F300FD2422A675F2D7AC022816F")
     
 public void setQueryHint(CharSequence hint) {
@@ -755,6 +769,8 @@ public boolean isIconfiedByDefault() {
      * @param iconify a true value will collapse the SearchView to an icon, while a false will
      * expand it.
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.789 -0500", hash_original_method = "1D615B467973354655EE36C4E6E1B780", hash_generated_method = "C09A92E6147C8CBBBE9D074799B9E1A8")
     
@@ -772,6 +788,8 @@ public void setIconified(boolean iconify) {
      * @return true if the SearchView is currently iconified, false if the search field is
      * fully visible.
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.791 -0500", hash_original_method = "844ED2B05054700D6A1A7C47A43DB3F5", hash_generated_method = "3685A368962CA6F1123C758E5F5A80B4")
     
 public boolean isIconified() {
@@ -786,6 +804,8 @@ public boolean isIconified() {
      * @param enabled true to show a submit button for submitting queries, false if a submit
      * button is not required.
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.793 -0500", hash_original_method = "3C1CA8493C58EB873C43522E7F5B066C", hash_generated_method = "62F6D438D9FC3DF5B9250D19DB86393F")
     
 public void setSubmitButtonEnabled(boolean enabled) {
@@ -798,6 +818,8 @@ public void setSubmitButtonEnabled(boolean enabled) {
      *
      * @return whether the submit button is enabled automatically when necessary
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.795 -0500", hash_original_method = "A8CFD3302CC6C1FBD45FF4B867C72D5B", hash_generated_method = "15D691DC348FF7CF2F97A6CFE98C0D36")
     
 public boolean isSubmitButtonEnabled() {
@@ -818,6 +840,8 @@ public boolean isSubmitButtonEnabled() {
      * @see SearchManager#SUGGEST_COLUMN_FLAGS
      * @see SearchManager#FLAG_QUERY_REFINEMENT
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.798 -0500", hash_original_method = "29051F8E555BD7A9218D5240E768869F", hash_generated_method = "FA290228C60F39E8CD705DE61626A847")
     
 public void setQueryRefinementEnabled(boolean enable) {
@@ -832,6 +856,8 @@ public void setQueryRefinementEnabled(boolean enable) {
      * Returns whether query refinement is enabled for all items or only specific ones.
      * @return true if enabled for all items, false otherwise.
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.800 -0500", hash_original_method = "A374A24A58636548BF0B2ADA0B696601", hash_generated_method = "8CB506AF9702E3CC4D45FBBD6AA96696")
     
 public boolean isQueryRefinementEnabled() {
@@ -868,6 +894,8 @@ public CursorAdapter getSuggestionsAdapter() {
      *
      * @attr ref android.R.styleable#SearchView_maxWidth
      */
+    @DSComment("SearchView, check callback")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.806 -0500", hash_original_method = "8FF296A57B18752E84CEF7286CDC8903", hash_generated_method = "35898894372962CF4B39196DCA943707")
     
 public void setMaxWidth(int maxpixels) {
@@ -1361,6 +1389,8 @@ void onTextFocusChanged() {
     /**
      * {@inheritDoc}
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:27.914 -0500", hash_original_method = "5D7477A3D9C6D568A19E621F4FAE5DD7", hash_generated_method = "8E15890FE8C1E16FFF8183FE8EA51626")
     
 @Override

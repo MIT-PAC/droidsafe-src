@@ -23,6 +23,8 @@ public class RSAPrivateKeySpec implements KeySpec {
      * @param privateExponent
      *            the private exponent {@code e}
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.210 -0500", hash_original_method = "F40385EC5FF36FD091AB4B014FD09334", hash_generated_method = "4C6C6A838705FADC091BB6706470A9F3")
     
 public RSAPrivateKeySpec(BigInteger modulus, BigInteger privateExponent) {

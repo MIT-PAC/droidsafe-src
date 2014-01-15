@@ -102,6 +102,8 @@ public static synchronized int insertProviderAt(Provider provider, int position)
      * @return the actual position or {@code -1} if the given {@code provider}
      *         was already in the list.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:00.366 -0500", hash_original_method = "E56D0C14EE73394DE8439EEF0879315D", hash_generated_method = "7FE6810E7DCDA05798504F90847EBF2F")
     
 public static int addProvider(Provider provider) {

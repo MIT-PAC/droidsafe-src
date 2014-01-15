@@ -306,6 +306,8 @@ protected URLConnection(URL url) {
      * @throws IOException
      *             if an error occurs while connecting to the resource.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.074 -0500", hash_original_method = "E3B3D609A299C20BEA286BB272FDF5DD", hash_generated_method = "12E46584ED58D785D1E4DDAC8B414223")
     
 public abstract void connect() throws IOException;
@@ -487,6 +489,8 @@ public int getContentLength() {
      *
      * @return the value of the response header field {@code content-type}.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.093 -0500", hash_original_method = "7440B54E7BE94AE7F9BB4349A25246D4", hash_generated_method = "C174C05C0D4687BFF9AF1A822C8B8A7E")
     
@@ -611,6 +615,8 @@ public Map<String, List<String>> getHeaderFields() {
      * @return the request-property representing generic map.
      * @since 1.4
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.119 -0500", hash_original_method = "04A4D958E6B53818E212E56DBBF1EB38", hash_generated_method = "0D7D1552A0D2D3F788EBC7C63F6318E0")
     
@@ -641,6 +647,8 @@ private void checkNotConnected() {
      *             if the property name is {@code null}.
      * @since 1.4
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.124 -0500", hash_original_method = "AA90A2DB0C71826C83D2E27C5299DE6D", hash_generated_method = "9A2054FF16C2C7295EC0F9342921BDF8")
     
 public void addRequestProperty(String field, String newValue) {
@@ -764,6 +772,8 @@ public long getIfModifiedSince() {
      * @throws IOException
      *             if no InputStream could be created.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.138 -0500", hash_original_method = "AC7495DD6573AA12A9CB49C509EE6FD0", hash_generated_method = "FAAEE0050218252D181324FD0AF4D174")
     
@@ -796,6 +806,8 @@ public long getLastModified() {
      * @throws IOException
      *             if no OutputStream could be created.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.143 -0500", hash_original_method = "F613A2AA87619B352A0F7C7CAB39D3F5", hash_generated_method = "2FA7EE7D9906A5BB0CDD13F5908662C8")
     
@@ -916,6 +928,8 @@ public void setAllowUserInteraction(boolean newValue) {
      *            the default value of the flag to be used for new connections.
      * @see #useCaches
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.174 -0500", hash_original_method = "850171EE0F333E1246D13E7B06ED7B4A", hash_generated_method = "B3B107E055283354A0EB84E1277B4C31")
     
@@ -934,6 +948,8 @@ public void setDefaultUseCaches(boolean newValue) {
      *             connection has been already established.
      * @see #doInput
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.176 -0500", hash_original_method = "3A49AB6E406CA8641E1DA3C376F73D42", hash_generated_method = "ABAEE1D791D99ACFDC3F90F8A4C41A99")
     
 public void setDoInput(boolean newValue) {
@@ -952,6 +968,8 @@ public void setDoInput(boolean newValue) {
      *             connection has been already established.
      * @see #doOutput
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.178 -0500", hash_original_method = "F9A1D9CFB149787BC9250701CAC2EC3A", hash_generated_method = "9ACA71AFE5A19544236C2D71E8590085")
     
 public void setDoOutput(boolean newValue) {
@@ -992,6 +1010,8 @@ public void setIfModifiedSince(long newValue) {
      * @throws NullPointerException
      *             if the parameter {@code field} is {@code null}.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.187 -0500", hash_original_method = "EB8A856B35FAF51399B9B389D895E434", hash_generated_method = "897791F44B5080C11972AA64B89EBE20")
     
@@ -1014,6 +1034,8 @@ public void setRequestProperty(String field, String newValue) {
      *             connection has been established.
      * @see #useCaches
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.189 -0500", hash_original_method = "36A4E65C2F0D12499DC505123F0CC423", hash_generated_method = "AF8D26B649C92DEC0A43D17876359183")
     
 public void setUseCaches(boolean newValue) {
@@ -1050,6 +1072,8 @@ public void setUseCaches(boolean newValue) {
      * @throws IllegalArgumentException
      *             if the parameter {@code timeout} is less than zero.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.191 -0500", hash_original_method = "6A558E4FD6643B6A2C9B278FD394A062", hash_generated_method = "8599EBB3492B35B0013C3C655134CE9E")
     
 public void setConnectTimeout(int timeout) {
@@ -1083,6 +1107,8 @@ public int getConnectTimeout() {
      * @throws IllegalArgumentException
      *             if the parameter {@code timeout} is less than zero.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.196 -0500", hash_original_method = "AFADA452D3B07139A9E1C4690AAC11B3", hash_generated_method = "FE4D686C5AA5BFEF2289E9D40CE9435F")
     
 public void setReadTimeout(int timeout) {

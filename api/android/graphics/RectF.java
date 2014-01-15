@@ -70,10 +70,14 @@ public RectF[] newArray(int size) {
     /**
      * Create a new empty RectF. All coordinates are initialized to 0.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.864 -0500", hash_original_method = "D61F570F41294C50B794115B72F287CF", hash_generated_method = "0C35021DCF1E2EEAC4ACC137BA6B97DB")
     
 public RectF() {}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public RectF(float left, float top, float right, float bottom) {    
     	this();
     	addTaint(left);
@@ -141,6 +145,8 @@ public RectF() {}
     	//addTaint(0.getTaint());	//No need to track , just an initializer type function setting things to 0   
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void set(float left, float top, float right, float bottom) {
     	addTaint(left);
     	addTaint(top);
@@ -168,6 +174,8 @@ public RectF() {}
      * @param dx The amount to add to the rectangle's left and right coordinates
      * @param dy The amount to add to the rectangle's top and bottom coordinates
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.903 -0500", hash_original_method = "987CF6DAC95BF2616996F2B7580ECF09", hash_generated_method = "209DD68EA03C32B026C6A69EF4BF7652")
     
 public void offset(float dx, float dy) {
@@ -436,6 +444,8 @@ public void union(float left, float top, float right, float bottom) {
      *
      * @param r The rectangle being unioned with this rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.936 -0500", hash_original_method = "7333A4F184A018E8DCD665D788936108", hash_generated_method = "DDE001E2C94ED57A95C9B868FAEDFEAD")
     
 public void union(RectF r) {

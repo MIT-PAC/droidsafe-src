@@ -26,6 +26,8 @@ public class AppWidgetManager {
      * Get the AppWidgetManager instance to use for the supplied {@link android.content.Context
      * Context} object.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.836 -0500", hash_original_method = "B3DF940F92A954D76F9893B692CC4E1A", hash_generated_method = "FBD8819BDCBC06F139EF4AD791BDB899")
     
@@ -150,6 +152,7 @@ public void updateAppWidget(int[] appWidgetIds, RemoteViews views) {
      * @param appWidgetId      The AppWidget instance for which to set the RemoteViews.
      * @param views         The RemoteViews object to show.
      */
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.845 -0500", hash_original_method = "779A0F382601F89CF93810A3753ED0EE", hash_generated_method = "D5BA8051AFB8D90F24D576EC7BAF20E1")
     
@@ -305,6 +308,8 @@ public List<AppWidgetProviderInfo> getInstalledProviders() {
      * @return A appWidgetId.  If the appWidgetId has not been bound to a provider yet, or
      * you don't have access to that appWidgetId, null is returned.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.867 -0500", hash_original_method = "57B0FB21059F64A76489662CF361FBD9", hash_generated_method = "187662D62236692025123F6003B36470")
     
@@ -403,6 +408,8 @@ public void unbindRemoteViewsService(int appWidgetId, Intent intent) {
      * @param provider The {@link android.content.BroadcastReceiver} that is the
      *            AppWidget provider to find appWidgetIds for.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:55.879 -0500", hash_original_method = "A8A608804967C37EB91DAF26AED4E71B", hash_generated_method = "EBB6C66BAE2A4CCABAEDA2DBEF6D8A88")
     

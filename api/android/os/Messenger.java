@@ -70,6 +70,8 @@ public Messenger[] newArray(int size) {
      * 
      * @param target The Handler that will receive sent messages.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.403 -0500", hash_original_method = "A65C5BAC2E4407473A9171FA89173DDE", hash_generated_method = "F9EADB68E50F41D4F02A92288796FDE3")
     
 public Messenger(Handler target) {
@@ -82,6 +84,8 @@ public Messenger(Handler target) {
      * 
      * @param target The IBinder this Messenger should communicate with.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.431 -0500", hash_original_method = "291BB446453057D831D652E8D2879500", hash_generated_method = "21FAEE86AF040679487C6933431AE666")
     
 public Messenger(IBinder target) {
@@ -97,6 +101,8 @@ public Messenger(IBinder target) {
      * @throws RemoteException Throws DeadObjectException if the target
      * Handler no longer exists.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.405 -0500", hash_original_method = "87BB77B45562A993DA127AF8A28A35EF", hash_generated_method = "14BEC707A4A52F5122FCA56614674178")
     
@@ -110,6 +116,8 @@ public void send(Message message) throws RemoteException {
      * 
      * @return Returns the IBinder backing this Messenger.
      */
+    @DSComment("Binder is vague, need modeling")
+    @DSSpec(DSCat.IPC)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.407 -0500", hash_original_method = "4371CC0F380F9E28159928FBC65693A0", hash_generated_method = "CF424504EFFD31AD8ED006BBB939C76F")
     
@@ -135,6 +143,8 @@ public boolean equals(Object otherObj) {
         return false;
     }
 
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.412 -0500", hash_original_method = "72E49DA56EC3D19D8D09B0982F6DDB55", hash_generated_method = "D3CD0FF680AAF7AE0414AB6B38BC2F04")
     
 public int hashCode() {

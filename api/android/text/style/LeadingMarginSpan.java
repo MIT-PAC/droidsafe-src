@@ -51,6 +51,8 @@ public Standard(int first, int rest) {
          * Constructor taking an indent for all lines.
          * @param every the indent of each line
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.258 -0500", hash_original_method = "97E8791ED853CD53EBF63C6C0A6CBCF5", hash_generated_method = "60A9F75006C1430F9FEADE9B5632FAF5")
         
 public Standard(int every) {
@@ -84,6 +86,8 @@ public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(mRest);
         }
 
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.271 -0500", hash_original_method = "C031E4EC1BEA687C1A76A6F271C64683", hash_generated_method = "73D1C024547E7D82C890EC308EE6F5E3")
         

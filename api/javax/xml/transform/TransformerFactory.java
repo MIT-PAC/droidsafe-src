@@ -5,11 +5,7 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class TransformerFactory {
-
 
     /**
      * <p>Get current state of canonicalization.</p>
@@ -42,6 +38,8 @@ public abstract class TransformerFactory {
      * @throws TransformerFactoryConfigurationError never. Included for API
      *     compatibility with other Java implementations.
      */
+    @DSComment("no suspicious activity, only creates object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.647 -0500", hash_original_method = "3E8CF5BE620708FB4FC89BA0D72DFBF3", hash_generated_method = "E9E99C08522096EAB8AEE9B1103F39F1")
     
 public static TransformerFactory newInstance()
@@ -136,6 +134,8 @@ public abstract Transformer newTransformer(Source source)
      * @exception TransformerConfigurationException Thrown if it is not
      *   possible to create a <code>Transformer</code> instance.
      */
+    @DSComment("no suspicious activity, only creates object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.654 -0500", hash_original_method = "A7E101C00A1C217438F3BE7E289CE40B", hash_generated_method = "A1935FF0124FA744285AB7B7640F5A3C")
     
 public abstract Transformer newTransformer()
@@ -329,7 +329,6 @@ public abstract void setErrorListener(ErrorListener listener);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.683 -0500", hash_original_method = "A69DC36A610F5E9CC88DC70E49C46EE7", hash_generated_method = "AE4BF0F77687929F0842F0F0E1A9FE70")
     
 public abstract ErrorListener getErrorListener();
-
     
 }
 

@@ -34,6 +34,8 @@ public class Proxy implements Serializable {
      *                if either {@code interfaces} or any of its elements are
      *                {@code null}
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.184 -0500", hash_original_method = "4E746CE0495D3DB0FF249BFCBD025F6A", hash_generated_method = "A1DE847C342E34996B3F50A48F205721")
     
@@ -154,6 +156,8 @@ public static Class<?> getProxyClass(ClassLoader loader,
      * @throws NullPointerException
      *                if the interfaces or any of its elements are null
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.188 -0500", hash_original_method = "4375560191FF9AF2AD66AAFC6EDA1910", hash_generated_method = "403419D6FE97EEEE4440D238B61372F5")
     
 public static Object newProxyInstance(ClassLoader loader,

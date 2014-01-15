@@ -98,6 +98,8 @@ public int executeUpdateDelete() {
      * @throws android.database.SQLException If the SQL string is invalid for
      *         some reason
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.373 -0500", hash_original_method = "78D2410201CEBD83C87275DB09AEC8B4", hash_generated_method = "2A4D5BD1B81B68465454108E8B5D9953")
     
 public long executeInsert() {

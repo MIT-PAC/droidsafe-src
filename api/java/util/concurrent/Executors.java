@@ -30,6 +30,8 @@ public class Executors {
      * @return the newly created thread pool
      * @throws IllegalArgumentException if {@code nThreads <= 0}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.737 -0500", hash_original_method = "4E40ED8EF1E85B572E2151F7FE652635", hash_generated_method = "24FC77A84622C7E6D132714BA0E4E804")
     
 public static ExecutorService newFixedThreadPool(int nThreads) {
@@ -128,6 +130,8 @@ public static ExecutorService newSingleThreadExecutor(ThreadFactory threadFactor
      *
      * @return the newly created thread pool
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.748 -0500", hash_original_method = "F8AEA60969AF891BED1528CB27A5B3DF", hash_generated_method = "5531971EB656A2DB0F9493BF080E0215")
     
 public static ExecutorService newCachedThreadPool() {
@@ -281,6 +285,8 @@ public static ScheduledExecutorService unconfigurableScheduledExecutorService(Sc
      * of the thread created by this factory.
      * @return a thread factory
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:08.769 -0500", hash_original_method = "B7AE3746CAE0BF4DA70BB99A06CCB766", hash_generated_method = "FF7C731BBAD164B6710B160D5B3024B5")
     
 public static ThreadFactory defaultThreadFactory() {

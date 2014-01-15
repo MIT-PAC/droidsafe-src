@@ -19,6 +19,8 @@ public class ParsePosition {
      * @param index
      *            the index to begin parsing.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.826 -0500", hash_original_method = "DC50BCA5F95CF2B530ABA250C6125033", hash_generated_method = "D2C67F25DF78C8DD8CC7C58EB94A8913")
     
 public ParsePosition(int index) {
@@ -66,6 +68,8 @@ public int getErrorIndex() {
      *
      * @return the current position.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.834 -0500", hash_original_method = "1CFE76DD95166F56A240763AD86BFFF6", hash_generated_method = "65114281D83995728CC54A5781A616A4")
     
@@ -86,6 +90,8 @@ public int getIndex() {
      * @param index
      *            the index of the parse error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.839 -0500", hash_original_method = "F3EA9276CC48A5113CA1E4D2C48DC7D4", hash_generated_method = "DA015261131ACB466C6FBA56A13F6CF9")
     
 public void setErrorIndex(int index) {
@@ -98,6 +104,8 @@ public void setErrorIndex(int index) {
      * @param index
      *            the current parse position.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.841 -0500", hash_original_method = "1C6C7B20133CCF9092C9B321C0CF7A81", hash_generated_method = "2460B67C707C219B342228AEF66DA5EF")
     
 public void setIndex(int index) {

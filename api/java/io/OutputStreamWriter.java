@@ -31,6 +31,8 @@ public class OutputStreamWriter extends Writer {
      * @param out
      *            the non-null target stream to write converted bytes to.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.574 -0500", hash_original_method = "8C206CCA706FC5574C37E56D894D8687", hash_generated_method = "842F6B6710D3A66CF876DB8E7DB54F66")
     
 public OutputStreamWriter(OutputStream out) {
@@ -80,6 +82,8 @@ public OutputStreamWriter(OutputStream out, final String enc)
      * @param cs
      *            the {@code Charset} that specifies the character encoding.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.580 -0500", hash_original_method = "8F31DE887FC24410EE09434FBA44CA21", hash_generated_method = "C388739C3AC44331B56B35FBA1B88BA7")
     
 public OutputStreamWriter(OutputStream out, Charset cs) {
@@ -100,6 +104,8 @@ public OutputStreamWriter(OutputStream out, Charset cs) {
      * @param enc
      *            the character encoder used for character conversion.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.583 -0500", hash_original_method = "C5AFC76AE8F04EED9C657E07A65429EA", hash_generated_method = "8CD38A4A4B1FF7E5F7207AD626AB27C7")
     
 public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
@@ -120,6 +126,8 @@ public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
      * @throws IOException
      *             if an error occurs while closing this writer.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.585 -0500", hash_original_method = "348EDF61477AE4A3DCAC4870D899F874", hash_generated_method = "5D0388D5AAD5F0793DE2F1E9322C0CED")
     
 @Override
@@ -143,6 +151,8 @@ public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
      * @throws IOException
      *             if an error occurs while flushing this writer.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.587 -0500", hash_original_method = "E89503CD667F6DF7A02E3D218DF666E8", hash_generated_method = "5472256256B480FB5B4336E5277791E6")
     
 @Override

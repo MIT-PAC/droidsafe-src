@@ -429,6 +429,8 @@ public static final CharSequence timeString(long millis) {
      * for display on the call-in-progress screen.
      * @param elapsedSeconds the elapsed time in seconds.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.098 -0500", hash_original_method = "D0EA86A6CC28EFB8C6A60B32F1D784F7", hash_generated_method = "6BDAA12EB64D2B1485C3C28942198D4D")
     
 public static String formatElapsedTime(long elapsedSeconds) {
@@ -599,6 +601,8 @@ public static Calendar newCalendar(boolean zulu)
     /**
      * @return true if the supplied when is today else false
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.119 -0500", hash_original_method = "BCBEFB19F695AD30621394F70B29C099", hash_generated_method = "63E341009367C2831E3CBC92EAD5E19D")
     
 public static boolean isToday(long when) {
@@ -1386,6 +1390,8 @@ public static Formatter formatDateRange(Context context, Formatter formatter, lo
      * @param flags a bit mask of formatting options
      * @return a string containing the formatted date/time.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:17.151 -0500", hash_original_method = "40048A0916DFE1A9CFC219167424AF4B", hash_generated_method = "CABF73F43CFEEE0590001DE2A5285770")
     
 public static String formatDateTime(Context context, long millis, int flags) {

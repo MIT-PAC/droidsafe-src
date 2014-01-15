@@ -164,6 +164,8 @@ private BluetoothSocket(int type, int fd, boolean auth, boolean encrypt, String 
      * <p>{@link #close} can be used to abort this call from another thread.
      * @throws IOException on error, for example connection failure
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.661 -0500", hash_original_method = "35545D04908740DE675063D7F1E138DB", hash_generated_method = "93EBAC2A87C975A356B5B20873931D02")
     
 public void connect() throws IOException {
@@ -187,6 +189,8 @@ public void connect() throws IOException {
      * <p>Causes blocked calls on this socket in other threads to immediately
      * throw an IOException.
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.663 -0500", hash_original_method = "83CCB2B87AD744C98E63B0BB2187BAC7", hash_generated_method = "710794DFEA4563F61213BB68AAAF0AAA")
     
 public void close() throws IOException {
@@ -245,6 +249,8 @@ public InputStream getInputStream() throws IOException {
      * the associated socket is connected.
      * @return OutputStream
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.670 -0500", hash_original_method = "650B33031816EC89B8DA91268C4339E3", hash_generated_method = "25C899671F89D3D1A419C73ABBD6875A")
     

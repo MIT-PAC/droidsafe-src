@@ -14,6 +14,8 @@ public class CRC32 implements Checksum {
 
     long tbytes = 0L;
     
+    @DSComment("no info moving")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.485 -0400", hash_original_method = "D55E28551E901525721E2A005775E885", hash_generated_method = "D55E28551E901525721E2A005775E885")
     public CRC32 ()
     {
@@ -25,6 +27,8 @@ public class CRC32 implements Checksum {
      *
      * @return The checksum for this instance.
      */
+    @DSComment("no info moving")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.163 -0500", hash_original_method = "854FE5E27AD17353F420BE5FB492E27A", hash_generated_method = "B19B471301649942B63964C318AED819")
     

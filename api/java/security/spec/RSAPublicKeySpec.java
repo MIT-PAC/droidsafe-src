@@ -23,6 +23,8 @@ public class RSAPublicKeySpec implements KeySpec {
      * @param publicExponent
      *            the public exponent {@code d}.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.050 -0500", hash_original_method = "02D2E2047B69666CD33836F402773F8F", hash_generated_method = "B51095546205823CB493C74D968A6814")
     
 public RSAPublicKeySpec(BigInteger modulus, BigInteger publicExponent) {

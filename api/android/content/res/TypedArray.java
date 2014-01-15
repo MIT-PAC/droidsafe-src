@@ -38,6 +38,8 @@ public class TypedArray {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public int length(){
 		return getTaintInt();
 		// Original method
@@ -80,6 +82,8 @@ public Resources getResources() {
         return mResources;
     }
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CharSequence getText(int index){
         String str = new String();
@@ -108,7 +112,9 @@ public Resources getResources() {
 		*/
 	}
     
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getString(int index){
         String str = new String();
         str.addTaint(getTaint());
@@ -169,6 +175,8 @@ public Resources getResources() {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean getBoolean(int index, boolean defValue){
 		return getTaintBoolean();
 		// Original method
@@ -196,6 +204,8 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getInt(int index, int defValue){
 		return getTaintInt();
@@ -224,6 +234,8 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getFloat(int index, float defValue){
 		return getTaintFloat();
@@ -231,6 +243,8 @@ public Resources getResources() {
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getColor(int index, int defValue){
 		return getTaintInt();
@@ -253,6 +267,8 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getInteger(int index, int defValue){
 		return getTaintInt();
@@ -274,6 +290,8 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public float getDimension(int index, float defValue){
 		return getTaintFloat();
@@ -295,6 +313,8 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDimensionPixelOffset(int index, int defValue){
 		return getTaintInt();
@@ -316,6 +336,8 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDimensionPixelSize(int index, int defValue){
 		return getTaintInt();
@@ -359,6 +381,8 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getLayoutDimension(int index, int defValue){
 		return getTaintInt();
@@ -401,7 +425,9 @@ public Resources getResources() {
 		*/
 	}
     
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getResourceId(int index, int defValue){
 		return getTaintInt();
 		// Original method
@@ -420,6 +446,8 @@ public Resources getResources() {
 		*/
 	}
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Drawable getDrawable(int index){
 		return mResources.loadDrawable(mValue, mValue.resourceId);
@@ -477,12 +505,16 @@ public Resources getResources() {
      * 
      * @return Returns true if the value was retrieved, else false. 
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.212 -0500", hash_original_method = "0C857F8AC76CD5CFBE7569B581103BDD", hash_generated_method = "8BA02359D62F0CC748F75C0F18969D76")
     
 public boolean getValue(int index, TypedValue outValue) {
         return getValueAt(index*AssetManager.STYLE_NUM_ENTRIES, outValue);
     }
     
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public boolean hasValue(int index){
 		return getTaintBoolean();
 		// Original method
@@ -523,7 +555,9 @@ public boolean getValue(int index, TypedValue outValue) {
 		*/
 	}
     
-	public void recycle(){
+	@DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public void recycle(){
 		mResources.mCachedStyledAttributes = this;
 		// Original method
 		/*

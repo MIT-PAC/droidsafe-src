@@ -46,6 +46,8 @@ private static void apply(Paint paint, String family) {
      * @param family The font family for this typeface.  Examples include
      * "monospace", "serif", and "sans-serif".
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.998 -0500", hash_original_method = "30225DE18E1EF58337803047C2C7576B", hash_generated_method = "E512622B6AD4EA72458E817A953BD263")
     
 public TypefaceSpan(String family) {
@@ -80,6 +82,8 @@ public void writeToParcel(Parcel dest, int flags) {
     /**
      * Returns the font family name.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.011 -0500", hash_original_method = "A22822B6578A7051FA8E71732705B93C", hash_generated_method = "FBA6554ECC41D538C8462DBE55F6F7DF")
     

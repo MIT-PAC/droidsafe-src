@@ -39,6 +39,8 @@ public class ScheduledThreadPoolExecutor extends ThreadPoolExecutor implements S
      *        if they are idle, unless {@code allowCoreThreadTimeOut} is set
      * @throws IllegalArgumentException if {@code corePoolSize < 0}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.036 -0500", hash_original_method = "D36047D4322FE6F8EBCA30AB15266BC6", hash_generated_method = "C6D051EFB4F60DCEAE37DBBD3B0B07F6")
     
 public ScheduledThreadPoolExecutor(int corePoolSize) {
@@ -276,6 +278,8 @@ private long overflowFree(long delay) {
      * @throws RejectedExecutionException {@inheritDoc}
      * @throws NullPointerException       {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.054 -0500", hash_original_method = "E8C91BC5CFBE81CC8958800A4E70C4DA", hash_generated_method = "70153009D30555822A21DF4C467D0B90")
     
 public ScheduledFuture<?> schedule(Runnable command,
@@ -444,6 +448,8 @@ Future<T> varC033FC2530DBD28BB1831A9C4CE5DB45_4715437 =         schedule(task, 0
      * @param value if {@code true}, continue after shutdown, else don't.
      * @see #getContinueExistingPeriodicTasksAfterShutdownPolicy
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.074 -0500", hash_original_method = "4AFC27553B47AB13DBA25E0474D83429", hash_generated_method = "18143D52445CCB29F3A9E20F56652FF9")
     
 public void setContinueExistingPeriodicTasksAfterShutdownPolicy(boolean value) {
@@ -481,6 +487,8 @@ public boolean getContinueExistingPeriodicTasksAfterShutdownPolicy() {
      * @param value if {@code true}, execute after shutdown, else don't.
      * @see #getExecuteExistingDelayedTasksAfterShutdownPolicy
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.079 -0500", hash_original_method = "DDF8C3EFAF4531B367BDE4CC570E21D4", hash_generated_method = "A2675CE46F6B5D3F768DE6C6745F7621")
     
 public void setExecuteExistingDelayedTasksAfterShutdownPolicy(boolean value) {
@@ -557,6 +565,8 @@ boolean getRemoveOnCancelPolicy() { // android-changed
      *
      * @throws SecurityException {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.089 -0500", hash_original_method = "06AE3A71ACDF5D94BFF2BA3486ECC61C", hash_generated_method = "EECA67464F24515745E21751DF906EFD")
     
 public void shutdown() {
@@ -584,6 +594,8 @@ public void shutdown() {
      *         zero-delay {@code ScheduledFuture}.
      * @throws SecurityException {@inheritDoc}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:16.091 -0500", hash_original_method = "58CAE4CD18062B6710EA14E24E67D3BE", hash_generated_method = "4310F6E0C68CEDEE4A0BB22C75A7B842")
     

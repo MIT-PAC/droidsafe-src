@@ -74,6 +74,8 @@ public class GregorianCalendar extends Calendar {
      * Constructs a new {@code GregorianCalendar} initialized to the current date and
      * time with the default {@code Locale} and {@code TimeZone}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.336 -0500", hash_original_method = "7EB3091E87333B7AA987345512812570", hash_generated_method = "8106811364876E1FB5FEFEAB5E247D55")
     
 public GregorianCalendar() {
@@ -91,6 +93,8 @@ public GregorianCalendar() {
      * @param day
      *            the day of the month.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.339 -0500", hash_original_method = "B0762BDDD2B39759F6CE94DB8F25D3E0", hash_generated_method = "C6FBC74FDA42BFD4E322BD6205A6B3F8")
     
 public GregorianCalendar(int year, int month, int day) {
@@ -172,6 +176,8 @@ public GregorianCalendar(Locale locale) {
      * @param timezone
      *            the {@code TimeZone}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.354 -0500", hash_original_method = "7987E4D71BE0DBF5086B038B74101A38", hash_generated_method = "989AD10C10424F4CEEDD7483BF5F80CF")
     
 public GregorianCalendar(TimeZone timezone) {
@@ -187,6 +193,8 @@ public GregorianCalendar(TimeZone timezone) {
      * @param locale
      *            the {@code Locale}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.357 -0500", hash_original_method = "98E484CB97D77C9503930A8DB608CAE2", hash_generated_method = "35023E300DC55B5BD1545BFDF63CDBB8")
     
 public GregorianCalendar(TimeZone timezone, Locale locale) {
@@ -213,6 +221,8 @@ GregorianCalendar(boolean ignored) {
      * @throws IllegalArgumentException
      *                if the specified field is DST_OFFSET or ZONE_OFFSET.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.363 -0500", hash_original_method = "1FE1308881E1142F9D3B7A007897B586", hash_generated_method = "CD6B180F0015465F27DC84FCF52538BA")
     
 @Override
@@ -1015,6 +1025,8 @@ private int daysInYear(boolean leapYear, int month) {
      *
      * @return a {@code Date} which represents the gregorian change date.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.414 -0500", hash_original_method = "BD206861177D272D9EC33433339CB64F", hash_generated_method = "6F349129557415586896680515720B93")
     

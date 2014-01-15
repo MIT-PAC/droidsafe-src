@@ -36,6 +36,8 @@ public static IntBuffer allocate(int capacity) {
      *            the int array which the new buffer will be based on.
      * @return the created int buffer.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.111 -0500", hash_original_method = "69AB4E308DD923986E8AB96AF4F625AA", hash_generated_method = "6C1B3D0124340296BE544158357DB7B0")
     
 public static IntBuffer wrap(int[] array) {

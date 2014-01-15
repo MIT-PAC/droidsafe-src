@@ -163,12 +163,16 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
         
 };
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.369 -0400", hash_original_method = "5B933AEEC6389C71875EE2A57A875A3A", hash_generated_method = "5B933AEEC6389C71875EE2A57A875A3A")
     public PreferenceActivity ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.579 -0500", hash_original_method = "7377982A731D92C32EEEF871F40BFABD", hash_generated_method = "52427157046BF3244375E6579DEF6556")
     
 @Override
@@ -578,6 +582,8 @@ public void setListFooter(View view) {
                 FrameLayout.LayoutParams.WRAP_CONTENT));
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.607 -0500", hash_original_method = "5055AD43F70FAF224ADCBC793E0582D3", hash_generated_method = "18452CB7F1C5EF94F201F49A2445B815")
     
 @Override
@@ -589,6 +595,8 @@ public void setListFooter(View view) {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.609 -0500", hash_original_method = "015EB586B516E4BA63E47DF2D2F941B5", hash_generated_method = "5FE1E22A9A75AB3816C7CADD00DC12E0")
     
 @Override
@@ -647,6 +655,8 @@ public void setListFooter(View view) {
         super.onRestoreInstanceState(state);
     }
 
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.616 -0500", hash_original_method = "BC5669EA98C9095AD4591AFCBD99CE20", hash_generated_method = "367800A5BDAE41B74EA1B95BD8DBE532")
     
 @Override
@@ -1346,6 +1356,8 @@ private void bindPreferences() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.667 -0500", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "606CF70C7776240D74182A497A612E24")
     
@@ -1400,6 +1412,8 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.674 -0500", hash_original_method = "7CC03E7D3EBAF4E1E382E9E7A55EF0AE", hash_generated_method = "FA685498E0CC32F1C045DBDEE416C01B")
     
@@ -1437,6 +1451,8 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.678 -0500", hash_original_method = "1D27A71B873F6C05FF2DA5D8C133ED30", hash_generated_method = "A72CCF4B5AF9FDD5731F350455BAC101")
     
 @Deprecated
@@ -1470,6 +1486,8 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.683 -0500", hash_original_method = "0C794FFD7CBFBB35093DF6CE24875508", hash_generated_method = "378655292483895DBE1C27B8BA6DA4B5")
     
 @Deprecated

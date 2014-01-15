@@ -25,6 +25,8 @@ public class ReentrantReadWriteLock implements ReadWriteLock, java.io.Serializab
      * Creates a new {@code ReentrantReadWriteLock} with
      * default (nonfair) ordering properties.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.792 -0500", hash_original_method = "1C7ADE1C43258ED1B8231199DCC94C2F", hash_generated_method = "69758B01510A7D7577C7DBEF09A98D66")
     
 public ReentrantReadWriteLock() {
@@ -1093,6 +1095,8 @@ protected WriteLock(ReentrantReadWriteLock lock) {
          * lies dormant until the write lock has been acquired, at which
          * time the write lock hold count is set to one.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.965 -0500", hash_original_method = "4197ECA2CFEBBAA5B9BD7C840B7670C7", hash_generated_method = "8D087EDFDCF1D880293070705EAF5998")
         
 public void lock() {
@@ -1287,6 +1291,8 @@ public boolean tryLock(long timeout, TimeUnit unit)
          * @throws IllegalMonitorStateException if the current thread does not
          * hold this lock.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.975 -0500", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "B39A8E8B3E8EC93EC8CE2E174E9F2264")
         
 public void unlock() {

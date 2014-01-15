@@ -169,6 +169,8 @@ public UsbDeviceConnection openDevice(UsbDevice device) {
      *
      * @return list of USB accessories, or null if none are attached.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.829 -0500", hash_original_method = "1BBBF6CC2C81B72139C0D4C7AF3A1618", hash_generated_method = "8AE4C903E8B822CEB6B3A1FC83A6DA3B")
     
@@ -192,6 +194,8 @@ public UsbAccessory[] getAccessoryList() {
      * @param accessory the USB accessory to open
      * @return file descriptor, or null if the accessor could not be opened.
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.831 -0500", hash_original_method = "E613A4CA88B6248C79E5606341D1D797", hash_generated_method = "96BFC0D30548295B2B07F5B529143609")
     

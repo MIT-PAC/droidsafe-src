@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.File;
 
-
-
-
-
 public class DexClassLoader extends BaseDexClassLoader {
     /**
      * Creates a {@code DexClassLoader} that finds interpreted and native
@@ -29,13 +25,14 @@ public class DexClassLoader extends BaseDexClassLoader {
      *     {@code null}
      * @param parent the parent class loader
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.020 -0500", hash_original_method = "0E54801097DD3CB2DCA8F1C7661C6431", hash_generated_method = "87A58931F57DAF46173EFD86E890DF88")
     
 public DexClassLoader(String dexPath, String optimizedDirectory,
             String libraryPath, ClassLoader parent) {
         super(dexPath, new File(optimizedDirectory), libraryPath, parent);
     }
-
     
 }
 

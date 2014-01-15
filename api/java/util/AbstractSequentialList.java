@@ -47,6 +47,8 @@ protected AbstractSequentialList() {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:43.113 -0500", hash_original_method = "1D00ECD22B3575A885077212162F97B2", hash_generated_method = "F8A35E883987D86B173CE6E6651B4120")
     

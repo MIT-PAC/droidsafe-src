@@ -15,6 +15,8 @@ public abstract class Reader implements Readable, Closeable {
      * Constructs a new {@code Reader} with {@code this} as the object used to
      * synchronize critical sections.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.829 -0500", hash_original_method = "23BD0F45FCD5744DE183656F7640DB10", hash_generated_method = "71C8FCF9A91B7A5A1526A6B249D29EC8")
     
 protected Reader() {
@@ -46,6 +48,8 @@ protected Reader(Object lock) {
      * @throws IOException
      *             if an error occurs while closing this reader.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.834 -0500", hash_original_method = "4E507319564A7E0BFD2A58D57A800811", hash_generated_method = "2228FF14FE1AFC53EB7399AA035D1509")
     
 public abstract void close() throws IOException;
@@ -69,6 +73,8 @@ public abstract void close() throws IOException;
      * @see #markSupported()
      * @see #reset()
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.836 -0500", hash_original_method = "2066C142E0E9A9BCC65518E0FCDDA1D6", hash_generated_method = "EBA12DF8A153DF5B9F7C994055D37955")
     
 public void mark(int readLimit) throws IOException {
@@ -82,6 +88,8 @@ public void mark(int readLimit) throws IOException {
      *
      * @return always {@code false}.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.838 -0500", hash_original_method = "12DAC0CE56878A53F37AFF65E12010EB", hash_generated_method = "68CB0655189E46325916378CAE21EACC")
     
 public boolean markSupported() {
@@ -98,6 +106,8 @@ public boolean markSupported() {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.841 -0500", hash_original_method = "4B904F9F4843983C12271BC14A375F35", hash_generated_method = "3181BD79906C23198BB1DA8AE2668AD1")
     
 public int read() throws IOException {
@@ -122,6 +132,8 @@ public int read() throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.843 -0500", hash_original_method = "E743E3D19B5FD453D0CBC2E5CA424673", hash_generated_method = "F1D6C9070AD8A49F0385879A6200617D")
     
 public int read(char[] buf) throws IOException {
@@ -146,6 +158,8 @@ public int read(char[] buf) throws IOException {
      * @throws IOException
      *             if this reader is closed or some other I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.846 -0500", hash_original_method = "BAAE620DD47C67A7C9FA2D182BB45EC6", hash_generated_method = "9A8DFEF4E7A8AC2186089662A0C89E20")
     
 public abstract int read(char[] buf, int offset, int count) throws IOException;
@@ -163,6 +177,8 @@ public abstract int read(char[] buf, int offset, int count) throws IOException;
      * @see #read(char[])
      * @see #read(char[], int, int)
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.848 -0500", hash_original_method = "D41EE0434E50B3C6E1AA0E42EDD44E0B", hash_generated_method = "94CE574D8F9043761F4405DCC097C872")
     
 public boolean ready() throws IOException {
@@ -181,6 +197,8 @@ public boolean ready() throws IOException {
      * @see #mark(int)
      * @see #markSupported()
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.850 -0500", hash_original_method = "B2B0ACE34E24898AD20F33154DDE5ADD", hash_generated_method = "905AD4216897ED858D0A370D64D237D3")
     
 public void reset() throws IOException {
@@ -202,6 +220,8 @@ public void reset() throws IOException {
      * @see #markSupported()
      * @see #reset()
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.853 -0500", hash_original_method = "7E8A2F73FB8EAE936D216E90BE91676B", hash_generated_method = "7AD957B0F0168F7BE1674D0299966610")
     
@@ -244,6 +264,8 @@ public long skip(long charCount) throws IOException {
      * @throws ReadOnlyBufferException
      *             if {@code target} is read-only.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.856 -0500", hash_original_method = "3EEA08DE1417537F34B729CF4FE40629", hash_generated_method = "C5940F6106B7BDD695AB535DD92FD3DC")
     

@@ -95,6 +95,8 @@ public static Bitmap createImageThumbnail(String filePath, int kind) {
      * @param filePath the path of video file
      * @param kind could be MINI_KIND or MICRO_KIND
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.758 -0500", hash_original_method = "3C5DBD92A3A305187D743DC871D6AE55", hash_generated_method = "0279A15AEFC098387B9E2647C88FBC69")
     
@@ -145,6 +147,8 @@ public static Bitmap createVideoThumbnail(String filePath, int kind) {
      * @param width targeted width
      * @param height targeted height
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.761 -0500", hash_original_method = "04F11977515FDB4F5E012AC13A40882D", hash_generated_method = "1BAB2227279275269EDB0E4C6BD99FA5")
     
 public static Bitmap extractThumbnail(

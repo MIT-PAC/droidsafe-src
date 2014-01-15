@@ -65,6 +65,8 @@ public class ZipEntry implements ZipConstants, Cloneable {
      * @throws IllegalArgumentException
      *             if the name length is outside the range (> 0xFFFF).
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.310 -0500", hash_original_method = "60F10CCF439EC77C0A98401AA44AF184", hash_generated_method = "F5AE49741A518153E5A7FD0732EEE752")
     
 public ZipEntry(String name) {

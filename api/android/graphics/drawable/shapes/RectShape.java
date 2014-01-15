@@ -8,10 +8,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.RectF;
 
-
-
-
-
 public class RectShape extends Shape {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.868 -0500", hash_original_field = "499D59727FC656C05DFD3E86493F2A86", hash_generated_field = "E080B89EC7A364FFC5B71FB812B38393")
 
@@ -20,6 +16,8 @@ public class RectShape extends Shape {
     /**
      * RectShape constructor.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.870 -0500", hash_original_method = "86D7394A029CE4FDE438585868C447F4", hash_generated_method = "EC5781DC7AC5EFDE946C3D218DF4DE25")
     
 public RectShape() {}
@@ -55,7 +53,6 @@ protected final RectF rect() {
         shape.mRect = new RectF(mRect);
         return shape;
     }
-
     
 }
 

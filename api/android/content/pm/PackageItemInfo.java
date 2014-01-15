@@ -80,6 +80,8 @@ protected PackageItemInfo(Parcel source) {
      * @return Returns a CharSequence containing the item's label.  If the
      * item does not have a label, its name is returned.
      */
+    @DSComment("information about package")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.324 -0500", hash_original_method = "7587CF1BD2560A6C6F4B753C933F3AB0", hash_generated_method = "F7142DA33E913DB7BEF3B8D354DCE8DC")
     
 public CharSequence loadLabel(PackageManager pm) {
@@ -110,6 +112,8 @@ public CharSequence loadLabel(PackageManager pm) {
      * item does not have an icon, the item's default icon is returned
      * such as the default activity icon.
      */
+    @DSComment("information about package")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.327 -0500", hash_original_method = "28CAE1EAC4906E828B7AB10B1D04EBA6", hash_generated_method = "EA73B7A27ACDD8CB3869132A9DA3CA2A")
     
 public Drawable loadIcon(PackageManager pm) {
@@ -150,6 +154,8 @@ protected Drawable loadDefaultIcon(PackageManager pm) {
      * @return Returns a Drawable containing the item's logo. If the item
      * does not have a logo, this method will return null.
      */
+    @DSComment("information about package")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.331 -0500", hash_original_method = "E08D2EB4B7AA31EEDBDC94D57D687BA7", hash_generated_method = "5E8227AADAE2C50C985BFE31AECFACB2")
     
 public Drawable loadLogo(PackageManager pm) {
@@ -192,6 +198,8 @@ protected Drawable loadDefaultLogo(PackageManager pm) {
      * assigned as the given meta-data.  If the meta-data name is not defined
      * or the XML resource could not be found, null is returned.
      */
+    @DSComment("information about package")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.335 -0500", hash_original_method = "3469F3AC66BE0248CB548730284A6983", hash_generated_method = "2485624FC9F5EDA0944762D77FF0BA2E")
     
 public XmlResourceParser loadXmlMetaData(PackageManager pm, String name) {

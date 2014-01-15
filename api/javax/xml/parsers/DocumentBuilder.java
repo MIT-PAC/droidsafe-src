@@ -68,6 +68,8 @@ public void reset() {
      * @see org.xml.sax.DocumentHandler
      */
 
+    @DSComment("input is io InputStream")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.097 -0500", hash_original_method = "95E59CF6F0A1DFE242840282B735E195", hash_generated_method = "D801F974BA0202307AC902C635182E61")
     
@@ -148,6 +150,8 @@ public Document parse(String uri)
      * @return A new DOM Document object.
      */
 
+    @DSComment("input is io file object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.105 -0500", hash_original_method = "F95298F4448DE156B1C85F49780E514D", hash_generated_method = "BD38C4001589DF85E06DF2B6CFF70AAF")
     

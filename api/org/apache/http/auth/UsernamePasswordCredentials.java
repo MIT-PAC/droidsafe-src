@@ -11,7 +11,6 @@ import org.apache.http.util.LangUtils;
 public class UsernamePasswordCredentials implements Credentials {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.382 -0500", hash_original_field = "F93842AFCA5096FA57DD8770403FD97C", hash_generated_field = "F686C01E11EE32E33613A169940ADF19")
 
-
     private  BasicUserPrincipal principal;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.384 -0500", hash_original_field = "2AFEDC818D0EF3384B2D2537704E6E21", hash_generated_field = "690A5FCB6F6469C4B045B751039E14AE")
 
@@ -40,13 +39,14 @@ public UsernamePasswordCredentials(String usernamePassword) {
         }
     }
 
-
     /**
      * The constructor with the username and password arguments.
      *
      * @param userName the user name
      * @param password the password
      */
+    @DSComment("no suspicious activity, only creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.395 -0500", hash_original_method = "214A596E68D335B6B76C9680AF9532F2", hash_generated_method = "4FBEE594BDCE02B0031C333C9D820FDC")
     
 public UsernamePasswordCredentials(String userName, String password) {
@@ -104,7 +104,6 @@ public String getPassword() {
     public String toString() {
         return this.principal.toString();
     }
-
     
 }
 

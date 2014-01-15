@@ -18,6 +18,8 @@ public class CountDownLatch {
      *        before threads can pass through {@link #await}
      * @throws IllegalArgumentException if {@code count} is negative
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.181 -0500", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "8222E2A72B8FE1E111921C80733077A6")
     
 public CountDownLatch(int count) {
@@ -52,6 +54,8 @@ public CountDownLatch(int count) {
      * @throws InterruptedException if the current thread is interrupted
      *         while waiting
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.184 -0500", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "CF7FF344DF6993EC0E05DDF0673776FB")
     
 public void await() throws InterruptedException {
@@ -116,6 +120,8 @@ public boolean await(long timeout, TimeUnit unit)
      *
      * <p>If the current count equals zero then nothing happens.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.188 -0500", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "195A2AA97CBD5879C8602CD14B86D68C")
     
 public void countDown() {

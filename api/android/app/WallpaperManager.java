@@ -48,6 +48,8 @@ static void initGlobals(Looper looper) {
     /**
      * Retrieve a WallpaperManager associated with the given Context.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.165 -0500", hash_original_method = "97C230F92BF2EA74D74E57D6E151F317", hash_generated_method = "E122D877CAEF7F74721B46251971E070")
     
@@ -222,6 +224,8 @@ public Drawable peekDrawable() {
      *
      * @return Returns a Drawable object that will draw the wallpaper.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.174 -0500", hash_original_method = "8FF7C2E7F253EDCD7E0E3FAE36FB4E5D", hash_generated_method = "A6D743C421A5C86C17A201B614B9B698")
     

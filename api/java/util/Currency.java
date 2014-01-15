@@ -16,6 +16,8 @@ public final class Currency implements Serializable {
      * @throws IllegalArgumentException
      *             if the currency code is not a supported ISO 4217 currency code.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:23.813 -0500", hash_original_method = "BAF6F7D56D54D6837D138AE76CB94486", hash_generated_method = "1958A5CB62A9CACC726EB766D9AEC024")
     

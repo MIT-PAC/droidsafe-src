@@ -75,6 +75,8 @@ public class Properties extends Hashtable<Object, Object> {
     /**
      * Constructs a new {@code Properties} object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.658 -0500", hash_original_method = "15BC7402B615AC640D692CA8D591C86A", hash_generated_method = "7795BAC062AED72B959D89678A199367")
     
 public Properties() {
@@ -144,6 +146,8 @@ private void dumpString(StringBuilder buffer, String string, boolean key) {
      *            the name of the property to find.
      * @return the named property value, or {@code null} if it can't be found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.666 -0500", hash_original_method = "B2B08C7B9AD3334D72416F92376E272C", hash_generated_method = "FE43F53EBFA7D65B5C53EC5509BBE58A")
     
@@ -168,6 +172,8 @@ public String getProperty(String name) {
      *            the default value.
      * @return the named property value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.668 -0500", hash_original_method = "3601550743DD7ED6E54F365D9B667C39", hash_generated_method = "C6113C6A35092CBD196D8546F6153BFC")
     
@@ -245,6 +251,8 @@ private void listToAppendable(Appendable out) {
      * @param in the {@code InputStream}
      * @throws IOException
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.679 -0500", hash_original_method = "B8EDE929B09671D07A2F603EF776CD24", hash_generated_method = "ABC75A374DCCE012A8512AE368C0A34C")
     
 public synchronized void load(InputStream in) throws IOException {
@@ -447,6 +455,8 @@ public synchronized void load(InputStream in) throws IOException {
     /**
      * Returns all of the property names (keys) in this {@code Properties} object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.687 -0500", hash_original_method = "1BF2C237B8DD3958FB1B8B5C0AE1938E", hash_generated_method = "DF74DE310FA8CC69912084B9A763044F")
     
 public Enumeration<?> propertyNames() {

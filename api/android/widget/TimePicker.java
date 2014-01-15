@@ -316,6 +316,8 @@ public void setOnTimeChangedListener(OnTimeChangedListener onTimeChangedListener
     /**
      * @return The current hour in the range (0-23).
      */
+    @DSComment("TimePicker, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.128 -0500", hash_original_method = "AE73BE8706F17DAEE1FF393F333C1E75", hash_generated_method = "F008939409E801B970BC0D0D87C95588")
     
@@ -333,6 +335,8 @@ public Integer getCurrentHour() {
     /**
      * Set the current hour.
      */
+    @DSComment("TimePicker, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.130 -0500", hash_original_method = "51BF76EB890889B8164A1C36DDF3660C", hash_generated_method = "5FFDEA0FFFFD2EE3195E1B4F83E97B5C")
     
@@ -365,6 +369,8 @@ public void setCurrentHour(Integer currentHour) {
      *
      * @param is24HourView True = 24 hour mode. False = AM/PM.
      */
+    @DSComment("TimePicker, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.132 -0500", hash_original_method = "241FCC8F6454A30E36E3EC76C851E3F2", hash_generated_method = "D9D0439E1B3E4FCC3AD3D9DB109E9B54")
     
@@ -393,6 +399,8 @@ public boolean is24HourView() {
     /**
      * @return The current minute.
      */
+    @DSComment("TimePicker, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.136 -0500", hash_original_method = "A85A8F7AA6E48BE779272D70D71211B4", hash_generated_method = "F0211D9F8029EFFFC8877A7E3437CBF0")
     
@@ -403,6 +411,8 @@ public Integer getCurrentMinute() {
     /**
      * Set the current minute (0-59).
      */
+    @DSComment("TimePicker, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.139 -0500", hash_original_method = "E5914CBE4C3F7152CD4D96804AFB4FF4", hash_generated_method = "379BEE9B0E1DBD75619021B07302B3DA")
     

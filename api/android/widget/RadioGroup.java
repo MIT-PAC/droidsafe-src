@@ -32,6 +32,8 @@ public class RadioGroup extends LinearLayout {
     /**
      * {@inheritDoc}
      */
+    @DSComment("RadioGroup")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.164 -0500", hash_original_method = "3F150AF0F79E2D2E674BD2F6CDCB9019", hash_generated_method = "CD607C8AACC191FD2EFAD1CBF0C9253E")
     
 public RadioGroup(Context context) {
@@ -131,6 +133,8 @@ private void init() {
      * @see #getCheckedRadioButtonId()
      * @see #clearCheck()
      */
+    @DSComment("RadioGroup")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.179 -0500", hash_original_method = "09268A2A1BCE88884506BAA643569A97", hash_generated_method = "18261EA61F80E2DD498F7E8562AA92D5")
     
 public void check(int id) {
@@ -177,6 +181,8 @@ private void setCheckedStateForView(int viewId, boolean checked) {
      * @see #check(int)
      * @see #clearCheck()
      */
+    @DSComment("RadioGroup")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.185 -0500", hash_original_method = "037226FCADAD9E6B157688A3599D3985", hash_generated_method = "CA799BFEF6959DBCC5E4B26BE6AA9F99")
     
@@ -250,6 +256,8 @@ public LayoutParams(Context c, AttributeSet attrs) {
         /**
          * {@inheritDoc}
          */
+        @DSComment("")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.202 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
         
 public LayoutParams(int w, int h) {

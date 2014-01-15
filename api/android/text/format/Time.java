@@ -26,6 +26,8 @@ public class Time {
      * @return a negative result if {@code a} is earlier, a positive result if
      *         {@code a} is earlier, or 0 if they are equal.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.769 -0500", hash_original_method = "1E5DE9F7F5CC8351FCC6C06EF6103A1F", hash_generated_method = "207458D93B711E43419FC34C3E3297FD")
     
 public static int compare(Time a, Time b) {
@@ -46,6 +48,8 @@ public static int compare(Time a, Time b) {
     /**
      * Returns the timezone string that is currently set for the device.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.804 -0500", hash_original_method = "9C730CB6C697DB2A56C8E6FAE9E8F345", hash_generated_method = "DEB2074E7BB36BB0690F5D23D9C3701A")
     
@@ -284,6 +288,8 @@ public static int getJulianMondayFromWeeksSinceEpoch(int week) {
      * @param timezone string containing the timezone to use.
      * @see TimeZone
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.743 -0500", hash_original_method = "E0FCF5C2DD1FC8B8CECA3F88CA26F2FA", hash_generated_method = "AEAC7D1422FF6F48C2FC8B5E88EABD1C")
     
 public Time(String timezone) {
@@ -302,6 +308,8 @@ public Time(String timezone) {
      * Construct a Time object in the default timezone. The time is initialized to
      * Jan 1, 1970.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.745 -0500", hash_original_method = "B143F86B302A5932C8EBD6FB2BD46478", hash_generated_method = "B2115C0DC328A5BA3B9C03D90D22162C")
     
 public Time() {
@@ -619,7 +627,9 @@ public boolean parse(String s) {
      * @return true if the resulting time value is in UTC time
      * @throws android.util.TimeFormatException if s cannot be parsed.
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.798 -0500", hash_original_method = "E417695E8CAC19265A6537D747474825", hash_generated_method = "DE9F06A70AE7B2D50C4E75981B0D2CE7")
+     @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.798 -0500", hash_original_method = "E417695E8CAC19265A6537D747474825", hash_generated_method = "DE9F06A70AE7B2D50C4E75981B0D2CE7")
     
 public boolean parse3339(String s) {
          if (nativeParse3339(s)) {
@@ -640,6 +650,8 @@ public boolean parse3339(String s) {
     /**
      * Sets the time of the given Time object to the current time.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.809 -0500", hash_original_method = "6CDA1CA0525F04C652EDF79AA26F0E90", hash_generated_method = "15AB5FFDBF444B39AECF6C7B3D1436D7")
     
     public void setToNow(){
@@ -694,6 +706,8 @@ public boolean parse3339(String s) {
      * to read back the same milliseconds that you set with {@link #set(long)}
      * or {@link #set(Time)} or after parsing a date string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.813 -0500", hash_original_method = "C1956449864825DE1FCC969EAC519409", hash_generated_method = "D0531688B3741002E0E1F71977D0DF65")
     
     public long toMillis(boolean ignoreDst){
@@ -709,6 +723,8 @@ public boolean parse3339(String s) {
      *
      * @param millis the time in UTC milliseconds since the epoch.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.817 -0500", hash_original_method = "934B6518FEFEB3D5C2DEFA32BEB78382", hash_generated_method = "AB41981E05C419C3C9509C60D6834BFE")
     
     public void set(long millis){
@@ -865,6 +881,8 @@ public int getWeekNumber() {
      * @param allDay
      * @return string in the RFC 3339 format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.844 -0500", hash_original_method = "84747EB963EFC6E551D95C210645E8C0", hash_generated_method = "6A5FBB901968BCE27B64EB8A163EDECD")
     
 public String format3339(boolean allDay) {

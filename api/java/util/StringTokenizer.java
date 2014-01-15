@@ -5,25 +5,17 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class StringTokenizer implements Enumeration<Object> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.834 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "D1325E87F7D151CD81D0B4A318C3AE5C")
-
 
     private String string;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.837 -0500", hash_original_field = "F79F5753CE2341DD7B606D07AE46B031", hash_generated_field = "08557D348CBDF8CC7B00F6CD8CA91B61")
 
-
     private String delimiters;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.840 -0500", hash_original_field = "B5FC224E1DE2A1E7C035EE0675169694", hash_generated_field = "641E06957176D04FBFF2F11AEC2A6EC3")
 
-
     private boolean returnDelimiters;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.842 -0500", hash_original_field = "92D7808EB8CD548A137230400384C6DC", hash_generated_field = "312206EA2404526B7BBC621459C87A80")
-
 
     private int position;
 
@@ -53,6 +45,8 @@ public StringTokenizer(String string) {
      * @param delimiters
      *            the delimiters to use.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.847 -0500", hash_original_method = "19F75AB88247B84D1EA58EB13E75D4B3", hash_generated_method = "04C80AC85BD9505571E3AE925FFB6AC8")
     
 public StringTokenizer(String string, String delimiters) {
@@ -92,6 +86,8 @@ public StringTokenizer(String string, String delimiters,
      * @return number of tokens that can be retreived before an {@code
      *         Exception} will result from a call to {@code nextToken()}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.853 -0500", hash_original_method = "F396A87D2BE9368C37D12C0E764C04A1", hash_generated_method = "4A47E56558FC986E42C18A2593CCA129")
     
 public int countTokens() {
@@ -131,6 +127,8 @@ public boolean hasMoreElements() {
      *
      * @return {@code true} if unprocessed tokens remain.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.858 -0500", hash_original_method = "15C5B981D98A46AC76B0A556FC01F2CE", hash_generated_method = "74F9C40B020314D4A7B8D5D14B376800")
     
 public boolean hasMoreTokens() {
@@ -172,6 +170,8 @@ public Object nextElement() {
      * @throws NoSuchElementException
      *                if no tokens remain.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.864 -0500", hash_original_method = "195590523F66664753FCC18930183C87", hash_generated_method = "A91970AF79C2D14A1D51498CECDB806B")
     
 public String nextToken() {
@@ -220,7 +220,6 @@ public String nextToken(String delims) {
         this.delimiters = delims;
         return nextToken();
     }
-
     
 }
 

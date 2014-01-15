@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.microedition.khronos.opengles.GL10;
 
-
-
-
-
-
 public class GLU {
 
     /**
@@ -20,6 +15,8 @@ public class GLU {
      * @return the error string for the input error code, or NULL if the input
      *         was not a valid GL or GLU error code.
      */
+    @DSComment("OpenGL Utils")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.616 -0500", hash_original_method = "3ABE2F316ECDFFD83FBC44153E87F595", hash_generated_method = "A2FC8AFF15470D95D80EA5B87B62A329")
     
 public static String gluErrorString(int error) {
@@ -102,6 +99,8 @@ public static void gluOrtho2D(GL10 gl, float left, float right,
      * @param zFar specifies the distance from the viewer to the far clipping
      *        plane (always positive).
      */
+    @DSComment("OpenGL Utils")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.628 -0500", hash_original_method = "9AF538E08B87A3ABF0DDE7BDDBBA91E2", hash_generated_method = "F2BF80FB629DF731008AB1848AA5E537")
     
 public static void gluPerspective(GL10 gl, float fovy, float aspect,
@@ -241,7 +240,6 @@ public static int gluUnProject(float winX, float winY, float winZ,
         return GL10.GL_TRUE;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.639 -0500", hash_original_field = "0B653DD92412B1F46EE9BDC62D614682", hash_generated_field = "4C7E849CA192581CA2BD76D1C6206DA9")
-
 
     private static final float[] sScratch = new float[32];
     

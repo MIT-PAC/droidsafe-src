@@ -276,6 +276,8 @@ public class InputMethodService extends AbstractInputMethodService {
         
 };
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.498 -0400", hash_original_method = "1525492D8EE98BBF3E2138610F838AAF", hash_generated_method = "1525492D8EE98BBF3E2138610F838AAF")
     public InputMethodService ()
     {
@@ -300,6 +302,8 @@ public class InputMethodService extends AbstractInputMethodService {
         mTheme = theme;
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.501 -0400", hash_original_method = "A4061C51E6B315B625647A4DAEF1D932", hash_generated_method = "DE550ABE012B963890E5EA21805F7878")
     @Override
     public void onCreate() {
@@ -394,6 +398,8 @@ void initViews() {
         mInputFrame.setVisibility(View.GONE);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.575 -0500", hash_original_method = "03BF0E4B83AB5EEC5EA04DACA2552646", hash_generated_method = "D40287164AA9AAAE1B590009ABEE7DE5")
     
 @Override public void onDestroy() {
@@ -491,6 +497,8 @@ void initViews() {
         return new InputMethodSessionImpl();
     }
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.584 -0500", hash_original_method = "F107DE3A8547E443866FF02369203993", hash_generated_method = "4CF1F70C1CBF341A5B589F607395DBC8")
     
@@ -534,6 +542,8 @@ public int getBackDisposition() {
      * <p>Note that this value can change dynamically, in particular when the
      * screen orientation changes.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.593 -0500", hash_original_method = "BF0CCCE3A6DFBF869485401A0C0B52E1", hash_generated_method = "ADEB78F689314EFFE444E49DCCCF5417")
     
@@ -557,6 +567,8 @@ public InputBinding getCurrentInputBinding() {
      * Retrieve the currently active InputConnection that is bound to
      * the input method, or null if there is none.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.598 -0500", hash_original_method = "25EFF753F3CF5167178BD7379B9659BF", hash_generated_method = "773E32CFFB6DFB776828E00B3A745593")
     
@@ -575,6 +587,8 @@ public boolean getCurrentInputStarted() {
         return mInputStarted;
     }
     
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.602 -0500", hash_original_method = "659C592D4ABB3DB82261D1C4692ABF2E", hash_generated_method = "D176431D91B0F46E596F046F6DFE48B1")
     
@@ -666,6 +680,8 @@ public void onConfigureWindow(Window win, boolean isFullscreen,
      * fullscreen mode.  This is the mode that was last determined and
      * applied by {@link #updateFullscreenMode()}.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.610 -0500", hash_original_method = "0B558CA7980DF9D2EBB981E6DDF5DF60", hash_generated_method = "B321AA08AAE634E6027026700009F5FD")
     
 public boolean isFullscreenMode() {
@@ -723,6 +739,8 @@ public void setExtractViewShown(boolean shown) {
      * false, though if {@link #isFullscreenMode()} returns true in that case
      * then it is probably only a sliver of the application).
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.617 -0500", hash_original_method = "DE07F0C980519D51E427F21507DA3D90", hash_generated_method = "FDF8A7945E1DE1CEF7141158AE75CEAE")
     
 public boolean isExtractViewShown() {
@@ -857,6 +875,8 @@ public boolean onEvaluateInputViewShown() {
      * Controls the visibility of the candidates display area.  By default
      * it is hidden.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.633 -0500", hash_original_method = "3ADC6F28D6F2E8A9F55D9BD9F82BC8D2", hash_generated_method = "DA1466E8A78C34D96D22AC6F8D4A0297")
     
@@ -1043,6 +1063,8 @@ public View onCreateInputView() {
      * @param restarting Set to true if we are restarting input on the
      * same text field as before.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.661 -0500", hash_original_method = "4B7A497965AEC42ECF0C79E271F7AFEF", hash_generated_method = "7AA061D048DFE3946E7BBEB04867DE6E")
     
 public void onStartInputView(EditorInfo info, boolean restarting) {
@@ -1333,6 +1355,8 @@ public void onUnbindInput() {
      * the editor.  Otherwise will be false, indicating this is a new
      * session with the editor.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.692 -0500", hash_original_method = "3ADFFB39DB97C5354271962A42564DD7", hash_generated_method = "C1E9AD96C736581C1A705C6238BF6027")
     
 public void onStartInput(EditorInfo attribute, boolean restarting) {
@@ -1398,6 +1422,8 @@ void doStartInput(InputConnection ic, EditorInfo attribute, boolean restarting) 
      * text; you can override this (not calling the base class implementation)
      * to perform whatever behavior you would like.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.699 -0500", hash_original_method = "E745A863BE4D98B94E02F169B272F08C", hash_generated_method = "1B6DE133E922D6BCF141B2D837C355BE")
     
 public void onFinishInput() {
@@ -1451,6 +1477,8 @@ public void onUpdateExtractedText(int token, ExtractedText text) {
      * <p>The default implementation takes care of updating the cursor in
      * the extract text, if it is being shown.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:39.706 -0500", hash_original_method = "08F34B1B106CF5B01DE522670D82A3BC", hash_generated_method = "B8226CECE01A1CE14F7C4DC9D2929B8E")
     
 public void onUpdateSelection(int oldSelStart, int oldSelEnd,

@@ -101,6 +101,8 @@ public DecimalFormat() {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.806 -0500", hash_original_method = "35AB5293961F9B593ADD183E8B6B3242", hash_generated_method = "F48FB803D27D0D027D76017074F2D40B")
     
 public DecimalFormat(String pattern) {
@@ -652,6 +654,8 @@ public void setGroupingSize(int value) {
      *
      * @param value the maximum number of integer digits.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.895 -0500", hash_original_method = "D5AFAB41905B13F7AD20D2FADDE73669", hash_generated_method = "836F4C4A51D27A61D4C060CA61C33E7B")
     

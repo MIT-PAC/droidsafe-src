@@ -160,6 +160,8 @@ public class SensorManager {
      * @see #remapCoordinateSystem(float[], int, int, float[])
      */
 
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.037 -0500", hash_original_method = "80FFBDA32F1CA6FB68C3B24B9C01CA42", hash_generated_method = "C2361A9E50FB5E2540C47B2203847598")
     
@@ -326,6 +328,8 @@ public static float getInclination(float[] I) {
      * @see #getRotationMatrix(float[], float[], float[], float[])
      */
 
+    @DSComment("Sensor accessing")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.043 -0500", hash_original_method = "FE2484DC0236D6664EA6E4EA310B2D70", hash_generated_method = "646AF5810B2BD63319A7EC849D82CDA3")
     
 public static boolean remapCoordinateSystem(float[] inR, int X, int Y,
@@ -447,6 +451,8 @@ private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
      * @see #getRotationMatrix(float[], float[], float[], float[])
      * @see GeomagneticField
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.051 -0500", hash_original_method = "48D1C344F1CE2628DE4C68ABB227A1F6", hash_generated_method = "5E0C14D6CF43554F17C02DEA9C8592AA")
     
@@ -1639,6 +1645,8 @@ public void onRotationChanged(int rotation) {
      * @see #getDefaultSensor(int)
      * @see Sensor
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.987 -0500", hash_original_method = "D388F11CBE90143BC36FA3E001809013", hash_generated_method = "A24E18E8BD8A929CC1A4EAD97C533099")
     
@@ -1875,6 +1883,8 @@ public List<Sensor> getSensorList(int type) {
      * @see #registerListener(SensorEventListener, Sensor, int)
      *
      */
+    @DSComment("no action when removing callback")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.013 -0500", hash_original_method = "A245758148D9D81E2CADBC67CD903CC7", hash_generated_method = "097D859FD01791F8FF42C752BCE68E9A")
     
 public void unregisterListener(SensorEventListener listener, Sensor sensor) {
@@ -1891,13 +1901,17 @@ public void unregisterListener(SensorEventListener listener, Sensor sensor) {
      * @see #registerListener(SensorEventListener, Sensor, int)
      *
      */
+    @DSComment("no action when removing callback")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.016 -0500", hash_original_method = "C9A0C02866BC64B5017A48A301526982", hash_generated_method = "66E71156F28D2F602815D9F161A4681D")
     
 public void unregisterListener(SensorEventListener listener) {
         unregisterListener((Object)listener);
     }
     
-	public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
+	@DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
+    public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
 		SensorEvent se = new SensorEvent(0);
 		se.sensor = sensor;
 		listener.onSensorChanged(se);
@@ -2091,7 +2105,9 @@ private void unregisterListener(Object listener) {
     }
     // orphaned legacy method
     
-	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+	@DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public Sensor getDefaultSensor(int i) {
 		return new Sensor(i);
 	}

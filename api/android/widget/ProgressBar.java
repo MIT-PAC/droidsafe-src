@@ -145,6 +145,8 @@ public ProgressBar(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.progressBarStyle);
     }
 
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.755 -0500", hash_original_method = "E1F87E741C36AFFDC636A9ACF6EDF064", hash_generated_method = "DF0BE037724D12B3A67CC8FCB3B2ED9F")
     
 public ProgressBar(Context context, AttributeSet attrs, int defStyle) {
@@ -355,6 +357,8 @@ private void initProgressBar() {
      *
      * @param indeterminate true to enable the indeterminate mode
      */
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.774 -0500", hash_original_method = "9BFD2BF2FBC3833B7107C0E363644A89", hash_generated_method = "6C104FE3027AADFF3B4C5EAC70F94A44")
     
 @android.view.RemotableViewMethod
@@ -436,6 +440,8 @@ public Drawable getProgressDrawable() {
      * @see #getProgressDrawable()
      * @see #setIndeterminate(boolean)
      */
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.783 -0500", hash_original_method = "3733E64362DE34A69671D2EF5503886A", hash_generated_method = "9BE10D26D1E010DAFB36345990CB8E1A")
     
 public void setProgressDrawable(Drawable d) {
@@ -571,6 +577,8 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #getProgress()
      * @see #incrementProgressBy(int) 
      */
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.817 -0500", hash_original_method = "E60A634EF77869D698E2255CD3404933", hash_generated_method = "B35794BD35CFE2DAE884F434C5E52CD1")
     
@@ -613,6 +621,8 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #getSecondaryProgress()
      * @see #incrementSecondaryProgressBy(int)
      */
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.823 -0500", hash_original_method = "9F9AE189F8359350B1506E3BE664E8EE", hash_generated_method = "7BC950379A7AD819B2451C593B6C4182")
     
 @android.view.RemotableViewMethod
@@ -647,6 +657,8 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #setMax(int)
      * @see #getMax()
      */
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.826 -0500", hash_original_method = "BF818051FE207A57D09CC2C24E2066F6", hash_generated_method = "7CF8711369421702779707E12BB7463A")
     
@@ -667,6 +679,8 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #setMax(int)
      * @see #getMax()
      */
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.828 -0500", hash_original_method = "0E2189FB3CB300C00977FC2C3BDB4D4B", hash_generated_method = "58E4C1CCFC1DD27C3F9337CD2BA5B461")
     
@@ -684,6 +698,8 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #getProgress()
      * @see #getSecondaryProgress()
      */
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.830 -0500", hash_original_method = "6E6A982D82D781B4C4E0B14E6160A2E7", hash_generated_method = "34A3B480BE2CC3F8D98489B2C60467E0")
     
@@ -701,6 +717,8 @@ private synchronized void refreshProgress(int id, int progress, boolean fromUser
      * @see #setProgress(int) 
      * @see #setSecondaryProgress(int) 
      */
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.833 -0500", hash_original_method = "DB535D9F1C65E31A54636A6B02096562", hash_generated_method = "5F485EFADD9A8E4B9E6B85A84DA8F58E")
     
 @android.view.RemotableViewMethod
@@ -827,6 +845,8 @@ public Interpolator getInterpolator() {
         return mInterpolator;
     }
 
+    @DSComment("ProgressBar")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:40.852 -0500", hash_original_method = "EC8B18EE88EE8E09369A36DBF52DF684", hash_generated_method = "39E0006847B6ED0F90C17C5E24442D20")
     

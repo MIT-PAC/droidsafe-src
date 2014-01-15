@@ -49,6 +49,8 @@ public TwoStatePreference(Context context) {
         this(context, null);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.353 -0500", hash_original_method = "41BF424D5DCED4AFC88BB1561E7758B1", hash_generated_method = "7A03287DCF28281EA2B997AF41CC167E")
     
 @Override
@@ -71,6 +73,8 @@ public TwoStatePreference(Context context) {
      *
      * @param checked The checked state.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.356 -0500", hash_original_method = "12D9CEBA0208655576D33A98ED54981A", hash_generated_method = "784176010AB6914D1ADE8C4FD8CEA97D")
     
 public void setChecked(boolean checked) {
@@ -87,6 +91,8 @@ public void setChecked(boolean checked) {
      *
      * @return The checked state.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.358 -0500", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "7DBC96472843914D224753BAD760B683")
     
 public boolean isChecked() {
@@ -106,6 +112,8 @@ public boolean isChecked() {
      *
      * @param summary The summary to be shown when checked.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.363 -0500", hash_original_method = "ABD6122B04EABCC29A2D57307245871E", hash_generated_method = "C46997D2300F9B96A75CB0A2563ADC11")
     
 public void setSummaryOn(CharSequence summary) {
@@ -142,6 +150,8 @@ public CharSequence getSummaryOn() {
      *
      * @param summary The summary to be shown when unchecked.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.369 -0500", hash_original_method = "D2C60679B7A2716D92F9A6A90EE31D5E", hash_generated_method = "7D192ED844E9ECE7FDC04FC71260413E")
     
 public void setSummaryOff(CharSequence summary) {

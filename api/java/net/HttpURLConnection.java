@@ -220,6 +220,8 @@ public abstract void disconnect();
      *
      * @return the error input stream returned by the server.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.608 -0500", hash_original_method = "6640096D2D877ED3E740627246DA5AF9", hash_generated_method = "58330C89C9E2E008813741E1516603AD")
     
@@ -275,6 +277,8 @@ public String getRequestMethod() {
      *             if there is an IO error during the retrieval.
      * @see #getResponseMessage
      */
+    @DSComment("accessing network response data")
+    @DSSpec(DSCat.NETWORKING)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.619 -0500", hash_original_method = "7D3B203196D55AEFB0033919830A54D2", hash_generated_method = "E5CEF15CCA918C333D4C4BE375BE6761")
     
@@ -333,6 +337,8 @@ public String getResponseMessage() throws IOException {
      * @see #getRequestMethod()
      * @see #method
      */
+    @DSComment("no suspicious activity, just gets string")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.627 -0500", hash_original_method = "3B5EB6833E70FFDCB063E860A5177AF6", hash_generated_method = "CB9578508F0DA92FBC57641C0CFBE1C1")
     
@@ -370,6 +376,8 @@ public abstract boolean usingProxy();
      * {@link #getContentType() content type}, which may also include the
      * content's character encoding.
      */
+    @DSComment("no suspicious activity, just calls super function")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:09.632 -0500", hash_original_method = "17A4A6C99056147BEFFA252CAD4737D6", hash_generated_method = "75271B8463D26A418CBC1CC9FFE3090D")
     

@@ -162,6 +162,8 @@ public int getStreamType() {
      * 
      * @param context A context used for querying. 
      */
+    @DSComment("Droidsafe will catch when app does something with the getTitle")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:26.960 -0500", hash_original_method = "9AA0FF99679830890209304DA3B8D69B", hash_generated_method = "6E3AD98B144BB627B392050A53FFE9BE")
     

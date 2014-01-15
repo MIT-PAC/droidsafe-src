@@ -46,6 +46,8 @@ public MatrixCursor(String[] columnNames, int initialCapacity) {
      * @param columnNames names of the columns, the ordering of which
      *  determines column ordering elsewhere in this cursor
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.740 -0500", hash_original_method = "520E9D572328080C8A52E1417D8346F4", hash_generated_method = "139E9284A654A258F94B9F29AED42E95")
     
 public MatrixCursor(String[] columnNames) {
@@ -97,6 +99,8 @@ public RowBuilder newRow() {
      * @param columnValues in the same order as the the column names specified
      *  at cursor construction time
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.748 -0500", hash_original_method = "48B10D52D633E686D99B492C35189F09", hash_generated_method = "87F3E7DEB331588F9FEE85FE0B266C4D")
     
 public void addRow(Object[] columnValues) {

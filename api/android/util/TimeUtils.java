@@ -117,6 +117,8 @@ public static TimeZone getTimeZone(int offset, boolean dst, long when, String co
      * is restarted.  Therefore, it is not necessary to re-query the database version
      * during the lifetime of an activity.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.936 -0500", hash_original_method = "1EDA04421B052D073A2A7549B576EB12", hash_generated_method = "BE0BB63257EE83C1BE5FB31F71FD083C")
     

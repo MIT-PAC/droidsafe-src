@@ -34,6 +34,8 @@ public class AtomicLong extends Number implements java.io.Serializable {
      *
      * @param initialValue the initial value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.521 -0500", hash_original_method = "6ECA774993D880ABD38A420DC693E35F", hash_generated_method = "289533BFFF52F6D05E10ACA8F1E13A96")
     
 public AtomicLong(long initialValue) {
@@ -43,6 +45,8 @@ public AtomicLong(long initialValue) {
     /**
      * Creates a new AtomicLong with initial value {@code 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.523 -0500", hash_original_method = "E5BCC7DD3ADE986582FDD04FB62FAAFA", hash_generated_method = "2C25E4FF944D2330F4ED58696D2578B6")
     
 public AtomicLong() {
@@ -53,6 +57,8 @@ public AtomicLong() {
      *
      * @return the current value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.526 -0500", hash_original_method = "558225EAA1BF82052D6B969C16747B7A", hash_generated_method = "0DA3986B795EBED7D70FCF24B2FF399B")
     
@@ -191,6 +197,8 @@ public final long getAndAdd(long delta) {
      *
      * @return the updated value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.549 -0500", hash_original_method = "0B4DA3D002D9BEE66893798DFD4DBDF7", hash_generated_method = "D3393C2385D07821FEECC3C8F0475B32")
     
 public final long incrementAndGet() {

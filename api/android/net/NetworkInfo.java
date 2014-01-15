@@ -130,6 +130,8 @@ public NetworkInfo(NetworkInfo source) {
      * info in this object pertains.
      * @return the network type
      */
+    @DSComment("Only getActiveNetworkInfo() is important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.911 -0500", hash_original_method = "96E8498F657AF6E41693B86C8B8439F4", hash_generated_method = "12140614F0FA586F324EFC620CF61C60")
     
@@ -198,6 +200,8 @@ public String getSubtypeName() {
      * @return {@code true} if network connectivity exists or is in the process
      * of being established, {@code false} otherwise.
      */
+    @DSComment("Only getActiveNetworkInfo() is important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.922 -0500", hash_original_method = "4340B79C926146F86A68CF1464A26E93", hash_generated_method = "2C9C2AC95481D3AC51881A7D7A326BC6")
     
 public boolean isConnectedOrConnecting() {
@@ -211,6 +215,8 @@ public boolean isConnectedOrConnecting() {
      * connections and pass data.
      * @return {@code true} if network connectivity exists, {@code false} otherwise.
      */
+    @DSComment("Only getActiveNetworkInfo() is important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.924 -0500", hash_original_method = "E81AE1BB2B0829AC31FE0D849F294E67", hash_generated_method = "8EECB83E305F4FE069A5F2CEC7520E99")
     
 public boolean isConnected() {
@@ -231,6 +237,8 @@ public boolean isConnected() {
      * </ul>
      * @return {@code true} if the network is available, {@code false} otherwise
      */
+    @DSComment("Only getActiveNetworkInfo() is important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.926 -0500", hash_original_method = "4897D1CF0EA563D6DA8C578331010914", hash_generated_method = "79476FFD25CA18C7F81E6A8C7C8DCF12")
     
 public boolean isAvailable() {

@@ -29,6 +29,8 @@ public abstract class BroadcastReceiver {
     
     private Application mApplication;
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.695 -0500", hash_original_method = "2900F07960080430406180ADD3872CDD", hash_generated_method = "D3FA3C172476927ED563AFCC971E4A9A")
     
 public BroadcastReceiver() {
@@ -65,6 +67,8 @@ public BroadcastReceiver() {
      * @param context The Context in which the receiver is running.
      * @param intent The Intent being received.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.698 -0500", hash_original_method = "938B84A43002091BA0754FF3EF2C5C0E", hash_generated_method = "694CB25ED6D3FBC56A56AD38523219EB")
     
 public abstract void onReceive(Context context, Intent intent);
@@ -144,6 +148,8 @@ public final void setResultCode(int code) {
      * 
      * @return int The current result code.
      */
+    @DSComment("no impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.707 -0500", hash_original_method = "413D4442793CB2CD30088D833172245E", hash_generated_method = "880C511B5BE77BEBC42FD95480D19EEC")
     
@@ -166,6 +172,8 @@ public final int getResultCode() {
      * 
      * @see #setResult(int, String, Bundle)
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.709 -0500", hash_original_method = "326C45A93CAC69AE5F40CC5662FD4E21", hash_generated_method = "E4DE2260ED5DD490E9332E22785D5122")
     
 public final void setResultData(String data) {
@@ -203,6 +211,8 @@ public final String getResultData() {
      * 
      * @see #setResult(int, String, Bundle)
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.714 -0500", hash_original_method = "A002D9C66CF7F2AA1D1827503AAC99EC", hash_generated_method = "569D36CAC8A5C7CB261AB149A764B2A9")
     
 public final void setResultExtras(Bundle extras) {
@@ -256,6 +266,8 @@ public final Bundle getResultExtras(boolean makeMap) {
      * broadcaster.  Can be set to null.  This completely
      * replaces the current map (if any).
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.718 -0500", hash_original_method = "71BA20FC3DD345B39DB950803A39A1ED", hash_generated_method = "ED3154BE987877FA0FF2943FC85107BB")
     
 public final void setResult(int code, String data, Bundle extras) {
@@ -292,6 +304,8 @@ public final boolean getAbortBroadcast() {
      * as those sent with {@link Context#sendBroadcast(Intent)
      * Context.sendBroadcast}</strong></p>
      */
+    @DSComment("no impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.723 -0500", hash_original_method = "EA4258D43E5FA594C300ACFA62523E77", hash_generated_method = "48E8F953F737C5875A829159CC0D6592")
     
 public final void abortBroadcast() {

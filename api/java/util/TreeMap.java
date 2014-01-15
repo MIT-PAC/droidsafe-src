@@ -63,7 +63,9 @@ static int count(Iterator<?> iterator) {
 
     int modCount = 0;
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.367 -0400", hash_original_method = "A79D85B768A2B786B5F2ACD3F2B9D249", hash_generated_method = "CFE342F2F41F7796DB24A93B3EC5E9D4")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.367 -0400", hash_original_method = "A79D85B768A2B786B5F2ACD3F2B9D249", hash_generated_method = "CFE342F2F41F7796DB24A93B3EC5E9D4")
     @SuppressWarnings("unchecked")
     public  TreeMap() {
         // ---------- Original Method ----------
@@ -84,6 +86,8 @@ static int count(Iterator<?> iterator) {
         //}
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.369 -0400", hash_original_method = "C1FE892CAD9D3780A675F5A8CA11F4FA", hash_generated_method = "39BB15B650529D91F63E90DE9C103299")
     @SuppressWarnings("unchecked")
     public  TreeMap(Comparator<? super K> comparator) {
@@ -354,6 +358,8 @@ public NavigableMap<K, V> tailMap(K from, boolean inclusive) {
         return new BoundedMap(true, from, fromBound, null, NO_BOUND);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:46.408 -0500", hash_original_method = "79B47D2E0956F27B23E0B18E5FD19D6A", hash_generated_method = "EA4A42F6650782E4A9A36597C8F4B65D")
     
 public SortedMap<K, V> tailMap(K fromInclusive) {
@@ -1153,6 +1159,8 @@ for(int i = 0;i < size;i++)
         //}
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @Override
     public Set<java.util.Map.Entry<K, V>> entrySet() {
         // TODO Auto-generated method stub

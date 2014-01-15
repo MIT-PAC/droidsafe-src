@@ -164,7 +164,9 @@ private static float convertRationalLatLonToFloat(
 
     private boolean mHasThumbnail;
     
-	public ExifInterface(String filename) throws IOException {
+	@DSComment("Get Exif from a file")
+    @DSSpec(DSCat.IO)
+    public ExifInterface(String filename) throws IOException {
 		addTaint(filename.getTaint());
         //mFilename = filename;
 		/*
@@ -180,7 +182,9 @@ private static float convertRationalLatLonToFloat(
         loadAttributes();
     }
     
-	@DSSource({DSSourceKind.IMAGE})
+	@DSComment("getting the ExifInterface is already SPEC")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.IMAGE})
     public String getAttribute(String tag) {
         String str = new String();
         str.addTaint(getTaint());
@@ -225,6 +229,8 @@ public double getAttributeDouble(String tag, double defaultValue) {
      * @param tag the name of the tag.
      * @param value the value of the tag.
      */
+    @DSComment("nothing happens until saveAttributes")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.731 -0500", hash_original_method = "B68A317BC0B14013541CB1D016F585DF", hash_generated_method = "E5B7A4C2160F0B1762C23311F5766F9A")
     
@@ -304,6 +310,8 @@ public byte[] getThumbnail() {
      * the latitude, and the second element is the longitude. Returns false if the
      * Exif tags are not available.
      */
+    @DSComment("GPS location from recorded picture")
+    @DSSpec(DSCat.SECURITY)
     @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.745 -0500", hash_original_method = "E57539251757696DAF9B1A2137150B59", hash_generated_method = "4EF1C3E6E9DC7AFCCD00387EE25E6D6E")
     

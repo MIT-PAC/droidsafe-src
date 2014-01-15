@@ -63,6 +63,8 @@ protected AbstractInterruptibleChannel() {
      *             if a problem occurs while closing this channel.
      * @see java.nio.channels.Channel#close()
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.859 -0500", hash_original_method = "4C9E4AC237D7628755D560FFD1AA5234", hash_generated_method = "6C2DE299C40C17EBC93A0618727B6ABB")
     
 @Override public final void close() throws IOException {

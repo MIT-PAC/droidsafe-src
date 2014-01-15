@@ -13,6 +13,8 @@ import java.util.Random;
 public class BigInteger extends Number implements Comparable<BigInteger>, Serializable {
 
     /** Returns a {@code BigInteger} whose value is equal to {@code value}. */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.051 -0500", hash_original_method = "C2FDE5DE76618A54A899B2942400B087", hash_generated_method = "8E297D69B9A8CF458E31251DBFCB859D")
     
 public static BigInteger valueOf(long value) {
@@ -213,6 +215,8 @@ BigInteger(int sign, int numberLength, int[] digits) {
      * @param random is the random number generator to be used.
      * @throws IllegalArgumentException if {@code numBits} < 0.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.025 -0500", hash_original_method = "0CDCBE4F35D9E336AD3EE0D0E2D0776D", hash_generated_method = "2F7712F0158E44CE9F92A42841FE1AB4")
     
 public BigInteger(int numBits, Random random) {
@@ -271,6 +275,8 @@ public BigInteger(int bitLength, int certainty, Random unused) {
      * @throws NumberFormatException if {@code value} is not a valid
      *     representation of a {@code BigInteger}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.030 -0500", hash_original_method = "858DE6DF463E0F4BFB47F99F590AB0EF", hash_generated_method = "A6981D88CADD3487404EAED79DA2A6AB")
     
 public BigInteger(String value) {
@@ -292,6 +298,8 @@ public BigInteger(String value) {
      *     representation of a {@code BigInteger} or if {@code radix <
      *     Character.MIN_RADIX} or {@code radix > Character.MAX_RADIX}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.033 -0500", hash_original_method = "A13EC41ACC3DF589C11C4779074EEB6B", hash_generated_method = "512F685274ADAFAD6DD6C70AAD154DA0")
     
 public BigInteger(String value, int radix) {
@@ -329,6 +337,8 @@ public BigInteger(String value, int radix) {
      * @throws NumberFormatException if the sign is not one of -1, 0, 1 or if
      *     the sign is zero and the magnitude contains non-zero entries.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.037 -0500", hash_original_method = "4725614D4A9FDEE6DBC2F6DB247469CF", hash_generated_method = "B96FD7194735C121EFA04CE68919A4EF")
     
 public BigInteger(int signum, byte[] magnitude) {
@@ -361,6 +371,8 @@ public BigInteger(int signum, byte[] magnitude) {
      * @throws NullPointerException if {@code value == null}.
      * @throws NumberFormatException if the length of {@code value} is zero.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.039 -0500", hash_original_method = "ABB1E16F13BE7B2CA5EC1AADB52B2350", hash_generated_method = "7618596B4E57DE2491B9082339F7E9E1")
     
 public BigInteger(byte[] value) {
@@ -440,6 +452,8 @@ void prepareJavaRepresentation() {
      * Returns the two's complement representation of this {@code BigInteger} in
      * a byte array.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.054 -0500", hash_original_method = "F45D943577A758DE4A75A5CD2DF6D206", hash_generated_method = "892F82226DA47F44D2E09C61D62E2B3B")
     
@@ -466,6 +480,8 @@ public BigInteger abs() {
     /**
      * Returns a {@code BigInteger} whose value is the {@code -this}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.059 -0500", hash_original_method = "DFABA71B5B9AE3E4CD65AD4AD666E31C", hash_generated_method = "0DAADEE6B9A5717095A88BAABC31792C")
     
 public BigInteger negate() {
@@ -482,6 +498,8 @@ public BigInteger negate() {
     /**
      * Returns a {@code BigInteger} whose value is {@code this + value}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.062 -0500", hash_original_method = "5B8AB174D1647BD6610121BBBEE51EE5", hash_generated_method = "103D8A482482E26FF5F1931171C13AE9")
     
 public BigInteger add(BigInteger value) {
@@ -499,6 +517,8 @@ public BigInteger add(BigInteger value) {
     /**
      * Returns a {@code BigInteger} whose value is {@code this - value}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.064 -0500", hash_original_method = "753BA04897A44EE33BA2055C50810858", hash_generated_method = "3DF9F62B067C971AA066D993B101E311")
     
 public BigInteger subtract(BigInteger value) {
@@ -597,6 +617,8 @@ BigInteger shiftLeftOneBit() {
      * @return the length of the minimal two's complement representation for
      *     {@code this} without the sign bit.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.075 -0500", hash_original_method = "5DD770E4600136986E52E3D1EE5F1B27", hash_generated_method = "192E350244C455B1F1EE9AC859003D57")
     
 public int bitLength() {
@@ -665,6 +687,8 @@ public boolean testBit(int n) {
      * @param n position where the bit in {@code this} has to be set.
      * @throws ArithmeticException if {@code n < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.082 -0500", hash_original_method = "0A60006224C30F0C8DC4E0C8D16895AE", hash_generated_method = "ACAC396F94B806A4371B9CBF03A7E39C")
     
@@ -849,6 +873,8 @@ public BigInteger andNot(BigInteger value) {
      * big to be represented as an int, then {@code this % (1 << 32)} is
      * returned.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.106 -0500", hash_original_method = "F298334B66A6EA4DC89E250C44198AEA", hash_generated_method = "9DDA6B2A2F12A4C05D253F20B9180AC4")
     
 @Override
@@ -865,6 +891,8 @@ public BigInteger andNot(BigInteger value) {
      * big to be represented as a long, then {@code this % pow(2, 64)} is
      * returned.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.108 -0500", hash_original_method = "22A0F6A18293749D1CD57F54133930DD", hash_generated_method = "1610A53DFCD3ED2ADE18A93892CE371C")
     
 @Override
@@ -915,6 +943,8 @@ public BigInteger andNot(BigInteger value) {
      * @param value value to be compared with {@code this}.
      * @throws NullPointerException if {@code value == null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.116 -0500", hash_original_method = "2F090DBB15C308A00016A444F7C5A620", hash_generated_method = "C21FCBEDF67AB8AF884268698F8718F2")
     
 public int compareTo(BigInteger value) {
@@ -960,6 +990,8 @@ public BigInteger max(BigInteger value) {
         return hashCode;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.126 -0500", hash_original_method = "D6CA37529D0AAA6915B88189BBB9DE43", hash_generated_method = "0CC9EA60E16D743DDB1F6BE2883A119A")
     
 @Override
@@ -977,6 +1009,8 @@ public BigInteger max(BigInteger value) {
      * Returns a string representation of this {@code BigInteger} in decimal
      * form.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.128 -0500", hash_original_method = "466A78542936FDDF00F235F55782CDB1", hash_generated_method = "421A441E6AA1D509DDF5FF8DAE96CB1F")
     
 @Override
@@ -993,6 +1027,8 @@ public BigInteger max(BigInteger value) {
      *
      * @param radix base to be used for the string representation.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.131 -0500", hash_original_method = "DC1B34095F4DDEED7FED4CD9DAE6BCA6", hash_generated_method = "8F8708D79161CA0122992C46410E050E")
     
 public String toString(int radix) {
@@ -1023,6 +1059,8 @@ public BigInteger gcd(BigInteger value) {
      *
      * @throws NullPointerException if {@code value == null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.135 -0500", hash_original_method = "7A377385A7A35B42B025ADA39BD9F319", hash_generated_method = "30866C3D584C9FD0D8E1E20331A054D1")
     
 public BigInteger multiply(BigInteger value) {
@@ -1071,6 +1109,8 @@ public BigInteger[] divideAndRemainder(BigInteger divisor) {
      * @throws NullPointerException if {@code divisor == null}.
      * @throws ArithmeticException if {@code divisor == 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.142 -0500", hash_original_method = "E605E3D77E9B13D877DA6B6F47D67F1F", hash_generated_method = "D5D26022F0F6A11E4AF524D9EEDC2535")
     
 public BigInteger divide(BigInteger divisor) {
@@ -1107,6 +1147,8 @@ public BigInteger remainder(BigInteger divisor) {
      * @throws ArithmeticException if {@code m < 0 or} if {@code this} is not
      *     relatively prime to {@code m}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.147 -0500", hash_original_method = "D09D0373DFB5DF67EDACA66D474BB75C", hash_generated_method = "C0A22361EA7D0B8CF8F11B6A6CE200D2")
     
 public BigInteger modInverse(BigInteger m) {
@@ -1132,6 +1174,8 @@ public BigInteger modInverse(BigInteger m) {
      * @throws ArithmeticException if {@code m < 0} or if {@code exponent<0} and
      *     this is not relatively prime to {@code m}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.150 -0500", hash_original_method = "4B2E2C43A8E0C70699BFC0E4EF01E685", hash_generated_method = "AF4A51DDF39A18F0E3B3D580E15CA1E0")
     
 public BigInteger modPow(BigInteger exponent, BigInteger m) {
@@ -1154,6 +1198,8 @@ public BigInteger modPow(BigInteger exponent, BigInteger m) {
      * @throws NullPointerException if {@code m == null}.
      * @throws ArithmeticException if {@code m < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:39.153 -0500", hash_original_method = "ADC51A8E4A4079F65268593A33DD74A7", hash_generated_method = "2A32F2698B2E1BF4EF5F20921E427818")
     
 public BigInteger mod(BigInteger m) {

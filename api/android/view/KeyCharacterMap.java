@@ -66,6 +66,8 @@ public class KeyCharacterMap {
      * could not be loaded because it was malformed or the default key character map
      * is missing from the system.
      */
+    @DSComment("device physical access/control")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.794 -0500", hash_original_method = "55A25C535CCD0059748A82385B0A19D3", hash_generated_method = "A58F77895EF8459FD95FA9B4DF308629")
     
 public static KeyCharacterMap load(int deviceId) {
@@ -98,6 +100,8 @@ public static KeyCharacterMap load(int deviceId) {
      * @param c The basic character.
      * @return The combined character, or 0 if the characters cannot be combined.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.812 -0500", hash_original_method = "C6F5470D92A32D0EFDBBA89CAC321185", hash_generated_method = "2AE83191FAC6404F3E8E4CE7A1860567")
     
 public static int getDeadChar(int accent, int c) {
@@ -203,6 +207,8 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
 
         public char[] meta = new char[META_LENGTH];
         
+        @DSComment("not sensitive/not an action")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.182 -0400", hash_original_method = "AA20F851FEA58DFB4FCE42162FC7E15E", hash_generated_method = "AA20F851FEA58DFB4FCE42162FC7E15E")
         public KeyData ()
         {
@@ -524,6 +530,8 @@ public boolean isPrintingKey(int keyCode) {
      *
      * @return The keyboard type.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.835 -0500", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "FE100288A2D20E0D214B24C766084AAA")
     

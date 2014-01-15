@@ -31,6 +31,8 @@ public class PrintStream extends FilterOutputStream implements Appendable, Close
      * @throws NullPointerException
      *             if {@code out} is {@code null}.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.013 -0500", hash_original_method = "DA75705BB6C20C2B5C6B266426BAE0E0", hash_generated_method = "75B61BC554C1596260D713DFDCFA50C9")
     
 public PrintStream(OutputStream out) {
@@ -54,6 +56,8 @@ public PrintStream(OutputStream out) {
      * @throws NullPointerException
      *             if {@code out} is {@code null}.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.016 -0500", hash_original_method = "4DF55F7DB2EC2DB5AB84BECA03073608", hash_generated_method = "0F3B6D2546CA2DCE1EE0ECD7A536C6C0")
     
 public PrintStream(OutputStream out, boolean autoFlush) {
@@ -223,6 +227,8 @@ protected void clearError() {
      * stream. If an I/O error occurs, this stream's error state is set to
      * {@code true}.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.038 -0500", hash_original_method = "43C4845D6E61D29AF25E893F4FEF10C8", hash_generated_method = "084C41C8180277B84887369DD4B0E622")
     
 @Override
@@ -243,6 +249,8 @@ protected void clearError() {
      * flushes the target stream. If an I/O error occurs, this stream's error
      * state is set to {@code true}.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.041 -0500", hash_original_method = "02B2E054E74BF295FB5EB637205E6B35", hash_generated_method = "3C8D1A6118D423ADD64926B1139D4505")
     
 @Override
@@ -329,6 +337,8 @@ public PrintStream format(Locale l, String format, Object... args) {
      *             error regarding the format string or arguments is detected.
      * @throws NullPointerException if {@code format == null}
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.049 -0500", hash_original_method = "AF1C3DC823982E73CFCD03CCF036C65E", hash_generated_method = "4289AA1E34294762A281E81EC632CE31")
     
 public PrintStream printf(String format, Object... args) {
@@ -381,6 +391,8 @@ public void print(char[] chars) {
     /**
      * Prints the string representation of the char {@code c}.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.059 -0500", hash_original_method = "C9EF4F31D0CD27922D7B220DA437A7D8", hash_generated_method = "6CEBC2F82D21BF559E12C90A3D8E19A5")
     
 public void print(char c) {
@@ -444,6 +456,8 @@ public void print(Object o) {
      *            the string to print to the target stream.
      * @see #write(int)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.073 -0500", hash_original_method = "EC0BC9FFC97B234EE7DA16C4D893B8BD", hash_generated_method = "489F7F4EEA6ECCC433FBCD9535D0F2B2")
     
@@ -480,6 +494,8 @@ public void print(boolean b) {
     /**
      * Prints a newline.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.078 -0500", hash_original_method = "9182DD9F41FA957369047C0FC9C79FCF", hash_generated_method = "2FB2249EAF550DB99337C4213777CDD2")
     
 public void println() {
@@ -550,6 +566,8 @@ public void println(long l) {
      * Prints the string representation of the Object {@code o}, or {@code "null"},
      * followed by a newline.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.096 -0500", hash_original_method = "320F49F677524EBEDCEEC6E202E646D4", hash_generated_method = "69578B780CE18EFA9BFBB5EC9A3A6677")
     
@@ -568,6 +586,8 @@ public void println(Object o) {
      *            the string to print to the target stream.
      * @see #write(int)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.098 -0500", hash_original_method = "0E73500566456C691BD3FFBE8C8D630F", hash_generated_method = "4A512F9EF154A49E278AEE766A83050C")
     
 public synchronized void println(String str) {
@@ -578,6 +598,8 @@ public synchronized void println(String str) {
     /**
      * Prints the string representation of the boolean {@code b} followed by a newline.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:41.101 -0500", hash_original_method = "63B90E61F0F8C1638BDCBB4A882302BD", hash_generated_method = "D2EE9655DC271F139DF31A427D683083")
     

@@ -65,6 +65,8 @@ public abstract class Service extends ContextWrapper implements ComponentCallbac
 
     private boolean mStartCompatibility = false;
 
+    @DSComment("Modeled")
+    @DSSafe(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.394 -0500", hash_original_method = "D0179C650F036CDA92B50348E0090B82", hash_generated_method = "51E9E57980FDAAC374C77A00B7C0E1C8")
     
 public Service() {
@@ -72,6 +74,8 @@ public Service() {
     }
 
     /** Return the application that owns this service. */
+    @DSComment("Modeled")
+    @DSSafe(DSCat.SERVICE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.396 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "63791FE33C4BA47B317000A8E62CC095")
     
@@ -82,6 +86,8 @@ public final Application getApplication() {
     /**
      * Called by the system when the service is first created.  Do not call this method directly.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.397 -0500", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "9687CB6D9F1B2A9EE9EE5E6EB201E78C")
     
 public void onCreate() {
@@ -90,6 +96,8 @@ public void onCreate() {
     /**
      * @deprecated Implement {@link #onStartCommand(Intent, int, int)} instead.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.400 -0500", hash_original_method = "8DB0845BC67A569482FD95D924F2B38E", hash_generated_method = "CF926B6A86164E3DF6A5EB52ADD8A622")
     
 @Deprecated
@@ -136,6 +144,8 @@ public void onCreate() {
      * 
      * @see #stopSelfResult(int)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.421 -0500", hash_original_method = "C7065D6B9C7065CE68918429E4AC852C", hash_generated_method = "8F82C5618944297E2295D41E531A28CB")
     
 public int onStartCommand(Intent intent, int flags, int startId) {
@@ -149,6 +159,8 @@ public int onStartCommand(Intent intent, int flags, int startId) {
      * receivers, etc) at this point.  Upon return, there will be no more calls
      * in to this Service object and it is effectively dead.  Do not call this method directly.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.423 -0500", hash_original_method = "7E0E89252855B3CDBF126F525B8DFC31", hash_generated_method = "B543AE4E1838FF864DE64776FEE21A06")
     
 public void onDestroy() {
@@ -224,6 +236,8 @@ public boolean onUnbind(Intent intent) {
      * Context.bindService}.  Note that any extras that were included with
      * the Intent at that point will <em>not</em> be seen here.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.436 -0500", hash_original_method = "96E602EF97C136D1349E20B0217FC297", hash_generated_method = "170404668CF0E888E1F95844174DBC8F")
     
 public void onRebind(Intent intent) {
@@ -250,6 +264,8 @@ public void onTaskRemoved(Intent rootIntent) {
      *  
      * @see #stopSelfResult(int)
      */
+    @DSComment("Modeled")
+    @DSSafe(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.440 -0500", hash_original_method = "63DABFC9549E2FB476F01FDE2AC0A25B", hash_generated_method = "6A4F3280C1644685ECF463CC6170460B")
     
 public final void stopSelf() {
@@ -355,6 +371,8 @@ public final boolean stopSelfResult(int startId) {
      * 
      * @see #stopForeground(boolean)
      */
+    @DSComment("Modeled")
+    @DSSafe(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.450 -0500", hash_original_method = "4FFCDBDE627194B5F1589AC610EF3404", hash_generated_method = "E7922E938EE15A47E01E0BF5C300A6DD")
     
 public final void startForeground(int id, Notification notification) {
@@ -374,6 +392,8 @@ public final void startForeground(int id, Notification notification) {
      * until a later call removes it (or the service is destroyed).
      * @see #startForeground(int, Notification)
      */
+    @DSComment("Modeled")
+    @DSSafe(DSCat.SERVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.453 -0500", hash_original_method = "4C19D500B60A0A1E30AA501DC977F119", hash_generated_method = "59FCD336F1BF8E1E136DD024DAFDF61C")
     
 public final void stopForeground(boolean removeNotification) {

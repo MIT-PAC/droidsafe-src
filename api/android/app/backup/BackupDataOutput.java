@@ -52,6 +52,8 @@ public BackupDataOutput(FileDescriptor fd) {
      * @return The number of bytes written to the backup stream
      * @throws IOException if the write failed
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.328 -0500", hash_original_method = "64DACF34CA37B4EE5BF2F213E613C915", hash_generated_method = "D2499C3A5BB8DA1EA6861FFEBC25BB19")
     
@@ -71,6 +73,8 @@ public int writeEntityHeader(String key, int dataSize) throws IOException {
      * @return the number of bytes written
      * @throws IOException if the write failed
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.332 -0500", hash_original_method = "1F7BD9065C295005115986DC5C5FEFFC", hash_generated_method = "79DE7E7815DF8F409EA7961CDB1960A7")
     

@@ -47,6 +47,8 @@ public abstract class BackupAgent extends ContextWrapper {
 
     private final IBinder mBinder = new BackupServiceBinder().asBinder();
 
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.382 -0500", hash_original_method = "B5A8D7758CDB468D197C4191C97B62B7", hash_generated_method = "932AAC6CD3B64AB519D5E4125D4E72AF")
     
 public BackupAgent() {
@@ -60,6 +62,8 @@ public BackupAgent() {
      * <p>
      * Agents do not need to override this method.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.385 -0500", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "9687CB6D9F1B2A9EE9EE5E6EB201E78C")
     
 public void onCreate() {

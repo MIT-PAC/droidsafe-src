@@ -27,6 +27,8 @@ public class ContextThemeWrapper extends ContextWrapper {
         super(new ContextImpl());
     }
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public ContextThemeWrapper(Context base, int themeres) {
         super(base);
         addTaint(themeres);
@@ -43,6 +45,8 @@ public class ContextThemeWrapper extends ContextWrapper {
         mBase = newBase;
     }
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Override public void setTheme(int resid) {
     }
     

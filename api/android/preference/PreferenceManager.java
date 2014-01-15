@@ -31,6 +31,8 @@ public class PreferenceManager {
      * @return A SharedPreferences instance that can be used to retrieve and
      *         listen to values of the preferences.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.726 -0500", hash_original_method = "DEE839A83C4B35ACEA8CCC2B71E2B5D1", hash_generated_method = "2B16C131215B04C3D72C14303B6B379E")
     
@@ -71,6 +73,8 @@ private static int getDefaultSharedPreferencesMode() {
      *            and clear it followed by a call to this method with this
      *            parameter set to true.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.739 -0500", hash_original_method = "1B08E289995C6C21F5C2BC4F9B6F5187", hash_generated_method = "3DC84A33A3C2DB62DE5115DFA6B9F88B")
     
@@ -374,6 +378,8 @@ public String getSharedPreferencesName() {
      * @param sharedPreferencesName The name of the SharedPreferences file.
      * @see Context#getSharedPreferences(String, int)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.717 -0500", hash_original_method = "F8FB75CAC643ECF72FE6E9CDE35245C6", hash_generated_method = "D3C3B5611FB8BEDC3068F55C7516B295")
     
 public void setSharedPreferencesName(String sharedPreferencesName) {
@@ -402,6 +408,8 @@ public int getSharedPreferencesMode() {
      * @param sharedPreferencesMode The mode of the SharedPreferences file.
      * @see Context#getSharedPreferences(String, int)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.721 -0500", hash_original_method = "6988E36A0998B14CBE7D70DCBAB74FF8", hash_generated_method = "8C8607EA8C2F96D19E7B38EF0A94EFB6")
     
 public void setSharedPreferencesMode(int sharedPreferencesMode) {
@@ -416,6 +424,8 @@ public void setSharedPreferencesMode(int sharedPreferencesMode) {
      * @return A SharedPreferences instance pointing to the file that contains
      *         the values of preferences that are managed by this.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.724 -0500", hash_original_method = "B901A30CD0A7131EC29E8BD072ADC21D", hash_generated_method = "9CA9AF2288C06BC076812E1B81D8C766")
     
@@ -464,6 +474,8 @@ boolean setPreferences(PreferenceScreen preferenceScreen) {
      * @return The {@link Preference} with the key, or null.
      * @see PreferenceGroup#findPreference(CharSequence)
      */
+    @DSComment("May change system behavior")
+    @DSSpec(DSCat.SYSTEM_SETTINGS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.737 -0500", hash_original_method = "313075D13AC6A3D78BD3127C39A86211", hash_generated_method = "17D4C85ACE0ADBEB3C87DB5BE0FA1596")
     
 public Preference findPreference(CharSequence key) {

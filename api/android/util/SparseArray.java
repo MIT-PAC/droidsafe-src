@@ -50,13 +50,17 @@ public class SparseArray<E> implements Cloneable {
     /**
      * Creates a new SparseArray containing no mappings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.749 -0500", hash_original_method = "E97D5EED29ED8377C999990C20A12343", hash_generated_method = "883E33622B92FE2F9F88EA2CD46632D6")
     
 public SparseArray() {
         this(10);
     }
     
-	public SparseArray(int initialCapacity){
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public SparseArray(int initialCapacity){
 		ArrayUtils.idealIntArraySize(initialCapacity);
 		mKeys = new int[0];
 		mValues = new Object[0];
@@ -91,6 +95,8 @@ public SparseArray() {
      * Gets the Object mapped from the specified key, or <code>null</code>
      * if no such mapping has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.760 -0500", hash_original_method = "63029C5D60DB5A1F0C43DA1A71993094", hash_generated_method = "A7652660538AB6B2764F0F7687491E4B")
     
@@ -114,6 +120,8 @@ public E get(int key) {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void delete(int key){
 		mValues[0] = DELETED;
 		// Original method
@@ -134,6 +142,8 @@ public E get(int key) {
     /**
      * Alias for {@link #delete(int)}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.771 -0500", hash_original_method = "EE51F875218CA8C1C2C8959A48F2A4BB", hash_generated_method = "C7FFA05DD1740D5D19664E20B4CEE216")
     
 public void remove(int key) {
@@ -180,7 +190,9 @@ public void remove(int key) {
 		//Return nothing
 	}
     
-	public void put(int key, E value){
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void put(int key, E value){
 		mValues[0] = value;
 		// How do we check if a type has field  
 		// Original method
@@ -188,7 +200,9 @@ public void remove(int key) {
 		//Return nothing
 	}
     
-	public int size(){
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public int size(){
 		return getTaintInt();
 		// Original method
 		/*
@@ -201,6 +215,8 @@ public void remove(int key) {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public int keyAt(int index){
 		return getTaintInt();
 		// Original method
@@ -214,6 +230,8 @@ public void remove(int key) {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @SuppressWarnings("unchecked") public E valueAt(int index){
 		return (E) mValues[0];
 		// Original method
@@ -255,6 +273,8 @@ public void remove(int key) {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public int indexOfValue(E value){
 		return getTaintInt();
 		// Original method
@@ -271,6 +291,8 @@ public void remove(int key) {
 		*/
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void clear(){
 		// Original method
 		/*
@@ -287,6 +309,8 @@ public void remove(int key) {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void append(int key, E value){
 		put(key, value);

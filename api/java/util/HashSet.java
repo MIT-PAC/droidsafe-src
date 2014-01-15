@@ -19,12 +19,16 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
 
     transient HashMap<E, HashSet<E>> backingMap;
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "E33F776FDE5FB34265D051C43B067D53", hash_generated_method = "04DBAE4FD4D1BE6063B2C2E36A78C25F")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "E33F776FDE5FB34265D051C43B067D53", hash_generated_method = "04DBAE4FD4D1BE6063B2C2E36A78C25F")
     public  HashSet() {
         // ---------- Original Method ----------
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "99449DF656D31D85FA19BFCB5BF76454", hash_generated_method = "0033902E8F425F3576BA1EDD3E4839F8")
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.219 -0400", hash_original_method = "99449DF656D31D85FA19BFCB5BF76454", hash_generated_method = "0033902E8F425F3576BA1EDD3E4839F8")
     public  HashSet(int capacity) {
         this(capacity, 0);
         // ---------- Original Method ----------
@@ -36,6 +40,8 @@ public class HashSet<E> extends AbstractSet<E> implements Set<E>, Cloneable, Ser
         // ---------- Original Method ----------
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:09.220 -0400", hash_original_method = "B287B339899074AD24911C01E3E019EA", hash_generated_method = "A6086E0532F712E31587B9655BDF6775")
     public  HashSet(Collection<? extends E> collection) {
         super.addAll(collection);
@@ -77,7 +83,9 @@ HashSet(HashMap<E, HashSet<E>> backingMap) {
         //}
     }
 
-   @Override
+   @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @Override
     
     public Iterator<E> iterator() {
         // TODO Auto-generated method stub

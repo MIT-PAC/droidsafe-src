@@ -73,6 +73,8 @@ SpannableStringInternal(CharSequence source,
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.069 -0500", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "65B805BA188437A52E59B7D842E00788")
     
 public final int length() {
@@ -85,7 +87,9 @@ public final char charAt(int i) {
         return mText.charAt(i);
     }
     
-	public final String toString() {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public final String toString() {
         return new String();
     }
 

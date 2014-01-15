@@ -12,22 +12,14 @@ import android.util.AttributeSet;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class RatingBar extends AbsSeekBar {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.720 -0500", hash_original_field = "98990ECA5DE415A342C4AAC988F69A23", hash_generated_field = "41FB5B10B91C91607A37B16172D7BB7B")
-
 
     private int mNumStars = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.722 -0500", hash_original_field = "7C9AD9C4B85F464A927A2733F560E125", hash_generated_field = "29069870A57CAD9CDBBA4A9B273494B8")
 
-
     private int mProgressOnStartTracking;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.724 -0500", hash_original_field = "EA9CFC534B50738A7373357858CB39CF", hash_generated_field = "26FA5FE396DAB5C7A7F6142358E24340")
-
     
     private OnRatingBarChangeListener mOnRatingBarChangeListener;
     
@@ -153,6 +145,8 @@ public int getNumStars() {
      * 
      * @param rating The rating to set.
      */
+    @DSComment("RatingBar")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.747 -0500", hash_original_method = "4B12106E3623F8927849B5EF91E272B5", hash_generated_method = "37105B61119354CE2D6DB311C355FF52")
     
 public void setRating(float rating) {
@@ -164,6 +158,8 @@ public void setRating(float rating) {
      * 
      * @return The current rating.
      */
+    @DSComment("RatingBar")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.749 -0500", hash_original_method = "EA1852BE7B44A888483D4F1C620CF769", hash_generated_method = "E20332C1700ADFACCF141565B520D4F9")
     
 public float getRating() {
@@ -317,10 +313,8 @@ void dispatchRatingChange(boolean fromUser) {
         
         super.setMax(max);
     }
-
     
     public interface OnRatingBarChangeListener {
-        
         
         void onRatingChanged(RatingBar ratingBar, float rating, boolean fromUser);
 

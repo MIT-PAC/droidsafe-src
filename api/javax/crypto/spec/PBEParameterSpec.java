@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.security.spec.AlgorithmParameterSpec;
 
-
-
-
-
-
 public class PBEParameterSpec implements AlgorithmParameterSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.286 -0500", hash_original_field = "E37DC2BC2509FBBDB9429277FE4D77AB", hash_generated_field = "8E8CA6A0D4A78C798E95C91BD86EA51C")
-
 
     private  byte[] salt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.288 -0500", hash_original_field = "63985F5D8355AAA3166FE055813432C8", hash_generated_field = "98D2C6D733D1F0E9FD9E8AD73AA86C06")
@@ -31,6 +25,8 @@ public class PBEParameterSpec implements AlgorithmParameterSpec {
      * @throws NullPointerException
      *             if salt is null.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.291 -0500", hash_original_method = "E4AD3F6E1F8504EC055E33BFD3FD6D04", hash_generated_method = "E8D546866AF64A65F678EC41E51DF1E7")
     
 public PBEParameterSpec(byte[] salt, int iterationCount) {
@@ -65,7 +61,6 @@ public byte[] getSalt() {
 public int getIterationCount() {
         return iterationCount;
     }
-
     
 }
 

@@ -371,6 +371,8 @@ private SpeechRecognizer(final Context context, final ComponentName serviceCompo
      * @param listener listener that will receive all the callbacks from the created
      *        {@link SpeechRecognizer}, this must not be null.
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.713 -0500", hash_original_method = "F27BB062A778ED5EBCB2B3B868E059E6", hash_generated_method = "51B58CFA8B31AC91F1DF1953A495C0C7")
     

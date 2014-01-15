@@ -836,6 +836,8 @@ private ThreadPolicy(int mask) {
 
             private int mMask = 0;  // need copy-on-write
 
+            @DSComment("Only URI passing around is important")
+            @DSSafe(DSCat.UTIL_FUNCTION)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:40.046 -0500", hash_original_method = "C72380FC51BF6FFB0D8183E2FF7C5DBE", hash_generated_method = "2DBF625FFD06FDF36909DDC7E5DF2F6A")
             
 public Builder() {

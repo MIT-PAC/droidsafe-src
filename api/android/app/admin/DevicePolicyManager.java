@@ -136,6 +136,8 @@ public static DevicePolicyManager create(Context context, Handler handler) {
      * Return true if the given administrator component is currently
      * active (enabled) in the system.
      */
+    @DSComment("device administration")
+    @DSSpec(DSCat.DEVICE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.678 -0500", hash_original_method = "DEBAA688BC0765F8640468141F520924", hash_generated_method = "27BF5B51AAA4CF65F3AECBF647F40D39")
     
@@ -191,6 +193,8 @@ public boolean packageHasActiveAdmins(String packageName) {
      * try to remove someone else's component, a security exception will be
      * thrown.
      */
+    @DSComment("device administration")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.684 -0500", hash_original_method = "260DBD46AB1A27EF2CC0A61E058D7901", hash_generated_method = "A34F6369DE54268FFED0D29DF5F4D187")
     
 public void removeActiveAdmin(ComponentName who) {
@@ -249,6 +253,8 @@ public boolean hasGrantedPolicy(ComponentName admin, int usesPolicy) {
      * {@link #PASSWORD_QUALITY_NUMERIC}, {@link #PASSWORD_QUALITY_ALPHABETIC},
      * {@link #PASSWORD_QUALITY_ALPHANUMERIC} or {@link #PASSWORD_QUALITY_COMPLEX}.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.706 -0500", hash_original_method = "59F8BF318650672CABE968E5789C79B4", hash_generated_method = "E4FDC421A930C78ABB10B0F505610904")
     
@@ -303,6 +309,8 @@ public int getPasswordQuality(ComponentName admin) {
      * @param length The new desired minimum password length.  A value of 0
      * means there is no restriction.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.711 -0500", hash_original_method = "F270559FB103FDDF70DB07978E6CE793", hash_generated_method = "8BAE076C0FA25459742B0C469F0B4148")
     
@@ -358,6 +366,8 @@ public int getPasswordMinimumLength(ComponentName admin) {
      *            required in the password. A value of 0 means there is no
      *            restriction.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.715 -0500", hash_original_method = "B0A7D811F24F382978794CAD91B66775", hash_generated_method = "475B1508F81885AACD1750F17D3741B5")
     
@@ -419,6 +429,8 @@ public int getPasswordMinimumUpperCase(ComponentName admin) {
      *            required in the password. A value of 0 means there is no
      *            restriction.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.719 -0500", hash_original_method = "411E57E6ADFDEF4CCE60FF315FF9330B", hash_generated_method = "D0A36400D0E336E48CE052EE786103DC")
     
@@ -479,6 +491,8 @@ public int getPasswordMinimumLowerCase(ComponentName admin) {
      * @param length The new desired minimum number of letters required in the
      *            password. A value of 0 means there is no restriction.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.724 -0500", hash_original_method = "14047A2F7D126C90FC5B2063BAF2E4A1", hash_generated_method = "D8C1F0AAAC2A113877CE35A3AB13ADD9")
     
@@ -538,6 +552,8 @@ public int getPasswordMinimumLetters(ComponentName admin) {
      * @param length The new desired minimum number of numerical digits required
      *            in the password. A value of 0 means there is no restriction.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.728 -0500", hash_original_method = "33FACE9A88EEFFC907427A4DE2511E88", hash_generated_method = "9EA2C9368E33C29479AF22723F246866")
     
@@ -597,6 +613,8 @@ public int getPasswordMinimumNumeric(ComponentName admin) {
      * @param length The new desired minimum number of symbols required in the
      *            password. A value of 0 means there is no restriction.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.733 -0500", hash_original_method = "D86720687DC7C5B971FF240E5ADCEB58", hash_generated_method = "110913DA2CB88B38CEC0609BC70AB910")
     
@@ -716,6 +734,8 @@ public int getPasswordMinimumNonLetter(ComponentName admin) {
    * @param length The new desired length of password history. A value of 0
    *        means there is no restriction.
    */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.741 -0500", hash_original_method = "56A45FF24A713BC35886C94CD936741A", hash_generated_method = "35DE2A00AA0D79BCB282660E1DEA9EB5")
     
@@ -748,6 +768,8 @@ public void setPasswordHistoryLength(ComponentName admin, int length) {
      * @param timeout The limit (in ms) that a password can remain in effect. A value of 0
      *        means there is no restriction (unlimited).
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.749 -0500", hash_original_method = "A2F840E60969344CDBBA08F42E12EB97", hash_generated_method = "F1271CF92F6B3701D8E992F7EB492240")
     
@@ -793,6 +815,8 @@ public long getPasswordExpirationTimeout(ComponentName admin) {
      * @param admin The name of the admin component to check, or null to aggregate all admins.
      * @return The password expiration time, in ms.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.754 -0500", hash_original_method = "F850BD1F4A684FFED232083DC78EC214", hash_generated_method = "F7B766CEAE434CB2D25557BF953CA8C2")
     
@@ -854,6 +878,8 @@ public int getPasswordMaximumLength(int quality) {
      * @return Returns true if the password meets the current requirements,
      * else false.
      */
+    @DSComment("device administration")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.760 -0500", hash_original_method = "2B762200302C4E580602F331CF81E49C", hash_generated_method = "A1E8004CC69CBC7393C5A90D581E66F1")
     
 public boolean isActivePasswordSufficient() {
@@ -908,6 +934,8 @@ public int getCurrentFailedPasswordAttempts() {
      * @param num The number of failed password attempts at which point the
      * device will wipe its data.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.764 -0500", hash_original_method = "386BE05045BF9977A6E5636AA6860E45", hash_generated_method = "7775E01C31B93481B29EE4669F2F1C05")
     
@@ -964,6 +992,8 @@ public int getMaximumFailedPasswordsForWipe(ComponentName admin) {
      * @return Returns true if the password was applied, or false if it is
      * not acceptable for the current constraints.
      */
+    @DSComment("device administration")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.771 -0500", hash_original_method = "17E6FC8B97A136DE019ACBDDB18AEC37", hash_generated_method = "B1C17E0534D90353D42B964C5FA185BC")
     
 public boolean resetPassword(String password, int flags) {
@@ -990,6 +1020,8 @@ public boolean resetPassword(String password, int flags) {
      * @param timeMs The new desired maximum time to lock in milliseconds.
      * A value of 0 means there is no restriction.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.774 -0500", hash_original_method = "063F6779A334FCBA41EF649C9EC5AECE", hash_generated_method = "CEAAC32104FE0682CFE5F6C6BB3F4B31")
     
@@ -1031,6 +1063,8 @@ public long getMaximumTimeToLock(ComponentName admin) {
      * {@link DeviceAdminInfo#USES_POLICY_FORCE_LOCK} to be able to call
      * this method; if it has not, a security exception will be thrown.
      */
+    @DSComment("device administration")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.778 -0500", hash_original_method = "1AD41EB1582F6A4A56913D2EEA649B59", hash_generated_method = "38C960AFB962E4F4A911599A242E23C4")
     
 public void lockNow() {
@@ -1054,6 +1088,8 @@ public void lockNow() {
      *
      * @param flags Bit mask of additional options: currently must be 0.
      */
+    @DSComment("device administration")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.783 -0500", hash_original_method = "6CEDCC268C3E709685447E15BC08FD3A", hash_generated_method = "9311530DA7B5928250FF41F628CC297A")
     
 public void wipeData(int flags) {
@@ -1191,6 +1227,8 @@ public ComponentName getGlobalProxyAdmin() {
      * {@link #ENCRYPTION_STATUS_ACTIVE}.  This is the value of the requests;  Use
      * {@link #getStorageEncryptionStatus()} to query the actual device state.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.802 -0500", hash_original_method = "17B73A4F954CB746271DADF07BB03245", hash_generated_method = "CB378D4C16DB2D05CDD662574A6FD08A")
     
@@ -1244,6 +1282,8 @@ public boolean getStorageEncryption(ComponentName admin) {
      * {@link #ENCRYPTION_STATUS_UNSUPPORTED}, {@link #ENCRYPTION_STATUS_INACTIVE},
      * {@link #ENCRYPTION_STATUS_ACTIVATING}, or{@link #ENCRYPTION_STATUS_ACTIVE}.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.808 -0500", hash_original_method = "6CEE42CBFD4B02D7CAAADEA83FCF3486", hash_generated_method = "9AF9993874F734D8E3EC27D86C8753E8")
     
@@ -1270,6 +1310,8 @@ public int getStorageEncryptionStatus() {
      * @param admin Which {@link DeviceAdminReceiver} this request is associated with.
      * @param disabled Whether or not the camera should be disabled.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:52.810 -0500", hash_original_method = "A5F298BC4842F29AB6F496D6FD4E07FD", hash_generated_method = "552B6290202768CA177AFF2BF574D8EB")
     

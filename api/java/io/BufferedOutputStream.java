@@ -20,6 +20,8 @@ public class BufferedOutputStream extends FilterOutputStream {
      *
      * @param out the {@code OutputStream} the buffer writes to.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.489 -0500", hash_original_method = "D896F62F17EBF4CCE50C0B823DA78DD6", hash_generated_method = "1DC2D67667A8AA777FEE99B1E87967D5")
     
 public BufferedOutputStream(OutputStream out) {
@@ -34,6 +36,8 @@ public BufferedOutputStream(OutputStream out) {
      * @param size the size of buffer in bytes.
      * @throws IllegalArgumentException if {@code size <= 0}.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.492 -0500", hash_original_method = "D77D548D42DBDD230976FC72C0A9CFDA", hash_generated_method = "4153D9D5D4726C88F7425CFB042587B2")
     
 public BufferedOutputStream(OutputStream out, int size) {
@@ -51,6 +55,8 @@ public BufferedOutputStream(OutputStream out, int size) {
      * @throws IOException
      *             if an error occurs attempting to flush this stream.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.494 -0500", hash_original_method = "1ACC3FF49FD09C78DA86C982A642A64A", hash_generated_method = "5F360D27F21F0CD30A4027B4D00D5D92")
     
 @Override
@@ -93,6 +99,8 @@ private void checkNotClosed() throws IOException {
      * @throws ArrayIndexOutOfBoundsException
      *             If offset or count is outside of bounds.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.500 -0500", hash_original_method = "EC14898AF1C6D500DEF61C098384315C", hash_generated_method = "0A30862E0D81C221231B60E443A2F762")
     
@@ -122,6 +130,8 @@ private void checkNotClosed() throws IOException {
         count += length;
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.503 -0500", hash_original_method = "C551C170B690A76D4989DEC0BC19E3FB", hash_generated_method = "3506112C9F3C134E3AB9692AB87518B8")
     
 @Override public synchronized void close() throws IOException {

@@ -292,6 +292,8 @@ public boolean isAutoDismissed() {
      * Sets whether the zoom controls will be automatically dismissed after
      * showing.
      */
+    @DSComment("ZoomButtonController")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:26.845 -0500", hash_original_method = "F5C09C601D97CCC2B78CB5FD3ABF9CB9", hash_generated_method = "8E88D1617A868301FE9A0E781BF2BF81")
     
 public void setAutoDismissed(boolean autoDismiss) {

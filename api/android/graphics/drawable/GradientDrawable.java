@@ -261,6 +261,8 @@ private int modulateAlpha(int alpha) {
         return alpha * scale >> 8;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.634 -0500", hash_original_method = "ACDDE907D9101C7CDDBBB954BA4F617E", hash_generated_method = "FE341961AD289E1A38BF3FE578DB496D")
     
 @Override
@@ -474,6 +476,8 @@ public void setColor(int argb) {
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:16.646 -0500", hash_original_method = "9DFE5D886E6229E65D3F438DE9F28624", hash_generated_method = "9F4759105C8703EDBF46840686784EBB")
     
 @Override

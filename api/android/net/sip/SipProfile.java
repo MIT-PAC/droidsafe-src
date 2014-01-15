@@ -146,6 +146,8 @@ public SipURI getUri() {
      *
      * @return the SIP URI string of this profile
      */
+    @DSComment("Data structure only, except writeToParcel")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.368 -0500", hash_original_method = "8967C0A1855BD4ECE9D4EFBDFCF47E43", hash_generated_method = "BF50A503FFF8E58300C49312CA915F38")
     
@@ -177,6 +179,8 @@ public Address getSipAddress() {
      *
      * @return the display name of the user
      */
+    @DSComment("Data structure only, except writeToParcel")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.372 -0500", hash_original_method = "986E0B7E655AC166DA3BC65E473D37F3", hash_generated_method = "E1D73EE245674BB839176FD2E2F3E033")
     
@@ -189,6 +193,8 @@ public String getDisplayName() {
      *
      * @return the username
      */
+    @DSComment("Data structure only, except writeToParcel")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.374 -0500", hash_original_method = "5CC4F03701178BF5DF2B7731C175F0C0", hash_generated_method = "19441879268764ACC8D0F353D88AF234")
     
@@ -227,6 +233,8 @@ public String getPassword() {
      *
      * @return the SIP domain
      */
+    @DSComment("Data structure only, except writeToParcel")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.381 -0500", hash_original_method = "B8163CA1BE0927DF0B70D99008321B49", hash_generated_method = "1DB85475B114B6FF212FD8A1D167E541")
     
@@ -357,6 +365,8 @@ public Builder(String uriString) throws ParseException {
          *      set server address
          * @throws ParseException if the parameters are not valid
          */
+        @DSComment("Utility to build profile")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.323 -0500", hash_original_method = "75E755B13696F99D7736C0DDC72A28FA", hash_generated_method = "D89607C23A0798A84030B4276C561676")
         
 public Builder(String username, String serverDomain)
@@ -516,6 +526,8 @@ public Builder setAutoRegistration(boolean flag) {
          *
          * @return the profile object created
          */
+        @DSComment("Utility to build profile")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:25.349 -0500", hash_original_method = "9D6052B0DC59ACBDB83E3EF9051B1CBF", hash_generated_method = "EE3144543673BCA538013AE8E29AD939")
         
 public SipProfile build() {

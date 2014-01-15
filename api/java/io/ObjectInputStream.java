@@ -186,6 +186,8 @@ protected ObjectInputStream() throws IOException {
      *             if the source stream does not contain serialized objects that
      *             can be read.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.328 -0500", hash_original_method = "15BB4AD74FE576D95ABFC0E40CC8A986", hash_generated_method = "51A8016FADCEFC89A5C92227CB583F45")
     
 public ObjectInputStream(InputStream input) throws StreamCorruptedException, IOException {
@@ -266,6 +268,8 @@ private void checkReadPrimitiveTypes() throws IOException {
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.335 -0500", hash_original_method = "4ECD43BBA7F31E748521530C375A35B5", hash_generated_method = "B1EA37F74AB1267A6B6A64C04E41DD04")
     
 @Override
@@ -286,6 +290,8 @@ private void checkReadPrimitiveTypes() throws IOException {
      *             if this method is not called from {@code readObject()}.
      * @see ObjectOutputStream#defaultWriteObject
      */
+    @DSComment("I/O load/store")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.338 -0500", hash_original_method = "6463B95302326251A8E319007FB9B6A5", hash_generated_method = "42B11E4D034DE9D234002248F992250B")
     
 public void defaultReadObject() throws IOException, ClassNotFoundException,
@@ -372,6 +378,8 @@ private void pushbackTC() {
      * @throws IOException
      *             if an error occurs while reading from this stream.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.350 -0500", hash_original_method = "87E37984C9E76D351365EC77DA0248F5", hash_generated_method = "628E188E690827B74EB56F54AB76B4A3")
     
 @Override
@@ -462,6 +470,8 @@ private byte[] readBlockDataLong() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.360 -0500", hash_original_method = "43182B65F59B21B8425D068A4900EB3A", hash_generated_method = "56A81332F158117C3BDA56D23B5D1F78")
     
 public boolean readBoolean() throws IOException {
@@ -716,6 +726,8 @@ private Object readCyclicReference() throws InvalidObjectException, IOException 
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.383 -0500", hash_original_method = "7C91F28BD77A4ED641420E614D9FCB15", hash_generated_method = "7756E71F951822D28642A19BC06AC8CF")
     
 public double readDouble() throws IOException {
@@ -1650,6 +1662,8 @@ protected ObjectStreamClass readClassDescriptor() throws IOException, ClassNotFo
      *             if an error occurs while reading from the source stream.
      * @see ObjectOutputStream#annotateProxyClass(Class)
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.460 -0500", hash_original_method = "C938C68924527CB04F806429B3BE928F", hash_generated_method = "34A903FE2EF819688809BA89B5D6E5E9")
     
 protected Class<?> resolveProxyClass(String[] interfaceNames)
@@ -1861,6 +1875,8 @@ private Object readNewLongString(boolean unshared) throws IOException {
      *             if primitive data types were found instead of an object.
      * @see ObjectOutputStream#writeObject(Object)
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.477 -0500", hash_original_method = "D5CBFBA6D0DD1CCB325BD55A2992CB88", hash_generated_method = "8B539A099312D41A4AC5038F6E707F3F")
     
 public final Object readObject() throws OptionalDataException,
@@ -2050,6 +2066,8 @@ public int readUnsignedShort() throws IOException {
      * @throws IOException
      *             if an error occurs while reading from the source stream.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.503 -0500", hash_original_method = "B2994D3A3B821949D517613320FA5065", hash_generated_method = "1EE882612647600C4FE16F9494A0E09D")
     
 public String readUTF() throws IOException {
@@ -2448,6 +2466,8 @@ public abstract Object get(String name, Object defaultValue)
      *             if an I/O error occurs while creating the class.
      * @see ObjectOutputStream#annotateClass(Class)
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:43.521 -0500", hash_original_method = "38B51F7C504D6211D87B81513F39C956", hash_generated_method = "8BE13CA5FD5F5C0BA8A874380177710B")
     
 protected Class<?> resolveClass(ObjectStreamClass osClass)

@@ -28,6 +28,8 @@ public class AnimationUtils {
      *
      * @see android.os.SystemClock
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.803 -0500", hash_original_method = "A342CAA3729B80BF74C5D77B5CF79EC1", hash_generated_method = "21A5922E1D802850493459379CB374FB")
     
 public static long currentAnimationTimeMillis() {
@@ -42,6 +44,8 @@ public static long currentAnimationTimeMillis() {
      * @return The animation object reference by the specified id
      * @throws NotFoundException when the animation cannot be loaded
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.806 -0500", hash_original_method = "6C4C15BBA350A59BA813AA1FCD4C13A9", hash_generated_method = "964AEB68764DEFC476CB3B91239FBE82")
     
@@ -254,6 +258,8 @@ public static Animation makeInChildBottomAnimation(Context c) {
      * @return The animation object reference by the specified id
      * @throws NotFoundException
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.830 -0500", hash_original_method = "BDF8B873A1CA7BFCFC39306793FA91B3", hash_generated_method = "2826F5F26A01425B8BA48E1AC8D3ABDF")
     

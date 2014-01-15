@@ -323,10 +323,14 @@ public class Paint {
 
     public  int         mBidiFlags = BIDI_DEFAULT_LTR;
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public Paint() {
         //this(0);  No real need to flow down into second constructor which would track taint, since it's a fixed value
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public Paint(int flags) {
 		setFlags(flags);
 		/*
@@ -343,6 +347,8 @@ public class Paint {
      * @param paint Existing paint used to initialized the attributes of the
      *              new paint.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.571 -0500", hash_original_method = "5333FFC8A800A9BDD5C93C0D81F44606", hash_generated_method = "8ABBA94AFCE96480E8CA6B2F52A5AE36")
     
 public Paint(Paint paint) {
@@ -496,7 +502,9 @@ public final boolean isAntiAlias() {
         return (getFlags() & ANTI_ALIAS_FLAG) != 0;
     }
     
-	public void setAntiAlias(boolean aa) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void setAntiAlias(boolean aa) {
 		//Helper for setFlags(), setting or clearing the ANTI_ALIAS_FLAG bit
 		addTaint(aa);
 	}
@@ -527,6 +535,8 @@ public final boolean isDither() {
      *
      * @param dither true to set the dithering bit in flags, false to clear it
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.611 -0500", hash_original_method = "A1D5308EB6CBA9AF3933567292CFE65A", hash_generated_method = "F8B5DC34A0FAD8DADBFEEF9E9B5A5B10")
     
     public void setDither(boolean dither){
@@ -599,6 +609,8 @@ public final boolean isUnderlineText() {
      * @param underlineText true to set the underlineText bit in the paint's
      *                      flags, false to clear it.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.628 -0500", hash_original_method = "08639A75D204C407A568CB7739C3FAB4", hash_generated_method = "4229B4B2D9813B7187D8D5DE636EC17F")
     
     public void setUnderlineText(boolean underlineText){
@@ -647,6 +659,8 @@ public final boolean isFakeBoldText() {
      * @param fakeBoldText true to set the fakeBoldText bit in the paint's
      *                     flags, false to clear it.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.640 -0500", hash_original_method = "6E7D99B95546D6ABB7274A6609FD0359", hash_generated_method = "6EA31BF0E7CC525CFBEE3BBC40D76929")
     
     public void setFakeBoldText(boolean fakeBoldText){
@@ -668,6 +682,8 @@ public final boolean isFilterBitmap() {
         return (getFlags() & FILTER_BITMAP_FLAG) != 0;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void setFilterBitmap(boolean filter) {
 		//Don't think we need to perform any tainting
 		//filter true to set the FILTER_BITMAP_FLAG bit in the paint's flags, false to clear it.
@@ -699,11 +715,15 @@ public void setStyle(Style style) {
         native_setStyle(mNativePaint, style.nativeInt);
     }
     
-	public int getColor() {  //Originally a native method, converted over
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public int getColor() {  //Originally a native method, converted over
 		return getTaintInt();
 	}
     
-	public void setColor(int color) { //Originally a native method, converted over
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void setColor(int color) { //Originally a native method, converted over
 		addTaint(color);
 	}
     
@@ -714,6 +734,8 @@ public void setStyle(Style style) {
      *
      * @return the alpha component of the paint's color.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.661 -0500", hash_original_method = "D39ECC24DCC5EA2AD7BF99F063294ED7", hash_generated_method = "8D411FEDDF6E6858EC11D8104B750BAA")
     
     public int getAlpha(){
@@ -728,6 +750,8 @@ public void setStyle(Style style) {
      *
      * @param a set the alpha component [0..255] of the paint's color.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.664 -0500", hash_original_method = "2717A1058DFCA3888C2EAD1CA5D16AFD", hash_generated_method = "F752F252F3C52F6A2A3EC93C063285E2")
     
     public void setAlpha(int a){
@@ -743,6 +767,8 @@ public void setStyle(Style style) {
      * @param g The new green component (0..255) of the paint's color.
      * @param b The new blue component (0..255) of the paint's color.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.666 -0500", hash_original_method = "61ED3E8FA79427F4AF66F905BEAE9870", hash_generated_method = "261B1F3BA320330F3FD63DDED79EF8EF")
     
@@ -759,6 +785,8 @@ public void setARGB(int a, int r, int g, int b) {
      * @return the paint's stroke width, used whenever the paint's style is
      *         Stroke or StrokeAndFill.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.669 -0500", hash_original_method = "6176D634A3133A706881E45A3F2EC84E", hash_generated_method = "AE3ABD3E65AC545424DFC66F8EB54DC6")
     
     public float getStrokeWidth(){
@@ -774,6 +802,8 @@ public void setARGB(int a, int r, int g, int b) {
      * @param width set the paint's stroke width, used whenever the paint's
      *              style is Stroke or StrokeAndFill.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.673 -0500", hash_original_method = "75F355CF371141B3EA541D9CF06B77D7", hash_generated_method = "67D53A626B07F6BFB755140A1AB29569")
     
     public void setStrokeWidth(float width){
@@ -895,6 +925,8 @@ public Shader getShader() {
      * @param shader May be null. the new shader to be installed in the paint
      * @return       shader
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.696 -0500", hash_original_method = "CB91A884CE132802683E082171CC1D6C", hash_generated_method = "880F654642DA2BF145471BD237AC89AB")
     
 public Shader setShader(Shader shader) {
@@ -924,6 +956,8 @@ public ColorFilter getColorFilter() {
      * @param filter May be null. The new filter to be installed in the paint
      * @return       filter
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.700 -0500", hash_original_method = "C7126951024C02787596F4A62EFB1A3F", hash_generated_method = "57AFE104AED6D331402A3DF13C5DD917")
     
 public ColorFilter setColorFilter(ColorFilter filter) {
@@ -956,6 +990,8 @@ public Xfermode getXfermode() {
      * @param xfermode May be null. The xfermode to be installed in the paint
      * @return         xfermode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.704 -0500", hash_original_method = "42770A58843BCA14944D0826F7595F4B", hash_generated_method = "BA23FFFA70B29A022BAA1ABD97CA70EC")
     
 public Xfermode setXfermode(Xfermode xfermode) {
@@ -1042,6 +1078,8 @@ public MaskFilter setMaskFilter(MaskFilter maskfilter) {
      *
      * @return the paint's typeface (or null)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.715 -0500", hash_original_method = "E402FEB0FEC812E5128501C647697EA3", hash_generated_method = "A909A7BCB28345CA256D5D547C6649A7")
     
@@ -1058,6 +1096,8 @@ public Typeface getTypeface() {
      * @param typeface May be null. The typeface to be installed in the paint
      * @return         typeface
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.717 -0500", hash_original_method = "73CCDBF9DAC8A72983E784437C89D8D5", hash_generated_method = "72137867EE8532052E0607F4D1D79159")
     
 public Typeface setTypeface(Typeface typeface) {
@@ -1111,6 +1151,8 @@ public Rasterizer setRasterizer(Rasterizer rasterizer) {
      * offset and color, and blur radius. If radius is 0, then the shadow
      * layer is removed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.724 -0500", hash_original_method = "30B7CF0D1828E00D1755D0EC1ABBE2FD", hash_generated_method = "BD8CFD4658EAAD98A6190601A807D1E8")
     
 public void setShadowLayer(float radius, float dx, float dy, int color) {
@@ -1175,6 +1217,8 @@ public void setTextAlign(Align align) {
      *
      * @return the paint's text size.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.737 -0500", hash_original_method = "2A8BEEB1775704D2B3E07881AE922147", hash_generated_method = "091337FB8E5E9CB10599FCB60993420E")
     
     public float getTextSize(){
@@ -1187,6 +1231,8 @@ public void setTextAlign(Align align) {
      *
      * @param textSize set the paint's text size.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.741 -0500", hash_original_method = "D08AF5901B1A9C873DECCE4D2981E18B", hash_generated_method = "1D965C7404B4452C182D80132547D00F")
     
     public void setTextSize(float textSize){
@@ -1254,6 +1300,8 @@ public void setTextAlign(Align align) {
      * @return the distance above (negative) the baseline (ascent) based on the
      *         current typeface and text size.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.758 -0500", hash_original_method = "BAAE43E1F09165366508512053D99CC4", hash_generated_method = "D8C670DCC19106F24A5FA937B386E7C2")
     
     public float ascent(){
@@ -1268,6 +1316,8 @@ public void setTextAlign(Align align) {
      * @return the distance below (positive) the baseline (descent) based on
      *         the current typeface and text size.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.762 -0500", hash_original_method = "C74862F858F8C9C5BB339033A2D07A66", hash_generated_method = "ECFE1B63481F82251B331729028554D2")
     
     public float descent(){
@@ -1537,7 +1587,9 @@ public float measureText(String text, int start, int end) {
     	return getTaintFloat();
     }
     
-	public float measureText(String text) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public float measureText(String text) {
 		return 0;  //Is purely a computational function and doesn't appear to change any values/state
 		/*
         if (text == null) {
@@ -1571,6 +1623,8 @@ public float measureText(String text, int start, int end) {
      * @param end   1 beyond the index of the last character to measure
      * @return      The width of the text
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.831 -0500", hash_original_method = "6EB2D4EE24026300FF5D315D09C81847", hash_generated_method = "5533FCC8620CB46E9315ABC72134C4C9")
     
 public float measureText(CharSequence text, int start, int end) {
@@ -1896,6 +1950,8 @@ public int getTextWidths(String text, int start, int end, float[] widths) {
      *               Must be at least a large as the text.
      * @return       the number of unichars in the specified text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.856 -0500", hash_original_method = "2A3DC3984F2D039C4252250086EEE48E", hash_generated_method = "794598FE398532B0C077C928931E3786")
     
@@ -2413,6 +2469,8 @@ public void getTextPath(String text, int start, int end,
      * @param bounds Returns the unioned bounds of all the text. Must be
      *               allocated by the caller.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.889 -0500", hash_original_method = "FD83EA4D46005AE0FEF3AC534F19299F", hash_generated_method = "67A558C88EFC12C6B179C661C2B26242")
     
 public void getTextBounds(String text, int start, int end, Rect bounds) {

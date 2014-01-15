@@ -68,6 +68,8 @@ public void deliverResult(D data) {
     /**
      * @return an application context retrieved from the Context passed to the constructor.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.653 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
@@ -200,6 +202,8 @@ protected void onStartLoading() {
      *
      * <p>Must be called from the process's main thread.
      */
+    @DSComment("Force loading content, event handler may also be invoked")
+    @DSSpec(DSCat.ANDROID_LOADER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.673 -0500", hash_original_method = "E102AD0C3BB2F8D5B106A9E25CAC340A", hash_generated_method = "7C65C609A676021DC6E00C13415FEFCD")
     
 public void forceLoad() {
@@ -319,6 +323,8 @@ public void reset() {
      * but as a result of a call to {@link #reset()}.
      * This will always be called from the process's main thread.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.687 -0500", hash_original_method = "16611E3F48156A317644CA113F750BCD", hash_generated_method = "7263AB7619FC664C9743FCE8FF63E928")
     
 protected void onReset() {
@@ -329,6 +335,8 @@ protected void onReset() {
      * changed while it was stopped.  If it had, true is returned and the
      * flag is cleared.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.689 -0500", hash_original_method = "C55C1C662CB28045D31932504C1021C3", hash_generated_method = "FB79F93498345AEA72EC028E85462AAE")
     
 public boolean takeContentChanged() {

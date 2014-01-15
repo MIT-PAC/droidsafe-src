@@ -27,10 +27,6 @@ import java.util.regex.Pattern;
 
 import libcore.io.IoUtils;
 
-
-
-
-
 public final class Scanner implements Iterator<String> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.436 -0500", hash_original_field = "B47F8D0CFB8B0A8E74ACEF69EFAAF7CA", hash_generated_field = "198E8DC61E6EE6260DD0FD67EC1BE70A")
 
@@ -54,13 +50,11 @@ public final class Scanner implements Iterator<String> {
     private static final Pattern ANY_PATTERN = Pattern.compile("(?s).*");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.452 -0500", hash_original_field = "0ABE4119F73D0DFB83A02A15D725E728", hash_generated_field = "3BA97B4331D762E18310C69487A4537F")
 
-
     private static final int DIPLOID = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.454 -0500", hash_original_field = "EB97D6C44BD18C424D4E82265283D91D", hash_generated_field = "6AD996F6F0E1D10B17B6B57671BFAA93")
 
     private static final int DEFAULT_RADIX = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.456 -0500", hash_original_field = "28E0DBF2907BB09A2F5C21AB717FC9F5", hash_generated_field = "943912C72E8350CCD8E69B9D60A0C886")
-
 
     private static final int DEFAULT_TRUNK_SIZE = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.459 -0500", hash_original_field = "65616AC57FB84BDA6BF682056C572304", hash_generated_field = "E0D52F97F351E69EECDE3C383EA70269")
@@ -68,22 +62,17 @@ public final class Scanner implements Iterator<String> {
     private Readable input;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.461 -0500", hash_original_field = "89091A77A3F40B97932F1F5BA644968C", hash_generated_field = "D260AE04E52CF23D72C8A3D8295E450B")
 
-
     private CharBuffer buffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.463 -0500", hash_original_field = "817851E00C2E34D79720AD08AAA6BADB", hash_generated_field = "7320765086863239DD8B2CE732355E5C")
-
 
     private Pattern delimiter = DEFAULT_DELIMITER;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.465 -0500", hash_original_field = "C7324B9A1B7E5BCAD3D2B1A512AC9CEE", hash_generated_field = "B6C086223608E4F54F76DF9A158EFEB4")
 
-
     private Matcher matcher;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.468 -0500", hash_original_field = "EB84341BC05B1803B3A35E00097AB259", hash_generated_field = "C3DABC3C885E91F4BEBE65D18A5D41DF")
 
-
     private int integerRadix = DEFAULT_RADIX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.470 -0500", hash_original_field = "8B296BE1494CF2FB637267DFD6EEFC9C", hash_generated_field = "E93B6DD8D2B917BF94B1E13ADC86BBF9")
-
 
     private Locale locale = Locale.getDefault();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.472 -0500", hash_original_field = "D8305FA40AEB30D5626E8AD10AD16362", hash_generated_field = "08240EC224E7D1F658B6C3E2B561656E")
@@ -101,14 +90,11 @@ public final class Scanner implements Iterator<String> {
     private boolean closed = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.482 -0500", hash_original_field = "2D64161965ACCFD5E6EAFC7F1C573898", hash_generated_field = "94160D1F6EC5CF5867F2CCE7946E9FCB")
 
-
     private IOException lastIOException;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.484 -0500", hash_original_field = "1C6D1D477DD6E2911B78F6585589561F", hash_generated_field = "FB51DEF3DC08BBEC5FA219733A95DF92")
 
-
     private boolean matchSuccessful = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.486 -0500", hash_original_field = "B59EEAA341F75708242A9E3221E821BD", hash_generated_field = "5CD50592C114680F0C3429A3015DD789")
-
 
     private DecimalFormat decimalFormat;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.488 -0500", hash_original_field = "12665679D2CAFF8C4A053D9B20D5EF70", hash_generated_field = "835E9638D88C3871B5D667F83042A305")
@@ -116,10 +102,8 @@ public final class Scanner implements Iterator<String> {
     private boolean inputExhausted = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.491 -0500", hash_original_field = "A51D0ECC63E18EDB9ADABF3293B68917", hash_generated_field = "16846571F2386772C11DF4DB11C6F290")
 
-
     private Object cacheHasNextValue = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.493 -0500", hash_original_field = "A4D950C48A6DDF26C40A5B63963E74FC", hash_generated_field = "890CB8D9E7ACCC8E639BDCEBE76016CB")
-
 
     private int cachehasNextIndex = -1;
 
@@ -132,6 +116,8 @@ public final class Scanner implements Iterator<String> {
      * @throws FileNotFoundException
      *             if the specified file does not exist.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.498 -0500", hash_original_method = "B810C33BB807151E40D15163250E5E02", hash_generated_method = "D26577CCB9043AF802260E163F23AE5F")
     
 public Scanner(File src) throws FileNotFoundException {
@@ -190,6 +176,8 @@ public Scanner(String src) {
      * @param src
      *            the {@code InputStream} to be scanned.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.505 -0500", hash_original_method = "C892D51D9056C33835D132934536F6A9", hash_generated_method = "1871A8297329316346417FC0FD505506")
     
 public Scanner(InputStream src) {
@@ -227,6 +215,8 @@ public Scanner(InputStream src, String charsetName) {
      * @param src
      *            the {@code Readable} to be scanned.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.512 -0500", hash_original_method = "E0E6972A58007CF9E26777BD359FD5D7", hash_generated_method = "2A8F26655E138D46B6E3613B4BE01534")
     
 public Scanner(Readable src) {
@@ -282,6 +272,8 @@ public Scanner(ReadableByteChannel src, String charsetName) {
      *
      * @see Closeable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.520 -0500", hash_original_method = "BE0E5A82355C52347C0C57A7BA02C4C5", hash_generated_method = "4981E93226D3D642ADB0B81DB0C8464D")
     
 public void close() {
@@ -533,6 +525,8 @@ public String findWithinHorizon(Pattern pattern, int horizon) {
      *             if {@code horizon} is less than zero.
      * @see #findWithinHorizon(Pattern, int)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.534 -0500", hash_original_method = "A3C55B99475A85AD2BF4742E957D07D7", hash_generated_method = "8B42006EAC7EE929F9A09B522FEFB34E")
     
 public String findWithinHorizon(String pattern, int horizon) {
@@ -548,6 +542,8 @@ public String findWithinHorizon(String pattern, int horizon) {
      * @throws IllegalStateException
      *             if the {@code Scanner} has been closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.536 -0500", hash_original_method = "A3E9F8A3E3BBCA86A059EA14ECB05A95", hash_generated_method = "8ACF5D97C09012CFC95287039A2EEAF0")
     
 public boolean hasNext() {
@@ -851,6 +847,8 @@ public boolean hasNextInt(int radix) {
      * @throws IllegalStateException
      *             if the {@code Scanner} is closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.568 -0500", hash_original_method = "F85B53817DDA0DC627A3FD344338966A", hash_generated_method = "E1AA38C47583B8A7FD0F5013C7785A12")
     
 public boolean hasNextLine() {
@@ -1004,6 +1002,8 @@ public Locale locale() {
      *             if the match result is not available, of if the last match
      *             was not successful.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.586 -0500", hash_original_method = "2D94F093F10F1A8356EDEC86FADDCA70", hash_generated_method = "5641FECC4850BFBA421BE67B82DBDED5")
     
 public MatchResult match() {
@@ -1024,6 +1024,8 @@ public MatchResult match() {
      * @throws NoSuchElementException
      *             if input has been exhausted.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.588 -0500", hash_original_method = "A473F9C9E320CD6CEDCE3CE271E08C07", hash_generated_method = "5AD096FC9C61E6884323F08CF48B6FE0")
     
 public String next() {
@@ -1213,6 +1215,8 @@ public BigInteger nextBigInteger(int radix) {
      *             if the next token can not be translated into a valid
      *             {@code boolean} value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.603 -0500", hash_original_method = "D0E4DE4C67E1DCF9B9C54027B3E1E21D", hash_generated_method = "EB909912857FD197A194F38FBA4A9EA8")
     
 public boolean nextBoolean() {
@@ -1390,6 +1394,8 @@ public byte nextByte() {
      *             if the next token can not be translated into a valid
      *             {@code int} value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.617 -0500", hash_original_method = "5185135F499E2963894A73963B55B971", hash_generated_method = "4D7E86235A8A3FDAE9C860E44B38B8E5")
     
 public int nextInt() {
@@ -1457,6 +1463,8 @@ public int nextInt() {
      * @throws NoSuchElementException
      *             if no line can be found, e.g. when input is an empty string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.622 -0500", hash_original_method = "3D66719B22D4824A272B09AB38D3D0FA", hash_generated_method = "A67F991174304DC7835FDA74A6F7E641")
     
 public String nextLine() {
@@ -1508,6 +1516,8 @@ public String nextLine() {
      *             if the next token can not be translated into a valid
      *             {@code long} value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.625 -0500", hash_original_method = "6374462D33C9F89E6E50C3F6D20F5373", hash_generated_method = "3BBB9A10635ED766175135AD0EBB0FE7")
     
 public long nextLong() {
@@ -1745,6 +1755,8 @@ public Scanner useDelimiter(Pattern pattern) {
      *            a string from which a {@code Pattern} can be compiled.
      * @return this {@code Scanner}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:26.647 -0500", hash_original_method = "353C3ED30BA7FF969DF17D7F091BC9CC", hash_generated_method = "1D64DC9B54D27C13E0181D72A1A4168B")
     
 public Scanner useDelimiter(String pattern) {
@@ -2025,7 +2037,6 @@ private String removeLocaleInfoFromFloat(String floatString) {
         }
         return removeLocaleInfo(floatString, DataType.FLOAT);
     }
-
     
     private enum DataType {
         INT,

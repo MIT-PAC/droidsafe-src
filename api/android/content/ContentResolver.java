@@ -854,6 +854,8 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
     * query call to the underlying cursor.  So just create a cursor and return it.
     * The DSCursor will take care of propagating the information flow.
     */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public final Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder) {
@@ -880,6 +882,8 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
      * @throws FileNotFoundException if the provided URI could not be opened.
      * @see #openAssetFileDescriptor(Uri, String)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.159 -0500", hash_original_method = "741F25E5E9079F60798D64718B03495A", hash_generated_method = "FF40C3A8319AD1636D47F56A713B2AB4")
     
@@ -1228,6 +1232,8 @@ public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException 
      *               the field. Passing an empty ContentValues will create an empty row.
      * @return the URL of the newly created row.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.187 -0500", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "30E6A8AA7791982EDB0C2593C57C1825")
     
@@ -1268,6 +1274,8 @@ public final Uri insert(Uri url, ContentValues values)
      * @throws RemoteException thrown if a RemoteException is encountered while attempting
      *   to communicate with a remote provider.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.189 -0500", hash_original_method = "35DA1841C97E840C3B5123B65D72A2FC", hash_generated_method = "74C8F16C7BE8369387E13E410A7C819D")
     
 public ContentProviderResult[] applyBatch(String authority,
@@ -1327,6 +1335,8 @@ public final int bulkInsert(Uri url, ContentValues[] values)
                     (excluding the WHERE itself).
      * @return The number of rows deleted.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.195 -0500", hash_original_method = "5F64E7642550035A4284C543DD08EBF1", hash_generated_method = "F77B1FA45188219F6988A6B6B681E82D")
     
 public final int delete(Uri url, String where, String[] selectionArgs)
@@ -1363,6 +1373,8 @@ public final int delete(Uri url, String where, String[] selectionArgs)
      * @return the number of rows updated.
      * @throws NullPointerException if uri or values are null
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.197 -0500", hash_original_method = "93173B163A2993B2278E9CE2CA5F5268", hash_generated_method = "BFDFE97E646A1E83E92C8A9712FB4DAA")
     
 public final int update(Uri uri, ContentValues values, String where,
@@ -1529,6 +1541,8 @@ public final ContentProviderClient acquireContentProviderClient(String name) {
      * functions will get called whenever an SMS message is received
      */
     
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer)
     {
@@ -1549,6 +1563,8 @@ public final ContentProviderClient acquireContentProviderClient(String name) {
      * @param observer The previously registered observer that is no longer needed.
      * @see #registerContentObserver
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.217 -0500", hash_original_method = "A19276E2B38D6FC8E7769343C0EFAA57", hash_generated_method = "5D9FB3944E47D05E123BB023EFCB7F6C")
     
 public final void unregisterContentObserver(ContentObserver observer) {
@@ -1570,6 +1586,8 @@ public final void unregisterContentObserver(ContentObserver observer) {
      * @param uri
      * @param observer The observer that originated the change, may be <code>null</null>
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.219 -0500", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "3A5872C192B574229FFFA2AFF9004DE8")
     

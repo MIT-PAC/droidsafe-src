@@ -26,6 +26,8 @@ public final class MifareClassic extends BasicTagTechnology {
      * @param tag an MIFARE Classic compatible tag
      * @return MIFARE Classic object
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.500 -0500", hash_original_method = "E256682DB559ACD3975BBE21D7BE6E4D", hash_generated_method = "9F064CCAD2CBFBF1159E2F336F20BB74")
     
@@ -234,6 +236,8 @@ public boolean isEmulated() {
      * <p>Does not cause any RF activity and does not block.
      * @return number of sectors
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.512 -0500", hash_original_method = "4AAA3C3D329C939FDD63EF1F58378EDA", hash_generated_method = "4D2FADE42AC7537391D9250404E1EABD")
     
@@ -271,6 +275,8 @@ public int getBlockCount() {
      * @param sectorIndex index of sector, starting from 0
      * @return number of blocks in the sector
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.516 -0500", hash_original_method = "4046C9F5F79A621BBA2F7BE2C9D1103D", hash_generated_method = "73213613B5EED476EAA815B3DE45523F")
     
@@ -343,6 +349,8 @@ public int sectorToBlock(int sectorIndex) {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.524 -0500", hash_original_method = "88C199BE0D888C3B911ED6B5CDCE45B3", hash_generated_method = "2F30C532D366C8631223F424EE7BD491")
     
 public boolean authenticateSectorWithKeyA(int sectorIndex, byte[] key) throws IOException {
@@ -431,6 +439,8 @@ private boolean authenticate(int sector, byte[] key, boolean keyA) throws IOExce
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.532 -0500", hash_original_method = "540E686F2680F6F111FB5FE029F249C7", hash_generated_method = "ED987BFD8349BF414FD2365B04E64336")
     

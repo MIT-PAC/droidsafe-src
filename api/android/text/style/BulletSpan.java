@@ -34,6 +34,8 @@ public class BulletSpan implements LeadingMarginSpan, ParcelableSpan {
 
     private  int mColor;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.431 -0500", hash_original_method = "F333B1FCD15ED8238A329F687C815603", hash_generated_method = "782F157293EC096F1BCE24A863E1DB3B")
     
 public BulletSpan() {

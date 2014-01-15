@@ -295,7 +295,9 @@ public class Matrix {
 
     public int native_instance;
     
-	public Matrix(){
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public Matrix(){
 		/*
 		native_instance = native_create(0);
 		*/
@@ -354,6 +356,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void reset(){
 		// Original method
 		/*
@@ -408,6 +412,8 @@ public class Matrix {
 		//Return nothing
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRotate(float degrees){
 		// Original method
@@ -475,6 +481,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean preTranslate(float dx, float dy){
 		// Original method
 		/*
@@ -515,6 +523,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean preRotate(float degrees){
 		// Original method
 		/*
@@ -555,6 +565,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean postTranslate(float dx, float dy){
 		// Original method
 		/*
@@ -575,6 +587,8 @@ public class Matrix {
 		return false;
 	}
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean postScale(float sx, float sy){
 		// Original method
 		/*
@@ -778,6 +792,8 @@ ScaleToFit(int nativeInt) {
          int nativeInt;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public boolean mapRect(RectF rect){
 		// Original method
 		/*

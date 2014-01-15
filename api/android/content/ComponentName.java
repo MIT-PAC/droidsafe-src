@@ -25,6 +25,8 @@ public final class ComponentName implements Parcelable, Cloneable, Comparable<Co
      * 
      * @see #flattenToString()
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.585 -0500", hash_original_method = "D4E8AB1939E332222FA82C6706402E5E", hash_generated_method = "AC1ABC1EAD9359F8606C0A629E68E2FF")
     
 public static ComponentName unflattenFromString(String str) {
@@ -111,6 +113,8 @@ public ComponentName[] newArray(int size) {
      * @param cls The name of the class inside of <var>pkg</var> that
      * implements the component.  Can not be null.
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.564 -0500", hash_original_method = "1714B1C8173E376D41E514F902D33E99", hash_generated_method = "1BA84BE4467588AE2A03CD87E288D467")
     
 public ComponentName(String pkg, String cls) {
@@ -128,6 +132,8 @@ public ComponentName(String pkg, String cls) {
      * @param cls The name of the class inside of <var>pkg</var> that
      * implements the component.
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.567 -0500", hash_original_method = "36F25878FE380B4CEA8E7C4B89DDFC1A", hash_generated_method = "366843CDEB60ED07212DE3CF20310076")
     
 public ComponentName(Context pkg, String cls) {
@@ -144,6 +150,8 @@ public ComponentName(Context pkg, String cls) {
      * @param cls The Class object of the desired component, from which the
      * actual class name will be retrieved.
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.570 -0500", hash_original_method = "8AE00F6D12874A3382D28F364D43BAC6", hash_generated_method = "D7EF4C8D4676CF4464A0EC53BF75F826")
     
 public ComponentName(Context pkg, Class<?> cls) {
@@ -188,6 +196,8 @@ public ComponentName clone() {
     /**
      * Return the package name of this component.
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.574 -0500", hash_original_method = "89B4378559F402BEFD7FD434E355C3B4", hash_generated_method = "63FE5FEFF39BF20BDF4A467B3EECCD22")
     
@@ -198,6 +208,8 @@ public String getPackageName() {
     /**
      * Return the class name of this component.
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.576 -0500", hash_original_method = "ABD4E1FA4C56F78B933D2E76ACF407D1", hash_generated_method = "7FDE699C4ACD1575C4F6A08F82280495")
     
@@ -235,6 +247,8 @@ public String getShortClassName() {
      * 
      * @see #unflattenFromString(String)
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.580 -0500", hash_original_method = "390AD2AD67B7039AADEA1F7D4A32A2A2", hash_generated_method = "4019EF7A1B25ACA97EDCBE9719C78F18")
     
 public String flattenToString() {
@@ -252,6 +266,8 @@ public String flattenToString() {
      * 
      * @see #unflattenFromString(String)
      */
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.582 -0500", hash_original_method = "CF7AA080F36C0EC07816037C2C3C9C55", hash_generated_method = "F0DF23288E549138FDBC94AFBDDCFECE")
     
 public String flattenToShortString() {
@@ -275,6 +291,8 @@ public String toShortString() {
         return "ComponentInfo{" + mPackage + "/" + mClass + "}";
     }
 
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.593 -0500", hash_original_method = "221E549665728B04A91E5C9A58326754", hash_generated_method = "D8F5E18DA105D11037667BE5EBF7E454")
     
 @Override
@@ -292,6 +310,8 @@ public String toShortString() {
         return false;
     }
 
+    @DSComment("data structure class")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.595 -0500", hash_original_method = "0BD278EA5D55E08CD4E56E53F182D0C7", hash_generated_method = "34C328E874FC615A2187ED5A2CE1B584")
     
 @Override

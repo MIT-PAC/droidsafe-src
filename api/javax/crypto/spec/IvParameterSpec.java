@@ -21,6 +21,8 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
      * @throws NullPointerException
      *             if the specified buffer is null.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.168 -0500", hash_original_method = "D9A5990E9ED63A0A9D454C79A44593C3", hash_generated_method = "AC521883E3CA4ADEFFD9410ACEB1F335")
     
 public IvParameterSpec(byte[] iv) {

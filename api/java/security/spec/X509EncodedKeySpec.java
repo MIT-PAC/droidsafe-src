@@ -14,6 +14,8 @@ public class X509EncodedKeySpec extends EncodedKeySpec {
      * @param encodedKey
      *            the encoded key bytes.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.787 -0500", hash_original_method = "653C2DD285722882E5BF9CD68F7E16B1", hash_generated_method = "A67D46C756B7827A9B6F37BCF7C96E70")
     
 public X509EncodedKeySpec(byte[] encodedKey) {
@@ -26,6 +28,8 @@ public X509EncodedKeySpec(byte[] encodedKey) {
      *
      * @return the encoded key bytes.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.790 -0500", hash_original_method = "79A7CC1F7A80EF2ADD7D2AFF5368D500", hash_generated_method = "E32E93258666D229EF01F9B67C223079")
     

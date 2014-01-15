@@ -155,6 +155,8 @@ public abstract class Window {
     private final WindowManager.LayoutParams mWindowAttributes =
         new WindowManager.LayoutParams();
 
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.640 -0500", hash_original_method = "50ED378DEE1AF31F505AB3EFDADA9166", hash_generated_method = "32C9EF35DB9FD5BC71C6F81F3A4479CB")
     
 public Window(Context context) {
@@ -281,6 +283,8 @@ public void setWindowManager(WindowManager wm, IBinder appToken, String appName,
      *
      * @return WindowManager The ViewManager.
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.692 -0500", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "0C79B12DA4736ABBDC4EC55B1426644A")
     
@@ -372,6 +376,8 @@ public void setLayout(int width, int height) {
      * @see Gravity
      * @see #setLayout
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.709 -0500", hash_original_method = "76A69B8FD04E6A39E52E254D3C51CA75", hash_generated_method = "F4D072DF86135354A573AF2B10CD9E6D")
     
 public void setGravity(int gravity)
@@ -450,6 +456,8 @@ public void setWindowAnimations(int resId) {
      * "unspecified" here will override the input mode the window would
      * normally retrieve from its theme.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.719 -0500", hash_original_method = "C4620B459A4A0F6C7D91CF9A478EC82D", hash_generated_method = "68F1B142EA49D217FB23E63225B18818")
     
 public void setSoftInputMode(int mode) {
@@ -471,6 +479,8 @@ public void setSoftInputMode(int mode) {
      * @param flags The flag bits to be set.
      * @see #setFlags
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.722 -0500", hash_original_method = "0498A767AE3286E2ACD9E77A8750E86F", hash_generated_method = "D313765D7EE886EA0958BBAD876109EF")
     
 public void addFlags(int flags) {
@@ -483,6 +493,8 @@ public void addFlags(int flags) {
      * @param flags The flag bits to be cleared.
      * @see #setFlags
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.724 -0500", hash_original_method = "1B1BB2C51A9E558BB4222C67BD342AB1", hash_generated_method = "52011151D7FF452638D837BC419171AD")
     
 public void clearFlags(int flags) {
@@ -506,6 +518,8 @@ public void clearFlags(int flags) {
      * @param flags The new window flags (see WindowManager.LayoutParams).
      * @param mask Which of the window flag bits to modify.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.727 -0500", hash_original_method = "40E42D383A45AE28D15E52653F68CBD5", hash_generated_method = "33AC6D1792EC1888DE667493ABB11B9B")
     
@@ -647,6 +661,8 @@ private boolean isOutOfBounds(Context context, MotionEvent event) {
      * @param featureId The desired features, defined as constants by Window.
      * @return The features that are now set.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.755 -0500", hash_original_method = "56D6FF40FC7BCA35CBE5379E385EA86C", hash_generated_method = "E3D53C16CA69D14614EBC23876A3893B")
     
 public boolean requestFeature(int featureId) {
@@ -710,6 +726,8 @@ public View findViewById(int id) {
      * @param layoutResID Resource ID to be inflated.
      * @see #setContentView(View, android.view.ViewGroup.LayoutParams)
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.768 -0500", hash_original_method = "9773B78A0DDFABD7EC1D4950258114B8", hash_generated_method = "EB433CC04E8E9E0A64557B9580BE400E")
     
 public abstract void setContentView(int layoutResID);
@@ -779,6 +797,8 @@ public abstract View getCurrentFocus();
     
 public abstract LayoutInflater getLayoutInflater();
 
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.787 -0500", hash_original_method = "410835EEA321510B785087E900780AFB", hash_generated_method = "F61FA778C52CF90209781407DFEFC387")
     
 public abstract void setTitle(CharSequence title);
@@ -799,6 +819,8 @@ public abstract void closePanel(int featureId);
     
 public abstract void togglePanel(int featureId, KeyEvent event);
 
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.800 -0500", hash_original_method = "ED5A2AB5A6A6225F17A71D49A205D55B", hash_generated_method = "3AF92264D614DD6D3C6140C9D60AEF63")
     
 public abstract void invalidatePanelMenu(int featureId);
@@ -872,6 +894,8 @@ public abstract void setBackgroundDrawable(Drawable drawable);
      * constant by Window.
      * @param resId Resource identifier of the desired image.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.823 -0500", hash_original_method = "D85024C42C38E01D8D1381EA0521413A", hash_generated_method = "8F53D434F9FEEAE22B35D318FA73CC8A")
     
 public abstract void setFeatureDrawableResource(int featureId, int resId);
@@ -929,6 +953,8 @@ public abstract void setFeatureDrawableAlpha(int featureId, int alpha);
      * @param value The value for the feature.  The interpretation of this
      *              value is feature-specific.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.837 -0500", hash_original_method = "F69F194C10A724FF5B54AE7707FA4E1F", hash_generated_method = "42C5E0BC5C45BCA76685BDD45D4E7A66")
     
 public abstract void setFeatureInt(int featureId, int value);
@@ -1123,6 +1149,8 @@ public abstract boolean superDispatchGenericMotionEvent(MotionEvent event);
      * 
      * @return Returns the top-level window decor view.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.856 -0500", hash_original_method = "83066C83022E8181658B34D6E338F2C6", hash_generated_method = "54D70119532474D04D2C263537967038")
     
 public abstract View getDecorView();
@@ -1175,6 +1203,8 @@ protected final int getFeatures()
      * @param feature The feature ID to check
      * @return true if the feature is enabled, false otherwise.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.872 -0500", hash_original_method = "5A085FB22E39DFD08969173C82283E9B", hash_generated_method = "1F7260A02653D87AB5FD59DC838B3743")
     
 public boolean hasFeature(int feature) {
@@ -1261,6 +1291,8 @@ public abstract int getVolumeControlStream();
      * Set extra options that will influence the UI for this window.
      * @param uiOptions Flags specifying extra options for this window.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.894 -0500", hash_original_method = "5C7A5DC825C127CAEB67314627C1344D", hash_generated_method = "E7803D9EA57EDD53A6619582D74C929D")
     
@@ -1272,6 +1304,8 @@ public void setUiOptions(int uiOptions) { }
      * @param uiOptions Flags specifying extra options for this window.
      * @param mask Flags specifying which options should be modified. Others will remain unchanged.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:26.897 -0500", hash_original_method = "DD14EAF3AEC819DEC25B96FED2D2DF84", hash_generated_method = "F49B7763563715E51446AA4C72042315")
     

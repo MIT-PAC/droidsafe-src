@@ -107,6 +107,8 @@ public AnimationSet(Context context, AttributeSet attrs) {
      *        should use the interpolator assocciated with this AnimationSet.
      *        Pass false if each animation should use its own interpolator.
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.794 -0500", hash_original_method = "40E1DAC9F5FF86741AE2A2FFD7F09052", hash_generated_method = "5F96F8968EED46B49569FF0B4F851825")
     
 public AnimationSet(boolean shareInterpolator) {
@@ -230,6 +232,8 @@ private void init() {
      * that they were added
      * @param a Animation to add.
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.820 -0500", hash_original_method = "F96436C1C98CEDEFC582978CFED41496", hash_generated_method = "A788A071F6C490FDA49F6AE24DF52612")
     
 public void addAnimation(Animation a) {

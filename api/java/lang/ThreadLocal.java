@@ -25,6 +25,8 @@ public class ThreadLocal<T> {
     /**
      * Creates a new thread-local variable.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.324 -0500", hash_original_method = "CCBA978684365F19FBD68BD48C79C23F", hash_generated_method = "D0C2DD8281FBEC9648419EC2F2A6CF45")
     
 public ThreadLocal() {}
@@ -37,6 +39,8 @@ public ThreadLocal() {}
      *
      * @return the current value of the variable for the calling thread.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.327 -0500", hash_original_method = "17AB1D63AD8B7EADE4880D6FD1744965", hash_generated_method = "487B38E97D772D8EDC85719FC3E88B3F")
     
@@ -77,6 +81,8 @@ protected T initialValue() {
      *
      * @param value the new value of the variable for the caller thread.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.332 -0500", hash_original_method = "93D51722B7CB3C8EF0C38EE234F866B9", hash_generated_method = "F4573C2031B961898558E7070BE21319")
     
@@ -97,6 +103,8 @@ public void set(T value) {
      *
      * @since 1.5
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.334 -0500", hash_original_method = "E12F04AD7D9687B33AD1C273DE0809EB", hash_generated_method = "ACDA24ADC78949A9692E989598D5396F")
     
 public void remove() {

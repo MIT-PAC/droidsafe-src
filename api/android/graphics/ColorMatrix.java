@@ -15,6 +15,8 @@ public class ColorMatrix {
      * Create a new colormatrix initialized to identity (as if reset() had
      * been called).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.554 -0500", hash_original_method = "7C280C0D6BD3CA85A908B9065390FD08", hash_generated_method = "DB971D5BC54B5A31AD0846AFF0400420")
     
 public ColorMatrix() {
@@ -42,6 +44,8 @@ public ColorMatrix(ColorMatrix src) {
     /**
      * Return the array of floats representing this colormatrix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.560 -0500", hash_original_method = "C51050FB528280ED78B19148B7D68B9E", hash_generated_method = "63C6B2BBD63D99F1D2FEFB03B9401E16")
     
@@ -225,6 +229,8 @@ public void setSaturation(float sat) {
     /**
      * Set the matrix to convert RGB to YUV
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.584 -0500", hash_original_method = "5B1F12450A5CDB7BE7A8B64628B4B21E", hash_generated_method = "7190FA541C0D10FAB02D0B7E3C36D680")
     
 public void setRGB2YUV() {

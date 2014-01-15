@@ -24,6 +24,8 @@ public final class SmsManager {
      *
      * @return the default instance of the SmsManager
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.962 -0500", hash_original_method = "90BE6788389BCE1C80031293D6D7E760", hash_generated_method = "9C1A166120752C95ACA753CF105E8926")
     
@@ -156,6 +158,8 @@ private SmsManager() {
      *
      * @throws IllegalArgumentException if destinationAddress or text are empty
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.948 -0500", hash_original_method = "9D6620F75021FD9E9FBB0176F1528DEF", hash_generated_method = "7E2CB05D0E625D5244B2ACD83151F77F")
     
@@ -188,6 +192,8 @@ public void sendTextMessage(
      * @return an <code>ArrayList</code> of strings that, in order,
      *   comprise the original message
      */
+    @DSComment("SMS message data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.951 -0500", hash_original_method = "C15BF98DC594420F78E24C2D1AF66E37", hash_generated_method = "E54848E4BC4358D067F4D82AB65C1FE4")
     

@@ -93,6 +93,8 @@ private static INfcAdapter getServiceInterface() {
      *
      * @return the default NFC adapter, or null if no NFC adapter exists
      */
+    @DSComment("NFC adapter manipulation")
+    @DSSpec(DSCat.NFC)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.659 -0500", hash_original_method = "BBAF054E3A572AA64409457A2C6BC138", hash_generated_method = "5115AE9CECB46ACBA915434EDC27859F")
     
@@ -579,6 +581,8 @@ public void setOnNdefPushCompleteCallback(OnNdefPushCompleteCallback callback,
      *      {@link NfcAdapter#ACTION_TECH_DISCOVERED} intent
      * @throws IllegalStateException if the Activity is not currently in the foreground
      */
+    @DSComment("NFC adapter manipulation")
+    @DSSpec(DSCat.NFC)
     @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.693 -0500", hash_original_method = "7DFF841E004C0B63DC3E7B85FC7B1907", hash_generated_method = "070D430D5D9AEFA4114F930CD19E2A91")
     
@@ -618,6 +622,8 @@ public void enableForegroundDispatch(Activity activity, PendingIntent intent,
      * @param activity the Activity to disable dispatch to
      * @throws IllegalStateException if the Activity has already been paused
      */
+    @DSComment("NFC adapter manipulation")
+    @DSSpec(DSCat.NFC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.696 -0500", hash_original_method = "18ACF5FE6AECAA88942AA43DE81790DE", hash_generated_method = "71ECA6B462C079E252759F86E931323D")
     
 public void disableForegroundDispatch(Activity activity) {

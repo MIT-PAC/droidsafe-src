@@ -34,6 +34,8 @@ public class Inflater {
      * stream. Use {@link #Inflater(boolean)} if the input comes without a ZLIB
      * header.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.303 -0500", hash_original_method = "52564046B1BB792C24EFCB3BD00F948F", hash_generated_method = "8EDD147117DB7DE8BA64CEAE40395168")
     
 public Inflater() {

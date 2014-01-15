@@ -598,6 +598,8 @@ public LayoutParams[] newArray(int size) {
 
         private CharSequence mTitle = "";
 
+        @DSComment("no action/not sensitive")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:00.016 -0500", hash_original_method = "AA9FD1851747B2F0FD665FC7C8D0CF51", hash_generated_method = "A9F78AD53FB6B4BDA0D0F95D5A5E1AA6")
         
 public LayoutParams() {

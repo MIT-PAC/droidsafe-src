@@ -132,6 +132,8 @@ BaseInputConnection(InputMethodManager mgr, boolean fullEditor) {
         mDummyMode = !fullEditor;
     }
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.426 -0500", hash_original_method = "8D9F46A02734088C3A101A4C25C68420", hash_generated_method = "37CA8E5AF2E9549F228E0744CAF992B7")
     
 public BaseInputConnection(View targetView, boolean fullEditor) {
@@ -557,6 +559,8 @@ public boolean setSelection(int start, int end) {
      * Provides standard implementation for sending a key event to the window
      * attached to the input connection's view.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.492 -0500", hash_original_method = "F539697840E1FFDBA9E983D0C0D8D0DD", hash_generated_method = "EFC70E180FE8A4B13933F470F54EF0F3")
     
 public boolean sendKeyEvent(KeyEvent event) {

@@ -8,11 +8,6 @@ import javax.xml.transform.Source;
 
 import org.w3c.dom.Node;
 
-
-
-
-
-
 public class DOMSource implements Source {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.301 -0500", hash_original_field = "854AAE683B90ED7486002A8649A4844B", hash_generated_field = "544E5A424F01A7FBB778D82E3C1AE2BE")
 
@@ -47,6 +42,8 @@ public DOMSource() { }
      *
      * @param n The DOM node that will contain the Source tree.
      */
+    @DSComment("no suspicious activity, only creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:59.305 -0500", hash_original_method = "7C7F7287E74EAB9B8232F0908501FA89", hash_generated_method = "F7CF3F71550B5F629D892F23E6C2C4EC")
     
 public DOMSource(Node n) {

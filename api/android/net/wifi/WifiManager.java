@@ -286,6 +286,8 @@ private WifiLock(int lockType, String tag) {
          * the radio, but subsequent calls will be ignored.  Only one call to {@link #release}
          * will be required, regardless of the number of times that {@code acquire} is called.
          */
+        @DSComment("Wifi subsystem")
+        @DSSpec(DSCat.WIFI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.429 -0500", hash_original_method = "208DCD1288F5AC0918E067B51EC18B17", hash_generated_method = "15F5DE8DE56310EC55EE30AB20985170")
         
 public void acquire() {
@@ -320,6 +322,8 @@ public void acquire() {
          * the radio was locked using {@link #acquire}) will unlock the radio, and subsequent
          * calls will be ignored.
          */
+        @DSComment("Wifi subsystem")
+        @DSSpec(DSCat.WIFI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.432 -0500", hash_original_method = "EEC110369AFED5315DDFD7D45F992208", hash_generated_method = "CE7CADFF513AFC914EDF1BF71D2F33BE")
         
 public void release() {
@@ -362,6 +366,8 @@ public void setReferenceCounted(boolean refCounted) {
          *
          * @return true if this WifiLock is held, false otherwise
          */
+        @DSComment("Wifi subsystem")
+        @DSSpec(DSCat.WIFI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.437 -0500", hash_original_method = "D7CEEF49E1A909FEFC04FBB22CAEF31F", hash_generated_method = "6E5AE3C21361B5E024A600F344792BD5")
         
 public boolean isHeld() {
@@ -687,6 +693,8 @@ public WifiManager(IWifiManager service, Handler handler) {
      * @return a list of network configurations in the form of a list
      * of {@link WifiConfiguration} objects.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.295 -0500", hash_original_method = "7B7EDD72C806D0E7DC8642CC316AA722", hash_generated_method = "2972D3BD198B6B1632E78F6CE3F43BE5")
     
@@ -712,6 +720,8 @@ public List<WifiConfiguration> getConfiguredNetworks() {
      *         other operations to specified the network to be acted upon.
      *         Returns {@code -1} on failure.
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.297 -0500", hash_original_method = "FC0AD51F5109F6EE6B896159A6BE091E", hash_generated_method = "5C2222EB6FB354B06ED147929A5CAFE2")
     
 public int addNetwork(WifiConfiguration config) {
@@ -737,6 +747,8 @@ public int addNetwork(WifiConfiguration config) {
      *         field of the {@code WifiConfiguration} does not refer to an
      *         existing network.
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.300 -0500", hash_original_method = "BAE559B7BC959F87E1981FBD6EC47DF5", hash_generated_method = "377DD85131999AE19481B91ABB7D40E4")
     
 public int updateNetwork(WifiConfiguration config) {
@@ -772,6 +784,8 @@ private int addOrUpdateNetwork(WifiConfiguration config) {
      * to the supplicant
      * @return {@code true} if the operation succeeded
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.304 -0500", hash_original_method = "C55861B25E581745B3C6351405363685", hash_generated_method = "52E9B106CCE0D358D6536E73B2D2D055")
     
 public boolean removeNetwork(int netId) {
@@ -794,6 +808,8 @@ public boolean removeNetwork(int netId) {
      * for this parameter.
      * @return {@code true} if the operation succeeded
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.306 -0500", hash_original_method = "A063D2F3A1A45A8B2BB20D41F98AEB1B", hash_generated_method = "5589CB694139C3927BD03E556015C3E5")
     
@@ -812,6 +828,8 @@ public boolean enableNetwork(int netId, boolean disableOthers) {
      * @param netId the ID of the network as returned by {@link #addNetwork}.
      * @return {@code true} if the operation succeeded
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.308 -0500", hash_original_method = "630BE7480BA2E95DA9CEC1F52BBE219A", hash_generated_method = "77542B059D3E982AEC0DAA518F06E8CB")
     
 public boolean disableNetwork(int netId) {
@@ -840,6 +858,8 @@ public void disableNetwork(int netId, int reason) {
      * in the asynchronous delivery of state change events.
      * @return {@code true} if the operation succeeded
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.312 -0500", hash_original_method = "13D7026BA6E2310038D9CCEC7D1F5CA4", hash_generated_method = "68D6939781BFBE3ABBF2F3F61C7E9CDE")
     
 public boolean disconnect() {
@@ -857,6 +877,8 @@ public boolean disconnect() {
      * change events.
      * @return {@code true} if the operation succeeded
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.314 -0500", hash_original_method = "AD9DD9C3B4130EB49C99A6BF92BCA383", hash_generated_method = "77CCB71F17073013C1ADA1E87119797F")
     
 public boolean reconnect() {
@@ -874,6 +896,8 @@ public boolean reconnect() {
      * change events.
      * @return {@code true} if the operation succeeded
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.317 -0500", hash_original_method = "4462A23EEF44DC4F050ECB7EA4566A65", hash_generated_method = "EABBD524FFC32EC10FC20FCC2FE824B4")
     
 public boolean reassociate() {
@@ -890,6 +914,8 @@ public boolean reassociate() {
      * @return {@code true} if we were able to communicate with the supplicant and
      * it returned the expected response to the PING message.
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.319 -0500", hash_original_method = "44FE7083E78F583BB16CDAFA3EBE6F36", hash_generated_method = "B3F0B9BDC6AF20544881CD9CD426063E")
     
 public boolean pingSupplicant() {
@@ -908,6 +934,8 @@ public boolean pingSupplicant() {
      * on completion of the scan.
      * @return {@code true} if the operation succeeded, i.e., the scan was initiated
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.322 -0500", hash_original_method = "F8088016DD577DAE90193BD2B16E77E5", hash_generated_method = "C6E6D263C7E7F070386825C9F4C9A388")
     
 public boolean startScan() {
@@ -944,6 +972,8 @@ public boolean startScanActive() {
      * Return dynamic information about the current Wi-Fi connection, if any is active.
      * @return the Wi-Fi information, contained in {@link WifiInfo}.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.326 -0500", hash_original_method = "8E854EE6D7B979BB188C54EFD6BB6717", hash_generated_method = "BACD07F224066A26A350E7EE166370CC")
     
@@ -959,6 +989,8 @@ public WifiInfo getConnectionInfo() {
      * Return the results of the latest access point scan.
      * @return the list of access points found in the most recent scan.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.328 -0500", hash_original_method = "ADD60A4DA3445A3E968EB713F725E5F1", hash_generated_method = "AEC55E2ABA1887606E01EC0E53450CF4")
     
@@ -979,6 +1011,8 @@ public List<ScanResult> getScanResults() {
      *
      * @return {@code true} if the operation succeeded
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.330 -0500", hash_original_method = "D1E32319AD181FF60DD93B5B2DB831F1", hash_generated_method = "1DA1A834FB6AFB8AE93CF220DEA6178C")
     
 public boolean saveConfiguration() {
@@ -1063,6 +1097,8 @@ public boolean isDualBandSupported() {
      * if any.
      * @return the DHCP information
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.341 -0500", hash_original_method = "711DEA09870DB7E049F72B7F8BEBC0A1", hash_generated_method = "7E4E74EA6FA5BC303296784B3C9F1971")
     
@@ -1080,6 +1116,8 @@ public DhcpInfo getDhcpInfo() {
      * @return {@code true} if the operation succeeds (or if the existing state
      *         is the same as the requested state).
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.343 -0500", hash_original_method = "B9430AD639DDE3004B577A4BF40EB18B", hash_generated_method = "6C2F829AF169DACAFAEEDD10ED44992C")
     
@@ -1098,6 +1136,8 @@ public boolean setWifiEnabled(boolean enabled) {
      *         {@link #WIFI_STATE_ENABLING}, {@link #WIFI_STATE_UNKNOWN}
      * @see #isWifiEnabled()
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.345 -0500", hash_original_method = "661FA885AE58B8C5231BF7DCF436505F", hash_generated_method = "0B5E55BEB69AF7D54D6ACFBCC094A048")
     
@@ -1114,6 +1154,8 @@ public int getWifiState() {
      * @return {@code true} if Wi-Fi is enabled
      * @see #getWifiState()
      */
+    @DSComment("Wifi subsystem")
+    @DSSpec(DSCat.WIFI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:05.347 -0500", hash_original_method = "D7F0AFD1306EBF22F34F7E014A2C9B11", hash_generated_method = "F3D7FB4B1B4B8151872D04C5B84B09C5")
     
 public boolean isWifiEnabled() {

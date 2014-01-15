@@ -62,6 +62,8 @@ public AudioGroup getGroup() {
      * @throws IllegalStateException if the stream is not properly configured.
      * @see AudioGroup
      */
+    @DSComment("Audio call")
+    @DSSpec(DSCat.RTP_CALL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.064 -0500", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "29ED583CFA904E738FF127CFB9F0B721")
     
 public void join(AudioGroup group) {

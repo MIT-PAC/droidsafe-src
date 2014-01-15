@@ -526,6 +526,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getCheckedItemCount(){
 		return getTaintInt();
@@ -537,6 +539,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public boolean isItemChecked(int position){
 		// Original method
 		/*
@@ -550,6 +554,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return false;
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getCheckedItemPosition(){
 		// Original method
@@ -564,6 +570,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return 0;
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public SparseBooleanArray getCheckedItemPositions(){
 		// Original method
@@ -614,6 +622,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setItemChecked(int position, boolean value){
 		// Original method
@@ -628,6 +638,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return false;
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getChoiceMode(){
 		return getTaintInt();
@@ -639,6 +651,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setChoiceMode(int choiceMode){
 		addTaint(choiceMode);
 		mChoiceMode = choiceMode;  //Preserved
@@ -694,6 +708,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		return false;
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setFastScrollEnabled(boolean enabled){
 		addTaint(enabled);
 		mFastScrollEnabled = enabled;  //Preserved
@@ -891,6 +907,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setTextFilterEnabled(boolean textFilterEnabled){
 		addTaint(textFilterEnabled);
 		mTextFilterEnabled = textFilterEnabled;  //Preserved
@@ -950,6 +968,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setStackFromBottom(boolean stackFromBottom){
 		// Original method
 		/*
@@ -1056,6 +1076,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		//Return nothing
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @Override public void requestLayout(){
 		// Original method
 		/*
@@ -1268,6 +1290,8 @@ protected void layoutChildren() {
 		return null;
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingTop(){
 		// Original method
@@ -1279,6 +1303,8 @@ protected void layoutChildren() {
 		return 0;
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingBottom(){
 		// Original method
@@ -1453,6 +1479,8 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setDrawSelectorOnTop(boolean onTop){
 		addTaint(onTop);
 		mDrawSelectorOnTop = onTop;  //Preserved
@@ -1476,6 +1504,8 @@ protected void layoutChildren() {
 		//Return nothing
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setSelector(Drawable sel){
 		mSelector = sel;  //Preserved
 		// Original method
@@ -1622,12 +1652,16 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override protected void onDetachedFromWindow(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override public void onWindowFocusChanged(boolean hasWindowFocus){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1730,6 +1764,8 @@ public void setScrollIndicators(View up, View down) {
         // get the selector in the right state, but we don't want to press each child.
     }
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public int pointToPosition(int x, int y){
 		// Original method
 		/*
@@ -1787,6 +1823,8 @@ public void setScrollIndicators(View up, View down) {
 		//Return nothing
 	}
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public boolean onTouchEvent(MotionEvent ev){
 		// Original method
@@ -2205,6 +2243,8 @@ abstract int findMotionRow(int y);
 		return 0;
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void invalidateViews(){
 		// Original method
 		/*
@@ -2987,12 +3027,16 @@ public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
         }
 
+        @DSComment("Layout params")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.729 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
         
 public LayoutParams(int w, int h) {
             super(w, h);
         }
         
+        @DSComment("Layout params")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         public LayoutParams(int w, int h, int viewType){
 			super(w, h);
 			/*
@@ -3340,6 +3384,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 		//Return nothing
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public boolean hasTextFilter(){
 		return getTaintBoolean();
 		// Original method
@@ -3435,6 +3481,8 @@ public void afterTextChanged(Editable s) {
 		return false;
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setTranscriptMode(int mode){
 		addTaint(mode);
 		mTranscriptMode = mode;  //Preserved
@@ -3486,6 +3534,8 @@ public void afterTextChanged(Editable s) {
 		//Return nothing
 	}
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(category="drawing") public int getCacheColorHint(){
 		return getTaintInt();

@@ -19,6 +19,8 @@ public final class ByteOrder {
      * @return the byte order object, which is either LITTLE_ENDIAN or
      *         BIG_ENDIAN.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.396 -0500", hash_original_method = "D07BFAC609E59F2C654790B31AE5FD0D", hash_generated_method = "A24B785DD11572D2B52D969BDBCFE967")
     
 public static ByteOrder nativeOrder() {

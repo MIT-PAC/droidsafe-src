@@ -21,6 +21,8 @@ import android.view.View;
 
 public class PasswordTransformationMethod implements TransformationMethod, TextWatcher {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.836 -0500", hash_original_method = "AA586779493D0903CD5D98EFA63FCB15", hash_generated_method = "15A79EC119B711DE3CE66CEF2A96A5AC")
     

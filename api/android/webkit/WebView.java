@@ -1306,6 +1306,8 @@ private static void checkThread() {
      * Construct a new WebView with a Context object.
      * @param context A Context object used to access application assets.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.378 -0500", hash_original_method = "21880E8B1C262D01AA21DDC9EA2C3D9A", hash_generated_method = "94935CB70AC87EEF477D2A7E00A939D8")
     
 public WebView(Context context) {
@@ -1317,6 +1319,8 @@ public WebView(Context context) {
      * @param context A Context object used to access application assets.
      * @param attrs An AttributeSet passed to our parent.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.381 -0500", hash_original_method = "2BC47759F145D8E46BE84713D18EFE55", hash_generated_method = "43DB8C8BA5135CBEB119F61A45FD4BC7")
     
 public WebView(Context context, AttributeSet attrs) {
@@ -1329,6 +1333,8 @@ public WebView(Context context, AttributeSet attrs) {
      * @param attrs An AttributeSet passed to our parent.
      * @param defStyle The default style resource ID.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.383 -0500", hash_original_method = "8D09D1B25D4C4E3EEA9DADC46EE54404", hash_generated_method = "EA32C4710F079B331868A4E93EB1D69F")
     
 public WebView(Context context, AttributeSet attrs, int defStyle) {
@@ -2027,6 +2033,8 @@ public void setNetworkType(String type, String subtype) {
      * @see #savePicture
      * @see #restorePicture
      */
+    @DSComment("Storage access indirectly")
+    @DSSpec(DSCat.STORAGE_ACCESS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.533 -0500", hash_original_method = "D76FC1BD4962410EDA97F2F673ACB95E", hash_generated_method = "BE9ECAD12A01D1D3F1757D031FD2DCD0")
     
@@ -2268,6 +2276,8 @@ public void clearViewState() {
      * @see #savePicture
      * @see #restorePicture
      */
+    @DSComment("Storage access indirectly")
+    @DSSpec(DSCat.STORAGE_ACCESS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.563 -0500", hash_original_method = "99FE452D222A3AA897B1F81F94FFC5BD", hash_generated_method = "54F47ABA8CB052ABA402D246AF43C583")
     
@@ -2356,6 +2366,8 @@ private void loadUrlImpl(String url, Map<String, String> extraHeaders) {
      * Load the given URL.
      * @param url The URL of the resource to load.
      */
+    @DSComment("I/O load/store/Internet")
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.569 -0500", hash_original_method = "900343F64392479D278DAE2853AD0CAD", hash_generated_method = "AACBEEE0E28FE1B64F1E9BC46034B940")
     
 public void loadUrl(String url) {
@@ -2422,6 +2434,8 @@ public void postUrl(String url, byte[] postData) {
      * @param mimeType The MIME type of the data, e.g. 'text/html'.
      * @param encoding The encoding of the data.
      */
+    @DSComment("I/O load/store")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.576 -0500", hash_original_method = "36CBAFDF58E1CD9C6313A9EA95B15170", hash_generated_method = "7129D2CE5481188BA506D152E5DF4298")
     
 public void loadData(String data, String mimeType, String encoding) {
@@ -2464,6 +2478,8 @@ private void loadDataImpl(String data, String mimeType, String encoding) {
      * @param historyUrl URL to use as the history entry, if null defaults to
      *            'about:blank'.
      */
+    @DSComment("I/O load/store/Internet")
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.581 -0500", hash_original_method = "1E8C089561768F21EB025C4FB395A147", hash_generated_method = "89BE15BE04FA3CB1EBB257D74C48283E")
     
 public void loadDataWithBaseURL(String baseUrl, String data,
@@ -2555,6 +2571,8 @@ public void reload() {
      * Return true if this WebView has a back history item.
      * @return True iff this WebView has a back history item.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.609 -0500", hash_original_method = "88FE306DA6AFC5714A3F873305A6EA3E", hash_generated_method = "BEDE549A4BAFA5CCD660B7D3056AD972")
     
 public boolean canGoBack() {
@@ -2572,6 +2590,8 @@ public boolean canGoBack() {
     /**
      * Go back in the history of this WebView.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.611 -0500", hash_original_method = "2B11D82AA68F54138F546C5942C42E38", hash_generated_method = "18A10E214FD6EAE3B511451CDCE1E568")
     
 public void goBack() {
@@ -2719,6 +2739,8 @@ public boolean pageUp(boolean top) {
      * @param bottom true to jump to bottom of page
      * @return true if the page was scrolled
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.635 -0500", hash_original_method = "8C3AB4FBBE1760CE6D8647585D27DDAF", hash_generated_method = "F6F74AE01233898F0996E6AE36F9881A")
     
 public boolean pageDown(boolean bottom) {
@@ -3403,6 +3425,8 @@ private int computeRealHorizontalScrollRange() {
         }
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.770 -0500", hash_original_method = "7C4F278B6BD93271722857221FD0D9C8", hash_generated_method = "B129A0A2DA3C35A75BA8F112EFBB4714")
     
 @Override
@@ -3439,6 +3463,8 @@ private int computeRealVerticalScrollRange() {
         }
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.777 -0500", hash_original_method = "95D066BAD337A1BCD6552EF2CEEE5772", hash_generated_method = "DF848DEEC15F38C424325849F24E9234")
     
 @Override
@@ -3464,6 +3490,8 @@ private int computeRealVerticalScrollRange() {
         return Math.max(mScrollY - getTitleHeight(), 0);
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.782 -0500", hash_original_method = "9B8C40BC2B17CAA747C155F52C82160F", hash_generated_method = "CEA40E73D7F29F4763F5FA915429E8B3")
     
 @Override
@@ -3556,6 +3584,8 @@ public String getOriginalUrl() {
      * until WebViewClient.onReceivedTitle is called.
      * @return The title for the current page.
      */
+    @DSComment("information may be on internet")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.794 -0500", hash_original_method = "D4595F49299490B58C966C4A02CB7245", hash_generated_method = "E7ECFF7699D3EBB5771FCAA8FB697708")
     
@@ -3608,6 +3638,8 @@ public int getProgress() {
     /**
      * @return the height of the HTML content.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.803 -0500", hash_original_method = "9280AE473B4D22C8C4242E7098408E11", hash_generated_method = "D1270718E2C8F4E88C999AB896253809")
     
@@ -3966,6 +3998,8 @@ public void stopScroll() {
         mLastVelocity = 0;
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.870 -0500", hash_original_method = "397FDDDC8F121B7E1915BEE82ADAC8FD", hash_generated_method = "8C9886F2D775D857649089B89A57EE10")
     
 @Override
@@ -4358,6 +4392,8 @@ private void contentSizeChanged(boolean updateLayout) {
      * requests. This will replace the current handler.
      * @param client An implementation of WebViewClient.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.908 -0500", hash_original_method = "769F6743ED2D17827D8530B0462AC06C", hash_generated_method = "62BFFE4108BE3AC6FAE4A3DFA32B6093")
     
@@ -4397,6 +4433,8 @@ public void setDownloadListener(DownloadListener listener) {
      * This will replace the current handler.
      * @param client An implementation of WebChromeClient.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.914 -0500", hash_original_method = "2B899D0DAE9F57DC761251705A20EE74", hash_generated_method = "4EEA2E22B4A1041289EAF3F896446D14")
     
@@ -4495,6 +4533,8 @@ public void documentAsText(Message callback) {
      * @param interfaceName The name to used to expose the instance in
      *                      JavaScript.
      */
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.929 -0500", hash_original_method = "F8CD5D2DFF3A220BC823A466CE0A8012", hash_generated_method = "3C2BF336734549FA2F6035BA7DE9224F")
     
 public void addJavascriptInterface(Object obj, String interfaceName) {
@@ -4529,6 +4569,8 @@ public void removeJavascriptInterface(String interfaceName) {
      * @return A WebSettings object that can be used to control this WebView's
      *         settings.
      */
+    @DSComment("Spec classification done at the Setting manipulation level")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.933 -0500", hash_original_method = "AE8854F55F54F48403D38F822FA4F88C", hash_generated_method = "A532D40D6A49AAE15F166EE8766438A8")
     
@@ -5729,6 +5771,8 @@ private boolean isEnterActionKey(int keyCode) {
         return false;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.113 -0500", hash_original_method = "64393B626C93173F66EDDE91781ECC7E", hash_generated_method = "B117E42AB9A0C0868602CFBF46853AF0")
     
 @Override
@@ -6167,6 +6211,8 @@ void setActive(boolean active) {
 
     // To avoid drawing the cursor ring, and remove the TextView when our window
     // loses focus.
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.149 -0500", hash_original_method = "41ADC5D401D396C45811340AC3A1CFB7", hash_generated_method = "E8F00BA2B6F2130275F5EE2C371431EF")
     
 @Override
@@ -6450,6 +6496,8 @@ private void startScrollingLayer(float x, float y) {
         return true;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.209 -0500", hash_original_method = "4ABFBBEB2C120C2EC8658D81232A5900", hash_generated_method = "2679FA7075D2EC221912DDD2609E8353")
     
 @Override
@@ -9845,6 +9893,8 @@ public SingleDataSetObserver(long id, ListView l, Adapter a) {
         return result;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.410 -0500", hash_original_method = "B3C79783D1B73E1F2F2D459408EF6637", hash_generated_method = "C81A99A0F578F9B2FECF377A3153192E")
     
 @Override
@@ -10377,6 +10427,8 @@ private boolean accessibilityScriptInjected() {
      * zero to make the view transparent.
      * @param color   the ARGB color described by Color.java
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.664 -0500", hash_original_method = "7544C03241648A3354186187AA9F4EF5", hash_generated_method = "C525087A89B637AE8141ADDBFDBC0EDC")
     

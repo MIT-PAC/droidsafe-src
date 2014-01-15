@@ -1005,6 +1005,8 @@ private static int
      * as far as we can tell on the device, suitable for use as an SMS
      * destination address.
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.466 -0500", hash_original_method = "A988E80FBF926E38476CB13622AE0017", hash_generated_method = "7C5E5705B6EC3452A5193A1A55FAF86A")
     
 public static boolean isWellFormedSmsAddress(String address) {
@@ -1140,6 +1142,8 @@ private static byte[]
      * @return A locally acceptable formatting of the input, or the raw input if
      *  formatting rules aren't known for the number
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.510 -0500", hash_original_method = "F559913F36966A96ABB20C01E67F5DD8", hash_generated_method = "AB4056F3A6E3A769AE23A235BAD6EBBE")
     
 public static String formatNumber(String source) {

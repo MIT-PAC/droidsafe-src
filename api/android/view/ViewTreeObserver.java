@@ -10,10 +10,6 @@ import java.util.concurrent.CopyOnWriteArrayList;
 import android.graphics.Rect;
 import android.graphics.Region;
 
-
-
-
-
 public final class ViewTreeObserver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.671 -0500", hash_original_field = "243C50630FCF204EE9B4C314818DD8FC", hash_generated_field = "04A11831DF9DCFA97CB002FC90812073")
 
@@ -34,7 +30,6 @@ public final class ViewTreeObserver {
 
     private ArrayList<OnPreDrawListener> mOnPreDrawListeners;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.685 -0500", hash_original_field = "2C2FECB1103C140EDEB3757207C903EA", hash_generated_field = "74CC761352E6A72E73CEEE65FB0BF6E6")
-
 
     private boolean mAlive = true;
 
@@ -354,6 +349,8 @@ private void checkIsAlive() {
      *
      * @return True if this object is alive and be used, false otherwise.
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.776 -0500", hash_original_method = "8E102E0046F857D94D6EB92859BCA09E", hash_generated_method = "D88ABEB2C09A24180CD65E034DC4D01E")
     
 public boolean isAlive() {
@@ -501,7 +498,6 @@ final void dispatchOnComputeInternalInsets(InternalInsetsInfo inoutInfo) {
             }
         }
     }
-
     
     public final static class InternalInsetsInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.708 -0500", hash_original_field = "F5E115DC24246FBD5BC969EF50847E03", hash_generated_field = "7F6E87AFCA4A72E51380B03E5BB0A18C")
@@ -526,7 +522,6 @@ final void dispatchOnComputeInternalInsets(InternalInsetsInfo inoutInfo) {
 
         public final Region touchableRegion = new Region();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:07.723 -0500", hash_original_field = "B6D68575B2D268B82B7DDC000A8998CF", hash_generated_field = "B6D68575B2D268B82B7DDC000A8998CF")
-
         
         int mTouchableInsets;
         
@@ -594,8 +589,6 @@ void set(InternalInsetsInfo other) {
             mTouchableInsets = other.mTouchableInsets;
         }
     }
-
-
     
     public interface OnGlobalFocusChangeListener {
         

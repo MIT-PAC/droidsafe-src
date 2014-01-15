@@ -50,6 +50,8 @@ public void onItemClick(AdapterView<?> parent, View v, int position, long id)
         
 };
     
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.761 -0400", hash_original_method = "E9A1B22E98BB93A49E0DD0DF78D68B8E", hash_generated_method = "E9A1B22E98BB93A49E0DD0DF78D68B8E")
     public ListActivity ()
     {
@@ -67,6 +69,8 @@ public void onItemClick(AdapterView<?> parent, View v, int position, long id)
      * @param position The position of the view in the list
      * @param id The row id of the item that was clicked
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.799 -0500", hash_original_method = "BF490B4BB4BD29ACC689E0297B614061", hash_generated_method = "A5ED3456A9BC8D0D960D02BCCB1B3136")
     
 protected void onListItemClick(ListView l, View v, int position, long id) {
@@ -78,6 +82,8 @@ protected void onListItemClick(ListView l, View v, int position, long id) {
      *
      *@see Activity#onRestoreInstanceState(Bundle)
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.802 -0500", hash_original_method = "39D3E8C83EC5D9AA90999E3A2D1BCB07", hash_generated_method = "2DE8AD90C1A42DCA55687530BB5B9E78")
     
 @Override
@@ -89,6 +95,8 @@ protected void onListItemClick(ListView l, View v, int position, long id) {
     /**
      * @see Activity#onDestroy()
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.804 -0500", hash_original_method = "4F23093C6BEB1F491BB932E73A46BC35", hash_generated_method = "38ECB1EC95321D4A833AF4322996CF7F")
     
 @Override
@@ -148,6 +156,8 @@ protected void onListItemClick(ListView l, View v, int position, long id) {
     /**
      * Provide the cursor for the list view.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.809 -0500", hash_original_method = "24FA4810D9E2927905358E0A26AF6AD1", hash_generated_method = "DCB6C00F391D143EC695F73E5AD0F36E")
     
 public void setListAdapter(ListAdapter adapter) {
@@ -164,6 +174,8 @@ public void setListAdapter(ListAdapter adapter) {
      *
      * @param position
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.811 -0500", hash_original_method = "567D9F46FDBA003818BBBCD086387BF6", hash_generated_method = "1BC22E0D725F73FF205318ECE82C4843")
     
@@ -184,6 +196,8 @@ public int getSelectedItemPosition() {
     /**
      * Get the cursor row ID of the currently selected list item.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.814 -0500", hash_original_method = "EBFC2CC18AED07D84008925040C28A97", hash_generated_method = "A31713499E58C077CBAC1FA4CC02C5DE")
     
@@ -194,6 +208,8 @@ public long getSelectedItemId() {
     /**
      * Get the activity's list view widget.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.816 -0500", hash_original_method = "B9D8406BF510100833C8B83670824289", hash_generated_method = "F390A30877A55CE39C88D546BF9EAE07")
     
@@ -205,6 +221,8 @@ public ListView getListView() {
     /**
      * Get the ListAdapter associated with this activity's ListView.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:40.818 -0500", hash_original_method = "6C199B6FBEC38BDF6D031387113C1DD5", hash_generated_method = "F0392D746E5256DD5E352F87E4AB1051")
     

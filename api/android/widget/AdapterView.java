@@ -360,6 +360,8 @@ public abstract void setAdapter(T adapter);
      *
      * @return int Position (starting at 0), or {@link #INVALID_POSITION} if there is nothing selected.
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.027 -0500", hash_original_method = "40CA9E4E71293F3BC1D33E874AD305A1", hash_generated_method = "EC81B80CFE8ACA8738EA07C9D9C967BD")
     
@@ -372,6 +374,8 @@ public abstract void setAdapter(T adapter);
      * @return The id corresponding to the currently selected item, or {@link #INVALID_ROW_ID}
      * if nothing is selected.
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.029 -0500", hash_original_method = "52C80BDBAB2E8D6D945028E83F843260", hash_generated_method = "820C39987DD95F59D5D3BE333149B927")
     
@@ -392,6 +396,8 @@ public abstract View getSelectedView();
      * @return The data corresponding to the currently selected item, or
      * null if there is nothing selected.
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.034 -0500", hash_original_method = "F45E40D646583F63F7A00B28C1D0B4AE", hash_generated_method = "D019C759994956F18259D1889D97E428")
     
@@ -410,6 +416,8 @@ public Object getSelectedItem() {
      *         AdapterView. (This is the number of data items, which may be
      *         larger than the number of visible views.)
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.036 -0500", hash_original_method = "C515244CDC30F9529A71B0CAA70231C3", hash_generated_method = "97987607FBFB8B0BEEB59451C0C41C97")
     
@@ -460,6 +468,8 @@ public int getPositionForView(View view) {
      *
      * @return The position within the adapter's data set
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.041 -0500", hash_original_method = "3F582E36FEB434C42F8F2A7A83CA506D", hash_generated_method = "4C661882740384910ED3AFB6B02BB431")
     
@@ -473,6 +483,8 @@ public int getFirstVisiblePosition() {
      *
      * @return The position within the adapter's data set
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.043 -0500", hash_original_method = "E5B0A16A7A6C9870BA6F980F2DB39BC0", hash_generated_method = "7E8296BB544C7048CCEA7F5EF15E6D5A")
     
@@ -486,6 +498,8 @@ public int getLastVisiblePosition() {
      *
      * @param position Index (starting at 0) of the data item to be selected.
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.045 -0500", hash_original_method = "C52E7BA94981C9816D91FF9AA5FE127B", hash_generated_method = "15EA841E1ED836D0E82EF5123E10DA17")
     
 public abstract void setSelection(int position);
@@ -493,6 +507,8 @@ public abstract void setSelection(int position);
     /**
      * Sets the view to show if the adapter is empty
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.047 -0500", hash_original_method = "0D2B56D1373B44CFA7E95FC0E87B79DB", hash_generated_method = "5C2BBE16AB242AB2FE7DA33DB002D8ED")
     
 @android.view.RemotableViewMethod
@@ -530,6 +546,8 @@ boolean isInFilterMode() {
         return false;
     }
 
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.054 -0500", hash_original_method = "2405FD914E83FFA9F0D8BC78F36E017E", hash_generated_method = "490362F415B1C2C93A8801C8323B85A7")
     
 @Override
@@ -545,6 +563,8 @@ boolean isInFilterMode() {
         super.setFocusable(focusable && (!empty || isInFilterMode()));
     }
 
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.057 -0500", hash_original_method = "510CB97D998AEB67CD24BEC214B467D4", hash_generated_method = "A4EDA43245915A38F48ADFB763FED2DC")
     
 @Override
@@ -615,6 +635,8 @@ private void updateEmptyStatus(boolean empty) {
      * @param position Which data to get
      * @return The data associated with the specified position in the list
      */
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.064 -0500", hash_original_method = "D3C6D351E34AE1C5D83960F098A550AE", hash_generated_method = "0AFA26C7A541A584DF50322067FC59B2")
     
@@ -623,6 +645,8 @@ public Object getItemAtPosition(int position) {
         return (adapter == null || position < 0) ? null : adapter.getItem(position);
     }
 
+    @DSComment("GUI, AdapterView")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:13.066 -0500", hash_original_method = "1B8B19ED8D728A74BB7DD4694FA31397", hash_generated_method = "A9E50CF165C723153601F5212FDC6C34")
     

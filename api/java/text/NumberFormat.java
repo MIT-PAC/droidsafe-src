@@ -289,6 +289,8 @@ protected NumberFormat() {
      *            the double to format.
      * @return the formatted string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.825 -0500", hash_original_method = "D30D6926B1574E72997696CC4AACA867", hash_generated_method = "95F58325036F2C69E171344EDB82232C")
     

@@ -734,6 +734,7 @@ public final void setMaxPriority(int newMax) {
      * @param t the Thread that terminated with an uncaught exception
      * @param e the uncaught exception itself
      */
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.790 -0500", hash_original_method = "1AEEC9D33E82C49A9FE6D436A43A8349", hash_generated_method = "91937A8B8B6096E808B5C7AF181B1ECB")
     
 public void uncaughtException(Thread t, Throwable e) {

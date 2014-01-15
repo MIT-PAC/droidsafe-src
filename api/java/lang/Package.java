@@ -21,6 +21,8 @@ public class Package implements AnnotatedElement {
      * @return the requested package, or {@code null}.
      * @see ClassLoader#getPackage(java.lang.String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.159 -0500", hash_original_method = "10159562E7C8BDDC782B1B1B486A12DE", hash_generated_method = "2F903CA5C20B82E314630C58709650B7")
     
@@ -196,6 +198,8 @@ public String getImplementationVersion() {
      *
      * @return the name of this package.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.156 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     

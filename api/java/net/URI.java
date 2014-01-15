@@ -22,6 +22,8 @@ public final class URI implements Comparable<URI>, Serializable {
      * URISyntaxException}; this method fails with an unchecked {@link
      * IllegalArgumentException}.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.853 -0500", hash_original_method = "01A5D2BAF7448F542F0C842BB71CF77A", hash_generated_method = "5CFE6B8E723650D4BB791547D5DBF394")
     
 public static URI create(String uri) {
@@ -139,6 +141,8 @@ public static int getEffectivePort(String scheme, int specifiedPort) {
     
 private URI() {}
     
+    @DSComment("no suspicious activity, just calls class function")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.827 -0400", hash_original_method = "81BA8F3B1394F61F87D69C567F9782CA", hash_generated_method = "14D9F285EF0C4143A3F21833924D8EC8")
     public  URI(String spec) throws URISyntaxException {
         addTaint(spec.getTaint());
@@ -795,6 +799,8 @@ public int getEffectivePort() {
     /**
      * Returns the decoded path of this URI, or null if this URI has no path.
      */
+    @DSComment("no suspicious activity, just calls class function")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.894 -0500", hash_original_method = "69A276867D65FB87E2E914A462B7AF91", hash_generated_method = "6E21F7B60172D61B590581CB1F93CE0D")
     
@@ -1140,6 +1146,8 @@ public String toASCIIString() {
         return result.toString();
     }
     
+    @DSComment("no suspicious activity, just gets string")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.846 -0400", hash_original_method = "17490955FE7D32C9695E89CDD3A294E6", hash_generated_method = "27D4065BF46968E70B80EE5A339BC58E")
     @Override
     public String toString() {
@@ -1212,6 +1220,8 @@ String var6E684D9B8DA835CC8A13C4D3E99458C8_563535807 =         convertHexToLower
      *             if an error occurs while creating the URL or no protocol
      *             handler could be found.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:14.945 -0500", hash_original_method = "61498548735D8100B59ED3B549CA2D7D", hash_generated_method = "8FEC3AB94E860C562C0D31C07152B7D5")
     
 public URL toURL() throws MalformedURLException {

@@ -335,6 +335,8 @@ public static void appendEscapedSQLString(StringBuilder sb, String sqlString) {
     /**
      * SQL-escape a string.
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.290 -0500", hash_original_method = "7552DB2CB2D2F1A34A98DAA2372BF735", hash_generated_method = "AF0FA82A7D6CD7394EBC331BCBC5D65F")
     
 public static String sqlEscapeString(String value) {

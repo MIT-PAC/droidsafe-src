@@ -30,6 +30,8 @@ public class Random implements Serializable {
      * <p>The initial state (that is, the seed) is <i>partially</i> based
      * on the current time of day in milliseconds.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.537 -0500", hash_original_method = "3173C51AF7594D647EC1C2CFA488A448", hash_generated_method = "3003E66E4DF5DBAF130E361D30BBC461")
     
 public Random() {
@@ -44,6 +46,8 @@ public Random() {
      * <p>This constructor is mainly useful for <i>predictability</i> in tests.
      * The default constructor is likely to provide better randomness.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.540 -0500", hash_original_method = "D88C1F5B76368386940C522DAEBBB898", hash_generated_method = "2AB029D1B592D6FE924D1C32E74CCD2F")
     
 public Random(long seed) {
@@ -68,6 +72,8 @@ protected synchronized int next(int bits) {
     /**
      * Returns a pseudo-random uniformly distributed {@code boolean}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.544 -0500", hash_original_method = "D8D2D3A52478C6F30DF9DDCAD352622E", hash_generated_method = "96A3AB85C6CB4661F9BF2127F4B47037")
     
 public boolean nextBoolean() {
@@ -97,6 +103,8 @@ public void nextBytes(byte[] buf) {
      * Returns a pseudo-random uniformly distributed {@code double}
      * in the half-open range [0.0, 1.0).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.549 -0500", hash_original_method = "B5A1D72A0CE7841EEF7745ACB102A3D0", hash_generated_method = "754206675C2AB6563F9CD0ADBE060AC9")
     
 public double nextDouble() {
@@ -107,6 +115,8 @@ public double nextDouble() {
      * Returns a pseudo-random uniformly distributed {@code float}
      * in the half-open range [0.0, 1.0).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.552 -0500", hash_original_method = "D1E3B2B06AA527A72663F03AD501BB2B", hash_generated_method = "E1B32F836E7FF48D1F800BD66C08D467")
     
 public float nextFloat() {
@@ -148,6 +158,8 @@ public synchronized double nextGaussian() {
     /**
      * Returns a pseudo-random uniformly distributed {@code int}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.557 -0500", hash_original_method = "82F6347EB6C4A01CB76B611DAE5AF092", hash_generated_method = "7AD0ED41A8CDF10FE07383EE86DBA893")
     
 public int nextInt() {
@@ -158,6 +170,8 @@ public int nextInt() {
      * Returns a pseudo-random uniformly distributed {@code int}
      * in the half-open range [0, n).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.560 -0500", hash_original_method = "173DEE1A34208F3BEEC0CED47E74657B", hash_generated_method = "60545AE716FFD98B148A918FF295A2FC")
     
 public int nextInt(int n) {

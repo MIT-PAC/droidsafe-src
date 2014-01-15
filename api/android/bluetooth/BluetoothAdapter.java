@@ -37,6 +37,8 @@ public final class BluetoothAdapter {
      * @return the default local adapter, or null if Bluetooth is not supported
      *         on this hardware platform
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.735 -0500", hash_original_method = "0EA032C93B9BB6C4C1D29146E96BABA8", hash_generated_method = "2A85D30D637B72EC36DE7AF12AA14DD7")
     
@@ -337,6 +339,8 @@ public BluetoothAdapter(IBluetooth service) {
      * @param address valid Bluetooth MAC address
      * @throws IllegalArgumentException if address is invalid
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.740 -0500", hash_original_method = "BAA9CF7F2ACFCBAB9569C2DACFA96981", hash_generated_method = "1F9B813339B83D60C44F63FEA48A9FA1")
     
@@ -352,6 +356,8 @@ public BluetoothDevice getRemoteDevice(String address) {
      *
      * @return true if the local adapter is turned on
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.743 -0500", hash_original_method = "D4868B88346C10F14C8F7C77B49B5DE2", hash_generated_method = "D53B4842436BB152E99B9340AD85BE2C")
     
 public boolean isEnabled() {
@@ -372,6 +378,8 @@ public boolean isEnabled() {
      *
      * @return current state of Bluetooth adapter
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.745 -0500", hash_original_method = "FCF9C6106F07630DEF71CB873FCC3D8F", hash_generated_method = "2D88E30A9F2E10CEA5D3C897F991A4CB")
     
@@ -409,6 +417,8 @@ public int getState() {
      * @return true to indicate adapter startup has begun, or false on
      *         immediate error
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.748 -0500", hash_original_method = "F70C75CE8A3147FA6677C79F04CF4B02", hash_generated_method = "73BA2DEB4E03F699509A9F12FD5E370A")
     
 public boolean enable() {
@@ -442,6 +452,8 @@ public boolean enable() {
      * @return true to indicate adapter shutdown has begun, or false on
      *         immediate error
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.750 -0500", hash_original_method = "DC1BB7EEB209838517C27214CEB71072", hash_generated_method = "F00D9C8CF9106920486544559C110E2A")
     
 public boolean disable() {
@@ -684,6 +696,8 @@ public boolean startDiscovery() {
      *
      * @return true on success, false on error
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.774 -0500", hash_original_method = "63E67EB5C61EED8D2B51A1BF56472E25", hash_generated_method = "F7942577CAE00601FEFDA72DBAA0ACA7")
     
 public boolean cancelDiscovery() {
@@ -713,6 +727,8 @@ public boolean cancelDiscovery() {
      *
      * @return true if discovering
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:35.777 -0500", hash_original_method = "C88946A48EEE076D7E3C1C6C5F371E49", hash_generated_method = "BB3D75AB1B1024BD4A2A9F722E4EC328")
     
 public boolean isDiscovering() {

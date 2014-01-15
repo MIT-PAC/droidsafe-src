@@ -73,14 +73,18 @@ public static void setErr(PrintStream newErr) {
         setFieldImpl("err", "Ljava/io/PrintStream;", newErr);
     }
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
 	}
     
+    @DSSafe(DSCat.OS_GENERAL)
     public static long currentTimeMillis() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
 	}
     
+    @DSSafe(DSCat.OS_GENERAL)
     public static long nanoTime() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111;
@@ -106,6 +110,7 @@ public static void exit(int code) {
      * garbage collector. Note that this is a hint only. There is no guarantee
      * that the garbage collector will actually be run.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.634 -0500", hash_original_method = "47EC6AE5C259ABE3B4A35CFA178D5702", hash_generated_method = "0709ED4B03A3139DD3527CC62BB2E466")
     
 public static void gc() {
@@ -184,6 +189,8 @@ public static Channel inheritedChannel() throws IOException {
      *
      * @return the system properties.
      */
+    @DSComment("get JVM operation environment")
+    @DSSafe(DSCat.SYSTEM)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.652 -0500", hash_original_method = "3FDC8784D1C5F7E5946B08E486E63909", hash_generated_method = "1C947DC75EF01852C48A7D3F1ACB061A")
     
@@ -336,6 +343,8 @@ private static void parsePropertyAssignments(Properties p, String[] assignments)
      * @return the value of the specified system property or {@code null} if the
      *         property doesn't exist.
      */
+    @DSComment("JVM/DVM parameters")
+    @DSSpec(DSCat.JAVA_SECURITY)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.664 -0500", hash_original_method = "06C945E6AB6193665AD35FBCA9AFCB6D", hash_generated_method = "766C443FD74124DA91FB9FB0825E934E")
     
@@ -426,6 +435,8 @@ public static Console console() {
      *
      * @return null
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.678 -0500", hash_original_method = "C8F7CB4F1804392B0063D92E89423E1A", hash_generated_method = "4FDF597B2D74E6DD9D48FFB24DE4E3C9")
     
@@ -433,6 +444,8 @@ public static SecurityManager getSecurityManager() {
         return null;
     }
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static int identityHashCode(Object anObject) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638;
@@ -477,6 +490,8 @@ public static void load(String pathName) {
      * @throws UnsatisfiedLinkError
      *             if the library could not be loaded.
      */
+    @DSComment("Dynamically loading library")
+    @DSSpec(DSCat.JAVA_SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.689 -0500", hash_original_method = "0A3470DEBF4C375636532E38AAF3C5D7", hash_generated_method = "88D9169C5FC0C884DFF6AA876D761784")
     
 public static void loadLibrary(String libName) {

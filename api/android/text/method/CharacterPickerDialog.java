@@ -48,6 +48,8 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
      * <code>options</code> for insertion or replacement (depending on
      * the sense of <code>insert</code>) into <code>text</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.215 -0500", hash_original_method = "B85B2CE2D9925643AD72FE26FAC534DC", hash_generated_method = "B2136AFE62B7246CAB629FD53700B2CA")
     
 public CharacterPickerDialog(Context context, View view,

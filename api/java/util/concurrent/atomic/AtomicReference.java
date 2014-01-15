@@ -34,6 +34,8 @@ public AtomicReference(V initialValue) {
     /**
      * Creates a new AtomicReference with null initial value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.203 -0500", hash_original_method = "F97CF4B9707D277EAF947474019CC6FE", hash_generated_method = "CEE6F0364685959E02A5037951EEC7AB")
     
 public AtomicReference() {
@@ -44,6 +46,8 @@ public AtomicReference() {
      *
      * @return the current value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.205 -0500", hash_original_method = "479D74F52EAA9F8F31AB11658696490B", hash_generated_method = "48DC9DDD5B35A417180739369A87118B")
     
@@ -56,6 +60,8 @@ public final V get() {
      *
      * @param newValue the new value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.207 -0500", hash_original_method = "1165CC32E796F42C2841421B342AA16F", hash_generated_method = "3F4039B38D30B5F2D908B9ACDB4E9C3A")
     
 public final void set(V newValue) {
@@ -83,6 +89,8 @@ public final void lazySet(V newValue) {
      * @return true if successful. False return indicates that
      * the actual value was not equal to the expected value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.212 -0500", hash_original_method = "069E7BB7A98500BAF130264F81E7ADC7", hash_generated_method = "55A18E7DD94B7439EA730F0CF8FEAE6F")
     
 public final boolean compareAndSet(V expect, V update) {

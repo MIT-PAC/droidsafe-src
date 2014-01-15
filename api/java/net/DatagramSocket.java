@@ -71,6 +71,8 @@ public static synchronized void setDatagramSocketImplFactory(DatagramSocketImplF
      * @throws SocketException
      *             if an error occurs while creating or binding the socket.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.606 -0500", hash_original_method = "600D2DC769AA1337C3E52515B77C9BA6", hash_generated_method = "E20B11B2B01A755621C765189DBA41B7")
     
 public DatagramSocket() throws SocketException {
@@ -106,6 +108,8 @@ public DatagramSocket(int aPort) throws SocketException {
      * @throws SocketException
      *             if an error occurs while creating or binding the socket.
      */
+    @DSComment("Socket construction")
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.611 -0500", hash_original_method = "CB0AFEB195CAFC978B9076AC8691C2BF", hash_generated_method = "4F66F1E6A00EEDD5800A398FCFF396DF")
     
 public DatagramSocket(int aPort, InetAddress addr) throws SocketException {
@@ -180,6 +184,8 @@ private void checkPort(int aPort) {
      */
     // In the documentation jdk1.1.7a/guide/net/miscNet.html, this method is
     // noted as not being synchronized.
+    @DSComment("no information leakage")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.616 -0500", hash_original_method = "613628CBB35065AE6B36DA8B5C0D3152", hash_generated_method = "E07D13A40AAA8AE3C1C1A83EBE240501")
     
 public void close() {
@@ -239,6 +245,8 @@ public InetAddress getInetAddress() {
      * @return the local address to which this socket is bound to or {@code
      *         null} if this socket is closed.
      */
+    @DSComment("Could try to obtain device IP")
+    @DSSpec(DSCat.NETWORK)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.626 -0500", hash_original_method = "120EDBD12BFFA2CD78689E1CCCEFC0A6", hash_generated_method = "A531F469508AA52D412D092323D2C43A")
     
@@ -258,6 +266,8 @@ public InetAddress getLocalAddress() {
      * @return the local port of this socket or {@code -1} if this socket is
      *         closed and {@code 0} if it is unbound.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.628 -0500", hash_original_method = "C20A7438B6018D8C8B6C316459831E1B", hash_generated_method = "E91F065498979E799788353E3516CE74")
     
@@ -323,6 +333,8 @@ public synchronized int getSendBufferSize() throws SocketException {
      * @throws SocketException
      *                if an error occurs while getting the option value.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.642 -0500", hash_original_method = "E87267C7B03A68795BE159270DE33B7D", hash_generated_method = "9F7A1F60E76959A75DD2FB96D8E81523")
     
@@ -343,6 +355,8 @@ public synchronized int getSoTimeout() throws SocketException {
      * @throws IOException
      *                if an error occurs while receiving the packet.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.645 -0500", hash_original_method = "C2244B28A3A8977EAD72461E3F35998B", hash_generated_method = "FA40C6DCB99A1FF924F067925A9AE9BC")
     
 public synchronized void receive(DatagramPacket pack) throws IOException {
@@ -369,6 +383,8 @@ public synchronized void receive(DatagramPacket pack) throws IOException {
      * @throws IOException
      *                if an error occurs while sending the packet.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.648 -0500", hash_original_method = "F0676E3BCA654DF56D2BFA1EDDBDFD76", hash_generated_method = "2353F46655A0E31C5FAD87BE14A59420")
     
@@ -457,6 +473,8 @@ public synchronized void setReceiveBufferSize(int size) throws SocketException {
      * @throws SocketException
      *                if an error occurs while setting the option.
      */
+    @DSComment("no information leakage")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.658 -0500", hash_original_method = "FEB39AD74968ADEBB5E7B7804953C3DE", hash_generated_method = "50EB82C7A51A39A5708F4D2AE00058D5")
     
@@ -728,6 +746,8 @@ public int getTrafficClass() throws SocketException {
      *
      * @return {@code true} if the socket is closed, {@code false} otherwise.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.707 -0500", hash_original_method = "2EEDDDEB8BA1CD500E3647BC397BF54F", hash_generated_method = "10C0B8E2B9DF49DDBC078E9919A022F7")
     
 public boolean isClosed() {

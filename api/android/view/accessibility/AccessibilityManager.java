@@ -122,6 +122,8 @@ public final class AccessibilityManager {
      *
      * @return True if accessibility is enabled, false otherwise.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.014 -0500", hash_original_method = "20CDD5F21F40208C5206265F82FC5959", hash_generated_method = "B15AAE05D6977C39D7FBDF72C26E365F")
     
 public boolean isEnabled() {
@@ -135,6 +137,8 @@ public boolean isEnabled() {
      *
      * @return True if touch exploration is enabled, false otherwise.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.016 -0500", hash_original_method = "7B07E9E942D9981C7AD5D7B1A6A19F18", hash_generated_method = "A8718A2CC02C3A5AB9AF5C341ABC3A78")
     
 public boolean isTouchExplorationEnabled() {
@@ -239,6 +243,8 @@ public void interrupt() {
      *
      * @return An unmodifiable list with {@link AccessibilityServiceInfo}s.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.030 -0500", hash_original_method = "4069133ECADF858B249C4B9AC03C2D2A", hash_generated_method = "BEC0F9CC527984268D14449285115DD1")
     
@@ -268,6 +274,8 @@ public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList() {
      * @see AccessibilityServiceInfo#FEEDBACK_SPOKEN
      * @see AccessibilityServiceInfo#FEEDBACK_VISUAL
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.033 -0500", hash_original_method = "0B36972F320E6D77C70DA2DE64F6CDA9", hash_generated_method = "DC96427724681BD4AFE1360F7CC3ED88")
     

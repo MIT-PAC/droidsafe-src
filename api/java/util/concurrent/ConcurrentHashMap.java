@@ -177,6 +177,8 @@ public ConcurrentHashMap(int initialCapacity, float loadFactor) {
      * @throws IllegalArgumentException if the initial capacity of
      * elements is negative.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.264 -0500", hash_original_method = "FC082FCC77B50E96B6B6DB58BAB97957", hash_generated_method = "1868059E578F334541C694CC2C8E1356")
     
 public ConcurrentHashMap(int initialCapacity) {
@@ -187,6 +189,8 @@ public ConcurrentHashMap(int initialCapacity) {
      * Creates a new, empty map with a default initial capacity (16),
      * load factor (0.75) and concurrencyLevel (16).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.266 -0500", hash_original_method = "DFADDF9198F2268E7EB2B4F062BE54B9", hash_generated_method = "D67688F0DFF5DC08C72EB2B9294A3593")
     
 public ConcurrentHashMap() {

@@ -24,6 +24,8 @@ public class AccessibleObject implements AnnotatedElement {
      *
      * @see #setAccessible(boolean)
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.336 -0500", hash_original_method = "670F990BF0D6A92A8F1AA8AC7F02D156", hash_generated_method = "68DE20ABD356D6F8D1ADEEEC1DD849F0")
     
 public static void setAccessible(AccessibleObject[] objects, boolean flag) {
@@ -81,6 +83,8 @@ protected AccessibleObject() {
      * @return {@code true} if this object is accessible without access
      *         checks, {@code false} otherwise
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.341 -0500", hash_original_method = "66D52F3844786BE4BB43647AC248F3A6", hash_generated_method = "F758FA2BFE5D48F8DCF99731C758F154")
     
 public boolean isAccessible() {
@@ -95,6 +99,8 @@ public boolean isAccessible() {
      * @param flag
      *            the new value for the accessible flag
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.344 -0500", hash_original_method = "1000999C704703264C7A249C905DEAE6", hash_generated_method = "BB58AE5FEDFFFA08CEBC07B09269E4D5")
     
 public void setAccessible(boolean flag) {

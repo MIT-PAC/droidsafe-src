@@ -251,6 +251,8 @@ public void bindNull(int index) {
      * @param index The 1-based index to the parameter to bind
      * @param value The value to bind
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.187 -0500", hash_original_method = "DDFF1311EF84C79E9F0283B8959C214A", hash_generated_method = "3388891A13AB586E95F3639121D7334F")
     
@@ -279,6 +281,8 @@ public void bindDouble(int index, double value) {
      * @param index The 1-based index to the parameter to bind
      * @param value The value to bind
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.192 -0500", hash_original_method = "963A4C4D7269247053E24419DAA13FC1", hash_generated_method = "8F5D6A2064655E7863E1E3363920F842")
     
@@ -309,6 +313,8 @@ public void bindBlob(int index, byte[] value) {
     /**
      * Clears all existing bindings. Unset bindings are treated as NULL.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.197 -0500", hash_original_method = "A82C4E1E74B388EF1F68336E0B7074B9", hash_generated_method = "DFA28A1095760F60199A7210297ABC05")
     
 public void clearBindings() {

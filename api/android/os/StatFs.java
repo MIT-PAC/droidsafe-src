@@ -17,6 +17,8 @@ public class StatFs {
      * 
      * @param path A path in the desired file system to state.
      */
+    @DSComment("OS low level")
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.536 -0500", hash_original_method = "B32C82E8AC66960E05928520E920B8ED", hash_generated_method = "D761477CEF9289FDAFFEFEAA5A4174EF")
     
 public StatFs(String path) { native_setup(path); }
@@ -39,6 +41,8 @@ public void restat(String path) { native_restat(path); }
      * The size, in bytes, of a block on the file system.  This corresponds
      * to the Unix statfs.f_bsize field.
      */
+    @DSComment("OS low level")
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.544 -0500", hash_original_method = "69F794FD342F65559C8B48F7A39B3D6D", hash_generated_method = "8E7CCFFD2FA6E7FB69A5A7BE6844BA60")
     
@@ -77,6 +81,8 @@ public void restat(String path) { native_restat(path); }
      * The number of blocks that are free on the file system and available to
      * applications.  This corresponds to the Unix statfs.f_bavail field.
      */
+    @DSComment("OS low level")
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.555 -0500", hash_original_method = "39AF4947A221201A3EFDFD20EE46EF90", hash_generated_method = "38BE51800A896E4B2DA019C69D1F4A23")
     

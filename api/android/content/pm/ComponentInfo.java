@@ -52,6 +52,8 @@ protected ComponentInfo(Parcel source) {
         exported = (source.readInt() != 0);
     }
 
+    @DSComment("Harvesting information")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.128 -0500", hash_original_method = "19CED443F16784258FF178C9AF81CAC8", hash_generated_method = "9A57E4A78540DAAB33B0079D1160C5F7")
     
 @Override public CharSequence loadLabel(PackageManager pm) {

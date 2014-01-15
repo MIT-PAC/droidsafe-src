@@ -22,6 +22,8 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.212 -0500", hash_original_method = "F934B6F8A166E3E18108E810D9639C1F", hash_generated_method = "498C56FA6C5428A7F1E055D14BB2280F")
     
@@ -88,6 +90,8 @@ public static KeyPairGenerator getInstance(String algorithm, String provider)
      *             if {@code algorithm} is {@code null}
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.217 -0500", hash_original_method = "D13E283A2C81D5C7579E7D4A3F04358E", hash_generated_method = "D8C2120FBD120C937F1BFCC4CC52137B")
     
@@ -185,6 +189,8 @@ public void initialize(int keysize) {
      * @throws InvalidAlgorithmParameterException
      *             if the specified parameters are not supported
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.226 -0500", hash_original_method = "505B12303F8A8E9420867471775AD0AC", hash_generated_method = "CDF5470CDAAD2CE83A02437AA9DE14B7")
     
 public void initialize(AlgorithmParameterSpec param)
@@ -259,6 +265,8 @@ private KeyPairGeneratorImpl(KeyPairGeneratorSpi keyPairGeneratorSpi,
      *
      * @return a new unique {@code KeyPair} each time this method is called
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.232 -0500", hash_original_method = "7972015D8BC3BAE6F8655706849D6EC4", hash_generated_method = "7416D4BAC31589F8D2E2893407C58F0D")
     
@@ -276,6 +284,8 @@ private KeyPairGeneratorImpl(KeyPairGeneratorSpi keyPairGeneratorSpi,
      * @param random
      *            the source of randomness
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.234 -0500", hash_original_method = "C1E2700C4D7C78BCD077B4B9FB70A89A", hash_generated_method = "78ADD1A0E8B1B61D568978291F6AA8B3")
     
 @Override

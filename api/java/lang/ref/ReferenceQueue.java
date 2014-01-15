@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ReferenceQueue<T> {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.018 -0500", hash_original_method = "6AE174B13F8683C0991DE48985C31F5E", hash_generated_method = "C186A2B079869A9ED3CD9461C13B023C")
@@ -33,12 +29,13 @@ static void add(Reference<?> list) {
     public static Reference unenqueued = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.000 -0500", hash_original_field = "FA1343295FE0A11162E42F3395980C0A", hash_generated_field = "0D4E357872E15A12A6822EA05A1FF146")
 
-
     private Reference<? extends T> head;
 
     /**
      * Constructs a new instance of this class.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.003 -0500", hash_original_method = "74975F7A6AFB5E81CCF3457B53FB8A14", hash_generated_method = "76CCCA88EDF0B80C204E0A2802C9ECAD")
     
 public ReferenceQueue() {
@@ -51,6 +48,8 @@ public ReferenceQueue() {
      * @return the next available reference, or {@code null} if no reference is
      *         immediately available
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.006 -0500", hash_original_method = "0715328D7F7BB9D5550B9E381C496C43", hash_generated_method = "790B23600F4BF572A29424D925C154B4")
     
 @SuppressWarnings("unchecked")
@@ -80,6 +79,8 @@ public ReferenceQueue() {
      *
      * @throws InterruptedException if the blocking call was interrupted
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.008 -0500", hash_original_method = "B9994ACC80E0363C78DC4EB28757C058", hash_generated_method = "D72AAED57CA4C191874CD040ABE06C73")
     
 public Reference<? extends T> remove() throws InterruptedException {

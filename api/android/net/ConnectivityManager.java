@@ -259,6 +259,8 @@ public int getNetworkPreference() {
         }
     }
 
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.987 -0500", hash_original_method = "5E96294DED8896A900AADA5BAA807536", hash_generated_method = "41EC2EBBFB0A8E61C4899BD3B725AE62")
     
@@ -282,6 +284,8 @@ public NetworkInfo getActiveNetworkInfoForUid(int uid) {
         }
     }
 
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.991 -0500", hash_original_method = "96564B6A49DFD6F7048AD1538B907A96", hash_generated_method = "F71292CA1D9F31586813A24788C5814B")
     

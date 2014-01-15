@@ -49,6 +49,8 @@ public class LayerDrawable extends Drawable implements Drawable.Callback {
      *
      * @param layers A list of drawables to use as layers in this new drawable.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.130 -0500", hash_original_method = "45431E38A045C0C983A2E1F24B9ACFC3", hash_generated_method = "75FF6DCE1A5016BCF3AE6BCA9B4BE9D0")
     
 public LayerDrawable(Drawable[] layers) {
@@ -215,6 +217,8 @@ private void addLayer(Drawable layer, int id, int left, int top, int right, int 
      * @param id The layer ID to search for.
      * @return The {@link Drawable} of the layer that has the given id in the hierarchy or null.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.148 -0500", hash_original_method = "C91DA5E408896EB69ADE8640201298D6", hash_generated_method = "F0AB868690D5FBC90D2305D8541BA51B")
     
 public Drawable findDrawableByLayerId(int id) {
@@ -235,6 +239,8 @@ public Drawable findDrawableByLayerId(int id) {
      * @param index The index of the layer which will received the ID. 
      * @param id The ID to assign to the layer.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.150 -0500", hash_original_method = "BFB89C99582071313F846F1C811CB3F0", hash_generated_method = "5D5606E7F0997E214CF86524881F3A03")
     
 public void setId(int index, int id) {
@@ -245,6 +251,8 @@ public void setId(int index, int id) {
      * Returns the number of layers contained within this.
      * @return The number of layers.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.152 -0500", hash_original_method = "A86CD78FFBAB297497BF089506C91B59", hash_generated_method = "6075AA902777F095317F3A14EA5716F3")
     
@@ -259,6 +267,8 @@ public int getNumberOfLayers() {
      *
      * @return The {@link android.graphics.drawable.Drawable} at the specified layer index.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.154 -0500", hash_original_method = "34EED4495029B4FCBDB042C377184EB5", hash_generated_method = "63F0399A05DCC998434F64635EAB029F")
     
@@ -273,6 +283,8 @@ public Drawable getDrawable(int index) {
      *
      * @return The id of the layer or {@link android.view.View#NO_ID} if the layer has no id. 
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.157 -0500", hash_original_method = "AA527FDBA3D8F60360C6FC80FEEC74D7", hash_generated_method = "AB61A0021DDDEA00578315114A44755B")
     

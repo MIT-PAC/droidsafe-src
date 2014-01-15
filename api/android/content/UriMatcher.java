@@ -43,6 +43,8 @@ public class UriMatcher {
      *
      * @param code the code to match for the root URI
      */
+    @DSComment("URL matching utility")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.366 -0500", hash_original_method = "3A2C7DFB4FC2B15E53BF2781D24B3722", hash_generated_method = "12BE94862BAC62C1414B67DFAD761ECF")
     
 public UriMatcher(int code)
@@ -75,6 +77,8 @@ private UriMatcher()
      * @param code the code that is returned when a URI is matched
      * against the given components. Must be positive.
      */
+    @DSComment("URL matching utility")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.371 -0500", hash_original_method = "2E3898492678127443A40FFAA44913F1", hash_generated_method = "A56B1FF934AE2286266D1A896140FC75")
     
@@ -125,6 +129,8 @@ public void addURI(String authority, String path, int code)
      * @return  The code for the matched node (added using addURI), 
      * or -1 if there is no matched node.
      */
+    @DSComment("URL matching utility")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.376 -0500", hash_original_method = "4993091A11603906CAD34405800B45EB", hash_generated_method = "8CB2911C750473F32C631C38B9D04CC5")
     
 public int match(Uri uri)

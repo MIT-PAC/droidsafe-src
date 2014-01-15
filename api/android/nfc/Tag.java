@@ -224,6 +224,8 @@ public byte[] getId() {
      * The ordering of the returned array is undefined and should not be relied upon.
      * @return an array of fully-qualified {@link TagTechnology} class-names.
      */
+    @DSComment("NFC Tag")
+    @DSSpec(DSCat.NFC)
     @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.167 -0500", hash_original_method = "ED11FAFB07CA3B90E3FEDDA21BAFA279", hash_generated_method = "377B8620F029252A423DDAF8AEB3C6EB")
     

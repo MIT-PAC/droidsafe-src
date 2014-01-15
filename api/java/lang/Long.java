@@ -37,6 +37,8 @@ private static NumberFormatException invalidLong(String s) {
      * @throws NumberFormatException
      *             if {@code string} cannot be parsed as a long value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.201 -0500", hash_original_method = "C4DE08B293D744CFBD0C37997765A17D", hash_generated_method = "DDB4A5686FCB85EB3F25017717543770")
     
 public static Long decode(String string) throws NumberFormatException {
@@ -181,6 +183,8 @@ public static Long getLong(String string, Long defaultValue) {
      * @throws NumberFormatException
      *             if {@code string} cannot be parsed as a long value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.227 -0500", hash_original_method = "40543B72DB43DB0F89BABF52692EB942", hash_generated_method = "8FD8A8A6BBF3AE39438B1FC3917E9E4E")
     
 public static long parseLong(String string) throws NumberFormatException {
@@ -202,6 +206,8 @@ public static long parseLong(String string) throws NumberFormatException {
      *             {@code radix < Character.MIN_RADIX ||
      *             radix > Character.MAX_RADIX}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.230 -0500", hash_original_method = "37F9F64824FAF4D2E17AC94C2167510B", hash_generated_method = "08F133E83B9B1B64AA4CE7E30D669FA8")
     
 public static long parseLong(String string, int radix) throws NumberFormatException {
@@ -274,6 +280,8 @@ public static String toBinaryString(long v) {
      *            the long value to convert.
      * @return the hexadecimal string representation of {@code l}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.241 -0500", hash_original_method = "6B85F90491881D2C299E5BF02CCF5806", hash_generated_method = "82489B93E2C39EE14F117933CF49B12C")
     
 public static String toHexString(long v) {
@@ -303,6 +311,8 @@ public static String toOctalString(long v) {
      *            the long to convert.
      * @return the decimal string representation of {@code l}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.249 -0500", hash_original_method = "5451D461541A6217AC0EFFC2EF4C9329", hash_generated_method = "4017904D62B0FEC0C72BF95924032E36")
     
 public static String toString(long n) {
@@ -328,6 +338,8 @@ public static String toString(long n) {
      *            the base to use for the conversion.
      * @return the string representation of {@code v}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.251 -0500", hash_original_method = "E70E35D7AD8B9CABB3BD011FA70B18B3", hash_generated_method = "EB5747C682923FE90CBB8319D454C726")
     
 public static String toString(long v, int radix) {
@@ -345,6 +357,8 @@ public static String toString(long v, int radix) {
      *             if {@code string} cannot be parsed as a long value.
      * @see #parseLong(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.254 -0500", hash_original_method = "5329D88830912459D833DA651EF25565", hash_generated_method = "978F13491909EB135627806DA513B029")
     
 public static Long valueOf(String string) throws NumberFormatException {
@@ -487,6 +501,8 @@ public static int numberOfTrailingZeros(long v) {
      * @return the number of 1 bits in {@code v}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.269 -0500", hash_original_method = "E6B8A87E363F5B01FA470053AAF5BDFD", hash_generated_method = "4AAEE0D7878EBFB345095E6687BB47F9")
     
 public static int bitCount(long v) {
@@ -620,6 +636,8 @@ public static int signum(long v) {
      * @return a {@code Long} instance containing {@code v}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.285 -0500", hash_original_method = "8F2CF5A217071E0F4A3781D5167C1BC6", hash_generated_method = "137B180EC478CCA493863FFA3A3D4729")
     
 public static Long valueOf(long v) {
@@ -663,6 +681,8 @@ public static Long valueOf(long v) {
      * @param value
      *            the primitive long value to store in the new instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.186 -0500", hash_original_method = "F7421F28ECB11D742A45928A1DF88A80", hash_generated_method = "C881530C83685CC8A13E1C945742B04A")
     
 public Long(long value) {
@@ -678,6 +698,8 @@ public Long(long value) {
      *             if {@code string} cannot be parsed as a long value.
      * @see #parseLong(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.189 -0500", hash_original_method = "FBD907393492057451D7BFE621A4E030", hash_generated_method = "CFB280A7B8AB2A0D00761A7CE10CA5F9")
     
 public Long(String string) throws NumberFormatException {
@@ -727,6 +749,8 @@ public int compareTo(Long object) {
      * @return {@code true} if the specified object is equal to this
      *         {@code Long}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.207 -0500", hash_original_method = "9DAD4C26B4F70BDE1AF6A261529DF01A", hash_generated_method = "126975311CD059CCC2CB348FF28481B8")
     
 @Override
@@ -748,6 +772,8 @@ public int compareTo(Long object) {
         return (int) (value ^ (value >>> 32));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.222 -0500", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "9019C920956BC6564E381830D24ADC2B")
     
 @Override
@@ -760,6 +786,8 @@ public int compareTo(Long object) {
      *
      * @return this object's primitive value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.225 -0500", hash_original_method = "ABF4FE035C950AC910A646D4B85E3F35", hash_generated_method = "1422248BBCC1B2BAF9351E8A3DC0A5BE")
     
 @Override
@@ -774,6 +802,8 @@ public int compareTo(Long object) {
         return (short) value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.246 -0500", hash_original_method = "6878CA43BE92FEF897301589A58FE568", hash_generated_method = "74AA83416BB5C082A687DD80E941BE7A")
     
 @Override

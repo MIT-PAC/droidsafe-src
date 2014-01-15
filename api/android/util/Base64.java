@@ -27,6 +27,8 @@ public class Base64 {
      * @throws IllegalArgumentException if the input contains
      * incorrect padding
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.839 -0500", hash_original_method = "D2F55864406EBEBDF4F8980B58236A85", hash_generated_method = "66ADEDD57E8DF67551C8904E7C1A8996")
     
 public static byte[] decode(String str, int flags) {
@@ -105,6 +107,8 @@ public static byte[] decode(byte[] input, int offset, int len, int flags) {
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.883 -0500", hash_original_method = "9F8B8F16A23EE15117AB1FE2B512CD16", hash_generated_method = "5678F807C5ED664186D0648015429F71")
     
 public static String encodeToString(byte[] input, int flags) {
@@ -148,6 +152,8 @@ public static String encodeToString(byte[] input, int offset, int len, int flags
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.887 -0500", hash_original_method = "7D93E16B367D9ED35C3EE948B04BB0A6", hash_generated_method = "8EA208C8C2B286660EC1A107CC3ADB9E")
     
 public static byte[] encode(byte[] input, int flags) {

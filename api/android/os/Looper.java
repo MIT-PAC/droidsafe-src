@@ -9,6 +9,8 @@ import android.util.Printer;
 
 public class Looper {
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static void prepare() {
     	/*
         if (sThreadLocal.get() != null) {
@@ -32,6 +34,8 @@ private synchronized static void setMainLooper(Looper looper) {
 
     /** Returns the application's main looper, which lives in the main thread of the application.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.966 -0500", hash_original_method = "B301D14AF486D9D7134940A0F1BF13CF", hash_generated_method = "7397F1AB5AB47E75F37A7B7BE4B27DD9")
     
@@ -53,6 +57,8 @@ public synchronized static Looper getMainLooper() {
             msg.recycle();
     }
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public static Looper myLooper() {
         return mLocalLooper;
     }

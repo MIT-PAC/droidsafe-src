@@ -56,6 +56,8 @@ public abstract class CountDownTimer {
      * @param countDownInterval The interval along the way to receive
      *   {@link #onTick(long)} callbacks.
      */
+    @DSComment("General OS service, check callback")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.287 -0500", hash_original_method = "64AD26CC4F853CBE40630E575971F568", hash_generated_method = "3CB4D91D5AE8165405421B633073217D")
     
 public CountDownTimer(long millisInFuture, long countDownInterval) {
@@ -66,6 +68,8 @@ public CountDownTimer(long millisInFuture, long countDownInterval) {
     /**
      * Cancel the countdown.
      */
+    @DSComment("General OS service, check callback")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.290 -0500", hash_original_method = "668A5D3225CBBDE8895EF9129976DF1D", hash_generated_method = "BE37793361F718607EE062AB62F0D328")
     
 public final void cancel() {
@@ -75,6 +79,8 @@ public final void cancel() {
     /**
      * Start the countdown.
      */
+    @DSComment("General OS service, check callback")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.293 -0500", hash_original_method = "9B88C24B384B8F4F3D5DCE994477E303", hash_generated_method = "CE7A286EC6CED7A9478DE9B4617AF590")
     

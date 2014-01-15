@@ -39,6 +39,8 @@ public abstract class Filter {
     /**
      * <p>Creates a new asynchronous filter.</p>
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.046 -0500", hash_original_method = "3A43B55E5FFADA496A080A897709E281", hash_generated_method = "EE9897E67685D32AA6B24C02E2653ECB")
     
 public Filter() {
@@ -70,6 +72,8 @@ public void setDelayer(Delayer delayer) {
      *
      * @see #filter(CharSequence, android.widget.Filter.FilterListener)
      */
+    @DSComment("Callback invoke happens in this method")
+    @DSSpec(DSCat.CALLBACK_INVOKE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.050 -0500", hash_original_method = "547418F5BDE1A6BA9449D3E97456DC38", hash_generated_method = "D8F21C75E056C2BC79D4899B662ABAFE")
     
 public final void filter(CharSequence constraint) {
@@ -83,6 +87,8 @@ public final void filter(CharSequence constraint) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.068 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "21B1DF5337CCD3E0731435FB1361ED67")
 
         public int count;
+        @DSComment("not sensitive")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.064 -0500", hash_original_method = "4DBCD611B55919CEC0E695E7409A22D3", hash_generated_method = "CCF8E93BD33E3F617EF0EEFB9A043275")
         
 public FilterResults() {

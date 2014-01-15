@@ -24,6 +24,8 @@ public class CipherOutputStream extends FilterOutputStream {
      * @param c
      *            the cipher to process the data with.
      */
+    @DSComment("cipher input stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.310 -0500", hash_original_method = "F0906B408310381889BAAA52B967EE5F", hash_generated_method = "0ADA483B9C2CFED5418C77FDF989EE2D")
     
 public CipherOutputStream(OutputStream os, Cipher c) {
@@ -74,6 +76,8 @@ protected CipherOutputStream(OutputStream os) {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSComment("IO operations")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.322 -0500", hash_original_method = "5836CE17B48698DBC2254777B1086E69", hash_generated_method = "303B5B5237A2689D22F4C6FFC92947DF")
     
 @Override public void write(byte[] b, int off, int len) throws IOException {
@@ -109,6 +113,8 @@ protected CipherOutputStream(OutputStream os) {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSComment("no impacts")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.330 -0500", hash_original_method = "C8083FF618F908C15CB2AD663C443A1B", hash_generated_method = "974459A89F685B5913D32585BCCCECBF")
     
 @Override

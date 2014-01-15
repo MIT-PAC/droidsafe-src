@@ -35,6 +35,8 @@ public class InputStreamReader extends Reader {
      * @param in
      *            the input stream from which to read characters.
      */
+    @DSComment("InputStreamReader class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.966 -0500", hash_original_method = "3590A2EED02D10C52AB0172AD4BE22C4", hash_generated_method = "2BA25DDC3C17AC85E8604B7021C53C69")
     
 public InputStreamReader(InputStream in) {
@@ -104,6 +106,8 @@ public InputStreamReader(InputStream in, CharsetDecoder dec) {
      * @param charset
      *            the Charset that defines the character converter
      */
+    @DSComment("InputStreamReader class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.975 -0500", hash_original_method = "F689BDB30C937E91D3C146F93A07A4B9", hash_generated_method = "25C9BE37F4F9559B696FB3861A4C24DF")
     
 public InputStreamReader(InputStream in, Charset charset) {
@@ -122,6 +126,8 @@ public InputStreamReader(InputStream in, Charset charset) {
      * @throws IOException
      *             if an error occurs attempting to close this reader.
      */
+    @DSComment("InputStreamReader class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.978 -0500", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "64568DB66E5B89ACA9154E9C002982F9")
     
 @Override

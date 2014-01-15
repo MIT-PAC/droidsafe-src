@@ -29,6 +29,8 @@ public class ArrayAdapter<T> extends BaseAdapter implements Filterable {
      *
      * @return An ArrayAdapter<CharSequence>.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.015 -0500", hash_original_method = "DFE3FD4383B9B7A9483BDED3B595C376", hash_generated_method = "2B98C8C49F28CBA4ED8C5C2766468CF4")
     
 public static ArrayAdapter<CharSequence> createFromResource(Context context,
@@ -75,6 +77,8 @@ public static ArrayAdapter<CharSequence> createFromResource(Context context,
      * @param textViewResourceId The resource ID for a layout file containing a TextView to use when
      *                 instantiating views.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.957 -0500", hash_original_method = "789F3BF67B69FD6C237A5778FFC1188F", hash_generated_method = "2833C0B2FA5336AAF90E2EF1D9BD3CCA")
     
 public ArrayAdapter(Context context, int textViewResourceId) {
@@ -103,6 +107,8 @@ public ArrayAdapter(Context context, int resource, int textViewResourceId) {
      *                 instantiating views.
      * @param objects The objects to represent in the ListView.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.962 -0500", hash_original_method = "0DF55CD51396FFBE8E2D3620B337DDA2", hash_generated_method = "CBD80B289FE05C4187C964890824DEEF")
     
 public ArrayAdapter(Context context, int textViewResourceId, T[] objects) {
@@ -132,6 +138,8 @@ public ArrayAdapter(Context context, int resource, int textViewResourceId, T[] o
      *                 instantiating views.
      * @param objects The objects to represent in the ListView.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.967 -0500", hash_original_method = "223AE4BB7D76AAEAE470FF2DB97AEEF6", hash_generated_method = "1AF214BAB132148F3F1A696130278B2A")
     
 public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
@@ -147,13 +155,17 @@ public ArrayAdapter(Context context, int textViewResourceId, List<T> objects) {
      * @param textViewResourceId The id of the TextView within the layout resource to be populated
      * @param objects The objects to represent in the ListView.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.970 -0500", hash_original_method = "25BF5070AB68B4CC94195FE94A6CDD15", hash_generated_method = "EB8E16267550BBD05261CAC002377E2D")
     
 public ArrayAdapter(Context context, int resource, int textViewResourceId, List<T> objects) {
         init(context, resource, textViewResourceId, objects);
     }
     
-	public void add(T object) {
+	@DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
+    public void add(T object) {
         mObjects.add(object);
         notifyDataSetChanged();
     }
@@ -163,6 +175,8 @@ public ArrayAdapter(Context context, int resource, int textViewResourceId, List<
      *
      * @param collection The Collection to add at the end of the array.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.974 -0500", hash_original_method = "2106A171487E5CA0624DE157360DB991", hash_generated_method = "16BB2292608F1A3AE6064F75050FAF53")
     
 public void addAll(Collection<? extends T> collection) {
@@ -200,6 +214,8 @@ public void addAll(T ... items) {
      * @param object The object to insert into the array.
      * @param index The index at which the object must be inserted.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.979 -0500", hash_original_method = "E6733B2C388AB0385CFE6D2E53E92DC8", hash_generated_method = "28E006E392B53873C75752A8259F600D")
     
 public void insert(T object, int index) {
@@ -218,6 +234,8 @@ public void insert(T object, int index) {
      *
      * @param object The object to remove.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.981 -0500", hash_original_method = "6A184D6E0EB34E61EA380878C12E3D42", hash_generated_method = "4725E2AEE9CDDA06641D129FBE976B4B")
     
 public void remove(T object) {
@@ -234,6 +252,8 @@ public void remove(T object) {
     /**
      * Remove all elements from the list.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.983 -0500", hash_original_method = "E80E28672DD45A1486192C70E40EF7F5", hash_generated_method = "694E1B024AC5136EEA404518D3F1B451")
     
 public void clear() {
@@ -269,6 +289,8 @@ public void sort(Comparator<? super T> comparator) {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.989 -0500", hash_original_method = "4B6963AC4824E23107C3535DF32052A8", hash_generated_method = "7086D0B5780CC15DBA499BE5E9121DB8")
     
 @Override
@@ -313,6 +335,8 @@ private void init(Context context, int resource, int textViewResourceId, List<T>
      *
      * @return The Context associated with this adapter.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.995 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
@@ -320,6 +344,8 @@ public Context getContext() {
         return mContext;
     }
     
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public int getCount() {
@@ -327,6 +353,8 @@ public Context getContext() {
         //return mObjects.size();
     }
     
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public Object getItem(int position) {
@@ -341,6 +369,8 @@ public Context getContext() {
      *
      * @return The position of the specified item.
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.001 -0500", hash_original_method = "4B52B65CCBAD37C22D6FCF1BE4A30381", hash_generated_method = "9F0BAE87F4E89FF7FF8FCDB2DA5566FE")
     
@@ -361,6 +391,8 @@ public long getItemId(int position) {
     /**
      * {@inheritDoc}
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.005 -0500", hash_original_method = "180EEF863853B86A02E5E476168E516D", hash_generated_method = "A5B1D9C00E70EDAFF5DE72AD387583B6")
     
@@ -405,6 +437,8 @@ public View getView(int position, View convertView, ViewGroup parent) {
      * @param resource the layout resource defining the drop down views
      * @see #getDropDownView(int, android.view.View, android.view.ViewGroup)
      */
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.010 -0500", hash_original_method = "614355FA33E2A17CA6280A34FDBFFDC0", hash_generated_method = "53E9BC2B4CD88AE698F664DCCF80E05A")
     
 public void setDropDownViewResource(int resource) {
@@ -422,6 +456,8 @@ public void setDropDownViewResource(int resource) {
         return createViewFromResource(position, convertView, parent, mDropDownResource);
     }
     
+    @DSComment("Binding data, need modeling to be safe")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public Filter getFilter() {

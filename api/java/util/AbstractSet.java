@@ -10,6 +10,8 @@ public abstract class AbstractSet<E> extends AbstractCollection<E> implements Se
     /**
      * Constructs a new instance of this AbstractSet.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:25.882 -0500", hash_original_method = "422EAA7182FF45B88C4EE6C211DE4EBB", hash_generated_method = "2FD83EFED6025F858EC91E81C4EFE5FC")
     
 protected AbstractSet() {
@@ -42,6 +44,8 @@ protected AbstractSet() {
         return result;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.659 -0400", hash_original_method = "6793D4CBA252A26447B19640912FAD83", hash_generated_method = "3340A7706F9D036C2E7AF8AB63DB5D19")
     @Override
     public boolean removeAll(Collection<?> collection) {

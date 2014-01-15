@@ -93,6 +93,8 @@ public static boolean isEncryptedFilesystemEnabled() {
     /**
      * Gets the Android data directory.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.769 -0500", hash_original_method = "410798574B14A1C7B2300F72C09D29B0", hash_generated_method = "2BC6B0A3FA5E9006E8139DE601FB8544")
     
@@ -138,6 +140,8 @@ public static File getDataDirectory() {
      * @see #getExternalStorageState()
      * @see #isExternalStorageRemovable()
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.771 -0500", hash_original_method = "5C670B147F567F755C94F9F92181BB98", hash_generated_method = "B877242D587754ED3BC1634CE142E9AB")
     
@@ -145,6 +149,8 @@ public static File getExternalStorageDirectory() {
         return EXTERNAL_STORAGE_DIRECTORY;
     }
     
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static File getExternalStoragePublicDirectory(String type) {
         return new File("mnt/sdcard");

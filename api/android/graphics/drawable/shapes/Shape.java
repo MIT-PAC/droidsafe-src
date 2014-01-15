@@ -24,6 +24,8 @@ public abstract class Shape implements Cloneable {
     /**
      * Returns the width of the Shape.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.797 -0500", hash_original_method = "AE68E159D936DCF4407D65307DCA00BB", hash_generated_method = "2EBC100F8EEA435FCFB1D71DF02003DC")
     
@@ -34,6 +36,8 @@ public final float getWidth() {
     /**
      * Returns the height of the Shape.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.799 -0500", hash_original_method = "DE764EE6028A1B0E9211313F1870FFB9", hash_generated_method = "CE68295D107697A1A2FEF1CEA5826C51")
     
@@ -59,6 +63,8 @@ public abstract void draw(Canvas canvas, Paint paint);
      * @param width the width of the shape (in pixels)
      * @param height the height of the shape (in pixels)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.804 -0500", hash_original_method = "479131B2F6B84573C2C45F62E9B9CD93", hash_generated_method = "A96EE469A7660E14176DAC899CD05FF0")
     
 public final void resize(float width, float height) {

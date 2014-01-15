@@ -187,6 +187,8 @@ public FileObserver(String path) {
      * @param path The file or directory to monitor
      * @param mask The event or events (added together) to watch for
      */
+    @DSComment("Low level monitoring file state")
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.761 -0500", hash_original_method = "F264FAE09DE2A5840856FF0F4AB8E776", hash_generated_method = "4420EB73C687A6AEEB448978A7536312")
     
 public FileObserver(String path, int mask) {
@@ -206,6 +208,8 @@ protected void finalize() {
      * this time, or else no events will be reported (even if it appears later).
      * If monitoring is already started, this call has no effect.
      */
+    @DSComment("Low level monitoring file state")
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.765 -0500", hash_original_method = "2F8CF3013C1A72AA7A8ACE9D7C9A9F50", hash_generated_method = "4B40553039EC0FF89457EEC174970D10")
     
 public void startWatching() {

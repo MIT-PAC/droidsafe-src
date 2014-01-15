@@ -77,6 +77,8 @@ public static String copyValueOf(char[] data, int start, int length) {
      * @throws NullPointerException
      *             if {@code data} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.979 -0500", hash_original_method = "2AD282CF508D37D852086ADCE714282E", hash_generated_method = "776F4278129F815F7D3D233435C9582D")
     
 public static String valueOf(char[] data) {
@@ -114,6 +116,8 @@ public static String valueOf(char[] data, int start, int length) {
      *            the character.
      * @return the character converted to a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.984 -0500", hash_original_method = "E7EDEB2BF9CD79B50B8CB74658BC8C20", hash_generated_method = "839E58FC55C9841E5D7E21929ABC3E81")
     
 public static String valueOf(char value) {
@@ -134,6 +138,8 @@ public static String valueOf(char value) {
      *            the double.
      * @return the double converted to a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.986 -0500", hash_original_method = "4A643EE28A4F78CB638222A80F5F07F5", hash_generated_method = "C8C2AA6B7D7DE849B5B81FEC769496B0")
     
 public static String valueOf(double value) {
@@ -147,6 +153,8 @@ public static String valueOf(double value) {
      *            the float.
      * @return the float converted to a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.989 -0500", hash_original_method = "A7339CF0A1845E47429F861771033D8B", hash_generated_method = "CF7DB5FFCBA3D0CB08B7AE31583B8A92")
     
 public static String valueOf(float value) {
@@ -160,6 +168,8 @@ public static String valueOf(float value) {
      *            the integer.
      * @return the integer converted to a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.991 -0500", hash_original_method = "7472D0A01C250CDB4203128D331B50ED", hash_generated_method = "AE763BADC02EAD29BBA2436A031207CD")
     
 public static String valueOf(int value) {
@@ -173,6 +183,8 @@ public static String valueOf(int value) {
      *            the long.
      * @return the long converted to a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.993 -0500", hash_original_method = "D1AF4635F236F26EDAA4AC997AD8C09A", hash_generated_method = "2288A665FEBE4EF35DE6B0C0BF9BCD7C")
     
 public static String valueOf(long value) {
@@ -188,6 +200,8 @@ public static String valueOf(long value) {
      *            the object.
      * @return the object converted to a string, or the string {@code "null"}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.996 -0500", hash_original_method = "29C79BCB300036CC1B9D463111BC50FD", hash_generated_method = "8DAED21ABAC747A4DC39D23D809B5F9B")
     
 public static String valueOf(Object value) {
@@ -203,6 +217,8 @@ public static String valueOf(Object value) {
      *            the boolean.
      * @return the boolean converted to a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.998 -0500", hash_original_method = "B6848F35FD27983F085C8CD99AB771A5", hash_generated_method = "1CFE3D87A36EDF4565701FA2D6B59E4A")
     
 public static String valueOf(boolean value) {
@@ -229,6 +245,8 @@ public static String valueOf(boolean value) {
      *             if the format is invalid.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.033 -0500", hash_original_method = "4C2FD221C22BC395CCF88A6A55BE98AD", hash_generated_method = "E5991F4FE9E9869A1E27A9D3B810AA76")
     
 public static String format(String format, Object... args) {
@@ -252,6 +270,8 @@ public static String format(String format, Object... args) {
      *             if the format is invalid.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.036 -0500", hash_original_method = "E957BA4807F1E0C30CA952954DA50144", hash_generated_method = "28E9802C1EC3687D9B95807B64B944A8")
     
 public static String format(Locale locale, String format, Object... args) {
@@ -337,6 +357,8 @@ public static String format(Locale locale, String format, Object... args) {
     /**
      * Creates an empty string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.783 -0500", hash_original_method = "F65E96A775698E2C256BB1E903F5D8A6", hash_generated_method = "2D4827908F7D1AE19B6B75D4111BE4B4")
     
 public String() {
@@ -363,6 +385,8 @@ public String() {
      * Converts the byte array to a string using the system's
      * {@link java.nio.charset.Charset#defaultCharset default charset}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.788 -0500", hash_original_method = "3CF6472F1EAFF36B200903831BC9D282", hash_generated_method = "03F81E410607AF83FE1129895E924F03")
     
 @FindBugsSuppressWarnings("DM_DEFAULT_ENCODING")
@@ -389,6 +413,8 @@ public String() {
         this(data, high, 0, data.length);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.652 -0400", hash_original_method = "9C5B9D3903B08C7F386C9C307D28A8D8", hash_generated_method = "D6439CB90D6545AC7AC3C86073E9F0E9")
     public  String(byte[] data, int offset, int byteCount) {
         addTaint(byteCount);
@@ -467,6 +493,8 @@ for(int i = 0;i < count;i++)
      * @throws UnsupportedEncodingException
      *             if the named charset is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.800 -0500", hash_original_method = "D35F458D65648B05442A41C1A12F30CA", hash_generated_method = "4A2E2E5B578D26BC53ADEAE92430F57A")
     
 public String(byte[] data, int offset, int byteCount, String charsetName) throws UnsupportedEncodingException {
@@ -484,6 +512,8 @@ public String(byte[] data, int offset, int byteCount, String charsetName) throws
      * @throws UnsupportedEncodingException
      *             if {@code charsetName} is not supported.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.803 -0500", hash_original_method = "11FE032D0B0EBCDEFC4E4C2065489303", hash_generated_method = "0F260EFB114087F1784BF1AB863C49ED")
     
 public String(byte[] data, String charsetName) throws UnsupportedEncodingException {
@@ -637,6 +667,8 @@ for(int i = 0;i < utfCount;i++)
      * @throws NullPointerException if {@code data == null}
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.811 -0500", hash_original_method = "9D77FFE69AA84BF1048ED5CBD8EE386C", hash_generated_method = "14BE1B47B3BDFB19FC4452BDB9ABB0DE")
     
 public String(byte[] data, Charset charset) {
@@ -650,12 +682,16 @@ public String(byte[] data, Charset charset) {
      *
      * @throws NullPointerException if {@code data == null}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.814 -0500", hash_original_method = "84FF2A14EA759DC7C1F299809C55E832", hash_generated_method = "F6B2AA4C452966F0A0FC1D5FF2BE0A93")
     
 public String(char[] data) {
         this(data, 0, data.length);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.828 -0400", hash_original_method = "14BFB40845511D49F067DB0E6AC711FE", hash_generated_method = "971E3234E4344BD64B6C546645470DD3")
     public  String(char[] data, int offset, int charCount) {
         addTaint(data[0]);
@@ -696,6 +732,8 @@ String(int offset, int charCount, char[] chars) {
      * toCopy}. The returned string's <a href="#backing_array">backing array</a>
      * is no larger than necessary.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.822 -0500", hash_original_method = "7D7AE898849737A5DE2F771028ADD293", hash_generated_method = "1067742A918A0414BA56DD0E157F3286")
     
 public String(String toCopy) {
@@ -853,6 +891,8 @@ public String(StringBuilder stringBuilder) {
      * @throws IndexOutOfBoundsException
      *             if {@code index < 0} or {@code index >= length()}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.844 -0500", hash_original_method = "87185450AF15BAF9DFFE5741D5928D9B", hash_generated_method = "272AD850E35F32A66C440BDE6E73AF76")
     
     public char charAt(int index){
@@ -915,6 +955,8 @@ private char foldCase(char ch) {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.858 -0500", hash_original_method = "E601A465E2566ECC4B972E253D5CFD79", hash_generated_method = "57FA755FC26750AD99632FC2AFFBA3C3")
     
     public int compareTo(String string){
@@ -943,6 +985,8 @@ private char foldCase(char ch) {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.860 -0500", hash_original_method = "1A9A71EFE325E55C19A2B451F1A9B9E2", hash_generated_method = "F7E005DD24A38F96E3E071826A6E3889")
     
 public int compareToIgnoreCase(String string) {
@@ -971,6 +1015,8 @@ public int compareToIgnoreCase(String string) {
      * @return a new string which is the concatenation of this string and the
      *         specified string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.863 -0500", hash_original_method = "F488471D994E6AC017026A4A172508CF", hash_generated_method = "21A9CBF4CE60BC5F74030C540EEF2812")
     
 public String concat(String string) {
@@ -994,6 +1040,8 @@ public String concat(String string) {
      * @throws NullPointerException
      *             if {@code suffix} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.871 -0500", hash_original_method = "3B37EFF40C149A7A244BFEF0002B2C93", hash_generated_method = "2C24111E3C33F98C179B82A67E3EFE53")
     
 public boolean endsWith(String suffix) {
@@ -1011,6 +1059,8 @@ public boolean endsWith(String suffix) {
      *         {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.875 -0500", hash_original_method = "84733F87EF08EE029ED9292B40928CC1", hash_generated_method = "F0F3281614602C65EE2A4BACD0B9E7C9")
     
     @Override
@@ -1029,6 +1079,8 @@ public boolean endsWith(String suffix) {
      * @return {@code true} if the specified string is equal to this string,
      *         {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.877 -0500", hash_original_method = "2D6A09B1457D58571ED784483A3E54F2", hash_generated_method = "8B92707DD4A71374670A5694D30393A6")
     
 @FindBugsSuppressWarnings("ES_COMPARING_PARAMETER_STRING_WITH_EQ")
@@ -1052,6 +1104,8 @@ public boolean endsWith(String suffix) {
         return true;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.952 -0400", hash_original_method = "628C355D58441C62D711BC1C2A898A67", hash_generated_method = "96F0117EE797C83FEB58E8D326BFF607")
     @Deprecated
     public void getBytes(int start, int end, byte[] data, int index) {
@@ -1105,6 +1159,8 @@ for(int i = offset + start;i < end;i++)
      * is unspecified. In practice, when the default charset is UTF-8 (as it is on Android),
      * all strings can be encoded.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.883 -0500", hash_original_method = "2E4CA200D3933E45C3FC02936B120C89", hash_generated_method = "0A6A6039C4B3B9F2FADF6ED1F57152BB")
     
@@ -1121,6 +1177,8 @@ public byte[] getBytes() {
      *
      * @throws UnsupportedEncodingException if the charset is not supported
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.886 -0500", hash_original_method = "D1476A765D84241818C22751CEBD7DE3", hash_generated_method = "DC158139A24E25D529425729D16D0CBF")
     
@@ -1138,6 +1196,8 @@ public byte[] getBytes(String charsetName) throws UnsupportedEncodingException {
      *
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.888 -0500", hash_original_method = "56FDAE3B6641018546E6C6674268142D", hash_generated_method = "B122503E334C5D64C92FAC8F5D7C7C64")
     
@@ -1160,6 +1220,8 @@ public byte[] getBytes(Charset charset) {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.989 -0400", hash_original_method = "D443F19C798F5645F696FD1973BB47C6", hash_generated_method = "168F6E3DA50E280535B3342B42AF704F")
     public void getChars(int start, int end, char[] buffer, int index) {
         addTaint(index);
@@ -1196,6 +1258,8 @@ void _getChars(int start, int end, char[] buffer, int index) {
         System.arraycopy(value, start + offset, buffer, index, end - start);
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.896 -0500", hash_original_method = "19D1106FC463FB90112A6C6293D6F5CF", hash_generated_method = "AB31E2FB551110250A6FEC92F9C5DCA2")
     
 @Override public int hashCode() {
@@ -1224,6 +1288,8 @@ void _getChars(int start, int end, char[] buffer, int index) {
      * @return the index in this string of the specified character, -1 if the
      *         character isn't found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.898 -0500", hash_original_method = "C183CC13D668537DB52873A8A3264758", hash_generated_method = "EF3ED02C218F9DCEE08DD51AAB959F02")
     
 public int indexOf(int c) {
@@ -1246,6 +1312,8 @@ public int indexOf(int c) {
      * @return the index in this string of the specified character, -1 if the
      *         character isn't found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.900 -0500", hash_original_method = "A9B16E70D2A4A056B33DA4268AACFBA9", hash_generated_method = "F50F2C459FB5069F52492E2F1C167523")
     
 public int indexOf(int c, int start) {
@@ -1287,6 +1355,8 @@ private int indexOfSupplementary(int c, int start) {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.909 -0500", hash_original_method = "AC187DA6A9C2600FBA62EFD5097D8F4D", hash_generated_method = "0D57523B1B110B3F4F960ABB598D0797")
     
 public int indexOf(String string) {
@@ -1334,6 +1404,8 @@ public int indexOf(String string) {
      * @throws NullPointerException
      *             if {@code subString} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.912 -0500", hash_original_method = "30C77F2F1070D21229A0301D2E3C23FC", hash_generated_method = "7B5C852FA9A1DF46DDC4AC013C96E720")
     
 public int indexOf(String subString, int start) {
@@ -1369,6 +1441,8 @@ public int indexOf(String subString, int start) {
         return start < _count ? start : _count;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.870 -0400", hash_original_method = "8D834ED1699A050AD62397187973DE2A", hash_generated_method = "D27768EE08A87AC5AC201AAF7BA53F8D")
     public String intern() {
     	return new String();
@@ -1379,6 +1453,8 @@ public int indexOf(String subString, int start) {
      *
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.921 -0500", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "9EFBA24431943EE0CA752566A6372B65")
     
     public boolean isEmpty(){
@@ -1391,6 +1467,8 @@ public int indexOf(String subString, int start) {
      * The search for the character starts at the end and moves towards the
      * beginning of this string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.923 -0500", hash_original_method = "B7458CFA700437DC398BF47C5A311056", hash_generated_method = "4ABC1CA75C51E38C8A7EC35525D60FD3")
     
 public int lastIndexOf(int c) {
@@ -1413,6 +1491,8 @@ public int lastIndexOf(int c) {
      * The search for the character starts at offset {@code start} and moves towards
      * the beginning of this string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.926 -0500", hash_original_method = "438C7E0E01B0881067FA33086AF4D678", hash_generated_method = "8DBC195876C77C52FE93414465403496")
     
 public int lastIndexOf(int c, int start) {
@@ -1458,6 +1538,8 @@ private int lastIndexOfSupplementary(int c, int start) {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.931 -0500", hash_original_method = "692347B4AF93950259A2DA740A39B258", hash_generated_method = "FEF0BFF9BA9E8F1DA2DE7F055FC99EC3")
     
 public int lastIndexOf(String string) {
@@ -1479,6 +1561,8 @@ public int lastIndexOf(String string) {
      * @throws NullPointerException
      *             if {@code subString} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.934 -0500", hash_original_method = "08D5FBAA11FAAE0244D1BD87258C05E0", hash_generated_method = "EEF14964EDF3E0241435E51BAF061B2D")
     
 public int lastIndexOf(String subString, int start) {
@@ -1518,6 +1602,8 @@ public int lastIndexOf(String subString, int start) {
      *
      * @return the number of characters in this string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.937 -0500", hash_original_method = "026D3AE6EA7284BA85CF864429138595", hash_generated_method = "41F61E755A7C3306650DE1A02239C8F3")
     
     public int length(){
@@ -1542,6 +1628,8 @@ public int lastIndexOf(String subString, int start) {
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.940 -0500", hash_original_method = "8EA3BFAB97A4D4877FC2554FB493C6C0", hash_generated_method = "91E7B8B05EA1C3F175A3139FD889C65C")
     
 public boolean regionMatches(int thisStart, String string, int start, int length) {
@@ -1588,6 +1676,8 @@ public boolean regionMatches(int thisStart, String string, int start, int length
      * @throws NullPointerException
      *             if {@code string} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.943 -0500", hash_original_method = "5098FC46543D7D1A735E08AA962F8003", hash_generated_method = "88F17216AA2E98FA881DE372CE6364E6")
     
 public boolean regionMatches(boolean ignoreCase, int thisStart, String string, int start, int length) {
@@ -1627,6 +1717,8 @@ public boolean regionMatches(boolean ignoreCase, int thisStart, String string, i
      *            the replacement character.
      * @return a new string with occurrences of oldChar replaced by newChar.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.946 -0500", hash_original_method = "52751D07523F52C15F0E15149B768BF7", hash_generated_method = "6DD64A04FC7BC7DC0050E5B221454760")
     
 public String replace(char oldChar, char newChar) {
@@ -1668,6 +1760,8 @@ public String replace(char oldChar, char newChar) {
      * @throws NullPointerException
      *             if {@code target} or {@code replacement} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.949 -0500", hash_original_method = "226EAAC156D556D42E48670E64FEC4E8", hash_generated_method = "BAA289D8CF1FC3382A99E9306635F827")
     
 public String replace(CharSequence target, CharSequence replacement) {
@@ -1726,6 +1820,8 @@ public String replace(CharSequence target, CharSequence replacement) {
      * @throws NullPointerException
      *             if {@code prefix} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.951 -0500", hash_original_method = "8508513C5D9E5D7A42B020CFB91803A3", hash_generated_method = "CE66BF7B4E46285328F82EC9849A383E")
     
@@ -1746,12 +1842,16 @@ public boolean startsWith(String prefix) {
      * @throws NullPointerException
      *             if {@code prefix} is {@code null}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.953 -0500", hash_original_method = "DCA59D254EE64B3144EDF9B3ACB43A45", hash_generated_method = "3003C39C59D3032711D80AD8F78AAB14")
     
 public boolean startsWith(String prefix, int start) {
         return regionMatches(start, prefix, 0, prefix.count);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.029 -0400", hash_original_method = "CB27750752A8934950488E0046CA5119", hash_generated_method = "33066E8AA094172FFF0CEC5E486EDCD6")
     public String substring(int start) {
         addTaint(start);
@@ -1780,6 +1880,8 @@ String var2B0D1736DD1B19490531C381A1416ABB_1242432222 =             new String(o
         //throw indexAndLength(start);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.049 -0400", hash_original_method = "FA273138383309E9BFDA8AAE2A7C6025", hash_generated_method = "0A4B172CD2951ABC21C7191BBBED5414")
     public String substring(int start, int end) {
@@ -1815,6 +1917,8 @@ String var2511EA3E5FEAAD0D48B436EB1999CC85_1798446020 =             new String(o
      *
      * @return a character array containing the characters of this string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.961 -0500", hash_original_method = "66BAEF040BB5FDC80731F9B16CD33C32", hash_generated_method = "F8512EE67F64CE701F309692817A9311")
     
 public char[] toCharArray() {
@@ -1829,6 +1933,8 @@ public char[] toCharArray() {
      *
      * @return a new lower case string, or {@code this} if it's already all lower case.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.964 -0500", hash_original_method = "1FBB4BF6938E55C9E24FEC1EE0A95252", hash_generated_method = "E97C0644499688529C3BF08E85BC65DF")
     
 public String toLowerCase() {
@@ -1848,6 +1954,8 @@ public String toLowerCase() {
      *
      * @return a new lower case string, or {@code this} if it's already all lower case.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.967 -0500", hash_original_method = "3BCA227A64DF8F05552679E5E357BCF1", hash_generated_method = "5FD4747EA9A442FB66B7E27AF997C7EF")
     
 public String toLowerCase(Locale locale) {
@@ -1857,6 +1965,8 @@ public String toLowerCase(Locale locale) {
     /**
      * Returns this string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.969 -0500", hash_original_method = "068E2EE4236B85776135405F1B66AD49", hash_generated_method = "28DD1B4FF5D0D981D70F8CACE98B810E")
     
 @Override
@@ -1870,6 +1980,8 @@ public String toLowerCase(Locale locale) {
      *
      * @return a new upper case string, or {@code this} if it's already all upper case.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.971 -0500", hash_original_method = "8DEC33A26AFC2829CCCCE108ECEB9551", hash_generated_method = "CD069DB34D6C0A6A177A7F24AFE5CA91")
     
 public String toUpperCase() {
@@ -1889,6 +2001,8 @@ public String toUpperCase() {
      *
      * @return a new upper case string, or {@code this} if it's already all upper case.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.973 -0500", hash_original_method = "11C711663B7D81E6BD865533BF51B442", hash_generated_method = "4E7E51E15F7C29846F15EFA5377AAAED")
     
 public String toUpperCase(Locale locale) {
@@ -1902,6 +2016,8 @@ public String toUpperCase(Locale locale) {
      * @return a new string with characters <code><= \\u0020</code> removed from
      *         the beginning and the end.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:19.976 -0500", hash_original_method = "5AB01C88F799E5B54FF71EE82B91E811", hash_generated_method = "EC72A69BD5DAA2B233102023BAFFC2D1")
     
 public String trim() {
@@ -1932,6 +2048,8 @@ public String trim() {
      *             if {@code strbuf} is {@code null}.
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.001 -0500", hash_original_method = "233CB676C051D9EE76740A9343D1B467", hash_generated_method = "4B95AEE813CA7CAF74C1B96B4257E04D")
     
 public boolean contentEquals(StringBuffer strbuf) {
@@ -1954,6 +2072,8 @@ public boolean contentEquals(StringBuffer strbuf) {
      * @return {@code true} if equal, otherwise {@code false}
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.004 -0500", hash_original_method = "733340B51AD84F3351AE4177729AE631", hash_generated_method = "002CA0AA9437153C4069C729DA94CA0D")
     
 public boolean contentEquals(CharSequence cs) {
@@ -1990,6 +2110,8 @@ public boolean contentEquals(CharSequence cs) {
      * @throws NullPointerException if {@code regularExpression == null}
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.007 -0500", hash_original_method = "54546B1154273B2EF815CC4641C4AF95", hash_generated_method = "31150CC120132529E2C554553C68A957")
     
 public boolean matches(String regularExpression) {
@@ -2011,6 +2133,8 @@ public boolean matches(String regularExpression) {
      * @see Pattern
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.009 -0500", hash_original_method = "85FB9291CC087326BB42DD27D5FF2770", hash_generated_method = "39E48D55E8E4F9E59F58690640BB29E5")
     
 public String replaceAll(String regularExpression, String replacement) {
@@ -2032,6 +2156,8 @@ public String replaceAll(String regularExpression, String replacement) {
      * @see Pattern
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.012 -0500", hash_original_method = "B1F6469D7EA429A7B60DE2A4BC9D1B18", hash_generated_method = "E6B964A174237D2BB7F3EA8A25C91AB3")
     
 public String replaceFirst(String regularExpression, String replacement) {
@@ -2054,6 +2180,8 @@ public String replaceFirst(String regularExpression, String replacement) {
      * @see Pattern
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.014 -0500", hash_original_method = "0ADD043F2AA11242F9B6645F9D3630BF", hash_generated_method = "E1341A3A010CA709FCD2C88E1FF85169")
     
 public String[] split(String regularExpression) {
@@ -2074,6 +2202,8 @@ public String[] split(String regularExpression) {
      *             valid.
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.016 -0500", hash_original_method = "4FB3AE192250E9EE292BE09F829C7FA4", hash_generated_method = "C2609287AD57B7D934CE6820CFD38AD3")
     
 public String[] split(String regularExpression, int limit) {
@@ -2096,12 +2226,16 @@ public String[] split(String regularExpression, int limit) {
      * @see java.lang.CharSequence#subSequence(int, int)
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.019 -0500", hash_original_method = "30B2B5AAE6BF00B7B5DE2415CD1C93C0", hash_generated_method = "31F89698891865DDF37976A5038C7055")
     
 public CharSequence subSequence(int start, int end) {
         return substring(start, end);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.090 -0400", hash_original_method = "C7D49B0E887DD351A54FAD0BD917A973", hash_generated_method = "4AA0D970F53A5437960DBB5362FF8172")
     public int codePointAt(int index) {
         addTaint(index);
@@ -2152,6 +2286,8 @@ public int compare(String o1, String o2) {
         }
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.114 -0400", hash_original_method = "45488902F6B74F4C7EAF8C828C18FB65", hash_generated_method = "E474A1580CC8AB31224E1CF48558880A")
     public int codePointBefore(int index) {
         addTaint(index);
@@ -2171,6 +2307,8 @@ public int compare(String o1, String o2) {
         //return Character.codePointBefore(value, offset + index, offset);
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:47.142 -0400", hash_original_method = "B50CCA2DE0C54B693E25540AFEB12014", hash_generated_method = "641A2FDB54DC47F97CC5C57D56F8065A")
     public int codePointCount(int start, int end) {
         addTaint(end);
@@ -2201,6 +2339,8 @@ public int compare(String o1, String o2) {
      *         string, otherwise {@code false}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.028 -0500", hash_original_method = "994533EB4329C14FF0C3B68A297AD053", hash_generated_method = "B306D1B94E8E09DC82F103510417208B")
     
 public boolean contains(CharSequence cs) {
@@ -2225,6 +2365,8 @@ public boolean contains(CharSequence cs) {
      *             index} to match {@code codePointOffset}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.031 -0500", hash_original_method = "3AF353F7691F77FE6437135BD27DAE4A", hash_generated_method = "BC45D9282C0FD11E84D0B3CB63D25ECA")
     
 public int offsetByCodePoints(int index, int codePointOffset) {

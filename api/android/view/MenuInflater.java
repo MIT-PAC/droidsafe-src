@@ -413,6 +413,8 @@ T var540C13E9E156B687226421B24F2DF178_1858135280 =             null;
      * 
      * @see Activity#getMenuInflater()
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.645 -0500", hash_original_method = "DAFF641201C63E19412016666CD58FB3", hash_generated_method = "65FD16580DDB789B6A6181E83124E0D7")
     
 public MenuInflater(Context context) {
@@ -430,6 +432,8 @@ public MenuInflater(Context context) {
      * @param menu The Menu to inflate into. The items and submenus will be
      *            added to this Menu.
      */
+    @DSComment("Proper menu needs to be created/instantiated/inflated")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.649 -0500", hash_original_method = "7D92BCA17E1F22EC74058A02DB16DD4F", hash_generated_method = "8AC21FD0DA7ADD2076DB467059A78ACF")
     
 public void inflate(int menuRes, Menu menu) {

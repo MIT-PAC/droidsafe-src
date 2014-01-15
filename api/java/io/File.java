@@ -183,6 +183,8 @@ public static File createTempFile(String prefix, String suffix) throws IOExcepti
      * @throws IOException
      *             if an error occurs when writing the file.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.577 -0500", hash_original_method = "300A258AF9CE3367B2E987791B45E579", hash_generated_method = "5A12F0C33269F4818329EA209B0269C7")
     
 public static File createTempFile(String prefix, String suffix, File directory)
@@ -238,6 +240,8 @@ public static File createTempFile(String prefix, String suffix, File directory)
      * @throws NullPointerException
      *             if {@code name} is {@code null}.
      */
+    @DSComment("not sensitive, real action happens on operations of File")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.432 -0500", hash_original_method = "A8210D76C41C6A4AAFC6BE2371A42886", hash_generated_method = "C4F8D83E64C44160E188661FCFE7409A")
     
 public File(File dir, String name) {
@@ -250,6 +254,8 @@ public File(File dir, String name) {
      * @param path
      *            the path to be used for the file.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.435 -0500", hash_original_method = "2175D562A2B588CC53D616403013683C", hash_generated_method = "6E9FD4316F59D7CE7196381057C46B1A")
     
 public File(String path) {
@@ -267,6 +273,8 @@ public File(String path) {
      * @throws NullPointerException
      *             if {@code name == null}.
      */
+    @DSComment("not sensitive, real action happens on operations of File")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.439 -0500", hash_original_method = "133C96EC98AEE8D59630F091A182C267", hash_generated_method = "6F57CB283102230538221213F534B8CF")
     
 public File(String dirPath, String name) {
@@ -296,6 +304,8 @@ public File(String dirPath, String name) {
      * @see #toURI
      * @see java.net.URI
      */
+    @DSComment("Potential Internet/URI processing")
+    @DSSpec(DSCat.URI_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.442 -0500", hash_original_method = "8BC21AA0285296D0787FE6CED7AAF58D", hash_generated_method = "8D7B2025B352DFD259920003A0518A80")
     
 public File(URI uri) {
@@ -323,6 +333,8 @@ public boolean canExecute() {
      *
      * @return {@code true} if this file can be read, {@code false} otherwise.
      */
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.457 -0500", hash_original_method = "7B792954ECFC131D8AE4D0E193C4885E", hash_generated_method = "0EB677AB132959DC534CAC8C90D1B544")
     
 public boolean canRead() {
@@ -335,6 +347,8 @@ public boolean canRead() {
      * @return {@code true} if this file can be written, {@code false}
      *         otherwise.
      */
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.460 -0500", hash_original_method = "80B9F14946D459E582021E9E2F6280AD", hash_generated_method = "CF578D1B801A5F671FA69BBF6907AB62")
     
 public boolean canWrite() {
@@ -361,6 +375,8 @@ private boolean doAccess(int mode) {
      *         described in the Comparable interface.
      * @see Comparable
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.464 -0500", hash_original_method = "B9E553F90A7CDA44D1E185A0919015AC", hash_generated_method = "9246B5974DFCA41CBC6E6EB8589B0456")
     
 public int compareTo(File another) {
@@ -375,6 +391,8 @@ public int compareTo(File another) {
      *
      * @return {@code true} if this file was deleted, {@code false} otherwise.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.467 -0500", hash_original_method = "5CDCBB522AFEF90E14CEC34C413E4DF5", hash_generated_method = "846E399EF55FCBBB469502891E573429")
     
 public boolean delete() {
@@ -401,6 +419,8 @@ public boolean delete() {
      * ones will still have access until the last one closes the file.
      * </ul>
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.469 -0500", hash_original_method = "CB1935EF5F2FD9C7C5DF0BCD9272AB92", hash_generated_method = "619F358CAF22F889A790A5205E70805E")
     
 public void deleteOnExit() {
@@ -416,6 +436,7 @@ public void deleteOnExit() {
      * @return {@code true} if {@code obj} is the same as this object,
      *         {@code false} otherwise.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.472 -0500", hash_original_method = "CB9025D33A83838782FA748F5EB00F53", hash_generated_method = "DF6CC618E6FEC2A320CD341AE4AF4C1F")
     
 @Override
@@ -432,12 +453,15 @@ public void deleteOnExit() {
      *
      * @return {@code true} if this file exists, {@code false} otherwise.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.474 -0500", hash_original_method = "D48176638CA08E926D8083B62CC7EB27", hash_generated_method = "F8A2DBAD4957C2E8530D4BBC1D7A1A43")
     
 public boolean exists() {
         return doAccess(F_OK);
     }
     
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.822 -0400", hash_original_method = "8F2B41FC4DF09EBF8497AC74B170E125", hash_generated_method = "C12A6EDB79539AA71068DD1E144D2E98")
     public String getAbsolutePath() {
@@ -463,6 +487,8 @@ String var535F4D9720F3B0C96D8143873CE0638C_1405753140 =             path;
      * Returns a new file constructed using the absolute path of this file.
      * Equivalent to {@code new File(this.getAbsolutePath())}.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.478 -0500", hash_original_method = "C817D7800025B01E09F67B96128B6FD2", hash_generated_method = "762253F33B1D9B859BA14BD84E373A66")
     
@@ -493,6 +519,8 @@ public File getAbsoluteFile() {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.482 -0500", hash_original_method = "2353D6268FF62C4AA3E4D2A85DA0DDFF", hash_generated_method = "3D68E5C98B6F0441D9B8857E875066A3")
     
@@ -508,6 +536,8 @@ public String getCanonicalPath() throws IOException {
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.492 -0500", hash_original_method = "703FA6965000EF35DC5F6EF68FCCB383", hash_generated_method = "607D769DE09E9975A9BD8FE6BF604C70")
     
@@ -521,6 +551,8 @@ public File getCanonicalFile() throws IOException {
      * @return this file's name or an empty string if there is no name part in
      *         the file's path.
      */
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.495 -0500", hash_original_method = "6E20F332F3C7773E9502AE9F2437B5A6", hash_generated_method = "AB4E3BAE59DBA2943E712F2F58B340A9")
     
@@ -536,6 +568,8 @@ public String getName() {
      *
      * @return this file's parent pathname or {@code null}.
      */
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.497 -0500", hash_original_method = "160BE3FD42E1931950E2200B6303D787", hash_generated_method = "D19EE6AE71A6B9F0A19C9A50867DF716")
     
@@ -565,6 +599,8 @@ public String getParent() {
      *
      * @return a new file representing this file's parent or {@code null}.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.500 -0500", hash_original_method = "05B6D7D4A7E04D12316D2DAB95CF61C6", hash_generated_method = "87CB15FAAF0F4CE298C7CD4BD98EF741")
     
@@ -581,6 +617,8 @@ public File getParentFile() {
      *
      * @return this file's path.
      */
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.502 -0500", hash_original_method = "F862A3BA81BCB206C83E79C3BEB01336", hash_generated_method = "685DA06B3205BF0988B63E7E0C7CEB6C")
     
@@ -624,6 +662,7 @@ public boolean isAbsolute() {
      * @return {@code true} if this file is a directory, {@code false}
      *         otherwise.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.510 -0500", hash_original_method = "5A1A5CA8E31989238D097F162F5C184C", hash_generated_method = "D36D7BBF127F2983896837F632E4EBE0")
     
 public boolean isDirectory() {
@@ -641,6 +680,7 @@ public boolean isDirectory() {
      *
      * @return {@code true} if this file is a file, {@code false} otherwise.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.513 -0500", hash_original_method = "B5DE2229663641D636EF433E62C83E7A", hash_generated_method = "D28055B98E7DD2D66204F5D003B9EB24")
     
 public boolean isFile() {
@@ -661,6 +701,7 @@ public boolean isFile() {
      *
      * @return {@code true} if the file is hidden, {@code false} otherwise.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.515 -0500", hash_original_method = "8D5680EC06296245D4F0DE9A90486B91", hash_generated_method = "38682CD78A90AEDA2EE3A2281092DE61")
     
 public boolean isHidden() {
@@ -677,6 +718,8 @@ public boolean isHidden() {
      *
      * @return the time when this file was last modified.
      */
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.517 -0500", hash_original_method = "0921E33485CFCA34C1412D0CC74585F6", hash_generated_method = "D860E5F1DFBA213A0282A688E6D70B62")
     
 public long lastModified() {
@@ -702,6 +745,8 @@ public long lastModified() {
      * @throws IllegalArgumentException
      *             if {@code time < 0}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.519 -0500", hash_original_method = "9B75702C13A04EF9D2AD1E246C28DD45", hash_generated_method = "E25510CB69644BCC9EDEFC03E361A7CC")
     
@@ -855,6 +900,8 @@ private boolean doChmod(int mask, boolean set) {
      *
      * @return the number of bytes in this file.
      */
+    @DSComment("File Information")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.546 -0500", hash_original_method = "6E1602EC51AE975F6EDA687DC2872422", hash_generated_method = "0CD97CA24911DBF6FF7EFE61EEFD12E2")
     
 public long length() {
@@ -876,6 +923,8 @@ public long length() {
      *
      * @return an array of strings with file names or {@code null}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.548 -0500", hash_original_method = "DC3A6B837A6CEBDAA6FC05976EEFEE9C", hash_generated_method = "C3F461AD4C3340BD933823AE6BD632D0")
     
 public String[] list() {
@@ -896,6 +945,8 @@ public String[] list() {
      *            the filter to match names against, may be {@code null}.
      * @return an array of files or {@code null}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.555 -0500", hash_original_method = "9DF6733463E25DE92688E347FBBAD22E", hash_generated_method = "3C3A3CFC49EB3C95FA39F5723040A33C")
     
 public String[] list(FilenameFilter filter) {
@@ -920,6 +971,8 @@ public String[] list(FilenameFilter filter) {
      *
      * @return an array of files or {@code null}.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.557 -0500", hash_original_method = "9B953D65872590D8ABB7497D4B159A57", hash_generated_method = "02AE2C1C40DB6FEABA09D2EED581A218")
     
 public File[] listFiles() {
@@ -940,6 +993,8 @@ public File[] listFiles() {
      *            the filter to match names against, may be {@code null}.
      * @return an array of files or {@code null}.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.559 -0500", hash_original_method = "94A37D22B56FB881F333055CF5969013", hash_generated_method = "915FAD761344385A2BCFAA4982F4BEE2")
     
 public File[] listFiles(FilenameFilter filter) {
@@ -959,6 +1014,8 @@ public File[] listFiles(FilenameFilter filter) {
      *            the filter to match names against, may be {@code null}.
      * @return an array of files or {@code null}.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.562 -0500", hash_original_method = "1FB8ED2C60AA91150D4C3211C8CB2AD8", hash_generated_method = "1F599671FB5A99CF35C65B016AE3135C")
     
 public File[] listFiles(FileFilter filter) {
@@ -1006,6 +1063,8 @@ private File[] filenamesToFiles(String[] filenames) {
      *         otherwise.
      * @see #mkdirs
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.566 -0500", hash_original_method = "9AA9A2328E77BE45E90F159A380326D5", hash_generated_method = "0A065ADE1D040E425EF9A892E1097ECB")
     
 public boolean mkdir() {
@@ -1030,6 +1089,8 @@ public boolean mkdir() {
      *         the directories can not be created.
      * @see #mkdir
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.569 -0500", hash_original_method = "0ED75208E22CDF6376FEADF6E55B44EF", hash_generated_method = "7BFF1F27222801DE4A24EF4A5B51C4ED")
     
 public boolean mkdirs() {
@@ -1071,6 +1132,7 @@ public boolean mkdirs() {
      *         already exists.
      * @throws IOException if it's not possible to create the file.
      */
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.572 -0500", hash_original_method = "B6F8DC1B8131115DA0E4E46657B89E08", hash_generated_method = "AD75715A5AEB9B279CC677EEA8B71771")
     
 public boolean createNewFile() throws IOException {
@@ -1109,6 +1171,8 @@ public boolean createNewFile() throws IOException {
      * @param newPath the new path.
      * @return true on success.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.580 -0500", hash_original_method = "FDC5D6D625B3CE9B182F17F4E03581A9", hash_generated_method = "7C1AE3A6CB934088A19AA981E3FB6DB0")
     
 public boolean renameTo(File newPath) {
@@ -1126,6 +1190,8 @@ public boolean renameTo(File newPath) {
      *
      * @return a printable representation of this file.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:44.583 -0500", hash_original_method = "2B0DBB93241DF37011E39BE4D10F6879", hash_generated_method = "26C57ED0CDB609D607D36CA3242D043F")
     
 @Override
@@ -1133,7 +1199,9 @@ public boolean renameTo(File newPath) {
         return path;
     }
         
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.857 -0400", hash_original_method = "700C756497BE64476D6C692FA75956E5", hash_generated_method = "83B703FD7718250D40AE9A9467D048ED")
+@DSComment("File Information")
+    @DSSpec(DSCat.IO)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:43.857 -0400", hash_original_method = "700C756497BE64476D6C692FA75956E5", hash_generated_method = "83B703FD7718250D40AE9A9467D048ED")
     public URI toURI() {
         String name = getAbsoluteName();
         try 

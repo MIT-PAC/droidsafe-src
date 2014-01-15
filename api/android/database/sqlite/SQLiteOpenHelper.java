@@ -116,6 +116,8 @@ public String getDatabaseName() {
      * @throws SQLiteException if the database cannot be opened for writing
      * @return a read/write database object valid until {@link #close} is called
      */
+    @DSComment("returned DB object")
+    @DSSpec(DSCat.DATABASE)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.787 -0500", hash_original_method = "907737C2FD1DDBAF11A72FCBC6C42218", hash_generated_method = "2232AC9EE8B6E44F14C198E6D8B3DC50")
     
@@ -206,6 +208,8 @@ public synchronized SQLiteDatabase getWritableDatabase() {
      * @return a database object valid until {@link #getWritableDatabase}
      *     or {@link #close} is called.
      */
+    @DSComment("returned DB object")
+    @DSSpec(DSCat.DATABASE)
     @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.791 -0500", hash_original_method = "2895B1DC2B2D9F1953E668AA67DA7E81", hash_generated_method = "CCD91013A9F1A17C4DECD1F769D86C56")
     
@@ -254,6 +258,8 @@ public synchronized SQLiteDatabase getReadableDatabase() {
     /**
      * Close any open database object.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.793 -0500", hash_original_method = "C09EB7B9D42A5A795555D7C9A56D8370", hash_generated_method = "7DAFEB4AF1658D891E4799A36032CC30")
     
 public synchronized void close() {

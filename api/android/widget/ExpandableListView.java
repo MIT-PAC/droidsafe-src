@@ -33,6 +33,8 @@ public class ExpandableListView extends ListView {
      *         either {@link #PACKED_POSITION_TYPE_CHILD}, {@link #PACKED_POSITION_TYPE_GROUP}, or
      *         {@link #PACKED_POSITION_TYPE_NULL}.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.869 -0500", hash_original_method = "8F2A6759AB2DE8E848B42C8EAF8E7669", hash_generated_method = "F855F629A016C8C9CDB78C54E5F942B5")
     
 public static int getPackedPositionType(long packedPosition) {
@@ -54,6 +56,8 @@ public static int getPackedPositionType(long packedPosition) {
      * @return The group position portion of the packed position. If this does
      *         not contain a group, returns -1.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.872 -0500", hash_original_method = "E7FEB201B74C7CCB951F4732DACD43EF", hash_generated_method = "82A6DAD2CD3647D08D4E3A69DAB541F7")
     
 public static int getPackedPositionGroup(long packedPosition) {
@@ -75,6 +79,8 @@ public static int getPackedPositionGroup(long packedPosition) {
      * @return The child position portion of the packed position. If this does
      *         not contain a child, returns -1.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.874 -0500", hash_original_method = "A693593CBB4108EEE9837B598724899E", hash_generated_method = "4B7A2B748BF5F662054C05D7FCC5E082")
     
 public static int getPackedPositionChild(long packedPosition) {
@@ -489,6 +495,8 @@ public void setChildDivider(Drawable childDivider) {
     /**
      * This method should not be used, use {@link #getExpandableListAdapter()}.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.798 -0500", hash_original_method = "1C0E40F01B81CC446BCB9E503587C60C", hash_generated_method = "AD4EED210FC927083466B4E53D9186CE")
     
 @Override
@@ -520,6 +528,8 @@ public void setChildDivider(Drawable childDivider) {
      * Sets the adapter that provides data to this view.
      * @param adapter The adapter that provides data to this view.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.803 -0500", hash_original_method = "86A402EAE8E162910BEF1CBB540CA500", hash_generated_method = "27BC0852675A405C13BDC2A25C5C6142")
     
 public void setAdapter(ExpandableListAdapter adapter) {
@@ -541,6 +551,8 @@ public void setAdapter(ExpandableListAdapter adapter) {
      * Gets the adapter that provides data to this view.
      * @return The adapter that provides data to this view.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.805 -0500", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "72DC64E495E44B4040054743218614A1")
     

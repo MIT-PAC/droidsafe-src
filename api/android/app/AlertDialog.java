@@ -112,6 +112,8 @@ protected AlertDialog(Context context, boolean cancelable, OnCancelListener canc
      *            {@link DialogInterface#BUTTON_POSITIVE}.
      * @return The button from the dialog, or null if a button does not exist.
      */
+    @DSComment("GUI, alert dialog")
+    @DSSafe(DSCat.GUI)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.003 -0500", hash_original_method = "2277A8C194577CB499FB53C1370D61D1", hash_generated_method = "B085ED52457D458E48F09C261A47BA82")
     
@@ -131,6 +133,8 @@ public ListView getListView() {
         return mAlert.getListView();
     }
     
+    @DSComment("GUI, alert dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.008 -0500", hash_original_method = "5655E82DFA793B6CD86300EA45F77D5A", hash_generated_method = "26AF562DBD989B710AC7960278F44650")
     
 @Override
@@ -149,6 +153,8 @@ public void setCustomTitle(View customTitleView) {
         mAlert.setCustomTitle(customTitleView);
     }
     
+    @DSComment("GUI, alert dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.012 -0500", hash_original_method = "0FDFF41BD74285789F29E89A2F2C112C", hash_generated_method = "89AE63E331E776DD0006DBDEB8468520")
     
 public void setMessage(CharSequence message) {
@@ -175,6 +181,8 @@ public void setView(View view) {
      * @param viewSpacingRight Extra space to appear to the right of {@code view}
      * @param viewSpacingBottom Extra space to appear below {@code view}
      */
+    @DSComment("GUI, alert dialog")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.017 -0500", hash_original_method = "399D46DD3D86F04F15AA9836309BED7E", hash_generated_method = "AF0B58B488D79D0F8E3CA214011A0CEC")
     
@@ -300,6 +308,8 @@ public void setButton(int whichButton, CharSequence text, OnClickListener listen
      * @param resId the resourceId of the drawable to use as the icon or 0
      * if you don't want an icon.
      */
+    @DSComment("GUI, alert dialog")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.037 -0500", hash_original_method = "B742B976A105323EE27DB344109D47DF", hash_generated_method = "473496E8EFD550346F20C86156F373DF")
     
@@ -307,6 +317,8 @@ public void setIcon(int resId) {
         mAlert.setIcon(resId);
     }
     
+    @DSComment("GUI, alert dialog")
+    @DSSafe(DSCat.GUI)
     @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.039 -0500", hash_original_method = "58CB6A167EA4E7B84F26608014843ADF", hash_generated_method = "6B370B792F8AA46DE34678423A94EE2C")
     
@@ -325,6 +337,8 @@ public void setIcon(Drawable icon) {
         /**
          * Constructor using a context for this builder and the {@link AlertDialog} it creates.
          */
+        @DSComment("Dialog builder")
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.059 -0500", hash_original_method = "CB1BA6F353D1C3D1D9DFD93D2E2AA221", hash_generated_method = "0F6F28BA388F588C46FF4901DEA377E8")
         
 public Builder(Context context) {
@@ -951,6 +965,8 @@ public Builder setRecycleOnMeasureEnabled(boolean enabled) {
          * before displaying the dialog. Use {@link #show()} if you don't have any other processing
          * to do and want this to be created and displayed.
          */
+        @DSComment("Dialog builder")
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.145 -0500", hash_original_method = "24F2ECF5FEA53B0907C34A4AFC4C2134", hash_generated_method = "316857243741277D06918E544FCD71B7")
         
 public AlertDialog create() {
@@ -971,6 +987,8 @@ public AlertDialog create() {
          * Creates a {@link AlertDialog} with the arguments supplied to this builder and
          * {@link Dialog#show()}'s the dialog.
          */
+        @DSComment("Dialog builder")
+        @DSSafe(DSCat.GUI)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.147 -0500", hash_original_method = "9ED881995B2EAB3CB90B8129D2705377", hash_generated_method = "FECC0B8CEF43AB35AB1E1B32C0D7658C")
         

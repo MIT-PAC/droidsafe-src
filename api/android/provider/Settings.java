@@ -229,6 +229,8 @@ public String getString(ContentResolver cr, String name) {
          * @param name to look up in the table
          * @return the corresponding value, or null if not present
          */
+        @DSComment("System settings/policy")
+        @DSSpec(DSCat.SYSTEM)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.512 -0500", hash_original_method = "BCE17AD551131F3C5B0199F6E8D71A65", hash_generated_method = "0E3882E2540A80A5533039D724BE4002")
         
@@ -295,6 +297,8 @@ public static Uri getUriFor(String name) {
          * @return The setting's current value, or 'def' if it is not defined
          * or not a valid integer.
          */
+        @DSComment("System settings/policy")
+        @DSSpec(DSCat.SYSTEM)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.520 -0500", hash_original_method = "DBD93DA0568D4E47C40E6BFA100A1EF2", hash_generated_method = "6431710C35E8CCD460BB62DB2BBC4A9B")
         
@@ -325,6 +329,8 @@ public static int getInt(ContentResolver cr, String name, int def) {
          *
          * @return The setting's current value.
          */
+        @DSComment("System settings/policy")
+        @DSSpec(DSCat.SYSTEM)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.522 -0500", hash_original_method = "BC1F410DCF7E88197DA27D0D425DD822", hash_generated_method = "65A02ED2DBB08389547A19AA8589B1B4")
         
@@ -351,6 +357,8 @@ public static int getInt(ContentResolver cr, String name)
          * @param value The new value for the setting.
          * @return true if the value was set, false on database errors
          */
+        @DSComment("System settings/policy")
+        @DSSpec(DSCat.SYSTEM)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.525 -0500", hash_original_method = "5F86FAE7117D2E108E68CEB80BF49DA7", hash_generated_method = "6ED7733ABB42EB8D1CAB516377E36AA4")
         
 public static boolean putInt(ContentResolver cr, String name, int value) {
@@ -1197,6 +1205,8 @@ public static void setShowGTalkServiceStatus(ContentResolver cr, boolean flag) {
          * @param name to look up in the table
          * @return the corresponding value, or null if not present
          */
+        @DSComment("System settings, info collection")
+        @DSSpec(DSCat.SYSTEM)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.966 -0500", hash_original_method = "673ACF52738B2550EB82A63F524A794C", hash_generated_method = "DF23D5CD90F7627E0234D522B83FB549")
         
@@ -1215,6 +1225,8 @@ public synchronized static String getString(ContentResolver resolver, String nam
          * @param value to associate with the name
          * @return true if the value was set, false on database errors
          */
+        @DSComment("System settings, info collection")
+        @DSSpec(DSCat.SYSTEM)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.969 -0500", hash_original_method = "0140B0C084561EBE6D9CB9F916362E53", hash_generated_method = "2E5FD5211A5DBC3FA7DD1C6845765FB6")
         
 public static boolean putString(ContentResolver resolver,
@@ -1249,6 +1261,8 @@ public static Uri getUriFor(String name) {
          * @return The setting's current value, or 'def' if it is not defined
          * or not a valid integer.
          */
+        @DSComment("System settings, info collection")
+        @DSSpec(DSCat.SYSTEM)
         @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:51.974 -0500", hash_original_method = "DBD93DA0568D4E47C40E6BFA100A1EF2", hash_generated_method = "6431710C35E8CCD460BB62DB2BBC4A9B")
         

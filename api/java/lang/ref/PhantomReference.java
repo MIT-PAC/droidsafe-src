@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public class PhantomReference<T> extends Reference<T> {
 
     /**
@@ -17,6 +16,8 @@ public class PhantomReference<T> extends Reference<T> {
      * @param r the referent to track
      * @param q the queue to register the phantom reference object with
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.073 -0500", hash_original_method = "269EAD0EE18A562FFF5DDE7409E1AEEE", hash_generated_method = "4727728D6D4C47B3855AF188ED24FE94")
     
 public PhantomReference(T r, ReferenceQueue<? super T> q) {
@@ -35,7 +36,6 @@ public PhantomReference(T r, ReferenceQueue<? super T> q) {
     public T get() {
         return null;
     }
-
     
 }
 

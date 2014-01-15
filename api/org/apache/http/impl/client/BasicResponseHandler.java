@@ -15,6 +15,8 @@ import org.apache.http.util.EntityUtils;
 
 public class BasicResponseHandler implements ResponseHandler<String> {
     
+    @DSComment("no input, no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:54.261 -0400", hash_original_method = "2E943129A9E8C0C10C42D984806E844A", hash_generated_method = "2E943129A9E8C0C10C42D984806E844A")
     public BasicResponseHandler ()
     {
@@ -40,7 +42,6 @@ public String handleResponse(final HttpResponse response)
         HttpEntity entity = response.getEntity();
         return entity == null ? null : EntityUtils.toString(entity);
     }
-
     
 }
 
