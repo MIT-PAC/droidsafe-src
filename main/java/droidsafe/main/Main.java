@@ -245,7 +245,7 @@ public class Main {
 
         // jsa uses pta results in hotspot calculation
 
-        if (afterTransform(monitor) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         //run jsa after we inject strings from XML values and layout
