@@ -197,6 +197,11 @@ public class Config {
     Option jsa = new Option("nojsa", "Do not use JSA");
     options.addOption(jsa);
     
+    Option jsatimeout =
+            OptionBuilder.withArgName("value").hasArg()
+                .withDescription("Timeout value for the string analysis (default 120)").create("jsatimeout");
+    options.addOption(jsatimeout);
+    
     Option strict = new Option("strict", "Strict mode: die on errors and assertions.");
     options.addOption(strict);
 

@@ -256,10 +256,23 @@ public class JSAStrings {
    * 
    * @param signature The signature of the method.
    * @param arg The argument index of the hotspot.
- * @return 
+   * @return 
    */
   public List<ValueBox> addArgumentHotspots(String signature, int arg) {
     List<ValueBox> sigSpots = StringAnalysis.getArgumentExpressions(signature, arg);
+    return addArgumentHotspots(signature, arg, sigSpots);
+  }
+
+  /**
+   * Add a hotspot for matching calls.
+   * 
+   * @param signature The signature of the method.
+   * @param arg The argument index of the hotspot.
+   * @param sigSpots the hotspot instances for the method and the argument index.
+   * @return 
+   */
+  public List<ValueBox> addArgumentHotspots(String signature, int arg, List<ValueBox> sigSpots) {
+    // List<ValueBox> sigSpots = StringAnalysis.getArgumentExpressions(signature, arg);
     logger.debug("For signature " + signature + " and arg " + arg  + " got " + sigSpots.size() + " hotspots.");
 
     if (!sigSpots.isEmpty()) {
