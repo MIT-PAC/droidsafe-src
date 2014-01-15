@@ -62,8 +62,8 @@ public class AllocationGraph {
         graph = new DirectedMultigraph<SootClass, DefaultEdge>(DefaultEdge.class);
         staticEdges = new HashSet<DefaultEdge>();
         buildAllocationGraph();
-        exportToDot(Project.v().getOutputDir() + File.separator + 
-            "allocation-graph.dot");
+        /*exportToDot(Project.v().getOutputDir() + File.separator + 
+            "allocation-graph.dot");*/
         
         //System.out.println("Allocation graph size: " + graph.vertexSet().size());
         
@@ -74,6 +74,19 @@ public class AllocationGraph {
         
         System.out.println("*************");
         */
+    }
+    
+    public String getGraphStats() {
+        long totalInDegree = 0;
+        long numberGT1 = 0;
+        for (SootClass clz : graph.vertexSet()) {
+            if (graph.inDegreeOf(clz) > 1)
+                numberGT1 ++;
+            totalInDegree += graph.inDegreeOf(clz);
+        }
+        
+        return "Number of nodes with in-degree > 1: " + numberGT1 +
+                "\nAverage in-degree: " + (((double)totalInDegree) / ((double)graph.vertexSet().size()));
     }
     
     public int getInDegree(SootClass clz) {

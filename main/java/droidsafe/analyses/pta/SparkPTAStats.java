@@ -27,6 +27,7 @@ import soot.jimple.toolkits.pta.IAllocNode;
 import soot.toolkits.scalar.Pair;
 import droidsafe.android.app.Project;
 import droidsafe.main.Config;
+import droidsafe.transforms.objsensclone.AllocationGraph;
 import droidsafe.transforms.objsensclone.ClonedContextTranslator;
 import droidsafe.transforms.objsensclone.ObjectSensitivityCloner;
 
@@ -181,6 +182,10 @@ public class SparkPTAStats {
             //cloning removed call graph
 
             fw.write("Average points to set size: " + ((double)PTSetSize)/((double)PTSets) + "\n");
+            
+            AllocationGraph graph = new AllocationGraph();
+            fw.write(graph.getGraphStats());
+            
             /*
             fw.write("virtual call sites: " + virtualCallSites + "\n");
             fw.write("polymorphic call sites: " + polyCallSites + "\n");
