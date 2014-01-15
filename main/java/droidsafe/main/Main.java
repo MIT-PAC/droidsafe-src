@@ -80,6 +80,8 @@ public class Main {
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     /** timing stats container */
     private static List<String> appStatRowEntries = new ArrayList<String>();
+    /** app stat csvwriter */
+    private static CSVWriter appStatWriter = null; 
 
     /**
      * Entry point of DroidSafe Tool.
@@ -89,7 +91,21 @@ public class Main {
         driverMsg("Starting DroidSafe Run");
         // grab command line args and set some globals
         Config.v().init(args);
-        run(new DroidsafeDefaultProgressMonitor());
+        // need this try catch so that app stats get written even if some phase throws exception
+        try { 
+            run(new DroidsafeDefaultProgressMonitor());
+        } catch (Exception e) {
+
+        } finally {
+            if (appStatWriter != null) {
+                appStatWriter.writeNext(appStatRowEntries.toArray(new String[] {}));                                             
+                try {                                                                                                            
+                    appStatWriter.close();                                                                                       
+                } catch(IOException ie) {                                                                                        
+                    logger.warn("Unable to close app-stats.log: {}", ie);                                                        
+                }        
+            }
+        }
     }
 
     public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) {
@@ -119,7 +135,6 @@ public class Main {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
        
-        CSVWriter appStatWriter = null; 
         try {
             appStatWriter = new CSVWriter(new FileWriter(Project.v().getOutputDir() + File.separator + "app-stats.csv"));
         } catch(Exception e) {
@@ -133,8 +148,6 @@ public class Main {
         String[] bits = Config.v().APP_ROOT_DIR.split("/");
         appStatRowEntries.add(bits[bits.length-1]);
 
-
-
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
         RemoveStupidOverrides.run();
@@ -142,7 +155,7 @@ public class Main {
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
         }
-
+       
         driverMsg("Calling scalar optimizations.");
         monitor.subTask("Scalar Optimization");
         ScalarAppOptimizations.run();
@@ -459,13 +472,6 @@ public class Main {
             driverMsg("Converting RCFG to SSL ...");
             RCFGToSSL.run(true);
             logger.error("Not implemented yet!");
-        }
-       
-        appStatWriter.writeNext(appStatRowEntries.toArray(new String[] {}));
-        try {
-            appStatWriter.close();
-        } catch(IOException ie) {
-            logger.warn("Unable to close app-stats.log: {}", ie);
         }
  
         monitor.worked(1);
