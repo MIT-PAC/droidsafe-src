@@ -152,7 +152,7 @@ public class PaddlePTA extends PTABridge {
                 continue;
             
            totalContexts += reachableMethodContextMap.get(method).size();
-           totalContextMethods = 0;
+           totalContextMethods++;
             
             if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
                 continue;
