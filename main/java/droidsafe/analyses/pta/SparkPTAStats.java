@@ -36,14 +36,6 @@ public class SparkPTAStats {
     private static FileWriter fw;
     private ClonedContextTranslator cTrans;
 
-    static {
-        try {
-            fw = new FileWriter(Project.v().getOutputDir() + File.separator +"spark-stats.txt");
-        } catch (Exception e) {
-
-        }
-    }
-
     public SparkPTAStats() {
         cTrans = new ClonedContextTranslator();
     }
@@ -54,10 +46,15 @@ public class SparkPTAStats {
     public void writeStats() {
         if (!Config.v().statsRun)
             return;
+        
 
         PTABridge pta = PTABridge.v();
 
         try {
+
+            if (fw == null)
+                fw = new FileWriter(Project.v().getOutputDir() + File.separator +"spark-stats.txt");
+            
             fw.write("\n=====================================================\n");
             fw.write("Obj sens: " + ObjectSensitivityCloner.v().hasRun + "\n");
 
@@ -179,7 +176,7 @@ public class SparkPTAStats {
             fw.write("Collapsed Reachable Methods: " + collapsedReachable + "\n");
             
             fw.write("Average method context size: " + 
-                    ((double)pta.getAllReachableMethods().size()) / ((double)collapsedReachable));
+                    ((double)pta.getAllReachableMethods().size()) / ((double)collapsedReachable) + "\n");
             
             //cloning removed call graph
 
@@ -192,6 +189,8 @@ public class SparkPTAStats {
              */
             fw.flush();
         } catch (IOException e) {
+            logger.error("Error writing stats file", e);
+            droidsafe.main.Main.exit(1);
 
         }
     }

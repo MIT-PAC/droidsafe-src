@@ -143,8 +143,12 @@ public class PaddlePTA extends PTABridge {
     private void printStats() {
         long PTSets = 0;
         long PTSetSize = 0;
-
+        long totalContexts = 0;
+        
+        
         for (SootMethod method : reachableMethodContextMap.keySet()) {
+            totalContexts += reachableMethodContextMap.get(method).size();
+            
             if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
                 continue;
 
@@ -180,7 +184,7 @@ public class PaddlePTA extends PTABridge {
         }
 
         System.out.println("Average method context size: " +
-                ((double)reachableMethodContextMap.values().size()) / ((double)reachableMethodContextMap.keySet().size()));
+                ((double)totalContexts) / ((double)reachableMethodContextMap.keySet().size()));
         System.out.println("Average points to set size: " + ((double)PTSetSize)/((double)PTSets) );
 
 
