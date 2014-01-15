@@ -368,7 +368,7 @@ public class ValueAnalysis implements CGContextVisitor {
                 //logger.info("handleString: {}", rhsNode.getMethod());
                 StringConstant sc = (StringConstant)rhsNode.getNewExpr();
                 //are we tracking all strings, or just the strings injected by jsa for api calls in user code
-                if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc)) {
+                if (!ONLY_TRACK_JSA_STRINGS || JSAResultInjection.trackedStringConstants.contains(sc) || rhsNodes.size() == 1) {
                     String value = ((IStringConstantNode)rhsNode).getString();
                     value = value.replaceAll("(\\r|\\n)", "");
                     value = value.replace("\"", "");
