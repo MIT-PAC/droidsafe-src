@@ -293,8 +293,8 @@ public int getRecordCount() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
-    @DSComment("Potenitally can fake other event")
-    @DSSpec(DSCat.SECURITY)
+    @DSComment("can only append for its own use")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.443 -0500", hash_original_method = "65BE24FB8BF3EB0B7B54A7C4AA9FE110", hash_generated_method = "A9E8D5291D5D0B74598ADA13EEC3447F")
     
 public void appendRecord(AccessibilityRecord record) {
@@ -390,8 +390,8 @@ public CharSequence getPackageName() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
-    @DSComment("Can spoof the source")
-    @DSSpec(DSCat.SECURITY)
+    @DSComment("for the same app usage only")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.459 -0500", hash_original_method = "D35D1C42C7BD5A2BDF03FC6BDBDF64EE", hash_generated_method = "194D21D70E7FE29679C690B456C3D46C")
     
 public void setPackageName(CharSequence packageName) {

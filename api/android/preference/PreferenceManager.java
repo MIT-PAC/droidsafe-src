@@ -475,7 +475,7 @@ boolean setPreferences(PreferenceScreen preferenceScreen) {
      * @see PreferenceGroup#findPreference(CharSequence)
      */
     @DSComment("May change system behavior")
-    @DSSpec(DSCat.SYSTEM_SETTINGS)
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.737 -0500", hash_original_method = "313075D13AC6A3D78BD3127C39A86211", hash_generated_method = "17D4C85ACE0ADBEB3C87DB5BE0FA1596")
     
 public Preference findPreference(CharSequence key) {

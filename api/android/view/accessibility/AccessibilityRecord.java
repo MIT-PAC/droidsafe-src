@@ -35,7 +35,7 @@ public static AccessibilityRecord obtain(AccessibilityRecord record) {
      *
      * @return An instance.
      */
-    @DSComment("Data structure/no action")
+    @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.093 -0500", hash_original_method = "F52296A1A788DF4272F6650232B88A31", hash_generated_method = "60B1C824D4E6E3CA5E531FDBE67AE447")
     
@@ -189,7 +189,7 @@ public void setSource(View source) {
      * </p>
      * @return The info of the source.
      */
-    @DSComment("Data structure/no action")
+    @DSComment("View state info")
     @DSSafe(DSCat.DATA_STRUCTURE)
     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.982 -0500", hash_original_method = "D6229F18D386359B7D2ED64A724CE545", hash_generated_method = "E3F4DD62F8EC4943796CD11E7138B5E7")
