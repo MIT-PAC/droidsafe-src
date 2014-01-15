@@ -56,7 +56,7 @@ import soot.jimple.paddle.NodeManager;
 import soot.jimple.paddle.P2SetVisitor;
 import soot.jimple.paddle.PaddleNumberers;
 import soot.jimple.paddle.PaddleScene;
-import soot.jimple.paddle.PointsToSetInternal;
+import soot.jimple.paddle.PointsToSetReadOnly;
 import soot.jimple.paddle.Results;
 import soot.jimple.paddle.VarNode;
 import soot.jimple.paddle.queue.Rctxt_method;
@@ -143,16 +143,15 @@ public class PaddlePTA extends PTABridge {
     private void printStats() {
         long PTSets = 0;
         long PTSetSize = 0;
-        long totalContexts = 0;
-        long totalContextMethods = 0;
+        
+        Set<Context> contexts = new HashSet<Context>();
         
         for (SootMethod method : reachableMethodContextMap.keySet()) {
+        
+            contexts.addAll(reachableMethodContextMap.get(method));
             
             if (shouldIgnoreForStats(method.getDeclaringClass()))
                 continue;
-            
-           totalContexts += reachableMethodContextMap.get(method).size();
-           totalContextMethods++;
             
             if (method.isAbstract() || !method.isConcrete() || method.isPhantom())
                 continue;
@@ -189,7 +188,7 @@ public class PaddlePTA extends PTABridge {
         }
 
         System.out.println("Average method context size: " +
-                ((double)totalContexts) / ((double)totalContextMethods));
+                ((double)contexts.size()) / ((double)reachableMethodContextMap.keySet().size()));
         System.out.println("Average points to set size: " + ((double)PTSetSize)/((double)PTSets) );
 
 
@@ -200,7 +199,7 @@ public class PaddlePTA extends PTABridge {
 
             //for any reference value perform the pta query
             for (Context ctxt : reachableMethodContextMap.get(method)) {
-                PointsToSetInternal pts = (PointsToSetInternal)ptsProvider.reachingObjects(ctxt, local);
+                PointsToSetReadOnly pts = (PointsToSetReadOnly)ptsProvider.reachingObjects(ctxt, local);
                 //visit internal points to set and grab all allocnodes
 
                 int size = pts.size();
@@ -363,21 +362,21 @@ public class PaddlePTA extends PTABridge {
     @Override
     public Set<? extends IAllocNode> getPTSet(Value val) {
         final Set<AllocNode> allocNodes = new HashSet<AllocNode>();
-        PointsToSetInternal pts = null;
+        PointsToSetReadOnly pts = null;
 
         try {
             if (val instanceof InstanceFieldRef) {
                 final InstanceFieldRef ifr = (InstanceFieldRef)val;
-                pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)ifr.getBase(), ifr.getField());
+                pts = (PointsToSetReadOnly)ptsProvider.reachingObjects((Local)ifr.getBase(), ifr.getField());
             } else if (val instanceof ArrayRef) {
                 ArrayRef arrayRef = (ArrayRef)val;
-                pts = (PointsToSetInternal)ptsProvider.reachingObjectsOfArrayElement
+                pts = (PointsToSetReadOnly)ptsProvider.reachingObjectsOfArrayElement
                         (ptsProvider.reachingObjects((Local)arrayRef.getBase()));
             } else if (val instanceof Local){            
-                pts = (PointsToSetInternal)ptsProvider.reachingObjects((Local)val);
+                pts = (PointsToSetReadOnly)ptsProvider.reachingObjects((Local)val);
             } else if (val instanceof StaticFieldRef) {
                 SootField field = ((StaticFieldRef)val).getField();
-                pts = (PointsToSetInternal)ptsProvider.reachingObjects(field);
+                pts = (PointsToSetReadOnly)ptsProvider.reachingObjects(field);
             } else if (val instanceof NullConstant) {
                 return (Set<? extends IAllocNode>) allocNodes;
             } else {
@@ -417,7 +416,7 @@ public class PaddlePTA extends PTABridge {
         while (iter.hasNext()) {
             ContextAllocDotField cadf = (ContextAllocDotField) iter.next();
             PointsToSet pointsToSet = p2sets.get(cadf);
-            ((PointsToSetInternal)ptsProvider.reachingObjects(pointsToSet, field)).forall(new P2SetVisitor() {
+            ((PointsToSetReadOnly)ptsProvider.reachingObjects(pointsToSet, field)).forall(new P2SetVisitor() {
                 @Override
                 public void visit(ContextAllocNode node) {
                     allocNodes.add(node.obj());

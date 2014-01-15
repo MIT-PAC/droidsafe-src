@@ -163,8 +163,12 @@ public class SparkPTA extends PTABridge {
             Integer i = type.numDimensions;
             Pair pair = new Pair(newArr, i);
             return (IAllocNode) newToAllocNodeMap.get(pair);
-        } else
+        } else {
+            if (!newToAllocNodeMap.containsKey(newExpr)) {
+                System.out.println("Not in new -> alloc map: " + newExpr);
+            }
             return (IAllocNode) newToAllocNodeMap.get(newExpr);
+        }
     }
 
     /**

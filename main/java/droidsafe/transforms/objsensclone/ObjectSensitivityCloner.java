@@ -92,9 +92,9 @@ public class ObjectSensitivityCloner {
     private List<SootMethod> masterMethodList;
     private static ObjectSensitivityCloner v;
 
-    private Set<SootClass> classesThatWereCloned;
+    private Map<SootClass, Set<SootClass>> originalToCloneMap;
 
-    private Set<SootClass> clonedClassesCreated;
+    private Map<SootClass, SootClass> cloneToOriginalMap;
 
     private Map<SootMethod,Set<SootMethod>> methodToClonesMap;
 
@@ -115,8 +115,8 @@ public class ObjectSensitivityCloner {
 
 
     private ObjectSensitivityCloner() {
-        clonedClassesCreated = new HashSet<SootClass>();
-        classesThatWereCloned = new HashSet<SootClass>();
+        cloneToOriginalMap = new HashMap<SootClass, SootClass>();
+        originalToCloneMap = new HashMap<SootClass, Set<SootClass>>();
         clonedMethodsAdded = new HashSet<SootMethod>();
         methodToClonesMap = new HashMap<SootMethod,Set<SootMethod>>();
     }
@@ -160,8 +160,36 @@ public class ObjectSensitivityCloner {
         Collections.sort(masterMethodList, new ToStringComparator());
     }
 
+    /**
+     * Given a cloned class, get the original class.
+     */
+    public SootClass getOriginalClass(SootClass clz) {
+        if (!isClonedClass(clz)) {
+            logger.error("Cannot call on non-cloned class!: {}", clz);
+            droidsafe.main.Main.exit(1);
+        }
+        
+        return cloneToOriginalMap.get(clz);
+    }
+    
+    /**
+     * Get all the cloned classes that represent the given original class.
+     */
+    public Set<SootClass> getClonedClasses(SootClass clz) {
+        if (isClonedClass(clz)) {
+            logger.error("Cannot call on cloned class!: {}", clz);
+            droidsafe.main.Main.exit(1);
+        }
+        
+        if (!originalToCloneMap.containsKey(clz))
+            return Collections.emptySet();
+        
+        return originalToCloneMap.get(clz);
+        
+    }
+    
     public boolean isClonedClass(SootClass clz) {
-        return clonedClassesCreated.contains(clz);
+        return cloneToOriginalMap.keySet().contains(clz);
     }
 
     public boolean isClonedMethod(SootMethod method) {
@@ -326,7 +354,7 @@ public class ObjectSensitivityCloner {
      * @return
      */
     private boolean cloneAllAllocsOfClass(SootClass currentClass, AllocationGraph aGraph) {
-        if (classesThatWereCloned.contains(currentClass) || clonedClassesCreated.contains(currentClass)) {
+        if (originalToCloneMap.keySet().contains(currentClass) || isClonedClass(currentClass)) {
             logger.error("Trying to clone allocs for already cloned class: {}", currentClass);
             droidsafe.main.Main.exit(1);
         }
@@ -407,8 +435,14 @@ public class ObjectSensitivityCloner {
                                 newExpr.setBaseType(RefType.v(cloned));
                                 
                                 numClonedClasses++;
-                                clonedClassesCreated.add(cloned);
-                                classesThatWereCloned.add(currentClass);
+                                cloneToOriginalMap.put(cloned, currentClass);
+                                
+                                if (!originalToCloneMap.containsKey(currentClass)) 
+                                    originalToCloneMap.put(currentClass, new HashSet<SootClass>());
+                                
+                                originalToCloneMap.get(currentClass).add(cloned);
+                                
+                                
                                 haveCloned = true;
                             } else {
                                 throw new Exception("Special Invoke Not Found!");

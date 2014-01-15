@@ -46,6 +46,7 @@ import soot.jimple.InstanceInvokeExpr;
 import soot.jimple.IntConstant;
 import soot.jimple.InvokeExpr;
 import soot.jimple.InvokeStmt;
+import soot.jimple.JasminClass;
 import soot.jimple.LongConstant;
 import soot.jimple.NullConstant;
 import soot.jimple.ParameterRef;
@@ -733,41 +734,40 @@ public class SootUtils {
      * path of parent directory.
      */
     public static void writeByteCodeAndJimple(String parentDir, SootClass clz) {
-        
+
         String methodThatFailed = "";
-        
+
         File packageDirectory = new File(parentDir + File.separator +
             clz.getPackageName().replaceAll("\\.", File.separator));
-        
+
         try {
             //make package directory
             packageDirectory.mkdirs();
-                    
+
             FileOutputStream fos = new FileOutputStream(packageDirectory.toString() + File.separator + 
                 clz.getShortName() + ".class");
             OutputStream streamOut = new JasminOutputStream(fos);
             OutputStreamWriter osw = new OutputStreamWriter(streamOut);
             PrintWriter writerOut = new PrintWriter(osw);
-            
+
             for (SootMethod method : clz.getMethods()) {
                 methodThatFailed = method.getName();
                 if (method.isConcrete())
                     method.retrieveActiveBody();
             }
-
-            streamOut.close();
-            osw.close();
-            writerOut.close();
-            fos.close();
-
-            
-            /*
-               JasminClass jasminClass = new soot.jimple.JasminClass(clz);
-               jasminClass.print(writerOut);
-               writerOut.flush();
-               streamOut.close();
-             */
+            try {
                 
+                JasminClass jasminClass = new soot.jimple.JasminClass(clz);
+                jasminClass.print(writerOut);
+                System.out.println("Succeeded writing class: " + clz);
+            } catch (Exception e) {
+                logger.warn("Error writing class to file {}", clz, e);
+            }
+            
+            writerOut.flush();
+            streamOut.close();
+            
+
             streamOut = new FileOutputStream(packageDirectory.toString() + File.separator + clz.getShortName() + ".jimple");
             writerOut = new PrintWriter(new OutputStreamWriter(streamOut));
             Printer.v().printTo(clz, writerOut);
@@ -824,7 +824,7 @@ public class SootUtils {
 
         return getSourceLocation(stmt);
     }
-    
+
     /**
      * Return the source location of a Jimple statement.
      */
@@ -853,7 +853,7 @@ public class SootUtils {
         if (tag != null) {
             line = new SourceLocationTag(clz.toString(),  tag.getLineNumber()); 
         } else {
-           logger.debug("Cannot find line number tag for {} {}", stmt, clz);
+            logger.debug("Cannot find line number tag for {} {}", stmt, clz);
         }
 
         return line;
@@ -1154,12 +1154,12 @@ public class SootUtils {
      */
     public static List<SootClass> getAncestorList(SootClass me) {
         List<SootClass> list = new LinkedList<SootClass>();
-        
+
         if (!me.hasSuperclass())
             return list;
-        
+
         SootClass current = me.getSuperclass();
-        
+
 
         //System.out.println("checking accestor for = " + me.toString());
         while (current != null) {
@@ -1185,12 +1185,12 @@ public class SootUtils {
 
         ancestorList.add(0, sootClass);
         NumberedString subSig = method.getSubSignature();
-        
+
         for (SootClass sc: ancestorList) {
-           if (sc.declaresMethod(subSig))
-               return sc.getMethod(subSig);
+            if (sc.declaresMethod(subSig))
+                return sc.getMethod(subSig);
         }
-        
+
         return null;
     }
 

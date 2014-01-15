@@ -45,7 +45,7 @@ public abstract class PTABridge {
     public static final Set<String> STATS_IGNORE_CLASS_STRINGS = new HashSet<String>(Arrays.asList(
         "java.lang.String", 
         "java.lang.AbstractStringBuilder", 
-        //"java.lang.Throwable",
+        "java.lang.Throwable",
         "java.lang.CharSequence"));
     /** Build above as soot classes with all children before each run */
     public static Set<SootClass> STATS_IGNORE_SOOTCLASSES;
