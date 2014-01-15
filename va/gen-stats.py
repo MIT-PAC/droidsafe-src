@@ -53,13 +53,8 @@ def run(settings, args):
             va_stat_file = os.path.join(droidsafe_gen_dir, "va-stats.csv")
             app_stat_file = os.path.join(droidsafe_gen_dir, "app-stats.csv")
             src_dir = os.path.join("/".join(droidsafe_gen_dir.split("/")[:-1]), "src")
-            print "\n\n"
-            print os.path.exists(src_dir)
-            if os.path.exists(va_stat_file):
-                print os.stat(va_stat_file).st_size
-            if os.path.exists(app_stat_file):
-                print os.stat(app_stat_file).st_size
-            if not os.path.exists(va_stat_file) or os.stat(va_stat_file).st_size == 0 or not os.path.exists(app_stat_file) or os.stat(app_stat_file).st_size == 0 or not os.path.exists(src_dir):
+            if not os.path.exists(va_stat_file) or os.stat(va_stat_file).st_size == 0 or not
+                os.path.exists(app_stat_file) or os.stat(app_stat_file).st_size == 0 or not os.path.exists(src_dir):
                 continue
 
             # get size of app
