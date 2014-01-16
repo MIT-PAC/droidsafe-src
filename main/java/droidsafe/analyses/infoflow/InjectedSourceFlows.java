@@ -7,6 +7,7 @@ import droidsafe.analyses.value.ValueAnalysis;
 import droidsafe.analyses.value.VAModel;
 import droidsafe.analyses.value.RefVAModel;
 import droidsafe.analyses.value.VAUtils;
+import droidsafe.android.system.InfoKind;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

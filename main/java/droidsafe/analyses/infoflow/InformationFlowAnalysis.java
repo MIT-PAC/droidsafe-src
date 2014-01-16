@@ -1113,7 +1113,7 @@ public class InformationFlowAnalysis {
                     Local lLocal = (Local)((AssignStmt)callStmt).getLeftOp();
                     if (lLocal.getType() instanceof RefLikeType) {
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
-                            if (APIInfoKindMapping.v().hasSourceInfoKind(calleeMethod)
+                            if (API.v().hasSourceInfoKind(calleeMethod)
                                     || (Config.v().infoFlowTrackAll && !calleeMethod.getDeclaringClass().getPackageName().equals("java.lang"))) {
                                 ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                                 for (PTAContext context : InterproceduralControlFlowGraph.v().methodToContexts.get(callerMethod)) {
@@ -1128,7 +1128,7 @@ public class InformationFlowAnalysis {
                             outState.locals.putS(context, lLocal, evaluate(context, opImmediate, inState.locals));
                         }
                         if (!API.v().isSystemMethod(callerMethod) && API.v().isSystemMethod(calleeMethod)) {
-                            if (APIInfoKindMapping.v().hasSourceInfoKind(calleeMethod)
+                            if (API.v().hasSourceInfoKind(calleeMethod)
                                     || (Config.v().infoFlowTrackAll && !calleeMethod.getDeclaringClass().getPackageName().equals("java.lang"))) {
                                 ImmutableSet<InfoValue> values = ImmutableSet.<InfoValue>of(InfoUnit.v(callStmt));
                                 for (PTAContext context : InterproceduralControlFlowGraph.v().methodToContexts.get(callerMethod)) {

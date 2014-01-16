@@ -6,6 +6,7 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.LineNumberReader;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -23,12 +24,15 @@ import soot.Scene;
 import soot.SootClass;
 import soot.SootMethod;
 import soot.Type;
+import soot.tagkit.AnnotationArrayElem;
+import soot.tagkit.AnnotationElem;
 import soot.tagkit.AnnotationEnumElem;
 import soot.tagkit.AnnotationTag;
 import soot.tagkit.SyntheticTag;
 import soot.tagkit.Tag;
 import soot.tagkit.VisibilityAnnotationTag;
 import droidsafe.android.app.Hierarchy;
+import droidsafe.android.app.Project;
 import droidsafe.main.Config;
 import droidsafe.utils.SootMethodList;
 import droidsafe.utils.SootUtils;
@@ -67,6 +71,14 @@ public class API {
                     ));
 
     private Map<String,Class<?>> stubsForModeledClasses;
+    /** Classification category for methods */
+    private Map<SootMethod, String> classificationCat;
+    /** map of sources from soot method to info kinds */
+    private Map<SootMethod,Set<InfoKind>> srcsMapping;
+    /** map of sinks from soot method to info kinds */
+    private Map<SootMethod,Set<InfoKind>> sinksMapping;
+    /** default info kind for a spec or ban method that is not labeled */
+    public InfoKind SENSITIVE_NOCATEGORY;
 
     /** Container classes that we have modified to be understood by our analysis. */
     private Set<String> droidSafeContainerClasses = 
@@ -121,12 +133,74 @@ public class API {
     public void addContainerClass(SootClass clz) {
         droidSafeContainerClasses.add(clz.getName());
     }
+    
+    /**
+     * When adding a method clone, make sure the cloned method has all same designations as
+     * original.
+     */
+    public void cloneMethodClassifications(SootMethod original, SootMethod clone) {
+        if (API.v().isBannedMethod(original.getSignature())) 
+            API.v().addBanMethod(clone);
+        else if (API.v().isSpecMethod(original)) 
+            API.v().addSpecMethod(clone);
+        else if (API.v().isSafeMethod(original)) 
+            API.v().addSafeMethod(clone);
+        else if (API.v().isSystemClass(original.getDeclaringClass())){
+            //some methods are auto generated and don't have a classification 
+            API.v().addBanMethod(clone);
+        }
+        
+        if (classificationCat.containsKey(original)) {
+            classificationCat.put(clone, classificationCat.get(original));
+        }
+        
+        if (srcsMapping.containsKey(original)) {
+            Set<InfoKind> ifs = new HashSet<InfoKind>();
+            ifs.addAll(srcsMapping.get(original));
+            srcsMapping.put(clone, ifs);
+        }
+        
+        if (sinksMapping.containsKey(original)) {
+            Set<InfoKind> ifs = new HashSet<InfoKind>();
+            ifs.addAll(sinksMapping.get(original));
+            sinksMapping.put(clone, ifs);
+        }
+    }
+    
+    /**
+     * If adding a class that is a clone, make sure to add the clone to the correct maps,
+     * as guided by the original class.
+     */
+    public void cloneClassClassifications(SootClass original, SootClass clone) {
+        if (isSystemClass(original)) {
+            addSystemClass(clone);
+        }
+
+        if (isContainerClass(original.getName())) 
+            addContainerClass(clone);
+
+        if (Project.v().isSrcClass(original)) {
+            Project.v().addSrcClass(clone);
+        }
+
+        if (Project.v().isGenClass(original)) {
+            Project.v().addGenClass(clone);
+        }
+
+        if (Project.v().isLibClass(original)) {
+            Project.v().addLibClass(clone);
+        }
+    }
 
     public void init() {
         //uncomment this to create system method files
         //createAllSystemMethodsFile();
 
         try {
+            srcsMapping = new HashMap<SootMethod,Set<InfoKind>>();
+
+            sinksMapping = new HashMap<SootMethod,Set<InfoKind>>();
+
             allSystemClasses = new LinkedHashSet<SootClass>();
 
             safe_methods = new SootMethodList(); 
@@ -139,7 +213,9 @@ public class API {
 
             api_modeled_methods = new SootMethodList();
 
-
+            classificationCat = new HashMap<SootMethod, String>();
+            
+            SENSITIVE_NOCATEGORY = InfoKind.getInfoKind("SENSITIVE_NOCATEGORY");
 
             //load any modeled classes from the api model, overwrite the stub classes
             JarFile apiModeling = new JarFile(new File(Config.v().getAndroidLibJarPath()));
@@ -269,33 +345,33 @@ public class API {
         }
     }
 
-    private Classification getModeledClassification(List<Tag> tags) {
+    private Classification getModeledClassification(SootMethod method, List<Tag> tags) {
+        Classification c;
         for (Tag tag : tags) {
             if (tag instanceof VisibilityAnnotationTag) {
                 VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
                 for (AnnotationTag at : vat.getAnnotations()) {
-                    if (at.getType().contains("droidsafe/annotations/DSModeled")) {
-
-                        //if no designation, then spec
-                        if (at.getNumElems() == 0)
-                            return Classification.SPEC;
-                        else {
-                            String c = ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
-                            if ("SAFE".equals(c)) {
-                                return Classification.SAFE;
-                            } else if ("SPEC".equals(c)) {
-                                return Classification.SPEC;
-                            } else if ("BAN".equals(c)) {
-                                return Classification.BAN;
-                            } else {
-                                logger.error("Invalid classification annotation {} on {}", c, tag);
-                            }
-                        }
+                    if (at.getType().contains("droidsafe/annotations/DSSafe")) {
+                        c = Classification.SAFE;
+                    } else if (at.getType().contains("droidsafe/annotations/DSSpec")) {
+                        c = Classification.SPEC;
+                    } else if (at.getType().contains("droidsafe/annotations/DSBan")) {
+                        c = Classification.BAN;  
+                    } else {
+                        c = Classification.NONE;
                     }
+
+                    if (c != Classification.NONE && at.getElems().size() > 0) {
+                        String category = ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
+                        logger.info("Adding classification category for {}: {}", method, category);
+                        classificationCat.put(method, category);
+                    } 
+
+                    return c;
                 }
             }
         }
-        //could not find a tag and classification
+
         return Classification.NONE;
     }
 
@@ -309,30 +385,97 @@ public class API {
     private void findModeledMethods() {
         markClinitsAsModeled();
         for (SootMethod method : all_sys_methods) {
-            Classification classification = getModeledClassification(method.getTags());
-            if (classification != Classification.NONE) {
-                //we have a classified and modeled method
-                logger.info("Found api modeled method: {}\n", method);
-                //try to get the active method body for any modeled method and make sure it exists
-                if (method.isConcrete()) {
-                    method.retrieveActiveBody();
-                    if (!method.hasActiveBody()) {
-                        logger.error("Modeled api method has no active body: {}", method);
-                        droidsafe.main.Main.exit(1);
+
+            //try to get the active method body for any modeled method and make sure it exists
+            if (method.isConcrete()) {
+                method.retrieveActiveBody();
+                if (!method.hasActiveBody()) {
+                    logger.error("Modeled api method has no active body: {}", method);
+                    droidsafe.main.Main.exit(1);
+                }
+            }
+
+            Classification c = Classification.NONE;
+            boolean verified = false;
+            String category = "";
+            for (Tag tag : method.getTags()) {
+                if (tag instanceof VisibilityAnnotationTag) {
+
+                    VisibilityAnnotationTag vat = (VisibilityAnnotationTag)tag;
+                    for (AnnotationTag at : vat.getAnnotations()) {
+                        if (at.getType().contains("droidsafe/annotations/DSSafe")) {
+                            c = Classification.SAFE;
+                            category = getCategoryFromClassificationTag(at);
+                            safe_methods.addMethod(method);
+                            logger.info("Found method with SAFE classification: {}", method);
+                        } else if (at.getType().contains("droidsafe/annotations/DSSpec")) {
+                            spec_methods.addMethod(method);  
+                            category = getCategoryFromClassificationTag(at);
+                            c = Classification.SPEC;
+                            logger.info("Found method with SPEC classification: {}", method);
+                        } else if (at.getType().contains("droidsafe/annotations/DSBan")) {
+                            c = Classification.BAN; 
+                            category = getCategoryFromClassificationTag(at);
+                            banned_methods.addMethod(method);
+                            logger.info("Found method with BAN classification: {}", method);
+                        } else if (at.getType().contains("droidsafe/annotations/DSVerified")) {
+                            verified = true;
+                        } else if (at.getType().contains("droidsafe/annotations/DSSink")) {
+                            logger.info("Found sink method: {}", method);
+                            addSinkSourceTag(method, at, sinksMapping);
+                        } else if (at.getType().contains("droidsafe/annotations/DSSource")) {
+                            logger.info("Found sink method: {}", method); 
+                            addSinkSourceTag(method, at, srcsMapping);
+                        }
                     }
                 }
+            }
 
-                if (classification == Classification.SAFE) {
-                    safe_methods.addMethod(method);
-                } else if (classification == Classification.SPEC) {
-                    spec_methods.addMethod(method);
-                } else if (classification == Classification.BAN) {
-                    banned_methods.addMethod(method);
-                }
+            if (c != Classification.NONE && !category.isEmpty()) {
+                logger.info("Adding classification category for {}: {}", method, category);
+                classificationCat.put(method, category);
+            } 
 
+            if (c == Classification.NONE) {
+                banned_methods.addMethod(method);
+                logger.info("Found method with no classification: {}", method);
+            }
+
+            if (verified) {
+                logger.info("Found verified method: {}", method);
                 api_modeled_methods.addMethod(method);
             }
         }
+    }
+
+    private void addSinkSourceTag(SootMethod sootMethod, AnnotationTag at, Map<SootMethod, Set<InfoKind>> mapping) {
+        if (!(at.getElemAt(0) instanceof AnnotationArrayElem)) {
+            logger.error("DSSink/DSSource Annotation incorrect for: {} is {}", sootMethod, at.getElemAt(0).getClass());
+            droidsafe.main.Main.exit(1);
+        }
+        
+        for (AnnotationElem ae : ((AnnotationArrayElem)at.getElemAt(0)).getValues()) {
+            if (!(ae instanceof AnnotationEnumElem)) {
+                logger.error("DSSink/DSSource Annotation Element incorrect for: {} is {}", sootMethod, ae.getClass());
+                droidsafe.main.Main.exit(1);
+            }
+            
+            String infoKind = ((AnnotationEnumElem)ae).getConstantName();
+            
+            if (!mapping.containsKey(sootMethod)) {
+                mapping.put(sootMethod, new HashSet<InfoKind>());
+            }
+            mapping.get(sootMethod).add(InfoKind.getInfoKind(infoKind));
+            logger.info("Adding sink/source infokind category for {} as {}", sootMethod, infoKind);
+        }
+            
+            
+    }
+    
+    private String getCategoryFromClassificationTag(AnnotationTag at) {
+        if (at.getElems().size() > 0)
+            return ((AnnotationEnumElem)at.getElemAt(0)).getConstantName();
+        return "";
     }
 
     /**
@@ -602,7 +745,88 @@ public class API {
         return all_sys_methods;
     }
 
-
+    /**
+     * Return turn if the method is a source method that has a high level information kind defined.
+     */
+    public boolean hasSourceInfoKind(SootMethod method) {
+        if (srcsMapping.containsKey(method)) 
+            return true;
+        
+        //check for all overriden methods because of possible cloning
+        if (API.v().isSystemMethod(method)) {
+            for (SootMethod parent : 
+                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                if (srcsMapping.containsKey(parent))
+                    return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Return the high level information kinds defined for this source method.  Search all parent overriden methods
+     * as well for info kind.
+     */
+    public Set<InfoKind> getSourceInfoKinds(SootMethod method) {
+        if (srcsMapping.containsKey(method))
+            return srcsMapping.get(method);
+        
+        Set<InfoKind> kinds = new HashSet<InfoKind>();
+        
+        if (API.v().isSystemMethod(method)) {
+            for (SootMethod parent : 
+                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                Set<InfoKind> parentMappings = srcsMapping.get(parent);
+                if (parentMappings != null)
+                    kinds.addAll(parentMappings);
+            }
+        }
+        
+        return kinds;
+    }
+    
+    /**
+     * Return turn if the method is a sink method that has a high level information kind defined.
+     * Search all parent overriden methods as well for info kind.
+     */
+    public boolean hasSinkInfoKind(SootMethod method) {
+        if (sinksMapping.containsKey(method)) 
+            return true;
+        
+        //check for all overriden methods because of possible cloning
+        if (API.v().isSystemMethod(method)) {
+            for (SootMethod parent : 
+                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                if (sinksMapping.containsKey(parent))
+                    return true;
+            }
+        }
+        
+        return false;
+    }
+    
+    /**
+     * Return the high level information kinds defined for this sink method. Search all parent overriden methods
+     * as well for info kind.
+     */
+    public Set<InfoKind> getSinkInfoKinds(SootMethod method) {
+        if (sinksMapping.containsKey(method))
+            return sinksMapping.get(method);
+        
+        Set<InfoKind> kinds = new HashSet<InfoKind>();
+        
+        if (API.v().isSystemMethod(method)) {
+            for (SootMethod parent : 
+                SootUtils.getOverriddenMethodsFromParents(method.getDeclaringClass(), method.getSubSignature())) {
+                Set<InfoKind> parentMapping = sinksMapping.get(parent);
+                if (parentMapping != null)
+                    kinds.addAll(parentMapping);
+            }
+        }
+        
+        return kinds;
+    }
 
 
     public enum Classification {

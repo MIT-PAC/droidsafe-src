@@ -1,6 +1,8 @@
-package droidsafe.analyses.infoflow;
+package droidsafe.android.system;
 
 import java.util.HashMap;
+
+import droidsafe.analyses.infoflow.InfoValue;
 
 
 /**

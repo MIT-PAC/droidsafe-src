@@ -32,10 +32,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import soot.ValueBox;
-import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.analyses.strings.JSAStrings;
 import droidsafe.analyses.strings.JSAStrings.Hotspot;
 import droidsafe.android.app.Project;
+import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;

@@ -14,7 +14,7 @@ import soot.SootMethod;
 import soot.Type;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.pta.IAllocNode;
-import droidsafe.analyses.infoflow.InfoKind;
+import droidsafe.android.system.InfoKind;
 import droidsafe.android.system.Permissions;
 import droidsafe.speclang.ArgumentValue;
 import droidsafe.speclang.ConcreteListArgumentValue;

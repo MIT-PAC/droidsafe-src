@@ -23,8 +23,6 @@ import soot.jimple.InvokeExpr;
 import soot.jimple.Stmt;
 import soot.jimple.toolkits.pta.IAllocNode;
 import soot.tagkit.LineNumberTag;
-import droidsafe.analyses.infoflow.APIInfoKindMapping;
-import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.analyses.infoflow.InfoUnit;
 import droidsafe.analyses.infoflow.InfoValue;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
@@ -32,6 +30,7 @@ import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAMethodInformation;
 import droidsafe.android.system.API;
+import droidsafe.android.system.InfoKind;
 import droidsafe.android.system.Permissions;
 import droidsafe.main.Config;
 import droidsafe.utils.CannotFindMethodException;
@@ -347,8 +346,8 @@ public class Method implements Comparable<Method> {
      * return the InfoKinds of this method.  Otherwise, return an empty list. 
      */
     public Set<InfoKind> getSinkInfoKinds() {
-        if (APIInfoKindMapping.v().hasSinkInfoKind(sootMethod)) {
-            return APIInfoKindMapping.v().getSinkInfoKinds(sootMethod);
+        if (API.v().hasSinkInfoKind(sootMethod)) {
+            return API.v().getSinkInfoKinds(sootMethod);
         }
         return new HashSet<InfoKind>();
     }
@@ -439,12 +438,12 @@ public class Method implements Comparable<Method> {
                             PTABridge.v().resolveInvoke(invoke, ptaInfo.getContext(ContextType.EVENT_CONTEXT));
 
                     for (SootMethod target : targets) {
-                        if (APIInfoKindMapping.v().hasSourceInfoKind(target))
-                            srcKinds.addAll(APIInfoKindMapping.v().getSourceInfoKinds(target));
+                        if (API.v().hasSourceInfoKind(target))
+                            srcKinds.addAll(API.v().getSourceInfoKinds(target));
                         else {
                             //unknown info kind, check if a spec or ban method and if so, denote with UNKNOWN kind
                             if (API.v().isInterestingMethod(target)) {
-                                srcKinds.add(APIInfoKindMapping.v().SENSITIVE_NOCATEGORY);
+                                srcKinds.add(API.v().SENSITIVE_NOCATEGORY);
                             }
 
                         }

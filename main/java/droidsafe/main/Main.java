@@ -4,7 +4,6 @@ import au.com.bytecode.opencsv.CSVWriter;
 
 import droidsafe.analyses.CheckInvokeSpecials;
 import droidsafe.analyses.infoflow.AllocNodeUtils;
-import droidsafe.analyses.infoflow.APIInfoKindMapping;
 import droidsafe.analyses.infoflow.InformationFlowAnalysis;
 import droidsafe.analyses.infoflow.InjectedSourceFlows;
 import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
@@ -122,7 +121,6 @@ public class Main {
         // create the permissions map
         Permissions.init();
         //sink high-level information flow mapping 
-        APIInfoKindMapping.initMapping();
         ResourcesSoot.reset();
         JimpleRelationships.reset();
         CallGraphTraversal.reset();

@@ -269,17 +269,7 @@ public class CloneInheritedMethods {
 
         clonedToOriginal.put(newMeth, ancestorM);
 
-        if (API.v().isBannedMethod(ancestorM.getSignature())) 
-            API.v().addBanMethod(newMeth);
-        else if (API.v().isSpecMethod(ancestorM)) 
-            API.v().addSpecMethod(newMeth);
-        else if (API.v().isSafeMethod(ancestorM)) 
-            API.v().addSafeMethod(newMeth);
-        else if (API.v().isSystemClass(ancestorM.getDeclaringClass())){
-            //some methods are auto generated and don't have a classification 
-            //make them safe
-            API.v().addBanMethod(newMeth);
-        }
+        API.v().cloneMethodClassifications(ancestorM, newMeth);
 
         //clone body
         Body newBody = (Body)ancestorM.retrieveActiveBody().clone();

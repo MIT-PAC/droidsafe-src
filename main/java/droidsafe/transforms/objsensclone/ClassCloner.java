@@ -139,24 +139,7 @@ public class ClassCloner {
         Scene.v().loadClass(clone.getName(), SootClass.BODIES);
         clone.setApplicationClass();  
 
-        if (API.v().isSystemClass(original)) {
-            API.v().addSystemClass(clone);
-        }
-
-        if (API.v().isContainerClass(original.getName())) 
-            API.v().addContainerClass(clone);
-
-        if (Project.v().isSrcClass(original)) {
-            Project.v().addSrcClass(clone);
-        }
-
-        if (Project.v().isGenClass(original)) {
-            Project.v().addGenClass(clone);
-        }
-
-        if (Project.v().isLibClass(original)) {
-            Project.v().addLibClass(clone);
-        }
+        API.v().cloneClassClassifications(original, clone);
 
         //for all new expressions in the cloned methods of the clone,
         //replace self creations with creations of clone

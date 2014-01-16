@@ -21,8 +21,8 @@ import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import droidsafe.analyses.infoflow.InfoKind;
 import droidsafe.android.system.API;
+import droidsafe.android.system.InfoKind;
 import droidsafe.utils.SourceLocationTag;
 import droidsafe.utils.Utils;
 
