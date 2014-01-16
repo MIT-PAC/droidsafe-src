@@ -81,6 +81,18 @@ public class VAStats {
         // Walks through all the arguments of all output events and gathers a set of sootclasses of the arguments
         // From a VA stats standpoint, only the set sizes of fields of models of these sootclasses matter
         for(RCFGNode rcfgNode : RCFG.v().getNodes()) {
+            InvokeExpr invokeExpr = rcfgNode.getInvokeExpr();
+            if(invokeExpr != null) {
+                SootMethod entryPointMethod = invokeExpr.getMethod();
+                if (entryPointMethod.getName().equals("onClick")) {
+                    for(int i = 0; i < rcfgNode.getNumArgs(); ++i) {
+                        for(IAllocNode allocNode : rcfgNode.getArgPTSet(rcfgNode.getContext(ContextType.EVENT_CONTEXT), i)) {
+                            v.markAllocNodeAsReachable(allocNode);
+                            v.markMethodAsRelevant(allocNode, entryPointMethod);
+                        }
+                    }
+                }
+            }
             for(OutputEvent oe : rcfgNode.getOutputEvents()) {
                 //System.out.println("Output Event: " + oe.toString());
                 InvokeExpr ie = oe.getInvokeExpr();
