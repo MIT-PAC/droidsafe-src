@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class ShortBuffer extends Buffer implements Comparable<ShortBuffer> {
 
     /**
@@ -40,6 +36,8 @@ public static ShortBuffer allocate(int capacity) {
      *            the short array which the new buffer will be based on.
      * @return the created short buffer.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.368 -0500", hash_original_method = "8B4AACC8CC10C13D135A06929763BDF6", hash_generated_method = "509E98722C673CDBAA01B76811FD1BC5")
     
 public static ShortBuffer wrap(short[] array) {
@@ -234,6 +232,7 @@ public abstract short get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.396 -0500", hash_original_method = "68406DA953A1F3530F74FC6FE1C452A7", hash_generated_method = "2F943CD8BE97273C95D613084C8175C9")
     
 public ShortBuffer get(short[] dst) {
@@ -259,6 +258,7 @@ public ShortBuffer get(short[] dst) {
      * @exception BufferUnderflowException
      *                if {@code shortCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.399 -0500", hash_original_method = "DE4C5284FF189AE8B07194EE8C193F03", hash_generated_method = "FE9700AF6413630B2C83C799F4D60421")
     
 public ShortBuffer get(short[] dst, int dstOffset, int shortCount) {
@@ -422,6 +422,7 @@ public final ShortBuffer put(short[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.425 -0500", hash_original_method = "F4EA1FDC39DA95E004DECB204CC15A47", hash_generated_method = "AF72556D5279A124D49614DCE6B0133C")
     
 public ShortBuffer put(short[] src, int srcOffset, int shortCount) {
@@ -502,7 +503,6 @@ public abstract ShortBuffer put(int index, short s);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.433 -0500", hash_original_method = "5A4FD88E954DBDA74D41F1E3D86F73D1", hash_generated_method = "72EF6F8F265AB024F008383B6BE0397F")
     
 public abstract ShortBuffer slice();
-
     
 }
 

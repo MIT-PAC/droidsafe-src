@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class InstrumentationInfo extends PackageItemInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:04.109 -0400", hash_original_field = "BA8A63A897F5E025416B15F18812752C", hash_generated_field = "A55C73249AB0FB01F9CA1AED98F25E65")
 
@@ -96,6 +91,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.722 -0500", hash_original_method = "6CE0B2B52F0EF507C684C63B39230F74", hash_generated_method = "21B8B9CE675722DA5FD8EE4F1CE170A3")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {

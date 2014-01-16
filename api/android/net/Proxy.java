@@ -24,8 +24,6 @@ import android.content.Context;
 import android.text.TextUtils;
 import android.util.Log;
 
-
-
 public final class Proxy {
 
     /**
@@ -37,6 +35,7 @@ public final class Proxy {
      *         A null value means that no host is to be used.
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.945 -0500", hash_original_method = "66D3F50ED16481B0B14959535BF8F553", hash_generated_method = "528CCAEC6E9BE135E54AC7B8FB019990")
     
 public static final java.net.Proxy getProxy(Context ctx, String url) {
@@ -64,7 +63,6 @@ public static final java.net.Proxy getProxy(Context ctx, String url) {
         return java.net.Proxy.NO_PROXY;
     }
 
-
     /**
      * Return the proxy host set by the user.
      * @param ctx A Context used to get the settings for the proxy host.
@@ -74,6 +72,7 @@ public static final java.net.Proxy getProxy(Context ctx, String url) {
      * @deprecated Use standard java vm proxy values to find the host, port
      *         and exclusion list.  This call ignores the exclusion list.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.948 -0500", hash_original_method = "F0F69366C00A2E0E35F4A59DBEA02BB9", hash_generated_method = "0E70946C3B52F40077328D4F152C081F")
     
 public static final String getHost(Context ctx) {
@@ -113,6 +112,7 @@ public static final int getPort(Context ctx) {
      *         exclusion list.  This call ignores the exclusion list and no
      *         longer reports only mobile-data apn-based proxy values.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.953 -0500", hash_original_method = "E669A7ACE9D8EEFE98E3D6369305AEB7", hash_generated_method = "7FC5045A7478361888863018FE1881A6")
     
 public static final String getDefaultHost() {
@@ -153,6 +153,7 @@ public static final int getDefaultPort() {
      * is no proxy.
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.958 -0500", hash_original_method = "0DC6892F9119B40AD3A553AA53E42E93", hash_generated_method = "F705D319450A7271C0F406E7D09BA266")
     
 public static final HttpHost getPreferredHttpHost(Context context,
@@ -225,6 +226,7 @@ public static void validate(String hostname, String port, String exclList) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.981 -0500", hash_original_method = "6F2826910ED861BE3917BC7BA6F33E4C", hash_generated_method = "813C1AC8F77D5BB4C302553C27F9DC4E")
     
 public static final HttpRoutePlanner getAndroidProxySelectorRoutePlanner(Context context) {
@@ -249,6 +251,7 @@ public static final void setHttpProxySystemProperty(ProxyProperties p) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.987 -0500", hash_original_method = "660478F21FCA5D999AF8E2D00B3AE310", hash_generated_method = "46766221F08D587407E031D1B550AE85")
     
 public static final void setHttpProxySystemProperty(String host, String port, String exclList) {
@@ -279,11 +282,9 @@ public static final void setHttpProxySystemProperty(String host, String port, St
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.920 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
     private static final boolean DEBUG = false;
-
     
     static class AndroidProxySelectorRoutePlanner extends org.apache.http.impl.conn.ProxySelectorRoutePlanner {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.967 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
         private Context mContext;
 
@@ -323,7 +324,6 @@ public AndroidProxySelectorRoutePlanner(SchemeRegistry schreg, ProxySelector pro
                 return new HttpRoute(target, null, proxy, false);
             }
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.924 -0500", hash_original_field = "386710A63E400853F0A8D53DB73B0BDE", hash_generated_field = "07BC923D17DFEE12B12FD2485130D09A")
@@ -338,7 +338,6 @@ public AndroidProxySelectorRoutePlanner(SchemeRegistry schreg, ProxySelector pro
     public static final String EXTRA_PROXY_INFO = "proxy";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.931 -0500", hash_original_field = "27EC7DAB5BF9DE0B37C6DF53C80F465D", hash_generated_field = "427960B73CFD9444E575418808762B27")
 
-
     private static ConnectivityManager sConnectivityManager = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.933 -0500", hash_original_field = "D8ADB57BB658BA5CF16A36C5E92EB4BD", hash_generated_field = "7F41A38C2F8FA812438F7455C162B285")
 
@@ -347,19 +346,15 @@ public AndroidProxySelectorRoutePlanner(SchemeRegistry schreg, ProxySelector pro
         "[a-zA-Z0-9]+(\\-[a-zA-Z0-9]+)*(\\.[a-zA-Z0-9]+(\\-[a-zA-Z0-9]+)*)*";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.935 -0500", hash_original_field = "F616F34B67D5772FCF10CD9BC3F67DA8", hash_generated_field = "C3F164D9CCD44E65DF6B06B17C810E5C")
 
-
     private static final String HOSTNAME_REGEXP = "^$|^" + NAME_IP_REGEX + "$";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.938 -0500", hash_original_field = "31ACAE76089FBD47C4DC2F47370399AC", hash_generated_field = "3F163D91D2D2BE24E05C601350F994B9")
-
 
     private static  Pattern HOSTNAME_PATTERN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.940 -0500", hash_original_field = "0C666730DB91C16D174BD02F71E56BFE", hash_generated_field = "50BAC89EA09AFF7002FC1AACFF8AD21E")
 
-
     private static final String EXCLLIST_REGEXP = "$|^(.?" + NAME_IP_REGEX
         + ")+(,(.?" + NAME_IP_REGEX + "))*$";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.943 -0500", hash_original_field = "F01F8BB9B09FD3F793952B572E617534", hash_generated_field = "15EAB5B4DB69207C81675593AAD3F9C2")
-
 
     private static  Pattern EXCLLIST_PATTERN;
     

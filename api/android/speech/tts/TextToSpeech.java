@@ -27,13 +27,8 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.text.TextUtils;
 
-
-
-
-
 public class TextToSpeech {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.626 -0500", hash_original_field = "C4A3C5832A23D8C079E9B7C865BB4B1D", hash_generated_field = "9FEA0A384A6DC49F3D654A7B0E49ACFB")
-
 
     private static final String TAG = "TextToSpeech";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.628 -0500", hash_original_field = "746609D22FCF0D7F2FA5575D91BB0797", hash_generated_field = "9B986A2CF4CE0B3870A44EA118A88E9A")
@@ -73,7 +68,6 @@ public class TextToSpeech {
             "android.speech.tts.TTS_QUEUE_PROCESSING_COMPLETED";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.762 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.764 -0500", hash_original_field = "BB0A098F4EF2BC260768F4AA2B2B0709", hash_generated_field = "46824CCAF8D8A297954B79F68288C27C")
 
@@ -89,7 +83,6 @@ public class TextToSpeech {
 
     private final Object mStartLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.773 -0500", hash_original_field = "01DD4447DCC171AB23243684D88DD048", hash_generated_field = "87C8AA46082F357B5A90BEFDCD55A9CA")
-
 
     private String mRequestedEngine;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.776 -0500", hash_original_field = "724B35CE2619B39A4479C54A141CD6A1", hash_generated_field = "F6B4C1579EC35D212C4AF2EE4A947247")
@@ -176,7 +169,6 @@ public TextToSpeech(Context context, OnInitListener listener, String engine,
 private String getPackageName() {
         return mPackageName;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.472 -0400", hash_original_method = "94C951553FBC2F5928AD7C3B02D8E2C9", hash_generated_method = "8BEDEBD4C8747828322C3B505CBC3EED")
     private <R> R runActionNoReconnect(Action<R> action, R errorResult, String method) {
@@ -189,7 +181,6 @@ R var6CD80DC7ED7C75CB0A432FA52BFDBB11_1308670570 =         runAction(action, err
         // ---------- Original Method ----------
         //return runAction(action, errorResult, method, false);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.472 -0400", hash_original_method = "29E7B310AE240E4C21F0167C8B8476FB", hash_generated_method = "835072A4301C23CCF2DA5AF0A87B876B")
     private <R> R runAction(Action<R> action, R errorResult, String method) {
@@ -202,7 +193,6 @@ R varBE0F0122D8EC62CE380C7C3C781DBEA1_2048697216 =         runAction(action, err
         // ---------- Original Method ----------
         //return runAction(action, errorResult, method, true);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.472 -0400", hash_original_method = "6EC1A4E0A67965882D9F244E76909BAE", hash_generated_method = "612554FE1430B70C0AE6021DFDD93A61")
     private <R> R runAction(Action<R> action, R errorResult, String method, boolean reconnect) {
@@ -304,6 +294,8 @@ private void dispatchOnInit(int result) {
      * It is good practice for instance to call this method in the onDestroy() method of an Activity
      * so the TextToSpeech engine can be cleanly stopped.
      */
+    @DSComment("not sensitive on info")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.817 -0500", hash_original_method = "EAB786CB351424B1FA3879678813021A", hash_generated_method = "DAB730F25E13AEC80174B05AB6A2CEF3")
     
 public void shutdown() {
@@ -354,6 +346,7 @@ public void shutdown() {
      *
      * @return Code indicating success or failure. See {@link #ERROR} and {@link #SUCCESS}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.820 -0500", hash_original_method = "DD10D1EA0D37E9C3175CB1CE81EACE27", hash_generated_method = "1D8BEA60642A53880416AA335B351404")
     
 public int addSpeech(String text, String packagename, int resourceId) {
@@ -378,6 +371,7 @@ public int addSpeech(String text, String packagename, int resourceId) {
      *
      * @return Code indicating success or failure. See {@link #ERROR} and {@link #SUCCESS}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.822 -0500", hash_original_method = "DBC13E8086F9460080E153D9CAE05A02", hash_generated_method = "FCA712957D5EB36730B314BF5C8DEAAD")
     
 public int addSpeech(String text, String filename) {
@@ -386,7 +380,6 @@ public int addSpeech(String text, String filename) {
             return SUCCESS;
         }
     }
-
 
     /**
      * Adds a mapping between a string of text and a sound resource in a
@@ -413,6 +406,7 @@ public int addSpeech(String text, String filename) {
      *
      * @return Code indicating success or failure. See {@link #ERROR} and {@link #SUCCESS}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.824 -0500", hash_original_method = "773577F8E212F06A89510B07A5731283", hash_generated_method = "21B611FD140646706908E8CBA5682894")
     
 public int addEarcon(String earcon, String packagename, int resourceId) {
@@ -437,6 +431,7 @@ public int addEarcon(String earcon, String packagename, int resourceId) {
      *
      * @return Code indicating success or failure. See {@link #ERROR} and {@link #SUCCESS}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.826 -0500", hash_original_method = "409D0B7C115347E1FFF71FD2BD1F314E", hash_generated_method = "90F619A89369DAB6AF74E7021450C3C8")
     
 public int addEarcon(String earcon, String filename) {
@@ -613,6 +608,8 @@ public boolean isSpeaking() {
      *
      * @return {@link #ERROR} or {@link #SUCCESS}.
      */
+    @DSComment("not sensitive on info")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.862 -0500", hash_original_method = "1B011279D3385FBEA81C0EEE9DDE31E7", hash_generated_method = "6D0891E8C63E8A15A192B1A3A8F8ED83")
     
 public int stop() {
@@ -635,6 +632,7 @@ public int stop() {
      *
      * @return {@link #ERROR} or {@link #SUCCESS}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.864 -0500", hash_original_method = "6950E84EE314E7032010233B0706B078", hash_generated_method = "CF78FA347B116B8BC5D0C2BA03058EDA")
     
 public int setSpeechRate(float speechRate) {
@@ -661,6 +659,9 @@ public int setSpeechRate(float speechRate) {
      *
      * @return {@link #ERROR} or {@link #SUCCESS}.
      */
+    @DSComment("not sensitive on info")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.868 -0500", hash_original_method = "7DADB23AB82E5180649E2697B1338160", hash_generated_method = "F4F362DE2FFFF4DF81E98DAB385C789C")
     
 public int setPitch(float pitch) {
@@ -680,6 +681,7 @@ public int setPitch(float pitch) {
      * @return the engine currently in use by this TextToSpeech instance.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.870 -0500", hash_original_method = "6F277B1B16E884F81974EA73065A64D8", hash_generated_method = "7B3DE1D09317EEFD1148729DA273942E")
     
 public String getCurrentEngine() {
@@ -739,6 +741,7 @@ public int setLanguage(final Locale loc) {
      * @return language, country (if any) and variant (if any) used by the engine stored in a Locale
      *     instance, or {@code null} on error.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.882 -0500", hash_original_method = "BC427E909E00C5BE5A5F111E336651C0", hash_generated_method = "610B9C13B54862D2C4CEF2D05C24FBA7")
     
 public Locale getLanguage() {
@@ -753,7 +756,6 @@ public Locale getLanguage() {
             }
         }, null, "getLanguage");
     }
-
     
     public class Engine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.660 -0500", hash_original_field = "DD4FAA2B6EDFFC4B787C777868DFA7AB", hash_generated_field = "6EA685DC1F94714F1A1A1A053FC21028")
@@ -772,7 +774,6 @@ public Locale getLanguage() {
 
         public static final int USE_DEFAULTS = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.673 -0500", hash_original_field = "09790C5C54DFC02849BDF0FDCC9B3592", hash_generated_field = "E67C17E73F19BA85E706AEDE17D00422")
-
 
         /**
          * Package name of the default TTS engine.
@@ -920,8 +921,6 @@ public Locale getLanguage() {
             //Synthesized constructor
         }
     }
-
-
     
     private class Connection implements ServiceConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.920 -0500", hash_original_field = "21BB9A18C241F11B90BD168F6EFD8119", hash_generated_field = "D3C3F8FD9BA670292396CDDDD2DBC0CC")
@@ -940,12 +939,7 @@ public Locale getLanguage() {
                 } 
                 addTaint(utteranceId.getTaint());
                 
-                
-                
-                    
-                
             }
-
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.357 -0400", hash_original_method = "71BFFA04ED8551E163779942DCEAA326", hash_generated_method = "BFEBE931F4A282E2199C01DE22C7D8D5")
             @Override
@@ -957,12 +951,7 @@ public Locale getLanguage() {
                 } 
                 addTaint(utteranceId.getTaint());
                 
-                
-                
-                    
-                
             }
-
             
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.357 -0400", hash_original_method = "AC6831F715B5A1560C1EB20081DD1B2E", hash_generated_method = "7FB994A124F9001B2239D7AE9A074095")
             @Override
@@ -974,12 +963,7 @@ public Locale getLanguage() {
                 } 
                 addTaint(utteranceId.getTaint());
                 
-                
-                
-                    
-                
             }
-
             
 };
         
@@ -1027,7 +1011,6 @@ public void onServiceDisconnected(ComponentName name) {
 public void disconnect() {
             mContext.unbindService(this);
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:31.487 -0400", hash_original_method = "34464E55B5499CA206CC99D3045C1292", hash_generated_method = "27193611E0B349FA2F74596F34D8B6CD")
         public <R> R runAction(Action<R> action, R errorResult, String method, boolean reconnect) {
@@ -1079,11 +1062,8 @@ R var79B35EE005A3F2115C55AE7046E4A0E2_113215503 =                 errorResult;
                 //return errorResult;
             //}
         }
-
         
     }
-
-
     
     public static class EngineInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.949 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "D29EB809CD7E712070B86A449A5F2E82")
@@ -1114,11 +1094,8 @@ R var79B35EE005A3F2115C55AE7046E4A0E2_113215503 =                 errorResult;
         public String toString() {
             return "EngineInfo{name=" + name + "}";
         }
-
         
     }
-
-
     
     public interface OnInitListener {
         
@@ -1315,6 +1292,7 @@ public int setOnUtteranceProgressListener(UtteranceProgressListener listener) {
      * @return Package name of the TTS engine that the user has chosen
      *        as their default.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.913 -0500", hash_original_method = "AAA28EF74B57D47AEDCF93243FD04D81", hash_generated_method = "772EF1D56C94BAFF878FA584C4BDBE7A")
     
 public String getDefaultEngine() {
@@ -1337,6 +1315,7 @@ public boolean areDefaultsEnforced() {
      *
      * @return A list of engine info objects. The list can be empty, but never {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.917 -0500", hash_original_method = "C282EF17EB1B4600865CB51DA0934709", hash_generated_method = "7941E360898875DDF37668F270DFE3F5")
     
 public List<EngineInfo> getEngines() {

@@ -20,11 +20,6 @@ import org.apache.http.params.CoreConnectionPNames;
 import org.apache.http.params.HttpParams;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public abstract class AbstractMessageParser implements HttpMessageParser {
 
     /**
@@ -115,7 +110,6 @@ public static Header[] parseHeaders(
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.681 -0500", hash_original_field = "13B47FDB2E79FE6CD90882D9DA95C973", hash_generated_field = "A33B1C99D4B1A85FF593937CE103B3DB")
 
-
     private  SessionInputBuffer sessionBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.683 -0500", hash_original_field = "F0C13102950DF6DEECC29E1050A6EEE7", hash_generated_field = "51B3B1D6F029892B5D1B485F1E8449D4")
 
@@ -126,7 +120,6 @@ public static Header[] parseHeaders(
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.688 -0500", hash_original_field = "723ECC87F42B3213E8B9AE9AA3CD7937", hash_generated_field = "FA36EAE3CC325D535A91E6794A3FA61E")
 
     protected  LineParser lineParser;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.691 -0500", hash_original_method = "CD9F7BFE0207530C59E31A12BA61FD32", hash_generated_method = "C56EDB0284C9BDBC66929A015DE95D08")
     
@@ -154,6 +147,7 @@ public AbstractMessageParser(
 protected abstract HttpMessage parseHead(SessionInputBuffer sessionBuffer) 
         throws IOException, HttpException, ParseException;
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.699 -0500", hash_original_method = "56FD9FE99CC7B8784E50CC19E304C067", hash_generated_method = "41264974E91E9340349EE60460B9AC40")
     
 public HttpMessage parse() throws IOException, HttpException {
@@ -171,7 +165,6 @@ public HttpMessage parse() throws IOException, HttpException {
         message.setHeaders(headers);
         return message;
     }
-
     
 }
 

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.EventObject;
 
-
-
-
-
-
 public class SIPTransactionErrorEvent extends EventObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.491 -0500", hash_original_field = "FD1319701F9D8B3BF382F89AD1C3FFBE", hash_generated_field = "B2919CC93A0DDB9603DD498A1339A398")
 
@@ -50,6 +45,7 @@ SIPTransactionErrorEvent(
      *
      * @return Error ID.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:22.509 -0500", hash_original_method = "0519EBFB6DA70B425C38921D23DA7A64", hash_generated_method = "0BB790A9247F5D0375A01CAD9294AADA")
     
 public int getErrorID() {

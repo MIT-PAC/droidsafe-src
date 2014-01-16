@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class DefaultedHttpContext implements HttpContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.521 -0500", hash_original_field = "6D2A54D860DEBB1E031F687F0830CF6F", hash_generated_field = "E015EF617CD4ED004D5007AC30C609BC")
-
 
     private  HttpContext local;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.524 -0500", hash_original_field = "FB45C7B58028E43766461E8C8059F493", hash_generated_field = "7ADABA5216B59FD658450669A2A3CCAA")
@@ -52,12 +47,12 @@ public void setAttribute(final String id, final Object obj) {
         this.local.setAttribute(id, obj);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.538 -0500", hash_original_method = "FA59965C12DF7B81C110308001A0693E", hash_generated_method = "2417135D67EAB4F57C659CEED6FDC3B5")
     
 public HttpContext getDefaults() {
         return this.defaults;
     }
-
     
 }
 

@@ -10,16 +10,11 @@ import java.util.logging.Logger;
 
 import org.apache.commons.logging.Log;
 
-
-
-
 public class Jdk14Logger implements Log, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.733 -0500", hash_original_field = "50BD4BC6666C59DC935E30AEA7191D2D", hash_generated_field = "B6015FBC4023476FF3F25CFD133F1252")
 
     protected static final Level dummyLevel = Level.FINE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.739 -0500", hash_original_field = "C56A82118B0BCDD9EBAF598E2B36C2E3", hash_generated_field = "C9BAB7357C9C71999E161758737AC735")
-
-
 
     /**
      * The underlying Logger implementation we are using.
@@ -30,7 +25,6 @@ public class Jdk14Logger implements Log, Serializable {
     protected String name = null;
 
     // ----------------------------------------------------------- Constructors
-
 
     /**
      * Construct a named instance of this Logger.
@@ -45,7 +39,6 @@ public Jdk14Logger(String name) {
         logger = getLogger();
 
     }
-
 
     // --------------------------------------------------------- Public Methods
 
@@ -87,7 +80,6 @@ public void debug(Object message) {
         log(Level.FINE, String.valueOf(message), null);
     }
 
-
     /**
      * Logs a message with <code>java.util.logging.Level.FINE</code>.
      *
@@ -101,7 +93,6 @@ public void debug(Object message, Throwable exception) {
         log(Level.FINE, String.valueOf(message), exception);
     }
 
-
     /**
      * Logs a message with <code>java.util.logging.Level.SEVERE</code>.
      *
@@ -113,7 +104,6 @@ public void debug(Object message, Throwable exception) {
 public void error(Object message) {
         log(Level.SEVERE, String.valueOf(message), null);
     }
-
 
     /**
      * Logs a message with <code>java.util.logging.Level.SEVERE</code>.
@@ -128,7 +118,6 @@ public void error(Object message, Throwable exception) {
         log(Level.SEVERE, String.valueOf(message), exception);
     }
 
-
     /**
      * Logs a message with <code>java.util.logging.Level.SEVERE</code>.
      *
@@ -140,7 +129,6 @@ public void error(Object message, Throwable exception) {
 public void fatal(Object message) {
         log(Level.SEVERE, String.valueOf(message), null);
     }
-
 
     /**
      * Logs a message with <code>java.util.logging.Level.SEVERE</code>.
@@ -155,10 +143,10 @@ public void fatal(Object message, Throwable exception) {
         log(Level.SEVERE, String.valueOf(message), exception);
     }
 
-
     /**
      * Return the native Logger instance we are using.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.759 -0500", hash_original_method = "4AF846FE0103434E8DCD79250F0704EC", hash_generated_method = "FC738BE797EFFAB473E4D836543C191D")
     
 public Logger getLogger() {
@@ -167,7 +155,6 @@ public Logger getLogger() {
         }
         return (logger);
     }
-
 
     /**
      * Logs a message with <code>java.util.logging.Level.INFO</code>.
@@ -180,7 +167,6 @@ public Logger getLogger() {
 public void info(Object message) {
         log(Level.INFO, String.valueOf(message), null);
     }
-
 
     /**
      * Logs a message with <code>java.util.logging.Level.INFO</code>.
@@ -195,7 +181,6 @@ public void info(Object message, Throwable exception) {
         log(Level.INFO, String.valueOf(message), exception);
     }
 
-
     /**
      * Is debug logging currently enabled?
      */
@@ -204,7 +189,6 @@ public void info(Object message, Throwable exception) {
 public boolean isDebugEnabled() {
         return (getLogger().isLoggable(Level.FINE));
     }
-
 
     /**
      * Is error logging currently enabled?
@@ -215,7 +199,6 @@ public boolean isErrorEnabled() {
         return (getLogger().isLoggable(Level.SEVERE));
     }
 
-
     /**
      * Is fatal logging currently enabled?
      */
@@ -224,7 +207,6 @@ public boolean isErrorEnabled() {
 public boolean isFatalEnabled() {
         return (getLogger().isLoggable(Level.SEVERE));
     }
-
 
     /**
      * Is info logging currently enabled?
@@ -235,7 +217,6 @@ public boolean isInfoEnabled() {
         return (getLogger().isLoggable(Level.INFO));
     }
 
-
     /**
      * Is trace logging currently enabled?
      */
@@ -245,7 +226,6 @@ public boolean isTraceEnabled() {
         return (getLogger().isLoggable(Level.FINEST));
     }
 
-
     /**
      * Is warn logging currently enabled?
      */
@@ -254,7 +234,6 @@ public boolean isTraceEnabled() {
 public boolean isWarnEnabled() {
         return (getLogger().isLoggable(Level.WARNING));
     }
-
 
     /**
      * Logs a message with <code>java.util.logging.Level.FINEST</code>.
@@ -267,7 +246,6 @@ public boolean isWarnEnabled() {
 public void trace(Object message) {
         log(Level.FINEST, String.valueOf(message), null);
     }
-
 
     /**
      * Logs a message with <code>java.util.logging.Level.FINEST</code>.
@@ -282,7 +260,6 @@ public void trace(Object message, Throwable exception) {
         log(Level.FINEST, String.valueOf(message), exception);
     }
 
-
     /**
      * Logs a message with <code>java.util.logging.Level.WARNING</code>.
      *
@@ -294,7 +271,6 @@ public void trace(Object message, Throwable exception) {
 public void warn(Object message) {
         log(Level.WARNING, String.valueOf(message), null);
     }
-
 
     /**
      * Logs a message with <code>java.util.logging.Level.WARNING</code>.

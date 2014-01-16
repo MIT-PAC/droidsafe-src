@@ -10,10 +10,6 @@ import android.os.storage.IMountService;
 import android.os.storage.StorageVolume;
 import android.util.Log;
 
-
-
-
-
 public class Environment {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.740 -0500", hash_original_method = "49D276246FC7889A9B561CCBB290F80E", hash_generated_method = "75573CFB29C81F706693B5B5C0544A51")
@@ -39,6 +35,7 @@ private static StorageVolume getPrimaryVolume() {
     /**
      * Gets the Android root directory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.742 -0500", hash_original_method = "23501762B1C83E6EA646AAE54FEFC03E", hash_generated_method = "E43BC8BEDB5505F06F4FFC2211137866")
     
 public static File getRootDirectory() {
@@ -52,6 +49,7 @@ public static File getRootDirectory() {
      * @return File object representing the secure storage system directory.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.744 -0500", hash_original_method = "A1EAA5ECD195432112B5EB9DA9261C3B", hash_generated_method = "E43A118490065B4DD32E72296F941023")
     
 public static File getSystemSecureDirectory() {
@@ -69,6 +67,7 @@ public static File getSystemSecureDirectory() {
      * @return File object representing the data directory for secure storage.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.747 -0500", hash_original_method = "93F27DEF70C79E666A71BBC6D537D555", hash_generated_method = "5C7410E3F0E06A45F082834F41C2C79E")
     
 public static File getSecureDataDirectory() {
@@ -94,6 +93,9 @@ public static boolean isEncryptedFilesystemEnabled() {
     /**
      * Gets the Android data directory.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.769 -0500", hash_original_method = "410798574B14A1C7B2300F72C09D29B0", hash_generated_method = "2BC6B0A3FA5E9006E8139DE601FB8544")
     
 public static File getDataDirectory() {
@@ -138,14 +140,18 @@ public static File getDataDirectory() {
      * @see #getExternalStorageState()
      * @see #isExternalStorageRemovable()
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.771 -0500", hash_original_method = "5C670B147F567F755C94F9F92181BB98", hash_generated_method = "B877242D587754ED3BC1634CE142E9AB")
     
 public static File getExternalStorageDirectory() {
         return EXTERNAL_STORAGE_DIRECTORY;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static File getExternalStoragePublicDirectory(String type) {
         return new File("mnt/sdcard");
     }
@@ -154,6 +160,7 @@ public static File getExternalStorageDirectory() {
      * Returns the path for android-specific data on the SD card.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.795 -0500", hash_original_method = "1DD329D955C5FBEF29FAACA1E44D1180", hash_generated_method = "93E5C19880DFB62649D3056ED9CB44FF")
     
 public static File getExternalStorageAndroidDataDir() {
@@ -164,6 +171,7 @@ public static File getExternalStorageAndroidDataDir() {
      * Generates the raw path to an application's data
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.798 -0500", hash_original_method = "40277F291B5A8E4B36A828D8C3A376B5", hash_generated_method = "B2093C2CE72C762DD80A4DF1A3C1EE0E")
     
 public static File getExternalStorageAppDataDirectory(String packageName) {
@@ -174,6 +182,7 @@ public static File getExternalStorageAppDataDirectory(String packageName) {
      * Generates the raw path to an application's media
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.801 -0500", hash_original_method = "55172197BB94D25451E63EEA35B16A56", hash_generated_method = "A2210D47B6756B51837CF8733C831890")
     
 public static File getExternalStorageAppMediaDirectory(String packageName) {
@@ -184,6 +193,7 @@ public static File getExternalStorageAppMediaDirectory(String packageName) {
      * Generates the raw path to an application's OBB files
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.803 -0500", hash_original_method = "133F5560A13C528822A145DDB5A18A92", hash_generated_method = "CF335B360D815D46F5C1D95E46D097B6")
     
 public static File getExternalStorageAppObbDirectory(String packageName) {
@@ -194,6 +204,7 @@ public static File getExternalStorageAppObbDirectory(String packageName) {
      * Generates the path to an application's files.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.805 -0500", hash_original_method = "050DBA7CC8565F34A0E9A00648CA002C", hash_generated_method = "54C17CF5A140720711F3A61262ACCD6F")
     
 public static File getExternalStorageAppFilesDirectory(String packageName) {
@@ -205,6 +216,7 @@ public static File getExternalStorageAppFilesDirectory(String packageName) {
      * Generates the path to an application's cache.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.807 -0500", hash_original_method = "C91E73381DEC6DAFD22AD517D132DDB1", hash_generated_method = "D07178151FABF1234633D29ADC19979E")
     
 public static File getExternalStorageAppCacheDirectory(String packageName) {
@@ -215,6 +227,7 @@ public static File getExternalStorageAppCacheDirectory(String packageName) {
     /**
      * Gets the Android Download/Cache content directory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.809 -0500", hash_original_method = "6C75CA3DA6425F473E9521EDF00E3AB4", hash_generated_method = "9E0FC6ADABAC3C59AE1F8E07A09E45A4")
     
 public static File getDownloadCacheDirectory() {
@@ -226,6 +239,7 @@ public static File getDownloadCacheDirectory() {
      * 
      * <p>See {@link #getExternalStorageDirectory()} for more information.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.832 -0500", hash_original_method = "BEB54D71784BB9886D2BD75DEB648BB3", hash_generated_method = "35AF323F642F3C48729D391565433D5F")
     
 public static String getExternalStorageState() {
@@ -274,6 +288,7 @@ public static boolean isExternalStorageEmulated() {
         return (volume != null && volume.isEmulated());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.840 -0500", hash_original_method = "9C53479BCA8A1AAF4BCF134D9ED07471", hash_generated_method = "966E08026B8F34CEDCCDC647ABF4FCA3")
     
 static File getDirectory(String variableName, String defaultPath) {
@@ -285,19 +300,15 @@ static File getDirectory(String variableName, String defaultPath) {
     private static final String TAG = "Environment";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.731 -0500", hash_original_field = "85AB27342DCABB6BA155402D18B2289D", hash_generated_field = "FE08AA822266DAF98C9F2274AD45AF9E")
 
-
     private static final File ROOT_DIRECTORY
             = getDirectory("ANDROID_ROOT", "/system");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.733 -0500", hash_original_field = "F8F01D8EA17D83A2B038EE9E2DF5D3DE", hash_generated_field = "EE3FE0CAF4E93AB133014AF996B70CCE")
 
-
     private static final String SYSTEM_PROPERTY_EFS_ENABLED = "persist.security.efs.enabled";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.735 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "CA3747CC2EC4B1C7DB6ABC7879C88A34")
 
-
     private static final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:43.737 -0500", hash_original_field = "07CD2CFF9309E5BF864753B6E6F8D7BD", hash_generated_field = "BE2642BFD28BEEB7B21B6346504CF160")
-
 
     private volatile static StorageVolume mPrimaryVolume = null;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:43.943 -0400", hash_original_field = "ABD2DC3A68E7E273F00286BB6E564846", hash_generated_field = "4859F8047AF82464AD430C6BD0B6CE29")

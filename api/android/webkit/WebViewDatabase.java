@@ -22,12 +22,9 @@ import android.util.Log;
 import android.webkit.CacheManager.CacheResult;
 import android.webkit.CookieManager.Cookie;
 
-
-
-
-
 public class WebViewDatabase {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.555 -0500", hash_original_method = "18F043B8C68A94FA6BFE49237EDEA254", hash_generated_method = "643CAAE754ECA52FC0FF06A8140D4818")
     
 public static synchronized WebViewDatabase getInstance(Context context) {
@@ -205,7 +202,6 @@ private static void bootstrapCacheDatabase() {
     protected static final String LOGTAG = "webviewdatabase";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.401 -0500", hash_original_field = "E0DE33F41918CF52750B09DA72123EE2", hash_generated_field = "C1B002270A3E3DA04EE8826B5BFBB2B5")
 
-
     private static final int DATABASE_VERSION = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.404 -0500", hash_original_field = "F6D7C499008BA6FA653597C349460CD9", hash_generated_field = "19606A19BE9C717B28787FFB93D34764")
 
@@ -229,7 +225,6 @@ private static void bootstrapCacheDatabase() {
     private static WebViewDatabase mInstance = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.408 -0500", hash_original_field = "44FFBD8FF4418C357393646DA7699518", hash_generated_field = "2A9DC9A5BD2819616E44A0ADAFECE4A7")
 
-
     private static SQLiteDatabase mDatabase = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.410 -0500", hash_original_field = "5D3F3E6709C337548872A6970B078A30", hash_generated_field = "6216361743BC8C4805B411B6532C00A7")
 
@@ -246,25 +241,20 @@ private static void bootstrapCacheDatabase() {
     private static final int TABLE_COOKIES_ID = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.426 -0500", hash_original_field = "FBFD14E14CD401E1A4DECB0090C03E7A", hash_generated_field = "C26654F80C65505FF03B4C5B6DA105F3")
 
-
     private static final int TABLE_PASSWORD_ID = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.428 -0500", hash_original_field = "4D697510213B16D4B09559710CC430C1", hash_generated_field = "F83A26899C0F0D2C1ACAA87EEDA0153E")
-
 
     private static final int TABLE_FORMURL_ID = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.431 -0500", hash_original_field = "294BAA5DCDBCA54B9FEA33C0E9843BE5", hash_generated_field = "D07F66BAD2BCF3FAD0DB03739B7A2A53")
 
-
     private static final int TABLE_FORMDATA_ID = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.433 -0500", hash_original_field = "E2BFBAEA3B0618C385B78347ED360C16", hash_generated_field = "213F1FE4C5C8147C0E3AA82A86D16003")
-
 
     private static final int TABLE_HTTPAUTH_ID = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.436 -0500", hash_original_field = "70305059E8AC5168EA563396F902132D", hash_generated_field = "544D8A467AF5FAAA84AB157CE043EFEA")
 
     private static final String ID_COL = "_id";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.438 -0500", hash_original_field = "68A77CA8F6BE9A20813C14CE9CB97E41", hash_generated_field = "E30EDA8D5CEF5DBC0865B3EFC9FE624F")
-
 
     private static final String[] ID_PROJECTION = new String[] {
         "_id"
@@ -274,22 +264,17 @@ private static void bootstrapCacheDatabase() {
     private static final String COOKIES_NAME_COL = "name";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.442 -0500", hash_original_field = "711C9ECFC5AC063E97FD95D6382D408A", hash_generated_field = "36856FCE215FA203C61B4737E1A6D314")
 
-
     private static final String COOKIES_VALUE_COL = "value";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.445 -0500", hash_original_field = "B48DC6816AE2BC71A9252C2B4012188F", hash_generated_field = "974379DCBAF58FDB14009A07716F2DE3")
-
 
     private static final String COOKIES_DOMAIN_COL = "domain";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.448 -0500", hash_original_field = "8BA9D0D541F34EE156CB1652F567997D", hash_generated_field = "919C7E98C32C3DE4E674B31354083103")
 
-
     private static final String COOKIES_PATH_COL = "path";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.450 -0500", hash_original_field = "EF454B951E47581052E433D9C96DBDB3", hash_generated_field = "92595ACB5997D57A9912CEC295FFD385")
 
-
     private static final String COOKIES_EXPIRES_COL = "expires";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.452 -0500", hash_original_field = "EC0768312B074E5F7C07E3CEA278B571", hash_generated_field = "4555D5715510CC15CD635D945C145E69")
-
 
     private static final String COOKIES_SECURE_COL = "secure";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.455 -0500", hash_original_field = "39D375E133E52EACC16E1DDE34CEA07A", hash_generated_field = "26E13854774B9D7E5B3D124BA1DA43C8")
@@ -297,50 +282,38 @@ private static void bootstrapCacheDatabase() {
     private static final String CACHE_URL_COL = "url";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.457 -0500", hash_original_field = "2B1ADDE4B594AB37FD4947727F7747EE", hash_generated_field = "FBB51F4E9164A38BC02FE055D0D31F69")
 
-
     private static final String CACHE_FILE_PATH_COL = "filepath";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.459 -0500", hash_original_field = "907A854A84341BE97FD44275F86E123E", hash_generated_field = "E4EDB200A85003914E478A614635D399")
-
 
     private static final String CACHE_LAST_MODIFY_COL = "lastmodify";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.462 -0500", hash_original_field = "3CF18422A344A523ACE35D25D93C69E1", hash_generated_field = "E63A0BBF23F285D448CCD1D377216419")
 
-
     private static final String CACHE_ETAG_COL = "etag";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.464 -0500", hash_original_field = "9BF749881B29C74A8406C64D1F9BC4F1", hash_generated_field = "D715992BD667778579FCD9642CD2DF0B")
-
 
     private static final String CACHE_EXPIRES_COL = "expires";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.466 -0500", hash_original_field = "4784E065870C5FEB90FA0FC0A1D83320", hash_generated_field = "7EA32DCE9FCB8F00238F15D76A4D1EB0")
 
-
     private static final String CACHE_EXPIRES_STRING_COL = "expiresstring";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.468 -0500", hash_original_field = "5F7D97A330F7A2815E559ADACD04FF55", hash_generated_field = "4346EC9A786A0D8B47B0AF2F746CCDF9")
-
 
     private static final String CACHE_MIMETYPE_COL = "mimetype";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.470 -0500", hash_original_field = "C28CF5BC085E655A6364BF78ABCC312C", hash_generated_field = "A5B14468B66E4C651D16A4B4EF3D4988")
 
-
     private static final String CACHE_ENCODING_COL = "encoding";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.473 -0500", hash_original_field = "06F273089291EF31DADC979AFE6480FA", hash_generated_field = "74EDAC14B6454EB4BD8EC537D3A48C1D")
-
 
     private static final String CACHE_HTTP_STATUS_COL = "httpstatus";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.475 -0500", hash_original_field = "0A5EF2A3796699D42B1451BC37FD39C0", hash_generated_field = "AC242FF315AD73BD18B75D87F22A121D")
 
-
     private static final String CACHE_LOCATION_COL = "location";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.478 -0500", hash_original_field = "F8A3C83BD49E96641D70D13C52FC0DFC", hash_generated_field = "A45041FED79C2F37B614E43E9EAA62EE")
-
 
     private static final String CACHE_CONTENTLENGTH_COL = "contentlength";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.480 -0500", hash_original_field = "91E65F2474380E1F41401DC3CEE4A61D", hash_generated_field = "12021DAB4B009D47C4C0B03A8B7F08FB")
 
-
     private static final String CACHE_CONTENTDISPOSITION_COL = "contentdisposition";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.483 -0500", hash_original_field = "96E33401E1D745E54D56FEB661FB288E", hash_generated_field = "0C17DB9AB903701BF734F0A36DECDE32")
-
 
     private static final String CACHE_CROSSDOMAIN_COL = "crossdomain";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.486 -0500", hash_original_field = "23D37C52E26B6D7DD65365389ABE90AD", hash_generated_field = "C9B09646DBA0EE3D1FD4703689B6709E")
@@ -348,10 +321,8 @@ private static void bootstrapCacheDatabase() {
     private static final String PASSWORD_HOST_COL = "host";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.488 -0500", hash_original_field = "0C2217014CF0B31FA4B5F5CB30F4BD7D", hash_generated_field = "4834A6E26AC690BEEDA4205B55E80F71")
 
-
     private static final String PASSWORD_USERNAME_COL = "username";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.490 -0500", hash_original_field = "9A6B8D1997200C24D1C0C193E2364719", hash_generated_field = "6169E1A26615324546DDBAFA8EA35E46")
-
 
     private static final String PASSWORD_PASSWORD_COL = "password";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.493 -0500", hash_original_field = "77A187A5931C3B22CB1D1C29CDE634B3", hash_generated_field = "405F7907F7A8C1D13F6685D3670B540F")
@@ -362,10 +333,8 @@ private static void bootstrapCacheDatabase() {
     private static final String FORMDATA_URLID_COL = "urlid";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.497 -0500", hash_original_field = "FCD36957F8E8AB96B23F4598654756AE", hash_generated_field = "AC7FD45F189A1AFA7D8D735589B88FEC")
 
-
     private static final String FORMDATA_NAME_COL = "name";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.500 -0500", hash_original_field = "EDB31DD1AC4ACB04411497E515F41DBD", hash_generated_field = "6301A8ABA0887A6D2B97FE4E3D00C0D7")
-
 
     private static final String FORMDATA_VALUE_COL = "value";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.502 -0500", hash_original_field = "A29AE8C42D20384A422E7E6D209BE74C", hash_generated_field = "A49759473C2E0C990FC7CE8A30842EC9")
@@ -373,14 +342,11 @@ private static void bootstrapCacheDatabase() {
     private static final String HTTPAUTH_HOST_COL = "host";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.504 -0500", hash_original_field = "AF2E79BA89DDC6CB04E16620BC6C6EE2", hash_generated_field = "A8836A926F4D3E2666084C23DE3ABA47")
 
-
     private static final String HTTPAUTH_REALM_COL = "realm";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.507 -0500", hash_original_field = "6A58497AA323F5248A55114D03D6E036", hash_generated_field = "E43FF3904390D4343F6CBCC7E76BB50A")
 
-
     private static final String HTTPAUTH_USERNAME_COL = "username";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.509 -0500", hash_original_field = "8450E49DB55159FAFB3C991B4AD67359", hash_generated_field = "306AFBB09ADAF2FFC1BE20DBB1DE10A6")
-
 
     private static final String HTTPAUTH_PASSWORD_COL = "password";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.512 -0500", hash_original_field = "F2A389B17CAA7CF4D46F64A17E55432B", hash_generated_field = "9978AB64D9ADE743F038BE7845E6172E")
@@ -426,7 +392,6 @@ private static void bootstrapCacheDatabase() {
 
     private static int mCacheCrossDomainColIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.544 -0500", hash_original_field = "F862681BA6DC02D348449FC30DBC8D17", hash_generated_field = "BFC3FA813D8D5121BE43E51DCA5BBA65")
-
 
     private static int mCacheTransactionRefcount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:43.413 -0500", hash_original_field = "1CBCD28C0FF0FD1BA2527EF45D3C6F9B", hash_generated_field = "93D9ABAC661FEA809DA54BD9E7E9D9D3")

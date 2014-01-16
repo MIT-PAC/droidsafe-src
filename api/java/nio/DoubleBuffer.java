@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class DoubleBuffer extends Buffer implements Comparable<DoubleBuffer> {
 
     /**
@@ -243,6 +239,7 @@ public abstract double get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.509 -0500", hash_original_method = "9BEB92FAE64B1253EE6CA9009E99F3B4", hash_generated_method = "B2C1AFE0F8659736164D0D822A275DAE")
     
 public DoubleBuffer get(double[] dst) {
@@ -268,6 +265,7 @@ public DoubleBuffer get(double[] dst) {
      * @exception BufferUnderflowException
      *                if {@code doubleCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.512 -0500", hash_original_method = "38134BA6A99F502238B51F3879F810C3", hash_generated_method = "EAC8151AE9324153277E4F151BA8F7BE")
     
 public DoubleBuffer get(double[] dst, int dstOffset, int doubleCount) {
@@ -433,6 +431,7 @@ public final DoubleBuffer put(double[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.539 -0500", hash_original_method = "3E73039BF6DB142176253DE2263B83AD", hash_generated_method = "4F015A29746EB1C0C69EB5D48214782E")
     
 public DoubleBuffer put(double[] src, int srcOffset, int doubleCount) {
@@ -513,7 +512,6 @@ public abstract DoubleBuffer put(int index, double d);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.547 -0500", hash_original_method = "77285C0B11D6FAF3123027CAFA126E55", hash_generated_method = "FFE5DDEBAB752CC87926AAAD15D2E4AA")
     
 public abstract DoubleBuffer slice();
-
     
 }
 

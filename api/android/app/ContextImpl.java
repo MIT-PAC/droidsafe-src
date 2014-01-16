@@ -82,10 +82,6 @@ import android.view.textservice.TextServicesManager;
 import com.android.internal.os.IDropBoxManagerService;
 import com.android.internal.policy.PolicyManager;
 
-
-
-
-
 import droidsafe.concrete.DroidSafeContentResolver;
 import droidsafe.helpers.DSUtils;
 
@@ -98,6 +94,7 @@ ReceiverRestrictedContext(Context base) {
         super(base);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.003 -0500", hash_original_method = "E79FC2581462A23AEE3B4180EBBDA608", hash_generated_method = "90430B4E7D776228913823B75B9973EF")
     
 @Override
@@ -105,6 +102,7 @@ ReceiverRestrictedContext(Context base) {
         return registerReceiver(receiver, filter, null, null);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.005 -0500", hash_original_method = "7DBE869AA37665F34E0D6939DBC75DAB", hash_generated_method = "BE9909161683E82474FD582E36B38112")
     
 @Override
@@ -118,6 +116,7 @@ ReceiverRestrictedContext(Context base) {
         //        scheduler);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.008 -0500", hash_original_method = "E81E60407BE1AC3446285185653F6DEC", hash_generated_method = "70CCA2B262847282DDB92A6E7AC7ABF3")
     
 @Override
@@ -128,12 +127,12 @@ ReceiverRestrictedContext(Context base) {
         //Log.e("IntentReceiver", ex.getMessage(), ex);
         //return mContext.bindService(service, interfaceName, conn, flags);
     }
-
     
 }
 
 public class ContextImpl extends Context {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.187 -0500", hash_original_method = "374239E6E9AC9E3552D4A077D8744FFB", hash_generated_method = "B8FDDC39B13812FD0E23045E8DFF123F")
     
 static ContextImpl getImpl(Context context) {
@@ -168,6 +167,7 @@ static ContextImpl createSystemContext(ActivityThread mainThread) {
         return context;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.432 -0500", hash_original_method = "C8AF3048756974EA22546B41BE2F7C6F", hash_generated_method = "1DC327CB6766B683BFBFB743C0F8C248")
     
 static void setFilePermissionsFromMode(String name, int mode,
@@ -195,11 +195,9 @@ static void setFilePermissionsFromMode(String name, int mode,
     private final static boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.017 -0500", hash_original_field = "CE42D0F9354A6290AB7AAA746491BCDC", hash_generated_field = "C28D37FE74542C16238F74BB2031E102")
 
-
     private static final HashMap<String, SharedPreferencesImpl> sSharedPrefs =
             new HashMap<String, SharedPreferencesImpl>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.061 -0500", hash_original_field = "4E4A3933C0CBDF5ABDBF6C047A99416B", hash_generated_field = "24FE645B537D86D59BF761DAE24AA3EA")
-
 
     private static final String[] EMPTY_FILE_LIST = {};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.018 -0500", hash_original_field = "EDE05288DA1A1347727FFDBB84784438", hash_generated_field = "EDE05288DA1A1347727FFDBB84784438")
@@ -238,10 +236,8 @@ static void setFilePermissionsFromMode(String name, int mode,
     private boolean mRestricted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.045 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "E2A875EF987A77EEC850F20D740B8615")
 
-
     private final Object mSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.047 -0500", hash_original_field = "4B4F5453FAAD1AF3E5BEECD0B2F3E6A8", hash_generated_field = "BD1C0920C019BE593BE14FA4F0428E82")
-
 
     private File mDatabasesDir;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.049 -0500", hash_original_field = "B80688CDDD1C13CD0F220F3A32A77FE5", hash_generated_field = "BEE1171B4DEF7C018E6FF18B5E39497F")
@@ -277,7 +273,6 @@ static void setFilePermissionsFromMode(String name, int mode,
     // orphaned legacy field
     private SensorManager sensorManager;
     
-    @DSModeled(DSC.SPEC)
 	public ContextImpl() {
 		contentResolver = new DroidSafeContentResolver(this);
 		sensorManager = new SensorManager();
@@ -299,112 +294,99 @@ public ContextImpl(ContextImpl context) {
         mContentResolver = context.mContentResolver;
         mOuterContext = this;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public AssetManager getAssets() {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSModeled(DSC.SAFE)
+    
     public Resources getResources() {
         return Resources.getSystem();
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public PackageManager getPackageManager() {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSModeled(DSC.SAFE)
+    
     public ContentResolver getContentResolver() {
         return contentResolver;
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Looper getMainLooper() {
     	return Looper.getMainLooper();
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Context getApplicationContext() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public void setTheme(int resid) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.208 -0500", hash_original_method = "AE4733E1C9FA88CFC00EFC04FF1EA93F", hash_generated_method = "CE5A2BC266716375B637FA5870314F3E")
     
 @Override
     public int getThemeResId() {
         return mThemeResource;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public Resources.Theme getTheme() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public ClassLoader getClassLoader() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageName() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public ApplicationInfo getApplicationInfo() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageResourcePath() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public String getPackageCodePath() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getSharedPrefsFile(String name) {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public SharedPreferences getSharedPreferences(String name, int mode) {
         throw new UnsupportedOperationException();
@@ -420,66 +402,60 @@ private File getPreferencesDir() {
             return mPreferencesDir;
         }
     }
-
     
+    @DSSink({DSSinkKind.FILE})
     @Override
     public FileInputStream openFileInput(String name) throws FileNotFoundException {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSink({DSSinkKind.FILE})
     @Override
     public FileOutputStream openFileOutput(String name, int mode) throws FileNotFoundException {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public boolean deleteFile(String name) {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getFilesDir() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getExternalFilesDir(String type) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getObbDir() {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getCacheDir() {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getExternalCacheDir() {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getFileStreamPath(String name) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public String[] fileList() {
         throw new UnsupportedOperationException( );
@@ -505,27 +481,22 @@ private File getPreferencesDir() {
         setFilePermissionsFromMode(f.getPath(), mode, 0);
         return db;
     }
-
     
     @Override
     public boolean deleteDatabase(String name) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getDatabasePath(String name) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public String[] databaseList() {
         throw new UnsupportedOperationException();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.272 -0500", hash_original_method = "5E7F893311C7FFBA04D943EFEC31C4D2", hash_generated_method = "CECB6C2171E104773B017888B934F3B5")
     
@@ -540,129 +511,113 @@ private File getDatabasesDir() {
             return mDatabasesDir;
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Drawable getWallpaper() {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public Drawable peekWallpaper() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public int getWallpaperDesiredMinimumWidth() {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public int getWallpaperDesiredMinimumHeight() {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void setWallpaper(Bitmap bitmap) throws IOException {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void setWallpaper(InputStream data) throws IOException {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void clearWallpaper() {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void startActivity(Intent intent) {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void startActivities(Intent[] intents) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags)
             throws IntentSender.SendIntentException {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendBroadcast(Intent intent, String receiverPermission) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendOrderedBroadcast(Intent intent,
             String receiverPermission) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendOrderedBroadcast(Intent intent, String receiverPermission,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
            Bundle initialExtras) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendStickyBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public void sendStickyOrderedBroadcast(Intent intent,
             BroadcastReceiver resultReceiver, Handler scheduler, int initialCode, String initialData,
            Bundle initialExtras) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void removeStickyBroadcast(Intent intent) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter) {
     	// Generate Intents based on filter
@@ -672,9 +627,7 @@ private File getDatabasesDir() {
 		}
     	return null; // no 'sticky' intents need to be modeled for coverage
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public Intent registerReceiver(BroadcastReceiver receiver, IntentFilter filter,
             String broadcastPermission, Handler scheduler) {
@@ -716,48 +669,41 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
             return null;
         }
     }
-
     
     @Override
     public void unregisterReceiver(BroadcastReceiver receiver) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public ComponentName startService(Intent service) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public boolean stopService(Intent service) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public boolean bindService(Intent service, ServiceConnection conn, int flags) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void unbindService(ServiceConnection conn) {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments) {
         throw new UnsupportedOperationException();
   }
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:33.108 -0400", hash_original_method = "0B425FF354429B91E3FB5E5F0CCF5247", hash_generated_method = "9DC6D6BDC8B919CA9F34CC2423316AAF")
     private WallpaperManager getWallpaperManager() {
 		return wallPaperManager;
@@ -765,19 +711,16 @@ private Intent registerReceiverInternal(BroadcastReceiver receiver,
         // ---------- Original Method ----------
         //return (WallpaperManager) WALLPAPER_FETCHER.getService(this);
     }
-
     
     @Override
     public int checkPermission(String permission, int pid, int uid) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public int checkCallingPermission(String permission) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public int checkCallingOrSelfPermission(String permission) {
@@ -799,63 +742,48 @@ private void enforce(
                     ".");
         }
     }
-
     
     @Override
     public void enforcePermission(
             String permission, int pid, int uid, String message) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void enforceCallingPermission(String permission, String message) {
         throw new UnsupportedOperationException();
     }
-
     
     @Override
     public void enforceCallingOrSelfPermission(String permission, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void grantUriPermission(String toPackage, Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void revokeUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public int checkUriPermission(Uri uri, int pid, int uid, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public int checkCallingUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public int checkCallingOrSelfUriPermission(Uri uri, int modeFlags) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public int checkUriPermission(Uri uri, String readPermission,
             String writePermission, int pid, int uid, int modeFlags) {
@@ -895,49 +823,38 @@ private void enforceForUri(
                     ".");
         }
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void enforceUriPermission(
             Uri uri, int pid, int uid, int modeFlags, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void enforceCallingUriPermission(
             Uri uri, int modeFlags, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     @Override
     public void enforceCallingOrSelfUriPermission(
             Uri uri, int modeFlags, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SPEC)
     public void enforceUriPermission(
             Uri uri, String readPermission, String writePermission,
             int pid, int uid, int modeFlags, String message) {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public Context createPackageContext(String packageName, int flags)
             throws PackageManager.NameNotFoundException {
         throw new UnsupportedOperationException();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public boolean isRestricted() {
         throw new UnsupportedOperationException();        
@@ -951,8 +868,8 @@ private File getDataDirFile() {
         }
         throw new RuntimeException("Not supported in system context");
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
     public File getDir(String name, int mode) {
         throw new UnsupportedOperationException();
@@ -1013,6 +930,7 @@ final void performFinalCleanup(String who, String what) {
         mPackageInfo.removeContextRegistrations(getOuterContext(), who, what);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.420 -0500", hash_original_method = "00E338AD03CD22E7A509C63ABE7257F4", hash_generated_method = "E1719FC9EAE97D56287081945234BDDE")
     
 final Context getReceiverRestrictedContext() {
@@ -1021,18 +939,9 @@ final Context getReceiverRestrictedContext() {
         }
         return mReceiverRestrictedContext = new ReceiverRestrictedContext(getOuterContext());
     }
-
-    
-    
-
-    
-
-
-
     
     private static final class ApplicationContentResolver extends ContentResolver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.449 -0500", hash_original_field = "DAA5CF027F30E341CB6E5B438E9919B8", hash_generated_field = "3BD1B37D989628ECBEBF06B5281DCE58")
-
 
         private  ActivityThread mMainThread;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.440 -0500", hash_original_method = "FC2218F5409D3B615253B9FADC78F4F0", hash_generated_method = "C2EBBD2140065E086EED206CC0344224")
@@ -1062,7 +971,6 @@ public ApplicationContentResolver(Context context, ActivityThread mainThread) {
         public boolean releaseProvider(IContentProvider provider) {
             return mMainThread.releaseProvider(provider);
         }
-
         
     }
 
@@ -1078,12 +986,14 @@ final void setOuterContext(Context context) {
         mOuterContext = context;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.427 -0500", hash_original_method = "03C284D73757410812309249CAB76117", hash_generated_method = "4E683FF5A8BC97CB945DA2DFC7A929BE")
     
 final Context getOuterContext() {
         return mOuterContext;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:57.429 -0500", hash_original_method = "D32D1A589CFC02641AF8A3133A37BC7F", hash_generated_method = "D2B98033670730E13D8A5E06B011771E")
     
 final IBinder getActivityToken() {

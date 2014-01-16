@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import sun.misc.Unsafe;
 
-
-
-
-
 public class AtomicBoolean implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.071 -0500", hash_original_field = "FA01BDB879BB99A8D2FB4230076CD508", hash_generated_field = "0560675D9B140F497F7B6539FEA0318E")
 
@@ -22,7 +18,6 @@ public class AtomicBoolean implements java.io.Serializable {
     private static  long valueOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.078 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "AACF1191CE0421BEFC63226B2561E15D")
 
-
     private volatile int value;
 
     /**
@@ -30,6 +25,8 @@ public class AtomicBoolean implements java.io.Serializable {
      *
      * @param initialValue the initial value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.082 -0500", hash_original_method = "2D4043190EFF6FBF71F6E61F91ACE979", hash_generated_method = "22155F1CEA387050B46DD1FA608FC521")
     
 public AtomicBoolean(boolean initialValue) {
@@ -39,6 +36,8 @@ public AtomicBoolean(boolean initialValue) {
     /**
      * Creates a new {@code AtomicBoolean} with initial value {@code false}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.084 -0500", hash_original_method = "4EFA45A0BE6632C845A9BA70932A5A0A", hash_generated_method = "DD75D899E8FB229720E6C75B96D2B634")
     
 public AtomicBoolean() {
@@ -49,6 +48,8 @@ public AtomicBoolean() {
      *
      * @return the current value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.087 -0500", hash_original_method = "5ABD420FFDECFAFBA90B6FD43E53DADE", hash_generated_method = "2A5391E4D85B9017AC3F9C1E1F50A417")
     
 public final boolean get() {
@@ -97,6 +98,9 @@ public boolean weakCompareAndSet(boolean expect, boolean update) {
      *
      * @param newValue the new value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.099 -0500", hash_original_method = "FD0CF162327E2AB30C8884FB52F6FB5F", hash_generated_method = "B7867BD27F3347CA40707405C7C5B66A")
     
 public final void set(boolean newValue) {

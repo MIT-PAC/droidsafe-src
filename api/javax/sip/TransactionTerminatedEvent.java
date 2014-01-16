@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.EventObject;
 
-
-
-
-
-
 public class TransactionTerminatedEvent extends EventObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.190 -0500", hash_original_field = "7F0DEF4149A50E91D47D48AF026F263A", hash_generated_field = "3875027DABF1E19F66E817463ADDFE1C")
 
@@ -48,18 +43,19 @@ public boolean isServerTransaction() {
         return mIsServerTransaction;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.205 -0500", hash_original_method = "00896F7299BD9459656811B60B06B2C6", hash_generated_method = "81AF1418326903D133D5A72B4179C35F")
     
 public ClientTransaction getClientTransaction() {
         return mClientTransaction;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.207 -0500", hash_original_method = "8D21BCE8DC60E722EE457FD9027E91F0", hash_generated_method = "68BE8F510D36285A2EDFFE7542489C74")
     
 public ServerTransaction getServerTransaction() {
         return mServerTransaction;
     }
-
     
 }
 

@@ -14,8 +14,6 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.view.ViewGroup;
 
-
-
 public class LinearLayout extends ViewGroup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.808 -0500", hash_original_field = "FBA6C9C5213832E18F5A01E0F1543E85", hash_generated_field = "AC2205EFFDAF899686D059A4EFB7832E")
 
@@ -37,10 +35,8 @@ public class LinearLayout extends ViewGroup {
     public static final int SHOW_DIVIDER_END = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.845 -0500", hash_original_field = "1D3A9536CCBB8A5004DA5871D6521680", hash_generated_field = "2ADB96257BCF6B94BEB08B7C805F3758")
 
-
     private static final int VERTICAL_GRAVITY_COUNT = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.848 -0500", hash_original_field = "42186D9F215F3CF35A6F7BAD9CED0E8C", hash_generated_field = "32CFAC2C2333762286EED0DC09E96431")
-
 
     private static final int INDEX_CENTER_VERTICAL = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.851 -0500", hash_original_field = "EADD05467EC02284ACFA97A8F97C2E01", hash_generated_field = "E642F731D98BFDC57447B50CB016F9AF")
@@ -66,11 +62,9 @@ public class LinearLayout extends ViewGroup {
     private int mBaselineChildTop = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.829 -0500", hash_original_field = "9D3FC5FADE012FDDFCCC496073866451", hash_generated_field = "3C6DDBEC00F7F6467812B81CEA371C07")
 
-
     @ViewDebug.ExportedProperty(category = "measurement")
     private int mOrientation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.832 -0500", hash_original_field = "613BFEDA63FF8A3B7212201863D19750", hash_generated_field = "EE266283EE900FDD2432D031F7395357")
-
 
     @ViewDebug.ExportedProperty(category = "measurement", flagMapping = {
             @ViewDebug.FlagToString(mask = -1,
@@ -107,28 +101,23 @@ public class LinearLayout extends ViewGroup {
     private int mGravity = Gravity.START | Gravity.TOP;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.835 -0500", hash_original_field = "1CE256E4F5677FEB8B9F6518DC4D0035", hash_generated_field = "DE3BC85B85ECB21DC64AEE79C7BD6AB4")
 
-
     @ViewDebug.ExportedProperty(category = "measurement")
     private int mTotalLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.837 -0500", hash_original_field = "2390EDB65C3F01D3B58AA9F800427A44", hash_generated_field = "EF9873241C2DA21073158F3890B03884")
-
 
     @ViewDebug.ExportedProperty(category = "layout")
     private float mWeightSum;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.839 -0500", hash_original_field = "13D5A6E6C7DF367CD3380625883A4BF2", hash_generated_field = "295836EFFBA80C7933F8A212CF2A587C")
 
-
     @ViewDebug.ExportedProperty(category = "layout")
     private boolean mUseLargestChild;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.841 -0500", hash_original_field = "3494FB6BCB44CD742F6CD7B83845512B", hash_generated_field = "EAE955816B4A7ECE00EA7D8113667D8A")
-
 
     private int[] mMaxAscent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.843 -0500", hash_original_field = "4D438510CEC43757766598753150A792", hash_generated_field = "59DC29D31F14D9C75D4CE10DB2E42CAF")
 
     private int[] mMaxDescent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.857 -0500", hash_original_field = "3837E71D24376BABDBC6EE7CD182AABB", hash_generated_field = "D73292FD603C307DCBB538076F31C80F")
-
 
     private Drawable mDivider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.859 -0500", hash_original_field = "C03C0EAD5BCD2EE4D0165D18AEA12E41", hash_generated_field = "57640F4296EC1DBBA1FC773929C31009")
@@ -144,20 +133,24 @@ public class LinearLayout extends ViewGroup {
 
     private int mDividerPadding;
 
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.868 -0500", hash_original_method = "FE94B0C3331DC48DD922B45C9927A2E5", hash_generated_method = "8B2A5CE3E06980F8A76CE3DD33ED334F")
     
 public LinearLayout(Context context) {
         super(context);
     }
 
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.871 -0500", hash_original_method = "90765D7AD39C5FFE28F827609E4D9AAF", hash_generated_method = "4C7DDA589A635B38E56D20DF84A9773B")
     
 public LinearLayout(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     public LinearLayout(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
         /*
@@ -185,29 +178,22 @@ public LinearLayout(Context context, AttributeSet attrs) {
         a.recycle();
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setShowDividers(int showDividers) {
         addTaint(showDividers);
         requestLayout();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
     public boolean shouldDelayChildPressedState() {
         return getTaintBoolean();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getShowDividers() {
         return getTaintInt();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setDividerDrawable(Drawable divider) {
         if (divider != null) {
             mDividerWidth = divider.getIntrinsicWidth();
@@ -218,54 +204,43 @@ public LinearLayout(Context context, AttributeSet attrs) {
         }
         addTaint(divider.getIntrinsicWidth());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setDividerPadding(int padding) {
         addTaint(padding);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDividerPadding() {
         return getTaintInt();
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getDividerWidth() {
         return getTaintInt();
     }
-
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override
-    @DSModeled(DSC.SAFE)
+    
     protected void onDraw(Canvas canvas) {
         drawDividersVertical(canvas);
         drawDividersHorizontal(canvas);
     }
-
     
-    @DSModeled(DSC.SAFE)
     void drawDividersVertical(Canvas canvas) {
         drawHorizontalDivider(canvas, 0);
     }
-
     
-    @DSModeled(DSC.SAFE)
     void drawDividersHorizontal(Canvas canvas) {
         drawVerticalDivider(canvas, 0);
     }
-
     
-    @DSModeled(DSC.SAFE)
     void drawHorizontalDivider(Canvas canvas, int top) {
         mDivider.setBounds(getTaintInt(), top, 0, 0);
         mDivider.draw(canvas);
     }
-
     
-    @DSModeled(DSC.SAFE)
     void drawVerticalDivider(Canvas canvas, int left) {
         mDivider.setBounds(getTaintInt(), left, 0, 0);
         mDivider.draw(canvas);
@@ -292,6 +267,8 @@ public boolean isBaselineAligned() {
      *
      * @attr ref android.R.styleable#LinearLayout_baselineAligned
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.905 -0500", hash_original_method = "8643C35E200A9ECC6F4D083B3C632ADD", hash_generated_method = "2D787394E95CBC96E68EE29B0748320D")
     
 @android.view.RemotableViewMethod
@@ -330,6 +307,7 @@ public boolean isMeasureWithLargestChildEnabled() {
         mUseLargestChild = enabled;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.913 -0500", hash_original_method = "8677A7AE77B37457B2CE24BC40A0B2AA", hash_generated_method = "5FF2804CC39F25A1046DE4EB2474B683")
     
 @Override
@@ -390,6 +368,7 @@ public boolean isMeasureWithLargestChildEnabled() {
      *   part of a larger layout that is baseline aligned, or -1 if none has
      *   been set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.915 -0500", hash_original_method = "90F550BFDC49A6587A7A8440E339A132", hash_generated_method = "60E71E80EA1054765A7B4F72AC229618")
     
 public int getBaselineAlignedChildIndex() {
@@ -422,6 +401,7 @@ public int getBaselineAlignedChildIndex() {
      * @param index the child's index
      * @return the child at the specified index
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.919 -0500", hash_original_method = "87FE8C209A68A97BDFF0666E4CF673D3", hash_generated_method = "87FE8C209A68A97BDFF0666E4CF673D3")
     
 View getVirtualChildAt(int index) {
@@ -437,6 +417,7 @@ View getVirtualChildAt(int index) {
      *
      * @return the virtual number of children
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.921 -0500", hash_original_method = "04A766EF9FA40CCD4344368D3178C5E7", hash_generated_method = "04A766EF9FA40CCD4344368D3178C5E7")
     
 int getVirtualChildCount() {
@@ -450,6 +431,7 @@ int getVirtualChildCount() {
      *         a number lower than or equals to 0.0f if not weight sum is
      *         to be used.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.923 -0500", hash_original_method = "131E7E20664E8B649BC33F0915A0DE0D", hash_generated_method = "D9E3D512993B2A8EFED07BD9D9494601")
     
 public float getWeightSum() {
@@ -468,6 +450,7 @@ public float getWeightSum() {
      *        to 0.0f if the weight sum should be computed from the children's
      *        layout_weight
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.925 -0500", hash_original_method = "47922B5280E89B2CF9B73D66705F0A8D", hash_generated_method = "5B4CD5F9CDB4653DC8C1F81264D59EB3")
     
 @android.view.RemotableViewMethod
@@ -475,6 +458,8 @@ public float getWeightSum() {
         mWeightSum = Math.max(0.0f, weightSum);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.928 -0500", hash_original_method = "3F3B158F407FDE6BDDE91ED473E376D3", hash_generated_method = "3DD5D1F2240F26C7DCAFE31632C527E7")
     
 @Override
@@ -776,7 +761,6 @@ void measureVertical(int widthMeasureSpec, int heightMeasureSpec) {
         } else {
             alternativeMaxWidth = Math.max(alternativeMaxWidth,
                                            weightedMaxWidth);
-
 
             // We have no limit, so make all weighted views as tall as the largest child.
             // Children will have already been measured once.
@@ -1275,6 +1259,7 @@ private void forceUniformHeight(int count, int widthMeasureSpec) {
      * @param index the index of the child after which we want to skip children
      * @return the number of children to skip, 0 by default
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.956 -0500", hash_original_method = "64CDF538399E47C38C21DACEFC8C1E08", hash_generated_method = "64CDF538399E47C38C21DACEFC8C1E08")
     
 int getChildrenSkipCount(View child, int index) {
@@ -1323,6 +1308,7 @@ void measureChildBeforeLayout(View child, int childIndex,
      * @param child the child for which to obtain the location offset
      * @return the location offset in pixels
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.962 -0500", hash_original_method = "BA69BAE2E1D7A163D53D02D47016A6D7", hash_generated_method = "BA69BAE2E1D7A163D53D02D47016A6D7")
     
 int getLocationOffset(View child) {
@@ -1337,12 +1323,15 @@ int getLocationOffset(View child) {
      * @param child the child whose next sibling will be moved
      * @return the location offset of the next child in pixels
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.964 -0500", hash_original_method = "6D7A4F846C7E828D32B84605EE3B545F", hash_generated_method = "6D7A4F846C7E828D32B84605EE3B545F")
     
 int getNextLocationOffset(View child) {
         return 0;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.966 -0500", hash_original_method = "38617BD257A07AF46AAF702E88FA7138", hash_generated_method = "B8F8072E136786133A79701CF061DDA1")
     
 @Override
@@ -1445,7 +1434,6 @@ void layoutVertical() {
             }
         }
     }
-
     
     public static class LayoutParams extends ViewGroup.MarginLayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.001 -0500", hash_original_field = "ED32AE0265E055EF357B36A061633A65", hash_generated_field = "B59DE7C019472A73872C811A2811FA3D")
@@ -1475,6 +1463,8 @@ void layoutVertical() {
         /**
          * {@inheritDoc}
          */
+        @DSComment("GUI Layout")
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.007 -0500", hash_original_method = "C424BD779148A2828DEB0ABC94DCC73C", hash_generated_method = "1949DD99FD290058A73A861303B9D7FF")
         
 public LayoutParams(Context c, AttributeSet attrs) {
@@ -1491,6 +1481,8 @@ public LayoutParams(Context c, AttributeSet attrs) {
         /**
          * {@inheritDoc}
          */
+        @DSComment("GUI Layout")
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.009 -0500", hash_original_method = "5675045EFCD4661F32116909A9822399", hash_generated_method = "D00C43B28A1B544AF669D1382210BD5F")
         
 public LayoutParams(int width, int height) {
@@ -1508,6 +1500,8 @@ public LayoutParams(int width, int height) {
          *        {@link #WRAP_CONTENT} or a fixed size in pixels
          * @param weight the weight
          */
+        @DSComment("GUI Layout")
+        @DSSafe(DSCat.GUI)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.012 -0500", hash_original_method = "4CDC4D1E7FEEFBC37A8F4BABF983F00D", hash_generated_method = "9F21D0821BE5D3698BA91397A51EBA72")
         
 public LayoutParams(int width, int height, float weight) {
@@ -1540,7 +1534,6 @@ public LayoutParams(MarginLayoutParams source) {
             return output + "LinearLayout.LayoutParams={width=" + sizeToString(width) +
                     ", height=" + sizeToString(height) + " weight=" + weight +  "}";
         }
-
         
     }
 
@@ -1563,7 +1556,7 @@ void layoutHorizontal() {
         
         // Where bottom of child should go
         final int height = mBottom - mTop;
-        int childBottom = height - mPaddingBottom; 
+        int childBottom = height - mPaddingBottom;
         
         // Space available for child
         int childSpace = height - paddingTop - mPaddingBottom;
@@ -1691,6 +1684,8 @@ private void setChildFrame(View child, int left, int top, int width, int height)
      * 
      * @attr ref android.R.styleable#LinearLayout_orientation
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.979 -0500", hash_original_method = "708E6C59CCF6822D1254CF8F346C250A", hash_generated_method = "BFA3958A7C0BC790D178EF86B7EDBF59")
     
 public void setOrientation(int orientation) {
@@ -1705,6 +1700,9 @@ public void setOrientation(int orientation) {
      * 
      * @return either {@link #HORIZONTAL} or {@link #VERTICAL}
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.981 -0500", hash_original_method = "6BA82D6B625174A8AC80664141F0D361", hash_generated_method = "BD403A9700920A99F22D5BAAE290999D")
     
 public int getOrientation() {
@@ -1721,6 +1719,8 @@ public int getOrientation() {
      * 
      * @attr ref android.R.styleable#LinearLayout_gravity
      */
+    @DSComment("Layout")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.984 -0500", hash_original_method = "DC8D5E1211DE0926B9DDA2FADCED75EE", hash_generated_method = "ACC460D6D3A88CDE5F61A25B30D37A34")
     
 @android.view.RemotableViewMethod
@@ -1739,6 +1739,7 @@ public int getOrientation() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.986 -0500", hash_original_method = "076C59065FCBD07F7CAA4FFA6D12CC3A", hash_generated_method = "DD9C3C2378492508B428C0D28CCABAA5")
     
 @android.view.RemotableViewMethod
@@ -1750,6 +1751,7 @@ public int getOrientation() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.988 -0500", hash_original_method = "EE245B70888F9F1582A126D948173E64", hash_generated_method = "0591F7E10EF7E02B9451B299C8FAC684")
     
 @android.view.RemotableViewMethod
@@ -1794,7 +1796,6 @@ public int getOrientation() {
     protected LayoutParams generateLayoutParams(ViewGroup.LayoutParams p) {
         return new LayoutParams(p);
     }
-
 
     // Override to allow type-checking of LayoutParams.
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:04.997 -0500", hash_original_method = "1F2E8350C10FBDB8051DCF8E5479411B", hash_generated_method = "28AB7436F710E069C2BB270F65908AD1")

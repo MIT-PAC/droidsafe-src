@@ -9,11 +9,6 @@ import java.io.IOException;
 import org.apache.harmony.security.asn1.ASN1Enumerated;
 import org.apache.harmony.security.asn1.ASN1Type;
 
-
-
-
-
-
 public final class ReasonCode extends ExtensionValue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.304 -0500", hash_original_field = "7F9D9C29CB293F4A4F060B1EA2611944", hash_generated_field = "FC9B9354EEC4DDC14F6C969560681A6C")
 
@@ -59,6 +54,7 @@ public ReasonCode(byte[] encoding) throws IOException {
         this.code = ((byte[]) ASN1.decode(encoding))[0];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.334 -0500", hash_original_method = "410E015295E6E50D0A716577DAE7F9D9", hash_generated_method = "77CC6166D02C02F0CA98A03ED2E931F1")
     
 @Override public byte[] getEncoded() {

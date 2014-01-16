@@ -19,9 +19,6 @@ import android.util.Log;
 import com.android.internal.util.AsyncChannel;
 import com.android.internal.util.Protocol;
 
-
-
-
 public class WifiP2pManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.636 -0500", hash_original_field = "3BB7A8F6BB50B4B73B08E7CCAB5C6140", hash_generated_field = "60C1E150443611DF14BBCBAE33752417")
 
@@ -72,12 +69,10 @@ public class WifiP2pManager {
     public static final String EXTRA_WIFI_P2P_DEVICE = "wifiP2pDevice";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.671 -0500", hash_original_field = "820AA681EFDE22694C9374B8689CEB3A", hash_generated_field = "B2327E7E8CB442C29251D0B90987B173")
 
-
     private static final int BASE = Protocol.BASE_WIFI_P2P_MANAGER;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.673 -0500", hash_original_field = "FCE90E758FD4872D2FAB97A2C821705F", hash_generated_field = "E2CBFBD4BAFA9BABF9DE67012EEB7D48")
 
     public static final int ENABLE_P2P                              = BASE + 1;
-
     
     public static class Channel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.761 -0500", hash_original_field = "4A962768E924B3302D060CDFEED2D8E1", hash_generated_field = "21467B1B6B8E8EF3583A933A5A10E73B")
@@ -93,7 +88,6 @@ public class WifiP2pManager {
 
         private int mListenerKey = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.769 -0500", hash_original_field = "DDBFF7075CEDA1D68CD8EBEE19E8EF07", hash_generated_field = "DDBFF7075CEDA1D68CD8EBEE19E8EF07")
-
 
         AsyncChannel mAsyncChannel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.771 -0500", hash_original_field = "71779ABFDFD5610585018E11388B9462", hash_generated_field = "71779ABFDFD5610585018E11388B9462")
@@ -126,7 +120,6 @@ Object getListener(int key) {
                 return mListenerMap.remove(key);
             }
         }
-
         
         class P2pHandler extends Handler {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.773 -0500", hash_original_method = "1A56C06271A8BC48B0210F0B84874BB3", hash_generated_method = "1A56C06271A8BC48B0210F0B84874BB3")
@@ -190,15 +183,10 @@ P2pHandler(Looper looper) {
                         break;
                 }
             }
-
             
         }
-
-
         
     }
-
-
     
     public interface ChannelListener {
         
@@ -315,7 +303,6 @@ P2pHandler(Looper looper) {
     public static final int BUSY                = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.668 -0500", hash_original_field = "BD8FB108D640F5B5A5EE463CD27A6D68", hash_generated_field = "BD8FB108D640F5B5A5EE463CD27A6D68")
 
-
     IWifiP2pManager mService;
 
     /**
@@ -331,8 +318,7 @@ P2pHandler(Looper looper) {
 public WifiP2pManager(IWifiP2pManager service) {
         mService = service;
     }
-
-    @DSModeled(DSC.BAN)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.775 -0400", hash_original_method = "E626A45256220AE3F4AF9F0577D669AE", hash_generated_method = "AE4DAB67531AE0D3DD7CB41C112DC312")
     public  WifiP2pManager() {
         // ---------- Original Method ----------
@@ -550,6 +536,7 @@ public void requestGroupInfo(Channel c, GroupInfoListener listener) {
      * @return Messenger pointing to the WifiP2pService handler
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.814 -0500", hash_original_method = "A358F8361C96DABE1A63B04B5804B3F5", hash_generated_method = "DA6144D34D1ABFD0D2380EC6E44B953A")
     
 public Messenger getMessenger() {

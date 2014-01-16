@@ -45,12 +45,10 @@ class FastScroller {
     private static final int STATE_EXIT = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.933 -0500", hash_original_field = "1C7D51957586CA7CCA3D9248F72A9E66", hash_generated_field = "A4ED50417A9DBB08E9A7851FFF0DB179")
 
-
     private static final int[] PRESSED_STATES = new int[] {
         android.R.attr.state_pressed
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.936 -0500", hash_original_field = "0D3EDC5BC5356A0BED3AE2230AED5AE0", hash_generated_field = "1EE9C5A9B487C2093F1C1687A659D84D")
-
 
     private static final int[] DEFAULT_STATES = new int[0];
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.698 -0400", hash_original_field = "72C442925745EFC5792F94523ABD1AB2", hash_generated_field = "84AAA12BA67F0A875D601387F39B9663")
@@ -64,7 +62,6 @@ class FastScroller {
         R.attr.fastScrollOverlayPosition
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.940 -0500", hash_original_field = "8BA834CA86EB36F1A1C6110B0F27E3C7", hash_generated_field = "1FA0034D769E8804C911CA57C3894230")
-
 
     private static final int TEXT_COLOR = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.943 -0500", hash_original_field = "F796370E1CCCC596EF25D9C69154533B", hash_generated_field = "0239F9DADAC23BDBF7DAE9F4242945FC")
@@ -84,20 +81,17 @@ class FastScroller {
     private static final int OVERLAY_POSITION = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.955 -0500", hash_original_field = "EF4DC379A0810B76C20FA2B01FF8682E", hash_generated_field = "C7D64E758B6AB043EBEA3866A6D65988")
 
-
     private static final int OVERLAY_FLOATING = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.957 -0500", hash_original_field = "2BE942ECD39CE5C4B85A0478A7F7F68B", hash_generated_field = "C800788580620028E6672AF4A08A7118")
 
     private static final int OVERLAY_AT_THUMB = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.028 -0500", hash_original_field = "D59FB70289344DCBCB67FDCD42D89461", hash_generated_field = "34BA387044B3D0FAAB4EEB4796FFF3A1")
 
-
     private static final int FADE_TIMEOUT = 1500;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.030 -0500", hash_original_field = "84FB55330EA5C3AA3AA0B9D76D7EB267", hash_generated_field = "CF9EC8D9C1271C568A979F597BD18D32")
 
     private static final int PENDING_DRAG_DELAY = 180;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.959 -0500", hash_original_field = "CC35B65C4DF6EB37FFE598AD0E85776D", hash_generated_field = "723113CD58F6B081A7D304DE131200C0")
-
     
     private Drawable mThumbDrawable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.962 -0500", hash_original_field = "EEF6172953B5FC6CF90C795CAE614F4E", hash_generated_field = "C4F6607BE177BD0C551FFF72CB52709D")
@@ -108,13 +102,11 @@ class FastScroller {
     private Drawable mTrackDrawable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.966 -0500", hash_original_field = "23AEA43425EC366B0F0D979C5580BBB5", hash_generated_field = "3F431D8A9EEFA832E40733D030288C4E")
 
-
     private Drawable mOverlayDrawableLeft;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.967 -0500", hash_original_field = "7C92A688DB96482E993517EEAAA9DF82", hash_generated_field = "CBEF23D76FD5E642BD307BDCC6E254DC")
 
     private Drawable mOverlayDrawableRight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.969 -0500", hash_original_field = "3D6BD301AD11E22B2417B343C44F938F", hash_generated_field = "3D6BD301AD11E22B2417B343C44F938F")
-
 
     int mThumbH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.971 -0500", hash_original_field = "DCE6651DC2A97578BDBD4F73CA2A9123", hash_generated_field = "DCE6651DC2A97578BDBD4F73CA2A9123")
@@ -125,13 +117,11 @@ class FastScroller {
     int mThumbY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.975 -0500", hash_original_field = "338C99E0D8E2EB4EC7257FC4ABC99760", hash_generated_field = "652CA9CCF5547E5517E87FEB493C682F")
 
-
     private RectF mOverlayPos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.978 -0500", hash_original_field = "10075C47A0F7954AF394A0C06D3D4027", hash_generated_field = "CF4608DD9AF6C21FCFF4CAB07660E9AC")
 
     private int mOverlaySize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.979 -0500", hash_original_field = "8DE3CD4C54B5C114BFFFAF8D6B3834ED", hash_generated_field = "8DE3CD4C54B5C114BFFFAF8D6B3834ED")
-
 
     AbsListView mList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.981 -0500", hash_original_field = "F80BE66A40916AFE64128A97287351B5", hash_generated_field = "F80BE66A40916AFE64128A97287351B5")
@@ -153,7 +143,6 @@ class FastScroller {
 
     private boolean mLongList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.994 -0500", hash_original_field = "F589CA49F5F0FBB7B2AAA1D167B09C77", hash_generated_field = "E10BB9F3460B91FF78086EFA996A0114")
-
     
     private Object [] mSections;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.996 -0500", hash_original_field = "5DA5B72F319798902FC1F3C890FC3BB4", hash_generated_field = "8F91F071959F5E46C9D858D712A42531")
@@ -166,15 +155,12 @@ class FastScroller {
 
     private ScrollFade mScrollFade;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.003 -0500", hash_original_field = "7BB479D2050B776CF48FB8B4E674911B", hash_generated_field = "19B55F2750B971E6310D64ADB9B2D0CF")
-
     
     private int mState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.005 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2E60E17486AAEB1A4E1F1878A0354061")
-
     
     private Handler mHandler = new Handler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.007 -0500", hash_original_field = "33273F8B8EE0B442CE373E963CE812B8", hash_generated_field = "33273F8B8EE0B442CE373E963CE812B8")
-
     
     BaseAdapter mListAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.009 -0500", hash_original_field = "2969AFB82210EC5F5E924DDA5639C435", hash_generated_field = "993A155558E830738166022FC5D1A65D")
@@ -182,26 +168,20 @@ class FastScroller {
     private SectionIndexer mSectionIndexer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.011 -0500", hash_original_field = "4679CAE2B24A3D5F4A4C8AB361D657E0", hash_generated_field = "54BB6C7E624546A679D88F2CE6A36CC3")
 
-
     private boolean mChangedBounds;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.013 -0500", hash_original_field = "4EE731A4D843C99A130C2ED24E5FDDEA", hash_generated_field = "D614AE7D1AAE0276EA05A974DCBF0210")
-
     
     private int mPosition;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.015 -0500", hash_original_field = "33619D55BE69E2B8A733B3607B6451AA", hash_generated_field = "1013EB9EDD9A15A8ED84F490CA1C5ACA")
 
-
     private boolean mAlwaysShow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.017 -0500", hash_original_field = "CD5C76EAA91CF34AEB137BEA7A5E4085", hash_generated_field = "818199C64E5FB571F9E3F2622DF96D7E")
-
 
     private int mOverlayPosition;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.019 -0500", hash_original_field = "14E789E41B34F824F9C54CE1DDCE3E13", hash_generated_field = "6A99D75E2A8444FF7C66E9499447E446")
 
-
     private boolean mMatchDragPosition;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.021 -0500", hash_original_field = "A2E2E464E467FCA571530A8485FFA938", hash_generated_field = "A2E2E464E467FCA571530A8485FFA938")
-
 
     float mInitialTouchY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.023 -0500", hash_original_field = "A31D9AE99DECC41BA4A47D3E5C2BD2CA", hash_generated_field = "A31D9AE99DECC41BA4A47D3E5C2BD2CA")
@@ -212,12 +192,11 @@ class FastScroller {
     private int mScaledTouchSlop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.032 -0500", hash_original_field = "C53D3ED3F7CBB30122A6D714A9203A7D", hash_generated_field = "570061BA9CB059462550E9BCCD2A0735")
 
-
     private final Rect mTmpRect = new Rect();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.853 -0400", hash_original_field = "FDE3D253B193C180C3BB694BFE237899", hash_generated_field = "29B709708C4F13168EDC66CB4D662E67")
 
-    private final Runnable mDeferStartDrag = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    private final Runnable mDeferStartDrag = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:10.853 -0400", hash_original_method = "8A3021930710B16F81DE57976EDC3D0F", hash_generated_method = "121B411EE501440C0B88B56E21D1E2FA")
         public void run() {
             {
@@ -235,21 +214,7 @@ class FastScroller {
             } 
             mPendingDrag = false;
             
-            
-                
-                
-                
-                
-                    
-                
-                    
-                
-                
-                
-            
-            
         }
-
         
 };
 
@@ -307,6 +272,7 @@ public void setScrollbarPosition(int position) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.052 -0500", hash_original_method = "B47561E95C2F1E64B16085B75AB60280", hash_generated_method = "A5BE265953E237C34F68583E708A4BB3")
     
 public int getWidth() {
@@ -338,6 +304,7 @@ public void setState(int state) {
         refreshDrawableState();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.056 -0500", hash_original_method = "10E9373648D5DF4EE43B4904732E3886", hash_generated_method = "4C50D1866B5E804CF0B05EFBD6788B97")
     
 public int getState() {
@@ -376,7 +343,6 @@ private void useThumbDrawable(Context context, Drawable drawable) {
         }
         mChangedBounds = true;
     }
-
     
     public class ScrollFade implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.120 -0500", hash_original_field = "DFBD50F7D67BF1C8D0922836E7A670AC", hash_generated_field = "A7C45DFCF276811667648B1C1A572838")
@@ -386,7 +352,6 @@ private void useThumbDrawable(Context context, Drawable drawable) {
 
         static final long FADE_DURATION = 200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.115 -0500", hash_original_field = "3C3A30DDD94D9D47CBB52C3848791CE7", hash_generated_field = "3C3A30DDD94D9D47CBB52C3848791CE7")
-
         
         long mStartTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.117 -0500", hash_original_field = "307FFDDA4C0E2DF961BB56499DC85520", hash_generated_field = "307FFDDA4C0E2DF961BB56499DC85520")
@@ -407,6 +372,7 @@ void startFade() {
             setState(STATE_EXIT);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.126 -0500", hash_original_method = "AFB48DA784BE880095A4465F927D06A4", hash_generated_method = "AFB48DA784BE880095A4465F927D06A4")
         
 int getAlpha() {
@@ -674,12 +640,14 @@ void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.082 -0500", hash_original_method = "AD42D97439FFEC71F76D9E9B9EF1920A", hash_generated_method = "AD42D97439FFEC71F76D9E9B9EF1920A")
     
 SectionIndexer getSectionIndexer() {
         return mSectionIndexer;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:12.084 -0500", hash_original_method = "0CD968054794DA4AF55762FEAC06E707", hash_generated_method = "0CD968054794DA4AF55762FEAC06E707")
     
 Object[] getSections() {

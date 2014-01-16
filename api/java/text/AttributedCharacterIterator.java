@@ -12,11 +12,9 @@ import java.util.Map;
 import java.util.Set;
 
 public interface AttributedCharacterIterator extends CharacterIterator {
-
     
     public static class Attribute implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.340 -0500", hash_original_field = "A257E6C9ED72D07359849AED69D69087", hash_generated_field = "385C16D260BAD11F2749B86ED81E7405")
-
 
         private static final long serialVersionUID = -9142742483513960612L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.343 -0500", hash_original_field = "5B636D7ABFAFE29C5A1F4DDC52A925B5", hash_generated_field = "02AAC6208FE1255FF42E622F931F0B28")
@@ -29,7 +27,6 @@ public interface AttributedCharacterIterator extends CharacterIterator {
 
         public static final Attribute READING = new Attribute("reading");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.351 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
-
 
         private String name;
 
@@ -67,6 +64,7 @@ protected Attribute(String name) {
          *
          * @return the name of this attribute.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.359 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "C7902D845D08F4F6CA0D1BA5E593678A")
         
 protected String getName() {
@@ -130,31 +128,22 @@ protected Object readResolve() throws InvalidObjectException {
             return getClass().getName() + '(' + getName() + ')';
         }
     }
-
     
     public Set<Attribute> getAllAttributeKeys();
-
     
     public Object getAttribute(Attribute attribute);
-
     
     public Map<Attribute, Object> getAttributes();
-
     
     public int getRunLimit();
-
     
     public int getRunLimit(Attribute attribute);
-
     
     public int getRunLimit(Set<? extends Attribute> attributes);
-
     
     public int getRunStart();
-
     
     public int getRunStart(Attribute attribute);
-
     
     public int getRunStart(Set<? extends Attribute> attributes);
 }

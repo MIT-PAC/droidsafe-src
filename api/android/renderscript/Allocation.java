@@ -47,6 +47,7 @@ static public Allocation createTyped(RenderScript rs, Type type, MipmapControl m
      *
      * @return allocation
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.162 -0500", hash_original_method = "A408B34F281395540EEED77731180C65", hash_generated_method = "8161DBF71A1F31005E5910BA3A540D17")
     
 static public Allocation createTyped(RenderScript rs, Type type, int usage) {
@@ -63,6 +64,7 @@ static public Allocation createTyped(RenderScript rs, Type type, int usage) {
      *
      * @return allocation
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.165 -0500", hash_original_method = "2F9FE5236662F74D39C5964ED1AC733E", hash_generated_method = "91F8FCFA8E864025E14A6A32CC90A733")
     
 static public Allocation createTyped(RenderScript rs, Type type) {
@@ -81,6 +83,7 @@ static public Allocation createTyped(RenderScript rs, Type type) {
      *
      * @return allocation
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.167 -0500", hash_original_method = "5F0329920CE6539503E8DACE82C515C1", hash_generated_method = "1545BCD278795E649171171C17A88878")
     
 static public Allocation createSized(RenderScript rs, Element e,
@@ -107,6 +110,7 @@ static public Allocation createSized(RenderScript rs, Element e,
      *
      * @return allocation
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.169 -0500", hash_original_method = "BD08BF24DECE867FBC9BAD4B74A67538", hash_generated_method = "2D32BC9CC9400302C75C909342F79A39")
     
 static public Allocation createSized(RenderScript rs, Element e, int count) {
@@ -182,6 +186,7 @@ static public Allocation createFromBitmap(RenderScript rs, Bitmap b,
      * @return renderscript allocation containing bitmap data
      *
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.179 -0500", hash_original_method = "95514FF5073DD08599DBE9F6D73E59F3", hash_generated_method = "0F370532FCB5748EE69AAC583B25F924")
     
 static public Allocation createFromBitmap(RenderScript rs, Bitmap b) {
@@ -252,6 +257,7 @@ static public Allocation createCubemapFromBitmap(RenderScript rs, Bitmap b,
      * @return allocation containing cubemap data
      *
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.185 -0500", hash_original_method = "0AEC913D07D4AD9724684A673FC6F8D3", hash_generated_method = "E9609598A966F8817A66516FB39D7B13")
     
 static public Allocation createCubemapFromBitmap(RenderScript rs,
@@ -346,6 +352,7 @@ static public Allocation createCubemapFromCubeFaces(RenderScript rs,
      * @return allocation containing cubemap data
      *
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.191 -0500", hash_original_method = "62C2C1B6F0249A81DF96D887CDE57892", hash_generated_method = "807BC3E63A8EC7B7CD4EFA3978F6E0B1")
     
 static public Allocation createCubemapFromCubeFaces(RenderScript rs,
@@ -401,6 +408,7 @@ static public Allocation createFromBitmapResource(RenderScript rs,
      * @return renderscript allocation containing resource data
      *
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.196 -0500", hash_original_method = "B0C87E65C5430C3898079FF855C10E98", hash_generated_method = "8D9B2644325A2F7E8FBEFDF7D614187B")
     
 static public Allocation createFromBitmapResource(RenderScript rs,
@@ -421,6 +429,7 @@ static public Allocation createFromBitmapResource(RenderScript rs,
      *              utilized
      *
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.198 -0500", hash_original_method = "B8CE0DE4924B901D9FDF5D196082956F", hash_generated_method = "97283EDF44EE1B1E0078162D518FDD90")
     
 static public Allocation createFromString(RenderScript rs,
@@ -455,9 +464,6 @@ static public Allocation createFromString(RenderScript rs,
     public static final int USAGE_GRAPHICS_RENDER_TARGET = 0x0010;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.157 -0500", hash_original_field = "CB4D2A9A30166F32913FF91112AF5F85", hash_generated_field = "7A3E66DD2D5D765451AE7D825CAB2F16")
 
-
-
-
     // creation
 
     static BitmapFactory.Options mBitmapOptions = new BitmapFactory.Options();
@@ -474,7 +480,6 @@ static public Allocation createFromString(RenderScript rs,
 
     Allocation mAdaptedAllocation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.000 -0500", hash_original_field = "1FF9B76BD894BB7012F7F3B358570205", hash_generated_field = "1FF9B76BD894BB7012F7F3B358570205")
-
 
     boolean mConstrainedLOD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.002 -0500", hash_original_field = "348B2424577ECDC38E311FD999D29B92", hash_generated_field = "348B2424577ECDC38E311FD999D29B92")
@@ -499,7 +504,6 @@ static public Allocation createFromString(RenderScript rs,
 
     Type.CubemapFace mSelectedFace = Type.CubemapFace.POSITIVE_X;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.016 -0500", hash_original_field = "C9FB47D56F7EDB1EE840BDC3AE79BB40", hash_generated_field = "C9FB47D56F7EDB1EE840BDC3AE79BB40")
-
 
     int mCurrentDimX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.019 -0500", hash_original_field = "A99E76F576811A9EDE6769AE3935BB39", hash_generated_field = "A99E76F576811A9EDE6769AE3935BB39")
@@ -529,7 +533,6 @@ Allocation(int id, RenderScript rs, Type t, int usage) {
             updateCacheInfo(t);
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.043 -0500", hash_original_method = "311D2B5BD14C46D52A18F5FB7D46A7CD", hash_generated_method = "EF4A9BBCFACDD949B961C655FAE4A879")
     
@@ -630,6 +633,7 @@ private void validateIsObject() {
         }
     }
 
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.065 -0500", hash_original_method = "9C32C8CB3047BF2C1A7EE0D985A901B5", hash_generated_method = "8CB2603D4174969C589CB781EB5489B4")
     
 public Type getType() {
@@ -855,6 +859,7 @@ public void copyFrom(Bitmap b) {
      * @param xoff
      * @param fp
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.097 -0500", hash_original_method = "E70E78EB3719016B4E6FB42A9EB5810C", hash_generated_method = "97A710717708BEEC3171324422D5E37A")
     
 public void setFromFieldPacker(int xoff, FieldPacker fp) {
@@ -877,6 +882,7 @@ public void setFromFieldPacker(int xoff, FieldPacker fp) {
      * @param component_number
      * @param fp
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.099 -0500", hash_original_method = "507EA1A1B860EC041E68F02818C67D1F", hash_generated_method = "4D8E80D26F52714FC62A8065959577CD")
     
 public void setFromFieldPacker(int xoff, int component_number, FieldPacker fp) {
@@ -1187,14 +1193,12 @@ public void copy2DRangeFrom(int xoff, int yoff, Bitmap data) {
         validate2DRange(xoff, yoff, data.getWidth(), data.getHeight());
         mRS.nAllocationData2D(getIDSafe(), xoff, yoff, mSelectedLOD, mSelectedFace.mID, data);
     }
-
     
     public enum MipmapControl {
         MIPMAP_NONE(0),
         MIPMAP_FULL(1),
         MIPMAP_ON_SYNC_TO_TEXTURE(2);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.038 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
-
 
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:09.040 -0500", hash_original_method = "799E9DBA54D46449D97C57D053873549", hash_generated_method = "799E9DBA54D46449D97C57D053873549")
@@ -1203,7 +1207,6 @@ MipmapControl(int id) {
             mID = id;
         }
     }
-
 
     /**
      * Copy from the Allocation into a Bitmap.  The bitmap must

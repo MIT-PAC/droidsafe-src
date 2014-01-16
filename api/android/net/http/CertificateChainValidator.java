@@ -19,16 +19,12 @@ import org.apache.harmony.xnet.provider.jsse.SSLParametersImpl;
 
 import com.android.internal.net.DomainNameValidator;
 
-
-
-
-
-
 class CertificateChainValidator {
 
     /**
      * @return The singleton instance of the certificates chain validator
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.195 -0500", hash_original_method = "0F243599E8016F5D4F15CBBF70F43AE6", hash_generated_method = "02D8009B6E1299C3B3A212C7B30F1CD2")
     
 public static CertificateChainValidator getInstance() {
@@ -122,6 +118,7 @@ private CertificateChainValidator() {}
      * @param domain The website domain
      * @return An SSL error object if there is an error and null otherwise
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.200 -0500", hash_original_method = "5B87AA85F76367E84F6A87186CEADEE5", hash_generated_method = "216E1F74EE288CB17CA845827E206614")
     
 public SslError doHandshakeAndValidateServerCertificates(
@@ -152,7 +149,6 @@ public SslError doHandshakeAndValidateServerCertificates(
 
         return verifyServerDomainAndCertificates((X509Certificate[]) peerCertificates, domain, "RSA");
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.207 -0500", hash_original_method = "768C411890F29309D1F137AF28998331", hash_generated_method = "10AEA3ED4E1BC4F19C79B4C82569D499")
     

@@ -14,10 +14,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
 
-
-
-
-
 public class ApplicationInfo extends PackageItemInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.456 -0500", hash_original_field = "1C12CC5812F37AE9DD1D75B7D551FC1B", hash_generated_field = "561B89510C1340BB2679DFD17733782E")
 
@@ -139,11 +135,9 @@ public ApplicationInfo[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.517 -0500", hash_original_field = "342A355A4D1542CCE1007DED042033A3", hash_generated_field = "04E16A94C9ACEC761C099F572C9ACA2E")
 
     public int requiresSmallestWidthDp = 0;
-
     
     public static class DisplayNameComparator implements Comparator<ApplicationInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.557 -0500", hash_original_field = "EE5E44F3B728B272AD02D50E8F128A4E", hash_generated_field = "0F522A2F9FEC0AE6C7C0EFB2E65868E6")
-
 
         private final Collator   sCollator = Collator.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.559 -0500", hash_original_field = "D7E1102720CC9E76648EB86B25CA5216", hash_generated_field = "B9590FAB3CF140F08C9CD4E0309ED58A")
@@ -169,7 +163,6 @@ public final int compare(ApplicationInfo aa, ApplicationInfo ab) {
             
             return sCollator.compare(sa.toString(), sb.toString());
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.519 -0500", hash_original_field = "6C3409B065DC3A460DA44F1C646826DF", hash_generated_field = "414C12C8D4EBC7FEA48FF4F1F93E9547")
@@ -276,6 +269,7 @@ private ApplicationInfo(Parcel source) {
         uiOptions = source.readInt();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.548 -0500", hash_original_method = "7729FD0B554CDA849A4BAB68A5483EB9", hash_generated_method = "52336D759D5C914B52234733CC0B0C45")
     
 public void dump(Printer pw, String prefix) {
@@ -321,7 +315,6 @@ public void dump(Printer pw, String prefix) {
         super.dumpBack(pw, prefix);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.568 -0500", hash_original_method = "D921E47CA861D6D48D77FD8F7E62A49D", hash_generated_method = "C53B78FE209B276ED2DA690C8798F7FA")
     
 public String toString() {
@@ -336,6 +329,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.573 -0500", hash_original_method = "49D8EFBAED7609827DD9A53B007B084F", hash_generated_method = "8F8C492A119A988ADD1E603678C7B1CB")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {
@@ -429,6 +423,7 @@ private boolean isPackageUnavailable(PackageManager pm) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:59.596 -0500", hash_original_method = "4CB14D4C822DE3694FE375457E968E4C", hash_generated_method = "4E111D174133403CA93D9B272F2965D8")
     
 @Override protected ApplicationInfo getApplicationInfo() {

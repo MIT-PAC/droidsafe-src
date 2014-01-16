@@ -9,10 +9,6 @@ import android.net.http.SslError;
 import android.os.Message;
 import android.view.KeyEvent;
 
-
-
-
-
 public class WebViewClient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.241 -0500", hash_original_field = "58067C0F689D3D13A2C5D55E20398B61", hash_generated_field = "AFF2A8FAA6EFD814083D0A1774C9B3B4")
 
@@ -61,6 +57,8 @@ public class WebViewClient {
 
     public static final int ERROR_TOO_MANY_REQUESTS = -15;
     
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.612 -0400", hash_original_method = "B78AAF28C2768A73FBC0F670C8F6188A", hash_generated_method = "B78AAF28C2768A73FBC0F670C8F6188A")
     public WebViewClient ()
     {
@@ -80,6 +78,8 @@ public class WebViewClient {
      * @return True if the host application wants to leave the current WebView
      *         and handle the url itself, otherwise return false.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.228 -0500", hash_original_method = "B25B5EE312C01437108EEEF8D289ECD3", hash_generated_method = "C63E892A6BA4EC792C3677F2364FB69A")
     
 public boolean shouldOverrideUrlLoading(WebView view, String url) {
@@ -124,6 +124,8 @@ public void onPageFinished(WebView view, String url) {
      * @param view The WebView that is initiating the callback.
      * @param url The url of the resource the WebView will load.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.234 -0500", hash_original_method = "854E1155516A65D2A0AC69045B4275C1", hash_generated_method = "131BF72B6B1D1DE1F995D238334481A4")
     
 public void onLoadResource(WebView view, String url) {
@@ -180,6 +182,8 @@ public WebResourceResponse shouldInterceptRequest(WebView view,
      * @param description A String describing the error.
      * @param failingUrl The url that failed to load.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.276 -0500", hash_original_method = "12ABA78EBE10E417F0C1B2A97120946D", hash_generated_method = "75FC56698A2AEE9B834045C27A0DF3DE")
     
 public void onReceivedError(WebView view, int errorCode,

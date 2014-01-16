@@ -10,11 +10,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.SocketOptions;
 
-
-
-
-
-
 class LocalSocketImpl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.261 -0500", hash_original_field = "2E69C796FF6BAD53C79A467DE3BC8E3D", hash_generated_field = "355E2A769FEE7E54D6F0256760F338B6")
 
@@ -136,10 +131,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(name.getTaint());
     	addTaint(namespace);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "91E7A83B201CCE6F03E99B6B97993D3C", hash_generated_method = "BF4DB921189260FDA30B994461CFCF87")
     private FileDescriptor create_native(boolean stream) throws IOException {
         FileDescriptor fd = new FileDescriptor();
@@ -162,10 +154,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(fd.getTaint());
     	addTaint(shutdownInput);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.248 -0400", hash_original_method = "0137F99D53D5E10D02D5A211BB31B969", hash_generated_method = "5F1B13E48615D9E4FD0789735B8F4C85")
     private Credentials getPeerCredentials_native(
             FileDescriptor fd) throws IOException {
@@ -193,10 +182,7 @@ LocalSocketImpl(FileDescriptor fd) throws IOException
     	addTaint(b);
     	addTaint(value);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:37.249 -0400", hash_original_method = "AD93B21D07861EA052C26EC40030E4DA", hash_generated_method = "0BA24B5688D235E53CBDA81423459803")
     private FileDescriptor accept(FileDescriptor fd, LocalSocketImpl s) throws IOException {
         FileDescriptor fd2 = new FileDescriptor();
@@ -262,6 +248,7 @@ protected void connect(LocalSocketAddress address, int timeout)
      * @param endpoint endpoint address
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.371 -0500", hash_original_method = "D301FBD428349B466ACCB27339A08D2F", hash_generated_method = "1EF36E0E81A21E092BB79644E67D0F14")
     
 public void bind(LocalSocketAddress endpoint) throws IOException
@@ -308,6 +295,7 @@ protected void accept(LocalSocketImpl s) throws IOException
      * @return input stream
      * @throws IOException if socket has been closed or cannot be created.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.378 -0500", hash_original_method = "D37322C17A1B9B191A9C32D9BD81E000", hash_generated_method = "6FD9301C4C1D3F08AEF60AB79F19C5D3")
     
 protected InputStream getInputStream() throws IOException
@@ -331,6 +319,7 @@ protected InputStream getInputStream() throws IOException
      * @return output stream
      * @throws IOException if socket has been closed or cannot be created.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.380 -0500", hash_original_method = "2E8F2E95CF2F6CF40AEA3B38F9B68B34", hash_generated_method = "F020EBF0AD51BA094F15DE6ECA348FD7")
     
 protected OutputStream getOutputStream() throws IOException
@@ -393,6 +382,7 @@ protected void shutdownOutput() throws IOException
         shutdown(fd, false);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.389 -0500", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "C8664C638E6E7676776FC905B50F6CA8")
     
 protected FileDescriptor getFileDescriptor()
@@ -414,6 +404,7 @@ protected void sendUrgentData(int data) throws IOException
         throw new RuntimeException ("not impled");
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.396 -0500", hash_original_method = "02CEF5E6368D2209C8707863BE147BD2", hash_generated_method = "74EFBAA0E814C92024470C9BA113EC79")
     
 public Object getOption(int optID) throws IOException
@@ -438,6 +429,7 @@ public Object getOption(int optID) throws IOException
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.398 -0500", hash_original_method = "A0313708A2FB484B7104FAC62F0E39B4", hash_generated_method = "88D277497D8007967B2FDCAA44913C24")
     
 public void setOption(int optID, Object value)
@@ -475,6 +467,7 @@ public void setOption(int optID, Object value)
      * @param fds non-null; file descriptors to send.
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.400 -0500", hash_original_method = "AEC4AD692525702323537BC369199B7F", hash_generated_method = "4A891BE68D75308B131997586EE23B05")
     
 public void setFileDescriptorsForSend(FileDescriptor[] fds) {
@@ -493,6 +486,7 @@ public void setFileDescriptorsForSend(FileDescriptor[] fds) {
      * @return null or file descriptor array
      * @throws IOException
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.403 -0500", hash_original_method = "D444308F286D853D2E5F97ACF37B86DF", hash_generated_method = "36DAF8135E7E0ABE09E6A4524064A836")
     
 public FileDescriptor[] getAncillaryFileDescriptors() throws IOException {
@@ -511,6 +505,7 @@ public FileDescriptor[] getAncillaryFileDescriptors() throws IOException {
      * @return non-null; peer credentials
      * @throws IOException
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.405 -0500", hash_original_method = "3E3240E544229F6BEFF619755963B808", hash_generated_method = "CF858812CA4F6308F56B0B5E8D38BD13")
     
 public Credentials getPeerCredentials() throws IOException
@@ -524,6 +519,7 @@ public Credentials getPeerCredentials() throws IOException
      * @return non-null; socket name
      * @throws IOException on failure
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.406 -0500", hash_original_method = "C6AD39B00524B9355CA4153DB07C4B13", hash_generated_method = "D8218971A0D58DC34787D527528E6156")
     
 public LocalSocketAddress getSockAddress() throws IOException
@@ -539,7 +535,6 @@ public LocalSocketAddress getSockAddress() throws IOException
     protected void finalize() throws IOException {
         close();
     }
-
     
     class SocketInputStream extends InputStream {
         
@@ -605,11 +600,8 @@ public LocalSocketAddress getSockAddress() throws IOException
                 return ret;
             }
         }
-
         
     }
-
-
     
     class SocketOutputStream extends OutputStream {
         
@@ -627,6 +619,7 @@ public LocalSocketAddress getSockAddress() throws IOException
         }
 
         /** {@inheritDoc} */
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.294 -0500", hash_original_method = "E1D4EA7BC5A1A039095C078064FA6BD5", hash_generated_method = "7D09861B37E141F39BE351A56688C45A")
         
 @Override
@@ -661,11 +654,8 @@ public LocalSocketAddress getSockAddress() throws IOException
                 write_native(b, myFd);
             }
         }
-
         
     }
-
-
     
 }
 

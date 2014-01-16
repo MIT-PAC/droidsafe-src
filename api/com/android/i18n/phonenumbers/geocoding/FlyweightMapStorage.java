@@ -15,11 +15,6 @@ import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-
-
-
-
-
 class FlyweightMapStorage extends AreaCodeMapStorageStrategy {
 
   /**
@@ -129,7 +124,6 @@ private static void writeExternalWord(ObjectOutput objectOutput, int wordSize,
   private int descIndexSizeInBytes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.775 -0500", hash_original_field = "D0680C3D8B7F418EFCE236A960FA7194", hash_generated_field = "FB05A510369364A4962318241B573EEF")
 
-
   private ByteBuffer phoneNumberPrefixes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.778 -0500", hash_original_field = "361583A7A379577174766D23A35BDF4B", hash_generated_field = "8DD3BA710A227D567B0C909055F247B4")
 
@@ -149,14 +143,16 @@ public FlyweightMapStorage() {}
     return true;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.795 -0500", hash_original_method = "2F4ECD8A243390FA1987AE315BD02BED", hash_generated_method = "59BF6591498625BC0E2D9B52CCE13C19")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.795 -0500", hash_original_method = "2F4ECD8A243390FA1987AE315BD02BED", hash_generated_method = "59BF6591498625BC0E2D9B52CCE13C19")
     
 @Override
   public int getPrefix(int index) {
     return readWordFromBuffer(phoneNumberPrefixes, prefixSizeInBytes, index);
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.798 -0500", hash_original_method = "22178ADBDB18A4450F9D0DCE4A5B21CB", hash_generated_method = "C4C63EF05A7A12E0C1D2E42BED612D85")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.798 -0500", hash_original_method = "22178ADBDB18A4450F9D0DCE4A5B21CB", hash_generated_method = "C4C63EF05A7A12E0C1D2E42BED612D85")
     
 @Override
   public String getDescription(int index) {
@@ -239,7 +235,8 @@ public FlyweightMapStorage() {}
     }
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.818 -0500", hash_original_method = "6F391CD50156CF53BBA3CDABE0E437A9", hash_generated_method = "DEA9F38DAC4B06B52B88D00B2B436137")
+  @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.818 -0500", hash_original_method = "6F391CD50156CF53BBA3CDABE0E437A9", hash_generated_method = "DEA9F38DAC4B06B52B88D00B2B436137")
     
 @Override
   public void writeExternal(ObjectOutput objectOutput) throws IOException {

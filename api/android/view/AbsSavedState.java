@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public abstract class AbsSavedState implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.406 -0500", hash_original_field = "6145E0F80353A475CC55492C0FF63B95", hash_generated_field = "23C63B06C45486E5E57AC4257D5F33FA")
 
@@ -37,7 +33,6 @@ public AbsSavedState[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.408 -0500", hash_original_field = "D5DA1F3A7CD37F6DE3D20850965E56F6", hash_generated_field = "EEFC201B63925E4659FF4A1C55B1892F")
-
 
     private  Parcelable mSuperState;
 
@@ -78,6 +73,9 @@ protected AbsSavedState(Parcel source) {
         mSuperState = superState != null ? superState : EMPTY_STATE;
     }
 
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.418 -0500", hash_original_method = "D1776F094204A2E68E2669C5D33A32E2", hash_generated_method = "AF464EED3716AECE0A66502BB0592F8F")
     
 final public Parcelable getSuperState() {
@@ -90,6 +88,9 @@ public int describeContents() {
         return 0;
     }
 
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:12.423 -0500", hash_original_method = "49F04AE9062C121AE76FFD8C13AF6818", hash_generated_method = "59DEDCCB266A692EC97DC26A98166A87")
     
 public void writeToParcel(Parcel dest, int flags) {

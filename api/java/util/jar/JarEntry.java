@@ -17,28 +17,20 @@ import java.util.zip.ZipEntry;
 
 import javax.security.auth.x500.X500Principal;
 
-
-
-
-
-
 public class JarEntry extends ZipEntry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.561 -0500", hash_original_field = "14CC0F9D3F04FE972837D6018D833138", hash_generated_field = "B58329F5904269DD97B6B42BAA3B838E")
 
     private Attributes attributes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.565 -0500", hash_original_field = "E10AC56F726B2514C26051F710368016", hash_generated_field = "E10AC56F726B2514C26051F710368016")
 
-
     JarFile parentJar;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.569 -0500", hash_original_field = "278E8EAD2807325636A698ADB675DF9F", hash_generated_field = "278E8EAD2807325636A698ADB675DF9F")
-
 
     CodeSigner signers[];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.573 -0500", hash_original_field = "5ADDC3687C0D2332122E19DFD2FBBE25", hash_generated_field = "5868DDDCE4F3C752A45AD023AADEC2C1")
 
     private CertificateFactory factory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.576 -0500", hash_original_field = "346F62713CBD19CC8ED42787A40B2075", hash_generated_field = "E4A6C0FA878C2F2F60B68706B8A0D905")
-
 
     private boolean isFactoryChecked = false;
 
@@ -91,6 +83,7 @@ public JarEntry(JarEntry je) {
      *                If an error occurs obtaining the {@code Attributes}.
      * @see Attributes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.596 -0500", hash_original_method = "8B6D7741BEFEF015D0439F90F97A5465", hash_generated_method = "01772515427EE7A6E87F03C886405BA1")
     
 public Attributes getAttributes() throws IOException {
@@ -113,6 +106,7 @@ public Attributes getAttributes() throws IOException {
      * @return the certificate for this entry.
      * @see java.security.cert.Certificate
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.599 -0500", hash_original_method = "3CE58A412B40810ECA641FDC022C6998", hash_generated_method = "D51C318AD9E10263B0A1440BAD94130D")
     
 public Certificate[] getCertificates() {
@@ -141,6 +135,7 @@ void setAttributes(Attributes attrib) {
      * @return the code signers for the JAR entry.
      * @see CodeSigner
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:56.608 -0500", hash_original_method = "AC53E883AD9D8ECF5D160A6258BB3798", hash_generated_method = "A813CC59DD53731C777BD1BABDF3A3DA")
     
 public CodeSigner[] getCodeSigners() {
@@ -227,7 +222,6 @@ private void addCodeSigner(ArrayList<CodeSigner> asigners,
             asigners.add(new CodeSigner(certPath, null));
         }
     }
-
     
 }
 

@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class StandardTestSuiteLoader implements TestSuiteLoader {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:19.406 -0400", hash_original_method = "5793FEEF6F25BC48377D1976D0FE8F1B", hash_generated_method = "5793FEEF6F25BC48377D1976D0FE8F1B")
@@ -18,7 +15,8 @@ public class StandardTestSuiteLoader implements TestSuiteLoader {
 	/**
 	 * Uses the system class loader to load the test class
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.739 -0500", hash_original_method = "F2FF7EF8A0DC7477BB00BBE8F4736B84", hash_generated_method = "440B44A8B71FBB9C3D13EE01FB35EE56")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.739 -0500", hash_original_method = "F2FF7EF8A0DC7477BB00BBE8F4736B84", hash_generated_method = "440B44A8B71FBB9C3D13EE01FB35EE56")
     
 public Class load(String suiteClassName) throws ClassNotFoundException {
 		return Class.forName(suiteClassName);
@@ -31,7 +29,6 @@ public Class load(String suiteClassName) throws ClassNotFoundException {
 public Class reload(Class aClass) throws ClassNotFoundException {
 		return aClass;
 	}
-
     
 }
 

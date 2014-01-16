@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import libcore.io.Memory;
 import libcore.io.SizeOf;
 
-
-
-
 final class ReadWriteHeapByteBuffer extends HeapByteBuffer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.759 -0500", hash_original_method = "D8F52E8B0014492B64280C8D830BE45D", hash_generated_method = "9ABE08A12BB800BF5E2FE1F348B24DCA")
@@ -73,6 +70,7 @@ ReadWriteHeapByteBuffer(byte[] backingArray, int capacity, int arrayOffset) {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.779 -0500", hash_original_method = "DFA49F6DA30AF833A3263BE3EE9CD5BB", hash_generated_method = "C841D45CC1FB04924EA78669A55EFC77")
     
 @Override
@@ -194,6 +192,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return this;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.816 -0500", hash_original_method = "D3D66F8ECD97953078E15D88E3210D7C", hash_generated_method = "B546CF7347862E08E05F010EC04F4DCF")
     
 @Override
@@ -201,6 +200,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return putLong(Double.doubleToRawLongBits(value));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.818 -0500", hash_original_method = "FE6D03BC4C20DB28CF1BCC78BA5DBE78", hash_generated_method = "1159482AC67B4C74363BFB04CC935053")
     
 @Override
@@ -208,6 +208,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return putLong(index, Double.doubleToRawLongBits(value));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.821 -0500", hash_original_method = "E45ECD1B48C76B33C550D1D3ABE8CF24", hash_generated_method = "F1B009E253B6AAF4F7087360900EF848")
     
 @Override
@@ -215,6 +216,7 @@ final void put(short[] src, int srcOffset, int shortCount) {
         return putInt(Float.floatToRawIntBits(value));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.823 -0500", hash_original_method = "9AFB8F5FE765C8CDC0ED3C930ED840C0", hash_generated_method = "3212C4B007946BAB3A94AF1E4C3C3334")
     
 @Override
@@ -294,7 +296,6 @@ final void put(short[] src, int srcOffset, int shortCount) {
     public ByteBuffer slice() {
         return new ReadWriteHeapByteBuffer(backingArray, remaining(), offset + position);
     }
-
     
 }
 

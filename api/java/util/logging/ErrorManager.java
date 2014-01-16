@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ErrorManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.871 -0500", hash_original_field = "35CD5F8D561784239532240E5C5966F0", hash_generated_field = "464AF05E9A04A362279DE255D6605961")
 
@@ -29,7 +25,6 @@ public class ErrorManager {
 
     public static final int FORMAT_FAILURE = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.886 -0500", hash_original_field = "3D976F439DDFB7F9AA241E551BD86E48", hash_generated_field = "BD39D7396A9D2741C80F65787B65559D")
-
 
     private static final String[] FAILURES = new String[] { "GENERIC_FAILURE",
             "WRITE_FAILURE", "FLUSH_FAILURE", "CLOSE_FAILURE", "OPEN_FAILURE",
@@ -61,6 +56,7 @@ public ErrorManager() {
      *            the error code that identifies the type of error; see the
      *            constant fields of this class for possible values.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.894 -0500", hash_original_method = "88D78C1D6CF19D14D0670D7F86679469", hash_generated_method = "F54423ABBD0AAE2A1F5070C3B34E3A67")
     
 public void error(String message, Exception exception, int errorCode) {

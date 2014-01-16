@@ -40,7 +40,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.953 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.953 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
@@ -63,13 +64,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.968 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.968 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.970 -0500", hash_original_method = "7432CD2C271D88FA2A194789E5F04F73", hash_generated_method = "9D612A66AF52B94302901BF2D2F37458")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.970 -0500", hash_original_method = "7432CD2C271D88FA2A194789E5F04F73", hash_generated_method = "9D612A66AF52B94302901BF2D2F37458")
             
 public void onStatusChanged(int which) throws android.os.RemoteException
 {

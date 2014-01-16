@@ -17,10 +17,6 @@ import android.view.Gravity;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class Spinner extends AbsSpinner implements OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.997 -0500", hash_original_field = "C4AB240E6B4A8D3A229E006BF52962A4", hash_generated_field = "24196829F47AA90801DC8C1D4AB09CA2")
 
@@ -38,7 +34,6 @@ public class Spinner extends AbsSpinner implements OnClickListener {
 
     private static final int MODE_THEME = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.011 -0500", hash_original_field = "FC14FC3442A2E6593D55C850EF3DFBFB", hash_generated_field = "2B2C8DD5949DF96120E12CE686443E54")
-
     
     private SpinnerPopup mPopup;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.013 -0500", hash_original_field = "1F5BCC6FC4C6935B9E8358A75684BF85", hash_generated_field = "C1900A4CF75F2ED95144B24FDA148887")
@@ -49,13 +44,11 @@ public class Spinner extends AbsSpinner implements OnClickListener {
     int mDropDownWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.017 -0500", hash_original_field = "E8D24DE70DE8CB945622B4CE486A90EA", hash_generated_field = "ACF14A395FB2702990553CD0EFA1BDCC")
 
-
     private int mGravity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.019 -0500", hash_original_field = "A54FEEB2C700F354FBCE3AFFCB9861AC", hash_generated_field = "7967DE792AA6967947AC34B6AC2CC5E6")
 
     private boolean mDisableChildrenWhenDisabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.021 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
-
 
     private Rect mTempRect = new Rect();
 
@@ -65,6 +58,8 @@ public class Spinner extends AbsSpinner implements OnClickListener {
      * @param context The Context the view is running in, through which it can
      *        access the current theme, resources, etc.
      */
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.023 -0500", hash_original_method = "B5C06F1AC4F38C2FF014EC091685338D", hash_generated_method = "9633135D3E212869BBD31A4116325EE4")
     
 public Spinner(Context context) {
@@ -197,6 +192,9 @@ public Spinner(Context context, AttributeSet attrs, int defStyle, int mode) {
         }
     }
 
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.037 -0500", hash_original_method = "E89DC933CAA3948ECC7191CDEBCA4F7F", hash_generated_method = "F0FBAB05DA6BEA4CE4204261FC3F4E56")
     
 @Override
@@ -230,6 +228,8 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSComment("Spinner")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.042 -0500", hash_original_method = "60241601236C86A9296272064A15234D", hash_generated_method = "C3B2D6E860B82141D2CA77EF0BF7E624")
     
 @Override
@@ -243,6 +243,7 @@ public void setGravity(int gravity) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.044 -0500", hash_original_method = "50D7CC7A93B993E2A6FF522D575BAEB5", hash_generated_method = "611E2DA9775E0C612F4D5EF38FAF5956")
     
 @Override
@@ -477,7 +478,6 @@ private void setUpChild(View child) {
 
         return handled;
     }
-
     
     private static class DropDownAdapter implements ListAdapter, SpinnerAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.079 -0500", hash_original_field = "F3411DF47899C6681AB924958C72D742", hash_generated_field = "3308AF23407F136C8CF926C7FBD8DC1B")
@@ -501,30 +501,35 @@ public DropDownAdapter(SpinnerAdapter adapter) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.086 -0500", hash_original_method = "7176E9532C0349D7016ABE3301806E2C", hash_generated_method = "ABAE663C8AC8F01A715ED84AE922B778")
         
 public int getCount() {
             return mAdapter == null ? 0 : mAdapter.getCount();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.088 -0500", hash_original_method = "E5529375AE985E64AC9FCAEB196D1278", hash_generated_method = "F7E6CB401961A1E291BC7ABB39C301C3")
         
 public Object getItem(int position) {
             return mAdapter == null ? null : mAdapter.getItem(position);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.090 -0500", hash_original_method = "516B3E26F5C00C4BD8BAF28DFF38500C", hash_generated_method = "B8F4839BD8D550183657C800480C87BD")
         
 public long getItemId(int position) {
             return mAdapter == null ? -1 : mAdapter.getItemId(position);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.092 -0500", hash_original_method = "A9F8983A232A0A246637701F010ACE34", hash_generated_method = "03AFF81851DA0BC76885ED27D0C5048D")
         
 public View getView(int position, View convertView, ViewGroup parent) {
             return getDropDownView(position, convertView, parent);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.095 -0500", hash_original_method = "F097CA4C24B6E5261C3C9C12681A60CA", hash_generated_method = "913C5CA37528A27E8EF4206A364B885C")
         
 public View getDropDownView(int position, View convertView, ViewGroup parent) {
@@ -584,12 +589,14 @@ public boolean isEnabled(int position) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.110 -0500", hash_original_method = "EE97D094FF23924861F9B1BB9874462B", hash_generated_method = "3610CA007643502BCB5C59065F70D2D6")
         
 public int getItemViewType(int position) {
             return 0;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.112 -0500", hash_original_method = "A6079B88B18082AA3C7D7E460D2C3B87", hash_generated_method = "2577B8C4DED14F5EF8C0214DED9A780B")
         
 public int getViewTypeCount() {
@@ -601,11 +608,8 @@ public int getViewTypeCount() {
 public boolean isEmpty() {
             return getCount() == 0;
         }
-
         
     }
-
-
     
     private class DialogPopup implements SpinnerPopup, DialogInterface.OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.122 -0500", hash_original_field = "61F59CF4D78BDCFED50249BCBE572AFE", hash_generated_field = "8A66D18866E05C57D866195195114C43")
@@ -649,6 +653,7 @@ public void setPromptText(CharSequence hintText) {
             mPrompt = hintText;
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.137 -0500", hash_original_method = "2D362FF1EB68D3106D16676724B21A20", hash_generated_method = "ABF7BBA69C3858CDA612A3C2A354DA83")
         
 public CharSequence getHintText() {
@@ -672,11 +677,8 @@ public void onClick(DialogInterface dialog, int which) {
             setSelection(which);
             dismiss();
         }
-
         
     }
-
-
     
     private class DropdownPopup extends ListPopupWindow implements SpinnerPopup {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.147 -0500", hash_original_field = "D9985579330390AE8290FE29DE0EF688", hash_generated_field = "1FDB4027FDC409C38C96D7C7129240A3")
@@ -710,6 +712,7 @@ public DropdownPopup(Context context, AttributeSet attrs, int defStyleRes) {
             mAdapter = adapter;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.160 -0500", hash_original_method = "708F2EB27A8EC2C1F7F8C9DF82B35D6E", hash_generated_method = "405D74EE7896C7D984D5B9BB270E8642")
         
 public CharSequence getHintText() {
@@ -753,24 +756,17 @@ public void setPromptText(CharSequence hintText) {
             getListView().setChoiceMode(ListView.CHOICE_MODE_SINGLE);
             setSelection(Spinner.this.getSelectedItemPosition());
         }
-
         
     }
-
-
     
     private interface SpinnerPopup {
         public void setAdapter(ListAdapter adapter);
         
-        
         public void show();
-        
         
         public void dismiss();
         
-        
         public boolean isShowing();
-        
         
         public void setPromptText(CharSequence hintText);
         public CharSequence getHintText();
@@ -797,6 +793,7 @@ public void setPrompt(CharSequence prompt) {
      * Sets the prompt to display when the dialog is shown.
      * @param promptId the resource ID of the prompt to display when the dialog is shown
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.071 -0500", hash_original_method = "21AEC72317B46CB2881CC90C11A2AA6E", hash_generated_method = "5286C94FB2EAD6E33D86CEEEEEAF9ED6")
     
 public void setPromptId(int promptId) {
@@ -806,6 +803,7 @@ public void setPromptId(int promptId) {
     /**
      * @return The prompt to display when the dialog is shown
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.073 -0500", hash_original_method = "07472705288FF1B8FBB0DCE1C944E4ED", hash_generated_method = "9ECC58AF25644B79F11D7F0915DCDF0D")
     
 public CharSequence getPrompt() {

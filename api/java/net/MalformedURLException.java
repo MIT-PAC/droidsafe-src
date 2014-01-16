@@ -6,12 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
 public class MalformedURLException extends IOException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.251 -0500", hash_original_field = "E744E5E5145E24C62ED6FDA618DBC852", hash_generated_field = "B44A4BD557582E4A416B968EA462C43E")
-
 
     private static final long serialVersionUID = -182787522200415866L;
 
@@ -26,6 +22,8 @@ public MalformedURLException() {
     /**
      * Constructs a new instance with the given detail message.
      */
+    @DSComment("exception")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.257 -0500", hash_original_method = "1BAAD892782075B201BE55BD9DAC535A", hash_generated_method = "AA9F9CC55712E63E74CB29634AA09FCD")
     
 public MalformedURLException(String detailMessage) {

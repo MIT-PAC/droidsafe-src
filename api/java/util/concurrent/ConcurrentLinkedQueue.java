@@ -11,11 +11,6 @@ import java.util.Iterator;
 import java.util.NoSuchElementException;
 import java.util.Queue;
 
-
-
-
-
-
 public class ConcurrentLinkedQueue<E> extends AbstractQueue<E> implements Queue<E>, java.io.Serializable {
 
     /**
@@ -48,7 +43,6 @@ static long objectFieldOffset(sun.misc.Unsafe UNSAFE,
     private static final long serialVersionUID = 196745693267521676L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.816 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
 
-
     private static final sun.misc.Unsafe UNSAFE = sun.misc.Unsafe.getUnsafe();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.819 -0500", hash_original_field = "CAC71C97168C08066A0751C53920A8EA", hash_generated_field = "9EFA27FCA31FFA33F7E605E12104104C")
 
@@ -65,10 +59,11 @@ static long objectFieldOffset(sun.misc.Unsafe UNSAFE,
 
     private transient volatile Node<E> tail;
 
-
     /**
      * Creates a {@code ConcurrentLinkedQueue} that is initially empty.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.740 -0500", hash_original_method = "6A57FB745E5D860E38239AF0DB1591EF", hash_generated_method = "D1746736EE12BF8D23599CAA7240438E")
     
 public ConcurrentLinkedQueue() {
@@ -435,9 +430,7 @@ public Object[] toArray() {
         }
         return al.toArray();
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:13.721 -0400", hash_original_method = "1B34191977E7D82DF73C99DC22E56270", hash_generated_method = "083DB23FA5D6BA154941AB836C30B5AA")
     @SuppressWarnings("unchecked")
     public <T> T[] toArray(T[] a) {
@@ -508,11 +501,9 @@ T[] varAA44379FEF6B0261A49B4F9151CB856C_1343847510 =         al.toArray(a);
 public Iterator<E> iterator() {
         return new Itr();
     }
-
     
     private static class Node<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.725 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
-
 
         private static final sun.misc.Unsafe UNSAFE =
             sun.misc.Unsafe.getUnsafe();
@@ -559,8 +550,6 @@ boolean casNext(Node<E> cmp, Node<E> val) {
             return UNSAFE.compareAndSwapObject(this, nextOffset, cmp, val);
         }
     }
-
-
     
     private class Itr implements Iterator<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.785 -0500", hash_original_field = "138F1A36912062F45403BBEDD9B8281D", hash_generated_field = "BD45C7FA08D8C17CC087E2A8B9D2DBAA")
@@ -641,7 +630,6 @@ public void remove() {
             l.item = null;
             lastRet = null;
         }
-
         
     }
 

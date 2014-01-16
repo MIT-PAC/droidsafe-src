@@ -17,11 +17,6 @@ import java.util.logging.Logger;
 import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-
-
-
-
-
 public class AreaCodeMap implements Externalizable {
 
   /**
@@ -49,7 +44,6 @@ private static int getSizeOfAreaCodeMapStorage(AreaCodeMapStorageStrategy mapSto
   private final PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.567 -0500", hash_original_field = "42C7CEEFF27F1DF7294680FC44588504", hash_generated_field = "ED1850D47B6862466E3813601569EB4C")
 
-
   private AreaCodeMapStorageStrategy areaCodeMapStorage;
 
   /**
@@ -62,7 +56,8 @@ private static int getSizeOfAreaCodeMapStorage(AreaCodeMapStorageStrategy mapSto
 public AreaCodeMap() {}
 
   // @VisibleForTesting
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.569 -0500", hash_original_method = "2F443A9F7F25B3F1F0013A418F926218", hash_generated_method = "2F443A9F7F25B3F1F0013A418F926218")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.569 -0500", hash_original_method = "2F443A9F7F25B3F1F0013A418F926218", hash_generated_method = "2F443A9F7F25B3F1F0013A418F926218")
     
 AreaCodeMapStorageStrategy getAreaCodeMapStorage() {
     return areaCodeMapStorage;
@@ -86,7 +81,8 @@ private AreaCodeMapStorageStrategy createFlyweightMapStorage() {
    * make this method quite expensive.
    */
   // @VisibleForTesting
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.581 -0500", hash_original_method = "F7090ADB0D57C526EAAF391F3C19F58E", hash_generated_method = "F7090ADB0D57C526EAAF391F3C19F58E")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.581 -0500", hash_original_method = "F7090ADB0D57C526EAAF391F3C19F58E", hash_generated_method = "F7090ADB0D57C526EAAF391F3C19F58E")
     
 AreaCodeMapStorageStrategy getSmallerMapStorage(SortedMap<Integer, String> areaCodeMap) {
     try {
@@ -137,7 +133,8 @@ public void readExternal(ObjectInput objectInput) throws IOException {
   /**
    * Supports Java Serialization.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.587 -0500", hash_original_method = "E6F2985648B73053281BC07D9BFD7460", hash_generated_method = "AE67E77026FB90BEAB4F6A3069598601")
+  @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.587 -0500", hash_original_method = "E6F2985648B73053281BC07D9BFD7460", hash_generated_method = "AE67E77026FB90BEAB4F6A3069598601")
     
 public void writeExternal(ObjectOutput objectOutput) throws IOException {
     objectOutput.writeBoolean(areaCodeMapStorage.isFlyweight());

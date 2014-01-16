@@ -13,10 +13,6 @@ import com.android.internal.telephony.CommandsInterface;
 import com.android.internal.telephony.UUSInfo;
 import com.android.internal.telephony.gsm.SmsBroadcastConfigInfo;
 
-
-
-
-
 class SipCommandInterface extends BaseCommands implements CommandsInterface {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.504 -0500", hash_original_method = "A6511375FC27D28438216697969D84B8", hash_generated_method = "A6511375FC27D28438216697969D84B8")
     
@@ -24,6 +20,7 @@ SipCommandInterface(Context context) {
         super(context);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.506 -0500", hash_original_method = "7892594A38871B784C768CFB911D0AFF", hash_generated_method = "5A578BBF7A7D5E55DB8675EE63D6893A")
     
 @Override public void setOnNITZTime(Handler h, int what, Object obj) {
@@ -116,7 +113,6 @@ public void getIMEI(Message result) {
 public void getIMEISV(Message result) {
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.547 -0500", hash_original_method = "367D9C3523440D236020890B46AD46EA", hash_generated_method = "59C0419BF5664B61247B5C6AD39930F8")
     
 public void hangupConnection (int gsmIndex, Message result) {
@@ -142,7 +138,7 @@ public void switchWaitingOrHoldingAndActive (Message result) {
 public void conference (Message result) {
     }
 
-
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.559 -0500", hash_original_method = "F8189B7D9A2D4B100A35E308752559C1", hash_generated_method = "A4310B7F921493C4C6CC636F7691937B")
     
 public void setPreferredVoicePrivacy(boolean enable, Message result) {
@@ -189,6 +185,7 @@ public void getLastPdpFailCause (Message result) {
 public void getLastDataCallFailCause (Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.579 -0500", hash_original_method = "47C0EC939F57E1591B76316E27B95AC6", hash_generated_method = "6D5ECDFE5AEEC870266D089926FB46AD")
     
 public void setMute (boolean enableMute, Message response) {
@@ -219,6 +216,7 @@ public void getDataRegistrationState (Message result) {
 public void getOperator(Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.592 -0500", hash_original_method = "AD70FA03EB7E7D9139EEB149F6091A1C", hash_generated_method = "6D4A047781FA4D6F1BC41C0EC0911550")
     
 public void sendDtmf(char c, Message result) {
@@ -234,17 +232,20 @@ public void startDtmf(char c, Message result) {
 public void stopDtmf(Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.598 -0500", hash_original_method = "9D33455A19E4CDFE7486EF4C6C2B8AAA", hash_generated_method = "4E0CEBEB5C71C187752508A94405477A")
     
 public void sendBurstDtmf(String dtmfString, int on, int off,
             Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.600 -0500", hash_original_method = "1A6264A9FF23649BF5DB6F7920F9A21A", hash_generated_method = "B5FF7CBA0BCE016F01249BDE86AF58D6")
     
 public void sendSMS (String smscPDU, String pdu, Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.603 -0500", hash_original_method = "6EB636270661AC6BE13856E5BA601B13", hash_generated_method = "0ADE81982E6685491470B265225037EE")
     
 public void sendCdmaSms(byte[] pdu, Message result) {
@@ -270,6 +271,7 @@ public void writeSmsToSim(int status, String smsc, String pdu, Message response)
 public void writeSmsToRuim(int status, String pdu, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.614 -0500", hash_original_method = "5419A5B08D65477966DC4B41045B2D43", hash_generated_method = "52CD6B0BEA3867E003C4C15BD05C1D26")
     
 public void setupDataCall(String radioTechnology, String profile,
@@ -282,11 +284,13 @@ public void setupDataCall(String radioTechnology, String profile,
 public void deactivateDataCall(int cid, int reason, Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.618 -0500", hash_original_method = "658BFFD1699DF28E1FC33C876F64D0E2", hash_generated_method = "2C22752599418AA1C18236084A6E6268")
     
 public void setRadioPower(boolean on, Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.620 -0500", hash_original_method = "34A3D962E1CAE2FDD06754C7CD1F32F3", hash_generated_method = "50080C11500F8DDA673FCC18DE366C90")
     
 public void setSuppServiceNotifications(boolean enable, Message result) {
@@ -321,6 +325,7 @@ public void iccIO (int command, int fileid, String path, int p1, int p2,
 public void getCLIR(Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.634 -0500", hash_original_method = "B8D63B72DC65EE3608FC65F298DE2981", hash_generated_method = "487C3E24601F5BDEC62BFDE58F3ED640")
     
 public void setCLIR(int clirMode, Message result) {
@@ -331,17 +336,20 @@ public void setCLIR(int clirMode, Message result) {
 public void queryCallWaiting(int serviceClass, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.638 -0500", hash_original_method = "5B610ADF58E8A4CB2911C741C5D1D851", hash_generated_method = "BEEB3B4BD9C9417A7D13A2A4AF2A3DED")
     
 public void setCallWaiting(boolean enable, int serviceClass,
             Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.640 -0500", hash_original_method = "958A118B1D6DEAAC3F2CD7A0471E8E5A", hash_generated_method = "5C44E2DE0145E74BE24D559D7FB4F61E")
     
 public void setNetworkSelectionModeAutomatic(Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.642 -0500", hash_original_method = "A699748593EA9CB79EF65A1D8087DE87", hash_generated_method = "C9B8FF5BD94FE479422CEB7457AEC539")
     
 public void setNetworkSelectionModeManual(
@@ -358,6 +366,7 @@ public void getNetworkSelectionMode(Message response) {
 public void getAvailableNetworks(Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.649 -0500", hash_original_method = "DA232DDE50E73AC5D636EAD7EF5FC864", hash_generated_method = "78B4368EDB55C78685590968D2879D91")
     
 public void setCallForward(int action, int cfReason, int serviceClass,
@@ -394,6 +403,7 @@ public void getBasebandVersion (Message response) {
             int serviceClass, String appId, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.663 -0500", hash_original_method = "AD3FF097428D5AB19C8EE6C9813E3899", hash_generated_method = "C3764D7F8C6421AB96AD1C0ECD0D57AB")
     
 @Override
@@ -401,6 +411,7 @@ public void getBasebandVersion (Message response) {
             String password, int serviceClass, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.665 -0500", hash_original_method = "933F2123A615A9A39A40CBF915D35DBF", hash_generated_method = "ABB15714AFB35E99821079D4BDECED3B")
     
 @Override
@@ -408,6 +419,7 @@ public void getBasebandVersion (Message response) {
             String password, int serviceClass, String appId, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.668 -0500", hash_original_method = "F9FFB06D76A77B7B92045DB70103041E", hash_generated_method = "95F3480671289286868A1C55EEF16322")
     
 public void sendUSSD (String ussdString, Message response) {
@@ -433,6 +445,7 @@ public void invokeOemRilRequestRaw(byte[] data, Message response) {
 public void invokeOemRilRequestStrings(String[] strings, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.679 -0500", hash_original_method = "B390B8B053975D6E247D6ADF9DE7B6FC", hash_generated_method = "9B1E26C88804147F1044601E6FAFD0D1")
     
 public void setBandMode (int bandMode, Message response) {
@@ -443,16 +456,19 @@ public void setBandMode (int bandMode, Message response) {
 public void queryAvailableBandMode (Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.683 -0500", hash_original_method = "1B08354C58BC7E4FA9F6A992437EB8EB", hash_generated_method = "11B38D25E7337C9942626E677CC05CD5")
     
 public void sendTerminalResponse(String contents, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.685 -0500", hash_original_method = "8510CB1FCB2D71445BC7D7948652F9FF", hash_generated_method = "277D160E2BCED1813CBC38E24F18ED75")
     
 public void sendEnvelope(String contents, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.687 -0500", hash_original_method = "A584A8270CEEFF3893478A017045D938", hash_generated_method = "701A8A2326E4652731616B817B35A9DB")
     
 public void sendEnvelopeWithStatus(String contents, Message response) {
@@ -464,6 +480,7 @@ public void handleCallSetupRequestFromSim(
             boolean accept, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.692 -0500", hash_original_method = "27AB8573439D5EB2F33C81C73E25E8F8", hash_generated_method = "B70520F14CE098A6483B62DA41D8EE88")
     
 public void setPreferredNetworkType(int networkType , Message response) {
@@ -479,6 +496,7 @@ public void getPreferredNetworkType(Message response) {
 public void getNeighboringCids(Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.698 -0500", hash_original_method = "8F4AD1B328B83D997278B06A4EE5820C", hash_generated_method = "1AA99C3733ECBCE7289E95C8E86FB1EF")
     
 public void setLocationUpdates(boolean enable, Message response) {
@@ -489,6 +507,7 @@ public void setLocationUpdates(boolean enable, Message response) {
 public void getSmscAddress(Message result) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.703 -0500", hash_original_method = "7097F8C49B12B71CDD20291B3AB7964A", hash_generated_method = "F1F2D79AF5A315939AAA30BD67428C6E")
     
 public void setSmscAddress(String address, Message result) {
@@ -515,11 +534,13 @@ public void reportStkServiceIsRunning(Message result) {
 public void getGsmBroadcastConfig(Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.715 -0500", hash_original_method = "BEC32E28BD6A6EC85956F36B9D44924D", hash_generated_method = "5978E03091F56949C348C5214327B1BF")
     
 public void setGsmBroadcastConfig(SmsBroadcastConfigInfo[] config, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.717 -0500", hash_original_method = "2F3C945F2B405B443912668B2367D904", hash_generated_method = "95BF91ECE4CDA58D19672556E37F549A")
     
 public void setGsmBroadcastActivation(boolean activate, Message response) {
@@ -536,6 +557,7 @@ public void getDeviceIdentity(Message response) {
 public void getCDMASubscription(Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.723 -0500", hash_original_method = "6A64EDF04D6CCF6DA11C17A9004CF963", hash_generated_method = "CC059F0DCBF839ED9EA3313B96D3950A")
     
 public void setPhoneType(int phoneType) { //Set by CDMAPhone and GSMPhone constructor
@@ -546,11 +568,13 @@ public void setPhoneType(int phoneType) { //Set by CDMAPhone and GSMPhone constr
 public void queryCdmaRoamingPreference(Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.727 -0500", hash_original_method = "A524FD7F96F7FB62BB4ABD4057A9354C", hash_generated_method = "9F7F20AD0C191DEC70DB60BF092B918F")
     
 public void setCdmaRoamingPreference(int cdmaRoamingType, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.729 -0500", hash_original_method = "87C7978CD92754BB7623428AEFA60479", hash_generated_method = "E78ACD72FB9CCFD3EF6DBC11CFB911A7")
     
 public void setCdmaSubscriptionSource(int cdmaSubscription , Message response) {
@@ -561,11 +585,13 @@ public void setCdmaSubscriptionSource(int cdmaSubscription , Message response) {
 public void queryTTYMode(Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.734 -0500", hash_original_method = "44348CEECDEE74EEC687675A834A99DA", hash_generated_method = "BA3B94CAA5505B85E7DB6F18D3B4C2BD")
     
 public void setTTYMode(int ttyMode, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.736 -0500", hash_original_method = "D826071ECAAC08358EF9CEAACAFF0A2A", hash_generated_method = "9687F74FCA14235DC5A15670CE86E8DB")
     
 public void sendCDMAFeatureCode(String FeatureCode, Message response) {
@@ -576,11 +602,13 @@ public void sendCDMAFeatureCode(String FeatureCode, Message response) {
 public void getCdmaBroadcastConfig(Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.741 -0500", hash_original_method = "86E74F47BAC216027EBD89BDEFC4A2E0", hash_generated_method = "60402C15D180EC0A74591AD70A5EE162")
     
 public void setCdmaBroadcastConfig(int[] configValuesArray, Message response) {
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:23.743 -0500", hash_original_method = "02EE3B357DCB6CF5847DAE1F69A62BD8", hash_generated_method = "771D09A44B2159B3BA55D1C97F6FE92F")
     
 public void setCdmaBroadcastActivation(boolean activate, Message response) {
@@ -632,7 +660,6 @@ public void exitEmergencyCallbackMode(Message response) {
     
 public void requestIsimAuthentication(String nonce, Message response) {
     }
-
     
 }
 

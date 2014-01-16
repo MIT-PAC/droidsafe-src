@@ -26,10 +26,6 @@ import android.view.View;
 import android.view.ViewDebug;
 import android.view.accessibility.AccessibilityEvent;
 
-
-
-
-
 public class ImageView extends View {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.931 -0500", hash_original_method = "794DDCD2F1CC379DC73569DF9A81912A", hash_generated_method = "54FF3F645443323781BB5CB61724FCA8")
@@ -39,7 +35,6 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
         return sS2FArray[st.nativeInt - 1];
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.849 -0500", hash_original_field = "1BEEEE80B9B1ED7C64A99F1694709124", hash_generated_field = "49F3AE1F9A33DAD969F75FE221C01603")
-
 
     private static final ScaleType[] sScaleTypeArray = {
         ScaleType.MATRIX,
@@ -52,7 +47,6 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
         ScaleType.CENTER_INSIDE
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.929 -0500", hash_original_field = "7493F22E5B069F589FD71E7C1B52CAC6", hash_generated_field = "6A6FB41DF0BD10A3E546839DDC4FEEB8")
-
 
     private static final Matrix.ScaleToFit[] sS2FArray = {
         Matrix.ScaleToFit.FILL,
@@ -98,7 +92,6 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
     private boolean mColorMod = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.823 -0500", hash_original_field = "8AC7F8A91CAABDD8C266F61B46BEBED9", hash_generated_field = "4203E503DD280EB595B89035662691AC")
 
-
     private Drawable mDrawable = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.825 -0500", hash_original_field = "D2B723E6656C8CD2970F2823B4398553", hash_generated_field = "55E5EFD87E77F38783CE10C9BF766B2D")
 
@@ -126,16 +119,16 @@ private static Matrix.ScaleToFit scaleTypeToScaleToFit(ScaleType st)  {
     private RectF mTempDst = new RectF();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.842 -0500", hash_original_field = "B15F5C9CCEFAAC7046F407CFC0D19760", hash_generated_field = "2A167B0395D5D689B5161FD76D7714AC")
 
-
     private boolean mCropToPadding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.844 -0500", hash_original_field = "AA759664711376E49D5BE27103EA5136", hash_generated_field = "FEB7CA79CE658BB3A037CDF3395A66FC")
-
 
     private int mBaseline = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.847 -0500", hash_original_field = "B945E19F480AEA937B2B6E93510EDBC9", hash_generated_field = "43E60ED5A18EF5C89E67168564FB92E1")
 
     private boolean mBaselineAlignBottom = false;
 
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.852 -0500", hash_original_method = "3103DD3B06C95633A5076C8A302A640B", hash_generated_method = "A9312934B320F52AF3B76BC1947F3486")
     
 public ImageView(Context context) {
@@ -143,12 +136,16 @@ public ImageView(Context context) {
         initImageView();
     }
     
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.854 -0500", hash_original_method = "67FF47760B585BF8195A474475D955DB", hash_generated_method = "97AB01D65DE1CF05D3F3DCCA4747DE30")
     
 public ImageView(Context context, AttributeSet attrs) {
         this(context, attrs, 0);
     }
     
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.857 -0500", hash_original_method = "8CC4CE610519C30A909B4E591A3E5936", hash_generated_method = "7733C97D46F188090692509C5C8D271A")
     
 public ImageView(Context context, AttributeSet attrs, int defStyle) {
@@ -288,6 +285,8 @@ private void initImageView() {
      * 
      * @attr ref android.R.styleable#ImageView_adjustViewBounds
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.877 -0500", hash_original_method = "3F8BE319328C68420F5075492EAAB722", hash_generated_method = "F0B36AE7E464DFD8ACED97C2ACB4F0AF")
     
 @android.view.RemotableViewMethod
@@ -316,6 +315,8 @@ private void initImageView() {
      * 
      * @attr ref android.R.styleable#ImageView_maxWidth
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.879 -0500", hash_original_method = "EB73857FE18ECB168F084B0FAC346FEA", hash_generated_method = "2CE7E42FFE2C31E1A22305F9A1E43AE0")
     
 @android.view.RemotableViewMethod
@@ -341,6 +342,8 @@ private void initImageView() {
      * 
      * @attr ref android.R.styleable#ImageView_maxHeight
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.881 -0500", hash_original_method = "9473C5CB1AE9899AEC7CB726EABA77F7", hash_generated_method = "A002710690767296259F2CD92EF811D6")
     
 @android.view.RemotableViewMethod
@@ -351,6 +354,9 @@ private void initImageView() {
     /** Return the view's drawable, or null if no drawable has been
         assigned.
     */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.883 -0500", hash_original_method = "53D05784890C72350FD6879A6582F7F3", hash_generated_method = "DF96164158117DC7A0136AF51CE8F171")
     
 public Drawable getDrawable() {
@@ -370,6 +376,8 @@ public Drawable getDrawable() {
      *
      * @attr ref android.R.styleable#ImageView_src
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.885 -0500", hash_original_method = "FEA329647011282E5AA15854AC819C8B", hash_generated_method = "1B3E5E42D142B65A1EE79330B36AB68D")
     
 @android.view.RemotableViewMethod
@@ -395,6 +403,8 @@ public Drawable getDrawable() {
      *
      * @param uri The Uri of an image
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.888 -0500", hash_original_method = "796039DEA15F6465B0D947F27F5B4F32", hash_generated_method = "B77D6E63EE3023176451D7CD68FF83F3")
     
 @android.view.RemotableViewMethod
@@ -416,6 +426,9 @@ public Drawable getDrawable() {
      * 
      * @param drawable The drawable to set
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.891 -0500", hash_original_method = "5426F5FAF3C8635D29ADE0169269A6F9", hash_generated_method = "37AAC6991023BB22E48327E3EA2C66CF")
     
 public void setImageDrawable(Drawable drawable) {
@@ -440,6 +453,9 @@ public void setImageDrawable(Drawable drawable) {
      * 
      * @param bm The bitmap to set
      */
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.893 -0500", hash_original_method = "5EFFAF8EE29E35792B081E6E83A7DFE3", hash_generated_method = "02829D3E86CB5FA2EC39813FBB35490C")
     
 @android.view.RemotableViewMethod
@@ -449,6 +465,8 @@ public void setImageDrawable(Drawable drawable) {
         setImageDrawable(new BitmapDrawable(mContext.getResources(), bm));
     }
 
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.895 -0500", hash_original_method = "B00DD17D168377A844733E90ECCFE75B", hash_generated_method = "CEDF11FC1C80235ABD6BE1A8080A67AA")
     
 public void setImageState(int[] state, boolean merge) {
@@ -460,6 +478,7 @@ public void setImageState(int[] state, boolean merge) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.897 -0500", hash_original_method = "44CE6C01D324B2DC91AFD69B5F1BB742", hash_generated_method = "598BD5D57A4E32C3151CA42FAA846E12")
     
 @Override
@@ -503,7 +522,7 @@ public void setScaleType(ScaleType scaleType) {
         if (mScaleType != scaleType) {
             mScaleType = scaleType;
 
-            setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);            
+            setWillNotCacheDrawing(mScaleType == ScaleType.CENTER);
 
             requestLayout();
             invalidate();
@@ -529,12 +548,14 @@ public ScaleType getScaleType() {
         Do not change this matrix in place. If you want a different matrix
         applied to the drawable, be sure to call setImageMatrix().
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.914 -0500", hash_original_method = "5B9FD9A0A164EA90D695E910523F6E96", hash_generated_method = "963AEFA2CB190844C895D26ABA80C3B5")
     
 public Matrix getImageMatrix() {
         return mMatrix;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.916 -0500", hash_original_method = "A32A82AEE544A388BA62C8178AC7E88C", hash_generated_method = "5C00E4DE6909583021DDD7B5864A64A4")
     
 public void setImageMatrix(Matrix matrix) {
@@ -663,7 +684,7 @@ private void resizeFromDrawable() {
                 requestLayout();
             }
         }
-    }    
+    }
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.935 -0500", hash_original_method = "5D5C8E0C5B3B131983F43D2E85F23CCE", hash_generated_method = "8319D3DB8BBFBDB5D1DFCB3D599269D0")
     
@@ -801,6 +822,7 @@ private int resolveAdjustedSize(int desiredSize, int maxSize,
         return result;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.941 -0500", hash_original_method = "7ED99727E4B1435AFDB83292B92819BD", hash_generated_method = "876449C83FF72421E42296BD5B0C29C3")
     
 @Override
@@ -909,6 +931,8 @@ private void configureBounds() {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.949 -0500", hash_original_method = "355C7834E61DDE917A6F527556974749", hash_generated_method = "1C9D798A9510D9155570D002AE5DB66C")
     
 @Override 
@@ -954,6 +978,7 @@ private void configureBounds() {
      * @return the offset of the baseline within the widget's bounds or -1
      *         if baseline alignment is not supported.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.952 -0500", hash_original_method = "697E0DCA3A40ADA0E60547E8AD02CB08", hash_generated_method = "6EB491C14EA109A0AB1664B84B756DAF")
     
 @Override
@@ -1008,6 +1033,7 @@ public void setBaselineAlignBottom(boolean aligned) {
      *
      * @see #setBaselineAlignBottom(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.958 -0500", hash_original_method = "7D3365C5D6F47846F65EFD0480835D79", hash_generated_method = "2994E74552E351861F3CAEEAFD355B13")
     
 public boolean getBaselineAlignBottom() {
@@ -1036,6 +1062,7 @@ public final void setColorFilter(int color, PorterDuff.Mode mode) {
      * @param color Color tint to apply.
      * @attr ref android.R.styleable#ImageView_tint
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.964 -0500", hash_original_method = "50A13570451A3C69931555EF0FE8C15D", hash_generated_method = "49C84EA77644D9EE4E13B1955DA23D44")
     
 @RemotableViewMethod
@@ -1065,6 +1092,7 @@ public void setColorFilter(ColorFilter cf) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.970 -0500", hash_original_method = "F29539FC5DE82D33A1732D8CBDF1B3F0", hash_generated_method = "FA4FC55525E8C03A0249EAF7F7D3F5DA")
     
 @RemotableViewMethod
@@ -1091,6 +1119,9 @@ private void applyColorMod() {
         }
     }
 
+    @DSComment("Safe excetp setImageURI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.975 -0500", hash_original_method = "C6B07741C64FD260DDE5C02AC0455E05", hash_generated_method = "AFDD61839AA6E68F5AC2CEE81161A784")
     
 @RemotableViewMethod
@@ -1101,7 +1132,6 @@ private void applyColorMod() {
             mDrawable.setVisible(visibility == VISIBLE, false);
         }
     }
-
     
     public enum ScaleType {
         MATRIX      (0),
@@ -1123,6 +1153,8 @@ ScaleType(int ni) {
          int nativeInt;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.977 -0500", hash_original_method = "3717E0990FC85EED7B1343A97507698D", hash_generated_method = "E9CFEA04097042E9FE4E2353AE312A91")
     
 @Override
@@ -1133,6 +1165,8 @@ ScaleType(int ni) {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:15.979 -0500", hash_original_method = "66E6E711A91B2172E1C35BB591AC6445", hash_generated_method = "1DC3531588F772DCE2F68275AE751A24")
     
 @Override

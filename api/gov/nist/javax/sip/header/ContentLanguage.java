@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
-
-
-
-
-
 public class ContentLanguage extends SIPHeader implements javax.sip.header.ContentLanguageHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.720 -0500", hash_original_field = "54EA45B077AD6285DC89BC0113FB6B5B", hash_generated_field = "51CDCD95970F98C01DA5ED4493E40EC1")
 
@@ -49,6 +44,7 @@ public String encodeBody() {
     /** get the languageTag field.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.739 -0500", hash_original_method = "97684B013EF42C114E2563BE4754CC3B", hash_generated_method = "FE64D074FF4C5334640BF606935ED70C")
     
 public String getLanguageTag() {
@@ -63,6 +59,7 @@ public String getLanguageTag() {
     /** set the languageTag field
      * @param languageTag -- language tag to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.742 -0500", hash_original_method = "0029980C0556452F57A726D089728FB9", hash_generated_method = "FC3B28B9C6A9A9F36B41B9B87D38F212")
     
 public void setLanguageTag(String languageTag) {
@@ -83,6 +80,7 @@ public void setLanguageTag(String languageTag) {
      * @return the Locale value of this ContentLanguageHeader
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.745 -0500", hash_original_method = "BB5B9CEBF2423E9AF1F4569292591142", hash_generated_method = "F2D9ECC6A5EC51558C55D8E3FD4EA8D7")
     
 public Locale getContentLanguage() {

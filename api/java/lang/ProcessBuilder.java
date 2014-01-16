@@ -17,25 +17,21 @@ public final class ProcessBuilder
 
     File dir = new File("ProessBuilder-dir");
     
-    @DSModeled(DSC.SAFE)
     public ProcessBuilder(String[] command)
     {
         command(command);
-    } 
-
-    @DSModeled(DSC.SAFE)
+    }
+    
     public ProcessBuilder(List<String> command) { 
         command(command);
-    } 
-
-    @DSModeled(DSC.SAFE)
+    }
+    
     public List<String> command() { 
         List<String> ret = new LinkedList<String>();
         ret.add(commands);
         return ret;
-    } 
-
-    @DSModeled(DSC.SAFE)
+    }
+    
     public ProcessBuilder command(String[] command) { 
         this.commands = "";
 
@@ -43,9 +39,8 @@ public final class ProcessBuilder
             this.commands += command[i];
         
         return this;
-    } 
-
-    @DSModeled(DSC.SAFE)
+    }
+    
     public ProcessBuilder command(List<String> command) { 
         this.commands = "";
 
@@ -53,36 +48,30 @@ public final class ProcessBuilder
             this.commands += cmd;
         
         return this;
-    } 
-
-    @DSModeled(DSC.SAFE)
+    }
+    
     public File directory() { 
         return dir;
-    } 
-
-    @DSModeled(DSC.SAFE)
+    }
+    
     public ProcessBuilder directory(File directory) { 
         this.dir = directory;
         return this;
-    } 
-
-    @DSModeled(DSC.SAFE)
+    }
+    
     public Map<String, String> environment() { 
         return new HashMap<String,String>();
-    } 
-
-    @DSModeled(DSC.SPEC)
+    }
+    
     public boolean redirectErrorStream() {
         return getTaintBoolean();
-    } 
-
-    @DSModeled(DSC.SPEC)
+    }
+    
     public ProcessBuilder redirectErrorStream(boolean redirectErrorStream) { 
         this.addTaint(redirectErrorStream);
         return this;
-    } 
-
-    @DSModeled(DSC.SPEC)
+    }
+    
     public Process start() throws IOException { 
         return new DroidSafeProcess();
     }

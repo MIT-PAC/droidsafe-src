@@ -23,10 +23,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-
-
-
-
 public final class NfcAdapter {
 
     /**
@@ -50,9 +46,8 @@ private static boolean hasNfcFeature() {
             return false;
         }
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSource({DSSourceKind.NFC})
     public static synchronized NfcAdapter getNfcAdapter(Context context) {
         if (DroidSafeAndroidRuntime.control) {
            UnsupportedOperationException exc = new UnsupportedOperationException();
@@ -98,6 +93,9 @@ private static INfcAdapter getServiceInterface() {
      *
      * @return the default NFC adapter, or null if no NFC adapter exists
      */
+    @DSComment("NFC adapter manipulation")
+    @DSSpec(DSCat.NFC)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.659 -0500", hash_original_method = "BBAF054E3A572AA64409457A2C6BC138", hash_generated_method = "5115AE9CECB46ACBA915434EDC27859F")
     
 public static NfcAdapter getDefaultAdapter(Context context) {
@@ -122,6 +120,7 @@ public static NfcAdapter getDefaultAdapter(Context context) {
      * object created from this method.<p>
      * @deprecated use {@link #getDefaultAdapter(Context)}
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.662 -0500", hash_original_method = "48A7691839F3163BD41DEB5028DF54C7", hash_generated_method = "00D355938CBC4A736CD55F3604C3ECCB")
     
 @Deprecated
@@ -194,7 +193,6 @@ public static NfcAdapter getDefaultAdapter(Context context) {
     static HashMap<Context, NfcAdapter> sNfcAdapters = new HashMap();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.640 -0500", hash_original_field = "98BCE2FA4CD149969F933211DFD678A2", hash_generated_field = "1DAC697DF93D7551113C7B2C5A1CB051")
 
-
     /**
      * NfcAdapter used with a null context. This ctor was deprecated but we have
      * to support it for backwards compatibility. New methods that require context
@@ -202,7 +200,6 @@ public static NfcAdapter getDefaultAdapter(Context context) {
      */
     static NfcAdapter sNullContextNfcAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.642 -0500", hash_original_field = "35B3C2E1A1D38F975F8DF16795973C35", hash_generated_field = "35B3C2E1A1D38F975F8DF16795973C35")
-
 
      NfcActivityManager mNfcActivityManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.645 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
@@ -218,9 +215,7 @@ public static NfcAdapter getDefaultAdapter(Context context) {
             disableForegroundDispatchInternal(activity, true);
             addTaint(activity.getTaint());
             
-            
         }
-
         
 };
 
@@ -234,6 +229,7 @@ NfcAdapter(Context context) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.668 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
@@ -244,6 +240,7 @@ public Context getContext() {
      * Returns the binder interface to the service.
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.670 -0500", hash_original_method = "5DC17A5CA100E57D93FCA0A10242D110", hash_generated_method = "67BDEEAF74AD8E7AA4D695CD3950CDFF")
     
 public INfcAdapter getService() {
@@ -255,13 +252,13 @@ public INfcAdapter getService() {
      * Returns the binder interface to the tag service.
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.672 -0500", hash_original_method = "1AA3314EB2D88084AC95E9F76A714199", hash_generated_method = "9F6A59069E733103F62E8135C7AA16B9")
     
 public INfcTag getTagService() {
         isEnabled();  // NOP call to recover sTagService if it is stale
         return sTagService;
     }
-
     
     static final class LegacyCallbackWrapper implements CreateNdefMessageCallback, OnNdefPushCompleteCallback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.714 -0500", hash_original_field = "C7B0DB97242B1A2CD9ADF6D51253FEC6", hash_generated_field = "C7B0DB97242B1A2CD9ADF6D51253FEC6")
@@ -284,11 +281,8 @@ LegacyCallbackWrapper(NdefPushCallback legacyCallback) {
         public NdefMessage createNdefMessage(NfcEvent event) {
             return mLegacyCallback.createMessage();
         }
-
         
     }
-
-
     
     public interface OnNdefPushCompleteCallback {
         
@@ -372,6 +366,7 @@ public boolean isEnabled() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.679 -0500", hash_original_method = "928B269965D2C98169E42755C4D77176", hash_generated_method = "333AE0A5C2E08ACB07CD764088133ED1")
     
 public int getAdapterState() {
@@ -464,6 +459,7 @@ public boolean disable() {
      * @param activities optional additional activities that should also enable NDEF push with
      *                   the provided NDEF message
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.685 -0500", hash_original_method = "A1E6832BF1F30CB75C5E3838CB4EB39F", hash_generated_method = "2801EBC84E285C2B255CCA9C15DB4170")
     
 public void setNdefPushMessage(NdefMessage message, Activity activity,
@@ -585,6 +581,9 @@ public void setOnNdefPushCompleteCallback(OnNdefPushCompleteCallback callback,
      *      {@link NfcAdapter#ACTION_TECH_DISCOVERED} intent
      * @throws IllegalStateException if the Activity is not currently in the foreground
      */
+    @DSComment("NFC adapter manipulation")
+    @DSSpec(DSCat.NFC)
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.693 -0500", hash_original_method = "7DFF841E004C0B63DC3E7B85FC7B1907", hash_generated_method = "070D430D5D9AEFA4114F930CD19E2A91")
     
 public void enableForegroundDispatch(Activity activity, PendingIntent intent,
@@ -623,6 +622,8 @@ public void enableForegroundDispatch(Activity activity, PendingIntent intent,
      * @param activity the Activity to disable dispatch to
      * @throws IllegalStateException if the Activity has already been paused
      */
+    @DSComment("NFC adapter manipulation")
+    @DSSpec(DSCat.NFC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.696 -0500", hash_original_method = "18ACF5FE6AECAA88942AA43DE81790DE", hash_generated_method = "71ECA6B462C079E252759F86E931323D")
     
 public void disableForegroundDispatch(Activity activity) {
@@ -789,6 +790,7 @@ public boolean isNdefPushEnabled() {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:47.736 -0500", hash_original_method = "AC9BE1816495D76DB77DE4C0C93B101E", hash_generated_method = "FA2152B5FBA646DF6DD8C402D9DDB792")
     
 public INfcAdapterExtras getNfcAdapterExtrasInterface() {

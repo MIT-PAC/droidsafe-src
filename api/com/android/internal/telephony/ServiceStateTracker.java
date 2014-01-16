@@ -12,10 +12,6 @@ import android.os.RegistrantList;
 import android.telephony.ServiceState;
 import android.telephony.SignalStrength;
 
-
-
-
-
 public abstract class ServiceStateTracker extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.163 -0500", hash_original_field = "30D0F379595D6DC02E55F0AA6F32B639", hash_generated_field = "5FE34011A6194BC6286A035D997282EE")
 
@@ -30,7 +26,6 @@ public abstract class ServiceStateTracker extends Handler {
 
     static public final int OTASP_NOT_NEEDED = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.208 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
-
 
     protected  static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.210 -0500", hash_original_field = "F6266A1AC6DFEDEA4DB00E3ACF6E41AA", hash_generated_field = "600CA2D504BDCE1FC8FF6ACEDB6B81F2")
@@ -146,7 +141,6 @@ public abstract class ServiceStateTracker extends Handler {
     protected static final int EVENT_SET_RADIO_POWER_OFF               = 38;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.309 -0500", hash_original_field = "2E9B45C12471AB6A67F1A47B6DAF8FDD", hash_generated_field = "9741BEB9C7E685D363E6CB738BA59228")
 
-
     protected static final String TIMEZONE_PROPERTY = "persist.sys.timezone";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.312 -0500", hash_original_field = "1994A0AE0F101D9E533F7404EE96CA71", hash_generated_field = "F73E2C2B2366E68D4B92159CD24006B1")
 
@@ -180,17 +174,14 @@ public abstract class ServiceStateTracker extends Handler {
     protected static final String REGISTRATION_DENIED_AUTH = "Authentication Failure";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.151 -0500", hash_original_field = "AD2081CF4152C993ABD262358732E864", hash_generated_field = "EDF057DBE0A02042DBF83073757034E9")
 
-
     protected CommandsInterface cm;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.154 -0500", hash_original_field = "771F16AC824726F2F9EC6A46190C24E9", hash_generated_field = "D607C471A1606B559A4F0C28A47BFD3A")
-
 
     public ServiceState ss;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.156 -0500", hash_original_field = "F766E2B01D46CFEF1359F131A72544E7", hash_generated_field = "37638718D876F5421AD103383236AD22")
 
     protected ServiceState newSS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.158 -0500", hash_original_field = "E9D457B2016609C6DD19200851D3F47A", hash_generated_field = "6D9902C068708E16DB7D3B6602B19CEF")
-
 
     public SignalStrength mSignalStrength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.161 -0500", hash_original_field = "CA67AEC23BD3AA97A8C09403F3889385", hash_generated_field = "F7D70BE82B631DDA8C3B56EF51FC91C4")
@@ -212,7 +203,6 @@ public abstract class ServiceStateTracker extends Handler {
 
     protected boolean dontPollSignalStrength = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.186 -0500", hash_original_field = "16753A8E70329359BB70958304E8CB4B", hash_generated_field = "3AD1304D1BA317277BBEE277F670A472")
-
 
     protected RegistrantList mRoamingOnRegistrants = new RegistrantList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.188 -0500", hash_original_field = "9132F761B07FFE4C68ADC5EB4596503B", hash_generated_field = "7819DA14832792F71F719B742BCE9053")
@@ -251,6 +241,7 @@ public abstract class ServiceStateTracker extends Handler {
 public ServiceStateTracker() {
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.322 -0500", hash_original_method = "34F755352C02DF9FD9E8CDE125547BA1", hash_generated_method = "9832B7CED06102AA9B2EEE16EC427320")
     
 public boolean getDesiredPowerState() {

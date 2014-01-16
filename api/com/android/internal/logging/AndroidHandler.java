@@ -16,9 +16,6 @@ import android.util.Log;
 import dalvik.system.DalvikLogHandler;
 import dalvik.system.DalvikLogging;
 
-
-
-
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
 public class AndroidHandler extends Handler implements DalvikLogHandler {
@@ -30,6 +27,7 @@ public class AndroidHandler extends Handler implements DalvikLogHandler {
      *
      * @return The resulting Android logging level.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.853 -0500", hash_original_method = "3F92BD817EEC109FB3EFF14A3BE3BBE9", hash_generated_method = "35B5BBAE71B726DCD5E0BB70F044795B")
     
 static int getAndroidLevel(Level level) {
@@ -44,12 +42,12 @@ static int getAndroidLevel(Level level) {
             return Log.DEBUG;
         }
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.231 -0400", hash_original_field = "05CB8D5FA80AAAD88471EF57C0EC546F", hash_generated_field = "006C8788F0F47E8A210E001196024E69")
 
-    private static final Formatter THE_FORMATTER = new Formatter() {        
-        @DSModeled(DSC.SAFE)
+    private static final Formatter THE_FORMATTER = new Formatter() {
+        
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:19.231 -0400", hash_original_method = "5552BF51EFD27F1F4C5C7AE17D37E3F1", hash_generated_method = "F7BE88C6E38E8155E09EE006CC13CD65")
         @Override
         public String format(LogRecord r) {
@@ -81,20 +79,7 @@ static int getAndroidLevel(Level level) {
             varA7E53CE21691AB073D9660D615818899_1775326922.addTaint(getTaint()); 
             return varA7E53CE21691AB073D9660D615818899_1775326922;
             
-            
-            
-                
-                
-                
-                
-                
-                
-                
-            
-                
-            
         }
-
         
 };
 
@@ -121,6 +106,7 @@ public AndroidHandler() {
         // No need to flush, but must implement abstract method.
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.848 -0500", hash_original_method = "CEA54EC9759DF54F81D3C4C5F0B6BD15", hash_generated_method = "A33B4D4D9FD9E95ACA274375B1828ED7")
     
 @Override
@@ -139,6 +125,7 @@ public AndroidHandler() {
         }
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.850 -0500", hash_original_method = "23FAB086781713B49A4D1AC40EDC6A51", hash_generated_method = "A6C649DFABC7E10B72064E69B72963DC")
     
 public void publish(Logger source, String tag, Level level, String message) {

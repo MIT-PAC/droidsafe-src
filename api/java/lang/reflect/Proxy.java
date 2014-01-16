@@ -10,11 +10,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.WeakHashMap;
 
-
-
-
-
-
 public class Proxy implements Serializable {
 
     /**
@@ -39,6 +34,9 @@ public class Proxy implements Serializable {
      *                if either {@code interfaces} or any of its elements are
      *                {@code null}
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.184 -0500", hash_original_method = "4E746CE0495D3DB0FF249BFCBD025F6A", hash_generated_method = "A1DE847C342E34996B3F50A48F205721")
     
 public static Class<?> getProxyClass(ClassLoader loader,
@@ -158,6 +156,8 @@ public static Class<?> getProxyClass(ClassLoader loader,
      * @throws NullPointerException
      *                if the interfaces or any of its elements are null
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.188 -0500", hash_original_method = "4375560191FF9AF2AD66AAFC6EDA1910", hash_generated_method = "403419D6FE97EEEE4440D238B61372F5")
     
 public static Object newProxyInstance(ClassLoader loader,
@@ -217,6 +217,7 @@ public static boolean isProxyClass(Class<?> cl) {
      * @throws IllegalArgumentException
      *                if the supplied {@code proxy} is not a proxy object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.193 -0500", hash_original_method = "BDB130E146D4EEE1EE2A0139344DF6E4", hash_generated_method = "53B5EC9ED5B48FB9ADC94ECB944BF755")
     
 public static InvocationHandler getInvocationHandler(Object proxy)
@@ -228,9 +229,7 @@ public static InvocationHandler getInvocationHandler(Object proxy)
 
         throw new IllegalArgumentException("not a proxy instance");
     }
-
     
-    @DSModeled(DSC.BAN)
     private static Class generateProxy(String name, Class[] interfaces,
         ClassLoader loader) {
     	Class ret = (Class)new Object();
@@ -239,13 +238,10 @@ public static InvocationHandler getInvocationHandler(Object proxy)
     	ret.addTaint(loader.taint);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void constructorPrototype(InvocationHandler h) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.163 -0500", hash_original_field = "EE4DEE6FBD7EC29CC5158EA595047545", hash_generated_field = "FDC5D947F950CF597538724FB8BE4535")
-
 
     private static final long serialVersionUID = -2222568056686623797L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.166 -0500", hash_original_field = "4749BF434871D23E35ACEBA8F8693AE0", hash_generated_field = "1447B52A855471675EBE21031FFE881C")
@@ -255,7 +251,6 @@ public static InvocationHandler getInvocationHandler(Object proxy)
 
     private static final Map<Class<?>, String> proxyCache = new WeakHashMap<Class<?>, String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.171 -0500", hash_original_field = "36C395B6B8E86AB13D2AB8268BEB438B", hash_generated_field = "D9EF94FD4EC58A4FD3C03727E5FB6ABC")
-
 
     private static int NextClassNameIndex = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:14.173 -0500", hash_original_field = "8746C20A5E189D22EA6D45D68E66DBE3", hash_generated_field = "89B0705CC0F6BF714E0545A8467AD6EB")

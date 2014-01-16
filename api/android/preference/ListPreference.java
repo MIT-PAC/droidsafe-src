@@ -12,10 +12,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.AttributeSet;
 
-
-
-
-
 public class ListPreference extends DialogPreference {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.255 -0500", hash_original_field = "9DDB32C07C355CC1743DA55671D8927A", hash_generated_field = "4FC648754770C3205F9446C9F7605834")
 
@@ -33,6 +29,8 @@ public class ListPreference extends DialogPreference {
 
     private int mClickedDialogEntryIndex;
     
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.265 -0500", hash_original_method = "2CB69D78EE187D68AAE6FD5CB1694152", hash_generated_method = "3F0E4E0A9EAAAA071DEE9D34451B43F7")
     
 public ListPreference(Context context, AttributeSet attrs) {
@@ -53,6 +51,8 @@ public ListPreference(Context context, AttributeSet attrs) {
         a.recycle();
     }
 
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.268 -0500", hash_original_method = "EFEFAC33FEDF5CFCCDC225AF06B658FF", hash_generated_method = "8B0B4F9D4A0EA67C4E871D43D65AAB57")
     
 public ListPreference(Context context) {
@@ -69,6 +69,8 @@ public ListPreference(Context context) {
      * @param entries The entries.
      * @see #setEntryValues(CharSequence[])
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.270 -0500", hash_original_method = "92444C405286C6A282911C360FA1B20D", hash_generated_method = "302950FB7BED9885645124DF239A43F9")
     
 public void setEntries(CharSequence[] entries) {
@@ -79,6 +81,7 @@ public void setEntries(CharSequence[] entries) {
      * @see #setEntries(CharSequence[])
      * @param entriesResId The entries array as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.272 -0500", hash_original_method = "F8AB6256811E3BA7AD610D04605DBEC4", hash_generated_method = "7BA5761937675BD0B0EC2B67C45A8475")
     
 public void setEntries(int entriesResId) {
@@ -90,6 +93,9 @@ public void setEntries(int entriesResId) {
      * 
      * @return The list as an array.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.274 -0500", hash_original_method = "F69A5267D165BB7292A2F7B29A70DF84", hash_generated_method = "AD714FB946096D4173F39D089447A889")
     
 public CharSequence[] getEntries() {
@@ -103,6 +109,8 @@ public CharSequence[] getEntries() {
      * 
      * @param entryValues The array to be used as values to save for the preference.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.276 -0500", hash_original_method = "33C67F5304EFCF57E93FE56574A29FD8", hash_generated_method = "5508A90163592EA1632D80E304D0522A")
     
 public void setEntryValues(CharSequence[] entryValues) {
@@ -113,6 +121,9 @@ public void setEntryValues(CharSequence[] entryValues) {
      * @see #setEntryValues(CharSequence[])
      * @param entryValuesResId The entry values array as a resource.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.278 -0500", hash_original_method = "7F861B3AE1A834F9F6742B52B4830C35", hash_generated_method = "3F6606757B98ACF0AA1E729E6A5C13C6")
     
 public void setEntryValues(int entryValuesResId) {
@@ -124,6 +135,9 @@ public void setEntryValues(int entryValuesResId) {
      * 
      * @return The array of values.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.281 -0500", hash_original_method = "4077A49F0088F4F9F53375DFF9727B97", hash_generated_method = "6ACEC0A2332CD82A4012F7701E2D45F0")
     
 public CharSequence[] getEntryValues() {
@@ -136,6 +150,8 @@ public CharSequence[] getEntryValues() {
      * 
      * @param value The value to set for the key.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.283 -0500", hash_original_method = "C381E833D619D719391B620073306BFE", hash_generated_method = "220A5BD7A62524EB3744B4EB6DB31206")
     
 public void setValue(String value) {
@@ -152,6 +168,9 @@ public void setValue(String value) {
      *
      * @return the summary with appropriate string substitution
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.286 -0500", hash_original_method = "C91AC61B4049FB662B529C1D1FF98F02", hash_generated_method = "1ADDD367AAA1A08308E8609EB30FA51B")
     
 @Override
@@ -173,6 +192,8 @@ public void setValue(String value) {
      *
      * @param summary The summary for the preference.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.288 -0500", hash_original_method = "4C1B142B1B7C5EA1E6C6981CF6E13968", hash_generated_method = "E5338CAD084404E4E11D1C8474AFBED4")
     
 @Override
@@ -190,6 +211,9 @@ public void setValue(String value) {
      * 
      * @param index The index of the value to set.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.290 -0500", hash_original_method = "BCD9DE4E5FC7BA2AD13976209DEB6B06", hash_generated_method = "8CFE42693252720D86102FC0820AEB8D")
     
 public void setValueIndex(int index) {
@@ -204,6 +228,9 @@ public void setValueIndex(int index) {
      * 
      * @return The value of the key.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.292 -0500", hash_original_method = "20F1B7D715A473C2ABE076C27B2A3109", hash_generated_method = "A248978541C494C9EDC5F8C81B52BA84")
     
 public String getValue() {
@@ -215,6 +242,9 @@ public String getValue() {
      * 
      * @return The entry corresponding to the current value, or null.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.294 -0500", hash_original_method = "70FF40F71A0C525EB8753661CD710EE3", hash_generated_method = "02453E38705146C3F0DF2115880BE813")
     
 public CharSequence getEntry() {
@@ -228,6 +258,8 @@ public CharSequence getEntry() {
      * @param value The value whose index should be returned.
      * @return The index of the value, or -1 if not found.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.297 -0500", hash_original_method = "4E596FDEE64331A25D2B8DFD1BC8797E", hash_generated_method = "AB7808B7EE20CA1E95E83FE48A0F1C7F")
     
 public int findIndexOfValue(String value) {
@@ -281,6 +313,8 @@ private int getValueIndex() {
         builder.setPositiveButton(null, null);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.307 -0500", hash_original_method = "CCC14398C5ED43EC620F4801AA3D0865", hash_generated_method = "FEC5BAB72F3DD0B29A357E2A229CDD96")
     
 @Override
@@ -338,11 +372,9 @@ private int getValueIndex() {
         super.onRestoreInstanceState(myState.getSuperState());
         setValue(myState.value);
     }
-
     
     private static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.335 -0500", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
-
 
         public static final Parcelable.Creator<SavedState> CREATOR =
                 new Parcelable.Creator<SavedState>() {
@@ -371,6 +403,7 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:23.325 -0500", hash_original_method = "8DFCA3C36BA7A53489D20A0BA4FD0CC0", hash_generated_method = "C1C6F47B2086812F826D2D3D1657D081")
         
 @Override
@@ -379,8 +412,6 @@ public SavedState(Parcelable superState) {
             dest.writeString(value);
         }
     }
-
-
     
 }
 

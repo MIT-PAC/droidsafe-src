@@ -14,10 +14,6 @@ import java.util.concurrent.locks.ReentrantReadWriteLock;
 import android.os.ParcelUuid;
 import android.os.RemoteException;
 
-
-
-
-
 public final class BluetoothSocket implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.609 -0500", hash_original_field = "F78B3EFC9E6672FD90BC1F5D134AF764", hash_generated_field = "89C25C510E23215A46B2622E15238245")
 
@@ -37,7 +33,6 @@ public final class BluetoothSocket implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.623 -0500", hash_original_field = "9ADC59C0F71E48BE7702150CC1EE7737", hash_generated_field = "E130AC1DA9B3F4409D90AD8F068B757A")
  static final int EADDRINUSE = 98;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.625 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
-
 
     private  int mType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.627 -0500", hash_original_field = "793253818BA6C7B0BA0EE44002B9EC24", hash_generated_field = "E4571726F4118D3C8C7A8AF1D003C1BF")
@@ -62,7 +57,6 @@ public final class BluetoothSocket implements Closeable {
 
     private  SdpHelper mSdp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.643 -0500", hash_original_field = "AAAF8A3C293EA5711E38C28140852BDE", hash_generated_field = "A2873EA11C139FA2F790281AB4EEDB4E")
-
 
     private int mPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.647 -0500", hash_original_field = "3BBE1F641B3BAE5FA9B727FD419D433A", hash_generated_field = "562C7965DFEE94A8FAD805D0C3C61AE8")
@@ -170,6 +164,8 @@ private BluetoothSocket(int type, int fd, boolean auth, boolean encrypt, String 
      * <p>{@link #close} can be used to abort this call from another thread.
      * @throws IOException on error, for example connection failure
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.661 -0500", hash_original_method = "35545D04908740DE675063D7F1E138DB", hash_generated_method = "93EBAC2A87C975A356B5B20873931D02")
     
 public void connect() throws IOException {
@@ -193,6 +189,8 @@ public void connect() throws IOException {
      * <p>Causes blocked calls on this socket in other threads to immediately
      * throw an IOException.
      */
+    @DSComment("Bluetooth subsystem")
+    @DSSpec(DSCat.BLUETOOTH)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.663 -0500", hash_original_method = "83CCB2B87AD744C98E63B0BB2187BAC7", hash_generated_method = "710794DFEA4563F61213BB68AAAF0AAA")
     
 public void close() throws IOException {
@@ -223,6 +221,7 @@ public void close() throws IOException {
      * Get the remote device this socket is connecting, or connected, to.
      * @return remote device
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.666 -0500", hash_original_method = "B5CADD9AEDAFC7D30E54D77C9BCE6C15", hash_generated_method = "2DA2BB7F6FA41B5740E2FEDAC863C333")
     
 public BluetoothDevice getRemoteDevice() {
@@ -236,6 +235,7 @@ public BluetoothDevice getRemoteDevice() {
      * the associated socket is connected.
      * @return InputStream
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.668 -0500", hash_original_method = "3F2C344C79BB6AAED73F7DEF9A9B7E79", hash_generated_method = "FF8D6E9A010C0CA34745F6CB0FCC8D8D")
     
 public InputStream getInputStream() throws IOException {
@@ -249,6 +249,9 @@ public InputStream getInputStream() throws IOException {
      * the associated socket is connected.
      * @return OutputStream
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.670 -0500", hash_original_method = "650B33031816EC89B8DA91268C4339E3", hash_generated_method = "25C899671F89D3D1A419C73ABBD6875A")
     
 public OutputStream getOutputStream() throws IOException {
@@ -283,7 +286,8 @@ int bindListen() {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.677 -0500", hash_original_method = "7D6884496E175BC1959E5AD456C9EDAE", hash_generated_method = "7D6884496E175BC1959E5AD456C9EDAE")
+    /*package*/ @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.677 -0500", hash_original_method = "7D6884496E175BC1959E5AD456C9EDAE", hash_generated_method = "7D6884496E175BC1959E5AD456C9EDAE")
     
 BluetoothSocket accept(int timeout) throws IOException {
         mLock.readLock().lock();
@@ -359,20 +363,16 @@ int write(byte[] b, int offset, int length) throws IOException {
     	//Formerly a native method
     	return getTaintInt();
     }
-
-
     
     private enum SocketState {
         INIT,
         CONNECTED,
         CLOSED;
         
-        @DSModeled(DSC.SAFE)
         SocketState() {
         	
         }
     }
-
     
     private static class SdpHelper extends IBluetoothCallback.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.726 -0500", hash_original_field = "C66BA6443CBBC9D8DFC16F6C3ABD613F", hash_generated_field = "777D5925CD79734350BBCD8B6382CA12")
@@ -445,12 +445,9 @@ public synchronized void onRfcommChannelFound(int channel) {
                 notifyAll();  // unblock
             }
         }
-
         
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:07.393 -0400", hash_original_method = "CC0EA693249E8BA7FE7333002DBC9497", hash_generated_method = "8710BA099487CF3CAC9E26508C1C065E")
     private BluetoothSocket acceptNative(int timeout) throws IOException {
     	BluetoothSocket other = new BluetoothSocket(getTaintInt(), getTaintInt(), mAuth, mEncrypt, mDevice, getTaintInt(), null);

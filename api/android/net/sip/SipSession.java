@@ -7,16 +7,11 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import android.os.RemoteException;
 
-
-
-
-
 public final class SipSession {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.464 -0500", hash_original_field = "AF9438B88AD0FB6B975D18D00203FE64", hash_generated_field = "C71A0754A378907E73E85A0E7FA4A060")
 
     private static final String TAG = "SipSession";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.538 -0500", hash_original_field = "D0612F19DE6148ECCBB71FC3A3423CE7", hash_generated_field = "B127E608132911BCC4FB99E4A8F915FC")
-
 
     private  ISipSession mSession;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.540 -0500", hash_original_field = "DB28047BDCC49490A13C1B72324FBE59", hash_generated_field = "55B4CC9A7CFEB5835D007742DA36AADE")
@@ -48,6 +43,7 @@ SipSession(ISipSession realSession, Listener listener) {
      *
      * @return the IP address of the local host
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.547 -0500", hash_original_method = "E9A721906097EBC1FEB98095FAB057F5", hash_generated_method = "677E55B4188D99256E0D8A054CA03870")
     
 public String getLocalIp() {
@@ -64,6 +60,7 @@ public String getLocalIp() {
      *
      * @return the SIP profile that this session is associated with
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.550 -0500", hash_original_method = "87F54D512869FBB2D14566F63922D1B6", hash_generated_method = "1FD2899D5D6411C331BF8D9381F9A633")
     
 public SipProfile getLocalProfile() {
@@ -81,6 +78,7 @@ public SipProfile getLocalProfile() {
      *
      * @return the SIP profile that this session is connected to
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.552 -0500", hash_original_method = "D61110CB083F8C813E52FD778D269E44", hash_generated_method = "A85C13DC8C4E5EC6A927456BDB42FB5A")
     
 public SipProfile getPeerProfile() {
@@ -98,6 +96,7 @@ public SipProfile getPeerProfile() {
      *
      * @return the session state
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.554 -0500", hash_original_method = "9EA9E21B58E34C7FB49C45688377E72F", hash_generated_method = "A2A0E799F3A8BAA58BCAFEF701F28036")
     
 public int getState() {
@@ -130,6 +129,7 @@ public boolean isInCall() {
      *
      * @return the call ID
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.559 -0500", hash_original_method = "A52F1B195D0D0A598BE5EAF9C188D1E2", hash_generated_method = "20463913D1EB1192B810213B0ACC00BE")
     
 public String getCallId() {
@@ -140,7 +140,6 @@ public String getCallId() {
             return null;
         }
     }
-
 
     /**
      * Sets the listener to listen to the session events. A {@code SipSession}
@@ -154,7 +153,6 @@ public String getCallId() {
 public void setListener(Listener listener) {
         mListener = listener;
     }
-
 
     /**
      * Performs registration to the server specified by the associated local
@@ -274,12 +272,12 @@ public void changeCall(String sessionDescription, int timeout) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:29.576 -0500", hash_original_method = "457DE503669A22F9796CDD5163AC081E", hash_generated_method = "457DE503669A22F9796CDD5163AC081E")
     
 ISipSession getRealSession() {
         return mSession;
     }
-
     
     public static class State {
 
@@ -356,8 +354,6 @@ public static String toString(int state) {
 private State() {
         }
     }
-
-
     
     public static class Listener {
         
@@ -514,7 +510,6 @@ public void onRegistrationFailed(SipSession session, int errorCode,
         
 public void onRegistrationTimeout(SipSession session) {
         }
-
         
     }
 

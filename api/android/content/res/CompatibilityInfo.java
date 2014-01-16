@@ -16,10 +16,6 @@ import android.view.MotionEvent;
 import android.view.WindowManager;
 import android.view.WindowManager.LayoutParams;
 
-
-
-
-
 public class CompatibilityInfo implements Parcelable {
 
     /**
@@ -327,7 +323,6 @@ public boolean neverSupportsScreen() {
 public boolean alwaysSupportsScreen() {
         return (mCompatibilityFlags&NEVER_NEEDS_COMPAT) != 0;
     }
-
     
     public class Translator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.149 -0500", hash_original_field = "7DEEE262D55E0BA5F3DCA380FFEC5E0C", hash_generated_field = "14E3397589B948719667F1E3AF571289")
@@ -337,7 +332,6 @@ public boolean alwaysSupportsScreen() {
 
          public float applicationInvertedScale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.154 -0500", hash_original_field = "2A4BEE6C2588E84372B845F2C5A81EFA", hash_generated_field = "C20DA98F4A08CF10BAA7142D933BD66B")
-
         
         private Rect mContentInsetsBuffer = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.156 -0500", hash_original_field = "2CA50AF598DDAF6290D1E4A05BF40D5B", hash_generated_field = "1C9F92E30D2ADEA2CAAF0B834CACAAC8")
@@ -471,6 +465,7 @@ public void translateLayoutParamsInAppWindowToScreen(LayoutParams params) {
          * Translate the content insets in application window to Screen. This uses
          * the internal buffer for content insets to avoid extra object allocation.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.186 -0500", hash_original_method = "43D8C9F45845A6C6CC10427CCFCFAF3D", hash_generated_method = "A8D3417DD351B38B5A1BCE2011F2B9AF")
         
 public Rect getTranslatedContentInsets(Rect contentInsets) {
@@ -484,6 +479,7 @@ public Rect getTranslatedContentInsets(Rect contentInsets) {
          * Translate the visible insets in application window to Screen. This uses
          * the internal buffer for visible insets to avoid extra object allocation.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.189 -0500", hash_original_method = "DB46A5AF3015676AE668EB7338A074FC", hash_generated_method = "F6CF5ABCB151C32350958C8E1777F0A2")
         
 public Rect getTranslatedVisibleInsets(Rect visibleInsets) {
@@ -497,6 +493,7 @@ public Rect getTranslatedVisibleInsets(Rect visibleInsets) {
          * Translate the touchable area in application window to Screen. This uses
          * the internal buffer for touchable area to avoid extra object allocation.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:07.191 -0500", hash_original_method = "25CFF327B78CA768A3AFCA299ED2CC8E", hash_generated_method = "89B0C97888476B1C2E9BEB649369ACBC")
         
 public Region getTranslatedTouchableArea(Region touchableArea) {
@@ -505,7 +502,6 @@ public Region getTranslatedTouchableArea(Region touchableArea) {
             mTouchableAreaBuffer.scale(applicationScale);
             return mTouchableAreaBuffer;
         }
-
         
     }
 

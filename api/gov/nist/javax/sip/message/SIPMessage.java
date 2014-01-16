@@ -79,11 +79,6 @@ import javax.sip.header.ToHeader;
 import javax.sip.header.ViaHeader;
 import javax.sip.message.Request;
 
-
-
-
-
-
 public abstract class SIPMessage extends MessageObject implements javax.sip.message.Message, MessageExt {
 
     /**
@@ -119,55 +114,44 @@ public static boolean isResponseHeader(SIPHeader sipHeader) {
 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.233 -0500", hash_original_field = "140583C7D6A7B27A3D80E3A8BB7B4A11", hash_generated_field = "3904126BA9BA221FEEB83EA7E49FDA36")
-
     
     private static final String CONTENT_TYPE_LOWERCASE = SIPHeaderNamesCache
     .toLowerCase(ContentTypeHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.243 -0500", hash_original_field = "384ED9F5B65FDBCDF82E256C2C50F502", hash_generated_field = "2A8E8F0E3F29FFFF710437740FFE07B1")
 
-
     private static final String ERROR_LOWERCASE = SIPHeaderNamesCache.toLowerCase(ErrorInfo.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.249 -0500", hash_original_field = "299D40657FFB8B99846F35F69FA2E500", hash_generated_field = "3BB82B473CACCC793FC18D6F0CF9300E")
-
 
     private static final String CONTACT_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContactHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.257 -0500", hash_original_field = "6E58821CED9BEE0C59F73F9B976F84BA", hash_generated_field = "51278ECFB8FC893D338CBD35C1B5F8F7")
 
-
     private static final String VIA_LOWERCASE = SIPHeaderNamesCache.toLowerCase(ViaHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.272 -0500", hash_original_field = "FF64FB72636E61DBB702ED5DFB0CDB84", hash_generated_field = "F10B3CAD8FB507F5BDFF22A8AD4FFF13")
-
 
     private static final String AUTHORIZATION_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(AuthorizationHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.282 -0500", hash_original_field = "963D5153C1D1D6789130333CC984AFFD", hash_generated_field = "BE5A48849228660E6DA6589746E7D093")
 
-
     private static final String ROUTE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(RouteHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.294 -0500", hash_original_field = "06B08B687FBFA0767CC49D4A92CF5D51", hash_generated_field = "0F29B176C2B3A3AA106F93F963532E79")
-
 
     private static final String RECORDROUTE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(RecordRouteHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.388 -0500", hash_original_field = "3F8F8E2298F923B771AA7F2562571228", hash_generated_field = "6AF602A3153F2C32B93DA6F98A935DA5")
 
-
     private static final String CONTENT_DISPOSITION_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentDispositionHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.393 -0500", hash_original_field = "CBA9C5B72E09132A26484FA584259563", hash_generated_field = "6D27C3CBA91F0C290360A638D7DF519E")
-
 
     private static final String CONTENT_ENCODING_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentEncodingHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.398 -0500", hash_original_field = "0CCD9469DD923818AEB820184FACC25E", hash_generated_field = "376511CEFEB33BD270D266CD58BF159F")
 
-
     private static final String CONTENT_LANGUAGE_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ContentLanguageHeader.NAME);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.403 -0500", hash_original_field = "B4F2ABE961D0018E20A8A6602766205A", hash_generated_field = "5C2E81EB8278F47B64608EF8A7BB04DF")
-
 
     private static final String EXPIRES_LOWERCASE = SIPHeaderNamesCache
             .toLowerCase(ExpiresHeader.NAME);
@@ -188,22 +172,17 @@ public static boolean isResponseHeader(SIPHeader sipHeader) {
     protected From fromHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.128 -0500", hash_original_field = "0EC70AF0BA3CF671255C069BE1EF5A29", hash_generated_field = "386FEF496B2D00FF2AEEA4F647EAA2EC")
 
-
     protected To toHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.130 -0500", hash_original_field = "97F2621E58544EB5857FA617766383AF", hash_generated_field = "9243D81B8C37269C34D9BD3D6292835A")
-
 
     protected CSeq cSeqHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.133 -0500", hash_original_field = "19B8FB08B553EF9A4349BACE86FA8AAE", hash_generated_field = "471E372FA6B60996CC5D5DA482544660")
 
-
     protected CallID callIdHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.135 -0500", hash_original_field = "DC087804B6A332FFEF3AAFD8FA219B42", hash_generated_field = "BD2FD117E706370D42DF61B188BF8940")
 
-
     protected ContentLength contentLengthHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.137 -0500", hash_original_field = "6239D14961A7E96DEC4801ABA1461276", hash_generated_field = "19F23DC4282A0EF2D6622C8B0C1149E7")
-
 
     protected MaxForwards maxForwardsHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.139 -0500", hash_original_field = "673BDAEBF4FBC900963E210E042549D6", hash_generated_field = "BEC7808019D8AD57BF06A5469459FF0A")
@@ -214,10 +193,8 @@ public static boolean isResponseHeader(SIPHeader sipHeader) {
     private String messageContent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.144 -0500", hash_original_field = "95F7D92AA7E61DA15548358D0500E443", hash_generated_field = "3E3D2657E47D4DE2C783823CF246BBAB")
 
-
     private byte[] messageContentBytes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.147 -0500", hash_original_field = "E06771BF0AF78CC5FF2D374B53AB4258", hash_generated_field = "1560325BE0E32978EBE2ECDE71A6C345")
-
 
     private Object messageContentObject;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.149 -0500", hash_original_field = "A38DB47C89E5187A9BF8ECB115A68CA2", hash_generated_field = "1C03D389CB46F0B01812A6FDFBD5DD7D")
@@ -250,6 +227,7 @@ public SIPMessage() {
      * @return a linked list with each element of the list containing a string encoded header in
      *         canonical form.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.160 -0500", hash_original_method = "4E875487FBA3E9E3C25B636513844812", hash_generated_method = "75A5849C5E1DBE999CA6570BB06D5D24")
     
 public LinkedList<String> getMessageAsEncodedStrings() {
@@ -273,6 +251,7 @@ public LinkedList<String> getMessageAsEncodedStrings() {
      * 
      * @return a string with all the headers encoded.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.163 -0500", hash_original_method = "A27900405272FB61F2D6362A05DA41D6", hash_generated_method = "E9A5E2820A2C3B091DACE695E759D769")
     
 protected String encodeSIPHeaders() {
@@ -406,6 +385,7 @@ public void merge(Object template) {
      * @return The Canonical String representation of the message (including the canonical string
      *         representation of the SDP payload if it exists).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.177 -0500", hash_original_method = "79C45AA8D92059F002F56259D7022AFE", hash_generated_method = "BFE6BB93C3085DADA6F76A302E461FD5")
     
 public String encode() {
@@ -456,6 +436,7 @@ public String encode() {
      *         byte array representation of the SDP payload if it exists all in one contiguous
      *         byte array).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.180 -0500", hash_original_method = "716A084604DD8483BAA5EE270A2C01EC", hash_generated_method = "2F30D9803EDDB84BAA70C974E369880C")
     
 public byte[] encodeAsBytes(String transport) {
@@ -522,6 +503,7 @@ public byte[] encodeAsBytes(String transport) {
      * 
      * @return A cloned copy of this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.183 -0500", hash_original_method = "CAA2D0A800A8BA91CFE25E08D1466992", hash_generated_method = "441794B8EC21652DE9A4976EB05D7714")
     
 public Object clone() {
@@ -555,6 +537,7 @@ public Object clone() {
      * @return Formatted string representation of the object. Note that this is NOT the same as
      *         encode(). This is used mainly for debugging purposes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.187 -0500", hash_original_method = "CE435A19EF4C3C8ADC65C5BBD44452BB", hash_generated_method = "90F835D7DA784CAC2638DF85A20787B0")
     
 public String debugDump() {
@@ -686,6 +669,7 @@ public void attachHeader(SIPHeader h, boolean replaceflag) throws SIPDuplicateHe
      *         headers that are in this message.
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.204 -0500", hash_original_method = "7BE2AED7224623BF9774680F8F08FE9F", hash_generated_method = "F69412DD175DEC64229D6EA1510505DB")
     
 public void attachHeader(SIPHeader header, boolean replaceFlag, boolean top)
@@ -882,6 +866,7 @@ public void removeHeader(String headerName) {
      *         used for matching responses and requests (i.e. an outgoing request and its matching
      *         response have the same computed transaction identifier).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.215 -0500", hash_original_method = "04B79D458A896A4F330B98FD27925CCB", hash_generated_method = "8CB9CE1A8CD3290AC02DA0C251F9494A")
     
 public String getTransactionId() {
@@ -962,6 +947,7 @@ public boolean hasContent() {
      * 
      * @return an Iterator for the headers of this message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.223 -0500", hash_original_method = "16CF6C29A1D923EBFDFB9DE65000093A", hash_generated_method = "A3CBBCB183B159EC9B6AF6FBB6F89D38")
     
 public Iterator<SIPHeader> getHeaders() {
@@ -973,6 +959,7 @@ public Iterator<SIPHeader> getHeaders() {
      * 
      * @return header -- the first header of the given name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.225 -0500", hash_original_method = "1ADD77F2239C280F0A32414969B68312", hash_generated_method = "C0D099FDF35CAB36C6CF8318CEF8301C")
     
 public Header getHeader(String headerName) {
@@ -997,28 +984,29 @@ private Header getHeaderLowerCase(String lowerCaseHeaderName) {
      * @return contentType header
      */
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.230 -0500", hash_original_method = "094433154D44236D0991BBCF366E0E6A", hash_generated_method = "F5209DB546C0F6B4EF27600A0DC37C79")
     
 public ContentType getContentTypeHeader() {
         return (ContentType) getHeaderLowerCase(CONTENT_TYPE_LOWERCASE);
     }
-
     
     /**
      * Get the contentLength header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.236 -0500", hash_original_method = "F29DC29143C65AC3E05B010248583D2F", hash_generated_method = "E813B40A5EE8BDEA0B9AC78A309C0341")
     
 public ContentLengthHeader getContentLengthHeader() {
         return this.getContentLength();
     }
-
   
     /**
      * Get the from header.
      * 
      * @return -- the from header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.238 -0500", hash_original_method = "E10DCB9A2200DABE5E8DE063DD5342F3", hash_generated_method = "E8D18277FE70FA5C9B0BB7C991AC9988")
     
 public FromHeader getFrom() {
@@ -1030,6 +1018,7 @@ public FromHeader getFrom() {
      * 
      * @return List containing ErrorInfo headers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.241 -0500", hash_original_method = "10D7F219ADDA2D1F9DA30C2C2F401D03", hash_generated_method = "4C3518C0D5E2EA7DE26B9F6A997DB938")
     
 public ErrorInfoList getErrorInfoHeaders() {
@@ -1041,6 +1030,7 @@ public ErrorInfoList getErrorInfoHeaders() {
      * 
      * @return List containing Contact headers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.246 -0500", hash_original_method = "6BBB646E6D7D64808CC70B68BEB17C86", hash_generated_method = "63B9CDDC16CEAD0C74F58EA4B07DA9DF")
     
 public ContactList getContactHeaders() {
@@ -1051,6 +1041,7 @@ public ContactList getContactHeaders() {
      * Get the contact header ( the first contact header) which is all we need for the most part.
      * 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.251 -0500", hash_original_method = "7930A8382B37585900D6B0ADAEF5E908", hash_generated_method = "2ADC15288826236ADC6853FD36B7F468")
     
 public Contact getContactHeader() {
@@ -1068,6 +1059,7 @@ public Contact getContactHeader() {
      * 
      * @return List containing Via headers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.254 -0500", hash_original_method = "F913627528E03E7BE96F6FC26EC1EAB5", hash_generated_method = "F1C8E308C74B320D7496C23E00A590AA")
     
 public ViaList getViaHeaders() {
@@ -1097,6 +1089,7 @@ public void setVia(java.util.List viaList) {
      * @param sipHeaderList a headerList to set
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.262 -0500", hash_original_method = "458FFC69EFF172F74B60E661629859D7", hash_generated_method = "C64029C85E2CF2EE28CB0520C141718E")
     
 public void setHeader(SIPHeaderList<Via> sipHeaderList) {
@@ -1108,6 +1101,7 @@ public void setHeader(SIPHeaderList<Via> sipHeaderList) {
      * 
      * @return the top most via header if one exists or null if none exists.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.264 -0500", hash_original_method = "D8225C1F89A591B431137F8AC67C8011", hash_generated_method = "72FEE0AE3DE5A492EA5E2BC8DA97CEF5")
     
 public Via getTopmostVia() {
@@ -1122,6 +1116,7 @@ public Via getTopmostVia() {
      * 
      * @return CSeq header
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.267 -0500", hash_original_method = "734B287C3C9508BBD63962A2764D9C01", hash_generated_method = "9C7BCFC7FADB19E10C43CC4B2AA78768")
     
 public CSeqHeader getCSeq() {
@@ -1133,6 +1128,7 @@ public CSeqHeader getCSeq() {
      * 
      * @return Authorization header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.269 -0500", hash_original_method = "6A92E6492A4EA537FE7E1089912E5A2E", hash_generated_method = "FF948DA769F88316039690A89A505B46")
     
 public Authorization getAuthorization() {
@@ -1145,6 +1141,7 @@ public Authorization getAuthorization() {
      * @return Max-Forwards header
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.274 -0500", hash_original_method = "1941B7A53D19F77542CA45C05AFF9884", hash_generated_method = "CE66032576DFD2CE16D4E789AC1836E1")
     
 public MaxForwardsHeader getMaxForwards() {
@@ -1167,6 +1164,7 @@ public void setMaxForwards(MaxForwardsHeader maxForwards) {
      * 
      * @return List containing Route headers
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.279 -0500", hash_original_method = "7800F88C4B689BC7D7C78CBE850678CA", hash_generated_method = "29EC90BAB917556FE014629ED8F0ADAA")
     
 public RouteList getRouteHeaders() {
@@ -1178,6 +1176,7 @@ public RouteList getRouteHeaders() {
      * 
      * @return Call-ID header .
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.284 -0500", hash_original_method = "9DA69A74904D39D3267E3E1010C409F3", hash_generated_method = "22CD19FCA90C7D5D3294D66B4E3C86CE")
     
 public CallIdHeader getCallId() {
@@ -1200,6 +1199,7 @@ public void setCallId(CallIdHeader callId) {
      * 
      * @param callId -- the call identifier to be assigned to the call id header
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.289 -0500", hash_original_method = "16037BFD4917B839A558D81FBF251209", hash_generated_method = "40F37147C0A24EBFED7983181C26D53B")
     
 public void setCallId(String callId) throws java.text.ParseException {
@@ -1214,6 +1214,7 @@ public void setCallId(String callId) throws java.text.ParseException {
      * 
      * @return Record-Route header
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.292 -0500", hash_original_method = "6FCB806D3659BA1DF59CA318834E3C35", hash_generated_method = "856DF26E31E706BBFA9D3469EDE3B241")
     
 public RecordRouteList getRecordRouteHeaders() {
@@ -1225,6 +1226,7 @@ public RecordRouteList getRecordRouteHeaders() {
      * 
      * @return To header
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.297 -0500", hash_original_method = "D2F3523F315E42C3CDB78FE4D7DBD860", hash_generated_method = "7BA193BDADD87EFDA6C02494898A6335")
     
 public ToHeader getTo() {
@@ -1249,6 +1251,7 @@ public void setFrom(FromHeader from) {
      * 
      * @return content-length header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.305 -0500", hash_original_method = "BF14C97BBADF5B6B3DD1A606FFB97154", hash_generated_method = "F0B966CFF8D9137BFEF2C3552BE980B2")
     
 public ContentLengthHeader getContentLength() {
@@ -1265,6 +1268,7 @@ public ContentLengthHeader getContentLength() {
      *         in the content type header.
      * 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.307 -0500", hash_original_method = "40D47E0A8FD809ED2EC3170259DB7692", hash_generated_method = "91A45F58E83E8E0C9A71BD68F698CFEF")
     
 public String getMessageContent() throws UnsupportedEncodingException {
@@ -1283,6 +1287,7 @@ public String getMessageContent() throws UnsupportedEncodingException {
      * 
      * @return an array of bytes that is the message payload.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.310 -0500", hash_original_method = "0A8A11F2CA57642B3F77F3FF48221ABE", hash_generated_method = "5B262A6CC099D5D8507D75CC43FD2D0F")
     
 public byte[] getRawContent() {
@@ -1357,6 +1362,7 @@ public void setContent(Object content, ContentTypeHeader contentTypeHeader)
      * 
      * @return the content of the sip message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.318 -0500", hash_original_method = "54FC52177A1CB92C02565C30A4F8CE94", hash_generated_method = "81F53B3012E132FF8110E84E51FC5468")
     
 public Object getContent() {
@@ -1377,6 +1383,7 @@ public Object getContent() {
      * @param subType is the message subType.
      * @param messageContent is the message content as a byte array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.321 -0500", hash_original_method = "567464035ABE474ACDCFF614F9D534B5", hash_generated_method = "D820D8BA2A766F41CE770386C33A80DA")
     
 public void setMessageContent(String type, String subType, byte[] messageContent) {
@@ -1499,6 +1506,7 @@ public void removeContent() {
      * @param headerName is the name of the header to get.
      * @return a header or header list that contians the retrieved header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.337 -0500", hash_original_method = "B51D33B6E886062DB169564C9DA9DCD8", hash_generated_method = "1B50EDCA294B397004721F77C292A540")
     
 @SuppressWarnings("unchecked")
@@ -1524,6 +1532,7 @@ public void removeContent() {
      * @param name
      * @return the header as a formatted string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.340 -0500", hash_original_method = "6CE50AA271DA9876F1700D8E280EAFD1", hash_generated_method = "526268425EE69EAEA90E09A7AEFA5289")
     
 public String getHeaderAsFormattedString(String name) {
@@ -1604,6 +1613,7 @@ public boolean hasToTag() {
      * @return the tag from the from header.
      * 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.356 -0500", hash_original_method = "5C72A9C802C6EC574622DB27171F7A2E", hash_generated_method = "32B6A83A681E62F9170475BD9F88995A")
     
 public String getFromTag() {
@@ -1615,6 +1625,7 @@ public String getFromTag() {
      * 
      * @param tag -- tag to set in the from header.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.358 -0500", hash_original_method = "2974ECBC3FF627B3CB2268B4D90C9E07", hash_generated_method = "7B59FEFAE51EE1B0B71318055116B426")
     
 public void setFromTag(String tag) {
@@ -1629,6 +1640,7 @@ public void setFromTag(String tag) {
      * 
      * @param tag -- tag to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.360 -0500", hash_original_method = "7DFC8A6205B3CBC36E5183721A30EB01", hash_generated_method = "B33E6523870B8F39F6874EFBE0A8D113")
     
 public void setToTag(String tag) {
@@ -1641,6 +1653,7 @@ public void setToTag(String tag) {
     /**
      * Return the to tag.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.363 -0500", hash_original_method = "5B9C84C201385B92B0E684584F1ECF7E", hash_generated_method = "F771BD90253AE41B15B36D2EEC84F422")
     
 public String getToTag() {
@@ -1716,6 +1729,7 @@ public void addHeader(String sipHeader) {
      * 
      * @return a linked list containing unrecongnized headers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.376 -0500", hash_original_method = "F4B3A65BCC1C141571353972EC488146", hash_generated_method = "E1F6DD7376E5599ABDED1BA6245AA40D")
     
 public ListIterator<String> getUnrecognizedHeaders() {
@@ -1728,6 +1742,7 @@ public ListIterator<String> getUnrecognizedHeaders() {
      * @return a list iterator to a list of header names. These are ordered in the same order as
      *         are present in the message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.379 -0500", hash_original_method = "C08D5FBD41C305191A05DA7EC6E8BA34", hash_generated_method = "6454CEF7F76D0E7E2400734F097CCEB0")
     
 public ListIterator<String> getHeaderNames() {
@@ -1777,6 +1792,7 @@ public boolean equals(Object other) {
      * 
      * @return the contentDisposition header
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.385 -0500", hash_original_method = "3C4825ADE695C84AAF8B57CDEA1CF4CB", hash_generated_method = "FA715F84C4095B339BB308FDCBF0F63C")
     
 public javax.sip.header.ContentDispositionHeader getContentDisposition() {
@@ -1788,6 +1804,7 @@ public javax.sip.header.ContentDispositionHeader getContentDisposition() {
      * 
      * @return the contentEncoding header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.390 -0500", hash_original_method = "46C03ED253FA9F93BF664C06918E9287", hash_generated_method = "F71D6CC51B7F60B3410B54C1DA88B37A")
     
 public javax.sip.header.ContentEncodingHeader getContentEncoding() {
@@ -1799,6 +1816,7 @@ public javax.sip.header.ContentEncodingHeader getContentEncoding() {
      * 
      * @return the content language header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.395 -0500", hash_original_method = "7F8FF7046ECB01AA1B56D3558C9342AE", hash_generated_method = "5FC0C5F17B70244A9976D0149FE394FB")
     
 public javax.sip.header.ContentLanguageHeader getContentLanguage() {
@@ -1810,6 +1828,7 @@ public javax.sip.header.ContentLanguageHeader getContentLanguage() {
      * 
      * @return the expires header or null if one does not exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.400 -0500", hash_original_method = "9AC8AD6CCC74995A67CEDA1778D18415", hash_generated_method = "01D00D86641159886EFF4CCD512C1EF7")
     
 public javax.sip.header.ExpiresHeader getExpires() {
@@ -1880,6 +1899,7 @@ public void setSize(int size) {
         this.size = size;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.420 -0500", hash_original_method = "54E84843E0EEE275508F3EB8305B3F4F", hash_generated_method = "E4C490CCF23F67A9F71E17DDE93323F8")
     
 public int getSize() {
@@ -1984,6 +2004,7 @@ public void setApplicationData(Object applicationData) {
      * 
      * @return stored application data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.438 -0500", hash_original_method = "5F924FC61375970A4DC758380BEBFF0F", hash_generated_method = "65575224A94F45AA5C180B0ED3AF02CA")
     
 public Object getApplicationData() {
@@ -1994,6 +2015,7 @@ public Object getApplicationData() {
      * Get the multipart MIME content
      * 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.441 -0500", hash_original_method = "3FB4581572217B4D34EC8E3A9F62CA88", hash_generated_method = "72DE370694ABCA4F119294AF83E853D9")
     
 public MultipartMimeContent getMultipartMimeContent() throws ParseException {
@@ -2013,33 +2035,35 @@ public MultipartMimeContent getMultipartMimeContent() throws ParseException {
 		}
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.443 -0500", hash_original_method = "6A8980AC46BDEC47E118DEA889F580E2", hash_generated_method = "614D43E76AD5E54A6A6D769091A2DB17")
     
 public CallIdHeader getCallIdHeader() {
         return this.callIdHeader;
     }
-
    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.446 -0500", hash_original_method = "616E19996CDDFB660618161B80D5BB27", hash_generated_method = "75138080FA03089EA328657F10891A94")
     
 public FromHeader getFromHeader() {
         return this.fromHeader;
     }
-
    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.448 -0500", hash_original_method = "9C43D5663CBD78C15545690BFB01C4BF", hash_generated_method = "8B12838DAE69E8373A6B87B8293CB511")
     
 public ToHeader getToHeader() {
         return this.toHeader;
     }
-
   
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.451 -0500", hash_original_method = "FE98900B9C779953579B6764E7283FC2", hash_generated_method = "FDFAC33C949167265F43186BA98D4FD7")
     
 public ViaHeader getTopmostViaHeader() {
         return this.getTopmostVia();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.453 -0500", hash_original_method = "2CE1B7EDE28DB048E923E7FFD28A72BE", hash_generated_method = "305C413E35665B4C44CFC40011E54795")
     
 public CSeqHeader getCSeqHeader() {
@@ -2049,6 +2073,7 @@ public CSeqHeader getCSeqHeader() {
     /**
      * Returns the charset to use for encoding/decoding the body of this message
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.455 -0500", hash_original_method = "5D0D1F0E94EB86910B32FB17BCD97869", hash_generated_method = "760CF147EE1651FDA24B009425443FB0")
     
 protected final String getCharset() {
@@ -2079,7 +2104,6 @@ public boolean isNullRequest() {
 public void setNullRequest() {
         this.nullRequest = true;
     }
-    
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:39.463 -0500", hash_original_method = "CFE860B19AD3D57A0F1F7E2F8E62600E", hash_generated_method = "35F6989AA4DE4044BBBF57E6D95A0E43")
     

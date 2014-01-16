@@ -9,9 +9,6 @@ import java.lang.reflect.Type;
 import java.lang.reflect.WildcardType;
 import java.util.Arrays;
 
-
-
-
 public final class ImplForWildcard implements WildcardType {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.980 -0400", hash_original_field = "F46925D3540A6CF061C3B56DAECD636F", hash_generated_field = "09ECEF7959A04D8A2E7315F105554DF2")
 
@@ -27,6 +24,7 @@ public ImplForWildcard(ListOfTypes extendsBound, ListOfTypes superBound) {
         this.superBound = superBound;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.494 -0500", hash_original_method = "0E02033FF7243902E994038D555D1587", hash_generated_method = "BB94CA458237C8C2E2434E55F9FB1023")
     
 public Type[] getLowerBounds() throws TypeNotPresentException,
@@ -34,6 +32,7 @@ public Type[] getLowerBounds() throws TypeNotPresentException,
         return superBound.getResolvedTypes().clone();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.496 -0500", hash_original_method = "F21086AF3EFC8DD73AF90E899FA34F74", hash_generated_method = "E84DCEC095B58839AF75892129776AD0")
     
 public Type[] getUpperBounds() throws TypeNotPresentException,
@@ -74,7 +73,6 @@ public Type[] getUpperBounds() throws TypeNotPresentException,
         }
         return sb.toString();
     }
-
     
 }
 

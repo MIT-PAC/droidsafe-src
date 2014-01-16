@@ -19,11 +19,6 @@ import java.util.Enumeration;
 import java.util.Hashtable;
 import java.util.Properties;
 
-
-
-
-
-
 public abstract class LogFactory {
 
     /**
@@ -74,7 +69,6 @@ private static final Hashtable createFactoryStore() {
         return result;
     }
 
-
     // --------------------------------------------------------- Static Methods
 
     /**
@@ -107,6 +101,7 @@ private static final Hashtable createFactoryStore() {
      * @exception LogConfigurationException if the implementation class is not
      *  available or cannot be instantiated.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.243 -0500", hash_original_method = "33FF688455A61CB525147A185CEE209C", hash_generated_method = "3DB104B438DA7DCEE194F35F16677826")
     
 public static LogFactory getFactory() throws LogConfigurationException {
@@ -218,7 +213,6 @@ public static LogFactory getFactory() throws LogConfigurationException {
             throw e;
         }
 
-
         // Second, try to find a service by using the JDK1.3 class
         // discovery mechanism, which involves putting a file with the name
         // of an interface class in the META-INF/services directory, where the
@@ -282,7 +276,6 @@ public static LogFactory getFactory() throws LogConfigurationException {
             }
         }
 
-
         // Third try looking into the properties file read earlier (if found)
 
         if (factory == null) {
@@ -317,7 +310,6 @@ public static LogFactory getFactory() throws LogConfigurationException {
                 }
             }
         }
-
 
         // Fourth, try the fallback implementation class
 
@@ -360,7 +352,6 @@ public static LogFactory getFactory() throws LogConfigurationException {
         return factory;
     }
 
-
     /**
      * Convenience method to return a named logger, without the application
      * having to care about factories.
@@ -370,6 +361,7 @@ public static LogFactory getFactory() throws LogConfigurationException {
      * @exception LogConfigurationException if a suitable <code>Log</code>
      *  instance cannot be returned
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.246 -0500", hash_original_method = "91375CC7DDE12AA338C602727C25174F", hash_generated_method = "044821AC2AA898B0076D21ECC71EC87A")
     
 public static Log getLog(Class clazz)
@@ -384,7 +376,6 @@ public static Log getLog(Class clazz)
 
     }
 
-
     /**
      * Convenience method to return a named logger, without the application
      * having to care about factories.
@@ -396,6 +387,7 @@ public static Log getLog(Class clazz)
      * @exception LogConfigurationException if a suitable <code>Log</code>
      *  instance cannot be returned
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.248 -0500", hash_original_method = "9CDE1AF86C53A03FEBBCD488EAA5D64F", hash_generated_method = "101A139828661B07F82A7885866E2F7A")
     
 public static Log getLog(String name)
@@ -409,7 +401,6 @@ public static Log getLog(String name)
         // END android-deleted
 
     }
-
 
     /**
      * Release any internal references to previously created {@link LogFactory}
@@ -443,7 +434,6 @@ public static void release(ClassLoader classLoader) {
 
     }
 
-
     /**
      * Release any internal references to previously created {@link LogFactory}
      * instances, after calling the instance method <code>release()</code> on
@@ -475,7 +465,6 @@ public static void releaseAll() {
 
     }
 
-
     // ------------------------------------------------------ Protected Methods
 
     /**
@@ -500,6 +489,7 @@ public static void releaseAll() {
      * 
      * @since 1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.256 -0500", hash_original_method = "BB3F6B78143DB6D0ADEC7F433E59252E", hash_generated_method = "D8624905AC94843F4FEF503B26E292EE")
     
 protected static ClassLoader getClassLoader(Class clazz) {
@@ -533,6 +523,7 @@ protected static ClassLoader getClassLoader(Class clazz) {
      * @throws SecurityException if the current java security policy doesn't
      * allow this class to access the context classloader.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.262 -0500", hash_original_method = "7256493EBAA0CD15571FBFA48D348BB6", hash_generated_method = "2E0B3E0B30DDC2E2195A8055D9CC2DBC")
     
 protected static ClassLoader getContextClassLoader()
@@ -751,7 +742,8 @@ protected static LogFactory newFactory(final String factoryClass,
         // ClassCastException can be thrown.
         Object result = AccessController.doPrivileged(
             new PrivilegedAction() {
-                public Object run() {
+                @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        public Object run() {
                     return createFactory(factoryClass, classLoader);
                 }
             });
@@ -1488,7 +1480,6 @@ public static String objectId(Object o) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.180 -0500", hash_original_field = "F2B914B72B6C791BFE4F04E459705519", hash_generated_field = "D39AFAD27EED39D02E35F26FB5566E86")
 
-
     /**
      * The name (<code>priority</code>) of the key in the config file used to 
      * specify the priority of that particular config file. The associated value 
@@ -1537,8 +1528,6 @@ public static String objectId(Object o) {
     private static ClassLoader thisClassLoader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.232 -0500", hash_original_field = "E39DFF69014CBC33B78403839A43A4BD", hash_generated_field = "0DD8D5F36915FC414889E9F489834DBF")
 
-
-
     /**
      * The previously constructed <code>LogFactory</code> instances, keyed by
      * the <code>ClassLoader</code> with which it was created.
@@ -1550,7 +1539,6 @@ public static String objectId(Object o) {
     
     // ----------------------------------------------------------- Constructors
 
-
     /**
      * Protected constructor that is not available for public use.
      */
@@ -1560,7 +1548,6 @@ protected LogFactory() {
     }
     
     // --------------------------------------------------------- Public Methods
-
 
     /**
      * Return the configuration attribute with the specified name (if any),
@@ -1572,7 +1559,6 @@ protected LogFactory() {
     
 public abstract Object getAttribute(String name);
 
-
     /**
      * Return an array containing the names of all currently defined
      * configuration attributes.  If there are no such attributes, a zero
@@ -1581,7 +1567,6 @@ public abstract Object getAttribute(String name);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.217 -0500", hash_original_method = "B483E463AD782788123AFB164C362A6B", hash_generated_method = "31D18C91D6F792C33F89EF815037FEE0")
     
 public abstract String[] getAttributeNames();
-
 
     /**
      * Convenience method to derive a name from the specified class and
@@ -1596,7 +1581,6 @@ public abstract String[] getAttributeNames();
     
 public abstract Log getInstance(Class clazz)
         throws LogConfigurationException;
-
 
     /**
      * <p>Construct (if necessary) and return a <code>Log</code> instance,
@@ -1620,7 +1604,6 @@ public abstract Log getInstance(Class clazz)
 public abstract Log getInstance(String name)
         throws LogConfigurationException;
 
-
     /**
      * Release any internal references to previously created {@link Log}
      * instances returned by this factory.  This is useful in environments
@@ -1632,7 +1615,6 @@ public abstract Log getInstance(String name)
     
 public abstract void release();
 
-
     /**
      * Remove any configuration attribute associated with the specified name.
      * If there is no such attribute, no action is taken.
@@ -1642,7 +1624,6 @@ public abstract void release();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.227 -0500", hash_original_method = "F2B1C6370498677CAD1FF1E7C1667F22", hash_generated_method = "9E20905C9741F4DC53902FA8DF269B39")
     
 public abstract void removeAttribute(String name);
-
 
     /**
      * Set the configuration attribute with the specified name.  Calling

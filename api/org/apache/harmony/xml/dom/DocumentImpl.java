@@ -24,11 +24,6 @@ import org.w3c.dom.ProcessingInstruction;
 import org.w3c.dom.Text;
 import org.w3c.dom.UserDataHandler;
 
-
-
-
-
-
 public final class DocumentImpl extends InnerNodeImpl implements Document {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.812 -0500", hash_original_method = "ECB0F77202F680B9EEEE15A5B36EFD30", hash_generated_method = "CE41BC1EB0C8C3ADD328B005630C9650")
@@ -94,7 +89,6 @@ private static void notifyUserDataHandlers(
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.789 -0500", hash_original_field = "61E672D5F77F268BA078989C16727BAB", hash_generated_field = "02CE798A8CB59B7226C8831D772A3C37")
-
 
     private DOMImplementation domImplementation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.791 -0500", hash_original_field = "CD08A1D55EE4481C59A3B1181ED5BA8A", hash_generated_field = "4C2B5AB6B1E4F28DC9582765A0F90963")
@@ -417,6 +411,7 @@ public TextImpl createTextNode(String data) {
         return new TextImpl(this, data);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.859 -0500", hash_original_method = "D024EAB4EE7007F22F93D8BE399D2ED2", hash_generated_method = "16C0248F777E57593B3FA01DE6E2B23C")
     
 public DocumentType getDoctype() {
@@ -429,6 +424,7 @@ public DocumentType getDoctype() {
         return null;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.861 -0500", hash_original_method = "59978D20A08E2A3D10080AFCDAEC6A5E", hash_generated_method = "62FF05BA0DE7E633D67E5B98D95C93B5")
     
 public Element getDocumentElement() {
@@ -441,6 +437,7 @@ public Element getDocumentElement() {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.863 -0500", hash_original_method = "F4A17E55F2C93FA371B29DDF570BB5F6", hash_generated_method = "0F5C189FAAEA52CA318332C012FF1B32")
     
 public Element getElementById(String elementId) {
@@ -449,6 +446,7 @@ public Element getElementById(String elementId) {
         return (root == null ? null : root.getElementById(elementId));
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.865 -0500", hash_original_method = "6E8835CC5AA6D9440E7C33D346671E0B", hash_generated_method = "168E7265B92B25940BE256C44126574B")
     
 public NodeList getElementsByTagName(String name) {
@@ -457,6 +455,7 @@ public NodeList getElementsByTagName(String name) {
         return result;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.868 -0500", hash_original_method = "A5BCB04504E6AD1A3895B6FBC1B390B7", hash_generated_method = "564D369733C1D7372018653373C517B0")
     
 public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
@@ -465,12 +464,14 @@ public NodeList getElementsByTagNameNS(String namespaceURI, String localName) {
         return result;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.871 -0500", hash_original_method = "871220F29645F989F5FF83627B59D2B9", hash_generated_method = "DF6F69AC905886EBB87859BE95B4DCD1")
     
 public DOMImplementation getImplementation() {
         return domImplementation;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.873 -0500", hash_original_method = "3823D9F624F2EC5FAA072B7BE8806F96", hash_generated_method = "4822B8A7C06D73334A43C4F1DE616B84")
     
 @Override
@@ -478,6 +479,7 @@ public DOMImplementation getImplementation() {
         return "#document";
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.875 -0500", hash_original_method = "043CCE8DE1A8362BF53702E45F3637E9", hash_generated_method = "B13708E24B8804412251FF767ACDDE04")
     
 @Override
@@ -503,24 +505,28 @@ public DOMImplementation getImplementation() {
         return super.insertChildAt(toInsert, index);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.880 -0500", hash_original_method = "523640531DE4ABEBCC885A0C8EFFAA8E", hash_generated_method = "61B43AF77696F8245AC8BEDFC2783D9E")
     
 @Override public String getTextContent() {
         return null;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.882 -0500", hash_original_method = "94C9917BD9FB417B21D37D438D58D41C", hash_generated_method = "706E556FB08BB6E7A4BABC1C8F5C630E")
     
 public String getInputEncoding() {
         return inputEncoding;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.884 -0500", hash_original_method = "54494C811BAA1F5B46191C70DF542771", hash_generated_method = "52CC0571C63508D20A0FDEAF20E2DECC")
     
 public String getXmlEncoding() {
         return xmlEncoding;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.887 -0500", hash_original_method = "A9BBCA9526831CCA3B1BE6D8EEF33ABE", hash_generated_method = "A5BCF2FBACC90DCFA7095DA841949981")
     
 public boolean getXmlStandalone() {
@@ -533,6 +539,7 @@ public void setXmlStandalone(boolean xmlStandalone) {
         this.xmlStandalone = xmlStandalone;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.891 -0500", hash_original_method = "BC354AC833FDCF3905B7FEDC7BFD541D", hash_generated_method = "571BDA5666B65F28D5766911A4647F9A")
     
 public String getXmlVersion() {
@@ -545,6 +552,7 @@ public void setXmlVersion(String xmlVersion) {
         this.xmlVersion = xmlVersion;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.895 -0500", hash_original_method = "338EEC38209BE0DB329E33E9EDD7ED88", hash_generated_method = "A4E39CC48AEA5FCA3091EA7D7F612D52")
     
 public boolean getStrictErrorChecking() {
@@ -557,6 +565,7 @@ public void setStrictErrorChecking(boolean strictErrorChecking) {
         this.strictErrorChecking = strictErrorChecking;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.899 -0500", hash_original_method = "2433E48CE07A4EB6DFAAA40EF72A0853", hash_generated_method = "CBC03157E2506B8B8D8D9DCF0AFFA92F")
     
 public String getDocumentURI() {
@@ -569,6 +578,7 @@ public void setDocumentURI(String documentUri) {
         this.documentUri = documentUri;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.904 -0500", hash_original_method = "9C5D9FE4294F6D7509E6E0C2DA50CF2D", hash_generated_method = "5DF89564672A342EA7D75930BF90EBA7")
     
 public DOMConfiguration getDomConfig() {
@@ -593,6 +603,7 @@ public void normalizeDocument() {
      * Returns a map with the user data objects attached to the specified node.
      * This map is readable and writable.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.908 -0500", hash_original_method = "83962F2DF698AAA6D760C50C082C5A3C", hash_generated_method = "83962F2DF698AAA6D760C50C082C5A3C")
     
 Map<String, UserData> getUserDataMap(NodeImpl node) {
@@ -611,6 +622,7 @@ Map<String, UserData> getUserDataMap(NodeImpl node) {
      * Returns a map with the user data objects attached to the specified node.
      * The returned map may be read-only.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:20.911 -0500", hash_original_method = "8B5F30F59CCBC9322DB0F048DEF01A52", hash_generated_method = "8B5F30F59CCBC9322DB0F048DEF01A52")
     
 Map<String, UserData> getUserDataMapForRead(NodeImpl node) {
@@ -622,7 +634,6 @@ Map<String, UserData> getUserDataMapForRead(NodeImpl node) {
                 ? Collections.<String, UserData>emptyMap()
                 : userDataMap;
     }
-
     
 }
 

@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-
-
-
-
-
 public final class GpsStatus {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.817 -0500", hash_original_field = "49232C74E6665CFDA35F271FDDD12289", hash_generated_field = "9525E23D06AB56F41AB5F5DADBC87DF3")
 
@@ -36,8 +31,8 @@ public final class GpsStatus {
     private GpsSatellite mSatellites[] = new GpsSatellite[NUM_SATELLITES];
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.273 -0400", hash_original_field = "2DF85302EF31B22A6E1E6CB995BF0173", hash_generated_field = "4E2BE773D59F171305B1D8BC86C6191A")
 
-    private Iterable<GpsSatellite> mSatelliteList = new Iterable<GpsSatellite>() {        
-        @DSModeled(DSC.SAFE)
+    private Iterable<GpsSatellite> mSatelliteList = new Iterable<GpsSatellite>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:35.273 -0400", hash_original_method = "9983CD5442E4C518DD699220FBA30311", hash_generated_method = "D802BB52D632FD31E6502E4338BAE5D2")
         public Iterator<GpsSatellite> iterator() {
             Iterator<GpsSatellite> varB4EAC82CA7396A68D541C85D26508E83_399552892 = null; 
@@ -45,9 +40,7 @@ public final class GpsStatus {
             varB4EAC82CA7396A68D541C85D26508E83_399552892.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_399552892;
             
-            
         }
-
         
 };
 
@@ -91,11 +84,9 @@ synchronized void setStatus(int svCount, int[] prns, float[] snrs,
             }
         }
     }
-
     
     private final class SatelliteIterator implements Iterator<GpsSatellite> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.824 -0500", hash_original_field = "6B49F34EB8B8F48FA910BB6FA923837E", hash_generated_field = "A2118CDC10EB9E5F1F9C0A975C1188EF")
-
 
         private GpsSatellite[] mSatellites;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.827 -0500", hash_original_field = "53702B6348E11EAA55A0AB4A37AFE1D9", hash_generated_field = "53702B6348E11EAA55A0AB4A37AFE1D9")
@@ -136,11 +127,8 @@ public GpsSatellite next() {
 public void remove() {
             throw new UnsupportedOperationException();
         }
-
         
     }
-
-
     
     public interface Listener {
         
@@ -157,6 +145,7 @@ public void remove() {
      * Since this method is only used within {@link LocationManager#getGpsStatus},
      * it does not need to be synchronized.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.865 -0500", hash_original_method = "C95E5E3E266CC24D44E0C8A907AC47BF", hash_generated_method = "C95E5E3E266CC24D44E0C8A907AC47BF")
     
 void setStatus(GpsStatus status) {
@@ -179,6 +168,9 @@ void setTimeToFirstFix(int ttff) {
      *
      * @return time to first fix in milliseconds
      */
+    @DSComment("GPS status inquiry")
+    @DSSpec(DSCat.LOCATION)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.869 -0500", hash_original_method = "75FBD0BC51265BCFA2480910110E8F36", hash_generated_method = "30B430B55C77B02A9FBB5B23D6213947")
     
 public int getTimeToFirstFix() {
@@ -191,6 +183,7 @@ public int getTimeToFirstFix() {
      *
      * @return the list of satellites
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.871 -0500", hash_original_method = "8623867703A7BB23EDE8EB2AB29E2B88", hash_generated_method = "C088CB919884494187C652A2575B61CC")
     
 public Iterable<GpsSatellite> getSatellites() {
@@ -203,6 +196,7 @@ public Iterable<GpsSatellite> getSatellites() {
      *
      * @return the maximum number of satellites
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.873 -0500", hash_original_method = "30B567DEF49ED207BED02E25B8D7701A", hash_generated_method = "0F1BF08BACC5EBC7335C7957322E860B")
     
 public int getMaxSatellites() {

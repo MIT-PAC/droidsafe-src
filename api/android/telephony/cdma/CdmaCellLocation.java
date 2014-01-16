@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Bundle;
 import android.telephony.CellLocation;
 
-
-
-
-
 public class CdmaCellLocation extends CellLocation {
 
     /**
@@ -38,7 +34,6 @@ private static boolean equalsHandlesNulls(Object a, Object b) {
 
     private int mBaseStationLongitude = INVALID_LAT_LONG;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.338 -0500", hash_original_field = "1C3D2A2E0A02FAC6C32003C68BDB416D", hash_generated_field = "5B31DE8CC89DD13B11EA69E8D17F6B69")
-
 
     private int mSystemId = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.342 -0500", hash_original_field = "99E5913F52142C86A537ABB02FD4C95D", hash_generated_field = "61B4BCE8DF023A8A81D64AB2D58B0D50")
@@ -76,6 +71,7 @@ public CdmaCellLocation(Bundle bundle) {
     /**
      * @return cdma base station identification number, -1 if unknown
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.353 -0500", hash_original_method = "5BA2DB973405907BCB7576020C4BB767", hash_generated_method = "B6E0DF355EB8A553E136B7CE28C8F20A")
     
 public int getBaseStationId() {
@@ -85,6 +81,7 @@ public int getBaseStationId() {
     /**
      * @return cdma base station latitude, Integer.MAX_VALUE if unknown
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.356 -0500", hash_original_method = "8D32771FFADF2E37F4C4C4E7BB2945F8", hash_generated_method = "D01FD695044C5CF144C02ED4988FC0CB")
     
 public int getBaseStationLatitude() {
@@ -94,6 +91,7 @@ public int getBaseStationLatitude() {
     /**
      * @return cdma base station longitude, Integer.MAX_VALUE if unknown
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.359 -0500", hash_original_method = "B2E759A184D0C15083668122E08B0641", hash_generated_method = "C51EF04CAB8F8FD62698DF135133A2C2")
     
 public int getBaseStationLongitude() {
@@ -103,6 +101,7 @@ public int getBaseStationLongitude() {
     /**
      * @return cdma system identification number, -1 if unknown
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.363 -0500", hash_original_method = "E5E4F22C1EB64E5BA2863333F6C891A3", hash_generated_method = "318DA97F6722F5CBE558371991B6EC9C")
     
 public int getSystemId() {
@@ -112,6 +111,7 @@ public int getSystemId() {
     /**
      * @return cdma network identification number, -1 if unknown
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:50.365 -0500", hash_original_method = "909C93F66AD557988A123F548D8C31FC", hash_generated_method = "3C8DAA33B7EF9A3BB4D25A7A63500EE0")
     
 public int getNetworkId() {

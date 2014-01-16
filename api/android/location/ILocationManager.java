@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.827 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.827 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.830 -0500", hash_original_method = "C0821E6A5255491206B2EFC6C4EB022C", hash_generated_method = "FC719B38411B7367D58109BD0843C9C8")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.830 -0500", hash_original_method = "C0821E6A5255491206B2EFC6C4EB022C", hash_generated_method = "FC719B38411B7367D58109BD0843C9C8")
             
 public java.util.List<java.lang.String> getAllProviders() throws android.os.RemoteException
 {
@@ -81,7 +83,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.833 -0500", hash_original_method = "2397F212ABA8C21D905B6D7D8B121F1E", hash_generated_method = "87ECD498E2CF942F2C50F7E62FF80036")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.833 -0500", hash_original_method = "2397F212ABA8C21D905B6D7D8B121F1E", hash_generated_method = "87ECD498E2CF942F2C50F7E62FF80036")
             
 public java.util.List<java.lang.String> getProviders(android.location.Criteria criteria, boolean enabledOnly) throws android.os.RemoteException
 {
@@ -108,7 +111,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.836 -0500", hash_original_method = "5D9097856CC334CCD4DD2A2D4A212E00", hash_generated_method = "DD6A4EC3335D5406EEF613ABB3A0ABB4")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.836 -0500", hash_original_method = "5D9097856CC334CCD4DD2A2D4A212E00", hash_generated_method = "DD6A4EC3335D5406EEF613ABB3A0ABB4")
             
 public java.lang.String getBestProvider(android.location.Criteria criteria, boolean enabledOnly) throws android.os.RemoteException
 {
@@ -135,7 +139,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.839 -0500", hash_original_method = "3AE2094B951586968F7F41D089D7E47A", hash_generated_method = "12A106BE312C2F8556AABF12A7605725")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.839 -0500", hash_original_method = "3AE2094B951586968F7F41D089D7E47A", hash_generated_method = "12A106BE312C2F8556AABF12A7605725")
             
 public boolean providerMeetsCriteria(java.lang.String provider, android.location.Criteria criteria) throws android.os.RemoteException
 {
@@ -264,7 +269,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.854 -0500", hash_original_method = "98B83E363897B616D7D3F082F44F2D0C", hash_generated_method = "777ABA746CFF035E9723DD6024F3D7A8")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.854 -0500", hash_original_method = "98B83E363897B616D7D3F082F44F2D0C", hash_generated_method = "777ABA746CFF035E9723DD6024F3D7A8")
             
 public boolean addGpsStatusListener(android.location.IGpsStatusListener listener) throws android.os.RemoteException
 {
@@ -284,7 +290,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.857 -0500", hash_original_method = "29A243B324F98101DD594847221748B4", hash_generated_method = "B1451D00FFE7CC8FB6D143EF3FB387C0")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.857 -0500", hash_original_method = "29A243B324F98101DD594847221748B4", hash_generated_method = "B1451D00FFE7CC8FB6D143EF3FB387C0")
             
 public void removeGpsStatusListener(android.location.IGpsStatusListener listener) throws android.os.RemoteException
 {
@@ -303,7 +310,8 @@ _data.recycle();
 }
 // for reporting callback completion
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.859 -0500", hash_original_method = "F02DC28371AAB51C29192A7A1A6F627E", hash_generated_method = "762063B50B5FE93F73FD305EC704489F")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.859 -0500", hash_original_method = "F02DC28371AAB51C29192A7A1A6F627E", hash_generated_method = "762063B50B5FE93F73FD305EC704489F")
             
 public void locationCallbackFinished(android.location.ILocationListener listener) throws android.os.RemoteException
 {
@@ -320,7 +328,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.862 -0500", hash_original_method = "CCF773B16DAF1A5CE8FCB9A7503FF2EA", hash_generated_method = "65E944A8045983421148FC31A4141DA2")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.862 -0500", hash_original_method = "CCF773B16DAF1A5CE8FCB9A7503FF2EA", hash_generated_method = "65E944A8045983421148FC31A4141DA2")
             
 public boolean sendExtraCommand(java.lang.String provider, java.lang.String command, android.os.Bundle extras) throws android.os.RemoteException
 {
@@ -426,7 +435,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.873 -0500", hash_original_method = "D37CE27A6627CE482E63A2B351273E94", hash_generated_method = "512BA3F77FD2EFDB7B830FE6B26C6368")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.873 -0500", hash_original_method = "D37CE27A6627CE482E63A2B351273E94", hash_generated_method = "512BA3F77FD2EFDB7B830FE6B26C6368")
             
 public boolean isProviderEnabled(java.lang.String provider) throws android.os.RemoteException
 {
@@ -518,7 +528,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.884 -0500", hash_original_method = "2DF226641C501E2DF3982B08ACBDFB2C", hash_generated_method = "CB0AED64C2E34BE831C7A0EF05EAA592")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.884 -0500", hash_original_method = "2DF226641C501E2DF3982B08ACBDFB2C", hash_generated_method = "CB0AED64C2E34BE831C7A0EF05EAA592")
             
 public java.lang.String getFromLocation(double latitude, double longitude, int maxResults, android.location.GeocoderParams params, java.util.List<android.location.Address> addrs) throws android.os.RemoteException
 {
@@ -548,7 +559,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.888 -0500", hash_original_method = "5DADE8908487DDF7E2BA674715DF38C6", hash_generated_method = "3654563F6847250746726F6AB6CFCC74")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.888 -0500", hash_original_method = "5DADE8908487DDF7E2BA674715DF38C6", hash_generated_method = "3654563F6847250746726F6AB6CFCC74")
             
 public java.lang.String getFromLocationName(java.lang.String locationName, double lowerLeftLatitude, double lowerLeftLongitude, double upperRightLatitude, double upperRightLongitude, int maxResults, android.location.GeocoderParams params, java.util.List<android.location.Address> addrs) throws android.os.RemoteException
 {
@@ -607,7 +619,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.894 -0500", hash_original_method = "4DB798D13E868A9E5524A40067A078CE", hash_generated_method = "AD814CC531F101D237971A04E0F38706")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.894 -0500", hash_original_method = "4DB798D13E868A9E5524A40067A078CE", hash_generated_method = "AD814CC531F101D237971A04E0F38706")
             
 public void removeTestProvider(java.lang.String provider) throws android.os.RemoteException
 {
@@ -624,7 +637,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.897 -0500", hash_original_method = "E87965F36D9699870FA61F47CC45832C", hash_generated_method = "B759FDDD068B03971143F272F7DAC70B")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.897 -0500", hash_original_method = "E87965F36D9699870FA61F47CC45832C", hash_generated_method = "B759FDDD068B03971143F272F7DAC70B")
             
 public void setTestProviderLocation(java.lang.String provider, android.location.Location loc) throws android.os.RemoteException
 {
@@ -648,7 +662,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.899 -0500", hash_original_method = "07F4A5EDBE4507C88E05F1E69937F59E", hash_generated_method = "D15DF376A181A1E25E69FC9DAAA8ADE8")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.899 -0500", hash_original_method = "07F4A5EDBE4507C88E05F1E69937F59E", hash_generated_method = "D15DF376A181A1E25E69FC9DAAA8ADE8")
             
 public void clearTestProviderLocation(java.lang.String provider) throws android.os.RemoteException
 {
@@ -665,7 +680,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.902 -0500", hash_original_method = "8B62FDF312787A591978F93156A3670B", hash_generated_method = "BD1FAF3B0BEA2E6BD8AE2EAD50BD64E5")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.902 -0500", hash_original_method = "8B62FDF312787A591978F93156A3670B", hash_generated_method = "BD1FAF3B0BEA2E6BD8AE2EAD50BD64E5")
             
 public void setTestProviderEnabled(java.lang.String provider, boolean enabled) throws android.os.RemoteException
 {
@@ -683,7 +699,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.904 -0500", hash_original_method = "F7E11C1B9FB348C434B5298523BF8B45", hash_generated_method = "48AFE355EEE83D3A65F2D04660B897A6")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.904 -0500", hash_original_method = "F7E11C1B9FB348C434B5298523BF8B45", hash_generated_method = "48AFE355EEE83D3A65F2D04660B897A6")
             
 public void clearTestProviderEnabled(java.lang.String provider) throws android.os.RemoteException
 {
@@ -700,7 +717,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.907 -0500", hash_original_method = "13C2636743B7D3CB2E90FDE593203174", hash_generated_method = "BBCDBCD8E40C23168FA4A45F63D040C9")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.907 -0500", hash_original_method = "13C2636743B7D3CB2E90FDE593203174", hash_generated_method = "BBCDBCD8E40C23168FA4A45F63D040C9")
             
 public void setTestProviderStatus(java.lang.String provider, int status, android.os.Bundle extras, long updateTime) throws android.os.RemoteException
 {
@@ -726,7 +744,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.909 -0500", hash_original_method = "3BD17C739C653288AE432E00A19B2936", hash_generated_method = "7473A04F59F44EA861F1CC83565C6930")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.909 -0500", hash_original_method = "3BD17C739C653288AE432E00A19B2936", hash_generated_method = "7473A04F59F44EA861F1CC83565C6930")
             
 public void clearTestProviderStatus(java.lang.String provider) throws android.os.RemoteException
 {
@@ -745,7 +764,8 @@ _data.recycle();
 }
 // for NI support
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.912 -0500", hash_original_method = "13C4B3EC0B5D91128701C302A6E283C6", hash_generated_method = "BC55F5739F1F77D3E0061B6B3D277852")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.912 -0500", hash_original_method = "13C4B3EC0B5D91128701C302A6E283C6", hash_generated_method = "BC55F5739F1F77D3E0061B6B3D277852")
             
 public boolean sendNiResponse(int notifId, int userResponse) throws android.os.RemoteException
 {
@@ -855,13 +875,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.789 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.LOCATION_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.789 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.799 -0500", hash_original_method = "AB61A075AE242D91D53C4E2823482495", hash_generated_method = "96B42CB6376E569B9365F7AAF7A5EBE8")
+@DSSink({DSSinkKind.LOCATION_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:59.799 -0500", hash_original_method = "AB61A075AE242D91D53C4E2823482495", hash_generated_method = "96B42CB6376E569B9365F7AAF7A5EBE8")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
@@ -1354,7 +1376,6 @@ public void removeUpdatesPI(android.app.PendingIntent intent) throws android.os.
 public boolean addGpsStatusListener(android.location.IGpsStatusListener listener) throws android.os.RemoteException;
 public void removeGpsStatusListener(android.location.IGpsStatusListener listener) throws android.os.RemoteException;
 
-
 public void locationCallbackFinished(android.location.ILocationListener listener) throws android.os.RemoteException;
 public boolean sendExtraCommand(java.lang.String provider, java.lang.String command, android.os.Bundle extras) throws android.os.RemoteException;
 public void addProximityAlert(double latitude, double longitude, float distance, long expiration, android.app.PendingIntent intent) throws android.os.RemoteException;
@@ -1362,9 +1383,6 @@ public void removeProximityAlert(android.app.PendingIntent intent) throws androi
 public android.os.Bundle getProviderInfo(java.lang.String provider) throws android.os.RemoteException;
 public boolean isProviderEnabled(java.lang.String provider) throws android.os.RemoteException;
 public android.location.Location getLastKnownLocation(java.lang.String provider) throws android.os.RemoteException;
-
-
-
 
 public void reportLocation(android.location.Location location, boolean passive) throws android.os.RemoteException;
 public boolean geocoderIsPresent() throws android.os.RemoteException;
@@ -1378,7 +1396,6 @@ public void setTestProviderEnabled(java.lang.String provider, boolean enabled) t
 public void clearTestProviderEnabled(java.lang.String provider) throws android.os.RemoteException;
 public void setTestProviderStatus(java.lang.String provider, int status, android.os.Bundle extras, long updateTime) throws android.os.RemoteException;
 public void clearTestProviderStatus(java.lang.String provider) throws android.os.RemoteException;
-
 
 public boolean sendNiResponse(int notifId, int userResponse) throws android.os.RemoteException;
 }

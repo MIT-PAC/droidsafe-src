@@ -20,11 +20,6 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.DerInputStream;
 import org.apache.harmony.security.x509.DNParser;
 
-
-
-
-
-
 public final class Name {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.388 -0500", hash_original_field = "E7AEB4B69F3F0B113B0771D3CC8C087B", hash_generated_field = "292A5C4C3AF0A6F5B034171E032DDEFA")
 
@@ -34,12 +29,14 @@ public final class Name {
 
     public static final ASN1SequenceOf ASN1 = new ASN1SequenceOf(ASN1_RDN) {
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.391 -0500", hash_original_method = "AE12B5F4C720C4DD20E3FB3F6A6065AA", hash_generated_method = "EE3D2EDCF166EEA81DE3CFE1F7BB50EE")
         
 public Object getDecodedObject(BerInputStream in) {
             return new Name((List<List<AttributeTypeAndValue>>) in.content);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.393 -0500", hash_original_method = "016399535C7822D693ADBCE49E7AA104", hash_generated_method = "624FBB7CDC759BB834C832F6B4D09013")
         
 public Collection getValues(Object object) {
@@ -106,6 +103,7 @@ private Name(List<List<AttributeTypeAndValue>> rdn) {
      *
      * @return equivalent X500Principal object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.377 -0500", hash_original_method = "0542B71517FD35CAEA3075D7EB945221", hash_generated_method = "FACAF1712D8A1F2F2E6150BC234BD5E8")
     
 public X500Principal getX500Principal(){
@@ -119,6 +117,7 @@ public X500Principal getX500Principal(){
      * @param format one of X500Principal.CANONICAL, X500Principal.RFC1779, or
      *     X500Principal.RFC2253, case insensitive
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.380 -0500", hash_original_method = "5BEC09DB13BD8A96A72F05D9AA4FB5FA", hash_generated_method = "7E2085EC43237AA4D9771CF476A231D4")
     
 public String getName(String format) {
@@ -229,6 +228,7 @@ private String getName0(String format) {
      *
      * @return return encoding, no copying is performed
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.385 -0500", hash_original_method = "2981EA1A601F56A7B701653790363606", hash_generated_method = "6169E38820F7CA96C774C4D5BCA28D6D")
     
 public byte[] getEncoded() {

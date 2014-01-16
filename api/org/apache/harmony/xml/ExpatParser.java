@@ -23,44 +23,28 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.ext.LexicalHandler;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class ExpatParser {
-
     
-    @DSModeled(DSC.SAFE)
     private static int createEntityParser(int parentPointer, String context) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void releaseParser(int pointer) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void staticInitialize(String emptyString) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int line(int pointer) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int column(int pointer) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int cloneAttributes(int pointer, int attributeCount) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -86,10 +70,8 @@ static InputStream openUrl(String url) throws IOException {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.152 -0500", hash_original_field = "78D8EC56D336F89A6014B039F0C2BF38", hash_generated_field = "A64DAE236D33721DE2FB44FFC0928678")
 
-
     private static final int BUFFER_SIZE = 8096;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.178 -0500", hash_original_field = "3B7617F29A6438A457F851ED22816624", hash_generated_field = "A08506C5912D951D1976A5B09A1419D6")
-
 
     private static final String OUTSIDE_START_ELEMENT
             = "Attributes can only be used within the scope of startElement().";
@@ -104,11 +86,9 @@ static InputStream openUrl(String url) throws IOException {
     private static final int TIMEOUT = 20 * 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.155 -0500", hash_original_field = "AB07E4221CA20C9A461D941058B9A5BE", hash_generated_field = "73E4D9A47F5F138CD4D128E1EA14902F")
 
-
     /** Pointer to XML_Parser instance. */
     private int pointer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.157 -0500", hash_original_field = "0E9848D6D30DA7AACB5B6B5BA5A1B1C3", hash_generated_field = "7AE5C3866E266124176520F985884913")
-
 
     private boolean inStartElement = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.159 -0500", hash_original_field = "3E65C4577E8EDD126DE0C57010978492", hash_generated_field = "7130FCC160E4FC4EA6A7052FB1FDD986")
@@ -119,14 +99,11 @@ static InputStream openUrl(String url) throws IOException {
     private int attributePointer = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.163 -0500", hash_original_field = "AB8B6DE975C24CE67BCB33C20D21DF2E", hash_generated_field = "831B23B1055E5A04D60D35B3B396FFC8")
 
-
     private final Locator locator = new ExpatLocator();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.166 -0500", hash_original_field = "2F984065B6308DC7EE31E580785E5F98", hash_generated_field = "703C38EABA8EBF65E6BC35CB8C8EF9C3")
 
-
     private  ExpatReader xmlReader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.168 -0500", hash_original_field = "A787D4782D28CB658656F9CEA39140B8", hash_generated_field = "60BF385FD0C88E4BC32EFD3E71F5528C")
-
 
     private  String publicId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.171 -0500", hash_original_field = "EA33D5D9FADC1DE12A306FAB26B3A5DA", hash_generated_field = "D8573F28EF4599A1790219EF1708D9C9")
@@ -134,10 +111,8 @@ static InputStream openUrl(String url) throws IOException {
     private  String systemId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.173 -0500", hash_original_field = "C7941A2E59CC2DF1A97D47295C728725", hash_generated_field = "AA03A19AA54A465901EEA798BB232EAE")
 
-
     private  String encoding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.176 -0500", hash_original_field = "136D7AF3EFC0289E090FCAAF885FEC7E", hash_generated_field = "F3F026228715567E77DB92EA66C8CF66")
-
 
     private final ExpatAttributes attributes = new CurrentAttributes();
 
@@ -195,7 +170,6 @@ private ExpatParser(String encoding, ExpatReader xmlReader, int pointer,
     	return getTaintInt();
     }
 
-
     /**
      * Called at the start of an element.
      *
@@ -208,7 +182,8 @@ private ExpatParser(String encoding, ExpatReader xmlReader, int pointer,
      *  a separate pointer so we can detach it from the parser instance
      * @param attributeCount number of attributes
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.198 -0500", hash_original_method = "6539B8063CABFAD0D8EBA84883A1CF66", hash_generated_method = "6539B8063CABFAD0D8EBA84883A1CF66")
+    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.198 -0500", hash_original_method = "6539B8063CABFAD0D8EBA84883A1CF66", hash_generated_method = "6539B8063CABFAD0D8EBA84883A1CF66")
     
 void startElement(String uri, String localName, String qName,
             int attributePointer, int attributeCount) throws SAXException {
@@ -277,7 +252,8 @@ void endCdata() throws SAXException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.210 -0500", hash_original_method = "C8BFB5467C9B61347AC273E622412632", hash_generated_method = "C8BFB5467C9B61347AC273E622412632")
+    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.210 -0500", hash_original_method = "C8BFB5467C9B61347AC273E622412632", hash_generated_method = "C8BFB5467C9B61347AC273E622412632")
     
 void startNamespace(String prefix, String uri)
             throws SAXException {
@@ -296,7 +272,8 @@ void endNamespace(String prefix) throws SAXException {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.215 -0500", hash_original_method = "08337DADA79B09679000AC18FB47E35A", hash_generated_method = "08337DADA79B09679000AC18FB47E35A")
+    /*package*/ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.215 -0500", hash_original_method = "08337DADA79B09679000AC18FB47E35A", hash_generated_method = "08337DADA79B09679000AC18FB47E35A")
     
 void startDtd(String name, String publicId, String systemId)
             throws SAXException {
@@ -524,7 +501,6 @@ void append(String xml) throws SAXException {
     	addTaint(isFinal);
     }
 
-
     /**
      * Appends part of an XML document. This parser will parse the given XML to
      * the extent possible and dispatch to the appropriate methods.
@@ -555,7 +531,6 @@ void append(char[] xml, int offset, int length)
     	addTaint(offset);
     	addTaint(length);
     }
-
 
     /**
      * Appends part of an XML document. This parser will parse the given XML to
@@ -600,7 +575,6 @@ void append(byte[] xml, int offset, int length)
     	addTaint(offset);
     	addTaint(length);
     }
-
 
     /**
      * Parses an XML document from the given input stream.
@@ -696,15 +670,12 @@ void finish() throws SAXException {
             throw new ParseException(e.getMessage(), this.locator);
         }
     }
-
     
     private static class ClonedAttributes extends ExpatAttributes {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.310 -0500", hash_original_field = "9C7FE2EDC7BBB91A509A3E65C3C4981F", hash_generated_field = "9EEF20496C35220A780FB0DBE8DDDF03")
 
-
         private static final Attributes EMPTY = new ClonedAttributes(0, 0, 0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.313 -0500", hash_original_field = "585CBF428290485D7A9A443087F4DAAB", hash_generated_field = "F1200750FD64399CAB1B5625087F1715")
-
 
         private  int parserPointer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.315 -0500", hash_original_field = "AB07E4221CA20C9A461D941058B9A5BE", hash_generated_field = "0AC27A3F0A4FBCD5C9DE4F17ACD0E1AC")
@@ -730,6 +701,7 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             this.length = length;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.323 -0500", hash_original_method = "81345E38E6C55A28DE606E0BCA6E5F93", hash_generated_method = "681017A548FEFA432FE739F64FA9E25D")
         
 @Override
@@ -737,6 +709,7 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             return this.parserPointer;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.325 -0500", hash_original_method = "8BF0A90E7356097362ADB7AB9898D2BC", hash_generated_method = "C6E9E158EB44C108284F5F33B4C4AA0F")
         
 @Override
@@ -744,6 +717,7 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             return pointer;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.328 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "10FC3BA0162E7D76668B0A5170B92D2D")
         
 @Override
@@ -764,8 +738,6 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             }
         }
     }
-
-
     
     private class ExpatLocator implements Locator {
         
@@ -775,24 +747,28 @@ private ClonedAttributes(int parserPointer, int pointer, int length) {
             //Synthesized constructor
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.335 -0500", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "C2B64346C205A83C958059FEF62D1E97")
         
 public String getPublicId() {
             return publicId;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.337 -0500", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "6A03DC8D49FB90AC37FD320CD622E272")
         
 public String getSystemId() {
             return systemId;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.340 -0500", hash_original_method = "9A9541F7496758CF9181B7D5DBEDC898", hash_generated_method = "7790210D08DC90491F85751219830EFB")
         
 public int getLineNumber() {
             return line();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.343 -0500", hash_original_method = "4EEF522BB99544999D89F5949A6FB044", hash_generated_method = "9420ACC58BCBBC9CFF044EC9217F2F43")
         
 public int getColumnNumber() {
@@ -807,11 +783,8 @@ public int getColumnNumber() {
                 + ", line: " + getLineNumber()
                 + ", column: " + getColumnNumber() + "]";
         }
-
         
     }
-
-
     
     private class CurrentAttributes extends ExpatAttributes {
         
@@ -821,6 +794,7 @@ public int getColumnNumber() {
             //Synthesized constructor
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.350 -0500", hash_original_method = "A89638ADC5A1EBA87157983FC792900F", hash_generated_method = "F217EF76DE30015EAE3E935AEF47C123")
         
 @Override
@@ -828,6 +802,7 @@ public int getColumnNumber() {
             return pointer;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.353 -0500", hash_original_method = "13948788E535A0F103A62D341F619BEF", hash_generated_method = "19A171051D6E81FFD2B0A6075AAD56E5")
         
 @Override
@@ -838,6 +813,7 @@ public int getColumnNumber() {
             return attributePointer;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.355 -0500", hash_original_method = "27A61DE39F4EE665DACE4F17911F194F", hash_generated_method = "0EADB694A9EE889EDB586ABA927BD81E")
         
 @Override
@@ -847,11 +823,8 @@ public int getColumnNumber() {
             }
             return attributeCount;
         }
-
         
     }
-
-
     
     private static class ParseException extends SAXParseException {
 
@@ -875,15 +848,11 @@ private static String makeMessage(
 private ParseException(String message, Locator locator) {
             super(makeMessage(message, locator), locator);
         }
-
         
     }
-
-
     
     private static class EntityParser extends ExpatParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.372 -0500", hash_original_field = "CEA439F7416EC0580A35885BBE14AEF7", hash_generated_field = "1AF6664FDB28F42A843891FCC46FCB20")
-
 
         private int depth = 0;
 
@@ -894,6 +863,7 @@ private EntityParser(String encoding, ExpatReader xmlReader,
             super(encoding, xmlReader, pointer, publicId, systemId);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.377 -0500", hash_original_method = "046BB8109CA52E8AB8C918C4992DC8E2", hash_generated_method = "8096A34B427AF4FCCD3AC387A564BBB1")
         
 @Override
@@ -930,7 +900,6 @@ private EntityParser(String encoding, ExpatReader xmlReader,
              * parsing context--our parent is using it.
              */
         }
-
         
     }
 
@@ -956,7 +925,6 @@ private EntityParser(String encoding, ExpatReader xmlReader,
     	//Formerly a native method
     	addTaint(pointer);
     }
-
 
     /**
      * Gets the current line number within the XML file.

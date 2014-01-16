@@ -11,17 +11,11 @@ import java.security.GeneralSecurityException;
 
 import libcore.io.Streams;
 
-
-
-
-
 public class CipherInputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.844 -0500", hash_original_field = "17EB8419073573BCE3A0D064B41698CF", hash_generated_field = "15654AA7FE9DD715F5D7B5D292F8279E")
 
-
     private static final int I_BUFFER_SIZE = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.847 -0500", hash_original_field = "250DADA90730C7EEAE534A8757581875", hash_generated_field = "2FF9F58B969F4213F59ABA296D3A8FC3")
-
 
     private  Cipher cipher;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.849 -0500", hash_original_field = "7E46CBB3D3286318B976675E39568711", hash_generated_field = "DBE86B18DCC7D2F72C0A6792DDA95D4C")
@@ -50,6 +44,8 @@ public class CipherInputStream extends FilterInputStream {
      * @param c
      *            the cipher to process the data with.
      */
+    @DSComment("cipher input stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.858 -0500", hash_original_method = "EC8926C4C5D7C4B05365DF92BFAEAD8D", hash_generated_method = "F12952E0CA8E1854E15DF5DB4C454684")
     
 public CipherInputStream(InputStream is, Cipher c) {
@@ -165,6 +161,8 @@ protected CipherInputStream(InputStream is) {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSComment("no impacts")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.874 -0500", hash_original_method = "6325F2669A2E29C02EEAA5CF85C35B84", hash_generated_method = "4A52BEEDC3B4C19075A88B5C435F3B79")
     
 @Override

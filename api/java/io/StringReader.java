@@ -6,25 +6,17 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class StringReader extends Reader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.754 -0500", hash_original_field = "8D1932428116A452F4A363260F8684E7", hash_generated_field = "787A2B4D426AC144FB23E0D0502FE70E")
 
     private String str;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.756 -0500", hash_original_field = "AA082170A07E47DD757AA0D276241BD9", hash_generated_field = "D9BE4F291B7CF1E403126100EC51CB87")
 
-
     private int markpos = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.758 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
-
     private int pos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.761 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
-
 
     private int count;
 
@@ -36,6 +28,8 @@ public class StringReader extends Reader {
      * @param str
      *            the source string for this reader.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.764 -0500", hash_original_method = "FB44DCC8276A9B32CF15DCC88FC63BEE", hash_generated_method = "6947F25B438E6AE482E8E023AF1349D8")
     
 public StringReader(String str) {
@@ -261,7 +255,6 @@ private void checkNotClosed() throws IOException {
             return charCount;
         }
     }
-
     
 }
 

@@ -28,11 +28,6 @@ import libcore.util.Objects;
 
 import org.apache.harmony.xnet.provider.jsse.OpenSSLSocketImpl;
 
-
-
-
-
-
 final class HttpConnection {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.691 -0500", hash_original_method = "22C5C5E8E87C7BC2DD06DFD6C9827DA4", hash_generated_method = "6F648DB371387AEA053D3E0EDC51F470")
@@ -82,7 +77,6 @@ public static HttpConnection connect(URI uri, Proxy proxy, boolean requiresTunne
     private  Address address;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.672 -0500", hash_original_field = "5019B3EE05D6098E4ECE32F00F7F88CA", hash_generated_field = "8626E3C3C4BFCB66E8863775B28E01CC")
 
-
     private  Socket socket;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.675 -0500", hash_original_field = "219F81106B069BE15533E4B7BAC5527C", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
 
@@ -91,7 +85,6 @@ public static HttpConnection connect(URI uri, Proxy proxy, boolean requiresTunne
 
     private OutputStream outputStream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.679 -0500", hash_original_field = "46B4D17F12A36C17C104C796AAB1EC5A", hash_generated_field = "649CC3E68690FE0D5C49F1CB1C97C793")
-
 
     private SSLSocket unverifiedSocket;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.681 -0500", hash_original_field = "AEF574D1FDB94AB7E47AFE01544C161B", hash_generated_field = "CE8322B162FF12735FB871E7AA8B8BA9")
@@ -145,12 +138,14 @@ public void closeSocketAndStreams() {
         IoUtils.closeQuietly(socket);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.697 -0500", hash_original_method = "8353DEF033DB8B4F652D08F1BE7D5FB2", hash_generated_method = "C85CBCDA24EC8CD174E9D4A52F197AF0")
     
 public void setSoTimeout(int readTimeout) throws SocketException {
         socket.setSoTimeout(readTimeout);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.699 -0500", hash_original_method = "97D9B93978E46D1095C2BFB6FD92F6AE", hash_generated_method = "43F3FA3241C577367335938E6D9AF5C7")
     
 public OutputStream getOutputStream() throws IOException {
@@ -165,6 +160,7 @@ public OutputStream getOutputStream() throws IOException {
         return outputStream;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.702 -0500", hash_original_method = "1360CB9715FEE0D075363C3EF21DD92C", hash_generated_method = "6F7E230249AD89C9E65BB768166689ED")
     
 public InputStream getInputStream() throws IOException {
@@ -188,6 +184,7 @@ public InputStream getInputStream() throws IOException {
         return inputStream;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.704 -0500", hash_original_method = "EA9CBC15CAAA468AF10BBF1CD02918CF", hash_generated_method = "25CEAAC7C1D353A197B84844D34FA4E6")
     
 protected Socket getSocket() {
@@ -209,6 +206,7 @@ public Address getAddress() {
      * TLS extensions and SSL deflate compression. If false, use
      * an SSL3 only fallback mode without compression.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.709 -0500", hash_original_method = "15C1B21595200C1DF5857AC28380107D", hash_generated_method = "AA9A7875A7CD9C0FE0107FD3F0D2029B")
     
 public void setupSecureSocket(SSLSocketFactory sslSocketFactory, boolean tlsTolerant)
@@ -252,6 +250,7 @@ public SSLSocket verifySecureSocketHostname(HostnameVerifier hostnameVerifier)
     /**
      * Return an {@code SSLSocket} if already connected, otherwise null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.713 -0500", hash_original_method = "0390CC00C23D2289E08AFB9047DDDB88", hash_generated_method = "84DEC4F76B1FE416005685F168F0560A")
     
 public SSLSocket getSecureSocketIfConnected() {
@@ -306,7 +305,6 @@ protected boolean isEligibleForRecycling() {
                 && !socket.isInputShutdown()
                 && !socket.isOutputShutdown();
     }
-
     
     public static final class Address {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.722 -0500", hash_original_field = "CA775536D3A7F4013C2E9C464BE24463", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
@@ -363,6 +361,7 @@ public Address(URI uri, Proxy proxy, boolean requiresTunnel) {
             this.socketPort = proxySocketAddress.getPort();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.744 -0500", hash_original_method = "19AE87D83FEEE8E799F844F8A7A84495", hash_generated_method = "1834A10F1CD4537F2A71DE81C5EBDAE9")
         
 public Proxy getProxy() {
@@ -398,11 +397,8 @@ public Proxy getProxy() {
 public HttpConnection connect(int connectTimeout) throws IOException {
             return new HttpConnection(this, connectTimeout);
         }
-
         
     }
-
-
     
 }
 

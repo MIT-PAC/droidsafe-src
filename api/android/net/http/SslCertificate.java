@@ -27,10 +27,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.TextView;
 
-
-
-
-
 public class SslCertificate {
 
     /**
@@ -38,6 +34,7 @@ public class SslCertificate {
      * @param certificate The SSL certificate to store
      * @return A bundle with the certificate stored in it or null if fails
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.438 -0500", hash_original_method = "880873CE7B63CF2F24561F719FB04003", hash_generated_method = "C0608A76EC65887A30B994AFF34FBFF5")
     
 public static Bundle saveState(SslCertificate certificate) {
@@ -279,6 +276,7 @@ private SslCertificate(
      * @return Not-before date from the certificate validity period or
      * "" if none has been set
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.453 -0500", hash_original_method = "86D829D0BCD4BD19D84EADD31DD5FCE1", hash_generated_method = "6B745589B48C817901A3E984E81A2750")
     
 public Date getValidNotBeforeDate() {
@@ -291,6 +289,7 @@ public Date getValidNotBeforeDate() {
      *
      * @deprecated Use {@link #getValidNotBeforeDate()}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.456 -0500", hash_original_method = "E74141FEB26284E4BA15E02DC99CE923", hash_generated_method = "906469760EC9FF7EC54CC2F5572802B4")
     
 @Deprecated
@@ -302,12 +301,12 @@ public Date getValidNotBeforeDate() {
      * @return Not-after date from the certificate validity period or
      * "" if none has been set
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.458 -0500", hash_original_method = "5976F2F67CC4D55E479FF99F5BD66B52", hash_generated_method = "C93E018667540B41F134F29638AC0187")
     
 public Date getValidNotAfterDate() {
         return cloneDate(mValidNotAfter);
     }
-
     
     public class DName {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.484 -0500", hash_original_field = "0A1AE598F4DE402F5AB1E2786E227934", hash_generated_field = "3BD097ADC1AABD13C2B47840D547843E")
@@ -363,6 +362,7 @@ public DName(String dName) {
         /**
          * @return The distinguished name (normally includes CN, O, and OU names)
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.496 -0500", hash_original_method = "CA7B7457EAE364E31ECFC3E240698ADB", hash_generated_method = "608CAB9EC6484E5B39AD95AC3D10630E")
         
 public String getDName() {
@@ -372,6 +372,7 @@ public String getDName() {
         /**
          * @return The Common-name (CN) component of this name
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.498 -0500", hash_original_method = "9443834DD976C880848529D9F73675CC", hash_generated_method = "992C984B3D4EDE2D411418A1EBF2206A")
         
 public String getCName() {
@@ -381,6 +382,7 @@ public String getCName() {
         /**
          * @return The Organization (O) component of this name
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.500 -0500", hash_original_method = "7251BF6AE7EA38B61D97CF2E138787A6", hash_generated_method = "5ECD8CC7AC40046231E5BBD69A55A303")
         
 public String getOName() {
@@ -390,12 +392,12 @@ public String getOName() {
         /**
          * @return The Organizational Unit (OU) component of this name
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.502 -0500", hash_original_method = "372D1A5E33F38EEDF5C6B63F53532F1F", hash_generated_method = "522403B9925D9707FF9DEAFA8F56DC47")
         
 public String getUName() {
             return mUName != null ? mUName : "";
         }
-
         
     }
 
@@ -405,6 +407,7 @@ public String getUName() {
      *
      * @deprecated Use {@link #getValidNotAfterDate()}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:11.460 -0500", hash_original_method = "8855AE273E27E2CAD00A7550F7D75B05", hash_generated_method = "1A425A9CBA12924BA92645C35800760F")
     
 @Deprecated

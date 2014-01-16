@@ -11,11 +11,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public class MinSE extends ParametersHeader implements ExtensionHeader, MinSEHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.425 -0500", hash_original_field = "90F790E32C487DB6ED80B6C9C474A49E", hash_generated_field = "E1530D0326084B5B0CBC7960EB119C5D")
 
@@ -50,6 +45,7 @@ public String encodeBody() {
         return retval;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.441 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "01B37E653FE76FEB916567082AAEE1D8")
     
 public void setValue(String value) throws ParseException {
@@ -70,6 +66,7 @@ public void setValue(String value) throws ParseException {
      * @since JAIN SIP v1.1
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.444 -0500", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "C2DB0E96C56A45B14BA4BCD03EAE8F48")
     
 public int getExpires() {

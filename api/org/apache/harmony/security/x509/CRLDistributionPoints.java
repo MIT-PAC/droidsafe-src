@@ -12,11 +12,6 @@ import org.apache.harmony.security.asn1.ASN1SequenceOf;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class CRLDistributionPoints extends ExtensionValue {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.944 -0500", hash_original_method = "33FB7D6A2B0A75BE58C7076DC6C11F96", hash_generated_method = "FEBE709455336C78CBFB07C9D9F02301")
@@ -24,7 +19,6 @@ public final class CRLDistributionPoints extends ExtensionValue {
 public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
         return (CRLDistributionPoints) ASN1.decode(encoding);
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.859 -0400", hash_original_field = "62B1FBBD0D0E4A202BE41C11512F1F03", hash_generated_field = "102F29B1A82B7676F643B080296B8FC7")
 
@@ -35,6 +29,7 @@ public static CRLDistributionPoints decode(byte[] encoding) throws IOException {
             return new CRLDistributionPoints((List<DistributionPoint>) in.content, in.getEncoded());
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.953 -0500", hash_original_method = "1B1D9906279467E5EA238A1FED425544", hash_generated_method = "09327B39B48E83579DE00714D3580663")
         
 @Override public Collection<?> getValues(Object object) {
@@ -59,6 +54,7 @@ private CRLDistributionPoints(List<DistributionPoint> distributionPoints, byte[]
         this.encoding = encoding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.942 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {
@@ -68,6 +64,7 @@ private CRLDistributionPoints(List<DistributionPoint> distributionPoints, byte[]
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.947 -0500", hash_original_method = "B23CB95A086DE744F33B5369D34A5985", hash_generated_method = "B70AD256691B633712529D48D0DBEFA7")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

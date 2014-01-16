@@ -9,11 +9,6 @@ import gov.nist.javax.sip.header.SIPHeader;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-
-
-
-
-
 public class HeaderIterator implements ListIterator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.040 -0500", hash_original_field = "3C93204531B7E90EE919CA293E960B6C", hash_generated_field = "8B45939C2DCF0A4AAAC1D2D65D70A62B")
 
@@ -67,6 +62,7 @@ public int previousIndex() {
         return index == 0 ? -1 : 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.062 -0500", hash_original_method = "560AF6CD6614E15175ADEE44F5D56698", hash_generated_method = "19B69DB3617938FB59CD656369AEAE99")
     
 public void set(Object header) {
@@ -103,7 +99,6 @@ public boolean hasNext() {
 public boolean hasPrevious() {
         return index == 1;
     }
-
     
 }
 

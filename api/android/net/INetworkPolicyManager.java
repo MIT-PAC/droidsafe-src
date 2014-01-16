@@ -56,14 +56,16 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.481 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.481 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
 /** Control UID policies. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.484 -0500", hash_original_method = "F5900E4FC1E6E083433DA9A50E3DA8F9", hash_generated_method = "F5CE0B303F9D811C9DFA7EAA1712A70F")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.484 -0500", hash_original_method = "F5900E4FC1E6E083433DA9A50E3DA8F9", hash_generated_method = "F5CE0B303F9D811C9DFA7EAA1712A70F")
             
 public void setUidPolicy(int uid, int policy) throws android.os.RemoteException
 {
@@ -81,7 +83,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.487 -0500", hash_original_method = "D2F77A83601324CC33F08FD17E647056", hash_generated_method = "DF41DF3CEB8C4FA5A48F9B256601A53F")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.487 -0500", hash_original_method = "D2F77A83601324CC33F08FD17E647056", hash_generated_method = "DF41DF3CEB8C4FA5A48F9B256601A53F")
             
 public int getUidPolicy(int uid) throws android.os.RemoteException
 {
@@ -101,7 +104,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.489 -0500", hash_original_method = "B9844D92D9F0FDE18E63B5A8061CE066", hash_generated_method = "6A959C261922918A00BBA570CE86BFF4")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.489 -0500", hash_original_method = "B9844D92D9F0FDE18E63B5A8061CE066", hash_generated_method = "6A959C261922918A00BBA570CE86BFF4")
             
 public boolean isUidForeground(int uid) throws android.os.RemoteException
 {
@@ -121,7 +125,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.492 -0500", hash_original_method = "217B7E6A80257783BC0154FFB9062AD0", hash_generated_method = "6607EBD55E8894899EE4E941E1BE2B46")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.492 -0500", hash_original_method = "217B7E6A80257783BC0154FFB9062AD0", hash_generated_method = "6607EBD55E8894899EE4E941E1BE2B46")
             
 public void registerListener(android.net.INetworkPolicyListener listener) throws android.os.RemoteException
 {
@@ -138,7 +143,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.496 -0500", hash_original_method = "13CB24254CFB5C06AEC79035A6D92342", hash_generated_method = "0302D99DF3C292309CFEA4FDA99D1093")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.496 -0500", hash_original_method = "13CB24254CFB5C06AEC79035A6D92342", hash_generated_method = "0302D99DF3C292309CFEA4FDA99D1093")
             
 public void unregisterListener(android.net.INetworkPolicyListener listener) throws android.os.RemoteException
 {
@@ -156,7 +162,8 @@ _data.recycle();
 }
 }
 /** Control network policies atomically. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.499 -0500", hash_original_method = "B234C89B0F7751F5E9F4B34D18F040B2", hash_generated_method = "78C7ECC5CC96490F92C494F1C40331DC")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.499 -0500", hash_original_method = "B234C89B0F7751F5E9F4B34D18F040B2", hash_generated_method = "78C7ECC5CC96490F92C494F1C40331DC")
             
 public void setNetworkPolicies(android.net.NetworkPolicy[] policies) throws android.os.RemoteException
 {
@@ -173,7 +180,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.502 -0500", hash_original_method = "FE4BC10598D04CB1FDAF5F3C362FB674", hash_generated_method = "6F956E87296D405F0FC72B59B6B40EBE")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.502 -0500", hash_original_method = "FE4BC10598D04CB1FDAF5F3C362FB674", hash_generated_method = "6F956E87296D405F0FC72B59B6B40EBE")
             
 public android.net.NetworkPolicy[] getNetworkPolicies() throws android.os.RemoteException
 {
@@ -217,7 +225,8 @@ _data.recycle();
 }
 }
 /** Control if background data is restricted system-wide. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.507 -0500", hash_original_method = "965C77F86EA0A588BDD3C3BB9EBBCCFB", hash_generated_method = "52F7EB507FE1FA0E0A64672CA2AEE121")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.507 -0500", hash_original_method = "965C77F86EA0A588BDD3C3BB9EBBCCFB", hash_generated_method = "52F7EB507FE1FA0E0A64672CA2AEE121")
             
 public void setRestrictBackground(boolean restrictBackground) throws android.os.RemoteException
 {
@@ -253,7 +262,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.512 -0500", hash_original_method = "AB0519972ECDCC0F8A61F037F37779DA", hash_generated_method = "C5C25F830D8B58C6C113391BA0FD8DA9")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.512 -0500", hash_original_method = "AB0519972ECDCC0F8A61F037F37779DA", hash_generated_method = "C5C25F830D8B58C6C113391BA0FD8DA9")
             
 public android.net.NetworkQuotaInfo getNetworkQuotaInfo(android.net.NetworkState state) throws android.os.RemoteException
 {
@@ -316,13 +326,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.466 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.466 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.471 -0500", hash_original_method = "59D8BA3B5CCE64C041ECC36AE80161BE", hash_generated_method = "73C33FF99E07A61A70368D62EC9EF8BE")
+@DSSink({DSSinkKind.NETWORK})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.471 -0500", hash_original_method = "59D8BA3B5CCE64C041ECC36AE80161BE", hash_generated_method = "73C33FF99E07A61A70368D62EC9EF8BE")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

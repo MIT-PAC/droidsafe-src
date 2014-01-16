@@ -6,12 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import droidsafe.runtime.DroidSafeAndroidRuntime;
 
-
-
 public final class Message implements Parcelable {
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     public static Message obtain(){
 		// Original method
 		/*
@@ -93,6 +91,8 @@ public static Message obtain(Handler h, Runnable callback) {
      * @param what  Value to assign to the <em>what</em> member.
      * @return A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.324 -0500", hash_original_method = "E26B7D4E6B35F5234F7DF4974522919A", hash_generated_method = "735878BCF4D4D13F8EC3A8CC8DF1B845")
     
 public static Message obtain(Handler h, int what) {
@@ -111,6 +111,8 @@ public static Message obtain(Handler h, int what) {
      * @param obj  The <em>object</em> method to set.
      * @return  A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.326 -0500", hash_original_method = "DD09B29D12E38FF7883BAB5D6B58243F", hash_generated_method = "48467203DADCBADA8EFADA7691CEBF70")
     
 public static Message obtain(Handler h, int what, Object obj) {
@@ -132,6 +134,8 @@ public static Message obtain(Handler h, int what, Object obj) {
      * @param arg2  The <em>arg2</em> value to set.
      * @return  A Message object from the global pool.
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.329 -0500", hash_original_method = "4DCC15A1D3B41D0AD35502FBE5B811FF", hash_generated_method = "F3CC485A508121FCA56CF2574BB30B5D")
     
 public static Message obtain(Handler h, int what, int arg1, int arg2) {
@@ -143,9 +147,7 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
 
         return m;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public static Message obtain(Handler h, int what, 
             int arg1, int arg2, Object obj){
 		// Original method
@@ -168,7 +170,6 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
     /*package*/ static final int FLAGS_TO_CLEAR_ON_COPY_FROM = FLAGS_RESERVED | FLAG_IN_USE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.305 -0500", hash_original_field = "FF70C662CB92BB1987F6CF4637424D6E", hash_generated_field = "D5B99AC4B86CE940DBBD3CF3FA1D542C")
 
-
     private static final Object sPoolSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.307 -0500", hash_original_field = "C3B98DB7170BE56DC73323FF4F23BC29", hash_generated_field = "3C48422D8BFA116BB318D4BB60A34BBD")
 
@@ -177,7 +178,6 @@ public static Message obtain(Handler h, int what, int arg1, int arg2) {
 
     private static int sPoolSize = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.312 -0500", hash_original_field = "3257F81BBFE679E3360141AA5EA9D518", hash_generated_field = "FB8E412EAB46029C42E8E38ED918C6D9")
-
 
     private static final int MAX_POOL_SIZE = 10;
     public static final Parcelable.Creator<Message> CREATOR
@@ -227,13 +227,13 @@ public Message[] newArray(int size) {
 
     /** Constructor (but the preferred way to get a Message is to call {@link #obtain() Message.obtain()}).
     */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.362 -0500", hash_original_method = "07161C5E5BFC528DA3FC2F6017B16172", hash_generated_method = "C388122C31305A6494A3C73AA60B75A9")
     
 public Message() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void recycle(){
 		// Original method
 		/*
@@ -276,6 +276,7 @@ public void copyFrom(Message o) {
     /**
      * Return the targeted delivery time of this message, in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.338 -0500", hash_original_method = "003296F505672677447BEB837B373395", hash_generated_method = "02D49CA56ECAA0D2FBAA9CCB74889B76")
     
 public long getWhen() {
@@ -296,6 +297,7 @@ public void setTarget(Handler target) {
      * message codes, so you do not need to
      * worry about yours conflicting with other handlers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.342 -0500", hash_original_method = "71A342D68A16A50B25BC4BF2093BFF62", hash_generated_method = "DB4CE288ABA8CC2FF8E21FD5CD6A260A")
     
 public Handler getTarget() {
@@ -310,15 +312,17 @@ public Handler getTarget() {
      * not set, the message will be dispatched to the receiving Handler's
      * {@link Handler#handleMessage(Message Handler.handleMessage())}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.344 -0500", hash_original_method = "BE120AA50B796443E57F262EC015813E", hash_generated_method = "F3037125B1FF2FF11986F79F6A898A18")
     
 public Runnable getCallback() {
         return callback;
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public Bundle getData(){
+	@DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public Bundle getData(){
         return data = new Bundle();
 	}
 
@@ -341,6 +345,8 @@ public Bundle peekData() {
      * @see #getData() 
      * @see #peekData()
      */
+    @DSComment("OS Message")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.351 -0500", hash_original_method = "2A3AF1BEE5D39047FC40D7968EE3828B", hash_generated_method = "E6DE205F5507518F4C757F398D9B9FC5")
     
 public void setData(Bundle data) {
@@ -351,14 +357,14 @@ public void setData(Bundle data) {
      * Sends this Message to the Handler specified by {@link #getTarget}.
      * Throws a null pointer exception if this field has not been set.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.353 -0500", hash_original_method = "2D3F3759D60A7A1CBA79B8F487061097", hash_generated_method = "35E9C435AC941949A3E301FED5BE4231")
     
 public void sendToTarget() {
         target.sendMessage(this);
     }
-
     
-    @DSModeled(DSC.SAFE)
     void clearForRecycle(){
 		// Original method
 		/*
@@ -377,9 +383,7 @@ public void sendToTarget() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     boolean isInUse(){
 		// Original method
 		/*
@@ -389,9 +393,7 @@ public void sendToTarget() {
 		*/
 		return getTaintBoolean();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     void markInUse(){
 		// Original method
 		/*
@@ -401,9 +403,7 @@ public void sendToTarget() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String toString(){
 		// Original method
 		/*
@@ -413,9 +413,7 @@ public void sendToTarget() {
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.SAFE)
     String toString(long now){
 		// Original method
 		/*
@@ -443,9 +441,7 @@ public void sendToTarget() {
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public int describeContents(){
 		// Original method
 		/*
@@ -455,9 +451,8 @@ public void sendToTarget() {
 		*/
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void writeToParcel(Parcel dest, int flags){
 		// Original method
         if (DroidSafeAndroidRuntime.control) {
@@ -485,9 +480,7 @@ public void sendToTarget() {
         dest.writeBundle(data);
         Messenger.writeMessengerOrNullToParcel(replyTo, dest);
 	}
-
     
-    @DSModeled(DSC.BAN)
     private final void readFromParcel(Parcel source){
         addTaint(source.getTaint());
 		// Original method

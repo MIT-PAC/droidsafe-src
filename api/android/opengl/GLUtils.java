@@ -9,8 +9,6 @@ import javax.microedition.khronos.egl.EGL11;
 
 import android.graphics.Bitmap;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class GLUtils {
@@ -20,6 +18,7 @@ public final class GLUtils {
      * @param bitmap
      * @return the internal format of the bitmap.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.449 -0500", hash_original_method = "B6B481F20C06158B7B2683399A01F45A", hash_generated_method = "B083C1A85AF000F8EF87832B426CA4F2")
     
 public static int getInternalFormat(Bitmap bitmap) {
@@ -44,6 +43,7 @@ public static int getInternalFormat(Bitmap bitmap) {
      * @param bitmap
      * @return the OpenGL ES type of the bitmap.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.452 -0500", hash_original_method = "7F321909DE884C965D7AD4908EC024EC", hash_generated_method = "7DDAAEF9A95CA0DF572BAAB7A4A70EC5")
     
 public static int getType(Bitmap bitmap) {
@@ -134,6 +134,8 @@ public static void texImage2D(int target, int level, int internalformat,
      * @param bitmap
      * @param border
      */
+    @DSComment("OpenGL Utils")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.460 -0500", hash_original_method = "54245E5C92D815A48A8550C075E1277A", hash_generated_method = "05D189ABED035A5E95EAE8A96DBA368D")
     
 public static void texImage2D(int target, int level, Bitmap bitmap,
@@ -171,6 +173,8 @@ public static void texImage2D(int target, int level, Bitmap bitmap,
      * @param yoffset
      * @param bitmap
      */
+    @DSComment("OpenGL Utils")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.463 -0500", hash_original_method = "8C0A16DEFCA17DC4A60E066564CB56D3", hash_generated_method = "024FF416E0F94E29C981CA21E5CEAFB9")
     
 public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
@@ -198,6 +202,8 @@ public static void texSubImage2D(int target, int level, int xoffset, int yoffset
      * @param bitmap
      * @param type
      */
+    @DSComment("OpenGL Utils")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.466 -0500", hash_original_method = "F6FE0C69971F26CF832691677B050FE2", hash_generated_method = "2161DDDE7E6B631F673E5960EC2F3860")
     
 public static void texSubImage2D(int target, int level, int xoffset, int yoffset,
@@ -221,6 +227,7 @@ public static void texSubImage2D(int target, int level, int xoffset, int yoffset
      * 
      * @return An error string corresponding to the EGL error code.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.469 -0500", hash_original_method = "4A75296C27DF89363E5071AFCCE0DA22", hash_generated_method = "94E82E0D7C757E1E539FE45B49C33D8E")
     
 public static String getEGLErrorString(int error) {
@@ -259,33 +266,23 @@ public static String getEGLErrorString(int error) {
                 return "0x" + Integer.toHexString(error);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getInternalFormat(Bitmap bitmap) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getType(Bitmap bitmap) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_texImage2D(int target, int level, int internalformat,
             Bitmap bitmap, int type, int border) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_texSubImage2D(int target, int level, int xoffset, int yoffset,
             Bitmap bitmap, int format, int type) {
         return DSUtils.UNKNOWN_INT;
@@ -295,7 +292,6 @@ public static String getEGLErrorString(int error) {
     
 private GLUtils() {
     }
-
     
     static {
         nativeClassInit();

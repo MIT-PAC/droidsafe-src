@@ -9,11 +9,6 @@ import java.net.Inet6Address;
 import java.net.InetAddress;
 import java.net.SocketException;
 
-
-
-
-
-
 public class RtpStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.423 -0500", hash_original_field = "A65A69A2ACF32E03502670189C23328B", hash_generated_field = "3DEED3F3E236ECDEF49ABC73C5FEF55B")
 
@@ -26,17 +21,14 @@ public class RtpStream {
     public static final int MODE_RECEIVE_ONLY = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.430 -0500", hash_original_field = "624981906D3957BB7A810D403B6D53F7", hash_generated_field = "FF9C72AD3D8D30E66745A8A195C5604C")
 
-
     private static final int MODE_LAST = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.432 -0500", hash_original_field = "5AA4234E9E66795D9BCCFB1883538545", hash_generated_field = "82E160F333ECBB4C3723A32F659FDA5C")
-
 
     private  InetAddress mLocalAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.434 -0500", hash_original_field = "FAA97FDD31637F491BEDAC5FB227BAF1", hash_generated_field = "BAE743184ACBAA6741F9878C5CDE5973")
 
     private  int mLocalPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.436 -0500", hash_original_field = "9B5159A708B66EC0B35B900B7987F83D", hash_generated_field = "CF6A95AED4B072ED0D692D0D05C9CA47")
-
 
     private InetAddress mRemoteAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.438 -0500", hash_original_field = "22EFE1D5B3F90C2D2D5EC112FCFEC1D2", hash_generated_field = "A2AF795CC22BFE09F7BFD08F3E1E84C6")
@@ -46,7 +38,6 @@ public class RtpStream {
 
     private int mMode = MODE_NORMAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.443 -0500", hash_original_field = "D883352313723F88BD080533FB82D9CF", hash_generated_field = "9DD3DA3B4DB5A1786C464E9BB7FF265B")
-
 
     private int mNative;
 
@@ -73,10 +64,10 @@ RtpStream(InetAddress address) throws SocketException {
     	return getTaintInt();
     }
 
-
     /**
      * Returns the network address of the local host.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.451 -0500", hash_original_method = "F28BFDFF195309DBD86E5144551EE7AD", hash_generated_method = "DF44113E6B59CA44A7F42A9D99002DE1")
     
 public InetAddress getLocalAddress() {
@@ -86,6 +77,7 @@ public InetAddress getLocalAddress() {
     /**
      * Returns the network port of the local host.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.453 -0500", hash_original_method = "7C31E9E70AC59EA03FD32B04D9A6DCA9", hash_generated_method = "2DF0EB1F58B9B44C339C90A52EA29722")
     
 public int getLocalPort() {
@@ -96,6 +88,7 @@ public int getLocalPort() {
      * Returns the network address of the remote host or {@code null} if the
      * stream is not associated.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.461 -0500", hash_original_method = "DA9171B440EA3ADB706340063F8102C7", hash_generated_method = "9CF498C475C4F21DB4C831F5FD5926E1")
     
 public InetAddress getRemoteAddress() {
@@ -106,6 +99,7 @@ public InetAddress getRemoteAddress() {
      * Returns the network port of the remote host or {@code -1} if the stream
      * is not associated.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.463 -0500", hash_original_method = "B0A2085CD61C2E0240384F40F555D7FA", hash_generated_method = "C29BA3E5679A16A9A5933B07EF8FAE37")
     
 public int getRemotePort() {
@@ -126,6 +120,7 @@ public boolean isBusy() {
     /**
      * Returns the current mode.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.467 -0500", hash_original_method = "46CDEAEE57FC46504BB8BB611AFCF88D", hash_generated_method = "70517447F35CFDB022215DEF7415008A")
     
 public int getMode() {
@@ -141,6 +136,8 @@ public int getMode() {
      * @throws IllegalStateException if the stream is busy.
      * @see #isBusy()
      */
+    @DSComment("can change to send/receive only mode")
+    @DSSpec(DSCat.RTP_CALL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.469 -0500", hash_original_method = "343CDE7B48421898D79FEBC0BB9BBA38", hash_generated_method = "28774BF3C6064DA12FC00B4CBCCC590C")
     
 public void setMode(int mode) {
@@ -188,7 +185,6 @@ public void associate(InetAddress address, int port) {
     	return getTaintInt();
     }
 
-
     /**
      * Releases allocated resources. The stream becomes inoperable after calling
      * this method.
@@ -210,7 +206,6 @@ public void release() {
     private synchronized void close(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.483 -0500", hash_original_method = "2E21A04735F7B7DFBA8D51C21EAA3D5C", hash_generated_method = "478223465B2967B81B6B25A7047A7AB5")
     

@@ -29,9 +29,6 @@ import android.util.Log;
 import dalvik.system.VMRuntime;
 import dalvik.system.Zygote;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class ZygoteInit {
@@ -339,7 +336,6 @@ private static int preloadColorStateLists(VMRuntime runtime, TypedArray ar) {
         return N;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.785 -0500", hash_original_method = "CD535216A85FF51D7A90936E24E9BD83", hash_generated_method = "5FF12C82422C0D3DFEB27DFE42C007C7")
     
 private static int preloadDrawables(VMRuntime runtime, TypedArray ar) {
@@ -595,7 +591,6 @@ private static void runSelectLoopMode() throws MethodAndArgsCaller {
                 loopCount--;
             }
 
-
             try {
                 fdArray = fds.toArray(fdArray);
                 index = selectReadable(fdArray);
@@ -620,77 +615,55 @@ private static void runSelectLoopMode() throws MethodAndArgsCaller {
             }
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     static int setreuid(int ruid, int euid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21444046 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_21444046;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static int setregid(int rgid, int egid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792758307 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1792758307;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static int setpgid(int pid, int pgid) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270716942 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1270716942;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static int getpgid(int pid) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260756067 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1260756067;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void reopenStdio(FileDescriptor in,
             FileDescriptor out, FileDescriptor err) throws IOException {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void setCloseOnExec(FileDescriptor fd, boolean flag) throws IOException {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static long capgetPermitted(int pid) throws IOException {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1659405050 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1659405050;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void setCapabilities(
             long permittedCapabilities,
             long effectiveCapabilities) throws IOException {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static int selectReadable(FileDescriptor[] fds) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197257160 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1197257160;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static FileDescriptor createFileDescriptor(int fd) throws IOException {
     	return new FileDescriptor();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.715 -0500", hash_original_field = "CA9104072FF1AE74E9853C2A46401BC7", hash_generated_field = "2A664B91B7AF4DD6DD39F407BBDAB91B")
 
-
     private static final String TAG = "Zygote";
-
     
     public static class MethodAndArgsCaller extends Exception implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.846 -0500", hash_original_field = "1AE782A3C6D55F3EEA9985EDCF6719E3", hash_generated_field = "B855DD63C0CF0451E81317C9109F465D")
@@ -724,15 +697,12 @@ public void run() {
                 throw new RuntimeException(ex);
             }
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.717 -0500", hash_original_field = "FE64A8F9D190EA3489BA8CB96F558915", hash_generated_field = "21A14DBCE7B0B42B26E0AE4D21BE6374")
 
-
     private static final String ANDROID_SOCKET_ENV = "ANDROID_SOCKET_zygote";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.720 -0500", hash_original_field = "C431609858C64BFFA661CA0287DC05DC", hash_generated_field = "72D0A8D066088F349825C90FFD278BF3")
-
 
     private static final int LOG_BOOT_PROGRESS_PRELOAD_START = 3020;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.722 -0500", hash_original_field = "A323195975FD5A55072EBE2E7DEBA678", hash_generated_field = "36D14AFABA880F6F31DEC33191D862C7")
@@ -743,11 +713,9 @@ public void run() {
     private static final int PRELOAD_GC_THRESHOLD = 50000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.727 -0500", hash_original_field = "AFA88C4B9C552005A41BC8F13A42D38A", hash_generated_field = "11B5CFA86B8C286EFBAA6F7566AACF92")
 
-
     public static final String USAGE_STRING =
             " <\"start-system-server\"|\"\" for startSystemServer>";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.730 -0500", hash_original_field = "FB40507F157D3BB1B2B7C526354E4B1D", hash_generated_field = "9E17DF7A35B42830EDB580D52F5D2BFC")
-
 
     private static LocalServerSocket sServerSocket;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.733 -0500", hash_original_field = "8C221FB485568FEFC5ABDDF092AD743A", hash_generated_field = "F35B055A0E956F42EA68C0747FE25322")
@@ -767,13 +735,11 @@ public void run() {
     private static final boolean PRELOAD_RESOURCES = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.756 -0500", hash_original_field = "8C294BAB038DFDC08F17C2CFBEBC8659", hash_generated_field = "B7C284A979FDA8DD7A1E86E6B13F83B4")
 
-
     private static final int UNPRIVILEGED_UID = 9999;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.759 -0500", hash_original_field = "3FF8B3A0A59668361FB36720ECE174AB", hash_generated_field = "20022E96E92B292F7F27BAE668605B1C")
 
     private static final int UNPRIVILEGED_GID = 9999;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.762 -0500", hash_original_field = "AF039FE22D668EF9032DD7891D998BA1", hash_generated_field = "AA8F959796928F28B5B6310780704CB2")
-
 
     private static final int ROOT_UID = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.765 -0500", hash_original_field = "DB8DF0CE5F8A8D6410843EB3BF32E1E3", hash_generated_field = "1A2EF32D420BCC0E5CC1DF0ABF44BE23")

@@ -17,13 +17,7 @@ import java.util.ListIterator;
 
 import javax.sip.header.Header;
 
-
-
-
-
-
 public abstract class SIPHeaderList<HDR extends SIPHeader> extends SIPHeader implements java.util.List<HDR>, Header {
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.748 -0500", hash_original_method = "3479D46A175E4E7E02958E37278BD36E", hash_generated_method = "7BD48B92D903DC8EF08046D5E59526DD")
     
@@ -32,16 +26,13 @@ public static void setPrettyEncode(boolean flag) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.568 -0500", hash_original_field = "3E6654B574B7B146FB19CF38092BC78D", hash_generated_field = "F24392C13A6D95700264E5A997197264")
 
-
     private static boolean prettyEncode = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.572 -0500", hash_original_field = "4353EE1013E3359C24F2F7A43652CFED", hash_generated_field = "1610EB574C9A048E3BE2EA98FBE15AF1")
 
     protected List<HDR> hlist;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.574 -0500", hash_original_field = "43B2ABA48E81AE0750B9B4971CAD7379", hash_generated_field = "7DDB65A0A435AAFCBC63AD9D687C490F")
 
-
     private Class<HDR> myClass;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.580 -0500", hash_original_method = "D7E30AE5F54C678856B1E2B4E08FADF6", hash_generated_method = "1B375F3151E47402C3A2F26A1EB13D02")
     
@@ -65,6 +56,7 @@ protected SIPHeaderList(Class<HDR> objclass, String hname) {
         this.myClass =  objclass;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.577 -0500", hash_original_method = "5A8D65821D08B5534EF9F59F256EB0ED", hash_generated_method = "F3F8F203B82F62163ACC77D3355FEA39")
     
 public String getName() {
@@ -139,14 +131,13 @@ public void concatenate(SIPHeaderList<HDR> other, boolean topFlag)
 
     }
 
-
-
     /**
      * Encode a list of sip headers. Headers are returned in cannonical form.
      *
      * @return String encoded string representation of this list of headers.
      *         (Contains string append of each encoded header).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.600 -0500", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "3E83C3693072E036EE6283AD07E42258")
     
 public String encode() {
@@ -193,6 +184,7 @@ public StringBuffer encode(StringBuffer buffer) {
      *         headers.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.607 -0500", hash_original_method = "3A5F29F99CF35D16AD0C376ECAFA4E44", hash_generated_method = "2F8A4294D043A0D4FFD1926147911900")
     
 public List<String> getHeadersAsEncodedStrings() {
@@ -214,6 +206,7 @@ public List<String> getHeadersAsEncodedStrings() {
      *
      * @return SIPHeader first element of the list.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.610 -0500", hash_original_method = "6C7059400A289BDBD2DC174FD9546E0E", hash_generated_method = "9A9A6622EA50661311B6037CD7613E34")
     
 public Header getFirst() {
@@ -228,6 +221,7 @@ public Header getFirst() {
      *
      * @return SIPHeader last element of the list.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.613 -0500", hash_original_method = "564DA566938B5DEC3F30C613889BA2FD", hash_generated_method = "D066CE7B66C3741C7EE78C82FBCA05AD")
     
 public Header getLast() {
@@ -241,6 +235,7 @@ public Header getLast() {
      *
      * @return Class of header supported by this list.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.616 -0500", hash_original_method = "52DB400388897C60F1E5D7C5CF768C2C", hash_generated_method = "B793AA81A1208A012BD710EE4FCA211B")
     
 public Class<HDR> getMyClass() {
@@ -263,6 +258,7 @@ public boolean isEmpty() {
      *
      * @return the generated ListIterator
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.621 -0500", hash_original_method = "36E257E69C92FC5D45CD0DCB007DB07A", hash_generated_method = "765263DBB9F52D22742C0677CC4C7BD4")
     
 public ListIterator<HDR> listIterator() {
@@ -275,6 +271,7 @@ public ListIterator<HDR> listIterator() {
      *
      * @return the imedded linked list of SIP headers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.624 -0500", hash_original_method = "9E6C15618943805727A8B08583C0FF39", hash_generated_method = "1915FE8BC5C77ABA174AE011674FFC44")
     
 public List<HDR> getHeaderList() {
@@ -288,6 +285,7 @@ public List<HDR> getHeaderList() {
      *            position for the list iterator to return
      * @return the generated list iterator
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.627 -0500", hash_original_method = "EDE82742DF271310D47CFC69F814BF44", hash_generated_method = "E5B689D6ABBE0E3C06D78A5F5688548E")
     
 public ListIterator<HDR> listIterator(int position) {
@@ -374,6 +372,7 @@ public String debugDump(int indentation) {
      *
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.647 -0500", hash_original_method = "ABFB21316126C2849AB41073C957D80E", hash_generated_method = "CA9FDAB05D64003C749F093A56047C05")
     
 public String debugDump() {
@@ -385,6 +384,7 @@ public String debugDump() {
      *
      * @return SIPHeader []
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.650 -0500", hash_original_method = "7EBA89BCEE46EEC5D25867CF89F8E8B9", hash_generated_method = "AFD4D64ED22ACE50EF1BB1B1A7A48939")
     
 public Object[] toArray() {
@@ -397,6 +397,7 @@ public Object[] toArray() {
      *
      * @return index of the given element (-1) if element does not exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.653 -0500", hash_original_method = "795B857E8950EF3C66EEA5946EF97E00", hash_generated_method = "348846283D89ED607D27C17EE4A9858E")
     
 public int indexOf(GenericObject gobj) {
@@ -481,12 +482,12 @@ public boolean match(SIPHeaderList<?> template) {
         }
     }
 
-
     /**
      * make a clone of this header list.
      *
      * @return clone of this Header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.667 -0500", hash_original_method = "359991759D26E2A3F33ACAEA17758D18", hash_generated_method = "DF397C0487B7030073A58781A19C1EEE")
     
 public Object clone() {
@@ -542,12 +543,14 @@ public boolean isHeaderList() {
      * Authorization, Proxy-Authenticate and Proxy-Authorization and hence this
      * is protected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.680 -0500", hash_original_method = "E7A2FB4AC135D29D78CE09D5448C290F", hash_generated_method = "BBFCFD2AD6BD270AD38D8FE87FD0572B")
     
 protected String encodeBody() {
         return encodeBody(new StringBuffer()).toString();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.683 -0500", hash_original_method = "8EFAAECA9CE0AC45762D4D910A6D9585", hash_generated_method = "61808CFC1656C3F3D4153C2FD2D330E1")
     
 protected StringBuffer encodeBody(StringBuffer buffer) {
@@ -589,9 +592,6 @@ public boolean containsAll(Collection<?> collection) {
         return this.hlist.containsAll(collection);
     }
 
-
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.695 -0500", hash_original_method = "D791B8D331C82850017A4DF87B2D73FE", hash_generated_method = "DD48FCDD38D43309D1E9BD10583894DA")
     
 public void clear() {
@@ -603,7 +603,6 @@ public void clear() {
 public boolean contains(Object header) {
         return this.hlist.contains(header);
     }
-
 
     /**
      * Get the object at the specified location.
@@ -624,6 +623,7 @@ public HDR get(int index) {
      * @param obj --
      *            object whose index to compute.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.705 -0500", hash_original_method = "9C1A1055EA03DFB32FF882EA4FC9149D", hash_generated_method = "59A048735E082051D84A211B25F71E16")
     
 public int indexOf(Object obj) {
@@ -637,6 +637,7 @@ public int indexOf(Object obj) {
      *
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.708 -0500", hash_original_method = "84FF645EE0B76DB0D5B552F9A7A0DC94", hash_generated_method = "2C9F9172277FBCC77F44B8EB9FF01C29")
     
 public java.util.Iterator<HDR> iterator() {
@@ -649,6 +650,7 @@ public java.util.Iterator<HDR> iterator() {
      * @param obj --
      *            object whose index to find.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.711 -0500", hash_original_method = "05A7D65C6D911E0B1F3261A66888CB52", hash_generated_method = "3AFFFBA2DDE5D54646A6F203B3BBAF40")
     
 public int lastIndexOf(Object obj) {
@@ -694,7 +696,6 @@ public boolean removeAll(java.util.Collection<?> collection) {
         return this.hlist.removeAll(collection);
     }
 
-
     /**
      * @see List#retainAll(java.util.Collection)
      * @param collection
@@ -710,6 +711,7 @@ public boolean retainAll(java.util.Collection<?> collection) {
      *
      * @see List#subList(int, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:08.736 -0500", hash_original_method = "894CB5A5FAD7AFC5CD5A3389B3F77AB4", hash_generated_method = "35638E214210D780397781FC12C13372")
     
 public java.util.List<HDR> subList(int index1, int index2) {
@@ -740,10 +742,9 @@ public HDR set(int position, HDR sipHeader) {
         return hlist.set(position, sipHeader);
 
     }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.339 -0400", hash_original_method = "B04CD19C0316B320C5B66A678FB2994B", hash_generated_method = "913F231D737BF10A7AB8B832C5BAA111")
+        
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:34.339 -0400", hash_original_method = "B04CD19C0316B320C5B66A678FB2994B", hash_generated_method = "913F231D737BF10A7AB8B832C5BAA111")
     public <T> T[] toArray(T[] array) {
         addTaint(array[0].getTaint());
 T[] var0350DC20E51885F26BC9AE21A5634403_1012850215 =         this.hlist.toArray(array);

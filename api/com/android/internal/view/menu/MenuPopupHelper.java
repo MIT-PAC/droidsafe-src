@@ -24,20 +24,14 @@ import android.widget.ListAdapter;
 import android.widget.ListPopupWindow;
 import android.widget.PopupWindow;
 
-
-
-
-
 public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.OnKeyListener, ViewTreeObserver.OnGlobalLayoutListener, PopupWindow.OnDismissListener, View.OnAttachStateChangeListener, MenuPresenter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.014 -0500", hash_original_field = "894DDED20B32A4ACE82E85BB7611CAA8", hash_generated_field = "6C9DFC256D4283331236FE5061F62A3A")
 
     private static final String TAG = "MenuPopupHelper";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.016 -0500", hash_original_field = "E6BF7F7BDDDE6F7E11E4A9B4E440F882", hash_generated_field = "AAC4D87FB214431216863D160D58133B")
 
-
     static final int ITEM_LAYOUT = com.android.internal.R.layout.popup_menu_item_layout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.018 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.021 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
@@ -63,18 +57,14 @@ public class MenuPopupHelper implements AdapterView.OnItemClickListener, View.On
     private ViewTreeObserver mTreeObserver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.036 -0500", hash_original_field = "85BD8C2F470603886C61D670BD662E5D", hash_generated_field = "70EF1FC230E0951E3D83E696BE279410")
 
-
     private MenuAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.039 -0500", hash_original_field = "8A90713BA1A114069E13ED2F7302D2FE", hash_generated_field = "1CD6F63E5806E04B51B62E75FCD724F8")
-
 
     private Callback mPresenterCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.041 -0500", hash_original_field = "346196818A9B2A3ADB36739C20BD24C8", hash_generated_field = "346196818A9B2A3ADB36739C20BD24C8")
 
-
     boolean mForceShowIcon;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.043 -0500", hash_original_field = "0940732891F2298DD930EF9EFFE42842", hash_generated_field = "E84D2043C556E9480A2C4C979E61DFD1")
-
 
     private ViewGroup mMeasureParent;
 
@@ -184,6 +174,7 @@ public boolean isShowing() {
         return mPopup != null && mPopup.isShowing();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.070 -0500", hash_original_method = "CC543C30CFA85AC204B1A7C4ADC5298F", hash_generated_method = "8064FA4EE09322C88B459DF4BD3026C7")
     
 @Override
@@ -269,6 +260,7 @@ private int measureContentWidth(ListAdapter adapter) {
         // Don't need to do anything; we added as a presenter in the constructor.
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.086 -0500", hash_original_method = "763B49CF567916F2535D5913B399980B", hash_generated_method = "112BC26BB8F44D11AC63C56F0B91CD14")
     
 @Override
@@ -351,13 +343,13 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.106 -0500", hash_original_method = "B74F33F41EA76949D2B7FFC2C0C48D8F", hash_generated_method = "C0CB620CEC980AD85BC1EE1B6EA7B000")
     
 @Override
     public int getId() {
         return 0;
     }
-
     
     private class MenuAdapter extends BaseAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.113 -0500", hash_original_field = "F443E10B53219295A5CB14FC02A81BF7", hash_generated_field = "CDC3157ECB79F38E247155B4DAD83C83")
@@ -375,6 +367,7 @@ public MenuAdapter(MenuBuilder menu) {
             findExpandedIndex();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.121 -0500", hash_original_method = "A184D01EFF77484135B24A56DB5CEE5C", hash_generated_method = "B04709EFD607D951E88284934D0100B3")
         
 public int getCount() {
@@ -386,6 +379,7 @@ public int getCount() {
             return items.size() - 1;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.123 -0500", hash_original_method = "007AF294AD9B69A523B4CB65CF7063F8", hash_generated_method = "63D8E35105523D7DD84EA799E9DF2A2A")
         
 public MenuItemImpl getItem(int position) {
@@ -397,6 +391,7 @@ public MenuItemImpl getItem(int position) {
             return items.get(position);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.125 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "8CA03C062FFB619062E87AB7922D9645")
         
 public long getItemId(int position) {
@@ -405,6 +400,7 @@ public long getItemId(int position) {
             return position;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:34.128 -0500", hash_original_method = "D8FCA6D369D77459F33FFA03EFE73A9B", hash_generated_method = "50CABC5E5552B27DA5DB2D56AF34E85D")
         
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -437,11 +433,8 @@ void findExpandedIndex() {
             }
             mExpandedIndex = -1;
         }
-
         
     }
-
-
     
     private class ExpandedIndexObserver extends DataSetObserver {
         
@@ -456,7 +449,6 @@ void findExpandedIndex() {
         public void onChanged() {
             mAdapter.findExpandedIndex();
         }
-
         
     }
 

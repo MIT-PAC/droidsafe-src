@@ -8,26 +8,20 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class CorrectionInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.293 -0400", hash_original_field = "0802A0FE3EDE98511D93025B888127A6", hash_generated_field = "545C65D572FA367719FAFB5FF700B68D")
 
     public static final Parcelable.Creator<CorrectionInfo> CREATOR
             = new Parcelable.Creator<CorrectionInfo>() {
-    	@DSModeled(DSC.SAFE)
+    	
         public CorrectionInfo createFromParcel(Parcel source) {
     		addTaint(source.getTaint());
     		CorrectionInfo retVal = new CorrectionInfo(source);
     		retVal.addTaint(taint);
             return retVal;
         }
-
-        @DSModeled(DSC.SAFE)
+        
         public CorrectionInfo[] newArray(int size) {
         	addTaint(size);
             return new CorrectionInfo[size];
@@ -68,6 +62,7 @@ private CorrectionInfo(Parcel source) {
      * Return the offset position of this correction in the text. Both the {@link #getOldText()} and
      * {@link #getNewText()} start at this offset.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.778 -0500", hash_original_method = "FB2FFBF84EFDF3FAC1DB07E1BCD653F5", hash_generated_method = "6F0A4A5FCF19E7C347B9315FF86C0189")
     
 public int getOffset() {
@@ -77,6 +72,7 @@ public int getOffset() {
     /**
      * Return the text that has actually been typed by the user, and which has been corrected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.780 -0500", hash_original_method = "B5F6375A5B3C1F7513E2C762D0A387DE", hash_generated_method = "120CF55EBB2F568B5E24FB54C3274BD2")
     
 public CharSequence getOldText() {
@@ -86,6 +82,7 @@ public CharSequence getOldText() {
     /**
      * Return the new text that corrects what was typed by the user.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.782 -0500", hash_original_method = "A44877BB52BDCF0EDD87983832FB9E30", hash_generated_method = "161EFAB57732DEAC597AF92B819C9B2C")
     
 public CharSequence getNewText() {
@@ -105,6 +102,7 @@ public CharSequence getNewText() {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.788 -0500", hash_original_method = "4D2AAA8E4AD44FCBAED8BA48A77A4AE0", hash_generated_method = "C7C6E988E3C15E289C9FB58447E14EBA")
     
 public void writeToParcel(Parcel dest, int flags) {

@@ -6,11 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-
-
 public class CountDownLatch {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.179 -0500", hash_original_field = "791C2888A6F5CDC158445182FD1E3538", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
-
 
     private  Sync sync;
 
@@ -21,6 +18,8 @@ public class CountDownLatch {
      *        before threads can pass through {@link #await}
      * @throws IllegalArgumentException if {@code count} is negative
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.181 -0500", hash_original_method = "4C9DACB295593778FC44AB86E8E7D747", hash_generated_method = "8222E2A72B8FE1E111921C80733077A6")
     
 public CountDownLatch(int count) {
@@ -55,6 +54,8 @@ public CountDownLatch(int count) {
      * @throws InterruptedException if the current thread is interrupted
      *         while waiting
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.184 -0500", hash_original_method = "A9727D614A84DE128F63540E6073A44B", hash_generated_method = "CF7FF344DF6993EC0E05DDF0673776FB")
     
 public void await() throws InterruptedException {
@@ -119,6 +120,8 @@ public boolean await(long timeout, TimeUnit unit)
      *
      * <p>If the current count equals zero then nothing happens.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.188 -0500", hash_original_method = "ACB2575EE39865032078A7B67E3D5076", hash_generated_method = "195A2AA97CBD5879C8602CD14B86D68C")
     
 public void countDown() {
@@ -132,6 +135,7 @@ public void countDown() {
      *
      * @return the current count
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.192 -0500", hash_original_method = "ABE42AE497B23B643FDF7DC2348A1AF5", hash_generated_method = "A790BC05DE38C8C5892565B190DA5B88")
     
 public long getCount() {
@@ -150,7 +154,6 @@ public long getCount() {
 public String toString() {
         return super.toString() + "[Count = " + sync.getCount() + "]";
     }
-
     
     private static final class Sync extends AbstractQueuedSynchronizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.165 -0500", hash_original_field = "7D8247BB2ABAC952D1BFA8DC7E09642F", hash_generated_field = "CC4AEE6AD5E042E09631015E4C8CF188")
@@ -163,6 +166,7 @@ Sync(int count) {
             setState(count);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.170 -0500", hash_original_method = "192D38E698A214D58DA93C3298AD6AD3", hash_generated_method = "192D38E698A214D58DA93C3298AD6AD3")
         
 int getCount() {
@@ -189,8 +193,6 @@ protected boolean tryReleaseShared(int releases) {
             }
         }
     }
-
-
     
 }
 

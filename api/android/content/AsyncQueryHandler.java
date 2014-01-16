@@ -14,10 +14,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.util.Log;
 
-
-
-
-
 public abstract class AsyncQueryHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.856 -0500", hash_original_field = "308A471AE508CD143380C55F65246BC3", hash_generated_field = "56DF43D15450C3B466C476CFB04CD0ED")
 
@@ -26,7 +22,6 @@ public abstract class AsyncQueryHandler extends Handler {
 
     private static final boolean localLOGV = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.860 -0500", hash_original_field = "B4B5DD185B72B76F222325D7F56B27D9", hash_generated_field = "32F7556585B8C7C5DAAC0912D7E410F0")
-
 
     private static final int EVENT_ARG_QUERY = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.863 -0500", hash_original_field = "CB40908DE987C17316C34A92A1605742", hash_generated_field = "D8523E18ED29DA7E7B33104AACC2DDF2")
@@ -40,12 +35,10 @@ public abstract class AsyncQueryHandler extends Handler {
     private static final int EVENT_ARG_DELETE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.872 -0500", hash_original_field = "486DEB08162A61D496A2A906EACF35AA", hash_generated_field = "711CF2789028D66BC3DA37028EB24680")
 
-
     private static Looper sLooper = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.869 -0500", hash_original_field = "2623DC09028481BBFC31885FF1F55C62", hash_generated_field = "2623DC09028481BBFC31885FF1F55C62")
   WeakReference<ContentResolver> mResolver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.874 -0500", hash_original_field = "97410944F2D251997323EDE8307CFCF0", hash_generated_field = "7AD8CDD6B2C328BF6D705083CF4BDA0C")
-
 
     private Handler mWorkerThreadHandler;
 
@@ -65,6 +58,7 @@ public AsyncQueryHandler(ContentResolver cr) {
         mWorkerThreadHandler = createHandler(sLooper);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.909 -0500", hash_original_method = "0167182BD3CADC89AFF2FEC9CD47D129", hash_generated_method = "9DF31B658AA3AB071A94529FE2CDCB67")
     
 protected Handler createHandler(Looper looper) {
@@ -157,7 +151,6 @@ public final void startInsert(int token, Object cookie, Uri uri,
 
         mWorkerThreadHandler.sendMessage(msg);
     }
-
     
     protected static final class WorkerArgs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.877 -0500", hash_original_field = "F30A3503738FDB118E2076C7F22FF172", hash_generated_field = "CD245B47D421EDF9464454AF3C13247D")
@@ -194,10 +187,7 @@ public final void startInsert(int token, Object cookie, Uri uri,
             //Synthesized constructor
         }
 
-
     }
-
-
     
     protected class WorkerHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:37.899 -0500", hash_original_method = "A52B8D8E16654F983AD0EA90A5CCAF59", hash_generated_method = "4D2A7C2622FCE2CDBCAFF3A89841A95A")
@@ -265,7 +255,6 @@ public WorkerHandler(Looper looper) {
 
             reply.sendToTarget();
         }
-
         
     }
 

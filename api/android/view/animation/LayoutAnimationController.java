@@ -12,10 +12,6 @@ import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class LayoutAnimationController {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.343 -0500", hash_original_field = "4740D71BCBDAA516D05BBE2DB1309CEA", hash_generated_field = "E859EC909F26DCFC9E7628E48052485C")
 
@@ -37,18 +33,16 @@ public class LayoutAnimationController {
     protected Interpolator mInterpolator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.356 -0500", hash_original_field = "D3CD8642B181146C60D2B5CCBA523761", hash_generated_field = "40E31E41BFDF10FA2549A57D1E0B2464")
 
-
     private float mDelay;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.359 -0500", hash_original_field = "F4BD2555E505B5F74392044EEB4F14A1", hash_generated_field = "5491D551C576BD6880788C5897A5BA8A")
 
     private int mOrder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.361 -0500", hash_original_field = "CFDA69B4AD03D72FC4B0627E39231164", hash_generated_field = "8BF5222528387AE04CED3C727F9F8865")
 
-
     private long mDuration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.363 -0500", hash_original_field = "36B33795FFC885ECAAC56D572445CC57", hash_generated_field = "6858B6909E393C6400B9A7BBD2C111B0")
 
-    private long mMaxDelay;    
+    private long mMaxDelay;
 
     /**
      * Creates a new layout animation controller from external resources.
@@ -116,6 +110,7 @@ public LayoutAnimationController(Animation animation, float delay) {
      *
      * @attr ref android.R.styleable#LayoutAnimation_animationOrder
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.373 -0500", hash_original_method = "BE8C43C510B8AF8546FEBBAA3EF0F0B1", hash_generated_method = "1910514B82CFF79E9C692B005D1B90F5")
     
 public int getOrder() {
@@ -148,6 +143,7 @@ public void setOrder(int order) {
      *
      * @attr ref android.R.styleable#LayoutAnimation_animation
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.378 -0500", hash_original_method = "DA137DCBF1E5E58EF4425067063E3D6F", hash_generated_method = "4A84A8545ABE4A363E49BE899AA83A33")
     
 public void setAnimation(Context context, int resourceID) {
@@ -181,6 +177,7 @@ public void setAnimation(Animation animation) {
      * @see #setAnimation(android.content.Context, int)
      * @see #setAnimation(Animation)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.383 -0500", hash_original_method = "DAC4606AD5070B4B7D220BEE34A17978", hash_generated_method = "83A97390DABAB7D0A645F10764265A56")
     
 public Animation getAnimation() {
@@ -199,6 +196,7 @@ public Animation getAnimation() {
      *
      * @attr ref android.R.styleable#LayoutAnimation_interpolator
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.385 -0500", hash_original_method = "66DF0F8C4443D43AC8C0B59FD3C0EE80", hash_generated_method = "20725F66758EF06D9305E35974BCA41F")
     
 public void setInterpolator(Context context, int resourceID) {
@@ -228,6 +226,7 @@ public void setInterpolator(Interpolator interpolator) {
      *
      * @return an {@link android.view.animation.Interpolator}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.390 -0500", hash_original_method = "8AA04851FFB5BE49EA5890940035B142", hash_generated_method = "680BC21A34AFF00E6707D9E25D0C0570")
     
 public Interpolator getInterpolator() {
@@ -242,6 +241,7 @@ public Interpolator getInterpolator() {
      *
      * @see #setDelay(float)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.392 -0500", hash_original_method = "55CD68136127075BB4939DEA602DB451", hash_generated_method = "CAC98EA714B5B10F9AF4D5A4E504278E")
     
 public float getDelay() {
@@ -305,6 +305,7 @@ public void start() {
      * @see #setDelay(float)
      * @see #getDelayForView(android.view.View)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.401 -0500", hash_original_method = "96F3EFCD32C49E23FCBCF1FC0105A7B0", hash_generated_method = "038197BB7DC2374258E67AB988B71238")
     
 public final Animation getAnimationForView(View view) {
@@ -319,7 +320,6 @@ public final Animation getAnimationForView(View view) {
             return null;
         }
     }
-
     
     public static class AnimationParameters {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.412 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "21B1DF5337CCD3E0731435FB1361ED67")
@@ -334,7 +334,6 @@ public final Animation getAnimationForView(View view) {
         {
             //Synthesized constructor
         }
-
 
     }
 
@@ -375,6 +374,7 @@ public boolean isDone() {
      * @see #getTransformedIndex(android.view.animation.LayoutAnimationController.AnimationParameters)
      * @see android.view.ViewGroup.LayoutParams
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.406 -0500", hash_original_method = "C5014C66E1BA1577E6F39C7457247B02", hash_generated_method = "D885027E34C7C40BED5461F6A4AD0AFC")
     
 protected long getDelayForView(View view) {

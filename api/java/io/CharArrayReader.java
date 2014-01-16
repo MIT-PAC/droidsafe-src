@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class CharArrayReader extends Reader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.608 -0500", hash_original_field = "40514AFF00B14ABD40D54C723F22A0B4", hash_generated_field = "F3184E7FC423A3DB65CA949884DB59BD")
 
@@ -33,6 +28,8 @@ public class CharArrayReader extends Reader {
      * @param buf
      *            the char array from which to read.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:46.619 -0500", hash_original_method = "6DA04233D2F41366A5B785CAFAB5785D", hash_generated_method = "5548F526C166AF95111D29EB16A551B3")
     
 public CharArrayReader(char[] buf) {
@@ -290,7 +287,6 @@ private void checkNotClosed() throws IOException {
             return skipped;
         }
     }
-
     
 }
 

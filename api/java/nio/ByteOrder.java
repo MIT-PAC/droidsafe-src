@@ -5,15 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class ByteOrder {
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isLittleEndian() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -24,6 +19,8 @@ public final class ByteOrder {
      * @return the byte order object, which is either LITTLE_ENDIAN or
      *         BIG_ENDIAN.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.396 -0500", hash_original_method = "D07BFAC609E59F2C654790B31AE5FD0D", hash_generated_method = "A24B785DD11572D2B52D969BDBCFE967")
     
 public static ByteOrder nativeOrder() {
@@ -39,7 +36,6 @@ public static ByteOrder nativeOrder() {
 
     public static  ByteOrder LITTLE_ENDIAN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.389 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
-
 
     private  String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.391 -0500", hash_original_field = "148531C14C69A88C9CE8A910FECF241A", hash_generated_field = "4ECB2B3E8E176FD36BB429A3A3830E89")

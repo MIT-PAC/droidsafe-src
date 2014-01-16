@@ -6,13 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.net.ssl.SSLException;
 
-
-
-
-
 public class StrictHostnameVerifier extends AbstractVerifier {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:34.096 -0400", hash_original_method = "09E0CCDA5973A156C5A0868BB4EDD28E", hash_generated_method = "09E0CCDA5973A156C5A0868BB4EDD28E")
     public StrictHostnameVerifier ()
     {
@@ -34,7 +29,6 @@ public final void verify(
     public final String toString() { 
         return "STRICT"; 
     }
-
     
 }
 

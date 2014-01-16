@@ -10,8 +10,6 @@ import android.content.Context;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-
-
 public class FileBackupHelper extends FileBackupHelperBase implements BackupHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.156 -0500", hash_original_field = "4AA8978EA595B617A916023CE6C2E2ED", hash_generated_field = "CDEF20CCFEFAE12DD6C95EDA4EE82D22")
 
@@ -20,7 +18,6 @@ public class FileBackupHelper extends FileBackupHelperBase implements BackupHelp
 
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.161 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
 
     Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.163 -0500", hash_original_field = "7B5121095E7B8659514EB86A9685C1BA", hash_generated_field = "7B5121095E7B8659514EB86A9685C1BA")
@@ -37,6 +34,8 @@ public class FileBackupHelper extends FileBackupHelperBase implements BackupHelp
      * @param context The backup agent's Context object
      * @param files A list of the files to be backed up or restored.
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.168 -0500", hash_original_method = "7CBA866E381731475421534F9512B87B", hash_generated_method = "34184F7083DF5923092C9E735C13DE99")
     
 public FileBackupHelper(Context context, String... files) {

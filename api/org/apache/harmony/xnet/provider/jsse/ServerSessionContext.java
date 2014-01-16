@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.net.ssl.SSLSession;
 
-
-
-
-
-
 public class ServerSessionContext extends AbstractSessionContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.043 -0500", hash_original_field = "E7EEAAE01EABB89BC3E379487CEBB368", hash_generated_field = "03372E20A94CFEB28F0443462F1FB862")
-
 
     private SSLServerSessionCache persistentCache;
 
@@ -42,6 +36,7 @@ public void setPersistentCache(SSLServerSessionCache persistentCache) {
     
 protected void sessionRemoved(SSLSession session) {}
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:12.053 -0500", hash_original_method = "B67FD63429286D10E1FBB2A9ED634511", hash_generated_method = "686501806461EE8B4EC98F9B766B54DC")
     
 @Override
@@ -80,7 +75,6 @@ protected void sessionRemoved(SSLSession session) {}
             }
         }
     }
-
     
 }
 

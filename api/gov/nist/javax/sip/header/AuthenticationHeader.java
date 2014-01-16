@@ -10,70 +10,50 @@ import gov.nist.javax.sip.header.ims.ParameterNamesIms;
 
 import java.text.ParseException;
 
-
-
-
-
-
 public abstract class AuthenticationHeader extends ParametersHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.909 -0500", hash_original_field = "0C44A58709479306B86B0611FCABFC25", hash_generated_field = "17FF58D2E4819C468CD0033E52CC7881")
-
 
     public static final String DOMAIN = ParameterNames.DOMAIN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.912 -0500", hash_original_field = "1275ADD4899A05374E4917DEB3E85A56", hash_generated_field = "EBBD9BA1BADBAC5EF593F488645D5C46")
 
-
     public static final String REALM = ParameterNames.REALM;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.915 -0500", hash_original_field = "81FBABA1EA606A8FA62DB9607A4FE8BA", hash_generated_field = "04CDC06BB0A5B6663DDA46DEE36CCB2B")
-
 
     public static final String OPAQUE = ParameterNames.OPAQUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.918 -0500", hash_original_field = "0BDB2E931C77EE01757E7E39F51323F7", hash_generated_field = "591C458296CAAD3DAD3DC69D39923AB3")
 
-
     public static final String ALGORITHM = ParameterNames.ALGORITHM;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.922 -0500", hash_original_field = "467F6A3015D0A09F1AD10451955B0FA4", hash_generated_field = "7862B7814B761743D8679A1CE71BE925")
-
 
     public static final String QOP = ParameterNames.QOP;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.925 -0500", hash_original_field = "A3C5D0834CA28C61E526EFE1B82B6B04", hash_generated_field = "9254AA79BC5CBC7DBBCE98D12C5618BC")
 
-
     public static final String STALE = ParameterNames.STALE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.929 -0500", hash_original_field = "C3F46FDD688E9B421594AAA8A6AC9EC3", hash_generated_field = "EC08D758804B4FDE227D2AAB23EED546")
-
 
     public static final String SIGNATURE = ParameterNames.SIGNATURE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.932 -0500", hash_original_field = "4589237E4C15BE9E58625B89E2F768D7", hash_generated_field = "0BBA7683ABB90D800A75724CF582A61A")
 
-
     public static final String RESPONSE = ParameterNames.RESPONSE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.935 -0500", hash_original_field = "E29A15EF258616A7A5914BE34AD5CFD4", hash_generated_field = "C2AF6C64E388AB2628A7844DCD27068F")
-
 
     public static final String SIGNED_BY = ParameterNames.SIGNED_BY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.938 -0500", hash_original_field = "B0423270CF67D4B30F83F52F789C0539", hash_generated_field = "945C00AD0FB2001FDFE332FC462F84B5")
 
-
     public static final String NC = ParameterNames.NC;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.942 -0500", hash_original_field = "0E8BEAC5A0A9AAAE1E1CD6CDD2FE317F", hash_generated_field = "E0529E04E9C46EB7B3C9AFFEEB80131C")
-
 
     public static final String URI = ParameterNames.URI;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.946 -0500", hash_original_field = "AB898748C444A07AD10F404A27361063", hash_generated_field = "141BBA99C5BA0E2C564C80B92D9ECEF4")
 
-
     public static final String USERNAME = ParameterNames.USERNAME;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.949 -0500", hash_original_field = "10AAA79FDFC92662FFD47EF0786E23AF", hash_generated_field = "7628B0C67486A8D201E3E813C670AEFA")
-
 
     public static final String CNONCE = ParameterNames.CNONCE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.953 -0500", hash_original_field = "C8B218AA96ADB2F432D4C2E2FBC23F05", hash_generated_field = "4FA62036A736AEB7215955B884E2C736")
 
-
     public static final String NONCE = ParameterNames.NONCE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.956 -0500", hash_original_field = "94BB9F892BFF2F6F53972B57303AB217", hash_generated_field = "509D45CD35B3A28E9024383BC022E75B")
-
 
     public static final String IK = ParameterNamesIms.IK;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.959 -0500", hash_original_field = "55F393DE13C883134910B16185A7B2D3", hash_generated_field = "D36E5E6DD689766EC5136A3D190A0B78")
@@ -83,7 +63,6 @@ public abstract class AuthenticationHeader extends ParametersHeader {
 
     public static final String INTEGRITY_PROTECTED = ParameterNamesIms.INTEGRITY_PROTECTED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.965 -0500", hash_original_field = "AF5A968572CEFDCD6FE22E7345201E0B", hash_generated_field = "24D7425D6BECD3F5F1DFFA7A7A9931FF")
-
 
     protected String scheme;
 
@@ -110,6 +89,7 @@ public AuthenticationHeader() {
      * @param value --
      *            value of the parameter.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.976 -0500", hash_original_method = "63A2509649DB1C5E3D5569CEACEDF418", hash_generated_method = "314DD2EEBCA81FBD560B6C12E036AE2C")
     
 public void setParameter(String name, String value) throws ParseException {
@@ -153,6 +133,7 @@ public void setParameter(String name, String value) throws ParseException {
      * @param challenge --
      *            the challenge from which the parameters are extracted.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.979 -0500", hash_original_method = "855C75AA7A25318520BDD2BB747F87D1", hash_generated_method = "71C10291016CC53E8509DD1A88B4E3E8")
     
 public void setChallenge(Challenge challenge) {
@@ -165,6 +146,7 @@ public void setChallenge(Challenge challenge) {
      *
      * @return canonical string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.982 -0500", hash_original_method = "9C8F11B1DE9667C53D0EB2C6FF74CC89", hash_generated_method = "11BB745E9210EA37F0419F6FA283CA8A")
     
 public String encodeBody() {
@@ -192,6 +174,7 @@ public void setScheme(String scheme) {
      *
      * @return the string value of the challenge information.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.988 -0500", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "9D11AD0B611F352DC84C8E1A6B825617")
     
 public String getScheme() {
@@ -211,6 +194,7 @@ public String getScheme() {
      *             which signals that an error has been reached unexpectedly
      *             while parsing the realm.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.991 -0500", hash_original_method = "389B06AAD21713BEFD607954CE113A50", hash_generated_method = "278CDFDEC070F3B95962D47193FC86E1")
     
 public void setRealm(String realm) throws ParseException {
@@ -229,6 +213,7 @@ public void setRealm(String realm) throws ParseException {
      *         not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.994 -0500", hash_original_method = "C947FEA98ED8A5E735C71437037B2D94", hash_generated_method = "C8EA395B9DCD0CF12E8BF45479353A0D")
     
 public String getRealm() {
@@ -246,6 +231,7 @@ public String getRealm() {
      *             while parsing the nonce value.
      * @since v1.1
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.998 -0500", hash_original_method = "D28512DD5DADEB1219799F9FE9539511", hash_generated_method = "E477ACBD272F4E768E2B71FCAC9C539A")
     
 public void setNonce(String nonce) throws ParseException {
@@ -263,6 +249,7 @@ public void setNonce(String nonce) throws ParseException {
      *         not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.001 -0500", hash_original_method = "AE10AC1E29E2379ECD11C42D2EA0F8C1", hash_generated_method = "97184A00E467160041BD5BC55A5DCBE8")
     
 public String getNonce() {
@@ -303,6 +290,7 @@ public void setURI(javax.sip.address.URI uri) {
      * Note that since 1.2 this is no longer applicable to the WWW-Authenticate
      * and Proxy-Authenticate headers
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.006 -0500", hash_original_method = "C651D4576806B169F61A46B4807216FD", hash_generated_method = "84AFEB48D3931E614EB2F783EC4D1482")
     
 public javax.sip.address.URI getURI() {
@@ -320,6 +308,7 @@ public javax.sip.address.URI getURI() {
      *             while parsing the algorithm value.
      * @since v1.1
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.009 -0500", hash_original_method = "A70D72402AA001F050CF710FE3E4AACB", hash_generated_method = "DC13E51532E9C434B8853E41BA31CB9C")
     
 public void setAlgorithm(String algorithm) throws ParseException {
@@ -335,6 +324,7 @@ public void setAlgorithm(String algorithm) throws ParseException {
      *         value is not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.013 -0500", hash_original_method = "2AF2AF93F3BCE45D8EB0FCF5D647A3F0", hash_generated_method = "84900DFA40566C511E8422A595081A85")
     
 public String getAlgorithm() {
@@ -352,6 +342,7 @@ public String getAlgorithm() {
      *             while parsing the Qop value.
      * @since v1.1
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.016 -0500", hash_original_method = "33AFDF6E9223256AFA6668E8CADD3DE2", hash_generated_method = "C2A35CA8AAE389791841AECCB3D5E919")
     
 public void setQop(String qop) throws ParseException {
@@ -367,6 +358,7 @@ public void setQop(String qop) throws ParseException {
      *         not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.019 -0500", hash_original_method = "A29C3BFFBE330CF76325CB0EF7125F69", hash_generated_method = "423A14FDF8433B479AAA8F0ACB99E1CA")
     
 public String getQop() {
@@ -384,6 +376,7 @@ public String getQop() {
      *             while parsing the opaque value.
      * @since v1.1
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.023 -0500", hash_original_method = "76E3536FF05DCEF3BC0C3CCACC26C3E9", hash_generated_method = "B4AA3AEA72AD9676F669E3CBB1E7FCA1")
     
 public void setOpaque(String opaque) throws ParseException {
@@ -399,6 +392,7 @@ public void setOpaque(String opaque) throws ParseException {
      *         is not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.025 -0500", hash_original_method = "74CFB2775BB87B4CA5EB14E12EDD4FAA", hash_generated_method = "5F8E1DDF05CDECA0AC29FCE0FBAE47E6")
     
 public String getOpaque() {
@@ -416,6 +410,7 @@ public String getOpaque() {
      *             while parsing the domain.
      * @since v1.1
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.028 -0500", hash_original_method = "0CF00DF85E6E023A49347C3D97FE25E8", hash_generated_method = "6B6D37E373DF84FE349C3B17AAC263C6")
     
 public void setDomain(String domain) throws ParseException {
@@ -431,6 +426,7 @@ public void setDomain(String domain) throws ParseException {
      *         not set.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.031 -0500", hash_original_method = "FF2BF47C5FE979FA8AC19766A91C33D5", hash_generated_method = "B1316C355E4A18AB534539BAFC09F05E")
     
 public String getDomain() {
@@ -445,6 +441,7 @@ public String getDomain() {
      *            the Boolean.valueOf value of the stale parameter.
      * @since v1.1
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.034 -0500", hash_original_method = "4D2E04293B20A27BD458DB2208C5CD5A", hash_generated_method = "FD3EA5DCE1E935A361DF664AB12D2CCE")
     
 public void setStale(boolean stale) {
@@ -470,6 +467,7 @@ public boolean isStale() {
      * @param cnonce --
      *            a nonce string.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.040 -0500", hash_original_method = "DC70DAD63B3B016EB719597770A168A8", hash_generated_method = "958277A9478C6C70F74DECE39198BB81")
     
 public void setCNonce(String cnonce) throws ParseException {
@@ -481,12 +479,14 @@ public void setCNonce(String cnonce) throws ParseException {
      *
      * @return the cnonce value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.043 -0500", hash_original_method = "2A1857D33807A19504A72F3100996078", hash_generated_method = "4043EB639C6278F3D6DCAA9CABD4D306")
     
 public String getCNonce() {
         return getParameter(ParameterNames.CNONCE);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.046 -0500", hash_original_method = "A399E18540C780BD641CBDC9149756E0", hash_generated_method = "38E88A510A64FF3F3624210E2DF5E787")
     
 public int getNonceCount() {
@@ -498,6 +498,7 @@ public int getNonceCount() {
      * Set the nonce count pakrameter. Bug fix sent in by Andreas Bystr�m
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.049 -0500", hash_original_method = "76CF7C4BB03DAD75C2063E167B2975DA", hash_generated_method = "255399408A7CFE98D3072A19F898FBFB")
     
 public void setNonceCount(int param) throws java.text.ParseException {
@@ -517,6 +518,7 @@ public void setNonceCount(int param) throws java.text.ParseException {
      *
      * @return String response parameter value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.051 -0500", hash_original_method = "9CF506858536EED9F17336D37906D7B1", hash_generated_method = "531577494568521F5B8236387FCF4885")
     
 public String getResponse() {
@@ -529,6 +531,7 @@ public String getResponse() {
      * @param response
      *            to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.056 -0500", hash_original_method = "3019C4D6EA7009219C4F2124D013528F", hash_generated_method = "387037A13DCB5E9360C7C4E87F900132")
     
 public void setResponse(String response) throws ParseException {
@@ -548,6 +551,7 @@ public void setResponse(String response) throws ParseException {
      *
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.058 -0500", hash_original_method = "B515E3B485EA8C128CD8B454808B5965", hash_generated_method = "796BBFA12B42DE2F8B7D47B6571C4118")
     
 public String getUsername() {
@@ -569,12 +573,14 @@ public String getUsername() {
      *
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.061 -0500", hash_original_method = "737A9BC8D666816000B1F83AF3435CC9", hash_generated_method = "F2480664B0B56492D9B18CBAE1EBAA2F")
     
 public void setUsername(String username) throws ParseException {
         this.setParameter(ParameterNames.USERNAME, username);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.064 -0500", hash_original_method = "C945DC5CCA937939305E33DCD57FE88B", hash_generated_method = "BE9FA00257792147FE8BFA513D4DF264")
     
 public void setIK(String ik) throws ParseException {
@@ -585,12 +591,14 @@ public void setIK(String ik) throws ParseException {
         setParameter(IK, ik);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.067 -0500", hash_original_method = "6860A8600CF9767918EEF6950728D612", hash_generated_method = "2C9711E272383AD3421950178C0F7248")
     
 public String getIK() {
         return getParameter(ParameterNamesIms.IK);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.070 -0500", hash_original_method = "294221E5C763C88C3235A01BF56EDDDF", hash_generated_method = "48FF90077D940DB9E5D4C50865822C98")
     
 public void setCK(String ck) throws ParseException {
@@ -601,13 +609,14 @@ public void setCK(String ck) throws ParseException {
         setParameter(CK, ck);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.073 -0500", hash_original_method = "069687871A480347A7851D04BD98256F", hash_generated_method = "C1659F7CE51A370DAA424199F5EB1A02")
     
 public String getCK() {
         return getParameter(ParameterNamesIms.CK);
     }
 
-
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.076 -0500", hash_original_method = "2D0954ACD2F7E7C621F6D74F94C4BE3A", hash_generated_method = "9688A46DDE518D30135950B7B8C2449F")
     
 public void setIntegrityProtected(String integrityProtected) throws ParseException
@@ -620,8 +629,7 @@ public void setIntegrityProtected(String integrityProtected) throws ParseExcepti
         setParameter(INTEGRITY_PROTECTED, integrityProtected);
     }
 
-
-
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:04.080 -0500", hash_original_method = "84FABD46260852E6AB8072476C79DC4A", hash_generated_method = "CF78EDA75FA8E8BF706F31AE2A84E9AA")
     
 public String getIntegrityProtected() {

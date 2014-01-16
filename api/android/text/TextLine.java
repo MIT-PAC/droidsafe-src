@@ -20,11 +20,6 @@ import android.util.Log;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 class TextLine {
 
     /**
@@ -114,14 +109,11 @@ static void updateMetrics(FontMetricsInt fmi, int previousTop, int previousAscen
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.540 -0500", hash_original_field = "E38DEB35EF1EB454117E6E7066E721DE", hash_generated_field = "B787628D86685B4DD27C326E2D91EEE2")
 
-
     private static final TextLine[] sCached = new TextLine[3];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.637 -0500", hash_original_field = "523B437B66E94D47C6D3407D5611D3C9", hash_generated_field = "D5E340FF9F0E2C74F920DF02A6624213")
 
-
     private static final int TAB_INCREMENT = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.501 -0500", hash_original_field = "956DBF43153BA67BCB0E9C5A7787D348", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
-
 
     private TextPaint mPaint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.503 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
@@ -170,7 +162,6 @@ static void updateMetrics(FontMetricsInt fmi, int previousTop, int previousAscen
     private final SpanSet<ReplacementSpan> mReplacementSpanSpanSet =
             new SpanSet<ReplacementSpan>(ReplacementSpan.class);
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.885 -0400", hash_original_method = "2FAB193CBF90842ECB23B93C34526440", hash_generated_method = "2FAB193CBF90842ECB23B93C34526440")
     public TextLine ()
     {
@@ -503,6 +494,7 @@ private float measureRun(int start, int offset, int limit, boolean runIsRtl,
      * of the line, the previous/following line should be examined to get the
      * actual offset.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.571 -0500", hash_original_method = "4BDB20A2184F91CDB9542314BD3E47CD", hash_generated_method = "07B09DD4B0CCA43FDBD92EC54B6EE973")
     
 int getOffsetToLeftRightOf(int cursor, boolean toLeft) {
@@ -1023,7 +1015,6 @@ private float handleRun(int start, int measureLimit,
 
         return x - originalX;
     }
-
     
     private static class SpanSet<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:14.591 -0500", hash_original_field = "4D016F914E51DC9C3732F557E45EB452", hash_generated_field = "4D016F914E51DC9C3732F557E45EB452")
@@ -1117,7 +1108,6 @@ public void recycle() {
                 spans[i] = null; // prevent a leak: no reference kept when TextLine is recycled
             }
         }
-
         
     }
 

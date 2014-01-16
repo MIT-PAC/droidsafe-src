@@ -25,11 +25,6 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.utils.AlgNameMapper;
 import org.apache.harmony.security.x509.AlgorithmIdentifier;
 
-
-
-
-
-
 public class EncryptedPrivateKeyInfo {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.909 -0500", hash_original_method = "C7F017D6BF0E95CAC7E674AE844EA4C0", hash_generated_method = "771F301A53C79B4866730FA1B1BFDF03")
@@ -71,7 +66,6 @@ private static boolean isNullValue(byte[] toCheck) {
                         throw new RuntimeException(e.getMessage());
                     }
                 }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.954 -0500", hash_original_field = "A11EDF8CF3A8BB86D36A267914CFC02F", hash_generated_field = "FECDA1F83CA859E5D8EFB1232126B5BC")
@@ -97,7 +91,6 @@ private static boolean isNullValue(byte[] toCheck) {
 
     private static final ASN1SetOf ASN1Attributes = new ASN1SetOf(ASN1Any.getInstance());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.957 -0500", hash_original_field = "D26FDF2D9014955F3EDD22BA2379AFC1", hash_generated_field = "3F79D30007B2B4B6B1391DB32F1ED09E")
-
 
     private static final ASN1Sequence ASN1PrivateKeyInfo = new ASN1Sequence(
             new ASN1Type[] { ASN1Integer.getInstance(), AlgorithmIdentifier.ASN1,
@@ -225,6 +218,8 @@ public EncryptedPrivateKeyInfo(String encrAlgName, byte[] encryptedData)
      *             if {@code algParams} or {@code encryptedData} is
      *             {@code null}.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.916 -0500", hash_original_method = "5A4FF1B4B6EE8C8ABD405D2DD33761E1", hash_generated_method = "1C1631A0E74EAD9E9B3F3FC9AAFD9227")
     
 public EncryptedPrivateKeyInfo(AlgorithmParameters algParams, byte[] encryptedData)
@@ -505,6 +500,8 @@ private InvalidKeyException invalidKey() throws InvalidKeyException {
      * @throws IOException
      *             if encoding this object fails.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:56.939 -0500", hash_original_method = "64506A3A148BFB8614C90465965B2E22", hash_generated_method = "429BA8AB473A949FCE514B8CBD77E250")
     
 public byte[] getEncoded() throws IOException {

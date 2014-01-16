@@ -18,10 +18,6 @@ import libcore.io.ErrnoException;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 
-
-
-
-
 final class PipeImpl extends Pipe {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.243 -0500", hash_original_field = "328AD54C4998361CC714AC1C2831E090", hash_generated_field = "4B05C0563C4559C55245EBA97183BE45")
 
@@ -55,7 +51,6 @@ public PipeImpl() throws IOException {
 @Override public SourceChannel source() {
         return source;
     }
-
     
     private static class FdCloser implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.258 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
@@ -71,11 +66,8 @@ private FdCloser(FileDescriptor fd) {
 public void close() throws IOException {
             IoUtils.close(fd);
         }
-
         
     }
-
-
     
     private class PipeSourceChannel extends Pipe.SourceChannel implements FileDescriptorChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.268 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
@@ -123,16 +115,14 @@ public long read(ByteBuffer[] buffers, int offset, int length) throws IOExceptio
             return channel.read(buffers, offset, length);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.289 -0500", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "8F9C1BA6B62D105E8F557BE8D56765AF")
         
 public FileDescriptor getFD() {
             return fd;
         }
-
         
     }
-
-
     
     private class PipeSinkChannel extends Pipe.SinkChannel implements FileDescriptorChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.294 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
@@ -162,34 +152,35 @@ private PipeSinkChannel(FileDescriptor fd) throws IOException {
             IoUtils.setBlocking(getFD(), blocking);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.309 -0500", hash_original_method = "9BC03C30CAC8AF5ED6AA22DAB8C2126F", hash_generated_method = "2EC8E2959DE631A84FD0A6D37F43F586")
         
 public int write(ByteBuffer buffer) throws IOException {
             return channel.write(buffer);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.311 -0500", hash_original_method = "E4E8C5CCE7619931C84A953E614C424A", hash_generated_method = "90F3DEF6DC0B3BB2D2E0B8044E925278")
         
 public long write(ByteBuffer[] buffers) throws IOException {
             return channel.write(buffers);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.314 -0500", hash_original_method = "99500A3AB82F453FF24AFFE3A364E51F", hash_generated_method = "E4CEF99586D5EB3575D82A406ABE1C42")
         
 public long write(ByteBuffer[] buffers, int offset, int length) throws IOException {
             return channel.write(buffers, offset, length);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:04.316 -0500", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "8F9C1BA6B62D105E8F557BE8D56765AF")
         
 public FileDescriptor getFD() {
             return fd;
         }
-
         
     }
-
-
     
 }
 

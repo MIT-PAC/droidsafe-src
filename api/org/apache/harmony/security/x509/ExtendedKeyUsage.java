@@ -14,13 +14,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-
-
-
-
-
 public final class ExtendedKeyUsage extends ExtensionValue {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.100 -0400", hash_original_field = "1C1534A2AA96342A497C51FF8E5360A5", hash_generated_field = "BF598BD805210074FAC5B7D06116F7DE")
 
@@ -49,6 +43,7 @@ public ExtendedKeyUsage(byte[] encoding) {
      * Returns the list of string representation of OIDs corresponding
      * to key purpose IDs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.267 -0500", hash_original_method = "EC4A736D051BE2AF82868DFFF88ACC79", hash_generated_method = "C08D8A14C95987A92F34DDD9738ABC4F")
     
 public List<String> getExtendedKeyUsage() throws IOException {
@@ -58,6 +53,7 @@ public List<String> getExtendedKeyUsage() throws IOException {
         return keys;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.269 -0500", hash_original_method = "63AFE39A4816AB8A1F7656BFDDDB680C", hash_generated_method = "C47EC007E48BAD93DD250D3352564B1E")
     
 @Override public byte[] getEncoded() {
@@ -67,6 +63,7 @@ public List<String> getExtendedKeyUsage() throws IOException {
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.272 -0500", hash_original_method = "4F87579E7E9CA4B1B17B20CD410B3E10", hash_generated_method = "76915DB22A600812D57900C98F3F664F")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

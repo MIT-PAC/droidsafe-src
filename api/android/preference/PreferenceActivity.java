@@ -72,10 +72,8 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     public static final String EXTRA_NO_HEADERS = ":android:no_headers";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.432 -0500", hash_original_field = "07A92C52E9A0529B8A0BBC301D6C72EE", hash_generated_field = "A284837FF977B323F510310B8A0B07BC")
 
-
     private static final String BACK_STACK_PREFS = ":android:prefs";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.435 -0500", hash_original_field = "56CA01FB702FD0C1821373F6C3CDF75A", hash_generated_field = "ADF6AAB2E36F959142988AA6C9A4B500")
-
 
     // show Back and Next buttons? takes boolean parameter
     // Back will then return RESULT_CANCELED and Next RESULT_OK
@@ -95,7 +93,6 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     private static final int FIRST_REQUEST_CODE = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.467 -0500", hash_original_field = "527115F2BBB9AFA090DB4A1C2F4D370C", hash_generated_field = "7A68CD10BF8C3B855976E8E8F733E671")
 
-
     private static final int MSG_BIND_PREFERENCES = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.469 -0500", hash_original_field = "B333F87B4C3A3F15B2A6084E90BB450E", hash_generated_field = "CF41B970CC3B897D25CF787D434428D5")
 
@@ -105,38 +102,29 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
     public static final long HEADER_ID_UNDEFINED = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.444 -0500", hash_original_field = "D4BA745EF746ED82C85F58EF4171CFAD", hash_generated_field = "05229AEEB45F74E6571A04947AF7440D")
 
-
     private final ArrayList<Header> mHeaders = new ArrayList<Header>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.446 -0500", hash_original_field = "7A46D58E9373A396D1878E4F12CD4178", hash_generated_field = "FD5AB4D46307B27E8B131FCC69B56024")
-
 
     private FrameLayout mListFooter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.449 -0500", hash_original_field = "4BFEBCD179051A6AD954B7C0056C566F", hash_generated_field = "7F048D850CFE3A627851CBB7E986274C")
 
-
     private ViewGroup mPrefsContainer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.451 -0500", hash_original_field = "0433CBF092186CAF13AF3D99C4E244F1", hash_generated_field = "C9A9E888C6CF8869C49ADC5AA023A69B")
-
 
     private FragmentBreadCrumbs mFragmentBreadCrumbs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.453 -0500", hash_original_field = "C1227A8D190B9EED1A3F26E4B09FF207", hash_generated_field = "A5B8DDF0DF04B9985F211EFD1518F984")
 
-
     private boolean mSinglePane;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.455 -0500", hash_original_field = "55AC852C7B8ED98951F16E8068C7A6D1", hash_generated_field = "801A7E2120484101CEC1CFAD107C2A9C")
-
 
     private Header mCurHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.457 -0500", hash_original_field = "F44A9B2F698C7B96C36DE45B8F61794D", hash_generated_field = "13262EB3751B753EEB3302EF75D8B1E5")
 
-
     private PreferenceManager mPreferenceManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.459 -0500", hash_original_field = "540FC7475282CE902EB05EE0E2FD5926", hash_generated_field = "04DDA78321A9F720FA97A23B9C869D4C")
 
-
     private Bundle mSavedInstanceState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.461 -0500", hash_original_field = "4A0BF985B0515BC6CEDD46C3626DEC54", hash_generated_field = "128183E1ED5B562A53AAED4DF9F0640D")
-
 
     private Button mNextButton;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.368 -0400", hash_original_field = "92EE827C36817A69E1CF224FB382CB43", hash_generated_field = "17A435BCB512B12289624DA1E2A26680")
@@ -172,17 +160,19 @@ public abstract class PreferenceActivity extends ListActivity implements Prefere
                 } break;
             }
         }
-
         
 };
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.369 -0400", hash_original_method = "5B933AEEC6389C71875EE2A57A875A3A", hash_generated_method = "5B933AEEC6389C71875EE2A57A875A3A")
     public PreferenceActivity ()
     {
         //Synthesized constructor
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.579 -0500", hash_original_method = "7377982A731D92C32EEEF871F40BFABD", hash_generated_method = "52427157046BF3244375E6579DEF6556")
     
 @Override
@@ -341,7 +331,6 @@ public boolean hasHeaders() {
                 && mPreferenceManager == null;
     }
     
-    @DSModeled(DSC.BAN)
     @Override
     public void droidsafeOnSubActivityHook() {
         onIsHidingHeaders();
@@ -583,6 +572,7 @@ public void loadHeadersFromResource(int resid, List<Header> target) {
     /**
      * Set a footer that should be shown at the bottom of the header list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.604 -0500", hash_original_method = "0C226BA6EB709C0B8BDD6989275021F7", hash_generated_method = "9B928AE24A2BDA9F14C8520E1111062C")
     
 public void setListFooter(View view) {
@@ -592,6 +582,8 @@ public void setListFooter(View view) {
                 FrameLayout.LayoutParams.WRAP_CONTENT));
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.607 -0500", hash_original_method = "5055AD43F70FAF224ADCBC793E0582D3", hash_generated_method = "18452CB7F1C5EF94F201F49A2445B815")
     
 @Override
@@ -603,6 +595,8 @@ public void setListFooter(View view) {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.609 -0500", hash_original_method = "015EB586B516E4BA63E47DF2D2F941B5", hash_generated_method = "5FE1E22A9A75AB3816C7CADD00DC12E0")
     
 @Override
@@ -661,6 +655,8 @@ public void setListFooter(View view) {
         super.onRestoreInstanceState(state);
     }
 
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.616 -0500", hash_original_method = "BC5669EA98C9095AD4591AFCBD99CE20", hash_generated_method = "367800A5BDAE41B74EA1B95BD8DBE532")
     
 @Override
@@ -739,6 +735,7 @@ public void onHeaderClick(Header header, int position) {
      * @return Returns an Intent that can be launched to display the given
      * fragment.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.627 -0500", hash_original_method = "B5DA23DDC47E44587D99F550083B256B", hash_generated_method = "D694B38CE711606CC8563D5769288619")
     
 public Intent onBuildStartFragmentIntent(String fragmentName, Bundle args,
@@ -757,6 +754,7 @@ public Intent onBuildStartFragmentIntent(String fragmentName, Bundle args,
      * Like {@link #startWithFragment(String, Bundle, Fragment, int, int, int)}
      * but uses a 0 titleRes.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.629 -0500", hash_original_method = "7A5ABD7084FE456D2AC9E7363F23F617", hash_generated_method = "F44F953B843CDA61CFFB0C970B2E4A7C")
     
 public void startWithFragment(String fragmentName, Bundle args,
@@ -781,6 +779,7 @@ public void startWithFragment(String fragmentName, Bundle args,
      * @param shortTitleRes Resource ID of string to display for the short title of
      * this set of preferences.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.631 -0500", hash_original_method = "A8702F14B58AAD20058746FC81F4589D", hash_generated_method = "FA9F84C4830C5AB60D417F152BB76B01")
     
 public void startWithFragment(String fragmentName, Bundle args,
@@ -957,11 +956,9 @@ Header findBestMatchingHeader(Header cur, ArrayList<Header> from) {
         }
         return null;
     }
-
     
     private static class HeaderAdapter extends ArrayAdapter<Header> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.488 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
-
 
         private LayoutInflater mInflater;
 
@@ -971,9 +968,8 @@ public HeaderAdapter(Context context, List<Header> objects) {
             super(context, 0, objects);
             mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         }
-
         
-        @DSModeled(DSC.SAFE)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.639 -0400", hash_original_method = "BD15B4EB453F2C74F6031A45FD2B76C2", hash_generated_method = "26757578C3FCD43F8FF32C3523B6A317")
         @Override
         public View getView(int position, View convertView, ViewGroup parent) {
@@ -1016,7 +1012,6 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
-
         
         private static class HeaderViewHolder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.479 -0500", hash_original_field = "7D496A7EF4277B81CF926C9FC9D04248", hash_generated_field = "7D496A7EF4277B81CF926C9FC9D04248")
@@ -1029,24 +1024,17 @@ View var057D265746AE9672AFE5F9FF6338071D_1722391247 =             view;
 
             TextView summary;
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.646 -0400", hash_original_method = "7AAB7B01E6419825274A30D2382564EA", hash_generated_method = "7AAB7B01E6419825274A30D2382564EA")
             public HeaderViewHolder ()
             {
                 //Synthesized constructor
             }
 
-
         }
-
-
         
     }
-
-
     
     public static final class Header implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:56.717 -0400", hash_original_field = "80358CCA6C151B1C75C8F6D01427BC96", hash_generated_field = "0285FC5896D2C8A81AC7F6CCCD215EAF")
 
@@ -1122,6 +1110,7 @@ Header(Parcel in) {
          * this resource is loaded from <var>res</var> and returned.  Otherwise
          * {@link #title} is returned.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.536 -0500", hash_original_method = "334D1E94CC98A584AC982CEC8D5C3813", hash_generated_method = "558119F0346FC33D66232F3AB2F54893")
         
 public CharSequence getTitle(Resources res) {
@@ -1136,6 +1125,7 @@ public CharSequence getTitle(Resources res) {
          * this resource is loaded from <var>res</var> and returned.  Otherwise
          * {@link #summary} is returned.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.538 -0500", hash_original_method = "817FA0FA7A0D92830E14FE64024CE8CC", hash_generated_method = "6B1B3BF94A66A564864764F49C732AC0")
         
 public CharSequence getSummary(Resources res) {
@@ -1150,6 +1140,7 @@ public CharSequence getSummary(Resources res) {
          * this resource is loaded from <var>res</var> and returned.  Otherwise
          * {@link #breadCrumbTitle} is returned.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.540 -0500", hash_original_method = "AB517FA9C1DC5B1E62910A1ABDCECDD0", hash_generated_method = "5419ED962D99E0BA9669C14FE8FF3315")
         
 public CharSequence getBreadCrumbTitle(Resources res) {
@@ -1165,6 +1156,7 @@ public CharSequence getBreadCrumbTitle(Resources res) {
          * this resource is loaded from <var>res</var> and returned.  Otherwise
          * {@link #breadCrumbShortTitle} is returned.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.543 -0500", hash_original_method = "F11776C7591643DD9CB4C4ECCD867732", hash_generated_method = "E4501D960841694B287DBBF69FFD5A42")
         
 public CharSequence getBreadCrumbShortTitle(Resources res) {
@@ -1181,6 +1173,7 @@ public CharSequence getBreadCrumbShortTitle(Resources res) {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.548 -0500", hash_original_method = "BB0DBC9520A7E98C1F6BA8AD4772118F", hash_generated_method = "3FCE770CA3A52A269B81414300D49F64")
         
 @Override
@@ -1268,6 +1261,7 @@ public void startPreferenceFragment(Fragment fragment, boolean push) {
      * @param resultRequestCode If resultTo is non-null, this is the caller's
      * request code to be received with the resut.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.655 -0500", hash_original_method = "E25F9CE570E0BFA743AE6FCAFFB6168D", hash_generated_method = "B45569DC11A75BEC758B271655EA9D3C")
     
 public void startPreferencePanel(String fragmentClass, Bundle args, int titleRes,
@@ -1319,6 +1313,7 @@ public void finishPreferencePanel(Fragment caller, int resultCode, Intent result
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.660 -0500", hash_original_method = "88B12B83AF6C82165835FAA52B723B1A", hash_generated_method = "CE6C747186D68711084C57C35A99D10B")
     
 @Override
@@ -1361,6 +1356,9 @@ private void bindPreferences() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.667 -0500", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "606CF70C7776240D74182A497A612E24")
     
 @Deprecated
@@ -1388,6 +1386,7 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.671 -0500", hash_original_method = "20BEF3079E316F6730A81E488DFA70F2", hash_generated_method = "CB73D3B03400881BC7A95FC5A764F2C8")
     
 @Deprecated
@@ -1413,6 +1412,9 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.674 -0500", hash_original_method = "7CC03E7D3EBAF4E1E382E9E7A55EF0AE", hash_generated_method = "FA685498E0CC32F1C045DBDEE416C01B")
     
 @Deprecated
@@ -1449,6 +1451,8 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.678 -0500", hash_original_method = "1D27A71B873F6C05FF2DA5D8C133ED30", hash_generated_method = "A72CCF4B5AF9FDD5731F350455BAC101")
     
 @Deprecated
@@ -1482,6 +1486,8 @@ private void requirePreferenceManager() {
      * @deprecated This function is not relevant for a modern fragment-based
      * PreferenceActivity.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.683 -0500", hash_original_method = "0C794FFD7CBFBB35093DF6CE24875508", hash_generated_method = "378655292483895DBE1C27B8BA6DA4B5")
     
 @Deprecated
@@ -1511,6 +1517,7 @@ protected boolean hasNextButton() {
         return mNextButton != null;
     }
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:24.689 -0500", hash_original_method = "CC6F0F14612F322772A46478BA75E81F", hash_generated_method = "469B44BBEFA1C18D487E69314CE28ED4")
     
 protected Button getNextButton() {

@@ -8,12 +8,7 @@ import android.accounts.Account;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class SyncInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.962 -0400", hash_original_field = "A01FEEA498E9DC325074E88D0BA2C977", hash_generated_field = "5C265E4318FC6B04FC842570ABED2BA1")
 
@@ -72,6 +67,7 @@ public int describeContents() {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.946 -0500", hash_original_method = "1C5B91DE7E7E8D04DC252E4EE5F1DBAA", hash_generated_method = "E75C285F771F0D084E4A01ED837DFBA2")
     
 public void writeToParcel(Parcel parcel, int flags) {

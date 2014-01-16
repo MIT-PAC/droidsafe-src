@@ -17,11 +17,6 @@ import com.android.internal.telephony.ISms;
 import com.android.internal.telephony.IccConstants;
 import com.android.internal.telephony.SmsRawData;
 
-
-
-
-
-
 public final class SmsManager {
 
     /**
@@ -29,6 +24,9 @@ public final class SmsManager {
      *
      * @return the default instance of the SmsManager
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.962 -0500", hash_original_method = "90BE6788389BCE1C80031293D6D7E760", hash_generated_method = "9C1A166120752C95ACA753CF105E8926")
     
 public static SmsManager getDefault() {
@@ -44,6 +42,7 @@ public static SmsManager getDefault() {
      *
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.979 -0500", hash_original_method = "99ADD055A9B6DECFD44D9DAC14E75079", hash_generated_method = "51B1764F4C3503DB865B1030185E8A32")
     
 public static ArrayList<SmsMessage> getAllMessagesFromIcc() {
@@ -93,7 +92,6 @@ private static ArrayList<SmsMessage> createMessageListFromRawRecords(List<SmsRaw
     private static final SmsManager sInstance = new SmsManager();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.000 -0500", hash_original_field = "32EC953CC073D710A20490F011A770A9", hash_generated_field = "9B19D81E4A6550A2394AA6D410C4C25D")
 
-
     /** Free space (TS 51.011 10.5.3 / 3GPP2 C.S0023 3.4.27). */
     static public final int STATUS_ON_ICC_FREE      = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.003 -0500", hash_original_field = "08CD8E45B5B9A7874F77B4E55776F8A0", hash_generated_field = "00BACFAD7A3200CC928AC8BD98BBA6EC")
@@ -109,7 +107,6 @@ private static ArrayList<SmsMessage> createMessageListFromRawRecords(List<SmsRaw
 
     static public final int STATUS_ON_ICC_UNSENT    = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:53.018 -0500", hash_original_field = "B3D471F816AD7E4E15483AD4B00BF74C", hash_generated_field = "09B94621BA64E79BAFC3396E7C9159A1")
-
 
     /** Generic failure cause */
     static public final int RESULT_ERROR_GENERIC_FAILURE    = 1;
@@ -161,6 +158,9 @@ private SmsManager() {
      *
      * @throws IllegalArgumentException if destinationAddress or text are empty
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.948 -0500", hash_original_method = "9D6620F75021FD9E9FBB0176F1528DEF", hash_generated_method = "7E2CB05D0E625D5244B2ACD83151F77F")
     
 public void sendTextMessage(
@@ -192,6 +192,9 @@ public void sendTextMessage(
      * @return an <code>ArrayList</code> of strings that, in order,
      *   comprise the original message
      */
+    @DSComment("SMS message data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.951 -0500", hash_original_method = "C15BF98DC594420F78E24C2D1AF66E37", hash_generated_method = "E54848E4BC4358D067F4D82AB65C1FE4")
     
 public ArrayList<String> divideMessage(String text) {
@@ -293,6 +296,7 @@ public void sendMultipartTextMessage(
      *
      * @throws IllegalArgumentException if destinationAddress or data are empty
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.958 -0500", hash_original_method = "5042F246D8D2B46884C265425E52DAB1", hash_generated_method = "4E7506FBCEA4CF0F1FB89CF1297ECA6A")
     
 public void sendDataMessage(
@@ -330,6 +334,7 @@ public void sendDataMessage(
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.968 -0500", hash_original_method = "149DCB8E596A59716D0EA3B88B730E88", hash_generated_method = "8FA7F71D74A33611FDEF5B42549B3A81")
     
 public boolean copyMessageToIcc(byte[] smsc, byte[] pdu, int status) {
@@ -357,6 +362,7 @@ public boolean copyMessageToIcc(byte[] smsc, byte[] pdu, int status) {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.973 -0500", hash_original_method = "D912FCB1DFFBD3EFF004E65AAFF52944", hash_generated_method = "F42B96F37F56F4E03EF2CE6A5F457A69")
     
 public boolean
@@ -391,6 +397,7 @@ public boolean
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.976 -0500", hash_original_method = "E7AD2FCC9238E9621F78F9C99C389491", hash_generated_method = "2A4F95874FEEFD0673FB865F1C81BEEE")
     
 public boolean updateMessageOnIcc(int messageIndex, int newStatus, byte[] pdu) {
@@ -423,6 +430,7 @@ public boolean updateMessageOnIcc(int messageIndex, int newStatus, byte[] pdu) {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.982 -0500", hash_original_method = "D2AB66A7ACEF0D4C8C4D01478F148AA5", hash_generated_method = "21DC2D4654A30F5918F7D07B4E0FBB8F")
     
 public boolean enableCellBroadcast(int messageIdentifier) {
@@ -455,6 +463,7 @@ public boolean enableCellBroadcast(int messageIdentifier) {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.986 -0500", hash_original_method = "BF7C27985ACD2C46C3E7C98C6196EF24", hash_generated_method = "BB13DA5E83C88211FB3E68F2D6E78465")
     
 public boolean disableCellBroadcast(int messageIdentifier) {
@@ -488,6 +497,7 @@ public boolean disableCellBroadcast(int messageIdentifier) {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.989 -0500", hash_original_method = "48FE73E95EE31EEBE730A030272A67D6", hash_generated_method = "5C0C602A635BB6361D07F53B8EE9AF92")
     
 public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {
@@ -521,6 +531,7 @@ public boolean enableCellBroadcastRange(int startMessageId, int endMessageId) {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:52.992 -0500", hash_original_method = "528508E389FED61ADC9A70FF93AA8789", hash_generated_method = "59B59CD0BDDA39AA7270D74CEB419FFD")
     
 public boolean disableCellBroadcastRange(int startMessageId, int endMessageId) {

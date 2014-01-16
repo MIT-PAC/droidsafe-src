@@ -12,12 +12,8 @@ import java.util.Map;
 
 import org.apache.http.params.HttpParams;
 
-
-
-
 public final class AuthSchemeRegistry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.159 -0500", hash_original_field = "A76137644C4EB541CBD7C570A2A34EDA", hash_generated_field = "7DEAAE1C48DF7EB41AD4414C102662D1")
-
 
     private  Map<String,AuthSchemeFactory> registeredSchemes;
     
@@ -97,7 +93,7 @@ public synchronized AuthScheme getAuthScheme(final String name, final HttpParams
         } else {
             throw new IllegalStateException("Unsupported authentication scheme: " + name);
         }
-    } 
+    }
 
     /**
      * Obtains a list containing names of all registered {@link AuthScheme authentication 
@@ -105,11 +101,12 @@ public synchronized AuthScheme getAuthScheme(final String name, final HttpParams
      * 
      * @return list of registered scheme names
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.173 -0500", hash_original_method = "AC70BADA49B0F71D218410F2BC1D1DD5", hash_generated_method = "A0766A9657CCECE4B5EA241D39076162")
     
 public synchronized List<String> getSchemeNames() {
         return new ArrayList<String>(registeredSchemes.keySet()); 
-    } 
+    }
  
     /**
      * Populates the internal collection of registered {@link AuthScheme authentication schemes} 
@@ -126,7 +123,6 @@ public synchronized void setItems(final Map<String, AuthSchemeFactory> map) {
         registeredSchemes.clear();
         registeredSchemes.putAll(map);
     }
-
     
 }
 

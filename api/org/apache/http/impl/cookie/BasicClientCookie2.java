@@ -8,14 +8,8 @@ import java.util.Date;
 
 import org.apache.http.cookie.SetCookie2;
 
-
-
-
-
-
 public class BasicClientCookie2 extends BasicClientCookie implements SetCookie2 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.972 -0500", hash_original_field = "3BBF3F64A34794B64FB53E371BD4F422", hash_generated_field = "6A2B50CEA40AC67F646E005F8BAEDBCB")
-
 
     private String commentURL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.974 -0500", hash_original_field = "6A977495C0D45A68547DA6ADBCA73444", hash_generated_field = "10C002323FE5D85E96EB29FD69E0FF2A")
@@ -37,6 +31,7 @@ public BasicClientCookie2(final String name, final String value) {
         super(name, value);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.981 -0500", hash_original_method = "95D16F8D855E74509F3FC69A633DD645", hash_generated_method = "63803F162F0479AC6022D4C6E49F6D5A")
     
 @Override
@@ -50,6 +45,7 @@ public void setPorts(final int[] ports) {
         this.ports = ports;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.985 -0500", hash_original_method = "601AD280A8E13C6CCEB794F77493867D", hash_generated_method = "6C0EAF59492C09642AEFB7F5F645C901")
     
 @Override
@@ -91,7 +87,6 @@ public void setDiscard(boolean discard) {
         clone.ports = this.ports.clone();
         return clone;
     }
-
     
 }
 

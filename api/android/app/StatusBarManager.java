@@ -14,21 +14,14 @@ import android.view.View;
 
 import com.android.internal.statusbar.IStatusBarService;
 
-
-
-
-
-
 public class StatusBarManager {
 
-
-    //Added by manual modeling 
-    @DSModeled(DSC.BAN)
+    //Added by manual modeling
+    
     public static StatusBarManager createInstance(Context context){
         return new StatusBarManager(context);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.118 -0500", hash_original_field = "1E7B0AF5EE05CF7F4EA04E219656EAE8", hash_generated_field = "ED6D876020D65A11D924082E2D3D9A2F")
-
 
     public static final int DISABLE_EXPAND = View.STATUS_BAR_DISABLE_EXPAND;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.120 -0500", hash_original_field = "F79639D736D9D3D8C0F8D35484355F0A", hash_generated_field = "144723B1FB4111EFB8C8DA494C628BBB")
@@ -59,22 +52,18 @@ public class StatusBarManager {
     public static final int DISABLE_CLOCK = View.STATUS_BAR_DISABLE_CLOCK;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.140 -0500", hash_original_field = "0B5A92B3AF37913AA310B2B857E31137", hash_generated_field = "2E3FBA2AC061C8F289A78D50D9952B40")
 
-
     @Deprecated
     public static final int DISABLE_NAVIGATION = 
             View.STATUS_BAR_DISABLE_HOME | View.STATUS_BAR_DISABLE_RECENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.142 -0500", hash_original_field = "3FDD3C38791C7F2E43113D115AEEC83A", hash_generated_field = "F4C5DD292330500DE56B01C9CEE3B21B")
 
-
     public static final int DISABLE_NONE = 0x00000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.145 -0500", hash_original_field = "67121E4C41A38D817A1286C58FF21A60", hash_generated_field = "E156F5490D81F8761417909C13031904")
-
 
     public static final int DISABLE_MASK = DISABLE_EXPAND | DISABLE_NOTIFICATION_ICONS
             | DISABLE_NOTIFICATION_ALERTS | DISABLE_NOTIFICATION_TICKER
             | DISABLE_SYSTEM_INFO | DISABLE_RECENT | DISABLE_HOME | DISABLE_BACK | DISABLE_CLOCK;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.147 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.149 -0500", hash_original_field = "F8B3788AC50C66F6D1F2CB5AD0C04432", hash_generated_field = "1E58C5C0CCB7FC88A86AEBA18390C9AC")
@@ -155,6 +144,7 @@ public void collapse() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.165 -0500", hash_original_method = "8A330421DEC3E061C169D87595A7D18D", hash_generated_method = "7D07FBDB98B51F61C0AA6807EBCB495A")
     
 public void setIcon(String slot, int iconId, int iconLevel, String contentDescription) {
@@ -184,6 +174,7 @@ public void removeIcon(String slot) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.170 -0500", hash_original_method = "59E45760864584BE81198BD1AADB01C2", hash_generated_method = "4CBA87B69B2EC49F2E6F870C831644ED")
     
 public void setIconVisibility(String slot, boolean visible) {

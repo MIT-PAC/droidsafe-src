@@ -5,15 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class PorterDuffXfermode extends Xfermode {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateXfermode(int mode) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -32,7 +27,6 @@ public PorterDuffXfermode(PorterDuff.Mode mode) {
         this.mode = mode;
         native_instance = nativeCreateXfermode(mode.nativeInt);
     }
-
     
 }
 

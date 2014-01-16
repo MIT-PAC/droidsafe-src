@@ -11,29 +11,19 @@ import java.net.URL;
 
 import libcore.io.IoUtils;
 
-
-
-
-
 public final class ServiceLoader<S> implements Iterable<S> {
-
     
-    @DSModeled(DSC.BAN)
     public static <S> ServiceLoader<S> load(Class<S> service, ClassLoader classLoader) {
         if (classLoader == null) {
             classLoader = ClassLoader.getSystemClassLoader();
         }
         return new ServiceLoader<S>(service, classLoader);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <S> ServiceLoader<S> load(Class<S> service) {
         return ServiceLoader.load(service, Thread.currentThread().getContextClassLoader());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <S> ServiceLoader<S> loadInstalled(Class<S> service) {
         ClassLoader cl = ClassLoader.getSystemClassLoader();
         if (cl != null) {
@@ -43,9 +33,7 @@ public final class ServiceLoader<S> implements Iterable<S> {
         }
         return ServiceLoader.load(service, cl);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <S> S loadFromSystemProperty(final Class<S> service) {
         try {
             final String className = System.getProperty(service.getName());
@@ -101,6 +89,7 @@ public void reload() {
      *
      * <p>The returned iterator does not support {@code remove}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.403 -0500", hash_original_method = "347C14FB6BD1E7714C96867577CC330D", hash_generated_method = "903E79232BB492D8486688E535217E3B")
     
 public Iterator<S> iterator() {
@@ -125,7 +114,6 @@ private void internalLoad() {
     public String toString() {
         return "ServiceLoader for " + service.getName();
     }
-
     
     private class ServiceIterator implements Iterator<S> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.420 -0500", hash_original_field = "DB93E4DB6045160743AC769A344DA267", hash_generated_field = "F6BCA95A9F68D069180083A80576157E")
@@ -139,10 +127,8 @@ private void internalLoad() {
         private  Set<URL> services;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.428 -0500", hash_original_field = "50C457FF74D9C40288B48AEB440D50AE", hash_generated_field = "AF3FD4FB03AF670FF56C37A3383F4F8C")
 
-
         private boolean isRead = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:27.430 -0500", hash_original_field = "DEC57B84A4CD748354D1673FC02EFE30", hash_generated_field = "379E2423239498A389B9B242C49020D7")
-
 
         private LinkedList<String> queue = new LinkedList<String>();
 
@@ -228,11 +214,8 @@ private void checkValidJavaClassName(String className) {
                 }
             }
         }
-
         
     }
-
-
     
 }
 

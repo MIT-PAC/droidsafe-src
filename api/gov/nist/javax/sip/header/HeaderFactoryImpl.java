@@ -125,18 +125,10 @@ import javax.sip.header.ViaHeader;
 import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.header.WarningHeader;
 
-
-
-
-
-
 public class HeaderFactoryImpl implements HeaderFactory, HeaderFactoryExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.119 -0500", hash_original_field = "8C10C55A9BEAD35C9C3822ED5A78B55A", hash_generated_field = "0D2878F1D6B0CD805C869443DA7FE75E")
 
     private boolean stripAddressScopeZones = false;
-    
-    
-
 
     //////////////////////////////////////////////////////////
     // Constructor
@@ -157,6 +149,7 @@ public HeaderFactoryImpl() {
      * debugging ).
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.122 -0500", hash_original_method = "9BEACA878DCF694953AD8141227DB60F", hash_generated_method = "F632BF1452A4CEE092D75156519D0C5E")
     
 public void setPrettyEncoding(boolean flag) {
@@ -215,6 +208,7 @@ public AcceptHeader createAcceptHeader(
      * @param language - the new Locale value of the language
      * @return the newly created AcceptLanguageHeader object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.131 -0500", hash_original_method = "5AF5E9D92982780781CC81035C3C1529", hash_generated_method = "24ECF7D91B9CA37241100F960164BEB1")
     
 public AcceptLanguageHeader createAcceptLanguageHeader(Locale language) {
@@ -357,6 +351,7 @@ public CSeqHeader createCSeqHeader( long sequenceNumber, String method)
      * For backwards compatibility, also accept int
      * @deprecated
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.152 -0500", hash_original_method = "332D5DD16F528ACCDED76BFE26F4F243", hash_generated_method = "116978D5ECE6F115C01EBBBAF952AACA")
     
 public CSeqHeader createCSeqHeader( int sequenceNumber, String method)
@@ -491,6 +486,7 @@ public ContentEncodingHeader createContentEncodingHeader(String encoding)
      * @return the newly created ContentLanguageHeader object.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.179 -0500", hash_original_method = "CD027E2457CF527330FF9F4C0A972B91", hash_generated_method = "A01A741425EF2E0926BFA778BF4AFACC")
     
 public ContentLanguageHeader createContentLanguageHeader(Locale contentLanguage) {
@@ -510,6 +506,7 @@ public ContentLanguageHeader createContentLanguageHeader(Locale contentLanguage)
      * than zero.
      * @return the newly created ContentLengthHeader object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.181 -0500", hash_original_method = "DA3B5EC62F3E30804B07AD592D303E3E", hash_generated_method = "C581C5630CD37B1611A79974E1D1D0BE")
     
 public ContentLengthHeader createContentLengthHeader(int contentLength)
@@ -552,6 +549,7 @@ public ContentTypeHeader createContentTypeHeader(
     * @param date - the new Calender value of the date.
     * @return the newly created DateHeader object.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.187 -0500", hash_original_method = "F3D0948AB2AB5DCB4D46B0F9C4754A1D", hash_generated_method = "2DA6945439286EF6E87FA0E912C22609")
     
 public DateHeader createDateHeader(Calendar date) {
@@ -592,6 +590,7 @@ public EventHeader createEventHeader(String eventType)
      * than zero.
      * @return the newly created ExpiresHeader object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.193 -0500", hash_original_method = "1A307AD1BD02E7BD6299AF40D811E5D5", hash_generated_method = "08918995EB82EDD3A70D4A64ED663891")
     
 public ExpiresHeader createExpiresHeader(int expires)
@@ -685,6 +684,7 @@ public InReplyToHeader createInReplyToHeader(String callId)
     * than zero or greater than 255.
     * @return the newly created MaxForwardsHeader object.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.206 -0500", hash_original_method = "2B62AE770A28023C5424C7B7718E4BD4", hash_generated_method = "452226191162440A69C61CCC2956DB5F")
     
 public MaxForwardsHeader createMaxForwardsHeader(int maxForwards)
@@ -709,6 +709,7 @@ public MaxForwardsHeader createMaxForwardsHeader(int maxForwards)
      * @return the newly created MimeVersionHeader object.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.209 -0500", hash_original_method = "623C745ED7578EC4227F3B15A38B5D4A", hash_generated_method = "B10F93C097FE82E158B0DB65EFE2067A")
     
 public MimeVersionHeader createMimeVersionHeader(
@@ -734,6 +735,7 @@ public MimeVersionHeader createMimeVersionHeader(
      * @return the newly created MinExpiresHeader object.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.212 -0500", hash_original_method = "F897D0FECB8A8CC74BFA504858C91B42", hash_generated_method = "20D805C70E663C57C461557042E0E3B3")
     
 public MinExpiresHeader createMinExpiresHeader(int minExpires)
@@ -759,6 +761,7 @@ public MinExpiresHeader createMinExpiresHeader(int minExpires)
      *
      * pmusgrave
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.215 -0500", hash_original_method = "8EE941BB2D8E39A517F98D1ED3613B4D", hash_generated_method = "0C3FA5BA462F527FE7CBB3A7D0B35421")
     
 public ExtensionHeader createMinSEHeader(int expires)
@@ -912,6 +915,7 @@ public RAckHeader createRAckHeader(
      * @deprecated
      * @see javax.sip.header.HeaderFactory#createRAckHeader(int, int, java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.237 -0500", hash_original_method = "B44C2BD23DFFCB51A992C42D93BADE4E", hash_generated_method = "2CADF926ED6409AFC24EC6CAF3D74F33")
     
 public RAckHeader createRAckHeader(int rSeqNumber, int cSeqNumber, String method) throws InvalidArgumentException, ParseException {
@@ -919,11 +923,11 @@ public RAckHeader createRAckHeader(int rSeqNumber, int cSeqNumber, String method
         return createRAckHeader((long)rSeqNumber, (long)cSeqNumber, method);
     }
 
-
     /**
      * @deprecated
      * @see javax.sip.header.HeaderFactory#createRSeqHeader(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.239 -0500", hash_original_method = "38086BF4D4EB3CE5AB4BF7772F8EACF2", hash_generated_method = "AB81220B2482779995348ED5405A3957")
     
 public RSeqHeader createRSeqHeader(int sequenceNumber) throws InvalidArgumentException {
@@ -940,6 +944,7 @@ public RSeqHeader createRSeqHeader(int sequenceNumber) throws InvalidArgumentExc
      * @return the newly created RSeqHeader object.
      * @since v1.1
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.242 -0500", hash_original_method = "CA4CA07B31DF6CB609C05636F40DB22F", hash_generated_method = "F1656D64C351B2C62FC72407CC65AFFB")
     
 public RSeqHeader createRSeqHeader(long sequenceNumber)
@@ -1047,6 +1052,7 @@ public RequireHeader createRequireHeader(String optionTag)
      * than zero.
      * @return the newly created RetryAfterHeader object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.257 -0500", hash_original_method = "43D5E8C96E4C1ED3ED5B8AD5C39C801C", hash_generated_method = "B66E712B9FB43D7AC2C0E83502131686")
     
 public RetryAfterHeader createRetryAfterHeader(int retryAfter)
@@ -1167,6 +1173,7 @@ public SupportedHeader createSupportedHeader(String optionTag)
      * than zero.
      * @return the newly created TimeStampHeader object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.274 -0500", hash_original_method = "380079DA7F92D6CF2CEA9086AA5F92D7", hash_generated_method = "62F810F2BCF68D3D445BB90D996DBF7B")
     
 public TimeStampHeader createTimeStampHeader(float timeStamp)
@@ -1400,6 +1407,7 @@ public javax.sip.header.Header createHeader(String headerText) throws ParseExcep
      * @throws ParseException
      * @return  the parsed sip header
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.303 -0500", hash_original_method = "BE8A77015DA0080195A899A1BFDA2B08", hash_generated_method = "4DD51F69C4AFAD774B946588A2335384")
     
 public javax.sip.header.Header createHeader(
@@ -1510,7 +1518,6 @@ public JoinHeader createJoinHeader(String callId, String toTag,
         return join;
     }
 
-
     /*
      * (non-Javadoc)
      * @see javax.sip.header.HeaderFactory#createSIPETagHeader(java.lang.String)
@@ -1550,7 +1557,6 @@ public PAccessNetworkInfoHeader createPAccessNetworkInfoHeader()
         return accessNetworkInfo;
     }
 
-
     /**
      * P-Asserted-Identity header
      * @param address - Address
@@ -1571,9 +1577,7 @@ public PAssertedIdentityHeader createPAssertedIdentityHeader(Address address)
 
         return assertedIdentity;
 
-
     }
-
 
     /**
      * Creates a new P-Associated-URI header based on the supplied address
@@ -1595,9 +1599,6 @@ public PAssociatedURIHeader createPAssociatedURIHeader(Address assocURI)
         return associatedURI;
     }
 
-
-
-
     /**
      * P-Called-Party-ID header
      * @param address - Address
@@ -1618,8 +1619,6 @@ public PCalledPartyIDHeader createPCalledPartyIDHeader(Address address)
         return calledPartyID;
     }
 
-
-
     /**
      * P-Charging-Function-Addresses header
      * @return newly created P-Charging-Function-Addresses header
@@ -1632,7 +1631,6 @@ public PChargingFunctionAddressesHeader createPChargingFunctionAddressesHeader()
 
         return cfa;
     }
-
 
     /**
      * P-Charging-Vector header
@@ -1656,7 +1654,6 @@ public PChargingVectorHeader createChargingVectorHeader(String icid)
 
     }
 
-
     /**
      * P-Media-Authorization header
      * @param token - token string
@@ -1672,13 +1669,11 @@ public PMediaAuthorizationHeader createPMediaAuthorizationHeader(String token)
         if (token == null || token == "")
             throw new InvalidArgumentException("The Media-Authorization-Token parameter is null or empty");
 
-
         PMediaAuthorization mediaAuthorization = new PMediaAuthorization();
         mediaAuthorization.setMediaAuthorizationToken(token);
 
         return mediaAuthorization;
     }
-
 
     /**
      * P-Preferred-Identity header
@@ -1713,8 +1708,6 @@ public PVisitedNetworkIDHeader createPVisitedNetworkIDHeader()
         return visitedNetworkID;
     }
 
-
-
     /**
      * PATH header
      * @param address - Address
@@ -1729,13 +1722,11 @@ public PathHeader createPathHeader(Address address)
         if (address == null)
             throw new NullPointerException("null address!");
 
-
         Path path = new Path();
         path.setAddress(address);
 
         return path;
     }
-
 
     /**
      * Privacy header
@@ -1755,7 +1746,6 @@ public PrivacyHeader createPrivacyHeader(String privacyType)
         return privacy;
 
     }
-
 
     /**
      * Service-Route header
@@ -1831,7 +1821,6 @@ public PUserDatabaseHeader createPUserDatabaseHeader(String databaseName)
         return pUserDatabase;
     }
 
-
     /**
      * 
      * @return The newly created P-Profile-Key header.
@@ -1896,6 +1885,7 @@ public PAssertedServiceHeader createPAssertedServiceHeader()
      * @return the newly created SessionExpiresHeader object.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.386 -0500", hash_original_method = "6D472F26B8815D9A75157924D7DB3DB8", hash_generated_method = "0A0E6DA44D324DA85EA874CE831AF067")
     
 public SessionExpiresHeader createSessionExpiresHeader(int expires)
@@ -1907,7 +1897,6 @@ public SessionExpiresHeader createSessionExpiresHeader(int expires)
 
         return s;
     }
-    
     
     /**
      * Create a new Request Line from a String.
@@ -1930,8 +1919,6 @@ public SipStatusLine createStatusLine(String statusLine) throws ParseException {
         StatusLineParser statusLineParser = new StatusLineParser(statusLine);
         return (SipStatusLine) statusLineParser.parse();
     }
-
-
     
     /**
      * Create and return a references header.
@@ -1942,6 +1929,7 @@ public SipStatusLine createStatusLine(String statusLine) throws ParseException {
      * @throws ParseException
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:07.395 -0500", hash_original_method = "B06A6A8CC80D9698711113EFD1E58499", hash_generated_method = "57C1CCBA69B4100AD0EB721BFEB07DD9")
     
 public ReferencesHeader createReferencesHeader(String callId, String rel) throws ParseException {
@@ -1950,7 +1938,6 @@ public ReferencesHeader createReferencesHeader(String callId, String rel) throws
         retval.setRel(rel);
         return retval;
     }
-
     
 }
 

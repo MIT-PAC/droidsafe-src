@@ -16,11 +16,6 @@ import javax.sip.InvalidArgumentException;
 import javax.sip.address.Hop;
 import javax.sip.header.ViaHeader;
 
-
-
-
-
-
 public class Via extends ParametersHeader implements javax.sip.header.ViaHeader, ViaHeaderExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.031 -0500", hash_original_field = "677EAF6CDCAE295B23459F626BCF0C3F", hash_generated_field = "44E58998010CA4EBABA566C0FB985DB3")
 
@@ -51,7 +46,6 @@ public class Via extends ParametersHeader implements javax.sip.header.ViaHeader,
     protected String comment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.061 -0500", hash_original_field = "A8DC08CD30DA636AE03D9B76ABCE0FC4", hash_generated_field = "2352712DCFC5BA30D0234B4D1AC22071")
 
-
     private boolean rPortFlag = false;
 
     /** Default constructor
@@ -80,10 +74,10 @@ public boolean equals(Object other) {
         return false;
     }
 
-
     /** get the Protocol Version
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.079 -0500", hash_original_method = "F03A2761E3B9AF6DF371EC359829DB1F", hash_generated_method = "32895BC1C079DC20DE78B350609DB20B")
     
 public String getProtocolVersion() {
@@ -97,6 +91,7 @@ public String getProtocolVersion() {
      * Accessor for the sentProtocol field.
      * @return Protocol field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.082 -0500", hash_original_method = "07C91BB13E357235D0646F9B1302A813", hash_generated_method = "3A0F2EC46C83142EFE37885BF3789ABB")
     
 public Protocol getSentProtocol() {
@@ -108,6 +103,7 @@ public Protocol getSentProtocol() {
      * Accessor for the sentBy field
      *@return SentBy field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.085 -0500", hash_original_method = "834E4BBD7298D05AE3719FD543779099", hash_generated_method = "7E9F36EDB6B8F7DEC4550BD2B30D1B4B")
     
 public HostPort getSentBy() {
@@ -119,6 +115,7 @@ public HostPort getSentBy() {
      * useful for the stack to avoid duplication of code.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.088 -0500", hash_original_method = "D671032CD8E13BB36667C287933AFA1D", hash_generated_method = "63F29EFA98759442F1A8B24A62C4F969")
     
 public Hop getHop() {
@@ -131,6 +128,7 @@ public Hop getHop() {
      * Accessor for the parameters field
      * @return parameters field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.091 -0500", hash_original_method = "50080B5B5AC1614DCB7B006B51F53E3F", hash_generated_method = "DFE8C46845B2BF694E1F9DF7A36DD65A")
     
 public NameValueList getViaParms() {
@@ -142,13 +140,12 @@ public NameValueList getViaParms() {
      * @return comment field.
      * @deprecated RFC 2543 support feature.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.094 -0500", hash_original_method = "D7C1F8AAD3D2F40DD04B72C74A7D0B69", hash_generated_method = "E40F10878D62F1009133973700BC0B5C")
     
 public String getComment() {
         return comment;
     }
-
-
 
     /** port of the Via Header.
      * @return true if Port exists.
@@ -188,6 +185,7 @@ public void removeComment() {
     /** set the Protocol Version
      * @param protocolVersion String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.110 -0500", hash_original_method = "EAF98E914AE1C4A3745B20F70C227AC7", hash_generated_method = "FAC026355BED919F9D525B451C4230F5")
     
 public void setProtocolVersion(String protocolVersion) {
@@ -199,6 +197,7 @@ public void setProtocolVersion(String protocolVersion) {
     /** set the Host of the Via Header
          * @param host String to set
          */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.113 -0500", hash_original_method = "DC556AA065BEAF9D4C2B976D57E39DA8", hash_generated_method = "6C40B83EF6C0E6452AD2399FE668FCB3")
     
 public void setHost(Host host) {
@@ -272,6 +271,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the host value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.131 -0500", hash_original_method = "A6610C3C674AD8475435D641E21474E9", hash_generated_method = "CD939FA926D042953639AC7BDFD55E52")
     
 public void setHost(String host) throws ParseException {
@@ -290,6 +290,7 @@ public void setHost(String host) throws ParseException {
     *
     * @return  the string value of the host
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.134 -0500", hash_original_method = "C40590C8092ADD61F2FE2F813826D182", hash_generated_method = "D2C361D4C23F32BB17AC6E8CCEE36372")
     
 public String getHost() {
@@ -310,6 +311,7 @@ public String getHost() {
      *
      * @param port - the Integer.valueOf value of the port of this ViaHeader
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.137 -0500", hash_original_method = "3BFDF83597585B440A29B8E314A4320F", hash_generated_method = "6B58981524053DA5CEBD218FA31BFE68")
     
 public void setPort(int port) throws InvalidArgumentException {
@@ -337,6 +339,7 @@ public void setRPort(){
      *
      * @return the integer value of the port
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.144 -0500", hash_original_method = "E4A7E9B0C37CC00BF245A9AEF6038FD8", hash_generated_method = "906A1F3A5691CFDC4DDC6C1A571AB8A3")
     
 public int getPort() {
@@ -345,13 +348,13 @@ public int getPort() {
         return sentBy.getPort();
     }
 
-
     /**
     * Return the rport parameter.
     *
     *@return the rport parameter or -1.
     */
-       @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.147 -0500", hash_original_method = "8F51D2BD996E5077EFE382EF5CCB28F7", hash_generated_method = "3511351E0D0FE8826264B6C3334B3AAF")
+       @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.147 -0500", hash_original_method = "8F51D2BD996E5077EFE382EF5CCB28F7", hash_generated_method = "3511351E0D0FE8826264B6C3334B3AAF")
     
 public int getRPort() {
          String strRport = getParameter(ParameterNames.RPORT);
@@ -361,12 +364,12 @@ public int getRPort() {
             return -1;
          }
 
-
     /**
      * Returns the value of the transport parameter.
      *
      * @return the string value of the transport paramter of the ViaHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.151 -0500", hash_original_method = "2C7D6CB162F307BBDEA3C529EA37600B", hash_generated_method = "278AEA19B837E1396BDED40458AA0DF4")
     
 public String getTransport() {
@@ -385,6 +388,7 @@ public String getTransport() {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the transport value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.154 -0500", hash_original_method = "DA10FBD3B27193627F0BF00A97E141AB", hash_generated_method = "70EFF33C755FC93B2D9F1AE6A3D3C60B")
     
 public void setTransport(String transport) throws ParseException {
@@ -402,6 +406,7 @@ public void setTransport(String transport) throws ParseException {
      *
      * @return the string value of the protocol paramter of the ViaHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.157 -0500", hash_original_method = "076253ECD4074E0CF94E6CAE84ACD031", hash_generated_method = "AE3F914C1F385E80EBD7FC351D7FF964")
     
 public String getProtocol() {
@@ -418,6 +423,7 @@ public String getProtocol() {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the protocol value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.160 -0500", hash_original_method = "983A1DB4807CBA4F5F74F526664C05F9", hash_generated_method = "9FB96C9A6B3B83D3DC2242FDB012BD1E")
     
 public void setProtocol(String protocol) throws ParseException {
@@ -437,6 +443,7 @@ public void setProtocol(String protocol) throws ParseException {
      *
      * @return the integer value of the <code>ttl</code> parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.163 -0500", hash_original_method = "AB2BF7863E6929FA549276BF1FCB8F41", hash_generated_method = "FC6220DDEB7B2F642A5C176519D4A5FD")
     
 public int getTTL() {
@@ -452,6 +459,7 @@ public int getTTL() {
      * @throws InvalidArgumentException if supplied value is less than zero or
      * greater than 255, excluding -1 the default not set value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.167 -0500", hash_original_method = "275C0FDDD82C74D9D06FF2EBDF31F802", hash_generated_method = "68E4131A7FBF1C99BF6026D77E50DE97")
     
 public void setTTL(int ttl) throws InvalidArgumentException {
@@ -468,6 +476,7 @@ public void setTTL(int ttl) throws InvalidArgumentException {
      *
      * @return the string value of the maddr parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.170 -0500", hash_original_method = "BA8497BF19C86E6498457C19F33C2BB1", hash_generated_method = "1F148048371B6A738FC40E49494DF6D1")
     
 public String getMAddr() {
@@ -483,6 +492,7 @@ public String getMAddr() {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the mAddr value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.172 -0500", hash_original_method = "6AB0C98EE8B2466C821195A9A73846A0", hash_generated_method = "85B938EA502BF43FCC37B7396603824F")
     
 public void setMAddr(String mAddr) throws ParseException {
@@ -504,6 +514,7 @@ public void setMAddr(String mAddr) throws ParseException {
      *
      * @return the string received value of ViaHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.175 -0500", hash_original_method = "25AF7C33721E5D780684174C5845DEAD", hash_generated_method = "4E8FCF5656D0BCA0C0FBDE4F491C238B")
     
 public String getReceived() {
@@ -517,6 +528,7 @@ public String getReceived() {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the received value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.178 -0500", hash_original_method = "F727BD69B2536BBCBA80253D70F95056", hash_generated_method = "DC81FC96D12EC8236D2B8780E9141741")
     
 public void setReceived(String received) throws ParseException {
@@ -535,6 +547,7 @@ public void setReceived(String received) throws ParseException {
      *
      * @return the string branch value of ViaHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.182 -0500", hash_original_method = "9A958EF7B290CF5A27A4EB96F15158F0", hash_generated_method = "0018E0512B32E4AA454DEB730D48FE1D")
     
 public String getBranch() {
@@ -549,6 +562,7 @@ public String getBranch() {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the branch value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.185 -0500", hash_original_method = "5A56F4FACEB17A95A8FCAD93BB83EA63", hash_generated_method = "340F253F2A8F99F6D632137DDBBA9D59")
     
 public void setBranch(String branch) throws ParseException {
@@ -577,6 +591,7 @@ public Object clone() {
      * (non-Javadoc)
      * @see gov.nist.javax.sip.header.ViaHeaderExt#getSentByField()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.192 -0500", hash_original_method = "5347FDDA2C7AAC95D7D1D2F666800B71", hash_generated_method = "7741DB56E64F64615C969A6462982567")
     
 public String getSentByField() {
@@ -588,6 +603,7 @@ public String getSentByField() {
      * (non-Javadoc)
      * @see gov.nist.javax.sip.header.ViaHeaderExt#getSentProtocolField()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.195 -0500", hash_original_method = "128FFEF5D307451BA5388B5193A6BF26", hash_generated_method = "58427536C6610BFA4C3467698B755DC0")
     
 public String getSentProtocolField() {

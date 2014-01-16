@@ -9,10 +9,6 @@ import java.util.HashMap;
 
 import android.util.Log;
 
-
-
-
-
 public abstract class FileObserver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.682 -0500", hash_original_field = "5FE9DDE9D837F34381C4A54B3D07EE27", hash_generated_field = "21BD865D91527844549AD20398D3728F")
 
@@ -41,7 +37,6 @@ public abstract class FileObserver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.700 -0500", hash_original_field = "0B56105F8D0FC207B117C5E139DEDF9A", hash_generated_field = "91ECC282AD15E5A8F68B2D076FF1EAC8")
 
     public static final int CREATE = 0x00000100;
-
     
     private static class ObserverThread extends Thread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.716 -0500", hash_original_field = "56456BFCC9D71198E1C8B389DC5580DC", hash_generated_field = "95A030757310716145723A8A1CEA6B63")
@@ -64,6 +59,7 @@ public void run() {
             observe(m_fd);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.724 -0500", hash_original_method = "D908EBB4D5EECA8DE9588D13B5ECBFEE", hash_generated_method = "A4B25ED9C6B8AD280CA32B66CC6873E9")
         
 public int startWatching(String path, int mask, FileObserver observer) {
@@ -142,8 +138,6 @@ public void onEvent(int wfd, int mask, String path) {
         	addTaint(fd);
         	addTaint(wfd);
         }
-
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.703 -0500", hash_original_field = "CAB0384DF54A798636664314B0F34248", hash_generated_field = "B3C04D515307EB7E0F19F0FA5082DE3C")
@@ -162,10 +156,8 @@ public void onEvent(int wfd, int mask, String path) {
             | DELETE_SELF | MOVE_SELF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.713 -0500", hash_original_field = "3CE1256B1C9BDB4415B01ECC77A3613B", hash_generated_field = "AC0E7C3E561C767FDA353DB7657B76AD")
 
-
     private static final String LOG_TAG = "FileObserver";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.749 -0500", hash_original_field = "53047BD8D0D028D55CFACC5947363460", hash_generated_field = "810470F71D04523E52A64C29782F9430")
-
 
     private static ObserverThread s_observerThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.752 -0500", hash_original_field = "86D341BCB988DE4CD549A04FD8E01BB0", hash_generated_field = "F6AE1494CAFC5CFCCCF98A3C7A6207EF")
@@ -195,6 +187,8 @@ public FileObserver(String path) {
      * @param path The file or directory to monitor
      * @param mask The event or events (added together) to watch for
      */
+    @DSComment("Low level monitoring file state")
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.761 -0500", hash_original_method = "F264FAE09DE2A5840856FF0F4AB8E776", hash_generated_method = "4420EB73C687A6AEEB448978A7536312")
     
 public FileObserver(String path, int mask) {
@@ -214,6 +208,8 @@ protected void finalize() {
      * this time, or else no events will be reported (even if it appears later).
      * If monitoring is already started, this call has no effect.
      */
+    @DSComment("Low level monitoring file state")
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.765 -0500", hash_original_method = "2F8CF3013C1A72AA7A8ACE9D7C9A9F50", hash_generated_method = "4B40553039EC0FF89457EEC174970D10")
     
 public void startWatching() {

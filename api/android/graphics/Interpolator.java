@@ -6,46 +6,30 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.SystemClock;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Interpolator {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int valueCount, int frameCount) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_instance) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeReset(int native_instance, int valueCount, int frameCount) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetKeyFrame(int native_instance, int index, int msec, float[] values, float[] blend) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetRepeatMirror(int native_instance, float repeatCount, boolean mirror) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeTimeToValues(int native_instance, int msec, float[] values) {
         return DSUtils.UNKNOWN_INT;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.812 -0500", hash_original_field = "7C821A44BA6C69802A2F40CFF359D196", hash_generated_field = "68C3E9DC71F308640D17475B37A6DDEF")
-
     
     private int mValueCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.814 -0500", hash_original_field = "2B862720623879764FB3C1B9EA11B335", hash_generated_field = "539D32ACC3FFB5021AAD2744A6F8CCC3")
@@ -95,12 +79,14 @@ public void reset(int valueCount, int frameCount) {
         nativeReset(native_instance, valueCount, frameCount);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.792 -0500", hash_original_method = "89BB77AE086853608E25F99A94348DC0", hash_generated_method = "1CB4F11CFA2991257AEC8A9AE99A491A")
     
 public final int getKeyFrameCount() {
         return mFrameCount;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.795 -0500", hash_original_method = "776BE84F4731B9CD4E842330007BED2A", hash_generated_method = "DD489F639A9250C746DDDF3722535E08")
     
 public final int getValueCount() {
@@ -117,6 +103,7 @@ public final int getValueCount() {
      *        SystemClock.uptimeMillis() clock
      * @param values Array of values associated with theis key frame
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.798 -0500", hash_original_method = "8B845648DDEC7EC4E813052052B8A4ED", hash_generated_method = "43FF38EF0AB89DB8347AED2F078AC8FA")
     
 public void setKeyFrame(int index, int msec, float[] values) {
@@ -133,6 +120,7 @@ public void setKeyFrame(int index, int msec, float[] values) {
      * @param values Array of values associated with theis key frame
      * @param blend (may be null) Optional array of 4 blend values
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.800 -0500", hash_original_method = "0A4BD1EDAE26740EE7CE301C3AD23A04", hash_generated_method = "0C62FAFCF086862A06AAF6823A5B7E21")
     
 public void setKeyFrame(int index, int msec, float[] values, float[] blend) {
@@ -153,6 +141,7 @@ public void setKeyFrame(int index, int msec, float[] values, float[] blend) {
      * whether the interpolator should mirror its repeats. The default settings
      * are repeatCount = 1, and mirror = false.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.802 -0500", hash_original_method = "951FAF18C8FD28DC8D0B362372C0DCF6", hash_generated_method = "AE0C836A346A863BC38BB857F2DB94DD")
     
 public void setRepeatMirror(float repeatCount, boolean mirror) {
@@ -201,14 +190,12 @@ public Result timeToValues(int msec, float[] values) {
     protected void finalize() throws Throwable {
         nativeDestructor(native_instance);
     }
-
     
     public enum Result {
         NORMAL,
         FREEZE_START,
         FREEZE_END
     }
-
     
 }
 

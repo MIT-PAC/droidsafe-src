@@ -6,15 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import sun.misc.Unsafe;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class AtomicLong extends Number implements java.io.Serializable {
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean VMSupportsCS8() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -32,7 +27,6 @@ public class AtomicLong extends Number implements java.io.Serializable {
     static final boolean VM_SUPPORTS_LONG_CAS = VMSupportsCS8();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.518 -0500", hash_original_field = "DDD221DA9F0E75EE691CFACED8C3397A", hash_generated_field = "272863A964896393C50056118F48F189")
 
-
     private volatile long value;
 
     /**
@@ -40,6 +34,8 @@ public class AtomicLong extends Number implements java.io.Serializable {
      *
      * @param initialValue the initial value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.521 -0500", hash_original_method = "6ECA774993D880ABD38A420DC693E35F", hash_generated_method = "289533BFFF52F6D05E10ACA8F1E13A96")
     
 public AtomicLong(long initialValue) {
@@ -49,6 +45,8 @@ public AtomicLong(long initialValue) {
     /**
      * Creates a new AtomicLong with initial value {@code 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.523 -0500", hash_original_method = "E5BCC7DD3ADE986582FDD04FB62FAAFA", hash_generated_method = "2C25E4FF944D2330F4ED58696D2578B6")
     
 public AtomicLong() {
@@ -59,6 +57,9 @@ public AtomicLong() {
      *
      * @return the current value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.526 -0500", hash_original_method = "558225EAA1BF82052D6B969C16747B7A", hash_generated_method = "0DA3986B795EBED7D70FCF24B2FF399B")
     
 public final long get() {
@@ -82,6 +83,7 @@ public final void set(long newValue) {
      * @param newValue the new value
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.531 -0500", hash_original_method = "5F840B47C39798AC1AA2E3C6DCFC9B43", hash_generated_method = "83A9877A95611BF082C2348B8392889A")
     
 public final void lazySet(long newValue) {
@@ -94,6 +96,7 @@ public final void lazySet(long newValue) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.534 -0500", hash_original_method = "390AAB13B16AF188378473BA59BB98BA", hash_generated_method = "4DB366D00B730F399166E828BE3ABDB1")
     
 public final long getAndSet(long newValue) {
@@ -142,6 +145,7 @@ public final boolean weakCompareAndSet(long expect, long update) {
      *
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.542 -0500", hash_original_method = "0FB09453B9C7F7E3674DED4A168E8FE2", hash_generated_method = "3E6BAA9B4DE447110E896CD61AC2ACE1")
     
 public final long getAndIncrement() {
@@ -158,6 +162,7 @@ public final long getAndIncrement() {
      *
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.544 -0500", hash_original_method = "B338EF04AC352C769CAB7069B279216B", hash_generated_method = "6552A10E0051DDC92382F8CAC7DF24C1")
     
 public final long getAndDecrement() {
@@ -175,6 +180,7 @@ public final long getAndDecrement() {
      * @param delta the value to add
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.547 -0500", hash_original_method = "F13F3FE7BE5ED16E2943CEEE9739382A", hash_generated_method = "77B18165BA1EBE3546A7B43EEE7209E2")
     
 public final long getAndAdd(long delta) {
@@ -191,6 +197,8 @@ public final long getAndAdd(long delta) {
      *
      * @return the updated value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.549 -0500", hash_original_method = "0B4DA3D002D9BEE66893798DFD4DBDF7", hash_generated_method = "D3393C2385D07821FEECC3C8F0475B32")
     
 public final long incrementAndGet() {
@@ -244,7 +252,6 @@ public final long addAndGet(long delta) {
 public String toString() {
         return Long.toString(get());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.558 -0500", hash_original_method = "84EB409D8DAC6A9532DB1B14F662CA95", hash_generated_method = "EE23D09943DC9A4EFC33B9CF333E20F2")
     

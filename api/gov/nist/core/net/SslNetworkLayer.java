@@ -25,18 +25,11 @@ import javax.net.ssl.SSLSocket;
 import javax.net.ssl.SSLSocketFactory;
 import javax.net.ssl.TrustManagerFactory;
 
-
-
-
-
-
 public class SslNetworkLayer implements NetworkLayer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.870 -0500", hash_original_field = "873903B7FC49F40C02995A48B85609AA", hash_generated_field = "87C1504631DE52B6388145B4A5898443")
 
-
     private SSLSocketFactory sslSocketFactory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.873 -0500", hash_original_field = "596C860C31BFBC55B01434387C8A8429", hash_generated_field = "C44352573933B1EA5CAC2388C9289B1C")
-
 
     private SSLServerSocketFactory sslServerSocketFactory;
 
@@ -94,6 +87,7 @@ public DatagramSocket createDatagramSocket(int port, InetAddress laddr)
     }
 
     /* Added by Daniel J. Martinez Manzano <dani@dif.um.es> */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.888 -0500", hash_original_method = "C136B26924FEF16657D19F16D9E45E07", hash_generated_method = "119688E8F055C3ADFB57FC6749AD2BF6")
     
 public SSLServerSocket createSSLServerSocket(int port, int backlog,
@@ -103,6 +97,7 @@ public SSLServerSocket createSSLServerSocket(int port, int backlog,
     }
 
     /* Added by Daniel J. Martinez Manzano <dani@dif.um.es> */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.892 -0500", hash_original_method = "A69DB4651ABD80BB673808D27D01239A", hash_generated_method = "8CC4B058898211158438279B7ED5D174")
     
 public SSLSocket createSSLSocket(InetAddress address, int port)
@@ -111,6 +106,7 @@ public SSLSocket createSSLSocket(InetAddress address, int port)
     }
 
     /* Added by Daniel J. Martinez Manzano <dani@dif.um.es> */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.894 -0500", hash_original_method = "42E28448C903215260E4CCA841EF7FB7", hash_generated_method = "BF42325DE07BE9E5E07B9ECBECCB83DA")
     
 public SSLSocket createSSLSocket(InetAddress address, int port,
@@ -145,6 +141,7 @@ public Socket createSocket(InetAddress address, int port,
      * @throws IOException if binding or connecting the socket fail for a reason
      * (exception relayed from the correspoonding Socket methods)
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.900 -0500", hash_original_method = "79DF1B5079137D62C29C5EAC0F3F40E2", hash_generated_method = "A015978186413157B4AD18DBEEDB9864")
     
 public Socket createSocket(InetAddress address, int port,
@@ -164,7 +161,6 @@ public Socket createSocket(InetAddress address, int port,
         else
             return new Socket(address, port);
     }
-
     
 }
 

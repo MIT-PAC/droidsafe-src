@@ -9,10 +9,6 @@ import android.graphics.Paint;
 import android.graphics.Path;
 import android.graphics.RectF;
 
-
-
-
-
 public class RoundRectShape extends RectShape {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.691 -0500", hash_original_field = "FFD42C23F2C723747ED877F614CEF10A", hash_generated_field = "6830495B7E4516D5AD2F6812EB294538")
 
@@ -24,7 +20,6 @@ public class RoundRectShape extends RectShape {
 
     private float[] mInnerRadii;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.697 -0500", hash_original_field = "87E108BA533AD53ED54A9D43AC876571", hash_generated_field = "8D82BE416946019DAC8D55ACEFBD37C0")
-
     
     private RectF mInnerRect;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.699 -0500", hash_original_field = "BA85F34C67A3F4FFA171800FB1C1C633", hash_generated_field = "101E51A8003B09B39CD3C51138473AB6")
@@ -50,6 +45,8 @@ public class RoundRectShape extends RectShape {
      *                   pass null.
      *                   If inset parameter is null, this parameter is ignored. 
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.702 -0500", hash_original_method = "BFB37C497FF277AFDA0C7FF1B797A20B", hash_generated_method = "69B629F93436596B6E6AC6E5DC0E2075")
     
 public RoundRectShape(float[] outerRadii, RectF inset,
@@ -116,7 +113,6 @@ public RoundRectShape(float[] outerRadii, RectF inset,
         shape.mPath = new Path(mPath);
         return shape;
     }
-
     
 }
 

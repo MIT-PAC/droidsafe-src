@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.concurrent.locks.AbstractQueuedSynchronizer;
 
-
-
-
-
-
 public class FutureTask<V> implements RunnableFuture<V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.307 -0500", hash_original_field = "791C2888A6F5CDC158445182FD1E3538", hash_generated_field = "A4B34EF3CE38520839B34A2F06599243")
 
@@ -23,6 +18,8 @@ public class FutureTask<V> implements RunnableFuture<V> {
      * @param  callable the callable task
      * @throws NullPointerException if callable is null
      */
+    @DSComment("callback needs to be called")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.310 -0500", hash_original_method = "EBD25CFA864782219EF130D05DE406FC", hash_generated_method = "7BD296EDBFF52128CD69A980B4707200")
     
 public FutureTask(Callable<V> callable) {
@@ -49,6 +46,8 @@ public FutureTask(Runnable runnable, V result) {
         sync = new Sync(Executors.callable(runnable, result));
     }
 
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.315 -0500", hash_original_method = "87256A2F3BC620B5A65A2DEACA482F4A", hash_generated_method = "4C5742613CCA16D20CDA018ADC844780")
     
 public boolean isCancelled() {
@@ -61,6 +60,8 @@ public boolean isDone() {
         return sync.innerIsDone();
     }
 
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.320 -0500", hash_original_method = "88A87863EC7E1056D8FE46146EF894BC", hash_generated_method = "2B9A6D8E962965597198EE7EF5CC30EB")
     
 public boolean cancel(boolean mayInterruptIfRunning) {
@@ -70,6 +71,9 @@ public boolean cancel(boolean mayInterruptIfRunning) {
     /**
      * @throws CancellationException {@inheritDoc}
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.322 -0500", hash_original_method = "162C3BFD86443C5C054F309FCD025483", hash_generated_method = "4BA8D097AA6015B36B09431BCBD339FE")
     
 public V get() throws InterruptedException, ExecutionException {
@@ -79,6 +83,9 @@ public V get() throws InterruptedException, ExecutionException {
     /**
      * @throws CancellationException {@inheritDoc}
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.324 -0500", hash_original_method = "90F54A92EEE05A0240D215CA50ECEC0E", hash_generated_method = "F2C4282953312CB1FC8BB08A4E7F5CE4")
     
 public V get(long timeout, TimeUnit unit)
@@ -154,7 +161,6 @@ public void run() {
 protected boolean runAndReset() {
         return sync.innerRunAndReset();
     }
-
     
     private final class Sync extends AbstractQueuedSynchronizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:19.340 -0500", hash_original_field = "48283B78DFDDDD24606FBF66FAFFFB12", hash_generated_field = "A00041810A819D5E857048CB950A7783")
@@ -356,8 +362,6 @@ boolean innerRunAndReset() {
             }
         }
     }
-
-
     
 }
 

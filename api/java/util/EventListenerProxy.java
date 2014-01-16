@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class EventListenerProxy implements EventListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.383 -0500", hash_original_field = "349D93182B74FDD05AC630535DA0F781", hash_generated_field = "63216795243EEE41ECEC8F741B6ECA5B")
-
 
     private  EventListener listener;
 
@@ -32,12 +27,12 @@ public EventListenerProxy(EventListener listener) {
      *
      * @return the wrapped {@code EventListener}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.388 -0500", hash_original_method = "544CEBD256D91351395433E8E1959E7F", hash_generated_method = "26437651E60C6E6FE53A6F9741417A1A")
     
 public EventListener getListener() {
         return listener;
     }
-
     
 }
 

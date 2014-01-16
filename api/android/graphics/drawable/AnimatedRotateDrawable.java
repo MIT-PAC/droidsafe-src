@@ -21,14 +21,8 @@ import android.util.TypedValue;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class AnimatedRotateDrawable extends Drawable implements Drawable.Callback, Runnable, Animatable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.504 -0500", hash_original_field = "76B2D79DE74AF341676FB7B6133116D3", hash_generated_field = "FE6E5F6D52B9C115F35C89BDFFFA8B21")
-
 
     private AnimatedRotateState mState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.506 -0500", hash_original_field = "B15C308E96D0EEBD27CFE369FA349C15", hash_generated_field = "5CA5A1EF3CAA45117BCACBC34EF05952")
@@ -71,6 +65,7 @@ private void init() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.522 -0500", hash_original_method = "5DFCBA38220408C5DABBFEFD0FA87F8B", hash_generated_method = "D9B5048E192D6A721FAD907C26FD5607")
     
 @Override
@@ -136,6 +131,7 @@ public void run() {
         nextFrame();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.536 -0500", hash_original_method = "183F775A408D23F991FB2833203EEE63", hash_generated_method = "03EF580F34B523F3F86B03A2584BFB35")
     
 @Override
@@ -151,17 +147,19 @@ public void run() {
             unscheduleSelf(this);
         }
         return changed;
-    }    
+    }
     
     /**
      * Returns the drawable rotated by this RotateDrawable.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.538 -0500", hash_original_method = "CE08CCF44A5C011BE03C2CE7D256555D", hash_generated_method = "BEFA5166E237A523F1847A1483E2D376")
     
 public Drawable getDrawable() {
         return mState.mDrawable;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.540 -0500", hash_original_method = "1BF1269A7F11A078222AE5900C6EC170", hash_generated_method = "F4C80938C81C1C6892334A7C3046F63C")
     
 @Override
@@ -171,6 +169,7 @@ public Drawable getDrawable() {
                 | mState.mDrawable.getChangingConfigurations();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.543 -0500", hash_original_method = "E07BF10440452C45B5D504184A6B58C8", hash_generated_method = "771A5B696691C72ECB795BE897A70411")
     
 @Override
@@ -178,6 +177,7 @@ public Drawable getDrawable() {
         mState.mDrawable.setAlpha(alpha);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.545 -0500", hash_original_method = "6C570D1758B788EA390E83E99A76EB36", hash_generated_method = "D515DA309DA73F6E9E81CB00A60B86B6")
     
 @Override
@@ -185,6 +185,7 @@ public Drawable getDrawable() {
         mState.mDrawable.setColorFilter(cf);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.547 -0500", hash_original_method = "7CC935EC38A8A9ED900F61C0DE237712", hash_generated_method = "2C6912CB7EFAF5519A5B360EDA63E638")
     
 @Override
@@ -240,6 +241,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mState.mDrawable.setBounds(bounds.left, bounds.top, bounds.right, bounds.bottom);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.563 -0500", hash_original_method = "5B4218C80F47B6E11FBBAA9FF9621C9F", hash_generated_method = "E28C2E4A7B9402F89BB9614B8EB9AEEA")
     
 @Override
@@ -247,6 +249,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mState.mDrawable.getIntrinsicWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.565 -0500", hash_original_method = "D5692643A14F3CC0D08138E7C727B99D", hash_generated_method = "7484AD6435F7AE8BD48190BEDCA8E9A4")
     
 @Override
@@ -350,7 +353,6 @@ public void setFramesDuration(int framesDuration) {
         }
         return this;
     }
-
     
     final static class AnimatedRotateState extends Drawable.ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.580 -0500", hash_original_field = "38BA53DD394F85639C99ED8E666FF8FB", hash_generated_field = "38BA53DD394F85639C99ED8E666FF8FB")
@@ -358,10 +360,8 @@ public void setFramesDuration(int framesDuration) {
         Drawable mDrawable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.583 -0500", hash_original_field = "9BFAF00848476277D36D9BA586984BA7", hash_generated_field = "9BFAF00848476277D36D9BA586984BA7")
 
-
         int mChangingConfigurations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.585 -0500", hash_original_field = "C85378C704A40C3EFC15605BD9C2CCB0", hash_generated_field = "C85378C704A40C3EFC15605BD9C2CCB0")
-
         
         boolean mPivotXRel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.587 -0500", hash_original_field = "5936761CCB9106C6D82A6436A57EC343", hash_generated_field = "5936761CCB9106C6D82A6436A57EC343")
@@ -381,11 +381,10 @@ public void setFramesDuration(int framesDuration) {
         int mFramesCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.597 -0500", hash_original_field = "09212A3A30B7E6D48DEECC4F4639CCBC", hash_generated_field = "F62F8D22C4EDE8B8E63C376677BD915C")
 
-
         private boolean mCanConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.599 -0500", hash_original_field = "04605894B57F7B3414AF620BF4AC040E", hash_generated_field = "63D49323436A33301C0DA6EDF88627FF")
 
-        private boolean mCheckedConstantState;        
+        private boolean mCheckedConstantState;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.602 -0500", hash_original_method = "1B1F90708B07C46F9FB4F0410B3AE108", hash_generated_method = "D833034A91655C36359E83C1265D544A")
         
@@ -422,6 +421,7 @@ public AnimatedRotateState(AnimatedRotateState source, AnimatedRotateDrawable ow
             return new AnimatedRotateDrawable(this, res);
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:17.613 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override
@@ -439,11 +439,8 @@ public boolean canConstantState() {
 
             return mCanConstantState;
         }
-
         
     }
-
-
     
 }
 

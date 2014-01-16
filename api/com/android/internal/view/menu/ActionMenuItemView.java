@@ -20,16 +20,11 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-
-
-
-
 public class ActionMenuItemView extends LinearLayout implements MenuView.ItemView, View.OnClickListener, View.OnLongClickListener, ActionMenuView.ActionMenuChildView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.133 -0500", hash_original_field = "5E900415DC83EB4A21128A5F009D6AD3", hash_generated_field = "59FAE62321B2FBA7C3D29B6855696300")
 
     private static final String TAG = "ActionMenuItemView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.135 -0500", hash_original_field = "DBB703567F4F0AD8C976E510ACED07CC", hash_generated_field = "B32E7CB0DF6786FBC4DDA7C50169A79B")
-
 
     private MenuItemImpl mItemData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.137 -0500", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
@@ -39,7 +34,6 @@ public class ActionMenuItemView extends LinearLayout implements MenuView.ItemVie
 
     private MenuBuilder.ItemInvoker mItemInvoker;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.141 -0500", hash_original_field = "E7F1856FFCFEC6DE5CAE6A6442AAAAA2", hash_generated_field = "FAB3D217CE66519B4E9F8FFE982A38EF")
-
 
     private ImageButton mImageButton;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.143 -0500", hash_original_field = "1DD0FEF7EAFC27E50D0C652743229254", hash_generated_field = "9B0FB4DD236A598CA5E9F899DD0004A7")
@@ -94,6 +88,7 @@ public ActionMenuItemView(Context context, AttributeSet attrs, int defStyle) {
         setOnLongClickListener(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.164 -0500", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "B0B9AF9FA2DDD827E4877533896893E2")
     
 public MenuItemImpl getItemData() {
@@ -142,12 +137,14 @@ public boolean prefersCondensedTitle() {
         return true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.177 -0500", hash_original_method = "206C9D092F8D2CE8A945E1A45B818CB4", hash_generated_method = "190A86B6FCC2D0FB7D679FA2B212DD27")
     
 public void setCheckable(boolean checkable) {
         // TODO Support checkable action items
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.180 -0500", hash_original_method = "98D5E38367DB01B2323D3E891737183A", hash_generated_method = "FD79D39CDBCB9A353A0E4D9EECD3BA27")
     
 public void setChecked(boolean checked) {
@@ -194,6 +191,7 @@ public boolean hasText() {
         return mTextButton.getVisibility() != GONE;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:37.191 -0500", hash_original_method = "85A41D343B47A7443CFB0CEF90E94BCA", hash_generated_method = "A602A3D9225E44DB42D70BA9D23108A5")
     
 public void setShortcut(boolean showShortcut, char shortcutKey) {

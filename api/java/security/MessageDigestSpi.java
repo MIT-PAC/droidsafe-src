@@ -6,13 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
-
-
-
-
 public abstract class MessageDigestSpi {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.096 -0400", hash_original_method = "1CC69EEF55221D742AA45996503C6E66", hash_generated_method = "1CC69EEF55221D742AA45996503C6E66")
     public MessageDigestSpi ()
     {
@@ -148,13 +143,13 @@ protected int engineDigest(byte[] buf, int offset, int len) throws DigestExcepti
     
 protected abstract void engineReset();
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.068 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
     
 @Override
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     
 }
 

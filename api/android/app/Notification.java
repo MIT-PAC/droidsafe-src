@@ -18,11 +18,6 @@ import android.widget.RemoteViews;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class Notification implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.239 -0500", hash_original_field = "5BB1F14B760B289DD56199D40503C3B2", hash_generated_field = "493D0EBDAE7097F899550C884AC22A2C")
 
@@ -124,14 +119,12 @@ public Notification[] newArray(int size)
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.279 -0500", hash_original_field = "D33E756C2D5F750C5D34904C059EE8D3", hash_generated_field = "F2FF83B6EA1500EB5B3B8FD769168619")
 
     public long[] vibrate;
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.347 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
         private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.349 -0500", hash_original_field = "DC3C02B3B86774AA049529AB7BA1456D", hash_generated_field = "844ECA1D47A3C505C7DE80048E6071EA")
-
 
         private long mWhen;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.351 -0500", hash_original_field = "1ECA0A39CA494F6BEDC60572E1607E75", hash_generated_field = "45C49A5EA6EC401F6D3EFC525CE84A58")
@@ -217,6 +210,8 @@ public Notification[] newArray(int size)
          *      RemoteViews. The Context will not be held past the lifetime of this
          *      Builder object.
          */
+        @DSComment("Building Notification")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.407 -0500", hash_original_method = "A0705CD8F7169475619B80AC2CAED080", hash_generated_method = "31183F4BFEB771758826DC42A3BB6B50")
         
 public Builder(Context context) {
@@ -620,6 +615,9 @@ private RemoteViews makeTickerView() {
          * Combine all of the options that have been set and return a new {@link Notification}
          * object.
          */
+        @DSComment("Building Notification")
+        @DSSafe(DSCat.UTIL_FUNCTION)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.475 -0500", hash_original_method = "ACBCD2459BD592E66E9A1B94FF396B6B", hash_generated_method = "9E9159152B42F42893112012D9565859")
         
 public Notification getNotification() {
@@ -651,7 +649,6 @@ public Notification getNotification() {
             }
             return n;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.282 -0500", hash_original_field = "128E38791619DBDCD60954601A40EDB1", hash_generated_field = "057E0BFB613A5D660FB5738277981EFF")
@@ -668,13 +665,14 @@ public Notification getNotification() {
     public int defaults;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.310 -0500", hash_original_field = "E0CDE1A38A40425C446F52269E5723DC", hash_generated_field = "06C062A47B4E980AE7B4928732A7AB14")
 
-
     public int flags;
 
     /**
      * Constructs a Notification object with everything set to 0.
      * You might want to consider using {@link Builder} instead.
      */
+    @DSComment("no impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.312 -0500", hash_original_method = "1CE373DE78E11DB8401FDC6F724116BB", hash_generated_method = "79DCC7BC767E8F085FFC072842DC4C08")
     
 public Notification()
@@ -709,6 +707,8 @@ public Notification(Context context, int icon, CharSequence tickerText, long whe
      *
      * @deprecated Use {@link Builder} instead.
      */
+    @DSComment("no impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.317 -0500", hash_original_method = "CC2BF19BEFE3DF69C00F83DC5FB8C9D2", hash_generated_method = "024900C64796E7D706CC036A6F0BE7A3")
     
 @Deprecated
@@ -824,6 +824,7 @@ public int describeContents() {
     /**
      * Flatten this notification from a parcel.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.329 -0500", hash_original_method = "2E97C8DA884DBA934FB3E6EBE25C30F5", hash_generated_method = "26BFF04B04901CA06B5B471C37A88912")
     
 public void writeToParcel(Parcel parcel, int flags)
@@ -912,6 +913,8 @@ public void writeToParcel(Parcel parcel, int flags)
      * 
      * @deprecated Use {@link Builder} instead.
      */
+    @DSComment("IPC activity")
+    @DSSpec(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:18.340 -0500", hash_original_method = "15C64B5C143E30BF8DB14A898F7C5E53", hash_generated_method = "D323371ED817368FE42627BAC8C1A842")
     
 @Deprecated

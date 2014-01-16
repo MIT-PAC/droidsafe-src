@@ -22,10 +22,6 @@ import javax.net.ssl.SSLSession;
 
 import libcore.io.IoUtils;
 
-
-
-
-
 public class FileClientSessionCache {
 
     /**
@@ -38,6 +34,7 @@ public class FileClientSessionCache {
      * @throws IOException if the file exists and is not a directory or if
      *  creating the directories fails
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.700 -0500", hash_original_method = "05C617D461D77195B2E85EFC82E4058C", hash_generated_method = "77B835C846B7732D948F8F13965F7191")
     
 public static synchronized SSLClientSessionCache usingDirectory(
@@ -58,9 +55,7 @@ static synchronized void reset() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.652 -0500", hash_original_field = "B9CF3F368199AEFAAFEB125B3B92D9DE", hash_generated_field = "7AE276D1B1BAA9C4B56D319F3FED4FD0")
 
-
     public static final int MAX_SIZE = 12;
-
     
     static class Impl implements SSLClientSessionCache {
 
@@ -147,6 +142,7 @@ Impl(File directory) throws IOException {
             this.directory = directory;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.676 -0500", hash_original_method = "6735B81487DB1A41BA0188585FC9CDB0", hash_generated_method = "FFDD09C226A3DECE8B07C0E621B21081")
         
 public synchronized byte[] getSessionData(String host, int port) {
@@ -197,6 +193,7 @@ public synchronized byte[] getSessionData(String host, int port) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.681 -0500", hash_original_method = "5132AE8CDA034691D0864F8896105224", hash_generated_method = "D5F28A47CA22A82A576E3F38A4593C40")
         
 public synchronized void putSessionData(SSLSession session,
@@ -319,19 +316,14 @@ private void indexFiles() {
             }
             size--;
         }
-
         
     }
-
-
     
     static class CacheFile extends File {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.706 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
 
-
          String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.710 -0500", hash_original_field = "C57F295716CFF89C00CC3061FA79AC83", hash_generated_field = "C57F295716CFF89C00CC3061FA79AC83")
-
 
         long lastModified = -1;
 
@@ -364,7 +356,6 @@ CacheFile(File dir, String name) {
             }
             return result < 0 ? -1 : 1;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.698 -0500", hash_original_field = "F8AFAF8A637439051EBBAD7E7F81D41B", hash_generated_field = "C5D99E3CF4DB28197153FDE2D1C47755")

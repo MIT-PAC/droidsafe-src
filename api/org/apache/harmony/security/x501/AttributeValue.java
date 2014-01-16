@@ -9,11 +9,6 @@ import java.io.IOException;
 import org.apache.harmony.security.asn1.ASN1StringType;
 import org.apache.harmony.security.asn1.DerInputStream;
 
-
-
-
-
-
 public final class AttributeValue {
 
     /**
@@ -38,34 +33,26 @@ private static boolean isPrintableString(String str) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.043 -0500", hash_original_field = "84B201F12B93C4A22935FF8AEB825853", hash_generated_field = "D85F8A65E9DE43097BB265479C87E73B")
 
-
     public  boolean wasEncoded;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.045 -0500", hash_original_field = "C2F83787DCFDB0BEF15AD79E38B15E12", hash_generated_field = "4A17972559F62AB2783311336A9D4582")
-
 
     public String escapedString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.047 -0500", hash_original_field = "5DA0D0DEEDF14DDA1194714C7CBCD3AD", hash_generated_field = "6CF85B6901CE5996CC9D91D793C48B7A")
 
-
     private String hexString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.049 -0500", hash_original_field = "75DDD831AA6BEDC0081548B34B0142BC", hash_generated_field = "917AECB67DEB49506F6054710716A2C2")
-
 
     private int tag = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.051 -0500", hash_original_field = "B26EA4441AC976CE9D513DB2C8639526", hash_generated_field = "8DF314849D9BDCEAE78F4B8DFF0C1E45")
 
-
     public byte[] encoded;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.054 -0500", hash_original_field = "AB97A4156FC1CC1DAF26375194010FF1", hash_generated_field = "1395852C401E496F85701A0A9D82F003")
-
 
     public byte[] bytes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.055 -0500", hash_original_field = "60A47098D83F88DA9997B0BA3591E851", hash_generated_field = "439798B0B0B82905E05B97B14950EE49")
 
-
     public boolean hasQE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.058 -0500", hash_original_field = "3F1856C6499EED7D4325FD9564A51E14", hash_generated_field = "B06E71DF7A343E20C8542F4E7F9F2A51")
-
 
     public String rawString;
 
@@ -125,6 +112,7 @@ public AttributeValue(String rawString, byte[] encoded, int tag) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.072 -0500", hash_original_method = "01F8BD1A541A09C15BC5DA5B1F02995A", hash_generated_method = "CC77EF1B72A571133314D3BEE05D8B2B")
     
 public int getTag() {
@@ -136,6 +124,7 @@ public int getTag() {
         return tag;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.075 -0500", hash_original_method = "2B88DEF802689DAD6E450E66D9E740A5", hash_generated_method = "950FD46BFC3ADB9C126FD6DEDF460343")
     
 public String getHexString() {
@@ -295,7 +284,6 @@ public String makeCanonical() {
 
         return buf.toString();
     }
-
     
 }
 

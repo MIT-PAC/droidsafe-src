@@ -7,22 +7,14 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.security.cert.CertPath;
 
-
-
-
-
-
 public final class CodeSigner implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.207 -0500", hash_original_field = "BAF8884A774DF62E276A09BDF26B6BA0", hash_generated_field = "29E3705B91FEE287C2335C4D8AA59C47")
-
 
     private static final long serialVersionUID = 6819288105193937581L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.211 -0500", hash_original_field = "C6569135C27F1E6021BDE7485FB065B4", hash_generated_field = "FC883EA50AB2FDD2C3073E407E6CEA66")
 
-
     private CertPath signerCertPath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.215 -0500", hash_original_field = "81116940964DBAC2DFF057116D2E46D6", hash_generated_field = "0D494C7F1B090A9E890D8617AD65E8BA")
-
 
     private Timestamp timestamp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.218 -0500", hash_original_field = "5ED776CD81502BA181156D7F28EBC9C8", hash_generated_field = "0316D82713F1CE4A6BE9BC97E8C831C1")
@@ -85,6 +77,7 @@ public CodeSigner(CertPath signerCertPath, Timestamp timestamp) {
      *
      * @return the certificate path associated with this {@code CodeSigner}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.231 -0500", hash_original_method = "30F2DDB76579221F80A186A0F4D6B0C1", hash_generated_method = "01A5353F5016822816912028EB92BCE2")
     
 public CertPath getSignerCertPath() {
@@ -97,6 +90,7 @@ public CertPath getSignerCertPath() {
      * @return the time stamp associated with this {@code CodeSigner}, maybe
      *         {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.235 -0500", hash_original_method = "F117DFA1A6EB777CC4A763885DD30F8B", hash_generated_method = "4B27F1C3C30E2F31AB70EF3276E874F9")
     
 public Timestamp getTimestamp() {

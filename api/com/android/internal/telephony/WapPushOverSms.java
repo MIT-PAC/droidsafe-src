@@ -14,16 +14,11 @@ import android.os.RemoteException;
 import android.provider.Telephony.Sms.Intents;
 import android.util.Log;
 
-
-
-
-
 public class WapPushOverSms {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.767 -0500", hash_original_field = "85CC68C3A5EDE562AE97B9341E829CBB", hash_generated_field = "D83C831CD0AB23E53B0E52B2C0EB27F8")
 
     private static final String LOG_TAG = "WAP PUSH";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.770 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.772 -0500", hash_original_field = "1B4082614F898F1FF2AD2C831A38F19A", hash_generated_field = "FBAD2745825D1B222348829BBBC8E895")
@@ -36,7 +31,6 @@ public class WapPushOverSms {
 
     private final int WAKE_LOCK_TIMEOUT = 5000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.779 -0500", hash_original_field = "E56C4EABE2BBC91E0B9CFA0D3B38E10B", hash_generated_field = "12DDD756FBB753EEF6004C34AE7CA6CD")
-
 
     private final int BIND_RETRY_INTERVAL = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.781 -0500", hash_original_field = "7A83276FAA2520390E1A3F73EB912AC9", hash_generated_field = "3B39AAC7E4A10A6ACE8511A3256C9AEB")
@@ -51,7 +45,6 @@ public WapPushOverSms(Phone phone, SMSDispatcher smsDispatcher) {
         mWapConn = new WapPushConnection(mContext);
         mWapConn.bindWapPushManager();
     }
-
     
     private class WapPushConnection implements ServiceConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.784 -0500", hash_original_field = "FF42D57D225A7A9CD1DC06929143A36F", hash_generated_field = "A8578F8CE8534FC6D53552C1463CAA5B")
@@ -126,15 +119,14 @@ private void rebindWapPushManager() {
         /**
          * Returns interface to WapPushManager
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.806 -0500", hash_original_method = "12BA8034F310D7C3159CADAC53085388", hash_generated_method = "0978255B4A9C6F66D3DBBD2273DF1954")
         
 public IWapPushManager getWapPushManager() {
             return mWapPushMan;
         }
-
         
     }
-
 
     /**
      * Dispatches inbound messages that are in the WAP PDU format. See
@@ -145,6 +137,7 @@ public IWapPushManager getWapPushManager() {
      *         {@link Activity#RESULT_OK} if the message has been broadcast
      *         to applications
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.815 -0500", hash_original_method = "B943BA9A516C7D27398DA677689F619E", hash_generated_method = "AF61DDA6338265B622ECA4BC7473512D")
     
 public int dispatchWapPdu(byte[] pdu) {

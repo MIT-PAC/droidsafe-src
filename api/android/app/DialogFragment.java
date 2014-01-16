@@ -15,10 +15,6 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-
-
-
-
 public class DialogFragment extends Fragment implements DialogInterface.OnCancelListener, DialogInterface.OnDismissListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.439 -0500", hash_original_field = "B33617D119C9E65EA12B9D46B7D4B9F5", hash_generated_field = "2799E9EE0BE29351BF2343EFA521A888")
 
@@ -33,7 +29,6 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
 
     public static final int STYLE_NO_INPUT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.448 -0500", hash_original_field = "7C2844D3DF7604C62F66EFED0CC6C3AD", hash_generated_field = "94C97F4A0413FA80F711F0AF0957903C")
-
 
     private static final String SAVED_DIALOG_STATE_TAG = "android:savedDialogState";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.452 -0500", hash_original_field = "E2492F7AF4DDC10729303DEE44331262", hash_generated_field = "32CF27987345FC568CD0673A0881B818")
@@ -53,7 +48,6 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     private static final String SAVED_BACK_STACK_ID = "android:backStackId";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.463 -0500", hash_original_field = "DBD7D865FD8EE56258485D2729E89222", hash_generated_field = "DBD7D865FD8EE56258485D2729E89222")
 
-
     int mStyle = STYLE_NORMAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.465 -0500", hash_original_field = "075FD7AAD50C5AD8803D9E3B208423A2", hash_generated_field = "075FD7AAD50C5AD8803D9E3B208423A2")
 
@@ -69,7 +63,6 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
     int mBackStackId = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.474 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "0C87BCBAF0D95855709E5BEE2BDBA46D")
 
-
     Dialog mDialog;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.476 -0500", hash_original_field = "CEF7EBA8F9051BD4EB01CF3D59FD7DB3", hash_generated_field = "CEF7EBA8F9051BD4EB01CF3D59FD7DB3")
 
@@ -81,6 +74,8 @@ public class DialogFragment extends Fragment implements DialogInterface.OnCancel
 
     boolean mShownByMe;
 
+    @DSComment("GUI, dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.483 -0500", hash_original_method = "0534DFBA1BDB91809702979D0F5FEACD", hash_generated_method = "CFA527E8B5A5174F7A9660414809174D")
     
 public DialogFragment() {
@@ -123,6 +118,8 @@ public void setStyle(int style, int theme) {
      * @param tag The tag for this fragment, as per
      * {@link FragmentTransaction#add(Fragment, String) FragmentTransaction.add}.
      */
+    @DSComment("GUI, dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.487 -0500", hash_original_method = "8FAA759F9028DD0FC2323799369D6711", hash_generated_method = "5C6D90FF7F0EA4F4D76354EF83F7E041")
     
 public void show(FragmentManager manager, String tag) {
@@ -159,6 +156,8 @@ public int show(FragmentTransaction transaction, String tag) {
      * be popped.  Otherwise, a new transaction will be committed to remove
      * the fragment.
      */
+    @DSComment("GUI, dialog")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.491 -0500", hash_original_method = "DB04742794ECD07699F134042784BBAE", hash_generated_method = "995FB47B2ED1ADE79D1CFC3C7747B4D2")
     
 public void dismiss() {
@@ -205,12 +204,16 @@ void dismissInternal(boolean allowStateLoss) {
         }
     }
     
+    @DSComment("GUI, dialog")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.498 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
     
 public Dialog getDialog() {
         return mDialog;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.500 -0500", hash_original_method = "EDA2E352252479FB515DBD558139BFDA", hash_generated_method = "70C10CD453A270D9A3D6BB0351C256D5")
     
 public int getTheme() {
@@ -268,6 +271,7 @@ public void setShowsDialog(boolean showsDialog) {
     /**
      * Return the current value of {@link #setShowsDialog(boolean)}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.508 -0500", hash_original_method = "A66E43B75AC73A59CB0304F6142C6A81", hash_generated_method = "B9101F7AA44C7E8C87EF62912DF1DDE6")
     
 public boolean getShowsDialog() {
@@ -299,6 +303,8 @@ public boolean getShowsDialog() {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.517 -0500", hash_original_method = "B4FC504618F0AC1ACE07BF1B45E5B9CF", hash_generated_method = "9347B65955CA212EDA6B1AB62C4BBD9E")
     
 @Override
@@ -318,6 +324,7 @@ public boolean getShowsDialog() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.519 -0500", hash_original_method = "EC067D1F5D74A2844592729119AA0EAB", hash_generated_method = "E54FE9B80EB98CF6B0844591E9573EA1")
     
 @Override
@@ -488,6 +495,7 @@ public void onDismiss(DialogInterface dialog) {
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:26.541 -0500", hash_original_method = "8EE9E1D4B179CD60330B8D8143C75D0D", hash_generated_method = "621908A35FB58C92A07A77E60CD3658D")
     
 @Override

@@ -11,8 +11,6 @@ import java.net.CacheRequest;
 
 import libcore.io.Streams;
 
-
-
 abstract class AbstractHttpInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.945 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "1EF0A70CD08BE8D63EB2015C913859E5")
 
@@ -66,6 +64,7 @@ protected final void checkNotClosed() throws IOException {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.963 -0500", hash_original_method = "F99DAA756C38E790D14E093C328A014A", hash_generated_method = "53EA44A32FCE521D72E22E3C804E8F8C")
     
 protected final void cacheWrite(byte[] buffer, int offset, int count) throws IOException {
@@ -107,7 +106,6 @@ protected final void unexpectedEndOfInput() {
         }
         httpEngine.release(false);
     }
-
     
 }
 

@@ -10,11 +10,6 @@ import java.util.LinkedList;
 import java.util.ListIterator;
 import java.util.NoSuchElementException;
 
-
-
-
-
-
 public abstract class GenericObjectList extends LinkedList<GenericObject> implements Serializable, Cloneable {
 
     /**
@@ -37,110 +32,83 @@ public static boolean isMySubclass(Class<?> other) {
     protected static final String SEMICOLON = Separators.SEMICOLON;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.182 -0500", hash_original_field = "D77BD2C56F0ED05DF3619D69EC5649F2", hash_generated_field = "6B6A3C0E5AAA12BC4230EF790A3C2476")
 
-
     protected static final String COLON = Separators.COLON;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.185 -0500", hash_original_field = "5201C3D18F11737A5DD3460775E883ED", hash_generated_field = "2C4A8D03DDB954D51E978CD8F8E2DEA4")
-
 
     protected static final String COMMA = Separators.COMMA;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.188 -0500", hash_original_field = "0C18FFF75A726C363F0DB6D598A8E1AD", hash_generated_field = "8A50D691E37AC9254B7ED2ABCE4AC6D2")
 
-
     protected static final String SLASH = Separators.SLASH;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.191 -0500", hash_original_field = "0F465C1A1C5914A9212A6C1DC851E9B7", hash_generated_field = "0CF03E9FD9212362B2D202A36124051A")
-
 
     protected static final String SP = Separators.SP;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.193 -0500", hash_original_field = "2DB7282116447C711C852E29F65C28C9", hash_generated_field = "AD22F298E6FF482BE0BD697358901610")
 
-
     protected static final String EQUALS = Separators.EQUALS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.196 -0500", hash_original_field = "16A0EB1F3341F8778CCE9E8B90D6DDE3", hash_generated_field = "2A5C8D44567A1C68D53F48B0CD1AF72E")
-
 
     protected static final String STAR = Separators.STAR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.199 -0500", hash_original_field = "535F896CBCDC67C062AECC6B8D97F82B", hash_generated_field = "99D8C532EFD2EC03350A98B152CEDB7F")
 
-
     protected static final String NEWLINE = Separators.NEWLINE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.201 -0500", hash_original_field = "CE823ACDDD84129449B4E21BF2FF83A6", hash_generated_field = "5E44FE20A9580182CC4CE4836B87D2F2")
-
 
     protected static final String RETURN = Separators.RETURN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.203 -0500", hash_original_field = "D15F62FC9A8937755EA0BA75161B9A7F", hash_generated_field = "03472463E2EA98D819ECAC54647D9EEB")
 
-
     protected static final String LESS_THAN = Separators.LESS_THAN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.206 -0500", hash_original_field = "3D37A32BEC186FF520FFD38791BDF5EF", hash_generated_field = "EADC9D4C7F8A41AC9253B4399DD9CC22")
-
 
     protected static final String GREATER_THAN = Separators.GREATER_THAN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.208 -0500", hash_original_field = "DAEDC9E484E5315814F455409686FE3F", hash_generated_field = "94E22BF70767B9E5F90C8BEFB48DFB31")
 
-
     protected static final String AT = Separators.AT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.211 -0500", hash_original_field = "09B222C8B655C77BFC9278CC42ED844D", hash_generated_field = "C68E946646D329E00948C391567E8245")
-
 
     protected static final String DOT = Separators.DOT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.214 -0500", hash_original_field = "E6FD69D5C38CE5CD44E0697BF8DED97D", hash_generated_field = "C6F6498E0BEB8E9B929D5FF0691C60C5")
 
-
     protected static final String QUESTION = Separators.QUESTION;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.216 -0500", hash_original_field = "6CCD01656CADA37CEC29F4F620E7B103", hash_generated_field = "3931FF01A0452F4B915432DFE1D8342B")
-
 
     protected static final String POUND = Separators.POUND;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.219 -0500", hash_original_field = "3BD4DCA47A0CF037479AC0875C12BF09", hash_generated_field = "A7C8E60A9ACCF4FC95E42A6FE3CBE98A")
 
-
     protected static final String AND = Separators.AND;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.222 -0500", hash_original_field = "C0F5D3F991B86901594C17F73AE21724", hash_generated_field = "96B1BA6A04896DF507DBF5F6007D53FF")
-
 
     protected static final String LPAREN = Separators.LPAREN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.224 -0500", hash_original_field = "EBA28B5ABEF9F9C40189523E5809ACE7", hash_generated_field = "04E1EDA33DBBA7B9CD0B5320DA6E2B15")
 
-
     protected static final String RPAREN = Separators.RPAREN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.227 -0500", hash_original_field = "A3D0DB312B6F76C52BC72B77300EB77C", hash_generated_field = "60970C4DF02E2922FFB2BB3FCBF1CC4C")
-
 
     protected static final String DOUBLE_QUOTE = Separators.DOUBLE_QUOTE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.229 -0500", hash_original_field = "A012C2C89C3BC94350D794BCFAA61AC6", hash_generated_field = "36D2B8942300A11E9A202D488BEEC708")
 
-
     protected static final String QUOTE = Separators.QUOTE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.233 -0500", hash_original_field = "46C5ABFAF9FA93391F615FBAF29CAF5D", hash_generated_field = "EE0F746E0ADCCF78C293F0BC27A024C1")
-
 
     protected static final String HT = Separators.HT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.235 -0500", hash_original_field = "CFBF7772290813FB9E7FE633CE7D8D3B", hash_generated_field = "E525B1F947054DAAB71F0D7018A0312F")
 
-
     protected static final String PERCENT = Separators.PERCENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.238 -0500", hash_original_field = "286452610CAD998336F0009181E4D242", hash_generated_field = "3BB4EF50B1D217FA88F0841635612381")
-
 
     protected int indentation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.240 -0500", hash_original_field = "D297A5BE89C59BA85D80C2C4FEA0872D", hash_generated_field = "DD964F0DE507D319881A894372709801")
 
-
     protected String listName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.242 -0500", hash_original_field = "4CE552E89796E653DFEF03D5B5F8A2E4", hash_generated_field = "B16F5FE53C476D2E6CEFB884C718A580")
-
 
     private ListIterator<? extends GenericObject> myListIterator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.245 -0500", hash_original_field = "E3930F4F4617B35851A6540EEE3F9D12", hash_generated_field = "A7CB93AD593788A74C76D77C24510B38")
 
-
     private String stringRep;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.247 -0500", hash_original_field = "C5E8A5EA76A2850F600B14EA78D9A124", hash_generated_field = "2318E7DEB97DCC58ED55C9B3D6EA868C")
 
-
     protected Class<?> myClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.250 -0500", hash_original_field = "9B5B4672FF037607BB8CCE0F5B6469A8", hash_generated_field = "05ABC643E14669ABD06E074989E55128")
-
 
     protected String separator;
 
@@ -189,6 +157,7 @@ protected GenericObjectList(String lname, Class objclass) {
         myClass = objclass;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.252 -0500", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "BDD6C135FB07D8AC261FA4D2B4D2AE55")
     
 protected String getIndentation() {
@@ -200,6 +169,7 @@ protected String getIndentation() {
     /**
      * Makes a deep clone of this list.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.260 -0500", hash_original_method = "6368B146C50DA8D7E84E7623E4D72233", hash_generated_method = "B7D1CA39FA0521F03A0F238F949058BF")
     
 public Object clone() {
@@ -211,8 +181,6 @@ public Object clone() {
         }
         return retval;
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.262 -0500", hash_original_method = "D0155A1FF97450AAAC485CBFCA9B9151", hash_generated_method = "A11BD1437B6BC8AABD9C2F09BD1E0F63")
     
@@ -237,6 +205,7 @@ protected GenericObject next(ListIterator iterator) {
      * This is the default list iterator.This will not handle nested list
      * traversal.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.278 -0500", hash_original_method = "0C810F8EA313238CAFFD85BD22D89FC5", hash_generated_method = "AFD6F572F23AF378CFA4C5B1328320AA")
     
 protected GenericObject first() {
@@ -251,6 +220,7 @@ protected GenericObject first() {
     /**
      * Fetch the next object from the list based on the default list iterator
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.280 -0500", hash_original_method = "F8FE3E2E9328224EF7348B82C4E16D5E", hash_generated_method = "AFAE8ADCD6DB00463035671A4D87ECE4")
     
 protected GenericObject next() {
@@ -326,6 +296,7 @@ private void sprint(String s) {
      * Convert this list of headers to a formatted string.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.291 -0500", hash_original_method = "373CBEDF2A2DC4BB05F4307048ABF6D6", hash_generated_method = "5BD5F6C67C2B829D72164C4552A43708")
     
 public String debugDump() {
@@ -407,6 +378,7 @@ public void mergeObjects(GenericObjectList mergeList) {
      * @return an encoded string containing the objects in this list.
      * @since v1.0
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.301 -0500", hash_original_method = "CDD824836834585D009706CA2D2AF418", hash_generated_method = "6D4D32194769A9F3D2B691D031B40991")
     
 public String encode() {
@@ -435,6 +407,7 @@ public String encode() {
     /**
      * Alias for the encode function above.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.304 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {
@@ -517,6 +490,7 @@ public boolean equals(Object other) {
      *            template object to compare against.
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.314 -0500", hash_original_method = "28715ED51BABD0145D8C6E4EC8A7426B", hash_generated_method = "A5AEC7C9FB9724C8F7496171A4624E6F")
     
 public boolean match(Object other) {

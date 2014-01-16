@@ -17,7 +17,8 @@ private static final java.lang.String DESCRIPTOR = "com.android.internal.telepho
  * Cast an IBinder object into an com.android.internal.telephony.IWapPushManager interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.911 -0500", hash_original_method = "6E0F16370990FA86C30D2EF47197D85E", hash_generated_method = "0EBC445F5C5A7739B58515C0BC81D19F")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.911 -0500", hash_original_method = "6E0F16370990FA86C30D2EF47197D85E", hash_generated_method = "0EBC445F5C5A7739B58515C0BC81D19F")
         
 public static com.android.internal.telephony.IWapPushManager asInterface(android.os.IBinder obj)
 {
@@ -56,7 +57,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.928 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.928 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -66,7 +68,8 @@ return DESCRIPTOR;
      * Processes WAP push message and triggers the receiver application registered
      * in the application ID table.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.931 -0500", hash_original_method = "79C733037BFBA6C3FAE684CBC0D8C161", hash_generated_method = "F1A8031B585626078763E9A73D9F3413")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.931 -0500", hash_original_method = "79C733037BFBA6C3FAE684CBC0D8C161", hash_generated_method = "F1A8031B585626078763E9A73D9F3413")
             
 public int processMessage(java.lang.String app_id, java.lang.String content_type, android.content.Intent intent) throws android.os.RemoteException
 {
@@ -99,7 +102,8 @@ return _result;
      * Returns true if inserting the information is successfull. Inserting the duplicated
      * record in the application ID table is not allowed. Use update/delete method.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.935 -0500", hash_original_method = "8D36FB2105488AEF61C466DAC43F37FA", hash_generated_method = "4B8B66AEBE4402CF3D66D1297C0BB2D6")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.935 -0500", hash_original_method = "8D36FB2105488AEF61C466DAC43F37FA", hash_generated_method = "4B8B66AEBE4402CF3D66D1297C0BB2D6")
             
 public boolean addPackage(java.lang.String x_app_id, java.lang.String content_type, java.lang.String package_name, java.lang.String class_name, int app_type, boolean need_signature, boolean further_processing) throws android.os.RemoteException
 {
@@ -129,7 +133,8 @@ return _result;
      * Updates receiver application that is last added.
      * Returns true if updating the information is successfull.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.938 -0500", hash_original_method = "582539EE273DCC102586E21AD33366D4", hash_generated_method = "C77F56B71AC8B35FE172689CF5A6AED7")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.938 -0500", hash_original_method = "582539EE273DCC102586E21AD33366D4", hash_generated_method = "C77F56B71AC8B35FE172689CF5A6AED7")
             
 public boolean updatePackage(java.lang.String x_app_id, java.lang.String content_type, java.lang.String package_name, java.lang.String class_name, int app_type, boolean need_signature, boolean further_processing) throws android.os.RemoteException
 {
@@ -159,7 +164,8 @@ return _result;
      * Delites receiver application information.
      * Returns true if deleting is successfull.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.940 -0500", hash_original_method = "5DF7489F58C12D60475D0E2B570C313B", hash_generated_method = "BBB6955C1368D262314C34F554401FE1")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.940 -0500", hash_original_method = "5DF7489F58C12D60475D0E2B570C313B", hash_generated_method = "BBB6955C1368D262314C34F554401FE1")
             
 public boolean deletePackage(java.lang.String x_app_id, java.lang.String content_type, java.lang.String package_name, java.lang.String class_name) throws android.os.RemoteException
 {
@@ -193,13 +199,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.913 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.913 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.918 -0500", hash_original_method = "7303448824E3B1DA9CA5C8FD265D85E4", hash_generated_method = "F54E86A445A2E36FCBC6E8B4888E01BB")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.918 -0500", hash_original_method = "7303448824E3B1DA9CA5C8FD265D85E4", hash_generated_method = "F54E86A445A2E36FCBC6E8B4888E01BB")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

@@ -24,19 +24,13 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.view.ViewRootImpl;
 
-
-
-
-
 class ComposingText implements NoCopySpan {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.232 -0400", hash_original_method = "299AC39680AC1BE3A17612B5D7B1D330", hash_generated_method = "299AC39680AC1BE3A17612B5D7B1D330")
     public ComposingText ()
     {
         //Synthesized constructor
     }
-
 
 }
 
@@ -121,11 +115,9 @@ public static int getComposingSpanEnd(Spannable text) {
 
      boolean mDummyMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.416 -0500", hash_original_field = "262A329882BEE88213C74B3FDC4E1748", hash_generated_field = "252704B80FDD4D9B6E86ECF1CBD2B09A")
-
     
     private Object[] mDefaultComposingSpans;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.418 -0500", hash_original_field = "BC747A06F00EC3CB73FDE2D30B84DC2D", hash_generated_field = "BC747A06F00EC3CB73FDE2D30B84DC2D")
-
     
     Editable mEditable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.420 -0500", hash_original_field = "5553093AC34FB198BC290668CD3A4BD4", hash_generated_field = "5553093AC34FB198BC290668CD3A4BD4")
@@ -140,6 +132,8 @@ BaseInputConnection(InputMethodManager mgr, boolean fullEditor) {
         mDummyMode = !fullEditor;
     }
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.426 -0500", hash_original_method = "8D9F46A02734088C3A101A4C25C68420", hash_generated_method = "37CA8E5AF2E9549F228E0744CAF992B7")
     
 public BaseInputConnection(View targetView, boolean fullEditor) {
@@ -155,6 +149,7 @@ public BaseInputConnection(View targetView, boolean fullEditor) {
      * subclasses that are real text editors should override this and
      * supply their own.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.442 -0500", hash_original_method = "A97F5DFC2840DF7B5D61C809FDCD4D64", hash_generated_method = "B9CC82C92617709D43E0C972CF5E0C75")
     
 public Editable getEditable() {
@@ -312,6 +307,7 @@ public boolean finishComposingText() {
      * cursor caps mode for the current selection position in the editable
      * text, unless in dummy mode in which case 0 is always returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.464 -0500", hash_original_method = "A12ABCD2EB4522E8FE53DB6299A361B5", hash_generated_method = "28DA2DF10A711F52B85FC424358C926F")
     
 public int getCursorCapsMode(int reqModes) {
@@ -335,6 +331,7 @@ public int getCursorCapsMode(int reqModes) {
     /**
      * The default implementation always returns null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.466 -0500", hash_original_method = "A2A8D9B6A3DC6DA18051F8E023FD4A27", hash_generated_method = "8936794892555B759A66108240A3AB9A")
     
 public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
@@ -345,6 +342,7 @@ public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
      * The default implementation returns the given amount of text from the
      * current cursor position in the buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.468 -0500", hash_original_method = "75E370B84589846A89A63AE625719BF1", hash_generated_method = "F628D16938A07EC3C2781BED6C630F56")
     
 public CharSequence getTextBeforeCursor(int length, int flags) {
@@ -378,6 +376,7 @@ public CharSequence getTextBeforeCursor(int length, int flags) {
      * The default implementation returns the text currently selected, or null if none is
      * selected.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.471 -0500", hash_original_method = "ED9D872BFDE8C5E26AC99155DBA149BF", hash_generated_method = "583DA0B7B71E8D58AB532743D3867F50")
     
 public CharSequence getSelectedText(int flags) {
@@ -405,6 +404,7 @@ public CharSequence getSelectedText(int flags) {
      * The default implementation returns the given amount of text from the
      * current cursor position in the buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.474 -0500", hash_original_method = "08096EEE0873EB795CD58B469F10D5B2", hash_generated_method = "E93C8508EF64179E6A7155EB519D1CAB")
     
 public CharSequence getTextAfterCursor(int length, int flags) {
@@ -428,7 +428,6 @@ public CharSequence getTextAfterCursor(int length, int flags) {
         if (b + length > content.length()) {
             length = content.length() - b;
         }
-
 
         if ((flags&GET_TEXT_WITH_STYLES) != 0) {
             return content.subSequence(b, b + length);
@@ -487,6 +486,7 @@ public boolean setComposingText(CharSequence text, int newCursorPosition) {
         return true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.487 -0500", hash_original_method = "683D72CF1BBC9E7A391F140A2B9406BC", hash_generated_method = "67636B152BB6AA30875B1B52F7C79368")
     
 public boolean setComposingRegion(int start, int end) {
@@ -529,6 +529,7 @@ public boolean setComposingRegion(int start, int end) {
      * The default implementation changes the selection position in the
      * current editable text.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.490 -0500", hash_original_method = "06BE1F921CCFEC5EE49CD2FF18114BBC", hash_generated_method = "FC8D5B5B840DE79CFC20DD26643C979E")
     
 public boolean setSelection(int start, int end) {
@@ -558,6 +559,8 @@ public boolean setSelection(int start, int end) {
      * Provides standard implementation for sending a key event to the window
      * attached to the input connection's view.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:21.492 -0500", hash_original_method = "F539697840E1FFDBA9E983D0C0D8D0DD", hash_generated_method = "EFC70E180FE8A4B13933F470F54EF0F3")
     
 public boolean sendKeyEvent(KeyEvent event) {

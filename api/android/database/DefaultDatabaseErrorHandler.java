@@ -12,17 +12,11 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteException;
 import android.util.Pair;
 
-
-
-
-
 public final class DefaultDatabaseErrorHandler implements DatabaseErrorHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.943 -0500", hash_original_field = "7A43BE15E30AAB677E00CA000B61133A", hash_generated_field = "23BA72495E1959CF9D5D5CA8183FBE7E")
 
-
     private static final String TAG = "DefaultDatabaseErrorHandler";
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.957 -0400", hash_original_method = "896C9D78E64EAD9D50DC29D09D68C65A", hash_generated_method = "896C9D78E64EAD9D50DC29D09D68C65A")
     public DefaultDatabaseErrorHandler ()
     {

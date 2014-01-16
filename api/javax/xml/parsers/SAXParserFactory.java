@@ -11,11 +11,6 @@ import org.xml.sax.SAXException;
 import org.xml.sax.SAXNotRecognizedException;
 import org.xml.sax.SAXNotSupportedException;
 
-
-
-
-
-
 public abstract class SAXParserFactory {
 
     /**
@@ -28,6 +23,8 @@ public abstract class SAXParserFactory {
      * @exception FactoryConfigurationError never. Included for API
      *     compatibility with other Java implementations.
      */
+    @DSComment("no suspicious activity, just creates objects")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.643 -0500", hash_original_method = "D6BFF54803293788CC40085FF209ED1E", hash_generated_method = "1BB62AC084791E5596A520819F0C0E7C")
     
 public static SAXParserFactory newInstance() {
@@ -97,7 +94,6 @@ protected SAXParserFactory () {
 public abstract SAXParser newSAXParser()
         throws ParserConfigurationException, SAXException;
 
-
     /**
      * Specifies that the parser produced by this code will
      * provide support for XML namespaces. By default the value of this is set
@@ -139,6 +135,8 @@ public void setNamespaceAware(boolean awareness) {
      *                   validate documents as they are parsed; false otherwise.
      */
 
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.653 -0500", hash_original_method = "55B714FD0DC17953A4D0F6C9203268D6", hash_generated_method = "20A92CFBF84C6F5D289DA3B1FC978F63")
     
 public void setValidating(boolean validating) {
@@ -382,7 +380,6 @@ public boolean isXIncludeAware() {
             + "\""
             );
     }
-
     
 }
 

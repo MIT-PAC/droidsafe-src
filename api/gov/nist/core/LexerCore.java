@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.util.Hashtable;
 
-
-
-
-
-
 public class LexerCore extends StringTokenizer {
 
     /**
@@ -176,13 +171,11 @@ public static String charAsString(char ch) {
     public static final int UNDERSCORE = (int) '_';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.917 -0500", hash_original_field = "4E15CDF1BE145AF026EDAE66A7BF1576", hash_generated_field = "9A4439847AD02C063A85CA312E27B5B7")
 
-
     protected static  Hashtable globalSymbolTable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.919 -0500", hash_original_field = "0BECC17D64220268F84BA0A9601234A5", hash_generated_field = "94CD673D75FBEC685CA66860DE29769A")
 
     protected static  Hashtable lexerTables;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.979 -0500", hash_original_field = "64B71AE2BB908DE3B11B125428D25665", hash_generated_field = "98DA5713B8CB9625620DDB4ECDE10877")
-
 
     static final char ALPHA_VALID_CHARS = Character.MAX_VALUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.981 -0500", hash_original_field = "8F8DB3D35C099F222E2F7337A7CCB09A", hash_generated_field = "A91B938778BCC54CB153A8DC19B91D12")
@@ -217,6 +210,7 @@ public LexerCore(String lexerName, String buffer) {
         this.currentLexerName = lexerName;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.929 -0500", hash_original_method = "AD96F60DA08AE9E896CB042D3CC5B1A1", hash_generated_method = "C3B1C2FA4A45B4AC89017279AA382D37")
     
 protected void addKeyword(String name, int value) {
@@ -239,6 +233,7 @@ public String lookupToken(int value) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.936 -0500", hash_original_method = "A9968CF51D1D67FF8D3FB6DE23BFC8AA", hash_generated_method = "0CD7688F819297B2CE7E4487B70146ED")
     
 protected Hashtable addLexer(String lexerName) {
@@ -273,6 +268,7 @@ public String peekNextId() {
 
     /** Get the next id.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.948 -0500", hash_original_method = "7F6D0FFBB3DD0E896E18057F7DC876B2", hash_generated_method = "4EEC32D944698BE420AF830EEFAD8040")
     
 public String getNextId() {
@@ -280,6 +276,7 @@ public String getNextId() {
     }
 
     // call this after you call match
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.951 -0500", hash_original_method = "DD3F66B83694243DF059D5B5621ADB54", hash_generated_method = "AC958D60942083B4834D606B96511C69")
     
 public Token getNextToken() {
@@ -331,6 +328,7 @@ public Token[] peekNextToken(int ntokens) throws ParseException {
     /** Match the given token or throw an exception if no such token
      * can be matched.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.959 -0500", hash_original_method = "EF527252962F704D7452C6B99500917D", hash_generated_method = "BE7655C07E1329CD326693E64EB0674A")
     
 public Token match(int tok) throws ParseException {
@@ -419,7 +417,6 @@ public void SPorHT() {
             // Ignore
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:50.968 -0500", hash_original_method = "F58976B32EA8A9502EE0AC2AF2B6A7AB", hash_generated_method = "3059BECAC29D045BDFC2F07B221013DA")
     
@@ -821,6 +818,7 @@ public void rewindInputPosition(int position) {
     /** Get the rest of the String
      * @return rest of the buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.015 -0500", hash_original_method = "2FDB8C189AB11331619907255B1EC94B", hash_generated_method = "0CC817560D3FA6FCA66A4B885D665582")
     
 public String getRest() {
@@ -834,6 +832,7 @@ public String getRest() {
      * @param c the character to match
      * @return the substring that matches.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.018 -0500", hash_original_method = "720A9C8698AD8EBEF63DE1F048944846", hash_generated_method = "280573BDFBE88FEAE20614843D1D4CAB")
     
 public String getString(char c) throws ParseException {
@@ -875,6 +874,7 @@ public String getString(char c) throws ParseException {
 
     /** Get the read pointer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.021 -0500", hash_original_method = "976AE9BCD44A20D9CC809F6C91A5525F", hash_generated_method = "82AF28238265DE1776FC37087FB0B53F")
     
 public int getPtr() {
@@ -883,6 +883,7 @@ public int getPtr() {
 
     /** Get the buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:51.023 -0500", hash_original_method = "E132864DD50CA73C29855C29E535CA90", hash_generated_method = "6E3441502EEC01C275EF7EB724A104D2")
     
 public String getBuffer() {

@@ -10,14 +10,8 @@ import org.apache.http.HttpEntityEnclosingRequest;
 import org.apache.http.ProtocolException;
 import org.apache.http.protocol.HTTP;
 
-
-
-
-
-
 public class EntityEnclosingRequestWrapper extends RequestWrapper implements HttpEntityEnclosingRequest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.338 -0500", hash_original_field = "84BEE3610D6DA557FD534AD24775E93F", hash_generated_field = "1845537B516494D16BEEE561F2E771CF")
-
     
     private HttpEntity entity;
     
@@ -29,6 +23,7 @@ public EntityEnclosingRequestWrapper(final HttpEntityEnclosingRequest request)
         this.entity = request.getEntity();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.343 -0500", hash_original_method = "FCFC1A07171F7DE920C85D2DD77008FA", hash_generated_method = "F26E442D152B9CF496C6F072484628AD")
     
 public HttpEntity getEntity() {
@@ -54,7 +49,6 @@ public boolean expectContinue() {
     public boolean isRepeatable() {
         return this.entity == null || this.entity.isRepeatable();
     }
-
     
 }
 

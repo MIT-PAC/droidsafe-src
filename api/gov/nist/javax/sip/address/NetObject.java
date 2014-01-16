@@ -12,14 +12,8 @@ import gov.nist.core.PackageNames;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-
-
-
-
-
 public abstract class NetObject extends GenericObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.914 -0500", hash_original_field = "783363F762E312FC7DC4F9A7F69E1386", hash_generated_field = "46C2887731A82D54499D991777D692CF")
-
 
     protected static final String CORE_PACKAGE = PackageNames.CORE_PACKAGE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.917 -0500", hash_original_field = "928DF341A507E7600562A079BCA40233", hash_generated_field = "594D4223DA826D2239E3278060CF9C1D")
@@ -68,7 +62,6 @@ public abstract class NetObject extends GenericObject {
 
     // params for outbound and gruu drafts
     protected static final String GRUU = "gr";
-
 
     /** Default constructor
      */
@@ -154,9 +147,6 @@ public boolean equals(Object that) {
         }
         return true;
     }
-
-
-
 
     /** An introspection based predicate matching using a template
      * object. Allows for partial match of two protocl Objects.
@@ -286,6 +276,7 @@ public boolean match(Object other) {
      * of the other objects in this class.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.973 -0500", hash_original_method = "8F6462E23806D652AB2FB8FE10D0061F", hash_generated_method = "3C7532443F0E1BCE055B73DA114D8A47")
     
 public String debugDump() {
@@ -382,9 +373,6 @@ public String debugDump() {
         return stringRepresentation;
     }
 
-
-
-
     /**
      * Formatter with a given starting indentation (for nested structs).
      * @param indent int to set
@@ -404,6 +392,7 @@ public String debugDump(int indent) {
      *
      *@return string representation for this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:31.980 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {

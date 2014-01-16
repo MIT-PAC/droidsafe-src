@@ -28,10 +28,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
 
-
-
-
-
 public class FragmentActivity extends Activity {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.432 -0500", hash_original_method = "3274893E9C9F22CAC70DF93D680DD8B1", hash_generated_method = "CF399103EB831757AC957B278C4C83D7")
@@ -105,7 +101,6 @@ private static String viewToString(View view) {
 
     private static final String TAG = "FragmentActivity";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.297 -0500", hash_original_field = "2AF235EEED0492E0CB0E7DE85B56C523", hash_generated_field = "1476D3F2166208C74AB619F6216B021B")
-
     
     static final String FRAGMENTS_TAG = "android:support:fragments";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.301 -0500", hash_original_field = "96C0E1C589D3827CD74FAEAD9361F1E8", hash_generated_field = "9B5590C251929187BF81DBAD4FF353CC")
@@ -113,49 +108,31 @@ private static String viewToString(View view) {
     private static final int HONEYCOMB = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.303 -0500", hash_original_field = "EAAFB98425DBE846CB8FBA82BAAF6325", hash_generated_field = "3858BC703C64AB39E77D6A854C205B10")
 
-
     static final int MSG_REALLY_STOPPED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.305 -0500", hash_original_field = "28C9C9C3A034C36DDBDED7A2C6A353CA", hash_generated_field = "85BC97DB38BAD7BD3198C330C85F8A73")
 
     static final int MSG_RESUME_PENDING = 2;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.736 -0400", hash_original_field = "BD6DAC53FC9C157B350330EAEE248807", hash_generated_field = "501FA87408E2F66D936187DF5DCADDC6")
 
-    final Handler mHandler = new Handler() {        
-        @DSModeled(DSC.SAFE)
+    final Handler mHandler = new Handler() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.736 -0400", hash_original_method = "ED8978699985B094E29E929E78E6359E", hash_generated_method = "168BA30ED6C33F2DDBC36D8B8B268C8C")
         @Override
         public void handleMessage(Message msg) {
             
             {
                 doReallyStop(false);
-            } 
-            
+            }
             
             onResumeFragments();
             
-            
             mFragments.execPendingActions();
-            
             
             super.handleMessage(msg);
             
             addTaint(msg.getTaint());
             
-            
-                
-                    
-                        
-                    
-                    
-                
-                    
-                    
-                    
-                
-                    
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.313 -0500", hash_original_field = "770A646DB3FFD5D268F1207A9B6648B8", hash_generated_field = "694874072698409F6608B46B5D5A3DE1")
@@ -163,8 +140,8 @@ private static String viewToString(View view) {
     final FragmentManagerImpl mFragments = new FragmentManagerImpl();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.737 -0400", hash_original_field = "BF98B02E33783F9E5A5CF09B5615CA83", hash_generated_field = "ADF324DE7C48550B65817C7DAE1C2031")
 
-    final FragmentContainer mContainer = new FragmentContainer() {        
-        @DSModeled(DSC.SAFE)
+    final FragmentContainer mContainer = new FragmentContainer() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:45.737 -0400", hash_original_method = "EBF9138B1D5057AD1D48F1D0D3D08E54", hash_generated_method = "93FC326340435248F019828EB69DF899")
         @Override
         public View findViewById(int id) {
@@ -174,13 +151,10 @@ private static String viewToString(View view) {
             varB4EAC82CA7396A68D541C85D26508E83_497045847.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_497045847;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.320 -0500", hash_original_field = "271824B07358893C73D20BA1540862F9", hash_generated_field = "271824B07358893C73D20BA1540862F9")
-
     
     boolean mCreated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.322 -0500", hash_original_field = "23D2434AD22548E124B62AB7739838E9", hash_generated_field = "23D2434AD22548E124B62AB7739838E9")
@@ -197,10 +171,8 @@ private static String viewToString(View view) {
     boolean mRetaining;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.330 -0500", hash_original_field = "DB8D4CEB8A7AAD8A9737A3EEEA202045", hash_generated_field = "DB8D4CEB8A7AAD8A9737A3EEEA202045")
 
-
     boolean mOptionsMenuInvalidated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.332 -0500", hash_original_field = "93A369593E1CC22C7DE8D4D5C675B065", hash_generated_field = "93A369593E1CC22C7DE8D4D5C675B065")
-
 
     boolean mCheckedForLoaderManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.335 -0500", hash_original_field = "D357ECA56BF47F1751443279339D50DF", hash_generated_field = "D357ECA56BF47F1751443279339D50DF")
@@ -882,7 +854,6 @@ public void onAttachFragment(Fragment fragment) {
 public FragmentManager getSupportFragmentManager() {
         return mFragments;
     }
-
     
     static final class NonConfigurationInstances {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.341 -0500", hash_original_field = "AE7D68ABA75D09946A953E289939C500", hash_generated_field = "AE7D68ABA75D09946A953E289939C500")
@@ -907,10 +878,7 @@ public FragmentManager getSupportFragmentManager() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static class FragmentTag {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:37.355 -0500", hash_original_field = "D5735142D7ECEEC1BCBF5251ADCC33B0", hash_generated_field = "3167F4E7249DC389B08D5F8E4C20C10E")

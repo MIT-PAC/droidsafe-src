@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class Authenticator {
 
     /**
@@ -158,11 +154,9 @@ public static PasswordAuthentication requestPasswordAuthentication(
     private static Authenticator thisAuthenticator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.343 -0500", hash_original_field = "89C4DBD92A7C11049D6E45F6CB08BF15", hash_generated_field = "0600E962B7B6CE9DE248036206873A5F")
 
-
     private static final NetPermission requestPasswordAuthenticationPermission = new NetPermission(
             "requestPasswordAuthentication");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.346 -0500", hash_original_field = "EDDBBE48E58DA24336A50FD25FE39727", hash_generated_field = "21B565F35E37E56DBE475EE1E023C013")
-
 
     private static final NetPermission setDefaultAuthenticatorPermission = new NetPermission(
             "setDefaultAuthenticator");
@@ -171,30 +165,23 @@ public static PasswordAuthentication requestPasswordAuthentication(
     private String host;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.350 -0500", hash_original_field = "AD87F1710B0BBE13E418BD36FE4E24C7", hash_generated_field = "0B6CE69CF925D6E46B22FFB8B45B7F59")
 
-
     private InetAddress addr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.353 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
-
 
     private int port;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.356 -0500", hash_original_field = "DE3F28962485CE99CA97D0A480B93596", hash_generated_field = "512C13BA7A4120A610964F395EA31E91")
 
-
     private String protocol;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.358 -0500", hash_original_field = "E39008C8C5530C4D0AB35F720027C03F", hash_generated_field = "73A8FB617E5E6FEE69E01BC210863E4D")
-
 
     private String prompt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.360 -0500", hash_original_field = "AF5A968572CEFDCD6FE22E7345201E0B", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
 
-
     private String scheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.362 -0500", hash_original_field = "D0C59163767519DDC23EEDD08636971F", hash_generated_field = "4E8909F55682E93D265FDB05DA0C8C95")
 
-
     private URL url;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.364 -0500", hash_original_field = "6EFED99F32589679AD2AB542684C660F", hash_generated_field = "9714F053F4B331A2C144544CF89DAA37")
-
 
     private RequestorType rt;
     
@@ -213,6 +200,7 @@ public static PasswordAuthentication requestPasswordAuthentication(
      *
      * @return collected password authentication data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.367 -0500", hash_original_method = "3093C4DCBD758CB1DB7C3B81720996CD", hash_generated_method = "990E67815C527B59AFE038DE5CB758DC")
     
 protected PasswordAuthentication getPasswordAuthentication() {
@@ -224,6 +212,7 @@ protected PasswordAuthentication getPasswordAuthentication() {
      *
      * @return port of the connection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.369 -0500", hash_original_method = "DC9C52EAA515BAD6BDD0FA3590432E35", hash_generated_method = "730ACD6054AF4C272F4E4AF6E4DD8105")
     
 protected final int getRequestingPort() {
@@ -236,6 +225,7 @@ protected final int getRequestingPort() {
      *
      * @return address of the connection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.371 -0500", hash_original_method = "2B14AF242379C7938332ECF0E248EB1C", hash_generated_method = "CD99276B12DA2C56EDB08C62B35F5E1C")
     
 protected final InetAddress getRequestingSite() {
@@ -248,6 +238,7 @@ protected final InetAddress getRequestingSite() {
      *
      * @return prompt string of the connection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.374 -0500", hash_original_method = "77C5C0A5F58C3B05E3A20169E90243A2", hash_generated_method = "F074DE81732331E46E74B26DA743590F")
     
 protected final String getRequestingPrompt() {
@@ -259,6 +250,7 @@ protected final String getRequestingPrompt() {
      *
      * @return protocol of the connection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.376 -0500", hash_original_method = "0EEBE945906182A6ED15FB53AC64D909", hash_generated_method = "61BF34E8C7F5D453553F6BE074F9A7C7")
     
 protected final String getRequestingProtocol() {
@@ -271,12 +263,12 @@ protected final String getRequestingProtocol() {
      *
      * @return scheme of the connection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.378 -0500", hash_original_method = "09F9AD99062E3C7EFE932F710107733C", hash_generated_method = "F194417B903B7A98FCCCD4FF971A5E4D")
     
 protected final String getRequestingScheme() {
         return this.scheme;
     }
-
     
     public enum RequestorType {
         PROXY,
@@ -289,6 +281,7 @@ protected final String getRequestingScheme() {
      *
      * @return name of the requesting host or {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.389 -0500", hash_original_method = "8CC1A8E4CE78153F4006F6F40BA275CE", hash_generated_method = "6DC214D91EE00F756D4E801D49E32D71")
     
 protected final String getRequestingHost() {
@@ -300,6 +293,7 @@ protected final String getRequestingHost() {
      *
      * @return authentication request url.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.394 -0500", hash_original_method = "3D575AEF6CE8C91A17FF3C39D0168781", hash_generated_method = "0DD03FD0569DF624B2CEE947408548AB")
     
 protected URL getRequestingURL() {

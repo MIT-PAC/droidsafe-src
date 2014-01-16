@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.307 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.307 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -91,7 +92,8 @@ _data.recycle();
 }
 }
 /** @see DropBoxManager#getNextEntry */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.312 -0500", hash_original_method = "48D27E1B964E8B49ED44AF316C07C95E", hash_generated_method = "3D90429E74FDBB5E91C51EE5D566A98C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.312 -0500", hash_original_method = "48D27E1B964E8B49ED44AF316C07C95E", hash_generated_method = "3D90429E74FDBB5E91C51EE5D566A98C")
             
 public boolean isTagEnabled(java.lang.String tag) throws android.os.RemoteException
 {
@@ -146,13 +148,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.292 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.292 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.295 -0500", hash_original_method = "39A04C5CCDDC4A52FC9601B3F1C05DE5", hash_generated_method = "3D1AB04B85A5B6B73C7583A7D886CE5F")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:52.295 -0500", hash_original_method = "39A04C5CCDDC4A52FC9601B3F1C05DE5", hash_generated_method = "3D1AB04B85A5B6B73C7583A7D886CE5F")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

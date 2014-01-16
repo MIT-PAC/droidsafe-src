@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 final class HeaderParser {
 
     /**
@@ -103,13 +102,11 @@ public static int parseSeconds(String value) {
         }
     }
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.993 -0400", hash_original_method = "C3E16CB5840D33E016F8223898DE7315", hash_generated_method = "C3E16CB5840D33E016F8223898DE7315")
     public HeaderParser ()
     {
         //Synthesized constructor
     }
-
     
     public interface CacheControlHandler {
         void handle(String directive, String parameter);

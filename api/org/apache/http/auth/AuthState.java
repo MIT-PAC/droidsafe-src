@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class AuthState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.279 -0500", hash_original_field = "91E690EEF42A939FE7DD8AED9D5FDB64", hash_generated_field = "BD9BCA899CE487533F83BB63B68D9949")
 
@@ -67,24 +63,24 @@ public void setAuthScheme(final AuthScheme authScheme) {
      * 
      * @return {@link AuthScheme authentication scheme}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.294 -0500", hash_original_method = "C7CF977B6EF3E7F983B2AE16A4014379", hash_generated_method = "1D8B8A090266D18EC10416DB7F2651EB")
     
 public AuthScheme getAuthScheme() {
         return this.authScheme;
     }
     
-    
     /** 
      * Returns user {@link Credentials} selected for authentication if available
      * 
      * @return user credentials if available, <code>null</code otherwise
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.296 -0500", hash_original_method = "57CD79A3968806BAC032754AA40A41DA", hash_generated_method = "38D007598656000EB67CFC934EFB819F")
     
 public Credentials getCredentials() {
         return this.credentials;
     }
-
     
     /** 
      * Sets user {@link Credentials} to be used for authentication
@@ -97,13 +93,13 @@ public void setCredentials(final Credentials credentials) {
         this.credentials = credentials;
     }
 
-
     /** 
      * Returns actual {@link AuthScope} if available
      * 
      * @return actual authentication scope if available, <code>null</code otherwise
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.300 -0500", hash_original_method = "BF313F23BCC888676D9F0166A2639A73", hash_generated_method = "B2EF6C42DF166ECED5736B231AAFF90E")
+     @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.300 -0500", hash_original_method = "BF313F23BCC888676D9F0166A2639A73", hash_generated_method = "B2EF6C42DF166ECED5736B231AAFF90E")
     
 public AuthScope getAuthScope() {
         return this.authScope;
@@ -119,7 +115,6 @@ public AuthScope getAuthScope() {
 public void setAuthScope(final AuthScope authScope) {
         this.authScope = authScope;
      }
-
      
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.305 -0500", hash_original_method = "CD2C06D38ABEB8110AC037A3B94BECA0", hash_generated_method = "F37DB38818C4B1AFDF67CBBAC2647BEE")
     
@@ -133,7 +128,6 @@ public void setAuthScope(final AuthScope authScope) {
         buffer.append("]");
         return buffer.toString();
     }
-
     
 }
 

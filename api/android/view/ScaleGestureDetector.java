@@ -9,10 +9,6 @@ import android.content.Context;
 import android.util.DisplayMetrics;
 import android.util.FloatMath;
 
-
-
-
-
 public class ScaleGestureDetector {
 
     /**
@@ -46,7 +42,6 @@ private static float getRawY(MotionEvent event, int pointerIndex) {
     private static final float PRESSURE_THRESHOLD = 0.67f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.557 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.560 -0500", hash_original_field = "3F9C288FC21567876B56BAC69B9C34B8", hash_generated_field = "A08AF84037A8352C0A5AC97B5C4711DA")
 
@@ -56,13 +51,11 @@ private static float getRawY(MotionEvent event, int pointerIndex) {
     private boolean mGestureInProgress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.564 -0500", hash_original_field = "4B8A42063191A4133FB9114EC0E506C0", hash_generated_field = "3C7A422FE0E65BBDCD9090B91410FF41")
 
-
     private MotionEvent mPrevEvent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.567 -0500", hash_original_field = "8A847D642C38B926624E7F00D555AF79", hash_generated_field = "D61C81DE46CCD592C64D38B586C58E19")
 
     private MotionEvent mCurrEvent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.569 -0500", hash_original_field = "94A353B58E248D99854FB0B964DBEA35", hash_generated_field = "9E3ECCCE67853EF67D401BC85D54FCDD")
-
 
     private float mFocusX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.571 -0500", hash_original_field = "C5B54888D0BE6CAF4CFCD322A758FD24", hash_generated_field = "E01C42CAE2152A2827127C5E1618E0BF")
@@ -99,7 +92,6 @@ private static float getRawY(MotionEvent event, int pointerIndex) {
 
     private long mTimeDelta;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.597 -0500", hash_original_field = "DE07563BC74B44DF2762265E237775A0", hash_generated_field = "87E1CD70AA880AA0038E22EA3C795791")
-
 
     private  float mEdgeSlop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.599 -0500", hash_original_field = "9E5157F61681DC41BED18235E2C2204F", hash_generated_field = "B70D199FA23802CA3820F738CE6BECA4")
@@ -565,6 +557,7 @@ public boolean isInProgress() {
      *
      * @return X coordinate of the focal point in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.646 -0500", hash_original_method = "5AA73E7030B433A4A506EA714645F254", hash_generated_method = "874F5478AF4E1A1071A9C4A3A37AE4B7")
     
 public float getFocusX() {
@@ -582,6 +575,7 @@ public float getFocusX() {
      *
      * @return Y coordinate of the focal point in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.648 -0500", hash_original_method = "1634272865979B530C4105679871001B", hash_generated_method = "52632C775F6D9632E170A544D6AF35B4")
     
 public float getFocusY() {
@@ -594,6 +588,7 @@ public float getFocusY() {
      *
      * @return Distance between pointers in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.650 -0500", hash_original_method = "AB0C6BF3BCA5EEB3D5CA8E031A94ABD9", hash_generated_method = "9A443A8813356E79567BCE141AAD82A1")
     
 public float getCurrentSpan() {
@@ -611,6 +606,7 @@ public float getCurrentSpan() {
      *
      * @return Distance between pointers in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.653 -0500", hash_original_method = "96703DCF80F0F42B9182D748E24B5F12", hash_generated_method = "8B0183DC7299A6B053C8D69245CA25F4")
     
 public float getCurrentSpanX() {
@@ -623,6 +619,7 @@ public float getCurrentSpanX() {
      *
      * @return Distance between pointers in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.655 -0500", hash_original_method = "46ABD98E7ABFBBE92F1E1C8C1A82F921", hash_generated_method = "6BF22D246C72964B6F75995BCD712B33")
     
 public float getCurrentSpanY() {
@@ -635,6 +632,7 @@ public float getCurrentSpanY() {
      *
      * @return Previous distance between pointers in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.658 -0500", hash_original_method = "61588E4085777CBFF7E61092314CDCD6", hash_generated_method = "B5025A01863C639B80517B503F62FA5D")
     
 public float getPreviousSpan() {
@@ -652,6 +650,7 @@ public float getPreviousSpan() {
      *
      * @return Previous distance between pointers in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.660 -0500", hash_original_method = "0AFCA4EC344BB39A6FBEFCC5BD88D7B6", hash_generated_method = "F31C03262F40CF8FBF0A243142C92154")
     
 public float getPreviousSpanX() {
@@ -664,6 +663,7 @@ public float getPreviousSpanX() {
      *
      * @return Previous distance between pointers in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.663 -0500", hash_original_method = "F0E427EE2F15CB9D89F340FD227EA8BF", hash_generated_method = "9AC564B3BEFF1C2B1952B36F03089934")
     
 public float getPreviousSpanY() {
@@ -677,6 +677,7 @@ public float getPreviousSpanY() {
      *
      * @return The current scaling factor.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.665 -0500", hash_original_method = "EF10CCD331D0CD8126F652B47BBB1296", hash_generated_method = "B64B6879A3ADD500F55A9708EB600516")
     
 public float getScaleFactor() {
@@ -685,7 +686,6 @@ public float getScaleFactor() {
         }
         return mScaleFactor;
     }
-
     
     public static class SimpleOnScaleGestureListener implements OnScaleGestureListener {
         
@@ -712,19 +712,14 @@ public boolean onScaleBegin(ScaleGestureDetector detector) {
 public void onScaleEnd(ScaleGestureDetector detector) {
             // Intentionally empty
         }
-
         
     }
-
-
     
     public interface OnScaleGestureListener {
         
         public boolean onScale(ScaleGestureDetector detector);
-
         
         public boolean onScaleBegin(ScaleGestureDetector detector);
-
         
         public void onScaleEnd(ScaleGestureDetector detector);
     }
@@ -735,6 +730,7 @@ public void onScaleEnd(ScaleGestureDetector detector) {
      *
      * @return Time difference since the last scaling event in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.667 -0500", hash_original_method = "478681CCF9BA4A844274161522001BDE", hash_generated_method = "D0C71CFDA1C49596A9CBB5571787A8EA")
     
 public long getTimeDelta() {
@@ -746,6 +742,7 @@ public long getTimeDelta() {
      *
      * @return Current event time in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:16.669 -0500", hash_original_method = "93D380EA2FE2DB10568746F6E0FB3B8E", hash_generated_method = "BB0593FC7E733EF2FF53909574109C0D")
     
 public long getEventTime() {

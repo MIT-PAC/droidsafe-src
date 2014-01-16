@@ -11,10 +11,6 @@ import android.text.Layout;
 import android.text.ParcelableSpan;
 import android.text.TextUtils;
 
-
-
-
-
 public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.281 -0500", hash_original_field = "31E56BD8B2275A61D20E89F31CB86962", hash_generated_field = "D30589795BDA1B839BB8F37F184231C0")
 
@@ -23,7 +19,6 @@ public class QuoteSpan implements LeadingMarginSpan, ParcelableSpan {
 
     private static final int GAP_WIDTH = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.287 -0500", hash_original_field = "CF1046E2EF6F9B2B63BE18A3B2BC71FD", hash_generated_field = "118704B52DA650C4DCD23A9FC0B970FC")
-
 
     private  int mColor;
 
@@ -47,6 +42,7 @@ public QuoteSpan(Parcel src) {
         mColor = src.readInt();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.298 -0500", hash_original_method = "91516A2AC14E144F9D08D31960E0CDBA", hash_generated_method = "FF0085C299826924E8034DB70E053C22")
     
 public int getSpanTypeId() {
@@ -65,12 +61,14 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mColor);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.306 -0500", hash_original_method = "43BEB8B89AD2425C976FAD6ED1828A38", hash_generated_method = "7A0896AC75F29590ED428CB0809B3573")
     
 public int getColor() {
         return mColor;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.309 -0500", hash_original_method = "0C0816FE65D1CAB7203AAB3FE043AC6B", hash_generated_method = "543A620249B118248633B60068645BD8")
     
 public int getLeadingMargin(boolean first) {

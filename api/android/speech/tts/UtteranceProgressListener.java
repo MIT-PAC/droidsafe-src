@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class UtteranceProgressListener {
-
     
-    @DSModeled(DSC.SAFE)
     static UtteranceProgressListener from(
             final TextToSpeech.OnUtteranceCompletedListener listener) {
         return new UtteranceProgressListener() {
@@ -81,7 +76,6 @@ public abstract void onDone(String utteranceId);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:53.309 -0500", hash_original_method = "B478909748E14FD8A516D3C92795C8CC", hash_generated_method = "605DC1C1145DE80DDE09A8BDBDACC33A")
     
 public abstract void onError(String utteranceId);
-
     
 }
 

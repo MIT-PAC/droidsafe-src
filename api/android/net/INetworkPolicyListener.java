@@ -60,13 +60,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.674 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.674 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.677 -0500", hash_original_method = "34C768630B9C499D8CA75A0648650C06", hash_generated_method = "BF0D7FC05C17D3ACF149AA2A786A010A")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.677 -0500", hash_original_method = "34C768630B9C499D8CA75A0648650C06", hash_generated_method = "BF0D7FC05C17D3ACF149AA2A786A010A")
             
 public void onUidRulesChanged(int uid, int uidRules) throws android.os.RemoteException
 {
@@ -81,7 +83,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.679 -0500", hash_original_method = "B5105F9B3885BD0C8BA8E01DFC0B91E3", hash_generated_method = "33289646BC05A08A0BACD16CCC575076")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.679 -0500", hash_original_method = "B5105F9B3885BD0C8BA8E01DFC0B91E3", hash_generated_method = "33289646BC05A08A0BACD16CCC575076")
             
 public void onMeteredIfacesChanged(java.lang.String[] meteredIfaces) throws android.os.RemoteException
 {
@@ -96,7 +99,8 @@ _data.recycle();
 }
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.661 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:06.661 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

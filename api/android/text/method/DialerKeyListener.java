@@ -9,12 +9,9 @@ import android.text.Spannable;
 import android.view.KeyCharacterMap.KeyData;
 import android.view.KeyEvent;
 
-
-
-
-
 public class DialerKeyListener extends NumberKeyListener {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.636 -0500", hash_original_method = "AE7C568B1FC945A3D62D83ECB6AACC3F", hash_generated_method = "0AA2BB67796C4A68DB2BDF94AD1A65E8")
     
 public static DialerKeyListener getInstance() {
@@ -32,15 +29,14 @@ public static DialerKeyListener getInstance() {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.648 -0500", hash_original_field = "CF91476473FDE63475D47E5A7BFC6493", hash_generated_field = "056A87FCF20D35A01976664357B66FF4")
 
-
     private static DialerKeyListener sInstance;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.200 -0400", hash_original_method = "DB0B81FF92CA7DAE82B6AED220522587", hash_generated_method = "DB0B81FF92CA7DAE82B6AED220522587")
     public DialerKeyListener ()
     {
         //Synthesized constructor
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.633 -0500", hash_original_method = "EEC77EA89700D9A449D9FC8461D61396", hash_generated_method = "C8829E311180669DC917FA428AC766DB")
     
 @Override
@@ -49,6 +45,7 @@ public static DialerKeyListener getInstance() {
         return CHARACTERS;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.638 -0500", hash_original_method = "CF04961F3F1B69C39A5779241DF2A6D8", hash_generated_method = "CA7F189DF334696BDCB37FC8D67ACEB2")
     
 public int getInputType() {

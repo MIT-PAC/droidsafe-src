@@ -11,12 +11,9 @@ import android.media.DecoderCapabilities.AudioDecoder;
 import android.media.DecoderCapabilities.VideoDecoder;
 import android.mtp.MtpConstants;
 
-
-
-
-
 public class MediaFile {
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.976 -0500", hash_original_method = "9580D55967DC9BBB4B34535D7F5160BB", hash_generated_method = "D0293C22F3A2D19024F5077248D61EE9")
     
 static void addFileType(String extension, int fileType, String mimeType) {
@@ -24,6 +21,7 @@ static void addFileType(String extension, int fileType, String mimeType) {
         sMimeTypeMap.put(mimeType, Integer.valueOf(fileType));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.978 -0500", hash_original_method = "5ADC35196E775CC51F3FAECE85209DA3", hash_generated_method = "9EEF8D0441B302ED4AE9AA1B6788FEDA")
     
 static void addFileType(String extension, int fileType, String mimeType, int mtpFormatCode) {
@@ -118,6 +116,7 @@ public static boolean isMimeTypeMedia(String mimeType) {
     }
 
     // generates a title based on file name
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.007 -0500", hash_original_method = "3F19F8DD2C222D6218E9AC3506AA6F51", hash_generated_method = "A9D2E1840AFF4FF6459802D242982C4D")
     
 public static String getFileTitle(String path) {
@@ -144,6 +143,7 @@ public static int getFileTypeForMimeType(String mimeType) {
         return (value == null ? 0 : value.intValue());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.013 -0500", hash_original_method = "B740F3517DEF0D033D718183586443F5", hash_generated_method = "E2DA79676DB455181597BC59A9868F6D")
     
 public static String getMimeTypeForFile(String path) {
@@ -171,6 +171,7 @@ public static int getFormatCode(String fileName, String mimeType) {
         return MtpConstants.FORMAT_UNDEFINED;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:28.019 -0500", hash_original_method = "774B4347757F4357102FC259B06A2804", hash_generated_method = "0F7D4A858D5392B2441FC5552BAC51E7")
     
 public static String getMimeTypeForFormatCode(int formatCode) {
@@ -179,7 +180,6 @@ public static String getMimeTypeForFormatCode(int formatCode) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.796 -0500", hash_original_field = "20D11ED641233F8E64DC613F7697EFC5", hash_generated_field = "0442E65E46FD86EDDDD9D9538674D39B")
 
     public static final int FILE_TYPE_MP3     = 1;
-
     
     public static class MediaFileType {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.952 -0500", hash_original_field = "1CEDD8F802C3C43A6F8EE83BD24E353E", hash_generated_field = "8B71EC67105E5F27E184B46882300AAD")
@@ -195,7 +195,6 @@ MediaFileType(int fileType, String mimeType) {
             this.fileType = fileType;
             this.mimeType = mimeType;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.799 -0500", hash_original_field = "52758B25CC40897D0930F30E8C4ADC29", hash_generated_field = "7D7076EFC4D195B2A48868CCCB0FD5C9")
@@ -329,7 +328,6 @@ MediaFileType(int fileType, String mimeType) {
     public static final int FILE_TYPE_HTTPLIVE = 44;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.917 -0500", hash_original_field = "6A96D655D91FDAB77863BE67698A9FEF", hash_generated_field = "47419CF879B57E44118BBD474F41CE76")
 
-
     private static final int FIRST_PLAYLIST_FILE_TYPE = FILE_TYPE_M3U;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.920 -0500", hash_original_field = "BC3B04D0C2209A958887178834E53160", hash_generated_field = "871E9297B34DEE916EC288416AE326B4")
 
@@ -368,7 +366,6 @@ MediaFileType(int fileType, String mimeType) {
 
     public static final int FILE_TYPE_ZIP           = 107;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:27.962 -0500", hash_original_field = "C314F2FD40406CBF19966826F6B6DFB7", hash_generated_field = "D720C3C8609AEDFC558C093EA691AB44")
-
     
     private static HashMap<String, MediaFileType> sFileTypeMap
             = new HashMap<String, MediaFileType>();

@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.net.UnknownHostException;
 
-
-
-
 public final class GaiException extends RuntimeException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.496 -0500", hash_original_field = "4E55026DE98CFA86DA317EEAE8A270FB", hash_generated_field = "3A7419DC5D02B665865D1D41C31D2769")
 
@@ -37,6 +34,7 @@ public GaiException(String functionName, int error, Throwable cause) {
      * We do this here rather than in the constructor so that callers only pay for
      * this if they need it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:20.505 -0500", hash_original_method = "6B923BF9D17AE00E606BE15037C1D30D", hash_generated_method = "A242F936DA6CF917011C6A1A869A0BDF")
     
 @Override public String getMessage() {
@@ -61,7 +59,6 @@ public UnknownHostException rethrowAsUnknownHostException(String detailMessage) 
 public UnknownHostException rethrowAsUnknownHostException() throws UnknownHostException {
         throw rethrowAsUnknownHostException(getMessage());
     }
-
     
 }
 

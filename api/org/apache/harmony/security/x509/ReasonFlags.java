@@ -10,11 +10,6 @@ import org.apache.harmony.security.asn1.ASN1BitString;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BerOutputStream;
 
-
-
-
-
-
 public final class ReasonFlags {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.528 -0500", hash_original_field = "988CE29797D9C71ABAADD708314B7A21", hash_generated_field = "348B9970CC87333497E0122E357CC7BA")
 
@@ -39,6 +34,7 @@ public Object getDecodedObject(BerInputStream in) throws IOException {
             return new ReasonFlags((boolean[]) super.getDecodedObject(in));
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.541 -0500", hash_original_method = "7CAEE2990EB6DF6257751BA848966F42", hash_generated_method = "52E4D1960D48A19C26A58844945CA40F")
         
 public void setEncodingContent(BerOutputStream out) {

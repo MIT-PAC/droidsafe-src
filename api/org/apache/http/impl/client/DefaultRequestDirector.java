@@ -67,12 +67,8 @@ import org.apache.http.protocol.HttpContext;
 import org.apache.http.protocol.HttpProcessor;
 import org.apache.http.protocol.HttpRequestExecutor;
 
-
-
-
 public class DefaultRequestDirector implements RequestDirector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.864 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.867 -0500", hash_original_field = "79C539F0631DE1ED22CABB863DF47A25", hash_generated_field = "02A8F7D7605C029767E3572CFEE2F34C")
@@ -116,18 +112,14 @@ public class DefaultRequestDirector implements RequestDirector {
     protected ManagedClientConnection managedConn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.898 -0500", hash_original_field = "0AE41E5E8D5B3D970EA29093BE41B738", hash_generated_field = "D59A8F322AA61B2EDF1BDFFFEB284AB6")
 
-
     private int redirectCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.900 -0500", hash_original_field = "74902B111622E9E3A744EFC5D329328E", hash_generated_field = "C858360B99BF75CE96620A237ADD6C16")
 
-
     private int maxRedirects;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.903 -0500", hash_original_field = "5A35C8104FC2D865E8F8A0879C0F7F9A", hash_generated_field = "09D81EEE3AA06EF4775316736BFDA2B2")
-
     
     private  AuthState targetAuthState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.905 -0500", hash_original_field = "A6CA6072C1BFCC3C72577263E286D091", hash_generated_field = "04947E0C0D6A7F5789678D91EF5BFD42")
-
     
     private  AuthState proxyAuthState;
     
@@ -216,7 +208,6 @@ public DefaultRequestDirector(
         this.proxyAuthState = new AuthState();
     } // constructor
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.911 -0500", hash_original_method = "61E87BBE33E8E65E80E9F3F1C82F2660", hash_generated_method = "6FBF59CD03CC8B4D52C23997423EADC5")
     
 private RequestWrapper wrapRequest(
@@ -229,7 +220,6 @@ private RequestWrapper wrapRequest(
                     request);
         }
     }
-    
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.914 -0500", hash_original_method = "6DDB48FED3712857B06BA2C85DA91575", hash_generated_method = "127EB3421BD46398C7ABCCC86B5FF295")
     
@@ -260,8 +250,8 @@ protected void rewriteRequestURI(
         }
     }
     
-    
     // non-javadoc, see interface ClientRequestDirector
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.921 -0500", hash_original_method = "FF11182248C158BE9943CC5E99D59AB1", hash_generated_method = "FADA447509B07675118E8E4872FBFA31")
     
 public HttpResponse execute(HttpHost target, HttpRequest request,
@@ -273,7 +263,7 @@ public HttpResponse execute(HttpHost target, HttpRequest request,
         origWrapper.setParams(params);
         HttpRoute origRoute = determineRoute(target, origWrapper, context);
 
-        RoutedRequest roureq = new RoutedRequest(origWrapper, origRoute); 
+        RoutedRequest roureq = new RoutedRequest(origWrapper, origRoute);
 
         long timeout = ConnManagerParams.getTimeout(params);
         
@@ -443,7 +433,6 @@ public HttpResponse execute(HttpHost target, HttpRequest request,
                 // Run response protocol interceptors
                 response.setParams(params);
                 requestExec.postProcess(response, httpProcessor, context);
-                
 
                 // The connection is in or can be brought to a re-usable state.
                 reuse = reuseStrategy.keepAlive(response, context);
@@ -483,7 +472,6 @@ public HttpResponse execute(HttpHost target, HttpRequest request,
                     managedConn.setState(userToken);
                 }
             } // while not done
-
 
             // check for entity, release connection if possible
             if ((response == null) || (response.getEntity() == null) ||
@@ -549,6 +537,7 @@ protected void releaseConnection() {
      *
      * @throws HttpException    in case of a problem
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.926 -0500", hash_original_method = "855E342C251EB2356D381DD4230A53C3", hash_generated_method = "A332452DAA3A752D6FC6722C5C72039F")
     
 protected HttpRoute determineRoute(HttpHost    target,
@@ -580,7 +569,6 @@ protected HttpRoute determineRoute(HttpHost    target,
 
         return this.routePlanner.determineRoute(target, request, context);
     }
-
 
     /**
      * Establishes the target route.
@@ -636,7 +624,6 @@ protected void establishRoute(HttpRoute route, HttpContext context)
                                         secure, this.params);
             }   break;
 
-
             case HttpRouteDirector.LAYER_PROTOCOL:
                 managedConn.layerProtocol(context, this.params);
                 break;
@@ -659,7 +646,6 @@ protected void establishRoute(HttpRoute route, HttpContext context)
         } while (step > HttpRouteDirector.COMPLETE);
 
     } // establishConnection
-
 
     /**
      * Creates a tunnel to the target server.
@@ -783,7 +769,7 @@ protected boolean createTunnelToTarget(HttpRoute route,
             HttpEntity entity = response.getEntity();
             if (entity != null) {
                 response.setEntity(new BufferedHttpEntity(entity));
-            }                
+            }
             
             this.managedConn.close();
             throw new TunnelRefusedException("CONNECT refused by proxy: " +
@@ -799,8 +785,6 @@ protected boolean createTunnelToTarget(HttpRoute route,
         return false;
 
     } // createTunnelToTarget
-
-
 
     /**
      * Creates a tunnel to an intermediate proxy.
@@ -837,8 +821,6 @@ protected boolean createTunnelToProxy(HttpRoute route, int hop,
         throw new UnsupportedOperationException
             ("Proxy chains are not supported.");
     }
-
-
 
     /**
      * Creates the CONNECT request for tunnelling.
@@ -880,7 +862,6 @@ protected HttpRequest createConnectRequest(HttpRoute route,
         return req;
     }
 
-
     /**
      * Analyzes a response to check need for a followup.
      *
@@ -894,6 +875,7 @@ protected HttpRequest createConnectRequest(HttpRoute route,
      * @throws HttpException    in case of a problem
      * @throws IOException      in case of an IO problem
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.943 -0500", hash_original_method = "E253F133593C4FA5CC62D333761B1C94", hash_generated_method = "24E27C826C46B023BB99412DF746179B")
     
 protected RoutedRequest handleResponse(RoutedRequest roureq,
@@ -1010,7 +992,6 @@ protected RoutedRequest handleResponse(RoutedRequest roureq,
         return null;
     } // handleResponse
 
-
     /**
      * Shuts down the connection.
      * This method is called from a <code>catch</code> block in
@@ -1040,7 +1021,6 @@ private void abortConnection() {
         }
     } // abortConnection
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.949 -0500", hash_original_method = "582621DB4D93E0412F3CDB3DDE871FB7", hash_generated_method = "83C7CA03A31FEC6F6006FB8DE25DCE8F")
     
 private void processChallenges(
@@ -1068,7 +1048,6 @@ private void processChallenges(
         this.log.debug("Authorization challenge processed");
     }
     
-    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.952 -0500", hash_original_method = "48429FCD8E54925B92F9CF361D5F9B0A", hash_generated_method = "ADD32D1227248CB9BD42747DB98E512A")
     
 private void updateAuthState(
@@ -1092,7 +1071,7 @@ private void updateAuthState(
                 hostname,
                 port,
                 authScheme.getRealm(), 
-                authScheme.getSchemeName());  
+                authScheme.getSchemeName());
         
         if (this.log.isDebugEnabled()) {
             this.log.debug("Authentication scope: " + authScope);
@@ -1116,7 +1095,6 @@ private void updateAuthState(
         authState.setAuthScope(authScope);
         authState.setCredentials(creds);
     }
-
     
 }
 

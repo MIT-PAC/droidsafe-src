@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 abstract class LongArrayBuffer extends LongBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.248 -0500", hash_original_field = "E767141AD2A9691035B7D6080D48C564", hash_generated_field = "328A8BF34389CAFD34319C79BCDE07B5")
 
-
     protected  long[] backingArray;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.252 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "22BBBB3BDBDCD622FED3EBF1A70B4EC5")
-
 
     protected  int offset;
 
@@ -39,6 +33,7 @@ LongArrayBuffer(int capacity, long[] backingArray, int offset) {
         this.offset = offset;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.262 -0500", hash_original_method = "E2FF30257BFFCB6B65D7425E7B88C7B2", hash_generated_method = "A3A189D5C44D04E11EE6C105CD763853")
     
 @Override
@@ -49,6 +44,7 @@ LongArrayBuffer(int capacity, long[] backingArray, int offset) {
         return backingArray[offset + position++];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.265 -0500", hash_original_method = "E501A733A2C96D5405AAE01CF07D222B", hash_generated_method = "9ABF9E10528DA276BC0352030FE41B74")
     
 @Override
@@ -57,6 +53,7 @@ LongArrayBuffer(int capacity, long[] backingArray, int offset) {
         return backingArray[offset + index];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.267 -0500", hash_original_method = "E85CBDF91AD45B8A94165F7B57575CBE", hash_generated_method = "524D3B860D2F69FBB1C115495288FCD5")
     
 @Override
@@ -82,7 +79,6 @@ LongArrayBuffer(int capacity, long[] backingArray, int offset) {
     public final ByteOrder order() {
         return ByteOrder.nativeOrder();
     }
-
     
 }
 

@@ -31,16 +31,13 @@ public StringEntity(final String s, String charset)
         this.content = s.getBytes(charset);
         setContentType(HTTP.PLAIN_TEXT_TYPE + HTTP.CHARSET_PARAM + charset);
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:01.794 -0400", hash_original_method = "C6F1280894F4B444CF2EFAD46C585EEF", hash_generated_method = "708E4C200C264FD91BBE539DBA47BFF1")
     public  StringEntity(final String s) throws UnsupportedEncodingException {
         //this(s, null);
         addTaint(s.getTaint());
         // ---------- Original Method ----------
     }
-
     
     // orphaned legacy method
     public StringEntity(final String string, final ContentType contentType) {
@@ -52,25 +49,21 @@ public StringEntity(final String s, String charset)
     public StringEntity(final String string, final Charset charset) {
         this(string, ContentType.create(ContentType.TEXT_PLAIN.getMimeType(), charset));
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public boolean isRepeatable() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public long getContentLength() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public InputStream getContent() throws IOException, IllegalStateException {
 		// TODO Auto-generated method stub
@@ -110,7 +103,6 @@ public Object clone() throws CloneNotSupportedException {
 		// TODO Auto-generated method stub
 		return false;
 	}
-    
     
     // orphaned legacy method
     @Override

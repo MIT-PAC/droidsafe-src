@@ -8,16 +8,11 @@ import android.os.Bundle;
 import android.os.IBinder;
 import android.os.RemoteException;
 
-
-
-
-
 public final class CursorToBulkCursorAdaptor extends BulkCursorNative implements IBinder.DeathRecipient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.681 -0500", hash_original_field = "185286679E98DDBA5FF230438EB0F181", hash_generated_field = "C0008393E22A94FFD078F5CB06D7EC35")
 
     private static final String TAG = "Cursor";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.684 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
-
 
     private final Object mLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.687 -0500", hash_original_field = "719FE8D1D312E4983A0DDBA58E58CDCF", hash_generated_field = "A729030D5DBB0175A438B51B5B1D1491")
@@ -87,6 +82,7 @@ private void throwIfCursorIsClosed() {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.725 -0500", hash_original_method = "4ECB0E8EDFF03AFDCED1B443F780B12E", hash_generated_method = "9A15BCAC89E334437CA3D66B23D658B9")
     
 @Override
@@ -245,6 +241,7 @@ private void unregisterObserverProxyLocked() {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.749 -0500", hash_original_method = "D70B44F91871C59AEA1A14E0E16BCFE5", hash_generated_method = "162DE252350A112A17DD6E06E3D1CEF0")
     
 @Override
@@ -255,7 +252,6 @@ private void unregisterObserverProxyLocked() {
             return mCursor.getExtras();
         }
     }
-
     
     private static final class ContentObserverProxy extends ContentObserver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.697 -0500", hash_original_field = "B953E44F04521B54F9B83F1940415B2A", hash_generated_field = "74D5AC8BC3A14B4C09214B5B5668899E")
@@ -298,7 +294,6 @@ public boolean unlinkToDeath(DeathRecipient recipient) {
                 // Do nothing, the far side is dead
             }
         }
-
         
     }
 

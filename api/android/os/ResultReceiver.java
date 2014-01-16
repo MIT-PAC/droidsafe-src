@@ -6,14 +6,7 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.os.IResultReceiver;
 
-
-
-
-
-
 public class ResultReceiver implements Parcelable {
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.530 -0400", hash_original_field = "1616AC5A23A35716E8AC81C303077CDC", hash_generated_field = "7C3C665B8D40A2CCD87F8A835E2FE4A9")
 
@@ -37,7 +30,6 @@ public ResultReceiver[] newArray(int size) {
 
      Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.355 -0500", hash_original_field = "D7B90760A7F6237C1A31E420E3CA0A2C", hash_generated_field = "D7B90760A7F6237C1A31E420E3CA0A2C")
-
     
     IResultReceiver mReceiver;
     
@@ -68,6 +60,7 @@ ResultReceiver(Parcel in) {
      * @param resultCode Arbitrary result code to deliver, as defined by you.
      * @param resultData Any additional data provided by you.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.376 -0500", hash_original_method = "09F6E48395AF4822069195CE0B4A582F", hash_generated_method = "A333E88D55493381E6E2689B194132B6")
     
 public void send(int resultCode, Bundle resultData) {
@@ -105,7 +98,6 @@ protected void onReceiveResult(int resultCode, Bundle resultData) {
 public int describeContents() {
         return 0;
     }
-
     
     class MyRunnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.358 -0500", hash_original_field = "457E6BFD9A88F809DF3F4A88B9B7B893", hash_generated_field = "457E6BFD9A88F809DF3F4A88B9B7B893")
@@ -127,11 +119,8 @@ MyRunnable(int resultCode, Bundle resultData) {
 public void run() {
             onReceiveResult(mResultCode, mResultData);
         }
-
         
     }
-
-
     
     class MyResultReceiver extends IResultReceiver.Stub {
         
@@ -140,6 +129,7 @@ public void run() {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.370 -0500", hash_original_method = "B49F987C1CD0318792118745999D9DB4", hash_generated_method = "EFA6E027AB4269A27354DDE7D386BD63")
         
 public void send(int resultCode, Bundle resultData) {
@@ -149,7 +139,6 @@ public void send(int resultCode, Bundle resultData) {
                 onReceiveResult(resultCode, resultData);
             }
         }
-
         
     }
 

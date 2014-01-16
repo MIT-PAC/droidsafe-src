@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.channels.ServerSocketChannel;
 
-
-
-
-
-
 public class ServerSocket {
 
     /**
@@ -38,18 +33,14 @@ public static synchronized void setSocketFactory(SocketImplFactory aFactory) thr
     private static final int DEFAULT_BACKLOG = 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.823 -0500", hash_original_field = "D13BB32EBB2361D82290016DAD496DC0", hash_generated_field = "10D4EEC45D11B59A6B6543CD9427385B")
 
-
     static SocketImplFactory factory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.818 -0500", hash_original_field = "76382137C184A183F2BF2D8583A90AEC", hash_generated_field = "E5435F593B4B4C544AAC5D578CFF6639")
-
 
     private  SocketImpl impl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.825 -0500", hash_original_field = "B2E2EDC9404AD10BB9AF0AC0088343DD", hash_generated_field = "C0B93BC213B673FF2E47783C561E2823")
 
-
     private boolean isBound;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.828 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
-
 
     private boolean isClosed;
 
@@ -58,6 +49,8 @@ public static synchronized void setSocketFactory(SocketImplFactory aFactory) thr
      *
      * @throws IOException if an error occurs while creating the socket.
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.831 -0500", hash_original_method = "31BB74D5896D397B1327C5B34E5CB836", hash_generated_method = "F6958EEE717C65B2382EA357C50183A7")
     
 public ServerSocket() throws IOException {
@@ -72,6 +65,8 @@ public ServerSocket() throws IOException {
      *
      * @throws IOException if an error occurs while creating the socket.
      */
+    @DSComment("can learn network device info")
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.833 -0500", hash_original_method = "17E5A7EAB5FF74551872A5C22051BFB5", hash_generated_method = "B9F823FA7D895103EEFDAF26A9FC01D0")
     
 public ServerSocket(int port) throws IOException {
@@ -99,6 +94,8 @@ public ServerSocket(int port, int backlog) throws IOException {
      *
      * @throws IOException if an error occurs while creating the socket.
      */
+    @DSComment("can learn network device info")
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.839 -0500", hash_original_method = "6BB36DC8E15E305D7407A47C7739996C", hash_generated_method = "F776CE6D05038553C1A88DD290C54077")
     
 public ServerSocket(int port, int backlog, InetAddress localAddress) throws IOException {
@@ -123,6 +120,7 @@ public ServerSocket(int port, int backlog, InetAddress localAddress) throws IOEx
     /**
      * @hide internal use only
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.820 -0500", hash_original_method = "847F07D140851DC7DF04F3DA230B7EED", hash_generated_method = "FAB0479ECF5F05048C7FE7B9B50808FC")
     
 public SocketImpl getImpl$() {
@@ -138,6 +136,8 @@ public SocketImpl getImpl$() {
      * @throws IOException
      *             if an error occurs while accepting a new connection.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.842 -0500", hash_original_method = "DE0153D2AABFEE83527E2EAC5D1F68DF", hash_generated_method = "29F537F9AC7BE50FF7DBE4DBA5831698")
     
 public Socket accept() throws IOException {
@@ -171,6 +171,8 @@ private void checkListen(int aPort) {
      * @throws IOException
      *             if an error occurs while closing this socket.
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.847 -0500", hash_original_method = "8636C7CEC5FFD33F6CBF2C75F9E6A135", hash_generated_method = "49D139305406AB770BC7CB5D3895D434")
     
 public void close() throws IOException {
@@ -184,6 +186,9 @@ public void close() throws IOException {
      *
      * @return the local address of this server socket.
      */
+    @DSComment("can learn network device info")
+    @DSSpec(DSCat.NETWORK)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.850 -0500", hash_original_method = "0AAA019638F2B2CC41FFEEEB4E260F6C", hash_generated_method = "AD67A3BCA0927F812C6A2C52711C2948")
     
 public InetAddress getInetAddress() {
@@ -199,6 +204,9 @@ public InetAddress getInetAddress() {
      *
      * @return the local port this server is listening on.
      */
+    @DSComment("local port has to be provided, no new info leaking")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.852 -0500", hash_original_method = "F5BB694DF3469EBFBD82064FFB1FEAE0", hash_generated_method = "7757875108A58B1E253356DE798623DA")
     
 public int getLocalPort() {
@@ -214,6 +222,7 @@ public int getLocalPort() {
      * @throws IOException
      *             if the option cannot be retrieved.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.855 -0500", hash_original_method = "37BE74568AC5DDD629C634B42E81BFFA", hash_generated_method = "405F927B58C98C88965016EB5176B58B")
     
 public synchronized int getSoTimeout() throws IOException {
@@ -251,6 +260,9 @@ protected final void implAccept(Socket aSocket) throws IOException {
      * @throws SocketException
      *             if an error occurs while setting the option.
      */
+    @DSComment("no info leakage")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.863 -0500", hash_original_method = "E2A5F03981AB4BF932E59A553E83FA6F", hash_generated_method = "D11FFBB6E24AFF767E7A4AB1B4A07FDB")
     
 public synchronized void setSoTimeout(int timeout) throws SocketException {
@@ -299,6 +311,9 @@ public synchronized void setSoTimeout(int timeout) throws SocketException {
      *             if the socket is already bound or a problem occurs during
      *             binding.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.868 -0500", hash_original_method = "AB1F91AE5F8F2B3C00C4EDCF73D5B4D1", hash_generated_method = "6D8A600A2BA5C00245EE3BF986AC0850")
     
 public void bind(SocketAddress localAddr) throws IOException {
@@ -318,6 +333,7 @@ public void bind(SocketAddress localAddr) throws IOException {
      * @throws IOException if the socket is already bound or a problem occurs
      *     during binding.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.871 -0500", hash_original_method = "684D242B2EA0BE4D55F437B908E9CC5D", hash_generated_method = "EAC39C6E1A8A8AE1A6C52CDDCAC68D6A")
     
 public void bind(SocketAddress localAddr, int backlog) throws IOException {
@@ -357,6 +373,7 @@ public void bind(SocketAddress localAddr, int backlog) throws IOException {
      *
      * @return the local socket address and port this socket is bound to.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.874 -0500", hash_original_method = "7AD76537AA5A3220834213189640F2E9", hash_generated_method = "B6F6BE40480DB6FDE227D19A9E29325B")
     
 public SocketAddress getLocalSocketAddress() {
@@ -383,6 +400,8 @@ public boolean isBound() {
      *
      * @return {@code true} if this socket is closed, {@code false} otherwise.
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.878 -0500", hash_original_method = "2EEDDDEB8BA1CD500E3647BC397BF54F", hash_generated_method = "10C0B8E2B9DF49DDBC078E9919A022F7")
     
 public boolean isClosed() {
@@ -405,6 +424,7 @@ private void checkOpen() throws SocketException {
      * @throws SocketException
      *             if an error occurs while setting the option value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.883 -0500", hash_original_method = "D6CD69E67882E49578E557811A0FC457", hash_generated_method = "F94F3DC09B3E131C2F7D5BA39FFC9336")
     
 public void setReuseAddress(boolean reuse) throws SocketException {
@@ -419,6 +439,7 @@ public void setReuseAddress(boolean reuse) throws SocketException {
      * @throws SocketException
      *             if an error occurs while reading the option value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.886 -0500", hash_original_method = "8920D58954E3583481E89192EF874E86", hash_generated_method = "4750294BF903E7A0F86FCB8F7F2519DE")
     
 public boolean getReuseAddress() throws SocketException {
@@ -429,6 +450,7 @@ public boolean getReuseAddress() throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_SNDBUF receive buffer size}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.888 -0500", hash_original_method = "4A5F0E88940F2B7162C81724AB1FDFE4", hash_generated_method = "C87F3412CD4ADAA1F2B4D2E022D7A397")
     
 public void setReceiveBufferSize(int size) throws SocketException {
@@ -442,6 +464,7 @@ public void setReceiveBufferSize(int size) throws SocketException {
     /**
      * Returns this socket's {@link SocketOptions#SO_RCVBUF receive buffer size}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.890 -0500", hash_original_method = "1025A74ACDCA065D38BE1D18813D43DB", hash_generated_method = "E0D1E6777755F89A592BB6B477403B32")
     
 public int getReceiveBufferSize() throws SocketException {
@@ -456,6 +479,7 @@ public int getReceiveBufferSize() throws SocketException {
      * In practice, this means that the socket must have been created by
      * {@link java.nio.channels.ServerSocketChannel#open}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.893 -0500", hash_original_method = "3D28E6253835634FC7711C1CE3F0C48B", hash_generated_method = "C5E30506A370D3B8F16D8419FD259FD0")
     
 public ServerSocketChannel getChannel() {
@@ -475,6 +499,7 @@ public ServerSocketChannel getChannel() {
      * @param bandwidth
      *            the value representing the importance of high bandwidth.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.896 -0500", hash_original_method = "EE4DCDA11944F25F3B6AAA6A92D8AD2F", hash_generated_method = "F246F8DA4A0CBB54D188217F5E7B1DB3")
     
 public void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {

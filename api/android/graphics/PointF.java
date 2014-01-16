@@ -8,9 +8,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.FloatMath;
 
-
-
-
 public class PointF implements Parcelable {
     
     /**
@@ -21,7 +18,6 @@ public class PointF implements Parcelable {
 public static float length(float x, float y) {
         return FloatMath.sqrt(x * x + y * y);
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.566 -0400", hash_original_field = "A8B72BB8FF20DCD3E42E3990C2FB1A2D", hash_generated_field = "290F12F848FCA2A5689B95FB1FE844BB")
 
@@ -56,16 +52,14 @@ public PointF[] newArray(int size) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.885 -0500", hash_original_method = "AC71EBB0EDB844032A48DF20A80FB47B", hash_generated_method = "C7971DDDF14A176537AD598EA326BF59")
     
 public PointF() {}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public PointF(float x, float y){
         addTaint(x);
         addTaint(y);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public PointF(Point p){
         addTaint(p.getTaint());
         /*
@@ -73,36 +67,29 @@ public PointF() {}
         this.y = p.y;
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public final void set(float x, float y){
         addTaint(x);
         addTaint(y);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void set(PointF p){
         addTaint(p.getTaint());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final void negate(){
         addTaint(x);
         addTaint(y);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final void offset(float dx, float dy){
         addTaint(dx);
         addTaint(dy);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final boolean equals(float x, float y){
         return getTaintBoolean();
         // Original method
@@ -112,9 +99,7 @@ public PointF() {}
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float length(){
         return getTaintFloat();
         // Original method
@@ -124,9 +109,7 @@ public PointF() {}
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override public int describeContents(){
         return getTaintInt();
     }
@@ -143,9 +126,7 @@ public PointF() {}
         out.writeFloat(x);
         out.writeFloat(y);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void readFromParcel(Parcel in){
         // Original method
         /*

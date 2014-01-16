@@ -28,11 +28,6 @@ import org.apache.http.message.BasicHttpEntityEnclosingRequest;
 import org.apache.http.message.BasicHttpRequest;
 import org.apache.http.protocol.RequestContent;
 
-
-
-
-
-
 class Request {
 
     /**
@@ -62,7 +57,6 @@ private static boolean canResponseHaveBody(final HttpRequest request,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.651 -0500", hash_original_field = "1E92A266EBDB8B46D3250CA0A5786BE9", hash_generated_field = "7B9DE3A4130C6C995D9A037F9150C7FA")
 
-
     private final static String HOST_HEADER = "Host";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.654 -0500", hash_original_field = "3EE60C7966B8BBAB851456B4A377E69C", hash_generated_field = "E84D9A59CAEF3BCC11F8F89244D21D5D")
 
@@ -78,7 +72,6 @@ private static boolean canResponseHaveBody(final HttpRequest request,
 
     EventHandler mEventHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.630 -0500", hash_original_field = "D468AD0EA1184CE89FA8A45254E2CDD6", hash_generated_field = "619FD7E303013DFEE90F58DA7C3DCACD")
-
 
     private Connection mConnection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.632 -0500", hash_original_field = "00DCF501A850F291B81138270DDF7D4D", hash_generated_field = "00DCF501A850F291B81138270DDF7D4D")
@@ -98,14 +91,12 @@ private static boolean canResponseHaveBody(final HttpRequest request,
     volatile boolean mCancelled = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.642 -0500", hash_original_field = "5E66863F07F10B7287F0E997DBE9BDFD", hash_generated_field = "5E66863F07F10B7287F0E997DBE9BDFD")
 
-
     int mFailCount = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.644 -0500", hash_original_field = "9F24C9AA82C33343B9BFCD7DF72B7F2C", hash_generated_field = "9AA1D199AB2A27232DA25E07F74C582A")
 
     // is http/1.1 feature.
     private int mReceivedBytes = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.647 -0500", hash_original_field = "00BD06F3A68F022203FBFD258BDC707D", hash_generated_field = "D18E2D3147EECBD8F566EDA75779DDA2")
-
 
     private InputStream mBodyProvider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.649 -0500", hash_original_field = "9F97B0948BBDDDA2CDEDF84C846F0425", hash_generated_field = "DAA6C79DB8D209A54BE4FF4B04B63B6B")
@@ -186,7 +177,8 @@ void setConnection(Connection connection) {
         mConnection = connection;
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.673 -0500", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0")
+    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.673 -0500", hash_original_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0", hash_generated_method = "1AA9C40DC41DAB952A0E5EA6B233F2D0")
     
 EventHandler getEventHandler() {
         return mEventHandler;
@@ -232,9 +224,7 @@ void addHeaders(Map<String, String> headers) {
             addHeader(entry.getKey(), entry.getValue());
         }
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.379 -0400", hash_original_method = "8B550870D8AB2316B065E1C79CBF1A12", hash_generated_method = "383E98875EEC585A968060D5275FCCF4")
      void sendRequest(AndroidHttpClientConnection httpClientConnection) throws HttpException, IOException {
         addTaint(httpClientConnection.getTaint());
@@ -269,9 +259,7 @@ void addHeaders(Map<String, String> headers) {
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.382 -0400", hash_original_method = "77E4A14D27C62797F0A19B684369B7C4", hash_generated_method = "2E64E738A714DA8F9EDDFAFF77FC9478")
      void readResponse(AndroidHttpClientConnection httpClientConnection) throws IOException, ParseException {
         addTaint(httpClientConnection.getTaint());
@@ -424,6 +412,7 @@ synchronized void cancel() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.689 -0500", hash_original_method = "512B3E32AEE990D1477AF1DD14A214E5", hash_generated_method = "632932A86D9A8B15AC1DAA7F9BBDA079")
     
 String getHostPort() {
@@ -438,9 +427,8 @@ String getHostPort() {
             return mHost.getHostName();
         }
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.386 -0400", hash_original_method = "2DF65EB3016FC9C1BCED4852586E67B2", hash_generated_method = "1CD07FD701792A8833A6C0A8D18BE133")
      String getUri() {
         if(mProxyHost == null ||
@@ -469,7 +457,6 @@ String var2C2774A4504CCD41056B65A992871E34_1015357335 =         mHost.getSchemeN
 public String toString() {
         return mPath;
     }
-
 
     /**
      * If this request has been sent once and failed, it must be reset
@@ -548,7 +535,6 @@ private void setBodyProvider(InputStream bodyProvider, int bodyLength) {
         ((BasicHttpEntityEnclosingRequest)mHttpRequest).setEntity(
                 new InputStreamEntity(bodyProvider, bodyLength));
     }
-
 
     /**
      * Handles SSL error(s) on the way down from the user (the user

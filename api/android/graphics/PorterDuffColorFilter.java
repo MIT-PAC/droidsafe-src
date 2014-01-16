@@ -5,20 +5,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public class PorterDuffColorFilter extends ColorFilter {
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_CreatePorterDuffFilter(int srcColor, int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nCreatePorterDuffFilter(int nativeFilter, int srcColor,
             int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
@@ -36,7 +30,6 @@ public PorterDuffColorFilter(int srcColor, PorterDuff.Mode mode) {
         native_instance = native_CreatePorterDuffFilter(srcColor, mode.nativeInt);
         nativeColorFilter = nCreatePorterDuffFilter(native_instance, srcColor, mode.nativeInt);
     }
-
     
 }
 

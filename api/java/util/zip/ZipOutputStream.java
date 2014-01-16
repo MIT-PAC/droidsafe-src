@@ -11,8 +11,6 @@ import java.nio.charset.Charsets;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-
-
 public class ZipOutputStream extends DeflaterOutputStream implements ZipConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.687 -0500", hash_original_field = "76C48874DF3F847D8799A9755C24ED8B", hash_generated_field = "F94D24D83064DA464F1E7F5CBAFCBAC0")
 
@@ -22,34 +20,26 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     public static final int STORED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.692 -0500", hash_original_field = "54699AF53E8564C6E5F214A7233CCDD6", hash_generated_field = "C7C4508444B1DF1FC0028548D38411C2")
 
-
     private static final int ZIPLocalHeaderVersionNeeded = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.695 -0500", hash_original_field = "6C9FE4127C88B2FD28EFE861CA65A713", hash_generated_field = "3ED42D4B537F5FDB36FDF1EA0D6B44D6")
-
 
     private String comment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.697 -0500", hash_original_field = "AC8055A280DC35CF986D8F9985631987", hash_generated_field = "FCD66FA4768DC8FA4CD3A9CC1267729C")
 
-
     private final ArrayList<String> entries = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.699 -0500", hash_original_field = "466121C1BB03C4AEEC4797317B8E914B", hash_generated_field = "E346083B375866BE2A4C0EAFE5E7BD2C")
-
 
     private int compressMethod = DEFLATED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.701 -0500", hash_original_field = "8D0A167E8895678068AB0FC4EDE9D878", hash_generated_field = "62D95194EDF4CD5AF603C678BBE8005F")
 
-
     private int compressLevel = Deflater.DEFAULT_COMPRESSION;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.703 -0500", hash_original_field = "A6095F3EC380485DF76B1EDC41E32D32", hash_generated_field = "C96530FB5377271C1898F50B375B5BBD")
-
 
     private ByteArrayOutputStream cDir = new ByteArrayOutputStream();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.706 -0500", hash_original_field = "AE5E76079A9FB60B306BB24D8DD33468", hash_generated_field = "FAD8DD5A4D43550551E80B6E823A3546")
 
-
     private ZipEntry currentEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.709 -0500", hash_original_field = "8797544496C08ADE2D4F77E9A38D0FB1", hash_generated_field = "05500ADE9A7CD6E53D52A131B8F3E602")
-
 
     private final CRC32 crc = new CRC32();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.855 -0400", hash_original_field = "F13C8B3640CBC13657DAF750F9C8A763", hash_generated_field = "724EB7AA080C9DB92A724877C069F566")
@@ -63,7 +53,6 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
     private int nameLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.714 -0500", hash_original_field = "0D1AACDA58A3D49FFE7A3DC9DDAEC33A", hash_generated_field = "C02803E2C735C9AD9F5E84CD57AB59E3")
 
-
     private byte[] nameBytes;
 
     /**
@@ -73,6 +62,8 @@ public class ZipOutputStream extends DeflaterOutputStream implements ZipConstant
      * @param p1
      *            the {@code OutputStream} to write the data to.
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.717 -0500", hash_original_method = "8A42A56E156B97294BE7CC83201EADCF", hash_generated_method = "F421FE5C883001A63E02AD136DB20949")
     
 public ZipOutputStream(OutputStream p1) {
@@ -86,6 +77,8 @@ public ZipOutputStream(OutputStream p1) {
      * @throws IOException
      *             If an error occurs closing the stream.
      */
+    @DSComment("no impacts")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.720 -0500", hash_original_method = "96C568DC9FCDB3D53590F6DD994D0456", hash_generated_method = "29AA042CE63E9348EE8728FB9A5169DB")
     
 @Override
@@ -106,6 +99,8 @@ public ZipOutputStream(OutputStream p1) {
      * @throws IOException
      *             If an error occurs closing the entry.
      */
+    @DSComment("no impacts")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.724 -0500", hash_original_method = "7ED55E9CAB55F4762479C264D19A0A1A", hash_generated_method = "D2E42844E675B45C0508617ED084D17F")
     
 public void closeEntry() throws IOException {
@@ -245,6 +240,8 @@ public void closeEntry() throws IOException {
      *             If an error occurs storing the entry.
      * @see #write
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.731 -0500", hash_original_method = "B67EF5B3649AC60448D5855D166716A9", hash_generated_method = "6577F6E7EF0A9824426666CBE3AAA8F0")
     
 public void putNextEntry(ZipEntry ze) throws IOException {
@@ -396,6 +393,7 @@ private int writeShort(OutputStream os, int i) throws IOException {
      * @exception IOException
      *                If an error occurs writing to the stream
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.746 -0500", hash_original_method = "F9EBE9ED855C5E2014EA6CAF53F89130", hash_generated_method = "3F4E55B962E176E96CF3299F7DB01ADA")
     
 @Override

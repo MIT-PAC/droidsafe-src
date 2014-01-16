@@ -22,11 +22,6 @@ import com.android.internal.telephony.SmsMessageBase.TextEncodingDetails;
 import com.android.internal.util.BitwiseInputStream;
 import com.android.internal.util.BitwiseOutputStream;
 
-
-
-
-
-
 public final class BearerData {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.822 -0500", hash_original_method = "C8440B4B5249951B0460180E0996DCC0", hash_generated_method = "FA9866DE9E0EBCC74C058B4FAECAE16B")
@@ -1521,7 +1516,6 @@ public static BearerData decode(byte[] smsData) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.612 -0500", hash_original_field = "B6EEA0B39F02799DF856036668DFCE25", hash_generated_field = "B10E9EC23F761D26DC7E6765FA14E45D")
 
     public static final int PRIVACY_SECRET         = 0x3;
-
     
     public static class TimeStamp extends Time {
 
@@ -1572,11 +1566,8 @@ public TimeStamp() {
             builder.append(" }");
             return builder.toString();
         }
-
         
     }
-
-
     
     private static class CodingException extends Exception {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.812 -0500", hash_original_method = "7A2C15A084F2DA50BCA20CD284E89E4B", hash_generated_method = "4FED4EE0C00A2998CCB9066876496DF7")
@@ -1584,11 +1575,8 @@ public TimeStamp() {
 public CodingException(String s) {
             super(s);
         }
-
         
     }
-
-
     
     private static class Gsm7bitCodingResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.844 -0500", hash_original_field = "3D638577AFFE2D6F939C79F75360B6FF", hash_generated_field = "3D638577AFFE2D6F939C79F75360B6FF")
@@ -1598,13 +1586,11 @@ public CodingException(String s) {
 
         byte[] data;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:23.708 -0400", hash_original_method = "7E9DFC757F4277B439A8F1AFF7D9B860", hash_generated_method = "7E9DFC757F4277B439A8F1AFF7D9B860")
         public Gsm7bitCodingResult ()
         {
             //Synthesized constructor
         }
-
 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.619 -0500", hash_original_field = "BA22A4A76D5FD376FB7A14BC682D83AB", hash_generated_field = "160382AAA1DBB0AAC0010B402FF60035")
@@ -1733,13 +1719,11 @@ public CodingException(String s) {
     public static final int RELATIVE_TIME_RESERVED        = 248;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.585 -0500", hash_original_field = "B3E0C00F8616825E1647BC1E6CD823E2", hash_generated_field = "7D96870A082A2C76305FFABAAF52B964")
 
-
     public int messageType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.587 -0500", hash_original_field = "6EB81A1EDD0A12DBAF913511729A2977", hash_generated_field = "69D22C3B16825C62B121ECB6B61FE9B4")
 
     public int messageId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.600 -0500", hash_original_field = "449AC62555DCFE2D93FEEE4F1FB74D9C", hash_generated_field = "8C6D4EB162537F5CB8F50CC2D2872E4C")
-
 
     public boolean priorityIndicatorSet = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.602 -0500", hash_original_field = "FED32C58FF3EC80D7BBFB75D2DE70C79", hash_generated_field = "87C8A49C336BEBF94409DBFE1A6E9513")
@@ -1747,13 +1731,11 @@ public CodingException(String s) {
     public int priority = PRIORITY_NORMAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.614 -0500", hash_original_field = "3F45085D5A05428F9F3CBE6081012CB6", hash_generated_field = "8AFEB6424474CA320D5E27C58170FD4F")
 
-
     public boolean privacyIndicatorSet = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.617 -0500", hash_original_field = "15221451F2B86BDC02EAAA9CED357273", hash_generated_field = "5D1760697D056EF534E00F74EA4CA781")
 
     public int privacy = PRIVACY_NOT_RESTRICTED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.630 -0500", hash_original_field = "F39EC2A67CD9AC460C8E5EDD0425A070", hash_generated_field = "F9B735CFCE16BBCEEC92C414108E0381")
-
 
     public boolean alertIndicatorSet = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.632 -0500", hash_original_field = "E9D2D8B8712E4737C19ACDF87E11533A", hash_generated_field = "1058D9B40B2EE772AA0DB52D24123C2C")
@@ -1761,20 +1743,17 @@ public CodingException(String s) {
     public int alert = ALERT_DEFAULT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.642 -0500", hash_original_field = "BBAAC3CC9D93ACA0860653E6DDE3116B", hash_generated_field = "8B825C7CC140C428A94DFB003A4EB6F5")
 
-
     public boolean displayModeSet = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.644 -0500", hash_original_field = "3CFF58F58811325B2887632BFC2D6B1F", hash_generated_field = "2557E119FF5302FABE3F787E2D1DFDC9")
 
     public int displayMode = DISPLAY_MODE_DEFAULT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.667 -0500", hash_original_field = "C67213094AD8E09A830F9C89DE35A897", hash_generated_field = "74138E627E76977DE10F18FB807F0E15")
 
-
     public boolean languageIndicatorSet = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.669 -0500", hash_original_field = "E923620B353BA1911010D9BC7EC50353", hash_generated_field = "DE6339F5105113B3C56C063546E8135C")
 
     public int language = LANGUAGE_UNKNOWN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.719 -0500", hash_original_field = "660C1612C76A0C4C712B80C57E97D433", hash_generated_field = "2920A4421EF87EA64E53D58C7FD08230")
-
 
     public boolean messageStatusSet = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.721 -0500", hash_original_field = "0886E5058665C6571B095488DB74401F", hash_generated_field = "EDCE519B7F83288A6CD0184D83960173")
@@ -1797,7 +1776,6 @@ public CodingException(String s) {
     public int userResponseCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.746 -0500", hash_original_field = "D1D4228F22A59F4181997B23869F591F", hash_generated_field = "F2CEDF1D18CD508C2828421FCE344864")
 
-
     public TimeStamp msgCenterTimeStamp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.748 -0500", hash_original_field = "675AC1B7CF391CD3025F935F8473AB16", hash_generated_field = "A7BDA794034CCF1E85FBB1CD3D5589E0")
 
@@ -1806,7 +1784,6 @@ public CodingException(String s) {
 
     public TimeStamp deferredDeliveryTimeAbsolute;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.775 -0500", hash_original_field = "42842F0A1C1AEBF19D7352D234092B79", hash_generated_field = "9C17B1FD88737F473DEBA3485827EC48")
-
 
     public boolean validityPeriodRelativeSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:50.778 -0500", hash_original_field = "839802210443379DFBF10AD2F5B80A69", hash_generated_field = "C69E194E4844C6AE487C64DC3199BA53")

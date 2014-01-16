@@ -29,11 +29,6 @@ import com.android.internal.telephony.cdma.sms.UserData;
 import com.android.internal.util.BitwiseInputStream;
 import com.android.internal.util.HexDump;
 
-
-
-
-
-
 public class SmsMessage extends SmsMessageBase {
 
     /**
@@ -337,6 +332,7 @@ public static TextEncodingDetails calculateLength(CharSequence messageBody,
      * binder-call, and hence should be thread-safe, it has been
      * synchronized.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.847 -0500", hash_original_method = "B1ECCC301AA91188E5EEB90EE18562E0", hash_generated_method = "A3F46B2E5D7E5D6512D9983CE5F52EC9")
     
 private synchronized static int getNextMessageId() {
@@ -457,7 +453,6 @@ private static SubmitPdu privateGetSubmitPdu(String destAddrStr, boolean statusR
     static private final String LOGGABLE_TAG = "CDMA:SMS";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.726 -0500", hash_original_field = "0E811A533EE6F3DBA24287171709A790", hash_generated_field = "C65F2A73F946D436D2201029781974D6")
 
-
     private final static byte TELESERVICE_IDENTIFIER                    = 0x00;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.729 -0500", hash_original_field = "51CEC42382CCFB8F6E506491846ED14D", hash_generated_field = "631EA667FBE5CC787A050F2AB978AD26")
 
@@ -494,7 +489,6 @@ private static SubmitPdu privateGetSubmitPdu(String destAddrStr, boolean statusR
     private int status;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.766 -0500", hash_original_field = "DB128CD3B752231758348B3D7C8F0ADC", hash_generated_field = "5DE432FC9FD653332885B7638256C4A9")
 
-
     private SmsEnvelope mEnvelope;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.769 -0500", hash_original_field = "A6C6F32E4531FEF4087515342CE005CB", hash_generated_field = "B90F3642F146E4CB5B7C5D2425641201")
 
@@ -509,6 +503,7 @@ private static SubmitPdu privateGetSubmitPdu(String destAddrStr, boolean statusR
     /**
      * Note: This function is a GSM specific functionality which is not supported in CDMA mode.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.796 -0500", hash_original_method = "CFC9E8C6C71B803A9382349B0D254790", hash_generated_method = "1E62D1DAC0FFB971B9F7AA54D8238671")
     
 public int getProtocolIdentifier() {
@@ -566,7 +561,6 @@ public boolean isMwiDontStore() {
                 (mBearerData.numberOfMessages > 0) &&
                 (mBearerData.userData == null));
     }
-
     
     public static class SubmitPdu extends SubmitPduBase {
         
@@ -576,7 +570,6 @@ public boolean isMwiDontStore() {
             //Synthesized constructor
         }
 
-
     }
 
     /**
@@ -584,6 +577,7 @@ public boolean isMwiDontStore() {
      * For not interfering with status codes from GSM, this status code is
      * shifted to the bits 31-16.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.810 -0500", hash_original_method = "03B5EE24FC37A73D7F31FE2BAB3C2BFD", hash_generated_method = "D61B9EC8352A34F8304694E35F8F3AB4")
     
 public int getStatus() {
@@ -616,7 +610,8 @@ public boolean isReplyPathPresent() {
      *  {@link com.android.internal.telephony.cdma.sms.SmsEnvelope#TELESERVICE_VMN},
      *  {@link com.android.internal.telephony.cdma.sms.SmsEnvelope#TELESERVICE_WAP}
     */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.826 -0500", hash_original_method = "BA17728EC06E4E9670ACA616D9E29C12", hash_generated_method = "BA17728EC06E4E9670ACA616D9E29C12")
+    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.826 -0500", hash_original_method = "BA17728EC06E4E9670ACA616D9E29C12", hash_generated_method = "BA17728EC06E4E9670ACA616D9E29C12")
     
 int getTeleService() {
         return mEnvelope.teleService;
@@ -629,7 +624,8 @@ int getTeleService() {
      *  {@link com.android.internal.telephony.cdma.sms.SmsEnvelope#MESSAGE_TYPE_BROADCAST},
      *  {@link com.android.internal.telephony.cdma.sms.SmsEnvelope#MESSAGE_TYPE_ACKNOWLEDGE},
     */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.828 -0500", hash_original_method = "1BE3451C0D43919E5115D33DA4A62DB3", hash_generated_method = "1BE3451C0D43919E5115D33DA4A62DB3")
+    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.828 -0500", hash_original_method = "1BE3451C0D43919E5115D33DA4A62DB3", hash_generated_method = "1BE3451C0D43919E5115D33DA4A62DB3")
     
 int getMessageType() {
         return mEnvelope.messageType;
@@ -1000,7 +996,8 @@ private byte convertDtmfToAscii(byte dtmfDigit) {
     /** This function  shall be called to get the number of voicemails.
      * @hide
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.859 -0500", hash_original_method = "D8D3E4C6269124C18E32B3734994B647", hash_generated_method = "D8D3E4C6269124C18E32B3734994B647")
+    /*package*/ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.859 -0500", hash_original_method = "D8D3E4C6269124C18E32B3734994B647", hash_generated_method = "D8D3E4C6269124C18E32B3734994B647")
     
 int getNumOfVoicemails() {
         return mBearerData.numberOfMessages;
@@ -1013,7 +1010,8 @@ int getNumOfVoicemails() {
      * @return byte array uniquely identifying the message.
      * @hide
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.861 -0500", hash_original_method = "ECE8D39C64EEB1FB74B915B4B0882D92", hash_generated_method = "ECE8D39C64EEB1FB74B915B4B0882D92")
+    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:56.861 -0500", hash_original_method = "ECE8D39C64EEB1FB74B915B4B0882D92", hash_generated_method = "ECE8D39C64EEB1FB74B915B4B0882D92")
     
 byte[] getIncomingSmsFingerprint() {
         ByteArrayOutputStream output = new ByteArrayOutputStream();

@@ -20,10 +20,6 @@ import java.util.Map;
 
 import libcore.io.Streams;
 
-
-
-
-
 public class Manifest implements Cloneable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.163 -0500", hash_original_method = "54A9C882DCF00408D3A492AAABB65302", hash_generated_method = "4120E28E793559951DD415810AFAABC0")
@@ -78,6 +74,7 @@ private static byte[] exposeByteArrayInputStreamBytes(ByteArrayInputStream bais)
      * @throws IOException
      *             If an error occurs writing the {@code Manifest}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.230 -0500", hash_original_method = "364FA78950C637E356994D1026A925C2", hash_generated_method = "0EE1D0450F252260DB5C7949D54F5970")
     
 static void write(Manifest manifest, OutputStream out) throws IOException {
@@ -142,18 +139,14 @@ private static void writeEntry(OutputStream os, Attributes.Name name,
     static final int LINE_LENGTH_LIMIT = 72;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.150 -0500", hash_original_field = "936EBCAA8797754AB37FA01259CA942D", hash_generated_field = "B67A073FAA2504AFA1E673A3A73B5070")
 
-
     private static final byte[] LINE_SEPARATOR = new byte[] { '\r', '\n' };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.153 -0500", hash_original_field = "3C43E5647122EC9A10FEF7482CB2F448", hash_generated_field = "9343CBDAF9029B97005DD375E4D0C015")
-
 
     private static final byte[] VALUE_SEPARATOR = new byte[] { ':', ' ' };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.156 -0500", hash_original_field = "5FACB4059AD65A056B74822D539CF3AF", hash_generated_field = "D9224D7DE651E7F79EB2339E3FD0F906")
 
-
     private static final Attributes.Name NAME_ATTRIBUTE = new Attributes.Name("Name");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.158 -0500", hash_original_field = "226FD86BA5C88B4CAAEBFF6E975EEA95", hash_generated_field = "1A0ED102D992A4F1419CAAB83C42E3A5")
-
 
     private static final Field BAIS_BUF = getByteArrayInputStreamField("buf");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.161 -0500", hash_original_field = "B171DDAE84E1B6E4AAA7C064DC536CF4", hash_generated_field = "BAEA4D286068745E7FCE0DB863E317C3")
@@ -161,14 +154,11 @@ private static void writeEntry(OutputStream os, Attributes.Name name,
     private static final Field BAIS_POS = getByteArrayInputStreamField("pos");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.166 -0500", hash_original_field = "BF1FA796499D694280535B3461BEAE17", hash_generated_field = "E1BDEFB6141BA3D4A18686A70FD48EA7")
 
-
     private Attributes mainAttributes = new Attributes();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.168 -0500", hash_original_field = "4225BF2361B516F4138B6A1683A4E835", hash_generated_field = "8F8C40B44CE5717105C1E59BBDAB375B")
 
-
     private HashMap<String, Attributes> entries = new HashMap<String, Attributes>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.181 -0500", hash_original_field = "05DACC5ADEF9675F91BE32207558BC6C", hash_generated_field = "786638D71EF24F3687C38482B297CD1D")
-
 
     private HashMap<String, Chunk> chunks;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.183 -0500", hash_original_field = "DF1FB7A6CE7B100076873B590ECCEE22", hash_generated_field = "DCB6AE1819FDCE75D830612AD5F2AE24")
@@ -243,6 +233,7 @@ public void clear() {
      * @return the Attributes for the entry or {@code null} if the entry does
      *         not exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.199 -0500", hash_original_method = "78C1F2A094121E0A509E66806BC04C36", hash_generated_method = "E4DE14DB9621A9D657B46207A017F464")
     
 public Attributes getAttributes(String name) {
@@ -255,6 +246,7 @@ public Attributes getAttributes(String name) {
      *
      * @return the map of entry attributes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.201 -0500", hash_original_method = "AD5E8B028D2F33E921C50CB4C1BDCE39", hash_generated_method = "E1F6C9A8CB2009128564CD77B4042B46")
     
 public Map<String, Attributes> getEntries() {
@@ -267,6 +259,7 @@ public Map<String, Attributes> getEntries() {
      * @return main {@code Attributes} associated with the source {@code
      *         JarFile}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.204 -0500", hash_original_method = "E50165B574B80B3A6D479CE79F6197B1", hash_generated_method = "C4BF8381294FCDC1FAB64ADD93A2235A")
     
 public Attributes getMainAttributes() {
@@ -295,12 +288,12 @@ public Attributes getMainAttributes() {
      * @throws IOException
      *             If an error occurs writing the {@code Manifest}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.209 -0500", hash_original_method = "FE58047C3F32AF11D7E00269EA71B148", hash_generated_method = "AABA4DD623EA31BA083B1F1BF032742E")
     
 public void write(OutputStream os) throws IOException {
         write(this, os);
     }
-
     
     static class Chunk {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.171 -0500", hash_original_field = "A420862623A673AB42FCEC90A616158F", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
@@ -316,7 +309,6 @@ Chunk(int start, int end) {
             this.start = start;
             this.end = end;
         }
-
         
     }
 
@@ -406,6 +398,7 @@ void removeChunks() {
         chunks = null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:58.227 -0500", hash_original_method = "4F9436521007A1D33F6CF267D74BE295", hash_generated_method = "4F9436521007A1D33F6CF267D74BE295")
     
 int getMainAttributesEnd() {

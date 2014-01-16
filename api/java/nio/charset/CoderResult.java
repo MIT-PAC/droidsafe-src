@@ -8,11 +8,6 @@ import java.nio.BufferOverflowException;
 import java.nio.BufferUnderflowException;
 import java.util.WeakHashMap;
 
-
-
-
-
-
 public class CoderResult {
 
     /**
@@ -26,6 +21,9 @@ public class CoderResult {
      * @throws IllegalArgumentException
      *             if <code>length</code> is non-positive.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.573 -0500", hash_original_method = "32B9309C5888D5D441E10DB420683F91", hash_generated_method = "EA5ABC13387F1533A05FEB74F9C87F72")
     
 public static synchronized CoderResult malformedForLength(int length)
@@ -56,6 +54,9 @@ public static synchronized CoderResult malformedForLength(int length)
      * @throws IllegalArgumentException
      *             if <code>length</code> is non-positive.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.576 -0500", hash_original_method = "BBA6EC87D4C3AA6AD9F0D4B623871AE8", hash_generated_method = "D790B3ABAD493C64B831394CF1B5AB81")
     
 public static synchronized CoderResult unmappableForLength(int length)
@@ -125,6 +126,8 @@ private CoderResult(int type, int length) {
      *
      * @return true if an underflow, otherwise false.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.579 -0500", hash_original_method = "72D962B2D73E7D1A25E9E1AB76F037A1", hash_generated_method = "CAF9A4E111854F6FF7C687173E4F4809")
     
 public boolean isUnderflow() {
@@ -138,6 +141,8 @@ public boolean isUnderflow() {
      * @return true if this is a malformed-input error or an
      *         unmappable-character error, otherwise false.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.581 -0500", hash_original_method = "6E4CD2CEA8B470E2711551FAF2632892", hash_generated_method = "1D64F760E3C6751142FF43E5BE9BABBC")
     
 public boolean isError() {
@@ -161,6 +166,8 @@ public boolean isMalformed() {
      *
      * @return true if this is an overflow, otherwise false.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.586 -0500", hash_original_method = "B611C5CE05597AA2840AB6FA98EFB1D0", hash_generated_method = "716A62D018BCE4DEC3B5E75C09F90BCC")
     
 public boolean isOverflow() {
@@ -209,6 +216,8 @@ public int length() throws UnsupportedOperationException {
      * @throws CharacterCodingException
      *             the default exception.
      */
+    @DSComment("Character encoder/decoder")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.593 -0500", hash_original_method = "8994A4AB686221398F6DD6413AEB03CF", hash_generated_method = "F1C666256FC275EB16EDAF06C5753736")
     
 public void throwException() throws BufferUnderflowException,

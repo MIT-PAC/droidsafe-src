@@ -9,11 +9,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
-
-
 public final class BinaryHprof {
 
     /**
@@ -43,7 +38,6 @@ public static final String readMagic(DataInputStream in) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.297 -0500", hash_original_field = "4C0795C0A939AE0238A0C6B9E149787C", hash_generated_field = "8349BBEB77016752FBF2456D191A1A2F")
 
     public static final int ID_SIZE = 4;
-
     
     public static enum Tag {
         STRING_IN_UTF8(0x01, -ID_SIZE),
@@ -61,7 +55,6 @@ public static final String readMagic(DataInputStream in) {
         CPU_SAMPLES(0x0d, -(4 + 4)),
         CONTROL_SETTINGS(0x0e, 4 + 2);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.306 -0500", hash_original_field = "C26F073E58DC5C007884B060320F9888", hash_generated_field = "15A181EFB49DE6689AD9E2D055EF9D56")
-
 
         public  byte tag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.308 -0500", hash_original_field = "F9C82337597E99B795BA005CA377DE24", hash_generated_field = "E90D651047975E15CF469F83E4A07DBE")
@@ -86,7 +79,6 @@ private Tag(int tag, int size) {
             }
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.318 -0500", hash_original_field = "B64B75FF702546B30DF2E0F7D3776497", hash_generated_field = "6B09058F91885EB1EE8E9D1B4BCCB6D0")
-
 
         private static final Map<Byte, Tag> BYTE_TO_TAG
                 = new HashMap<Byte, Tag>();
@@ -123,13 +115,11 @@ public String checkSize(int actual) {
             return null;
         }
     }
-
     
     public static enum ControlSettings {
         ALLOC_TRACES(0x01),
         CPU_SAMPLING(0x02);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.328 -0500", hash_original_field = "24C81C32E60A87991A7246FE6D41B544", hash_generated_field = "9F0E391B0FF0D91D2C233A214B961BB3")
-
 
         public  int bitmask;
 
@@ -143,7 +133,6 @@ private ControlSettings(int bitmask) {
 
     static String MAGIC = "JAVA PROFILE ";
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.871 -0400", hash_original_method = "5337F4C002A0025B40CFBFFF348D94A9", hash_generated_method = "5337F4C002A0025B40CFBFFF348D94A9")
     public BinaryHprof ()
     {

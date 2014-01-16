@@ -9,14 +9,8 @@ import java.util.HashMap;
 import org.apache.http.HttpConnectionMetrics;
 import org.apache.http.io.HttpTransportMetrics;
 
-
-
-
-
-
 public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.246 -0500", hash_original_field = "40C24447C4B2008549DA71E385969FB8", hash_generated_field = "373C413BA4311AB7E96D795A72AF73FA")
-
     
     public static final String REQUEST_COUNT = "http.request-count";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.248 -0500", hash_original_field = "706CAFD10D21451E23A6E7F0380297E9", hash_generated_field = "AE2EB040A380B4F9C814EC5336AEF175")
@@ -29,7 +23,6 @@ public class HttpConnectionMetricsImpl implements HttpConnectionMetrics {
 
     public static final String RECEIVED_BYTES_COUNT = "http.received-bytes-count";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.255 -0500", hash_original_field = "EE84EBCFDB0A371B6875A78B0D715130", hash_generated_field = "5E7FFC1430A937FAE7142DC53FF509E3")
-
     
     private  HttpTransportMetrics inTransportMetric;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.257 -0500", hash_original_field = "3BEEA86C6993F429AB8022406BD0E777", hash_generated_field = "E0CF3516DB504D120AC5067342FFBE5B")
@@ -57,6 +50,7 @@ public HttpConnectionMetricsImpl(
     
     /* ------------------  Public interface method -------------------------- */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.269 -0500", hash_original_method = "1EBAB3737DE9FB9DF9CC42BB4FE509FE", hash_generated_method = "A8C47F55825E6BBABEA20C2E9F2878EB")
     
 public long getReceivedBytesCount() {
@@ -67,6 +61,7 @@ public long getReceivedBytesCount() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.272 -0500", hash_original_method = "F08F23EEAF6902947D0550EC2D19F62A", hash_generated_method = "C99F1A11515DFC820B1078EC7251BE19")
     
 public long getSentBytesCount() {
@@ -77,6 +72,7 @@ public long getSentBytesCount() {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.274 -0500", hash_original_method = "B8865720333D029C5CF85A9B740C8D79", hash_generated_method = "DFD6B91E7A0034F59509AA7E28C3050A")
     
 public long getRequestCount() {
@@ -89,6 +85,7 @@ public void incrementRequestCount() {
         this.requestCount++;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.279 -0500", hash_original_method = "49B98A48C56AB67D4EF8CDF6CC198706", hash_generated_method = "370EAAE7314730F894D698A3FD339160")
     
 public long getResponseCount() {

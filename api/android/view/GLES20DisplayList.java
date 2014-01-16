@@ -8,17 +8,12 @@ import java.util.ArrayList;
 
 import android.graphics.Bitmap;
 
-
-
-
-
 class GLES20DisplayList extends DisplayList {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.968 -0500", hash_original_field = "17A77D319EA2543AEE6DEDC1CDEFB4EA", hash_generated_field = "BB6CBCF49DD2510CC95665D64C80E794")
 
     // as the DisplayList is alive.  The Bitmaps are populated by the GLES20RecordingCanvas.
     final ArrayList<Bitmap> mBitmaps = new ArrayList<Bitmap>(5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.971 -0500", hash_original_field = "228D9B5C973A3A2FF113899814C2285A", hash_generated_field = "B2F7DA6F3E4A8F7E7A9EA569E557EA23")
-
 
     private GLES20RecordingCanvas mCanvas;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.974 -0500", hash_original_field = "ED254D523CA59D4B79795578544CDA27", hash_generated_field = "EA21572F663EFE15B9390D06509A48DD")
@@ -35,6 +30,7 @@ class GLES20DisplayList extends DisplayList {
         //Synthesized constructor
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.980 -0500", hash_original_method = "95D7EAA4B043B28D3D04F5E259ED8AAD", hash_generated_method = "95D7EAA4B043B28D3D04F5E259ED8AAD")
     
 int getNativeDisplayList() {
@@ -92,6 +88,7 @@ int getNativeDisplayList() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.993 -0500", hash_original_method = "3E7FC40C3EA5DE4EA51EEDE8E80652F9", hash_generated_method = "E58D98676E92D658A598AEE9912F9C18")
     
 @Override
@@ -99,7 +96,6 @@ int getNativeDisplayList() {
         if (mFinalizer == null) return 0;
         return GLES20Canvas.getDisplayListSize(mFinalizer.mNativeDisplayList);
     }
-
     
     private static class DisplayListFinalizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.997 -0500", hash_original_field = "79CD38F4DEF89D187CA539E02ADB2412", hash_generated_field = "79CD38F4DEF89D187CA539E02ADB2412")
@@ -122,11 +118,8 @@ public DisplayListFinalizer(int nativeDisplayList) {
                 super.finalize();
             }
         }
-
         
     }
-
-
     
 }
 

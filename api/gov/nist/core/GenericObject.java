@@ -12,13 +12,9 @@ import java.lang.reflect.Modifier;
 import java.util.HashSet;
 import java.util.Set;
 
-
-
-
-
-
 public abstract class GenericObject implements Serializable, Cloneable {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.773 -0500", hash_original_method = "3ADC87FD7E0CE83F45EDE92BAF50BA02", hash_generated_method = "3AAAF751889C9C699791AFC88073E877")
     
 public static Class<?> getClassFromName(String className) {
@@ -164,7 +160,6 @@ public static Object makeClone(Object obj) {
     protected static final String PERCENT = Separators.PERCENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.756 -0500", hash_original_field = "46B4BE6B9B17663D91BE0CBD6FC895ED", hash_generated_field = "23DD3DB933D01AADE0B2C40AA464AC9C")
 
-
     protected static final Set<Class<?>> immutableClasses = new HashSet<Class<?>> (10);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.758 -0500", hash_original_field = "7F6677E0154CDB5B80D151A3901979D8", hash_generated_field = "06A0F0FA7C3AA2D1A0C9419E5DAE1A94")
 
@@ -174,7 +169,6 @@ public static Object makeClone(Object obj) {
         "Float", "Double"
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.760 -0500", hash_original_field = "286452610CAD998336F0009181E4D242", hash_generated_field = "3BB4EF50B1D217FA88F0841635612381")
-
 
     protected int indentation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.762 -0500", hash_original_field = "D8755CDD7F030BEFEB89CB6F60C5B2A3", hash_generated_field = "9E5739E35654F3700B4DC02E1276C03E")
@@ -221,6 +215,7 @@ public void setMatcher(Match matchExpression) {
     /** Return the match expression.
      *@return the match expression that has previously been set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.770 -0500", hash_original_method = "5F1EBA3A7EC51605C965562331E40E61", hash_generated_method = "2A30BE8BED95C7D68E8EE546CC02F42B")
     
 public Match getMatcher() {
@@ -229,6 +224,7 @@ public Match getMatcher() {
 
     /** Clones this object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.782 -0500", hash_original_method = "2321A1A51988B1008E8A21E8D40DF48D", hash_generated_method = "CC1B934CC7175FE37AA368A3286E9D4F")
     
 public Object clone() {
@@ -326,6 +322,7 @@ public void merge(Object mergeObject) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.791 -0500", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "BDD6C135FB07D8AC261FA4D2B4D2AE55")
     
 protected String getIndentation() {
@@ -451,6 +448,7 @@ protected void dbgPrint() {
     /**
      * Debug printing function.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.819 -0500", hash_original_method = "F3C9E7E4BCD0D7ECC989FFC8CBCF37DF", hash_generated_method = "F59F8E3ABDC9B0D727646709B1D5D654")
     
 protected void dbgPrint(String s) {
@@ -650,6 +648,7 @@ public boolean match(Object other) {
      *(we never use circular linked structures).
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.831 -0500", hash_original_method = "9A2585B996B0A77325ECBDA944C7F6EB", hash_generated_method = "DDF6FCE2F5659819DBDB244DBC4187E6")
     
 public String debugDump() {
@@ -759,7 +758,6 @@ public String debugDump(int indent) {
         indentation = 0;
         return retval;
     }
-
 
     /**
      *  Get the string encoded version of this object

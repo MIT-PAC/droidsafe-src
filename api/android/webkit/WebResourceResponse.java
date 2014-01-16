@@ -8,10 +8,6 @@ import java.io.InputStream;
 
 import android.net.http.Headers;
 
-
-
-
-
 public class WebResourceResponse {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.437 -0500", hash_original_field = "B161F982909610C03B68BAACDD54E076", hash_generated_field = "D6D2783B71AE4BF9CBF84D44336E2BF9")
 
@@ -52,6 +48,7 @@ public void setMimeType(String mimeType) {
     /**
      * @see #setMimeType
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.448 -0500", hash_original_method = "FA5F1755E5361266828E073C873270CA", hash_generated_method = "B6BE0B3A83C82DC56DDAFE99F64DCDED")
     
 public String getMimeType() {
@@ -72,6 +69,7 @@ public void setEncoding(String encoding) {
     /**
      * @see #setEncoding
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.453 -0500", hash_original_method = "2712105DF2D5EC1ED27B9462D6F15E3A", hash_generated_method = "40A27533369FC876F76059D4CC6AB2EA")
     
 public String getEncoding() {
@@ -92,6 +90,7 @@ public void setData(InputStream data) {
     /**
      * @see #setData
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.457 -0500", hash_original_method = "70FED193DE86C029473917F94AE9B4C4", hash_generated_method = "9D8190C12BD4710F103E0997EC781AC5")
     
 public InputStream getData() {
@@ -103,7 +102,6 @@ public InputStream getData() {
 StreamLoader loader(LoadListener listener) {
         return new Loader(listener);
     }
-
     
     private class Loader extends StreamLoader {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.428 -0500", hash_original_method = "FF1E1DBFDB5E8CEAA6F22CFE65A4CDBA", hash_generated_method = "FF1E1DBFDB5E8CEAA6F22CFE65A4CDBA")
@@ -126,11 +124,8 @@ Loader(LoadListener loadListener) {
             headers.setContentType(mMimeType);
             headers.setContentEncoding(mEncoding);
         }
-
         
     }
-
-
     
 }
 

@@ -8,12 +8,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
 
-
-
 public class ActivityInfo extends ComponentInfo implements Parcelable {
-
     
-    @DSModeled(DSC.BAN)
     public static int activityInfoConfigToNative(int input){
 		return input;
 		// Original method
@@ -218,7 +214,6 @@ public ActivityInfo[] newArray(int size) {
     
 public ActivityInfo() {
     }
-
     
     public ActivityInfo(ActivityInfo orig){
 		super(orig);
@@ -236,9 +231,7 @@ public ActivityInfo() {
 		uiOptions = orig.uiOptions;
 		*/
 	}
-
     
-    @DSModeled(DSC.BAN)
     private ActivityInfo(Parcel source) {
     	super(source);
         addTaint(source.readInt()); //theme
@@ -255,9 +248,8 @@ public ActivityInfo() {
         addTaint(source.readInt()); //softInputMode
         addTaint(source.readInt()); //uiOptions
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getRealConfigChanged(){
 		// Original method
 		/*
@@ -270,22 +262,19 @@ public ActivityInfo() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getThemeResource() {
         return getTaintInt();
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void dump(Printer pw, String prefix){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public String toString(){
         String str = new String();
         str.addTaint(getTaint());
@@ -306,6 +295,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:00.300 -0500", hash_original_method = "0DBABFC7118E214F01D60FEE309F0914", hash_generated_method = "851AB96AA67DE049FD493A6EC3253DE4")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {

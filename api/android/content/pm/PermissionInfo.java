@@ -8,10 +8,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class PermissionInfo extends PackageItemInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.527 -0500", hash_original_field = "1B99EF1A6A81EDDB5DE5DA703DEA1FB0", hash_generated_field = "C9A532AE354590800FA04A66BAD3E386")
 
@@ -118,6 +114,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.557 -0500", hash_original_method = "1534C59E913BA20826F4978690F40C01", hash_generated_method = "F0E56868BCF239570C207E9FD2444D7D")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {

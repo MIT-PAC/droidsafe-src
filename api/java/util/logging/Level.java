@@ -16,10 +16,6 @@ import java.util.ResourceBundle;
 import libcore.util.Objects;
 import dalvik.system.VMStack;
 
-
-
-
-
 public class Level implements Serializable {
 
     /**
@@ -79,10 +75,8 @@ public static Level parse(String name) throws IllegalArgumentException {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.589 -0500", hash_original_field = "4E1718917C44931E02E5D2CF6F9A5FAF", hash_generated_field = "D33AC5439F5BB9E615F192463618D9E3")
 
-
     private static final long serialVersionUID = -8176160795706313070L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.591 -0500", hash_original_field = "1FC4A542D0E5293588F58550387070F6", hash_generated_field = "5545112DFF5AE761BF55D4BFDB05CF99")
-
 
     private static final List<Level> levels = new ArrayList<Level>(9);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.594 -0500", hash_original_field = "6AA1449FCEFAEE395608E659A0D31188", hash_generated_field = "7D4FE1BCF9F743133D4A933C0D2E6229")
@@ -182,6 +176,7 @@ protected Level(String name, int level, String resourceBundleName) {
      *
      * @return this level's name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.636 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
     
 public String getName() {
@@ -193,6 +188,7 @@ public String getName() {
      *
      * @return the name of this level's resource bundle.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.638 -0500", hash_original_method = "6DEDF515FC3DFB06F00973FF806B7B79", hash_generated_method = "795ECC4106B798264DC061D44D617BDB")
     
 public String getResourceBundleName() {
@@ -268,6 +264,7 @@ private void readObject(ObjectInputStream in) throws IOException,
      *
      * @return the localized name of this level.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.648 -0500", hash_original_method = "DEC78AA3502D783DBE391483E644D523", hash_generated_method = "17B331D2A9D24EC6EB750C5F9F54597A")
     
 public String getLocalizedName() {

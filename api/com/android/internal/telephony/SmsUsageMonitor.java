@@ -13,8 +13,6 @@ import android.content.ContentResolver;
 import android.provider.Settings;
 import android.util.Log;
 
-
-
 public class SmsUsageMonitor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.914 -0500", hash_original_field = "FB7DBAB3BD99ADAD6D2F0065DB8C554C", hash_generated_field = "ADC819F4640257478A9F0F8C0177ED0F")
 
@@ -26,7 +24,6 @@ public class SmsUsageMonitor {
 
     private static final int DEFAULT_SMS_MAX_COUNT = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.923 -0500", hash_original_field = "2E7035184047E27C930D9D586C42D9C1", hash_generated_field = "8251D8E7267A3EFD6EC445592CA97E50")
-
 
     private  int mCheckPeriod;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.925 -0500", hash_original_field = "363C0D837ADCDE4C2E113B6BDE1F2122", hash_generated_field = "88D310A8EA39C1E84390420AD9B4808A")
@@ -68,6 +65,7 @@ void dispose() {
      * @return true if application is allowed to send the requested number
      *  of new sms messages
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:47.935 -0500", hash_original_method = "EA1BFE3566BC11C4D089155AC6363183", hash_generated_method = "016ADFC455C529B040F4A548F2E62497")
     
 public boolean check(String appName, int smsWaiting) {

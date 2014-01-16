@@ -9,10 +9,6 @@ import java.io.IOException;
 
 import android.os.Handler;
 
-
-
-
-
 public final class BluetoothServerSocket implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.462 -0500", hash_original_field = "F88CEEEA2A0982472DB6E6356FAA58B9", hash_generated_field = "F88CEEEA2A0982472DB6E6356FAA58B9")
   BluetoothSocket mSocket;
@@ -104,12 +100,12 @@ synchronized void setCloseHandler(Handler handler, int message) {
      * Returns the channel on which this socket is bound.
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:30.481 -0500", hash_original_method = "87CE95BB5407CF3970CFD04437A2E7B9", hash_generated_method = "47B062176DB2E16DC3E4790A1FB6C83E")
     
 public int getChannel() {
         return mChannel;
     }
-
     
 }
 

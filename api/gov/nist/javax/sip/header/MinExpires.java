@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.MinExpiresHeader;
 
-
-
-
-
-
 public class MinExpires extends SIPHeader implements MinExpiresHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.322 -0500", hash_original_field = "8056CF48D84797B73842BAD69BACFA04", hash_generated_field = "54DFFD072C6FF45C93B222EE008E242A")
 
@@ -45,6 +40,7 @@ public String encodeBody() {
      * @return the expires value of the ExpiresHeader.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.348 -0500", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "C2DB0E96C56A45B14BA4BCD03EAE8F48")
     
 public int getExpires() {

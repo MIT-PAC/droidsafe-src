@@ -8,11 +8,6 @@ import java.util.Locale;
 
 import org.apache.http.util.LangUtils;
 
-
-
-
-
-
 public final class Scheme {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.773 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
@@ -29,7 +24,6 @@ public final class Scheme {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.784 -0500", hash_original_field = "E3930F4F4617B35851A6540EEE3F9D12", hash_generated_field = "A7CB93AD593788A74C76D77C24510B38")
 
     private String stringRep;
-
 
     /**
      * Creates a new scheme.
@@ -67,18 +61,17 @@ public Scheme(final String name,
         this.layered = (factory instanceof LayeredSocketFactory);
     }
 
-
     /**
      * Obtains the default port.
      *
      * @return  the default port for this scheme
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.789 -0500", hash_original_method = "CA86BB3AB3ACF92C5C19618DD925F5A0", hash_generated_method = "401192712493098D15EFB1F0ECDEF1C4")
     
 public final int getDefaultPort() {
         return defaultPort;
     }
-
 
     /**
      * Obtains the socket factory.
@@ -87,24 +80,24 @@ public final int getDefaultPort() {
      *
      * @return  the socket factory for this scheme
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.791 -0500", hash_original_method = "8D53BDBBDB5B8DACC183C2C5A3A2FE13", hash_generated_method = "44F91E40C7436BBE9C4296A40627D690")
     
 public final SocketFactory getSocketFactory() {
         return socketFactory;
     }
 
-
     /**
      * Obtains the scheme name.
      *
      * @return  the name of this scheme, in lowercase
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.794 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "CEAA3BC43A9BFF97F5638C3D9028D82D")
     
 public final String getName() {
         return name;
     }
-
 
     /**
      * Indicates whether this scheme allows for layered connections.
@@ -117,7 +110,6 @@ public final String getName() {
 public final boolean isLayered() {
         return layered;
     }
-
 
     /**
      * Resolves the correct port for this scheme.
@@ -133,7 +125,6 @@ public final boolean isLayered() {
 public final int resolvePort(int port) {
         return ((port <= 0) || (port > 0xffff)) ? defaultPort : port;
     }
-
 
     /**
      * Return a string representation of this object.
@@ -153,7 +144,6 @@ public final int resolvePort(int port) {
         }
         return stringRep;
     }
-
 
     /**
      * Compares this scheme to an object.
@@ -178,7 +168,6 @@ public final int resolvePort(int port) {
                 );
     } // equals
 
-
     /**
      * Obtains a hash code for this scheme.
      *
@@ -195,7 +184,6 @@ public final int resolvePort(int port) {
         hash = LangUtils.hashCode(hash, this.socketFactory);
         return hash;
     }
-
     
 }
 

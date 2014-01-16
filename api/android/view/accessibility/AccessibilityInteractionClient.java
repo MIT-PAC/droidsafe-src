@@ -16,15 +16,12 @@ import android.os.RemoteException;
 import android.os.SystemClock;
 import android.util.SparseArray;
 
-
-
-
-
 public final class AccessibilityInteractionClient extends IAccessibilityInteractionConnectionCallback.Stub {
 
     /**
      * @return The singleton of this class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.103 -0500", hash_original_method = "AC9C8E6AFA4BD19860E3B01D77CE7140", hash_generated_method = "0E252EFFE9F6AA2CE9503B245466CB85")
     
 public static AccessibilityInteractionClient getInstance() {
@@ -37,26 +34,20 @@ public static AccessibilityInteractionClient getInstance() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.068 -0500", hash_original_field = "BEB3544BF456B23E5F1F5575F3E93334", hash_generated_field = "181E1190C48C3A15B723E1972525FFE6")
 
-
     public static final int NO_ID = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.071 -0500", hash_original_field = "1C7E3C83486F8FDC8ED0BBC3C543A3AF", hash_generated_field = "F39970B10B2A1B6AAAA3BAA95BD6C833")
-
 
     private static final String LOG_TAG = "AccessibilityInteractionClient";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.073 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
-
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.075 -0500", hash_original_field = "94B38A4B22D5809DB037D92DF56B9195", hash_generated_field = "879CDE422299A8456AD3253132795354")
-
 
     private static final long TIMEOUT_INTERACTION_MILLIS = 5000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.078 -0500", hash_original_field = "70A71BD16E05A887B72D59F04116381D", hash_generated_field = "498BA8A796A917C092E570F2E37A3E7B")
 
-
     private static final Object sStaticLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.080 -0500", hash_original_field = "A21380ABE40C483F2885923D119EE952", hash_generated_field = "429338DE764BD4ACB4DB8F09D348E465")
-
 
     private static AccessibilityInteractionClient sInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.101 -0500", hash_original_field = "96BE1789EC19C804EF3574A35B59C987", hash_generated_field = "82A9D097CD8F5394610FEB7829547E07")
@@ -65,34 +56,26 @@ public static AccessibilityInteractionClient getInstance() {
         new SparseArray<IAccessibilityServiceConnection>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.083 -0500", hash_original_field = "D0C448D3D6C36E51CA704FA1F82BA03A", hash_generated_field = "1B453B20F0C1F3432E8CE879D519121D")
 
-
     private final AtomicInteger mInteractionIdCounter = new AtomicInteger();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.085 -0500", hash_original_field = "C1EC34416CA5919EC9DC169918854311", hash_generated_field = "6392F8242B4A9D3DC6E2F079ACDCEA46")
-
 
     private final Object mInstanceLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.087 -0500", hash_original_field = "6BA29085393712540B286281F44B67C6", hash_generated_field = "AE60776173DBC048CFBFFABBE4C7746A")
 
-
     private int mInteractionId = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.089 -0500", hash_original_field = "6542A5CB99BCCEB6F8596422F2884A9B", hash_generated_field = "A3D55D5A4D331347A5DC8437AFB890DE")
-
 
     private AccessibilityNodeInfo mFindAccessibilityNodeInfoResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.092 -0500", hash_original_field = "224394DD643E884C74EC7529304B0092", hash_generated_field = "3DCE295151A485FE086C2499765CB1E4")
 
-
     private List<AccessibilityNodeInfo> mFindAccessibilityNodeInfosResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.094 -0500", hash_original_field = "D54A5FBF491F128D5908B1902AE526F5", hash_generated_field = "1D4D87B32D7664CC278418585538879B")
-
 
     private boolean mPerformAccessibilityActionResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.096 -0500", hash_original_field = "9D92C6F514CC75ADEB1F6A052B886C92", hash_generated_field = "F8EC948A5A458F05C0667906EB13AD52")
 
-
     private Message mSameThreadMessage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.098 -0500", hash_original_field = "18B323F06848CA309C3A1F305DBA0D21", hash_generated_field = "9DBB084DD0568D939B76BF72796B166A")
-
 
     private final Rect mTempBounds = new Rect();
     
@@ -548,6 +531,7 @@ private Message getSameProcessMessageAndClear() {
      * @param connectionId The connection id.
      * @return The cached connection if such.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.152 -0500", hash_original_method = "C30C93509C0684283448214BFA9D8225", hash_generated_method = "DCD8487BB5A66A8CCEE4E4D160170CF8")
     
 public IAccessibilityServiceConnection getConnection(int connectionId) {
@@ -562,6 +546,7 @@ public IAccessibilityServiceConnection getConnection(int connectionId) {
      * @param connectionId The connection id.
      * @param connection The connection.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.155 -0500", hash_original_method = "7A0506F80A0A925F6D871EC270864AAB", hash_generated_method = "71E7462F24A8A3736FDA626CC2C92154")
     
 public void addConnection(int connectionId, IAccessibilityServiceConnection connection) {

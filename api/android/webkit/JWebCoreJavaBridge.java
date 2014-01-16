@@ -14,10 +14,6 @@ import android.net.Uri;
 import android.os.Handler;
 import android.os.Message;
 
-
-
-
-
 final class JWebCoreJavaBridge extends Handler {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.943 -0500", hash_original_method = "812C5D46D70F6EBD90414C46F818D47C", hash_generated_method = "AD2630B7C1B2B5474F846CC08C2CDBDC")
@@ -65,13 +61,11 @@ static synchronized void removeActiveWebView(WebView webview) {
     private boolean mHasInstantTimer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.927 -0500", hash_original_field = "8CD5C91DD61A5EB3812EB68BF5811C3E", hash_generated_field = "4C6E6459810428DDB9069F262AE62676")
 
-
     private boolean mTimerPaused;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.929 -0500", hash_original_field = "F54618ED5FC2F0D5E760B5024EC79C3A", hash_generated_field = "64B51006061AD1592250F72E98B31DCF")
 
     private boolean mHasDeferredTimers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.936 -0500", hash_original_field = "EDDEFF2BA5F576754455CE012E3A9AFB", hash_generated_field = "54D1A4080AE3D1D4D0316390BB67ECCC")
-
 
     private HashMap<String, String> mContentUriToFilePathMap;
 
@@ -148,7 +142,6 @@ private void signalServiceFuncPtrQueue() {
     	//Formerly a native method
     }
 
-
     /**
      * Pause all timers.
      */
@@ -186,7 +179,6 @@ public void resume() {
     	//Formerly a native method
     	addTaint(bytes);
     }
-
 
     /**
      * Store a cookie string associated with a url.
@@ -337,6 +329,7 @@ private String resolveFilePathForContentUri(String uri) {
         return jUri.getLastPathSegment();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.991 -0500", hash_original_method = "3D9A94F616B3884F20C1C47ABAEE0053", hash_generated_method = "E38A4BFA23D0EE978D7C9BC5E427A642")
     
 public void storeFilePathForContentUri(String path, String contentUri) {

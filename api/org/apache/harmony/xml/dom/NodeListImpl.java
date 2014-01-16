@@ -10,14 +10,8 @@ import java.util.List;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
 
-
-
-
-
-
 public class NodeListImpl implements NodeList {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.447 -0500", hash_original_field = "3571FDEDABBB67C544DB562B84A412E3", hash_generated_field = "01219BC14411B8933603C8E4F4F1DCA8")
-
 
     private List<NodeImpl> children;
 
@@ -39,6 +33,7 @@ void add(NodeImpl node) {
         children.add(node);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.457 -0500", hash_original_method = "91DC5DE88E19C57D8C382EFD5B1079BB", hash_generated_method = "C2BBA1299B7523F687324429EBEEAFEA")
     
 public int getLength() {
@@ -54,7 +49,6 @@ public Node item(int index) {
             return children.get(index);
         }
     }
-
     
 }
 

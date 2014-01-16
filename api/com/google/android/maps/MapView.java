@@ -14,98 +14,82 @@ import android.widget.ZoomButtonsController;
 import java.util.List;
 import java.util.LinkedList;
      
-import droidsafe.annotations.*;     
+import droidsafe.annotations.*;
 
 import droidsafe.concrete.*;
-
 
 public class MapView extends ViewGroup
 {
     List<Overlay> overlays = new LinkedList<Overlay>();
     
-    @DSModeled(DSC.SAFE)
     public void onLayout(boolean changed, int l, int t, int r, int b) {
         
     }
-
-
-    @DSModeled(DSC.SAFE)
+    
     public MapView(Context paramContext, String paramString)
     {
         super(paramContext);
     }
-     
-    @DSModeled(DSC.SAFE)
+    
     public MapView(Context paramContext, AttributeSet paramAttributeSet)
     {
         super(paramContext, paramAttributeSet);
     }
-     
-    @DSModeled(DSC.SAFE)
+    
     public MapView(Context paramContext, AttributeSet paramAttributeSet, int paramInt)
     {
         super(paramContext, paramAttributeSet, paramInt);
     }
-
-    @DSModeled(DSC.SAFE)
-    public void displayZoomControls(boolean paramBoolean) { addTaint(paramBoolean);} 
-
-    @DSModeled(DSC.SAFE)
+    
+    public void displayZoomControls(boolean paramBoolean) { addTaint(paramBoolean);}
+    
     public boolean canCoverCenter() { return getTaintBoolean();}
-
-    @DSModeled(DSC.SAFE)
-    public void preLoad() {  } 
-
-    @DSModeled(DSC.SAFE)
-    public int getZoomLevel() { return getTaintInt(); } 
-
-    @DSModeled(DSC.SAFE)
-    public void setSatellite(boolean paramBoolean) { addTaint(paramBoolean); } 
-
-    @DSModeled(DSC.SAFE)
-    public boolean isSatellite() { return getTaintBoolean();} 
-
-    @DSModeled(DSC.SAFE)
-    public void setTraffic(boolean paramBoolean) { addTaint(paramBoolean); } 
-
-    @DSModeled(DSC.SAFE)
-    public boolean isTraffic() { return getTaintBoolean(); } 
+    
+    public void preLoad() {  }
+    
+    public int getZoomLevel() { return getTaintInt(); }
+    
+    public void setSatellite(boolean paramBoolean) { addTaint(paramBoolean); }
+    
+    public boolean isSatellite() { return getTaintBoolean();}
+    
+    public void setTraffic(boolean paramBoolean) { addTaint(paramBoolean); }
+    
+    public boolean isTraffic() { return getTaintBoolean(); }
 
     @Deprecated
-    @DSModeled(DSC.SAFE)
-    public void setStreetView(boolean paramBoolean) { addTaint(paramBoolean); } 
-
-    @DSModeled(DSC.SAFE)
-    public boolean isStreetView() { return getTaintBoolean(); } 
-
-    @DSModeled(DSC.SAFE)
-    public GeoPoint getMapCenter() { return new GeoPoint(); } 
-    @DSModeled(DSC.SAFE)
+    
+    public void setStreetView(boolean paramBoolean) { addTaint(paramBoolean); }
+    
+    public boolean isStreetView() { return getTaintBoolean(); }
+    
+    public GeoPoint getMapCenter() { return new GeoPoint(); }
+    
     public MapController getController() { 
         return new MapController();
-    } 
-    @DSModeled(DSC.SAFE)
+    }
+    
     public final List<Overlay> getOverlays() {
         return overlays;
-    } 
-    @DSModeled(DSC.SAFE)
-    public int getLatitudeSpan() { return getTaintInt(); } 
-    @DSModeled(DSC.SAFE)
-    public int getLongitudeSpan() { return getTaintInt();} 
-    @DSModeled(DSC.SAFE)
-    public void setReticleDrawMode(ReticleDrawMode paramReticleDrawMode) {  } 
-    @DSModeled(DSC.SAFE)
-    public int getMaxZoomLevel() { return getTaintInt(); } 
-    @DSModeled(DSC.SAFE)
-    public View getZoomControls() { return this; } 
-    @DSModeled(DSC.SAFE)
+    }
+    
+    public int getLatitudeSpan() { return getTaintInt(); }
+    
+    public int getLongitudeSpan() { return getTaintInt();}
+    
+    public void setReticleDrawMode(ReticleDrawMode paramReticleDrawMode) {  }
+    
+    public int getMaxZoomLevel() { return getTaintInt(); }
+    
+    public View getZoomControls() { return this; }
+    
     public ZoomButtonsController getZoomButtonsController() { 
         return new ZoomButtonsController(this);
-    } 
-    @DSModeled(DSC.SAFE)
-    public void setBuiltInZoomControls(boolean paramBoolean) { addTaint(paramBoolean); } 
-    @DSModeled(DSC.SAFE)
-    public Projection getProjection() { return new DroidSafeProjection(); } 
+    }
+    
+    public void setBuiltInZoomControls(boolean paramBoolean) { addTaint(paramBoolean); }
+    
+    public Projection getProjection() { return new DroidSafeProjection(); }
 
     public static enum ReticleDrawMode
     {

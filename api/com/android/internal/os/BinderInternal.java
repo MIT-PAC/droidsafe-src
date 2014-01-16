@@ -12,14 +12,8 @@ import android.os.IBinder;
 import android.os.SystemClock;
 import android.util.EventLog;
 
-
-
-
-
 public class BinderInternal {
-
-
-    @DSModeled(DSC.SAFE)
+    
     public static final void joinThreadPool() {
     }
     
@@ -33,28 +27,24 @@ public class BinderInternal {
      * @return Returns the time as per {@link SystemClock#uptimeMillis
      * SystemClock.uptimeMillis()} of the last garbage collection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.469 -0500", hash_original_method = "97EE1367F7D21A2061B5C261F1E7F987", hash_generated_method = "93E1464CFF71D32450A26A70F1E8933A")
     
 public static long getLastGcTime() {
         return mLastGcTime;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final IBinder getContextObject() {
     	return new Binder();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void disableBackgroundScheduling(boolean disable) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final void handleGc() {
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.483 -0500", hash_original_method = "C06A63825025685CD72A0C7EB0DA954F", hash_generated_method = "2A120C37FE09D2BBCA349EC198BD8790")
     
 public static void forceGc(String reason) {
@@ -71,11 +61,9 @@ static void forceBinderGc() {
 
     static WeakReference<GcWatcher> mGcWatcher
             = new WeakReference<GcWatcher>(new GcWatcher());
-
     
     static final class GcWatcher {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.469 -0400", hash_original_method = "23BF1C701EF3B7F131F4805BD4892CC0", hash_generated_method = "23BF1C701EF3B7F131F4805BD4892CC0")
         public GcWatcher ()
         {
@@ -89,7 +77,6 @@ static void forceBinderGc() {
             mLastGcTime = SystemClock.uptimeMillis();
             mGcWatcher = new WeakReference<GcWatcher>(new GcWatcher());
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.457 -0500", hash_original_field = "8CAF103EDA9DB77FDE721BD1922741E3", hash_generated_field = "D78279B3A9A95C1743A81AEED357F5B0")

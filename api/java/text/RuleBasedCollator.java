@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.icu.RuleBasedCollatorICU;
 
-
-
-
 public class RuleBasedCollator extends Collator {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.510 -0500", hash_original_method = "31FBA21C05DBD02C02879BE90D845185", hash_generated_method = "31FBA21C05DBD02C02879BE90D845185")
     
@@ -67,6 +64,7 @@ public RuleBasedCollator(String rules) throws ParseException {
      *            the source character iterator.
      * @return a {@code CollationElementIterator} for {@code source}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.516 -0500", hash_original_method = "C93FCBD8C41C04013259A24B3BA25AFC", hash_generated_method = "19E5E258C162D2AA8B88185575754404")
     
 public CollationElementIterator getCollationElementIterator(CharacterIterator source) {
@@ -83,6 +81,7 @@ public CollationElementIterator getCollationElementIterator(CharacterIterator so
      *            the source string.
      * @return the {@code CollationElementIterator} for {@code source}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.518 -0500", hash_original_method = "0A03AD4A8EA2D5EFD885AFF079D1FBF8", hash_generated_method = "AD1B8AD7AFE2E9C0E340482B3A9D095A")
     
 public CollationElementIterator getCollationElementIterator(String source) {
@@ -104,6 +103,7 @@ public CollationElementIterator getCollationElementIterator(String source) {
      *
      * @return the collation rules.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.520 -0500", hash_original_method = "FF8EDD58F3376852427F0295E98F1202", hash_generated_method = "883506D97BFF401123E80AC480D00700")
     
 public String getRules() {
@@ -163,6 +163,7 @@ public String getRules() {
      *            the specified source text.
      * @return the {@code CollationKey} for the given source text.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:08.528 -0500", hash_original_method = "A9AF4E46AA414E7FF98E8748BB278551", hash_generated_method = "FF55CC53E57881B8F6A0E0C8E176DD06")
     
 @Override
@@ -198,7 +199,6 @@ public String getRules() {
         }
         return super.equals(obj);
     }
-
     
 }
 

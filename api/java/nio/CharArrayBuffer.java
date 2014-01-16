@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 abstract class CharArrayBuffer extends CharBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.720 -0500", hash_original_field = "831C21935489E2C2946A16D310875EF0", hash_generated_field = "0CB5FB822B200EFB3152ED27D6D936CC")
 
-
     protected  char[] backingArray;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.723 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "22BBBB3BDBDCD622FED3EBF1A70B4EC5")
-
 
     protected  int offset;
 
@@ -39,6 +33,7 @@ CharArrayBuffer(int capacity, char[] backingArray, int offset) {
         this.offset = offset;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.733 -0500", hash_original_method = "930271761AD6BA9DD8139CF2E7572A4C", hash_generated_method = "AB16C65E6A6A21196EF3A9432E5259E0")
     
 @Override
@@ -49,6 +44,7 @@ CharArrayBuffer(int capacity, char[] backingArray, int offset) {
         return backingArray[offset + position++];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.736 -0500", hash_original_method = "5DC544428BD1C6845537E5987EE9535C", hash_generated_method = "36732CDF494CD519857B498DCB00F396")
     
 @Override
@@ -57,6 +53,7 @@ CharArrayBuffer(int capacity, char[] backingArray, int offset) {
         return backingArray[offset + index];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.738 -0500", hash_original_method = "7C08804A3C6FF079C168DF2ED7D4D9F5", hash_generated_method = "0483CD7F7555664F27D79641D4D0064C")
     
 @Override
@@ -100,7 +97,6 @@ CharArrayBuffer(int capacity, char[] backingArray, int offset) {
     public final String toString() {
         return String.copyValueOf(backingArray, offset + position, remaining());
     }
-
     
 }
 

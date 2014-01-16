@@ -14,37 +14,26 @@ import java.util.NoSuchElementException;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
-
-
-
-
 public class Pipeline extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.731 -0500", hash_original_field = "86DA92917EB7762FF502F88DA803E684", hash_generated_field = "B4DAA050AED16D506138B23A2C545CFC")
 
     private LinkedList buffList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.733 -0500", hash_original_field = "0A73FD9A1AA89E3BF0779051055F85DB", hash_generated_field = "18A2B612A1CF4422210AEC79BF708D17")
 
-
     private Buffer currentBuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.736 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
-
 
     private boolean isClosed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.738 -0500", hash_original_field = "738C3D18449F14F8BF2AE2302B0A1011", hash_generated_field = "02D2240A23798B540E9F3183DC11EA33")
 
-
     private Timer timer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.741 -0500", hash_original_field = "A22F4158EEDE6585ECB16C67C9DD6488", hash_generated_field = "74EA00CD9256C545C6A23A280DF2583C")
-
 
     private InputStream pipe;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.743 -0500", hash_original_field = "665A6CAA499F4AF9E1413810B84B3FBE", hash_generated_field = "6532B828611581315664CF6DAFB483BF")
 
-
     private int readTimeout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.746 -0500", hash_original_field = "387ABD8C123EDD8BA64EC399E2255BE3", hash_generated_field = "861338A3A376656ED2C9B97C2EA0F97E")
-
 
     private TimerTask myTimerTask;
 
@@ -151,14 +140,12 @@ public int read() throws IOException {
             }
         }
     }
-
     
     class MyTimer extends SIPStackTimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.748 -0500", hash_original_field = "7840915867A0DD99EC64B89800E1CB6D", hash_generated_field = "7840915867A0DD99EC64B89800E1CB6D")
 
         Pipeline pipeline;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.752 -0500", hash_original_field = "BB99F9FD9B80227D96B49A85B4B95D46", hash_generated_field = "59DB49985984D67A006441E7DEFF885A")
-
 
         private boolean isCancelled;
 
@@ -188,11 +175,8 @@ public boolean cancel() {
             this.isCancelled = true;
             return retval;
         }
-
         
     }
-
-
     
     class Buffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.765 -0500", hash_original_field = "AB97A4156FC1CC1DAF26375194010FF1", hash_generated_field = "AB97A4156FC1CC1DAF26375194010FF1")
@@ -200,10 +184,8 @@ public boolean cancel() {
         byte[] bytes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.768 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "136C4DD872F8065EECD33F6CD4E7556E")
 
-
         int length;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.770 -0500", hash_original_field = "407F33A4FEC278EC364347D42DC7DA18", hash_generated_field = "407F33A4FEC278EC364347D42DC7DA18")
-
 
         int ptr;
 
@@ -215,17 +197,15 @@ public Buffer(byte[] bytes, int length) {
             this.bytes = bytes;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:42.776 -0500", hash_original_method = "C5E9FA9D1099E171DFD942E3B525903F", hash_generated_method = "087EB1F45898EAF0175AF01D67DE848C")
         
 public int getNextByte() {
             int retval = bytes[ptr++] & 0xFF;
             return retval;
         }
-
         
     }
-
-
     
 }
 

@@ -11,9 +11,6 @@ import java.util.Map;
 import org.apache.http.cookie.CookieAttributeHandler;
 import org.apache.http.cookie.CookieSpec;
 
-
-
-
 public abstract class AbstractCookieSpec implements CookieSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.604 -0500", hash_original_field = "43A9094CB57C2C7C4EEDCFB17CF21065", hash_generated_field = "25D17092F85E51EF7D67F5963CE29C57")
 
@@ -76,12 +73,12 @@ protected CookieAttributeHandler getAttribHandler(final String name) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.615 -0500", hash_original_method = "BF6A284618BDB748E6134235BAFA5C45", hash_generated_method = "93061CCFA4D56EE62B9F8B8C7F8FA92F")
     
 protected Collection<CookieAttributeHandler> getAttribHandlers() {
         return this.attribHandlerMap.values();
     }
-
     
 }
 

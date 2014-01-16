@@ -21,7 +21,6 @@ import org.xmlpull.v1.XmlSerializer;
 
 import android.util.Xml;
 
-
 public class XmlUtils {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.528 -0500", hash_original_method = "AAAAEA56462AF9647E1BBB323C7E0DC3", hash_generated_method = "BF6C3D6BE0175CB56641BBB5BD104A0E")
@@ -418,6 +417,7 @@ public static final void writeIntArrayXml(int[] val, String name,
      * @see #writeListXml
      * @see #readValueXml
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.564 -0500", hash_original_method = "82F216345EA52FCB5807D6A46DE8445B", hash_generated_method = "A9262B0D84E883AEAED8396C5245AE70")
     
 public static final void writeValueXml(Object v, String name, XmlSerializer out)
@@ -523,6 +523,7 @@ public static final HashMap readMapXml(InputStream in)
      * @see #readThisListXml
      * @see #writeListXml
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.571 -0500", hash_original_method = "19DDCF7A36CDD152C7A6B2FBD995EBB5", hash_generated_method = "9FD32910B0D0512DCF2D5BDEF96DEF28")
     
 public static final ArrayList readListXml(InputStream in)
@@ -532,7 +533,6 @@ public static final ArrayList readListXml(InputStream in)
         parser.setInput(in, null);
         return (ArrayList)readValueXml(parser, new String[1]);
     }
-    
     
     /**
      * Read a HashSet from an InputStream containing XML. The stream can
@@ -930,7 +930,6 @@ public static final void nextElement(XmlPullParser parser) throws XmlPullParserE
     {
         //Synthesized constructor
     }
-
     
 }
 

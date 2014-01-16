@@ -11,10 +11,6 @@ import android.net.Uri;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class NdefRecord implements Parcelable {
 
     /**
@@ -94,6 +90,7 @@ public static NdefRecord createUri(Uri uri) {
     /**
      * Creates an NDEF record of well known type URI.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.214 -0500", hash_original_method = "3B32FFA1CE722DE38A059403727B8397", hash_generated_method = "72E6470E177C9856FD91B43A85E7016D")
     
 public static NdefRecord createUri(String uriString) {
@@ -156,13 +153,11 @@ private static byte[] concat(byte[]... arrays) {
     public static final byte[] RTD_TEXT = {0x54};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.146 -0500", hash_original_field = "20BB0CF51CEED5BF78D38D58C1041985", hash_generated_field = "AF4A01C1B16F5EDA09A440BA1028A73B")
 
-
     /**
      * RTD URI type. For use with TNF_WELL_KNOWN.
      */
     public static final byte[] RTD_URI = {0x55};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.148 -0500", hash_original_field = "B20519CAF93AA2C57337B2B121E30CB9", hash_generated_field = "BE32D943AE20B02098876544C3EB2E39")
-
 
     /**
      * RTD Smart Poster type. For use with TNF_WELL_KNOWN.
@@ -170,13 +165,11 @@ private static byte[] concat(byte[]... arrays) {
     public static final byte[] RTD_SMART_POSTER = {0x53, 0x70};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.152 -0500", hash_original_field = "A1FE534799FED5526063CCE84DE3E92B", hash_generated_field = "48162E8DEAA31CA1792DB397558FF513")
 
-
     /**
      * RTD Alternative Carrier type. For use with TNF_WELL_KNOWN.
      */
     public static final byte[] RTD_ALTERNATIVE_CARRIER = {0x61, 0x63};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.154 -0500", hash_original_field = "0EC2E3503BC0FBE5384BE7EC701D787E", hash_generated_field = "530335AFED67E82469A1884F4129478F")
-
 
     /**
      * RTD Handover Carrier type. For use with TNF_WELL_KNOWN.
@@ -184,20 +177,17 @@ private static byte[] concat(byte[]... arrays) {
     public static final byte[] RTD_HANDOVER_CARRIER = {0x48, 0x63};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.156 -0500", hash_original_field = "37E1176C6EF16BBA2ABADF3C388FBCFE", hash_generated_field = "D9DD4EC8137EFE280BD7D9AE5FF23609")
 
-
     /**
      * RTD Handover Request type. For use with TNF_WELL_KNOWN.
      */
     public static final byte[] RTD_HANDOVER_REQUEST = {0x48, 0x72};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.158 -0500", hash_original_field = "119A497A3739EF8CF5C93D223B4E67F6", hash_generated_field = "8C2497FD94764E58F412190F3E8FB78D")
 
-
     /**
      * RTD Handover Select type. For use with TNF_WELL_KNOWN.
      */
     public static final byte[] RTD_HANDOVER_SELECT = {0x48, 0x73};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.160 -0500", hash_original_field = "234737A1960F721D7BB368F3678DFDB1", hash_generated_field = "8B5244DC38EBD5E1AB0D3160139C10FD")
-
 
     /**
      * RTD Android app type. For use with TNF_EXTERNAL.
@@ -213,7 +203,6 @@ private static byte[] concat(byte[]... arrays) {
      */
     public static final byte[] RTD_ANDROID_APP = "android.com:pkg".getBytes();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.163 -0500", hash_original_field = "43AA9F6BBA9861FD41265D3FF45443F3", hash_generated_field = "3835A2DFF1178D58B5296641A8C4E94F")
-
 
     private static final byte FLAG_MB = (byte) 0x80;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.166 -0500", hash_original_field = "9D7C853084BDC2D70ABF6A4B50AAA3A5", hash_generated_field = "EB576068E134091F49CFF121FA3CF3C3")
@@ -296,7 +285,6 @@ public NdefRecord[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.178 -0500", hash_original_field = "9FDA87992728AC3EBDE5218078A80DC2", hash_generated_field = "D69A1323403FF74B40E10D9DDFD257AB")
 
-
     private  byte mFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.180 -0500", hash_original_field = "A3C4F2FD36A594F5392ECC6676FB067E", hash_generated_field = "FC6E9E67F7C574177CE753C7489C4618")
 
@@ -325,6 +313,8 @@ public NdefRecord[] newArray(int size) {
      * @param payload byte array, containing zero to (2 ** 32 - 1) bytes,
      *                must not be null
      */
+    @DSComment("data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.189 -0500", hash_original_method = "FB48E937FC56CBD69B2A6F082227DD21", hash_generated_method = "DE7D3367A8D67D13F8EFFB1D24B2E12A")
     
 public NdefRecord(short tnf, byte[] type, byte[] id, byte[] payload) {
@@ -396,6 +386,9 @@ public NdefRecord(byte[] data) throws FormatException {
      * <p>
      * TNF is the top-level type.
      */
+    @DSComment("data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.198 -0500", hash_original_method = "57FC26158D8D678057BEA3A3771FCDE7", hash_generated_method = "22099949C0FAB7BEF77A26E027911AEC")
     
 public short getTnf() {
@@ -408,6 +401,9 @@ public short getTnf() {
      * This should be used in conjunction with the TNF field to determine the
      * payload format.
      */
+    @DSComment("data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.200 -0500", hash_original_method = "4BBEB3385EB023476A7C83C1132C6B8B", hash_generated_method = "D8BB2EC57A2C6F99A2F5BCBDBE2BFCC7")
     
 public byte[] getType() {
@@ -417,6 +413,7 @@ public byte[] getType() {
     /**
      * Returns the variable length ID.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.202 -0500", hash_original_method = "9D6A9E4635BF3A5F066D2AADCC504C7A", hash_generated_method = "04D08F0620A42926911203A7CA2E323E")
     
 public byte[] getId() {
@@ -426,6 +423,9 @@ public byte[] getId() {
     /**
      * Returns the variable length payload.
      */
+    @DSComment("data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.204 -0500", hash_original_method = "1327F8BA6EFB58D178B7F3819A329700", hash_generated_method = "3209572B1428FC77D1ED81F46732F85B")
     
 public byte[] getPayload() {
@@ -435,6 +435,7 @@ public byte[] getPayload() {
     /**
      * Returns this entire NDEF Record as a byte array.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.219 -0500", hash_original_method = "7310D9773CC55767E043FA59CD9561A6", hash_generated_method = "167F1A71240323606EF2A3640EEF2806")
     
 public byte[] toByteArray() {

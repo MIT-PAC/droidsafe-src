@@ -9,10 +9,6 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.Enumeration;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class DexFile {
@@ -41,6 +37,8 @@ public final class DexFile {
      * @throws IOException
      *  If unable to open the source or output file.
      */
+    @DSComment("Dalvik class method")
+    @DSBan(DSCat.DALVIK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.716 -0500", hash_original_method = "1EDCA09AD4C3913C3E18CC3064C22C6C", hash_generated_method = "BEC005FC12BA681CE5CAC96FCB71CC2A")
     
 static public DexFile loadDex(String sourcePathName, String outputPathName,
@@ -55,9 +53,7 @@ static public DexFile loadDex(String sourcePathName, String outputPathName,
          */
         return new DexFile(sourcePathName, outputPathName, flags);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Class defineClass(String name, ClassLoader loader, int cookie) {
     	Class clazz = new Class();
     	clazz.addTaint(name.taint);
@@ -65,37 +61,27 @@ static public DexFile loadDex(String sourcePathName, String outputPathName,
     	clazz.addTaint(cookie);
     	return clazz;
     }
-
     
-    @DSModeled(DSC.BAN)
     private static String[] getClassNameList(int cookie) {
     	String[] s = new String[0];
     	s.addTaint(cookie);
     	return s;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int openDexFile(String sourceName, String outputName,
         int flags) throws IOException {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_623029097;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int openDexFile(byte[] fileContents) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1747228384;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void closeDexFile(int cookie) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isDexOptNeeded(String fileName) throws FileNotFoundException, IOException {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_689770446;
@@ -184,6 +170,7 @@ private DexFile(String sourceName, String outputName, int flags) throws IOExcept
      *
      * @return the file name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.718 -0500", hash_original_method = "DFE26EB6CF2622DAE30C5BD1FDBCFEE9", hash_generated_method = "77F463454BDEE4385EB69987BB58F477")
     
 public String getName() {
@@ -255,6 +242,8 @@ public Class loadClassBinaryName(String name, ClassLoader loader) {
      * @return an enumeration of names of classes contained in the DEX file, in
      *         the usual internal form (like "java/lang/String").
      */
+    @DSComment("Dalvik class method")
+    @DSBan(DSCat.DALVIK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.732 -0500", hash_original_method = "51AB769B18373F25E42ACAB5FC64B8CC", hash_generated_method = "2F173EE517FB3C5BC94167DFC70EE753")
     
 public Enumeration<String> entries() {
@@ -280,7 +269,6 @@ public Enumeration<String> entries() {
             super.finalize();
         }
     }
-
     
     private class DFEnum implements Enumeration<String> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.735 -0500", hash_original_field = "3FE793BBC68255EAC5B3588E7DE2E2C6", hash_generated_field = "B8B828CADFFAE7A5A771AAB7A1527A20")
@@ -308,11 +296,8 @@ public boolean hasMoreElements() {
 public String nextElement() {
             return mNameList[mIndex++];
         }
-
         
     }
-
-
     
 }
 

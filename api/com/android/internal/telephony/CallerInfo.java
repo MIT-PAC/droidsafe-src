@@ -25,11 +25,6 @@ import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.android.i18n.phonenumbers.geocoding.PhoneNumberOfflineGeocoder;
 
-
-
-
-
-
 public class CallerInfo {
 
     /**
@@ -40,6 +35,7 @@ public class CallerInfo {
      * @return the CallerInfo which contains the caller id for the given
      * number. The returned CallerInfo is null if no number is supplied.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.400 -0500", hash_original_method = "5A41265338B441253D84C904D0572F1D", hash_generated_method = "D527D4D2440A499A7FDB9223A8D1728A")
     
 public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor cursor) {
@@ -140,6 +136,7 @@ public static CallerInfo getCallerInfo(Context context, Uri contactRef, Cursor c
      * @return the CallerInfo which contains the caller id for the given
      * number. The returned CallerInfo is null if no number is supplied.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.403 -0500", hash_original_method = "C8DFF2D0C3894E1B9175858C5EE3D3BB", hash_generated_method = "237AEB559BC360557812F8BE65E7FC45")
     
 public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
@@ -158,6 +155,7 @@ public static CallerInfo getCallerInfo(Context context, Uri contactRef) {
      * a matching number is not found, then a generic caller info is returned,
      * with all relevant fields empty or null.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.406 -0500", hash_original_method = "B6705B43DEEA0F2192B48F9F777B01B4", hash_generated_method = "FE8D81ECCCA8A8D5C94A6A43ADF78785")
     
 public static CallerInfo getCallerInfo(Context context, String number) {
@@ -232,6 +230,7 @@ static CallerInfo doSecondaryLookupIfNecessary(Context context,
      *   2. android.provider.Telephony.Sms.getDisplayAddress()
      * We may not need to make the change.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.411 -0500", hash_original_method = "AE0F6FD0A3800B899159B72DD57AA38C", hash_generated_method = "88815FCB5523578FB3BBEA604044CB5D")
     
 public static String getCallerId(Context context, String number) {
@@ -404,7 +403,6 @@ private static String getCurrentCountryIso(Context context, Locale locale) {
     private static final boolean VDBG = Log.isLoggable(TAG, Log.VERBOSE);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.337 -0500", hash_original_field = "88E44D205DD4CD062C11D9A9EBE039D4", hash_generated_field = "14B5286CD5D74D78D60A61E8C23808CE")
 
-
     public static final String UNKNOWN_NUMBER = "-1";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.340 -0500", hash_original_field = "400A8812536EC2D8A5A82ED8FC0A8857", hash_generated_field = "F1BFDCCA16CC5317696C3F332263F25D")
 
@@ -426,7 +424,6 @@ private static String getCurrentCountryIso(Context context, Locale locale) {
     public String geoDescription;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.354 -0500", hash_original_field = "A86CFAAA1D8CDA1D974D232F92D46C54", hash_generated_field = "B239E8D02EB187DB23B68D6C87ACA90A")
 
-
     public String cnapName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.357 -0500", hash_original_field = "091FFF931E0CD34BE4923BA987466B67", hash_generated_field = "6CB3D906347F781338EC2DA9AF9D3365")
 
@@ -439,7 +436,6 @@ private static String getCurrentCountryIso(Context context, Locale locale) {
     public boolean contactExists;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.364 -0500", hash_original_field = "95C16318AFD6918358C801BB8461E342", hash_generated_field = "B16EA2F1B36E8F31FFFDD25645C62D92")
 
-
     public String phoneLabel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.366 -0500", hash_original_field = "E16E5C9061E3FE5EA676B56B8F3FE12A", hash_generated_field = "CB2493E4DE6F750739F3F00C76D6A18B")
 
@@ -448,7 +444,6 @@ private static String getCurrentCountryIso(Context context, Locale locale) {
 
     public String numberLabel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.371 -0500", hash_original_field = "E040943544417634A9F8730D6BF32FF4", hash_generated_field = "7D7BB200679F8010347C035166402B92")
-
 
     public int photoResource;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.373 -0500", hash_original_field = "D890AD54D13DB50B764EDF26A6912FAE", hash_generated_field = "FDDDE3BF3B641EAA1034B3C7122F3126")
@@ -475,7 +470,6 @@ private static String getCurrentCountryIso(Context context, Locale locale) {
 
     public boolean isCachedPhotoCurrent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.391 -0500", hash_original_field = "79ACDEE21348FCBA838FCD3882A1E1F2", hash_generated_field = "A071CE64713D0CEBE0F796AE77A242C0")
-
 
     private boolean mIsEmergency;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.393 -0500", hash_original_field = "FC816548BA48F427434856E62F32DAFD", hash_generated_field = "FDF7722A08FE4E08F4285E4AC4744B13")
@@ -522,7 +516,8 @@ public boolean isVoiceMailNumber() {
     // should set the phone number to the dialed number and name to
     // 'Emergency Number' and let the UI make the decision about what
     // should be displayed.
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.418 -0500", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "0EF2E0F94875209BDFD349217543907F")
+    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.418 -0500", hash_original_method = "0EF2E0F94875209BDFD349217543907F", hash_generated_method = "0EF2E0F94875209BDFD349217543907F")
     
 CallerInfo markAsEmergency(Context context) {
         phoneNumber = context.getString(
@@ -531,7 +526,6 @@ CallerInfo markAsEmergency(Context context) {
         mIsEmergency = true;
         return this;
     }
-
 
     /**
      * Mark this CallerInfo as a voicemail call. The voicemail label
@@ -542,7 +536,8 @@ CallerInfo markAsEmergency(Context context) {
      */
     // TODO: As in the emergency number handling, we end up writing a
     // string in the phone number field.
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.421 -0500", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "80AC8B6BE9B156C3EE30B3EFE4A2A8F1")
+    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.421 -0500", hash_original_method = "E50E44C9D86336E922CA2AE8F511D506", hash_generated_method = "80AC8B6BE9B156C3EE30B3EFE4A2A8F1")
     
 CallerInfo markAsVoiceMail() {
         mIsVoiceMail = true;
@@ -587,6 +582,7 @@ public void updateGeoDescription(Context context, String fallbackNumber) {
     /**
      * @return a string debug representation of this instance.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:46.440 -0500", hash_original_method = "B2E8AF8AE71BB271A220763604B9FEA5", hash_generated_method = "7A65E4C100BDD67B7E46680E057873AC")
     
 public String toString() {

@@ -12,12 +12,9 @@ import android.content.Intent;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class VpnConfig implements Parcelable {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.684 -0500", hash_original_method = "E2B4F190A55D7785794B0646C1BF8F7C", hash_generated_method = "26557B87479877086733CABEA875BFAE")
     
 public static Intent getIntentForConfirmation() {
@@ -26,6 +23,7 @@ public static Intent getIntentForConfirmation() {
         return intent;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.686 -0500", hash_original_method = "A6FDE7EDEB3EAB44B9B5F7A984EB3D92", hash_generated_method = "2B739E0228AA7A1F25D9878623F65BC9")
     
 public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig config) {
@@ -39,10 +37,8 @@ public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig c
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.679 -0500", hash_original_field = "B1AFFBC88325DD4A5AEF1E3345A659BB", hash_generated_field = "3DE559FCCAED1098982ED547FF9663BB")
 
-
     public static final String SERVICE_INTERFACE = "android.net.VpnService";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.682 -0500", hash_original_field = "7972CCA224CB5964D80307847E8E0B9F", hash_generated_field = "A23A74C292C8FC0BB1625437C9BF1187")
-
 
     public static final String LEGACY_VPN = "[Legacy VPN]";
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:10.428 -0400", hash_original_field = "B9E25A0AC362BE835CC8488AB95C56B0", hash_generated_field = "83D1742B520DA7FD872FDBB1828AD74A")
@@ -75,7 +71,6 @@ public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig c
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.688 -0500", hash_original_field = "B37EB1ED61432756B8E994D3D7BA4599", hash_generated_field = "0D37FB1187DC93A5CBFAB3C14B0F27FB")
-
 
     public String user;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.691 -0500", hash_original_field = "A87999D214C9DBBDD0ECE4E5580D9C1E", hash_generated_field = "9342EB91AB7C5199220A234450DF96C8")
@@ -119,6 +114,7 @@ public static PendingIntent getIntentForStatusPanel(Context context, VpnConfig c
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:59.714 -0500", hash_original_method = "663713F2190B3FEEC06E42079AE10798", hash_generated_method = "656F39201885A701FF9786452503BBC5")
     
 @Override

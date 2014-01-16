@@ -8,13 +8,8 @@ import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Build;
 
-
-
-
-
 public class EdgeEffectCompat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.875 -0500", hash_original_field = "6A866271DD9DB39957FFF0E71ABE47DD", hash_generated_field = "C39368587D934C727CBBE97C813A7339")
-
 
     private static  EdgeEffectImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.872 -0500", hash_original_field = "F098455E78527867B0243F5F899E173E", hash_generated_field = "8B86712DCA30565AC003C93F8A9D023C")
@@ -41,6 +36,7 @@ public EdgeEffectCompat(Context context) {
      * @param width Effect width in pixels
      * @param height Effect height in pixels
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.926 -0500", hash_original_method = "D4DAEE1A405642168AB096E0B8E2EAD2", hash_generated_method = "B498A43726E29C2CDF3B80ECFCEDD032")
     
 public void setSize(int width, int height) {
@@ -117,11 +113,9 @@ public boolean onRelease() {
 public boolean onAbsorb(int velocity) {
         return IMPL.onAbsorb(mEdgeEffect, velocity);
     }
-
     
     static class BaseEdgeEffectImpl implements EdgeEffectImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.020 -0400", hash_original_method = "E93AF950D68741CBF25DC67984C27D7B", hash_generated_method = "E93AF950D68741CBF25DC67984C27D7B")
         public BaseEdgeEffectImpl ()
         {
@@ -133,6 +127,7 @@ public Object newEdgeEffect(Context context) {
             return null;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.884 -0500", hash_original_method = "7AB0823D4C5E0A56EB104E764A6EE643", hash_generated_method = "2A3F2A3644496ACB1CF1EDA0A2938943")
         
 public void setSize(Object edgeEffect, int width, int height) {
@@ -172,15 +167,11 @@ public boolean onAbsorb(Object edgeEffect, int velocity) {
 public boolean draw(Object edgeEffect, Canvas canvas) {
             return false;
         }
-
         
     }
-
-
     
     static class EdgeEffectIcsImpl implements EdgeEffectImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:34.021 -0400", hash_original_method = "722DC077141274393C35BB912CA199C0", hash_generated_method = "722DC077141274393C35BB912CA199C0")
         public EdgeEffectIcsImpl ()
         {
@@ -192,6 +183,7 @@ public Object newEdgeEffect(Context context) {
             return EdgeEffectCompatIcs.newEdgeEffect(context);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:25.904 -0500", hash_original_method = "7828FC66149E7A8F26ACE38B475CC37B", hash_generated_method = "12A358F1E0CC70FBC6CB0DC94F3A42EC")
         
 public void setSize(Object edgeEffect, int width, int height) {
@@ -233,11 +225,8 @@ public boolean onAbsorb(Object edgeEffect, int velocity) {
 public boolean draw(Object edgeEffect, Canvas canvas) {
             return EdgeEffectCompatIcs.draw(edgeEffect, canvas);
         }
-
         
     }
-
-
     
     interface EdgeEffectImpl {
         public Object newEdgeEffect(Context context);

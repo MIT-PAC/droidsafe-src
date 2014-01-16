@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class TypedValue {
 
     /**
@@ -114,6 +112,7 @@ public static int complexToDimensionPixelSize(int data,
         return -1;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.683 -0500", hash_original_method = "04AD62EFCF8834E104D76228065ADCEE", hash_generated_method = "9978C9AAC915E867A2A6C034AC911C4B")
     
 public static float complexToDimensionNoisy(int data, DisplayMetrics metrics)
@@ -293,7 +292,6 @@ public static final String coerceToString(int type, int data)
     public static final int TYPE_LAST_INT = 0x1f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.599 -0500", hash_original_field = "BEDCE3CFE3C46F196385EE1026E98631", hash_generated_field = "7DFC0CC8D23BDC2C27CA40E98820450F")
 
-
     /** Complex data: bit location of unit information. */
     public static final int COMPLEX_UNIT_SHIFT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.601 -0500", hash_original_field = "B20CF91295E965E74D46E04AA1328574", hash_generated_field = "7576233DF8001236B59FF5F8B6DF21E4")
@@ -349,7 +347,6 @@ public static final String coerceToString(int type, int data)
     public static final int COMPLEX_MANTISSA_MASK = 0xffffff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.645 -0500", hash_original_field = "9114F25CD26CBE7EFF5A7B2C5A195ADF", hash_generated_field = "7B92EA00A0CDAB4CB6F2206DBBB6354F")
 
-
     /**
      * If {@link #density} is equal to this value, then the density should be
      * treated as the system's default density value: {@link DisplayMetrics#DENSITY_DEFAULT}.
@@ -359,7 +356,6 @@ public static final String coerceToString(int type, int data)
 
     public static final int DENSITY_NONE = 0xffff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.668 -0500", hash_original_field = "B227E31B5FE2E06E3AEBC15ED5BE562E", hash_generated_field = "816429ADA4869386A788A79FCB2E4862")
-
 
     private static final float MANTISSA_MULT =
         1.0f / (1<<TypedValue.COMPLEX_MANTISSA_SHIFT);
@@ -371,7 +367,6 @@ public static final String coerceToString(int type, int data)
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.697 -0500", hash_original_field = "A40548904022F1286CC2EEDD56D6F43E", hash_generated_field = "10C0AF30F876AE259FC47201562554A2")
 
-
     private static final String[] DIMENSION_UNIT_STRS = new String[] {
         "px", "dip", "sp", "pt", "in", "mm"
     };
@@ -381,7 +376,6 @@ public static final String coerceToString(int type, int data)
         "%", "%p"
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.650 -0500", hash_original_field = "961B4204667A4AE2FF8DD374E6728ADE", hash_generated_field = "C5C834E5450DA8B269EA4773C3355C0C")
-
 
     /** The type held by this value, as defined by the constants here.
      *  This tells you how to interpret the other fields in the object. */
@@ -404,8 +398,9 @@ public static final String coerceToString(int type, int data)
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.663 -0500", hash_original_field = "D7FC4F087F7781307482B1B12ECB9138", hash_generated_field = "E5F5E1B9EB0FFA9AA190565F78E3A1F1")
 
     public int density;
-    
-@DSModeled(DSC.SAFE)
+
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public TypedValue() {
     }
 
@@ -413,6 +408,9 @@ public static final String coerceToString(int type, int data)
 
     /** Return the data for this value as a float.  Only use for values
      *  whose type is {@link #TYPE_FLOAT}. */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.665 -0500", hash_original_method = "A056539A8D172DAECD87700505289EB4", hash_generated_method = "327F456DBCCF2519D55F7061179FB0F9")
     
 public final float getFloat() {
@@ -429,6 +427,9 @@ public final float getFloat() {
      * @return The complex floating point value multiplied by the appropriate 
      * metrics depending on its unit. 
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.687 -0500", hash_original_method = "4E6E7F41B76F4FD15549F58DC569C010", hash_generated_method = "0DC9794378F16736B8B6E505EC7B7681")
     
 public float getDimension(DisplayMetrics metrics)
@@ -449,6 +450,9 @@ public float getDimension(DisplayMetrics metrics)
      * @return The complex floating point value multiplied by the appropriate 
      * base value depending on its unit. 
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.692 -0500", hash_original_method = "293ADCB2B20AD2D3C2E6AE6F03ECAE91", hash_generated_method = "2B399FDA82D9AF66EA1BEBB4A65D4087")
     
 public float getFraction(float base, float pbase)
@@ -475,6 +479,7 @@ public final CharSequence coerceToString()
         return coerceToString(t, data);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:21.705 -0500", hash_original_method = "AE1CAB20A8487EE7B21133A09B8F6C44", hash_generated_method = "A7E9CBDC4F50C1D09D48207184B5E47B")
     
 public void setTo(TypedValue other)

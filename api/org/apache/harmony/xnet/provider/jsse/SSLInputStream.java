@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
 public abstract class SSLInputStream extends InputStream {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:32.274 -0400", hash_original_method = "B3907DD288EBA16F858ADC5177372075", hash_generated_method = "B3907DD288EBA16F858ADC5177372075")
@@ -69,6 +65,7 @@ public int readUint24() throws IOException {
     /**
      * Reads and returns uint32 value.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.846 -0500", hash_original_method = "18D59391AE7948DA8080AA965DB6CE79", hash_generated_method = "DD3878EF0EBDE1C5D44194A626548B24")
     
 public long readUint32() throws IOException {
@@ -79,6 +76,7 @@ public long readUint32() throws IOException {
     /**
      * Reads and returns uint64 value.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.848 -0500", hash_original_method = "85B7C4B5BFF5E58A56D479C7E3A9AABB", hash_generated_method = "E389CAEA9FD43B57DCB9368BC2AE8648")
     
 public long readUint64() throws IOException {
@@ -93,6 +91,7 @@ public long readUint64() throws IOException {
      * @return the read data
      * @throws IOException if read operation could not be finished.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:06.850 -0500", hash_original_method = "22A07573F54A4BDDEECBBE8A8D080BB9", hash_generated_method = "4E7CF5D85F0893BC29378DE35D5500BC")
     
 public byte[] read(int length) throws IOException {
@@ -118,7 +117,6 @@ public byte[] read(int length) throws IOException {
         } while ((available() != 0) && (i<len));
         return i;
     }
-
     
 }
 

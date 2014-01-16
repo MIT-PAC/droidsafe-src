@@ -12,17 +12,11 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public class Join extends ParametersHeader implements ExtensionHeader, JoinHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.557 -0500", hash_original_field = "E6B96B7B2E8CADE387321F27BACCAA93", hash_generated_field = "6CB5FD5185865CE37770D9CE36F56865")
 
     private static final long serialVersionUID = -840116548918120056L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.560 -0500", hash_original_field = "CDBFF050B2B67BB7CC5B9089286D87C5", hash_generated_field = "13095D8F107AFC77A4F003D089C600F0")
-
 
     public static final String NAME = "Join";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.563 -0500", hash_original_field = "C3E358E95D23A99C47CBD56EDD5BB931", hash_generated_field = "64120D09C2B0721B310316A22E4103F4")
@@ -75,6 +69,7 @@ public String encodeBody() {
      *
      * @return String the encoded body part of the
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.580 -0500", hash_original_method = "EEE15C2182CFD7EA9CBDBFC60D7CEB59", hash_generated_method = "EB02B081C7AB467A549CA8E38E41CE27")
     
 public String getCallId() {
@@ -85,6 +80,7 @@ public String getCallId() {
      * get the call Identifer member.
      * @return CallIdentifier
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.583 -0500", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "C8B313DEC7DDBD2EFB9A879CEC727321")
     
 public CallIdentifier getCallIdentifer() {
@@ -118,6 +114,7 @@ public void setCallIdentifier(CallIdentifier cid) {
      * Get the to-tag parameter from the address parm list.
      * @return tag field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.592 -0500", hash_original_method = "B211B6A9EDFBB72196EA1C1405552E2E", hash_generated_method = "9B46F74E8C8C30CE21AE359FB62FDCB3")
     
 public String getToTag() {
@@ -129,6 +126,7 @@ public String getToTag() {
      * Set the to-tag member
      * @param t tag to set. From tags are mandatory.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.596 -0500", hash_original_method = "11B74AD04734B3C61566E9250AEBA382", hash_generated_method = "8DE719DBE9EC1F07E605730C5C1B3F28")
     
 public void setToTag(String t) throws ParseException {
@@ -158,6 +156,7 @@ public void removeToTag() {
      * Get the from-tag parameter from the address parm list.
      * @return tag field
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.605 -0500", hash_original_method = "31D6F2518E32939467AAA449E3B07BF0", hash_generated_method = "413B2174881AB8CE80D6FB02F74DDF67")
     
 public String getFromTag() {
@@ -169,6 +168,7 @@ public String getFromTag() {
      * Set the to-tag member
      * @param t tag to set. From tags are mandatory.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.608 -0500", hash_original_method = "06D289B84B93DB0101D64879F61C1049", hash_generated_method = "ADF7723D3D721310CAD4F8EE5F6AA9F1")
     
 public void setFromTag(String t) throws ParseException {
@@ -195,8 +195,7 @@ public void removeFromTag() {
         parameters.delete(ParameterNames.FROM_TAG);
     }
 
-
-
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:59.617 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "01B37E653FE76FEB916567082AAEE1D8")
     
 public void setValue(String value) throws ParseException {

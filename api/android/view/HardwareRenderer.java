@@ -47,11 +47,6 @@ import android.util.Log;
 
 import com.google.android.gles_jni.EGLImpl;
 
-
-
-
-
-
 public abstract class HardwareRenderer {
 
     /**
@@ -87,14 +82,13 @@ public static boolean isAvailable() {
      * 
      * @param cacheDir A directory the current process can write to
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.195 -0500", hash_original_method = "4D6DA7709E03DD958DC246E9D34F1611", hash_generated_method = "659680C38E48DF38D5BD90BD48E8C1D2")
     
 public static void setupDiskCache(File cacheDir) {
         nSetupShadersDiskCache(new File(cacheDir, CACHE_PATH_SHADERS).getAbsolutePath());
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nSetupShadersDiskCache(String cacheFile) {
     }
 
@@ -106,6 +100,7 @@ public static void setupDiskCache(File cacheDir) {
      * 
      * @return A hardware renderer backed by OpenGL.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.218 -0500", hash_original_method = "6EE96EBC477B77879F9A873960F8548A", hash_generated_method = "0502D06F1B00937FAD8B3C20BDF1D18F")
     
 static HardwareRenderer createGlRenderer(int glVersion, boolean translucent) {
@@ -158,13 +153,11 @@ static void trimMemory(int level) {
     public static boolean sSystemRendererDisabled = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.161 -0500", hash_original_field = "B372655E189CA31F1D74E7441882FA0E", hash_generated_field = "7A48C52BD142368ED44BC086FD9013A2")
 
-
     private boolean mEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.164 -0500", hash_original_field = "0CE24D677BB0060A09BDAA76A732BC53", hash_generated_field = "1A824CB4728D8EA1700C48FC56A6A4D0")
 
     private boolean mRequested = true;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.525 -0400", hash_original_method = "E06114671092584077A71408305BD1AB", hash_generated_method = "E06114671092584077A71408305BD1AB")
     public HardwareRenderer ()
     {
@@ -294,7 +287,6 @@ abstract HardwareCanvas getCanvas();
     
 abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbacks callbacks,
             Rect dirty);
-
     
     static abstract class GlRenderer extends HardwareRenderer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.233 -0500", hash_original_field = "05ED6095C69105CABAB5DA8E1FBF3493", hash_generated_field = "3E10338E50BF743AF77D21918619DEC3")
@@ -310,7 +302,6 @@ abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbac
 
         static final int EGL_SWAP_BEHAVIOR_PRESERVED_BIT = 0x0400;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.242 -0500", hash_original_field = "ABF5E1A4FDD60A8C604D76B15781AF59", hash_generated_field = "0938239E7634E9F8C37B8678E90396F9")
-        
 
         static final int SURFACE_STATE_ERROR = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.244 -0500", hash_original_field = "A544A3F14BA10C6F86E45CE1724DF50D", hash_generated_field = "A56E49F9D74B2FDD846AFDD966D2CA36")
@@ -320,7 +311,6 @@ abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbac
 
         static final int SURFACE_STATE_UPDATED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.251 -0500", hash_original_field = "F3F99A4AAF4495C7E5BD414E92D87A69", hash_generated_field = "89D62FD7DEAB0F4EA47FB451DD608D43")
-
         
         static EGL10 sEgl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.253 -0500", hash_original_field = "2850C2E5CF41CD47FAA9244CD3808DF8", hash_generated_field = "4D6AA44B0537982BD4C758CAAEDCA2BB")
@@ -334,11 +324,9 @@ abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbac
         static final Object[] sEglLock = new Object[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.262 -0500", hash_original_field = "1F888D1BF0C62050E8F97E5021FED0B8", hash_generated_field = "B964CE88695D4A806E497A467321E250")
 
-
         static final ThreadLocal<Gl20Renderer.Gl20RendererEglContext> sEglContextStorage
                 = new ThreadLocal<Gl20Renderer.Gl20RendererEglContext>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.280 -0500", hash_original_field = "FBD54073AB282DD33B22F58D5C3837F5", hash_generated_field = "2552FD4B6C23E3B90D7EC1BBA8F3293E")
-
 
         static boolean sDirtyRegions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.283 -0500", hash_original_field = "C783221E7492838CD3A28618CEA72311", hash_generated_field = "1C3D78F3A3106B7D131377ACD7D2905E")
@@ -352,17 +340,14 @@ abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbac
         int mHeight = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.265 -0500", hash_original_field = "75D18A698C8C0156FC372CC4CDC659FD", hash_generated_field = "75D18A698C8C0156FC372CC4CDC659FD")
 
-
         EGLContext mEglContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.267 -0500", hash_original_field = "C8809406F874F748D7C2D2A82FC8CAFB", hash_generated_field = "C8809406F874F748D7C2D2A82FC8CAFB")
 
         Thread mEglThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.269 -0500", hash_original_field = "3BCE51A04A846FE71AD218CCB7DF9B47", hash_generated_field = "3BCE51A04A846FE71AD218CCB7DF9B47")
 
-
         EGLSurface mEglSurface;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.271 -0500", hash_original_field = "776F52E98B7458F3181D343B01ABD47C", hash_generated_field = "776F52E98B7458F3181D343B01ABD47C")
-
         
         GL mGl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.273 -0500", hash_original_field = "37BD83BC682BDA2AAC757751086B36DE", hash_generated_field = "37BD83BC682BDA2AAC757751086B36DE")
@@ -376,13 +361,11 @@ abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbac
         Paint mDebugPaint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.286 -0500", hash_original_field = "ECB95A231B3EDB5A9081400631FFCAB1", hash_generated_field = "ECB95A231B3EDB5A9081400631FFCAB1")
 
-
         boolean mDirtyRegionsEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.288 -0500", hash_original_field = "763734C03E6324334FBF6C22D68E5385", hash_generated_field = "763734C03E6324334FBF6C22D68E5385")
 
          boolean mVsyncDisabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.290 -0500", hash_original_field = "F9D183B249EAF9218F504B0391DBAF55", hash_generated_field = "F9D183B249EAF9218F504B0391DBAF55")
-
 
          int mGlVersion;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.292 -0500", hash_original_field = "BA918D2716C9DCF541C02A323E8108FD", hash_generated_field = "BA918D2716C9DCF541C02A323E8108FD")
@@ -390,10 +373,8 @@ abstract boolean draw(View view, View.AttachInfo attachInfo, HardwareDrawCallbac
          boolean mTranslucent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.295 -0500", hash_original_field = "708F9D94DA99CD83DBB18AAAFBA8C49F", hash_generated_field = "1C64CB399BFF718CD14799195853AA6E")
 
-
         private boolean mDestroyed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.297 -0500", hash_original_field = "F6A60C6925878F0452B252169082DB15", hash_generated_field = "182B0379D371946AD3DA2504271E34F0")
-
 
         private final Rect mRedrawClip = new Rect();
 
@@ -767,6 +748,7 @@ private boolean createSurface(SurfaceHolder holder) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.353 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "651DCBA9FACC62304A60971F8F89CCBC")
         
 @Override
@@ -774,6 +756,7 @@ private boolean createSurface(SurfaceHolder holder) {
             return mWidth;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.356 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "ED21678AEB517A389B8FE90A798E5728")
         
 @Override
@@ -781,6 +764,7 @@ private boolean createSurface(SurfaceHolder holder) {
             return mHeight;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.358 -0500", hash_original_method = "03525402B3DC937D128A720724E320B3", hash_generated_method = "8DFF870ACAE374B016A5345B9168DC2B")
         
 @Override
@@ -792,7 +776,7 @@ private boolean createSurface(SurfaceHolder holder) {
         
 boolean canDraw() {
             return mGl != null && mCanvas != null;
-        }        
+        }
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.363 -0500", hash_original_method = "5270AAD77A1E26F7563AFAAC446C8262", hash_generated_method = "5270AAD77A1E26F7563AFAAC446C8262")
         
@@ -919,8 +903,6 @@ int checkCurrent() {
         }
         
     }
-
-
     
     static class Gl20Renderer extends GlRenderer {
 
@@ -1004,7 +986,6 @@ private static void usePbufferSurface(EGLContext eglContext) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.385 -0500", hash_original_field = "E466A43BAA9C7F59150794EAFA275E2B", hash_generated_field = "6C6559CCDF7784B417023844F64F56D4")
 
-
         private static EGLSurface sPbuffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.388 -0500", hash_original_field = "DAE42D9E3FFD5CB8F4F331EC6F477F94", hash_generated_field = "397F4B1C85C553C6A50924367AE7739B")
 
@@ -1026,6 +1007,7 @@ Gl20Renderer(boolean translucent) {
             return mGlCanvas = new GLES20Canvas(mTranslucent);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.411 -0500", hash_original_method = "F0C99ACF7C56841B3F486F5BFE1F4C1E", hash_generated_method = "FE63F231BD975606BA4D3DDD3D04FB36")
         
 @Override
@@ -1056,7 +1038,7 @@ Gl20Renderer(boolean translucent) {
 @Override
         boolean canDraw() {
             return super.canDraw() && mGlCanvas != null;
-        }                
+        }
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.417 -0500", hash_original_method = "0022B5A5096431CE2C7606DC3316BE73", hash_generated_method = "0F203CBDA7639E105C65101F9F1F8B96")
         
@@ -1085,6 +1067,7 @@ Gl20Renderer(boolean translucent) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.425 -0500", hash_original_method = "E63C13501979998737C0E9B67210D488", hash_generated_method = "CD9DC1D3314A700E2BB6D5376E6F3967")
         
 @Override
@@ -1122,7 +1105,6 @@ Gl20Renderer(boolean translucent) {
         SurfaceTexture createSurfaceTexture(HardwareLayer layer) {
             return ((GLES20TextureLayer) layer).getSurfaceTexture();
         }
-
         
         static class Gl20RendererEglContext extends ManagedEGLContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:54.391 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "26DE2B72977ADBD047A9853341F26F79")
@@ -1174,7 +1156,6 @@ public Gl20RendererEglContext(EGLContext context) {
                     }
                 }
             }
-
             
         }
 
@@ -1207,13 +1188,10 @@ public Gl20RendererEglContext(EGLContext context) {
             }
         }
     }
-
-
     
     interface HardwareDrawCallbacks {
         
         void onHardwarePreDraw(HardwareCanvas canvas);
-
         
         void onHardwarePostDraw(HardwareCanvas canvas);
     }

@@ -10,23 +10,17 @@ import java.util.Locale;
 import android.text.Selection;
 import android.text.SpannableStringBuilder;
 
-
-
-
-
 public class WordIterator implements Selection.PositionIterator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.752 -0500", hash_original_field = "FE41FFC4BE7142B433FC121A1EC6188E", hash_generated_field = "F5FE4ACCABC3D0B58FEDE31DAF9A3648")
 
     private static final int WINDOW_WIDTH = 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.755 -0500", hash_original_field = "0DD8A30A5B66E3389BB7F1641026A732", hash_generated_field = "C0B8B41E10B6EC8767D645F51D421276")
 
-
     private String mString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.757 -0500", hash_original_field = "57EF38B8D53BD974E124FC92AA2D585A", hash_generated_field = "0BBD7CD100EB425800EA2CBA37261EAE")
 
     private int mOffsetShift;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.761 -0500", hash_original_field = "375991621221DEB2B7274BC3764A961A", hash_generated_field = "3FDD48BD1B9B72C0290CDC044056432E")
-
 
     private BreakIterator mIterator;
 
@@ -107,6 +101,7 @@ public int following(int offset) {
      *
      * @throws IllegalArgumentException is offset is not valid.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.778 -0500", hash_original_method = "0D432F790B6324713F4FDAF5BC7F832D", hash_generated_method = "0092725EEE705A5456AAEB4B50451A20")
     
 public int getBeginning(int offset) {
@@ -139,6 +134,7 @@ public int getBeginning(int offset) {
      *
      * @throws IllegalArgumentException is offset is not valid.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.781 -0500", hash_original_method = "BDAE18DC1A45A79C9134EA83087086A0", hash_generated_method = "CB076793825B172EFF78A95E44AD4BBF")
     
 public int getEnd(int offset) {

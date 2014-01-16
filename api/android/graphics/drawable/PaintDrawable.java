@@ -11,9 +11,6 @@ import android.content.res.TypedArray;
 import android.graphics.drawable.shapes.RoundRectShape;
 import android.util.AttributeSet;
 
-
-
-
 public class PaintDrawable extends ShapeDrawable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.206 -0500", hash_original_method = "35894A2FD0CE190FC6DCE9F697221056", hash_generated_method = "EB239EA7E3A1C7969BCE1D083693AE7F")
@@ -32,6 +29,7 @@ public PaintDrawable(int color) {
      * drawable is drawn in a round-rectangle, rather than a rectangle.
      * @param radius the radius for the corners of the rectangle
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.210 -0500", hash_original_method = "29D687C39F10D3A684C3799EDBB48EFB", hash_generated_method = "6F40AA935AB00B671F6C53CB6B863A7E")
     
 public void setCornerRadius(float radius) {
@@ -51,6 +49,7 @@ public void setCornerRadius(float radius) {
      * top-left, top-right, bottom-right, bottom-left
      * @param radii the x and y radii of the corners
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:14.212 -0500", hash_original_method = "458539BDB31F16A86FED0FC05CC292D2", hash_generated_method = "83779F66102631002C7FEC9547C188FF")
     
 public void setCornerRadii(float[] radii) {
@@ -101,7 +100,6 @@ public void setCornerRadii(float[] radii) {
         }
         return super.inflateTag(name, r, parser, attrs);
     }
-
     
 }
 

@@ -12,10 +12,6 @@ import org.apache.harmony.dalvik.ddmc.DdmServer;
 
 import android.util.Log;
 
-
-
-
-
 public class DdmHandleAppName extends ChunkHandler {
 
     /**
@@ -24,8 +20,6 @@ public class DdmHandleAppName extends ChunkHandler {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.166 -0500", hash_original_method = "789B5085E0E3F0644FA7F1CD116FCAD9", hash_generated_method = "9BEA173807ADFA497EA149EC2DE7C825")
     
 public static void register() {}
-
-
 
     /**
      * Set the application name.  Called when we get named, which may be
@@ -44,6 +38,7 @@ public static void setAppName(String name) {
         sendAPNM(name);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.178 -0500", hash_original_method = "1616F246970763497051049B272382DF", hash_generated_method = "2DCB4E49DA3205D78CB0EE5EC1FA2ADF")
     
 public static String getAppName() {
@@ -69,17 +64,13 @@ private static void sendAPNM(String appName) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.157 -0500", hash_original_field = "B3B238C6C020226FD7379F4860ED072B", hash_generated_field = "A00FA52EEEF4E9D0FDBABD362F30DDE4")
 
-
     public static final int CHUNK_APNM = type("APNM");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.159 -0500", hash_original_field = "FACFB8C3EAB633D869097F7C5EDD785A", hash_generated_field = "13D874CFFECF1B13A69B63BC4FD01026")
-
 
     private volatile static String mAppName = "";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.162 -0500", hash_original_field = "1124B7354B7ADD7CACB5B26FCF7B663F", hash_generated_field = "CB6FB73A6BC364A591CA00981BD0CE53")
 
-
     private static DdmHandleAppName mInstance = new DdmHandleAppName();
-
 
     /* singleton, do not instantiate */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.164 -0500", hash_original_method = "D8F21F6A35B29C82CC84858F5D50C10E", hash_generated_method = "714E45DF5D6BD22E3F028526E485CEE1")

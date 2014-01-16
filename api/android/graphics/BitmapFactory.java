@@ -15,9 +15,6 @@ import android.content.res.Resources;
 import android.util.DisplayMetrics;
 import android.util.TypedValue;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class BitmapFactory {
@@ -64,6 +61,8 @@ public static Bitmap decodeFile(String pathName, Options opts) {
      * @param pathName complete path name for the file to be decoded.
      * @return the resulting decoded bitmap, or null if it could not be decoded.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.752 -0500", hash_original_method = "7D28734FCE7370D8FDCC234164691F4C", hash_generated_method = "F2CD77CABB152658A32F315E702CC3F9")
     
 public static Bitmap decodeFile(String pathName) {
@@ -115,7 +114,7 @@ public static Bitmap decodeResourceStream(Resources res, TypedValue value,
     
 public static Bitmap decodeResource(Resources res, int id, Options opts) {
         Bitmap bm = null;
-        InputStream is = null; 
+        InputStream is = null;
         
         try {
             final TypedValue value = new TypedValue();
@@ -150,6 +149,8 @@ public static Bitmap decodeResource(Resources res, int id, Options opts) {
      * @param id The resource id of the image data
      * @return The decoded bitmap, or null if the image could not be decode.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.760 -0500", hash_original_method = "1FD108E128E9B3F5B5DC3826EDC33E9E", hash_generated_method = "4EF628CBC4DD8FE30F8240AEA76D08E5")
     
 public static Bitmap decodeResource(Resources res, int id) {
@@ -305,6 +306,8 @@ private static Bitmap finishDecode(Bitmap bm, Rect outPadding, Options opts) {
      *           bitmap.
      * @return The decoded bitmap, or null if the image data could not be decoded.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.787 -0500", hash_original_method = "B1B6242CCE1D87F8A8E3C9512E1007D6", hash_generated_method = "5E7A8D8150BC51025C552D5F98850988")
     
 public static Bitmap decodeStream(InputStream is) {
@@ -384,57 +387,41 @@ public static void setDefaultConfig(Bitmap.Config config) {
         }
         nativeSetDefaultConfig(config.nativeInt);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetDefaultConfig(int nativeConfig) {
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static Bitmap nativeDecodeStream(InputStream is, byte[] storage, Rect padding, Options opts) {
 		return new Bitmap();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static Bitmap nativeDecodeFileDescriptor(FileDescriptor fd, Rect padding, Options opts) {
 		return new Bitmap();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static Bitmap nativeDecodeAsset(int asset, Rect padding, Options opts) {
 		return new Bitmap();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static Bitmap nativeDecodeByteArray(byte[] data, int offset, int length, Options opts) {
 		return new Bitmap();
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static byte[] nativeScaleNinePatch(byte[] chunk, float scale, Rect pad) {
 		byte[] var2F9C81BC6E497382285CD6B7A7E33DE1_721079546 = { DSUtils.UNKNOWN_BYTE };
 		return var2F9C81BC6E497382285CD6B7A7E33DE1_721079546;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeIsSeekable(FileDescriptor fd) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_440919392 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_440919392;
 	}
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:09.744 -0400", hash_original_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7", hash_generated_method = "9FB0451BE5E4A0EC96B2F8C3A0CC38F7")
     public BitmapFactory ()
     {
         //Synthesized constructor
     }
-
     
     public static class Options {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.699 -0500", hash_original_field = "4AAF01BBB4B463EB96C54AF98FCD3449", hash_generated_field = "E14A34C185341AE7F8D4DB91886BE7E5")
@@ -479,7 +466,6 @@ public static void setDefaultConfig(Bitmap.Config config) {
         public boolean inPreferQualityOverSpeed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.729 -0500", hash_original_field = "B688A9D4BB79BE98930626D311FF38CE", hash_generated_field = "1711C922F444BA74A1E98CA86D96DCCE")
 
-
         public int outWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.732 -0500", hash_original_field = "9A3E6E0F66078DDBF18BAE5C01E57643", hash_generated_field = "A872264BA87A83F67078713ABC67D7C1")
 
@@ -497,6 +483,8 @@ public static void setDefaultConfig(Bitmap.Config config) {
          * Create a default Options object, which if left unchanged will give
          * the same result from the decoder as if null were passed.
          */
+        @DSComment("not sensitive/not an action")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.697 -0500", hash_original_method = "1E2502131AFAFEE705D62EA28BD1E532", hash_generated_method = "476BB4A6DF32CC0368C94A292A50B98B")
         
 public Options() {
@@ -509,7 +497,6 @@ public Options() {
         private void requestCancel(){
         	//Formerly a native method
         }
-
 
         /**
          *  This can be called from another thread while this options object is
@@ -525,11 +512,8 @@ public void requestCancelDecode() {
             mCancel = true;
             requestCancel();
         }
-
         
     }
-
-
     
 }
 

@@ -11,13 +11,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class AccessibilityEvent extends AccessibilityRecord implements Parcelable {
-
-    @DSModeled(DSC.BAN)
+    
     public static AccessibilityEvent droidsafeGetEvent() {
         return new AccessibilityEvent(); 
     }
@@ -29,6 +24,8 @@ public final class AccessibilityEvent extends AccessibilityRecord implements Par
      * @param eventType The event type.
      * @return An instance.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.461 -0500", hash_original_method = "A7145B8906EC48103C63737E7936B464", hash_generated_method = "DECD9BD2A2F1267D265C497B5EE21ED5")
     
 public static AccessibilityEvent obtain(int eventType) {
@@ -67,6 +64,8 @@ public static AccessibilityEvent obtain(AccessibilityEvent event) {
      *
      * @return An instance.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.467 -0500", hash_original_method = "10F3069F21F3E55AED4FC89118BF5C5A", hash_generated_method = "E3D01B2B9125EFEB96BBDB3B34AEDE01")
     
 public static AccessibilityEvent obtain() {
@@ -183,7 +182,6 @@ public static String eventTypeToString(int eventType) {
     public static final int TYPES_ALL_MASK = 0xFFFFFFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.409 -0500", hash_original_field = "3257F81BBFE679E3360141AA5EA9D518", hash_generated_field = "FB8E412EAB46029C42E8E38ED918C6D9")
 
-
     private static final int MAX_POOL_SIZE = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.412 -0500", hash_original_field = "80BD8A730C8BC829BD11E3A3CFC39CA3", hash_generated_field = "515CCCD8D6622177DD93BECF774D048D")
 
@@ -220,7 +218,6 @@ public AccessibilityEvent[] newArray(int size) {
     private boolean mIsInPool;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.424 -0500", hash_original_field = "60513C71507B6FB4E4F9D7F335ECB484", hash_generated_field = "8DFF2F7D6614CCA19DAAC549D23778BF")
 
-
     private int mEventType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.426 -0500", hash_original_field = "70581C252521204037775F3EA9D8E9F2", hash_generated_field = "6A9DFBEC5628781E76307C090C363D49")
 
@@ -229,7 +226,6 @@ public AccessibilityEvent[] newArray(int size) {
 
     private long mEventTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.431 -0500", hash_original_field = "13483AE0B0468BA4337EA080FAA63C94", hash_generated_field = "22A74F87FC449BC3B93E8BB2B11BA02D")
-
 
     private final ArrayList<AccessibilityRecord> mRecords = new ArrayList<AccessibilityRecord>();
 
@@ -262,6 +258,7 @@ void init(AccessibilityEvent event) {
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.438 -0500", hash_original_method = "86DBA4ADDEC94CD24AE35AA90BF3A59E", hash_generated_method = "D50929EA929BCFE290769089BEBD4ACA")
     
 @Override
@@ -280,6 +277,9 @@ void init(AccessibilityEvent event) {
      *
      * @return The number of records.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.441 -0500", hash_original_method = "E3578B8B8EBF3C6DE3B4CEB5DF2FD3A0", hash_generated_method = "45AE797C926A97FF4238FE89EE498366")
     
 public int getRecordCount() {
@@ -293,6 +293,8 @@ public int getRecordCount() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("can only append for its own use")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.443 -0500", hash_original_method = "65BE24FB8BF3EB0B7B54A7C4AA9FE110", hash_generated_method = "A9E8D5291D5D0B74598ADA13EEC3447F")
     
 public void appendRecord(AccessibilityRecord record) {
@@ -306,6 +308,9 @@ public void appendRecord(AccessibilityRecord record) {
      * @param index The index.
      * @return The record at the specified index.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.445 -0500", hash_original_method = "9E2314A76EC6019735F4372CBF34D41F", hash_generated_method = "16B8C87E554CC89ED26CAC1F3B820131")
     
 public AccessibilityRecord getRecord(int index) {
@@ -317,6 +322,9 @@ public AccessibilityRecord getRecord(int index) {
      *
      * @return The event type.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.447 -0500", hash_original_method = "4F017DE4F3DB5F93E271E04CA9550DB1", hash_generated_method = "01F97DA7B4B424BFB276760D3ABE3C6A")
     
 public int getEventType() {
@@ -342,6 +350,7 @@ public void setEventType(int eventType) {
      *
      * @return The event time.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.452 -0500", hash_original_method = "9909149D86C7172035BFD4D31C880F99", hash_generated_method = "F653F6EE78E4EF60FE34AEBC3CD5060E")
     
 public long getEventTime() {
@@ -367,6 +376,7 @@ public void setEventTime(long eventTime) {
      *
      * @return The package name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.457 -0500", hash_original_method = "6D18CADAD3BE855C953B6A82043EA347", hash_generated_method = "62E16594ED1E4D773FC387EB5B07A489")
     
 public CharSequence getPackageName() {
@@ -380,6 +390,8 @@ public CharSequence getPackageName() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("for the same app usage only")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.459 -0500", hash_original_method = "D35D1C42C7BD5A2BDF03FC6BDBDF64EE", hash_generated_method = "194D21D70E7FE29679C690B456C3D46C")
     
 public void setPackageName(CharSequence packageName) {
@@ -491,6 +503,7 @@ private void readAccessibilityRecordFromParcel(AccessibilityRecord record,
     /**
      * {@inheritDoc}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.480 -0500", hash_original_method = "B3703ED8E89F0F725D62C7A182783343", hash_generated_method = "BCC25B3EEEEC0FB4DC4379EC2C8F6FEC")
     
 public void writeToParcel(Parcel parcel, int flags) {

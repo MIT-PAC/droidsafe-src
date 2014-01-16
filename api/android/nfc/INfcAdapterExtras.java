@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.602 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.602 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.605 -0500", hash_original_method = "8CA8E7A428AE977A904F4441A385961C", hash_generated_method = "1CB06127BCE812DB6E4B47E06BED1905")
+@DSSink({DSSinkKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.605 -0500", hash_original_method = "8CA8E7A428AE977A904F4441A385961C", hash_generated_method = "1CB06127BCE812DB6E4B47E06BED1905")
             
 public android.os.Bundle open(java.lang.String pkg, android.os.IBinder b) throws android.os.RemoteException
 {
@@ -88,7 +90,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.608 -0500", hash_original_method = "03B909E67F124C7DBC455ED773561F63", hash_generated_method = "CDCECA0C2E1CB15DDC47A3332B921A8F")
+@DSSource({DSSourceKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.608 -0500", hash_original_method = "03B909E67F124C7DBC455ED773561F63", hash_generated_method = "CDCECA0C2E1CB15DDC47A3332B921A8F")
             
 public android.os.Bundle close(java.lang.String pkg, android.os.IBinder b) throws android.os.RemoteException
 {
@@ -114,7 +117,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.610 -0500", hash_original_method = "FC69E30FC5D4CC9EB9DDA7AF648F46CD", hash_generated_method = "1CBEC85DFE1F95779977D1B537C266F7")
+@DSSource({DSSourceKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.610 -0500", hash_original_method = "FC69E30FC5D4CC9EB9DDA7AF648F46CD", hash_generated_method = "1CBEC85DFE1F95779977D1B537C266F7")
             
 public android.os.Bundle transceive(java.lang.String pkg, byte[] data_in) throws android.os.RemoteException
 {
@@ -140,7 +144,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.613 -0500", hash_original_method = "4F82839D40ADF80D169D87FFD486DC8A", hash_generated_method = "9209A4D932D76F97AF982264717E1EF7")
+@DSSource({DSSourceKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.613 -0500", hash_original_method = "4F82839D40ADF80D169D87FFD486DC8A", hash_generated_method = "9209A4D932D76F97AF982264717E1EF7")
             
 public int getCardEmulationRoute(java.lang.String pkg) throws android.os.RemoteException
 {
@@ -160,7 +165,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.616 -0500", hash_original_method = "D3CFC82C8BBCECF42D26ED8FC11CC5D1", hash_generated_method = "D43C36989BCDE367AE8E54893D8C8DAE")
+@DSSink({DSSinkKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.616 -0500", hash_original_method = "D3CFC82C8BBCECF42D26ED8FC11CC5D1", hash_generated_method = "D43C36989BCDE367AE8E54893D8C8DAE")
             
 public void setCardEmulationRoute(java.lang.String pkg, int route) throws android.os.RemoteException
 {
@@ -178,7 +184,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.618 -0500", hash_original_method = "ACB65093593AE31B8FA2F565E31DE8F0", hash_generated_method = "3EBEA2965C4C6A89B9021C8AC444C213")
+@DSSink({DSSinkKind.NFC})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.618 -0500", hash_original_method = "ACB65093593AE31B8FA2F565E31DE8F0", hash_generated_method = "3EBEA2965C4C6A89B9021C8AC444C213")
             
 public void authenticate(java.lang.String pkg, byte[] token) throws android.os.RemoteException
 {
@@ -213,13 +220,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.588 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NFC})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.588 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.591 -0500", hash_original_method = "43FE2A337D8D0168B5A31561A04826DF", hash_generated_method = "AEC5BE78745FF215A85033D6B65A6B7E")
+@DSSink({DSSinkKind.NFC})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:50.591 -0500", hash_original_method = "43FE2A337D8D0168B5A31561A04826DF", hash_generated_method = "AEC5BE78745FF215A85033D6B65A6B7E")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

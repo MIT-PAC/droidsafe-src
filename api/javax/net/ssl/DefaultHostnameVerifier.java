@@ -15,11 +15,6 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-
-
-
-
-
 class DefaultHostnameVerifier implements HostnameVerifier {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.377 -0500", hash_original_field = "CF832AED4ED292DEBA2E1483360AB57F", hash_generated_field = "3A751CA92898755F652261390A3F7AD7")
 
@@ -27,7 +22,6 @@ class DefaultHostnameVerifier implements HostnameVerifier {
           { "ac", "co", "com", "ed", "edu", "go", "gouv", "gov", "info",
             "lg", "ne", "net", "or", "org" };
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.557 -0400", hash_original_method = "1ABE3FCDF9FB32248BCD2F796A0E487C", hash_generated_method = "1ABE3FCDF9FB32248BCD2F796A0E487C")
     public DefaultHostnameVerifier ()
     {

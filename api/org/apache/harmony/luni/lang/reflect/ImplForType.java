@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 
-
-
-
-
-
 public final class ImplForType implements ParameterizedType {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.988 -0500", hash_original_field = "898CF09C9F13FDD87C219645175BB6C1", hash_generated_field = "22B7A856AFAF9B03C52198C74550F785")
 
@@ -32,7 +27,6 @@ public final class ImplForType implements ParameterizedType {
 
     private ClassLoader loader;
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.008 -0500", hash_original_method = "23B26279F59FD2756996C3E4E28C143C", hash_generated_method = "931AAC621CEF93AA134B7AF7581311CB")
     
 public ImplForType(ImplForType ownerType, String rawTypeName,
@@ -43,7 +37,7 @@ public ImplForType(ImplForType ownerType, String rawTypeName,
         this.loader = loader;
     }
 
-
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.011 -0500", hash_original_method = "467C0CA3F26F8ADD49B2C117FFDDE5B5", hash_generated_method = "33FDA3A2CE3AAA9B3851D022DD546ECA")
     
 public Type[] getActualTypeArguments() {
@@ -51,6 +45,7 @@ public Type[] getActualTypeArguments() {
         return args.getResolvedTypes().clone();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.013 -0500", hash_original_method = "607EB162392181215E5C2613EAFAE402", hash_generated_method = "17909C7E64462095813ED1B781EFFC23")
     
 public Type getOwnerType() {
@@ -64,6 +59,7 @@ public Type getOwnerType() {
         return ownerTypeRes;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.015 -0500", hash_original_method = "8C14A8DC9EE4FE0D18F10F9D13D7DE4A", hash_generated_method = "6F5E6EB400A4167EA3B6C46FC56C5A64")
     
 public Class getRawType() {
@@ -80,7 +76,7 @@ public Class getRawType() {
         return rawType;
     }
 
-
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.017 -0500", hash_original_method = "62DEF1F574FB703889CA718D111580A0", hash_generated_method = "62DEF1F574FB703889CA718D111580A0")
     
 Type getResolvedType() {
@@ -102,7 +98,6 @@ Type getResolvedType() {
         }
         return sb.toString();
     }
-
     
 }
 

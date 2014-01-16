@@ -18,13 +18,7 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BitString;
 import org.apache.harmony.security.x501.Name;
 
-
-
-
-
-
 public final class TBSCertificate {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.941 -0400", hash_original_field = "D7092AE3833E81A8348A8B7AF5B1AF9D", hash_generated_field = "6BC34EFC4439CF1F892B81CC2E73528B")
 
@@ -42,6 +36,7 @@ public final class TBSCertificate {
             setOptional(9);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.329 -0500", hash_original_method = "2B63D5268C80057DA518CE721B3C7CAE", hash_generated_method = "60B40A908E0C9ACD0F43DBD08FEF9097")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -156,6 +151,7 @@ private TBSCertificate(int version, BigInteger serialNumber,
     /**
      * Returns the value of version field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.299 -0500", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "0A6C4E4591BB9051C220BECC5445085D")
     
 public int getVersion() {
@@ -165,6 +161,7 @@ public int getVersion() {
     /**
      * Returns the value of serialNumber field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.302 -0500", hash_original_method = "9420C2CEA2A6F47D515C0AB0605412CD", hash_generated_method = "207C06B8E3C7AEAA1442B3B5D400DFA7")
     
 public BigInteger getSerialNumber() {
@@ -174,6 +171,7 @@ public BigInteger getSerialNumber() {
     /**
      * Returns the value of signature field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.305 -0500", hash_original_method = "DD6542667BFDE70B879F723105C92A71", hash_generated_method = "8983DBF8FD7CF97E2F3DB5F36F4DEF72")
     
 public AlgorithmIdentifier getSignature() {
@@ -183,6 +181,7 @@ public AlgorithmIdentifier getSignature() {
     /**
      * Returns the value of issuer field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.307 -0500", hash_original_method = "EBC299B5141657B108909E991892F54F", hash_generated_method = "F7EB58F964146EE4A9CA8F4132036285")
     
 public Name getIssuer() {
@@ -192,6 +191,7 @@ public Name getIssuer() {
     /**
      * Returns the value of validity field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.309 -0500", hash_original_method = "DAA501F00A793FDF912D8039C0483525", hash_generated_method = "0599A08D77F1A899D8345F9E4B253FCA")
     
 public Validity getValidity() {
@@ -201,6 +201,7 @@ public Validity getValidity() {
     /**
      * Returns the value of subject field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.311 -0500", hash_original_method = "01CA74A643B409E53785F17175CB2AB2", hash_generated_method = "7037021A45CF98F236A339130B97E1E4")
     
 public Name getSubject() {
@@ -210,6 +211,7 @@ public Name getSubject() {
     /**
      * Returns the value of subjectPublicKeyInfo field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.313 -0500", hash_original_method = "EE5B5FDD20BC2C4F67CD8D0C39F17B3D", hash_generated_method = "481470C7D7406472BB4A98FC1A53DE7B")
     
 public SubjectPublicKeyInfo getSubjectPublicKeyInfo() {
@@ -219,6 +221,7 @@ public SubjectPublicKeyInfo getSubjectPublicKeyInfo() {
     /**
      * Returns the value of issuerUniqueID field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.315 -0500", hash_original_method = "FFD3B59B457ECE2F283DE7A5AE2A1843", hash_generated_method = "DC60E3C07DD890B7189FCC8BFC8A6354")
     
 public boolean[] getIssuerUniqueID() {
@@ -228,6 +231,7 @@ public boolean[] getIssuerUniqueID() {
     /**
      * Returns the value of subjectUniqueID field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.318 -0500", hash_original_method = "7A561CAD271B493C1384E3B2691AA579", hash_generated_method = "1D2B632D191FB4F7DED88CD40620BB6A")
     
 public boolean[] getSubjectUniqueID() {
@@ -237,6 +241,7 @@ public boolean[] getSubjectUniqueID() {
     /**
      * Returns the value of extensions field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.320 -0500", hash_original_method = "160E3DAB15A775FB370B26EA87125324", hash_generated_method = "AC0E4A307C58CB40EC876A42E8BF125F")
     
 public Extensions getExtensions() {
@@ -246,6 +251,7 @@ public Extensions getExtensions() {
     /**
      * Returns ASN.1 encoded form of this X.509 TBSCertificate value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.322 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {
@@ -255,6 +261,7 @@ public byte[] getEncoded() {
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.325 -0500", hash_original_method = "20BC4358EC88862A49105AF5BBCC5ECB", hash_generated_method = "9E9A44C75B538FF763D0750FB902A026")
     
 public void dumpValue(StringBuilder sb) {

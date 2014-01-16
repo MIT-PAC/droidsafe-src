@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public final class Array {
 
     /**
@@ -29,6 +26,9 @@ public final class Array {
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code  index < 0 || index >= array.length}
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.893 -0500", hash_original_method = "DC819166ADE9A9BB796EBD77364A49D8", hash_generated_method = "B57FA28A23A3CBE2087765A9CBD0CB7A")
     
 public static Object get(Object array, int index)
@@ -121,6 +121,7 @@ public static boolean getBoolean(Object array, int index)
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code index < 0 || index >= array.length}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.900 -0500", hash_original_method = "B4311492402F851EAEF8E66ECE236930", hash_generated_method = "0AA22A962031A2D97CA8C12D8E0949C4")
     
 public static byte getByte(Object array, int index)
@@ -152,6 +153,7 @@ public static byte getByte(Object array, int index)
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code index < 0 || index >= array.length}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.903 -0500", hash_original_method = "F9750F8D4DCE07008B25C7B9487F8814", hash_generated_method = "B86F3A445EE7F35813E9E5F6EC113BD4")
     
 public static char getChar(Object array, int index)
@@ -187,6 +189,7 @@ public static char getChar(Object array, int index)
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code index < 0 || index >= array.length}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.905 -0500", hash_original_method = "50790AF08E26146F4B35A5889C5B3E01", hash_generated_method = "7CEC4F3CC0D7EEC9D77535675F4D890C")
     
 public static double getDouble(Object array, int index)
@@ -218,6 +221,7 @@ public static double getDouble(Object array, int index)
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code index < 0 || index >= array.length}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.908 -0500", hash_original_method = "688EF8AB88B411AE551AED0281953294", hash_generated_method = "A8F4F4E7676F5C9C1F8E4194AA6B6DDD")
     
 public static float getFloat(Object array, int index)
@@ -249,6 +253,7 @@ public static float getFloat(Object array, int index)
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code index < 0 || index >= array.length}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.911 -0500", hash_original_method = "5A8557FDE3B2AD2419DCA0873E4EC2DB", hash_generated_method = "BCBA513CC2B7EC43A10E7622F59DDF67")
     
 public static int getInt(Object array, int index)
@@ -274,6 +279,9 @@ public static int getInt(Object array, int index)
      * @throws IllegalArgumentException
      *             if {@code array} is not an array
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.914 -0500", hash_original_method = "01924EF6E2610B26238572C631DDDD41", hash_generated_method = "09C4DE3DCD0A88FB68A0D99BE393988C")
     
 public static int getLength(Object array) {
@@ -330,6 +338,7 @@ public static int getLength(Object array) {
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code index < 0 || index >= array.length}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.917 -0500", hash_original_method = "5A35E5A70189A9661FDF585F087D7AAE", hash_generated_method = "B619311A3C57FCC2206E764058DE5993")
     
 public static long getLong(Object array, int index)
@@ -361,6 +370,7 @@ public static long getLong(Object array, int index)
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code index < 0 || index >= array.length}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.919 -0500", hash_original_method = "4F5B502567D6D9A0FE26CC3AAC82FB87", hash_generated_method = "21D028DC552E779A896D9EBBA6CBF3EF")
     
 public static short getShort(Object array, int index)
@@ -392,6 +402,7 @@ public static short getShort(Object array, int index)
      *             if the array of dimensions is of size zero, or exceeds the
      *             limit of the number of dimension for an array (currently 255)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.922 -0500", hash_original_method = "9C554BC8C0AA11B64E6653FCAA15C2E7", hash_generated_method = "4A9297550B4F9160675971DAFB19C3B9")
     
 public static Object newInstance(Class<?> componentType, int... dimensions)
@@ -407,9 +418,7 @@ public static Object newInstance(Class<?> componentType, int... dimensions)
 
         return createMultiArray(componentType, dimensions);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Object createMultiArray(Class<?> componentType,
         int[] dimensions) throws NegativeArraySizeException {
     	Object ret = new Object();
@@ -434,6 +443,9 @@ public static Object newInstance(Class<?> componentType, int... dimensions)
      * @throws NegativeArraySizeException
      *             if {@code size < 0}
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.930 -0500", hash_original_method = "8C1FC94B96B7DFB690D4B009645E9D92", hash_generated_method = "7B175AE1219E00BE34100EB87DDF9825")
     
 public static Object newInstance(Class<?> componentType, int size)
@@ -470,9 +482,7 @@ public static Object newInstance(Class<?> componentType, int size)
         }
         throw new AssertionError();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Object createObjectArray(Class<?> componentType,
         int length) throws NegativeArraySizeException {
     	Object ret = new Object();
@@ -501,6 +511,9 @@ public static Object newInstance(Class<?> componentType, int size)
      * @throws ArrayIndexOutOfBoundsException
      *             if {@code  index < 0 || index >= array.length}
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.939 -0500", hash_original_method = "FADDAEE666A0FA8B6A8804C4360DADA9", hash_generated_method = "B34412158113A1AF647DBD12A67F2D85")
     
 public static void set(Object array, int index, Object value)
@@ -797,7 +810,6 @@ public static void setShort(Object array, int index, short value)
 private Array(){
         //do nothing
     }
-
     
 }
 

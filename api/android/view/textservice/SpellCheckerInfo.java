@@ -25,10 +25,6 @@ import android.os.Parcelable;
 import android.util.AttributeSet;
 import android.util.Xml;
 
-
-
-
-
 public final class SpellCheckerInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.760 -0500", hash_original_field = "CAFE3ED6B053B310C3D2FEEBC0BE5344", hash_generated_field = "B9C780B55162E0EEA102B93C8BE1103A")
 
@@ -162,16 +158,17 @@ public SpellCheckerInfo(Parcel source) {
      * Return a unique ID for this spell checker.  The ID is generated from
      * the package and class name implementing the method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.781 -0500", hash_original_method = "89A68E81BC93C5F428177630DB2A624A", hash_generated_method = "8F9FC8944DF69B66CB8D7A8B6ABB6416")
     
 public String getId() {
         return mId;
     }
 
-
     /**
      * Return the component of the service that implements.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.784 -0500", hash_original_method = "A035D08443F3F9853C50476F9CD3E50F", hash_generated_method = "2B97835D1618C71F40A014490410F857")
     
 public ComponentName getComponent() {
@@ -182,6 +179,7 @@ public ComponentName getComponent() {
     /**
      * Return the .apk package that implements this.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.786 -0500", hash_original_method = "0C90B853C75D6A321E7BDA40C2595177", hash_generated_method = "6994E25AD1E96805A7C2A499125900C0")
     
 public String getPackageName() {
@@ -194,6 +192,7 @@ public String getPackageName() {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.788 -0500", hash_original_method = "2F472510FA9E87ADC65F29887FB84501", hash_generated_method = "D4D43B62E449729D0528B748A3BE6CB3")
     
 @Override
@@ -228,11 +227,11 @@ public Drawable loadIcon(PackageManager pm) {
         return mService.loadIcon(pm);
     }
 
-
     /**
      * Return the raw information about the Service implementing this
      * spell checker.  Do not modify the returned object.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.804 -0500", hash_original_method = "543F99CB65CBDD66082E6D4B92910AC5", hash_generated_method = "1E6E8EA06F8EE7CE7231791DBE1C3740")
     
 public ServiceInfo getServiceInfo() {
@@ -248,6 +247,7 @@ public ServiceInfo getServiceInfo() {
      *
      * <p>A null will be returned if there is no settings activity.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.807 -0500", hash_original_method = "EE56873026FFE7A9D4435487CEBA8D19", hash_generated_method = "B6031419836B6E01A163B6457817552A")
     
 public String getSettingsActivity() {
@@ -257,6 +257,7 @@ public String getSettingsActivity() {
     /**
      * Return the count of the subtypes.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.809 -0500", hash_original_method = "CC228A570F36729F1778728092FDBD7B", hash_generated_method = "BF3C4168A920856FD17636F2E32450ED")
     
 public int getSubtypeCount() {
@@ -268,6 +269,7 @@ public int getSubtypeCount() {
      *
      * @param index the index of the subtype to return.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.811 -0500", hash_original_method = "A5CD061EE9765DD17A95FDAD389682DB", hash_generated_method = "3AA7C2644DB0FB4B71EE84D46A25EEFB")
     
 public SpellCheckerSubtype getSubtypeAt(int index) {

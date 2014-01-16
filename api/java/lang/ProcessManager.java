@@ -31,15 +31,10 @@ import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.util.MutableInt;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 final class ProcessManager {
-
     
-    @DSModeled(DSC.SAFE)
     private static int exec(String[] command, String[] environment,
             String workingDirectory, FileDescriptor in, FileDescriptor out,
             FileDescriptor err, boolean redirectErrorStream) throws IOException {
@@ -48,13 +43,13 @@ final class ProcessManager {
     }
 
     /** Gets the process manager. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.615 -0500", hash_original_method = "B41DB4FA1120B721DD670DFD65EC3117", hash_generated_method = "2CC82AAB217E781A411AC5965F8714CD")
     
 public static ProcessManager getInstance() {
         return instance;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.613 -0500", hash_original_field = "E88E23A0339006D35AC814B8C0C9D60B", hash_generated_field = "8D658FE2E05A9E4B2403457EE1E50872")
-
 
     private static final ProcessManager instance = new ProcessManager();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.530 -0500", hash_original_field = "4A9F08197610839E2D311F4656BF4C37", hash_generated_field = "1168B76BA43EB3A1C9C20A1EE6AADC71")
@@ -65,7 +60,6 @@ public static ProcessManager getInstance() {
 
     private final ProcessReferenceQueue referenceQueue = new ProcessReferenceQueue();
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.453 -0400", hash_original_method = "65B627E41D9F392064B029711B809D6A", hash_generated_method = "8F2C2A3FD38ED80D61DE63C94471BF94")
     private  ProcessManager() {
         Thread reaperThread = new Thread(ProcessManager.class.getName()) {
@@ -185,14 +179,12 @@ private void waitForMoreChildren() {
             }
         }
     }
-
     
     static class ProcessImpl extends Process {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.560 -0500", hash_original_field = "3D9A6B8E69012AA56F160CA7CCE3CF4F", hash_generated_field = "DBFF83134AA84403D6020EBC0053D7A1")
 
         private  int pid;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.562 -0500", hash_original_field = "FF138C3B799C70B3252924677C443956", hash_generated_field = "F3EEB1922B674B66C2C9C0F3C3CBC81D")
-
 
         private  InputStream errorStream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.566 -0500", hash_original_field = "219F81106B069BE15533E4B7BAC5527C", hash_generated_field = "92444C781A1F5D159CDAA9528EFB69D8")
@@ -244,18 +236,21 @@ public int exitValue() {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.583 -0500", hash_original_method = "DCE7BF5109CA162BD54D93588001BD51", hash_generated_method = "35E01D63A5F5E2CB917B76EB06BCC5C1")
         
 public InputStream getErrorStream() {
             return this.errorStream;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.586 -0500", hash_original_method = "DC1F0F5A793D1EF64AF6C7DB099DCE34", hash_generated_method = "045B7D54BB0AFFCC2F40B43FACDF9DCC")
         
 public InputStream getInputStream() {
             return this.inputStream;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.588 -0500", hash_original_method = "94C3B255D73CD61583B0AC248BC392B9", hash_generated_method = "5B8B07E552425D28CAC88F79CCC9D958")
         
 public OutputStream getOutputStream() {
@@ -273,6 +268,7 @@ public int waitFor() throws InterruptedException {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.593 -0500", hash_original_method = "B7D46CBA2679C4E3B0149113D5DCFB48", hash_generated_method = "B7D46CBA2679C4E3B0149113D5DCFB48")
         
 void setExitValue(int exitValue) {
@@ -288,15 +284,11 @@ void setExitValue(int exitValue) {
         public String toString() {
             return "Process[pid=" + pid + "]";
         }
-
         
     }
-
-
     
     static class ProcessReference extends WeakReference<ProcessImpl> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.600 -0500", hash_original_field = "E004204917AF1E5C42C1A06073D92523", hash_generated_field = "E004204917AF1E5C42C1A06073D92523")
-
 
          int processId;
 
@@ -306,15 +298,11 @@ public ProcessReference(ProcessImpl referent, ProcessReferenceQueue referenceQue
             super(referent, referenceQueue);
             this.processId = referent.pid;
         }
-
         
     }
-
-
     
     static class ProcessReferenceQueue extends ReferenceQueue<ProcessImpl> {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.465 -0400", hash_original_method = "862B9F300CC2459FB61E8AEDFA0DE051", hash_generated_method = "862B9F300CC2459FB61E8AEDFA0DE051")
         public ProcessReferenceQueue ()
         {
@@ -329,15 +317,11 @@ public ProcessReference(ProcessImpl referent, ProcessReferenceQueue referenceQue
             Object reference = super.poll();
             return (ProcessReference) reference;
         }
-
         
     }
-
-
     
     private static class ProcessInputStream extends FileInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.618 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
-
 
         private FileDescriptor fd;
 
@@ -364,15 +348,11 @@ private ProcessInputStream(FileDescriptor fd) {
                 }
             }
         }
-
         
     }
-
-
     
     private static class ProcessOutputStream extends FileOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.629 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
-
 
         private FileDescriptor fd;
 
@@ -399,13 +379,13 @@ private ProcessOutputStream(FileDescriptor fd) {
                 }
             }
         }
-
         
     }
 
     /**
      * Executes a process and returns an object representing it.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.556 -0500", hash_original_method = "3D8923075A9F95B30754D64C899AFA66", hash_generated_method = "BB59D398D3F667713061D80B34E12A3C")
     
 public Process exec(String[] taintedCommand, String[] taintedEnvironment, File workingDirectory,

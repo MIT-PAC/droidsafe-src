@@ -24,18 +24,14 @@ import libcore.icu.LocaleData;
 import libcore.icu.NativeDecimalFormat;
 import libcore.io.IoUtils;
 
-
-
-
-
 public final class Formatter implements Closeable, Flushable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.828 -0500", hash_original_field = "481409682F49E12073A8312D2241CF0A", hash_generated_field = "936B09C441C4FA32E24FFDE50779B4D5")
 
     private static final char[] ZEROS = new char[] { '0', '0', '0', '0', '0', '0', '0', '0', '0' };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.533 -0400", hash_original_field = "2E22D2BB824CAE76137397D7BB1A476C", hash_generated_field = "A22626209D6F7C1DAB7E829778351877")
 
-    private static final ThreadLocal<CachedDecimalFormat> cachedDecimalFormat = new ThreadLocal<CachedDecimalFormat>() {        
-        @DSModeled(DSC.SAFE)
+    private static final ThreadLocal<CachedDecimalFormat> cachedDecimalFormat = new ThreadLocal<CachedDecimalFormat>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:08.533 -0400", hash_original_method = "3BF85501572F336E7CB9026A6524A649", hash_generated_method = "1EC7F54F0E895EC060EFCA96009F4258")
         @Override
         protected CachedDecimalFormat initialValue() {
@@ -44,9 +40,7 @@ public final class Formatter implements Closeable, Flushable {
             varB4EAC82CA7396A68D541C85D26508E83_1389458477.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1389458477;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.833 -0500", hash_original_field = "968B872E966CD720BD66C6524EB8F888", hash_generated_field = "3DC9338DC786F95D1A95A8961D85A2A6")
@@ -536,6 +530,8 @@ public IOException ioException() {
      * @throws FormatterClosedException
      *             if the {@code Formatter} has been closed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.928 -0500", hash_original_method = "EE9FCF62B0D200225753D8BA586AA3F5", hash_generated_method = "C4D83BBCFDE4A21103D799255677161F")
     
 public Formatter format(String format, Object... args) {
@@ -1491,13 +1487,11 @@ private void transformG(StringBuilder result) {
             transformF(result);
         }
     }
-
     
     public enum BigDecimalLayoutForm {
         SCIENTIFIC,
         DECIMAL_FLOAT
     }
-
     
     private static class CachedDecimalFormat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.850 -0500", hash_original_field = "3879AF6134847E75DC69FA81FC5E83C6", hash_generated_field = "57B03D121D93C35DC4CD446F8684FFFD")
@@ -1515,6 +1509,7 @@ private void transformG(StringBuilder result) {
 public CachedDecimalFormat() {
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.860 -0500", hash_original_method = "784B3214258603820EA00D340F6FA563", hash_generated_method = "1CEA59D578CB0BC70F6D326AE69028BA")
         
 public NativeDecimalFormat update(LocaleData localeData, String pattern) {
@@ -1533,11 +1528,8 @@ public NativeDecimalFormat update(LocaleData localeData, String pattern) {
             }
             return decimalFormat;
         }
-
         
     }
-
-
     
     private static class FormatToken {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.942 -0500", hash_original_field = "1034ED376B9CE7AFECDABB8633010401", hash_generated_field = "1BAD064282D47A986023D9014C2CC686")
@@ -1545,22 +1537,17 @@ public NativeDecimalFormat update(LocaleData localeData, String pattern) {
         static final int LAST_ARGUMENT_INDEX = -2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.944 -0500", hash_original_field = "5EC817CD37AD06221688220B9719F247", hash_generated_field = "DE29D11B6980854EC22F3C15E7DA3A93")
 
-
         static final int UNSET = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.947 -0500", hash_original_field = "6CC503CB3A4F59C7D268F53881C4E777", hash_generated_field = "6514D206AC3CB1872EE1D615A4517002")
-
 
         static final int FLAGS_UNSET = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.950 -0500", hash_original_field = "F283ED3480F93B27A62C2341EAE8BFC4", hash_generated_field = "5A822570BEDDD49CF98C09711A50F2C5")
 
-
         static final int DEFAULT_PRECISION = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.952 -0500", hash_original_field = "EC86762E8E6BAAC1FFDEC14B5366BAE7", hash_generated_field = "9C5453ECCDBB9489F68E15932C42DB5C")
 
-
         static final int FLAG_ZERO = 1 << 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.954 -0500", hash_original_field = "1C8EE75F2FDF5A241BF584AA4E7F380A", hash_generated_field = "772417271F7F0BDFEA0E64414172A084")
-
 
         private int argIndex = UNSET;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.957 -0500", hash_original_field = "98479ABC53D035AE015748B6501BED19", hash_generated_field = "5FD21D85E4FA69DEC7ADDBE8881DD4B2")
@@ -1588,13 +1575,11 @@ public NativeDecimalFormat update(LocaleData localeData, String pattern) {
         boolean flagZero;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.972 -0500", hash_original_field = "00D05875EC9234EBE131D924AC26759B", hash_generated_field = "E9F667FE63992DF0A85E5D7A0685E01F")
 
-
         private char conversionType = (char) UNSET;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.975 -0500", hash_original_field = "221748B84F7BF298114DF8AA61DD5AC8", hash_generated_field = "6AC9B9E35F29643906A8717247B50CCB")
 
         private char dateSuffix;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.978 -0500", hash_original_field = "B39FA5AC1459207963DD56309C47ED42", hash_generated_field = "1A5EEC185E39D6E54480D34E352CE283")
-
 
         private int precision = UNSET;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.980 -0500", hash_original_field = "B7FC249EC0A2F898360BE8AE0E32982A", hash_generated_field = "7F084C83D0F1982A47DE9354FC0CF9F1")
@@ -1602,10 +1587,8 @@ public NativeDecimalFormat update(LocaleData localeData, String pattern) {
         private int width = UNSET;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.982 -0500", hash_original_field = "AEE43FE2CE39E86D95015273C6643E7E", hash_generated_field = "0527ECB4D15D76D63A180FF8CBB184B2")
 
-
         private StringBuilder strFlags;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:08.346 -0400", hash_original_method = "98998A93ECCA1CEE378BE6F5FF82B45F", hash_generated_method = "98998A93ECCA1CEE378BE6F5FF82B45F")
         public FormatToken ()
         {
@@ -1626,6 +1609,7 @@ boolean isPrecisionSet() {
             return precision != UNSET;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.989 -0500", hash_original_method = "3A74106121887CCA509F985D60DB5637", hash_generated_method = "3A74106121887CCA509F985D60DB5637")
         
 int getArgIndex() {
@@ -1638,6 +1622,7 @@ void setArgIndex(int index) {
             argIndex = index;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.994 -0500", hash_original_method = "40140C97EC91863535630C305615FEC1", hash_generated_method = "40140C97EC91863535630C305615FEC1")
         
 int getWidth() {
@@ -1650,6 +1635,7 @@ void setWidth(int width) {
             this.width = width;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:44.998 -0500", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "71BCDCF9E73C85D95AB18BEF6635FA18")
         
 int getPrecision() {
@@ -1662,6 +1648,7 @@ void setPrecision(int precise) {
             this.precision = precise;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.003 -0500", hash_original_method = "837A02C50E03265F058B23775F6F6197", hash_generated_method = "837A02C50E03265F058B23775F6F6197")
         
 String getStrFlags() {
@@ -1672,6 +1659,7 @@ String getStrFlags() {
          * Sets qualified char as one of the flags. If the char is qualified,
          * sets it as a flag and returns true. Or else returns false.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.006 -0500", hash_original_method = "E6ACD7E32E6ABC5AE16C357DB8116DB3", hash_generated_method = "396D2A5658270F2187B86860C13278C8")
         
 boolean setFlag(int ch) {
@@ -1720,6 +1708,7 @@ boolean setFlag(int ch) {
             return true;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.008 -0500", hash_original_method = "563B5213711441DEFA9BB3355CD61032", hash_generated_method = "563B5213711441DEFA9BB3355CD61032")
         
 char getConversionType() {
@@ -1732,6 +1721,7 @@ void setConversionType(char c) {
             conversionType = c;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.012 -0500", hash_original_method = "EE45DA1AFAF958B13872135C146745E9", hash_generated_method = "EE45DA1AFAF958B13872135C146745E9")
         
 char getDateSuffix() {
@@ -1892,8 +1882,6 @@ public UnknownFormatConversionException unknownFormatConversionException() {
             throw new UnknownFormatConversionException(String.valueOf(conversionType));
         }
     }
-
-
     
     private static class FormatSpecifierParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.106 -0500", hash_original_field = "9E5B91A51CAB853C854D305CDF095F62", hash_generated_field = "3AFBEC2146BDEA5BFCBD2772D27C43DD")
@@ -1903,7 +1891,6 @@ public UnknownFormatConversionException unknownFormatConversionException() {
 
         private int length;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.111 -0500", hash_original_field = "DD436961B9F44559E20E98178E4FCC9C", hash_generated_field = "4DF8ED554EC7B2C7483518163DCC894C")
-
 
         private int startIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.113 -0500", hash_original_field = "D6F1C227CD4638FDFF82091176AFA0F7", hash_generated_field = "DDFC4038967415E2F22993ABFD9A3B3F")
@@ -1936,6 +1923,7 @@ FormatToken parseFormatToken(int offset) {
          * Returns a string corresponding to the last format specifier that was parsed.
          * Used to construct error messages.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:45.120 -0500", hash_original_method = "7C388C74117CDF3E7844B526DC734D8C", hash_generated_method = "7C388C74117CDF3E7844B526DC734D8C")
         
 String getFormatSpecifierText() {
@@ -2073,7 +2061,6 @@ private int failNextInt() {
             }
             return FormatToken.UNSET;
         }
-
         
     }
 

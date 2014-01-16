@@ -6,15 +6,10 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
-
-
-
-
-
 public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implements Cloneable, Serializable {
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     public static <E extends Enum<E>> EnumSet<E> noneOf(Class<E> elementType) {
         if (!elementType.isEnum()) {
             throw new ClassCastException(elementType.getClass().getName() + " is not an Enum");
@@ -25,25 +20,21 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
         }
         return new HugeEnumSet<E>(elementType, enums);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> allOf(Class<E> elementType) {
         EnumSet<E> set = noneOf(elementType);
         set.complement();
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> copyOf(EnumSet<E> s) {
         EnumSet<E> set = EnumSet.noneOf(s.elementClass);
         set.addAll(s);
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static <E extends Enum<E>> EnumSet<E> copyOf(Collection<E> c) {
         if (c instanceof EnumSet) {
             return copyOf((EnumSet<E>) c);
@@ -60,56 +51,43 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
         }
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> complementOf(EnumSet<E> s) {
         EnumSet<E> set = EnumSet.noneOf(s.elementClass);
         set.addAll(s);
         set.complement();
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e) {
         EnumSet<E> set = EnumSet.noneOf(e.getDeclaringClass());
         set.add(e);
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e1, E e2) {
         EnumSet<E> set = of(e1);
         set.add(e2);
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e1, E e2, E e3) {
         EnumSet<E> set = of(e1, e2);
         set.add(e3);
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e1, E e2, E e3, E e4) {
         EnumSet<E> set = of(e1, e2, e3);
         set.add(e4);
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> of(E e1, E e2, E e3, E e4, E e5) {
         EnumSet<E> set = of(e1, e2, e3, e4);
         set.add(e5);
         return set;
     }
-
     
     public static <E extends Enum<E>> EnumSet<E> of(E start, E... others) {
         EnumSet<E> set = of(start);
@@ -118,9 +96,7 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
         }
         return set;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <E extends Enum<E>> EnumSet<E> range(E start, E end) {
         if (start.compareTo(end) > 0) {
             throw new IllegalArgumentException();
@@ -133,7 +109,6 @@ public abstract class EnumSet<E extends Enum<E>> extends AbstractSet<E> implemen
 
     private static final long serialVersionUID = 1009687484059888093L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.887 -0500", hash_original_field = "0757B9C0415F73A0D91556E8A81F8809", hash_generated_field = "0757B9C0415F73A0D91556E8A81F8809")
-
 
      Class<E> elementClass;
 
@@ -175,23 +150,18 @@ abstract void setRange(E start, E end);
 boolean isValidType(Class<?> cls) {
         return cls == elementClass || cls.getSuperclass() == elementClass;
     }
-
     
     private static class SerializationProxy<E extends Enum<E>> implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.931 -0500", hash_original_field = "590689D01799A1C2393FB3444EAC58BE", hash_generated_field = "E79FD2852CCA02DD45BA574EFFDAB459")
 
-
         private static final long serialVersionUID = 362491234563181265L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.934 -0500", hash_original_field = "D4653695FD4E6285822AB50E4AE9CD38", hash_generated_field = "BAFDB1CEF7FBA0865D5F65267AFDE26E")
-
 
         private Class<E> elementType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.936 -0500", hash_original_field = "FB10D604B5E15C042369D34E470EFDCF", hash_generated_field = "2E15D256D1A6512A2F0AF70544EADE97")
 
-
         private E[] elements;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:07.898 -0400", hash_original_method = "F430ADBE7D405D29614A0779FFE3FD6E", hash_generated_method = "F430ADBE7D405D29614A0779FFE3FD6E")
         public SerializationProxy ()
         {
@@ -209,6 +179,7 @@ private Object readResolve() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:34.943 -0500", hash_original_method = "3A8DA3E34FE3E13C123721386FD31559", hash_generated_method = "4102122C8CA6BFB91A0AAFAE0AD38EAD")
     
 @SuppressWarnings("unchecked")

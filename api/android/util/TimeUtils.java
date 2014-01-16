@@ -20,11 +20,6 @@ import android.content.res.XmlResourceParser;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
-
 public class TimeUtils {
 
     /**
@@ -32,6 +27,7 @@ public class TimeUtils {
      * and DST value at the specified moment in the specified country.
      * Returns null if no suitable zone could be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.934 -0500", hash_original_method = "4143CA31021B7F12CE34EDC73285920C", hash_generated_method = "3B66059A8DC5127D77FDB65651B5A6E0")
     
 public static TimeZone getTimeZone(int offset, boolean dst, long when, String country) {
@@ -121,6 +117,9 @@ public static TimeZone getTimeZone(int offset, boolean dst, long when, String co
      * is restarted.  Therefore, it is not necessary to re-query the database version
      * during the lifetime of an activity.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.936 -0500", hash_original_method = "1EDA04421B052D073A2A7549B576EB12", hash_generated_method = "BE0BB63257EE83C1BE5FB31F71FD083C")
     
 public static String getTimeZoneDatabaseVersion() {
@@ -286,7 +285,6 @@ public static void formatDuration(long time, long now, PrintWriter pw) {
     public static final int HUNDRED_DAY_FIELD_LEN = 19;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.941 -0500", hash_original_field = "CCF3D7934C5CF0E828DC919DE4C03FBB", hash_generated_field = "B4A690B48563C09FDB0833103369D4EF")
 
-
     private static final int SECONDS_PER_MINUTE = 60;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.944 -0500", hash_original_field = "B74C4AAABF949CC9638421C3FF2ED2F9", hash_generated_field = "EE6A9733E692805B2E523E6D33DA4ACC")
 
@@ -295,7 +293,6 @@ public static void formatDuration(long time, long now, PrintWriter pw) {
 
     private static final int SECONDS_PER_DAY = 24 * 60 * 60;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.949 -0500", hash_original_field = "57122C12B14FAFC205DF7ECFC3D203DA", hash_generated_field = "B62D876955C414BB9350CE4A9427EEC8")
-
 
     private static final Object sFormatSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.952 -0500", hash_original_field = "2C9FFE246E6936B3E5EBBCA18E32E183", hash_generated_field = "23A1022E9F725A0F3BAADDA607255C69")

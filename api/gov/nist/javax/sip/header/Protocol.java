@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public class Protocol extends SIPObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.849 -0500", hash_original_field = "0DE260D6A36CCF8999125C978C33AD00", hash_generated_field = "51FBF3C81D0285A3EC2B590DCDB910C8")
 
@@ -61,6 +56,7 @@ public StringBuffer encode(StringBuffer buffer) {
     /** get the protocol name
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.870 -0500", hash_original_method = "0EA6E7D3A9B59E59CEEBB8D3EE9D071C", hash_generated_method = "D7061D0695C2C4C3AAAA2E06D0E510DE")
     
 public String getProtocolName() {
@@ -70,6 +66,7 @@ public String getProtocolName() {
     /** get the protocol version
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.873 -0500", hash_original_method = "B8FA221EC0DA8944EFD0CEB861346936", hash_generated_method = "E98C0BF6FE7BE1220E5389C92E3DD540")
     
 public String getProtocolVersion() {
@@ -82,12 +79,14 @@ public String getProtocolVersion() {
      *
      * @return String : protocolname + '/' + version
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.877 -0500", hash_original_method = "3E5201C0CB5C46DC512CD40707A0CB06", hash_generated_method = "8C4ED23D1EEFD069E9D561B96D8FF7B9")
     
 public String getProtocol() {
         return protocolName + '/' + protocolVersion;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.880 -0500", hash_original_method = "095B78DD27D74EBF49777967A681F20E", hash_generated_method = "294E38CF2D32567761D38FD960FE5B84")
     
 public void setProtocol( String name_and_version ) throws ParseException {
@@ -101,6 +100,7 @@ public void setProtocol( String name_and_version ) throws ParseException {
     /** get the transport
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.883 -0500", hash_original_method = "43848E528F960D9C1F3B13D7D65AA4A4", hash_generated_method = "00BA105A025E226F3C987987A5F86CDE")
     
 public String getTransport() {

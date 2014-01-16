@@ -25,11 +25,6 @@ import com.android.internal.telephony.gsm.UsimServiceTable;
 import com.android.internal.telephony.ims.IsimRecords;
 import com.android.internal.telephony.test.SimulatedRadioControl;
 
-
-
-
-
-
 public class PhoneProxy extends Handler implements Phone {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.225 -0500", hash_original_method = "0B1698B355A404B2090D50EDC0CDBBB1", hash_generated_method = "1183BC7FE3BDC2AE5CE72B7E7F14E6BE")
@@ -42,13 +37,11 @@ private static void logd(String msg) {
     public final static Object lockForRadioTechnologyChange = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.214 -0500", hash_original_field = "FA286A806880F557FA2F91E6051D58CE", hash_generated_field = "54EE92F4B0FE4A4C30125103756EC93C")
 
-
     private static final int EVENT_RADIO_TECHNOLOGY_CHANGED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.217 -0500", hash_original_field = "F4446E751DD7D5E85FE650192A5E7AE4", hash_generated_field = "4A57918A348D50A14B9C302A7B5E80AE")
 
     private static final String LOG_TAG = "PHONE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.198 -0500", hash_original_field = "1068890E9C6D127AE7A4CC53E45E2D63", hash_generated_field = "79E1E1372DEBD73F7DC06CB339BF8515")
-
 
     private Phone mActivePhone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.200 -0500", hash_original_field = "1C1BE0F8AB5B5BD36DC96C6ADA057D44", hash_generated_field = "DDAC63588CE98849D5263880B7CCAB1C")
@@ -67,7 +60,6 @@ private static void logd(String msg) {
 
     private PhoneSubInfoProxy mPhoneSubInfoProxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.212 -0500", hash_original_field = "1BBE1ED87F57F7F30CFB2D9ADB5287CC", hash_generated_field = "BA1007FE924A9E554E78582269299C5A")
-
 
     private boolean mResetModemOnRadioTechnologyChange = false;
 
@@ -88,6 +80,7 @@ public PhoneProxy(Phone phone) {
                 this, EVENT_RADIO_TECHNOLOGY_CHANGED, null);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.223 -0500", hash_original_method = "E195EC1A1EABBEB6AA309412029DC755", hash_generated_method = "CD08DD6C0E587B0395672024A23CBE67")
     
 @Override
@@ -167,12 +160,14 @@ public PhoneProxy(Phone phone) {
         super.handleMessage(msg);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.227 -0500", hash_original_method = "F6146C48221B6AC50FCC99C2E0732890", hash_generated_method = "E1C32A65E2DC519576243B4684B05FE3")
     
 public ServiceState getServiceState() {
         return mActivePhone.getServiceState();
     }
 
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.230 -0500", hash_original_method = "977991957EA985C198AAE07D77598BC6", hash_generated_method = "0020C7A4B47D7882DD5EAE6AC3BD58A2")
     
 public CellLocation getCellLocation() {
@@ -197,6 +192,7 @@ public DataActivityState getDataActivityState() {
         return mActivePhone.getDataActivityState();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.239 -0500", hash_original_method = "22F8712EB30D49FEA52D38AA2D015573", hash_generated_method = "4F2478EC10483092D3CA291588D45F63")
     
 public Context getContext() {
@@ -221,42 +217,49 @@ public State getState() {
         return mActivePhone.getState();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.248 -0500", hash_original_method = "BA6A5305156A7886803B81E975A9F08E", hash_generated_method = "11A2854F87A9D78DEB632FFD82A97F9A")
     
 public String getPhoneName() {
         return mActivePhone.getPhoneName();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.251 -0500", hash_original_method = "3E62B25A79E53E7703B3567F76AD6B2A", hash_generated_method = "4782FD0BC1C494509A543CECD5DA7B1F")
     
 public int getPhoneType() {
         return mActivePhone.getPhoneType();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.253 -0500", hash_original_method = "300FDD9092F34E8971EBD6AE242E7025", hash_generated_method = "633B286617C9BDF62433F05F9CA45CCB")
     
 public String[] getActiveApnTypes() {
         return mActivePhone.getActiveApnTypes();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.256 -0500", hash_original_method = "DBB6D2A259790FC79B9F80AE021A760F", hash_generated_method = "1FEF8304A392837AB60A5492A8BA633A")
     
 public String getActiveApnHost(String apnType) {
         return mActivePhone.getActiveApnHost(apnType);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.258 -0500", hash_original_method = "7710C4C4432F211EFE7AD8A984CD2FB0", hash_generated_method = "20075A158CDDC9106BB2449A4DF8FA1E")
     
 public LinkProperties getLinkProperties(String apnType) {
         return mActivePhone.getLinkProperties(apnType);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.260 -0500", hash_original_method = "9EC4A02FBC847E33B8F7336E14FF2A4C", hash_generated_method = "70F8B93E8EFDA7A71DA6F2046064E86C")
     
 public LinkCapabilities getLinkCapabilities(String apnType) {
         return mActivePhone.getLinkCapabilities(apnType);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.263 -0500", hash_original_method = "10F86AA0A18CC6F6A539C498739147D9", hash_generated_method = "90A7ADAEBCAFD889B6EF5AFF627693FC")
     
 public SignalStrength getSignalStrength() {
@@ -347,12 +350,14 @@ public void unregisterForMmiComplete(Handler h) {
         mActivePhone.unregisterForMmiComplete(h);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.296 -0500", hash_original_method = "965809E4C7AF7ECD99BD9FF4F65AE728", hash_generated_method = "5B33AD1C9D2917FB542875DEBCD0DFB5")
     
 public List<? extends MmiCode> getPendingMmiCodes() {
         return mActivePhone.getPendingMmiCodes();
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.299 -0500", hash_original_method = "B939C63BC31CD003D961725459DB1D42", hash_generated_method = "0A717926D68E1243C23A03372680ABDA")
     
 public void sendUssdResponse(String ussdMessge) {
@@ -479,12 +484,14 @@ public void unregisterForResendIncallMute(Handler h) {
         mActivePhone.unregisterForResendIncallMute(h);
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.346 -0500", hash_original_method = "573CC92F3418BCFB0FF251AE3595504E", hash_generated_method = "846F997537110AE9D32EC9D0A102CAEC")
     
 public boolean getIccRecordsLoaded() {
         return mActivePhone.getIccRecordsLoaded();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.348 -0500", hash_original_method = "ED5011C4FD69C3E6F976A9BF6511614B", hash_generated_method = "50D46D5865F59AAB7941CDA5EEA93273")
     
 public IccCard getIccCard() {
@@ -521,12 +528,14 @@ public void conference() throws CallStateException {
         mActivePhone.conference();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.361 -0500", hash_original_method = "A5A7E6BB7B283912DDE8630491120174", hash_generated_method = "0CD0EDDB956D1FFE8F5349BA81E77F2E")
     
 public void enableEnhancedVoicePrivacy(boolean enable, Message onComplete) {
         mActivePhone.enableEnhancedVoicePrivacy(enable, onComplete);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.363 -0500", hash_original_method = "54592304AB72D14126CEC7573AE57082", hash_generated_method = "A0486DFF30C9B86F71CFBA8C4E2B666C")
     
 public void getEnhancedVoicePrivacy(Message onComplete) {
@@ -551,30 +560,35 @@ public void clearDisconnected() {
         mActivePhone.clearDisconnected();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.373 -0500", hash_original_method = "87919758DEFE651AC6D6A949AA5E8BE1", hash_generated_method = "0A43051139CBFD09E4A2F9AE7AA39C35")
     
 public Call getForegroundCall() {
         return mActivePhone.getForegroundCall();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.375 -0500", hash_original_method = "79059A2027409AA40012045BC12C74F8", hash_generated_method = "539EDF7560CCE674AA6F5FD6710FD1F8")
     
 public Call getBackgroundCall() {
         return mActivePhone.getBackgroundCall();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.377 -0500", hash_original_method = "25A6B759039431C26AB250FD612D30B1", hash_generated_method = "FA5DCBD469AA5F837274623ED9BCAF18")
     
 public Call getRingingCall() {
         return mActivePhone.getRingingCall();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.379 -0500", hash_original_method = "BB7BA0AEA89C9F082B060BF7F91AA704", hash_generated_method = "558B67B8CC14996AEFAF37256E93C73E")
     
 public Connection dial(String dialString) throws CallStateException {
         return mActivePhone.dial(dialString);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.381 -0500", hash_original_method = "5DE617D800B1B829CA4E6A4F18F6EB08", hash_generated_method = "798718B9434B2461FB7C1CA85C82A97B")
     
 public Connection dial(String dialString, UUSInfo uusInfo) throws CallStateException {
@@ -593,12 +607,14 @@ public boolean handleInCallMmiCommands(String command) throws CallStateException
         return mActivePhone.handleInCallMmiCommands(command);
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.389 -0500", hash_original_method = "0B6C232D6E8256028E4E830B46E0C865", hash_generated_method = "A6319772CDD5A928CADEEF7BB11453C4")
     
 public void sendDtmf(char c) {
         mActivePhone.sendDtmf(c);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.391 -0500", hash_original_method = "0BF246784E14D976C00B34F2293C9DD9", hash_generated_method = "E21F35FAFFC8DC2FE98157DE722E244B")
     
 public void startDtmf(char c) {
@@ -611,30 +627,35 @@ public void stopDtmf() {
         mActivePhone.stopDtmf();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.396 -0500", hash_original_method = "06BEA46EB33C17C0D8EC097176162A12", hash_generated_method = "230E56FD2B81AA961F3487BE7472AA65")
     
 public void setRadioPower(boolean power) {
         mActivePhone.setRadioPower(power);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.398 -0500", hash_original_method = "A0C1C046E248344C729559EE414F342E", hash_generated_method = "C809DB2FB56893C7FEAB86407AB7BD2B")
     
 public boolean getMessageWaitingIndicator() {
         return mActivePhone.getMessageWaitingIndicator();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.400 -0500", hash_original_method = "F1A2FB70EC1DACCE7F0918B592265B15", hash_generated_method = "71D339EF12037939481724EECDC5E959")
     
 public boolean getCallForwardingIndicator() {
         return mActivePhone.getCallForwardingIndicator();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.402 -0500", hash_original_method = "1CAA7F0C710838B237CC4DA5C7E7A33A", hash_generated_method = "14E41EC14008CD7172C3815B1C3BB16D")
     
 public String getLine1Number() {
         return mActivePhone.getLine1Number();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.404 -0500", hash_original_method = "10EAA774600B04568EE091121E794971", hash_generated_method = "A8E6B74D4E080188CF672C4E59D071E2")
     
 public String getCdmaMin() {
@@ -647,24 +668,28 @@ public boolean isMinInfoReady() {
         return mActivePhone.isMinInfoReady();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.408 -0500", hash_original_method = "67E2C83E9DB650D3B6C51CD69583EDC3", hash_generated_method = "D4EE3E3DC3C915E258CAC7DEF4753BA8")
     
 public String getCdmaPrlVersion() {
         return mActivePhone.getCdmaPrlVersion();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.411 -0500", hash_original_method = "120E431958E44A5C955EC29DDD87D928", hash_generated_method = "E0EE6D161708AB4F05999054CAB7C775")
     
 public String getLine1AlphaTag() {
         return mActivePhone.getLine1AlphaTag();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.413 -0500", hash_original_method = "26770037AE4E2E1515FF2F3BB6F4CF17", hash_generated_method = "54B1237E553480FB3B53024D422DA8AF")
     
 public void setLine1Number(String alphaTag, String number, Message onComplete) {
         mActivePhone.setLine1Number(alphaTag, number, onComplete);
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.415 -0500", hash_original_method = "E98C356F195960A9D5230053710E4E64", hash_generated_method = "DAD5822C1408196DA335A2EC05F68903")
     
 public String getVoiceMailNumber() {
@@ -672,18 +697,21 @@ public String getVoiceMailNumber() {
     }
 
      /** @hide */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.418 -0500", hash_original_method = "D1C747624B6D1D0F21E7BC1753211E26", hash_generated_method = "394E9406B998EC43EAD04F1264E73B31")
     
 public int getVoiceMessageCount(){
         return mActivePhone.getVoiceMessageCount();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.420 -0500", hash_original_method = "FC3451D7762D06B58ED1AC6B8DC91C9B", hash_generated_method = "7365E7BD35372D2455726387B036EEF4")
     
 public String getVoiceMailAlphaTag() {
         return mActivePhone.getVoiceMailAlphaTag();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.423 -0500", hash_original_method = "522282B12A2B688AADF5447531A6EC32", hash_generated_method = "FFF02E26966313C96F2D640853F4E61B")
     
 public void setVoiceMailNumber(String alphaTag,String voiceMailNumber,
@@ -691,6 +719,7 @@ public void setVoiceMailNumber(String alphaTag,String voiceMailNumber,
         mActivePhone.setVoiceMailNumber(alphaTag, voiceMailNumber, onComplete);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.425 -0500", hash_original_method = "86E14C93495E4C2EB6232D120A78ED3F", hash_generated_method = "E8BC5A6779A756722FB589A80CE69EB7")
     
 public void getCallForwardingOption(int commandInterfaceCFReason,
@@ -699,6 +728,7 @@ public void getCallForwardingOption(int commandInterfaceCFReason,
                 onComplete);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.427 -0500", hash_original_method = "CBFC5803992D2E6608C59A2C061F78E7", hash_generated_method = "4DC11D1A2AD4BA4F031842DF9294F284")
     
 public void setCallForwardingOption(int commandInterfaceCFReason,
@@ -708,12 +738,14 @@ public void setCallForwardingOption(int commandInterfaceCFReason,
             commandInterfaceCFAction, dialingNumber, timerSeconds, onComplete);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.429 -0500", hash_original_method = "AF286AD09BEA2798BEC2DEED1333B02E", hash_generated_method = "F283B14FACC83182FCDB83DC97905951")
     
 public void getOutgoingCallerIdDisplay(Message onComplete) {
         mActivePhone.getOutgoingCallerIdDisplay(onComplete);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.432 -0500", hash_original_method = "4DB15912E84A1437FA732CF441FE9BE5", hash_generated_method = "CB06D75E2BF3FE107EB2571DE735976C")
     
 public void setOutgoingCallerIdDisplay(int commandInterfaceCLIRMode,
@@ -722,24 +754,28 @@ public void setOutgoingCallerIdDisplay(int commandInterfaceCLIRMode,
                 onComplete);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.434 -0500", hash_original_method = "D7C353092E0E02293EE7D1F380F106FD", hash_generated_method = "8E116F179D20D68FED55665057815634")
     
 public void getCallWaiting(Message onComplete) {
         mActivePhone.getCallWaiting(onComplete);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.436 -0500", hash_original_method = "4A6B6036C75BD72C377A9C63DDB5DDAF", hash_generated_method = "06BEEE11B88508C7E6B0482187E44573")
     
 public void setCallWaiting(boolean enable, Message onComplete) {
         mActivePhone.setCallWaiting(enable, onComplete);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.438 -0500", hash_original_method = "A6F1CB8E89876C00E820BBE51B2BA46A", hash_generated_method = "7B8B0C852108510439F3F518457DEDC5")
     
 public void getAvailableNetworks(Message response) {
         mActivePhone.getAvailableNetworks(response);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.441 -0500", hash_original_method = "CCC0383764181B21DD71B0C7CBFA3583", hash_generated_method = "33E6FA101DE11E56C0DA84D07CBCAF87")
     
 public void setNetworkSelectionModeAutomatic(Message response) {
@@ -752,42 +788,49 @@ public void selectNetworkManually(OperatorInfo network, Message response) {
         mActivePhone.selectNetworkManually(network, response);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.445 -0500", hash_original_method = "4679FCD51F20EB924517A4780BB13924", hash_generated_method = "F578163665646A38D4BB7B9DC24E22AA")
     
 public void setPreferredNetworkType(int networkType, Message response) {
         mActivePhone.setPreferredNetworkType(networkType, response);
     }
 
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.447 -0500", hash_original_method = "25A22EEE8A64E80AD17264AC62119D91", hash_generated_method = "D6D7B5C81F85D6803682C7455434F19B")
     
 public void getPreferredNetworkType(Message response) {
         mActivePhone.getPreferredNetworkType(response);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.449 -0500", hash_original_method = "E237054E620C95355A936DB3AA0C64E2", hash_generated_method = "A0EA2E7F5F94D7DC98AEDB120AAE5211")
     
 public void getNeighboringCids(Message response) {
         mActivePhone.getNeighboringCids(response);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.451 -0500", hash_original_method = "AC14A905F8FF05A176B475E869B2A375", hash_generated_method = "00B20914D5C614E3F4343BCF7C975327")
     
 public void setOnPostDialCharacter(Handler h, int what, Object obj) {
         mActivePhone.setOnPostDialCharacter(h, what, obj);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.453 -0500", hash_original_method = "65FAB3F7948B788B5C89AC1B14A02C8D", hash_generated_method = "6FAECACE7AEACC7EC22F28DC9AD250FA")
     
 public void setMute(boolean muted) {
         mActivePhone.setMute(muted);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.456 -0500", hash_original_method = "F6AD30CE89308E5CF22664B8E215DF6B", hash_generated_method = "C4676135DECC15F197B5A6C37ACFAF61")
     
 public boolean getMute() {
         return mActivePhone.getMute();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.458 -0500", hash_original_method = "5715B1A91F99F5BB1F5D5EE2C48B0CC1", hash_generated_method = "E68551AB05767B1F9E1DCF44E3EDEC0E")
     
 public void setEchoSuppressionEnabled(boolean enabled) {
@@ -806,6 +849,7 @@ public void invokeOemRilRequestStrings(String[] strings, Message response) {
         mActivePhone.invokeOemRilRequestStrings(strings, response);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.466 -0500", hash_original_method = "1D5FCE6DD20C83C80CF156CE692CB4A6", hash_generated_method = "20861EB69959797301A1D2C3302B688C")
     
 public void getDataCallList(Message response) {
@@ -830,18 +874,21 @@ public void disableLocationUpdates() {
         mActivePhone.disableLocationUpdates();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.475 -0500", hash_original_method = "457D206E05D563816C5855FA476861B2", hash_generated_method = "740F9C8E1466F7C328BF1E501D0FA20F")
     
 public void setUnitTestMode(boolean f) {
         mActivePhone.setUnitTestMode(f);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.477 -0500", hash_original_method = "F2E5760DFB518C3EC61CEE553486D36A", hash_generated_method = "D042E046BC84E8F72ECCECF68D08D8F2")
     
 public boolean getUnitTestMode() {
         return mActivePhone.getUnitTestMode();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.479 -0500", hash_original_method = "23052B91D3CA97C96F37F6B3A4F34CD6", hash_generated_method = "A40E9CE9444EE6CB9CB6B36F7DBC90C8")
     
 public void setBandMode(int bandMode, Message response) {
@@ -854,12 +901,14 @@ public void queryAvailableBandMode(Message response) {
         mActivePhone.queryAvailableBandMode(response);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.483 -0500", hash_original_method = "83A00455A700B137B9490650D9F36B9D", hash_generated_method = "9AE70BA49EA5406CAFE4A696F0856099")
     
 public boolean getDataRoamingEnabled() {
         return mActivePhone.getDataRoamingEnabled();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.486 -0500", hash_original_method = "E1705A991A7EDCAB74DCBA7B48CAC41D", hash_generated_method = "95D4BE15FD4480960610B5CC85FD5291")
     
 public void setDataRoamingEnabled(boolean enable) {
@@ -872,24 +921,28 @@ public void queryCdmaRoamingPreference(Message response) {
         mActivePhone.queryCdmaRoamingPreference(response);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.491 -0500", hash_original_method = "1FC93ADA8B13CFFC5239004F3B3CB0B5", hash_generated_method = "AE97FFC68C3EC4F9F6E571EA27D0F85B")
     
 public void setCdmaRoamingPreference(int cdmaRoamingType, Message response) {
         mActivePhone.setCdmaRoamingPreference(cdmaRoamingType, response);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.493 -0500", hash_original_method = "8C53B1B8D1D6A38DA0E604956F179C6D", hash_generated_method = "3494A06F0B172E359EA528DDCC88A903")
     
 public void setCdmaSubscription(int cdmaSubscriptionType, Message response) {
         mActivePhone.setCdmaSubscription(cdmaSubscriptionType, response);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.495 -0500", hash_original_method = "1088387CE055184E1F97FE6BBA54FF58", hash_generated_method = "B9F9DAB8E7DADB9CF0D5BBC7B4EA85FA")
     
 public SimulatedRadioControl getSimulatedRadioControl() {
         return mActivePhone.getSimulatedRadioControl();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.497 -0500", hash_original_method = "75BC6DC84B42C3A26CA665761D0F7A10", hash_generated_method = "676A0B617F87BA7ECEED53EB44EE7F26")
     
 public int enableApnType(String type) {
@@ -914,72 +967,84 @@ public boolean isDataConnectivityPossible(String apnType) {
         return mActivePhone.isDataConnectivityPossible(apnType);
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.506 -0500", hash_original_method = "3998BBC7D6E7B86D0EF695C7689974F8", hash_generated_method = "C216D6B18090B91E0BA4349E6C5F7AD3")
     
 public String getDeviceId() {
         return mActivePhone.getDeviceId();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.508 -0500", hash_original_method = "76EAEF0E66F2A9BBE4717FE73F5ED353", hash_generated_method = "DA6148C1328EAF4FC24B0A21D92DE21C")
     
 public String getDeviceSvn() {
         return mActivePhone.getDeviceSvn();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.512 -0500", hash_original_method = "1ECAE2CD43CA09CB9212F2988BDE6FBC", hash_generated_method = "B28AF85C618F087DC9AB3E263780A1CD")
     
 public String getSubscriberId() {
         return mActivePhone.getSubscriberId();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.515 -0500", hash_original_method = "8CEEEC6C5657CF093EC5C2CD2B317EA0", hash_generated_method = "3B86863F47B13CF7A33B1AB99894B9BA")
     
 public String getIccSerialNumber() {
         return mActivePhone.getIccSerialNumber();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.517 -0500", hash_original_method = "2D1CB2879A81E8F3B8DDFCA9A2C2729E", hash_generated_method = "2A250161B2346C132DD6827C39004949")
     
 public String getEsn() {
         return mActivePhone.getEsn();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.519 -0500", hash_original_method = "52D33A8014F33FDF48C4849E35A302B8", hash_generated_method = "8E75050322151BDE8E45A159EE97E528")
     
 public String getMeid() {
         return mActivePhone.getMeid();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.521 -0500", hash_original_method = "3CACCFD581E76689B35FC9516D7D6722", hash_generated_method = "CECF983ECCD001E1BED8EB7F6CEADF3D")
     
 public String getMsisdn() {
         return mActivePhone.getMsisdn();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.523 -0500", hash_original_method = "AA62493265BE82E1EA914E3BCF7156B9", hash_generated_method = "63BE1F9AACBA700162F0392CFAFDD900")
     
 public String getImei() {
         return mActivePhone.getImei();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.525 -0500", hash_original_method = "F690EA9868154CE135715DACD9F934BA", hash_generated_method = "1C771E545F581D5052679DBAB4AD6605")
     
 public PhoneSubInfo getPhoneSubInfo(){
         return mActivePhone.getPhoneSubInfo();
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.527 -0500", hash_original_method = "086F5D99D445443CC50FFF4E863848F2", hash_generated_method = "B995BB30649A610D9C40FE1770116BAC")
     
 public IccSmsInterfaceManager getIccSmsInterfaceManager(){
         return mActivePhone.getIccSmsInterfaceManager();
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.529 -0500", hash_original_method = "60C2E0B4179F9AE0AB8C22122916C887", hash_generated_method = "85290E03DA28458F5C3355C981497593")
     
 public IccPhoneBookInterfaceManager getIccPhoneBookInterfaceManager(){
         return mActivePhone.getIccPhoneBookInterfaceManager();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.532 -0500", hash_original_method = "BF3B8B247068D4ADEA1F37A9B4F54BEE", hash_generated_method = "38F7AFE09A535B420B0BA9069EF83AA0")
     
 public void setTTYMode(int ttyMode, Message onComplete) {
@@ -998,12 +1063,14 @@ public void activateCellBroadcastSms(int activate, Message response) {
         mActivePhone.activateCellBroadcastSms(activate, response);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.539 -0500", hash_original_method = "8568141E62F764FB2C60CDDD3F5BE824", hash_generated_method = "691CB3F7495F9C5DF97634C27AC7A60A")
     
 public void getCellBroadcastSmsConfig(Message response) {
         mActivePhone.getCellBroadcastSmsConfig(response);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.542 -0500", hash_original_method = "94113A359AA9972971ECDC1E12DDE1DF", hash_generated_method = "624E5D26EBCA4A5045D66C6CB9BBA00A")
     
 public void setCellBroadcastSmsConfig(int[] configValuesArray, Message response) {
@@ -1016,42 +1083,49 @@ public void notifyDataActivity() {
          mActivePhone.notifyDataActivity();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.546 -0500", hash_original_method = "7EA1DF4C3C9340F77B51ED8AAF4D9915", hash_generated_method = "7807775D68B0CE954ECD40729B8C1593")
     
 public void getSmscAddress(Message result) {
         mActivePhone.getSmscAddress(result);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.548 -0500", hash_original_method = "FB2B0BAB94F6FB8614046C8030FDB583", hash_generated_method = "9826455BD2A7123369CF064E854705D6")
     
 public void setSmscAddress(String address, Message result) {
         mActivePhone.setSmscAddress(address, result);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.551 -0500", hash_original_method = "7E642731976316851883AF453F0DE9D1", hash_generated_method = "FDC68F35276C1DC919C21AFE4B82D826")
     
 public int getCdmaEriIconIndex() {
         return mActivePhone.getCdmaEriIconIndex();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.553 -0500", hash_original_method = "E4FB10ACB3B935577FCA6097A2878CDF", hash_generated_method = "900EE81327798720BA6252DB19FDC8BF")
     
 public String getCdmaEriText() {
         return mActivePhone.getCdmaEriText();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.555 -0500", hash_original_method = "D2EB202C2A6C92D481F95F578A41184F", hash_generated_method = "2B5158B61A68AC417230C960C2A757B5")
     
 public int getCdmaEriIconMode() {
         return mActivePhone.getCdmaEriIconMode();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.557 -0500", hash_original_method = "C3F5107FB4E93BC1C37D52CD5D46B8CE", hash_generated_method = "8B723A6A9301CBBC05D94C3760D67944")
     
 public Phone getActivePhone() {
         return mActivePhone;
     }
 
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.559 -0500", hash_original_method = "DBD858F210C7F2CCF40F9ECFF3F5960C", hash_generated_method = "8AAAB0D88123EB606FB8E196D2F2F63F")
     
 public void sendBurstDtmf(String dtmfString, int on, int off, Message onComplete){
@@ -1172,6 +1246,7 @@ public void unregisterForT53AudioControlInfo(Handler h) {
         mActivePhone.unregisterForT53AudioControlInfo(h);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.606 -0500", hash_original_method = "41133F4DD588507965EC315DCBBFF060", hash_generated_method = "44FA23284BFF62215497FB5E34D9E72B")
     
 public void setOnEcbModeExitResponse(Handler h, int what, Object obj){
@@ -1190,6 +1265,7 @@ public boolean isCspPlmnEnabled() {
         return mActivePhone.isCspPlmnEnabled();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.612 -0500", hash_original_method = "6B3F3727C6E27C1D7509403503E192DB", hash_generated_method = "BBEFFABA9C47E3ED13A7C0AE8C5ED6BA")
     
 public IsimRecords getIsimRecords() {
@@ -1205,6 +1281,7 @@ public void requestIsimAuthentication(String nonce, Message response) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.616 -0500", hash_original_method = "941A6F344732C9909039B3394C47476B", hash_generated_method = "5B70C9D3BF54D2660A7C27B4C48218C8")
     
 @Override
@@ -1212,6 +1289,7 @@ public void requestIsimAuthentication(String nonce, Message response) {
         return mActivePhone.getLteOnCdmaMode();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.619 -0500", hash_original_method = "76C4D60AAD82037C8D80BAFC420E4BE1", hash_generated_method = "98588777C17F2021E6E5E07FB5C213E1")
     
 @Override
@@ -1219,6 +1297,7 @@ public void requestIsimAuthentication(String nonce, Message response) {
         mActivePhone.setVoiceMessageWaiting(line, countWaiting);
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:09.622 -0500", hash_original_method = "7E67422BCCEADCFE06A679F5EB930FDC", hash_generated_method = "B0C383E9C52AB3A6F52876270B282094")
     
 @Override

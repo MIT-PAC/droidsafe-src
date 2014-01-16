@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class PrefixPrinter implements Printer {
 
     /**
@@ -39,12 +35,12 @@ private PrefixPrinter(Printer printer, String prefix) {
         mPrefix = prefix;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.599 -0500", hash_original_method = "278C97F139303CC78C423B9DD8BE836F", hash_generated_method = "880245808C15DF5AD2EB2520DF36F7F5")
     
 public void println(String str) {
         mPrinter.println(mPrefix + str);
     }
-
     
 }
 

@@ -23,11 +23,6 @@ import gov.nist.javax.sip.message.SIPResponse;
 import java.io.UnsupportedEncodingException;
 import java.text.ParseException;
 
-
-
-
-
-
 public class StringMsgParser {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.470 -0500", hash_original_method = "E55ED4E8D45A4ED321FE77BA414F4370", hash_generated_method = "078D6A91AF2AFA0E63B3A8F35C2A98A2")
@@ -36,8 +31,6 @@ public static void setComputeContentLengthFromMessage(
             boolean computeContentLengthFromMessage) {
         StringMsgParser.computeContentLengthFromMessage = computeContentLengthFromMessage;
     }
-
-
 
     /**
      * Test code.
@@ -125,10 +118,8 @@ public static void main(String[] args) throws ParseException {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.422 -0500", hash_original_field = "F0B5F632149A7F653D7F41A22A1ADA42", hash_generated_field = "A4CB644B81B9880592D43A90E29E3123")
 
-
     private static boolean computeContentLengthFromMessage = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.412 -0500", hash_original_field = "634C12985CE6ECEC1246829FA58BCD72", hash_generated_field = "7E0AA0556EE34EDC1E14E7271C2271D7")
-
 
     protected boolean readBody;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.414 -0500", hash_original_field = "39B3B432102584B1DCF65A99D4A9A6D5", hash_generated_field = "1B834CF99672F368DBE005CE727DA4BD")
@@ -402,7 +393,7 @@ public SIPMessage parseSIPMessage(String msgString) throws ParseException {
                  if ( strict ) {
                      throw new ParseException("Extraneous characters at the end of the message ",i);
                  }
-             } 
+             }
 
         }
 
@@ -613,6 +604,7 @@ public GenericURI parseUrl(String url) throws ParseException {
      * @exception ParseException
      *                if there was an error parsing the message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.462 -0500", hash_original_method = "6152413E77E62620D4330DAF5944A1B1", hash_generated_method = "08F4CAC237F3618F93B18A9A4E1E9CA1")
     
 public SIPHeader parseSIPHeader(String header) throws ParseException {

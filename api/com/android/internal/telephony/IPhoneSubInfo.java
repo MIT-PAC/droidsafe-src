@@ -17,7 +17,8 @@ private static final java.lang.String DESCRIPTOR = "com.android.internal.telepho
  * Cast an IBinder object into an com.android.internal.telephony.IPhoneSubInfo interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.176 -0500", hash_original_method = "10BDF9FA5C8C3CD66DD32BC8788172C4", hash_generated_method = "77EB9ED3EF9994F138004C7DE0A0A940")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.176 -0500", hash_original_method = "10BDF9FA5C8C3CD66DD32BC8788172C4", hash_generated_method = "77EB9ED3EF9994F138004C7DE0A0A940")
         
 public static com.android.internal.telephony.IPhoneSubInfo asInterface(android.os.IBinder obj)
 {
@@ -56,7 +57,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.194 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.194 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -65,7 +67,8 @@ return DESCRIPTOR;
 /**
      * Retrieves the unique device ID, e.g., IMEI for GSM phones.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.196 -0500", hash_original_method = "65744AF5DBCE0B9D6D98059D1D3FAF66", hash_generated_method = "24384C238F2FEBED45639BD8F3ACB9E1")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.196 -0500", hash_original_method = "65744AF5DBCE0B9D6D98059D1D3FAF66", hash_generated_method = "24384C238F2FEBED45639BD8F3ACB9E1")
             
 public java.lang.String getDeviceId() throws android.os.RemoteException
 {
@@ -88,7 +91,8 @@ return _result;
      * Retrieves the software version number for the device, e.g., IMEI/SV
      * for GSM phones.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.199 -0500", hash_original_method = "B79489F6155D0EA7CA2FD341614F611C", hash_generated_method = "0E3083E716F91C56916FB930D32BB0E4")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.199 -0500", hash_original_method = "B79489F6155D0EA7CA2FD341614F611C", hash_generated_method = "0E3083E716F91C56916FB930D32BB0E4")
             
 public java.lang.String getDeviceSvn() throws android.os.RemoteException
 {
@@ -110,7 +114,8 @@ return _result;
 /**
      * Retrieves the unique sbuscriber ID, e.g., IMSI for GSM phones.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.203 -0500", hash_original_method = "D5111E08142C3FDFF0A178F153D643B1", hash_generated_method = "29F7D0DBA3B9284E2E6546C43477CC97")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.203 -0500", hash_original_method = "D5111E08142C3FDFF0A178F153D643B1", hash_generated_method = "29F7D0DBA3B9284E2E6546C43477CC97")
             
 public java.lang.String getSubscriberId() throws android.os.RemoteException
 {
@@ -132,7 +137,8 @@ return _result;
 /**
      * Retrieves the serial number of the ICC, if applicable.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.206 -0500", hash_original_method = "EFE96A589FAB726A2DAC72FA60339D3E", hash_generated_method = "9C2582BD8689BDB40B5C3B49CB0F5944")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.206 -0500", hash_original_method = "EFE96A589FAB726A2DAC72FA60339D3E", hash_generated_method = "9C2582BD8689BDB40B5C3B49CB0F5944")
             
 public java.lang.String getIccSerialNumber() throws android.os.RemoteException
 {
@@ -154,7 +160,8 @@ return _result;
 /**
      * Retrieves the phone number string for line 1.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.208 -0500", hash_original_method = "AF2DE59FB7AE604ED58655004545795B", hash_generated_method = "756DAD2458150A1DA5CFE879419D7E32")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.208 -0500", hash_original_method = "AF2DE59FB7AE604ED58655004545795B", hash_generated_method = "756DAD2458150A1DA5CFE879419D7E32")
             
 public java.lang.String getLine1Number() throws android.os.RemoteException
 {
@@ -176,7 +183,8 @@ return _result;
 /**
      * Retrieves the alpha identifier for line 1.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.211 -0500", hash_original_method = "157B837F1A43690F94312AB376F3D0AA", hash_generated_method = "FAD3E937BE248BB8FC962FB32B0B6538")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.211 -0500", hash_original_method = "157B837F1A43690F94312AB376F3D0AA", hash_generated_method = "FAD3E937BE248BB8FC962FB32B0B6538")
             
 public java.lang.String getLine1AlphaTag() throws android.os.RemoteException
 {
@@ -198,7 +206,8 @@ return _result;
 /**
      * Retrieves MSISDN Number.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.214 -0500", hash_original_method = "467AF8F43FBF9FE6FC4330AC85227759", hash_generated_method = "2DC3C2255097724AF058B762EC2BBF41")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.214 -0500", hash_original_method = "467AF8F43FBF9FE6FC4330AC85227759", hash_generated_method = "2DC3C2255097724AF058B762EC2BBF41")
             
 public java.lang.String getMsisdn() throws android.os.RemoteException
 {
@@ -220,7 +229,8 @@ return _result;
 /**
      * Retrieves the voice mail number.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.217 -0500", hash_original_method = "0F8B01FD42886F0F73AC0E3D3578DE6F", hash_generated_method = "D251A385BEC83BA37A0B9771D201936F")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.217 -0500", hash_original_method = "0F8B01FD42886F0F73AC0E3D3578DE6F", hash_generated_method = "D251A385BEC83BA37A0B9771D201936F")
             
 public java.lang.String getVoiceMailNumber() throws android.os.RemoteException
 {
@@ -242,7 +252,8 @@ return _result;
 /**
      * Retrieves the complete voice mail number.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.220 -0500", hash_original_method = "4035A12AB3A7C86C04A72003EAD769F5", hash_generated_method = "2CC1F6A9615867A8FC53FB2621407764")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.220 -0500", hash_original_method = "4035A12AB3A7C86C04A72003EAD769F5", hash_generated_method = "2CC1F6A9615867A8FC53FB2621407764")
             
 public java.lang.String getCompleteVoiceMailNumber() throws android.os.RemoteException
 {
@@ -264,7 +275,8 @@ return _result;
 /**
      * Retrieves the alpha identifier associated with the voice mail number.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.222 -0500", hash_original_method = "E2A061D1660455865738FB6B9B2DE798", hash_generated_method = "5AC7AC52CF3D4BD85F38141E813E72C5")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.222 -0500", hash_original_method = "E2A061D1660455865738FB6B9B2DE798", hash_generated_method = "5AC7AC52CF3D4BD85F38141E813E72C5")
             
 public java.lang.String getVoiceMailAlphaTag() throws android.os.RemoteException
 {
@@ -287,7 +299,8 @@ return _result;
      * Returns the IMS private user identity (IMPI) that was loaded from the ISIM.
      * @return the IMPI, or null if not present or not loaded
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.224 -0500", hash_original_method = "25FC15DEA5E6AC7E8B0567781EDDCD0A", hash_generated_method = "3B4E4546B111DB6AE7C9E6922AF3E34E")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.224 -0500", hash_original_method = "25FC15DEA5E6AC7E8B0567781EDDCD0A", hash_generated_method = "3B4E4546B111DB6AE7C9E6922AF3E34E")
             
 public java.lang.String getIsimImpi() throws android.os.RemoteException
 {
@@ -310,7 +323,8 @@ return _result;
      * Returns the IMS home network domain name that was loaded from the ISIM.
      * @return the IMS domain name, or null if not present or not loaded
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.227 -0500", hash_original_method = "F69E5EE22231791ABF991ACA52DE6C54", hash_generated_method = "F19CBCB260214D67BB206AD31D37A5E1")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.227 -0500", hash_original_method = "F69E5EE22231791ABF991ACA52DE6C54", hash_generated_method = "F19CBCB260214D67BB206AD31D37A5E1")
             
 public java.lang.String getIsimDomain() throws android.os.RemoteException
 {
@@ -334,7 +348,8 @@ return _result;
      * @return an array of IMPU strings, with one IMPU per string, or null if
      *      not present or not loaded
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.230 -0500", hash_original_method = "4ACFF3291EAA3DCDA25B98C23487474C", hash_generated_method = "82BB4A25FF6EE5ED812FCCEC980EE230")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.230 -0500", hash_original_method = "4ACFF3291EAA3DCDA25B98C23487474C", hash_generated_method = "82BB4A25FF6EE5ED812FCCEC980EE230")
             
 public java.lang.String[] getIsimImpu() throws android.os.RemoteException
 {
@@ -391,7 +406,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.179 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.179 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

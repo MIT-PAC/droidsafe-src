@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class IntBuffer extends Buffer implements Comparable<IntBuffer> {
 
     /**
@@ -40,6 +36,8 @@ public static IntBuffer allocate(int capacity) {
      *            the int array which the new buffer will be based on.
      * @return the created int buffer.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.111 -0500", hash_original_method = "69AB4E308DD923986E8AB96AF4F625AA", hash_generated_method = "6C1B3D0124340296BE544158357DB7B0")
     
 public static IntBuffer wrap(int[] array) {
@@ -233,6 +231,7 @@ public abstract int get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.140 -0500", hash_original_method = "257B404B7D2C714566C75E4EA0767CA2", hash_generated_method = "788107F6E76274CC5C6266D6CB7F4F9A")
     
 public IntBuffer get(int[] dst) {
@@ -258,6 +257,7 @@ public IntBuffer get(int[] dst) {
      * @exception BufferUnderflowException
      *                if {@code intCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.143 -0500", hash_original_method = "72F522BE346D267FC1DB76B8F081AACA", hash_generated_method = "F757E7BF7AB4D20D9AF94C8418AF12DA")
     
 public IntBuffer get(int[] dst, int dstOffset, int intCount) {
@@ -421,6 +421,7 @@ public final IntBuffer put(int[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.170 -0500", hash_original_method = "E12C5DD5606B4F94202BB1F980DCA32C", hash_generated_method = "D8E8482E479EA8A948E3AD114397F08C")
     
 public IntBuffer put(int[] src, int srcOffset, int intCount) {
@@ -501,7 +502,6 @@ public abstract IntBuffer put(int index, int i);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.178 -0500", hash_original_method = "B9F3B2A9702898038CC25336B74676C0", hash_generated_method = "3B6DA994D8723384D96B2E09D6E6434C")
     
 public abstract IntBuffer slice();
-
     
 }
 

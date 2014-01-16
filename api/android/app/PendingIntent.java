@@ -17,10 +17,6 @@ import android.os.Parcelable;
 import android.os.RemoteException;
 import android.util.AndroidException;
 
-
-
-
-
 public final class PendingIntent implements Parcelable {
 
     /**
@@ -45,6 +41,9 @@ public final class PendingIntent implements Parcelable {
      * parameters.  May return null only if {@link #FLAG_NO_CREATE} has been
      * supplied.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.420 -0500", hash_original_method = "69D22A82CA352429278AB66C9EC4D269", hash_generated_method = "95BB43864FAB78706EBCD8B6F60963D4")
     
 public static PendingIntent getActivity(Context context, int requestCode,
@@ -106,6 +105,9 @@ public static PendingIntent getActivity(Context context, int requestCode,
      * parameters.  May return null only if {@link #FLAG_NO_CREATE} has been
      * supplied.
      */
+    @DSComment("IPC activity")
+    @DSSpec(DSCat.IPC)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.423 -0500", hash_original_method = "54CC706903E6C235969DAB2CC8228B77", hash_generated_method = "BE46BD134F3641199D92CC24DA371D50")
     
 public static PendingIntent getActivities(Context context, int requestCode,
@@ -146,6 +148,9 @@ public static PendingIntent getActivities(Context context, int requestCode,
      * parameters.  May return null only if {@link #FLAG_NO_CREATE} has been
      * supplied.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.426 -0500", hash_original_method = "7ECBF28DE75BC4F2B5047057DCC1075B", hash_generated_method = "41701B886985ED16AB2AB3DED8138C7A")
     
 public static PendingIntent getBroadcast(Context context, int requestCode,
@@ -186,6 +191,9 @@ public static PendingIntent getBroadcast(Context context, int requestCode,
      * parameters.  May return null only if {@link #FLAG_NO_CREATE} has been
      * supplied.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.428 -0500", hash_original_method = "ABFD2E080CD8663BF6E26BE6876274AD", hash_generated_method = "D979B054426B7D588BDD63C2E93DE780")
     
 public static PendingIntent getService(Context context, int requestCode,
@@ -214,6 +222,7 @@ public static PendingIntent getService(Context context, int requestCode,
      * @param sender The PendingIntent to write, or null.
      * @param out Where to write the PendingIntent.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.472 -0500", hash_original_method = "22B62015BE969BA5F8FF4277748534BD", hash_generated_method = "9C4F52F75D02CD3BE3C38AA5172500C5")
     
 public static void writePendingIntentOrNullToParcel(PendingIntent sender,
@@ -289,6 +298,7 @@ PendingIntent(IBinder target) {
      * @return Returns a IntentSender object that wraps the sender of PendingIntent
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.430 -0500", hash_original_method = "D9A9ECA0CF76712CB3C35292E7994C6B", hash_generated_method = "CC4CE09BF8F43AD6ADBEBE35CB9D4209")
     
 public IntentSender getIntentSender() {
@@ -299,6 +309,8 @@ public IntentSender getIntentSender() {
      * Cancel a currently active PendingIntent.  Only the original application
      * owning an PendingIntent can cancel it.
      */
+    @DSComment("other application can control this intent")
+    @DSSafe(DSCat.IPC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.433 -0500", hash_original_method = "7E47A257CCD629A0D7E43A8ADD34CCE8", hash_generated_method = "920E8C7E84F34DAC3321073AE18A2854")
     
 public void cancel() {
@@ -332,6 +344,9 @@ public void send() throws CanceledException {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.437 -0500", hash_original_method = "46F134C18EE926B408E7E9C21011E590", hash_generated_method = "CB8910838B2370E2E3A768D7BF8F1FFE")
     
 public void send(int code) throws CanceledException {
@@ -353,6 +368,7 @@ public void send(int code) throws CanceledException {
      * @throws CanceledException Throws CanceledException if the PendingIntent
      * is no longer allowing more intents to be sent through it.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.439 -0500", hash_original_method = "43E1DC288109C397E82F23215BE8AF8A", hash_generated_method = "6A32A838B0D449ABCB7226D14EC8E406")
     
 public void send(Context context, int code, Intent intent)
@@ -488,6 +504,7 @@ public void send(Context context, int code, Intent intent,
      * @return The package name of the PendingIntent, or null if there is
      * none associated with it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.449 -0500", hash_original_method = "1AE048A4984F76615C0EAE5393ABDA6D", hash_generated_method = "D3A6F32790B99E339D9B68926FE71FFC")
     
 public String getTargetPackage() {
@@ -535,7 +552,6 @@ public boolean isTargetedToPackage() {
         }
         return false;
     }
-
     
     public static class CanceledException extends AndroidException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.382 -0500", hash_original_method = "6C791280BC05C3F7B11A7004B8EB7BE8", hash_generated_method = "76984C31773ED74269A80CE848B3D28D")
@@ -554,11 +570,8 @@ public CanceledException(String name) {
 public CanceledException(Exception cause) {
             super(cause);
         }
-
         
     }
-
-
     
     private static class FinishedDispatcher extends IIntentReceiver.Stub implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.395 -0500", hash_original_field = "7B47F6D668EAC8B29A4C2C64F0EA44AC", hash_generated_field = "094D5D79D03F65D4515938385B22FFF9")
@@ -609,11 +622,8 @@ public void run() {
             mWho.onSendFinished(mPendingIntent, mIntent, mResultCode,
                     mResultData, mResultExtras);
         }
-
         
     }
-
-
     
     public interface OnFinished {
         
@@ -654,6 +664,7 @@ public void writeToParcel(Parcel out, int flags) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:29.482 -0500", hash_original_method = "5A73019C5B7699A011E114A766F68ECD", hash_generated_method = "147FBD3908885E3E49DD8E1224C6EDEA")
     
 public IIntentSender getTarget() {

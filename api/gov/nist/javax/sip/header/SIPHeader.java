@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class SIPHeader extends SIPObject implements SIPHeaderNames, javax.sip.header.Header, HeaderExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.599 -0500", hash_original_field = "BD66DD28721A718F4DADB56502A74024", hash_generated_field = "A59FED2AE4AD2264FB1F7BF89553485D")
 
@@ -37,6 +33,7 @@ public SIPHeader() {
      * Name of the SIPHeader
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.608 -0500", hash_original_method = "62BB7D98AC3AE2D1B44BF4A9C83BFCEA", hash_generated_method = "8D7B8212F3DDA267E3A24EF98F5AC7A2")
     
 public String getHeaderName() {
@@ -48,6 +45,7 @@ public String getHeaderName() {
     *@return String headerName
     *
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.611 -0500", hash_original_method = "5A8D65821D08B5534EF9F59F256EB0ED", hash_generated_method = "F3F8F203B82F62163ACC77D3355FEA39")
     
 public String getName() {
@@ -68,6 +66,7 @@ public void setHeaderName(String hdrname) {
     * This merely goes through and lops off the portion that follows
     * the headerName:
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.618 -0500", hash_original_method = "4978FCECCFF9CE458180DF94EDCE0642", hash_generated_method = "FCB193E0683631BB976684F1A86447F1")
     
 public String getHeaderValue() {
@@ -98,6 +97,7 @@ public boolean isHeaderList() {
 
     /** Encode this header into canonical form.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.625 -0500", hash_original_method = "A36333A6F745F23182438BFF478F971C", hash_generated_method = "3E83C3693072E036EE6283AD07E42258")
     
 public String encode() {
@@ -123,6 +123,7 @@ protected abstract String encodeBody();
     /** Encode the body of this header in the given buffer.
      * Default implementation calls encodeBody();
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.634 -0500", hash_original_method = "112FD4376D79389C2460FE6A980E7021", hash_generated_method = "C2FBC8B466424D6A5EC6C31025CEB4A3")
     
 protected StringBuffer encodeBody(StringBuffer buffer) {
@@ -131,6 +132,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
 
     /** Alias for getHeaderValue.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.637 -0500", hash_original_method = "B7F53CD18FD7F00B77483EF4A0589C59", hash_generated_method = "FE4CCB69A52E6D45457CE3913B02387C")
     
 public String getValue() {
@@ -147,12 +149,12 @@ public int hashCode() {
         return this.headerName.hashCode();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.643 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "EF12A656DE467EE951401443200E525A")
     
 public final String toString() {
         return this.encode();
     }
-
     
 }
 

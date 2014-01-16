@@ -19,15 +19,8 @@ import android.util.Xml;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
-
 public class SpnOverride {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.014 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
-
-
 
     static final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.017 -0500", hash_original_field = "97CFD8EB4FAB8256217AB19827F26F14", hash_generated_field = "571B447F908349646546615F3EBC7F9A")
@@ -50,6 +43,7 @@ boolean containsCarrier(String carrier) {
         return CarrierSpnMap.containsKey(carrier);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:27.023 -0500", hash_original_method = "DEBF8ECBE1690451B3CAF7E732385AF7", hash_generated_method = "DEBF8ECBE1690451B3CAF7E732385AF7")
     
 String getSpn(String carrier) {

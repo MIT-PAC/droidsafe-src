@@ -11,10 +11,6 @@ import gov.nist.core.InternalErrorHandler;
 import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
-
-
-
-
 public abstract class SIPObject extends GenericObject {
 
     /** default Constructor
@@ -24,8 +20,6 @@ public abstract class SIPObject extends GenericObject {
 protected SIPObject() {
         super();
     }
-
-
 
     /** Debug function
      */
@@ -267,6 +261,7 @@ public boolean match(Object other) {
      * of the other objects in this class.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.447 -0500", hash_original_method = "8C7E8103DEE2671781774C37BABA3BB5", hash_generated_method = "43ACE820E048560DD88C790458E7EB59")
     
 public String debugDump() {
@@ -378,13 +373,12 @@ public String debugDump(int indent) {
         return retval;
     }
 
-
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.453 -0500", hash_original_method = "9121421793EC5D37F14A312213FF0274", hash_generated_method = "0E38B803B5F7EA7FC3B7A952B8C48B78")
     
 public String toString() {
         return this.encode();
     }
-
     
 }
 

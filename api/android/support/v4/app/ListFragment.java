@@ -20,10 +20,6 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-
-
-
-
 public class ListFragment extends Fragment {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.803 -0500", hash_original_field = "F8DC49C3B8185836D79D5F6CC333D2B4", hash_generated_field = "D35812CB4DF51387A3967109DF8D7790")
 
@@ -35,20 +31,17 @@ public class ListFragment extends Fragment {
 
     static final int INTERNAL_LIST_CONTAINER_ID = 0x00ff0003;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.811 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "ED5BAD7C7A1EC83F341419B29A267C9F")
-
     
     final private Handler mHandler = new Handler();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.048 -0400", hash_original_field = "F487762B42FCD79D908F11802425F9AE", hash_generated_field = "2191C8C7F9D27D78D192D12C39499CAC")
 
-    final private Runnable mRequestFocus = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    final private Runnable mRequestFocus = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.048 -0400", hash_original_method = "4F290F2508C3F0B44E09591C5B0749BC", hash_generated_method = "203642A5324F5F18B21A0D020E65FD5C")
         public void run() {
             mList.focusableViewAvailable(mList);
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:46.049 -0400", hash_original_field = "9B3F30A71979D6623D111E114AFFBE5E", hash_generated_field = "11A57FDB212BDD905BF1B62417E937BB")
@@ -63,13 +56,10 @@ public class ListFragment extends Fragment {
             addTaint(position);
             addTaint(id);
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.824 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "CBDD62EF585589E92C0E00AE9F4F22E2")
-
 
     ListAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.826 -0500", hash_original_field = "A5B73AC2B922200A8C47FEAA8C3EB07A", hash_generated_field = "A5B73AC2B922200A8C47FEAA8C3EB07A")

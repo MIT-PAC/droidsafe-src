@@ -5,46 +5,34 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class AudioSystem {
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.744 -0500", hash_original_method = "2786D5971392BD395FA0BE76E8A7A088", hash_generated_method = "1E0EA87DE076318BBA62FD552AF198AF")
     
 public static final int getNumStreamTypes() { return NUM_STREAM_TYPES; }
-
     
-    @DSModeled(DSC.SAFE)
     public static int muteMicrophone(boolean on) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756309994 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1756309994;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isMicrophoneMuted() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_177342172 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_177342172;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isStreamActive(int stream, int inPastMs) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1331802538 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1331802538;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int setParameters(String keyValuePairs) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1860833902 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1860833902;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getParameters(String keys) {
     	return new String();
     }
@@ -81,72 +69,52 @@ private static void errorCallbackFromNative(int error)
             errorCallback.onError(error);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int setDeviceConnectionState(int device, int state, String device_address) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_187799177 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_187799177;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getDeviceConnectionState(int device, String device_address) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11225308 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_11225308;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int setPhoneState(int state) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995969536 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_995969536;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int setRingerMode(int mode, int mask) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1507481703 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1507481703;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int setForceUse(int usage, int config) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429176203 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1429176203;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getForceUse(int usage) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138645 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2138645;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int initStreamVolume(int stream, int indexMin, int indexMax) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593650950 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1593650950;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int setStreamVolumeIndex(int stream, int index) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1515598909 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1515598909;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getStreamVolumeIndex(int stream) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458088729 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_458088729;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getDevicesForStream(int stream) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65095384 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_65095384;
@@ -159,7 +127,6 @@ private static void errorCallbackFromNative(int error)
      */
     /* The audio stream for phone calls */
     public static final int STREAM_VOICE_CALL = 0;
-
     
     public interface ErrorCallback
     {
@@ -254,10 +221,8 @@ private static void errorCallbackFromNative(int error)
     public static final int AUDIO_STATUS_SERVER_DIED = 100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.814 -0500", hash_original_field = "9675E0D45065C18F07BE6D8299914033", hash_generated_field = "04DD76D9C83EA526A955FFA1C319E553")
 
-
     private static ErrorCallback mErrorCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:31.825 -0500", hash_original_field = "4FD03E87EEEA3D4DBD058586B9BF6D6E", hash_generated_field = "B6FA6F190527A2F2163A5841A5D7B7D7")
-
 
     // output devices, be sure to update AudioManager.java also
     public static final int DEVICE_OUT_EARPIECE = 0x1;

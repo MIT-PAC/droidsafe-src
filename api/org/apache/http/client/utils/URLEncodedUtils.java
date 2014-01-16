@@ -169,7 +169,6 @@ private static String encode (final String content, final String encoding) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.444 -0500", hash_original_field = "8CE1BE1F9E7F5E0ECDCE17C227A60463", hash_generated_field = "CA39D07C989D4F189D6186A6BE8AC2A2")
 
-
     public static final String CONTENT_TYPE = "application/x-www-form-urlencoded";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.447 -0500", hash_original_field = "BE30E2F1EF3EC80109603C450CC5D69C", hash_generated_field = "EADEDF186CBE5B5EA18ADAA5F38884BA")
 
@@ -178,7 +177,6 @@ private static String encode (final String content, final String encoding) {
 
     private static final String NAME_VALUE_SEPARATOR = "=";
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-09-18 10:03:54.756 -0400", hash_original_method = "81DBDF8E46C8CBBC080FA6A7719DA672", hash_generated_method = "81DBDF8E46C8CBBC080FA6A7719DA672")
     public URLEncodedUtils ()
     {

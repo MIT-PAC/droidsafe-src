@@ -12,10 +12,6 @@ import javax.security.auth.x500.X500Principal;
 
 import libcore.io.Streams;
 
-
-
-
-
 public class CertificateRequest extends Message {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.030 -0500", hash_original_field = "052660BD096960D182ED14500388945C", hash_generated_field = "052660BD096960D182ED14500388945C")
 
@@ -94,6 +90,7 @@ public CertificateRequest(HandshakeIODataStream in, int length) throws IOExcepti
      *
      * @param out
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.046 -0500", hash_original_method = "B75D6FC2C98C385FE0F3914F9044B1F0", hash_generated_method = "AFC1647D93FCCD35E1201C8E70FF4F45")
     
 @Override
@@ -119,6 +116,7 @@ public CertificateRequest(HandshakeIODataStream in, int length) throws IOExcepti
      *
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.049 -0500", hash_original_method = "B8B86D3685160AFFAE5E6FB9770B1A60", hash_generated_method = "221471CAB0DE2EE19C5273E572DFDE8E")
     
 @Override
@@ -129,6 +127,7 @@ public CertificateRequest(HandshakeIODataStream in, int length) throws IOExcepti
     /**
      * Returns requested certificate types as array of strings
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:07.051 -0500", hash_original_method = "9259963BD630FBE5E6BDCDC2C1D8D491", hash_generated_method = "1393503D5ABC060257DCF4F37D4B18CB")
     
 public String[] getTypesAsString() {
@@ -145,7 +144,6 @@ public String[] getTypesAsString() {
         }
         return types;
     }
-
     
 }
 

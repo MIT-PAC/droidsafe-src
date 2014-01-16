@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.crypto.Cipher;
 
-
-
-
-
-
 public abstract class ConnectionState {
 
     /**
@@ -51,7 +46,6 @@ protected static void incSequenceNumber(byte[] seq_num) {
     protected final byte[] read_seq_num = {0, 0, 0, 0, 0, 0, 0, 0};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.871 -0500", hash_original_field = "16399394529F4E1101CB1267B59A8CF1", hash_generated_field = "20CDF3CF116D1709E473D472063662F7")
 
-
     protected Logger.Stream logger = Logger.getStream("conn_state");
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:31.311 -0400", hash_original_method = "88641B04B82E21943FBE8D6E4F07DC57", hash_generated_method = "88641B04B82E21943FBE8D6E4F07DC57")
@@ -65,6 +59,7 @@ protected static void incSequenceNumber(byte[] seq_num) {
      * Generic[Stream|Generic]Cipher structure under this
      * connection state.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.873 -0500", hash_original_method = "A4712167FB5CF3F93D986A297FF936DF", hash_generated_method = "76A50EF9052D170FF6A2BDD0D851B148")
     
 protected int getMinFragmentSize() {
@@ -76,6 +71,7 @@ protected int getMinFragmentSize() {
      * Returns the size of the Generic[Stream|Generic]Cipher structure
      * corresponding to the content data of specified size.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.875 -0500", hash_original_method = "DD3B7DF1039350512C674DDBBC384DAA", hash_generated_method = "E6BE36078D083E4DBD9620DEDD605C5B")
     
 protected int getFragmentSize(int content_size) {
@@ -87,6 +83,7 @@ protected int getFragmentSize(int content_size) {
      * into the Generic[Stream|Generic]Cipher structure of specified size.
      * For stream ciphers the returned value will be exact value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.877 -0500", hash_original_method = "1E3397EF0AF5BC858955A8504765F190", hash_generated_method = "6A05FF6314EB5C241917F5BB9744C0B7")
     
 protected int getContentSize(int generic_cipher_size) {
@@ -100,6 +97,7 @@ protected int getContentSize(int generic_cipher_size) {
      * content up to the required block size. Assumes power of two
      * block size.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.879 -0500", hash_original_method = "56D34079E1DEB6511460268571012285", hash_generated_method = "A0B1D361809AEB51D3FE355435E102CA")
     
 protected int getPaddingSize(int content_size) {
@@ -114,6 +112,7 @@ protected int getPaddingSize(int content_size) {
      * @param fragment - the byte array containing the
      * data to be encrypted under the current connection state.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.881 -0500", hash_original_method = "0AD5A21CD5938B7890C178E88EF1C886", hash_generated_method = "F0983B657BF580079AFB1A227E779D06")
     
 protected byte[] encrypt(byte type, byte[] fragment) {
@@ -141,6 +140,7 @@ protected abstract byte[] encrypt
      * @param fragment - the byte array containing the
      * data to be encrypted under the current connection state.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.887 -0500", hash_original_method = "4CD2779F027BE7D5E16F48C0F5195279", hash_generated_method = "16F51084DF8803493075EFFA252F5F81")
     
 protected byte[] decrypt(byte type, byte[] fragment) {
@@ -175,7 +175,6 @@ protected void shutdown() {
             read_seq_num[i] = 0;
         }
     }
-
     
 }
 

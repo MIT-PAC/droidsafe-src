@@ -5,13 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class AnimatorListenerAdapter implements Animator.AnimatorListener {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.968 -0400", hash_original_method = "577D05693184EE178A20150D84A37CD4", hash_generated_method = "577D05693184EE178A20150D84A37CD4")
-        @DSModeled(DSC.SAFE)
+        
     public AnimatorListenerAdapter ()
     {
         //Synthesized constructor
@@ -52,7 +49,6 @@ public abstract class AnimatorListenerAdapter implements Animator.AnimatorListen
 @Override
     public void onAnimationStart(Animator animation) {
     }
-
     
 }
 

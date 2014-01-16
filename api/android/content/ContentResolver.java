@@ -36,8 +36,6 @@ import android.util.EventLog;
 import android.util.Log;
 import dalvik.system.CloseGuard;
 
-
-
 import droidsafe.concrete.DSCursor;
 
 public abstract class ContentResolver {
@@ -157,6 +155,7 @@ public static void cancelSync(Account account, String authority) {
      * Get information about the SyncAdapters that are known to the system.
      * @return an array of SyncAdapters that have registered with the system
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.236 -0500", hash_original_method = "73E621DB5CBC41567953829AD086C09E", hash_generated_method = "6CB02123789FCFB0C1AA6EADC4A389C1")
     
 public static SyncAdapterType[] getSyncAdapterTypes() {
@@ -174,6 +173,7 @@ public static SyncAdapterType[] getSyncAdapterTypes() {
      * @param authority the provider whose setting we are querying
      * @return true if the provider should be synced when a network tickle is received
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.238 -0500", hash_original_method = "40F680882F51B8DF93B91B007EA34DFA", hash_generated_method = "6D4A4B5F83D81A6EAACA1A139F403C60")
     
 public static boolean getSyncAutomatically(Account account, String authority) {
@@ -191,6 +191,7 @@ public static boolean getSyncAutomatically(Account account, String authority) {
      * @param authority the provider whose behavior is being controlled
      * @param sync true if the provider should be synced when tickles are received for it
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.240 -0500", hash_original_method = "C45393365DF55DBBF34D87F9DFB07A0E", hash_generated_method = "4064BAE8FA6519AFCF28B0D7EC6499F5")
     
 public static void setSyncAutomatically(Account account, String authority, boolean sync) {
@@ -286,6 +287,7 @@ public static void removePeriodicSync(Account account, String authority, Bundle 
      * @param authority the provider whose periodic syncs we are querying
      * @return a list of PeriodicSync objects. This list may be empty but will never be null.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.249 -0500", hash_original_method = "342780EDBB61BA70D8F5407D611A17AB", hash_generated_method = "4ED998824EC22AEC37082CE05FFB7907")
     
 public static List<PeriodicSync> getPeriodicSyncs(Account account, String authority) {
@@ -306,6 +308,7 @@ public static List<PeriodicSync> getPeriodicSyncs(Account account, String author
      * Check if this account/provider is syncable.
      * @return >0 if it is syncable, 0 if not, and <0 if the state isn't known yet.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.251 -0500", hash_original_method = "12469DB36272456EC96DBBF2A0C7F6DB", hash_generated_method = "0F2DD104B1307481A16FF088FB86B16E")
     
 public static int getIsSyncable(Account account, String authority) {
@@ -320,6 +323,7 @@ public static int getIsSyncable(Account account, String authority) {
      * Set whether this account/provider is syncable.
      * @param syncable >0 denotes syncable, 0 means not syncable, <0 means unknown
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.253 -0500", hash_original_method = "0A00860601B883D5D57C7B4B58CC648B", hash_generated_method = "C164D7E46A59E1610414F7A95B602BAA")
     
 public static void setIsSyncable(Account account, String authority, int syncable) {
@@ -391,6 +395,7 @@ public static boolean isSyncActive(Account account, String authority) {
      * This method returns the first item from the list of current syncs
      * or null if there are none.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.263 -0500", hash_original_method = "F46B20DF4060F21E0B5F9B4A6CDDD1B7", hash_generated_method = "438C07BD1AB0B1A7E7F9DA735814947B")
     
 @Deprecated
@@ -411,6 +416,7 @@ public static boolean isSyncActive(Account account, String authority) {
      * if there are no active syncs.
      * @return a List of SyncInfo objects for the currently active syncs.
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.265 -0500", hash_original_method = "B8247507BA2F9E261470E53F362E3C80", hash_generated_method = "91FE7808D34F770BA2D170DA428F9642")
     
 public static List<SyncInfo> getCurrentSyncs() {
@@ -428,6 +434,7 @@ public static List<SyncInfo> getCurrentSyncs() {
      * @return the SyncStatusInfo for the authority, or null if none exists
      * @hide
      */
+    @DSSource({DSSourceKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.267 -0500", hash_original_method = "3CA3ACEA0F64C037745D2946B86898D9", hash_generated_method = "29F098BA53F2425AC9A06059ABC44C85")
     
 public static SyncStatusInfo getSyncStatus(Account account, String authority) {
@@ -506,6 +513,7 @@ public static void removeStatusChangeListener(Object handle) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.326 -0500", hash_original_method = "B848004A8469BC74A9D0115209F67BC2", hash_generated_method = "94DF7311AC3C0B57DE0F1EDB7F4E1C27")
     
 public static IContentService getContentService() {
@@ -543,7 +551,6 @@ public static IContentService getContentService() {
     public static final String SYNC_EXTRAS_MANUAL = "force";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.085 -0500", hash_original_field = "95E12551FD1813A3B4B131256742EF18", hash_generated_field = "C66AD9A9054789246D88C3CEF49E0FE1")
 
-
     public static final String SYNC_EXTRAS_UPLOAD = "upload";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.087 -0500", hash_original_field = "3BDAFF08B8B5D1FD247D54C93DBB602E", hash_generated_field = "085DFE00F23ABC519407289B800B9330")
 
@@ -555,7 +562,6 @@ public static IContentService getContentService() {
 
     public static final String SYNC_EXTRAS_INITIALIZE = "initialize";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.095 -0500", hash_original_field = "23CF7C1D7F7D34A52AE3013FCBEF7C56", hash_generated_field = "2A050A80E7005A896641161E25801F35")
-
 
     public static final String SCHEME_CONTENT = "content";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.097 -0500", hash_original_field = "661B0EEDBA4AA93209BB617B6341969F", hash_generated_field = "7BECC35C4D527BA52EC58C833FB0BB34")
@@ -596,7 +602,6 @@ public static IContentService getContentService() {
     public static final int SYNC_ERROR_INTERNAL = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.125 -0500", hash_original_field = "3E7F77D8E6790DAE61B7FE9FBA555837", hash_generated_field = "EC6D4E9079B435808FB02F42CC269B78")
 
-
     public static final int SYNC_OBSERVER_TYPE_SETTINGS = 1<<0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.127 -0500", hash_original_field = "DFB06C7A2FBD2E5B04F1A08AA7980F13", hash_generated_field = "1F0C3937881F3FCFBF4E76673AB2169B")
 
@@ -619,7 +624,6 @@ public static IContentService getContentService() {
     public static final String CONTENT_SERVICE_NAME = "content";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.328 -0500", hash_original_field = "FF075AB4CC757752C1C7F0A3C1F082AC", hash_generated_field = "EBBA89635D26FA830DBE060ABCA948AD")
 
-
     private static IContentService sContentService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.332 -0500", hash_original_field = "A6791527B14473DE7C470C42780930DC", hash_generated_field = "2E4D905723B5A2539B6E57BF8A2185DE")
 
@@ -636,7 +640,6 @@ public static IContentService getContentService() {
 public ContentResolver(Context context) {
         mContext = context;
     }
-
     
     public class OpenResourceIdResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.175 -0500", hash_original_field = "DEA1ED7828F798697E4EA5B9016D799C", hash_generated_field = "3D94ED8234243D4DE3F50EF6E646D0E3")
@@ -652,10 +655,7 @@ public ContentResolver(Context context) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private final class CursorWrapperInner extends CrossProcessCursorWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.290 -0500", hash_original_field = "AE288B6FA0FFB660720033CA9B71BF21", hash_generated_field = "EACA88E7B01FC8694B38FD93BBF3A6CA")
@@ -665,7 +665,6 @@ public ContentResolver(Context context) {
 
         private  IContentProvider mContentProvider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.292 -0500", hash_original_field = "6ADAA7D7C1C7D2FB7CE0E7D55A51778B", hash_generated_field = "91705AACD6DDE42AEA628776AF2A3DC6")
-
 
         private final CloseGuard mCloseGuard = CloseGuard.get();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.295 -0500", hash_original_field = "9CE7EF6F7F99E6E2E3761F5545AECF33", hash_generated_field = "FF245C536DEFD57B2DCDAA00E8BC192F")
@@ -713,8 +712,6 @@ CursorWrapperInner(Cursor cursor, IContentProvider icp) {
             }
         }
     }
-
-
     
     private final class ParcelFileDescriptorInner extends ParcelFileDescriptor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.310 -0500", hash_original_field = "EFBABC770A9D88F847529F4A7BC11412", hash_generated_field = "853BAF17ACDDF73D9A8E686A803B9543")
@@ -762,6 +759,7 @@ protected abstract IContentProvider acquireProvider(Context c, String name);
     /** Providing a default implementation of this, to avoid having to change
      * a lot of other things, but implementations of ContentResolver should
      * implement it. @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.146 -0500", hash_original_method = "4AF2A0465BC3B713C9C8E0417552AB76", hash_generated_method = "B46372EB146110E7FBF4F78FF4A12DF1")
     
 protected IContentProvider acquireExistingProvider(Context c, String name) {
@@ -779,6 +777,7 @@ public abstract boolean releaseProvider(IContentProvider icp);
      * using the content:// scheme.
      * @return A MIME type for the content, or null if the URL is invalid or the type is unknown
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.151 -0500", hash_original_method = "045596B6E0367AC7BED26FC054AD1E2B", hash_generated_method = "DF9E0D2B16441944892EBA418FBCD08C")
     
 public final String getType(Uri url) {
@@ -830,6 +829,7 @@ public final String getType(Uri url) {
      * data streams that match the given mimeTypeFilter.  If there are none,
      * null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.154 -0500", hash_original_method = "BFD7301BBEDEF32538E97E3FEFB31C63", hash_generated_method = "E74D022B8DC4284C8D15C672FCE79E03")
     
 public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
@@ -848,14 +848,15 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
             releaseProvider(provider);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
    /**
     * On this query call, we want the information flow taint to flow from the
     * query call to the underlying cursor.  So just create a cursor and return it.
     * The DSCursor will take care of propagating the information flow.
     */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     public final Cursor query(Uri uri, String[] projection,
             String selection, String[] selectionArgs, String sortOrder) {
        Cursor dsCursor = new DSCursor(uri, projection, selection, selectionArgs, sortOrder);
@@ -881,6 +882,9 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) {
      * @throws FileNotFoundException if the provided URI could not be opened.
      * @see #openAssetFileDescriptor(Uri, String)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.159 -0500", hash_original_method = "741F25E5E9079F60798D64718B03495A", hash_generated_method = "FF40C3A8319AD1636D47F56A713B2AB4")
     
 public final InputStream openInputStream(Uri uri)
@@ -941,6 +945,7 @@ public final OutputStream openOutputStream(Uri uri)
      * @throws FileNotFoundException if the provided URI could not be opened.
      * @see #openAssetFileDescriptor(Uri, String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.164 -0500", hash_original_method = "99597D87D82436F243497E22352BC980", hash_generated_method = "8F2E08C0EC957DE4DCAAEA83F2EB3AAB")
     
 public final OutputStream openOutputStream(Uri uri, String mode)
@@ -1227,6 +1232,9 @@ public OpenResourceIdResult getResourceId(Uri uri) throws FileNotFoundException 
      *               the field. Passing an empty ContentValues will create an empty row.
      * @return the URL of the newly created row.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.187 -0500", hash_original_method = "21049B5CF31214AC69662F00A8291DA2", hash_generated_method = "30E6A8AA7791982EDB0C2593C57C1825")
     
 public final Uri insert(Uri url, ContentValues values)
@@ -1266,6 +1274,8 @@ public final Uri insert(Uri url, ContentValues values)
      * @throws RemoteException thrown if a RemoteException is encountered while attempting
      *   to communicate with a remote provider.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.189 -0500", hash_original_method = "35DA1841C97E840C3B5123B65D72A2FC", hash_generated_method = "74C8F16C7BE8369387E13E410A7C819D")
     
 public ContentProviderResult[] applyBatch(String authority,
@@ -1325,6 +1335,8 @@ public final int bulkInsert(Uri url, ContentValues[] values)
                     (excluding the WHERE itself).
      * @return The number of rows deleted.
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.195 -0500", hash_original_method = "5F64E7642550035A4284C543DD08EBF1", hash_generated_method = "F77B1FA45188219F6988A6B6B681E82D")
     
 public final int delete(Uri url, String where, String[] selectionArgs)
@@ -1361,6 +1373,8 @@ public final int delete(Uri url, String where, String[] selectionArgs)
      * @return the number of rows updated.
      * @throws NullPointerException if uri or values are null
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.197 -0500", hash_original_method = "93173B163A2993B2278E9CE2CA5F5268", hash_generated_method = "BFDFE97E646A1E83E92C8A9712FB4DAA")
     
 public final int update(Uri uri, ContentValues values, String where,
@@ -1398,6 +1412,7 @@ public final int update(Uri uri, ContentValues values, String where,
      * @throws NullPointerException if uri or method is null
      * @throws IllegalArgumentException if uri is not known
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.201 -0500", hash_original_method = "7B97BF1D704BA5CFE2C56D2F21EF49E5", hash_generated_method = "75489650A20C25CB2C47805C67362FCF")
     
 public final Bundle call(Uri uri, String method, String arg, Bundle extras) {
@@ -1429,6 +1444,7 @@ public final Bundle call(Uri uri, String method, String arg, Bundle extras) {
      * @return The ContentProvider for the given URI, or null if no content provider is found.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.203 -0500", hash_original_method = "337E4492D27C715A525AA87619808C6B", hash_generated_method = "D3E5A9E03B3D395306466B5F9C7636EE")
     
 public final IContentProvider acquireProvider(Uri uri) {
@@ -1518,14 +1534,15 @@ public final ContentProviderClient acquireContentProviderClient(String name) {
 
         return null;
     }
-
     
     /** 
      * This registers the specified ContentObserver to be called when the URI 
      * changes.  For example, the URI could be content://sms and the onChange()
      * functions will get called whenever an SMS message is received
      */
-    @DSModeled(DSC.SAFE)
+    
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     public final void registerContentObserver(Uri uri, boolean notifyForDescendents,
             ContentObserver observer)
     {
@@ -1546,6 +1563,8 @@ public final ContentProviderClient acquireContentProviderClient(String name) {
      * @param observer The previously registered observer that is no longer needed.
      * @see #registerContentObserver
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.217 -0500", hash_original_method = "A19276E2B38D6FC8E7769343C0EFAA57", hash_generated_method = "5D9FB3944E47D05E123BB023EFCB7F6C")
     
 public final void unregisterContentObserver(ContentObserver observer) {
@@ -1567,6 +1586,9 @@ public final void unregisterContentObserver(ContentObserver observer) {
      * @param uri
      * @param observer The observer that originated the change, may be <code>null</null>
      */
+    @DSComment("Content model/data manipulation")
+    @DSSpec(DSCat.CONTENT)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.219 -0500", hash_original_method = "E76834C8ABF23847CEBC5965503FC8D5", hash_generated_method = "3A5872C192B574229FFFA2AFF9004DE8")
     
 public void notifyChange(Uri uri, ContentObserver observer) {
@@ -1582,6 +1604,7 @@ public void notifyChange(Uri uri, ContentObserver observer) {
      * @param observer The observer that originated the change, may be <code>null</null>
      * @param syncToNetwork If true, attempt to sync the change to the network.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:31.222 -0500", hash_original_method = "F301FE1DDD6CC7648C7F98CD4F863542", hash_generated_method = "D4B7A5BA283E58792D86DBEA8A8D8DD8")
     
 public void notifyChange(Uri uri, ContentObserver observer, boolean syncToNetwork) {

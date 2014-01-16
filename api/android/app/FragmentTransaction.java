@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class FragmentTransaction {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.786 -0500", hash_original_field = "8A2784D472F1E9570825A12575F2B43C", hash_generated_field = "C9662C300B2D516C85FAB581ACAF2A52")
 
@@ -32,7 +28,6 @@ public abstract class FragmentTransaction {
 
     public static final int TRANSIT_FRAGMENT_FADE = 3 | TRANSIT_ENTER_MASK;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:53.715 -0400", hash_original_method = "B5A603083BF658FD0649843C639EBB28", hash_generated_method = "B5A603083BF658FD0649843C639EBB28")
     public FragmentTransaction ()
     {
@@ -48,6 +43,8 @@ public abstract FragmentTransaction add(Fragment fragment, String tag);
     /**
      * Calls {@link #add(int, Fragment, String)} with a null tag.
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.763 -0500", hash_original_method = "CE157581551FA29527EBF8BD8B8E7951", hash_generated_method = "9AE875A561816D375662C13376216FDD")
     
 public abstract FragmentTransaction add(int containerViewId, Fragment fragment);
@@ -67,6 +64,8 @@ public abstract FragmentTransaction add(int containerViewId, Fragment fragment);
      * 
      * @return Returns the same FragmentTransaction instance.
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.765 -0500", hash_original_method = "23C69331AB94570E0A0B731AF3EDB6F3", hash_generated_method = "C6D7859F8D62F0F6C91C14EC3A92087B")
     
 public abstract FragmentTransaction add(int containerViewId, Fragment fragment, String tag);
@@ -74,6 +73,8 @@ public abstract FragmentTransaction add(int containerViewId, Fragment fragment, 
     /**
      * Calls {@link #replace(int, Fragment, String)} with a null tag.
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.769 -0500", hash_original_method = "03B4950089589D9E0AB79E68A4AC43E6", hash_generated_method = "006E5DD8C30E5A7FE8604C621FE6E525")
     
 public abstract FragmentTransaction replace(int containerViewId, Fragment fragment);
@@ -94,6 +95,8 @@ public abstract FragmentTransaction replace(int containerViewId, Fragment fragme
      * 
      * @return Returns the same FragmentTransaction instance.
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.771 -0500", hash_original_method = "96430312571D18C6A7B66F51BC354307", hash_generated_method = "26B413B0DEDE46B14833E57BDC191D77")
     
 public abstract FragmentTransaction replace(int containerViewId, Fragment fragment, String tag);
@@ -147,6 +150,8 @@ public abstract FragmentTransaction show(Fragment fragment);
      *
      * @return Returns the same FragmentTransaction instance.
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.780 -0500", hash_original_method = "1CDB7BE0A739957C26CB1A4DAEA0A3C8", hash_generated_method = "C732A98003F16B452F40FD8EF863BA48")
     
 public abstract FragmentTransaction detach(Fragment fragment);
@@ -161,6 +166,8 @@ public abstract FragmentTransaction detach(Fragment fragment);
      *
      * @return Returns the same FragmentTransaction instance.
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.782 -0500", hash_original_method = "D0BA812C953A880D97F8C9ED57649F69", hash_generated_method = "F46E264924C9175DF0004364A9369E77")
     
 public abstract FragmentTransaction attach(Fragment fragment);
@@ -198,6 +205,8 @@ public abstract FragmentTransaction setCustomAnimations(int enter, int exit,
      * one of {@link #TRANSIT_NONE}, {@link #TRANSIT_FRAGMENT_OPEN},
      * or {@link #TRANSIT_FRAGMENT_CLOSE}
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.807 -0500", hash_original_method = "B1D0AA5F3FD228E001A40F7C0CE4FEAF", hash_generated_method = "B9E7C3BA8E42737BB5535E0674C41C9A")
     
 public abstract FragmentTransaction setTransition(int transit);
@@ -217,6 +226,8 @@ public abstract FragmentTransaction setTransitionStyle(int styleRes);
      *
      * @param name An optional name for this back stack state, or null.
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.812 -0500", hash_original_method = "DEFABA50676F268B571842053FA4D98C", hash_generated_method = "8C03DA7BE9F89E5E514D871DDCD371E8")
     
 public abstract FragmentTransaction addToBackStack(String name);
@@ -295,6 +306,8 @@ public abstract FragmentTransaction setBreadCrumbShortTitle(CharSequence text);
      * if {@link #addToBackStack(String)} had been called.  Otherwise, returns
      * a negative number.
      */
+    @DSComment("Fragment transation")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.828 -0500", hash_original_method = "F74CF41C2E077D1DE3C217B0A3E8C495", hash_generated_method = "7E7995E558FCB03CB4321E10147E3CDF")
     
 public abstract int commit();

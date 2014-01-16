@@ -23,10 +23,6 @@ import android.os.ParcelFileDescriptor;
 import android.os.Process;
 import android.util.Log;
 
-
-
-
-
 public abstract class ContentProvider implements ComponentCallbacks2 {
 
     /**
@@ -56,7 +52,6 @@ public static ContentProvider coerceToLocalContentProvider(
     private static final String TAG = "ContentProvider";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.644 -0500", hash_original_field = "03913333DF6D90B31124AA237C7E0708", hash_generated_field = "64C2E29345D1A72D78C884235FF4120B")
 
-
     private Context mContext = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.646 -0500", hash_original_field = "635588DF3C0CEE4FAA84410695C60BE1", hash_generated_field = "BAE02AD4841B16814759F68D3AA9D00B")
 
@@ -75,7 +70,6 @@ public static ContentProvider coerceToLocalContentProvider(
     private boolean mExported;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.657 -0500", hash_original_field = "2D5E29FC7BC3EDC39507E0A8AD5A6CDE", hash_generated_field = "B996B8C49C2307FDF0CA3803832CA9DC")
 
-
     private Transport mTransport = new Transport();
 
     /**
@@ -93,6 +87,8 @@ public static ContentProvider coerceToLocalContentProvider(
      * application launch time.  The constructor must not perform lengthy
      * operations, or application startup will be delayed.
      */
+    @DSComment("Interface/abstract method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.659 -0500", hash_original_method = "F039A73ADD81439EFEE4572A926905FF", hash_generated_method = "95D9FE26934D919F164145BD4B52277D")
     
 public ContentProvider() {
@@ -124,12 +120,14 @@ public ContentProvider(
         mPathPermissions = pathPermissions;
     }
 
-
     /**
      * Retrieves the Context this provider is running in.  Only available once
      * {@link #onCreate} has been called -- this will return null in the
      * constructor.
      */
+    @DSComment("not sensitive, get get member variable")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.712 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "DDB999668EFCAD36DFA58D5D665B592E")
     
 public final Context getContext() {
@@ -156,6 +154,7 @@ protected final void setReadPermission(String permission) {
      * <a href="{@docRoot}guide/topics/fundamentals/processes-and-threads.html#Threads">Processes
      * and Threads</a>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.717 -0500", hash_original_method = "5C94FD95ADD3C0054247C1BF6F500E4F", hash_generated_method = "96E0D1B36B11378092A878FC95D0CD31")
     
 public final String getReadPermission() {
@@ -182,6 +181,7 @@ protected final void setWritePermission(String permission) {
      * <a href="{@docRoot}guide/topics/fundamentals/processes-and-threads.html#Threads">Processes
      * and Threads</a>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.722 -0500", hash_original_method = "7A0A16A9FA1EB10AD9D087C65A3EFFB1", hash_generated_method = "F58F04DF68E541FB73F002F72197DB0A")
     
 public final String getWritePermission() {
@@ -208,6 +208,7 @@ protected final void setPathPermissions(PathPermission[] permissions) {
      * <a href="{@docRoot}guide/topics/fundamentals/processes-and-threads.html#Threads">Processes
      * and Threads</a>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.726 -0500", hash_original_method = "E38FFC0E115EF293B9FB9C6179B78AA8", hash_generated_method = "1248898CD45F16517D5C9C4A7DD4C0D0")
     
 public final PathPermission[] getPathPermissions() {
@@ -387,6 +388,7 @@ public abstract Uri insert(Uri uri, ContentValues values);
      * @param values An array of sets of column_name/value pairs to add to the database.
      * @return The number of values that were inserted.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.744 -0500", hash_original_method = "C678349FF8875CB9D22305FF9A5474DD", hash_generated_method = "DB10E22D5FFB11F9E085FB4F782D17D3")
     
 public int bulkInsert(Uri uri, ContentValues[] values) {
@@ -542,6 +544,7 @@ public AssetFileDescriptor openAssetFile(Uri uri, String mode)
      * @return Returns a new ParcelFileDescriptor that can be used by the
      * client to access the file.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.756 -0500", hash_original_method = "B77C082B2FC41ABB2AC9CAAF0861BB6A", hash_generated_method = "15E279E4CA599D4F9A2A194A376208B5")
     
 protected final ParcelFileDescriptor openFileHelper(Uri uri,
@@ -591,6 +594,7 @@ protected final ParcelFileDescriptor openFileHelper(Uri uri,
      * @see #openTypedAssetFile(Uri, String, Bundle)
      * @see ClipDescription#compareMimeTypes(String, String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.758 -0500", hash_original_method = "BEF8B956D915C9CD914319D11D9F55DF", hash_generated_method = "ECED8D109C81BADA2FF3CB79B0E8F176")
     
 public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
@@ -632,6 +636,7 @@ public String[] getStreamTypes(Uri uri, String mimeTypeFilter) {
      * @see #openAssetFile(Uri, String)
      * @see ClipDescription#compareMimeTypes(String, String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.761 -0500", hash_original_method = "4E83B7632E2F0C6C101685B3A453F6C7", hash_generated_method = "E154058D1651C11A0B7BFCB07D29F74C")
     
 public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bundle opts)
@@ -648,7 +653,6 @@ public AssetFileDescriptor openTypedAssetFile(Uri uri, String mimeTypeFilter, Bu
         }
         throw new FileNotFoundException("Can't open " + uri + " as type " + mimeTypeFilter);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:59.801 -0400", hash_original_method = "BC63CE555A1B156ABB3D2B022F0E90CE", hash_generated_method = "1600271E293F4C12749AC8508682DA08")
     public <T> ParcelFileDescriptor openPipeHelper(final Uri uri, final String mimeType,
@@ -706,6 +710,7 @@ protected boolean isTemporary() {
      * @return the Binder object for this provider
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.773 -0500", hash_original_method = "883A061900350051FBA62F6F6FD9E085", hash_generated_method = "01677C8C73DD72384BF638D4A5102678")
     
 public IContentProvider getIContentProvider() {
@@ -790,7 +795,6 @@ public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> op
 public Bundle call(String method, String arg, Bundle extras) {
         return null;
     }
-
     
     class Transport extends ContentProviderNative {
         
@@ -799,12 +803,14 @@ public Bundle call(String method, String arg, Bundle extras) {
         {
             //Synthesized constructor
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.667 -0500", hash_original_method = "D85CC82248E7B34649DA1C02380D9E2C", hash_generated_method = "D85CC82248E7B34649DA1C02380D9E2C")
         
 ContentProvider getContentProvider() {
             return ContentProvider.this;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.670 -0500", hash_original_method = "157A3AC2CED86E999B16E7CDFBD5AE31", hash_generated_method = "5E5952EDC976C3AAA9BEA2B1A81A08F7")
         
 @Override
@@ -821,12 +827,12 @@ public Cursor query(Uri uri, String[] projection,
                     selectionArgs, sortOrder);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.674 -0500", hash_original_method = "BE9D1875DBA635C7BA04B42A3E893DA2", hash_generated_method = "F7F9ADB0E834AECC90BB268DEAA25DBF")
         
 public String getType(Uri uri) {
             return ContentProvider.this.getType(uri);
         }
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.676 -0500", hash_original_method = "2D883DF9190F17ADC9F3F05EDAD4CA9E", hash_generated_method = "FFBAD1A55B0D0BCB03580CCC52A126FB")
         
@@ -897,6 +903,7 @@ public Bundle call(String method, String arg, Bundle extras) {
             return ContentProvider.this.call(method, arg, extras);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:27.696 -0500", hash_original_method = "8E1F3128EE5808B485D05EE809576B99", hash_generated_method = "C2FEDAFBDE2266AE7019559A2ADFA50B")
         
 @Override
@@ -1018,11 +1025,8 @@ private void enforceWritePermission(Uri uri) {
                     + " requires " + getWritePermission();
             throw new SecurityException(msg);
         }
-
         
     }
-
-
     
     public interface PipeDataWriter<T> {
         

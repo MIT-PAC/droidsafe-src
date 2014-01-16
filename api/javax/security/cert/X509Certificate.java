@@ -18,15 +18,9 @@ import java.security.SignatureException;
 import java.security.cert.CertificateFactory;
 import java.util.Date;
 
-
-
-
-
-
 public abstract class X509Certificate extends Certificate {
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static final X509Certificate getInstance(InputStream inStream) throws CertificateException {
         if (inStream == null) {
             throw new CertificateException("inStream == null");
@@ -49,7 +43,8 @@ public abstract class X509Certificate extends Certificate {
         }
         return new X509Certificate() {
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.832 -0500", hash_original_method = "8AD2DCC1EEFB93B0D6F07C4FB7BF70E9", hash_generated_method = "A2D6588FF8363A2C82CB5FD54437BADC")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.832 -0500", hash_original_method = "8AD2DCC1EEFB93B0D6F07C4FB7BF70E9", hash_generated_method = "A2D6588FF8363A2C82CB5FD54437BADC")
             
 public byte[] getEncoded() throws CertificateEncodingException {
                 try {
@@ -90,7 +85,8 @@ public String toString() {
                 return cert.toString();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.843 -0500", hash_original_method = "DFA7B9612F04FA27415D790DCAB9B56B", hash_generated_method = "724BC0FBAC2A949AC783C9B17AF6FC00")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.843 -0500", hash_original_method = "DFA7B9612F04FA27415D790DCAB9B56B", hash_generated_method = "724BC0FBAC2A949AC783C9B17AF6FC00")
             
 public PublicKey getPublicKey() {
                 return cert.getPublicKey();
@@ -129,49 +125,57 @@ public int getVersion() {
                 return 2;
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.853 -0500", hash_original_method = "6031DB0A3BAFAE8082EB4CC865EC32C8", hash_generated_method = "15FDDAA066DD35F23710861058343AFB")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.853 -0500", hash_original_method = "6031DB0A3BAFAE8082EB4CC865EC32C8", hash_generated_method = "15FDDAA066DD35F23710861058343AFB")
             
 public BigInteger getSerialNumber() {
                 return cert.getSerialNumber();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.856 -0500", hash_original_method = "0DE779F5218051DFDA8D6AED41DCBBEC", hash_generated_method = "15888F28CE370639815C6DADAA052D77")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.856 -0500", hash_original_method = "0DE779F5218051DFDA8D6AED41DCBBEC", hash_generated_method = "15888F28CE370639815C6DADAA052D77")
             
 public Principal getIssuerDN() {
                 return cert.getIssuerDN();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.858 -0500", hash_original_method = "842EDDA5C55BBF3F51FA272A067D70E7", hash_generated_method = "CC90AB19C85742E39B55596E29CE344C")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.858 -0500", hash_original_method = "842EDDA5C55BBF3F51FA272A067D70E7", hash_generated_method = "CC90AB19C85742E39B55596E29CE344C")
             
 public Principal getSubjectDN() {
                 return cert.getSubjectDN();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.861 -0500", hash_original_method = "16FAF9BCD2CAC885C11ED38D4B8D72D3", hash_generated_method = "043F7575B666B697826D2D502196FF32")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.861 -0500", hash_original_method = "16FAF9BCD2CAC885C11ED38D4B8D72D3", hash_generated_method = "043F7575B666B697826D2D502196FF32")
             
 public Date getNotBefore() {
                 return cert.getNotBefore();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.864 -0500", hash_original_method = "F3AC697C0D919966395CCA080B040BC7", hash_generated_method = "774B7D4FC63E4F3D1F63CC375937D0AF")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.864 -0500", hash_original_method = "F3AC697C0D919966395CCA080B040BC7", hash_generated_method = "774B7D4FC63E4F3D1F63CC375937D0AF")
             
 public Date getNotAfter() {
                 return cert.getNotAfter();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.866 -0500", hash_original_method = "47C7F0D07F343BF2D250C19C8F227AFD", hash_generated_method = "116E7BD7753F268569DABFE67574D0B0")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.866 -0500", hash_original_method = "47C7F0D07F343BF2D250C19C8F227AFD", hash_generated_method = "116E7BD7753F268569DABFE67574D0B0")
             
 public String getSigAlgName() {
                 return cert.getSigAlgName();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.868 -0500", hash_original_method = "6EF21831D3E0F4F0EA739B4D72DF06B9", hash_generated_method = "673776EE55BF6858DA051445A0213866")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.868 -0500", hash_original_method = "6EF21831D3E0F4F0EA739B4D72DF06B9", hash_generated_method = "673776EE55BF6858DA051445A0213866")
             
 public String getSigAlgOID() {
                 return cert.getSigAlgOID();
             }
 
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.871 -0500", hash_original_method = "B14BB26E0DE1B1F3E36D1E9FA1E63109", hash_generated_method = "E04BC5D53DA35DA362C0E783F93820E6")
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.871 -0500", hash_original_method = "B14BB26E0DE1B1F3E36D1E9FA1E63109", hash_generated_method = "E04BC5D53DA35DA362C0E783F93820E6")
             
 public byte[] getSigAlgParams() {
                 return cert.getSigAlgParams();
@@ -189,6 +193,7 @@ public byte[] getSigAlgParams() {
      * @throws CertificateException
      *             if the certificate cannot be created or initialized.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.877 -0500", hash_original_method = "4740B2B56500AAF60D83C231AF13C259", hash_generated_method = "0C866782C071AAF4B318273EC6BE3C9F")
     
 public static final X509Certificate getInstance(byte[] certData)
@@ -200,7 +205,6 @@ public static final X509Certificate getInstance(byte[] certData)
         return getInstance(bais);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.825 -0500", hash_original_field = "C7A44D4A43B1906F79B31BCC6A88354D", hash_generated_field = "2112A4F4A023E8F770192D2021400B78")
-
 
     private static Constructor constructor;
 
@@ -238,7 +242,6 @@ public X509Certificate() {
     
 public abstract void checkValidity()
             throws CertificateExpiredException, CertificateNotYetValidException;
-
 
     /**
      * Checks whether the certificate is valid at the specified date.

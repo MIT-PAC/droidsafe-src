@@ -19,10 +19,6 @@ import android.view.View.OnTouchListener;
 import android.view.ViewGroup;
 import android.view.ViewParent;
 
-
-
-
-
 public class ListPopupWindow {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.914 -0500", hash_original_field = "9B22868DBB778B77630F608FF41CCE95", hash_generated_field = "0887B70F50539FED12873EB1C34B6CEE")
 
@@ -56,7 +52,6 @@ public class ListPopupWindow {
     public static final int INPUT_METHOD_NOT_NEEDED = PopupWindow.INPUT_METHOD_NOT_NEEDED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.921 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.924 -0500", hash_original_field = "7E4C7D8A72122A6640DF0AA884C2245D", hash_generated_field = "DD5B28EB4059D1AC7E72BAEDE50FACDF")
 
@@ -68,7 +63,6 @@ public class ListPopupWindow {
 
     private DropDownListView mDropDownList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.930 -0500", hash_original_field = "47629D9301A11E5A90DB7FD16C630178", hash_generated_field = "95C5FD2B2227A2419A547D55212619CB")
-
 
     private int mDropDownHeight = ViewGroup.LayoutParams.WRAP_CONTENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.932 -0500", hash_original_field = "1FBF54D200826BE24A98634613FB66C2", hash_generated_field = "DE8B8CD76D1AB415FF96E39AF3C5D34E")
@@ -85,7 +79,6 @@ public class ListPopupWindow {
     private boolean mDropDownVerticalOffsetSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.940 -0500", hash_original_field = "E408A4A94243B7CFBFDDDE18659D6637", hash_generated_field = "A2A88CD1765159B88DD7DB6DD2826AA7")
 
-
     private boolean mDropDownAlwaysVisible = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.943 -0500", hash_original_field = "38CCFB5B729C0D1016E8CD1FEEC6A290", hash_generated_field = "D1BD29312DE39A83C4D6D5BDC2010A61")
 
@@ -95,32 +88,26 @@ public class ListPopupWindow {
     int mListItemExpandMaximum = Integer.MAX_VALUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.947 -0500", hash_original_field = "5449FEC726829211DD8244A31A4FD026", hash_generated_field = "5F49A121459BF7DF82F93F51F66D9AFA")
 
-
     private View mPromptView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.949 -0500", hash_original_field = "CC2799DFE9A02CE4FAA05B620FA5203C", hash_generated_field = "D0EDBCF4B24F722A68C83DBD4FA7D38D")
 
     private int mPromptPosition = POSITION_PROMPT_ABOVE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.952 -0500", hash_original_field = "7F4E88E932CA04F746195B78340FAF19", hash_generated_field = "3BA4BCC5F225A10F755FE4D117871D40")
 
-
     private DataSetObserver mObserver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.954 -0500", hash_original_field = "9E0D6B2D2C41BFB970F7F40314CA67CA", hash_generated_field = "0AD13AB5208CE821A0A2BF31AEC73CB4")
-
 
     private View mDropDownAnchorView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.956 -0500", hash_original_field = "CF26749AC69E503F0E6CEE9E8D3F679D", hash_generated_field = "D7FBC36DD90F3884476AF7A145F7D085")
 
-
     private Drawable mDropDownListHighlight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.957 -0500", hash_original_field = "C3BCFE8177AEF338D4004A6DD4D2D8EF", hash_generated_field = "91F251C39E992AB6E9A1F97E1DB2D65A")
-
 
     private AdapterView.OnItemClickListener mItemClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.959 -0500", hash_original_field = "95D49B221C26B1A3334D3BD6A6E6E61A", hash_generated_field = "B20A14E839638431419A27C6FA2EB183")
 
     private AdapterView.OnItemSelectedListener mItemSelectedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.961 -0500", hash_original_field = "870EB41A3AD8AF770D57D2B2C2386419", hash_generated_field = "821F70C70BBBE64322F054DCBDCBD65D")
-
 
     private final ResizePopupRunnable mResizePopupRunnable = new ResizePopupRunnable();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.964 -0500", hash_original_field = "9EC385C13CED9DB47D8864C0559278A1", hash_generated_field = "C2DF6DA91E71FE1B73AF2F99DA491C65")
@@ -137,14 +124,11 @@ public class ListPopupWindow {
     private Runnable mShowDropDownRunnable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.973 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2E60E17486AAEB1A4E1F1878A0354061")
 
-
     private Handler mHandler = new Handler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.975 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "AFFA54D19F07A10EE8847CF76FC95323")
 
-
     private Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:09.977 -0500", hash_original_field = "35472579238A24390A4D232395567A7B", hash_generated_field = "2CBF8E91F49F039C5D23189C3E7CE590")
-
 
     private boolean mModal;
 
@@ -249,6 +233,7 @@ public void setPromptPosition(int position) {
      * @see #POSITION_PROMPT_ABOVE
      * @see #POSITION_PROMPT_BELOW
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.012 -0500", hash_original_method = "DF9D97B46096A1E4CCF9033CE8B43A47", hash_generated_method = "ED70513AB0BFFA1311B014B32D36D7DC")
     
 public int getPromptPosition() {
@@ -264,6 +249,7 @@ public int getPromptPosition() {
      * 
      * @param modal {@code true} if the popup window should be modal, {@code false} otherwise.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.014 -0500", hash_original_method = "320A57FA9129485B3F1A01EDA8808ED5", hash_generated_method = "6C2C1410866D1D61A1A62A8C0391C92E")
     
 public void setModal(boolean modal) {
@@ -333,6 +319,7 @@ public boolean isDropDownAlwaysVisible() {
      * @see android.view.WindowManager.LayoutParams#softInputMode
      * @see #getSoftInputMode()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.024 -0500", hash_original_method = "E80B835CA17A4D3E815EC079FA1EE953", hash_generated_method = "6F33DB8F703DFF6D3352DF67AA4D9723")
     
 public void setSoftInputMode(int mode) {
@@ -345,6 +332,7 @@ public void setSoftInputMode(int mode) {
      * @see #setSoftInputMode(int)
      * @see android.view.WindowManager.LayoutParams#softInputMode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.026 -0500", hash_original_method = "EF5235E70AE7C9521CFD0F4410B9073C", hash_generated_method = "34F28FB52B6DAFF7E76E087895AE72A9")
     
 public int getSoftInputMode() {
@@ -365,6 +353,7 @@ public void setListSelector(Drawable selector) {
     /**
      * @return The background drawable for the popup window.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.031 -0500", hash_original_method = "48A20BD7A1656DF8848E524613AD69C1", hash_generated_method = "8361F633C9EE2A209A5F0E8043587AC9")
     
 public Drawable getBackground() {
@@ -376,6 +365,7 @@ public Drawable getBackground() {
      * 
      * @param d A drawable to set as the background.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.033 -0500", hash_original_method = "53EE8E67A046C4A20122C0C008F8CCAA", hash_generated_method = "3F2D5FAE7B7F15768348E05BF53B40CD")
     
 public void setBackgroundDrawable(Drawable d) {
@@ -387,6 +377,7 @@ public void setBackgroundDrawable(Drawable d) {
      * 
      * @param animationStyle Animation style to use.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.035 -0500", hash_original_method = "CF4F09D135A7A5849055A447382D076E", hash_generated_method = "51C2A0238784BAF4CD2E35C1C31D1F1C")
     
 public void setAnimationStyle(int animationStyle) {
@@ -399,6 +390,7 @@ public void setAnimationStyle(int animationStyle) {
      * 
      * @return Animation style that will be used.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.037 -0500", hash_original_method = "A53F654A1BF514C432C9F43DB9ED5E7B", hash_generated_method = "1306DC89DF94081356E55A19EE8661CD")
     
 public int getAnimationStyle() {
@@ -410,6 +402,7 @@ public int getAnimationStyle() {
      * 
      * @return The popup's anchor view
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.040 -0500", hash_original_method = "875C75F19631B214BE64A011FD6A41E4", hash_generated_method = "018CCB43785B73150669A8D96162E023")
     
 public View getAnchorView() {
@@ -431,6 +424,7 @@ public void setAnchorView(View anchor) {
     /**
      * @return The horizontal offset of the popup from its anchor in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.044 -0500", hash_original_method = "2C5F7D64A15BDC64E0A7D1677E996184", hash_generated_method = "13EFA9158560F614588B8F5CF120A6A9")
     
 public int getHorizontalOffset() {
@@ -451,6 +445,7 @@ public void setHorizontalOffset(int offset) {
     /**
      * @return The vertical offset of the popup from its anchor in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.048 -0500", hash_original_method = "06BDE5646BE562A7D86252C676418C82", hash_generated_method = "DA7FAA8E025244FD39561BA6F341391F")
     
 public int getVerticalOffset() {
@@ -475,6 +470,7 @@ public void setVerticalOffset(int offset) {
     /**
      * @return The width of the popup window in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.052 -0500", hash_original_method = "6205F90E667ADE4444482E9AC195FB48", hash_generated_method = "52ADB8330CF1D99BDB9100B431908C2D")
     
 public int getWidth() {
@@ -499,6 +495,7 @@ public void setWidth(int width) {
      *
      * @param width Desired width of content in pixels.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.057 -0500", hash_original_method = "1CC81B1489D8EBDAA358E87EA72284F9", hash_generated_method = "B7561C3A7CA7F311BEEA8084196A7B42")
     
 public void setContentWidth(int width) {
@@ -514,6 +511,7 @@ public void setContentWidth(int width) {
     /**
      * @return The height of the popup window in pixels.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.059 -0500", hash_original_method = "2B0617362C23A2A1F29E0E83641579F9", hash_generated_method = "D37B95D83D167F9C4FBCCC7EF8DB8E0F")
     
 public int getHeight() {
@@ -724,6 +722,7 @@ private void removePromptView() {
      * @see #getInputMethodMode()
      * @see #show()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.082 -0500", hash_original_method = "288B7DB6446AD4FA82AB3ACE9506A35B", hash_generated_method = "664404492444FE4EDB8C9EF235897445")
     
 public void setInputMethodMode(int mode) {
@@ -735,6 +734,7 @@ public void setInputMethodMode(int mode) {
      * 
      * @see #setInputMethodMode(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.085 -0500", hash_original_method = "341CBB053B214C5E0FB1B54637325DA3", hash_generated_method = "E24A5236B5374EA3523D770364798036")
     
 public int getInputMethodMode() {
@@ -747,6 +747,7 @@ public int getInputMethodMode() {
      * 
      * @param position List position to set as selected.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.087 -0500", hash_original_method = "119CA9359C56E2DDD442B9A05EFE812C", hash_generated_method = "3B3BC52D181D5841E7CE1A55B23BB93A")
     
 public void setSelection(int position) {
@@ -816,7 +817,6 @@ public boolean performItemClick(int position) {
         }
         return false;
     }
-
     
     private static class DropDownListView extends ListView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.135 -0500", hash_original_field = "D20F3A87D43862A7B37B125A3FEE7F98", hash_generated_field = "23928DA4DE83E1135FB8A9793C3625F7")
@@ -907,8 +907,6 @@ public DropDownListView(Context context, boolean hijackFocus) {
             return mHijackFocus || super.hasFocus();
         }
     }
-
-
     
     private class PopupDataSetObserver extends DataSetObserver {
         
@@ -933,11 +931,8 @@ public DropDownListView(Context context, boolean hijackFocus) {
         public void onInvalidated() {
             dismiss();
         }
-
         
     }
-
-
     
     private class ListSelectorHider implements Runnable {
         
@@ -951,11 +946,8 @@ public DropDownListView(Context context, boolean hijackFocus) {
 public void run() {
             clearListSelection();
         }
-
         
     }
-
-
     
     private class ResizePopupRunnable implements Runnable {
         
@@ -973,11 +965,8 @@ public void run() {
                 show();
             }
         }
-
         
     }
-
-
     
     private class PopupTouchInterceptor implements OnTouchListener {
         
@@ -1002,11 +991,8 @@ public boolean onTouch(View v, MotionEvent event) {
             }
             return false;
         }
-
         
     }
-
-
     
     private class PopupScrollListener implements ListView.OnScrollListener {
         
@@ -1031,13 +1017,13 @@ public void onScrollStateChanged(AbsListView view, int scrollState) {
                 mResizePopupRunnable.run();
             }
         }
-
         
     }
 
     /**
      * @return The currently selected item or null if the popup is not showing.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.098 -0500", hash_original_method = "E481FD4B78A135BB1B6DC4E83167B196", hash_generated_method = "6A17B03FB9691569A1AE097B83BBAA4F")
     
 public Object getSelectedItem() {
@@ -1053,6 +1039,7 @@ public Object getSelectedItem() {
      * 
      * @see ListView#getSelectedItemPosition()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.101 -0500", hash_original_method = "055DCA84E8C7B3F34F7D7819C2CD5AC3", hash_generated_method = "8A3175CA69A3FA68DA6E161E8C3CEDF4")
     
 public int getSelectedItemPosition() {
@@ -1068,6 +1055,7 @@ public int getSelectedItemPosition() {
      * 
      * @see ListView#getSelectedItemId()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.103 -0500", hash_original_method = "4492784EC84C61BD8D41E43112FEBCD0", hash_generated_method = "D3EEC71A6116CC51874E3E01EAFBD952")
     
 public long getSelectedItemId() {
@@ -1083,6 +1071,7 @@ public long getSelectedItemId() {
      * 
      * @see ListView#getSelectedView()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.105 -0500", hash_original_method = "A94FEEC1ECDAC3555C21CB10FFC68C47", hash_generated_method = "892A145AB2B636C1047E11E5595197C0")
     
 public View getSelectedView() {
@@ -1096,6 +1085,7 @@ public View getSelectedView() {
      * @return The {@link ListView} displayed within the popup window.
      * Only valid when {@link #isShowing()} == {@code true}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:10.107 -0500", hash_original_method = "D21142DAF85C899FDAA3783E4BBEC12E", hash_generated_method = "7312C25846E6B9BBA3DB1F353BAB6BF7")
     
 public ListView getListView() {
@@ -1280,9 +1270,7 @@ public boolean onKeyPreIme(int keyCode, KeyEvent event) {
         }
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:01.724 -0400", hash_original_method = "F5C740553BB47CFEBEC052FD2A1DEFBA", hash_generated_method = "F19212F524157543401757E3253BD08A")
     private int buildDropDown() {
         ViewGroup dropDownView;

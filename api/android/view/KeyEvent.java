@@ -14,13 +14,8 @@ import android.util.SparseArray;
 import android.util.SparseIntArray;
 import android.view.KeyCharacterMap.KeyData;
 
-
-
-
-
 public class KeyEvent extends InputEvent implements Parcelable {
     
-    @DSModeled(DSC.BAN)
     public static KeyEvent droidsafeObtainEvent() {
         Random rand = new Random();
         KeyEvent ev = new KeyEvent(rand.nextInt(), rand.nextInt(), rand.nextInt(),
@@ -247,6 +242,7 @@ private static void populateKeycodeSymbolicNames() {
     /**
      * Returns the maximum keycode.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.046 -0500", hash_original_method = "614589E01471857DE8F1E319B98003E1", hash_generated_method = "B92157AD6E2E8B05A5BC2AB788256A02")
     
 public static int getMaxKeyCode() {
@@ -281,7 +277,6 @@ private static KeyEvent obtain() {
         return ev;
     }
     
-    @DSModeled(DSC.BAN)
     public static KeyEvent droidsafeGetEvent() {
         return new KeyEvent();
     }
@@ -461,6 +456,7 @@ public static final boolean isGamepadButton(int keyCode) {
      * {@link #META_META_ON}, {@link #META_META_LEFT_ON}, {@link #META_META_RIGHT_ON},
      * {@link #META_SYM_ON}, {@link #META_FUNCTION_ON}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.208 -0500", hash_original_method = "0B3E09A0C4EB9D0DDCD587A22D4E1BD5", hash_generated_method = "548864271838F8EAFC9DE770EFBBE267")
     
 public static int getModifierMetaStateMask() {
@@ -528,6 +524,8 @@ public static boolean isModifierKey(int keyCode) {
      * @param metaState The meta state.
      * @return The normalized meta state.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.214 -0500", hash_original_method = "FF10B1355184AC33BC9231DF2B9CE844", hash_generated_method = "70396B0C1D137396605B4EA5F4340D54")
     
 public static int normalizeMetaState(int metaState) {
@@ -570,6 +568,8 @@ public static int normalizeMetaState(int metaState) {
      * @return True if no modifier keys are pressed.
      * @see #hasNoModifiers()
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.217 -0500", hash_original_method = "39D9C16C68B6F41FF034537B98CA7050", hash_generated_method = "6ED68D3D6D1147E4BF5835F1709BF84F")
     
 public static boolean metaStateHasNoModifiers(int metaState) {
@@ -605,6 +605,8 @@ public static boolean metaStateHasNoModifiers(int metaState) {
      * @throws IllegalArgumentException if the modifiers parameter contains invalid modifiers
      * @see #hasModifiers
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.219 -0500", hash_original_method = "D72AA7105D31CF87A5590A7971CE1BB6", hash_generated_method = "BC6A634685E84C95F80919A71C2522FF")
     
 public static boolean metaStateHasModifiers(int metaState, int modifiers) {
@@ -996,7 +998,6 @@ public static KeyEvent createFromParcelBody(Parcel in) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.563 -0500", hash_original_field = "ABF4EC7B83F3D24E406BDCA59085D8A7", hash_generated_field = "C915146C0867D19CACED2D4EADFEF8A0")
 
     public static final int KEYCODE_SLASH           = 76;
-
     
     public static class DispatcherState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.312 -0500", hash_original_field = "09E1F61D6927630107A1B08B0819BA0E", hash_generated_field = "09E1F61D6927630107A1B08B0819BA0E")
@@ -1108,22 +1109,16 @@ public void handleUpEvent(KeyEvent event) {
                 mDownTarget = null;
             }
         }
-
         
     }
-
-
     
     public interface Callback {
         
         boolean onKeyDown(int keyCode, KeyEvent event);
-
         
         boolean onKeyLongPress(int keyCode, KeyEvent event);
-
         
         boolean onKeyUp(int keyCode, KeyEvent event);
-
         
         boolean onKeyMultiple(int keyCode, int count, KeyEvent event);
     }
@@ -1537,7 +1532,6 @@ public void handleUpEvent(KeyEvent event) {
     public static final int KEYCODE_CALCULATOR      = 210;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.911 -0500", hash_original_field = "21A478F95F691051EB15FCFF1D2A65CC", hash_generated_field = "F6A5DDFA8DC9C9559DA427D14D84C374")
 
-
     private static final int LAST_KEYCODE           = KEYCODE_CALCULATOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:22.914 -0500", hash_original_field = "FB7824F14F73D8E48637BF91D1ED5916", hash_generated_field = "8FB8DEEC7F201D8A94FE7147ACCBC029")
 
@@ -1727,14 +1721,12 @@ public void handleUpEvent(KeyEvent event) {
 
     public static final int FLAG_TAINTED = 0x80000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.051 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "F09208C088E716A2CD36A97B937BB5EA")
-
     
     static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.054 -0500", hash_original_field = "D6BC418CAB7808E9368D3E1A4A00B8B3", hash_generated_field = "0966EC22C56233A6511F81074732B996")
 
     static final String TAG = "KeyEvent";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.056 -0500", hash_original_field = "F593DBD4ACC5DC484D76C0656C0FB27F", hash_generated_field = "632CD138CDBCADE9A63F9B23105E1648")
-
 
     private static final int MAX_RECYCLED = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.060 -0500", hash_original_field = "383C33CA63B8C16F39C24669AA7A3D08", hash_generated_field = "4D2E3DEDF37103D77BF3BB46692742C8")
@@ -1775,7 +1767,7 @@ public void handleUpEvent(KeyEvent event) {
 
     public static final Parcelable.Creator<KeyEvent> CREATOR
             = new Parcelable.Creator<KeyEvent>() {
-    	@DSModeled(DSC.SAFE)
+    	
         public KeyEvent createFromParcel(Parcel in) {
     		addTaint(in.getTaint());
             in.readInt(); 
@@ -1792,13 +1784,11 @@ public KeyEvent[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.067 -0500", hash_original_field = "7281A38783B56E66F896B056FE68BC9E", hash_generated_field = "A21260B04ED5B32DBDB0093B175D9F6A")
 
-
     private KeyEvent mNext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.069 -0500", hash_original_field = "54377D1FA2AD41427FB83B9E454546B7", hash_generated_field = "2C8375875524783DEB30CD6C7E943390")
 
     private boolean mRecycled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.071 -0500", hash_original_field = "9C5D5B4697BA4F2BAA6617B930737C8B", hash_generated_field = "AE8D59B3F804A7C4665D164A31D2B414")
-
 
     private int mDeviceId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.074 -0500", hash_original_field = "11DA1CE39E46044FC7D0DA0865E06F43", hash_generated_field = "D564CAA4C2DB0DC0AAAD32F1767ED66A")
@@ -1832,7 +1822,6 @@ public KeyEvent[] newArray(int size) {
 
     private String mCharacters;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.320 -0400", hash_original_method = "E1777BC70B96D5008D693732650D9927", hash_generated_method = "560F8A7FDE8C5C12025FD3A840761BDA")
     public  KeyEvent() {
         // ---------- Original Method ----------
@@ -1845,6 +1834,8 @@ public KeyEvent[] newArray(int size) {
      * {@link #ACTION_UP}, or {@link #ACTION_MULTIPLE}.
      * @param code The key code.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.105 -0500", hash_original_method = "CD3F04ECBB2EC92C58F1141FB07383F6", hash_generated_method = "7509218E07DB23DEEBB2B9ADF8607D42")
     
 public KeyEvent(int action, int code) {
@@ -1893,6 +1884,8 @@ public KeyEvent(long downTime, long eventTime, int action,
      * initial down) or event count for multiple events.
      * @param metaState Flags indicating which meta keys are currently pressed.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.111 -0500", hash_original_method = "25AD2761B1583202D71C2F5EBFFC872D", hash_generated_method = "69582AB8397B519D69D2F4FAB99E0C11")
     
 public KeyEvent(long downTime, long eventTime, int action,
@@ -2158,6 +2151,7 @@ public final void recycle() {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.164 -0500", hash_original_method = "BF13334B6C13BDDF4754612AD733986A", hash_generated_method = "85F9A34EFE22DA19FEBE1D016802192E")
     
 @Override
@@ -2200,6 +2194,7 @@ public final boolean hasDefaultAction() {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.177 -0500", hash_original_method = "7BF185CA9C1C463FC99CEDE50E8D63D5", hash_generated_method = "0B4A00C0A40FF6327D681F173F9B5FBC")
     
 @Override
@@ -2208,6 +2203,7 @@ public final boolean hasDefaultAction() {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.180 -0500", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "ABE9C5FC45AFA595DED1F34B199308DE")
     
 @Override
@@ -2257,6 +2253,9 @@ public final boolean hasDefaultAction() {
      * @see #META_SCROLL_LOCK_ON
      * @see #getModifiers
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.185 -0500", hash_original_method = "8A0F7162152E6ECED85F47A14B4B5FFC", hash_generated_method = "78D86D905B6385129B1C9EEB9CFA8449")
     
 public final int getMetaState() {
@@ -2279,6 +2278,7 @@ public final int getMetaState() {
      * @return An integer in which each bit set to 1 represents a pressed modifier key.
      * @see #getMetaState
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.188 -0500", hash_original_method = "B496E7302AF88C4E63C665D5FB521FB2", hash_generated_method = "84EBAB4E34F233EBE7A28D858231D4A0")
     
 public final int getModifiers() {
@@ -2290,6 +2290,7 @@ public final int getModifiers() {
      *
      * @see #FLAG_WOKE_HERE
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.191 -0500", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "3A2F6A67E8ED8BF6BEBC7DB17273651D")
     
 public final int getFlags() {
@@ -2358,6 +2359,8 @@ public final boolean hasModifiers(int modifiers) {
      * @see #KEYCODE_ALT_RIGHT
      * @see #META_ALT_ON
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.230 -0500", hash_original_method = "97586FBB5F886A3B61BF136A6C082407", hash_generated_method = "7B0913A521E93CC952C8B98D17B0A583")
     
 public final boolean isAltPressed() {
@@ -2373,6 +2376,8 @@ public final boolean isAltPressed() {
      * @see #KEYCODE_SHIFT_RIGHT
      * @see #META_SHIFT_ON
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.233 -0500", hash_original_method = "CCAFE012B2273AEF4F41D4D6D0D204B5", hash_generated_method = "1CCA673789072683B3CF10664704A170")
     
 public final boolean isShiftPressed() {
@@ -2485,6 +2490,9 @@ public final boolean isScrollLockOn() {
      * 
      * @return The event action: ACTION_DOWN, ACTION_UP, or ACTION_MULTIPLE.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.251 -0500", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "76861B724DE778DC880D3D0375E21B8D")
     
 public final int getAction() {
@@ -2529,6 +2537,8 @@ public final boolean isTracking() {
      * For {@link #ACTION_DOWN} events, indicates that the event has been
      * canceled as per {@link #FLAG_LONG_PRESS}.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.262 -0500", hash_original_method = "AC7740C0A8B7B97C4388CB1808E16854", hash_generated_method = "D9615C8625B57D85D394106FAA71C912")
     
 public final boolean isLongPress() {
@@ -2541,6 +2551,9 @@ public final boolean isLongPress() {
      * 
      * @return The key code of the event.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.265 -0500", hash_original_method = "AA2A4756B9F9E3EBD53F7A185B310C03", hash_generated_method = "5529A683B3D9F1E49CF91B4CB6E54CBC")
     
 public final int getKeyCode() {
@@ -2555,6 +2568,9 @@ public final int getKeyCode() {
      * @return Returns a String of 1 or more characters associated with
      * the event.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.267 -0500", hash_original_method = "E7E0F27294714D41CE9B0DB8FACE7352", hash_generated_method = "7EEF7FA6F099A474C3BC1AD761880753")
     
 public final String getCharacters() {
@@ -2568,6 +2584,7 @@ public final String getCharacters() {
      * {@more}
      * Mostly this is here for debugging purposes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.270 -0500", hash_original_method = "C59C82C828E55FB1935E12A0581D4304", hash_generated_method = "2007E406BBAE950CFEE9A9D624D4458C")
     
 public final int getScanCode() {
@@ -2582,6 +2599,9 @@ public final int getScanCode() {
      * 
      * @return The number of times the key has repeated.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.272 -0500", hash_original_method = "4FE747AC8B0667617AE307ECFC6ED74A", hash_generated_method = "BF1FFFF7864A26F75F1F53545CCD4C5A")
     
 public final int getRepeatCount() {
@@ -2599,6 +2619,7 @@ public final int getRepeatCount() {
      * @return Returns the most recent key down time, in the
      * {@link android.os.SystemClock#uptimeMillis} time base
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.274 -0500", hash_original_method = "78B33B0396971A0CFD2DA3075372AEE4", hash_generated_method = "1E18E7D44158952E23CA627C30EE7909")
     
 public final long getDownTime() {
@@ -2612,6 +2633,9 @@ public final long getDownTime() {
      * @return Returns the time this event occurred, 
      * in the {@link android.os.SystemClock#uptimeMillis} time base.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.277 -0500", hash_original_method = "9909149D86C7172035BFD4D31C880F99", hash_generated_method = "FFD024D4791F2C5768014ED38CE2494E")
     
 public final long getEventTime() {
@@ -2619,6 +2643,7 @@ public final long getEventTime() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.279 -0500", hash_original_method = "E19EE848225D9E04BF4931E6C8BABFAF", hash_generated_method = "EDEDB87272C4B1BDD7DF4140A9B1E9BB")
     
 @Override
@@ -2632,6 +2657,7 @@ public final long getEventTime() {
      * @hide
      * @deprecated use {@link #getDeviceId()} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.282 -0500", hash_original_method = "DAE3D173E797B2BC058CC137FF578309", hash_generated_method = "81F0E0D78AA47DE812A82693A542D0DE")
     
 @Deprecated
@@ -2649,6 +2675,7 @@ public final long getEventTime() {
      *
      * @see KeyCharacterMap#load
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.284 -0500", hash_original_method = "E25038BBE92ACBB5F3F6678AD9978C07", hash_generated_method = "BF6AA37F226163A9412E47744BE1920D")
     
 public final KeyCharacterMap getKeyCharacterMap() {
@@ -2661,6 +2688,7 @@ public final KeyCharacterMap getKeyCharacterMap() {
      *
      * @return The display label character, or 0 if none (eg. for non-printing keys).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.287 -0500", hash_original_method = "709AF61B9CAC868190EE8F0D7699E677", hash_generated_method = "E98422D9353029B80B7959DC4F844319")
     
 public char getDisplayLabel() {
@@ -2686,6 +2714,7 @@ public char getDisplayLabel() {
      *
      * @return The associated character or combining accent, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.289 -0500", hash_original_method = "057CF77E1E85F6DA27F89D2E60B0B1BA", hash_generated_method = "4DFD6AFF77D5FB7569A3D60D43BEF66D")
     
 public int getUnicodeChar() {
@@ -2712,6 +2741,9 @@ public int getUnicodeChar() {
      * @param metaState The meta key modifier state.
      * @return The associated character or combining accent, or 0 if none.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.291 -0500", hash_original_method = "BE11FB783D347EE88A5E4A6075D1C256", hash_generated_method = "DF5709942362126343272935B1D1CC5E")
     
 public int getUnicodeChar(int metaState) {
@@ -2746,6 +2778,7 @@ public int getUnicodeChar(int metaState) {
      * @param chars The array of matching characters to consider.
      * @return The matching associated character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.296 -0500", hash_original_method = "BA318507FAF878809BC342F154CE9211", hash_generated_method = "3B628DD8A12CEC5701D84D780D4E9283")
     
 public char getMatch(char[] chars) {
@@ -2761,6 +2794,7 @@ public char getMatch(char[] chars) {
      * @param metaState The preferred meta key modifier state.
      * @return The matching associated character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.298 -0500", hash_original_method = "37D22A361AC08A8D1E1BFBF631093A43", hash_generated_method = "E042118E235B800177537C4F85817395")
     
 public char getMatch(char[] chars, int metaState) {
@@ -2787,6 +2821,7 @@ public char getMatch(char[] chars, int metaState) {
      *
      * @return The associated numeric or symbolic character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:23.301 -0500", hash_original_method = "8EE0DA8E3FFF6281CC8C4E46B5174FE9", hash_generated_method = "258AB9D5DB83D1ACF7169B6B20C3F432")
     
 public char getNumber() {

@@ -29,17 +29,15 @@ import org.apache.http.conn.scheme.LayeredSocketFactory;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
-
-
-
-
-
 public class SSLSocketFactory implements LayeredSocketFactory {
     
     /**
      * Gets an singleton instance of the SSLProtocolSocketFactory.
      * @return a SSLProtocolSocketFactory
      */
+    @DSComment("possible socket creation")
+    @DSSpec(DSCat.NETWORKING)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.632 -0500", hash_original_method = "6B121B894B8B46063AE1809ACAD0482F", hash_generated_method = "87AF58343C860BC81629A279DF58B94F")
     
 public static SSLSocketFactory getSocketFactory() {
@@ -73,7 +71,6 @@ private static TrustManager[] createTrustManagers(final KeyStore keystore)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.614 -0500", hash_original_field = "71F1B416844F8AD6CDB919A6F87FFF88", hash_generated_field = "CA5E4F0BFCB251BDC73BBB5281DA6EC7")
 
-
     public static final String TLS   = "TLS";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.616 -0500", hash_original_field = "124D4AF49728344A5035E3A8A654C08B", hash_generated_field = "86941BAF175786CD2D0CA4E940EC1D46")
 
@@ -82,17 +79,14 @@ private static TrustManager[] createTrustManagers(final KeyStore keystore)
 
     public static final String SSLV2 = "SSLv2";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.622 -0500", hash_original_field = "8C17E61C76FBAB027221525BBA2F085E", hash_generated_field = "D5F90D56F3DB6E488CA3C5CC0704B598")
-
     
     public static final X509HostnameVerifier ALLOW_ALL_HOSTNAME_VERIFIER 
         = new AllowAllHostnameVerifier();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.624 -0500", hash_original_field = "CC8C018C7AA7CCE05FA773E9C6818C7E", hash_generated_field = "5F3BDD7FFC06D2A92E3E1417CC23EFC0")
-
     
     public static final X509HostnameVerifier BROWSER_COMPATIBLE_HOSTNAME_VERIFIER 
         = new BrowserCompatHostnameVerifier();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.627 -0500", hash_original_field = "F2925BB528BB48B6CDC5D00043F64F03", hash_generated_field = "11D7C2BC55F08EBD00B773626A86597A")
-
     
     public static final X509HostnameVerifier STRICT_HOSTNAME_VERIFIER 
         = new StrictHostnameVerifier();
@@ -100,7 +94,6 @@ private static TrustManager[] createTrustManagers(final KeyStore keystore)
 
     private static final SSLSocketFactory DEFAULT_FACTORY = new SSLSocketFactory();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.635 -0500", hash_original_field = "AED75A470611C922665F1684CE9616BA", hash_generated_field = "99E7FAE9E3E14DF80520CEFA14EB241F")
-
     
     private  SSLContext sslcontext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.637 -0500", hash_original_field = "1EBE0F777ED2F311BDFF951F4973A92A", hash_generated_field = "E52538B4D22258905E6F27080C928A86")
@@ -198,8 +191,8 @@ private SSLSocketFactory() {
         this.nameResolver = null;
     }
 
-
     // non-javadoc, see interface org.apache.http.conn.SocketFactory
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.666 -0500", hash_original_method = "63050927494CC5AD1D14809EA278FFBF", hash_generated_method = "2D16386E7F46613604C88B4691B040E5")
     
 public Socket createSocket()
@@ -208,7 +201,6 @@ public Socket createSocket()
         // the cast makes sure that the factory is working as expected
         return (SSLSocket) this.socketfactory.createSocket();
     }
-
 
     // non-javadoc, see interface org.apache.http.conn.SocketFactory
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.669 -0500", hash_original_method = "1B91A377551E45AA28D03654EA268EA3", hash_generated_method = "6495BE9FBFE0542299E71FE520914380")
@@ -268,7 +260,6 @@ public Socket connectSocket(
         return sslsock;
     }
 
-
     /**
      * Checks whether a socket connection is secure.
      * This factory creates TLS/SSL socket connections
@@ -305,7 +296,6 @@ public boolean isSecure(Socket sock)
 
     } // isSecure
 
-
     // non-javadoc, see interface LayeredSocketFactory
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.674 -0500", hash_original_method = "76BFB202D82A5741071D030FB94DC57A", hash_generated_method = "CAABFADD958083AD03DF766B6A0223C2")
     
@@ -335,6 +325,7 @@ public void setHostnameVerifier(X509HostnameVerifier hostnameVerifier) {
         this.hostnameVerifier = hostnameVerifier;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.678 -0500", hash_original_method = "E4B056341E706F6A6ED43C64885CAEDA", hash_generated_method = "E6917D33729ADF2866948C5F78D5FE60")
     
 public X509HostnameVerifier getHostnameVerifier() {

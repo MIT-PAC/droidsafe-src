@@ -8,13 +8,8 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class WifiP2pDevice implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.178 -0500", hash_original_field = "F04D9FB2301464066CA4B658866B1A7C", hash_generated_field = "2D3FA46E684AAF11DB903AED32FED7F0")
-
 
     private static final String TAG = "WifiP2pDevice";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.193 -0500", hash_original_field = "277B34EC794982313F1D75A836F7B86F", hash_generated_field = "34C7BFF4A71DE101F52E5FEEC7E3D4DD")
@@ -67,7 +62,6 @@ public class WifiP2pDevice implements Parcelable {
 
     private static final int GROUP_CAPAB_GROUP_FORMATION            = 1<<6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.237 -0500", hash_original_field = "1E24F9D848DD61AFCB4567859AC1F346", hash_generated_field = "C64FAE939570F571A8BAE24D1B70BD13")
-
 
     public static final int CONNECTED   = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.239 -0500", hash_original_field = "8BCF35DAC151898B7E0676E11300D32A", hash_generated_field = "B6613B33DED36EABAC0CBA0C7B969929")
@@ -311,6 +305,7 @@ public int describeContents() {
     }
 
     /** Implement the Parcelable interface */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:01.278 -0500", hash_original_method = "F1F1C1D05E28ABD7E03ACA6C9259AC2F", hash_generated_method = "9823E54C53B079EDAC31D5C9B4C87A7F")
     
 public void writeToParcel(Parcel dest, int flags) {

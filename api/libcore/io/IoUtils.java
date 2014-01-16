@@ -15,10 +15,6 @@ import java.io.RandomAccessFile;
 import java.net.Socket;
 import java.nio.charset.Charsets;
 
-
-
-
-
 public final class IoUtils {
 
     /**
@@ -82,6 +78,7 @@ public static void closeQuietly(Socket socket) {
     /**
      * Sets 'fd' to be blocking or non-blocking, according to the state of 'blocking'.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.017 -0500", hash_original_method = "14AC22A96F8390BF85D5B067B091626F", hash_generated_method = "755DF892B39B85540801AE5A0975FD87")
     
 public static void setBlocking(FileDescriptor fd, boolean blocking) throws IOException {
@@ -160,7 +157,6 @@ public static void deleteContents(File dir) throws IOException {
     
 private IoUtils() {
     }
-
     
 }
 

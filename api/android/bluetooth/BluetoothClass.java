@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class BluetoothClass implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.428 -0500", hash_original_field = "1D5262A0E52304A95D0DF93E7D728EC1", hash_generated_field = "0A8DCF3C3E9335974986AC8A09465280")
 
@@ -50,7 +46,6 @@ public BluetoothClass[] newArray(int size) {
     public static final int PROFILE_NAP = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.430 -0500", hash_original_field = "E48DAE8D69C6B9F32DD524643B0838E9", hash_generated_field = "6544EE8866FC2E4C41A3A39948F7A47D")
 
-
     private  int mClass;
 
     /** @hide */
@@ -69,14 +64,12 @@ public BluetoothClass(int classInt) {
         }
         return false;
     }
-
     
     public static final class Service {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.455 -0500", hash_original_field = "D91B93CE6579CFD68BD5809AC8BE46B2", hash_generated_field = "426959E7E86F5DF5ED12EDB76E954DA5")
 
         private static final int BITMASK                 = 0xFFE000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.458 -0500", hash_original_field = "E5B7909731FDC8A93250CAAD2A787418", hash_generated_field = "5E269E79168551A0C4298C7721D7C84C")
-
 
         public static final int LIMITED_DISCOVERABILITY = 0x002000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.460 -0500", hash_original_field = "4B7BE0C082A7D10FCED74D74BCA08409", hash_generated_field = "00734D753B05B56395771F5D6B15AA89")
@@ -110,21 +103,17 @@ public BluetoothClass(int classInt) {
             //Synthesized constructor
         }
     }
-
-
     
     public static class Device {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.485 -0500", hash_original_field = "DC2C858F406E573FC7ADDF2541C8F380", hash_generated_field = "1D5B39E9B9B878FCC7CCB5BCFF59714D")
 
         private static final int BITMASK               = 0x1FFC;
 
-
         public static class Major {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.488 -0500", hash_original_field = "2AC9787844C4CC027375EE390B3EA166", hash_generated_field = "B141CF4C38B0F742777D6B2BC51B9A0B")
 
             private static final int BITMASK           = 0x1F00;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.491 -0500", hash_original_field = "6D3D0C5A0929F11A9B74859A2E80530D", hash_generated_field = "AE466877227B4A952D2138EB1029E3C6")
-
 
             public static final int MISC              = 0x0000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.493 -0500", hash_original_field = "E699ACD1B8D89BF33A62BBEABF6DD644", hash_generated_field = "20E6C2C42D683E45418599697445F839")
@@ -387,6 +376,7 @@ public boolean hasService(int service) {
      *
      * @return major device class component
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.660 -0500", hash_original_method = "3B15E8C4111EC35F10AF5C168F9A121C", hash_generated_method = "E36907ABD2D926BC80410DA751E44A09")
     
 public int getMajorDeviceClass() {
@@ -402,6 +392,7 @@ public int getMajorDeviceClass() {
      *
      * @return device class component
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:33.662 -0500", hash_original_method = "BA237D1BE1EA8EE11A66DDAAF0ED747D", hash_generated_method = "771C43732EC2FB8958C6B376C6A4572D")
     
 public int getDeviceClass() {

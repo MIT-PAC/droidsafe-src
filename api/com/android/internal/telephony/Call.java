@@ -7,14 +7,8 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import java.util.List;
 
-
-
-
-
-
 public abstract class Call {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.352 -0500", hash_original_field = "B9A7F7508B0B5FA0BFE8695446A61CF7", hash_generated_field = "682AB4A75DC1B6B1A2EFDFBB9B599B89")
-
 
     public State state = State.IDLE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.355 -0500", hash_original_field = "7D8BB6ADB117CDA5A7D86665AF4C7DC1", hash_generated_field = "A3D78BB4BFE03BD2029C37858ABFEC15")
@@ -26,7 +20,6 @@ public abstract class Call {
     // merged, etc.
     protected boolean isGeneric = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.359 -0500", hash_original_field = "AA82415423A161F79EE53609FCB2BED1", hash_generated_field = "548675245A66AB01BBAEC34E10E70E57")
-
 
     protected final String LOG_TAG = "Call";
     
@@ -54,7 +47,6 @@ public abstract boolean isMultiparty();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.371 -0500", hash_original_method = "75701B1B375E0F543AC12EA12A4A97FB", hash_generated_method = "A317DEC2810CF43CE258BB1AF0C61528")
     
 public abstract void hangup() throws CallStateException;
-
 
     /**
      * hasConnection
@@ -110,6 +102,7 @@ public boolean isIdle() {
      * Returns the Connection associated with this Call that was created
      * first, or null if there are no Connections in this Call
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.390 -0500", hash_original_method = "EADA1B2297DA3CAB3CFE5B591670DF74", hash_generated_method = "ACEB13664304309AF4846C775A69615B")
     
 public Connection
@@ -140,6 +133,7 @@ public Connection
         return earliest;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.394 -0500", hash_original_method = "259AE56D0CCB8C7D336EA51014BAFBD4", hash_generated_method = "694B93E1CD996C155FD6BF023A5236CA")
     
 public long
@@ -165,6 +159,7 @@ public long
         return time;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.397 -0500", hash_original_method = "4FCBF4743EBF22DA857FFD7B3BA209EB", hash_generated_method = "70C8DDCABB05E4F8DC7A0DAFCFE8C149")
     
 public long
@@ -188,7 +183,6 @@ public long
         return time;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.400 -0500", hash_original_method = "0639B31F7C82A2CFB39F855F1440727E", hash_generated_method = "45B471CBFE7BC9E8B7652A10E092F8EC")
     
 public boolean
@@ -207,6 +201,7 @@ public boolean
      * Returns the Connection associated with this Call that was created
      * last, or null if there are no Connections in this Call
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.407 -0500", hash_original_method = "D3D12A7045E5E26EBF89650CB45460A7", hash_generated_method = "4558929149DE334138F10DA6DC7EFE45")
     
 public Connection
@@ -264,7 +259,6 @@ public void hangupIfAlive() {
             }
         }
     }
-
     
     public enum State {
         IDLE, ACTIVE, HOLDING, DIALING, ALERTING, INCOMING, WAITING, DISCONNECTED, DISCONNECTING;
@@ -287,7 +281,6 @@ public boolean isDialing() {
             return this == DIALING || this == ALERTING;
         }
     }
-
     
 }
 

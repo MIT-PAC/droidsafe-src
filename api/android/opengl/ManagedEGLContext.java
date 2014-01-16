@@ -18,11 +18,6 @@ import android.util.Log;
 
 import com.google.android.gles_jni.EGLImpl;
 
-
-
-
-
-
 public abstract class ManagedEGLContext {
 
     /** @hide */
@@ -73,10 +68,8 @@ public static boolean doTerminate() {
     static final String TAG = "ManagedEGLContext";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.353 -0500", hash_original_field = "675FF3412C0D87AB65E85E5B1A61006D", hash_generated_field = "6F26B317B7D1B34F8FDEAC7200D5F188")
 
-
     static final ArrayList<ManagedEGLContext> sActive = new ArrayList<ManagedEGLContext>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.355 -0500", hash_original_field = "5F205B80EE2B67A11B019B523ECA191F", hash_generated_field = "5F205B80EE2B67A11B019B523ECA191F")
-
 
      EGLContext mContext;
 
@@ -95,6 +88,7 @@ public ManagedEGLContext(EGLContext context) {
     /**
      * Retrieve the EGLContext being managed by the class.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:09.360 -0500", hash_original_method = "0BA5CAD8B17303B4C3A912EF0F9065A7", hash_generated_method = "3F9873457B8E9F7828FDD34F986E7D80")
     
 public EGLContext getContext() {

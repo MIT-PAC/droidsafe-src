@@ -7,12 +7,10 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import android.util.Printer;
 
-
-
 public class Looper {
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static void prepare() {
     	/*
         if (sThreadLocal.get() != null) {
@@ -21,7 +19,6 @@ public class Looper {
         sThreadLocal.set(new Looper());
         */
     }
-
     
     public static void prepareMainLooper() {
         prepare();
@@ -37,14 +34,15 @@ private synchronized static void setMainLooper(Looper looper) {
 
     /** Returns the application's main looper, which lives in the main thread of the application.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.966 -0500", hash_original_method = "B301D14AF486D9D7134940A0F1BF13CF", hash_generated_method = "7397F1AB5AB47E75F37A7B7BE4B27DD9")
     
 public synchronized static Looper getMainLooper() {
         return mMainLooper;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void loop() {
         Looper me = myLooper();
         if (me == null) {
@@ -58,9 +56,9 @@ public synchronized static Looper getMainLooper() {
         long newIdent = Binder.clearCallingIdentity();
             msg.recycle();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public static Looper myLooper() {
         return mLocalLooper;
     }
@@ -88,7 +86,6 @@ public static MessageQueue myQueue() {
     private static Looper mLocalLooper = new Looper();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.948 -0500", hash_original_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
 
-
      MessageQueue mQueue;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.950 -0500", hash_original_field = "8CE20653889294789C714060A391C40F", hash_generated_field = "8CE20653889294789C714060A391C40F")
 
@@ -97,7 +94,6 @@ public static MessageQueue myQueue() {
 
     volatile boolean mRun;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.954 -0500", hash_original_field = "2EC3375BAD17E0646ECDA14E2CF7DFDD", hash_generated_field = "0DDB3AFD1E93687434C7D033CB3772C9")
-
 
     private Printer mLogging = null;
 
@@ -123,9 +119,7 @@ private Looper() {
 public void setMessageLogging(Printer printer) {
         mLogging = printer;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void quit(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //Message msg = Message.obtain();
@@ -138,7 +132,6 @@ public void setMessageLogging(Printer printer) {
     }
         */
     }
-
     
     public static interface Profiler {
         void profile(Message message, long wallStart, long wallTime,
@@ -148,6 +141,7 @@ public void setMessageLogging(Printer printer) {
     /**
      * Return the Thread associated with this Looper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.983 -0500", hash_original_method = "10A14FF061E08E67689F0F5686D6176F", hash_generated_method = "D402F1CFC3CD0CBF03882696518D38AC")
     
 public Thread getThread() {
@@ -155,16 +149,15 @@ public Thread getThread() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.984 -0500", hash_original_method = "9CC180E1B870A467FDD64311213EECB9", hash_generated_method = "00329067F61FEEBF263D62E8B22EAD26")
     
 public MessageQueue getQueue() {
         return mQueue;
     }
-
     
     public void dump(Printer pw, String prefix){
     }
-
     
     public String toString(){
         String str = new String();

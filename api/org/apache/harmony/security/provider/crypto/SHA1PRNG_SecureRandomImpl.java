@@ -13,13 +13,8 @@ import java.security.SecureRandomSpi;
 import libcore.io.Streams;
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serializable, SHA1_Data {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.846 -0500", hash_original_field = "6F03A5AC2EC741E6E21992044EC9E20A", hash_generated_field = "0572D6ADF8B4E59E97C497432F887795")
-
 
     private static final long serialVersionUID = 283736797212159675L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.848 -0500", hash_original_field = "60A82CC01099C7BAF874DAE854BC3873", hash_generated_field = "0F1C325B708C29F28B9D69D7577CC406")
@@ -34,18 +29,14 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     private static final int[] END_FLAGS = { 0x80000000, 0x800000, 0x8000, 0x80 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.851 -0500", hash_original_field = "A3597CAB9F9B70F78CB01E1E962409FE", hash_generated_field = "5C807BEE19CE765B4317F673B97DF948")
 
-
     private static final int[] RIGHT1 = { 0, 40, 48, 56 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.853 -0500", hash_original_field = "B5DF17BA81F90ACA0C2CCF658BE65002", hash_generated_field = "EAE2B62B1EF3A743512A0964184AADD2")
-
 
     private static final int[] RIGHT2 = { 0, 8, 16, 24 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.855 -0500", hash_original_field = "B6787AC593801E247278B20C503DAC3A", hash_generated_field = "B0E4A4E8E92603834DE04BB669F210A3")
 
-
     private static final int[] LEFT = { 0, 24, 16, 8 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.858 -0500", hash_original_field = "4BA2F89887BE125CE4FDA3872EB2FB82", hash_generated_field = "5ED2E9AA85783BAD621E242DDC93B094")
-
 
     private static final int[] MASK = { 0xFFFFFFFF, 0x00FFFFFF, 0x0000FFFF,
             0x000000FF };
@@ -78,34 +69,26 @@ public class SHA1PRNG_SecureRandomImpl extends SecureRandomSpi implements Serial
     private static final int COUNTER_BASE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.869 -0500", hash_original_field = "D91CE7754FB2AAD93BB2ED44153EDD46", hash_generated_field = "FC08696CCFA3EE206632295D5608E52A")
 
-
     private static final int HASHCOPY_OFFSET = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.871 -0500", hash_original_field = "50763DBF508EAE5AC2FA012522F30F0E", hash_generated_field = "BDC895B0D82A3B69363AB3B21E484915")
-
 
     private static final int EXTRAFRAME_OFFSET = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.874 -0500", hash_original_field = "CE1D88E6ACC97EF54DFCB7F7C36E5635", hash_generated_field = "D124EA7B91A1E166C74CB5971C4654D2")
 
-
     private static final int FRAME_OFFSET = 21;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.876 -0500", hash_original_field = "C5089646A7A1EABB39E57DED21CF5BE3", hash_generated_field = "16F5CCEF9F3F7B3A8F222B597A35CCA0")
-
 
     private static final int MAX_BYTES = 48;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.879 -0500", hash_original_field = "76543FBD60BDE03E72033EDE3CFE4116", hash_generated_field = "0DF11F4AAB291BF53347A9E765D366AE")
 
-
     private static final int UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.881 -0500", hash_original_field = "1CE9ED40DD56F00D2B174CD7ADC11648", hash_generated_field = "70F1EFD63BAB99FD438DDC5003389359")
-
 
     private static final int SET_SEED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.884 -0500", hash_original_field = "2C5DE8B3C43DC2FBE7D337554C2BEC79", hash_generated_field = "C7803B16145BE4E5D1B39E398B4A7566")
 
-
     private static final int NEXT_BYTES = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.886 -0500", hash_original_field = "5B4AC7C3AA889606B4A9C7B25C35A4FF", hash_generated_field = "8D0E7E89B95D023E9161984B3CF40ACF")
-
 
     private static SHA1PRNG_SecureRandomImpl myRandom;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.888 -0500", hash_original_field = "3900C177E5826B2C8E23E54E341EEF94", hash_generated_field = "3A8DBD8D358FE4BE848C2D6E312D8C3C")
@@ -240,6 +223,7 @@ protected synchronized void engineSetSeed(byte[] seed) {
      * @throws
      *       InvalidParameterException - if numBytes < 0
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.914 -0500", hash_original_method = "DD8EBB0EDF44ABE263687E4C98AB74A0", hash_generated_method = "DF02DED43394811F487DC203A1224014")
     
 protected synchronized byte[] engineGenerateSeed(int numBytes) {

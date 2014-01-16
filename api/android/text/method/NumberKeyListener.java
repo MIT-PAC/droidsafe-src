@@ -13,9 +13,6 @@ import android.text.Spanned;
 import android.view.KeyEvent;
 import android.view.View;
 
-
-
-
 public abstract class NumberKeyListener extends BaseKeyListener implements InputFilter {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.031 -0500", hash_original_method = "31CEF7B6ADFCFD6FD706824ECFEAE65B", hash_generated_method = "D718178AA3D8EF616421B07A2848E87F")
@@ -30,7 +27,6 @@ protected static boolean ok(char[] accept, char c) {
         return false;
     }
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.475 -0400", hash_original_method = "4B29623A8F76435C1A957FA964420338", hash_generated_method = "4B29623A8F76435C1A957FA964420338")
     public NumberKeyListener ()
     {
@@ -136,7 +132,6 @@ public CharSequence filter(CharSequence source, int start, int end,
         adjustMetaAfterKeypress(content);
         return super.onKeyDown(view, content, keyCode, event);
     }
-
     
 }
 

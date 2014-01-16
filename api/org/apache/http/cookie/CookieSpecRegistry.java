@@ -12,12 +12,8 @@ import java.util.Map;
 
 import org.apache.http.params.HttpParams;
 
-
-
-
 public final class CookieSpecRegistry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.336 -0500", hash_original_field = "B37A8525745FEA41F536E1DEDD24F56B", hash_generated_field = "010E9F60B3F377D0B23925E8DA25B64D")
-
 
     private  Map<String,CookieSpecFactory> registeredSpecs;
     
@@ -90,7 +86,7 @@ public synchronized CookieSpec getCookieSpec(final String name, final HttpParams
         } else {
             throw new IllegalStateException("Unsupported cookie spec: " + name);
         }
-    } 
+    }
 
     /**
      * Gets the {@link CookieSpec cookie specification} with the given name.
@@ -106,7 +102,7 @@ public synchronized CookieSpec getCookieSpec(final String name, final HttpParams
 public synchronized CookieSpec getCookieSpec(final String name) 
         throws IllegalStateException {
         return getCookieSpec(name, null);
-    } 
+    }
 
     /**
      * Obtains a list containing names of all registered {@link CookieSpec cookie 
@@ -117,6 +113,7 @@ public synchronized CookieSpec getCookieSpec(final String name)
      * 
      * @return list of registered cookie spec names
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.352 -0500", hash_original_method = "4CC259988AD0BC6F5659CB623EFD31B9", hash_generated_method = "40AC73DB014F53544211242E832A2F83")
     
 public synchronized List<String> getSpecNames(){
@@ -138,7 +135,6 @@ public synchronized void setItems(final Map<String, CookieSpecFactory> map) {
         registeredSpecs.clear();
         registeredSpecs.putAll(map);
     }
-
     
 }
 

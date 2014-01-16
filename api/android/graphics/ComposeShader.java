@@ -5,36 +5,25 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class ComposeShader extends Shader {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate1(int native_shaderA, int native_shaderB,
             int native_mode) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate2(int native_shaderA, int native_shaderB,
             int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativePostCreate1(int native_shader, int native_skiaShaderA,
             int native_skiaShaderB, int native_mode) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativePostCreate2(int native_shader, int native_skiaShaderA,
             int native_skiaShaderB, int porterDuffMode) {
         return DSUtils.UNKNOWN_INT;
@@ -90,7 +79,6 @@ public ComposeShader(Shader shaderA, Shader shaderB, PorterDuff.Mode mode) {
         native_shader = nativePostCreate2(native_instance, shaderA.native_shader,
                 shaderB.native_shader, mode.nativeInt);
     }
-
     
 }
 

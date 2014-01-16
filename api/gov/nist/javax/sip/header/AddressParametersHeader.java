@@ -10,14 +10,8 @@ import javax.sip.address.Address;
 import javax.sip.header.HeaderAddress;
 import javax.sip.header.Parameters;
 
-
-
-
-
-
 public abstract class AddressParametersHeader extends ParametersHeader implements Parameters {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.430 -0500", hash_original_field = "FA8896132AE8FEC3BA371981DFF10BB4", hash_generated_field = "50232C7D5628BA6D2DA2D4A79905A12A")
-
 
     protected AddressImpl address;
 
@@ -46,6 +40,7 @@ protected AddressParametersHeader(String name, boolean sync) {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.AddressParameters#getAddress()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.433 -0500", hash_original_method = "9472CD13980FF331A1EC2B82F4638C6F", hash_generated_method = "C447D8F3D28FA4B357817DCC39DEFF36")
     
 public Address getAddress() {
@@ -64,6 +59,7 @@ public void setAddress(Address address) {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.AddressParameters#clone()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:10.445 -0500", hash_original_method = "0CBC2CD54CDD43105BA83DF4459B73A7", hash_generated_method = "FB5CBBFE24B024CC25590AC7DAF685F2")
     
 public Object clone() {
@@ -81,15 +77,12 @@ public Object clone() {
 public boolean equals(Object other) {
         if (this==other) return true;
 
-
-
         if (other instanceof HeaderAddress && other instanceof Parameters) {
             final HeaderAddress o = (HeaderAddress) other;
             return this.getAddress().equals( o.getAddress() ) && this.equalParameters( (Parameters) o );
         }
         return false;
     }
-
     
 }
 

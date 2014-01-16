@@ -9,11 +9,6 @@ import java.math.BigInteger;
 
 import org.apache.harmony.security.asn1.ASN1Integer;
 
-
-
-
-
-
 public final class InhibitAnyPolicy extends ExtensionValue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.006 -0500", hash_original_field = "E50BA320A230875E33FBEB8EC9831240", hash_generated_field = "34CEC7EBF0D69FDD5ECCA6C7F25F7FAF")
 
@@ -33,6 +28,7 @@ public InhibitAnyPolicy(byte[] encoding) throws IOException {
     /**
      * Returns ASN.1 encoded form of the object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.011 -0500", hash_original_method = "3EBD51C43A05A1E4C8002DD6E78AE310", hash_generated_method = "93B1342ED85B3B9C4E78A3017E567EEB")
     
 @Override public byte[] getEncoded() {
@@ -48,7 +44,6 @@ public InhibitAnyPolicy(byte[] encoding) throws IOException {
 @Override public void dumpValue(StringBuilder sb, String prefix) {
         sb.append(prefix).append("Inhibit Any-Policy: ").append(skipCerts).append('\n');
     }
-
     
 }
 

@@ -34,18 +34,11 @@ import org.xml.sax.helpers.LocatorImpl;
 import org.xmlpull.v1.XmlPullParser;
 import org.xmlpull.v1.XmlPullParserException;
 
-
-
-
-
-
 class DocumentBuilderImpl extends DocumentBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.531 -0500", hash_original_field = "0102F1A49F8E316D8FD2897170D47D13", hash_generated_field = "512771BF3B10ACB6843471120D35250C")
 
-
     private static DOMImplementationImpl dom = DOMImplementationImpl.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.533 -0500", hash_original_field = "61B02D1FC4FDC4DF74DBAFF8FF38BA22", hash_generated_field = "4A9121F2D482493F3BEB1C30E72C76AA")
-
 
     private boolean coalescing;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.535 -0500", hash_original_field = "0F20E0B3BF6506A85F7C0D2D3D40FE9D", hash_generated_field = "923D10729FC72A63D7530A13EDC17701")
@@ -82,6 +75,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
         namespaceAware = false;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.549 -0500", hash_original_method = "18E3291D22CB922EEB4EFC42536C583A", hash_generated_method = "CE3A709CF5F906BDFA69FE3E3C90941E")
     
 @Override
@@ -103,6 +97,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
         return false;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.556 -0500", hash_original_method = "F8DF5811CFC2B33C1997BC6906E28600", hash_generated_method = "16602D19C7704B69970676F8A06EF9AB")
     
 @Override
@@ -110,6 +105,7 @@ class DocumentBuilderImpl extends DocumentBuilder {
         return dom.createDocument(null, null, null);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:23.560 -0500", hash_original_method = "3B90C04D8401BDC844BD72B6E8D6BA23", hash_generated_method = "F316879D365ECE09EF888752D05DFA3F")
     
 @Override

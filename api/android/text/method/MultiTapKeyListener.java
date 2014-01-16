@@ -15,10 +15,6 @@ import android.util.SparseArray;
 import android.view.KeyEvent;
 import android.view.View;
 
-
-
-
-
 public class MultiTapKeyListener extends BaseKeyListener implements SpanWatcher {
 
     /**
@@ -57,10 +53,8 @@ private static void removeTimeouts(Spannable buf) {
         new MultiTapKeyListener[Capitalize.values().length * 2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.526 -0500", hash_original_field = "ECA101F9529E11568760EB2314D83FC5", hash_generated_field = "7F64AC2635E34AEAB242631B33213228")
 
-
     private static final SparseArray<String> sRecs = new SparseArray<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.528 -0500", hash_original_field = "917533800E906A4D91677293540D1184", hash_generated_field = "7D23761C8705FAE591EE2FF3599940B6")
-
 
     private Capitalize mCapitalize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.531 -0500", hash_original_field = "CD7A811405529AA08CC45A606C53B887", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
@@ -75,6 +69,7 @@ public MultiTapKeyListener(Capitalize cap,
         mAutoText = autotext;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.542 -0500", hash_original_method = "0F62DAE08CCEDDF88EBED8C62070D6C5", hash_generated_method = "0B7F1FA09C054D9B934295C3C2A89BD2")
     
 public int getInputType() {
@@ -241,11 +236,9 @@ public void onSpanChanged(Spannable buf,
             removeTimeouts(buf);
         }
     }
-
     
     private class Timeout extends Handler implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.564 -0500", hash_original_field = "2E9B92BEB3F58CC9235E27C030F0082B", hash_generated_field = "18D0F939AB26C87C5090868F3237476C")
-
 
         private Editable mBuffer;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:02.558 -0500", hash_original_method = "3DB3951CA009929F9B4A37752F403591", hash_generated_method = "E7DCEC8AB791586EB937CA795193DAF7")
@@ -277,7 +270,6 @@ public void run() {
                 buf.removeSpan(Timeout.this);
             }
         }
-
         
     }
 

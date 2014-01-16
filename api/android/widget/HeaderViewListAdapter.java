@@ -10,10 +10,6 @@ import android.database.DataSetObserver;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.789 -0500", hash_original_field = "AD39205CE4628FAF011224FC936A4AF8", hash_generated_field = "EF2B0A0494B67C8F24E4D169C794B14E")
 
@@ -21,7 +17,6 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     static final ArrayList<ListView.FixedViewInfo> EMPTY_INFO_LIST =
         new ArrayList<ListView.FixedViewInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.783 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "90F29768206AB431EA361CD94838716F")
-
 
     private  ListAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.785 -0500", hash_original_field = "1174AC07D1E0FF5BE8FD7B73F622A98F", hash_generated_field = "CEDAAC6F6360C6156C22BE83085C5887")
@@ -33,10 +28,8 @@ public class HeaderViewListAdapter implements WrapperListAdapter, Filterable {
     ArrayList<ListView.FixedViewInfo> mFooterViewInfos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.791 -0500", hash_original_field = "2DA9D21A65202F474DD30A137186E034", hash_generated_field = "2DA9D21A65202F474DD30A137186E034")
 
-
     boolean mAreAllFixedViewsSelectable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.793 -0500", hash_original_field = "83C0874C8DB809FB4C012228E2EA2945", hash_generated_field = "6776BDE0D016372C684D038A88F70F04")
-
 
     private  boolean mIsFilterable;
 
@@ -65,12 +58,14 @@ public HeaderViewListAdapter(ArrayList<ListView.FixedViewInfo> headerViewInfos,
                 && areAllListInfosSelectable(mFooterViewInfos);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.799 -0500", hash_original_method = "F816FE78C9557554F8C5B6BB80A06D13", hash_generated_method = "D35435BAA79C392D18F5E294569DB3F6")
     
 public int getHeadersCount() {
         return mHeaderViewInfos.size();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.801 -0500", hash_original_method = "03601E80550495DBAEB6124EE960EF9F", hash_generated_method = "62EBC05D9B9AEF1600C7DCEAB7EE6C8B")
     
 public int getFootersCount() {
@@ -134,6 +129,7 @@ public boolean removeFooter(View v) {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.812 -0500", hash_original_method = "5EA4C802749955ACC8971AB13A15905C", hash_generated_method = "57CBC94C41FE3169911F7A0E0BD707AD")
     
 public int getCount() {
@@ -177,6 +173,7 @@ public boolean isEnabled(int position) {
         return mFooterViewInfos.get(adjPosition - adapterCount).isSelectable;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.819 -0500", hash_original_method = "5FB1DDE7849FB7B1EE35000192AE1125", hash_generated_method = "8918F8CAD06FC669E29BCDAAF4D39293")
     
 public Object getItem(int position) {
@@ -200,6 +197,7 @@ public Object getItem(int position) {
         return mFooterViewInfos.get(adjPosition - adapterCount).data;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.822 -0500", hash_original_method = "0EFF2641ED72ED5C174A1DFD9DE35423", hash_generated_method = "E63E5B93CC2923AAA40B574637AC8D43")
     
 public long getItemId(int position) {
@@ -223,6 +221,7 @@ public boolean hasStableIds() {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.826 -0500", hash_original_method = "B94999E1741825084E6BE4B30684EEAE", hash_generated_method = "1EFB409B82444E045D3208D61B0334FB")
     
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -246,6 +245,7 @@ public View getView(int position, View convertView, ViewGroup parent) {
         return mFooterViewInfos.get(adjPosition - adapterCount).view;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.829 -0500", hash_original_method = "18109841CF71190B9879A21F432A9D28", hash_generated_method = "294400AE5B0954E97BC6CBAE52859F08")
     
 public int getItemViewType(int position) {
@@ -261,6 +261,7 @@ public int getItemViewType(int position) {
         return AdapterView.ITEM_VIEW_TYPE_HEADER_OR_FOOTER;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.831 -0500", hash_original_method = "8F6564F3EA2E826663B1C340FEA4D3E0", hash_generated_method = "2DF38352BC9D91C6EC5B960423681FED")
     
 public int getViewTypeCount() {
@@ -286,6 +287,7 @@ public void unregisterDataSetObserver(DataSetObserver observer) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.837 -0500", hash_original_method = "9E800AF0A66A6C48391AEDACEAEC8859", hash_generated_method = "97FF7B6BF06B1EBE426196BC748DB848")
     
 public Filter getFilter() {
@@ -295,6 +297,7 @@ public Filter getFilter() {
         return null;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:05.839 -0500", hash_original_method = "16C6428A588CE1C0BF49AB22D8718A60", hash_generated_method = "1B4072FCD9397C730B9A7DF907318F48")
     
 public ListAdapter getWrappedAdapter() {

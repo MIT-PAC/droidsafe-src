@@ -20,10 +20,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.SparseArray;
 
-
-
-
-
 public class StorageManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.011 -0500", hash_original_field = "4FFA6AABE302BD622ED70CB179957D24", hash_generated_field = "666FAAC497550CA891D002F26E180573")
 
@@ -73,7 +69,7 @@ public StorageManager(Looper tgtLooper) throws RemoteException {
     }
     
     //Added by manual modeling
-    @DSModeled(DSC.BAN)
+    
     public  StorageManager() {
         /*
         if (DroidSafeAndroidRuntime.control) {
@@ -98,7 +94,6 @@ public StorageManager(Looper tgtLooper) throws RemoteException {
 private int getNextNonce() {
         return mNextNonce.getAndIncrement();
     }
-
 
     /**
      * Registers a {@link android.os.storage.StorageEventListener StorageEventListener}.
@@ -300,6 +295,7 @@ public boolean unmountObb(String filename, boolean force, OnObbStateChangeListen
      * @param filename path to OBB image
      * @return true if OBB is mounted; false if not mounted or on error
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.153 -0500", hash_original_method = "4111120C74906E4EF74CC0B96E5C85EA", hash_generated_method = "5CE4857D25FF91B9771ACE3CA8E56D49")
     
 public boolean isObbMounted(String filename) {
@@ -325,6 +321,7 @@ public boolean isObbMounted(String filename) {
      * @return absolute path to mounted OBB image data or <code>null</code> if
      *         not mounted or exception encountered trying to read status
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.156 -0500", hash_original_method = "4524FA5E45068B5E619708F061E65DAB", hash_generated_method = "0F4BAE3ECC3FDE074D70F5170D657C41")
     
 public String getMountedObbPath(String filename) {
@@ -345,6 +342,7 @@ public String getMountedObbPath(String filename) {
      * Gets the state of a volume via its mountpoint.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.158 -0500", hash_original_method = "9BA3F19D0DE55EC9B6B86E9B817FE10B", hash_generated_method = "D81876DE63D0AD390F244C6C56BDEE91")
     
 public String getVolumeState(String mountPoint) {
@@ -360,6 +358,7 @@ public String getVolumeState(String mountPoint) {
      * Returns list of all mountable volumes.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.160 -0500", hash_original_method = "7E321C52EE616E46A0C899410949AC4D", hash_generated_method = "A4186C0F929126F46AA2F6469447BA79")
     
 public StorageVolume[] getVolumeList() {
@@ -377,7 +376,6 @@ public StorageVolume[] getVolumeList() {
             return null;
         }
     }
-
     
     private class MountServiceBinderListener extends IMountServiceListener.Stub {
         
@@ -386,6 +384,7 @@ public StorageVolume[] getVolumeList() {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.026 -0500", hash_original_method = "3247F72E228BC8CA6CB0EFFDE0587175", hash_generated_method = "B6CDF41B8392D00636461509E8ACBF35")
         
 public void onUsbMassStorageConnectionChanged(boolean available) {
@@ -395,6 +394,7 @@ public void onUsbMassStorageConnectionChanged(boolean available) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.028 -0500", hash_original_method = "3412F22C5256750E7F040A232BDF8730", hash_generated_method = "750426AD55B9B0F2E3D1F3F0958781E9")
         
 public void onStorageStateChanged(String path, String oldState, String newState) {
@@ -403,11 +403,8 @@ public void onStorageStateChanged(String path, String oldState, String newState)
                 mListeners.get(i).sendStorageStateChanged(path, oldState, newState);
             }
         }
-
         
     }
-
-
     
     private class ObbActionListener extends IObbActionListener.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.034 -0500", hash_original_field = "23C5790839FDFB2DAD01EEE256FA3566", hash_generated_field = "B401ACBFDEFD68175AFBDCAE004213C6")
@@ -438,6 +435,7 @@ public void onStorageStateChanged(String path, String oldState, String newState)
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.040 -0500", hash_original_method = "8B6662593D8FF2E95312263F2E6C8A4E", hash_generated_method = "E26E5F1ED0096FD7B4E0D244EF6DF5EA")
         
 public int addListener(OnObbStateChangeListener listener) {
@@ -449,11 +447,8 @@ public int addListener(OnObbStateChangeListener listener) {
 
             return delegate.nonce;
         }
-
         
     }
-
-
     
     private class ObbListenerDelegate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.047 -0500", hash_original_field = "89BE479661C8257EB0C4B86BAF60CD99", hash_generated_field = "9765B2BB1BD930598C2982AB60432360")
@@ -463,7 +458,6 @@ public int addListener(OnObbStateChangeListener listener) {
 
         private  Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.052 -0500", hash_original_field = "5C0AC92679469CD4F266AD5EA3C62C10", hash_generated_field = "025203DA6E702827C569DA1096B5E235")
-
 
         private  int nonce;
 
@@ -492,6 +486,7 @@ ObbListenerDelegate(OnObbStateChangeListener listener) {
             };
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.061 -0500", hash_original_method = "834954D068AF2864C85CCAD9D321B725", hash_generated_method = "834954D068AF2864C85CCAD9D321B725")
         
 OnObbStateChangeListener getListener() {
@@ -501,24 +496,21 @@ OnObbStateChangeListener getListener() {
             return mObbEventListenerRef.get();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.063 -0500", hash_original_method = "E278FF9F38CD6580E6FCEF436B6AB830", hash_generated_method = "E278FF9F38CD6580E6FCEF436B6AB830")
         
 void sendObbStateChanged(String path, int state) {
             ObbStateChangedStorageEvent e = new ObbStateChangedStorageEvent(path, state);
             mHandler.sendMessage(e.getMessage());
         }
-
         
     }
-
-
     
     private class ObbStateChangedStorageEvent extends StorageEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.068 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "58104DC4D068DCE57A6D46AB8F30ECAD")
 
         public  String path;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.071 -0500", hash_original_field = "962E680994F097CBCF73193974918C63", hash_generated_field = "47895903500EF3C437D3B693442F9718")
-
 
         public  int state;
 
@@ -529,11 +521,8 @@ public ObbStateChangedStorageEvent(String path, int state) {
             this.path = path;
             this.state = state;
         }
-
         
     }
-
-
     
     private class StorageEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.077 -0500", hash_original_field = "1D0CB625E04594AF40C5EFDB4C571DCB", hash_generated_field = "F25F6D444BE5A1CFBE4DF466A9A1F864")
@@ -547,7 +536,6 @@ public ObbStateChangedStorageEvent(String path, int state) {
         static final int EVENT_OBB_STATE_CHANGED = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.085 -0500", hash_original_field = "2D41D548AF5E6C9BAD3BF2AC7B0EDE61", hash_generated_field = "C86344D57FB924DFB1BCA88A74120A66")
 
-
         private Message mMessage;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.087 -0500", hash_original_method = "546E2CE4C7A72D6081E7A50312A352DB", hash_generated_method = "9F23D8C4297A1A2036D6FAE9022F5B35")
@@ -558,14 +546,13 @@ public StorageEvent(int what) {
             mMessage.obj = this;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.090 -0500", hash_original_method = "237083C18B821DBF98088C4FF8F2E015", hash_generated_method = "5056BEB71FDB17C74971DA0D39E93C75")
         
 public Message getMessage() {
             return mMessage;
         }
     }
-
-
     
     private class UmsConnectionChangedStorageEvent extends StorageEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.094 -0500", hash_original_field = "661415AE147552A97B5A8383FA088351", hash_generated_field = "5C92C83D4651FA2CBBBE9F57619106E0")
@@ -578,11 +565,8 @@ public UmsConnectionChangedStorageEvent(boolean a) {
             super(EVENT_UMS_CONNECTION_CHANGED);
             available = a;
         }
-
         
     }
-
-
     
     private class StorageStateChangedStorageEvent extends StorageEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.101 -0500", hash_original_field = "4936DBCD90EF1129A7D9F03C4DB55EE0", hash_generated_field = "58104DC4D068DCE57A6D46AB8F30ECAD")
@@ -603,11 +587,8 @@ public StorageStateChangedStorageEvent(String p, String oldS, String newS) {
             oldState = oldS;
             newState = newS;
         }
-
         
     }
-
-
     
     private class ListenerDelegate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.113 -0500", hash_original_field = "7A1C33253FE6C5A1C1F7242C2999F45E", hash_generated_field = "7A1C33253FE6C5A1C1F7242C2999F45E")
@@ -639,12 +620,14 @@ ListenerDelegate(StorageEventListener listener) {
             };
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.123 -0500", hash_original_method = "DA2EC644741ABB32C38C92FF70A87DA0", hash_generated_method = "DA2EC644741ABB32C38C92FF70A87DA0")
         
 StorageEventListener getListener() {
             return mStorageEventListener;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.125 -0500", hash_original_method = "2B1B76FC8373F60078A15952F701EC30", hash_generated_method = "2B1B76FC8373F60078A15952F701EC30")
         
 void sendShareAvailabilityChanged(boolean available) {
@@ -652,13 +635,13 @@ void sendShareAvailabilityChanged(boolean available) {
             mHandler.sendMessage(e.getMessage());
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.128 -0500", hash_original_method = "6996CC17777F13485A3BD31F01C08054", hash_generated_method = "6996CC17777F13485A3BD31F01C08054")
         
 void sendStorageStateChanged(String path, String oldState, String newState) {
             StorageStateChangedStorageEvent e = new StorageStateChangedStorageEvent(path, oldState, newState);
             mHandler.sendMessage(e.getMessage());
         }
-
         
     }
 
@@ -666,6 +649,7 @@ void sendStorageStateChanged(String path, String oldState, String newState) {
      * Returns list of paths for all mountable volumes.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.163 -0500", hash_original_method = "32FCB28C74C473CB8B8088CF6B7B3DD3", hash_generated_method = "0482A7B4132D28A95CDD142BB4ACF07C")
     
 public String[] getVolumePaths() {

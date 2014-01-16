@@ -15,10 +15,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class ContentProviderOperation implements Parcelable {
 
     /**
@@ -78,7 +74,6 @@ public static Builder newAssertQuery(Uri uri) {
     public final static int TYPE_ASSERT = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.112 -0500", hash_original_field = "B6FF751B1A864DBACF90708D709FB527", hash_generated_field = "24245924956604414829F296110ED079")
 
-
     private final static String TAG = "ContentProviderOperation";
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:00.077 -0400", hash_original_field = "8924CBDB7EE2EFEBC660CED8A0C59192", hash_generated_field = "9AC0BB3876B129B46AD7C4638D0FA4D8")
 
@@ -97,7 +92,6 @@ public ContentProviderOperation[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.093 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
-
 
     private  int mType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.095 -0500", hash_original_field = "49226456B4CE4E55A779249DE3DC63D4", hash_generated_field = "04FA8EB5D9FB8AC4AAE6453BCF1BBF82")
@@ -167,6 +161,7 @@ private ContentProviderOperation(Parcel source) {
         mYieldAllowed = source.readInt() != 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.121 -0500", hash_original_method = "D97604A456AD6CF9916FB862EEBD56CF", hash_generated_method = "31930ED2A7929556DEA3FE3762994A93")
     
 public void writeToParcel(Parcel dest, int flags) {
@@ -215,6 +210,7 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mYieldAllowed ? 1 : 0);
     }
 
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.133 -0500", hash_original_method = "225259AA593B6A59F476A2C569F1B075", hash_generated_method = "A1B996311564AA1668AF8C1FC49818A0")
     
 public Uri getUri() {
@@ -228,6 +224,7 @@ public boolean isYieldAllowed() {
     }
 
     /** @hide exposed for unit tests */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.137 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
     
 public int getType() {
@@ -245,7 +242,6 @@ public boolean isWriteOperation() {
 public boolean isReadOperation() {
         return mType == TYPE_ASSERT;
     }
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.168 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
@@ -288,6 +284,8 @@ private Builder(int type, Uri uri) {
         }
 
         /** Create a ContentProviderOperation from this {@link Builder}. */
+        @DSComment("only building the operation, no action")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.191 -0500", hash_original_method = "52DF5CD1F3EDB944F65D1FF1857828C4", hash_generated_method = "81B910F5CAF6435070D9D9A1339D1692")
         
 public ContentProviderOperation build() {
@@ -481,7 +479,6 @@ public Builder withYieldAllowed(boolean yieldAllowed) {
             mYieldAllowed = yieldAllowed;
             return this;
         }
-
         
     }
 
@@ -499,6 +496,7 @@ public Builder withYieldAllowed(boolean yieldAllowed) {
      * @throws OperationApplicationException thrown if either the insert fails or
      * if the number of rows affected didn't match the expected count
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:40.145 -0500", hash_original_method = "2009EEC78D1FCDD51A500D4742040E7C", hash_generated_method = "C3DC8B45984359AE4D4E99DAEB3740CA")
     
 public ContentProviderResult apply(ContentProvider provider, ContentProviderResult[] backRefs,

@@ -60,13 +60,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.622 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.622 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.625 -0500", hash_original_method = "F977413C74A94F6A0339EC8ADB46ADAB", hash_generated_method = "1D8AC33EB6B975064DCC25DE1EF51CA2")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.625 -0500", hash_original_method = "F977413C74A94F6A0339EC8ADB46ADAB", hash_generated_method = "1D8AC33EB6B975064DCC25DE1EF51CA2")
             
 public void onHealthAppConfigurationStatusChange(android.bluetooth.BluetoothHealthAppConfiguration config, int status) throws android.os.RemoteException
 {
@@ -90,7 +92,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.628 -0500", hash_original_method = "01046949F354348939608685292C2391", hash_generated_method = "A2158528987D513CA0421EE93BA8915D")
+@DSSink({DSSinkKind.BLUETOOTH})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.628 -0500", hash_original_method = "01046949F354348939608685292C2391", hash_generated_method = "A2158528987D513CA0421EE93BA8915D")
             
 public void onHealthChannelStateChange(android.bluetooth.BluetoothHealthAppConfiguration config, android.bluetooth.BluetoothDevice device, int prevState, int newState, android.os.ParcelFileDescriptor fd, int id) throws android.os.RemoteException
 {
@@ -131,7 +134,8 @@ _data.recycle();
 }
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.609 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.609 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

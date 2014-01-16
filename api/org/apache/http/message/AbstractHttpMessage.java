@@ -14,11 +14,9 @@ import org.apache.http.params.BasicHttpParams;
 
 public abstract class AbstractHttpMessage implements HttpMessage {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.218 -0500", hash_original_field = "529E3541026CF32B6C0C26478EFC5931", hash_generated_field = "34FF19CD0855E5D63A04F524D7452FF4")
-
     
     protected HeaderGroup headergroup;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.220 -0500", hash_original_field = "E1952F00A693661EA0D1C7B3D836F77E", hash_generated_field = "3B20DD38103AF5BA4B3F3187700011E0")
-
     
     protected HttpParams params;
     
@@ -29,9 +27,7 @@ protected AbstractHttpMessage(final HttpParams params) {
         this.headergroup = new HeaderGroup();
         this.params = params;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public AbstractHttpMessage() {
 		// TODO Auto-generated constructor stub
 	}
@@ -63,8 +59,8 @@ public Header getFirstHeader(final String name) {
 public Header getLastHeader(final String name) {
         return this.headergroup.getLastHeader(name);
     }
-
-    @DSModeled(DSC.SAFE)
+    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public Header[] getAllHeaders() {
 		// TODO Auto-generated method stub
@@ -133,10 +129,10 @@ public void removeHeaders(final String name) {
             }
         }
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSModeled(DSC.SAFE)
+    
 	public HeaderIterator headerIterator() {
 		// TODO Auto-generated method stub
 		return null;
@@ -148,8 +144,8 @@ public void removeHeaders(final String name) {
 public HeaderIterator headerIterator(String name) {
         return this.headergroup.iterator(name);
     }
-
-    @DSModeled(DSC.SAFE)
+    
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override
 	public HttpParams getParams() {
 		// TODO Auto-generated method stub
@@ -165,8 +161,6 @@ public void setParams(final HttpParams params) {
         }
         this.params = params;
     }
-
-    
 
 }
 

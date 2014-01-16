@@ -2,8 +2,6 @@ package droidsafe.runtime;
 
 import java.util.Random;
 
-
-
 //Droidsafe Imports
 import droidsafe.annotations.*;
 import droidsafe.helpers.DSUtils;
@@ -20,7 +18,6 @@ import android.app.Dialog;
 import android.view.MotionEvent;
 import com.google.android.maps.MapActivity;
 
-
 /**
  * This class will simulate the android runtime system by making any calls or creating 
  * any globals required.
@@ -33,8 +30,7 @@ public class DroidSafeAndroidRuntime {
     public static boolean control = new Random().nextBoolean();
     public static int switchControl = new Random().nextInt();
     private static Application mApplication;
-
-    @DSModeled(DSC.BAN)
+    
     /**
      * This method will be called automatically by the droidsafe harness class before all
      * application code.
@@ -52,7 +48,7 @@ public class DroidSafeAndroidRuntime {
      * 
      * @param activity
      */
-    @DSModeled(DSC.BAN)
+    
     public static void modelActivity(android.app.Activity activity) {
         ContextImpl context = new ContextImpl();
 
@@ -82,7 +78,6 @@ public class DroidSafeAndroidRuntime {
         activity.onPrepareDialog(0, new Dialog(context));
         */
         
-        
         //TODO: WHAT ABOUT A REAL MENU?
         activity.onCreateOptionsMenu(null);
         activity.onPrepareOptionsMenu(null);
@@ -91,7 +86,6 @@ public class DroidSafeAndroidRuntime {
         activity.onContextItemSelected(null);
         
         activity.dispatchTouchEvent(new MotionEvent());
-        
         
         activity.onConfigurationChanged(new Configuration());
 
@@ -118,8 +112,7 @@ public class DroidSafeAndroidRuntime {
         }
 
     }
-
-    @DSModeled(DSC.BAN)
+    
     public static void modelService(android.app.Service service) {
         if (mApplication != null)
             service.setApplication(mApplication);
@@ -145,8 +138,7 @@ public class DroidSafeAndroidRuntime {
         service.stopSelf(0);
         service.onDestroy();
     }
-
-    @DSModeled(DSC.BAN)
+    
     public static void modelContentProvider(android.content.ContentProvider contentProvider) {
         contentProvider.onCreate();
         contentProvider.onConfigurationChanged(new Configuration());
@@ -160,14 +152,12 @@ public class DroidSafeAndroidRuntime {
         contentProvider.delete(null, null, null);
         contentProvider.getType(null);
     }
-
-    @DSModeled(DSC.BAN)
+    
     public static void modelBroadCastReceiver(BroadcastReceiver receiver) {
         if (mApplication != null)
             receiver.setApplication(mApplication);
     }
-
-    @DSModeled(DSC.SPEC)
+    
     public static void modelApplication(android.app.Application app) {
         mApplication = app;
 

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.PrintWriter;
 
-
-
-
-
-
 public class PrintWriterPrinter implements Printer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.870 -0500", hash_original_field = "6E8D43D32266728EF3FE704F1F656E95", hash_generated_field = "F05012BDDB58D140166F54E133EB677E")
 
@@ -27,12 +22,12 @@ public PrintWriterPrinter(PrintWriter pw) {
         mPW = pw;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.874 -0500", hash_original_method = "5189B7E75DB8D4AF68FE0FEBEB42EF0B", hash_generated_method = "AE4CB45991A1B483DE0E313BC7443338")
     
 public void println(String x) {
         mPW.println(x);
     }
-
     
 }
 

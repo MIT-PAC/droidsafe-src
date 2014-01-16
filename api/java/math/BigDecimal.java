@@ -12,10 +12,6 @@ import java.util.Arrays;
 
 import libcore.math.MathUtils;
 
-
-
-
-
 public class BigDecimal extends Number implements Comparable<BigDecimal>, Serializable {
 
     /* Public Methods */
@@ -310,7 +306,6 @@ private static int bitLength(int smallValue) {
     private static  BigInteger[] TEN_POW;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.122 -0500", hash_original_field = "8FA9D1BEEAB8A8C00CACD4833A69484A", hash_generated_field = "7278FA9BE84E3C616E4421DE5FF2F206")
 
-
     private static final long[] LONG_FIVE_POW = new long[]
     {   1L,
         5L,
@@ -342,13 +337,11 @@ private static int bitLength(int smallValue) {
         7450580596923828125L, };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.125 -0500", hash_original_field = "A77A182FE39DE5EBF94A318A1AFECB07", hash_generated_field = "FD0F7EAC9A9246982008521CC29799A7")
 
-
     private static final int[] LONG_FIVE_POW_BIT_LENGTH = new int[LONG_FIVE_POW.length];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.128 -0500", hash_original_field = "4749A86959EF10EF1080A9333DA3124F", hash_generated_field = "9DFBCE8298EAB00B86718FC0B2D88337")
 
     private static final int[] LONG_POWERS_OF_TEN_BIT_LENGTH = new int[MathUtils.LONG_POWERS_OF_TEN.length];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.130 -0500", hash_original_field = "52C500940B1EC4250CA8ACC65D9CCA1A", hash_generated_field = "E22EB04741B2BFD88E960FE524D60B1A")
-
 
     private static final int BI_SCALED_BY_ZERO_LENGTH = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.133 -0500", hash_original_field = "DCAF56BF5ED70EAB2415C3D633724F4E", hash_generated_field = "5B020D40BF07C0EC94E4149184B70A65")
@@ -380,10 +373,8 @@ private static int bitLength(int smallValue) {
     private BigInteger intVal;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.151 -0500", hash_original_field = "2D47056835D2DB19B19AB49B6EFAF056", hash_generated_field = "1C841931B61AD9BC0EB5C76BA4219E64")
 
-
     private transient int bitLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.153 -0500", hash_original_field = "C7105AF1F7C710FDA21C6C5661A3F35B", hash_generated_field = "27339F171BD0CF229BCBE4E7356A5F0B")
-
 
     private transient long smallValue;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.156 -0500", hash_original_field = "BA0D3D812FE0526303F6820DD8690E4B", hash_generated_field = "F9D5D1CA2ABDD82810FF1FE80E0268E6")
@@ -599,6 +590,8 @@ public BigDecimal(char[] in, MathContext mc) {
      *             if {@code val} does not contain a valid string representation
      *             of a big decimal.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.181 -0500", hash_original_method = "97883F5F25D8C2D5B9EC2501AC7ECDA2", hash_generated_method = "8A7E2F1E0BA78CDD4F6AE32E1A77DAE9")
     
 public BigDecimal(String val) {
@@ -645,6 +638,8 @@ public BigDecimal(String val, MathContext mc) {
      * @throws NumberFormatException
      *             if {@code val} is infinity or not a number.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.188 -0500", hash_original_method = "A550123107439183BDAF78BFBC33380D", hash_generated_method = "21F06AAA0AAC6CA3F389A18FE466D483")
     
 public BigDecimal(double val) {
@@ -1525,6 +1520,7 @@ public BigDecimal divideToIntegralValue(BigDecimal divisor) {
      *             if {@code mc.getPrecision() > 0} and the result requires more
      *             digits to be represented.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.283 -0500", hash_original_method = "15ECC758BA9BF5EB2D64CC984DE4A4C9", hash_generated_method = "011ACBACE693B1E02D307BCE345A0CFC")
     
 public BigDecimal divideToIntegralValue(BigDecimal divisor, MathContext mc) {
@@ -2038,6 +2034,7 @@ public BigDecimal round(MathContext mc) {
      *             if {@code roundingMode == ROUND_UNNECESSARY} and rounding is
      *             necessary according to the given scale.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.333 -0500", hash_original_method = "7B0F1A102C68137F597240860B4573E3", hash_generated_method = "1251547CE725D247880878D8861F2E24")
     
 public BigDecimal setScale(int newScale, RoundingMode roundingMode) {
@@ -2087,6 +2084,7 @@ public BigDecimal setScale(int newScale, RoundingMode roundingMode) {
      *             if {@code roundingMode == ROUND_UNNECESSARY} and rounding is
      *             necessary according to the given scale.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.336 -0500", hash_original_method = "82E5CBCA5195979E97780CEADBFBD3C4", hash_generated_method = "1F01152117CE8A68F2CE84AFB39BC354")
     
 public BigDecimal setScale(int newScale, int roundingMode) {
@@ -2109,6 +2107,7 @@ public BigDecimal setScale(int newScale, int roundingMode) {
      * @throws ArithmeticException
      *             if rounding would be necessary.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:36.339 -0500", hash_original_method = "ABCD452F1FC16ADBD3F58023EF098557", hash_generated_method = "E8ED73193568A0B44AEC00A62500D3AB")
     
 public BigDecimal setScale(int newScale) {
@@ -2331,7 +2330,6 @@ public int compareTo(BigDecimal val) {
             return x1.scale == scale
                    && (bitLength < 64 ? (x1.smallValue == smallValue)
                     : intVal.equals(x1.intVal));
-
 
         }
         return false;

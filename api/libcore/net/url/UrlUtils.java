@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
-
-
-
-
 public final class UrlUtils {
 
     /**
@@ -92,6 +88,7 @@ public static String authoritySafePath(String authority, String path) {
      * spec doesn't start with a scheme. Scheme prefixes match this pattern:
      * {@code alpha ( alpha | digit | '+' | '-' | '.' )* ':'}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.927 -0500", hash_original_method = "E2E22956A4F207916457EDE07112F88D", hash_generated_method = "419F2EEDA0825E754A3521196C5AFD60")
     
 public static String getSchemePrefix(String spec) {
@@ -143,7 +140,6 @@ public static int findFirstOf(String string, String chars, int start, int end) {
     
 private UrlUtils() {
     }
-
     
 }
 

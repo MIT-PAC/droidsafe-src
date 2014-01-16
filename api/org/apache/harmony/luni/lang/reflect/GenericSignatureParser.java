@@ -11,14 +11,8 @@ import java.lang.reflect.Method;
 import java.lang.reflect.Type;
 import java.lang.reflect.TypeVariable;
 
-
-
-
-
-
 public class GenericSignatureParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.706 -0500", hash_original_field = "CFAD442F68872B441545BF2444D3B382", hash_generated_field = "3A123DBAC2896D22118ACC4A0DBF2815")
-
 
     public ListOfTypes exceptionTypes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.708 -0500", hash_original_field = "2B1160BC05B17B2F612FCC97C50D31BF", hash_generated_field = "755AC25C18AC88DD7B505952EB00E2FC")
@@ -44,7 +38,6 @@ public class GenericSignatureParser {
     public ClassLoader loader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.724 -0500", hash_original_field = "4BEC95563D8D0B015ABDE90FC2F1C6AF", hash_generated_field = "4BEC95563D8D0B015ABDE90FC2F1C6AF")
 
-
     GenericDeclaration genericDecl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.726 -0500", hash_original_field = "4D622F1F51FE2777B0E8D81C997E113C", hash_generated_field = "4D622F1F51FE2777B0E8D81C997E113C")
 
@@ -56,7 +49,6 @@ public class GenericSignatureParser {
 
     private boolean eof;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.732 -0500", hash_original_field = "AF37951EAE101F357ACAF48FB7E85D88", hash_generated_field = "AF37951EAE101F357ACAF48FB7E85D88")
-
 
     char[] buffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.734 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "5780BC7BCF265A6425A5A90F1AD9B24E")
@@ -186,7 +178,6 @@ public void parseForField(GenericDeclaration genericDecl,
         }
     }
 
-
     //
     // Parser:
     //
@@ -228,6 +219,7 @@ void parseOptFormalTypeParameters() {
         this.formalTypeParameters = typeParams.getArray();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.757 -0500", hash_original_method = "8E4B54F231B830B261D22AAC458F74D2", hash_generated_method = "96C880D70312CBC139B8AB98DD0B326F")
     
 ImplForVariable<GenericDeclaration> parseFormalTypeParameter() {
@@ -253,6 +245,7 @@ ImplForVariable<GenericDeclaration> parseFormalTypeParameter() {
         return new ImplForVariable<GenericDeclaration>(genericDecl, name, bounds);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.759 -0500", hash_original_method = "39858CB077F5F270CB13BCD8F5E588C4", hash_generated_method = "749D357A47B23FA0DE78104098A8175B")
     
 Type parseFieldTypeSignature() {
@@ -273,6 +266,7 @@ Type parseFieldTypeSignature() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.762 -0500", hash_original_method = "0940B5693D1CE1CEA33652B7603676B3", hash_generated_method = "9DEC9521CE81C4D55CD8C59983880962")
     
 Type parseClassTypeSignature() {
@@ -311,6 +305,7 @@ Type parseClassTypeSignature() {
         return type;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.764 -0500", hash_original_method = "FCA6C6C42F8D0470CBF5F70C4C8E2247", hash_generated_method = "DCE856EEF4A95EB7BE5BE42CAE12797A")
     
 ListOfTypes parseOptTypeArguments() {
@@ -329,6 +324,7 @@ ListOfTypes parseOptTypeArguments() {
         return typeArgs;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.766 -0500", hash_original_method = "C611A5720E520CD6B6248914D1F9FF4D", hash_generated_method = "847D5827D690F284FB834E8421F50C8E")
     
 Type parseTypeArgument() {
@@ -356,6 +352,7 @@ Type parseTypeArgument() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.768 -0500", hash_original_method = "FF6DECA5851C272F523D7639C2D071BC", hash_generated_method = "8ADC92F2BC521F13815E267CE99829F3")
     
 ImplForVariable<GenericDeclaration> parseTypeVariableSignature() {
@@ -368,6 +365,7 @@ ImplForVariable<GenericDeclaration> parseTypeVariableSignature() {
         return new ImplForVariable<GenericDeclaration>(genericDecl, identifier);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.770 -0500", hash_original_method = "ABCBB21DD03AAC76512AB0248A5CE39A", hash_generated_method = "D5145821AA502497BF8C3C8E07217636")
     
 Type parseTypeSignature() {
@@ -428,6 +426,7 @@ void parseMethodTypeSignature(Class<?>[] rawExceptionTypes) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:25.776 -0500", hash_original_method = "6FEAF434B1E5FC2FC9EAA724A7A39FCB", hash_generated_method = "879B662B2A1DB1FA2733B83159E41A05")
     
 Type parseReturnType() {
@@ -435,7 +434,6 @@ Type parseReturnType() {
         if (symbol != 'V') { return parseTypeSignature(); }
         else { scanSymbol(); return void.class; }
     }
-
 
     //
     // Scanner:
@@ -515,7 +513,6 @@ void scanIdentifier() {
             throw new GenericSignatureFormatError();
         }
     }
-
     
 }
 

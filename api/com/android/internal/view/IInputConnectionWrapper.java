@@ -18,16 +18,11 @@ import android.view.inputmethod.CorrectionInfo;
 import android.view.inputmethod.ExtractedTextRequest;
 import android.view.inputmethod.InputConnection;
 
-
-
-
-
 public class IInputConnectionWrapper extends IInputContext.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.311 -0500", hash_original_field = "DA51199C6FA01D1CFDEDCEDF76608D1B", hash_generated_field = "900165FF60D4D63B5E39F15ED871ED73")
 
     static final String TAG = "IInputConnectionWrapper";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.314 -0500", hash_original_field = "DE3AE329D58BD236ACFD7DCC596A8841", hash_generated_field = "93215ED66A3AA28F5E079D863981D641")
-
 
     private static final int DO_GET_TEXT_AFTER_CURSOR = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.316 -0500", hash_original_field = "8CFBE61832B0AFF25F317505D5513ABA", hash_generated_field = "77B723127445ED341C49AD030D289BC5")
@@ -92,10 +87,8 @@ public class IInputConnectionWrapper extends IInputContext.Stub {
     private static final int DO_CLEAR_META_KEY_STATES = 130;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.368 -0500", hash_original_field = "94FC9D5399021E1DC54EC343560EF6C7", hash_generated_field = "BBA366FC8F1B26518754E187C86749B0")
 
-
     private WeakReference<InputConnection> mInputConnection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.371 -0500", hash_original_field = "22AA67C96F8F7AD7DFD89E53DF216F9A", hash_generated_field = "BAC908CF5B8572ED590A292E13883CF4")
-
 
     private Looper mMainLooper;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.373 -0500", hash_original_field = "CE7101CE6F8628D8EDF694C2A9A74F21", hash_generated_field = "A3B75E764711EA55737A441425E4D843")
@@ -166,12 +159,12 @@ public void commitCorrection(CorrectionInfo info) {
         dispatchMessage(obtainMessageO(DO_COMMIT_CORRECTION, info));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.418 -0500", hash_original_method = "E49BA2D7A7A069DD200E49150DD829D6", hash_generated_method = "0A2A73D1AC263571E477FBD705AEE81E")
     
 public void setSelection(int start, int end) {
         dispatchMessage(obtainMessageII(DO_SET_SELECTION, start, end));
     }
-
     
     static class SomeArgs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.376 -0500", hash_original_field = "524E284308787C3B27AB4CD560A816CF", hash_generated_field = "524E284308787C3B27AB4CD560A816CF")
@@ -187,17 +180,13 @@ public void setSelection(int start, int end) {
 
         int seq;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.184 -0400", hash_original_method = "C08D0E88500332C6E0DD16EFE525CF46", hash_generated_method = "C08D0E88500332C6E0DD16EFE525CF46")
         public SomeArgs ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     class MyHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.388 -0500", hash_original_method = "761ACCB2E72A1319CE4B08F794806580", hash_generated_method = "761ACCB2E72A1319CE4B08F794806580")
@@ -212,7 +201,6 @@ MyHandler(Looper looper) {
         public void handleMessage(Message msg) {
             executeMessage(msg);
         }
-
         
     }
 
@@ -228,6 +216,7 @@ public void performContextMenuAction(int id) {
         dispatchMessage(obtainMessageII(DO_PERFORM_CONTEXT_MENU_ACTION, id, 0));
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.425 -0500", hash_original_method = "D0BDE81E935635A3C1E1A2527338BB18", hash_generated_method = "6B55485338A16ED636CB5438779EF798")
     
 public void setComposingRegion(int start, int end) {
@@ -289,6 +278,7 @@ public void performPrivateCommand(String action, Bundle data) {
         dispatchMessage(obtainMessageOO(DO_PERFORM_PRIVATE_COMMAND, action, data));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.448 -0500", hash_original_method = "F5A5E3786D2DDCB2FEFEBA688154C5D7", hash_generated_method = "A1BBFB8562CE1F2873E7B8F06FF3267A")
     
 void dispatchMessage(Message msg) {

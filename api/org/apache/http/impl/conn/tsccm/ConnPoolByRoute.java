@@ -22,12 +22,8 @@ import org.apache.http.conn.params.ConnPerRoute;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.params.HttpParams;
 
-
-
-
 public class ConnPoolByRoute extends AbstractConnPool {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.248 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
         
     private final Log log = LogFactory.getLog(getClass());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.250 -0500", hash_original_field = "5ECDF9140F933CD067B24AED705BDC40", hash_generated_field = "026614D17D2D565C77517B2D71C2A557")
@@ -44,10 +40,8 @@ public class ConnPoolByRoute extends AbstractConnPool {
     protected  Map<HttpRoute, RouteSpecificPool> routeToPool;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.259 -0500", hash_original_field = "9593BFDFA77F7CEC9E2DEF7153A8A474", hash_generated_field = "72497F1614BF1540B1D26A1572D9E5CA")
 
-
     protected  int maxTotalConnections;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.262 -0500", hash_original_field = "4F999BC70044645838F3F4E2114A0BFC", hash_generated_field = "9E9F031DEF0505CA4E19FEFFE7AAAD7E")
-
     
     private  ConnPerRoute connPerRoute;
     
@@ -71,7 +65,6 @@ public ConnPoolByRoute(final ClientConnectionOperator operator, final HttpParams
         connPerRoute = ConnManagerParams
             .getMaxConnectionsPerRoute(params);
     }
-
 
     /**
      * Creates the queue for {@link #freeConnections}.
@@ -109,7 +102,6 @@ protected Map<HttpRoute, RouteSpecificPool> createRouteToPoolMap() {
         return new HashMap<HttpRoute, RouteSpecificPool>();
     }
 
-
     /**
      * Creates a new route-specific pool.
      * Called by {@link #getRoutePool} when necessary.
@@ -123,7 +115,6 @@ protected Map<HttpRoute, RouteSpecificPool> createRouteToPoolMap() {
 protected RouteSpecificPool newRouteSpecificPool(HttpRoute route) {
         return new RouteSpecificPool(route, connPerRoute.getMaxForRoute(route));
     }
-
 
     /**
      * Creates a new waiting thread.
@@ -141,7 +132,6 @@ protected WaitingThread newWaitingThread(Condition cond,
         return new WaitingThread(cond, rospl);
     }
 
-
     /**
      * Get a route-specific pool of available connections.
      *
@@ -151,6 +141,7 @@ protected WaitingThread newWaitingThread(Condition cond,
      * @return  the pool for the argument route,
      *     never <code>null</code> if <code>create</code> is <code>true</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.279 -0500", hash_original_method = "2DA0D144EE94C06AE8D1ED191B4BB0F6", hash_generated_method = "B25413AC7ABE939B0C0783C46AFD556E")
     
 protected RouteSpecificPool getRoutePool(HttpRoute route,
@@ -173,8 +164,8 @@ protected RouteSpecificPool getRoutePool(HttpRoute route,
         return rospl;
     }
 
-
     //@@@ consider alternatives for gathering statistics
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.282 -0500", hash_original_method = "BC602BD8B10C5776DF65F2D8A63D167D", hash_generated_method = "1F8CB93833AC002F19CB03C0E120A93D")
     
 public int getConnectionsInPool(HttpRoute route) {
@@ -238,6 +229,7 @@ public int getConnectionsInPool(HttpRoute route) {
      * @throws InterruptedException
      *         if the calling thread was interrupted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.293 -0500", hash_original_method = "0255BF16791796767BBFE4AD753EF26D", hash_generated_method = "42AE41691B0A6F52ED435ADF2A60DA17")
     
 protected BasicPoolEntry getEntryBlocking(
@@ -283,7 +275,7 @@ protected BasicPoolEntry getEntryBlocking(
                     break;
                 }
                 
-                boolean hasCapacity = rospl.getCapacity() > 0; 
+                boolean hasCapacity = rospl.getCapacity() > 0;
                 
                 if (log.isDebugEnabled()) {
                     log.debug("Available capacity: " + rospl.getCapacity() 
@@ -345,7 +337,6 @@ protected BasicPoolEntry getEntryBlocking(
 
     } // getEntry
 
-
     // non-javadoc, see base class AbstractConnPool
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.297 -0500", hash_original_method = "459D6C1E2796BA157345E479FDD43BC9", hash_generated_method = "A0C57248EFBB8ED1117CA62640C63DEE")
     
@@ -389,8 +380,6 @@ protected BasicPoolEntry getEntryBlocking(
 
     } // freeEntry
 
-
-
     /**
      * If available, get a free pool entry for a route.
      *
@@ -399,6 +388,7 @@ protected BasicPoolEntry getEntryBlocking(
      * @return  an available pool entry for the given route, or
      *          <code>null</code> if none is available
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.300 -0500", hash_original_method = "962CBFF1A83D816E79E3DF7051655A88", hash_generated_method = "4C168A3B7F5D96148AAB429AAB5A5A94")
     
 protected BasicPoolEntry getFreeEntry(RouteSpecificPool rospl, Object state) {
@@ -451,7 +441,6 @@ protected BasicPoolEntry getFreeEntry(RouteSpecificPool rospl, Object state) {
         return entry;
     }
 
-
     /**
      * Creates a new pool entry.
      * This method assumes that the new connection will be handed
@@ -489,7 +478,6 @@ protected BasicPoolEntry createEntry(RouteSpecificPool rospl,
 
         return entry;
     }
-
         
     /**
      * Deletes a given pool entry.
@@ -532,7 +520,6 @@ protected void deleteEntry(BasicPoolEntry entry) {
         }
     }
 
-
     /**
      * Delete an old, free pool entry to make room for a new one.
      * Used to replace pool entries with ones for a different route.
@@ -559,7 +546,6 @@ protected void deleteLeastUsedEntry() {
         }
     }
 
-
     // non-javadoc, see base class AbstractConnPool
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.309 -0500", hash_original_method = "DA32210354F9DB856361268717BF05AF", hash_generated_method = "3C6C7543468A7B5C7B2199850FCEAB03")
     
@@ -582,7 +568,6 @@ protected void deleteLeastUsedEntry() {
             poolLock.unlock();
         }
     }
-
 
     /**
      * Notifies a waiting thread that a connection is available.
@@ -630,7 +615,6 @@ protected void notifyWaitingThread(RouteSpecificPool rospl) {
         }
     }
 
-
     //@@@ revise this cleanup stuff
     //@@@ move method to base class when deleteEntry() is fixed
     // non-javadoc, see base class AbstractConnPool
@@ -655,7 +639,6 @@ protected void notifyWaitingThread(RouteSpecificPool rospl) {
             poolLock.unlock();
         }
     }
-
 
     // non-javadoc, see base class AbstractConnPool
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.318 -0500", hash_original_method = "38D5175483A246D837BDBD9602C30A7F", hash_generated_method = "AA4704DDF720BECB14BF1C3FD1807862")
@@ -691,7 +674,6 @@ protected void notifyWaitingThread(RouteSpecificPool rospl) {
             poolLock.unlock();
         }
     }
-
     
 }
 

@@ -9,11 +9,6 @@ import java.io.IOException;
 import org.apache.harmony.security.asn1.ASN1BitString;
 import org.apache.harmony.security.asn1.ASN1Type;
 
-
-
-
-
-
 public final class KeyUsage extends ExtensionValue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.011 -0500", hash_original_field = "8FE132A8681ACFA2876A03B7FB1C08C4", hash_generated_field = "830B315CB33B2EEE4101ABD18F32DE61")
 
@@ -45,12 +40,14 @@ public KeyUsage(byte[] encoding) throws IOException {
         this.keyUsage = (boolean[]) ASN1.decode(encoding);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.018 -0500", hash_original_method = "14A58386ABBA8977CF43289C95A15404", hash_generated_method = "A881DD27DDF692EADB3DB6785C6FA2C5")
     
 public boolean[] getKeyUsage() {
         return keyUsage;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.021 -0500", hash_original_method = "F00F1E8212387BCE78D166E85787DB94", hash_generated_method = "272D2970411221B6D7F5EA0347D0178D")
     
 @Override public byte[] getEncoded() {

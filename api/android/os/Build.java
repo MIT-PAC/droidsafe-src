@@ -6,17 +6,13 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.telephony.TelephonyProperties;
 
-
-
-
-
-
 public class Build {
 
     /**
      * Returns the version string for the radio firmware.  May return
      * null (if, for instance, the radio is not currently on).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.607 -0500", hash_original_method = "3B8999FDFEE854B82721B15385523740", hash_generated_method = "6AA38C91E136D282F6E7B93D837E38E3")
     
 public static String getRadioVersion() {
@@ -41,7 +37,6 @@ private static long getLong(String property) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.490 -0500", hash_original_field = "5A462897EA48AEA5F9A0CB0CCF53A323", hash_generated_field = "D26D08A366C3AD1AEBD8031F18AE7AA6")
 
     public static final String UNKNOWN = "unknown";
-
     
     public static class VERSION {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.530 -0500", hash_original_field = "957A353EF9C9CF8728D8F01A81ADB47D", hash_generated_field = "C89B4CFA69E781BDF05F6069340308C9")
@@ -72,8 +67,6 @@ private static long getLong(String property) {
             //Synthesized constructor
         }
     }
-
-
     
     public static class VERSION_CODES {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.548 -0500", hash_original_field = "4C3AD6045E45B15453C0B270B4C25AE2", hash_generated_field = "013C5374890283317202E565BA7C0DD8")

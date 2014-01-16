@@ -15,11 +15,6 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class ContentInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.576 -0500", hash_original_field = "A740757F63DAE1BC79955CF4744AA68C", hash_generated_field = "8428484335EE13FC1A9C1DBD7FDC9ECA")
 
@@ -69,6 +64,7 @@ public final class ContentInfo {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.617 -0500", hash_original_method = "C3EAC210669809D55F8F3014F8B268F8", hash_generated_method = "A186560C4C0ECEAFDA415CBD4E13E808")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -94,7 +90,6 @@ public final class ContentInfo {
    };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.591 -0500", hash_original_field = "82C0B35B7B0E7EF1298A50C60DFA28D7", hash_generated_field = "282BA3ECCB824558DBD68D7EB102F89D")
 
-
     private  int[] oid;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.593 -0500", hash_original_field = "D0B8E49E3D027D4128A52EE40E051281", hash_generated_field = "ACC0ED8FE681AE1F8700C32DE8F586D0")
 
@@ -111,6 +106,7 @@ private ContentInfo(int[] oid, Object content, byte[] encoding) {
         this.encoding = encoding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.600 -0500", hash_original_method = "FEA779456A4B7718EE7D788C42FE9ED3", hash_generated_method = "027A8128D24ED86408795831DEADE1B2")
     
 public SignedData getSignedData() {
@@ -120,18 +116,21 @@ public SignedData getSignedData() {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.602 -0500", hash_original_method = "7EF6AE96CD0AADFF5C056ACE9B248CB2", hash_generated_method = "B9A49F5825DE0C7B86F8CB4D24962550")
     
 public Object getContent() {
         return content;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.604 -0500", hash_original_method = "47E7DB6049BFBF7F7143C81AA2952707", hash_generated_method = "A78E53B54C978319513CDD9DE2099370")
     
 public int[] getContentType() {
         return oid;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.607 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "B5771FB56FBD9A4A3EB8F14B7F0CC2FE")
     
 public byte[] getEncoded() {

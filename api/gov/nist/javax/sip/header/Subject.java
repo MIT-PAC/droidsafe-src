@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.SubjectHeader;
 
-
-
-
-
-
 public class Subject extends SIPHeader implements SubjectHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.549 -0500", hash_original_field = "94F423F3F6978A186151BAB9F3081E9D", hash_generated_field = "5A108BF1E2A98855AB05AF0A50CEDCDE")
 
@@ -66,6 +61,7 @@ public void setSubject(String subject) throws ParseException {
      *
      * @return subject of SubjectHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.564 -0500", hash_original_method = "8EBD535E211A75BE78AF45361DF5913D", hash_generated_method = "8FE22A6343735A7D9BA6760DEE36A03C")
     
 public String getSubject() {

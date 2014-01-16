@@ -77,11 +77,6 @@ import gov.nist.javax.sip.header.ims.ServiceRouteList;
 
 import java.util.Hashtable;
 
-
-
-
-
-
 class ListMap {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.100 -0500", hash_original_method = "432E67B4E78CD4BF646DB4DECA89550C", hash_generated_method = "641992C365D9538BCC35E3D72A986433")
@@ -205,6 +200,7 @@ static protected Class<?> getListClass(Class<?> sipHdrClass) {
     /**
      * Return a list object for this header if it has an associated list object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.112 -0500", hash_original_method = "4F2A6D49F6C7C93E5FFFA8D8E9F78F48", hash_generated_method = "10A047F8AE9B9218BF8786EE4DDA5BBB")
     
 @SuppressWarnings("unchecked")
@@ -233,7 +229,6 @@ static protected Class<?> getListClass(Class<?> sipHdrClass) {
     // we are not using java 5.
     private static Hashtable<Class<?>,Class<?>> headerListTable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.096 -0500", hash_original_field = "6FBE6536E7CE204510C4979FD7989151", hash_generated_field = "9FD51B35B9E2224AA107F59D57389A34")
-
 
     private static boolean initialized;
     

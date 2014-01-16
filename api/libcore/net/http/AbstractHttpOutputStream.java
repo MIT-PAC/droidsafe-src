@@ -7,15 +7,11 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.OutputStream;
 
-
-
-
 abstract class AbstractHttpOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.492 -0500", hash_original_field = "0B6D06FC66AB1A3316E7702989E3F923", hash_generated_field = "BA207E645FA463C53A82992C378F82FC")
 
     protected boolean closed;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.894 -0400", hash_original_method = "2835FA09B3F183CC926451AC7D6D78D7", hash_generated_method = "2835FA09B3F183CC926451AC7D6D78D7")
     public AbstractHttpOutputStream ()
     {
@@ -35,7 +31,6 @@ protected final void checkNotClosed() throws IOException {
             throw new IOException("stream closed");
         }
     }
-
     
 }
 

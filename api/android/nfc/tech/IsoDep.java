@@ -12,10 +12,6 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
 
-
-
-
-
 public final class IsoDep extends BasicTagTechnology {
 
     /**
@@ -27,6 +23,7 @@ public final class IsoDep extends BasicTagTechnology {
      * @param tag an ISO-DEP compatible tag
      * @return ISO-DEP object
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.066 -0500", hash_original_method = "C6CC52618DE66A28A0006BD4E3051663", hash_generated_method = "F4F182B9FEF624CCC2DBFA03BD4E4747")
     
 public static IsoDep get(Tag tag) {
@@ -47,7 +44,6 @@ public static IsoDep get(Tag tag) {
 
     public static final String EXTRA_HIST_BYTES = "histbytes";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.061 -0500", hash_original_field = "024891029CB9A1D2D5A40AF6023BA549", hash_generated_field = "C1B33D9EC979F28624EE472E9265053E")
-
 
     private byte[] mHiLayerResponse = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.064 -0500", hash_original_field = "B228B60700B7320A8C1C9D098DEAFA2D", hash_generated_field = "7255E07206283D65FDE42F0CB345FA56")
@@ -79,6 +75,7 @@ public IsoDep(Tag tag)
      *
      * @param timeout timeout value in milliseconds
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.071 -0500", hash_original_method = "C12C31601200CC9185BEA621DAA9D522", hash_generated_method = "D55492101B40F463521FE464EFC6D320")
     
 public void setTimeout(int timeout) {
@@ -99,6 +96,7 @@ public void setTimeout(int timeout) {
      *
      * @return timeout value in milliseconds
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.073 -0500", hash_original_method = "DE4D3DFA438B7711A20A8976B1AA544A", hash_generated_method = "B06BC3FCD93EBF7540184CD12298E20D")
     
 public int getTimeout() {
@@ -121,6 +119,7 @@ public int getTimeout() {
      *
      * @return ISO-DEP historical bytes, or null if this is not a {@link NfcA} tag
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.075 -0500", hash_original_method = "4E22C8A1A17AEE88575C62DC6B93AE32", hash_generated_method = "F041335959690BB3F6F3F89EA4FCCE6C")
     
 public byte[] getHistoricalBytes() {
@@ -138,6 +137,7 @@ public byte[] getHistoricalBytes() {
      *
      * @return ISO-DEP historical bytes, or null if this is not a {@link NfcB} tag
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.077 -0500", hash_original_method = "7FAA32860355D81337B89B991C6D0641", hash_generated_method = "F25DC6AFB5A5FB58D0A0DF2AA726A425")
     
 public byte[] getHiLayerResponse() {
@@ -166,6 +166,7 @@ public byte[] getHiLayerResponse() {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or this operation is canceled
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.080 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
     
 public byte[] transceive(byte[] data) throws IOException {
@@ -176,6 +177,7 @@ public byte[] transceive(byte[] data) throws IOException {
      * Return the maximum number of bytes that can be sent with {@link #transceive}.
      * @return the maximum number of bytes that can be sent with {@link #transceive}.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.082 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
     
 public int getMaxTransceiveLength() {

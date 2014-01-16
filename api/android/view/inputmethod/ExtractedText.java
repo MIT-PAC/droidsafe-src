@@ -8,10 +8,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class ExtractedText implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.282 -0500", hash_original_field = "80B526FEBE61133EA608E91D9679B87E", hash_generated_field = "DF17605A93346144B114D0FDC38BDBBD")
 
@@ -76,6 +72,7 @@ public ExtractedText[] newArray(int size) {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:18.290 -0500", hash_original_method = "A6AF00275518DDDF6E9928CFE924AB5A", hash_generated_method = "707566131ABE4CF22C40F7FC7C5D5B8D")
     
 public void writeToParcel(Parcel dest, int flags) {

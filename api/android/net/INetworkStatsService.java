@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.834 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.834 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -201,7 +202,8 @@ _data.recycle();
 return _result;
 }
 /** Return data layer snapshot of UID network usage. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.848 -0500", hash_original_method = "1A88557C5D7AA6EBD3EBA7EA53E25EB1", hash_generated_method = "7BC8A10B856FF89D545A3E70287C94B6")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.848 -0500", hash_original_method = "1A88557C5D7AA6EBD3EBA7EA53E25EB1", hash_generated_method = "7BC8A10B856FF89D545A3E70287C94B6")
             
 public android.net.NetworkStats getDataLayerSnapshotForUid(int uid) throws android.os.RemoteException
 {
@@ -227,7 +229,8 @@ _data.recycle();
 return _result;
 }
 /** Increment data layer count of operations performed for UID and tag. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.851 -0500", hash_original_method = "10F51767D64FBEF18A57CD067D4BD79F", hash_generated_method = "BF673F700460A4279A8063C5978DBC4D")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.851 -0500", hash_original_method = "10F51767D64FBEF18A57CD067D4BD79F", hash_generated_method = "BF673F700460A4279A8063C5978DBC4D")
             
 public void incrementOperationCount(int uid, int tag, int operationCount) throws android.os.RemoteException
 {
@@ -247,7 +250,8 @@ _data.recycle();
 }
 }
 /** Mark given UID as being in foreground for stats purposes. */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.853 -0500", hash_original_method = "9FADAF129FD0E33999456235B63EEC10", hash_generated_method = "7A51092A770C5EEFA3CA3A8B6B70A08C")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.853 -0500", hash_original_method = "9FADAF129FD0E33999456235B63EEC10", hash_generated_method = "7A51092A770C5EEFA3CA3A8B6B70A08C")
             
 public void setUidForeground(int uid, boolean uidForeground) throws android.os.RemoteException
 {
@@ -305,13 +309,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.819 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.819 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.823 -0500", hash_original_method = "69F5C3AACC34E0F6C900FDF4C47AD86C", hash_generated_method = "4E64855B9281885D2FFE9E89612DF5ED")
+@DSSink({DSSinkKind.NETWORK})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:17.823 -0500", hash_original_method = "69F5C3AACC34E0F6C900FDF4C47AD86C", hash_generated_method = "4E64855B9281885D2FFE9E89612DF5ED")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

@@ -8,14 +8,8 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-
-
-
-
-
 public class GregorianCalendar extends Calendar {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.292 -0500", hash_original_field = "2AEF9994CA92EDBF78CF161F830ED6AD", hash_generated_field = "B9386A44E9BFA9A5ED8D3E7882B2C9E1")
-
 
     private static final long serialVersionUID = -8125100834729963327L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.296 -0500", hash_original_field = "8F18B7E25931F3F020A38D92250DBC58", hash_generated_field = "93BFF7C10A82D9138EF2CEC785C901D2")
@@ -26,68 +20,53 @@ public class GregorianCalendar extends Calendar {
     public static final int AD = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.301 -0500", hash_original_field = "6D017D6AC78BE66FCF363B178D70A5E6", hash_generated_field = "23BA66807055EDC52580EFE8B68EA6D9")
 
-
     private static final long defaultGregorianCutover = -12219292800000l;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.310 -0500", hash_original_field = "C710FC910AD6EEE7024665E4E1306978", hash_generated_field = "D109403F40DEAA9D96D5485CCE288282")
-
 
     static byte[] DaysInMonth = new byte[] { 31, 28, 31, 30, 31, 30, 31, 31,
             30, 31, 30, 31 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.313 -0500", hash_original_field = "3964D1A3597A89E7D22F1ED4946E1C6E", hash_generated_field = "0A4DD57D0556CD2CAD7A071A46A83584")
 
-
     private static int[] DaysInYear = new int[] { 0, 31, 59, 90, 120, 151, 181,
             212, 243, 273, 304, 334 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.315 -0500", hash_original_field = "3D6D2EAD2325BFBC091903FED8C6BDDD", hash_generated_field = "9C039D691AF795C6B392702421AF992F")
-
 
     private static int[] maximums = new int[] { 1, 292278994, 11, 53, 6, 31,
             366, 7, 6, 1, 11, 23, 59, 59, 999, 14 * 3600 * 1000, 7200000 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.318 -0500", hash_original_field = "5898DF6E9360F94F2965C8DBDD3A60FE", hash_generated_field = "34197BE97C1359ACB541F3CFF4B6D197")
 
-
     private static int[] minimums = new int[] { 0, 1, 0, 1, 0, 1, 1, 1, 1, 0,
             0, 0, 0, 0, 0, -13 * 3600 * 1000, 0 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.320 -0500", hash_original_field = "F896471ADDEB35A649148FC6116CF846", hash_generated_field = "72A42F262CE1CA8E4E3156D2F2A817C5")
-
 
     private static int[] leastMaximums = new int[] { 1, 292269054, 11, 50, 3,
             28, 355, 7, 3, 1, 11, 23, 59, 59, 999, 50400000, 1200000 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.303 -0500", hash_original_field = "062786F3914B87EA492F5CD0ADF5D8B8", hash_generated_field = "EA14FB63AF074345B169453863E64EC4")
 
-
     private long gregorianCutover = defaultGregorianCutover;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.306 -0500", hash_original_field = "B32171748BA84798392B75BE3D1CAB8A", hash_generated_field = "A0B8CA27149DD74350CDB7EC98C60162")
 
-
     private transient int changeYear = 1582;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.308 -0500", hash_original_field = "A2A1BF323C469790B379905EA1AE037F", hash_generated_field = "2808C9DD640CD873EE96A55ECDBB8D85")
-
 
     private transient int julianSkew = ((changeYear - 2000) / 400)
             + julianError() - ((changeYear - 2000) / 100);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.323 -0500", hash_original_field = "BD96B1F139C8EA198B3A1B2CA97B93E5", hash_generated_field = "4B7219F27A11B1E89794219BC39393A8")
 
-
     private boolean isCached;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.325 -0500", hash_original_field = "29EB5956BF6CB7E2028BB92FA0793412", hash_generated_field = "7AF7C45B7A2B45D012327222457CC902")
-
 
     private int[] cachedFields = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.327 -0500", hash_original_field = "09F8159258A9D84329045A944EE71E7B", hash_generated_field = "EAB4464060441E8E83529F625B8AC792")
 
-
     private long nextMidnightMillis = 0L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.330 -0500", hash_original_field = "F99CA18E41E7D3E217421BBFA1B856C6", hash_generated_field = "A139545ACF978509DA3F6AC55F657D39")
-
 
     private long lastMidnightMillis = 0L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.332 -0500", hash_original_field = "665D368DAE9B1850F1AA60EADBCFC3A0", hash_generated_field = "657D9B61D3147BAB9300368D7E5B963D")
 
-
     private int currentYearSkew = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.334 -0500", hash_original_field = "8CF3BB1297E7C57B5F8A17186009E762", hash_generated_field = "A15FC9D51CCB159121982FD9BA383E19")
-
 
     private int lastYearSkew = 0;
 
@@ -95,6 +74,8 @@ public class GregorianCalendar extends Calendar {
      * Constructs a new {@code GregorianCalendar} initialized to the current date and
      * time with the default {@code Locale} and {@code TimeZone}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.336 -0500", hash_original_method = "7EB3091E87333B7AA987345512812570", hash_generated_method = "8106811364876E1FB5FEFEAB5E247D55")
     
 public GregorianCalendar() {
@@ -112,6 +93,8 @@ public GregorianCalendar() {
      * @param day
      *            the day of the month.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.339 -0500", hash_original_method = "B0762BDDD2B39759F6CE94DB8F25D3E0", hash_generated_method = "C6FBC74FDA42BFD4E322BD6205A6B3F8")
     
 public GregorianCalendar(int year, int month, int day) {
@@ -193,6 +176,8 @@ public GregorianCalendar(Locale locale) {
      * @param timezone
      *            the {@code TimeZone}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.354 -0500", hash_original_method = "7987E4D71BE0DBF5086B038B74101A38", hash_generated_method = "989AD10C10424F4CEEDD7483BF5F80CF")
     
 public GregorianCalendar(TimeZone timezone) {
@@ -208,6 +193,8 @@ public GregorianCalendar(TimeZone timezone) {
      * @param locale
      *            the {@code Locale}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.357 -0500", hash_original_method = "98E484CB97D77C9503930A8DB608CAE2", hash_generated_method = "35023E300DC55B5BD1545BFDF63CDBB8")
     
 public GregorianCalendar(TimeZone timezone, Locale locale) {
@@ -234,6 +221,8 @@ GregorianCalendar(boolean ignored) {
      * @throws IllegalArgumentException
      *                if the specified field is DST_OFFSET or ZONE_OFFSET.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.363 -0500", hash_original_method = "1FE1308881E1142F9D3B7A007897B586", hash_generated_method = "CD6B180F0015465F27DC84FCF52538BA")
     
 @Override
@@ -932,6 +921,7 @@ private int daysInYear(boolean leapYear, int month) {
      *            the field.
      * @return the maximum value of the specified field.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.406 -0500", hash_original_method = "F6A8281F341CD14B238EE5FA427449C3", hash_generated_method = "913FDEF5112DA93F0557A07043E98A89")
     
 @Override
@@ -1005,6 +995,7 @@ private int daysInYear(boolean leapYear, int month) {
      *            the field.
      * @return the minimum value of the specified field.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.409 -0500", hash_original_method = "0094646504037C44C448A8626AEC2CA3", hash_generated_method = "9859DA9E3BF6480B52F971E718B8EF8F")
     
 @Override
@@ -1020,6 +1011,7 @@ private int daysInYear(boolean leapYear, int month) {
      *            the field.
      * @return the greatest minimum value of the specified field.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.411 -0500", hash_original_method = "F3CD156C4D2759DEA34A15A000EAB551", hash_generated_method = "06503E779DF1AAE63FA9E76A736474C4")
     
 @Override
@@ -1033,6 +1025,9 @@ private int daysInYear(boolean leapYear, int month) {
      *
      * @return a {@code Date} which represents the gregorian change date.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.414 -0500", hash_original_method = "BD206861177D272D9EC33433339CB64F", hash_generated_method = "6F349129557415586896680515720B93")
     
 public final Date getGregorianChange() {
@@ -1047,6 +1042,7 @@ public final Date getGregorianChange() {
      *            the field.
      * @return the smallest maximum value of the specified field.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.417 -0500", hash_original_method = "3B0100990EBACC07D6E54BAA89A3102A", hash_generated_method = "7B78DAC75A84381CCBABA20E70062944")
     
 @Override
@@ -1072,6 +1068,7 @@ public final Date getGregorianChange() {
      *            the field.
      * @return the greatest maximum value of the specified field.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.419 -0500", hash_original_method = "80794FF1ED1E8F2177114BCAA53EED59", hash_generated_method = "FB0DD220BDF24E9F0F24D7EAE89D9387")
     
 @Override
@@ -1086,6 +1083,7 @@ public final Date getGregorianChange() {
      *            the field.
      * @return the smallest minimum value of the specified field.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.421 -0500", hash_original_method = "1A09A14EE8971B3B0503081305AF18CB", hash_generated_method = "D44877A6918017B79756798A76B891F2")
     
 @Override
@@ -1348,6 +1346,7 @@ private int mod7(long num1) {
      * @param date
      *            a {@code Date} which represents the gregorian change date.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:28.447 -0500", hash_original_method = "BBA926F39AADCD3D723F5CC72B7A16F3", hash_generated_method = "4AA7C83623817997BC8747FF5A0196F8")
     
 public void setGregorianChange(Date date) {

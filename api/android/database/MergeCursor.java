@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class MergeCursor extends AbstractCursor {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.034 -0400", hash_original_field = "FA2BE9015D45FC980588BB7AE26DD67B", hash_generated_field = "B973D0B16972B08EE0EC04C0BE89E3D7")
 
@@ -27,11 +25,9 @@ public class MergeCursor extends AbstractCursor {
         public void onInvalidated() {
             mPos = -1;
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.492 -0500", hash_original_field = "4A85E902ED72E65A9AF8F6ED265E4F89", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
-
 
     private Cursor mCursor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.494 -0500", hash_original_field = "BFC46F58E76AA74F65A9C26229E79F96", hash_generated_field = "0942DA24BE4E32B4E9FADB0B3647107E")
@@ -52,6 +48,7 @@ public MergeCursor(Cursor[] cursors)
         }
     }
     
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.439 -0500", hash_original_method = "C94247264BA1143A8EFEBC4EA367BD4C", hash_generated_method = "E2DA0373B706ED60B98BB7FB33055AE0")
     
 @Override
@@ -97,6 +94,7 @@ public MergeCursor(Cursor[] cursors)
         return false;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.444 -0500", hash_original_method = "3CE824B95C82F11BF58FC21A90C6596E", hash_generated_method = "ED07F326C66A892800FB63C8FCD37B48")
     
 @Override
@@ -105,6 +103,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.getString(column);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.447 -0500", hash_original_method = "E017157A16B41C5A1732268363B588AE", hash_generated_method = "7EEB726C0B341CEB5DDFEAB5EBA9B598")
     
 @Override
@@ -113,6 +112,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.getShort(column);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.449 -0500", hash_original_method = "196BE6610F391149CB98C678C09840A9", hash_generated_method = "C28D8796BE04004FA31D5BCAE54426AF")
     
 @Override
@@ -121,6 +121,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.getInt(column);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.452 -0500", hash_original_method = "F9F66E8E22111A5FD3479C47D664F15E", hash_generated_method = "9237FC8AD54C22425AC591AF532E0CF4")
     
 @Override
@@ -129,6 +130,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.getLong(column);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.454 -0500", hash_original_method = "67B17E1A8809B30C69BA5C708B2EF661", hash_generated_method = "CA828043A5B9695000514DFE1A935D65")
     
 @Override
@@ -137,6 +139,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.getFloat(column);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.457 -0500", hash_original_method = "977D6BDEB2B1108A87BD2446DF855014", hash_generated_method = "9FE0CB8D8CA2F42105E397AC4001F939")
     
 @Override
@@ -145,6 +148,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.getDouble(column);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.460 -0500", hash_original_method = "EA5E8A29C1728085016D3A247FDA0EC9", hash_generated_method = "77FBE8C5B4CFC8958A0D479BC66DDA83")
     
 @Override
@@ -160,6 +164,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.isNull(column);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.465 -0500", hash_original_method = "9D3EADEAB6620E0607DB05CBA4EF5895", hash_generated_method = "8C73EB5E7F8882B29B28A306EBBD8727")
     
 @Override
@@ -168,6 +173,7 @@ public MergeCursor(Cursor[] cursors)
         return mCursor.getBlob(column);   
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.467 -0500", hash_original_method = "EAE2D1400909F2A5DEAF3F19FC10B4CB", hash_generated_method = "5D70EF17D89E7233687402F804F6C7F8")
     
 @Override
@@ -271,7 +277,6 @@ public MergeCursor(Cursor[] cursors)
 
         return true;
     }
-
     
 }
 

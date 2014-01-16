@@ -20,11 +20,6 @@ import android.util.SparseIntArray;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class GsmAlphabet {
 
     /**
@@ -174,6 +169,7 @@ public static char
      * @throws EncodeException if String is too large to encode
      * @see #stringToGsm7BitPackedWithHeader(String, byte[], int, int)
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.462 -0500", hash_original_method = "2F721D777A36DFB8DFB35BB3F12A2C71", hash_generated_method = "8CBE85E4D5CC888894020E43CC5894C6")
     
 public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header)
@@ -203,6 +199,7 @@ public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header)
      * @return Byte array containing header and encoded data.
      * @throws EncodeException if String is too large to encode
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.465 -0500", hash_original_method = "830AB81103073BE5F7AB467D579AEC22", hash_generated_method = "CB5A5F887997C6D64518DFB5BAE29853")
     
 public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
@@ -239,6 +236,7 @@ public static byte[] stringToGsm7BitPackedWithHeader(String data, byte[] header,
      * @return the encoded string
      * @throws EncodeException if String is too large to encode
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.468 -0500", hash_original_method = "4B8A35C111D653EE4FB3175AA95E287D", hash_generated_method = "60D0EAA4AAAF6E66518CDCAD0A181CD4")
     
 public static byte[] stringToGsm7BitPacked(String data)
@@ -264,6 +262,7 @@ public static byte[] stringToGsm7BitPacked(String data)
      * @return the encoded string
      * @throws EncodeException if String is too large to encode
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.471 -0500", hash_original_method = "0327FB2868DF4020C01C73472A1250C2", hash_generated_method = "5C840CD56D613D383A8D887516F98DEF")
     
 public static byte[] stringToGsm7BitPacked(String data, int languageTable,
@@ -293,6 +292,7 @@ public static byte[] stringToGsm7BitPacked(String data, int languageTable,
      *
      * @throws EncodeException if String is too large to encode
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.474 -0500", hash_original_method = "FBF38886347372CA6BF9139CF8BB5D1E", hash_generated_method = "BAA46BF94DCECA4E55750EF8C3D81E2D")
     
 public static byte[] stringToGsm7BitPacked(String data, int startingSeptetOffset,
@@ -466,7 +466,6 @@ public static String gsm7BitPackedToString(byte[] pdu, int offset,
         return ret.toString();
     }
 
-
     /**
      * Convert a GSM alphabet string that's stored in 8-bit unpacked
      * format (as it often appears in SIM records) into a String
@@ -496,6 +495,7 @@ public static String
      * Additionally, in some country(ex. Korea), there are non-ASCII or MBCS characters.
      * If a character set is given, characters in data are treat as MBCS.
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.491 -0500", hash_original_method = "F4F7246DD691380E13C09E794F3AA7A8", hash_generated_method = "C92D4A1A16E4C726EA5C5C5E2F1389CD")
     
 public static String
@@ -568,6 +568,7 @@ public static String
      * @param s the string to encode
      * @return the 8-bit GSM encoded byte array for the string
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.494 -0500", hash_original_method = "9F01E3A806C3F2E1984EAD9F3EE0C531", hash_generated_method = "74D44612EBB0C935680D45AD73197323")
     
 public static byte[]
@@ -583,7 +584,6 @@ public static byte[]
 
         return ret;
     }
-
 
     /**
      * Write a String into a GSM 8-bit unpacked field of
@@ -961,6 +961,7 @@ static synchronized void setEnabledLockingShiftTables(int[] tables) {
      *
      * @return the list of enabled single shift tables
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.523 -0500", hash_original_method = "199F40335AE19B445C77FA5EEE4476CE", hash_generated_method = "1CF0EBA223248AC82DA5D2B51BDCE44C")
     
 static synchronized int[] getEnabledSingleShiftTables() {
@@ -974,6 +975,7 @@ static synchronized int[] getEnabledSingleShiftTables() {
      *
      * @return the list of enabled locking shift tables
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.525 -0500", hash_original_method = "A94B11FCDA8381B4E3DEFD717897E065", hash_generated_method = "B96ED6965210D281C8265A9365306243")
     
 static synchronized int[] getEnabledLockingShiftTables() {
@@ -982,7 +984,6 @@ static synchronized int[] getEnabledLockingShiftTables() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.428 -0500", hash_original_field = "51AD1D1B7CA2A72E6B430B8A496104BA", hash_generated_field = "EFF0BA8EAA7A2E5FCD3601D1F8EC46DA")
 
     private static final String TAG = "GSM";
-
     
     private static class LanguagePairCount {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.542 -0500", hash_original_field = "751385C2D4084786D52A9F254B89775D", hash_generated_field = "751385C2D4084786D52A9F254B89775D")
@@ -1019,11 +1020,9 @@ LanguagePairCount(int code) {
                 septetCounts[2] = -1;   // Portuguese + Spanish
             }
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.434 -0500", hash_original_field = "B9B35F710D11B9745A68443E3729FAC5", hash_generated_field = "23BAEB52AEC98C55A18510FE2A207A99")
-
 
     /**
      * This escapes extended characters, and when present indicates that the

@@ -8,9 +8,6 @@ import java.util.Arrays;
 import java.util.Enumeration;
 import java.util.Vector;
 
-
-
-
 public class SequenceInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.515 -0500", hash_original_field = "978C925AD7599B7FA8038D4E71D9603D", hash_generated_field = "18AD9586F739C9162783E991FCA98C7A")
 
@@ -52,6 +49,8 @@ public SequenceInputStream(InputStream s1, InputStream s2) {
      * @throws NullPointerException
      *             if any of the elements in {@code e} is {@code null}.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.523 -0500", hash_original_method = "4836B5679700B3654AB08A07E2FBBEF0", hash_generated_method = "AAFB9F87E498C432E91EC33F6617B737")
     
 public SequenceInputStream(Enumeration<? extends InputStream> e) {
@@ -191,7 +190,6 @@ private void nextStream() throws IOException {
         }
         return -1;
     }
-
     
 }
 

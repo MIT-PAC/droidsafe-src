@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class Reference<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.724 -0500", hash_original_field = "4318A9541E288C0C1A2D1D7206659018", hash_generated_field = "4AAE9C6A17BDEC3E1C4355B9D19EC64B")
 
@@ -44,6 +40,8 @@ Reference(T r, ReferenceQueue q) {
      * Makes the referent {@code null}. This does not force the reference
      * object to be enqueued.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.739 -0500", hash_original_method = "0AFD16A0602732B7092274BEFFE68A69", hash_generated_method = "D22A9D70012ADAB162F6F2808D9E0BAF")
     
 public void clear() {
@@ -88,6 +86,9 @@ public boolean enqueue() {
      * @return the referent to which reference refers, or {@code null} if the
      *         object has been cleared.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.749 -0500", hash_original_method = "3B05713F718010AF3C5E0D5C54D10077", hash_generated_method = "4AFFE090F7B2D69F816896DB6BEE599A")
     
 public T get() {
@@ -105,7 +106,6 @@ public T get() {
 public boolean isEnqueued() {
         return queueNext != null;
     }
-
     
 }
 

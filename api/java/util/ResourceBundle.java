@@ -16,10 +16,6 @@ import java.net.URLConnection;
 import libcore.io.IoUtils;
 import dalvik.system.VMStack;
 
-
-
-
-
 public abstract class ResourceBundle {
 
     /**
@@ -32,6 +28,7 @@ public abstract class ResourceBundle {
      * @throws MissingResourceException
      *                if the {@code ResourceBundle} cannot be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.230 -0500", hash_original_method = "255590496454807E7D85BE3C53A0967E", hash_generated_method = "61CA38109D3BF90DCB66AE6B7CA98079")
     
 public static ResourceBundle getBundle(String bundleName) throws MissingResourceException {
@@ -54,6 +51,9 @@ public static ResourceBundle getBundle(String bundleName) throws MissingResource
      * @throws MissingResourceException
      *                if the resource bundle cannot be found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.233 -0500", hash_original_method = "04CC2E12096D8B439249FDE366F3564E", hash_generated_method = "462C3465B2894C59D0D7298104991FD4")
     
 public static ResourceBundle getBundle(String bundleName, Locale locale) {
@@ -113,6 +113,7 @@ public static ResourceBundle getBundle(String bundleName, Locale locale) {
      * @throws MissingResourceException
      *                if the {@code ResourceBundle} cannot be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.237 -0500", hash_original_method = "707AE527CA40E5BB5EF1C5E52774D069", hash_generated_method = "24872AF2D206003D769F00C7DF80C5E7")
     
 public static ResourceBundle getBundle(String bundleName, Locale locale,
@@ -444,27 +445,21 @@ public static void clearCache(ClassLoader loader) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.198 -0500", hash_original_field = "C9CEBD97C3684601F939E7E86D7AAC9B", hash_generated_field = "E5AACE7C1FB793E41B40495A16336A99")
 
-
     private static final String UNDER_SCORE = "_";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.201 -0500", hash_original_field = "7CB8BFC01FCDF4A2C23FAAA68C344752", hash_generated_field = "D14895E2C9628BA7CEA3A352030E9445")
-
 
     private static final String EMPTY_STRING = "";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.218 -0500", hash_original_field = "FDE3F83FA1D2022D3368776B51BD87A5", hash_generated_field = "85F7743A8A2325A7A53FE506DF5E477C")
 
-
     private static final ResourceBundle MISSING = new MissingBundle();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.221 -0500", hash_original_field = "796BE2CE809C6D959960C901C44AC113", hash_generated_field = "88C3120A32FE602FF897F593D3471105")
-
 
     private static final ResourceBundle MISSINGBASE = new MissingBundle();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.223 -0500", hash_original_field = "3FE9C7537A76FBCBCEAED827D4ABE4D0", hash_generated_field = "02B8BB57FAC4063B50B258C20ED67E99")
 
-
     private static final WeakHashMap<Object, Hashtable<String, ResourceBundle>> cache
             = new WeakHashMap<Object, Hashtable<String, ResourceBundle>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.225 -0500", hash_original_field = "907C2FA1D30F9868404E47C387BA8223", hash_generated_field = "FB53443D57FD33E6486E78E1759D3531")
-
 
     private static Locale cacheLocale = Locale.getDefault();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.203 -0500", hash_original_field = "724F485301376691F953BF28D348E90C", hash_generated_field = "EB43973F1559584562CFC00E839EB2BD")
@@ -472,10 +467,8 @@ public static void clearCache(ClassLoader loader) {
     protected ResourceBundle parent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.205 -0500", hash_original_field = "A25411C3C357716626A9185E220A5EAA", hash_generated_field = "3C599F5969C756C105E47474D7BCB663")
 
-
     private Locale locale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.208 -0500", hash_original_field = "FFC4AC36E31DCDDF95308B0D32D3E6C2", hash_generated_field = "7B08633B611AECF1A2DAD9D2043C79EB")
-
 
     private long lastLoadTime = 0;
 
@@ -504,6 +497,7 @@ public abstract Enumeration<String> getKeys();
      *
      * @return the {@code Locale} of this {@code ResourceBundle}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.258 -0500", hash_original_method = "4C873AD5A0D4D89DBA836C1C6CEC9B8D", hash_generated_method = "424B5570E26DE121275BC9C58AD53C4D")
     
 public Locale getLocale() {
@@ -522,6 +516,7 @@ public Locale getLocale() {
      * @throws MissingResourceException
      *                if the resource is not found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.261 -0500", hash_original_method = "5F9FE4637FD5B65A8B96E90EE5158818", hash_generated_method = "49CE3461BF0C507900DBE7FCE2F2CFE6")
     
 public final Object getObject(String key) {
@@ -549,6 +544,9 @@ public final Object getObject(String key) {
      *                if the resource found is not a string.
      * @see #getObject(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.263 -0500", hash_original_method = "BF93FB2083E0950C32E8F3481E34A9FB", hash_generated_method = "5A6EDD64E7AC080B92BCD0179FDDA64F")
     
 public final String getString(String key) {
@@ -567,21 +565,21 @@ public final String getString(String key) {
      *                if the resource found is not an array of strings.
      * @see #getObject(String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.266 -0500", hash_original_method = "D1E41ED4E95B94C38D8DBD0F59139218", hash_generated_method = "4E8EF81D6CCA817C884A518106011035")
     
 public final String[] getStringArray(String key) {
         return (String[]) getObject(key);
     }
-
     
     static class MissingBundle extends ResourceBundle {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.660 -0400", hash_original_method = "5BE09748C47EC015C065AB0FE98F6425", hash_generated_method = "5BE09748C47EC015C065AB0FE98F6425")
         public MissingBundle ()
         {
             //Synthesized constructor
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.211 -0500", hash_original_method = "FAC6F24BFEFF063353B4F824D489D5CA", hash_generated_method = "F748CF453B8DC8A57A1C86D2BE093A7F")
         
 @Override
@@ -595,25 +593,19 @@ public final String[] getStringArray(String key) {
         public Object handleGetObject(String name) {
             return null;
         }
-
         
     }
-
-
     
     private static class NoFallbackControl extends Control {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.298 -0500", hash_original_field = "A019761C028BB0E455B549F0CF31BBE1", hash_generated_field = "311001FFE9CF90DDC4781726BDC7CC2A")
-
 
         static final Control NOFALLBACK_FORMAT_PROPERTIES_CONTROL = new NoFallbackControl(
                 JAVAPROPERTIES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.301 -0500", hash_original_field = "D0EFB0076CE33D51D0BC7800CEAFD110", hash_generated_field = "477E16589760E3D71EC82A0A4D59108B")
 
-
         static final Control NOFALLBACK_FORMAT_CLASS_CONTROL = new NoFallbackControl(
                 JAVACLASS);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.303 -0500", hash_original_field = "38C1762A76C5DFADE5C4CEBF242ACC17", hash_generated_field = "58917EB628BB81A37E51203F85E79CF8")
-
 
         static final Control NOFALLBACK_FORMAT_DEFAULT_CONTROL = new NoFallbackControl(
                 listDefault);
@@ -632,6 +624,7 @@ public NoFallbackControl(List<String> list) {
             super.format = list;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.311 -0500", hash_original_method = "BF31820043735E3E2FECA9848CEFC17E", hash_generated_method = "C6D824F0BF68E51D6DD30832FA203A6B")
         
 @Override
@@ -642,8 +635,6 @@ public NoFallbackControl(List<String> list) {
             return null;
         }
     }
-
-
     
     private static class SimpleControl extends Control {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.316 -0500", hash_original_method = "3FE57273BBED2EFD79C4104DD304532B", hash_generated_method = "2C01667F5B497F0D003C747A55D9D317")
@@ -653,11 +644,8 @@ public SimpleControl(String format) {
             listClass.add(format);
             super.format = Collections.unmodifiableList(listClass);
         }
-
         
     }
-
-
     
     public static class Control {
 
@@ -714,18 +702,14 @@ public static Control getNoFallbackControl(List<String> formats) {
         static List<String> listDefault = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.324 -0500", hash_original_field = "3032ACC4394BB5FF32C7A7F3BDA866E1", hash_generated_field = "73FAB74F5A6B4799EFDB4572A408B125")
 
-
         static List<String> listClass = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.326 -0500", hash_original_field = "1AB62562A7AB0A9458EEBB00EF992EE0", hash_generated_field = "2563531F9CF47ED6FC1FDD970ECD4F16")
-
 
         static List<String> listProperties = new ArrayList<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.328 -0500", hash_original_field = "E002394AB403B260EEBA8CFC5E141E49", hash_generated_field = "F1888E6AB92B35D00E8781C6258E3EE0")
 
-
         static String JAVACLASS = "java.class";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.331 -0500", hash_original_field = "C8B6D5A255E3AAA230A80C911A28014E", hash_generated_field = "07BB0B876307E7CB6E2F167DC153078B")
-
 
         static String JAVAPROPERTIES = "java.properties";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.334 -0500", hash_original_field = "131B2FD3355EE3999E6D06EA6C3B3BF7", hash_generated_field = "F1424B45B48922D540F30BB96F5544C9")
@@ -748,20 +732,16 @@ public static Control getNoFallbackControl(List<String> formats) {
         public static final long TTL_NO_EXPIRATION_CONTROL = -2L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.348 -0500", hash_original_field = "F673F0BB7385FAB82AFC5390E93555BD", hash_generated_field = "E479AC9CE55FC38AA66AEB9C06A435BA")
 
-
         private static final Control FORMAT_PROPERTIES_CONTROL = new SimpleControl(
                 JAVAPROPERTIES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.351 -0500", hash_original_field = "11B525BB1B4D9C3C0CDCF5A983069043", hash_generated_field = "72CD7F4B7C3573EE5BEF1523C244BC01")
-
 
         private static final Control FORMAT_CLASS_CONTROL = new SimpleControl(
                 JAVACLASS);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.353 -0500", hash_original_field = "DD4FFE0EFFF45D0D694A488DF9EF04C2", hash_generated_field = "06188B6C636AFB65149581CD9F1C0A50")
 
-
         private static final Control FORMAT_DEFAULT_CONTROL = new Control();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.355 -0500", hash_original_field = "5C4A176E73E3AD8A44C29D1E04A3B849", hash_generated_field = "5C4A176E73E3AD8A44C29D1E04A3B849")
-
 
         List<String> format;
 
@@ -788,6 +768,7 @@ protected Control() {
          * Returns a list of candidate locales according to {@code baseName} in
          * {@code locale}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.367 -0500", hash_original_method = "45631C4F246F185145A9ED45ADEA49D4", hash_generated_method = "CFBC15A47B6FB40331F76E13DAA04B9F")
         
 public List<Locale> getCandidateLocales(String baseName, Locale locale) {
@@ -814,6 +795,7 @@ public List<Locale> getCandidateLocales(String baseName, Locale locale) {
         /**
          * Returns a list of strings of formats according to {@code baseName}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.369 -0500", hash_original_method = "84F7301A6175FB80884F0D8355AEA589", hash_generated_method = "55872B23568283CF508B5749F092B84E")
         
 public List<String> getFormats(String baseName) {
@@ -826,6 +808,7 @@ public List<String> getFormats(String baseName) {
         /**
          * Returns the fallback locale for {@code baseName} in {@code locale}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.372 -0500", hash_original_method = "42195BC54E9E8857F62CE9C9CCBB8A2E", hash_generated_method = "F7DC944A1E44D0AC487740F54AB8A87A")
         
 public Locale getFallbackLocale(String baseName, Locale locale) {
@@ -930,6 +913,7 @@ public ResourceBundle newBundle(String baseName, Locale locale,
          * Returns the time to live of the ResourceBundle {@code baseName} in {@code locale},
          * default is TTL_NO_EXPIRATION_CONTROL.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.379 -0500", hash_original_method = "7BA29E8DE065D9912A86853D625E45B1", hash_generated_method = "FF5032CCDA52F0841AD52F4113FC3C20")
         
 public long getTimeToLive(String baseName, Locale locale) {
@@ -1094,6 +1078,7 @@ public boolean containsKey(String key) {
         return keySet().contains(key);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.292 -0500", hash_original_method = "D187399FB44FEACCB04758A5D261BC63", hash_generated_method = "522BE43B30B4B5E774F8E09B7A0718BA")
     
 public Set<String> keySet() {
@@ -1105,6 +1090,7 @@ public Set<String> keySet() {
         return ret;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:42.295 -0500", hash_original_method = "DE22A4C1E400841A42E2FCE258F58109", hash_generated_method = "84172BFA1B5529140AFB3C07BDF2FBF5")
     
 protected Set<String> handleKeySet() {

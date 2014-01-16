@@ -17,10 +17,6 @@ import android.view.ViewTreeObserver;
 import android.view.animation.AccelerateDecelerateInterpolator;
 import android.view.animation.DecelerateInterpolator;
 
-
-
-
-
 public class LayoutTransition {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:35.958 -0500", hash_original_field = "4C19ABB566B055A3E37A924670A808DA", hash_generated_field = "E63A0521AAA8C6DC4279BA44E098FD23")
 
@@ -133,12 +129,13 @@ public class LayoutTransition {
 
     private boolean mAnimateParentHierarchy = true;
 
-
     /**
      * Constructs a LayoutTransition object. By default, the object will listen to layout
      * events on any ViewGroup that it is set on and will run default animations for each
      * type of layout event.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.034 -0500", hash_original_method = "52DB630B34835349C84181A9ADA45542", hash_generated_method = "D6FD60071C2464339504599926CC4579")
     
 public LayoutTransition() {
@@ -232,6 +229,7 @@ public void setStartDelay(int transitionType, long delay) {
      * @return long The start delay of the specified animation.
      * @see Animator#getStartDelay()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.042 -0500", hash_original_method = "3F88CD33B6864BEBC3B576EB6504FB35", hash_generated_method = "8508466D282632DE4A1219D3A48B67BA")
     
 public long getStartDelay(int transitionType) {
@@ -290,6 +288,7 @@ public void setDuration(int transitionType, long duration) {
      * @return long The duration of the specified animation.
      * @see Animator#getDuration()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.046 -0500", hash_original_method = "F259A86CD3BB3A6D515EAAF2335DC6DD", hash_generated_method = "BCEE60D56F7309AF485DEAE31950E1F5")
     
 public long getDuration(int transitionType) {
@@ -337,6 +336,7 @@ public void setStagger(int transitionType, long duration) {
      * @return long The length of time, in milliseconds, to delay before launching the next
      * animation in the sequence.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.051 -0500", hash_original_method = "70FCFF77D9C405B5FA9E6B4579BF3D8B", hash_generated_method = "6D42613D172E51766B0C3C2E27283690")
     
 public long getStagger(int transitionType) {
@@ -391,6 +391,7 @@ public void setInterpolator(int transitionType, TimeInterpolator interpolator) {
      * @return TimeInterpolator The interpolator that the specified animation uses.
      * @see Animator#setInterpolator(TimeInterpolator)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.055 -0500", hash_original_method = "11C2A17826922B819D4ABA31B32AF7FD", hash_generated_method = "6097A50CFE1AAE0F3F7BC0B8D1D65D63")
     
 public TimeInterpolator getInterpolator(int transitionType) {
@@ -466,6 +467,7 @@ public void setAnimator(int transitionType, Animator animator) {
      * @return Animator The animation being used for the given transition type.
      * @see #setAnimator(int, Animator)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.060 -0500", hash_original_method = "FF737FAA09DE0C7945DD1E6E302C4C89", hash_generated_method = "C51A0AF56F6A393099373922DBD79008")
     
 public Animator getAnimator(int transitionType) {
@@ -883,14 +885,11 @@ public void cancel(int transitionType) {
                 break;
         }
     }
-
     
     public interface TransitionListener {
-
         
         public void startTransition(LayoutTransition transition, ViewGroup container,
                 View view, int transitionType);
-
         
         public void endTransition(LayoutTransition transition, ViewGroup container,
                 View view, int transitionType);
@@ -1095,6 +1094,7 @@ public void removeTransitionListener(TransitionListener listener) {
      * Gets the current list of listeners for layout changes.
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:36.132 -0500", hash_original_method = "F0DD3EC0CE94CE6304D7C3009A3E39A6", hash_generated_method = "881B9E5CA5AA55FE67201917DF3AE25A")
     
 public List<TransitionListener> getTransitionListeners() {

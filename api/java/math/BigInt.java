@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 final class BigInt {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.475 -0500", hash_original_method = "43115F58BFFF7F5154CF32A9B68E359E", hash_generated_method = "90ADC5D097839776282E03BB5D369577")
@@ -54,7 +50,6 @@ private static BigInt newBigInt() {
         Check(bi.bignum != 0);
         return bi;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.484 -0500", hash_original_method = "0F6340ADF5245C54CBF49A235DDD47A4", hash_generated_method = "D1A09455E2647805342EFF34857AE908")
     
@@ -113,7 +108,6 @@ static BigInt subtraction(BigInt a, BigInt b) {
         Check(NativeBN.BN_sub(r.bignum, a.bignum, b.bignum));
         return r;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.556 -0500", hash_original_method = "AE1A417A9F001E92DAC0DB8BB82136F8", hash_generated_method = "025AA1AA5C37F4D26517838AE17A885F")
     
@@ -193,7 +187,6 @@ static BigInt modExp(BigInt a, BigInt p, BigInt m) {
         return r;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.573 -0500", hash_original_method = "7B172DFB94DBDDE79ECEDD19F7E4326A", hash_generated_method = "5449CD2B19BDBA83104809E2DB563CB3")
     
 static BigInt modInverse(BigInt a, BigInt m) {
@@ -201,7 +194,6 @@ static BigInt modInverse(BigInt a, BigInt m) {
         Check(NativeBN.BN_mod_inverse(r.bignum, a.bignum, m.bignum));
         return r;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.575 -0500", hash_original_method = "D06807C9C7C05CDFACAD1E5643882856", hash_generated_method = "06A2B579B482C5351F5050BC6F120704")
     
@@ -214,7 +206,6 @@ static BigInt generatePrimeDefault(int bitLength) {
 
     transient int bignum = 0;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.670 -0400", hash_original_method = "1310F12C90284BE28EAEC322C36620BE", hash_generated_method = "1310F12C90284BE28EAEC322C36620BE")
     public BigInt ()
     {
@@ -241,12 +232,12 @@ static BigInt generatePrimeDefault(int bitLength) {
         return this.decString();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.472 -0500", hash_original_method = "5BE7FB396EC56810A84432A49B351D93", hash_generated_method = "5BE7FB396EC56810A84432A49B351D93")
     
 int getNativeBIGNUM() {
         return this.bignum;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.480 -0500", hash_original_method = "271E8D5D7DE583053F26E9ECE2A9ACB3", hash_generated_method = "83D210F878162A054F5D5207ECA3A607")
     
@@ -256,7 +247,6 @@ private void makeValid() {
             Check(this.bignum != 0);
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.487 -0500", hash_original_method = "8941EBA58E329563221FF533A53A6CC6", hash_generated_method = "8941EBA58E329563221FF533A53A6CC6")
     
@@ -272,7 +262,6 @@ BigInt copy() {
         bi.putCopy(this);
         return bi;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.492 -0500", hash_original_method = "30A332A63D32AA82B1909AFA5FBB53FE", hash_generated_method = "30A332A63D32AA82B1909AFA5FBB53FE")
     
@@ -383,7 +372,6 @@ void putBigEndianTwosComplement(byte[] a) {
         Check(NativeBN.twosComp2bn(a, a.length, this.bignum));
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.516 -0500", hash_original_method = "27EA3CFBEF77EFE881C6E2FB553F4CC2", hash_generated_method = "27EA3CFBEF77EFE881C6E2FB553F4CC2")
     
 long longInt() {
@@ -402,6 +390,7 @@ String hexString() {
         return NativeBN.BN_bn2hex(this.bignum);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.523 -0500", hash_original_method = "5BFAE0D787CB740802A929B95296D76B", hash_generated_method = "5BFAE0D787CB740802A929B95296D76B")
     
 byte[] bigEndianMagnitude() {
@@ -420,6 +409,7 @@ int sign() {
         return NativeBN.sign(this.bignum);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:38.529 -0500", hash_original_method = "D1EC3F455E1B2B87D60E54F4D60552ED", hash_generated_method = "D1EC3F455E1B2B87D60E54F4D60552ED")
     
 void setSign(int val) {
@@ -478,7 +468,6 @@ void add(BigInt a) {
 boolean isPrime(int certainty) {
         return NativeBN.BN_is_prime_ex(bignum, certainty, 0);
     }
-
     
 }
 

@@ -22,9 +22,7 @@ public abstract class AbstractHttpEntity implements HttpEntity {
 
     protected boolean chunked;
     
-    @DSModeled(DSC.SAFE)
 	protected AbstractHttpEntity() {}
-
 
     /**
      * Obtains the Content-Type header.
@@ -33,12 +31,12 @@ public abstract class AbstractHttpEntity implements HttpEntity {
      *
      * @return  the Content-Type header, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.918 -0500", hash_original_method = "DA5232C01B88DD776A78D6C1E0EF7DB4", hash_generated_method = "33852E0EBCD1B1F03B200DF158C6DE03")
     
 public Header getContentType() {
         return this.contentType;
     }
-
     
     /**
      * Obtains the Content-Encoding header.
@@ -47,6 +45,7 @@ public Header getContentType() {
      *
      * @return  the Content-Encoding header, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.921 -0500", hash_original_method = "0300179EF34C28254565E1D29B0088D9", hash_generated_method = "0F715B6D0D7D905C0D822E970B6614D5")
     
 public Header getContentEncoding() {
@@ -65,7 +64,6 @@ public Header getContentEncoding() {
 public boolean isChunked() {
         return this.chunked;
     }
-
     
     /**
      * Specifies the Content-Type header.
@@ -98,7 +96,6 @@ public void setContentType(final String ctString) {
         }
         setContentType(h);
     }
-    
 
     /**
      * Specifies the Content-Encoding header.
@@ -132,7 +129,6 @@ public void setContentEncoding(final String ceString) {
         setContentEncoding(h);
     }
 
-
     /**
      * Specifies the 'chunked' flag.
      * The default implementation sets the value of the
@@ -140,12 +136,13 @@ public void setContentEncoding(final String ceString) {
      *
      * @param b         the new 'chunked' flag
      */
+    @DSComment("possibly edits networking data")
+    @DSSpec(DSCat.NETWORKING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.936 -0500", hash_original_method = "1B88FA65FDF60169F373F298E33E777E", hash_generated_method = "257FDFC86D61A9133D77F54CD71C658D")
     
 public void setChunked(boolean b) {
         this.chunked = b;
     }
-
 
     /**
      * Does not consume anything.
@@ -169,7 +166,6 @@ public void consumeContent()
                 ("streaming entity does not implement consumeContent()");
         }
     }
-
     
 }
 

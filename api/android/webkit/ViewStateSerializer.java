@@ -14,9 +14,6 @@ import android.graphics.Point;
 import android.graphics.Region;
 import android.webkit.WebViewCore.DrawData;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class ViewStateSerializer {
@@ -62,26 +59,20 @@ static DrawData deserializeViewState(InputStream stream, WebView web)
         draw.mInvalRegion = new Region(0, 0, contentWidth, contentHeight);
         return draw;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeSerializeViewState(int baseLayer,
             OutputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeDeserializeViewState(
             InputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_INT;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.293 -0500", hash_original_field = "93DB6FF890F60901303B2AEAD85141C3", hash_generated_field = "16A3D3E1F1A46232673D292E95776672")
 
-
     private static final int WORKING_STREAM_STORAGE = 16 * 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:42.295 -0500", hash_original_field = "965BFA0136A42F88AEBCBAB90EBADD3A", hash_generated_field = "C4C590CA9F059E3E20E236FD779C6637")
-
 
     static final int VERSION = 1;
 

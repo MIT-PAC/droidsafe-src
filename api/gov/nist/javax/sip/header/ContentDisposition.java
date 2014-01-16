@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public final class ContentDisposition extends ParametersHeader implements javax.sip.header.ContentDispositionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.596 -0500", hash_original_field = "6D30F97CF92ABC307F883ACFB9E10475", hash_generated_field = "1A47D47195A65F4F581EF3E849861302")
 
@@ -62,6 +57,7 @@ public void setDispositionType(String dispositionType)
      * Get the disposition type.
      * @return Disposition Type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.622 -0500", hash_original_method = "D3ED1AFB699417969621FE1884F8C7FE", hash_generated_method = "A74AD48002A48C108D26F19F589610F9")
     
 public String getDispositionType() {
@@ -72,6 +68,7 @@ public String getDispositionType() {
      * Get the dispositionType field.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.626 -0500", hash_original_method = "0297698DA62A584BC408978A78677ED8", hash_generated_method = "D88B00DAB3631BE3634C337963FCDB38")
     
 public String getHandling() {
@@ -81,6 +78,7 @@ public String getHandling() {
     /** set the dispositionType field.
      * @param handling String to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.631 -0500", hash_original_method = "B6C4C36D7665EDCFABC9BF782D2AADE0", hash_generated_method = "72746B0C8E6F50381A740846901C041A")
     
 public void setHandling(String handling) throws ParseException {
@@ -97,6 +95,7 @@ public void setHandling(String handling) throws ParseException {
      *
      * @return interpretation of the message body or message body part
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:52.636 -0500", hash_original_method = "C2FDE3A2DBDC43C0B4279ABCAA53BEFB", hash_generated_method = "F2C27927045A66DB71E910B6DC8BF382")
     
 public String getContentDisposition() {

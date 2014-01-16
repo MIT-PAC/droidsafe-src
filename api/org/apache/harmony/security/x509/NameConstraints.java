@@ -15,11 +15,6 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class NameConstraints extends ExtensionValue {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.689 -0500", hash_original_method = "8FB61ACD8CD827383570A2AA532D86A2", hash_generated_method = "D78A5D93A24288B0659C0170186DE635")
@@ -27,7 +22,6 @@ public final class NameConstraints extends ExtensionValue {
 public static NameConstraints decode(byte[] encoding) throws IOException {
         return (NameConstraints) ASN1.decode(encoding);
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.547 -0400", hash_original_field = "0F2F0693D95F2402F86C3A5B6E0E575B", hash_generated_field = "B4D47106C6BA5DC8C2956CCE475720F8")
 
@@ -39,6 +33,7 @@ public static NameConstraints decode(byte[] encoding) throws IOException {
             setOptional(1);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.709 -0500", hash_original_method = "615B46BCF08688AF9BAEA542A898E560", hash_generated_method = "C5D66E25BE23E183811BA60FFFF77F65")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -67,7 +62,6 @@ public static NameConstraints decode(byte[] encoding) throws IOException {
 
     private byte[] encoding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.679 -0500", hash_original_field = "AEEFF51808C2177A9BE613D0564D8141", hash_generated_field = "8E1781FAED2BE993CB5C76415843F294")
-
 
     private ArrayList<GeneralName>[] permitted_names;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.681 -0500", hash_original_field = "CEFFB92DCC6D431329E5888981B48D49", hash_generated_field = "E0D2B3769B023B270B4E969DD11C5AF9")
@@ -105,6 +99,7 @@ private NameConstraints(GeneralSubtrees permittedSubtrees,
         this.encoding = encoding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.692 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {
@@ -255,6 +250,7 @@ public boolean isAcceptable(List<GeneralName> names) {
         return true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.706 -0500", hash_original_method = "54185F2659E074B2203C13418D4687EB", hash_generated_method = "F873D5C44CB543E50861371BEEDAD3F1")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

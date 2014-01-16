@@ -20,8 +20,6 @@ public class BasicHeaderIterator implements HeaderIterator {
 
     protected String headerName;
 
-
-
     /**
      * Creates a new header iterator.
      *
@@ -41,7 +39,6 @@ public BasicHeaderIterator(Header[] headers, String name) {
         this.headerName = name;
         this.currentIndex = findNext(-1);
     }
-
 
     /**
      * Determines the index of the next header.
@@ -67,7 +64,6 @@ protected int findNext(int from) {
         return found ? from : -1;
     }
 
-
     /**
      * Checks whether a header is part of the iteration.
      *
@@ -82,37 +78,29 @@ protected boolean filterHeader(int index) {
         return (this.headerName == null) ||
             this.headerName.equalsIgnoreCase(this.allHeaders[index].getName());
     }
-
     
-    @DSModeled(DSC.SAFE)
 	@Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public Header nextHeader() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	@Override
 	public Object next() {
 		// TODO Auto-generated method stub
 		return new Object();
 	}
-
     
     @Override
 	public void remove() {
 		// TODO Auto-generated method stub
 	}
-
     
 }
 

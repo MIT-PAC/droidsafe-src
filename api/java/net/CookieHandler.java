@@ -8,16 +8,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-
-
-
-
-
 public abstract class CookieHandler {
 
     /**
      * Returns the system-wide cookie handler or {@code null} if not set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.128 -0500", hash_original_method = "65064E42240CB41EFD8C79933CC6C8FC", hash_generated_method = "55FAD7BF0BEF4B8C6325DB42E40DDC15")
     
 public static CookieHandler getDefault() {
@@ -33,7 +29,6 @@ public static void setDefault(CookieHandler cHandler) {
         systemWideCookieHandler = cHandler;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.125 -0500", hash_original_field = "960FE1D0599F5BBCD5F5E9E0F7FBB7E7", hash_generated_field = "8C9BF4ECEE0FD776A81C187004A66852")
-
 
     private static CookieHandler systemWideCookieHandler;
     

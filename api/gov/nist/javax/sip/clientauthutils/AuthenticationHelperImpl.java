@@ -34,9 +34,6 @@ import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.message.Request;
 import javax.sip.message.Response;
 
-
-
-
 public class AuthenticationHelperImpl implements AuthenticationHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.489 -0500", hash_original_field = "97A26D8BD8CC9D6A8A6173064B299B5B", hash_generated_field = "1A1B69CD5FD1781DFE3A277E582E290E")
 
@@ -49,10 +46,8 @@ public class AuthenticationHelperImpl implements AuthenticationHelper {
     private HeaderFactory headerFactory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.498 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
-
     private SipStackImpl sipStack;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.500 -0500", hash_original_field = "738C3D18449F14F8BF2AE2302B0A1011", hash_generated_field = "738C3D18449F14F8BF2AE2302B0A1011")
-
 
     Timer timer;
 
@@ -93,7 +88,6 @@ public AuthenticationHelperImpl(SipStackImpl sipStack, SecureAccountManager acco
 
         this.cachedCredentials = new CredentialsCache(((SIPTransactionStack) sipStack).getTimer());
     }
-    
 
     /*
      * (non-Javadoc)
@@ -101,6 +95,7 @@ public AuthenticationHelperImpl(SipStackImpl sipStack, SecureAccountManager acco
      * @see gov.nist.javax.sip.clientauthutils.AuthenticationHelper#handleChallenge(javax.sip.message.Response,
      *      javax.sip.ClientTransaction, javax.sip.SipProvider)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:40.512 -0500", hash_original_method = "CD11AFCBEA5D85B140502117B9E2B2FE", hash_generated_method = "8FCC82F4671DFF458822C68BE5416359")
     
 public ClientTransaction handleChallenge(Response challenge,
@@ -143,8 +138,6 @@ public ClientTransaction handleChallenge(Response challenge,
                 }
             }
 
-
-
             // remove the branch id so that we could use the request in a new
             // transaction
             removeBranchID(reoriginatedRequest);
@@ -184,7 +177,6 @@ public ClientTransaction handleChallenge(Response challenge,
                 throw new SipException("Invalid CSeq -- could not increment : "
                         + cSeq.getSeqNumber());
             }
-
 
             /* Resolve this to the next hop based on the previous lookup. If we are not using
              * lose routing (RFC2543) then just attach hop as a maddr param.
@@ -256,9 +248,6 @@ public ClientTransaction handleChallenge(Response challenge,
             throw new SipException("Unexpected exception ", ex);
         }
     }
-    
-    
-   
 
     /**
      * Generates an authorisation header in response to wwwAuthHeader.
@@ -455,7 +444,6 @@ public void removeCachedAuthenticationHeaders(String callId) {
         this.cachedCredentials.removeAuthenticationHeader(callId);
 
     }
-
     
 }
 

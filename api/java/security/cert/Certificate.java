@@ -16,14 +16,8 @@ import java.security.PublicKey;
 import java.security.SignatureException;
 import java.util.Arrays;
 
-
-
-
-
-
 public abstract class Certificate implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.469 -0500", hash_original_field = "8E6CD851C821763F93F2E7105A2055E8", hash_generated_field = "F128B9ED7E1B9361939A91BA465EE1B0")
-
 
     private static final long serialVersionUID = -3585440601605666277L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.472 -0500", hash_original_field = "1B03D0EF3E71EB350936336F82D5E0C5", hash_generated_field = "AB2C9E2EF2C4EBDBF6BF18A679B45B62")
@@ -47,6 +41,7 @@ protected Certificate(String type) {
      *
      * @return the certificate type.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.477 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "B5025B3379E65F477B29B0C5C8B783DF")
     
 public final String getType() {
@@ -191,11 +186,9 @@ public abstract String toString();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.495 -0500", hash_original_method = "F2C717FDFBF8A1EA046A033A3AA9C5CC", hash_generated_method = "D544FA3197F301F074C9140DD12C3EA0")
     
 public abstract PublicKey getPublicKey();
-
     
     protected static class CertificateRep implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.501 -0500", hash_original_field = "F30BFE25CCAFE9B43B2B3628B004F6F9", hash_generated_field = "945034F4E24059F289CC97EFC7BB0CA4")
-
 
         private static final long serialVersionUID = -8563758940495660020L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.508 -0500", hash_original_field = "F5371AF1F17086E8835088DFDB9C2730", hash_generated_field = "711682546E3189478C2A696C169FECF1")
@@ -255,6 +248,7 @@ protected Object readResolve() throws ObjectStreamException {
      * @throws ObjectStreamException
      *             if the creation of the alternate object fails.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.497 -0500", hash_original_method = "99E789CC29F8A2F97D8F3F24132FD9A6", hash_generated_method = "27FE5217C5BD51037D61E9067A177D34")
     
 protected Object writeReplace() throws ObjectStreamException {

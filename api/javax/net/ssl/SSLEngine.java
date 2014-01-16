@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
-
-
-
-
-
 public abstract class SSLEngine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.523 -0500", hash_original_field = "C33A347C63CF676DBDFD0CCC029E433E", hash_generated_field = "871B4093DF845204CC93E22B63A3EB07")
 
@@ -50,6 +45,7 @@ protected SSLEngine(String host, int port) {
      *
      * @return the name of the peer host, or {@code null} if none is available.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.533 -0500", hash_original_method = "686621F471AF14AF505B60419214318E", hash_generated_method = "B884ECED502456841527EC5FB85A2015")
     
 public String getPeerHost() {
@@ -62,6 +58,7 @@ public String getPeerHost() {
      * @return the port number of the peer host, or {@code -1} is none is
      *         available.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.535 -0500", hash_original_method = "356711D154A2D021F9E9DF4BCD609AF2", hash_generated_method = "0A13911FE5FD34A377B4DEB23C492969")
     
 public int getPeerPort() {
@@ -424,6 +421,7 @@ public abstract SSLEngineResult wrap(ByteBuffer[] srcs, int offset, int length, 
      *             if the engine does not have all the needed settings (e.g.
      *             client/server mode not set).
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.593 -0500", hash_original_method = "7AC56F3E97B3BF2A8A3FC335E647B318", hash_generated_method = "9ECDE8E6E145177E98F97B800C2FB6BF")
     
 public SSLEngineResult unwrap(ByteBuffer src, ByteBuffer dst) throws SSLException {
@@ -451,6 +449,7 @@ public SSLEngineResult unwrap(ByteBuffer src, ByteBuffer dst) throws SSLExceptio
      *             if the engine does not have all the needed settings (e.g.
      *             client/server mode not set).
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.596 -0500", hash_original_method = "9736EBF4FA9EEB1C5129AD63480700AA", hash_generated_method = "888840D46D3BD5AD31AB47DD90E565ED")
     
 public SSLEngineResult unwrap(ByteBuffer src, ByteBuffer[] dsts) throws SSLException {
@@ -480,6 +479,7 @@ public SSLEngineResult unwrap(ByteBuffer src, ByteBuffer[] dsts) throws SSLExcep
      *             if the engine does not have all the needed settings (e.g.
      *             client/server mode not set).
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.599 -0500", hash_original_method = "2CCA444D00129DF62214EE036E36E4DD", hash_generated_method = "BDAF0D160199EAB3940CB5B7DF30E08A")
     
 public SSLEngineResult wrap(ByteBuffer[] srcs, ByteBuffer dst) throws SSLException {
@@ -509,6 +509,7 @@ public SSLEngineResult wrap(ByteBuffer[] srcs, ByteBuffer dst) throws SSLExcepti
      *             if the engine does not have all the needed settings (e.g.
      *             client/server mode not set).
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.601 -0500", hash_original_method = "15A7413E97A8CAC06D2DFD60F87EA34E", hash_generated_method = "A44F54844E6FA3649A0F08484526C91C")
     
 public SSLEngineResult wrap(ByteBuffer src, ByteBuffer dst) throws SSLException {
@@ -521,6 +522,7 @@ public SSLEngineResult wrap(ByteBuffer src, ByteBuffer dst) throws SSLException 
      *
      * @since 1.6
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.603 -0500", hash_original_method = "B1069FA99460064F4DAFA14459B677AD", hash_generated_method = "E49272E6A5C5F4C5B789C28E3A1AD325")
     
 public SSLParameters getSSLParameters() {
@@ -541,6 +543,7 @@ public SSLParameters getSSLParameters() {
      * on the SSLEngine, otherwise both are set to false.
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.606 -0500", hash_original_method = "886AE080148D5E5D7C66238C628CC678", hash_generated_method = "B59D430B54A9E84755CD1B8DE11AFB42")
     
 public void setSSLParameters(SSLParameters p) {
@@ -560,7 +563,6 @@ public void setSSLParameters(SSLParameters p) {
             setWantClientAuth(false);
         }
     }
-
     
 }
 

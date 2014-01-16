@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class EmulatedFieldsForLoading extends ObjectInputStream.GetField {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.230 -0500", hash_original_field = "9784901087603B86AE4DFFDF75E981BD", hash_generated_field = "BB7D93F7E285B6B6ABC207AB64AE3D33")
 
@@ -84,6 +80,7 @@ EmulatedFields emulatedFields() {
      * @throws IllegalArgumentException
      *             If the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.242 -0500", hash_original_method = "E2EF3BE82D42EA9EDACA51530EC46031", hash_generated_method = "C73E057AE131F882272A1928317FC6D9")
     
 @Override
@@ -109,6 +106,7 @@ EmulatedFields emulatedFields() {
      * @throws IllegalArgumentException
      *             If the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.244 -0500", hash_original_method = "7F476519C93586AA18DAE834C31099C5", hash_generated_method = "28ACB059C2730002A77E5E9F3227F742")
     
 @Override
@@ -134,6 +132,7 @@ EmulatedFields emulatedFields() {
      * @throws IllegalArgumentException
      *             If the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.247 -0500", hash_original_method = "6EEAC0F2FE3228611FBEB2F317C71229", hash_generated_method = "2AD5BC20B97CA52CE762D322BE68A450")
     
 @Override
@@ -159,6 +158,7 @@ EmulatedFields emulatedFields() {
      * @throws IllegalArgumentException
      *             If the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.250 -0500", hash_original_method = "656F0985EB6DC9E8197CCDD755BCC8B1", hash_generated_method = "8263214F8C2C38743E3501734D153E24")
     
 @Override
@@ -209,6 +209,7 @@ EmulatedFields emulatedFields() {
      * @throws IllegalArgumentException
      *             If the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.255 -0500", hash_original_method = "6EAC14C93DA75CAEC3046B717CAB55B5", hash_generated_method = "4B9AEC8A8577660008782D509546199F")
     
 @Override
@@ -234,6 +235,7 @@ EmulatedFields emulatedFields() {
      * @throws IllegalArgumentException
      *             If the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.257 -0500", hash_original_method = "C001C2593281B8C12D4D30B1599FB136", hash_generated_method = "F18B2509E5879F1EAD77C54A8315DBA0")
     
 @Override
@@ -259,6 +261,7 @@ EmulatedFields emulatedFields() {
      * @throws IllegalArgumentException
      *             If the corresponding field can not be found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.260 -0500", hash_original_method = "10DCCBE6C4EE0FC6DB857351027C9025", hash_generated_method = "80B96BFD42A288FE90502D275458A613")
     
 @Override
@@ -299,13 +302,13 @@ EmulatedFields emulatedFields() {
      * @return ObjectStreamClass The class descriptor for which the emulated
      *         fields are defined.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.266 -0500", hash_original_method = "C05B1B5B49C9CD804F2B010781383CF8", hash_generated_method = "9D2C070FECF2DCAD0C6647FBD9F938E2")
     
 @Override
     public ObjectStreamClass getObjectStreamClass() {
         return streamClass;
     }
-
     
 }
 

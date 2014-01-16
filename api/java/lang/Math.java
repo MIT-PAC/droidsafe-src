@@ -6,130 +6,110 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Random;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Math {
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double abs(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static float abs(float f) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static int abs(int i) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static long abs(long l) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double acos(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double asin(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double atan(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double atan2(double y, double x) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double cbrt(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double ceil(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double cos(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double cosh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double exp(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double expm1(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double floor(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double hypot(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double IEEEremainder(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double log(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double log10(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double log1p(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -152,6 +132,8 @@ public final class Math {
      *            the second argument.
      * @return the larger of {@code d1} and {@code d2}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.675 -0500", hash_original_method = "44DF249E8533183B21D14B39E826B28E", hash_generated_method = "380B6602028EB9350F7E15749FFDEB86")
     
 public static double max(double d1, double d2) {
@@ -191,6 +173,8 @@ public static double max(double d1, double d2) {
      *            the second argument.
      * @return the larger of {@code f1} and {@code f2}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.678 -0500", hash_original_method = "9AEE96235CF6352E912E5660F1DE7C95", hash_generated_method = "52E191849024F1F783651368968A056F")
     
 public static float max(float f1, float f2) {
@@ -211,9 +195,9 @@ public static float max(float f1, float f2) {
         }
         return 0.0f;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static int max(int i1, int i2) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -228,6 +212,8 @@ public static float max(float f1, float f2) {
      *            the second argument.
      * @return the larger of {@code l1} and {@code l2}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.686 -0500", hash_original_method = "233BD25D9E931F9CFFEABFD8C1F7AD8D", hash_generated_method = "89BE60C16A0FDC38DA060BFBC44C081F")
     
 public static long max(long l1, long l2) {
@@ -252,6 +238,8 @@ public static long max(long l1, long l2) {
      *            the second argument.
      * @return the smaller of {@code d1} and {@code d2}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.689 -0500", hash_original_method = "8BB4E1970CF2E6F84A22C0B200AB3D65", hash_generated_method = "2DB2C5BF5971C12A102AAB53BED6CBE8")
     
 public static double min(double d1, double d2) {
@@ -291,6 +279,8 @@ public static double min(double d1, double d2) {
      *            the second argument.
      * @return the smaller of {@code f1} and {@code f2}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.691 -0500", hash_original_method = "2C0167268EE64CB5B5506FBA30CD6B47", hash_generated_method = "E261F8D8CD79B72EAF5E86F7A6A28E3D")
     
 public static float min(float f1, float f2) {
@@ -311,9 +301,9 @@ public static float min(float f1, float f2) {
         }
         return f2;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static int min(int i1, int i2) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -328,20 +318,20 @@ public static float min(float f1, float f2) {
      *            the second argument.
      * @return the smaller of {@code l1} and {@code l2}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.699 -0500", hash_original_method = "5570DD5E3DA486C8E4D5DC9CDBA5E092", hash_generated_method = "B73400D0D4481274464946AB0B36C034")
     
 public static long min(long l1, long l2) {
         return l1 < l2 ? l1 : l2;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double pow(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double rint(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -365,6 +355,8 @@ public static long min(long l1, long l2) {
      *            the value to be rounded.
      * @return the closest integer to the argument.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.710 -0500", hash_original_method = "F31023BEAA17C26F61A8FAFF1293674E", hash_generated_method = "072077AC89CC90DD70D1ADC526A4DCC6")
     
 public static long round(double d) {
@@ -394,6 +386,8 @@ public static long round(double d) {
      *            the value to be rounded.
      * @return the closest integer to the argument.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.712 -0500", hash_original_method = "E7A3BD9CEF3664A05F97B7EE40F06764", hash_generated_method = "B4CE0EC04834B45CEA43F2C462779E4A")
     
 public static int round(float f) {
@@ -457,6 +451,8 @@ public static double signum(double d) {
      *            the value whose signum has to be computed.
      * @return the value of the signum function.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.718 -0500", hash_original_method = "51588EB5370FA34884D982F539C5410D", hash_generated_method = "A023E61233CE7EB3C06C7F6C1C7BB8A3")
     
 public static float signum(float f) {
@@ -471,33 +467,29 @@ public static float signum(float f) {
         }
         return sig;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double sin(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double sinh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double sqrt(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double tan(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static double tanh(double d) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -511,6 +503,8 @@ public static float signum(float f) {
      *
      * @return a pseudo-random number.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.742 -0500", hash_original_method = "22576C597930F29271BE56A4EEB59899", hash_generated_method = "7228F28FDE792D02717F7FA9021FFDC1")
     
 public static synchronized double random() {
@@ -537,6 +531,8 @@ public static synchronized double random() {
      *            an angle in degrees.
      * @return the radian measure of the angle.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.745 -0500", hash_original_method = "8DABF7F6D42535B5D2AB5BAB7ED39309", hash_generated_method = "C6FBC8B2019816B31A04818178A89723")
     
 public static double toRadians(double angdeg) {
@@ -560,6 +556,8 @@ public static double toRadians(double angdeg) {
      *            an angle in radians.
      * @return the degree measure of the angle.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.748 -0500", hash_original_method = "502B50A67A0624ED7AF2A492E09480AA", hash_generated_method = "4AC6332E722A6F45208C9B436E0A8222")
     
 public static double toDegrees(double angrad) {
@@ -597,9 +595,7 @@ public static double ulp(double d) {
         d = abs(d);
         return nextafter(d, Double.MAX_VALUE) - d;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static double nextafter(double x, double y) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -683,6 +679,7 @@ public static float copySign(float magnitude, float sign) {
      * Returns the unbiased base-2 exponent of float {@code f}.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.766 -0500", hash_original_method = "97012FE7C9870A29CEA8A2EDD34265B2", hash_generated_method = "985C9E866BA90774D180385CF000AF5B")
     
 public static int getExponent(float f) {
@@ -695,6 +692,7 @@ public static int getExponent(float f) {
      * Returns the unbiased base-2 exponent of double {@code d}.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.768 -0500", hash_original_method = "19989C21DEF6CFA455C891A862B03E8C", hash_generated_method = "5D6AE80AF25A6EA9088CF469827CA904")
     
 public static int getExponent(double d) {
@@ -980,7 +978,6 @@ private static long shiftLongBits(long bits, long digits) {
 
     public static final double PI = 3.141592653589793;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:15.585 -0500", hash_original_field = "DC2327CCB95C5C902D526E5238316B9A", hash_generated_field = "4574226C6A992CD5F43E1273AEA83087")
-
 
     private static Random random;
 

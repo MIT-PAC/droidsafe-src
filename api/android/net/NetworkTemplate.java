@@ -20,11 +20,6 @@ import android.os.Parcelable;
 
 import com.android.internal.util.Objects;
 
-
-
-
-
-
 public class NetworkTemplate implements Parcelable {
 
     /**
@@ -133,7 +128,6 @@ public NetworkTemplate[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.246 -0500", hash_original_field = "61586E75DF1F9E362569C967C6545B95", hash_generated_field = "D0FA22F19C60C7D870BF0A9AE53EB17C")
 
-
     private  int mMatchRule;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.248 -0500", hash_original_field = "4CB6146C3E5C68A8736082D04D2233DE", hash_generated_field = "A7B8730BE01D0326C5198382C94E4F46")
 
@@ -198,6 +192,7 @@ public int describeContents() {
     }
 
     /** {@hide} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.267 -0500", hash_original_method = "F3B6429C6B29080B6AB6244CD6E2C6C6", hash_generated_method = "4FE6FFDE74FB6A449F71EEE91B6C997E")
     
 public int getMatchRule() {
@@ -205,6 +200,7 @@ public int getMatchRule() {
     }
 
     /** {@hide} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.269 -0500", hash_original_method = "DC04D62E493D044F593223B75A4808C0", hash_generated_method = "A7AB8B338BFAABE54CF6CD80FDE63752")
     
 public String getSubscriberId() {

@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.Log;
 
-
-
-
-
 public class PowerManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.589 -0500", hash_original_field = "3B4330FED75BB90B0CE9F985761989D9", hash_generated_field = "C992E04E6F98294D18127FB43220B098")
 
@@ -33,7 +29,6 @@ public class PowerManager {
 
     private static final int WAKE_BIT_PROXIMITY_SCREEN_OFF = 32;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.606 -0500", hash_original_field = "74306E3D80B861ADC2651DCA065DB8DA", hash_generated_field = "508DC0C6CE30C8ED2A556800FDE5D29E")
-
     
     private static final int LOCK_MASK = WAKE_BIT_CPU_STRONG
                                         | WAKE_BIT_CPU_WEAK
@@ -52,7 +47,6 @@ public class PowerManager {
 
     @Deprecated
     public static final int SCREEN_BRIGHT_WAKE_LOCK = WAKE_BIT_CPU_WEAK | WAKE_BIT_SCREEN_BRIGHT;
-
     
     public class WakeLock {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.633 -0500", hash_original_field = "AB493A44689C365DB0C15627FDC5B5BB", hash_generated_field = "E9017053B54EAB7FB5FC1DB7E6284D86")
@@ -65,13 +59,10 @@ public class PowerManager {
             public void run() {
                 release();
                 
-                
             }
-
             
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.640 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "4E5A87EA4636A8ACF68875B877F3A7B8")
-
 	
         int mFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.642 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "05B32B05746742D3A5261C827E7D8852")
@@ -120,6 +111,8 @@ WakeLock(int flags, String tag)
          *
          * @param value true for ref counted, false for not ref counted.
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.657 -0500", hash_original_method = "C9C09C089F97F5128A15BBE86111A3BF", hash_generated_method = "6748BB7750DA0EB9305F3FBD73636CFB")
         
 public void setReferenceCounted(boolean value)
@@ -131,6 +124,8 @@ public void setReferenceCounted(boolean value)
          * Makes sure the device is on at the level you asked when you created
          * the wake lock.
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.660 -0500", hash_original_method = "60F8C5E408EB104B9A6B83E1C96AB086", hash_generated_method = "6CBB7F30A9B24D66F901470838801880")
         
 public void acquire()
@@ -146,6 +141,8 @@ public void acquire()
          * 
          * @param timeout Release the lock after the give timeout in milliseconds.
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.662 -0500", hash_original_method = "557ADDA01C2A32642A34A73D3A75D3D5", hash_generated_method = "82D4DE857663CEA5A041286E314C40BF")
         
 public void acquire(long timeout) {
@@ -175,6 +172,8 @@ private void acquireLocked() {
          * It may turn off shortly after you release it, or it may not if there
          * are other wake locks held.
          */
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.667 -0500", hash_original_method = "4304724C92023C406072B166ABF56DE4", hash_generated_method = "6AA21D14C5EDE1271ACE8C5C9841CF80")
         
 public void release() {
@@ -210,6 +209,8 @@ public void release(int flags) {
             }
         }
 
+        @DSComment("Power management")
+        @DSSpec(DSCat.DEVICE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.672 -0500", hash_original_method = "B8CE240AF6103639736D7EE1F34595B3", hash_generated_method = "58A0667DBE8EA8514F1D4E4A3BE4A4DD")
         
 public boolean isHeld()
@@ -219,6 +220,7 @@ public boolean isHeld()
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.674 -0500", hash_original_method = "413F4C2C0B188BB0515F7A7D15C1E054", hash_generated_method = "AF637D4A4057E12E7AE0BBDDB3080BBD")
         
 public void setWorkSource(WorkSource ws) {
@@ -289,14 +291,12 @@ public String toString() {
 
     public static final int ON_AFTER_RELEASE = 0x20000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.704 -0500", hash_original_field = "5A93C277105259AF4C607FFD616B68DC", hash_generated_field = "5A93C277105259AF4C607FFD616B68DC")
-
     
     IPowerManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.706 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
     Handler mHandler;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.325 -0400", hash_original_method = "CC3F52E82947675044A40593774B54F6", hash_generated_method = "FBF57EA37BF41DE0AFD68D9E02F27504")
     public PowerManager() {
         // ---------- Original Method ----------
@@ -401,6 +401,7 @@ public void goToSleep(long time)
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.691 -0500", hash_original_method = "1657059AF219261DAAA3A6D217AB2CFE", hash_generated_method = "E9D76F6E04F1B6EDEA6885C3A8F0A9D0")
     
 public void setBacklightBrightness(int brightness)

@@ -9,9 +9,6 @@ import java.util.TimeZone;
 
 import android.content.res.Resources;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Time {
@@ -29,6 +26,8 @@ public class Time {
      * @return a negative result if {@code a} is earlier, a positive result if
      *         {@code a} is earlier, or 0 if they are equal.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.769 -0500", hash_original_method = "1E5DE9F7F5CC8351FCC6C06EF6103A1F", hash_generated_method = "207458D93B711E43419FC34C3E3297FD")
     
 public static int compare(Time a, Time b) {
@@ -40,9 +39,7 @@ public static int compare(Time a, Time b) {
 
         return nativeCompare(a, b);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCompare(Time a, Time b) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_450183953;
@@ -51,6 +48,9 @@ public static int compare(Time a, Time b) {
     /**
      * Returns the timezone string that is currently set for the device.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.804 -0500", hash_original_method = "9C730CB6C697DB2A56C8E6FAE9E8F345", hash_generated_method = "DEB2074E7BB36BB0690F5D23D9C3701A")
     
 public static String getCurrentTimezone() {
@@ -87,6 +87,7 @@ public static boolean isEpoch(Time time) {
      * @param gmtoff the offset from UTC in seconds
      * @return the Julian day
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.850 -0500", hash_original_method = "D08E597819461A2ABCDA3ECFD890EA67", hash_generated_method = "ED2CB255FE1DAAC50CD2EFB1B5DF55C9")
     
 public static int getJulianDay(long millis, long gmtoff) {
@@ -107,6 +108,7 @@ public static int getJulianDay(long millis, long gmtoff) {
      *            {@link #SUNDAY}
      * @return Weeks since the epoch
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.856 -0500", hash_original_method = "38665BD593D83A76BE7E942EDFDF3356", hash_generated_method = "B2667088C9EA16944039F40AC1BA4A98")
     
 public static int getWeeksSinceEpochFromJulianDay(int julianDay, int firstDayOfWeek) {
@@ -128,6 +130,7 @@ public static int getWeeksSinceEpochFromJulianDay(int julianDay, int firstDayOfW
      * @param week Number of weeks since the epoch
      * @return The julian day for the Monday of the given week since the epoch
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.860 -0500", hash_original_method = "416CF5B8E045D66926F7C97658B32152", hash_generated_method = "83D4A15CD9D63C38AEC7654782EF38DD")
     
 public static int getJulianMondayFromWeeksSinceEpoch(int week) {
@@ -143,7 +146,6 @@ public static int getJulianMondayFromWeeksSinceEpoch(int week) {
 
     private static final String Y_M_D = "%Y-%m-%d";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.627 -0500", hash_original_field = "CA779BEC9970A623BDF311FCF64D40A7", hash_generated_field = "448FF7C314ECEAD51910DBE6ACEDCDB5")
-
 
     public static final String TIMEZONE_UTC = "UTC";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.630 -0500", hash_original_field = "6D770E847D0056A79F87678CF7610409", hash_generated_field = "979BA9E17F757813AD1F7415B808BB0C")
@@ -180,7 +182,6 @@ public static int getJulianMondayFromWeeksSinceEpoch(int week) {
 
     public static final int WEEK_NUM = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.690 -0500", hash_original_field = "8E4DE116B88A16555727E91FF6A1712C", hash_generated_field = "36AE026E6127E76EA1E3630F36493111")
-
 
     public static final int SUNDAY = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.693 -0500", hash_original_field = "9A33D4C4CC018E922638687FF5A8DC99", hash_generated_field = "DBFAE43E90D9723C40B3BB19C4831A6F")
@@ -239,7 +240,6 @@ public static int getJulianMondayFromWeeksSinceEpoch(int week) {
     private static String sDateCommand = "%a %b %e %H:%M:%S %Z %Y";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.759 -0500", hash_original_field = "9626A128BD0ED0153979370F22647A9E", hash_generated_field = "C556B2A442B943AEC4D04E626AB106F8")
 
-
     private static final int[] DAYS_PER_MONTH = { 31, 28, 31, 30, 31, 30, 31,
             31, 30, 31, 30, 31 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.838 -0500", hash_original_field = "64057F2A6D95863CCE213E0945666F9B", hash_generated_field = "90DD57B3997497DA0FBDC833C844F416")
@@ -288,6 +288,8 @@ public static int getJulianMondayFromWeeksSinceEpoch(int week) {
      * @param timezone string containing the timezone to use.
      * @see TimeZone
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.743 -0500", hash_original_method = "E0FCF5C2DD1FC8B8CECA3F88CA26F2FA", hash_generated_method = "AEAC7D1422FF6F48C2FC8B5E88EABD1C")
     
 public Time(String timezone) {
@@ -306,6 +308,8 @@ public Time(String timezone) {
      * Construct a Time object in the default timezone. The time is initialized to
      * Jan 1, 1970.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.745 -0500", hash_original_method = "B143F86B302A5932C8EBD6FB2BD46478", hash_generated_method = "B2115C0DC328A5BA3B9C03D90D22162C")
     
 public Time() {
@@ -348,7 +352,6 @@ public Time(Time other) {
     	return getTaintLong();
     }
 
-
     /**
      * Convert this time object so the time represented remains the same, but is
      * instead located in a different timezone. This method automatically calls
@@ -361,7 +364,6 @@ public Time(Time other) {
     	addTaint(timezone.getTaint());
     }
 
-
     /**
      * Return the maximum possible value for the given field given the value of
      * the other fields. Requires that it be normalized for MONTH_DAY and
@@ -369,6 +371,7 @@ public Time(Time other) {
      * @param field one of the constants for HOUR, MINUTE, SECOND, etc.
      * @return the maximum value for the field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.763 -0500", hash_original_method = "DF789B90859E8F04F5333F3487A99DFB", hash_generated_method = "414C0A84A438577DA829FE91C903F5D1")
     
 public int getActualMaximum(int field) {
@@ -519,9 +522,7 @@ public String format(String format) {
             return format1(format);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "751765C8BBD19CCE2EF370E3AB9D4D19", hash_generated_method = "CC9E7C3FAB0B3C60FBFB40FF6979F754")
     private String format1(String format) {
     	String s = new String();
@@ -529,9 +530,7 @@ public String format(String format) {
     	s.addTaint(format.getTaint());
     	return s;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.831 -0400", hash_original_method = "D4E4943029EE450E10D723A13B21ADBA", hash_generated_method = "93A7BDD7A073B21936AAAC2D97F258FB")
     @Override
     public String toString() {
@@ -597,7 +596,6 @@ public boolean parse(String s) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Parse a time in RFC 3339 format.  This method also parses simple dates
      * (that is, strings that contain no time or time offset).  For example,
@@ -629,7 +627,9 @@ public boolean parse(String s) {
      * @return true if the resulting time value is in UTC time
      * @throws android.util.TimeFormatException if s cannot be parsed.
      */
-     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.798 -0500", hash_original_method = "E417695E8CAC19265A6537D747474825", hash_generated_method = "DE9F06A70AE7B2D50C4E75981B0D2CE7")
+     @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.798 -0500", hash_original_method = "E417695E8CAC19265A6537D747474825", hash_generated_method = "DE9F06A70AE7B2D50C4E75981B0D2CE7")
     
 public boolean parse3339(String s) {
          if (nativeParse3339(s)) {
@@ -647,16 +647,16 @@ public boolean parse3339(String s) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Sets the time of the given Time object to the current time.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.809 -0500", hash_original_method = "6CDA1CA0525F04C652EDF79AA26F0E90", hash_generated_method = "15AB5FFDBF444B39AECF6C7B3D1436D7")
     
     public void setToNow(){
     	//Formerly a native method
     }
-
 
     /**
      * Converts this time to milliseconds. Suitable for interacting with the
@@ -706,6 +706,8 @@ public boolean parse3339(String s) {
      * to read back the same milliseconds that you set with {@link #set(long)}
      * or {@link #set(Time)} or after parsing a date string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.813 -0500", hash_original_method = "C1956449864825DE1FCC969EAC519409", hash_generated_method = "D0531688B3741002E0E1F71977D0DF65")
     
     public long toMillis(boolean ignoreDst){
@@ -714,7 +716,6 @@ public boolean parse3339(String s) {
     	return getTaintLong();
     }
 
-
     /**
      * Sets the fields in this Time object given the UTC milliseconds.  After
      * this method returns, all the fields are normalized.
@@ -722,16 +723,15 @@ public boolean parse3339(String s) {
      *
      * @param millis the time in UTC milliseconds since the epoch.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.817 -0500", hash_original_method = "934B6518FEFEB3D5C2DEFA32BEB78382", hash_generated_method = "AB41981E05C419C3C9509C60D6834BFE")
     
     public void set(long millis){
     	//Formerly a native method
     	addTaint(millis);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:50.834 -0400", hash_original_method = "41A869EF339B8E1FD69184435BC2AFF4", hash_generated_method = "80016ED483EF4736E85C065EFF5B1D3A")
     public String format2445() {
     	String s = new String();
@@ -742,6 +742,7 @@ public boolean parse3339(String s) {
     /**
      * Copy the value of that to this Time object. No normalization happens.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.824 -0500", hash_original_method = "F960E973DC6F4E791CEC3120624756A7", hash_generated_method = "4509CB793883F76F83FC9ADE0AE82EDA")
     
 public void set(Time that) {
@@ -817,7 +818,6 @@ public boolean before(Time that) {
         return Time.compare(this, that) < 0;
     }
 
-
     /**
      * Returns true if the time represented by this Time object occurs after
      * the given time.
@@ -851,6 +851,7 @@ public boolean after(Time that) {
      *
      * @return the ISO week number.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.841 -0500", hash_original_method = "9786C5AD526EBB88697D6E3283396468", hash_generated_method = "1B937AB060B37085837F082A0464B732")
     
 public int getWeekNumber() {
@@ -880,6 +881,8 @@ public int getWeekNumber() {
      * @param allDay
      * @return string in the RFC 3339 format.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.844 -0500", hash_original_method = "84747EB963EFC6E551D95C210645E8C0", hash_generated_method = "6A5FBB901968BCE27B64EB8A163EDECD")
     
 public String format3339(boolean allDay) {
@@ -918,6 +921,7 @@ public String format3339(boolean allDay) {
      * @param julianDay the Julian day in the timezone for this Time object
      * @return the UTC milliseconds for the beginning of the Julian day
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:18.853 -0500", hash_original_method = "D0FEABA86A68FA32A36FDA48979CCD03", hash_generated_method = "BB3981764C056CDB01D2B20973E9B989")
     
 public long setJulianDay(int julianDay) {

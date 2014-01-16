@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ContentLengthHeader;
 
-
-
-
-
-
 public class ContentLength extends SIPHeader implements javax.sip.header.ContentLengthHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.813 -0500", hash_original_field = "4190EDB0E8C7DA78A55F07C7C89EE052", hash_generated_field = "0DAE05D7BF9A340249D2F42939DD9CA2")
 
@@ -43,6 +38,7 @@ public ContentLength(int length) {
      * get the ContentLength field.
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.825 -0500", hash_original_method = "071F13E55E71377D8D1F79D63D84EB7C", hash_generated_method = "595B83E3D25C37BB48AE6582CFC3FA5E")
     
 public int getContentLength() {
@@ -53,6 +49,7 @@ public int getContentLength() {
      * Set the contentLength member
      * @param contentLength int to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.827 -0500", hash_original_method = "D2E39B4328F6A55D8ECA212C37A06119", hash_generated_method = "981A882BC0402363784202E900A28FD7")
     
 public void setContentLength(int contentLength)

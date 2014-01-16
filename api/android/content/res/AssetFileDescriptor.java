@@ -13,10 +13,6 @@ import android.os.Parcel;
 import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 
-
-
-
-
 public class AssetFileDescriptor implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.727 -0500", hash_original_field = "D383DF2E70CDAE2ECE477107467659F5", hash_generated_field = "4FE9A1DE5214CFC95E635BC2E3ADC963")
 
@@ -37,7 +33,6 @@ public AssetFileDescriptor[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.730 -0500", hash_original_field = "F15BA4F12003086454C67D56791594A9", hash_generated_field = "AE959CCFA06A07F93FA2A8BEED883021")
-
     
     private  ParcelFileDescriptor mFd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.732 -0500", hash_original_field = "EA2AC6F7F17E9F5AC720129EC7B5A165", hash_generated_field = "286E6AACFD37B23A56DE152AEA0EBEB7")
@@ -81,6 +76,7 @@ AssetFileDescriptor(Parcel src) {
      * in addition to the normal FileDescriptor object also allows you to close
      * the descriptor when you are done with it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.739 -0500", hash_original_method = "9E61752120AEDC1582A5E495568F317A", hash_generated_method = "4296F37385ABE7D8D01D65FDFB3669B1")
     
 public ParcelFileDescriptor getParcelFileDescriptor() {
@@ -91,6 +87,9 @@ public ParcelFileDescriptor getParcelFileDescriptor() {
      * Returns the FileDescriptor that can be used to read the data in the
      * file.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.741 -0500", hash_original_method = "44C1CE26DE6098783D46BD5B3EB1BDD6", hash_generated_method = "AAD5723250B4FD2A2C783AFDFFD1F5F0")
     
 public FileDescriptor getFileDescriptor() {
@@ -100,6 +99,9 @@ public FileDescriptor getFileDescriptor() {
     /**
      * Returns the byte offset where this asset entry's data starts.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.743 -0500", hash_original_method = "F15F7E68559FE94D65E8E77E2E4D8AE9", hash_generated_method = "8D97620EF9AD25B7CC0B648BD738E0E0")
     
 public long getStartOffset() {
@@ -117,6 +119,9 @@ public long getStartOffset() {
      * 
      * @see #getDeclaredLength()
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.745 -0500", hash_original_method = "CF0C8205090CB57B9B1EACE80CFEFFE6", hash_generated_method = "F1D872A0D86B7EF8F27AE8B5C27ED7A5")
     
 public long getLength() {
@@ -135,6 +140,7 @@ public long getLength() {
      * 
      * @see #getDeclaredLength()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.748 -0500", hash_original_method = "017FD707368B4170A32A7494D8D576FE", hash_generated_method = "F6014B19B06A61282754490289EFC536")
     
 public long getDeclaredLength() {
@@ -144,6 +150,8 @@ public long getDeclaredLength() {
     /**
      * Convenience for calling <code>getParcelFileDescriptor().close()</code>.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.750 -0500", hash_original_method = "491F69AA4FD12992599C16C8B0915773", hash_generated_method = "96F1DAB79A4CAC2E01C61FFEE8C1D882")
     
 public void close() throws IOException {
@@ -191,7 +199,6 @@ public FileOutputStream createOutputStream() throws IOException {
         return "{AssetFileDescriptor: " + mFd
                 + " start=" + mStartOffset + " len=" + mLength + "}";
     }
-
     
     public static class AutoCloseInputStream extends ParcelFileDescriptor.AutoCloseInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.760 -0500", hash_original_field = "9B1849AEC403CCCD9B11224F99438BE6", hash_generated_field = "6A4F127DC4966865D6C91B71BF7CBFD7")
@@ -292,11 +299,8 @@ public AutoCloseInputStream(AssetFileDescriptor fd) throws IOException {
             }
             super.reset();
         }
-
         
     }
-
-
     
     public static class AutoCloseOutputStream extends ParcelFileDescriptor.AutoCloseOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.789 -0500", hash_original_field = "9B1849AEC403CCCD9B11224F99438BE6", hash_generated_field = "6A4F127DC4966865D6C91B71BF7CBFD7")
@@ -313,6 +317,7 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
             mRemaining = (int)fd.getLength();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.794 -0500", hash_original_method = "35A99E3D460555EE5E79B5F1CF4B3E8C", hash_generated_method = "99396FCB85956551DAF75A652F058F75")
         
 @Override
@@ -328,6 +333,7 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
             super.write(buffer, offset, count);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.796 -0500", hash_original_method = "4A27A012BA515BCAA339C3F9D7D659AA", hash_generated_method = "C9BADE41350B88B7A7E61999E744FB74")
         
 @Override
@@ -344,6 +350,7 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
             super.write(buffer);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.799 -0500", hash_original_method = "1210B34247DB6E03D45CB2428D3624D7", hash_generated_method = "332339B8451EA97A43A552B9C585D46F")
         
 @Override
@@ -357,10 +364,8 @@ public AutoCloseOutputStream(AssetFileDescriptor fd) throws IOException {
             
             super.write(oneByte);
         }
-
         
     }
-    
     
     /* Parcelable interface */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.803 -0500", hash_original_method = "0879BA3E6020CB54A0A428F518BD5C8A", hash_generated_method = "EFFB3C4548C45015B0D9B8D762F1DDE8")
@@ -369,6 +374,7 @@ public int describeContents() {
         return mFd.describeContents();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.805 -0500", hash_original_method = "FCAECA18F17390C63AF97C29D61A7F69", hash_generated_method = "04F78D42D902BAA983304466CC17FBBC")
     
 public void writeToParcel(Parcel out, int flags) {

@@ -22,10 +22,6 @@ import org.apache.http.cookie.SM;
 import org.apache.http.message.BufferedHeader;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
 public class RFC2965Spec extends RFC2109Spec {
     
     /**
@@ -228,6 +224,7 @@ private BasicClientCookie createCookie2(
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.723 -0500", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "4F0E8706C8A06A3327B55CCC84507458")
     
 @Override
@@ -235,6 +232,7 @@ private BasicClientCookie createCookie2(
         return 1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.726 -0500", hash_original_method = "135D9D751A7E49D965B3B7FE1A189F11", hash_generated_method = "A91FA22343ED136291772C1DEBFBC1C3")
     
 @Override
@@ -246,7 +244,6 @@ private BasicClientCookie createCookie2(
         buffer.append(Integer.toString(getVersion()));
         return new BufferedHeader(buffer);
     }
-
     
 }
 

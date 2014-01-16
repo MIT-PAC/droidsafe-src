@@ -20,11 +20,6 @@ import com.android.internal.os.HandlerCaller;
 import com.android.internal.view.IInputMethodCallback;
 import com.android.internal.view.IInputMethodSession;
 
-
-
-
-
-
 class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements HandlerCaller.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.631 -0500", hash_original_field = "C78C0AF3A280B526CE72F80B5C668B56", hash_generated_field = "7B184F0C0152E5E9C735D79B852D0D03")
 
@@ -33,7 +28,6 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
 
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.635 -0500", hash_original_field = "A3EE91493CF0A1795D9124D0DE7FED72", hash_generated_field = "479290E9A9EB32F21922EEA1BB1D645D")
-
     
     private static final int DO_FINISH_INPUT = 60;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.638 -0500", hash_original_field = "703F85948EEDB9AB53DC57C7EDF14055", hash_generated_field = "D500E3210C36C0D2274EC07536C54253")
@@ -68,7 +62,6 @@ class IInputMethodSessionWrapper extends IInputMethodSession.Stub implements Han
     private static final int DO_VIEW_CLICKED = 115;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.663 -0500", hash_original_field = "B57F12AA48E3204FC249B7683181CCD8", hash_generated_field = "B57F12AA48E3204FC249B7683181CCD8")
 
-
     HandlerCaller mCaller;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.665 -0500", hash_original_field = "0D0863CC1C8DF0F3C80E84309E51575E", hash_generated_field = "0D0863CC1C8DF0F3C80E84309E51575E")
 
@@ -81,7 +74,6 @@ public IInputMethodSessionWrapper(Context context,
         mCaller = new HandlerCaller(context, this);
         mInputMethodSession = inputMethodSession;
     }
-
     
     static class InputMethodEventCallbackWrapper implements InputMethodSession.EventCallback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.667 -0500", hash_original_field = "4903C6C7AA2E39F51C3230E9003EAA25", hash_generated_field = "4903C6C7AA2E39F51C3230E9003EAA25")
@@ -100,16 +92,17 @@ public void finishedEvent(int seq, boolean handled) {
             } catch (RemoteException e) {
             }
         }
-
         
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.679 -0500", hash_original_method = "FE0809D61F310D1DE2584DA263F14DCD", hash_generated_method = "1847811CEE0A517628367422540146E9")
     
 public InputMethodSession getInternalInputMethodSession() {
         return mInputMethodSession;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:38.682 -0500", hash_original_method = "00877500C4B72645AB17DC7FDAE0E34A", hash_generated_method = "2B33E7BDA8B47E8634A5D80AC7FEDF2A")
     
 public void executeMessage(Message msg) {

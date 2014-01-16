@@ -11,9 +11,6 @@ import android.util.Log;
 
 import com.android.internal.telephony.IccPhoneBookInterfaceManager;
 
-
-
-
 public class RuimPhoneBookInterfaceManager extends IccPhoneBookInterfaceManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.608 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
@@ -44,6 +41,7 @@ protected void finalize() {
         if(DBG) Log.d(LOG_TAG, "RuimPhoneBookInterfaceManager finalized");
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:54.620 -0500", hash_original_method = "F8C8B1EC8901BE31BE40309AF8515A8A", hash_generated_method = "728E874A7499D07407E9660978E51BD0")
     
 public int[] getAdnRecordsSize(int efid) {

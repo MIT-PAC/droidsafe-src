@@ -33,11 +33,6 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-
-
-
-
-
 class CallbackProxy extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.146 -0500", hash_original_field = "DD7504E4F438D772A13F5C792C582E02", hash_generated_field = "B8BCB03548AB3F60BD02883254FAF794")
 
@@ -247,6 +242,7 @@ public void setWebViewClient(WebViewClient client) {
      * Get the WebViewClient.
      * @return the current WebViewClient instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.296 -0500", hash_original_method = "F1A871AF9A3B10055BFFA9DC06A940C2", hash_generated_method = "D26228EECBDC7C3D2A75E622BC477A13")
     
 public WebViewClient getWebViewClient() {
@@ -267,6 +263,7 @@ public void setWebChromeClient(WebChromeClient client) {
      * Get the WebChromeClient.
      * @return the current WebChromeClient instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.300 -0500", hash_original_method = "578C7E32D2B540B07E657C95C84E837C", hash_generated_method = "D67BF301DD22BF2DCE8377F5F37BD801")
     
 public WebChromeClient getWebChromeClient() {
@@ -299,6 +296,7 @@ void setWebBackForwardListClient(WebBackForwardListClient client) {
         mWebBackForwardListClient = client;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.308 -0500", hash_original_method = "32023A06CFA84B93B3A0030ADE6E4A41", hash_generated_method = "32023A06CFA84B93B3A0030ADE6E4A41")
     
 WebBackForwardListClient getWebBackForwardListClient() {
@@ -309,6 +307,7 @@ WebBackForwardListClient getWebBackForwardListClient() {
      * Called by the UI side.  Calling overrideUrlLoading from the WebCore
      * side will post a message to call this method.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.311 -0500", hash_original_method = "43AE5B1BF40E67157C7361E5EC862A6C", hash_generated_method = "77FCB2DD35C0BD735FD6211133F153EF")
     
 public boolean uiOverrideUrlLoading(String overrideUrl) {
@@ -941,12 +940,12 @@ public boolean uiOverrideKeyEvent(KeyEvent event) {
     /**
      * Return the latest progress.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.363 -0500", hash_original_method = "F4FA55F4EB9CE414FB8C02AF96B11745", hash_generated_method = "886D759526B4E918F1D3A1B99474A1F3")
     
 public int getProgress() {
         return mLatestProgress;
     }
-
     
     private static class ResultTransport<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.280 -0500", hash_original_field = "C13B321A38074A0309A54D3D8023D02F", hash_generated_field = "8FF1976BF201D1F418EC84B9D35E5FAC")
@@ -965,16 +964,14 @@ public synchronized void setResult(E result) {
             mResult = result;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.287 -0500", hash_original_method = "67EA7E4C242F8EF7A6CF084AEA447779", hash_generated_method = "F142C47FF8D1328273469DC02D7AEB01")
         
 public synchronized E getResult() {
             return mResult;
         }
-
         
     }
-
-
     
     private static class UploadFileMessageData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.467 -0500", hash_original_field = "730E2803C3CB04DAD243EDB36218CA00", hash_generated_field = "141E146BCCC9E44E04F619B70ED78B17")
@@ -997,16 +994,14 @@ public UploadFile getUploadFile() {
             return mCallback;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.477 -0500", hash_original_method = "EE5645A876B8829341B5E714F10E353A", hash_generated_method = "72D9D0D3A142378C12634BFC271DA866")
         
 public String getAcceptType() {
             return mAcceptType;
         }
-
         
     }
-
-
     
     private class UploadFile implements ValueCallback<Uri> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.481 -0500", hash_original_field = "5313D513DFCA6ABC354AE3BE1634D7D1", hash_generated_field = "D24B10CB4DFA145F1AD29B267930EA48")
@@ -1026,12 +1021,12 @@ public void onReceiveValue(Uri value) {
                 CallbackProxy.this.notify();
             }
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.487 -0500", hash_original_method = "546BF3EDB8840D5BF09D8B66103FFEC6", hash_generated_method = "B9C522A3A94306FE6506FA26199B9892")
         
 public Uri getResult() {
             return mValue;
         }
-
         
     }
 
@@ -1043,9 +1038,7 @@ public Uri getResult() {
 void switchOutDrawHistory() {
         sendMessage(obtainMessage(SWITCH_OUT_HISTORY));
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.836 -0400", hash_original_method = "2F62F4E531DE0AF4C82D66205801E78A", hash_generated_method = "239292A03E2A1C8071CF2D7C707703DE")
     private String getJsDialogTitle(String url) {
         addTaint(url.getTaint());
@@ -1115,6 +1108,7 @@ String varCD126D34DD1576383395AEE5945E9C28_1967986208 =         title;
     }
     */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.377 -0500", hash_original_method = "FEA38F8F6B5615AC736396CA90380013", hash_generated_method = "91D172178D88C4DB31301C2E307BCC90")
     
 public void onPageStarted(String url, Bitmap favicon) {
@@ -1159,6 +1153,7 @@ public void onTooManyRedirects(Message cancelMsg, Message continueMsg) {
         // deprecated.
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.385 -0500", hash_original_method = "E5C6F1F12DEE48235072B52E91052ED8", hash_generated_method = "0ABCE03DC37A9ACCF66B5792B083591E")
     
 public void onReceivedError(int errorCode, String description,
@@ -1176,6 +1171,7 @@ public void onReceivedError(int errorCode, String description,
         sendMessage(msg);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.387 -0500", hash_original_method = "5E30734A74D85B2FEB399A04359A0FF5", hash_generated_method = "2386A9D1BBD50B32D795A2A9FFC8B055")
     
 public void onFormResubmission(Message dontResend,
@@ -1197,6 +1193,7 @@ public void onFormResubmission(Message dontResend,
     /**
      * Called by the WebCore side
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.389 -0500", hash_original_method = "6A31F6EEFC7A56081588A72CFCF2411E", hash_generated_method = "C3EFCEFD670D6F541200D7B9FEC157C9")
     
 public boolean shouldOverrideUrlLoading(String url) {
@@ -1218,6 +1215,7 @@ public boolean shouldOverrideUrlLoading(String url) {
         return res.getResult().booleanValue();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.392 -0500", hash_original_method = "4FA57A455CA03EC6D649ED38E4E56F01", hash_generated_method = "BD4E6242F8F93B85C93C30B9C9592776")
     
 public void onReceivedHttpAuthRequest(HttpAuthHandler handler,
@@ -1234,6 +1232,7 @@ public void onReceivedHttpAuthRequest(HttpAuthHandler handler,
         sendMessage(msg);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.394 -0500", hash_original_method = "8BC2AAF24BCB58C98055A520D9453CBA", hash_generated_method = "8F3AF956262433DCF879FCF3AFE458BD")
     
 public void onReceivedSslError(SslErrorHandler handler, SslError error) {
@@ -1262,6 +1261,7 @@ public void onProceededAfterSslError(SslError error) {
         sendMessage(msg);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.399 -0500", hash_original_method = "86B49DF771A8EEA4B9DCFCD28BAACF5B", hash_generated_method = "0EDDD42EE012BC0BA9A2D0A07A5D4C20")
     
 public void onReceivedClientCertRequest(ClientCertRequestHandler handler, String host_and_port) {
@@ -1323,6 +1323,7 @@ public void onUnhandledKeyEvent(KeyEvent event) {
         sendMessage(obtainMessage(ASYNC_KEYEVENTS, event));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.410 -0500", hash_original_method = "32F0A585D03AD391628455766053FDEF", hash_generated_method = "A99349676DDAA42398CC7EC57D87817C")
     
 public void onScaleChanged(float oldScale, float newScale) {
@@ -1338,6 +1339,7 @@ public void onScaleChanged(float oldScale, float newScale) {
         sendMessage(msg);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.412 -0500", hash_original_method = "96CFDF49B56568DC278F123893B1481C", hash_generated_method = "B8B064A8FB5EC16B2D709389F7F5BC3A")
     
 void onReceivedLoginRequest(String realm, String account, String args) {
@@ -1384,12 +1386,12 @@ public boolean onDownloadStart(String url, String userAgent,
         return true;
     }
 
-
     //--------------------------------------------------------------------------
     // WebView specific functions that do not interact with a client. These
     // functions just need to operate within the UI thread.
     //--------------------------------------------------------------------------
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.417 -0500", hash_original_method = "E36C2E9038F101EB831B9776820C94AF", hash_generated_method = "87ADD216F5284C663BE60BDDF26D8EF3")
     
 public boolean onSavePassword(String schemePlusHost, String username,
@@ -1420,6 +1422,7 @@ public boolean onSavePassword(String schemePlusHost, String username,
         return false;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.421 -0500", hash_original_method = "FE09891259ADB46761F758E0F5C88D74", hash_generated_method = "E5F54F99B31B7DC5E49E53CFED216D77")
     
 public void onReceivedHttpAuthCredentials(String host, String realm,
@@ -1563,6 +1566,7 @@ public void onReceivedTitle(String title) {
         sendMessage(obtainMessage(RECEIVED_TITLE, title));
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.439 -0500", hash_original_method = "7099C31F609DFFDBC7FE4DB990C0E80D", hash_generated_method = "D0D5EDB579D9F2403AAB59A56D5AF397")
     
 public void onJsAlert(String url, String message) {
@@ -1586,6 +1590,7 @@ public void onJsAlert(String url, String message) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.442 -0500", hash_original_method = "043F4DC8C3BE16DF648461B096D08CDF", hash_generated_method = "FCDFA7DCA0790D2EFF56BD77BC8CEF97")
     
 public boolean onJsConfirm(String url, String message) {
@@ -1610,6 +1615,7 @@ public boolean onJsConfirm(String url, String message) {
         return result.getResult();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.444 -0500", hash_original_method = "994C85F742AA26A8662DEB752BD55192", hash_generated_method = "1D773C27183AC6500970BC475B568A72")
     
 public String onJsPrompt(String url, String message, String defaultValue) {
@@ -1635,6 +1641,7 @@ public String onJsPrompt(String url, String message, String defaultValue) {
         return result.getStringResult();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.447 -0500", hash_original_method = "C62C6CDF3925B75D5791E39530CD4D60", hash_generated_method = "B7358504F02A381F8E4662FC8D4EF1CA")
     
 public boolean onJsBeforeUnload(String url, String message) {
@@ -1776,6 +1783,7 @@ public void onGeolocationPermissionsHidePrompt() {
      * @param msgLevel The message level, corresponding to the MessageLevel enum in
      *     WebCore/page/Console.h
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:14.460 -0500", hash_original_method = "E08EA131E9320463E856348907B813CB", hash_generated_method = "664617F0F17BA9E1B53827ED2EDDA9E9")
     
 public void addMessageToConsole(String message, int lineNumber, String sourceID, int msgLevel) {

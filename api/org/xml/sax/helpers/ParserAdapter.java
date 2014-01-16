@@ -24,17 +24,11 @@ import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.SAXParseException;
 import org.xml.sax.XMLReader;
 
-
-
-
-
-
 public class ParserAdapter implements XMLReader, DocumentHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.272 -0500", hash_original_field = "7C62AE9A20150A42A26A5AD7B14A845B", hash_generated_field = "1096644F71EDD67B690E4CE87AE1DE5B")
 
     // Implementation of org.xml.sax.XMLReader.
     ////////////////////////////////////////////////////////////////////
-
 
     //
     // Internal constants for the sake of convenience.
@@ -60,17 +54,14 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     private AttributeListAdapter attAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.351 -0500", hash_original_field = "4B9C3C20092D8C4E8F2E8C12AA6B8CAD", hash_generated_field = "B2B6F03C3323CC2E5DF880878C6AD064")
 
-
     private boolean parsing = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.353 -0500", hash_original_field = "7F5631DA40AFEA02D23B50F414B774CA", hash_generated_field = "9D06BBFBDDCCC6F79C4828C391273388")
 
     private String nameParts[] = new String[3];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.355 -0500", hash_original_field = "78998326B0DF34C103DE9D9688C73EBE", hash_generated_field = "C1941098165849B9BB09C918699765BA")
 
-
     private Parser parser = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.357 -0500", hash_original_field = "1E7E98FB612B7958E6D5EE79CDF5B4A2", hash_generated_field = "1C437322B74865B450A5CD9EA125241E")
-
 
     private AttributesImpl atts = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.359 -0500", hash_original_field = "487D36470CC197CE32401A3EEE7C0D76", hash_generated_field = "F2647CFF1692834895465A43B4FBE112")
@@ -84,11 +75,9 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
     private boolean uris = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.366 -0500", hash_original_field = "ACD7A3294F45ACE61F205E17A82EF3B3", hash_generated_field = "1D90ADA9EBB71DCE474548B241946332")
 
-
                 // Handlers
     Locator locator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.368 -0500", hash_original_field = "85A3C4DFDDC2E8B053733750B1AEDE7A", hash_generated_field = "85A3C4DFDDC2E8B053733750B1AEDE7A")
-
 
     EntityResolver entityResolver = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.371 -0500", hash_original_field = "36C16184E94517BCEA93A1000BB15E7B", hash_generated_field = "36C16184E94517BCEA93A1000BB15E7B")
@@ -100,12 +89,10 @@ public class ParserAdapter implements XMLReader, DocumentHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.375 -0500", hash_original_field = "B6B9BEC6A9AF54860C9708100871418D", hash_generated_field = "B6B9BEC6A9AF54860C9708100871418D")
 
     ErrorHandler errorHandler = null;
-
 
     ////////////////////////////////////////////////////////////////////
     // Constructors.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Construct a new parser adapter.
@@ -152,7 +139,6 @@ public ParserAdapter ()
     }
     }
 
-
     /**
      * Construct a new parser adapter.
      *
@@ -170,7 +156,6 @@ public ParserAdapter (Parser parser)
     {
     setup(parser);
     }
-
 
     /**
      * Internal setup method.
@@ -192,7 +177,6 @@ private void setup (Parser parser)
     nsSupport = new NamespaceSupport();
     attAdapter = new AttributeListAdapter();
     }
-
 
     /**
      * Set a feature flag for the parser.
@@ -233,7 +217,6 @@ public void setFeature (String name, boolean value)
     }
     }
 
-
     /**
      * Check a parser feature flag.
      *
@@ -264,7 +247,6 @@ public boolean getFeature (String name)
     }
     }
 
-
     /**
      * Set a parser property.
      *
@@ -278,6 +260,7 @@ public boolean getFeature (String name)
      *            can't be assigned that value.
      * @see org.xml.sax.XMLReader#setProperty
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.287 -0500", hash_original_method = "EE8A541C22360A747253892239DA9935", hash_generated_method = "1734503BC1D2DC5B0A93E8F9C40C564C")
     
 public void setProperty (String name, Object value)
@@ -285,7 +268,6 @@ public void setProperty (String name, Object value)
     {
     throw new SAXNotRecognizedException("Property: " + name);
     }
-
 
     /**
      * Get a parser property.
@@ -300,6 +282,7 @@ public void setProperty (String name, Object value)
      *            value is not currently readable.
      * @see org.xml.sax.XMLReader#getProperty
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.289 -0500", hash_original_method = "C44A70A290987077F2BE17BCA485ED98", hash_generated_method = "CC2ADCA125CB5A6D2AD99DB025EEB530")
     
 public Object getProperty (String name)
@@ -307,7 +290,6 @@ public Object getProperty (String name)
     {
     throw new SAXNotRecognizedException("Property: " + name);
     }
-
 
     /**
      * Set the entity resolver.
@@ -322,20 +304,19 @@ public void setEntityResolver (EntityResolver resolver)
     entityResolver = resolver;
     }
 
-
     /**
      * Return the current entity resolver.
      *
      * @return The current entity resolver, or null if none was supplied.
      * @see org.xml.sax.XMLReader#getEntityResolver
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.294 -0500", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "21235A3EAE7DB933DABF4A20E9939299")
     
 public EntityResolver getEntityResolver ()
     {
     return entityResolver;
     }
-
 
     /**
      * Set the DTD handler.
@@ -350,20 +331,19 @@ public void setDTDHandler (DTDHandler handler)
     dtdHandler = handler;
     }
 
-
     /**
      * Return the current DTD handler.
      *
      * @return the current DTD handler, or null if none was supplied
      * @see org.xml.sax.XMLReader#getEntityResolver
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.298 -0500", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "59B05D24F37BFA393F25F99590382F55")
     
 public DTDHandler getDTDHandler ()
     {
     return dtdHandler;
     }
-
 
     /**
      * Set the content handler.
@@ -378,20 +358,19 @@ public void setContentHandler (ContentHandler handler)
     contentHandler = handler;
     }
 
-
     /**
      * Return the current content handler.
      *
      * @return The current content handler, or null if none was supplied.
      * @see org.xml.sax.XMLReader#getEntityResolver
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.303 -0500", hash_original_method = "0648A0EF88EB44B7C03930DFF59893AE", hash_generated_method = "1D002E4F644B3971DAC0310E795E4A0B")
     
 public ContentHandler getContentHandler ()
     {
     return contentHandler;
     }
-
 
     /**
      * Set the error handler.
@@ -406,20 +385,19 @@ public void setErrorHandler (ErrorHandler handler)
     errorHandler = handler;
     }
 
-
     /**
      * Return the current error handler.
      *
      * @return The current error handler, or null if none was supplied.
      * @see org.xml.sax.XMLReader#getEntityResolver
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.307 -0500", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "DB848F72598F990979C28BB722D11B1F")
     
 public ErrorHandler getErrorHandler ()
     {
     return errorHandler;
     }
-
 
     /**
      * Parse an XML document.
@@ -439,7 +417,6 @@ public void parse (String systemId)
     {
     parse(new InputSource(systemId));
     }
-
 
     /**
      * Parse an XML document.
@@ -470,12 +447,9 @@ public void parse (InputSource input)
     parsing = false;
     }
 
-
-
     ////////////////////////////////////////////////////////////////////
     // Implementation of org.xml.sax.DocumentHandler.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Adapter implementation method; do not call.
@@ -493,7 +467,6 @@ public void setDocumentLocator (Locator locator)
         contentHandler.setDocumentLocator(locator);
     }
     }
-
 
     /**
      * Adapter implementation method; do not call.
@@ -513,7 +486,6 @@ public void startDocument ()
     }
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 end document event.
@@ -532,7 +504,6 @@ public void endDocument ()
     }
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 startElement event.
@@ -544,6 +515,7 @@ public void endDocument ()
      * @exception SAXException The client may raise a
      *            processing exception.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.323 -0500", hash_original_method = "41EBA2EAF373C2E18FF1DC39DB5B0A24", hash_generated_method = "4BC37B5677B6027DE42CCB7478AA9851")
     
 public void startElement (String qName, AttributeList qAtts) throws SAXException {
@@ -563,7 +535,6 @@ public void startElement (String qName, AttributeList qAtts) throws SAXException
         }
         return;
     }
-
 
                 // OK, we're doing Namespace processing.
     nsSupport.pushContext();
@@ -666,7 +637,6 @@ public void startElement (String qName, AttributeList qAtts) throws SAXException
     }
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 end element event.
@@ -703,7 +673,6 @@ public void endElement (String qName)
     nsSupport.popContext();
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 characters event.
@@ -724,7 +693,6 @@ public void characters (char ch[], int start, int length)
         contentHandler.characters(ch, start, length);
     }
     }
-
 
     /**
      * Adapter implementation method; do not call.
@@ -747,7 +715,6 @@ public void ignorableWhitespace (char ch[], int start, int length)
     }
     }
 
-
     /**
      * Adapter implementation method; do not call.
      * Adapt a SAX1 processing instruction event.
@@ -767,13 +734,10 @@ public void processingInstruction (String target, String data)
         contentHandler.processingInstruction(target, data);
     }
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Internal utility methods.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Initialize the parser before each run.
@@ -802,11 +766,9 @@ private void setupParser ()
     parser.setDocumentHandler(this);
     locator = null;
     }
-
     
     final class AttributeListAdapter implements Attributes {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.410 -0500", hash_original_field = "CC06505CCCFB5DA974CBD3100BF339C4", hash_generated_field = "05A4A4B78CD79FD60575BA538F5EFA68")
-
 
     private AttributeList qAtts;
 
@@ -818,7 +780,6 @@ private void setupParser ()
 AttributeListAdapter ()
     {
     }
-
 
     /**
      * Set the embedded AttributeList.
@@ -835,20 +796,19 @@ void setAttributeList (AttributeList qAtts)
         this.qAtts = qAtts;
     }
 
-
     /**
      * Return the length of the attribute list.
      *
      * @return The number of attributes in the list.
      * @see org.xml.sax.Attributes#getLength
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.382 -0500", hash_original_method = "B156048BB95084F4BF5D28EF31B66C03", hash_generated_method = "BB20AE79DB45D67F0F3D2CAAE7AB4AF8")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.382 -0500", hash_original_method = "B156048BB95084F4BF5D28EF31B66C03", hash_generated_method = "BB20AE79DB45D67F0F3D2CAAE7AB4AF8")
         
 public int getLength ()
     {
         return qAtts.getLength();
     }
-
 
     /**
      * Return the Namespace URI of the specified attribute.
@@ -857,13 +817,13 @@ public int getLength ()
      * @return Always the empty string.
      * @see org.xml.sax.Attributes#getURI
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.385 -0500", hash_original_method = "20CEB246971EBBCECBF2ACA441CBBECD", hash_generated_method = "12493DA6D8A53DEB8E0C0336711DA59E")
+    @DSSource({DSSourceKind.FILE_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.385 -0500", hash_original_method = "20CEB246971EBBCECBF2ACA441CBBECD", hash_generated_method = "12493DA6D8A53DEB8E0C0336711DA59E")
         
 public String getURI (int i)
     {
         return "";
     }
-
 
     /**
      * Return the local name of the specified attribute.
@@ -872,13 +832,13 @@ public String getURI (int i)
      * @return Always the empty string.
      * @see org.xml.sax.Attributes#getLocalName
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.387 -0500", hash_original_method = "FEDFFD9A667A49103BC32EE7ED61A0BB", hash_generated_method = "653E3788236731D8C6F4042D9D754641")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.387 -0500", hash_original_method = "FEDFFD9A667A49103BC32EE7ED61A0BB", hash_generated_method = "653E3788236731D8C6F4042D9D754641")
         
 public String getLocalName (int i)
     {
         return "";
     }
-
 
     /**
      * Return the qualified (prefixed) name of the specified attribute.
@@ -886,13 +846,13 @@ public String getLocalName (int i)
      * @param The attribute's index.
      * @return The attribute's qualified name, internalized.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.390 -0500", hash_original_method = "A764D8ED68137C2EBCBCEF1CD153F6C1", hash_generated_method = "5AB18488028B84E4036A93C3452EE29A")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.390 -0500", hash_original_method = "A764D8ED68137C2EBCBCEF1CD153F6C1", hash_generated_method = "5AB18488028B84E4036A93C3452EE29A")
         
 public String getQName (int i)
     {
         return qAtts.getName(i).intern();
     }
-
 
     /**
      * Return the type of the specified attribute.
@@ -900,13 +860,13 @@ public String getQName (int i)
      * @param The attribute's index.
      * @return The attribute's type as an internalized string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.392 -0500", hash_original_method = "27E76BA5C0D6AD663690DDCFFED2A8A3", hash_generated_method = "193D661C4E791CE613D2F492C39B89C9")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.392 -0500", hash_original_method = "27E76BA5C0D6AD663690DDCFFED2A8A3", hash_generated_method = "193D661C4E791CE613D2F492C39B89C9")
         
 public String getType (int i)
     {
         return qAtts.getType(i).intern();
     }
-
 
     /**
      * Return the value of the specified attribute.
@@ -914,13 +874,13 @@ public String getType (int i)
      * @param The attribute's index.
      * @return The attribute's value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.394 -0500", hash_original_method = "F0679796EDFA7C65CB4AD5C7F9CBE1FC", hash_generated_method = "59CFC8024232ED8BA11D0FF2A002F6A6")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.394 -0500", hash_original_method = "F0679796EDFA7C65CB4AD5C7F9CBE1FC", hash_generated_method = "59CFC8024232ED8BA11D0FF2A002F6A6")
         
 public String getValue (int i)
     {
         return qAtts.getValue(i);
     }
-
 
     /**
      * Look up an attribute index by Namespace name.
@@ -936,7 +896,6 @@ public int getIndex (String uri, String localName)
     {
         return -1;
     }
-
 
     /**
      * Look up an attribute index by qualified (prefixed) name.
@@ -958,7 +917,6 @@ public int getIndex (String qName)
         return -1;
     }
 
-
     /**
      * Look up the type of an attribute by Namespace name.
      *
@@ -966,13 +924,13 @@ public int getIndex (String qName)
      * @param localName The local name.
      * @return The attribute's type as an internalized string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.401 -0500", hash_original_method = "DB45F41F9C44849C439912CF28FC6F39", hash_generated_method = "880C294A7EAE6D836392E2BE5ECC821A")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.401 -0500", hash_original_method = "DB45F41F9C44849C439912CF28FC6F39", hash_generated_method = "880C294A7EAE6D836392E2BE5ECC821A")
         
 public String getType (String uri, String localName)
     {
         return null;
     }
-
 
     /**
      * Look up the type of an attribute by qualified (prefixed) name.
@@ -980,13 +938,13 @@ public String getType (String uri, String localName)
      * @param qName The qualified name.
      * @return The attribute's type as an internalized string.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.403 -0500", hash_original_method = "20D0A7881E2746A3B90C82673591E46C", hash_generated_method = "7FAD01855AFB4E51EBA5E4D04C5795C8")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.403 -0500", hash_original_method = "20D0A7881E2746A3B90C82673591E46C", hash_generated_method = "7FAD01855AFB4E51EBA5E4D04C5795C8")
         
 public String getType (String qName)
     {
         return qAtts.getType(qName).intern();
     }
-
 
     /**
      * Look up the value of an attribute by Namespace name.
@@ -995,13 +953,13 @@ public String getType (String qName)
      * @param localName The local name.
      * @return The attribute's value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.406 -0500", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "F23C4745139D5FB53F0FBCBD0566CDFA")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.406 -0500", hash_original_method = "A923F17E07DEE910B88DBEE5B2421501", hash_generated_method = "F23C4745139D5FB53F0FBCBD0566CDFA")
         
 public String getValue (String uri, String localName)
     {
         return null;
     }
-
 
     /**
      * Look up the value of an attribute by qualified (prefixed) name.
@@ -1009,18 +967,16 @@ public String getValue (String uri, String localName)
      * @param qName The qualified name.
      * @return The attribute's value.
      */
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.408 -0500", hash_original_method = "E305D94D7DAD816250B349D4183FD8D8", hash_generated_method = "D9A2660789A3C908966C2DA35937C9E0")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.408 -0500", hash_original_method = "E305D94D7DAD816250B349D4183FD8D8", hash_generated_method = "D9A2660789A3C908966C2DA35937C9E0")
         
 public String getValue (String qName)
     {
         return qAtts.getValue(qName);
     }
-
         
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:49:44.544 -0400", hash_original_method = "295B884B2E4E1E5DF2659FCF14AB7437", hash_generated_method = "A63E40ABA0ADB07D109396D7430691CA")
     private String [] processName(String qName, boolean isAttribute,
                    boolean useException) throws SAXException {
@@ -1059,7 +1015,6 @@ String [] var6651EAC2994005EE903B8D00ACB7442E_128503195 =         parts;
         //return parts;
     }
 
-
     /**
      * Report a non-fatal error.
      *
@@ -1076,7 +1031,6 @@ void reportError (String message)
         errorHandler.error(makeException(message));
     }
 
-
     /**
      * Construct an exception for the current context.
      *
@@ -1092,7 +1046,6 @@ private SAXParseException makeException (String message)
         return new SAXParseException(message, null, null, -1, -1);
     }
     }
-
 
     /**
      * Throw an exception if we are parsing.

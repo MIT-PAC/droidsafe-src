@@ -9,11 +9,6 @@ import java.text.CollationKey;
 import java.text.ParseException;
 import java.util.Locale;
 
-
-
-
-
-
 public final class RuleBasedCollatorICU implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.659 -0500", hash_original_field = "FC10F1D5DB77A59DC74DAA5810C2B00D", hash_generated_field = "728743DB6612B436D24CE07F9E0E578D")
 
@@ -115,42 +110,49 @@ public int compare(String source, String target) {
         return NativeCollation.compare(address, source, target);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.726 -0500", hash_original_method = "239D987CE6D9B4CADAB8F872E8E9D57B", hash_generated_method = "FD6120F6D1F0485715C59D82F0F61F12")
     
 public int getDecomposition() {
         return NativeCollation.getAttribute(address, DECOMPOSITION_MODE);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.728 -0500", hash_original_method = "44F9BFBEB06030096990BB2E8C89DED9", hash_generated_method = "E22C8178512FBFC4504685CCC2EF34FE")
     
 public void setDecomposition(int mode) {
         NativeCollation.setAttribute(address, DECOMPOSITION_MODE, mode);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.730 -0500", hash_original_method = "AAB074F82BF97FFE28F8563C1D57A964", hash_generated_method = "682FCE185179B1C52F53794CDF3B7EDE")
     
 public int getStrength() {
         return NativeCollation.getAttribute(address, STRENGTH);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.732 -0500", hash_original_method = "B780FC0CB29AFE09B6EA92E53FEFCCC0", hash_generated_method = "F52C3CEEC67196E29042FC398EA590D2")
     
 public void setStrength(int strength) {
         NativeCollation.setAttribute(address, STRENGTH, strength);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.735 -0500", hash_original_method = "EE4A6867E88BF501B4AF7B7DE8C48A39", hash_generated_method = "D6B769959F9ECB8E45A318DE808C190C")
     
 public void setAttribute(int type, int value) {
         NativeCollation.setAttribute(address, type, value);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.737 -0500", hash_original_method = "7E0368EE82E5C263E0341D3245A9B850", hash_generated_method = "136D6DDD8249625AC97968750C7B236F")
     
 public int getAttribute(int type) {
         return NativeCollation.getAttribute(address, type);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.739 -0500", hash_original_method = "AD47FDA34CF9DDAC21CE9DA304C498D4", hash_generated_method = "D6E50BFC747F336A3CA33C966987ED84")
     
 public CollationKey getCollationKey(String source) {
@@ -164,18 +166,21 @@ public CollationKey getCollationKey(String source) {
         return new CollationKeyICU(source, key);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.742 -0500", hash_original_method = "FFB9880C0352BAA3924C6058A715E6CF", hash_generated_method = "5AACC7E39C63C584E4FB9DC215A15AA9")
     
 public String getRules() {
         return NativeCollation.getRules(address);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.744 -0500", hash_original_method = "37423170550704AB69E3E5DFF5BA23DD", hash_generated_method = "CF926B0A19EC0DBECABE4CF41D879102")
     
 public CollationElementIteratorICU getCollationElementIterator(String source) {
         return CollationElementIteratorICU.getInstance(address, source);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.746 -0500", hash_original_method = "C7D7D5ADEA090F255D72693DB837681B", hash_generated_method = "F26B96F6F94104BAEA13A0FB8B6E8075")
     
 public CollationElementIteratorICU getCollationElementIterator(CharacterIterator it) {

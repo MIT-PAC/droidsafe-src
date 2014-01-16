@@ -6,34 +6,23 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
-
-
-
-
-
 public final class StackTraceElement implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.863 -0500", hash_original_field = "68BFF6955FDB892FD8456F4D83C847D1", hash_generated_field = "26C66B155644317B8367FDF23AF4DB9B")
-
 
     private static final long serialVersionUID = 6992337162326171013L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.866 -0500", hash_original_field = "3387D12AD9C393627295CAC355C106AA", hash_generated_field = "044B734A1D0D1997F7880A1DDED8AFF6")
 
-
     private static final int NATIVE_LINE_NUMBER = -2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.868 -0500", hash_original_field = "EDEEDC9CF5DB299DE0AADD712B8BE51C", hash_generated_field = "EDEEDC9CF5DB299DE0AADD712B8BE51C")
-
 
     String declaringClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.870 -0500", hash_original_field = "1E5D18395D934B5D254686548A645BA9", hash_generated_field = "1E5D18395D934B5D254686548A645BA9")
 
-
     String methodName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.873 -0500", hash_original_field = "90A7C14E9FDE747EFC2F1C95E470FF1A", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
 
-
     String fileName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.875 -0500", hash_original_field = "330B2760AA91CE77EFBAED3976D7655C", hash_generated_field = "330B2760AA91CE77EFBAED3976D7655C")
-
 
     int lineNumber;
 
@@ -65,9 +54,7 @@ public StackTraceElement(String cls, String method, String file, int line) {
         fileName = file;
         lineNumber = line;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:46.462 -0400", hash_original_method = "DC3E276578F22895683C0979CF7614B3", hash_generated_method = "069C2D8BCA6C8CA3D907F0C7C60A9CFB")
 	public  StackTraceElement() {
         // ---------- Original Method ----------
@@ -137,6 +124,9 @@ public StackTraceElement(String cls, String method, String file, int line) {
      *
      * @return the fully qualified type name of the class
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.887 -0500", hash_original_method = "BE14A042BD1289020FF0D183A63A0F88", hash_generated_method = "515F10678B5E0C1375183D39EA13494A")
     
 public String getClassName() {
@@ -150,6 +140,9 @@ public String getClassName() {
      * @return the name of the file, or {@code null} if this information is not
      *         available.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.890 -0500", hash_original_method = "0038085273B4122A69DA20E0B00D2EF2", hash_generated_method = "4A6B215A61D7F266A13F22833A21DA8B")
     
 public String getFileName() {
@@ -163,6 +156,9 @@ public String getFileName() {
      * @return the line number, or a negative number if this information is not
      *         available.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.892 -0500", hash_original_method = "0B737233CC5342C14C595BEE1A87604B", hash_generated_method = "CF4B4A3CBEDDB2EC6C0EA97DADAE4C2D")
     
 public int getLineNumber() {
@@ -176,6 +172,9 @@ public int getLineNumber() {
      * @return the name of the method, or "<unknown method>" if this information
      *         is not available.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:20.895 -0500", hash_original_method = "B15DF5174FD0E5C814CD72B1EE2ECDA2", hash_generated_method = "D7274D8666EBE92A154778213D7C33F4")
     
 public String getMethodName() {

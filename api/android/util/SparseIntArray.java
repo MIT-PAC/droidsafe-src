@@ -7,11 +7,6 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class SparseIntArray implements Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.195 -0500", hash_original_method = "7DB5AA23E16883217822FBC6D13669D2", hash_generated_method = "FEB35469F5B9E3BA231D8C8D51EF0135")
@@ -37,7 +32,6 @@ private static int binarySearch(int[] a, int start, int len, int key) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.152 -0500", hash_original_field = "904D0E6EB4847EA02E1703FDE76AE0FF", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
 
-
     private int[] mKeys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.154 -0500", hash_original_field = "AF95716C8E1CC9A8A1F58D24EE9BA3AC", hash_generated_field = "99CDF6DB2A492E619A6F25FAC593741C")
 
@@ -49,6 +43,8 @@ private static int binarySearch(int[] a, int start, int len, int key) {
     /**
      * Creates a new SparseIntArray containing no mappings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.158 -0500", hash_original_method = "3CB703BA4BBEFDD58F8198A538C651FA", hash_generated_method = "CF855BD0B8B8C8AFFCD8B68DE31A2318")
     
 public SparseIntArray() {
@@ -89,6 +85,9 @@ public SparseIntArray(int initialCapacity) {
      * Gets the int mapped from the specified key, or <code>0</code>
      * if no such mapping has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.166 -0500", hash_original_method = "31C2EB74F838DC49D6A7CCB91DEC9730", hash_generated_method = "0009355E1DCADF1D2A0438880AEE0DD0")
     
 public int get(int key) {
@@ -99,6 +98,9 @@ public int get(int key) {
      * Gets the int mapped from the specified key, or the specified value
      * if no such mapping has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.169 -0500", hash_original_method = "F09A11123BBC4B0EABD4FD786A922B87", hash_generated_method = "CB5A811FBDE1C43FEE04881EC2F4929F")
     
 public int get(int key, int valueIfKeyNotFound) {
@@ -140,6 +142,8 @@ public void removeAt(int index) {
      * replacing the previous mapping from the specified key if there
      * was one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.176 -0500", hash_original_method = "22FC701C5FD198EE89684FFAA296E5FF", hash_generated_method = "B59F71D87B2619681721145E061AD10B")
     
 public void put(int key, int value) {
@@ -180,6 +184,8 @@ public void put(int key, int value) {
      * Returns the number of key-value mappings that this SparseIntArray
      * currently stores.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.178 -0500", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "D1146B99C52208B28E4F9EC1242180A7")
     
 public int size() {
@@ -191,6 +197,8 @@ public int size() {
      * the key from the <code>index</code>th key-value mapping that this
      * SparseIntArray stores.  
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.180 -0500", hash_original_method = "A3423B1919CBB5E5DDAE8E35A522AED2", hash_generated_method = "C622C575F82B87F3E28E2B38FD9B52B9")
     
 public int keyAt(int index) {
@@ -202,6 +210,8 @@ public int keyAt(int index) {
      * the value from the <code>index</code>th key-value mapping that this
      * SparseIntArray stores.  
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.182 -0500", hash_original_method = "C4C41F7CADA2DF58870780D8F849030A", hash_generated_method = "3FC899A81DEB4320CE19F932A798DED6")
     
 public int valueAt(int index) {
@@ -240,6 +250,8 @@ public int indexOfValue(int value) {
     /**
      * Removes all key-value mappings from this SparseIntArray.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.189 -0500", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "079CB038114B3C01EA312AE5CCEF3330")
     
 public void clear() {
@@ -250,6 +262,7 @@ public void clear() {
      * Puts a key/value pair into the array, optimizing for the case where
      * the key is greater than all existing keys in the array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.191 -0500", hash_original_method = "582360498D222FA3AC7FD1DD315CF583", hash_generated_method = "4075642C1E9904B5D7C576D7607FAE56")
     
 public void append(int key, int value) {
@@ -277,7 +290,6 @@ public void append(int key, int value) {
         mValues[pos] = value;
         mSize = pos + 1;
     }
-
     
 }
 

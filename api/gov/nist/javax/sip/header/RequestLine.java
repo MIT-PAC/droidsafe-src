@@ -8,11 +8,6 @@ import gov.nist.javax.sip.address.GenericURI;
 
 import javax.sip.address.URI;
 
-
-
-
-
-
 public class RequestLine extends SIPObject implements SipRequestLine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.338 -0500", hash_original_field = "1D23EDFC276CA31BFE3F364D7A71C4E9", hash_generated_field = "ED5F8AB740667ACC3F117C961E7750C6")
 
@@ -44,7 +39,6 @@ public RequestLine(GenericURI requestURI, String method) {
         this.method = method;
         this.sipVersion = "SIP/2.0";
     }
-
    
     /** Encode the request line as a String.
     *
@@ -75,6 +69,7 @@ public StringBuffer encode(StringBuffer buffer) {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipRequestLine#getUri()
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.358 -0500", hash_original_method = "F87CE2D8FFE3E61DA8A4BD8B0BDA0697", hash_generated_method = "ED3D81A0DF2E489D77E3CFF96334234F")
     
 public GenericURI getUri() {
@@ -84,6 +79,7 @@ public GenericURI getUri() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipRequestLine#getMethod()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.364 -0500", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "BC38B478E0AED2517A3460750CABA307")
     
 public String getMethod() {
@@ -93,6 +89,7 @@ public String getMethod() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipRequestLine#getSipVersion()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.367 -0500", hash_original_method = "756FD7B4E35B001597A1BAB462C97AFC", hash_generated_method = "7635A3ADA2875913277DA776A6504B01")
     
 public String getSipVersion() {
@@ -129,6 +126,7 @@ public void setSipVersion(String version) {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipRequestLine#getVersionMajor()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.380 -0500", hash_original_method = "4D5FB483F06B9DEED18B900A5129C79B", hash_generated_method = "9BC8B56F13A145D6334560377EA214D5")
     
 public String getVersionMajor() {
@@ -154,6 +152,7 @@ public String getVersionMajor() {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.header.SipRequestLine#getVersionMinor()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.383 -0500", hash_original_method = "4EF04355E0E174C22FDE9BF5C4BD4B3D", hash_generated_method = "6EA6974F2F8CEB1964A391173266EFF2")
     
 public String getVersionMinor() {

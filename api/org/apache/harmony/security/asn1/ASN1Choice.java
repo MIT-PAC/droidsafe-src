@@ -11,11 +11,6 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.TreeMap;
 
-
-
-
-
-
 public abstract class ASN1Choice extends ASN1Type {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.777 -0500", hash_original_field = "2C1BBE312A31324DECE23D8C64DF5B3B", hash_generated_field = "24AC453E9AFABA0FC5B4FCBCBDACD1C1")
 
@@ -110,6 +105,7 @@ public final boolean checkTag(int identifier) {
         return Arrays.binarySearch(identifiers[0], identifier) >= 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.790 -0500", hash_original_method = "CA43C2DB32698BB605AF1C7E4ECA1770", hash_generated_method = "75C78604FD7AD7879D8553AE9485C9D6")
     
 public Object decode(BerInputStream in) throws IOException {
@@ -156,7 +152,6 @@ public abstract Object getObjectToEncode(Object object);
 public final void setEncodingContent(BerOutputStream out) {
         out.getChoiceLength(this);
     }
-
     
 }
 

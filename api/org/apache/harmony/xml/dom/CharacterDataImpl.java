@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import org.w3c.dom.CharacterData;
 import org.w3c.dom.DOMException;
 
-
-
-
-
-
 public abstract class CharacterDataImpl extends LeafNodeImpl implements CharacterData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.438 -0500", hash_original_field = "A9CAEEE2FF165AC333A62258118495FF", hash_generated_field = "8AF0FC6820B1A3CAE77FB8E492E96A1F")
-
 
     protected StringBuffer buffer;
 
@@ -37,6 +31,7 @@ public void deleteData(int offset, int count) throws DOMException {
         buffer.delete(offset, offset + count);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.447 -0500", hash_original_method = "0E5A18340A236774C2757554A3CD1C3E", hash_generated_method = "E88571BC406AD60D137504BDC277894D")
     
 public String getData() throws DOMException {
@@ -52,12 +47,14 @@ public void appendDataTo(StringBuilder stringBuilder) {
         stringBuilder.append(buffer);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.451 -0500", hash_original_method = "106EC06D9039E5E9A5A139C346DB10D2", hash_generated_method = "6982BC3E7A3243A8899A15B8AA18E2B7")
     
 public int getLength() {
         return buffer.length();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.453 -0500", hash_original_method = "25D9FE8F6D2D11968D5C5576BFCDE9E9", hash_generated_method = "355DC249A20997EE2DDDEF00945A93EB")
     
 @Override
@@ -86,6 +83,7 @@ public void replaceData(int offset, int count, String arg)
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:22.461 -0500", hash_original_method = "5BA6B073B626BFB26050E72E23806022", hash_generated_method = "D119B080B48318E2AA7109BC0FDFCB03")
     
 public void setData(String data) throws DOMException {
@@ -101,7 +99,6 @@ public String substringData(int offset, int count) throws DOMException {
             throw new DOMException(DOMException.INDEX_SIZE_ERR, null);
         }
     }
-
     
 }
 

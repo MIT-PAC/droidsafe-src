@@ -5,16 +5,13 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class DHParameters {
 
     /**
      * Returns prime bytes
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.543 -0500", hash_original_method = "5A0A21527AD2CDDB88C677469F0B4186", hash_generated_method = "40FF0E36783A0A5E664E968CC3D7885A")
     
 public static byte[] getPrime() {
@@ -91,7 +88,6 @@ public static byte[] getPrime() {
             (byte) 0xFF, (byte) 0xFF, (byte) 0xFF, (byte) 0xFF
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:14.540 -0500", hash_original_field = "14702BAE11A1A43483F11F4A56766F60", hash_generated_field = "E308A45DAEAECF2B8BCC430FCFA81CB6")
-
 
     private static byte[] prime;
     

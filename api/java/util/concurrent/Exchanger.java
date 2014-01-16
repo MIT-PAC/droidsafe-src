@@ -93,7 +93,6 @@ private static Object await(Node node, Slot slot) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.238 -0500", hash_original_field = "75EA46F781370128B90C88B0C6C4F82B", hash_generated_field = "1914937029C009DA607D29A4480902A4")
 
-
     /** The number of CPUs, for sizing and spin control */
     private static final int NCPU = Runtime.getRuntime().availableProcessors();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.241 -0500", hash_original_field = "658001A3F32BFA905BFADA170C70835F", hash_generated_field = "E87A8F05D56205E03FD465D71DDC4E64")
@@ -125,11 +124,12 @@ private static Object await(Node node, Slot slot) {
     /**
      * Creates a new Exchanger.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.309 -0500", hash_original_method = "7EAF111F5AA6799458B5BA4ED6EF193C", hash_generated_method = "F3DE1CB784C5627EDBD69D821D89A075")
     
 public Exchanger() {
     }
-
     
     private static final class Node extends AtomicReference<Object> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.266 -0500", hash_original_field = "CF812EE2AD9BC4EAA8B11FCCEDAE3ADB", hash_generated_field = "534A9EAE4E6170E4619513891411852D")
@@ -148,11 +148,8 @@ public Exchanger() {
 public Node(Object item) {
             this.item = item;
         }
-
         
     }
-
-
     
     private static final class Slot extends AtomicReference<Object> {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.499 -0400", hash_original_field = "61E23FC401E882840B471B3B125A68A9", hash_generated_field = "1AE1EC9FE6B62D9AC31A8484951D02A5")
@@ -201,13 +198,11 @@ public Node(Object item) {
 
         long qe;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 11:14:55.518 -0400", hash_original_method = "EA0EDCFF10F8D9E7849DBDB76AB4743F", hash_generated_method = "EA0EDCFF10F8D9E7849DBDB76AB4743F")
         public Slot ()
         {
             //Synthesized constructor
         }
-
 
     }
 
@@ -432,6 +427,8 @@ private Object scanOnTimeout(Node node) {
      * @throws InterruptedException if the current thread was
      *         interrupted while waiting
      */
+    @DSComment("General android/java operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.312 -0500", hash_original_method = "01BD898C994460F5196927F0C5114F9E", hash_generated_method = "43B9B19E5F9A3C4248EA65E9663E2CE1")
     
 public V exchange(V x) throws InterruptedException {

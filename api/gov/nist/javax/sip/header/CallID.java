@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.CallIdHeader;
 
-
-
-
-
-
 public class CallID extends SIPHeader implements javax.sip.header.CallIdHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.841 -0500", hash_original_field = "BBF05D189D1F032E78C83ACEFDCFF095", hash_generated_field = "BD88EAFB9547FBFAAD4836DB7C0DFC77")
 
@@ -59,7 +54,6 @@ public boolean equals( Object other ) {
         return false;
     }
 
-
     /**
      * Encode the body part of this header (i.e. leave out the hdrName).
      *@return String encoded body part of the header.
@@ -84,6 +78,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      * encodeBody
      * @return String the encoded body part of the
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.867 -0500", hash_original_method = "E18AC147BDD8255E722D716AAB46B0FD", hash_generated_method = "4E663843DA892E10C352B3ED8EA40396")
     
 public String getCallId() {
@@ -94,6 +89,7 @@ public String getCallId() {
      * get the call Identifer member.
      * @return CallIdentifier
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.871 -0500", hash_original_method = "B5581A57A5C5C2AEBCF8449C03245AE9", hash_generated_method = "C8B313DEC7DDBD2EFB9A879CEC727321")
     
 public CallIdentifier getCallIdentifer() {
@@ -107,6 +103,7 @@ public CallIdentifier getCallIdentifer() {
      * @throws IllegalArgumentException if cid is null, not a token, or is
      * not a token@token.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.875 -0500", hash_original_method = "CCC70F9489E78808F4B3E55A9B08CA23", hash_generated_method = "918E8B46AA64E38E035BD3C33D2AE941")
     
 public void setCallId(String cid) throws ParseException {

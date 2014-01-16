@@ -8,10 +8,6 @@ import java.util.ArrayList;
 
 import android.net.Uri;
 
-
-
-
-
 public final class Entity {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.345 -0500", hash_original_field = "4BBDD741F50F220390CF4FB3A7A2B7BA", hash_generated_field = "2CDA41B4D101B2B770760EBED9C98242")
 
@@ -27,12 +23,14 @@ public Entity(ContentValues values) {
         mSubValues = new ArrayList<NamedContentValues>();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.352 -0500", hash_original_method = "9F7798ADCC4D95B2412D7A9959C9D6A8", hash_generated_method = "15EFDDD40DBDAEE56304A40B4513670D")
     
 public ContentValues getEntityValues() {
         return mValues;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.354 -0500", hash_original_method = "8F0C435720446C70ACF6C91C6A520904", hash_generated_method = "46F344F82842A4CE323BED17EBAC6CDC")
     
 public ArrayList<NamedContentValues> getSubValues() {
@@ -56,7 +54,6 @@ public String toString() {
         }
         return sb.toString();
     }
-
     
     public static class NamedContentValues {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.360 -0500", hash_original_field = "F30A3503738FDB118E2076C7F22FF172", hash_generated_field = "CD245B47D421EDF9464454AF3C13247D")
@@ -72,11 +69,8 @@ public NamedContentValues(Uri uri, ContentValues values) {
             this.uri = uri;
             this.values = values;
         }
-
         
     }
-
-
     
 }
 

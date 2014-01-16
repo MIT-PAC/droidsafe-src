@@ -10,13 +10,7 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class GeneralSubtree {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.372 -0400", hash_original_field = "A4A9244C70C9136A6603EBC7858DB58B", hash_generated_field = "94DF6DD1FA4D2001319C2DBA7E60AB56")
 
@@ -29,6 +23,7 @@ public final class GeneralSubtree {
             setOptional(2);                 
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.773 -0500", hash_original_method = "2A7F97C8A163408D03702038DFF11AD2", hash_generated_method = "038ADCFF15EEB48B6D7956977B848C28")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -77,6 +72,7 @@ public GeneralSubtree(GeneralName base, int minimum, int maximum) {
     /**
      * Returns the value of base field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.765 -0500", hash_original_method = "FBC8A3DE80F48DE1891C2D6208F82433", hash_generated_method = "D43912BB46053FFED3C902B7F059B477")
     
 public GeneralName getBase() {
@@ -86,6 +82,7 @@ public GeneralName getBase() {
     /**
      * Returns ASN.1 encoded form of this X.509 GeneralSubtree value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.767 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

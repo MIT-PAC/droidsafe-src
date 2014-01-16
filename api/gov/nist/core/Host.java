@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
-
-
-
-
-
 public class Host extends GenericObject {
 
     /**
@@ -25,7 +20,6 @@ public static boolean isIPv6Reference(String address) {
             && address.charAt(address.length() - 1) == ']';
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.075 -0500", hash_original_field = "0AA768C7A8F01F6ADC4D7D134E7DD601", hash_generated_field = "8737994A53AACC355E4CFB0E79C3792C")
-
 
     private static final long serialVersionUID = -7233564517978323344L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.077 -0500", hash_original_field = "96AE0B41E8B753AE85E5B5858F41BF45", hash_generated_field = "9C094CF4C43BA6559AD1529F30F62BA3")
@@ -45,10 +39,8 @@ public static boolean isIPv6Reference(String address) {
     protected String hostname;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.087 -0500", hash_original_field = "4869FD8940D9617B6A2FA4DD94896EC8", hash_generated_field = "86D11EC31389BCB4DD7EA8E060BE2214")
 
-
     protected int addressType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.089 -0500", hash_original_field = "81650C71E6DA0E6758B361EDF219BF2B", hash_generated_field = "EC06D3E6C812B85A7A5E2E30C0116CD1")
-
 
     private InetAddress inetAddress;
 
@@ -133,6 +125,7 @@ public boolean equals(Object obj) {
     /** get the HostName field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.109 -0500", hash_original_method = "01D438C7CBE6320DFE75C4BCB8CCFBCD", hash_generated_method = "4277FADEC361BC1DBEF941BCB6F85214")
     
 public String getHostname() {
@@ -142,6 +135,7 @@ public String getHostname() {
     /** get the Address field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.111 -0500", hash_original_method = "4A9CAFF1CF2BA97BC04195E67D0EDAE7", hash_generated_method = "7E0763923BEDBB9E8CCF39F1BED51224")
     
 public String getAddress() {
@@ -153,6 +147,7 @@ public String getAddress() {
      * of a SIP message as a String.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.114 -0500", hash_original_method = "217AB83550ED2E15188C82C367958B30", hash_generated_method = "CFB0C442581C5DC2E6C02DD12F3E3D89")
     
 public String getIpAddress() {
@@ -177,6 +172,7 @@ public String getIpAddress() {
      * Set the hostname member.
      * @param h String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.116 -0500", hash_original_method = "034E33BB1D9418D32D19E4F440D283F7", hash_generated_method = "4B5D30EB4E40D64412565A4B52700947")
     
 public void setHostname(String h) {
@@ -186,6 +182,7 @@ public void setHostname(String h) {
     /** Set the IP Address.
      *@param address is the address string to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.119 -0500", hash_original_method = "FD1F209D65B716B09B8932A7E5ED8BB4", hash_generated_method = "BFCD9DFB9B8D53A5A751A38926BE8578")
     
 public void setHostAddress(String address) {
@@ -234,6 +231,7 @@ private void setHost(String host, int type){
      * Set the address member
      * @param address address String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.124 -0500", hash_original_method = "40D2051A869C7630B2CBDEFFB67D40A0", hash_generated_method = "CFE567B63DF82A750020F3B3375AD609")
     
 public void setAddress(String address) {
@@ -266,6 +264,7 @@ public boolean isIPAddress() {
      *
      *@throws UnkownHostexception when the host name cannot be resolved.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.131 -0500", hash_original_method = "0FE7E7513DCC8527F5BCCDE13498B6DC", hash_generated_method = "622B241C8F3A66290D0E87F3F36442E5")
     
 public InetAddress getInetAddress() throws java.net.UnknownHostException {

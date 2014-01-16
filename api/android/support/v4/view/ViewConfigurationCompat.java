@@ -6,8 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.view.ViewConfiguration;
 
-
-
 public class ViewConfigurationCompat {
 
     // -------------------------------------------------------------------
@@ -17,6 +15,7 @@ public class ViewConfigurationCompat {
      * If running on a pre-{@link android.os.Build.VERSION_CODES#FROYO} device,
      * returns {@link ViewConfiguration#getScaledTouchSlop()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.438 -0500", hash_original_method = "3528C0183AFB79CCB68AA739BEF357FF", hash_generated_method = "1BC52F06F2C8ECA5BEC4194ED7F7B291")
     
 public static int getScaledPagingTouchSlop(ViewConfiguration config) {
@@ -25,11 +24,9 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.436 -0500", hash_original_field = "757E23C6B8816B26A38274C90DED08B4", hash_generated_field = "4BAEFA1DBA6789946690ACEDFD86419E")
 
     static  ViewConfigurationVersionImpl IMPL;
-
     
     static class BaseViewConfigurationVersionImpl implements ViewConfigurationVersionImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.387 -0400", hash_original_method = "A69B2452C79DFBE1CA7B04111C2A43A4", hash_generated_method = "A69B2452C79DFBE1CA7B04111C2A43A4")
         public BaseViewConfigurationVersionImpl ()
         {
@@ -41,15 +38,11 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
         public int getScaledPagingTouchSlop(ViewConfiguration config) {
             return config.getScaledTouchSlop();
         }
-
         
     }
-
-
     
     static class FroyoViewConfigurationVersionImpl implements ViewConfigurationVersionImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.387 -0400", hash_original_method = "6DBEE8295DE3B0BBCD4D937DD1B1D583", hash_generated_method = "6DBEE8295DE3B0BBCD4D937DD1B1D583")
         public FroyoViewConfigurationVersionImpl ()
         {
@@ -61,11 +54,8 @@ public static int getScaledPagingTouchSlop(ViewConfiguration config) {
         public int getScaledPagingTouchSlop(ViewConfiguration config) {
             return ViewConfigurationCompatFroyo.getScaledPagingTouchSlop(config);
         }
-
         
     }
-
-
     
     interface ViewConfigurationVersionImpl {
         public int getScaledPagingTouchSlop(ViewConfiguration config);

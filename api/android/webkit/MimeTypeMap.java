@@ -9,10 +9,6 @@ import java.util.regex.Pattern;
 import libcore.net.MimeUtils;
 import android.text.TextUtils;
 
-
-
-
-
 public class MimeTypeMap {
 
     /**
@@ -22,6 +18,7 @@ public class MimeTypeMap {
      * @param url
      * @return The file extension of the given url.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.152 -0500", hash_original_method = "5C8472A4BF23E5ABD60543D4D726ECB1", hash_generated_method = "53F198E505517BB1B332F50D0B132F1F")
     
 public static String getFileExtensionFromUrl(String url) {
@@ -65,6 +62,9 @@ private static String mimeTypeFromExtension(String extension) {
      * Get the singleton instance of MimeTypeMap.
      * @return The singleton instance of the MIME-type map.
      */
+    @DSComment("Data structure factory")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.167 -0500", hash_original_method = "73A67A406B5A25034635E2FEA1819640", hash_generated_method = "169C199BAED4B582FF1B5FA6B4FA7742")
     
 public static MimeTypeMap getSingleton() {
@@ -95,6 +95,9 @@ public boolean hasMimeType(String mimeType) {
      * @param extension A file extension without the leading '.'
      * @return The MIME type for the given extension or null iff there is none.
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.156 -0500", hash_original_method = "9405A52065BBD485ABF37D1CA921E56B", hash_generated_method = "EDD49E0F199A255FBC119868328FE566")
     
 public String getMimeTypeFromExtension(String extension) {
@@ -119,6 +122,7 @@ public boolean hasExtension(String extension) {
      * @param mimeType A MIME type (i.e. text/plain)
      * @return The extension for the given MIME type or null iff there is none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.162 -0500", hash_original_method = "CB74F3FB06BF8C09198BE8DA9DF60967", hash_generated_method = "BEF4A01833E02F78B113AF11C6F31C57")
     
 public String getExtensionFromMimeType(String mimeType) {

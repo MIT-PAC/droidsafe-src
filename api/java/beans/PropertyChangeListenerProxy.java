@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.EventListenerProxy;
 
-
-
-
-
-
 public class PropertyChangeListenerProxy extends EventListenerProxy implements PropertyChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.311 -0500", hash_original_field = "F6E23082B68F75302CA6A0F5F57467FF", hash_generated_field = "F6E23082B68F75302CA6A0F5F57467FF")
-
 
     String propertyName;
 
@@ -39,6 +33,7 @@ public PropertyChangeListenerProxy(String propertyName,
      *
      * @return the name of the associated property.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.316 -0500", hash_original_method = "F855330D0A49F166D335D3D735B1EC12", hash_generated_method = "79D137ECBA6D10D7E0F2DC15CD7EDB65")
     
 public String getPropertyName() {
@@ -51,7 +46,6 @@ public void propertyChange(PropertyChangeEvent event) {
         PropertyChangeListener listener = (PropertyChangeListener) getListener();
         listener.propertyChange(event);
     }
-
     
 }
 

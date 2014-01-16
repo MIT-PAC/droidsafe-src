@@ -18,10 +18,6 @@ import libcore.io.Libcore;
 import libcore.io.Memory;
 import dalvik.system.VMRuntime;
 
-
-
-
-
 class MemoryBlock {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.581 -0500", hash_original_method = "BBFC8D551652AD3EEF096B28F6078288", hash_generated_method = "53AC51F00CCC1D4BC33D48CC3566EB3D")
@@ -84,6 +80,7 @@ private MemoryBlock(int address, long size) {
     }
 
     // Used to support array/arrayOffset/hasArray for direct buffers.
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.592 -0500", hash_original_method = "0474BFDE3AD81DCD66C16B9CD0EF394B", hash_generated_method = "56CDDF1385663904FB336DC08D59208F")
     
 public byte[] array() {
@@ -239,12 +236,12 @@ public final String toString() {
         return getClass().getName() + "[" + address + "]";
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.726 -0500", hash_original_method = "25EF411BA02CBCB0F772C5374653B5E7", hash_generated_method = "5BE0CBEF2D6C72C3611828559F4A0E5F")
     
 public final long getSize() {
         return size;
     }
-
     
     private static class MemoryMappedBlock extends MemoryBlock {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.547 -0500", hash_original_method = "4FA1675756D2D9224619666C72B7406C", hash_generated_method = "4D2AEDD1DBA920621345704854C9A78E")
@@ -273,11 +270,8 @@ private MemoryMappedBlock(int address, long byteCount) {
 @Override protected void finalize() throws Throwable {
             free();
         }
-
         
     }
-
-
     
     private static class NonMovableHeapBlock extends MemoryBlock {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.558 -0500", hash_original_field = "69A2529F36E7342616D51635092704F7", hash_generated_field = "9AF64BC00BB5D51223FCF5D879F8268F")
@@ -291,6 +285,7 @@ private NonMovableHeapBlock(byte[] array, int address, long byteCount) {
             this.array = array;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.563 -0500", hash_original_method = "D17F44ECB38D0894EC4D368C7A4552E2", hash_generated_method = "610FC94A7BA68ABC123A09941C0E33EE")
         
 @Override public byte[] array() {
@@ -303,11 +298,8 @@ private NonMovableHeapBlock(byte[] array, int address, long byteCount) {
             array = null;
             address = 0;
         }
-
         
     }
-
-
     
     private static class UnmanagedBlock extends MemoryBlock {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:54.571 -0500", hash_original_method = "3FA50BA19E59098968678E710BF90D48", hash_generated_method = "EFCCC746EA157D42714603255D748B72")
@@ -315,11 +307,8 @@ private NonMovableHeapBlock(byte[] array, int address, long byteCount) {
 private UnmanagedBlock(int address, long byteCount) {
             super(address, byteCount);
         }
-
         
     }
-
-
     
 }
 

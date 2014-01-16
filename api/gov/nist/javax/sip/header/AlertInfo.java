@@ -10,11 +10,6 @@ import java.text.ParseException;
 
 import javax.sip.address.URI;
 
-
-
-
-
-
 public final class AlertInfo extends ParametersHeader implements javax.sip.header.AlertInfoHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.653 -0500", hash_original_field = "1F6F5F8CFA970F2BE3A0A49C9F0A19C2", hash_generated_field = "837DE0F76A5BA789D54E73518AECF665")
 
@@ -77,6 +72,7 @@ public void setAlertInfo(String string) {
      * Returns the AlertInfo value of this AlertInfoHeader.
      * @return the URI representing the AlertInfo.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.674 -0500", hash_original_method = "93EE3BCFF83F692256BB0B6CBD3B0531", hash_generated_method = "86B2B9C9E6BD7076302C64C37D62828F")
     
 public URI getAlertInfo() {

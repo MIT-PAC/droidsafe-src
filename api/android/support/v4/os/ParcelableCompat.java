@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class ParcelableCompat {
-
-
-    @DSModeled(DSC.SAFE)
+    
     public static <T> Parcelable.Creator<T> newCreator(
             ParcelableCompatCreatorCallbacks<T> callbacks) {
         return new CompatCreator<T>(callbacks);
@@ -25,7 +19,6 @@ public class ParcelableCompat {
     {
         //Synthesized constructor
     }
-
     
     static class CompatCreator<T> implements Parcelable.Creator<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.615 -0500", hash_original_field = "BE8C2310A42C4AF4CAB9F639C1E3BDCF", hash_generated_field = "BE8C2310A42C4AF4CAB9F639C1E3BDCF")
@@ -38,6 +31,7 @@ public CompatCreator(ParcelableCompatCreatorCallbacks<T> callbacks) {
             mCallbacks = callbacks;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:27.620 -0500", hash_original_method = "BC4263EA8B5E453C51CC1CF339ED2394", hash_generated_method = "4EA354AA332798A65F22A475A247ABD1")
         
 @Override
@@ -51,11 +45,8 @@ public CompatCreator(ParcelableCompatCreatorCallbacks<T> callbacks) {
         public T[] newArray(int size) {
             return mCallbacks.newArray(size);
         }
-
         
     }
-
-
     
 }
 

@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public enum TimeUnit {
     NANOSECONDS {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.599 -0500", hash_original_method = "5A3BB1697B0C4B64A8068241CCE5D5C5", hash_generated_method = "BD70F916881E36DA5DF230A75A67A335")
@@ -15,7 +13,9 @@ public long toNanos(long d)   { return d; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.602 -0500", hash_original_method = "B26D4C0CA4EAEF579D191C63A23322F6", hash_generated_method = "9C69D2622E891C6450BFBF348DABF395")
         
 public long toMicros(long d)  { return d/(C1/C0); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.604 -0500", hash_original_method = "2A3538B933233C23032477C0A7C777D8", hash_generated_method = "EC966FE80A7FBCA1EC4EDA5326A62582")
+        @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.604 -0500", hash_original_method = "2A3538B933233C23032477C0A7C777D8", hash_generated_method = "EC966FE80A7FBCA1EC4EDA5326A62582")
         
 public long toMillis(long d)  { return d/(C2/C0); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.606 -0500", hash_original_method = "E4449E154B5B0117300490EFA60ED904", hash_generated_method = "F4777B9AE6980BBE4F673927095A2E44")
@@ -44,7 +44,9 @@ public long toNanos(long d)   { return x(d, C1/C0, MAX/(C1/C0)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.624 -0500", hash_original_method = "F8C692747F76368798AFDAD846E51457", hash_generated_method = "9E4CB52C5A2B7E291E173E7E679E29BA")
         
 public long toMicros(long d)  { return d; }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.627 -0500", hash_original_method = "6F3B61E78C500A3ACDD1E8FC69C7D359", hash_generated_method = "1338B91CA5691F497602B16770C3D97B")
+        @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.627 -0500", hash_original_method = "6F3B61E78C500A3ACDD1E8FC69C7D359", hash_generated_method = "1338B91CA5691F497602B16770C3D97B")
         
 public long toMillis(long d)  { return d/(C2/C1); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.629 -0500", hash_original_method = "A6B5B4F85BA40CFAB7BDE0FD2AD63072", hash_generated_method = "7346659F457FA568C2162E8FBD6A16BF")
@@ -73,7 +75,9 @@ public long toNanos(long d)   { return x(d, C2/C0, MAX/(C2/C0)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.648 -0500", hash_original_method = "CF4A5399BCAC084984BE470FCE6BA7E3", hash_generated_method = "83469C7840D75352CCE8A48B45FB8C97")
         
 public long toMicros(long d)  { return x(d, C2/C1, MAX/(C2/C1)); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.650 -0500", hash_original_method = "5C078795E01D4FA861AEBEB0BC27CFBA", hash_generated_method = "FC6B0D6F58B2C0CA14B5DA544F80990D")
+        @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.650 -0500", hash_original_method = "5C078795E01D4FA861AEBEB0BC27CFBA", hash_generated_method = "FC6B0D6F58B2C0CA14B5DA544F80990D")
         
 public long toMillis(long d)  { return d; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.653 -0500", hash_original_method = "FC611197BE66AE66BDC0E16F63CBDEBF", hash_generated_method = "5DF50075E94430A709D07E6F89883CD8")
@@ -102,7 +106,9 @@ public long toNanos(long d)   { return x(d, C3/C0, MAX/(C3/C0)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.670 -0500", hash_original_method = "CC8DD3DADB9AB473D5121FC84C3222D4", hash_generated_method = "8818B2DD32837179AA44EE83F22DD9B4")
         
 public long toMicros(long d)  { return x(d, C3/C1, MAX/(C3/C1)); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.673 -0500", hash_original_method = "041D848A2B246AC07652CB67812CBBAC", hash_generated_method = "7648174B13BB0481611BF15327CED988")
+        @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.673 -0500", hash_original_method = "041D848A2B246AC07652CB67812CBBAC", hash_generated_method = "7648174B13BB0481611BF15327CED988")
         
 public long toMillis(long d)  { return x(d, C3/C2, MAX/(C3/C2)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.675 -0500", hash_original_method = "077D444F35D8B646D15EEE35869B24F9", hash_generated_method = "8BC3C00D32A720FB2ACC5929778655D5")
@@ -120,7 +126,7 @@ public long toDays(long d)    { return d/(C6/C3); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.684 -0500", hash_original_method = "E52263BC74BA291DA5A366D72DB46150", hash_generated_method = "DC03BE00956A2A68859F6261CB891549")
         
 public long convert(long d, TimeUnit u) { return u.toSeconds(d); }
-        @DSModeled(DSC.SAFE)
+        
     int excessNanos(long d, long m) { return 0; }
     },
     MINUTES {
@@ -130,7 +136,9 @@ public long toNanos(long d)   { return x(d, C4/C0, MAX/(C4/C0)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.692 -0500", hash_original_method = "27E17FB430D08B01F8ECADBB4C17B6A4", hash_generated_method = "6AAEEED248EE3FC91623A383CDDF72D2")
         
 public long toMicros(long d)  { return x(d, C4/C1, MAX/(C4/C1)); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.696 -0500", hash_original_method = "D08EBA5D9305EBF49A2FF28F6D2EAB7A", hash_generated_method = "F7A73D25ED55C6B0D4C3DAFC47D2B375")
+        @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.696 -0500", hash_original_method = "D08EBA5D9305EBF49A2FF28F6D2EAB7A", hash_generated_method = "F7A73D25ED55C6B0D4C3DAFC47D2B375")
         
 public long toMillis(long d)  { return x(d, C4/C2, MAX/(C4/C2)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.698 -0500", hash_original_method = "0591F16FB75BF3E9FDC7B79CB81357DF", hash_generated_method = "DC0C297E89028CA5F64920023EB7CF05")
@@ -148,7 +156,7 @@ public long toDays(long d)    { return d/(C6/C4); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.708 -0500", hash_original_method = "E828B0AD5B842D0648FCF753305C1CB1", hash_generated_method = "B374929F6F9734022C766AA80DC26DF5")
         
 public long convert(long d, TimeUnit u) { return u.toMinutes(d); }
-        @DSModeled(DSC.SAFE)
+        
     int excessNanos(long d, long m) { return 0; }
     },
     HOURS {
@@ -158,7 +166,9 @@ public long toNanos(long d)   { return x(d, C5/C0, MAX/(C5/C0)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.716 -0500", hash_original_method = "CE14B3106CDF32CF393E661E6D65690C", hash_generated_method = "B12ADAAA5343C1D3D60071B9E50091BE")
         
 public long toMicros(long d)  { return x(d, C5/C1, MAX/(C5/C1)); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.718 -0500", hash_original_method = "55A16A3ECD7F9AC86D55E3FBFAF80CF3", hash_generated_method = "6A36AB81E06BA3E7B94BBBED5A253EB5")
+        @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.718 -0500", hash_original_method = "55A16A3ECD7F9AC86D55E3FBFAF80CF3", hash_generated_method = "6A36AB81E06BA3E7B94BBBED5A253EB5")
         
 public long toMillis(long d)  { return x(d, C5/C2, MAX/(C5/C2)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.721 -0500", hash_original_method = "AC53F41266838B73BB4C9EA295F6CF21", hash_generated_method = "8FCA03F3B61E681187B4FC09A4DDBD79")
@@ -176,7 +186,7 @@ public long toDays(long d)    { return d/(C6/C5); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.730 -0500", hash_original_method = "9ED6DE6F66E6C7FB1031F74041695D8B", hash_generated_method = "89AC0A6ADA6DC5E91EDCFEB9A54364AE")
         
 public long convert(long d, TimeUnit u) { return u.toHours(d); }
-        @DSModeled(DSC.SAFE)
+        
     int excessNanos(long d, long m) { return 0; }
     },
     DAYS {
@@ -186,7 +196,9 @@ public long toNanos(long d)   { return x(d, C6/C0, MAX/(C6/C0)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.739 -0500", hash_original_method = "BDE91BAB29F0EF1FE68DEC18F7541D4F", hash_generated_method = "DC2D04AEBEC0BDC4C8B6CB88ADD526E1")
         
 public long toMicros(long d)  { return x(d, C6/C1, MAX/(C6/C1)); }
-        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.741 -0500", hash_original_method = "138ACE569A9D01599722E8B63CFC3101", hash_generated_method = "5B308016EF60270164BE3376B41162E6")
+        @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.741 -0500", hash_original_method = "138ACE569A9D01599722E8B63CFC3101", hash_generated_method = "5B308016EF60270164BE3376B41162E6")
         
 public long toMillis(long d)  { return x(d, C6/C2, MAX/(C6/C2)); }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.744 -0500", hash_original_method = "4E687FF0B84E33ECCFBD5CCCCD27451E", hash_generated_method = "5DCDAA5C6B1E750ACA7A11993FDA9B00")
@@ -204,7 +216,7 @@ public long toDays(long d)    { return d; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.753 -0500", hash_original_method = "B06A317D4AEF754186F64EB2DF9099C1", hash_generated_method = "D57F7E4ED9C5708DA28DF76FE0FDA361")
         
 public long convert(long d, TimeUnit u) { return u.toDays(d); }
-        @DSModeled(DSC.SAFE)
+        
     int excessNanos(long d, long m) { return 0; }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.758 -0500", hash_original_field = "41883E058A4D5BF3B3B351969A126F22", hash_generated_field = "3EDEA9D06D99DD008D88AA6A904F2541")
@@ -229,7 +241,6 @@ public long convert(long d, TimeUnit u) { return u.toDays(d); }
 
     static final long C6 = C5 * 24L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.776 -0500", hash_original_field = "5AE27AA60A1C0B3B42E14F9CFAF99999", hash_generated_field = "76D049B98D4BF4AE7DC749FF1A3CB079")
-
 
     static final long MAX = Long.MAX_VALUE;
 
@@ -311,6 +322,8 @@ public long toMicros(long duration) {
      * overflow, or <tt>Long.MAX_VALUE</tt> if it would positively overflow.
      * @see #convert
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:10.789 -0500", hash_original_method = "F299978D45112E13E1D2F56CD0380D63", hash_generated_method = "54DC496A58B06AD4B88964C77E6B1202")
         
 public long toMillis(long duration) {

@@ -13,11 +13,6 @@ import java.nio.channels.ServerSocketChannel;
 import java.nio.channels.SocketChannel;
 import java.util.ServiceLoader;
 
-
-
-
-
-
 public abstract class SelectorProvider {
 
     /**
@@ -60,7 +55,6 @@ private static SelectorProvider loadProviderByJar() {
         return null;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.271 -0500", hash_original_field = "6B7D498973D24EE245B343DF130AA1D4", hash_generated_field = "D035C1A1A75D6145DD94D05B3D58FE60")
-
 
     private static SelectorProvider provider = null;
 
@@ -137,6 +131,7 @@ public abstract SocketChannel openSocketChannel() throws IOException;
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.293 -0500", hash_original_method = "1567929400994F6BBA42155A37789D93", hash_generated_method = "4BA794C5047799A4E3981E4D72C62B15")
     
 public Channel inheritedChannel() throws IOException {

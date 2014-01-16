@@ -9,14 +9,13 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-
-
 public class CountryCodeToRegionCodeMap {
   // A mapping from a country code to the region codes which denote the
   // country/region represented by that country code. In the case of multiple
   // countries sharing a calling code, such as the NANPA countries, the one
   // indicated with "isMainCountryForCode" in the metadata should be first.
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.630 -0500", hash_original_method = "BE431864601EAE48B892825B63E491FC", hash_generated_method = "7A66F935D67A11285242FE8DC006719D")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.630 -0500", hash_original_method = "BE431864601EAE48B892825B63E491FC", hash_generated_method = "7A66F935D67A11285242FE8DC006719D")
     
 static Map<Integer, List<String>> getCountryCodeToRegionCodeMap() {
     // The capacity is set to 273 as there are 205 different country codes,
@@ -888,7 +887,6 @@ static Map<Integer, List<String>> getCountryCodeToRegionCodeMap() {
     {
         //Synthesized constructor
     }
-
     
 }
 

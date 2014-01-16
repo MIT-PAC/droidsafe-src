@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class ByteArrayOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.326 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
@@ -24,6 +19,8 @@ public class ByteArrayOutputStream extends OutputStream {
      * If more than 32 bytes are written to this instance, the underlying byte
      * array will expand.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.332 -0500", hash_original_method = "4DC3C0B5ECFA05562A9AFEF7B1CF9D45", hash_generated_method = "FDFBFEB3E3EF5CD81ADCFCD518080293")
     
 public ByteArrayOutputStream() {
@@ -41,6 +38,8 @@ public ByteArrayOutputStream() {
      * @throws IllegalArgumentException
      *             if {@code size} < 0.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.334 -0500", hash_original_method = "931B663776F41DA70E9677006016F16F", hash_generated_method = "CE24AC27B7B66339EC71838E2850BE11")
     
 public ByteArrayOutputStream(int size) {
@@ -57,6 +56,8 @@ public ByteArrayOutputStream(int size) {
      * @throws IOException
      *             if an error occurs while attempting to close this stream.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.337 -0500", hash_original_method = "04777FE12371C5E12A689BB328BF05B3", hash_generated_method = "81559B248840B4A8460F72A02952056A")
     
 @Override
@@ -87,6 +88,8 @@ private void expand(int i) {
      * subsequent writes will overwrite any bytes previously stored in this
      * stream.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.342 -0500", hash_original_method = "D84F167B372983A8A32E17B936FA6E9B", hash_generated_method = "ABCB19599E50D7E02937CF8C013B8534")
     
 public synchronized void reset() {
@@ -111,6 +114,9 @@ public int size() {
      *
      * @return this stream's current contents as a byte array.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.347 -0500", hash_original_method = "F52D84F15F793E7D52B479C7891604F2", hash_generated_method = "5951B27DBA1F36D666752B978F5E613C")
     
 public synchronized byte[] toByteArray() {
@@ -170,6 +176,8 @@ public synchronized byte[] toByteArray() {
      * @throws UnsupportedEncodingException
      *             if the provided encoding is not supported.
      */
+    @DSComment("not sensitive, memory stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.355 -0500", hash_original_method = "E8B99C45FE2629BCCA1491714FD1F75F", hash_generated_method = "F57D6B578A28E83BF8E89D2D606E161E")
     
 public String toString(String enc) throws UnsupportedEncodingException {
@@ -193,6 +201,8 @@ public String toString(String enc) throws UnsupportedEncodingException {
      *             {@code offset + len} is greater than the length of
      *             {@code buffer}.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.358 -0500", hash_original_method = "6803EEF19C65AA8F03D81EBEC2EC6C85", hash_generated_method = "E48309311986BABB80FA0DD25BCC37B3")
     
 @Override
@@ -213,6 +223,8 @@ public String toString(String enc) throws UnsupportedEncodingException {
      * @param oneByte
      *            the byte to be written.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.360 -0500", hash_original_method = "0E8EDDE6C6CD9DF7AD28FE0F8F877448", hash_generated_method = "EC4AA14B7223D43B9330AFEFE8B74404")
     
 @Override
@@ -237,7 +249,6 @@ public String toString(String enc) throws UnsupportedEncodingException {
 public synchronized void writeTo(OutputStream out) throws IOException {
         out.write(buf, 0, count);
     }
-
     
 }
 

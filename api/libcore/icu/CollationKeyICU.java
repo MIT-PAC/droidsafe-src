@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.CollationKey;
 
-
-
-
-
-
 public final class CollationKeyICU extends CollationKey {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.527 -0500", hash_original_field = "AB97A4156FC1CC1DAF26375194010FF1", hash_generated_field = "4E58ABB9D5068B90ACC1157BF07E4EBB")
 
@@ -109,6 +104,7 @@ CollationKeyICU(String source, byte[] bytes) {
         return hashCode;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:09.543 -0500", hash_original_method = "6C3C6FF515A6D95256010638A5024205", hash_generated_method = "85E090F4E1A22D34B3EB8A349C3F8584")
     
 @Override public byte[] toByteArray() {
@@ -117,7 +113,6 @@ CollationKeyICU(String source, byte[] bytes) {
         }
         return bytes.clone();
     }
-
     
 }
 

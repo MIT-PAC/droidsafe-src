@@ -11,8 +11,6 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
 public class PProfileKey extends AddressParametersHeader implements PProfileKeyHeader, SIPHeaderNamesIms, ExtensionHeader {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.714 -0500", hash_original_method = "62A39FCB1E97FABE3CE56B88DF28D500", hash_generated_method = "E6217F21E92E9525E5A60A2562FACB76")
@@ -50,6 +48,7 @@ public PProfileKey(AddressImpl address)
         return retval.toString();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.725 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
@@ -65,14 +64,12 @@ public boolean equals(Object other)
 
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.733 -0500", hash_original_method = "38197786CF7CEF8229067A4B5205EC8C", hash_generated_method = "68016FA5C18470B1E9D06A907448617C")
     
 public Object clone() {
         PProfileKey retval = (PProfileKey) super.clone();
         return retval;
     }
-
     
 }
 

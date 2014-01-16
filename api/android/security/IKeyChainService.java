@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.053 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.053 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -84,7 +85,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.060 -0500", hash_original_method = "85837FBC16C4ABC19A4F56F7E6AD5AB4", hash_generated_method = "FA3C2E57C7CC5996B38ED109F545A44B")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.060 -0500", hash_original_method = "85837FBC16C4ABC19A4F56F7E6AD5AB4", hash_generated_method = "FA3C2E57C7CC5996B38ED109F545A44B")
             
 public byte[] getCertificate(java.lang.String alias) throws android.os.RemoteException
 {
@@ -106,7 +108,8 @@ return _result;
 }
 // APIs used by CertInstaller
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.064 -0500", hash_original_method = "245FC35906A30F772EEEE02A5918A89C", hash_generated_method = "3F850A42C42581408269FE34F76B9E32")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.064 -0500", hash_original_method = "245FC35906A30F772EEEE02A5918A89C", hash_generated_method = "3F850A42C42581408269FE34F76B9E32")
             
 public void installCaCertificate(byte[] caCertificate) throws android.os.RemoteException
 {
@@ -125,7 +128,8 @@ _data.recycle();
 }
 // APIs used by Settings
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.067 -0500", hash_original_method = "3AA415B0B68B0DB492154E015C895C01", hash_generated_method = "FB9BEAE583E3C3E70B3F90BE7FCB6F8E")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.067 -0500", hash_original_method = "3AA415B0B68B0DB492154E015C895C01", hash_generated_method = "FB9BEAE583E3C3E70B3F90BE7FCB6F8E")
             
 public boolean deleteCaCertificate(java.lang.String alias) throws android.os.RemoteException
 {
@@ -166,7 +170,8 @@ return _result;
 }
 // APIs used by KeyChainActivity
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.074 -0500", hash_original_method = "2CBE6F23E8E693A240B8880FFEADF816", hash_generated_method = "00E637FE91D0D339CF04F7CBF26683CE")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.074 -0500", hash_original_method = "2CBE6F23E8E693A240B8880FFEADF816", hash_generated_method = "00E637FE91D0D339CF04F7CBF26683CE")
             
 public void setGrant(int uid, java.lang.String alias, boolean value) throws android.os.RemoteException
 {
@@ -185,7 +190,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.077 -0500", hash_original_method = "37A67393E120257362C1B9EDA8C5BD70", hash_generated_method = "6FC632203D6C0AB4123CF8CD7DE616A6")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.077 -0500", hash_original_method = "37A67393E120257362C1B9EDA8C5BD70", hash_generated_method = "6FC632203D6C0AB4123CF8CD7DE616A6")
             
 public boolean hasGrant(int uid, java.lang.String alias) throws android.os.RemoteException
 {
@@ -226,13 +232,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.036 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.036 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.040 -0500", hash_original_method = "50E2FDA90F3F1EB3C94ED2D3835D9945", hash_generated_method = "E735C803376D7363339FC06F4092E6DF")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.040 -0500", hash_original_method = "50E2FDA90F3F1EB3C94ED2D3835D9945", hash_generated_method = "E735C803376D7363339FC06F4092E6DF")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
@@ -320,17 +328,13 @@ return super.onTransact(code, data, reply, flags);
 }
 }
 
-
 public byte[] getPrivateKey(java.lang.String alias) throws android.os.RemoteException;
 public byte[] getCertificate(java.lang.String alias) throws android.os.RemoteException;
 
-
 public void installCaCertificate(byte[] caCertificate) throws android.os.RemoteException;
-
 
 public boolean deleteCaCertificate(java.lang.String alias) throws android.os.RemoteException;
 public boolean reset() throws android.os.RemoteException;
-
 
 public void setGrant(int uid, java.lang.String alias, boolean value) throws android.os.RemoteException;
 public boolean hasGrant(int uid, java.lang.String alias) throws android.os.RemoteException;

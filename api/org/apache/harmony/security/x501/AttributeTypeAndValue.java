@@ -21,11 +21,6 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BerOutputStream;
 import org.apache.harmony.security.utils.ObjectIdentifier;
 
-
-
-
-
-
 public final class AttributeTypeAndValue {
 
     /**
@@ -121,7 +116,6 @@ private static int hashIntArray(int[] oid) {
             = new ObjectIdentifier(new int[] { 2, 5, 4, 46 }, "DNQ", RFC2459_NAMES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.249 -0500", hash_original_field = "328C2184289264351D05B861768AE32B", hash_generated_field = "188B912ADB054B566A701AFA00C51543")
 
-
     private static final ObjectIdentifier DNQUALIFIER
             = new ObjectIdentifier(new int[] { 2, 5, 4, 46 }, "DNQUALIFIER", RFC2459_NAMES);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.253 -0500", hash_original_field = "0ECACBDF3ED551EA32197932D01392D7", hash_generated_field = "ECF87076C29754CD3A47D1F600E03D36")
@@ -216,6 +210,7 @@ public Object decode(BerInputStream in) throws IOException {
             return new AttributeValue(str, bytesEncoded, in.tag);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.351 -0500", hash_original_method = "7DF56D76B0B7364F01AC493B84727F79", hash_generated_method = "995C5EF05C5ED12603776BEE26B568DD")
         
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -241,6 +236,7 @@ public void encodeASN(BerOutputStream out) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.361 -0500", hash_original_method = "23586BD12951670B298A785C71BB9FF4", hash_generated_method = "ACBCC99F666986B6AF7AB3F9537C495D")
         
 public void setEncodingContent(BerOutputStream out) {
@@ -284,6 +280,7 @@ public void encodeContent(BerOutputStream out) {
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             ASN1Oid.getInstance(), attributeValue }) {
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.380 -0500", hash_original_method = "D8107E6357EFE36630D3CBCE737F6259", hash_generated_method = "2FA6C59B2B9119548883FDA128E87FC3")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -445,6 +442,7 @@ public void appendName(String attrFormat, StringBuilder sb) {
     /**
      * Gets type of the AttributeTypeAndValue
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:54.338 -0500", hash_original_method = "FA85FF96313B2EEDB4486C871DCE0458", hash_generated_method = "978C1306EB6EC4C023A636CD52F4898F")
     
 public ObjectIdentifier getType() {

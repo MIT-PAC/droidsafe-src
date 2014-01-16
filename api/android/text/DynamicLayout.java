@@ -10,24 +10,17 @@ import android.graphics.Paint;
 import android.text.style.UpdateLayout;
 import android.text.style.WrapTogetherSpan;
 
-
-
-
-
 public class DynamicLayout extends Layout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.979 -0500", hash_original_field = "DB07E1361BFAFEB6A434A5E2178E432A", hash_generated_field = "4411169D7FD82CBF8AA4F3F3F57792B5")
 
     private static final int PRIORITY = 128;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.083 -0500", hash_original_field = "DF90238A91F7367C329D091B3F04FA41", hash_generated_field = "8547CB2E7AAF865B43A1389F1EFA4F37")
 
-
     private static StaticLayout sStaticLayout = new StaticLayout(null);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.086 -0500", hash_original_field = "14A59CFC333E208499C98B6D3860ADDD", hash_generated_field = "6FA9B47DB08FC419C50F72FDCF40883C")
 
-
     private static final Object[] sLock = new Object[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.089 -0500", hash_original_field = "27A41ADDFF59BC8B58A601456818918E", hash_generated_field = "D858CF53160507E553F41D31EE5B91B4")
-
 
     private static final int START = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.092 -0500", hash_original_field = "A93E36DA171556A9DAC174A6CE0830C7", hash_generated_field = "00A39BB8E63058E1AB6D38D081403510")
@@ -47,7 +40,6 @@ public class DynamicLayout extends Layout {
     private static final int COLUMNS_NORMAL = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.105 -0500", hash_original_field = "DCAA152E596CCF7D943D5B21A68B86B4", hash_generated_field = "E2BDE677DE1C429BF2BE569E18329E43")
 
-
     private static final int ELLIPSIS_START = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.108 -0500", hash_original_field = "664582F8629EEEC6D6294BAB4BA1269C", hash_generated_field = "1B418124A7F291F864D2626D0BD306EC")
 
@@ -56,7 +48,6 @@ public class DynamicLayout extends Layout {
 
     private static final int COLUMNS_ELLIPSIZE = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.113 -0500", hash_original_field = "51ABBD2944D24467D63DD23BADE8CD8B", hash_generated_field = "E308275B4AE398B992072A6F7EA1A3C0")
-
 
     private static final int START_MASK = 0x1FFFFFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.116 -0500", hash_original_field = "2174DD8845E3505750875CAA65AA1573", hash_generated_field = "B97E7A8E8F664E1C1793F75E8020C7A1")
@@ -67,10 +58,8 @@ public class DynamicLayout extends Layout {
     private static final int TAB_MASK   = 0x20000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.121 -0500", hash_original_field = "E7262C5494D60C26E4431EA6F64A2187", hash_generated_field = "5F25A8AF84EF55C73DA55AAF6E9BEDC2")
 
-
     private static final int ELLIPSIS_UNDEFINED = 0x80000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.059 -0500", hash_original_field = "5AA8BCA90D20DE4EA6AD7DD52311E654", hash_generated_field = "15367B8B2C746CFC484DB8A82189D9A1")
-
 
     private CharSequence mBase;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.061 -0500", hash_original_field = "189B1E7169C8774EF368745574371CB9", hash_generated_field = "D786E4FA619E26D15C3AF77D65AC82C9")
@@ -92,7 +81,6 @@ public class DynamicLayout extends Layout {
 
     private TextUtils.TruncateAt mEllipsizeAt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.076 -0500", hash_original_field = "2378F15AEBE8A9C41DDAE9AAFF8C252A", hash_generated_field = "F71EEB15D0A10CA360B6D2DAC14050D2")
-
 
     private PackedIntVector mInts;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.078 -0500", hash_original_field = "D805E6BC96EF3A5326067E731C769A16", hash_generated_field = "98DE842C94CE85760CB5F06A2EB32DA3")
@@ -119,11 +107,9 @@ public DynamicLayout(CharSequence base,
         this(base, base, paint, width, align, spacingmult, spacingadd,
              includepad);
     }
-
     
     private static class ChangeWatcher implements TextWatcher, SpanWatcher {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.049 -0500", hash_original_field = "3F723A8AEB8B508D6DA28FFF8085A253", hash_generated_field = "8D1810AB5CD5D0106C47C451BC1214A2")
-
 
         private WeakReference<DynamicLayout> mLayout;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.028 -0500", hash_original_method = "5B008785D1A2C7A00F27EBFB90B5E73C", hash_generated_method = "3D162BC9F486D17A9A8609C8CF801F1A")
@@ -181,7 +167,6 @@ public void onSpanChanged(Spannable s, Object o, int start, int end, int nstart,
                 reflow(s, nstart, nend - nstart, nend - nstart);
             }
         }
-
         
     }
 
@@ -508,6 +493,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.001 -0500", hash_original_method = "152FA51B02D5FF2B246CE19D3B6F70D3", hash_generated_method = "CC1C88D38AFD959022580027F44A131A")
     
 @Override
@@ -515,6 +501,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.size() - 1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.004 -0500", hash_original_method = "D6F378A47E9DC69D83D62FCE6E90C326", hash_generated_method = "8C3BE57369149F292E0CDECC247CD2E8")
     
 @Override
@@ -522,6 +509,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.getValue(line, TOP);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.006 -0500", hash_original_method = "730DAEEEE356A285055D20F0106F731A", hash_generated_method = "2754D367D485AD7D05CAD612FD563651")
     
 @Override
@@ -529,6 +517,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.getValue(line, DESCENT);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.009 -0500", hash_original_method = "2D0F6CD810E708D2F846F779125A5CEA", hash_generated_method = "09AB562361EE24C85E8246B466BFA61D")
     
 @Override
@@ -543,6 +532,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return (mInts.getValue(line, TAB) & TAB_MASK) != 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.014 -0500", hash_original_method = "54E53FDCC15DB3057A5F7E1DF0F2D93F", hash_generated_method = "DA61D920D7C002B928BB90BBBA526ADE")
     
 @Override
@@ -557,6 +547,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mObjects.getValue(line, 0);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.019 -0500", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "C9A37F9D7E53BC032BE1989D8B7F43F3")
     
 @Override
@@ -564,6 +555,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mTopPadding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.022 -0500", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "F0B9D53486F44C4D9B5E36E2D1B1C62A")
     
 @Override
@@ -571,6 +563,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mBottomPadding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.024 -0500", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "466A36682DB1C1AD0B2234723777A380")
     
 @Override
@@ -578,6 +571,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mEllipsizedWidth;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.053 -0500", hash_original_method = "C2BA24D83CCF8B46DBDB9E42876D7FC0", hash_generated_method = "E1691EFEB29DA3D8A46F947435E4B747")
     
 @Override
@@ -589,6 +583,7 @@ private void reflow(CharSequence s, int where, int before, int after) {
         return mInts.getValue(line, ELLIPSIS_START);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:13.056 -0500", hash_original_method = "8861D8B0168294A81E05E00D1A35F6B4", hash_generated_method = "1C8ED8CB9C6D797E4FFBEFBE4408DFDF")
     
 @Override

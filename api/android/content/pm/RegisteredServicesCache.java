@@ -41,17 +41,11 @@ import com.android.internal.util.FastXmlSerializer;
 import com.google.android.collect.Lists;
 import com.google.android.collect.Maps;
 
-
-
-
-
-
 public abstract class RegisteredServicesCache<V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.838 -0500", hash_original_field = "B4667463F60DCD48849D657740F41408", hash_generated_field = "E87B09140D2B39BDC1A082AB48B400E2")
 
     private static final String TAG = "PackageManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.841 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "DE8577C1C990964647332D172A1FAC00")
-
 
     public  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.843 -0500", hash_original_field = "5D2D75DE4020ED94AFC743546E0FE97A", hash_generated_field = "B91D2FDD736D033C029D0603CE28FBCE")
@@ -70,7 +64,6 @@ public abstract class RegisteredServicesCache<V> {
 
     private  AtomicReference<BroadcastReceiver> mReceiver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.854 -0500", hash_original_field = "8BD1CBBF1BD26772FD8A64BF15463062", hash_generated_field = "7B88287937D2F8332B319EA97FDE5E9F")
-
 
     private final Object mServicesLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.856 -0500", hash_original_field = "B38CDB010801A35438D731CC1ACCF60E", hash_generated_field = "7C9830B84CCB22FE7159A16CB3E4930F")
@@ -141,6 +134,7 @@ public void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.878 -0500", hash_original_method = "D8F0001D796B123F3D4D73C4471FA428", hash_generated_method = "B683D4E1159000788828D139458F35FF")
     
 public RegisteredServicesCacheListener<V> getListener() {
@@ -468,9 +462,7 @@ private void readPersistentServicesLocked() {
             }
         }
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.580 -0400", hash_original_method = "EE98DCC48BA776AAD27AD82ED0CDBCAD", hash_generated_method = "B48FD1310EFCBD075BD6C7C79A42333B")
     private void writePersistentServicesLocked() {
         if(mSerializerAndParser == null)        
@@ -507,7 +499,6 @@ for(Map.Entry<V, Integer> service : mPersistentServices.entrySet())
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     public static class ServiceInfo<V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:49.889 -0500", hash_original_field = "B7164ACA5B2367A3B9E43D782CBA3E64", hash_generated_field = "1C0901F7CD197CB5951F2E539CF1A8AE")
@@ -535,7 +526,6 @@ public ServiceInfo(V type, ComponentName componentName, int uid) {
         public String toString() {
             return "ServiceInfo: " + type + ", " + componentName + ", uid " + uid;
         }
-
         
     }
 

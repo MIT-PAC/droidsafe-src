@@ -8,7 +8,6 @@ import android.util.Log;
 public class BaseObj {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.592 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "B318151FF40ADE16FE6B3D1CFBCF936A")
 
-
     private int mID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.594 -0500", hash_original_field = "708F9D94DA99CD83DBB18AAAFBA8C49F", hash_generated_field = "1C64CB399BFF718CD14799195853AA6E")
 
@@ -99,6 +98,7 @@ public void setName(String name) {
     /**
      * @return name of the renderscript object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:04.605 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {
@@ -182,7 +182,6 @@ void updateFromNative() {
         BaseObj b = (BaseObj) obj;
         return mID == b.mID;
     }
-
     
 }
 

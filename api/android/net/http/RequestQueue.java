@@ -23,10 +23,6 @@ import android.net.Proxy;
 import android.net.WebAddress;
 import android.util.Log;
 
-
-
-
-
 public class RequestQueue implements RequestFeeder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.229 -0500", hash_original_field = "3B336A0182CCCB8357C14CA1832B3D52", hash_generated_field = "37BB035DE4DBFD177A6ADC5B8C105D95")
 
@@ -44,7 +40,6 @@ public class RequestQueue implements RequestFeeder {
 
     private  ConnectivityManager mConnectivityManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.224 -0500", hash_original_field = "D1D639C5596FCF5BCCB2D8DE2062557E", hash_generated_field = "99742757777505E14871D3515FDC7109")
-
 
     private HttpHost mProxyHost = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.227 -0500", hash_original_field = "BBC3BB7DCD4ABB1C5FDFA673C3A087C1", hash_generated_field = "EAF3975B1E21B046C1D30C80F39B0ACA")
@@ -89,7 +84,6 @@ public RequestQueue(Context context, int connectionCount) {
         mConnectivityManager = (ConnectivityManager)
                 context.getSystemService(Context.CONNECTIVITY_SERVICE);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:20.853 -0400", hash_original_method = "192F6D29BBECFA47E09E7D8D48EF8859", hash_generated_method = "2E4A107819364196942A449FCCD44C9A")
     public synchronized void enablePlatformNotifications() {
@@ -167,6 +161,7 @@ private synchronized void setProxyConfig() {
      * used by webkit
      * @return proxy host if set, null otherwise
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.289 -0500", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "4BC88B0C4F8420EA46933C51803C4057")
     
 public HttpHost getProxyHost() {
@@ -290,7 +285,6 @@ synchronized boolean requestsPending() {
         return !mPending.isEmpty();
     }
 
-
     /**
      * debug tool: prints request queue to log
      */
@@ -327,6 +321,7 @@ synchronized void dump() {
     /*
      * RequestFeeder implementation
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.323 -0500", hash_original_method = "8F04B443A564D50EFFE076AEA97295A7", hash_generated_method = "C5662E3D0008E6019496C6C0594DABDB")
     
 public synchronized Request getRequest() {
@@ -342,6 +337,7 @@ public synchronized Request getRequest() {
     /**
      * @return a request for given host if possible
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.326 -0500", hash_original_method = "871E1F4E9BD2BA7BA6F72CE2CEEFAC66", hash_generated_method = "68016E68CF819C1B2617E31465E380F1")
     
 public synchronized Request getRequest(HttpHost host) {
@@ -385,6 +381,7 @@ public void shutdown() {
         mActivePool.shutdown();
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.335 -0500", hash_original_method = "99743D8700F7CD0272109FAA55D49D1A", hash_generated_method = "352B9F00E36246627B621AEAD7D6FEC1")
     
 protected synchronized void queueRequest(Request request, boolean head) {
@@ -403,7 +400,6 @@ protected synchronized void queueRequest(Request request, boolean head) {
         }
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.337 -0500", hash_original_method = "D615BD22372BF27837008A0B674B3672", hash_generated_method = "54286DD993225353067BB88F7051F1F0")
     
 public void startTiming() {
@@ -415,7 +411,6 @@ public void startTiming() {
 public void stopTiming() {
         mActivePool.stopTiming();
     }
-
     
     class ActivePool implements ConnectionManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.232 -0500", hash_original_field = "A911064E545F525658232640AFA7D0B9", hash_generated_field = "A911064E545F525658232640AFA7D0B9")
@@ -423,10 +418,8 @@ public void stopTiming() {
         ConnectionThread[] mThreads;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.234 -0500", hash_original_field = "448266124930497935AABDA6EA3530AA", hash_generated_field = "448266124930497935AABDA6EA3530AA")
 
-
         IdleCache mIdleCache;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.236 -0500", hash_original_field = "5D14188A729D4F2635BB53973FC26F5B", hash_generated_field = "04EBA439DE54BE9E4E88BA35E3F14E1F")
-
 
         private int mTotalRequest;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.238 -0500", hash_original_field = "29B740AAB1531020789DC6ED7C636BBB", hash_generated_field = "75F51D982E39DA7109E095FB57E24560")
@@ -511,7 +504,7 @@ void logState() {
             HttpLog.v(dump.toString());
         }
 
-
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.260 -0500", hash_original_method = "36781366BC2C228EA97F354BC28E7BDA", hash_generated_method = "4BC88B0C4F8420EA46933C51803C4057")
         
 public HttpHost getProxyHost() {
@@ -534,6 +527,7 @@ void disablePersistence() {
         /* Linear lookup -- okay for small thread counts.  Might use
            private HashMap<HttpHost, LinkedList<ConnectionThread>> mActiveMap;
            if this turns out to be a hotspot */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.264 -0500", hash_original_method = "4350BDA0BFA960DC6ECB5B267907B720", hash_generated_method = "4350BDA0BFA960DC6ECB5B267907B720")
         
 ConnectionThread getThread(HttpHost host) {
@@ -549,6 +543,7 @@ ConnectionThread getThread(HttpHost host) {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.266 -0500", hash_original_method = "FFEAD5D96A31C5526086E61D15C11F62", hash_generated_method = "5ECF59203E07C45B00F91B0521BC4B5D")
         
 public Connection getConnection(Context context, HttpHost host) {
@@ -566,11 +561,8 @@ public Connection getConnection(Context context, HttpHost host) {
 public boolean recycleConnection(Connection connection) {
             return mIdleCache.cacheConnection(connection.getHost(), connection);
         }
-
         
     }
-
-
     
     private static class SyncFeeder implements RequestFeeder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.297 -0500", hash_original_field = "480419B6BBB9A26A6DD8401352CF0FEE", hash_generated_field = "CD1358C024850E376AE84FBA2FC6F2A1")
@@ -581,6 +573,7 @@ public boolean recycleConnection(Connection connection) {
         
 SyncFeeder() {
         }
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.303 -0500", hash_original_method = "E0C38BA5AF5E9B7363BEA9E204F697F3", hash_generated_method = "C74EDD87A503CBBE7FA9739CE06E1684")
         
 public Request getRequest() {
@@ -588,6 +581,7 @@ public Request getRequest() {
             mRequest = null;
             return r;
         }
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.305 -0500", hash_original_method = "DE8B4E1CA9B86F476AFDBAF1FF7FD442", hash_generated_method = "8784B9E19CB677C96570406E17C21CA8")
         
 public Request getRequest(HttpHost host) {
@@ -603,11 +597,8 @@ public boolean haveRequest(HttpHost host) {
 public void requeueRequest(Request r) {
             mRequest = r;
         }
-
         
     }
-
-
     
     interface ConnectionManager {
         HttpHost getProxyHost();

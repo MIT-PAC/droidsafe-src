@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.Date;
 import java.util.concurrent.locks.Condition;
 
-
-
-
-
-
 public class WaitingThread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.520 -0500", hash_original_field = "DD3B07F50A4277E065FDFFC919E9FDDB", hash_generated_field = "E7E85605CD9DCB175BB641FD2FDA33A7")
 
@@ -26,7 +21,6 @@ public class WaitingThread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.527 -0500", hash_original_field = "D257EA6B1465C401242DE11DC61376AA", hash_generated_field = "7C8E769DDEE22768B70313CCC815CA01")
 
     private boolean aborted;
-
 
     /**
      * Creates a new entry for a waiting thread.
@@ -47,12 +41,12 @@ public WaitingThread(Condition cond, RouteSpecificPool pool) {
         this.pool = pool;
     }
 
-
     /**
      * Obtains the condition.
      *
      * @return  the condition on which to wait, never <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.532 -0500", hash_original_method = "06148A18B01DA630C8E9D1BE56535730", hash_generated_method = "4F4AE62136D5CFFE877E5BE8F3488E56")
     
 public final Condition getCondition() {
@@ -60,13 +54,13 @@ public final Condition getCondition() {
         return this.cond;
     }
 
-
     /**
      * Obtains the pool, if there is one.
      *
      * @return  the pool on which a thread is or was waiting,
      *          or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.534 -0500", hash_original_method = "7ACEF95834A46E1067A2FCD807704A00", hash_generated_method = "C35E32D5D68307FC752F688479E534D1")
     
 public final RouteSpecificPool getPool() {
@@ -74,19 +68,18 @@ public final RouteSpecificPool getPool() {
         return this.pool;
     }
 
-
     /**
      * Obtains the thread, if there is one.
      *
      * @return  the thread which is waiting, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.536 -0500", hash_original_method = "71CC45999E743AA15F11389550D41BFD", hash_generated_method = "CB85D10A1FD8B2013E04262B36A14664")
     
 public final Thread getThread() {
         // not synchronized
         return this.waiter;
     }
-
 
     /**
      * Blocks the calling thread.
@@ -143,7 +136,6 @@ public boolean await(Date deadline)
 
     } // await
 
-
     /**
      * Wakes up the waiting thread.
      * <br/>
@@ -171,7 +163,6 @@ public void interrupt() {
         aborted = true;
         this.cond.signalAll();
     }
-
     
 }
 

@@ -8,11 +8,6 @@ import java.io.File;
 import java.net.URL;
 import java.util.Enumeration;
 
-
-
-
-
-
 public class BaseDexClassLoader extends ClassLoader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.494 -0500", hash_original_field = "591C7231D87F27EA57DB8A8DF440323B", hash_generated_field = "3A1905766FA74BE7F45BBB06C9F84A8F")
 
@@ -105,6 +100,7 @@ public BaseDexClassLoader(String dexPath, File optimizedDirectory,
      * @return the package information for the class, or {@code null}
      * if there is no package information available for it
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.511 -0500", hash_original_method = "CA22ACC2BBED318A2E853CC270258DF9", hash_generated_method = "1C71499B6A9BAE929FEA7A8293AB5740")
     
 @Override
@@ -129,7 +125,6 @@ public BaseDexClassLoader(String dexPath, File optimizedDirectory,
     public String toString() {
         return getClass().getName() + "[" + originalPath + "]";
     }
-
     
 }
 

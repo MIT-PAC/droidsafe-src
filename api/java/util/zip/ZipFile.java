@@ -20,10 +20,6 @@ import libcore.io.HeapBufferIterator;
 import libcore.io.Streams;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class ZipFile implements ZipConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.308 -0500", hash_original_field = "5E14C7376EFF57EED7E931E162965942", hash_generated_field = "845771CF1327085096E285BA804AA3A7")
 
@@ -39,22 +35,17 @@ public class ZipFile implements ZipConstants {
     public static final int OPEN_DELETE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.318 -0500", hash_original_field = "90A7C14E9FDE747EFC2F1C95E470FF1A", hash_generated_field = "0CA74B4233F69873CB47E022D845EA81")
 
-
     private  String fileName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.321 -0500", hash_original_field = "C2EBBED0D2DD3C8668837F5A2A59CAD2", hash_generated_field = "B13A9F7F3BCBF757EA8C226CB83B1836")
-
 
     private File fileToDeleteOnClose;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.323 -0500", hash_original_field = "74641A1C1F13FE91E84647C53784077C", hash_generated_field = "FB2540966EB1F635EC5558E5A5A775E6")
 
-
     private RandomAccessFile mRaf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.326 -0500", hash_original_field = "6C252FE5E279A8BB3F31EA95B50F1C86", hash_generated_field = "57A589128123E20585B6C054876EA61B")
 
-
     private final LinkedHashMap<String, ZipEntry> mEntries = new LinkedHashMap<String, ZipEntry>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.328 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 
@@ -68,6 +59,8 @@ public class ZipFile implements ZipConstants {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.331 -0500", hash_original_method = "E5AF570B733F2A8A2A3B06248A7E8835", hash_generated_method = "A59FE118065A3FA0C7A5ABC70B304A1F")
     
 public ZipFile(File file) throws ZipException, IOException {
@@ -167,9 +160,7 @@ private void checkNotClosed() {
             throw new IllegalStateException("Zip file closed");
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.805 -0400", hash_original_method = "C7A9A4F6B932FEDB0ECC5AECA323DFC1", hash_generated_method = "6F769368C927136E5DA2F396F24B94E5")
     public Enumeration<? extends ZipEntry> entries() {
         checkNotClosed();
@@ -215,6 +206,9 @@ public ZipEntry nextElement() {
      *         exist in the ZIP file.
      * @throws IllegalStateException if this ZIP file has been closed.
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.354 -0500", hash_original_method = "D382D29E599C910662BB0F89A97F218A", hash_generated_method = "955202DE1AF533EEDFC3BBFC49E0D4E8")
     
 public ZipEntry getEntry(String entryName) {
@@ -229,11 +223,9 @@ public ZipEntry getEntry(String entryName) {
         }
         return ze;
     }
-
     
     static class RAFStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.369 -0500", hash_original_field = "9A517EC1A66B8BABFBEC36F04F6D50E9", hash_generated_field = "9A517EC1A66B8BABFBEC36F04F6D50E9")
-
 
         RandomAccessFile mSharedRaf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.372 -0500", hash_original_field = "404D538D7C85388778B668910857AE1E", hash_generated_field = "404D538D7C85388778B668910857AE1E")
@@ -291,15 +283,11 @@ public RAFStream(RandomAccessFile raf, long pos) throws IOException {
             mOffset += byteCount;
             return byteCount;
         }
-
         
     }
-
-
     
     static class ZipInflaterInputStream extends InflaterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.392 -0500", hash_original_field = "6ABF0A573F6A71AB8AAE237EF7DCBFD4", hash_generated_field = "6ABF0A573F6A71AB8AAE237EF7DCBFD4")
-
 
         ZipEntry entry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.394 -0500", hash_original_field = "B454E81C25A392A63976B59EF20BFDA7", hash_generated_field = "B454E81C25A392A63976B59EF20BFDA7")
@@ -336,7 +324,6 @@ public ZipInflaterInputStream(InputStream is, Inflater inf, int bsize, ZipEntry 
             }
             return super.available() == 0 ? 0 : (int) (entry.getSize() - bytesRead);
         }
-
         
     }
 
@@ -350,6 +337,9 @@ public ZipInflaterInputStream(InputStream is, Inflater inf, int bsize, ZipEntry 
      *             if an {@code IOException} occurs.
      * @throws IllegalStateException if this ZIP file has been closed.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.358 -0500", hash_original_method = "B69421FB9318C1ABE9ECEEB1DD311069", hash_generated_method = "8EAC736ACC17C5ECCFFF65C0A3EE6FFC")
     
 public InputStream getInputStream(ZipEntry entry) throws IOException {
@@ -388,6 +378,7 @@ public InputStream getInputStream(ZipEntry entry) throws IOException {
      *
      * @return the file name of this {@code ZipFile}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.360 -0500", hash_original_method = "16A0E81CED7078E4D61B7DA2166E122D", hash_generated_method = "61220CBF47CC3FDA292F55A4F9600680")
     
 public String getName() {

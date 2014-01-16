@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.xml.sax.Attributes;
 
-
-
-
-
-
 public class AttributesImpl implements Attributes {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.969 -0500", hash_original_field = "136C4DD872F8065EECD33F6CD4E7556E", hash_generated_field = "F8DDE62EA42266C7FC49FC2E2B951350")
 
@@ -21,12 +16,10 @@ public class AttributesImpl implements Attributes {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.971 -0500", hash_original_field = "FF698A9C75F799EB4FE98C16A723AC90", hash_generated_field = "FF698A9C75F799EB4FE98C16A723AC90")
 
     String data [];
-
 
     ////////////////////////////////////////////////////////////////////
     // Constructors.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Construct a new, empty AttributesImpl object.
@@ -38,7 +31,6 @@ public AttributesImpl ()
     length = 0;
     data = null;
     }
-
 
     /**
      * Copy an existing Attributes object.
@@ -54,13 +46,10 @@ public AttributesImpl (Attributes atts)
     {
     setAttributes(atts);
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Implementation of org.xml.sax.Attributes.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Return the number of attributes in the list.
@@ -68,13 +57,13 @@ public AttributesImpl (Attributes atts)
      * @return The number of attributes in the list.
      * @see org.xml.sax.Attributes#getLength
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.913 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "AF903EC3B9FE28DC883DCDAF202C537E")
     
 public int getLength ()
     {
     return length;
     }
-
 
     /**
      * Return an attribute's Namespace URI.
@@ -84,6 +73,7 @@ public int getLength ()
      *         available, or null if the index is out of range.
      * @see org.xml.sax.Attributes#getURI
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.916 -0500", hash_original_method = "1BF0AE5363A8618B6A71FCEE06881B7C", hash_generated_method = "0FFFF132B4642A83FB51F09E8A0805A7")
     
 public String getURI (int index)
@@ -95,7 +85,6 @@ public String getURI (int index)
     }
     }
 
-
     /**
      * Return an attribute's local name.
      *
@@ -104,6 +93,7 @@ public String getURI (int index)
      *         none is available, or null if the index if out of range.
      * @see org.xml.sax.Attributes#getLocalName
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.918 -0500", hash_original_method = "92B1686F7E458511CE45EC4DB3E3CE89", hash_generated_method = "1535CAF44B8EFA0A3C48A1C3BD66BF06")
     
 public String getLocalName (int index)
@@ -115,7 +105,6 @@ public String getLocalName (int index)
     }
     }
 
-
     /**
      * Return an attribute's qualified (prefixed) name.
      *
@@ -124,6 +113,7 @@ public String getLocalName (int index)
      *         none is available, or null if the index is out of bounds.
      * @see org.xml.sax.Attributes#getQName
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.920 -0500", hash_original_method = "32BD7D7FFA2C46007E9D534F2070D779", hash_generated_method = "E8383D48F2D53371D50DA725131EC7FB")
     
 public String getQName (int index)
@@ -135,7 +125,6 @@ public String getQName (int index)
     }
     }
 
-
     /**
      * Return an attribute's type by index.
      *
@@ -144,6 +133,7 @@ public String getQName (int index)
      *         if the index is out of bounds.
      * @see org.xml.sax.Attributes#getType(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.922 -0500", hash_original_method = "CD55E4A1C2CBE3FE53B5A622E57F028C", hash_generated_method = "BF093253DB32009BC7EA7A29E1969D9E")
     
 public String getType (int index)
@@ -155,7 +145,6 @@ public String getType (int index)
     }
     }
 
-
     /**
      * Return an attribute's value by index.
      *
@@ -163,6 +152,7 @@ public String getType (int index)
      * @return The attribute's value or null if the index is out of bounds.
      * @see org.xml.sax.Attributes#getValue(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.924 -0500", hash_original_method = "7BC4C2655702EDFE2361F9F97C33BDBD", hash_generated_method = "5E1A71BD421981F5C4A3E55A52E5CBDB")
     
 public String getValue (int index)
@@ -173,7 +163,6 @@ public String getValue (int index)
         return null;
     }
     }
-
 
     /**
      * Look up an attribute's index by Namespace name.
@@ -188,6 +177,7 @@ public String getValue (int index)
      * @return The attribute's index, or -1 if none matches.
      * @see org.xml.sax.Attributes#getIndex(java.lang.String,java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.927 -0500", hash_original_method = "090A4B083F61ECB7CB7169BD1EF033DF", hash_generated_method = "34F4F14577D0E0B4F663B614D68BA077")
     
 public int getIndex (String uri, String localName)
@@ -201,7 +191,6 @@ public int getIndex (String uri, String localName)
     return -1;
     }
 
-
     /**
      * Look up an attribute's index by qualified (prefixed) name.
      *
@@ -209,6 +198,7 @@ public int getIndex (String uri, String localName)
      * @return The attribute's index, or -1 if none matches.
      * @see org.xml.sax.Attributes#getIndex(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.929 -0500", hash_original_method = "EE3F059D65C038AB1F6CDD7302F8C95C", hash_generated_method = "213BD369DC01DBAC4203C3A74740F3CF")
     
 public int getIndex (String qName)
@@ -222,7 +212,6 @@ public int getIndex (String qName)
     return -1;
     }
 
-
     /**
      * Look up an attribute's type by Namespace-qualified name.
      *
@@ -233,6 +222,7 @@ public int getIndex (String qName)
      *         matching attribute.
      * @see org.xml.sax.Attributes#getType(java.lang.String,java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.931 -0500", hash_original_method = "B693D2A452C34B3F63F46AE3F73B4CD6", hash_generated_method = "0E635E92BE81ABFAE39C45ED6E1AE126")
     
 public String getType (String uri, String localName)
@@ -246,7 +236,6 @@ public String getType (String uri, String localName)
     return null;
     }
 
-
     /**
      * Look up an attribute's type by qualified (prefixed) name.
      *
@@ -255,6 +244,7 @@ public String getType (String uri, String localName)
      *         matching attribute.
      * @see org.xml.sax.Attributes#getType(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.933 -0500", hash_original_method = "EC27C5C1CA5357EEA1E16E770BA20FA2", hash_generated_method = "02AB4DE7FBB7D8E73706EC1ED1F91DE7")
     
 public String getType (String qName)
@@ -268,7 +258,6 @@ public String getType (String qName)
     return null;
     }
 
-
     /**
      * Look up an attribute's value by Namespace-qualified name.
      *
@@ -279,6 +268,7 @@ public String getType (String qName)
      *         matching attribute.
      * @see org.xml.sax.Attributes#getValue(java.lang.String,java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.936 -0500", hash_original_method = "522BBD1273EB28D82A0CFFAB0B22501D", hash_generated_method = "5D3230EED6E41B8C7028094FAB1539DB")
     
 public String getValue (String uri, String localName)
@@ -292,7 +282,6 @@ public String getValue (String uri, String localName)
     return null;
     }
 
-
     /**
      * Look up an attribute's value by qualified (prefixed) name.
      *
@@ -301,6 +290,7 @@ public String getValue (String uri, String localName)
      *         matching attribute.
      * @see org.xml.sax.Attributes#getValue(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.938 -0500", hash_original_method = "4282B0A2744D6B6FFA141D6FBFC4111A", hash_generated_method = "26C05066D63A3AF96C038D1448FD8999")
     
 public String getValue (String qName)
@@ -313,13 +303,10 @@ public String getValue (String qName)
     }
     return null;
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Manipulators.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Clear the attribute list for reuse.
@@ -338,7 +325,6 @@ public void clear ()
     }
     length = 0;
     }
-
 
     /**
      * Copy an entire Attributes object.
@@ -365,7 +351,6 @@ public void setAttributes (Attributes atts)
             }
     }
     }
-
 
     /**
      * Add an attribute to the end of the list.
@@ -398,7 +383,6 @@ public void addAttribute (String uri, String localName, String qName,
     length++;
     }
 
-
     /**
      * Set an attribute in the list.
      *
@@ -420,6 +404,7 @@ public void addAttribute (String uri, String localName, String qName,
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.949 -0500", hash_original_method = "FF1F65C71EB4DEEB1CAA0E424ECEBB91", hash_generated_method = "E75C58011C3AC49D1DB796D4AC6CFEF7")
     
 public void setAttribute (int index, String uri, String localName,
@@ -435,7 +420,6 @@ public void setAttribute (int index, String uri, String localName,
         badIndex(index);
     }
     }
-
 
     /**
      * Remove an attribute from the list.
@@ -466,7 +450,6 @@ public void removeAttribute (int index)
     }
     }
 
-
     /**
      * Set the Namespace URI of a specific attribute.
      *
@@ -477,6 +460,7 @@ public void removeAttribute (int index)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.953 -0500", hash_original_method = "50F4EE4994BD814C254566A0C91A3159", hash_generated_method = "9E5A6592D779AEB45A0A53187A650A27")
     
 public void setURI (int index, String uri)
@@ -488,7 +472,6 @@ public void setURI (int index, String uri)
     }
     }
 
-
     /**
      * Set the local name of a specific attribute.
      *
@@ -499,6 +482,7 @@ public void setURI (int index, String uri)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.956 -0500", hash_original_method = "752FFE3C27BC55D6B126D5816B29C527", hash_generated_method = "8F327B8D22B2655EB2D407571922F410")
     
 public void setLocalName (int index, String localName)
@@ -510,7 +494,6 @@ public void setLocalName (int index, String localName)
     }
     }
 
-
     /**
      * Set the qualified name of a specific attribute.
      *
@@ -521,6 +504,7 @@ public void setLocalName (int index, String localName)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.958 -0500", hash_original_method = "092FB5C36230E9F885C6748AEF4243E2", hash_generated_method = "15C7BA345DCAC8559E44C9DC72DD41DC")
     
 public void setQName (int index, String qName)
@@ -532,7 +516,6 @@ public void setQName (int index, String qName)
     }
     }
 
-
     /**
      * Set the type of a specific attribute.
      *
@@ -542,6 +525,7 @@ public void setQName (int index, String qName)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.960 -0500", hash_original_method = "C2C16165C0A88812FD10B2DCA3F19338", hash_generated_method = "A51849AD3FE121726F738C6D42279E30")
     
 public void setType (int index, String type)
@@ -553,7 +537,6 @@ public void setType (int index, String type)
     }
     }
 
-
     /**
      * Set the value of a specific attribute.
      *
@@ -563,6 +546,7 @@ public void setType (int index, String type)
      *            supplied index does not point to an attribute
      *            in the list.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.962 -0500", hash_original_method = "384311AE4C6374A489D3CC7FA620C40E", hash_generated_method = "0C574FEAF85E06C61F8C9F4F84AF928D")
     
 public void setValue (int index, String value)
@@ -573,13 +557,10 @@ public void setValue (int index, String value)
         badIndex(index);
     }
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Internal methods.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Ensure the internal array's capacity.
@@ -614,7 +595,6 @@ private void ensureCapacity (int n)    {
         data = newData;
     }
 
-
     /**
      * Report a bad array index in a manipulator.
      *
@@ -630,7 +610,6 @@ private void badIndex (int index)
         "Attempt to modify attribute at illegal index: " + index;
     throw new ArrayIndexOutOfBoundsException(msg);
     }
-
     
 }
 

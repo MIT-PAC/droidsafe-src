@@ -28,8 +28,6 @@ import android.net.Uri;
 
 import com.google.android.collect.Maps;
 
-
-
 import java.util.Map;
 
 /**
@@ -79,6 +77,7 @@ public MockContentResolver() {
      * @param provider An instance of {@link android.content.ContentProvider} or one of its
      * subclasses, or null.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.015 -0500", hash_original_method = "FA861A4F4A3AD51C69F90915108FDD56", hash_generated_method = "CF72EC6317D5D2FD71FF445EC7F8AA75")
     
 public void addProvider(String name, ContentProvider provider) {
@@ -98,6 +97,7 @@ public void addProvider(String name, ContentProvider provider) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:45.020 -0500", hash_original_method = "62AC33657D9355178DB566B04AB4A5F7", hash_generated_method = "F2351185E03BC113DE4789A75FEE332B")
     
 @Override

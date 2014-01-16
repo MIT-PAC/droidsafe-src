@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Error extends Throwable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.157 -0500", hash_original_field = "386A00E1E27E51DFD74AF81FF1E097A4", hash_generated_field = "0C6BB99ACF2AC755166A071BFA44B261")
-
 
     private static final long serialVersionUID = 4980196508277280342L;
 
@@ -30,6 +25,8 @@ public Error() {
      * @param detailMessage
      *            the detail message for this error.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.163 -0500", hash_original_method = "C6CAA4A4AF257044103CFF33D3E9FE9A", hash_generated_method = "E3D8165277FA6D50061AAC001F58C19C")
     
 public Error(String detailMessage) {

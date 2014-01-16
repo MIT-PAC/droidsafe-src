@@ -8,14 +8,8 @@ import gov.nist.javax.sip.header.SIPHeader;
 
 import java.text.ParseException;
 
-
-
-
-
-
 public class SIPDuplicateHeaderException extends ParseException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.960 -0500", hash_original_field = "0323EB4E0D255756D236E330F2B2BAFB", hash_generated_field = "1CF6B23B11C04227AE0D306881B8A32C")
-
 
     private static final long serialVersionUID = 8241107266407879291L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.963 -0500", hash_original_field = "EC37AFF31FBF9EE8C49132F07EB0F32A", hash_generated_field = "DEA203A7A81C763AC07A6499FA517016")
@@ -29,12 +23,14 @@ public class SIPDuplicateHeaderException extends ParseException {
 public SIPDuplicateHeaderException(String msg) {
         super(msg, 0);
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.971 -0500", hash_original_method = "33B1FEC769A0D2DAFD3ECF3DA486EB50", hash_generated_method = "00AC7631EA1C96FD896CB35A07F89415")
     
 public SIPMessage getSIPMessage() {
         return sipMessage;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.973 -0500", hash_original_method = "41260058ED6F5F8ADF876F4D655653A8", hash_generated_method = "E56BBB0A45EFA923F47E5B0ABB0E355A")
     
 public SIPHeader getSIPHeader() {

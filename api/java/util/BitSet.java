@@ -13,10 +13,6 @@ import java.nio.LongBuffer;
 
 import libcore.io.SizeOf;
 
-
-
-
-
 public class BitSet implements Serializable, Cloneable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.872 -0500", hash_original_method = "1111A64C23DDCF149E99F7B137B1F799", hash_generated_method = "4E8F03DCF07A0DF56E510F9082D72E34")
@@ -89,7 +85,6 @@ public static BitSet valueOf(ByteBuffer byteBuffer) {
     private static final long serialVersionUID = 7997698588986878753L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.854 -0500", hash_original_field = "DEEECB9191B71C4C2B4B619251057097", hash_generated_field = "BC830E41BA8334B8E98728347067D4B9")
 
-
     private static final long ALL_ONES = ~0L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.857 -0500", hash_original_field = "92F775DED5CE5142CEEF7075890CCFCE", hash_generated_field = "487233F7143B18DBA481DB90C8ACD8D3")
 
@@ -113,6 +108,8 @@ public BitSet() {
      *
      * @throws NegativeArraySizeException if {@code bitCount < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.866 -0500", hash_original_method = "12ED281EDA73627C34F706B1E8393C0F", hash_generated_method = "CCA75D20C978B5242794FB978FDBC8AB")
     
 public BitSet(int bitCount) {
@@ -216,6 +213,8 @@ private void ensureCapacity(int desiredLongCount) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.885 -0500", hash_original_method = "95B4B3127159370AD2A9AF3A9CB73F00", hash_generated_method = "0C9AC5C908057F8168D7843E21A6DF08")
     
 public boolean get(int index) {
@@ -234,6 +233,9 @@ public boolean get(int index) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.888 -0500", hash_original_method = "3D2EC51930163E4AB4304E4F9059CB5F", hash_generated_method = "8185EA4AEDBA7BDE7BA26A57910FD132")
     
 public void set(int index) {
@@ -253,6 +255,8 @@ public void set(int index) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.890 -0500", hash_original_method = "D4755629803CE3870851808B06FB6C2C", hash_generated_method = "E4EF3C3547190AAB68250E8985CC28B6")
     
 public void clear(int index) {
@@ -312,6 +316,7 @@ private void checkRange(int fromIndex, int toIndex) {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.901 -0500", hash_original_method = "5C76FE7FFACA682F8E2DA192826E5D27", hash_generated_method = "BE536BDE2E3E2A89FF121B98ADC0FD25")
     
 public BitSet get(int fromIndex, int toIndex) {
@@ -376,6 +381,7 @@ public BitSet get(int fromIndex, int toIndex) {
      *
      * @throws IndexOutOfBoundsException if {@code index < 0}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.903 -0500", hash_original_method = "74386BE28B96B2445F889AFAD9F88AFA", hash_generated_method = "5075AF5A9DA1126BC989D385BF14419D")
     
 public void set(int index, boolean state) {
@@ -393,6 +399,7 @@ public void set(int index, boolean state) {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.905 -0500", hash_original_method = "9EFB812AD22830556B4E1C754018229D", hash_generated_method = "C684743A61A6FE7B85D098BB851F13D6")
     
 public void set(int fromIndex, int toIndex, boolean state) {
@@ -422,6 +429,7 @@ public void clear() {
      *             if {@code fromIndex} or {@code toIndex} is negative, or if
      *             {@code toIndex} is smaller than {@code fromIndex}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.911 -0500", hash_original_method = "A26503DA159C46EB79782AEABE473F9D", hash_generated_method = "31C8795A099AF909AD3221B0BD5FAA64")
     
 public void set(int fromIndex, int toIndex) {
@@ -620,6 +628,8 @@ public int size() {
      * Returns the number of bits up to and including the highest bit set. This is unrelated to
      * the {@link #size} of the {@code BitSet}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.934 -0500", hash_original_method = "6F3396C6D4F506441C95587742A4BBC3", hash_generated_method = "554038216182ED28D763275A8FC1C890")
     
 public int length() {
@@ -793,6 +803,7 @@ public long[] toLongArray() {
      * this {@code BitSet}.
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:29.972 -0500", hash_original_method = "BCE80AE7073A25796C80405F8FB14636", hash_generated_method = "F8B61DA0FCB0C79B27726A5133092BC9")
     
 public byte[] toByteArray() {

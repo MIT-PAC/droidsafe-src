@@ -9,7 +9,6 @@ import java.nio.charset.Charset;
 
 import libcore.net.UriCodec;
 
-
 public class URLDecoder {
     /**
      * Decodes the argument which is assumed to be encoded in the {@code
@@ -50,6 +49,8 @@ public class URLDecoder {
      * @throws UnsupportedEncodingException
      *             if the specified encoding scheme is invalid.
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:11.561 -0500", hash_original_method = "08FCF3E03A800113A7194CB72BB59DA9", hash_generated_method = "E0C46DB131A739C4A90A1AC029D9124F")
     
 public static String decode(String s, String encoding) throws UnsupportedEncodingException {
@@ -61,7 +62,6 @@ public static String decode(String s, String encoding) throws UnsupportedEncodin
     {
         //Synthesized constructor
     }
-
     
 }
 

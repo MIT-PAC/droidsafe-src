@@ -14,10 +14,6 @@ import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
 import android.net.Uri;
 
-
-
-
-
 public class ImageSpan extends DynamicDrawableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.787 -0500", hash_original_field = "38BA53DD394F85639C99ED8E666FF8FB", hash_generated_field = "F17AF26B1AE93DE0DD2EED2442B6F076")
 
@@ -150,6 +146,7 @@ public ImageSpan(Context context, int resourceId, int verticalAlignment) {
         mResourceId = resourceId;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.837 -0500", hash_original_method = "16DECD9D0B2DB9DD9C51FE274851DFB5", hash_generated_method = "EF0FF21DEC8BC201EE4C65D597D6BECC")
     
 @Override
@@ -187,12 +184,12 @@ public ImageSpan(Context context, int resourceId, int verticalAlignment) {
     /**
      * Returns the source string that was saved during construction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.840 -0500", hash_original_method = "6D9DB226EA21C548410845AA7A7E2DD4", hash_generated_method = "AF9874FA5096A31AE97D22EB7DD799B5")
     
 public String getSource() {
         return mSource;
     }
-
     
 }
 

@@ -7,16 +7,18 @@ import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
 
-
-
 @DSVAModeled
 public class Button extends TextView {
+    @DSComment("Button")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.398 -0500", hash_original_method = "C06F98A3CD878B8C7E36A915748630BD", hash_generated_method = "4E2CDF635C0F1B9708513A26F512504C")
     
 public Button(Context context) {
         this(context, null);
     }
 
+    @DSComment("Button")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:13.401 -0500", hash_original_method = "073102849ED65AD03507E980F361FFAC", hash_generated_method = "4704B79E0E6CBD10A3B73B6A47B1FB82")
     
 public Button(Context context, AttributeSet attrs) {
@@ -28,7 +30,6 @@ public Button(Context context, AttributeSet attrs) {
 public Button(Context context, AttributeSet attrs, int defStyle) {
         super(context, attrs, defStyle);
     }
-
     
 }
 

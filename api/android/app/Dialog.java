@@ -38,17 +38,11 @@ import android.view.accessibility.AccessibilityEvent;
 import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
 
-
-
-
-
-
 public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.991 -0500", hash_original_field = "086DFBC7BC837F5BACC9A967FDC19303", hash_generated_field = "EFC22AB7F88AB7E35035F4D3FC081168")
 
     private static final String TAG = "Dialog";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.030 -0500", hash_original_field = "80638025183CEDD46CF5FDAB60F3AEC2", hash_generated_field = "214E1AE6D64D144B8D5F29D5AF8A5A07")
-
 
     private static final int DISMISS = 0x43;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.033 -0500", hash_original_field = "8169580360B404703429FA3DEEB53EF2", hash_generated_field = "5FAD2102A44A31CE5E01758518DF50F5")
@@ -59,7 +53,6 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     private static final int SHOW = 0x45;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.093 -0500", hash_original_field = "30633E1CCD3D5789E9E5D2CE7F996EE0", hash_generated_field = "A896FC35ACED801674ADC56E7BBC39CB")
 
-
     private static final String DIALOG_SHOWING_TAG = "android:dialogShowing";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.096 -0500", hash_original_field = "BB82A6D34648882F9995CF3123B9C136", hash_generated_field = "7504B7324AA77CD343365D491A1E51D5")
 
@@ -68,7 +61,6 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
 
     private Activity mOwnerActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.995 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
     
      Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:16.997 -0500", hash_original_field = "83A062836C11DD52DC32F4325712F233", hash_generated_field = "83A062836C11DD52DC32F4325712F233")
@@ -88,7 +80,6 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     protected boolean mCancelable = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.008 -0500", hash_original_field = "A42DE90960EF4709AEA396BA4E6C4C4D", hash_generated_field = "B13EDAE25BF4DFF139CD5FAE4D2A0A25")
 
-
     private String mCancelAndDismissTaken;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.010 -0500", hash_original_field = "A7C0594296F9C7AF2F2199F05E3670D8", hash_generated_field = "76C74178C09C090FAEDAAD0E8B0CF7A0")
 
@@ -101,10 +92,8 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     private Message mShowMessage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.016 -0500", hash_original_field = "015168FBB2FF4C181AE52DE804ABA4A4", hash_generated_field = "E9EAFA3F5F183CD7232E888DAC035728")
 
-
     private OnKeyListener mOnKeyListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.019 -0500", hash_original_field = "A8D9F85A3B5CDEF086D3B2DF626FB110", hash_generated_field = "AE31AA5AE388883F7650182C0E3C7933")
-
 
     private boolean mCreated = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.021 -0500", hash_original_field = "7ABFB7C6D38D9AB108E3B918C41F97E6", hash_generated_field = "524E990B3B93C6331366CC3FFD800C87")
@@ -115,30 +104,25 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
     private boolean mCanceled = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.025 -0500", hash_original_field = "348A8677E1E3F1084FC4FBEC2A3E1F5D", hash_generated_field = "A94051227A36AE91A6CE3B31BF1DD3E6")
 
-
     private  Thread mUiThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.028 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "2C33E5889A8CDA732A297DBE7101DB89")
 
     private final Handler mHandler = new Handler();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.037 -0500", hash_original_field = "BF0D726FB6FA34DA0D2571FA4203078C", hash_generated_field = "BE6770D46FDA6621A2256CC938B90138")
 
-
     private Handler mListenersHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.039 -0500", hash_original_field = "B7BD8B12490FD42C33E24469AF6B48C1", hash_generated_field = "941205D807AC4DF9704A65BDAF4756EC")
-
 
     private ActionMode mActionMode;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_field = "90764B7AE877EFFD33D3124ADF85860E", hash_generated_field = "8FA22581A256DB33942DF76F392B65DC")
 
-    private final Runnable mDismissAction = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    private final Runnable mDismissAction = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:17.380 -0400", hash_original_method = "BEE19A9C5B7D04B78955A3FD8170F1CA", hash_generated_method = "4B98EED19700DEC05BCE304A452DAE0F")
         public void run() {
             dismissDialog();
             
-            
         }
-
         
 };
 
@@ -149,6 +133,8 @@ public class Dialog implements DialogInterface, Window.Callback, KeyEvent.Callba
      *                uses the window manager and theme in this context to
      *                present its UI.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.047 -0500", hash_original_method = "BC9D2F22217346E354BF7BFC78A2D0C2", hash_generated_method = "DDBAE1C6053AAADDEEB81EF120BBEB14")
     
 public Dialog(Context context) {
@@ -167,6 +153,8 @@ public Dialog(Context context) {
      * styles.  This theme is applied on top of the current theme in 
      * <var>context</var>.  If 0, the default dialog theme will be used.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.049 -0500", hash_original_method = "E8683E6729C8449A45D83189604DFAE9", hash_generated_method = "98259AAF2CBADD065607919899437452")
     
 public Dialog(Context context, int theme) {
@@ -222,6 +210,9 @@ protected Dialog(Context context, boolean cancelable,
      * 
      * @return Context The Context used by the Dialog.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.059 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "DDB999668EFCAD36DFA58D5D665B592E")
     
 public final Context getContext() {
@@ -233,6 +224,7 @@ public final Context getContext() {
      *
      * @return The ActionBar attached to the dialog or null if no ActionBar is present.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.061 -0500", hash_original_method = "624FE63EC935EE8F7C5CD37954EA0AEA", hash_generated_method = "33D66BF8FD53038F6F7DC0896F5CE635")
     
 public ActionBar getActionBar() {
@@ -245,6 +237,8 @@ public ActionBar getActionBar() {
      * 
      * @param activity The Activity that owns this dialog.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.064 -0500", hash_original_method = "AEEF4868262FBFB181A318E6FDCF1973", hash_generated_method = "0944C07C997A59B39D804809DA1CAB6E")
     
 public final void setOwnerActivity(Activity activity) {
@@ -261,6 +255,7 @@ public final void setOwnerActivity(Activity activity) {
      * 
      * @return The Activity that owns this Dialog.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.066 -0500", hash_original_method = "D833D4731703AD671D7AED3C45CAE756", hash_generated_method = "7B9A6CA941CAE2C4730333AA7BFF9AEB")
     
 public final Activity getOwnerActivity() {
@@ -270,6 +265,8 @@ public final Activity getOwnerActivity() {
     /**
      * @return Whether the dialog is currently showing.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.069 -0500", hash_original_method = "F21458EB6FE36A924A49B40493E1F9F8", hash_generated_method = "C14BB39171429278E5F75B94242D6C8F")
     
 public boolean isShowing() {
@@ -282,6 +279,8 @@ public boolean isShowing() {
      * method to do initialization when the dialog is shown, instead implement
      * that in {@link #onStart}.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.072 -0500", hash_original_method = "079FA2E5CA600A12F7067E75E853F614", hash_generated_method = "11E4DB30ED79C6CDA041FA909FA3550C")
     
 public void show() {
@@ -330,6 +329,8 @@ public void show() {
     /**
      * Hide the dialog, but do not dismiss it.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.074 -0500", hash_original_method = "4A0CDBB7EA97DC376E25E0EE43387CF4", hash_generated_method = "2974FADFA5947469B520D265DBDEB530")
     
 public void hide() {
@@ -344,6 +345,8 @@ public void hide() {
      * method to do cleanup when the dialog is dismissed, instead implement
      * that in {@link #onStop}.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.076 -0500", hash_original_method = "33443011198828BD072B057DA719765A", hash_generated_method = "08FD4653A4C402E0581A74D32401A496")
     
 public void dismiss() {
@@ -419,6 +422,8 @@ void dispatchOnCreate(Bundle savedInstanceState) {
      *     the most recent call to {@link #onSaveInstanceState}, or null if this
      *     is the first time.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.086 -0500", hash_original_method = "B84ED822BC6011EB138B2F6F1D018FE5", hash_generated_method = "77A2481F58483133CF549B870D7F844F")
     
 protected void onCreate(Bundle savedInstanceState) {
@@ -450,6 +455,8 @@ protected void onStop() {
      * state.
      * @return A bundle with the state of the dialog.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.098 -0500", hash_original_method = "2D855197EA1046BD8EC8CA2E991844E1", hash_generated_method = "D37FA2CB6FD8B56BC1A93315A28DB0DC")
     
 public Bundle onSaveInstanceState() {
@@ -471,6 +478,9 @@ public Bundle onSaveInstanceState() {
      * @param savedInstanceState The state of the dialog previously saved by
      *     {@link #onSaveInstanceState()}.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.100 -0500", hash_original_method = "EE5C9B4EF0AAEC8AB3AF49A30F3FD2D3", hash_generated_method = "BEE22EB7A0FCFB296E957648A81A3257")
     
 public void onRestoreInstanceState(Bundle savedInstanceState) {
@@ -494,6 +504,9 @@ public void onRestoreInstanceState(Bundle savedInstanceState) {
      * @return Window The current window, or null if the activity is not
      *         visual.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.103 -0500", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "331876D44C3CE896E388411794B32F6E")
     
 public Window getWindow() {
@@ -509,6 +522,7 @@ public Window getWindow() {
      * @see #getWindow
      * @see android.view.Window#getCurrentFocus
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.105 -0500", hash_original_method = "44957F5326E5A87B91E438DCD3C71232", hash_generated_method = "09E1957E53D3994EE33E68D897FC3623")
     
 public View getCurrentFocus() {
@@ -522,6 +536,8 @@ public View getCurrentFocus() {
      * @param id the identifier of the view to find
      * @return The view if found or null otherwise.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.108 -0500", hash_original_method = "FBC1E026CFF410D335B7C0F9A45B0829", hash_generated_method = "DF935DC9559B6B34CF7AC16F65849BAE")
     
 public View findViewById(int id) {
@@ -534,6 +550,9 @@ public View findViewById(int id) {
      * 
      * @param layoutResID Resource ID to be inflated.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.110 -0500", hash_original_method = "A6A8A3E553FD4B026D939E9AE3AC9985", hash_generated_method = "34F06CEA5B574E84E31D5E5187CA0961")
     
 public void setContentView(int layoutResID) {
@@ -547,6 +566,9 @@ public void setContentView(int layoutResID) {
      * 
      * @param view The desired content to display.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.112 -0500", hash_original_method = "64A976C0ECE03B8AD97B801012E7B71B", hash_generated_method = "8505878B7681F77E00CE8368877013C5")
     
 public void setContentView(View view) {
@@ -585,6 +607,8 @@ public void addContentView(View view, ViewGroup.LayoutParams params) {
      * 
      * @param title The new text to display in the title.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.118 -0500", hash_original_method = "A94A4616451E43B03E2FA5DD3DFB9ED3", hash_generated_method = "B2573109B4DF5AAEEABA79F58E13CFC1")
     
 public void setTitle(CharSequence title) {
@@ -598,6 +622,9 @@ public void setTitle(CharSequence title) {
      *
      * @param titleId the title's text resource identifier
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.121 -0500", hash_original_method = "0D914ED2883864B655DBF2629252A595", hash_generated_method = "7E20A4D7759EB3A7DD02C09CD2AF955C")
     
 public void setTitle(int titleId) {
@@ -1174,7 +1201,6 @@ private ComponentName getAssociatedActivity() {
         return activity == null ? null : activity.getComponentName();
     }
 
-
     /**
      * Request that key events come to this dialog. Use this if your
      * dialog has no views with focus, but the dialog still wants
@@ -1200,6 +1226,8 @@ public void takeKeyEvents(boolean get) {
      * 
      * @see android.view.Window#requestFeature
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.222 -0500", hash_original_method = "3CDF417FCD4F33EAE6CFCF0FB6D583A8", hash_generated_method = "881FBD2BDEED0015ADB64FC143BF0105")
     
 public final boolean requestWindowFeature(int featureId) {
@@ -1210,6 +1238,7 @@ public final boolean requestWindowFeature(int featureId) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawableResource}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.224 -0500", hash_original_method = "E7AFD534CB1DF8060614ED36111B2407", hash_generated_method = "77462D4BD7A21F99BAD57C59CACE9BF5")
     
 public final void setFeatureDrawableResource(int featureId, int resId) {
@@ -1230,6 +1259,7 @@ public final void setFeatureDrawableUri(int featureId, Uri uri) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawable(int, Drawable)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.229 -0500", hash_original_method = "D3FA0A5870730A6F3C959B16FC004BCD", hash_generated_method = "845589EF459B40468B119030F6839003")
     
 public final void setFeatureDrawable(int featureId, Drawable drawable) {
@@ -1240,12 +1270,14 @@ public final void setFeatureDrawable(int featureId, Drawable drawable) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawableAlpha}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.231 -0500", hash_original_method = "4D2A81FF8C2C83F47460DEB3120C04CB", hash_generated_method = "42B6BECB117F777AFB6F11B60A38D749")
     
 public final void setFeatureDrawableAlpha(int featureId, int alpha) {
         getWindow().setFeatureDrawableAlpha(featureId, alpha);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.233 -0500", hash_original_method = "2F200E491A9F2CDC38C392035D21ED48", hash_generated_method = "3A16D6A7B6ED88109371E767B4893157")
     
 public LayoutInflater getLayoutInflater() {
@@ -1256,6 +1288,8 @@ public LayoutInflater getLayoutInflater() {
      * Sets whether this dialog is cancelable with the
      * {@link KeyEvent#KEYCODE_BACK BACK} key.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.235 -0500", hash_original_method = "C80CDCB014C953B0801E95FEB1706C5F", hash_generated_method = "5952C6CEE01EE86227B86B0B3007B0FF")
     
 public void setCancelable(boolean flag) {
@@ -1270,6 +1304,9 @@ public void setCancelable(boolean flag) {
      * @param cancel Whether the dialog should be canceled when touched outside
      *            the window.
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.238 -0500", hash_original_method = "BD7DFECDBEA3F81451B9076CEFC17564", hash_generated_method = "FFDB8DA5023282815789B2E8846CC855")
     
 public void setCanceledOnTouchOutside(boolean cancel) {
@@ -1284,6 +1321,8 @@ public void setCanceledOnTouchOutside(boolean cancel) {
      * Cancel the dialog.  This is essentially the same as calling {@link #dismiss()}, but it will
      * also call your {@link DialogInterface.OnCancelListener} (if registered).
      */
+    @DSComment("GUI, no security concern")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.240 -0500", hash_original_method = "4DD1D51C0E16D279CD855F2D66BA21A6", hash_generated_method = "66AEF5625C67A64B920D22182D77DF83")
     
 public void cancel() {
@@ -1348,7 +1387,6 @@ public void setOnDismissListener(final OnDismissListener listener) {
             mDismissMessage = null;
         }
     }
-
     
     private static final class ListenersHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.264 -0500", hash_original_field = "DC7483C81552C4D76DF4759BE53BA423", hash_generated_field = "436872B12AE04B06D18A845CB0719BC2")
@@ -1377,7 +1415,6 @@ public ListenersHandler(Dialog dialog) {
                     break;
             }
         }
-
         
     }
 
@@ -1429,6 +1466,7 @@ public boolean takeCancelAndDismissListeners(String msg, final OnCancelListener 
      * @see Activity#setVolumeControlStream(int)
      * @see #setOwnerActivity(Activity)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.257 -0500", hash_original_method = "70729F29EB37CCBEC739A5986214C32F", hash_generated_method = "3084C39BB70D3B6F524464E54969131C")
     
 public final void setVolumeControlStream(int streamType) {
@@ -1438,6 +1476,7 @@ public final void setVolumeControlStream(int streamType) {
     /**
      * @see Activity#getVolumeControlStream()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.259 -0500", hash_original_method = "03A841DC7655848901B3CE2C14084AAE", hash_generated_method = "0A136881DA0A667DEE6F55CE255E857C")
     
 public final int getVolumeControlStream() {

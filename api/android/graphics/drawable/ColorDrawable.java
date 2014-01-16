@@ -17,10 +17,6 @@ import android.graphics.Paint;
 import android.graphics.PixelFormat;
 import android.util.AttributeSet;
 
-
-
-
-
 public class ColorDrawable extends Drawable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.360 -0500", hash_original_field = "A405993723FCD61240CC265F058545AB", hash_generated_field = "FD7347C3EC0F5B546B9EA73CCF0BC637")
 
@@ -56,6 +52,7 @@ private ColorDrawable(ColorState state) {
         mState = new ColorState(state);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.372 -0500", hash_original_method = "CCB9F44E02BA506AC13DF4A6CD3FA45F", hash_generated_method = "79A1C10E5A48365D8B9978537D00AB08")
     
 @Override
@@ -78,6 +75,7 @@ private ColorDrawable(ColorState state) {
      *
      * @return int The color to draw.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.377 -0500", hash_original_method = "12CB188AAA441342DA340C647E5F4CB8", hash_generated_method = "B0AA492B9D8833FB6DBD1E2EE33781FD")
     
 public int getColor() {
@@ -104,6 +102,7 @@ public void setColor(int color) {
      *
      * @return A value between 0 and 255.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.381 -0500", hash_original_method = "5CD88AD7EDD59028127023DB7F8765AB", hash_generated_method = "60FD9929B15A1D916703D0B6F5F8B120")
     
 public int getAlpha() {
@@ -115,6 +114,7 @@ public int getAlpha() {
      *
      * @param alpha The alpha value to set, between 0 and 255.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.383 -0500", hash_original_method = "459E9D088A35A829F6316FAAD661A311", hash_generated_method = "76FD3359CB81794BC431052CE211C471")
     
 public void setAlpha(int alpha) {
@@ -133,11 +133,13 @@ public void setAlpha(int alpha) {
      *
      * @param colorFilter Ignore.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.385 -0500", hash_original_method = "A617079D3CF57FB47B0EF9E1F05040EF", hash_generated_method = "4F96E60EF79CC62633E15FD9F37728CA")
     
 public void setColorFilter(ColorFilter colorFilter) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.387 -0500", hash_original_method = "B5DEC9C614B60B544E3B9333F2490C35", hash_generated_method = "24344A1D81C73B8A7DBBD6DCA997AFDC")
     
 public int getOpacity() {
@@ -173,7 +175,6 @@ public int getOpacity() {
         mState.mChangingConfigurations = getChangingConfigurations();
         return mState;
     }
-
     
     final static class ColorState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.395 -0500", hash_original_field = "5AE93BCE3A5CA0AC335BC45A61DD8BC4", hash_generated_field = "5AE93BCE3A5CA0AC335BC45A61DD8BC4")
@@ -209,17 +210,15 @@ ColorState(ColorState state) {
             return new ColorDrawable(this);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.409 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override
         public int getChangingConfigurations() {
             return mChangingConfigurations;
         }
-
         
     }
-
-
     
 }
 

@@ -9,11 +9,6 @@ import java.util.Hashtable;
 
 import javax.crypto.Cipher;
 
-
-
-
-
-
 public class CipherSuite {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.239 -0500", hash_original_method = "3EDAD5A5AC099D703E8FCE466C4E49F5", hash_generated_method = "00A2549BB4245DF3C178A5F6BBDAE142")
     
@@ -55,6 +50,7 @@ private static void registerSupportedCipherSuites(int offset, CipherSuite[] ciph
     /**
      * Returns CipherSuite by name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.244 -0500", hash_original_method = "19655685C35742CC7B9539D784924513", hash_generated_method = "2270898CC731B7396F8B9F2C7674A779")
     
 public static CipherSuite getByName(String name) {
@@ -65,6 +61,7 @@ public static CipherSuite getByName(String name) {
      * Returns CipherSuite based on TLS CipherSuite code
      * @see <a href="http://www.ietf.org/rfc/rfc2246.txt">TLS 1.0 spec., A.5. The CipherSuite</a>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.247 -0500", hash_original_method = "9A699819E1F6B25CCCE0C9197119752B", hash_generated_method = "8DC1B1D9BD512A041DB98B8AD064BDA4")
     
 public static CipherSuite getByCode(byte b1, byte b2) {
@@ -82,6 +79,7 @@ public static CipherSuite getByCode(byte b1, byte b2) {
      * Returns CipherSuite based on V2CipherSpec code
      * as described in TLS 1.0 spec., E. Backward Compatibility With SSL
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.250 -0500", hash_original_method = "7FC29106569D1D54FC46639E4695B58C", hash_generated_method = "291DCC66DA72234C5DDB531A58986FB5")
     
 public static CipherSuite getByCode(byte b1, byte b2, byte b3) {
@@ -117,6 +115,7 @@ private static CipherSuite getCipherSuiteByCode(int i1, int i2, int i3) {
      * Returns array of supported CipherSuites
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.262 -0500", hash_original_method = "479A55B470634F94D9EDADBBEBCC7F31", hash_generated_method = "E83B3795BEB1C1D0E8EA1C6AADBBED99")
     
 public static CipherSuite[] getSupported() {
@@ -127,6 +126,7 @@ public static CipherSuite[] getSupported() {
      * Returns array of supported cipher suites names
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.264 -0500", hash_original_method = "18FDF3B6EC05378F84422E748DCE12AC", hash_generated_method = "002FCAB1E7DDDC1B0B1B77303F0C3FFE")
     
 public static String[] getSupportedCipherSuiteNames() {
@@ -139,6 +139,7 @@ public static String[] getSupportedCipherSuiteNames() {
      * message for use with X509KeyManager.chooseClientAlias or
      * X509ExtendedKeyManager.chooseEngineClientAlias.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.321 -0500", hash_original_method = "87CAB1CF5F8CE8DF70B5B1746E78341B", hash_generated_method = "88E475DA09EADDE33A86758BC3867D59")
     
 public static String getClientKeyType(byte keyType) {
@@ -382,42 +383,35 @@ public static String getClientKeyType(byte keyType) {
     static final byte[] CODE_TLS_ECDH_anon_WITH_AES_256_CBC_SHA = { (byte) 0xc0, 0x19};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.088 -0500", hash_original_field = "A7B66C598CCAC455DFA7D86680F6DBF4", hash_generated_field = "4EC2DAA3C01937C6CDA5F9177EF51C83")
 
-
     static final CipherSuite SSL_NULL_WITH_NULL_NULL = new CipherSuite(
             "SSL_NULL_WITH_NULL_NULL", true, 0, null, null, null,
             CODE_SSL_NULL_WITH_NULL_NULL);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.090 -0500", hash_original_field = "4F2A4C13001D67ADFD1A649247A7528E", hash_generated_field = "D7C3DA33765CBCB9FD34C9AB9549F186")
-
 
     static final CipherSuite SSL_RSA_WITH_NULL_MD5 = new CipherSuite(
             "SSL_RSA_WITH_NULL_MD5", true, KEY_EXCHANGE_RSA, "RSA", null, "MD5",
             CODE_SSL_RSA_WITH_NULL_MD5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.092 -0500", hash_original_field = "579D80CE417162CADC52D411AB36F41E", hash_generated_field = "AFFBA3F15943DDC119CF36F05988EA26")
 
-
     static final CipherSuite SSL_RSA_WITH_NULL_SHA = new CipherSuite(
             "SSL_RSA_WITH_NULL_SHA", true, KEY_EXCHANGE_RSA, "RSA", null, "SHA",
             CODE_SSL_RSA_WITH_NULL_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.094 -0500", hash_original_field = "FDF7184EC7F8533ABA21C08A4072EE68", hash_generated_field = "19AA66EC2BD1A1DA3E429C4B80F879DE")
-
 
     static final CipherSuite SSL_RSA_EXPORT_WITH_RC4_40_MD5 = new CipherSuite(
             "SSL_RSA_EXPORT_WITH_RC4_40_MD5", true, KEY_EXCHANGE_RSA_EXPORT,
             "RSA", "RC4_40", "MD5", CODE_SSL_RSA_EXPORT_WITH_RC4_40_MD5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.097 -0500", hash_original_field = "C9678D75BAF79D3C7FD5E889AD22204A", hash_generated_field = "8177CEF281F978E2D98457E1A4DCFB50")
 
-
     static final CipherSuite SSL_RSA_WITH_RC4_128_MD5 = new CipherSuite(
             "SSL_RSA_WITH_RC4_128_MD5", false, KEY_EXCHANGE_RSA, "RSA", "RC4_128",
             "MD5", CODE_SSL_RSA_WITH_RC4_128_MD5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.099 -0500", hash_original_field = "6C69D6A5AEB29BB28F52FD08F5D8E29C", hash_generated_field = "2AAA5288D81DCBC2B0F8F241DC6DD0D8")
 
-
     static final CipherSuite SSL_RSA_WITH_RC4_128_SHA = new CipherSuite(
             "SSL_RSA_WITH_RC4_128_SHA", false, KEY_EXCHANGE_RSA, "RSA", "RC4_128",
             "SHA", CODE_SSL_RSA_WITH_RC4_128_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.102 -0500", hash_original_field = "ACE8DC9ACF5CAF8D479807F46EBF77EF", hash_generated_field = "E8A8CA45BF6254408A32D77635496D75")
-
 
     static final CipherSuite SSL_RSA_EXPORT_WITH_RC2_CBC_40_MD5 = new CipherSuite(
             "SSL_RSA_EXPORT_WITH_RC2_CBC_40_MD5", true, KEY_EXCHANGE_RSA_EXPORT,
@@ -434,12 +428,10 @@ public static String getClientKeyType(byte keyType) {
             "RSA", "DES40_CBC", "SHA", CODE_SSL_RSA_EXPORT_WITH_DES40_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.107 -0500", hash_original_field = "F9CA122961E34DE7804C8FAA8E1B3F02", hash_generated_field = "9CE80D4E1B086789B2805DE088E34D37")
 
-
     static final CipherSuite SSL_RSA_WITH_DES_CBC_SHA = new CipherSuite(
             "SSL_RSA_WITH_DES_CBC_SHA", false, KEY_EXCHANGE_RSA, "RSA", "DES_CBC",
             "SHA", CODE_SSL_RSA_WITH_DES_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.109 -0500", hash_original_field = "5FB30F48AB357B4FB08F5B2C34E694E9", hash_generated_field = "48F8F23E83304B9714D84D5554A4AD64")
-
 
     static final CipherSuite SSL_RSA_WITH_3DES_EDE_CBC_SHA = new CipherSuite(
             "SSL_RSA_WITH_3DES_EDE_CBC_SHA", false, KEY_EXCHANGE_RSA,
@@ -479,18 +471,15 @@ public static String getClientKeyType(byte keyType) {
             CODE_SSL_DHE_DSS_EXPORT_WITH_DES40_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.114 -0500", hash_original_field = "12115A8D7119666429179B6A666D6F16", hash_generated_field = "A006CDB683B4FF81C5EF2657F07711FF")
 
-
     static final CipherSuite SSL_DHE_DSS_WITH_DES_CBC_SHA = new CipherSuite(
             "SSL_DHE_DSS_WITH_DES_CBC_SHA", false, KEY_EXCHANGE_DHE_DSS,
             "DSA", "DES_CBC", "SHA", CODE_SSL_DHE_DSS_WITH_DES_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.117 -0500", hash_original_field = "9C35BFB4C6EAE25C2E245D649916B48A", hash_generated_field = "AC0A68BB30CD8FFEE1D4D12D5F65E998")
 
-
     static final CipherSuite SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA = new CipherSuite(
             "SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA", false, KEY_EXCHANGE_DHE_DSS,
             "DSA", "3DES_EDE_CBC", "SHA", CODE_SSL_DHE_DSS_WITH_3DES_EDE_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.119 -0500", hash_original_field = "63D99F380E48F7077FE9B7D34996D2DC", hash_generated_field = "1A773B5A4356A9F11C2CFD4FCF6A525B")
-
 
     static final CipherSuite SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA = new CipherSuite(
             "SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA", true,
@@ -498,18 +487,15 @@ public static String getClientKeyType(byte keyType) {
             CODE_SSL_DHE_RSA_EXPORT_WITH_DES40_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.121 -0500", hash_original_field = "646766D75A33590A75A981F748017896", hash_generated_field = "F8D69EE1E19B7EC1754EC6F246A2FF26")
 
-
     static final CipherSuite SSL_DHE_RSA_WITH_DES_CBC_SHA = new CipherSuite(
             "SSL_DHE_RSA_WITH_DES_CBC_SHA", false, KEY_EXCHANGE_DHE_RSA,
             "RSA", "DES_CBC", "SHA", CODE_SSL_DHE_RSA_WITH_DES_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.124 -0500", hash_original_field = "F30C74AEA36E317B21C69C2DC64FC245", hash_generated_field = "1515AF1779BD2D635C0DF4A11FE13EF3")
 
-
     static final CipherSuite SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA = new CipherSuite(
             "SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA", false, KEY_EXCHANGE_DHE_RSA,
             "RSA", "3DES_EDE_CBC", "SHA", CODE_SSL_DHE_RSA_WITH_3DES_EDE_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.127 -0500", hash_original_field = "F497BDE958D6AA61CA25EBCD674CA093", hash_generated_field = "40BA565115737BE8643741DB1A5C43E5")
-
 
     static final CipherSuite SSL_DH_anon_EXPORT_WITH_RC4_40_MD5 = new CipherSuite(
             "SSL_DH_anon_EXPORT_WITH_RC4_40_MD5", true,
@@ -517,12 +503,10 @@ public static String getClientKeyType(byte keyType) {
             CODE_SSL_DH_anon_EXPORT_WITH_RC4_40_MD5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.129 -0500", hash_original_field = "47CFCFAD6AB4D14FE27DE5408C39CD9F", hash_generated_field = "2A8F3A4351538FDD152D4881A0234A65")
 
-
     static final CipherSuite SSL_DH_anon_WITH_RC4_128_MD5 = new CipherSuite(
             "SSL_DH_anon_WITH_RC4_128_MD5", false, KEY_EXCHANGE_DH_anon,
             "DH", "RC4_128", "MD5", CODE_SSL_DH_anon_WITH_RC4_128_MD5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.132 -0500", hash_original_field = "DFE42B27597463C66E0034E7B9433AF9", hash_generated_field = "AC640F2EDA8C3EDB1185C3C26B42D220")
-
 
     static final CipherSuite SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA = new CipherSuite(
             "SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA", true,
@@ -530,18 +514,15 @@ public static String getClientKeyType(byte keyType) {
             CODE_SSL_DH_anon_EXPORT_WITH_DES40_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.134 -0500", hash_original_field = "42792DDE7AEA34D804EA253B538EC13C", hash_generated_field = "D9345C52E7FCB7B8BCCC41A4FD2CFEEA")
 
-
     static final CipherSuite SSL_DH_anon_WITH_DES_CBC_SHA = new CipherSuite(
             "SSL_DH_anon_WITH_DES_CBC_SHA", false, KEY_EXCHANGE_DH_anon,
             "DH", "DES_CBC", "SHA", CODE_SSL_DH_anon_WITH_DES_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.136 -0500", hash_original_field = "8ABED314D889197CCB7FD203AD70EF85", hash_generated_field = "6EAE1711619CAE9262488BECCBD8DA00")
 
-
     static final CipherSuite SSL_DH_anon_WITH_3DES_EDE_CBC_SHA = new CipherSuite(
             "SSL_DH_anon_WITH_3DES_EDE_CBC_SHA", false, KEY_EXCHANGE_DH_anon,
             "DH", "3DES_EDE_CBC", "SHA", CODE_SSL_DH_anon_WITH_3DES_EDE_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.139 -0500", hash_original_field = "EF4BF9127549CCB23DD14A8E0C14F38F", hash_generated_field = "C8755D57EFCD4FF34CC1A40F4E92A2E0")
-
 
     static final CipherSuite TLS_RSA_WITH_AES_128_CBC_SHA
             = new CipherSuite("TLS_RSA_WITH_AES_128_CBC_SHA",
@@ -622,7 +603,6 @@ public static String getClientKeyType(byte keyType) {
                               "SHA",
                               CODE_TLS_DH_anon_WITH_AES_256_CBC_SHA);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.159 -0500", hash_original_field = "E4B7673742814C070893CAE59F491BA9", hash_generated_field = "0FD043C3983298F2736EED01FE6F669F")
-
 
     static final CipherSuite TLS_ECDH_ECDSA_WITH_NULL_SHA
             = new CipherSuite("TLS_ECDH_ECDSA_WITH_NULL_SHA",
@@ -1022,7 +1002,6 @@ public static String getClientKeyType(byte keyType) {
     static  CipherSuite[] DEFAULT_CIPHER_SUITES;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.286 -0500", hash_original_field = "E61FF3ECC46030AC921C9408991022A1", hash_generated_field = "77F19AD70EC1D24EA7A28598362432C7")
 
-
     static final String KEY_TYPE_RSA = "RSA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.288 -0500", hash_original_field = "5EA64D92C9435DB6CA916DBBF2A6BE8E", hash_generated_field = "630B9C0F0D3AEF35E7DA4AFECEA78C9E")
 
@@ -1064,7 +1043,6 @@ public static String getClientKeyType(byte keyType) {
 
     static final byte TLS_CT_ECDSA_FIXED_ECDH = 66;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.323 -0500", hash_original_field = "CDD897EDC28A584D78690798D9636044", hash_generated_field = "75BBB8F06193906FA068195C91CC982F")
-
 
     private static final String AUTH_TYPE_RSA = "RSA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.326 -0500", hash_original_field = "FD8DAE36303392795DF18AD444971C95", hash_generated_field = "8590A0B84340C915C8FC0330943D3EE4")
@@ -1323,6 +1301,7 @@ public boolean isAnonymous() {
      * Returns cipher suite name
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.266 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -1333,6 +1312,7 @@ public String getName() {
      * Returns cipher suite code as byte array
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.268 -0500", hash_original_method = "914B5E2C4522C674B906D3A88195AF81", hash_generated_method = "5F87F09CB55E38B11E6016977A9B359C")
     
 public byte[] toBytes() {
@@ -1353,6 +1333,7 @@ public byte[] toBytes() {
      * Returns cipher algorithm name
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.273 -0500", hash_original_method = "7D208669D7EDDA60D0FD344147D9AAD6", hash_generated_method = "0A6164B58082A57A3ABDC96B5A3D6A05")
     
 public String getBulkEncryptionAlgorithm() {
@@ -1363,6 +1344,7 @@ public String getBulkEncryptionAlgorithm() {
      * Returns cipher block size
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.275 -0500", hash_original_method = "E03DB665D968D86F8F6FEC0B3CE97B35", hash_generated_method = "0EBFE41219CD77147AD588766739AE74")
     
 public int getBlockSize() {
@@ -1373,6 +1355,7 @@ public int getBlockSize() {
      * Returns MAC algorithm name
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.277 -0500", hash_original_method = "58CBEDAB9C64FBF2F046D83798145AD9", hash_generated_method = "988AB1B385746C012DBEE3337D88BAA0")
     
 public String getHmacName() {
@@ -1383,6 +1366,7 @@ public String getHmacName() {
      * Returns hash algorithm name
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.279 -0500", hash_original_method = "D391A3C678BDD6A89326831F4F051E38", hash_generated_method = "F698A4A2F59D452DCB8AB0A27F8728C0")
     
 public String getHashName() {
@@ -1393,6 +1377,7 @@ public String getHashName() {
      * Returns hash size
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.281 -0500", hash_original_method = "5CA4B8D3CBACCFD69EE0CC1B72A2F92B", hash_generated_method = "7BD894F81B4BA43F1F95928CC354189D")
     
 public int getMACLength() {
@@ -1414,6 +1399,7 @@ public boolean isExportable() {
      * X509KeyManager.chooseServerAlias or
      * X509ExtendedKeyManager.chooseEngineServerAlias.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.302 -0500", hash_original_method = "936867E36B0EB6E36D3CC4941D208DF5", hash_generated_method = "6E33392349706AF17F02181FEB4ABEB8")
     
 public String getServerKeyType() {
@@ -1444,6 +1430,7 @@ public String getServerKeyType() {
     /**
      * Returns auth type constant suitable for calling X509TrustManager.checkServerTrusted.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:16.349 -0500", hash_original_method = "0C964AFB9ED36BE0A1810A2A5E5F4637", hash_generated_method = "DDDD7CD2AB550EC2D02BFB6CD8CF6C0D")
     
 public String getAuthType(boolean emphemeral) {

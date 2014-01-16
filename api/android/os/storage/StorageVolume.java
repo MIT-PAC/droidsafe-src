@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class StorageVolume implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.730 -0500", hash_original_field = "38E83BBE5F5664A7E7AD15D9A4DC648C", hash_generated_field = "2B4345C5FAC03D85D6460319FBA645D9")
 
@@ -44,7 +40,6 @@ public StorageVolume[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.712 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "A0075230E546209E3EDB95F698912FDA")
-
 
     private final String mPath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.716 -0500", hash_original_field = "6FC53B81BF2A7EC21138D42F363D7B9A", hash_generated_field = "D58E2E2E369193E8B6C54168B334B477")
@@ -103,6 +98,7 @@ private StorageVolume(String path, String description, boolean removable,
      *
      * @return the mount path
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.738 -0500", hash_original_method = "F177C5B02553C0E0327F321BDDCEAFD5", hash_generated_method = "737CD89E9B5A7ABC855CEA2E5A098D56")
     
 public String getPath() {
@@ -148,6 +144,7 @@ public boolean isEmulated() {
      *
      * @return MTP storage ID
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.746 -0500", hash_original_method = "D91614A87EF069B6CB0CB580F9424F2A", hash_generated_method = "BE799C52A2343EA3BAB3B52148FF7170")
     
 public int getStorageId() {
@@ -157,6 +154,7 @@ public int getStorageId() {
     /**
      * Do not call this unless you are MountService
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.749 -0500", hash_original_method = "DF85DF3474DF218FD90EC56A476BBB47", hash_generated_method = "750669F8B869F828EF1CAD4735C87533")
     
 public void setStorageId(int index) {
@@ -177,6 +175,7 @@ public void setStorageId(int index) {
      *
      * @return MTP reserve space
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.751 -0500", hash_original_method = "AD5CC5267CED7BD79E23E2B3D995596D", hash_generated_method = "CF3C1925F85F93939C615ABA8073DC7E")
     
 public int getMtpReserveSpace() {
@@ -199,6 +198,7 @@ public boolean allowMassStorage() {
      *
      * @return maximum file size
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.756 -0500", hash_original_method = "F3A7583351778AC1576078A1D9F37684", hash_generated_method = "22342D3197EC7B5656813A600C785D5C")
     
 public long getMaxFileSize() {
@@ -239,6 +239,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.775 -0500", hash_original_method = "39BDB7739C8FE16566F7ABF501D9091E", hash_generated_method = "464CAA15AF9A0E03CEAF74C57057DE88")
     
 public void writeToParcel(Parcel parcel, int flags) {

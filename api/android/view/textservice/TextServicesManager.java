@@ -16,14 +16,13 @@ import android.view.textservice.SpellCheckerSession.SpellCheckerSessionListener;
 
 import com.android.internal.textservice.ITextServicesManager;
 
-
-
 public final class TextServicesManager {
 
     /**
      * Retrieve the global TextServicesManager instance, creating it if it doesn't already exist.
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.512 -0500", hash_original_method = "818A9F7557AFA3E51F48AB4545B2EDDB", hash_generated_method = "7A23ECBE53D73EDFB2A1F08003C262F0")
     
 public static TextServicesManager getInstance() {
@@ -43,13 +42,11 @@ public static TextServicesManager getInstance() {
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.504 -0500", hash_original_field = "A82911E658B2C72E4F8802885050882D", hash_generated_field = "C8FA124301EED2431C4D22EB09223E94")
 
-
     private static TextServicesManager sInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.506 -0500", hash_original_field = "95CDD9B4B410618635F97CABFD44149C", hash_generated_field = "BCB4F2C99AD5684E437C6C7FDD215756")
 
     private static ITextServicesManager sService;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.056 -0400", hash_original_method = "378570C283DD42AD8C379B99FE38C5D3", hash_generated_method = "6D8E7E5AC37BE0D0EB3E290F31648406")
     private  TextServicesManager() {
         /*
@@ -150,6 +147,7 @@ public SpellCheckerSession newSpellCheckerSession(Bundle bundle, Locale locale,
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.518 -0500", hash_original_method = "996F778F72629C35F59A814BE7E587F6", hash_generated_method = "E251415AB5E626FBDF7980F548B14732")
     
 public SpellCheckerInfo[] getEnabledSpellCheckers() {
@@ -168,6 +166,7 @@ public SpellCheckerInfo[] getEnabledSpellCheckers() {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.521 -0500", hash_original_method = "A6F1D379519B22786C64C08B94869872", hash_generated_method = "67E1A73C9BB08CF84E611330E81B471E")
     
 public SpellCheckerInfo getCurrentSpellChecker() {
@@ -182,6 +181,7 @@ public SpellCheckerInfo getCurrentSpellChecker() {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.523 -0500", hash_original_method = "4E93A8413D33E514F2933033BBA9E9C6", hash_generated_method = "C22F703830145D2CEBC318C7C98D180F")
     
 public void setCurrentSpellChecker(SpellCheckerInfo sci) {
@@ -198,6 +198,7 @@ public void setCurrentSpellChecker(SpellCheckerInfo sci) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.526 -0500", hash_original_method = "A09B5B882B337AC1ACCDB12AE24B1D1D", hash_generated_method = "36DE492E4C2B12A218D9F69B818CB76C")
     
 public SpellCheckerSubtype getCurrentSpellCheckerSubtype(
@@ -214,6 +215,7 @@ public SpellCheckerSubtype getCurrentSpellCheckerSubtype(
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.528 -0500", hash_original_method = "CBCFCEE50800407BA5D76453EB5E1B5E", hash_generated_method = "0FCAD81A9A40E76F63E30EB4A07EA36C")
     
 public void setSpellCheckerSubtype(SpellCheckerSubtype subtype) {
@@ -233,6 +235,7 @@ public void setSpellCheckerSubtype(SpellCheckerSubtype subtype) {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.531 -0500", hash_original_method = "61F4D400D4BC8B241A007E9AEF488847", hash_generated_method = "3E27938A1621CB00828E5E8511D5EE35")
     
 public void setSpellCheckerEnabled(boolean enabled) {

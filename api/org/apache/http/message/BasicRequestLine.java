@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.RequestLine;
 
-
-
-
-
-
 public class BasicRequestLine implements RequestLine, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.760 -0500", hash_original_field = "13562D9F74FFA1CC7E8C143377A3FB6C", hash_generated_field = "FB524F3C45513827A3D0C2FF3CDC9338")
-
 
     private  ProtocolVersion protoversion;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.762 -0500", hash_original_field = "842C170402669AC7A74293BBBFD3BC5D", hash_generated_field = "F42F15CDE806BBAD7F26F7952D68FCE2")
@@ -47,18 +41,21 @@ public BasicRequestLine(final String method,
         this.protoversion = version;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.770 -0500", hash_original_method = "691C5451C67574E660997BC2056A5F23", hash_generated_method = "7472B5026828D1D5EB47237766CBDA14")
     
 public String getMethod() {
         return this.method;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.772 -0500", hash_original_method = "96B8CBD1E6801618947DE1A14DEAA69F", hash_generated_method = "55024CD90D2ECAD5CDA12A5A8B3254BE")
     
 public ProtocolVersion getProtocolVersion() {
         return this.protoversion;
     }
 
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.774 -0500", hash_original_method = "638E54DC35C58AE1ED57DF94E885B4C7", hash_generated_method = "8857A4DB81E344D0C9514C8654CCFB43")
     
 public String getUri() {
@@ -78,7 +75,6 @@ public String toString() {
 public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     
 }
 

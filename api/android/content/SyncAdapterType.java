@@ -8,10 +8,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class SyncAdapterType implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.516 -0500", hash_original_method = "BE9D5A7300F00B3E167DEF043BAF0785", hash_generated_method = "66A2B5AAD58478E08B2058881DDCEBDB")
@@ -19,7 +15,6 @@ public class SyncAdapterType implements Parcelable {
 public static SyncAdapterType newKey(String authority, String accountType) {
         return new SyncAdapterType(authority, accountType);
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.915 -0400", hash_original_field = "C0271090D095B41DEE511966A620F157", hash_generated_field = "D799AD48CC34F9F1CF0974DC61C7D14C")
 
@@ -194,6 +189,7 @@ public boolean isAlwaysSyncable() {
      * @return The activity to use to invoke this SyncAdapter's settings activity.
      * May be null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:42.514 -0500", hash_original_method = "255B2528E2817C3729D95130236DCF63", hash_generated_method = "2B2C7E20B6DD46CE353FB91528567605")
     
 public String getSettingsActivity() {

@@ -8,18 +8,13 @@ import java.io.FileDescriptor;
 
 import android.os.ParcelFileDescriptor;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class UsbDeviceConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.069 -0500", hash_original_field = "0C663A0453FFCA73CBAF02CA4F25527B", hash_generated_field = "4D3562CD13C810BE38422BD8716B9B6F")
 
-
     private static final String TAG = "UsbDeviceConnection";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.073 -0500", hash_original_field = "96CF9DCB0700F4F17C2B20B3728B381A", hash_generated_field = "70928665C1B6A300CDA8094BC826C018")
-
 
     private  UsbDevice mDevice;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.076 -0500", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
@@ -61,6 +56,7 @@ public void close() {
      *
      * @return the native file descriptor
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.086 -0500", hash_original_method = "60A97EE86A4E90019B43CF20671154F6", hash_generated_method = "D1AFDC3E572AC08C800BDCCFD464C4B5")
     
 public int getFileDescriptor() {
@@ -74,6 +70,7 @@ public int getFileDescriptor() {
      *
      * @return raw USB descriptors
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.088 -0500", hash_original_method = "C038534F3EE98DEDE0B2FBB8841C177D", hash_generated_method = "E506C17EE9482F4A7FEE53DA20E123B8")
     
 public byte[] getRawDescriptors() {
@@ -175,6 +172,7 @@ public UsbRequest requestWait() {
      *
      * @return the device serial number
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.107 -0500", hash_original_method = "4F2DA9C2985F5A00889FEF441508C01D", hash_generated_method = "F9BAFD5263D02D037A5EBA14281ADB38")
     
 public String getSerial() {
@@ -252,17 +250,12 @@ public String getSerial() {
     	addTaint(timeout);
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.960 -0400", hash_original_method = "88959A018189FD60E12A8554B278AF72", hash_generated_method = "3CB7E68BF025980C89AAE00C7D02E8F5")
     private UsbRequest native_request_wait() {
     	return new UsbRequest();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:16.960 -0400", hash_original_method = "7798A12605DD56CE252D35CCA7400682", hash_generated_method = "ABC78903D368E3A02775041EDC3A80F9")
     private String native_get_serial() {
     	return DSUtils.UNKNOWN_STRING;

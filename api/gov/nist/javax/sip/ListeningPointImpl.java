@@ -23,15 +23,7 @@ import javax.sip.address.SipURI;
 import javax.sip.header.ContactHeader;
 import javax.sip.header.ViaHeader;
 
-
-
-
-
-
 public class ListeningPointImpl implements javax.sip.ListeningPoint, gov.nist.javax.sip.ListeningPointExt {
-
-
-
 
     /**
      * Construct a key to refer to this structure from the SIP stack
@@ -53,11 +45,8 @@ public static String makeKey(String host, int port, String transport) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.705 -0500", hash_original_field = "852FD1938B4FCA59C0635E9D670A8D0B", hash_generated_field = "B1CF55BB145913C3C7A70130704FABEE")
 
-
-
     protected String transport;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.707 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "5A948EF636511EF149269A68FE278AED")
-
 
     int port;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.709 -0500", hash_original_field = "E4941A6D5D11F7097BE49F2BB415489B", hash_generated_field = "9E12CC740EB4D514DEBB557E6BE577E6")
@@ -91,6 +80,7 @@ protected ListeningPointImpl(
      * Get the key for this strucut
      * @return  get the host
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.720 -0500", hash_original_method = "7B5051E336F9DA4D6C5FA2A2C5289297", hash_generated_method = "D09B47B9C7C7D97856A2D296D9052899")
     
 protected String getKey() {
@@ -130,8 +120,6 @@ public Object clone() {
         return lip;
     }
 
-
-
     /**
      * Gets the port of the ListeningPoint. The default port of a ListeningPoint
      * is dependent on the scheme and transport.  For example:
@@ -145,6 +133,7 @@ public Object clone() {
      *
      * @return port of ListeningPoint
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.732 -0500", hash_original_method = "9099990124C6005A8102A71CBA5F7A65", hash_generated_method = "4F204B5ED45BB548CF28AFE7C57565EB")
     
 public int getPort() {
@@ -156,6 +145,7 @@ public int getPort() {
      *
      * @return transport of ListeningPoint
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.735 -0500", hash_original_method = "2F70021F53E5650B4EE9A2F614549153", hash_generated_method = "A5A7D93E396D80685398EF17B6B67763")
     
 public String getTransport() {
@@ -167,6 +157,7 @@ public String getTransport() {
      *
      * @return the provider.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.737 -0500", hash_original_method = "AAD8E25C27C8721BC0F29D01F90B95A6", hash_generated_method = "821A72F7EE986C8E1FD4966D903C9078")
     
 public SipProviderImpl getProvider() {
@@ -176,6 +167,7 @@ public SipProviderImpl getProvider() {
     /* (non-Javadoc)
      * @see javax.sip.ListeningPoint#getIPAddress()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.739 -0500", hash_original_method = "C8FDA759281B0540F1A01A50A8584E49", hash_generated_method = "8B1F4D14E2CD6874D8D55B931387805D")
     
 public String getIPAddress() {
@@ -183,11 +175,10 @@ public String getIPAddress() {
         return this.messageProcessor.getIpAddress().getHostAddress();
     }
 
-
-
     /* (non-Javadoc)
      * @see javax.sip.ListeningPoint#setSentBy(java.lang.String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.741 -0500", hash_original_method = "C988C19E7315430B0087298232CBBC55", hash_generated_method = "3CCBE29524C9A3DA0F3FAC24EB19BCCC")
     
 public void setSentBy(String sentBy) throws ParseException {
@@ -198,6 +189,7 @@ public void setSentBy(String sentBy) throws ParseException {
     /* (non-Javadoc)
      * @see javax.sip.ListeningPoint#getSentBy()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.743 -0500", hash_original_method = "0F3CBDA4EFE78BE80FA7EB48D9C543C3", hash_generated_method = "A1EEE7F0166B76121B736334C10CFFC5")
     
 public String getSentBy() {
@@ -210,12 +202,14 @@ public String getSentBy() {
 public boolean isSentBySet() {
         return this.messageProcessor.isSentBySet();
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.749 -0500", hash_original_method = "98E0FDFAA28F1C7110EA27D9E468A7B1", hash_generated_method = "9097EC0BA2C457452C5627F4DE507B5C")
     
 public Via getViaHeader() {
         return this.messageProcessor.getViaHeader();
      }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.751 -0500", hash_original_method = "B369445AF3BB32430CE637694E76219B", hash_generated_method = "4B0F0A9B7F50969861BE18EA82A66E74")
     
 public MessageProcessor getMessageProcessor() {
@@ -244,7 +238,7 @@ public ContactHeader createContactHeader() {
         }
     }
 
-
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.756 -0500", hash_original_method = "5402C8EE79A7BEF74C3B072587BA8FD1", hash_generated_method = "3B731FBDEBF9C67A94F3246A288D24D6")
     
 public void sendHeartbeat(String ipAddress, int port) throws IOException {
@@ -258,14 +252,12 @@ public void sendHeartbeat(String ipAddress, int port) throws IOException {
         messageChannel.sendMessage(siprequest);
 
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.759 -0500", hash_original_method = "463489B426580FC1D58885BA81FC3706", hash_generated_method = "C421309420FE90F81E0D183CBADD17D7")
     
 public ViaHeader createViaHeader() {
            return this.getViaHeader();
     }
-
     
 }
 

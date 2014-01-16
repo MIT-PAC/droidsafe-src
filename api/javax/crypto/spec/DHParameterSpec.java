@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import java.math.BigInteger;
 import java.security.spec.AlgorithmParameterSpec;
 
-
-
-
-
-
 public class DHParameterSpec implements AlgorithmParameterSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.101 -0500", hash_original_field = "36A2346422FAB1A0484079E02615C501", hash_generated_field = "0E1745DDBCB8E3192EFA76F952746D75")
-
 
     private  BigInteger p;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.103 -0500", hash_original_field = "12F45ECD0F75F4702B861E1DEFDA99B3", hash_generated_field = "5E2139CE4CF026F837A4AD7B2D5946CD")
@@ -66,6 +60,7 @@ public DHParameterSpec(BigInteger p, BigInteger g, int l) {
      *
      * @return the prime modulus.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.114 -0500", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "FA39994F0F567A64C38613032682F7D7")
     
 public BigInteger getP() {
@@ -77,6 +72,7 @@ public BigInteger getP() {
      *
      * @return the base generator.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.116 -0500", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "FBDB40C3059FF68266098ECF54AD2FB6")
     
 public BigInteger getG() {
@@ -88,12 +84,12 @@ public BigInteger getG() {
      *
      * @return the size (in bits) of the random exponent.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.118 -0500", hash_original_method = "657EAD8DC5C96D72590F45704DE7ABCD", hash_generated_method = "F51E52098F0714102B2F5862DD458995")
     
 public int getL() {
         return l;
     }
-
     
 }
 

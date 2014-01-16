@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class MissingResourceException extends RuntimeException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.663 -0500", hash_original_field = "F9CDA1B5AA02E56E897904F77B01B427", hash_generated_field = "31A19D95C3D0097D3CB81CFACA273934")
-
 
     private static final long serialVersionUID = -4876345176062000401L;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.313 -0400", hash_original_field = "6F66E878C62DB60568A3487869695820", hash_generated_field = "CA6BE7A479C5F3E68F3687DBA3A4A48F")
@@ -49,6 +44,7 @@ public MissingResourceException(String detailMessage, String className,
      *
      * @return the class name of the resource bundle.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.671 -0500", hash_original_method = "8415940D3A1E5651F883E391EC68DA41", hash_generated_method = "887A92DB5095808C84C58B108DAB1C1A")
     
 public String getClassName() {
@@ -61,6 +57,7 @@ public String getClassName() {
      *
      * @return the name of the missing resource.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:47.673 -0500", hash_original_method = "C39C8C9D5BC81C2FE68967748762171F", hash_generated_method = "864E9B692EEA007ED2B72251C0EF6A1F")
     
 public String getKey() {

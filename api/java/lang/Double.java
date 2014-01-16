@@ -5,21 +5,18 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Double extends Number implements Comparable<Double> {
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static long doubleToLongBits(double value) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static long doubleToRawLongBits(double value) {
         return DSUtils.UNKNOWN_LONG;
     }
@@ -32,6 +29,8 @@ public final class Double extends Number implements Comparable<Double> {
      * @return {@code true} if the value of {@code d} is positive or negative
      *         infinity; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.654 -0500", hash_original_method = "A3EC509E9519032EDFEF225EA8C949FF", hash_generated_method = "B11887FC3B6A3BAD273423365EA6BE37")
     
 public static boolean isInfinite(double d) {
@@ -47,14 +46,16 @@ public static boolean isInfinite(double d) {
      * @return {@code true} if {@code d} is <em>Not-a-Number</em>;
      *         {@code false} if it is a (potentially infinite) double number.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.659 -0500", hash_original_method = "A570339C802CFE5901F930FCAA1CB116", hash_generated_method = "7F8B0D286435B57612BBCABE86B8E8D3")
     
 public static boolean isNaN(double d) {
         return d != d;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static double longBitsToDouble(long bits) {
         return DSUtils.UNKNOWN_DOUBLE;
     }
@@ -68,6 +69,8 @@ public static boolean isNaN(double d) {
      * @throws NumberFormatException
      *             if {@code string} cannot be parsed as a double value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.668 -0500", hash_original_method = "25293AE596CADCBBB53C06F5AC0CC1E4", hash_generated_method = "605DFB2105E41AF97FEBDA947F8A9F93")
     
 public static double parseDouble(String string) throws NumberFormatException {
@@ -99,6 +102,8 @@ public static String toString(double d) {
      *             if {@code string} cannot be parsed as a double value.
      * @see #parseDouble(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.678 -0500", hash_original_method = "56E955925627A96DCDE69BCFADC27964", hash_generated_method = "8A6643F14BD489EA94E2349ED39852F6")
     
 public static Double valueOf(String string) throws NumberFormatException {
@@ -121,6 +126,8 @@ public static Double valueOf(String string) throws NumberFormatException {
      *         0 if {@code double1} and {@code double2} are equal; a positive
      *         value if {@code double1} is greater than {@code double2}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.681 -0500", hash_original_method = "16F4C4AC195BAC3086DB19C14344D828", hash_generated_method = "F607633F4BB8D1C812C817D81F436495")
     
 public static int compare(double double1, double double2) {
@@ -161,6 +168,8 @@ public static int compare(double double1, double double2) {
      * @return a {@code Double} instance containing {@code d}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.683 -0500", hash_original_method = "B9C3A93ED4B2A822BD31B71C2B61BA78", hash_generated_method = "7F9C2DDB7260719502823F2D7E2B9678")
     
 public static Double valueOf(double d) {
@@ -265,7 +274,6 @@ public static String toHexString(double d) {
     static final int EXPONENT_BIAS = 1023;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.572 -0500", hash_original_field = "001714363BB57C7EAACCCB37B3EE5CB0", hash_generated_field = "000E54F3BA29FBD16878C04E2FD284BE")
 
-
     static final int EXPONENT_BITS = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.575 -0500", hash_original_field = "633D3941CFCD2CB07CBC370B19286CA6", hash_generated_field = "B967A752EB7E74E3CC0A175C277EF3D5")
 
@@ -274,7 +282,6 @@ public static String toHexString(double d) {
 
     static final int NON_MANTISSA_BITS = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.580 -0500", hash_original_field = "D05945263B9CC3ABC6A4CAC5B08D5200", hash_generated_field = "9BA6940C2D6091320867626804E0CB6D")
-
 
     static final long SIGN_MASK     = 0x8000000000000000L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.582 -0500", hash_original_field = "26E4C7D338C97FEBD85162696B037ABA", hash_generated_field = "EBAB46050B41988DC2C5DC9FB4EC64CB")
@@ -285,7 +292,6 @@ public static String toHexString(double d) {
     static final long MANTISSA_MASK = 0x000fffffffffffffL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.587 -0500", hash_original_field = "C5A2B2057A03DEDC57BD654BB16EFF95", hash_generated_field = "2742CA755AF68701043B73DE036C7EDA")
 
-
     private static final long serialVersionUID = -9172774392245257468L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.592 -0500", hash_original_field = "4201E1E7B051C0E2134CCEFEA994B330", hash_generated_field = "D7B4F6E8BA984FBCFAED1ACB27E780C2")
 
@@ -294,7 +300,6 @@ public static String toHexString(double d) {
 
     public static final double MIN_VALUE = 5e-324;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.597 -0500", hash_original_field = "6985004810874D53150DE7FB5CBC9076", hash_generated_field = "5AF44A589AC0950641B2A15FBD377731")
-
 
     /**
      * Constant for the Not-a-Number (NaN) value of the {@code double} type.
@@ -357,6 +362,8 @@ public Double(double value) {
      *             if {@code string} cannot be parsed as a double value.
      * @see #parseDouble(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.623 -0500", hash_original_method = "C14717042677DE8EFE6605DB4D5CF298", hash_generated_method = "343BD09059FB57D9991D877A88D8B7ED")
     
 public Double(String string) throws NumberFormatException {
@@ -401,6 +408,8 @@ public int compareTo(Double object) {
      *
      * @return this object's primitive value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.639 -0500", hash_original_method = "3D3B0AF18CC8081B7BB4A7DC662E1F07", hash_generated_method = "BF89BE4469CF5E691A2C43432BBB5D3E")
     
 @Override
@@ -429,6 +438,8 @@ public int compareTo(Double object) {
                 (doubleToLongBits(this.value) == doubleToLongBits(((Double) object).value));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.643 -0500", hash_original_method = "118855AC112B739ED1B5D8D57CEDA105", hash_generated_method = "0B5E80262680677099E066818539AB62")
     
 @Override
@@ -444,6 +455,8 @@ public int compareTo(Double object) {
         return (int) (v ^ (v >>> 32));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.648 -0500", hash_original_method = "138584002FB2DE9D0E5B5F8DAEDB3270", hash_generated_method = "9019C920956BC6564E381830D24ADC2B")
     
 @Override
@@ -457,6 +470,8 @@ public int compareTo(Double object) {
      * @return {@code true} if the value of this double is positive or negative
      *         infinity; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.652 -0500", hash_original_method = "82C3193F23F6D7770C948A8F860700C8", hash_generated_method = "ECFDA70CD333AB189AE460B59374A49D")
     
 public boolean isInfinite() {
@@ -469,6 +484,8 @@ public boolean isInfinite() {
      * @return {@code true} if this double is <em>Not-a-Number</em>;
      *         {@code false} if it is a (potentially infinite) double number.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.656 -0500", hash_original_method = "9E74C322CF79FFEBE378AFAB98D56D96", hash_generated_method = "AD43DA09B8F6BB6058A22755BDBA989F")
     
 public boolean isNaN() {
@@ -489,6 +506,8 @@ public boolean isNaN() {
         return (short) value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:33.673 -0500", hash_original_method = "CC4885D60C7843DD614D40299C63463C", hash_generated_method = "EE1984E84915156C0AAA3C8B1CFFD86F")
     
 @Override

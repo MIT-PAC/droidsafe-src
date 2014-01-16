@@ -35,7 +35,6 @@ public static IObbActionListener asInterface(IBinder obj) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.829 -0500", hash_original_field = "BF0F37D07317086440192C1E6917874B", hash_generated_field = "CF631EDA0B331B24DF35259CA6EC0C91")
 
-
         static final int TRANSACTION_onObbResult = (IBinder.FIRST_CALL_TRANSACTION + 0);
 
         /** Construct the stub at attach it to the interface. */
@@ -45,6 +44,7 @@ public Stub() {
             this.attachInterface(this, DESCRIPTOR);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.809 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
         
 public IBinder asBinder() {
@@ -68,6 +68,7 @@ public IBinder asBinder() {
                 return mRemote;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.822 -0500", hash_original_method = "93FCABDFBB24901E6298DD02204BB971", hash_generated_method = "CF508C7C95AE462F1450A60346FD4C18")
             
 public String getInterfaceDescriptor() {
@@ -81,6 +82,7 @@ public String getInterfaceDescriptor() {
              *            on
              * @param returnCode status of the operation
              */
+            @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:33.824 -0500", hash_original_method = "D8ACC621C10B2C8FB7C7E89B47A47912", hash_generated_method = "18221EBF374BC69CFA4761400A8FFDD9")
             
 public void onObbResult(String filename, int nonce, int status)
@@ -128,7 +130,6 @@ public void onObbResult(String filename, int nonce, int status)
             return super.onTransact(code, data, reply, flags);
         }
     }
-
     
     public void onObbResult(String filename, int nonce, int status) throws RemoteException;
 }

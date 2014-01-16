@@ -16,14 +16,8 @@ import javax.sip.header.ContentDispositionHeader;
 import javax.sip.header.ContentTypeHeader;
 import javax.sip.header.Header;
 
-
-
-
-
-
 public class MultipartMimeContentImpl implements MultipartMimeContent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.210 -0500", hash_original_field = "B753BF064F1AAAC492A2DC8B8E945F72", hash_generated_field = "9E4348587CD55FA4C6062879941EE6EC")
-
 
     public static String BOUNDARY = "boundary";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.202 -0500", hash_original_field = "F9DD76EC9604308FE65CF18537F96FBD", hash_generated_field = "FD0E7DDD1AF822BB0A779B8E067816D9")
@@ -31,10 +25,8 @@ public class MultipartMimeContentImpl implements MultipartMimeContent {
     private List<Content> contentList = new LinkedList<Content>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.204 -0500", hash_original_field = "23F314B2CFF312300C9F929A45254C2F", hash_generated_field = "CE73E72EF711E1E06248C7F0F370E9AA")
 
-
     private ContentTypeHeader multipartMimeContentTypeHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.207 -0500", hash_original_field = "5F126137DAFC04B9EEE2456C3083A67E", hash_generated_field = "ED35814FA47AF2DBDA1D10B34E2A8ED6")
-
 
     private String boundary;
 
@@ -65,6 +57,7 @@ public boolean add(Content content) {
      * 
      * @see gov.nist.javax.sip.message.MultipartMimeContentExt#getContentTypeHeader()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.217 -0500", hash_original_method = "4590DD0C77A768FED1E8ACE7CF0313E8", hash_generated_method = "F7078A53193E3585492F31F72681D34E")
     
 public ContentTypeHeader getContentTypeHeader() {
@@ -111,7 +104,6 @@ public void createContentList(String body) throws ParseException {
             }
 
             String[] fragments = body.split("--" + delimiter + "\r\n");
-
 
             for (String nextPart : fragments) {
                 // NOTE - we are not hanlding line folding for the sip header here.
@@ -168,6 +160,7 @@ public void createContentList(String body) throws ParseException {
      * @see gov.nist.javax.sip.message.MultipartMimeContentExt#getContentByType(java.lang.String,
      *      java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.226 -0500", hash_original_method = "3C7197D83A3DC33713AACEA2691D16BA", hash_generated_method = "889A4D50C4375D50C2CAC7AF6E4880E0")
     
 public Content getContentByType(String contentType, String contentSubtype) {
@@ -198,13 +191,14 @@ public void addContent(Content content) {
         this.add(content);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.231 -0500", hash_original_method = "DFB35A5106E2AD2A9D629D81C13D382C", hash_generated_method = "21198AD56E87C68151DECA5CFF9CC573")
     
 public Iterator<Content> getContents() {
         return this.contentList.iterator();
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:37.234 -0500", hash_original_method = "B0C4727628A80D66AB97702342F94FFA", hash_generated_method = "E211D52C5206E29CE9992FAD9FC50119")
     
 public int getContentCount() {

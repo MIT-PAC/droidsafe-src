@@ -5,14 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Element {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.764 -0500", hash_original_field = "48FC5DA7D9A4C1BF369BCA91A9EC45AD", hash_generated_field = "3F58E4656692FD6FEAD0053A32B05324")
-
-
 
 	private ElementType theType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.766 -0500", hash_original_field = "04C9AEBC1E4947AFBDB44B7BD1940B45", hash_generated_field = "B0A2FBEB8F242E836C1CA731A6AB041F")
@@ -161,7 +155,6 @@ public boolean canContain(Element other) {
 		return theType.canContain(other.theType);
 		}
 
-
 	/**
 	Set an attribute and its value into this element.
 	@param name The attribute name (Qname)
@@ -169,7 +162,8 @@ public boolean canContain(Element other) {
 	@param value The attribute value
 	*/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.803 -0500", hash_original_method = "D84E1EF02E49BC2153CE4E53757510D3", hash_generated_method = "7B76AD311063C5CDD549D2B8CD04EBE0")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:44.803 -0500", hash_original_method = "D84E1EF02E49BC2153CE4E53757510D3", hash_generated_method = "7B76AD311063C5CDD549D2B8CD04EBE0")
     
 public void setAttribute(String name, String type, String value) {
 		theType.setAttribute(theAtts, name, type, value);
@@ -232,7 +226,6 @@ public void preclose() {
 public boolean isPreclosed() {
 		return preclosed;
 		}
-
     
 }
 

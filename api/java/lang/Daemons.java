@@ -12,10 +12,6 @@ import java.util.concurrent.TimeoutException;
 import libcore.util.EmptyArray;
 import dalvik.system.VMRuntime;
 
-
-
-
-
 public final class Daemons { // 10 seconds
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.197 -0500", hash_original_method = "96A953FF88701F6481E522FC8FA197D7", hash_generated_method = "2395E1790BBF4FC36EFA3ECFEA4E2E25")
@@ -36,14 +32,12 @@ public static void stop() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.191 -0500", hash_original_field = "5FC7F9392DE523EE635F94A39030F4C7", hash_generated_field = "E32D593DEDB2FDC7FE0DFB7474352DBA")
 
     private static final int NANOS_PER_MILLI = 1000000;
-
     
     private static abstract class Daemon implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.203 -0500", hash_original_field = "AB87C4F6E5547EBD7483F34732EA576D", hash_generated_field = "3B3F78C77D023C4AC9933B933AD9AFEC")
 
         private Thread thread;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.802 -0400", hash_original_method = "E956A3D7836B08A486122F00857B9C56", hash_generated_method = "E956A3D7836B08A486122F00857B9C56")
         public Daemon ()
         {
@@ -113,23 +107,20 @@ public void stop() {
          * Returns the current stack trace of the thread, or an empty stack trace
          * if the thread is not currently running.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.219 -0500", hash_original_method = "71D841FC79E6E388CBA40EED62E5BA4E", hash_generated_method = "105C2CE68BDD769E05A16DDB9C0E0A27")
         
 public synchronized StackTraceElement[] getStackTrace() {
             return thread != null ? thread.getStackTrace() : EmptyArray.STACK_TRACE_ELEMENT;
         }
-
         
     }
-
-
     
     private static class ReferenceQueueDaemon extends Daemon {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.225 -0500", hash_original_field = "B0F27D05C2E84AEB476CFD29B14CB3E0", hash_generated_field = "C275CE9279DB140FF5DBBF91CA644933")
 
         private static final ReferenceQueueDaemon INSTANCE = new ReferenceQueueDaemon();
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.824 -0400", hash_original_method = "CD631EFADB4142F64B0E6D0342597BAC", hash_generated_method = "CD631EFADB4142F64B0E6D0342597BAC")
         public ReferenceQueueDaemon ()
         {
@@ -175,8 +166,6 @@ private void enqueue(Reference<?> list) {
             }
         }
     }
-
-
     
     private static class FinalizerDaemon extends Daemon {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.238 -0500", hash_original_field = "06A9C4E4F8ECA95CA5CB0653FBCBED36", hash_generated_field = "420894E7A6688AFF48001D45B60EC731")
@@ -192,7 +181,6 @@ private void enqueue(Reference<?> list) {
 
         private volatile long finalizingStartedNanos;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.825 -0400", hash_original_method = "4CAA35D6DE3500E449D08F039EDA298E", hash_generated_method = "4CAA35D6DE3500E449D08F039EDA298E")
         public FinalizerDaemon ()
         {
@@ -230,15 +218,12 @@ private void enqueue(Reference<?> list) {
             }
         }
     }
-
-
     
     private static class FinalizerWatchdogDaemon extends Daemon {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:17.257 -0500", hash_original_field = "E7302A9C7CAB59DD513C6917B373DF25", hash_generated_field = "6FC68EE84E3EFE1A4A91B7713085F78F")
 
         private static final FinalizerWatchdogDaemon INSTANCE = new FinalizerWatchdogDaemon();
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:46.826 -0400", hash_original_method = "703968011540BAA8269C6E22457DD3B1", hash_generated_method = "703968011540BAA8269C6E22457DD3B1")
         public FinalizerWatchdogDaemon ()
         {

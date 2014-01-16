@@ -25,32 +25,23 @@ import com.android.internal.telephony.DriverCall;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.TelephonyProperties;
 
-
-
-
-
-
 public final class CdmaCallTracker extends CallTracker {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.664 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
     static final String LOG_TAG = "CDMA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.666 -0500", hash_original_field = "C0E75EBA000DEBDBEC9BEF2F1AD73912", hash_generated_field = "A7B75AEFB3EF53E7FDD36572121557CF")
 
-
     private static final boolean REPEAT_POLLING = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.669 -0500", hash_original_field = "83EC3F78C66627469DFE7766D8BC2B63", hash_generated_field = "5105F543721DFE6C6FC4422BBF3A00CF")
 
-
     private static final boolean DBG_POLL = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.672 -0500", hash_original_field = "8687A18135CDCE52A057265B20651AFF", hash_generated_field = "3D5BB3B6A3F2D8A508B231AB505DE10A")
-
 
     static final int MAX_CONNECTIONS = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.674 -0500", hash_original_field = "7ED5FB0B00FB656A373A1FE348FE2FBB", hash_generated_field = "50E5124FACE9F1EADB0A251AF8BCB55D")
 
     static final int MAX_CONNECTIONS_PER_CALL = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.676 -0500", hash_original_field = "6A689CEE5AFC02EE7871982A34436F33", hash_generated_field = "8778DA83769DA6B7C7A4F54B9D0B49D2")
-
 
     //***** Instance Variables
 
@@ -70,7 +61,6 @@ public final class CdmaCallTracker extends CallTracker {
         = new ArrayList<CdmaConnection>(MAX_CONNECTIONS);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.687 -0500", hash_original_field = "4BBDA18FC07012B464497A7036E9A64A", hash_generated_field = "4BBDA18FC07012B464497A7036E9A64A")
 
-
     CdmaCall ringingCall = new CdmaCall(this);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.689 -0500", hash_original_field = "0CD0B75B3735614AF877856265E67CC2", hash_generated_field = "0CD0B75B3735614AF877856265E67CC2")
 
@@ -79,7 +69,6 @@ public final class CdmaCallTracker extends CallTracker {
 
     CdmaCall backgroundCall = new CdmaCall(this);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.695 -0500", hash_original_field = "2DB35562B0BF54F2C81F690DFDF249EA", hash_generated_field = "2DB35562B0BF54F2C81F690DFDF249EA")
-
 
     CdmaConnection pendingMO;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.697 -0500", hash_original_field = "02C3359C89BD9A3EFAD64C6344B66724", hash_generated_field = "02C3359C89BD9A3EFAD64C6344B66724")
@@ -96,10 +85,8 @@ public final class CdmaCallTracker extends CallTracker {
     CDMAPhone phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.705 -0500", hash_original_field = "9D75FD49CDE6D2073BBD4C557B93C735", hash_generated_field = "9D75FD49CDE6D2073BBD4C557B93C735")
 
-
     boolean desiredMute = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.707 -0500", hash_original_field = "27174E0D68E2766EF4C51C4E944D5755", hash_generated_field = "27174E0D68E2766EF4C51C4E944D5755")
-
 
     int pendingCallClirMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.710 -0500", hash_original_field = "40E232559DDE23609D651E7B63760E6C", hash_generated_field = "40E232559DDE23609D651E7B63760E6C")
@@ -107,12 +94,9 @@ public final class CdmaCallTracker extends CallTracker {
     Phone.State state = Phone.State.IDLE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.712 -0500", hash_original_field = "42A7493F9C995CAD89B391816B271217", hash_generated_field = "B4B1C0C1B427A1CEF2D1461193F5A876")
 
-
     private boolean mIsEcmTimerCanceled = false;
 
 //    boolean needsPoll;
-
-
 
     //***** Events
 
@@ -226,6 +210,7 @@ private void
     /**
      * clirMode is one of the CLIR_ constants
      */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.739 -0500", hash_original_method = "FEC4E6BC08FD10A2C518984DAAD113C7", hash_generated_method = "1588BDF5754148DC78081AD24F221FCD")
     
 Connection
@@ -294,7 +279,7 @@ Connection
         return pendingMO;
     }
 
-
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.742 -0500", hash_original_method = "916DB4F3BDDE26A491E1178653223CEE", hash_generated_method = "916DB4F3BDDE26A491E1178653223CEE")
     
 Connection
@@ -515,8 +500,6 @@ private void
             pendingOperations = 0;
         }
     }
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.780 -0500", hash_original_method = "E4BBEB9CBA55B093A717754E6D30B945", hash_generated_method = "142EF9AA83C1CCB33DCBB91CE86B2AB7")
     
@@ -874,13 +857,13 @@ void
         cm.setMute(desiredMute, null);
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.797 -0500", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "11907D6A9C6D8F23B8C0FECA1425D0D1")
+    /*package*/ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.797 -0500", hash_original_method = "11907D6A9C6D8F23B8C0FECA1425D0D1", hash_generated_method = "11907D6A9C6D8F23B8C0FECA1425D0D1")
     
 boolean
     getMute() {
         return desiredMute;
     }
-
 
     //***** Called from CdmaCall
 
@@ -969,6 +952,7 @@ void hangupAllConnections(CdmaCall call) throws CallStateException{
     }
 
     /* package */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:58.812 -0500", hash_original_method = "DA3BA6D275DE18892F45915EBAE08DC8", hash_generated_method = "DA3BA6D275DE18892F45915EBAE08DC8")
     
 CdmaConnection getConnectionByIndex(CdmaCall call, int index)

@@ -8,10 +8,6 @@ import java.util.ArrayList;
 
 import android.animation.Keyframe.IntKeyframe;
 
-
-
-
-
 class IntKeyframeSet extends KeyframeSet {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.280 -0500", hash_original_field = "D7C570C1A8BC4A63589CBEB595FA32A4", hash_generated_field = "CCD07B82BF514AF2BA45DC7821C1FB70")
 
@@ -32,6 +28,7 @@ public IntKeyframeSet(IntKeyframe... keyframes) {
         super(keyframes);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.292 -0500", hash_original_method = "9A8CA9046BD131DAA0650B91E65A3FB9", hash_generated_method = "24F6A53CF731B7867C333CCC5DA206D6")
     
 @Override
@@ -53,6 +50,7 @@ public IntKeyframeSet(IntKeyframe... keyframes) {
         return newSet;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:31.298 -0500", hash_original_method = "7B6E2369DEAB44F75E4F137274BA59BB", hash_generated_method = "566B4FE64534C71386D22372B7BA3C5A")
     
 public int getIntValue(float fraction) {
@@ -126,7 +124,6 @@ public int getIntValue(float fraction) {
         // shouldn't get here
         return ((Number)mKeyframes.get(mNumKeyframes - 1).getValue()).intValue();
     }
-
     
 }
 

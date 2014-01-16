@@ -16,10 +16,6 @@ import android.view.KeyCharacterMap;
 import android.view.KeyEvent;
 import android.view.View;
 
-
-
-
-
 public class QwertyKeyListener extends BaseKeyListener {
 
     /**
@@ -43,6 +39,7 @@ public static QwertyKeyListener getInstance(boolean autoText, Capitalize cap) {
      * Disables auto-capitalization, auto-text and long-press initiated on-screen
      * character pickers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.512 -0500", hash_original_method = "28036565923896767649070FCEAD63E9", hash_generated_method = "0B8DEE85B85265AA92FB2339489EC029")
     
 public static QwertyKeyListener getInstanceForFullKeyboard() {
@@ -96,11 +93,9 @@ private static String toTitleCase(String src) {
     private static QwertyKeyListener sFullKeyboardInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.532 -0500", hash_original_field = "CC50BA795F37D7C55E085B5638CF7E91", hash_generated_field = "874843BFD3C716ACB6504590F54D3C63")
 
-
     private static SparseArray<String> PICKER_SETS =
                         new SparseArray<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.494 -0500", hash_original_field = "3B5E34829A96BDB56A96B72761630C9F", hash_generated_field = "BEDDE5D3B36AFDA96122F6739A399D24")
-
 
     private Capitalize mAutoCap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.497 -0500", hash_original_field = "CD7A811405529AA08CC45A606C53B887", hash_generated_field = "C101024EE87082E36D969AEA4683627E")
@@ -124,16 +119,15 @@ public QwertyKeyListener(Capitalize cap, boolean autoText) {
         this(cap, autoText, false);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.515 -0500", hash_original_method = "77B762D33BA1CBC4DB995B196C907EDB", hash_generated_method = "514B58733981F5CADFDD316D670DD46D")
     
 public int getInputType() {
         return makeTextContentType(mAutoCap, mAutoText);
     }
-
     
     static class Replaced implements NoCopySpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.547 -0500", hash_original_field = "FE2DC1C4E7D46875FA268CEDC057D0E8", hash_generated_field = "6CB0C9E6186F94D00B15A6B38EEADB93")
-
 
         private char[] mText;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.544 -0500", hash_original_method = "573A0A1D2F4880FCE39DFE2EE4242AA3", hash_generated_method = "CCF842D94F2C1571A5886311B3A7F89C")
@@ -141,7 +135,6 @@ public int getInputType() {
 public Replaced(char[] text) {
             mText = text;
         }
-
         
     }
     

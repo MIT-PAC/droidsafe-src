@@ -11,10 +11,6 @@ import java.util.concurrent.TimeUnit;
 
 import sun.misc.Unsafe;
 
-
-
-
-
 public abstract class AbstractQueuedSynchronizer extends AbstractOwnableSynchronizer implements java.io.Serializable {
 
     /**
@@ -89,10 +85,8 @@ private static final boolean compareAndSetNext(Node node,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.054 -0500", hash_original_field = "1F308781B69CA144EE964F3D13D1B8FC", hash_generated_field = "D0E32D39585FA118FF323BF7B8487515")
 
-
     private static final long serialVersionUID = 7373984972572414691L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.121 -0500", hash_original_field = "31EF0FD32B41579996230BE158DB7639", hash_generated_field = "F44F319CC44F92ACA1B0BF97F5A1CABF")
-
 
     /**
      * The number of nanoseconds for which it is faster to spin
@@ -142,6 +136,7 @@ protected AbstractQueuedSynchronizer() { }
      * This operation has memory semantics of a <tt>volatile</tt> read.
      * @return current state value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.113 -0500", hash_original_method = "15A8F8E5739EB2961628EAE8F68BF29F", hash_generated_method = "7BD0EF4590675A6D229BA0F6AA70AD05")
     
 protected final int getState() {
@@ -1001,6 +996,7 @@ public final boolean hasContended() {
      * @return the first (longest-waiting) thread in the queue, or
      *         {@code null} if no threads are currently queued
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.209 -0500", hash_original_method = "DB23AE447B60E978D848F5CEAEC8257B", hash_generated_method = "C85CE6E16C73974CB41083E907609161")
     
 public final Thread getFirstQueuedThread() {
@@ -1146,7 +1142,6 @@ public final boolean hasQueuedPredecessors() {
             ((s = h.next) == null || s.thread != Thread.currentThread());
     }
 
-
     // Instrumentation and monitoring methods
 
     /**
@@ -1159,6 +1154,7 @@ public final boolean hasQueuedPredecessors() {
      *
      * @return the estimated number of threads waiting to acquire
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.222 -0500", hash_original_method = "65AB677A04652631BF1CC269A789F93A", hash_generated_method = "3891B39CEDDDC3F2382E5CD4C00CC553")
     
 public final int getQueueLength() {
@@ -1181,6 +1177,7 @@ public final int getQueueLength() {
      *
      * @return the collection of threads
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.225 -0500", hash_original_method = "BA97C075FB0E9B39CEF398B585209CAD", hash_generated_method = "C8AA1296DBAA21B50FB1466011F82C85")
     
 public final Collection<Thread> getQueuedThreads() {
@@ -1201,6 +1198,7 @@ public final Collection<Thread> getQueuedThreads() {
      *
      * @return the collection of threads
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.227 -0500", hash_original_method = "8F9C05C78C38CDEC6B94C7386A00C30C", hash_generated_method = "B57D297BB60651F8BF59DB74E589A08B")
     
 public final Collection<Thread> getExclusiveQueuedThreads() {
@@ -1223,6 +1221,7 @@ public final Collection<Thread> getExclusiveQueuedThreads() {
      *
      * @return the collection of threads
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.230 -0500", hash_original_method = "3B2BC348731488178C75B0F7C3256BE4", hash_generated_method = "CE4E9194FCA7D28E65C681FDCFC4E133")
     
 public final Collection<Thread> getSharedQueuedThreads() {
@@ -1246,6 +1245,7 @@ public final Collection<Thread> getSharedQueuedThreads() {
      *
      * @return a string identifying this synchronizer, as well as its state
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.233 -0500", hash_original_method = "2C49C090DBE6788B4A91D995132AEECA", hash_generated_method = "83A51AA04AFC157B403BDF3D76B84E44")
     
 public String toString() {
@@ -1254,7 +1254,6 @@ public String toString() {
         return super.toString() +
             "[State = " + s + ", " + q + "empty queue]";
     }
-
 
     // Internal support methods for Conditions
 
@@ -1328,7 +1327,6 @@ final boolean transferForSignal(Node node) {
             LockSupport.unpark(node.thread);
         return true;
     }
-
     
     static final class Node {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.060 -0500", hash_original_field = "DA6DD7147E439DFCD19448A835019A52", hash_generated_field = "A09441E8911A57E0DA262F7FAB0EA28A")
@@ -1410,15 +1408,12 @@ final Node predecessor() throws NullPointerException {
                 return p;
         }
     }
-
-
     
     public class ConditionObject implements Condition, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.260 -0500", hash_original_field = "5E04DFF6740ADCE84419E351FA0F5494", hash_generated_field = "C9096AAE36B16976484AF1C63AF46815")
 
         private static final long serialVersionUID = 1173984872572414699L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.291 -0500", hash_original_field = "414569B187DE1D67BA14F47AB7057734", hash_generated_field = "B4CDE7AA239B26824DEACE77FCD9303B")
-
 
         /** Mode meaning to reinterrupt on exit from wait */
         private static final int REINTERRUPT =  1;
@@ -1844,6 +1839,7 @@ protected final boolean hasWaiters() {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.322 -0500", hash_original_method = "586699B2B19676C29FE19392CDC481BB", hash_generated_method = "30974DA2235D0BD4131D3752CB6B3514")
         
 protected final int getWaitQueueLength() {
@@ -1866,6 +1862,7 @@ protected final int getWaitQueueLength() {
          * @throws IllegalMonitorStateException if {@link #isHeldExclusively}
          *         returns {@code false}
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:21.325 -0500", hash_original_method = "D1136CB2B0FE173AD3F139F996FAE8B5", hash_generated_method = "7EA3D53A4EBF34B862031A40D99920FC")
         
 protected final Collection<Thread> getWaitingThreads() {

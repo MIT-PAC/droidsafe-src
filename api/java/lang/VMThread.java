@@ -5,38 +5,25 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class VMThread {
-
     
-    @DSModeled(DSC.SAFE)
     static void create(Thread t, long stackSize) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static Thread currentThread() {
     	return new Thread();
     }
-
     
-    @DSModeled(DSC.SAFE)
     static boolean interrupted() {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1527386262 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1527386262;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void sleep(long msec, int nsec) throws InterruptedException {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void yield() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.368 -0500", hash_original_field = "9806D3C74BE7A1F2A2AE6C3DF1EC822E", hash_generated_field = "F9B19B51E65C63905337C0FA1F19D0C4")
@@ -72,14 +59,12 @@ VMThread(Thread t) {
     	//Formerly a native method
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.351 -0500", hash_original_method = "52F72D61B7E8A4F0C857BD363070E325", hash_generated_method = "5003F7243C0F6F6B4860DAFF8D8320F2")
     
     boolean isInterrupted(){
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
 
     /**
      *  Starts the VMThread (and thus the Java Thread) with the given
@@ -103,7 +88,6 @@ void start(long stackSize) {
     	return getTaintBoolean();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.362 -0500", hash_original_method = "7C8E9A670D06C8AE48DAFFA12CDF6628", hash_generated_method = "A7B8E145FAF4202F5F2BD51F427460A3")
     
     void setPriority(int newPriority){
@@ -117,7 +101,6 @@ void start(long stackSize) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Tell the VM that the thread's name has changed.  This is useful for

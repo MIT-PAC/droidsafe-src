@@ -16,11 +16,6 @@ import java.security.spec.AlgorithmParameterSpec;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class Mac implements Cloneable {
 
     /**
@@ -36,6 +31,8 @@ public class Mac implements Cloneable {
      *             if {@code algorithm} is {@code null} (instead of
      *             NoSuchAlgorithmException as in 1.4 release).
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.665 -0500", hash_original_method = "3E4BC559FFF8F8BDA507B13EF8AF490F", hash_generated_method = "14D7DD9047E39E52B5B033CEE35BB241")
     
 public static final Mac getInstance(String algorithm)
@@ -152,6 +149,7 @@ protected Mac(MacSpi macSpi, Provider provider, String algorithm) {
      *
      * @return the name of the MAC algorithm.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.661 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -163,6 +161,7 @@ public final String getAlgorithm() {
      *
      * @return the provider of this {@code Mac} instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.663 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -174,6 +173,7 @@ public final Provider getProvider() {
      *
      * @return the length of this MAC (in bytes).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.673 -0500", hash_original_method = "02AEE303A4D099BA107FB2CB7C60A1E3", hash_generated_method = "656E9EB0E4DD43379A7E6E6A9ECA9FA5")
     
 public final int getMacLength() {
@@ -218,6 +218,8 @@ public final void init(Key key, AlgorithmParameterSpec params)
      *             if the specified key cannot be used to initialize this
      *             algorithm.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.679 -0500", hash_original_method = "874C36BA9BA67506DF1E27339862DC05", hash_generated_method = "C5C2C8365CA2E2386B03EF357C9A23D3")
     
 public final void init(Key key) throws InvalidKeyException {
@@ -334,6 +336,7 @@ public final void update(ByteBuffer input) {
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.692 -0500", hash_original_method = "09A7E9E8BA2AA06F6A3808F7BB018D3B", hash_generated_method = "BBBC3271E7BF877707A76B4510A43D2F")
     
 public final byte[] doFinal() throws IllegalStateException {
@@ -401,6 +404,9 @@ public final void doFinal(byte[] output, int outOffset)
      * @throws IllegalStateException
      *             if this MAC is not initialized.
      */
+    @DSComment("IO operations")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.697 -0500", hash_original_method = "D317760A96395810E5039143278FB4E4", hash_generated_method = "397FF92AD1E3086CF78C1865ECC76522")
     
 public final byte[] doFinal(byte[] input) throws IllegalStateException {

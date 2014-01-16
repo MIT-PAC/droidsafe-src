@@ -24,10 +24,6 @@ import java.util.zip.ZipFile;
 
 import libcore.net.UriCodec;
 
-
-
-
-
 public class JarURLConnectionImpl extends JarURLConnection {
 
     /**
@@ -53,26 +49,20 @@ public static void closeCachedFiles() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.463 -0500", hash_original_field = "EEE6F212560803EB63561C5DB4EDC791", hash_generated_field = "DAFAEFD0112EA423D0DE3AF30FA2DDE9")
 
-
     static HashMap<URL, JarFile> jarCache = new HashMap<URL, JarFile>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.465 -0500", hash_original_field = "B621CEFFF1CE60AB7ED145CDC7D8A502", hash_generated_field = "07485ED06E2A407A7D38E89DF7EA433B")
-
 
     private URL jarFileURL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.468 -0500", hash_original_field = "73CA466E3034481085B5947266F7234C", hash_generated_field = "2FDA65A94865AD8BD0FCF44E4CEE7E9C")
 
-
     private InputStream jarInput;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.470 -0500", hash_original_field = "B339322987345D78E0B630D63AE8DAC1", hash_generated_field = "A1544DC796279D75E8EFE7D422D11F29")
-
 
     private JarFile jarFile;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.472 -0500", hash_original_field = "243A80CC36D36456031E60F78531B9C5", hash_generated_field = "AC8BC8520BF86140D134B22CF6FB9C16")
 
-
     private JarEntry jarEntry;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.474 -0500", hash_original_field = "0B6D06FC66AB1A3316E7702989E3F923", hash_generated_field = "52C99699A476D9ED1506978946DA0E51")
-
 
     private boolean closed;
 
@@ -116,6 +106,7 @@ public JarURLConnectionImpl(URL url) throws MalformedURLException,
      *             thrown if an IO error occurs while connecting to the
      *             resource.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.481 -0500", hash_original_method = "BAB8781FAD6151E9B45BF4A1B941497D", hash_generated_method = "EDDD207AE7A1A8EF9710B474C9878CF3")
     
 @Override
@@ -159,6 +150,7 @@ private void findJarFile() throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.487 -0500", hash_original_method = "AF67425F611C6CCEA6B4F36EBE571AB2", hash_generated_method = "AF67425F611C6CCEA6B4F36EBE571AB2")
     
 JarFile openJarFile() throws IOException {
@@ -209,6 +201,7 @@ JarFile openJarFile() throws IOException {
      * @throws IOException
      *             if an IO error occurs while getting the entry
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.490 -0500", hash_original_method = "4969FA075748EE67279B88C22279B5EB", hash_generated_method = "E61711C77A0500B1E101A319B8915E7A")
     
 @Override
@@ -242,6 +235,7 @@ private void findJarEntry() throws IOException {
      * @throws IOException
      *             if an IO error occurs while connecting to the resource.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.494 -0500", hash_original_method = "96C498B69E21157D37D76B9902545F24", hash_generated_method = "C56B586BDAB524E470136EBBC5C9B019")
     
 @Override
@@ -268,6 +262,7 @@ private void findJarEntry() throws IOException {
      *
      * @return the content type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.497 -0500", hash_original_method = "626D247225A5C5A729C002EF0C988C29", hash_generated_method = "2758DF82E46CF926A8F810BCC9635F2D")
     
 @Override
@@ -304,6 +299,7 @@ private void findJarEntry() throws IOException {
      *
      * @return the content length
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.499 -0500", hash_original_method = "C82FBA290AE26D875C8865E2241D6919", hash_generated_method = "D0608284EF49FF8AD559D7F1BEB68058")
     
 @Override
@@ -336,6 +332,7 @@ private void findJarEntry() throws IOException {
      * @see java.io.IOException
      * @see #setContentHandlerFactory(ContentHandlerFactory)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.501 -0500", hash_original_method = "277EA8603145BCD9B1620E5B0867C76D", hash_generated_method = "1E407D4BF6D927E9F9483E003F23E85A")
     
 @Override
@@ -360,6 +357,7 @@ private void findJarEntry() throws IOException {
      *             permission.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.504 -0500", hash_original_method = "32AB82048771397A8F2D1AACD6751885", hash_generated_method = "4448AB76790A3478C2A6AEE7067BA4F7")
     
 @Override
@@ -367,6 +365,7 @@ private void findJarEntry() throws IOException {
         return jarFileURLConnection.getPermission();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.507 -0500", hash_original_method = "89E1132CC6620CB971998873757D9D18", hash_generated_method = "77023372473D25337D2B6542C9C6CC06")
     
 @Override
@@ -374,6 +373,7 @@ private void findJarEntry() throws IOException {
         return jarFileURLConnection.getUseCaches();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.509 -0500", hash_original_method = "B4491CDE2E10F000A5909671FFF7BF11", hash_generated_method = "5678194492AA9FFBBE1580289BE105B5")
     
 @Override
@@ -381,13 +381,13 @@ private void findJarEntry() throws IOException {
         jarFileURLConnection.setUseCaches(usecaches);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.511 -0500", hash_original_method = "E32A55AFDD8C878EAFF3633240EF835D", hash_generated_method = "4B24D3EC9C6D6325DAB02E033DAF4B32")
     
 @Override
     public boolean getDefaultUseCaches() {
         return jarFileURLConnection.getDefaultUseCaches();
     }
-
     
     private class JarURLConnectionInputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.519 -0500", hash_original_field = "B339322987345D78E0B630D63AE8DAC1", hash_generated_field = "B339322987345D78E0B630D63AE8DAC1")
@@ -411,10 +411,10 @@ protected JarURLConnectionInputStream(InputStream in, JarFile file) {
                 jarFile.close();
             }
         }
-
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.514 -0500", hash_original_method = "9B53AD37225976042371B5DBF82602F6", hash_generated_method = "26621973421190D65594FDF72B3AA5BA")
     
 @Override

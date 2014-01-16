@@ -24,15 +24,10 @@ import android.text.SpannableString;
 import android.text.SpannedString;
 import android.text.TextUtils;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class GLES20Canvas extends HardwareCanvas {
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nIsAvailable() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -42,93 +37,61 @@ class GLES20Canvas extends HardwareCanvas {
 static boolean isAvailable() {
         return sIsAvailable;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nCreateRenderer() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nCreateLayerRenderer(int layer) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nCreateDisplayListRenderer() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nResetDisplayListRenderer(int renderer) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDestroyRenderer(int renderer) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static int nCreateTextureLayer(boolean opaque, int[] layerInfo) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static int nCreateLayer(int width, int height, boolean isOpaque, int[] layerInfo) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void nResizeLayer(int layerId, int width, int height, int[] layerInfo) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void nUpdateTextureLayer(int layerId, int width, int height, boolean opaque,
             SurfaceTexture surface) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void nSetTextureLayerTransform(int layerId, int matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void nDestroyLayer(int layerId) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void nDestroyLayerDeferred(int layerId) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static boolean nCopyLayer(int layerId, int bitmap) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nGetMaximumTextureWidth() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nGetMaximumTextureHeight() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nSetViewport(int renderer, int width, int height) {
     }
 
@@ -148,12 +111,10 @@ static boolean isAvailable() {
 public static boolean preserveBackBuffer() {
         return nPreserveBackBuffer();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nPreserveBackBuffer() {
         return DSUtils.UNKNOWN_BOOLEAN;
-    }    
+    }
 
     /**
      * Indicates whether the current surface preserves its back buffer
@@ -169,9 +130,7 @@ public static boolean preserveBackBuffer() {
 public static boolean isBackBufferPreserved() {
         return nIsBackBufferPreserved();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nIsBackBufferPreserved() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -186,30 +145,20 @@ public static boolean isBackBufferPreserved() {
 public static void disableVsync() {
         nDisableVsync();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDisableVsync() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nPrepare(int renderer, boolean opaque) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nPrepareDirty(int renderer, int left, int top, int right, int bottom,
             boolean opaque) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nFinish(int renderer) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nCallDrawGLFunction(int renderer, int drawGLFunction) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -230,9 +179,7 @@ public static void disableVsync() {
 public static void flushCaches(int level) {
         nFlushCaches(level);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nFlushCaches(int level) {
     }
 
@@ -247,9 +194,7 @@ public static void flushCaches(int level) {
 public static void terminateCaches() {
         nTerminateCaches();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nTerminateCaches() {
     }
 
@@ -261,14 +206,10 @@ public static void terminateCaches() {
 public static void initCaches() {
         nInitCaches();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nInitCaches() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nGetDisplayList(int renderer, int displayList) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -278,9 +219,7 @@ public static void initCaches() {
 static void destroyDisplayList(int displayList) {
         nDestroyDisplayList(displayList);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDestroyDisplayList(int displayList) {
     }
 
@@ -289,282 +228,186 @@ static void destroyDisplayList(int displayList) {
 static int getDisplayListSize(int displayList) {
         return nGetDisplayListSize(displayList);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nGetDisplayListSize(int displayList) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nDrawDisplayList(int renderer, int displayList,
             int width, int height, Rect dirty) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nOutputDisplayList(int renderer, int displayList) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawLayer(int renderer, int layer, float x, float y, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nInterrupt(int renderer) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nResume(int renderer) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nClipRect(int renderer, float left, float top,
             float right, float bottom, int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nClipRect(int renderer, int left, int top, int right, int bottom,
             int op) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nGetClipBounds(int renderer, Rect bounds) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nQuickReject(int renderer, float left, float top,
             float right, float bottom, int edge) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nTranslate(int renderer, float dx, float dy) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nSkew(int renderer, float sx, float sy) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nRotate(int renderer, float degrees) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nScale(int renderer, float sx, float sy) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nSetMatrix(int renderer, int matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nGetMatrix(int renderer, int matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nConcatMatrix(int renderer, int matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nSave(int renderer, int flags) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nSaveLayer(int renderer, int paint, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nSaveLayer(int renderer, float left, float top,
             float right, float bottom, int paint, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nSaveLayerAlpha(int renderer, int alpha, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nSaveLayerAlpha(int renderer, float left, float top, float right,
             float bottom, int alpha, int saveFlags) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nRestore(int renderer) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nRestoreToCount(int renderer, int saveCount) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nGetSaveCount(int renderer) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawArc(int renderer, float left, float top,
             float right, float bottom, float startAngle, float sweepAngle,
             boolean useCenter, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawPatch(int renderer, int bitmap, byte[] buffer, byte[] chunks,
             float left, float top, float right, float bottom, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawBitmap(
             int renderer, int bitmap, byte[] buffer, float left, float top, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawBitmap(int renderer, int bitmap, byte[] buff,
             int matrix, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawBitmap(int renderer, int bitmap, byte[] buffer,
             float srcLeft, float srcTop, float srcRight, float srcBottom,
             float left, float top, float right, float bottom, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawBitmapMesh(int renderer, int bitmap, byte[] buffer,
             int meshWidth, int meshHeight, float[] verts, int vertOffset,
             int[] colors, int colorOffset, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawCircle(int renderer, float cx, float cy,
             float radius, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawColor(int renderer, int color, int mode) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawLines(int renderer, float[] points,
             int offset, int count, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawOval(int renderer, float left, float top,
             float right, float bottom, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawPath(int renderer, int path, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawRects(int renderer, int region, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawPoints(int renderer, float[] points,
             int offset, int count, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawRect(int renderer, float left, float top,
             float right, float bottom, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawRoundRect(int renderer, float left, float top,
             float right, float bottom, float rx, float y, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawText(int renderer, char[] text, int index, int count,
             float x, float y, int bidiFlags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawText(int renderer, String text, int start, int end,
             float x, float y, int bidiFlags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawTextRun(int renderer, char[] text, int index, int count,
             int contextIndex, int contextCount, float x, float y, int dir, int nativePaint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nDrawTextRun(int renderer, String text, int start, int end,
             int contextStart, int contextEnd, float x, float y, int flags, int nativePaint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nSetupShader(int renderer, int shader) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nSetupColorFilter(int renderer, int colorFilter) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nSetupShadow(int renderer, float radius,
             float dx, float dy, int color) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nResetModifiers(int renderer, int modifiers) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.028 -0500", hash_original_field = "E0A3150F3F38261C8E4D4BE8D4154830", hash_generated_field = "E2BA09F8DF55E2B4054F568E93987B59")
@@ -601,7 +444,6 @@ static int getDisplayListSize(int displayList) {
     public static final int FLUSH_CACHES_FULL = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.037 -0500", hash_original_field = "1A5E1BEFDB0DF6CE4A573A377262DC5D", hash_generated_field = "EB29C468CD6CC66BADB54A0F112750F9")
 
-
     private  boolean mOpaque;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.039 -0500", hash_original_field = "2B452A59440EC392E79D53931F031EDF", hash_generated_field = "29611ED2287CE69051FC2BCDB2E2FF9D")
 
@@ -613,24 +455,20 @@ static int getDisplayListSize(int displayList) {
     private CanvasFinalizer mFinalizer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.046 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
 
-
     private int mWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.048 -0500", hash_original_field = "7DDAE255893B528E7BEBEC203BC2D9F3", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
 
     private int mHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.050 -0500", hash_original_field = "CF6BEF09B050EF04D7DAF2E71645B9A2", hash_generated_field = "6791C5CD1248B8A3047AAAB23F781F88")
-
     
     private final float[] mPoint = new float[2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.052 -0500", hash_original_field = "B13B58B4084D8A17811E5403A71954E5", hash_generated_field = "BB2122C190B62908BBEDD5B8E43D320D")
 
     private final float[] mLine = new float[4];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.054 -0500", hash_original_field = "8AB232A6CE3131F6D9ADAEE4BAB77D3A", hash_generated_field = "49E49C9D9740E032CABA98DD5151CA56")
-
     
     private final Rect mClipBounds = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.056 -0500", hash_original_field = "E64BC6A401ACB45F89B54F9EA0DDC4A1", hash_generated_field = "7E8B7E1A9144C0D301C8FE334261595B")
-
 
     private DrawFilter mFilter;
 
@@ -699,6 +537,7 @@ protected void resetDisplayListRenderer() {
         return mOpaque;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.142 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "544DCA524D5A67C6D05071F3100B5B3C")
     
 @Override
@@ -706,6 +545,7 @@ protected void resetDisplayListRenderer() {
         return mWidth;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.145 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "E76548EEA445A2E9D8F83F5D972E0669")
     
 @Override
@@ -713,6 +553,7 @@ protected void resetDisplayListRenderer() {
         return mHeight;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.147 -0500", hash_original_method = "10F69D1300E55A44C724BA9496871588", hash_generated_method = "65D18FF7E8486F50C37E7AD31D6D07F6")
     
 @Override
@@ -720,12 +561,13 @@ protected void resetDisplayListRenderer() {
         return nGetMaximumTextureWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.149 -0500", hash_original_method = "A5ADDC40BA4D92830B9288340B890F82", hash_generated_method = "53BB15B9BD2CFEFAEBBACF64DDD1AB32")
     
 @Override
     public int getMaximumBitmapHeight() {
         return nGetMaximumTextureHeight();
-    }    
+    }
 
     ///////////////////////////////////////////////////////////////////////////
     // Setup
@@ -770,6 +612,7 @@ protected void resetDisplayListRenderer() {
     // Display list
     ///////////////////////////////////////////////////////////////////////////
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.232 -0500", hash_original_method = "B6A785707CFBE1E38AD4FE8A1D6625FF", hash_generated_method = "B6A785707CFBE1E38AD4FE8A1D6625FF")
     
 int getDisplayList(int displayList) {
@@ -960,6 +803,7 @@ void resume() {
         nScale(mRenderer, sx, sy);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.361 -0500", hash_original_method = "F6D59AD1FAE97EC22EF86A1DF6443B3F", hash_generated_method = "842B4D0D1DA321F39C333F1F49A9D447")
     
 @Override
@@ -999,6 +843,7 @@ void resume() {
         return nSave(mRenderer, saveFlags);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.389 -0500", hash_original_method = "9DF5A937336C76576E5F634C144FC48D", hash_generated_method = "5874F23B7ACE8895C1D7BAA60010B41A")
     
 @Override
@@ -1012,8 +857,9 @@ void resume() {
         int count = nSaveLayer(mRenderer, nativePaint, saveFlags);
         if (modifier != MODIFIER_NONE) nResetModifiers(mRenderer, modifier);
         return count;
-    }    
+    }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.396 -0500", hash_original_method = "E794596E5060868E9256D6234D184C09", hash_generated_method = "C049EBA06670DC13A938785626378E55")
     
 @Override
@@ -1029,6 +875,7 @@ void resume() {
         return save(saveFlags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.403 -0500", hash_original_method = "E4AB6B80C5EF0D5B797D753415FED0BE", hash_generated_method = "CFDBAE483E8CD313DC1DB9DB500F6346")
     
 @Override
@@ -1038,8 +885,9 @@ void resume() {
                     alpha, saveFlags);
         }
         return nSaveLayerAlpha(mRenderer, alpha, saveFlags);
-    }    
+    }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.409 -0500", hash_original_method = "B4AB4565F10B041D742F1796C47ECB95", hash_generated_method = "3D76D7C8F728830E6940716B15976C7E")
     
 @Override
@@ -1058,6 +906,7 @@ void resume() {
         nRestore(mRenderer);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.422 -0500", hash_original_method = "03029795119CF4F7F4374FF9CDD913F1", hash_generated_method = "47865D29D08961405F5E34856C49A3E1")
     
 @Override
@@ -1065,6 +914,7 @@ void resume() {
         nRestoreToCount(mRenderer, saveCount);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.428 -0500", hash_original_method = "5171A9EFFCF2464453072A29F0BC817F", hash_generated_method = "BDD837002E564B51F46CB8A72B2FE5D6")
     
 @Override
@@ -1083,6 +933,7 @@ void resume() {
         mFilter = filter;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.437 -0500", hash_original_method = "00C808EC6F25CC6E1FA57C10F69CA13D", hash_generated_method = "A09D80A22C969C496AD901F52849B6ED")
     
 @Override
@@ -1503,7 +1354,6 @@ void resume() {
             if (modifiers != MODIFIER_NONE) nResetModifiers(mRenderer, modifiers);
         }
     }
-
     
     private static final class CanvasFinalizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:44.100 -0500", hash_original_field = "2B452A59440EC392E79D53931F031EDF", hash_generated_field = "29611ED2287CE69051FC2BCDB2E2FF9D")
@@ -1526,7 +1376,6 @@ public CanvasFinalizer(int renderer) {
                 super.finalize();
             }
         }
-
         
     }
 

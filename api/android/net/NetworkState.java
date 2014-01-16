@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class NetworkState implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.548 -0400", hash_original_field = "639231E2CF24AC818C14B1454EE59F27", hash_generated_field = "8B25ACE201431313251FD6C8326EA110")
 
@@ -30,7 +25,6 @@ public NetworkState[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.815 -0500", hash_original_field = "783575A388C9A34EBCFC54A057A5B9A4", hash_generated_field = "97BC2F6998D1E4D0DED95BC177B82BD4")
-
 
     public  NetworkInfo networkInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.818 -0500", hash_original_field = "9710D51B67527C9083778B928FD16963", hash_generated_field = "CBFC770A2970049F6731C897B915E6C6")
@@ -77,6 +71,7 @@ public int describeContents() {
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.833 -0500", hash_original_method = "EF66345FC72BF78BF99044E19149D234", hash_generated_method = "3FBB245BDE9928E253253C2856C3D731")
     
 public void writeToParcel(Parcel out, int flags) {

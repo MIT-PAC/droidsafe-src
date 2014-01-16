@@ -9,9 +9,6 @@ import android.graphics.Canvas;
 import android.graphics.Paint;
 import android.graphics.Rect;
 
-
-
-
 public abstract class HardwareCanvas extends Canvas {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:42.414 -0400", hash_original_method = "B9875B3DDCC23B593D0FCAB83616982C", hash_generated_method = "B9875B3DDCC23B593D0FCAB83616982C")
@@ -26,6 +23,7 @@ public abstract class HardwareCanvas extends Canvas {
         return true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.735 -0500", hash_original_method = "09BF352B013BE09D7407EC81EDFAD3C9", hash_generated_method = "6B21C1AA6160CD3506F803B9A1DF3D26")
     
 @Override
@@ -101,7 +99,6 @@ public boolean callDrawGLFunction(int drawGLFunction) {
         // Noop - this is done in the display list recorder subclass
         return false;
     }
-
     
 }
 

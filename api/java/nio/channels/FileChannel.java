@@ -9,11 +9,6 @@ import java.nio.ByteBuffer;
 import java.nio.MappedByteBuffer;
 import java.nio.channels.spi.AbstractInterruptibleChannel;
 
-
-
-
-
-
 public abstract class FileChannel extends AbstractInterruptibleChannel implements GatheringByteChannel, ScatteringByteChannel, ByteChannel {
 
     /**
@@ -82,6 +77,7 @@ public abstract void force(boolean metadata) throws IOException;
      *             if another I/O error occurs while obtaining the requested
      *             lock.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.363 -0500", hash_original_method = "DFAB2BF3C1A891B83AFBA77A43B03809", hash_generated_method = "A870032A5BE185398477C92B02CAC7A3")
     
 public final FileLock lock() throws IOException {
@@ -328,6 +324,7 @@ public abstract int read(ByteBuffer buffer, long position)
      *             if the channel has not been opened in a mode that permits
      *             reading.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.381 -0500", hash_original_method = "4118483D5739F1F8B1E72DACCDF365C6", hash_generated_method = "5E3DE9B53B261351875D534317A11FE9")
     
 public final long read(ByteBuffer[] buffers) throws IOException {
@@ -510,6 +507,7 @@ public abstract FileChannel truncate(long size) throws IOException;
      * @throws IOException
      *             if any I/O error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.397 -0500", hash_original_method = "F4B810DA7C3314CA042E76DA336480A9", hash_generated_method = "765B70727AF6AE5E4DD4630CCB15527C")
     
 public final FileLock tryLock() throws IOException {
@@ -575,6 +573,8 @@ public abstract FileLock tryLock(long position, long size, boolean shared)
      *             if another I/O error occurs, details are in the message.
      * @see java.nio.channels.WritableByteChannel#write(java.nio.ByteBuffer)
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.401 -0500", hash_original_method = "D87BCA67F95D1FD6B9CB7D4E4ADD1B2A", hash_generated_method = "FA9F2388453D6D813A2368038E57E8FD")
     
 public abstract int write(ByteBuffer src) throws IOException;
@@ -647,6 +647,7 @@ public abstract int write(ByteBuffer buffer, long position)
      * @throws NonWritableChannelException
      *             if this channel was not opened for writing.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.407 -0500", hash_original_method = "50EBF858502260FDC2F74EB3C865D254", hash_generated_method = "7AA1B97F418BF33310818DAF604E2235")
     
 public final long write(ByteBuffer[] buffers) throws IOException {
@@ -693,7 +694,6 @@ public final long write(ByteBuffer[] buffers) throws IOException {
     
 public abstract long write(ByteBuffer[] buffers, int offset, int length)
             throws IOException;
-
     
     public static class MapMode {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:57.340 -0500", hash_original_field = "F54DBA0E8003D347C0E5FC6C7F122070", hash_generated_field = "E61C6941861B8B13323795D9F76ADC35")
@@ -730,8 +730,6 @@ private MapMode(String displayName) {
             return displayName;
         }
     }
-
-
     
 }
 

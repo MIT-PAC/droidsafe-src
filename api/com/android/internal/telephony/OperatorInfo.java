@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class OperatorInfo implements Parcelable {
 
     /**
@@ -32,7 +28,6 @@ private static State rilStateToState(String s) {
                 "RIL impl error: Invalid network state '" + s + "'");
         }
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:17.569 -0400", hash_original_field = "CE4D84BB5D80D6F1E7F23127D57FA1E7", hash_generated_field = "244DE5599F688C0C7CE39BEE35E6AF81")
 
@@ -57,7 +52,6 @@ public OperatorInfo[] newArray(int size) {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.332 -0500", hash_original_field = "D5205C75E0728BD5532E96497C7DFA52", hash_generated_field = "F0150DE98C56463E8FBA5168FF9D36D5")
 
-
     private String operatorAlphaLong;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.335 -0500", hash_original_field = "F2D71A9A98F61830E20D376D8C079200", hash_generated_field = "DAF789E03D68464206271876E158DD07")
 
@@ -66,7 +60,6 @@ public OperatorInfo[] newArray(int size) {
 
     private String operatorNumeric;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.340 -0500", hash_original_field = "D84B2AF2604659345A0E663E537B31A2", hash_generated_field = "8632897B42EA54355D7D05C4187E6C0B")
-
 
     private State state = State.UNKNOWN;
 
@@ -84,7 +77,6 @@ OperatorInfo(String operatorAlphaLong,
         this.state = state;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.354 -0500", hash_original_method = "22D6EAAD8ACDCB5BD2588D137EBB558E", hash_generated_method = "721BE0088A3EE450F273F79299951737")
     
 public OperatorInfo(String operatorAlphaLong,
@@ -95,7 +87,7 @@ public OperatorInfo(String operatorAlphaLong,
                 operatorNumeric, rilStateToState(stateString));
     }
 
-
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.342 -0500", hash_original_method = "B51FA3C3765E71F08A241B1C8BA79C96", hash_generated_method = "CB638F59BD0B25A23177222101C9E3B6")
     
 public String
@@ -103,6 +95,7 @@ public String
         return operatorAlphaLong;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.344 -0500", hash_original_method = "A8269EAEF0CA69A19C2F3D33BBF8152B", hash_generated_method = "FB481291A527FECB4BD90F8095874EFC")
     
 public String
@@ -110,6 +103,7 @@ public String
         return operatorAlphaShort;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.347 -0500", hash_original_method = "06DBB2F851A1F540C7CE21639E1F11FC", hash_generated_method = "839AF192B0AA543A2D859FC12F24D1D0")
     
 public String
@@ -124,7 +118,7 @@ public State
         return state;
     }
 
-
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.359 -0500", hash_original_method = "3A69A53B1D569DD83E423933B58E91F0", hash_generated_method = "4BB95C078DA1404522803CF8E4B187E1")
     
 public String toString() {
@@ -147,7 +141,6 @@ public String toString() {
 public int describeContents() {
         return 0;
     }
-
     
     public enum State {
         UNKNOWN,

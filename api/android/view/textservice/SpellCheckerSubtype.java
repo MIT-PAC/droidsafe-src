@@ -16,10 +16,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class SpellCheckerSubtype implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.428 -0500", hash_original_method = "8E1C6298EB66C275DF3380320723757A", hash_generated_method = "FE94C4A8FECD84D683885278E012F460")
@@ -78,7 +74,6 @@ public static List<SpellCheckerSubtype> sort(Context context, int flags, SpellCh
         }
         return sortedList;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.976 -0400", hash_original_field = "5A5854B9FB29CE0EBE5D9E127472BB34", hash_generated_field = "964CF97E5D9081BC2EF059D5B5A4010C")
 
@@ -99,7 +94,6 @@ public static List<SpellCheckerSubtype> sort(Context context, int flags, SpellCh
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.401 -0500", hash_original_field = "622071262F8C7323916A08E8A5FE5B0F", hash_generated_field = "1C2C808B01EBFBF48626EDEF77BDA121")
-
 
     private  int mSubtypeHashCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.404 -0500", hash_original_field = "4B8E567964882234BB978E7260845CFE", hash_generated_field = "57FC2D78B24F52DDE6BE3F9540A84844")
@@ -142,6 +136,7 @@ SpellCheckerSubtype(Parcel source) {
     /**
      * @return the name of the subtype
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.416 -0500", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "26CBCDA99AD203B4314FE6FE708C7FDB")
     
 public int getNameResId() {
@@ -151,6 +146,7 @@ public int getNameResId() {
     /**
      * @return the locale of the subtype
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.418 -0500", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "EE03D54FF1419549D24B5FD49A307399")
     
 public String getLocale() {
@@ -160,6 +156,7 @@ public String getLocale() {
     /**
      * @return the extra value of the subtype
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.421 -0500", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "B0B48211E788C5E773FA1B3FFFFC18D8")
     
 public String getExtraValue() {
@@ -197,6 +194,7 @@ public String getExtraValue() {
      * specified by mSubtypeNameResId. If mSubtypeNameResId is not specified (== 0), it's up to the
      * framework to generate an appropriate display name.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:47.431 -0500", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "D9FE477B4AE71540ABA1B09AB9219FF9")
     
 public CharSequence getDisplayName(

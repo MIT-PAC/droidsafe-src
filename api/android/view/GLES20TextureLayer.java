@@ -8,10 +8,6 @@ import android.graphics.Canvas;
 import android.graphics.Matrix;
 import android.graphics.SurfaceTexture;
 
-
-
-
-
 class GLES20TextureLayer extends GLES20Layer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.621 -0500", hash_original_field = "BDB6A6C8A3F80F4A028EAF374A5C2487", hash_generated_field = "95BD811F6C75A4EC837CB912DCEC863B")
 
@@ -47,6 +43,7 @@ GLES20TextureLayer(boolean isOpaque) {
     void resize(int width, int height) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.633 -0500", hash_original_method = "FE3F18C4DF5FFEAAB94B6C71D2FF4AC1", hash_generated_method = "E1827AD236E6122B2580FCDDB65E8C53")
     
 @Override
@@ -67,6 +64,7 @@ GLES20TextureLayer(boolean isOpaque) {
     void end(Canvas currentCanvas) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.639 -0500", hash_original_method = "CDD23CBBC42E4C818DBF49A0C1C7FFA6", hash_generated_method = "CDD23CBBC42E4C818DBF49A0C1C7FFA6")
     
 SurfaceTexture getSurfaceTexture() {
@@ -84,13 +82,13 @@ SurfaceTexture getSurfaceTexture() {
         GLES20Canvas.nUpdateTextureLayer(mLayer, width, height, isOpaque, mSurface);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.644 -0500", hash_original_method = "A2F486FA7726377A1A987D8CE4D8F80A", hash_generated_method = "0B46F5D91B999EC9E221C2651B58AB64")
     
 @Override
     void setTransform(Matrix matrix) {
         GLES20Canvas.nSetTextureLayerTransform(mLayer, matrix.native_instance);
     }
-
     
 }
 

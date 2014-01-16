@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.831 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.831 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -83,7 +84,8 @@ return DESCRIPTOR;
      * @param callbackBinder Binder on which to indicate operation completion,
      *        passed here as a convenience to the agent.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.834 -0500", hash_original_method = "38ABAE47777CD71C1332151525EBB98A", hash_generated_method = "8FF34B5C1D8AB6EE6FDF5F950A6AAC68")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.834 -0500", hash_original_method = "38ABAE47777CD71C1332151525EBB98A", hash_generated_method = "8FF34B5C1D8AB6EE6FDF5F950A6AAC68")
             
 public void doBackup(android.os.ParcelFileDescriptor oldState, android.os.ParcelFileDescriptor data, android.os.ParcelFileDescriptor newState, int token, android.app.backup.IBackupManager callbackBinder) throws android.os.RemoteException
 {
@@ -142,7 +144,8 @@ _data.recycle();
      * @param callbackBinder Binder on which to indicate operation completion,
      *        passed here as a convenience to the agent.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.837 -0500", hash_original_method = "FFB5D5D99D1A7509F9DFEC38FD442FF1", hash_generated_method = "2436B2A4685505A8F1AA31E1666D2C10")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.837 -0500", hash_original_method = "FFB5D5D99D1A7509F9DFEC38FD442FF1", hash_generated_method = "2436B2A4685505A8F1AA31E1666D2C10")
             
 public void doRestore(android.os.ParcelFileDescriptor data, int appVersionCode, android.os.ParcelFileDescriptor newState, int token, android.app.backup.IBackupManager callbackBinder) throws android.os.RemoteException
 {
@@ -189,7 +192,8 @@ _data.recycle();
      * @param callbackBinder Binder on which to indicate operation completion,
      *        passed here as a convenience to the agent.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.840 -0500", hash_original_method = "22EDF7CCC5F708029E8FA1B203B8B462", hash_generated_method = "142357608C81481A556CF9DEE820E75C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.840 -0500", hash_original_method = "22EDF7CCC5F708029E8FA1B203B8B462", hash_generated_method = "142357608C81481A556CF9DEE820E75C")
             
 public void doFullBackup(android.os.ParcelFileDescriptor data, int token, android.app.backup.IBackupManager callbackBinder) throws android.os.RemoteException
 {
@@ -226,7 +230,8 @@ _data.recycle();
      * @param mode Access mode of the file system entity, e.g. 0660.
      * @param mtime Last modification time of the file system entity.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.843 -0500", hash_original_method = "36E0B830C44AC9BF09E9AAE2B1E38A29", hash_generated_method = "51B161BB5959FF57E7A78ED8D6AD828A")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.843 -0500", hash_original_method = "36E0B830C44AC9BF09E9AAE2B1E38A29", hash_generated_method = "51B161BB5959FF57E7A78ED8D6AD828A")
             
 public void doRestoreFile(android.os.ParcelFileDescriptor data, long size, int type, java.lang.String domain, java.lang.String path, long mode, long mtime, int token, android.app.backup.IBackupManager callbackBinder) throws android.os.RemoteException
 {
@@ -265,7 +270,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.815 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:28.815 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

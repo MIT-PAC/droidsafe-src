@@ -15,22 +15,15 @@ import android.view.Surface;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class EGLImpl implements EGL10 {
-
     
-    @DSModeled(DSC.SAFE)
     public static int getInitCount(EGLDisplay display) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1163271600;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void _nativeClassInit() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.339 -0500", hash_original_field = "5165D24D9AE870029D7EE629BD62CEFE", hash_generated_field = "299BB99E9FA7B75F06D17EB158F11EC7")
@@ -43,7 +36,6 @@ public class EGLImpl implements EGL10 {
 
     private EGLSurfaceImpl mSurface = new EGLSurfaceImpl(-1);
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.539 -0400", hash_original_method = "1F432E8932AB5EEB87E85C95C31E8080", hash_generated_method = "1F432E8932AB5EEB87E85C95C31E8080")
     public EGLImpl ()
     {
@@ -158,10 +150,7 @@ public class EGLImpl implements EGL10 {
     	addTaint(context.getTaint());
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.388 -0400", hash_original_method = "7F0F6E22A72F3EFD03B53C72B8A334B5", hash_generated_method = "FD75A226178BC0A876B19864D0D93C7A")
     public String eglQueryString(EGLDisplay display, int name) {
     	addTaint(display.getTaint());
@@ -212,7 +201,6 @@ public class EGLImpl implements EGL10 {
     	addTaint(bindTarget.getTaint());
     	return getTaintBoolean();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.419 -0500", hash_original_method = "CAD561FB9C34D7001DB982C1B864CD0D", hash_generated_method = "40CAA5A85A69A3E707B97DBF7CF008B6")
     
@@ -407,8 +395,6 @@ public synchronized EGLSurface eglGetCurrentSurface(int readdraw) {
     	addTaint(readdraw);
     	return getTaintInt();
     }
-
-
     
     static { _nativeClassInit(); }
     

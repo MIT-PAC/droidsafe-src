@@ -9,16 +9,10 @@ import java.lang.ref.WeakReference;
 
 import org.apache.http.conn.routing.HttpRoute;
 
-
-
-
-
-
 public class BasicPoolEntryRef extends WeakReference<BasicPoolEntry> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.926 -0500", hash_original_field = "8824947D446181E666F5CCE159788709", hash_generated_field = "81479629776815A054F50541D8F2C724")
 
     private  HttpRoute route;
-
 
     /**
      * Creates a new reference to a pool entry.
@@ -38,19 +32,18 @@ public BasicPoolEntryRef(BasicPoolEntry entry,
         route = entry.getPlannedRoute();
     }
 
-
     /**
      * Obtain the planned route for the referenced entry.
      * The planned route is still available, even if the entry is gone.
      *
      * @return      the planned route
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.931 -0500", hash_original_method = "70D653A6C3CCC37B9D27B2DACB554C85", hash_generated_method = "CEDA45E567D55F23E75E6004A2646B42")
     
 public final HttpRoute getRoute() {
         return this.route;
     }
-
     
 }
 

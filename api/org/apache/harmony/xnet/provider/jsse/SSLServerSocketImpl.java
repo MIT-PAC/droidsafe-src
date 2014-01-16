@@ -10,11 +10,6 @@ import java.net.Socket;
 
 import javax.net.ssl.SSLServerSocket;
 
-
-
-
-
-
 public class SSLServerSocketImpl extends SSLServerSocket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.890 -0500", hash_original_field = "8EC89ADA2574F1DBC3DD4508F1BBC0BF", hash_generated_field = "AC5C8E3DAC2E9F1A1DA44B231474BF8D")
 
@@ -93,6 +88,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#getSupportedCipherSuites()
      * method documentation for more information
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.905 -0500", hash_original_method = "12BE90119F3183109C9DE5DBB63B352A", hash_generated_method = "0E9DEB7FA21717EA39000930983C1B84")
     
 @Override
@@ -105,6 +101,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#getEnabledCipherSuites()
      * method documentation for more information
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.907 -0500", hash_original_method = "80B545F2398A25060AECB1A23E821DD5", hash_generated_method = "9743EBAEBACB48E752148548CBED207E")
     
 @Override
@@ -117,6 +114,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#setEnabledCipherSuites(String[])
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.909 -0500", hash_original_method = "7C4ABDE66C2DD67AB299013913F9BF06", hash_generated_method = "C5557FA44AA989E23B0178177369FD5D")
     
 @Override
@@ -129,6 +127,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#getSupportedProtocols()
      * method documentation for more information
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.912 -0500", hash_original_method = "9A36300B3497119D0180A59D3E72D371", hash_generated_method = "0336F8759C7C42688A7C93D456C43BA3")
     
 @Override
@@ -141,6 +140,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#getEnabledProtocols()
      * method documentation for more information
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.914 -0500", hash_original_method = "9376751549A6436575C0783CA6C3A4A0", hash_generated_method = "33350DCBA69002691B7A369DC97FFA9B")
     
 @Override
@@ -153,6 +153,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#setEnabledProtocols(String[])
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.917 -0500", hash_original_method = "1CAC4BB68A222585D834DF0E7DBBD0B9", hash_generated_method = "5199FC3D60A4E4583B057C0623C822F9")
     
 @Override
@@ -165,6 +166,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#setUseClientMode(boolean)
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.919 -0500", hash_original_method = "433F9F6F1671E88E2914017CCCE9CE51", hash_generated_method = "ED0148AE7F6FFE9B057DEA60FFD079FA")
     
 @Override
@@ -177,6 +179,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#getUseClientMode()
      * method documentation for more information
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.921 -0500", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "C189C4A91AE7529C93E5FE1A68636F7D")
     
 @Override
@@ -189,6 +192,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#setNeedClientAuth(boolean)
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.924 -0500", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "C446CA4D04BF46EBA63D06A750C2C8C1")
     
 @Override
@@ -201,6 +205,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#getNeedClientAuth()
      * method documentation for more information
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.927 -0500", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "1AC7C5FF07516804848811840A468A8B")
     
 @Override
@@ -213,6 +218,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#setWantClientAuth(boolean)
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.929 -0500", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "21E8FF7B7CE0E4FB146B4F3F0EE91E86")
     
 @Override
@@ -225,6 +231,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#getWantClientAuth()
      * method documentation for more information
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.931 -0500", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "C498EFFB7EA33937BE58E3D8E2A82C77")
     
 @Override
@@ -237,6 +244,7 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#setEnableSessionCreation(boolean)
      * method documentation for more information
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.933 -0500", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "3DEA9628617E70F67E1471694350041C")
     
 @Override
@@ -249,13 +257,13 @@ protected SSLServerSocketImpl(int port, int backlog,
      * @see javax.net.ssl.SSLServerSocket#getEnableSessionCreation()
      * method documentation for more information
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.936 -0500", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "F0850E2B8F230278D1EE6575AFA464E6")
     
 @Override
     public boolean getEnableSessionCreation() {
         return sslParameters.getEnableSessionCreation();
     }
-
 
     // ------------- ServerSocket's methods overridings ----------------
 
@@ -290,7 +298,6 @@ protected SSLServerSocketImpl(int port, int backlog,
     public String toString() {
         return "[SSLServerSocketImpl]";
     }
-
     
 }
 

@@ -11,11 +11,8 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.RemoteException;
 
-
-
 public class CountryDetector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.565 -0500", hash_original_field = "584F7D5060DB0ED0AEB7611B35D98E42", hash_generated_field = "FDDD7BCA9CDA28F5A3E99818FA3CA6DE")
-
 
     private final static String TAG = "CountryDetector";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.567 -0500", hash_original_field = "F4C0A0502A557D3E35711C29B17B7850", hash_generated_field = "586490950C196F388A8EA4D62FE86E5C")
@@ -25,7 +22,6 @@ public class CountryDetector {
 
     private  HashMap<CountryListener, ListenerTransport> mListeners;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.931 -0400", hash_original_method = "1A7B373E04EF53B30E08B7B8CC03780E", hash_generated_method = "D989B224CC275E8895828F0A793F6A43")
     public  CountryDetector(ICountryDetector service) {
         mService = service;
@@ -37,7 +33,7 @@ public class CountryDetector {
     }
     
     //inject by hand modeling
-    @DSModeled(DSC.BAN)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.931 -0400", hash_original_method = "1A7B373E04EF53B30E08B7B8CC03780E", hash_generated_method = "D989B224CC275E8895828F0A793F6A43")
     public  CountryDetector() {
         mListeners = new HashMap<CountryListener, ListenerTransport>();
@@ -87,15 +83,12 @@ public void addCountryListener(CountryListener listener, Looper looper) {
             }
         }
     }
-
     
     private final static class ListenerTransport extends ICountryListener.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.549 -0500", hash_original_field = "4377D948CF35F8478267CA973E916FF1", hash_generated_field = "C83CBAAD111326C8688E466E2DD9969D")
 
-
         private  CountryListener mListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:56.552 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
-
 
         private  Handler mHandler;
 
@@ -119,7 +112,6 @@ public void onCountryDetected(final Country country) {
                 }
             });
         }
-
         
     }
 

@@ -12,21 +12,17 @@ import java.util.Arrays;
 
 import libcore.io.Memory;
 
-
 public class GZIPInputStream extends InflaterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.638 -0500", hash_original_field = "562DED064ECF9245FD9964B42E1B365A", hash_generated_field = "02DDC74956F881D64CE1C7D6050C9F70")
 
     private static final int FCOMMENT = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.641 -0500", hash_original_field = "959B3384CBC0C3E67D0ECCEA64D202E1", hash_generated_field = "E75B8E4FDF02F0C7E68C62FE1BBF493F")
 
-
     private static final int FEXTRA = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.644 -0500", hash_original_field = "93C6A00BB570B22DACF6A67FBE45DDB0", hash_generated_field = "390F1EF548C925A41577D8A8F438ADC9")
 
-
     private static final int FHCRC = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.646 -0500", hash_original_field = "B844997ECF08C6CD1FC43F320571A37F", hash_generated_field = "BEF062C8719D26CFC454C2C6074500B1")
-
 
     private static final int FNAME = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.649 -0500", hash_original_field = "A60D6887DA9295E3D6BABAE0A26A0251", hash_generated_field = "EA43AF0273B6C3B8DADF1F68E7A59DEF")
@@ -48,6 +44,8 @@ public class GZIPInputStream extends InflaterInputStream {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
+    @DSComment("IO/Stream accessing")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.657 -0500", hash_original_method = "DC7C53463DEA3BC77C9FF2C25FAEFF14", hash_generated_method = "4CACDDA3C01475C988E89A026717E9AA")
     
 public GZIPInputStream(InputStream is) throws IOException {
@@ -65,6 +63,8 @@ public GZIPInputStream(InputStream is) throws IOException {
      * @throws IOException
      *             if an {@code IOException} occurs.
      */
+    @DSComment("IO/Stream accessing")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.660 -0500", hash_original_method = "5DD740AE0EB83490269826B6CD66524C", hash_generated_method = "AF15E3C7F5B5382DCDADBB1DF73D5083")
     
 public GZIPInputStream(InputStream is, int size) throws IOException {
@@ -117,6 +117,8 @@ public GZIPInputStream(InputStream is, int size) throws IOException {
     /**
      * Closes this stream and any underlying streams.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.663 -0500", hash_original_method = "BB5EB4821217BB73F8D521350E3FEC7B", hash_generated_method = "BA6BD4389234E8C218462453C8EB683C")
     
 @Override

@@ -10,11 +10,6 @@ import java.io.Writer;
 
 import javax.xml.transform.Result;
 
-
-
-
-
-
 public class StreamResult implements Result {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.122 -0500", hash_original_field = "854AAE683B90ED7486002A8649A4844B", hash_generated_field = "07B41A84AEB1C38AEE0632EF7AA4850C")
 
@@ -70,6 +65,8 @@ public StreamResult(OutputStream outputStream) {
      *
      * @param writer  A valid Writer reference.
      */
+    @DSComment("input is io writer")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.130 -0500", hash_original_method = "4C7FF3D19CAA5E8142F763BAEAB400A6", hash_generated_method = "0B6B9AC28E672B3BF921A643134A2BD5")
     
 public StreamResult(Writer writer) {
@@ -92,6 +89,8 @@ public StreamResult(String systemId) {
      *
      * @param f Must a non-null File reference.
      */
+    @DSComment("input is file object")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:00.135 -0500", hash_original_method = "69C6A757CEF52150252713CD9ECC25FB", hash_generated_method = "854C7AC00FFB6637A4C3AEB25C9A248D")
     
 public StreamResult(File f) {

@@ -11,16 +11,11 @@ import android.os.Handler;
 import android.os.Message;
 import android.util.Log;
 
-
-
-
-
 public class AdnRecordLoader extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.635 -0500", hash_original_field = "B23F1213336A6A9687543ED87A15B656", hash_generated_field = "17A3362C3349AC144D451B5CA8B78324")
 
     static String LOG_TAG;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.657 -0500", hash_original_field = "2C7F3EDB742DE4DD6ECF1FAC496F496B", hash_generated_field = "6C4F2B2823554C1D8FB27E13A8A823B4")
-
 
     static final int EVENT_ADN_LOAD_DONE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.661 -0500", hash_original_field = "5B60DBB5A2E0FCCA3B462950F5880ACD", hash_generated_field = "E558B4E6E15486F9756108AEB9A85B6E")
@@ -36,7 +31,6 @@ public class AdnRecordLoader extends Handler {
 
     static final int EVENT_UPDATE_RECORD_DONE = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.637 -0500", hash_original_field = "4D74BFF297E0DF8FA98FF6D8A8DBA78C", hash_generated_field = "4D74BFF297E0DF8FA98FF6D8A8DBA78C")
-
 
     PhoneBase phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.640 -0500", hash_original_field = "036ADE2862D2A42E9D25EBB639B81422", hash_generated_field = "036ADE2862D2A42E9D25EBB639B81422")
@@ -61,7 +55,6 @@ public class AdnRecordLoader extends Handler {
 
     ArrayList<AdnRecord> adns;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.655 -0500", hash_original_field = "BCA77D12632DFCDF9A8AEB56A649B3D3", hash_generated_field = "AF3702DCE31842B1077A6BA0BEAC4C02")
-
 
     // Either an AdnRecord or a reference to adns depending
     // if this is a load one or load all operation
@@ -99,7 +92,6 @@ public void
                     obtainMessage(EVENT_ADN_LOAD_DONE));
 
     }
-
 
     /**
      * Resulting ArrayList&lt;adnRecord> is placed in response.obj.result
@@ -149,6 +141,7 @@ public void
 
     //***** Overridden from Handler
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.683 -0500", hash_original_method = "051E5CCA6123D268EF8D870B0A4015BF", hash_generated_method = "3A1D97C4CD64F1883311ED84843E30BE")
     
 public void

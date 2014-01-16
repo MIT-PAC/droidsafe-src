@@ -10,10 +10,10 @@ import android.view.accessibility.AccessibilityEvent;
 
 import com.android.internal.R;
 
-
-
 public class RadioButton extends CompoundButton {
     
+    @DSComment("RadioButton")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.424 -0500", hash_original_method = "8EA0788A6467FFBB5D903E4298CD9D3F", hash_generated_method = "1CC640C88E022C090251D7E89C600A3A")
     
 public RadioButton(Context context) {
@@ -59,7 +59,6 @@ public RadioButton(Context context, AttributeSet attrs, int defStyle) {
             event.getText().add(mContext.getString(R.string.radiobutton_not_selected));
         }
     }
-
     
 }
 

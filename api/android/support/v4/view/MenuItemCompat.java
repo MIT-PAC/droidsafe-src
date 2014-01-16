@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.view.MenuItem;
 import android.view.View;
 
-
-
-
-
 public class MenuItemCompat {
 
     // -------------------------------------------------------------------
@@ -44,11 +40,9 @@ public static MenuItem setActionView(MenuItem item, View view) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.319 -0500", hash_original_field = "CE0FD093D5606EE490406D031A25C64B", hash_generated_field = "49E9487BFDE37A8FB02ED40DCD77804C")
 
     public static final int SHOW_AS_ACTION_NEVER = 0;
-
     
     static class BaseMenuVersionImpl implements MenuVersionImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.258 -0400", hash_original_method = "BFDC30535AAA3E19A04AFADFFD50E16A", hash_generated_method = "BFDC30535AAA3E19A04AFADFFD50E16A")
         public BaseMenuVersionImpl ()
         {
@@ -67,15 +61,11 @@ public static MenuItem setActionView(MenuItem item, View view) {
         public MenuItem setActionView(MenuItem item, View view) {
             return item;
         }
-
         
     }
-
-
     
     static class HoneycombMenuVersionImpl implements MenuVersionImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.259 -0400", hash_original_method = "1A0F236AE805B2AE3CB14132D083E8D6", hash_generated_method = "1A0F236AE805B2AE3CB14132D083E8D6")
         public HoneycombMenuVersionImpl ()
         {
@@ -94,11 +84,8 @@ public static MenuItem setActionView(MenuItem item, View view) {
         public MenuItem setActionView(MenuItem item, View view) {
             return MenuItemCompatHoneycomb.setActionView(item, view);
         }
-
         
     }
-
-
     
     interface MenuVersionImpl {
         public boolean setShowAsAction(MenuItem item, int actionEnum);

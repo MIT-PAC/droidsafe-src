@@ -13,14 +13,8 @@ import java.util.List;
 
 import javax.security.auth.x500.X500Principal;
 
-
-
-
-
-
 public abstract class X509Certificate extends Certificate implements X509Extension {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.753 -0500", hash_original_field = "45A94DD103E7CC2C6930B99BDD4E44E3", hash_generated_field = "295358E84336F84BE14E3E6F43F3885D")
-
 
     private static final long serialVersionUID = -2491127588187038216L;
 
@@ -146,6 +140,7 @@ public abstract Principal getIssuerDN() ;
      *
      * @return the {@code issuer} (issuer distinguished name).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.771 -0500", hash_original_method = "622364792700CAE6EDC2CD40345CDB0C", hash_generated_method = "478760CCC26CE25D1BFDCC9A710FDFC9")
     
 public X500Principal getIssuerX500Principal() {
@@ -206,6 +201,7 @@ public abstract Principal getSubjectDN();
      *
      * @return the {@code subject} (subject distinguished name)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.776 -0500", hash_original_method = "4B536E889AC2F831879320061DB28B36", hash_generated_method = "CDA1CB61CC02EE95C2EA7871BDAE4CDE")
     
 public X500Principal getSubjectX500Principal() {
@@ -350,6 +346,7 @@ public abstract boolean[] getKeyUsage();
      * @throws CertificateParsingException
      *             if the extension decoding fails.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.802 -0500", hash_original_method = "418B9B73EF0BB9A94B6F38EF0D0811CB", hash_generated_method = "9D60A831FC7F629FFDF2244F7B5F2183")
     
 public List<String> getExtendedKeyUsage()
@@ -398,6 +395,7 @@ public abstract int getBasicConstraints();
      * @throws CertificateParsingException
      *             if decoding of the extension fails.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.808 -0500", hash_original_method = "2F7FC96FA38F720B2ACF5452CA7F8BC4", hash_generated_method = "3B38E600F6745A563AE2BD9CBD9C3451")
     
 public Collection<List<?>> getSubjectAlternativeNames()
@@ -434,6 +432,7 @@ public Collection<List<?>> getSubjectAlternativeNames()
      * @throws CertificateParsingException
      *             if decoding of the extension fails.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.810 -0500", hash_original_method = "274C80A4A7372477807793557A7E6C15", hash_generated_method = "41EA8909B54C30DB2B9ECAE055E46505")
     
 public Collection<List<?>> getIssuerAlternativeNames()

@@ -20,11 +20,6 @@ import org.apache.http.message.BufferedHeader;
 import org.apache.http.message.ParserCursor;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class BrowserCompatSpec extends CookieSpecBase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.844 -0500", hash_original_field = "4F30D7346FE9603EC1B9A123868D0324", hash_generated_field = "0A51A84F6A48C700CC30A9F8BE2AB7A0")
 
@@ -46,8 +41,7 @@ public class BrowserCompatSpec extends CookieSpecBase {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.847 -0500", hash_original_field = "6ECCC683F151EE6CE57F2B5BB3F18FF6", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
 
-
-    private  String[] datepatterns; 
+    private  String[] datepatterns;
     
     /** Default constructor */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.850 -0500", hash_original_method = "6F0554959345610814E9AA8C15D0E733", hash_generated_method = "7D8D35CA9F2F06B4FCE9AD644D24968B")
@@ -156,12 +150,14 @@ public List<Header> formatCookies(final List<Cookie> cookies) {
         return headers;
     }
 
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.861 -0500", hash_original_method = "F5A7F7B6DBF07E93DFA757749FB9F06B", hash_generated_method = "4F2143F4EC2E36A2DC294CA599F7593F")
     
 public int getVersion() {
         return 0;
     }
 
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.863 -0500", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "1B200382D02120253E20B1BF08CC95D3")
     
 public Header getVersionHeader() {

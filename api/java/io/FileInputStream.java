@@ -18,13 +18,8 @@ import libcore.io.Libcore;
 import libcore.io.Streams;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class FileInputStream extends InputStream implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.101 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
-
 
     private FileDescriptor fd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.103 -0500", hash_original_field = "58BD5E983B42D5DA1EAF3358ED6D6916", hash_generated_field = "84D2D8F04948CA1C168D3A3584462F87")
@@ -34,7 +29,6 @@ public class FileInputStream extends InputStream implements Closeable {
 
     private FileChannel channel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.108 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 
@@ -46,6 +40,8 @@ public class FileInputStream extends InputStream implements Closeable {
      * @throws FileNotFoundException
      *             if {@code file} does not exist.
      */
+    @DSComment("File Input Stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.110 -0500", hash_original_method = "1BD49D518996D312C80F5CC2297619D7", hash_generated_method = "B658BDC677171B3FEE9047C0F1943C54")
     
 public FileInputStream(File file) throws FileNotFoundException {
@@ -65,6 +61,8 @@ public FileInputStream(File file) throws FileNotFoundException {
      * @throws NullPointerException
      *             if {@code fd} is {@code null}.
      */
+    @DSComment("File Input Stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.113 -0500", hash_original_method = "9A99F3F0C17344BC7A4198604236E89C", hash_generated_method = "6FFB9E5503B5FFEBF02470C9DA7622BF")
     
 public FileInputStream(FileDescriptor fd) {
@@ -80,12 +78,16 @@ public FileInputStream(FileDescriptor fd) {
     /**
      * Equivalent to {@code new FileInputStream(new File(path))}.
      */
+    @DSComment("File Input Stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.116 -0500", hash_original_method = "3B135756B4C06BFF0359EE9E41EEDC20", hash_generated_method = "A45CB9BBA620FFB20A4C2B7E074F5E66")
     
 public FileInputStream(String path) throws FileNotFoundException {
         this(new File(path));
     }
 
+    @DSComment("File Input Stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.119 -0500", hash_original_method = "EBD7B964937B6AA7FA3657DA1AAC30BC", hash_generated_method = "ADA0D7075AE3399605E425074EC4F63B")
     
 @Override
@@ -93,6 +95,8 @@ public FileInputStream(String path) throws FileNotFoundException {
         return IoBridge.available(fd);
     }
 
+    @DSComment("File Input Stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.122 -0500", hash_original_method = "F8E8B4DFEA301034B0C9D2DA47B66D8A", hash_generated_method = "0DF0B8874963515CB2F09EA5F083FA85")
     
 @Override
@@ -142,6 +146,9 @@ public FileInputStream(String path) throws FileNotFoundException {
      * Returns a read-only {@link FileChannel} that shares its position with
      * this stream.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.127 -0500", hash_original_method = "BB4E25A77FBA5E31003F6019B5643EE2", hash_generated_method = "2FB2F921FF08661F63F300CEEF489872")
     
 public FileChannel getChannel() {
@@ -156,18 +163,25 @@ public FileChannel getChannel() {
     /**
      * Returns the underlying file descriptor.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.129 -0500", hash_original_method = "7178DA6FA6DD367775EBAB657FD1BDA0", hash_generated_method = "BF99A80A25EF13693DBEFA2A53118A0A")
     
 public final FileDescriptor getFD() throws IOException {
         return fd;
     }
 
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.132 -0500", hash_original_method = "DEBABCFB0D5C81DCE0E37961227F43C9", hash_generated_method = "259E44B8B64C1FF49A2A2EC42CFB5CBE")
     
 @Override public int read() throws IOException {
         return Streams.readSingleByte(this);
     }
 
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.135 -0500", hash_original_method = "C5A4FB68C0A55B7975F40A4160EB1CAC", hash_generated_method = "E85E2815A9A684302F2788213CC7C71B")
     
 @Override public int read(byte[] buffer, int byteOffset, int byteCount) throws IOException {
@@ -194,7 +208,6 @@ public final FileDescriptor getFD() throws IOException {
             throw errnoException.rethrowAsIOException();
         }
     }
-
     
 }
 

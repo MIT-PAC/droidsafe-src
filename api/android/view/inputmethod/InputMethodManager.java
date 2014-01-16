@@ -41,11 +41,6 @@ import com.android.internal.view.IInputMethodManager;
 import com.android.internal.view.IInputMethodSession;
 import com.android.internal.view.InputBindResult;
 
-
-
-
-
-
 public final class InputMethodManager {
 
     /**
@@ -53,14 +48,14 @@ public final class InputMethodManager {
      * doesn't already exist.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.633 -0500", hash_original_method = "424A4B77F0AFDB65F3E66A3DDD55A926", hash_generated_method = "1687AC00C8A9CF972080C9248F12F34F")
     
 static public InputMethodManager getInstance(Context context) {
         return getInstance(context.getMainLooper());
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     static public InputMethodManager getInstance(Looper mainLooper) {
         synchronized (mInstanceSync) {
             if (mInstance != null) {
@@ -96,13 +91,11 @@ static public InputMethodManager peekInstance() {
     static final String TAG = "InputMethodManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.510 -0500", hash_original_field = "541AC6A543E5DDE4BA13B62C18B210B7", hash_generated_field = "8E1374FF2568A6E7DF58ACEEF1A2A836")
 
-
     static final Object mInstanceSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.513 -0500", hash_original_field = "1E8EE6D6CBCC39100FFEE331D06EF48B", hash_generated_field = "70278290516934488710CF458A67B14F")
 
     static InputMethodManager mInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.577 -0500", hash_original_field = "58BEFE975A77EC3D2B230FE124E2FF63", hash_generated_field = "29E3688958B2990B4C392F7BA34B78FE")
-
     
     static final int MSG_DUMP = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.580 -0500", hash_original_field = "C2A7BBFEA502DBFB8E9B84CBDD9C0296", hash_generated_field = "00F2010EA24613AFCCBC353F90339FF1")
@@ -139,7 +132,6 @@ static public InputMethodManager peekInstance() {
 
     public static final int HIDE_NOT_ALWAYS = 0x0002;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.515 -0500", hash_original_field = "AF4D994570007AEC23008412E21170BC", hash_generated_field = "AF4D994570007AEC23008412E21170BC")
-
     
      IInputMethodManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.517 -0500", hash_original_field = "22AA67C96F8F7AD7DFD89E53DF216F9A", hash_generated_field = "22AA67C96F8F7AD7DFD89E53DF216F9A")
@@ -162,7 +154,6 @@ static public InputMethodManager peekInstance() {
 
     boolean mFullscreenMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.539 -0500", hash_original_field = "8610B5C69CA08D5F83A8EDAD499B41DF", hash_generated_field = "BD9E4743D5524AAE2A9CA10C0E8D34F5")
-
     
     /**
      * This is the root view of the overall window that currently has input
@@ -209,7 +200,6 @@ static public InputMethodManager peekInstance() {
 
     int mCursorCandEnd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.571 -0500", hash_original_field = "C983A711DB3B897D81814DB669E54903", hash_generated_field = "9762E6807C32AD2031CDDB1E17D9601F")
-
     
     /**
      * Sequence number of this binding, as returned by the server.
@@ -223,8 +213,8 @@ static public InputMethodManager peekInstance() {
     IInputMethodSession mCurMethod;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_field = "BCB122DBAEAD09474F3177A327270EA8", hash_generated_field = "7F61D375E432AF7DEA6AA6FB636235DA")
 
-    final IInputMethodClient.Stub mClient = new IInputMethodClient.Stub() {        
-        @DSModeled(DSC.SAFE)
+    final IInputMethodClient.Stub mClient = new IInputMethodClient.Stub() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.210 -0400", hash_original_method = "F6EA3706319B79FC567D288B23EBD7C8", hash_generated_method = "C657B985C982F7F1989F7F8E33AA9AB9")
         @Override
         protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
@@ -252,70 +242,42 @@ static public InputMethodManager peekInstance() {
             addTaint(fout.getTaint());
             addTaint(args[0].getTaint());
             
-            
-            
-            
-            
-            
-            
-            
-            
-                
-                    
-                
-            
-                
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.210 -0400", hash_original_method = "45BD5FF75807911B1CFCFBB58E96318E", hash_generated_method = "E89AC6B358CC1D0E0E8D60BFEB3BF192")
         public void setUsingInputMethod(boolean state) {
             addTaint(state);
             
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.210 -0400", hash_original_method = "574FEF71BCEC075DFBB030A0D3C30C22", hash_generated_method = "2CC8A14340DD97B215BB7F37776C22E7")
         public void onBindMethod(InputBindResult res) {
             
             mH.sendMessage(mH.obtainMessage(MSG_BIND, res));
             addTaint(res.getTaint());
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_method = "588CEEFF7FA7882256433E31043E7659", hash_generated_method = "93B331FAA4D44012CC809EFD07D72DC5")
         public void onUnbindMethod(int sequence) {
             
             mH.sendMessage(mH.obtainMessage(MSG_UNBIND, sequence, 0));
             addTaint(sequence);
             
-            
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.211 -0400", hash_original_method = "348B3468B5EF750F568EE6741021F563", hash_generated_method = "F00801DE5796A4FB5DF1A8F8529ED1F9")
         public void setActive(boolean active) {
             mH.sendMessage(mH.obtainMessage(MSG_SET_ACTIVE, active ? 1 : 0, 0));
             addTaint(active);
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.628 -0500", hash_original_field = "857160D6CD8A26C79A4C0E2FBFA77DF6", hash_generated_field = "23E79A65143FCC7F6AFAF0A8EA3DFB92")
     
-    
     final InputConnection mDummyInputConnection = new BaseInputConnection(this, false);
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.711 -0400", hash_original_method = "508ED56B5BF5DABABCAF5D12E61B17FA", hash_generated_method = "8F8CB7DD0282198FF166028847E17584")
       InputMethodManager(IInputMethodManager service, Looper looper) {
         mService = service;
@@ -341,12 +303,13 @@ static public InputMethodManager peekInstance() {
     }
     
     //Hand modeling
-    @DSModeled(DSC.BAN)
+    
     public InputMethodManager() {
      
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.641 -0500", hash_original_method = "3D9C93A013E7DC300254687B6593E9DE", hash_generated_method = "23009FC047CD86B82991D738FC080ED1")
     
 public IInputMethodClient getClient() {
@@ -354,12 +317,14 @@ public IInputMethodClient getClient() {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.643 -0500", hash_original_method = "BB1CC2AA4E519DFF3D7BB1A17FAAA9A1", hash_generated_method = "574F1B58FB031FC8E0E4FE41A3FC2633")
     
 public IInputContext getInputContext() {
         return mIInputContext;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.645 -0500", hash_original_method = "4976C1493B414917938FA9CF9C859341", hash_generated_method = "A5D9227E6D133148150212A1FC22F8BB")
     
 public List<InputMethodInfo> getInputMethodList() {
@@ -370,6 +335,7 @@ public List<InputMethodInfo> getInputMethodList() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.648 -0500", hash_original_method = "E8BA85FCD94534AA9F0D8586DC21C83A", hash_generated_method = "50223B28DCCF2DE4A8CD6995D00FCE60")
     
 public List<InputMethodInfo> getEnabledInputMethodList() {
@@ -387,6 +353,7 @@ public List<InputMethodInfo> getEnabledInputMethodList() {
      * selected subtypes. If an input method info doesn't have enabled subtypes, the framework
      * will implicitly enable subtypes according to the current system language.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.650 -0500", hash_original_method = "6701B30EF11ADDDCEFC97757F6DCE403", hash_generated_method = "B1FC0F4538A0653C57E850863F54776F")
     
 public List<InputMethodSubtype> getEnabledInputMethodSubtypeList(InputMethodInfo imi,
@@ -419,6 +386,7 @@ public void hideStatusIcon(IBinder imeToken) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.658 -0500", hash_original_method = "7375BD73E964162AE893F10DF6DE4659", hash_generated_method = "318B4F18EE0F7E3AA06671365F6ECEC3")
     
 public void setImeWindowStatus(IBinder imeToken, int vis, int backDisposition) {
@@ -448,6 +416,7 @@ public void registerSuggestionSpansForNotification(SuggestionSpan[] spans) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.666 -0500", hash_original_method = "67AB3FB4ECE37955692BC451DD457E24", hash_generated_method = "8A649CE463E3FB6B3BEA7AD02D9CB5EB")
     
 public void notifySuggestionPicked(SuggestionSpan span, String originalString, int index) {
@@ -601,6 +570,7 @@ public void displayCompletions(View view, CompletionInfo[] completions) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.690 -0500", hash_original_method = "51F483359287A71D0F033A0D1668F291", hash_generated_method = "C567B52DE9443B581691DE694A93798F")
     
 public void updateExtractedText(View view, int token, ExtractedText text) {
@@ -630,6 +600,8 @@ public void updateExtractedText(View view, int token, ExtractedText text) {
      * @param flags Provides additional operating flags.  Currently may be
      * 0 or have the {@link #SHOW_IMPLICIT} bit set.
      */
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.697 -0500", hash_original_method = "8D2F613F92BFA1616CD527BE18090765", hash_generated_method = "8B69D752E6300569DF8BE9839965005B")
     
 public boolean showSoftInput(View view, int flags) {
@@ -691,6 +663,8 @@ public void showSoftInputUnchecked(int flags, ResultReceiver resultReceiver) {
      * @param flags Provides additional operating flags.  Currently may be
      * 0 or have the {@link #HIDE_IMPLICIT_ONLY} bit set.
      */
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.720 -0500", hash_original_method = "4391301CC9B8F998B7CF2FBAB148B8AA", hash_generated_method = "F0D9750483C2385989EDC41B5E340D15")
     
 public boolean hideSoftInputFromWindow(IBinder windowToken, int flags) {
@@ -730,7 +704,6 @@ public boolean hideSoftInputFromWindow(IBinder windowToken, int flags,
             return false;
         }
     }
-    
 
     /**
      * This method toggles the input method window display.
@@ -773,6 +746,8 @@ public void toggleSoftInputFromWindow(IBinder windowToken, int showFlags, int hi
      * {@link #HIDE_NOT_ALWAYS} bit set.
      * @hide
      */
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.727 -0500", hash_original_method = "79211245E8E42CAB1585D75CD7067652", hash_generated_method = "6E47BC4561ACF73C9EAAD7DCD0628FB9")
     
 public void toggleSoftInput(int showFlags, int hideFlags) {
@@ -1052,6 +1027,7 @@ void closeCurrentInput() {
      * Called by ViewAncestor when its window gets input focus.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.758 -0500", hash_original_method = "4893EC862C01D5D2A6E85A7017E94B9B", hash_generated_method = "349D9D12DF3A6DA1D0A30BA63321958C")
     
 public void onWindowFocus(View rootView, View focusedView, int softInputMode,
@@ -1095,6 +1071,7 @@ public void startGettingWindowFocus(View rootView) {
     /**
      * Report the current selection range.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.763 -0500", hash_original_method = "6EC728E52174DF43F39F15D376B96D59", hash_generated_method = "741763FA91FB3B125F4D311FC2F6B63E")
     
 public void updateSelection(View view, int selStart, int selEnd,
@@ -1163,6 +1140,7 @@ public boolean isWatchingCursor(View view) {
     /**
      * Report the current cursor location in its window.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.771 -0500", hash_original_method = "06AF2B97EC9C8BBE1303A237FE727449", hash_generated_method = "103A7E1B02C228D1981B721CBC7DAC4C")
     
 public void updateCursor(View view, int left, int top, int right, int bottom) {
@@ -1188,7 +1166,6 @@ public void updateCursor(View view, int left, int top, int right, int bottom) {
             }
         }
     }
-
     
     class H extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.588 -0500", hash_original_method = "6EF38EF9E91987FCDB2CC1FED5C76A24", hash_generated_method = "6EF38EF9E91987FCDB2CC1FED5C76A24")
@@ -1279,11 +1256,8 @@ H(Looper looper) {
                 }
             }
         }
-
         
     }
-
-
     
     private static class ControlledInputConnectionWrapper extends IInputConnectionWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.599 -0500", hash_original_field = "BBC16146D0A901FDED4BB966420384DF", hash_generated_field = "9798BD50577982452DA631DD5C538942")
@@ -1304,7 +1278,6 @@ public ControlledInputConnectionWrapper(final Looper mainLooper, final InputConn
         public boolean isActive() {
             return mParentInputMethodManager.mActive;
         }
-
         
     }
 
@@ -1319,6 +1292,7 @@ public ControlledInputConnectionWrapper(final Looper mainLooper, final InputConn
      * different developers will not create conflicting commands.
      * @param data Any data to include with the command.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.774 -0500", hash_original_method = "42E6E13C0C5606029CE59DAABCC4FEF4", hash_generated_method = "637CE227C95F20FE5A9F9CD169CDF76B")
     
 public void sendAppPrivateCommand(View view, String action, Bundle data) {
@@ -1346,6 +1320,7 @@ public void sendAppPrivateCommand(View view, String action, Bundle data) {
      * itself.
      * @param id The unique identifier for the new input method to be switched to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.777 -0500", hash_original_method = "BA3360E0078151C4E77F69CD0F708AC2", hash_generated_method = "A5938D513A91511C2DFF9742F3A37CA1")
     
 public void setInputMethod(IBinder token, String id) {
@@ -1365,6 +1340,7 @@ public void setInputMethod(IBinder token, String id) {
      * @param id The unique identifier for the new input method to be switched to.
      * @param subtype The new subtype of the new input method to be switched to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.779 -0500", hash_original_method = "6B5F7BD4B9987D792262BC3FA22B0356", hash_generated_method = "2423AB9E571221589831B1F4A89E7E3B")
     
 public void setInputMethodAndSubtype(IBinder token, String id, InputMethodSubtype subtype) {
@@ -1525,6 +1501,9 @@ public void showInputMethodAndSubtypeEnabler(String imiId) {
      * the current input method. This method returns null when the current input method doesn't
      * have any input method subtype.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.798 -0500", hash_original_method = "FD9F276F6D40BEB379032073F0CE055D", hash_generated_method = "B0AAE5461AF9B5346EE89377D430A6FF")
     
 public InputMethodSubtype getCurrentInputMethodSubtype() {
@@ -1544,6 +1523,7 @@ public InputMethodSubtype getCurrentInputMethodSubtype() {
      * @return true if the current subtype was successfully switched. When the specified subtype is
      * null, this method returns false.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.800 -0500", hash_original_method = "3CA77773C45BE29D3C7CB419603994A1", hash_generated_method = "EBCF77961B85338AAB227CD051845F15")
     
 public boolean setCurrentInputMethodSubtype(InputMethodSubtype subtype) {
@@ -1560,6 +1540,7 @@ public boolean setCurrentInputMethodSubtype(InputMethodSubtype subtype) {
     /**
      * Returns a map of all shortcut input method info and their subtypes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.804 -0500", hash_original_method = "43A6DF9F5E808A92ECB1533408005E7F", hash_generated_method = "6B3036069590C808E6FF68E1FB3C361C")
     
 public Map<InputMethodInfo, List<InputMethodSubtype>> getShortcutInputMethodsAndSubtypes() {
@@ -1630,6 +1611,7 @@ public boolean switchToLastInputMethod(IBinder imeToken) {
      * @param imiId Id of InputMethodInfo which additional input method subtypes will be added to.
      * @param subtypes subtypes will be added as additional subtypes of the current input method.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.809 -0500", hash_original_method = "E3938A1614AA74CBD638A5A0682603ED", hash_generated_method = "D34D9596D75C1D779B74100477243A36")
     
 public void setAdditionalInputMethodSubtypes(String imiId, InputMethodSubtype[] subtypes) {
@@ -1642,6 +1624,7 @@ public void setAdditionalInputMethodSubtypes(String imiId, InputMethodSubtype[] 
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.812 -0500", hash_original_method = "D92C08014C42A358F015C9B31552925A", hash_generated_method = "B4BE121955C3E0394B5BD04A3B1399AD")
     
 public InputMethodSubtype getLastInputMethodSubtype() {
@@ -1655,6 +1638,7 @@ public InputMethodSubtype getLastInputMethodSubtype() {
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:19.815 -0500", hash_original_method = "A669FCC83173C60A2ED2B3C5020338A1", hash_generated_method = "A669FCC83173C60A2ED2B3C5020338A1")
     
 void doDump(FileDescriptor fd, PrintWriter fout, String[] args) {

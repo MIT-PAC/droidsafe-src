@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class SmsAddress {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.418 -0500", hash_original_field = "153E90B6A360B28E5ED013710DF79449", hash_generated_field = "56A4F1D6B084373CE43CD27D5809A080")
 
@@ -34,7 +30,6 @@ public abstract class SmsAddress {
     public static final int TON_ABBREVIATED = 6;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.435 -0500", hash_original_field = "B7A40B0EBCA8C1E2D256C431365D258C", hash_generated_field = "5E46769E3138C30BA726827EC521CE4C")
 
-
     public int ton;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.436 -0500", hash_original_field = "815EECE17AF4BC840D4544A9ECB9EACD", hash_generated_field = "94F51CF62708E9C4165D74975525630C")
 
@@ -52,6 +47,7 @@ public abstract class SmsAddress {
     /**
      * Returns the address of the SMS message in String form or null if unavailable
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:10.441 -0500", hash_original_method = "EAD8B5BB0DBAF5034E5C9FE6C7B0909A", hash_generated_method = "16A98D98BF22E2226CA4E552EBC9B9DF")
     
 public String getAddressString() {

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class RestrictedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.841 -0500", hash_original_field = "EBCF5A218343A6E650E6B0B7F607421E", hash_generated_field = "DFF46A4E704B5BD370FD8E12EB30BC1D")
 
@@ -109,6 +105,7 @@ public boolean isCsRestricted() {
         && mCsEmergencyRestricted == s.mCsEmergencyRestricted;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:11.871 -0500", hash_original_method = "845D0E6369A38FB89C7B9C67406A7898", hash_generated_method = "11081E9454E6AB52E292A7C378A60628")
     
 @Override
@@ -125,7 +122,6 @@ public boolean isCsRestricted() {
 
         return  "Restricted State CS: " + csString + " PS:" + mPsRestricted;
     }
-
     
 }
 

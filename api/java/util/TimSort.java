@@ -5,20 +5,12 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class TimSort<T> {
-
     
-    @DSModeled(DSC.SAFE)
     static <T> void sort(T[] a, Comparator<? super T> c) {
         sort(a, 0, a.length, c);
     }
-
     
-    @DSModeled(DSC.SAFE)
     static <T> void sort(T[] a, int lo, int hi, Comparator<? super T> c) {
         if (c == null) {
             Arrays.sort(a, lo, hi);
@@ -51,9 +43,7 @@ class TimSort<T> {
         ts.mergeForceCollapse();
         if (DEBUG) assert ts.stackSize == 1;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @SuppressWarnings("fallthrough")
     private static <T> void binarySort(T[] a, int lo, int hi, int start,
                                        Comparator<? super T> c) {
@@ -83,9 +73,7 @@ class TimSort<T> {
             a[left] = pivot;
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static <T> int countRunAndMakeAscending(T[] a, int lo, int hi,
                                                     Comparator<? super T> c) {
         if (DEBUG) assert lo < hi;
@@ -149,9 +137,7 @@ private static int minRunLength(int n) {
         }
         return n + r;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static <T> int gallopLeft(T key, T[] a, int base, int len, int hint,
                                       Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -195,9 +181,7 @@ private static int minRunLength(int n) {
         if (DEBUG) assert lastOfs == ofs;
         return ofs;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static <T> int gallopRight(T key, T[] a, int base, int len,
                                        int hint, Comparator<? super T> c) {
         if (DEBUG) assert len > 0 && hint >= 0 && hint < len;
@@ -266,7 +250,6 @@ private static int minRunLength(int n) {
 
     private T[] tmp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:05.136 -0500", hash_original_field = "7B918E739EAB69FF9211C8EF3B5951F1", hash_generated_field = "8A03E88A245DF30F78B349A1EAF962EE")
-
 
     /**
      * A stack of pending runs yet to be merged.  Run i starts at

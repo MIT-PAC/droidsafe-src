@@ -8,10 +8,6 @@ import java.io.IOException;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class ASN1BitString extends ASN1StringType {
 
     /**
@@ -23,6 +19,7 @@ public class ASN1BitString extends ASN1StringType {
      * @return ASN.1 Bitstring type default implementation
      * @see org.apache.harmony.security.asn1.BitString
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.099 -0500", hash_original_method = "66B1F67B2E4924691687068C01957881", hash_generated_method = "09FC42AAA2010F0F571B2693B7BFC711")
     
 public static ASN1BitString getInstance() {
@@ -63,6 +60,7 @@ public ASN1BitString() {
      * @param in - BER input stream
      * @return BitString object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.104 -0500", hash_original_method = "E5B2C829F55FF77DE885EB0182CA875F", hash_generated_method = "24C5744267DF28523A463FE89F8C323F")
     
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -77,7 +75,6 @@ public ASN1BitString() {
 @Override public void encodeContent(BerOutputStream out) {
         out.encodeBitString();
     }
-
     
     public static class ASN1NamedBitList extends ASN1BitString {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.112 -0500", hash_original_field = "B8CA03B1D4CC2487E29E89EEB5EF2F9B", hash_generated_field = "AEC1F0C6EBA822C84ED8236810752976")
@@ -91,7 +88,6 @@ public ASN1BitString() {
         private static final int INDEFINITE_SIZE = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.119 -0500", hash_original_field = "2249D5EAE5D206050241DA9164C6582A", hash_generated_field = "2B48B9A1899DE822AC4EC2D83505C6F1")
 
-
         private  int minBits;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.122 -0500", hash_original_field = "DE7F4CC3E2B8F31D9926BD3DA40DD690", hash_generated_field = "BECE67D662A881E5FD42CD7CE3FA03FC")
 
@@ -104,6 +100,7 @@ public ASN1NamedBitList(int minBits) {
             this.maxBits = INDEFINITE_SIZE;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.128 -0500", hash_original_method = "039CEFCC208866EAEA17CE6A32A74892", hash_generated_method = "3210BEC7C6D0E61D358F2617AB453BEF")
         
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -153,6 +150,7 @@ public ASN1NamedBitList(int minBits) {
             return value;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.132 -0500", hash_original_method = "41EEFA120EBBC70AD57105C61092B6CF", hash_generated_method = "E3DE1F1CF68CFF7B1EF417A37E861FD3")
         
 @Override public void setEncodingContent(BerOutputStream out) {
@@ -193,6 +191,7 @@ public ASN1NamedBitList(int minBits) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.109 -0500", hash_original_method = "FF34851DE63579E10DEA6E02E8081017", hash_generated_method = "C74BF0B52156EFB4F6E4A05E92415479")
     
 @Override public void setEncodingContent(BerOutputStream out) {

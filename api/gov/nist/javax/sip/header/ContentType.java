@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.ContentTypeHeader;
 
-
-
-
-
-
 public class ContentType extends ParametersHeader implements javax.sip.header.ContentTypeHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.391 -0500", hash_original_field = "7BA0516880DD2AA311344E5EDF675622", hash_generated_field = "F8C109B71FF1A33F443977543E5F5F99")
 
@@ -76,6 +71,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
     /** get the mediaRange field.
      * @return MediaRange.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.412 -0500", hash_original_method = "95EC1B8E6B4FF94ADCA4E5294FD4A8E3", hash_generated_method = "0B6D6C1ABE19E2582C3C4BB50CA1EDFA")
     
 public MediaRange getMediaRange() {
@@ -85,6 +81,7 @@ public MediaRange getMediaRange() {
     /** get the Media Type.
      * @return String.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.415 -0500", hash_original_method = "71A8EC95A25C2B8732F46A6E9FE1A552", hash_generated_method = "E83B2494B9461062A2FDDAF3DC290288")
     
 public String getMediaType() {
@@ -94,6 +91,7 @@ public String getMediaType() {
     /** get the MediaSubType field.
      * @return String.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.417 -0500", hash_original_method = "EEE1854610A538C776591DF3242D2F30", hash_generated_method = "C3FFE958E0E4B51AE98A5BDFE574832B")
     
 public String getMediaSubType() {
@@ -103,6 +101,7 @@ public String getMediaSubType() {
     /** Get the content subtype.
     *@return the content subtype string (or null if not set).
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.420 -0500", hash_original_method = "8BA245F79ADA117CDC825C68939B2C5E", hash_generated_method = "D50487336DF5EA676FC0876A8565A6EC")
     
 public String getContentSubType() {
@@ -113,6 +112,7 @@ public String getContentSubType() {
     *@return the content tyep string (or null if not set).
     */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.423 -0500", hash_original_method = "13593DF0637733E8B4FF50555F8020B8", hash_generated_method = "8B4ABECBF848B177A2577F392D8DA7A8")
     
 public String getContentType() {
@@ -121,6 +121,7 @@ public String getContentType() {
 
     /** Get the charset parameter.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.425 -0500", hash_original_method = "706F14B8E3FC5B0A8E41E785E1C48F47", hash_generated_method = "8AFA5A9460F662206C220EA2887E7A97")
     
 public String getCharset() {
@@ -142,6 +143,7 @@ public void setMediaRange(MediaRange m) {
     *@param contentType Content type string.
     *@param contentSubType content subtype string
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.431 -0500", hash_original_method = "255C5DEA7C1BA0115D227FF364F117E1", hash_generated_method = "83ADF05B5CD8F5BA8564FED874B6DDF0")
     
 public void setContentType(String contentType, String contentSubType) {
@@ -156,6 +158,7 @@ public void setContentType(String contentType, String contentSubType) {
     *@param contentType Content type string.
     */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.434 -0500", hash_original_method = "D590DDC03635869B8BF7D8A74B8AFC87", hash_generated_method = "82AB572602AB8E73BDB47CF09B09CDDF")
     
 public void setContentType(String contentType) throws ParseException {
@@ -170,6 +173,7 @@ public void setContentType(String contentType) throws ParseException {
     /** Set the content subtype.
          * @param contentType String to set
          */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.437 -0500", hash_original_method = "0B1F5B2677CEADEDD2A1902A7B2F0CE3", hash_generated_method = "99E05A0D8012EB75DD0FFFA0A8B4971A")
     
 public void setContentSubType(String contentType) throws ParseException {

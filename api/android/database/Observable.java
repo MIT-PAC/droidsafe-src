@@ -6,15 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-
-
-
 public abstract class Observable<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.562 -0500", hash_original_field = "111F340D3667EAAF312D756E4DC51E42", hash_generated_field = "68FF9C8CE88B8AC7C5CD64388A1A318D")
 
     protected final ArrayList<T> mObservers = new ArrayList<T>();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.062 -0400", hash_original_method = "70464F2D6E4F3B59517C778B3B1A93D5", hash_generated_method = "70464F2D6E4F3B59517C778B3B1A93D5")
     public Observable ()
     {
@@ -28,6 +24,8 @@ public abstract class Observable<T> {
      * @throws IllegalArgumentException the observer is null
      * @throws IllegalStateException the observer is already registered
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.564 -0500", hash_original_method = "E1D85670162EF30644779B34B74FE79F", hash_generated_method = "64961E9417B447273F7D503CADBD57C5")
     
 public void registerObserver(T observer) {
@@ -49,6 +47,8 @@ public void registerObserver(T observer) {
      * @throws IllegalArgumentException the observer is null
      * @throws IllegalStateException the observer is not yet registered
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.567 -0500", hash_original_method = "5FAF0F37EA51171D6350539680C2708B", hash_generated_method = "110CF4BDE569CD145CF9EAC2D3053CD0")
     
 public void unregisterObserver(T observer) {
@@ -74,7 +74,6 @@ public void unregisterAll() {
             mObservers.clear();
         }        
     }
-
     
 }
 

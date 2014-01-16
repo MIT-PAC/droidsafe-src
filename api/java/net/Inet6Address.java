@@ -13,11 +13,6 @@ import java.io.ObjectStreamField;
 import java.util.Arrays;
 import java.util.Enumeration;
 
-
-
-
-
-
 public final class Inet6Address extends InetAddress {
 
     /**
@@ -34,6 +29,7 @@ public final class Inet6Address extends InetAddress {
      * @throws UnknownHostException
      *             if the address is null or has an invalid length.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.041 -0500", hash_original_method = "3EBBCEDEC56E7AB88FDFBBA10A7277EC", hash_generated_method = "2738A3A2DB880FE1666B91390E102972")
     
 public static Inet6Address getByAddress(String host, byte[] addr, int scope_id)
@@ -66,6 +62,7 @@ public static Inet6Address getByAddress(String host, byte[] addr, int scope_id)
      *             the interface doesn't have a numeric scope id for the given
      *             address type.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.044 -0500", hash_original_method = "A49AD0F17226A2518E05AA9E7B3D7401", hash_generated_method = "67B4E32FD9EB6997BB0F70F75774D53B")
     
 public static Inet6Address getByAddress(String host, byte[] addr,
@@ -104,7 +101,6 @@ public static Inet6Address getByAddress(String host, byte[] addr,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.020 -0500", hash_original_field = "509D2649D0720A019A3BE5787623729D", hash_generated_field = "33860EDD36D3C15C684CA6291D57C5F3")
 
-
     private static final long serialVersionUID = 6880410070516793377L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.023 -0500", hash_original_field = "9C7983317A96F8730EC0A215D9D0A39D", hash_generated_field = "0DD864D68660257C63399D6AE1C39774")
 
@@ -117,7 +113,6 @@ public static Inet6Address getByAddress(String host, byte[] addr,
                     "localhost", 0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.083 -0500", hash_original_field = "E792A6F412FC9AC97BBBBC4217A1546B", hash_generated_field = "80F683DFFB1443818A3133094A7F3E44")
 
-
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("ipaddress", byte[].class),
         new ObjectStreamField("scope_id", int.class),
@@ -127,13 +122,11 @@ public static Inet6Address getByAddress(String host, byte[] addr,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.028 -0500", hash_original_field = "41D33BD5BE32E6D2C28DE3661CB62483", hash_generated_field = "540B1C4E03CB3F83CE53991B800AA5B4")
 
-
     private boolean scope_id_set;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.031 -0500", hash_original_field = "19DDBB0A8C50D0B5A5DEE29BDEA199B1", hash_generated_field = "351D02D0A0BDA8B744D0089144674D8B")
 
     private int scope_id;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.034 -0500", hash_original_field = "DB075635A538B553B15510156131F1A4", hash_generated_field = "D87D8B960AE4DD5A16D6F3BEBE7DE96B")
-
 
     private boolean scope_ifname_set;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.036 -0500", hash_original_field = "0D91B529E87429372316008C4CCB0D9A", hash_generated_field = "9CB9BAC1E4A6ACB09F6AABB6B922D3F0")
@@ -262,6 +255,7 @@ public boolean isIPv4CompatibleAddress() {
     /**
      * Returns the scope id if this address is scoped to an interface, 0 otherwise.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.078 -0500", hash_original_method = "50E705BC98343A8115E00AFCB06615D7", hash_generated_method = "DECC39A89226EC4FC1F204C8768F2743")
     
 public int getScopeId() {
@@ -272,6 +266,7 @@ public int getScopeId() {
      * Returns the network interface if this address is instanced with a scoped
      * network interface, null otherwise.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:08.080 -0500", hash_original_method = "F4AA364893CE5E0A3EC053A0FC0AB68A", hash_generated_method = "055B24A17F8AA39219A32393030DFE99")
     
 public NetworkInterface getScopedInterface() {

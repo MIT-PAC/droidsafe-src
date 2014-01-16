@@ -9,10 +9,6 @@ import java.util.List;
 
 import android.content.Context;
 
-
-
-
-
 public class PluginList {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.116 -0500", hash_original_field = "6F1ADA12B2C2CA117AD1C9371F4F403A", hash_generated_field = "2E9E45DF2A62E67ADA94EFB03194A6CB")
 
@@ -39,6 +35,7 @@ public class PluginList {
     * @deprecated This interface was intended to be used by Gears. Since Gears was
     * deprecated, so is this class.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.121 -0500", hash_original_method = "1801070113215AA650907EEB61F166CD", hash_generated_method = "3BECEFBF0B6E4E8E898E2706F0B4BF10")
     
 @Deprecated
@@ -112,7 +109,6 @@ public class PluginList {
             // gets changed while the pref menu is up.
         }
     }
-
     
 }
 

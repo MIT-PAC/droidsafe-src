@@ -15,10 +15,6 @@ import android.os.SystemClock;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 
-
-
-
-
 public abstract class BaseSurfaceHolder implements SurfaceHolder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.855 -0500", hash_original_field = "EAFBA95484B3EFA9190AA696CD5D3C5E", hash_generated_field = "25EA1DB5DFEC23EE8B60521742AF8CB0")
 
@@ -27,7 +23,6 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
 
     static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.860 -0500", hash_original_field = "245DBB681D9BCEAB91C3AF9BEFD14B0B", hash_generated_field = "E2B111E4E2AF9D070F427E06A59175AE")
-
 
     public final ArrayList<SurfaceHolder.Callback> mCallbacks
             = new ArrayList<SurfaceHolder.Callback>();
@@ -38,14 +33,12 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
 
     boolean mHaveGottenCallbacks;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.866 -0500", hash_original_field = "F02D12B5BB0722412233675ECD5E628C", hash_generated_field = "75EFD538893F5DD13B0AD54DB0DA969B")
-
     
     public final ReentrantLock mSurfaceLock = new ReentrantLock();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.868 -0500", hash_original_field = "1124ED61F6BA8AE3DABDAA886BC252C4", hash_generated_field = "1AC64A6B091D59168F964952F2A6F53B")
 
     public Surface mSurface = new Surface();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.870 -0500", hash_original_field = "F9EC238B16254BED53BCBCEFBD6EF45D", hash_generated_field = "F9EC238B16254BED53BCBCEFBD6EF45D")
-
 
     int mRequestedWidth = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.872 -0500", hash_original_field = "C329ECB2BC7D94AC739801F768FE2BE6", hash_generated_field = "C329ECB2BC7D94AC739801F768FE2BE6")
@@ -59,10 +52,8 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
     int mRequestedType = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.879 -0500", hash_original_field = "0FB69CE58A9B36474A3E521462C289A0", hash_generated_field = "0FB69CE58A9B36474A3E521462C289A0")
 
-
     long mLastLockTime = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.882 -0500", hash_original_field = "DE07B82DC42B56613109CDBFD4F50C15", hash_generated_field = "DE07B82DC42B56613109CDBFD4F50C15")
-
     
     int mType = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.884 -0500", hash_original_field = "F621A8E01339D28C0B8365EF1B47521B", hash_generated_field = "5FF70CE962F22D930D1FDE55775FEDAE")
@@ -72,7 +63,6 @@ public abstract class BaseSurfaceHolder implements SurfaceHolder {
 
     Rect mTmpDirty;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.115 -0400", hash_original_method = "65236AFB54FAB65BD2FC1C8CD2966A75", hash_generated_method = "65236AFB54FAB65BD2FC1C8CD2966A75")
     public BaseSurfaceHolder ()
     {
@@ -89,24 +79,28 @@ public abstract void onRelayoutContainer();
     
 public abstract boolean onAllowLockCanvas();
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.896 -0500", hash_original_method = "3AF431EE7D6883EB1B4141BFAE213C2E", hash_generated_method = "B67C3BF256340C15E666623C5D80BD7B")
     
 public int getRequestedWidth() {
         return mRequestedWidth;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.899 -0500", hash_original_method = "2ED2833D03220673A510D00698E2D0FF", hash_generated_method = "842BAD34755AF8AB84A088EE9F34B280")
     
 public int getRequestedHeight() {
         return mRequestedHeight;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.902 -0500", hash_original_method = "E655118A2C284546E2D290C1F5BE4CAA", hash_generated_method = "B260BF7E77F89DAAEA13BEBD7024D418")
     
 public int getRequestedFormat() {
         return mRequestedFormat;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.904 -0500", hash_original_method = "1ADEF52CA934B4124985C64931FCC871", hash_generated_method = "DA9E1D51DB5406E1A4891383D6B91A6A")
     
 public int getRequestedType() {
@@ -211,6 +205,7 @@ public void setType(int type) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.927 -0500", hash_original_method = "62E11A68BFE49B76328D9C868319D907", hash_generated_method = "4C0E121027D4B5F23A9CF38E716D9DA7")
     
 public Canvas lockCanvas() {
@@ -282,12 +277,14 @@ public void unlockCanvasAndPost(Canvas canvas) {
         mSurfaceLock.unlock();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.938 -0500", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "2AAD7E290BC377BCEC98E2821A948720")
     
 public Surface getSurface() {
         return mSurface;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:31.941 -0500", hash_original_method = "BE643F9C45A14CE663214357E2B511D8", hash_generated_method = "952442CC0A609055D8F20CD44FE8CA9F")
     
 public Rect getSurfaceFrame() {

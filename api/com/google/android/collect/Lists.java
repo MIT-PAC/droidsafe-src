@@ -7,16 +7,11 @@ import droidsafe.annotations.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-
 public class Lists {
-
-
-    @DSModeled(DSC.SAFE)
+    
     public static <E> ArrayList<E> newArrayList() {
         return new ArrayList<E>();
     }
-
     
     public static <E> ArrayList<E> newArrayList(E... elements) {
         int capacity = (elements.length * 110) / 100 + 5;
@@ -30,7 +25,6 @@ public class Lists {
     {
         //Synthesized constructor
     }
-
     
 }
 

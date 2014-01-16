@@ -12,11 +12,6 @@ import android.telephony.SmsMessage;
 
 import com.android.internal.util.HexDump;
 
-
-
-
-
-
 public class SmsHeader {
 
     /**
@@ -102,6 +97,7 @@ public static SmsHeader fromByteArray(byte[] data) {
      * (see TS 23.040 9.2.3.24)
      * @return Byte array representing the SmsHeader
      */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.713 -0500", hash_original_method = "313D7507D012D5A754A21F769BA1BB3D", hash_generated_method = "E61F57DB8C58E56E795CC1C73527316C")
     
 public static byte[] toByteArray(SmsHeader smsHeader) {
@@ -189,7 +185,6 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.589 -0500", hash_original_field = "7B1D5B8C1D5F2D3998760DFE447F2C72", hash_generated_field = "F313A88EAB2289D6E0271B9984D256C7")
 
     public static final int ELT_ID_CONCATENATED_16_BIT_REFERENCE      = 0x08;
-
     
     public static class PortAddrs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.663 -0500", hash_original_field = "43FCC01AB1C7BC09F803AB811B014379", hash_generated_field = "7506CCEE3F7162FA4E3689CDC6299EE7")
@@ -208,10 +203,7 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class ConcatRef {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.674 -0500", hash_original_field = "F13A17E3B9DD4A115850D7E283D9B422", hash_generated_field = "0F3B72757D76773A83926AA1D0D28751")
@@ -233,10 +225,7 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static class MiscElt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.686 -0500", hash_original_field = "53E65FEF28E32C7EDCD1B07B4F5A0DE3", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
@@ -251,7 +240,6 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
         {
             //Synthesized constructor
         }
-
 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.592 -0500", hash_original_field = "C1AC89308DE25D85744755DF37A77351", hash_generated_field = "D734490B86FA530D366AF47A730DBC68")
@@ -328,13 +316,11 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
     public static final int ELT_ID_NATIONAL_LANGUAGE_LOCKING_SHIFT    = 0x25;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.657 -0500", hash_original_field = "9CE4C752A0B869515C51123B0B606E4A", hash_generated_field = "1A4B7B65D84026CF96E6BD6C16BF0C96")
 
-
     public static final int PORT_WAP_PUSH = 2948;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.660 -0500", hash_original_field = "312F2D1EA519BF905EC1FA8EF0474710", hash_generated_field = "7583F19EAB9670A3C7D501902942DB47")
 
     public static final int PORT_WAP_WSP  = 9200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.693 -0500", hash_original_field = "94F4C6A293B020B0E5BB3BA2A20D75C0", hash_generated_field = "05ED881ED743F115A7BFB64944720FFD")
-
 
     public PortAddrs portAddrs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.695 -0500", hash_original_field = "2DACEBF93B41EE0C8647D149EEE42E35", hash_generated_field = "EBCF5775C5867B0A4E4F7B6AA225F299")
@@ -354,6 +340,7 @@ public static byte[] toByteArray(SmsHeader smsHeader) {
     
 public SmsHeader() {}
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:37.717 -0500", hash_original_method = "3B501A432F153619ABA258E9F603F65E", hash_generated_method = "A70A906DA2583C1C28BD7D300E931087")
     
 @Override

@@ -13,9 +13,6 @@ import java.util.Set;
 import android.os.Handler;
 import android.os.Message;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class WebStorage {
@@ -24,6 +21,7 @@ public final class WebStorage {
      * Get the global instance of WebStorage.
      * @return A single instance of WebStorage.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.312 -0500", hash_original_method = "13124F4F94E405768D8E20607A9780AD", hash_generated_method = "E3D9650EA7BD47A9BD42127B636C3AC6")
     
 public static WebStorage getInstance() {
@@ -32,44 +30,30 @@ public static WebStorage getInstance() {
       }
       return sWebStorage;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Set nativeGetOrigins() {
         	return new HashSet();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static long nativeGetUsageForOrigin(String origin) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1902901200 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1902901200;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static long nativeGetQuotaForOrigin(String origin) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_752076961 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_752076961;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetQuotaForOrigin(String origin, long quota) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDeleteOrigin(String origin) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDeleteAllData() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetAppCacheMaximumSize(long size) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.204 -0500", hash_original_field = "89315E767D1FCC96269A405D475BDE30", hash_generated_field = "B124889B42C1C29694444BA7EE6BE397")
@@ -110,7 +94,6 @@ public static WebStorage getInstance() {
     static final int RETURN_QUOTA_ORIGIN = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.231 -0500", hash_original_field = "3A8763FFA79362A6F91CC6D8BB60CC66", hash_generated_field = "A0F0A22ECAE7202D88A4D3804E189136")
 
-
     private static final String ORIGINS = "origins";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.233 -0500", hash_original_field = "983FFBADFC71C6AD0E8CAB8AC6F52330", hash_generated_field = "A2B83EB03A0EE6C64FAB04BF77831BDE")
 
@@ -126,9 +109,7 @@ public static WebStorage getInstance() {
     private static final String QUOTA = "quota";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.243 -0500", hash_original_field = "1719CE0771D73BFF018DBA8A9B4EF9ED", hash_generated_field = "37FCB2431FF7E2170127344873AA09C0")
 
-
     private Map <String, Origin> mOrigins;
-
     
     public static class Origin {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.250 -0500", hash_original_field = "F6058587CC1DE776C10C367E01BBCD20", hash_generated_field = "C0D04DE859485FC064E3233B8B61E000")
@@ -170,6 +151,7 @@ private Origin(String origin) {
          * of 0 and hence toString() == 'http://www.google.com' for both.
          * @return The origin string.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.266 -0500", hash_original_method = "1C35B3C80693DCFAD3BBB071D3FEEF91", hash_generated_method = "FE80DFECDAB4568B003CCA3FED55809C")
         
 public String getOrigin() {
@@ -180,6 +162,7 @@ public String getOrigin() {
          * Returns the quota for this origin's HTML5 database.
          * @return The quota in bytes.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.268 -0500", hash_original_method = "85A4ADA77B01EE5A270890AB8ED69D00", hash_generated_method = "6FE1683C4FD2FD1286558D60FB46A1DE")
         
 public long getQuota() {
@@ -190,22 +173,19 @@ public long getQuota() {
          * Returns the usage for this origin's HTML5 database.
          * @return The usage in bytes.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.270 -0500", hash_original_method = "9EBBDD3C0652D213E94F799A53008143", hash_generated_method = "7B22B0A723E985BC0449B81BAB103C25")
         
 public long getUsage() {
             return mUsage;
         }
-
         
     }
-
-
     
     public interface QuotaUpdater {
         public void updateQuota(long newQuota);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.245 -0500", hash_original_field = "5AC474BA51F7B7C543F2DB5B1360A60E", hash_generated_field = "A7637B18C168C40831B0C5AF31A66C87")
-
 
     private Handler mHandler = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.248 -0500", hash_original_field = "62C452DC955B51B8C5282E5B97E9998B", hash_generated_field = "CAEF8005729A037CF5EC6BF8A6C37C05")
@@ -426,6 +406,7 @@ public void getQuotaForOrigin(String origin, ValueCallback<Long> callback) {
     /**
      * Set the quota for a given origin
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:18.298 -0500", hash_original_method = "567046E45B1707841AB709B2994EB872", hash_generated_method = "9F7FAAF1F324A758693C53AFB4A3A0EF")
     
 public void setQuotaForOrigin(String origin, long quota) {

@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.telephony.IccServiceTable;
 
-
-
-
-
 public final class UsimServiceTable extends IccServiceTable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.718 -0500", hash_original_method = "817BD5CF49BC23E6643D1124A4E1BE41", hash_generated_method = "150542268E0F45E4B0E90D2995ECAF23")
@@ -24,6 +20,7 @@ public boolean isAvailable(UsimService service) {
         return super.isAvailable(service.ordinal());
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.723 -0500", hash_original_method = "E87A72CCD83C43A988523404C93A686A", hash_generated_method = "B571DFE3EED0772F1CF5DFD247BE4C20")
     
 @Override
@@ -31,13 +28,13 @@ public boolean isAvailable(UsimService service) {
         return "UsimServiceTable";
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.725 -0500", hash_original_method = "5896C19C7C6B06EFB443A2DEA834E8BC", hash_generated_method = "9AF79B41A56042B3A8942DF1FC353844")
     
 @Override
     protected Object[] getValues() {
         return UsimService.values();
     }
-
     
     public enum UsimService {
         PHONEBOOK,
@@ -137,7 +134,6 @@ public boolean isAvailable(UsimService service) {
         UICC_ACCESS_TO_IMS,
         NAS_CONFIG_BY_USIM
     }
-
     
 }
 

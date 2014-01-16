@@ -6,18 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 class PortableThreadSampler implements ThreadSampler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.348 -0500", hash_original_field = "C1588B2CF4C1B54961548959E16213DF", hash_generated_field = "9E4E1D4E0DD2F9B43B1F6C7CB67C1409")
 
-
     private int depth;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.999 -0400", hash_original_method = "4D56809BA46B0880BDFB6525AB14F55F", hash_generated_method = "4D56809BA46B0880BDFB6525AB14F55F")
     public PortableThreadSampler ()
     {
@@ -30,6 +23,7 @@ class PortableThreadSampler implements ThreadSampler {
         this.depth = depth;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.353 -0500", hash_original_method = "E8C7A5DFD07B28248405DFC9E0C75853", hash_generated_method = "EE73165FFF9E91AF146444B307784C44")
     
 @Override public StackTraceElement[] getStackTrace(Thread thread) {
@@ -42,7 +36,6 @@ class PortableThreadSampler implements ThreadSampler {
         }
         return stackFrames;
     }
-
     
 }
 

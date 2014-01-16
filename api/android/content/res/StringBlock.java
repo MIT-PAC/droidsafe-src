@@ -31,10 +31,6 @@ import android.util.SparseArray;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 final class StringBlock {
@@ -86,39 +82,29 @@ private static String subtag(String full, String attribute) {
             return full.substring(start, end);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeCreate(byte[] data,
                                                  int offset,
                                                  int size) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int nativeGetSize(int obj) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final String nativeGetString(int obj, int idx) {
         	String ret = new String();
         	ret.addTaint(obj);
         	ret.addTaint(idx);
         	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final int[] nativeGetStyle(int obj, int idx) {
         int[] ret = {DSUtils.UNKNOWN_INT};
         return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final void nativeDestroy(int obj) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.467 -0500", hash_original_field = "E972EA7E59D95929329EC1DEC67C521E", hash_generated_field = "FDC75AE01ED37E059BA4F54E9509C8D2")
@@ -128,7 +114,6 @@ private static String subtag(String full, String attribute) {
 
     private static final boolean localLOGV = false || false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.471 -0500", hash_original_field = "D883352313723F88BD080533FB82D9CF", hash_generated_field = "9DD3DA3B4DB5A1786C464E9BB7FF265B")
-
 
     private  int mNative;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.474 -0500", hash_original_field = "3036CA71DF377F23E42CCBF8C874A1A6", hash_generated_field = "038BAFF209AC24C690C68705B5282717")
@@ -183,6 +168,7 @@ StringBlock(int obj, boolean useSparse) {
                 + ": " + nativeGetSize(mNative));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.492 -0500", hash_original_method = "CA0D40E41A55E0E3360E62E713B76B88", hash_generated_method = "805F196009A2372027DB8FB8150F7D6F")
     
 public CharSequence get(int idx) {
@@ -264,7 +250,6 @@ public CharSequence get(int idx) {
             return res;
         }
     }
-
     
     static final class StyleIDs {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.496 -0500", hash_original_field = "43C921B24D0E41E9F35401176E29BFCF", hash_generated_field = "8BDB7171C09EC9A28241743847C2F13E")
@@ -307,10 +292,7 @@ public CharSequence get(int idx) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Height implements LineHeightSpan.WithDensity {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:04.537 -0500", hash_original_field = "626C6192DD0D50EA896F3421FCADF714", hash_generated_field = "2D094D2B577DA7C03844DB00B123469C")
@@ -414,7 +396,6 @@ private CharSequence applyStyles(String str, int[] style, StyleIDs ids) {
             int type = style[i];
             if (localLOGV) Log.v(TAG, "Applying style span id=" + type
                     + ", start=" + style[i+1] + ", end=" + style[i+2]);
-
 
             if (type == ids.boldId) {
                 buffer.setSpan(new StyleSpan(Typeface.BOLD),

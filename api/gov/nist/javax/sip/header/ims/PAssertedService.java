@@ -10,14 +10,8 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public class PAssertedService extends SIPHeader implements PAssertedServiceHeader, SIPHeaderNamesIms, ExtensionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.415 -0500", hash_original_field = "DFC659C097418CBB8C1EC0C3D50D53A5", hash_generated_field = "8B30B176BF34BEC26AF3F3FDA86A1827")
-
 
     private String subServiceIds;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.418 -0500", hash_original_field = "F3C636661E9DFC4BE76EFDD1192193F4", hash_generated_field = "7976ED8892ABC041E4713F4D251EC3B6")
@@ -37,6 +31,7 @@ public PAssertedService()
         super(P_ASSERTED_SERVICE);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.429 -0500", hash_original_method = "13CD5B55BBBCA0548D99A959291FFE7D", hash_generated_method = "6B6D27B1CD38111B325EFBAF0BC00AC3")
     
 @Override
@@ -61,6 +56,7 @@ public PAssertedService()
         return retval.toString();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.433 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
@@ -68,6 +64,7 @@ public void setValue(String value) throws ParseException {
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.436 -0500", hash_original_method = "C9711D50FDDAB1BC6FA9D8BEA3306598", hash_generated_method = "2842ECCF63E9B5B0D67C0A2BA561F8D8")
     
 public String getApplicationIdentifiers() {
@@ -78,6 +75,7 @@ public String getApplicationIdentifiers() {
         return this.subAppIds;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.439 -0500", hash_original_method = "A7D1F6103283AF549702A3BD8A97DA85", hash_generated_method = "27F97AB6043CB4E046CD52AE7285A1C0")
     
 public String getSubserviceIdentifiers() {
@@ -109,14 +107,12 @@ public boolean equals(Object other)
 
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.453 -0500", hash_original_method = "3CDC6738E06A7AFD0A34818FC063034A", hash_generated_method = "EC849A5DD26DA0B0853E15F6B153DE3D")
     
 public Object clone() {
         PAssertedService retval = (PAssertedService) super.clone();
         return retval;
     }
-
     
 }
 

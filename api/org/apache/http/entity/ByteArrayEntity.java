@@ -9,14 +9,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
-
-
-
-
 public class ByteArrayEntity extends AbstractHttpEntity implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.664 -0500", hash_original_field = "6A9B1BF6E4F51C5BBC665A9F39B095B2", hash_generated_field = "5694DF6F087835D263272D46C49C87A7")
-
 
     protected  byte[] content;
 
@@ -36,12 +30,14 @@ public boolean isRepeatable() {
         return true;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.673 -0500", hash_original_method = "161FF0185286748984501E39486F36ED", hash_generated_method = "93033B2A767636AD1C8B9B84FA3C5F42")
     
 public long getContentLength() {
         return this.content.length;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.675 -0500", hash_original_method = "004C3F78EC3F500E7D7F762D94BAEB0E", hash_generated_method = "27D3D214D0211F80B5801B5EB21C0033")
     
 public InputStream getContent() {
@@ -57,7 +53,6 @@ public void writeTo(final OutputStream outstream) throws IOException {
         outstream.write(this.content);
         outstream.flush();
     }
-
 
     /**
      * Tells that this entity is not streaming.
@@ -75,7 +70,6 @@ public boolean isStreaming() {
 public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     
 }
 

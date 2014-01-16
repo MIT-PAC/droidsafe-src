@@ -15,10 +15,6 @@ import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 import libcore.icu.TimeZones;
 
-
-
-
-
 public class DateFormatSymbols implements Serializable, Cloneable {
 
     /**
@@ -28,6 +24,7 @@ public class DateFormatSymbols implements Serializable, Cloneable {
      * @return an instance of {@code DateFormatSymbols}
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.822 -0500", hash_original_method = "3EB23C2DF5EB21266FB298F464DCFFCF", hash_generated_method = "F45FB7B1AF681A36267EB5D88557BB70")
     
 public static final DateFormatSymbols getInstance() {
@@ -42,6 +39,7 @@ public static final DateFormatSymbols getInstance() {
      * @throws NullPointerException if {@code locale == null}
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.825 -0500", hash_original_method = "D58E0AC5713E6C4C00BE02A97E40DFE2", hash_generated_method = "C1D7872A04D2CAA85925056DDF6980C5")
     
 public static final DateFormatSymbols getInstance(Locale locale) {
@@ -57,6 +55,7 @@ public static final DateFormatSymbols getInstance(Locale locale) {
      * <p>Note that Android does not support user-supplied locale service providers.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.827 -0500", hash_original_method = "256797DA5B6BE050E889700D67B9C760", hash_generated_method = "BF6BD0497C537B76BD8E15E7A25B3BB6")
     
 public static Locale[] getAvailableLocales() {
@@ -86,10 +85,8 @@ private static String[][] clone2dStringArray(String[][] array) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.791 -0500", hash_original_field = "000410F3E4110E922FAF352732C42607", hash_generated_field = "3A9F42BB82D57C84015671E87240C88B")
 
-
     private static final long serialVersionUID = -5987973545549424702L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.793 -0500", hash_original_field = "638D89148E50EBCC60E4E8C7FF9DC90C", hash_generated_field = "B3AAF3207AD6EC4015B2989CC1E896AA")
-
 
     private String localPatternChars;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.009 -0400", hash_original_field = "EE109C8604E524BC6D9E0C2587FEE2D8", hash_generated_field = "E9E36152E2B2CCE2D2DF7029FCA0E0AA")
@@ -150,6 +147,8 @@ public DateFormatSymbols() {
      * @param locale
      *            the locale.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.819 -0500", hash_original_method = "10456A2571D0B6BA1CAC9BF624A7CB6F", hash_generated_method = "66A899D7DC9685B14752F7E4AE7BE51A")
     
 public DateFormatSymbols(Locale locale) {
@@ -175,6 +174,7 @@ public DateFormatSymbols(Locale locale) {
      * a defensive copy, so make sure you do so before exposing the returned
      * arrays to clients.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.814 -0500", hash_original_method = "D4F915DF738351C94CAE2742EF7502E4", hash_generated_method = "00D080E7FE990AFC83626B54C393ADE4")
     
 synchronized String[][] internalZoneStrings() {
@@ -272,6 +272,9 @@ private void writeObject(ObjectOutputStream oos) throws IOException {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.846 -0500", hash_original_method = "72991BA97E8B1C753B319ABB9AE6A911", hash_generated_method = "A9856D8B6C989DDF059928D8717607F5")
     
 public String[] getAmPmStrings() {
@@ -285,6 +288,9 @@ public String[] getAmPmStrings() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.848 -0500", hash_original_method = "BB9FAB8B89491AAFEBAE987DB8D7ADC9", hash_generated_method = "94B4266AAF8B96068E6A4428AD166AE1")
     
 public String[] getEras() {
@@ -297,6 +303,7 @@ public String[] getEras() {
      *
      * @return a string containing the pattern characters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.851 -0500", hash_original_method = "EEE83582BA421C729308A747699C1F8B", hash_generated_method = "8020C829A4307205A8380FF0EC7773DC")
     
 public String getLocalPatternChars() {
@@ -310,6 +317,9 @@ public String getLocalPatternChars() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.853 -0500", hash_original_method = "7E7D6ABDEA9D17B1FB9A10690E51D2C0", hash_generated_method = "E6F7C6F7EDCFF21CD9EC9705A9997081")
     
 public String[] getMonths() {
@@ -323,6 +333,9 @@ public String[] getMonths() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.855 -0500", hash_original_method = "B159D6A758F880417EB3F558245AB4C8", hash_generated_method = "23228701839B041BE35E570066BA5B82")
     
 public String[] getShortMonths() {
@@ -336,6 +349,9 @@ public String[] getShortMonths() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.858 -0500", hash_original_method = "22143FF136703407DD6E3A76253CFCD4", hash_generated_method = "E21790038F6B6114BA0E3C8BF9C72EF2")
     
 public String[] getShortWeekdays() {
@@ -349,6 +365,9 @@ public String[] getShortWeekdays() {
      *
      * @return an array of strings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.860 -0500", hash_original_method = "9B40AAE5B3ACDD77762A9FF02C898A9B", hash_generated_method = "347ECB5FA9861F1CA81E7F26A2A506DC")
     
 public String[] getWeekdays() {
@@ -371,6 +390,9 @@ public String[] getWeekdays() {
      *     "CST" for "Canada/Saskatchewan".
      * </ul>
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.862 -0500", hash_original_method = "BCD39B9ED22174061A8487583A862B84", hash_generated_method = "563FAAFCA0308CDEF53A5C45612E3C9C")
     
 public String[][] getZoneStrings() {
@@ -420,6 +442,7 @@ public String[][] getZoneStrings() {
      * @param data
      *            the array of strings for AM and PM.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.871 -0500", hash_original_method = "C567EF18556F46918292A2FE23B946BD", hash_generated_method = "D59F05F711749B873850B7A455C787AC")
     
 public void setAmPmStrings(String[] data) {
@@ -434,6 +457,7 @@ public void setAmPmStrings(String[] data) {
      * @param data
      *            the array of strings for BC and AD.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.873 -0500", hash_original_method = "144479B04BA5F93BAF1BE491BC6DCE8F", hash_generated_method = "B1E6F0C5C41407BB499052643894FD2B")
     
 public void setEras(String[] data) {
@@ -466,6 +490,7 @@ public void setLocalPatternChars(String data) {
      * @param data
      *            the array of strings.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.878 -0500", hash_original_method = "FF561E75C563B528E8ADE2D7DEADB24B", hash_generated_method = "C8F11F8A2C34DB8F290459879A4CB458")
     
 public void setMonths(String[] data) {
@@ -480,6 +505,7 @@ public void setMonths(String[] data) {
      * @param data
      *            the array of strings.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.881 -0500", hash_original_method = "6978BA653DCBEF5E7386E930F96F0A7F", hash_generated_method = "1D932DD50180AA9DC1DF095941DEC658")
     
 public void setShortMonths(String[] data) {
@@ -494,6 +520,7 @@ public void setShortMonths(String[] data) {
      * @param data
      *            the array of strings.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.883 -0500", hash_original_method = "D0F3596C1C1C0E88C3194208B883F56E", hash_generated_method = "62231263430DF127971CD07AB28E99E5")
     
 public void setShortWeekdays(String[] data) {
@@ -508,6 +535,7 @@ public void setShortWeekdays(String[] data) {
      * @param data
      *            the array of strings.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.885 -0500", hash_original_method = "8E95286ADE938FE6BC77C4018461282B", hash_generated_method = "BAD8A77AFDB6717590D8AEDAA67EE54F")
     
 public void setWeekdays(String[] data) {
@@ -520,6 +548,7 @@ public void setWeekdays(String[] data) {
      * @throws IllegalArgumentException if any row has fewer than 5 elements.
      * @throws NullPointerException if {@code zoneStrings == null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.887 -0500", hash_original_method = "97B75279909DC0B04FB710B3778B8E55", hash_generated_method = "C214CE0282615E8EE7C6D7BF302A4AD7")
     
 public void setZoneStrings(String[][] zoneStrings) {

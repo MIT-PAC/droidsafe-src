@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.math.BigInteger;
 
-
-
-
-
-
 public class DSAPrivateKeySpec implements KeySpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.600 -0500", hash_original_field = "8A69D3B9CF67CA1128DF293842071E77", hash_generated_field = "3D78E4B6D398CF86CC9666CFD1AA5B41")
 
@@ -53,6 +48,7 @@ public DSAPrivateKeySpec(BigInteger x, BigInteger p,
      *
      * @return the base {@code g}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.614 -0500", hash_original_method = "8C38F55FA5DB902C3D9409517AA217E2", hash_generated_method = "FBDB40C3059FF68266098ECF54AD2FB6")
     
 public BigInteger getG() {
@@ -64,6 +60,7 @@ public BigInteger getG() {
      *
      * @return the prime {@code p}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.616 -0500", hash_original_method = "451C630A2F5A52BD2AE63729BE355876", hash_generated_method = "FA39994F0F567A64C38613032682F7D7")
     
 public BigInteger getP() {
@@ -75,6 +72,7 @@ public BigInteger getP() {
      *
      * @return the sub-prime {@code q}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.619 -0500", hash_original_method = "ACFCE2DB75EFF131F33A5EE2D309C15F", hash_generated_method = "5A6F1A696B2A6370C598909B1A9A2601")
     
 public BigInteger getQ() {
@@ -86,12 +84,12 @@ public BigInteger getQ() {
      *
      * @return the private key {@code x}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:57.621 -0500", hash_original_method = "67A367EC1A42595A125F9EA99F2EC9F5", hash_generated_method = "B144ED3669B4AEF784786CAB344FA847")
     
 public BigInteger getX() {
         return x;
     }
-
     
 }
 

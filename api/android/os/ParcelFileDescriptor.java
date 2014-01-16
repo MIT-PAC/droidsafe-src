@@ -13,11 +13,6 @@ import java.io.IOException;
 import java.net.DatagramSocket;
 import java.net.Socket;
 
-
-
-
-
-
 public class ParcelFileDescriptor implements Parcelable {
 
     /**
@@ -36,6 +31,9 @@ public class ParcelFileDescriptor implements Parcelable {
      * @throws FileNotFoundException Throws FileNotFoundException if the given
      * file does not exist or can not be opened with the requested mode.
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.028 -0500", hash_original_method = "6C139DF2C99367764164B889BB05F5C6", hash_generated_method = "A4FC67A1E0EC81E84D832D0DE58F7F12")
     
 public static ParcelFileDescriptor open(File file, int mode)
@@ -87,9 +85,7 @@ public static ParcelFileDescriptor fromFd(int fd) throws IOException {
         FileDescriptor fdesc = getFileDescriptorFromFd(fd);
         return new ParcelFileDescriptor(fdesc);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static FileDescriptor getFileDescriptorFromFd(int fd) throws IOException {
     	return new FileDescriptor();
     }
@@ -110,9 +106,7 @@ public static ParcelFileDescriptor adoptFd(int fd) {
         FileDescriptor fdesc = getFileDescriptorFromFdNoDup(fd);
         return new ParcelFileDescriptor(fdesc);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static FileDescriptor getFileDescriptorFromFdNoDup(int fd) {
     	return new FileDescriptor();
     }
@@ -167,9 +161,7 @@ public static ParcelFileDescriptor[] createPipe() throws IOException {
         pfds[1] = new ParcelFileDescriptor(fds[1]);
         return pfds;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void createPipeNative(FileDescriptor[] outFds) throws IOException {
     }
 
@@ -183,6 +175,7 @@ public static ParcelFileDescriptor[] createPipe() throws IOException {
      * @return A ParcelFileDescriptor.
      * @throws IOException if there is an error while creating the shared memory area.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.059 -0500", hash_original_method = "5DAB2FA0A665F799CCD0D6860DBF4933", hash_generated_method = "502151D93914B556FDAA4F01C688FADC")
     
 @Deprecated
@@ -288,12 +281,14 @@ public ParcelFileDescriptor dup() throws IOException {
      *
      * @return Returns the FileDescriptor associated with this object.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.061 -0500", hash_original_method = "949276D2764A2C9DACACDE44898698C8", hash_generated_method = "E5BF1F22A9EE48D78F7BADE5BB998512")
     
 public FileDescriptor getFileDescriptor() {
         return mFileDescriptor;
     }
-
     
     public static class AutoCloseInputStream extends FileInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.082 -0500", hash_original_field = "F15BA4F12003086454C67D56791594A9", hash_generated_field = "AE959CCFA06A07F93FA2A8BEED883021")
@@ -317,11 +312,8 @@ public AutoCloseInputStream(ParcelFileDescriptor fd) {
                 super.close();
             }
         }
-
         
     }
-
-
     
     public static class AutoCloseOutputStream extends FileOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.091 -0500", hash_original_field = "F15BA4F12003086454C67D56791594A9", hash_generated_field = "AE959CCFA06A07F93FA2A8BEED883021")
@@ -345,7 +337,6 @@ public AutoCloseOutputStream(ParcelFileDescriptor fd) {
                 super.close();
             }
         }
-
         
     }
 
@@ -360,7 +351,6 @@ public AutoCloseOutputStream(ParcelFileDescriptor fd) {
     	return getTaintLong();
     }
 
-
     /**
      * This is needed for implementing AssetFileDescriptor.AutoCloseOutputStream,
      * and I really don't think we want it to be public.
@@ -374,12 +364,12 @@ public AutoCloseOutputStream(ParcelFileDescriptor fd) {
     	return getTaintLong();
     }
 
-
     /**
      * Return the native fd int for this ParcelFileDescriptor.  The
      * ParcelFileDescriptor still owns the fd, and it still must be closed
      * through this API.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:29.070 -0500", hash_original_method = "C747587E89EFBC650597F209F149B598", hash_generated_method = "9486D8D458C93EF74D0AA526839B0ABE")
     
 public int getFd() {
@@ -395,7 +385,6 @@ public int getFd() {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Return the native fd int for this ParcelFileDescriptor and detach it

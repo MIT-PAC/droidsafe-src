@@ -10,13 +10,11 @@ import android.content.res.TypedArray;
 import android.util.AttributeSet;
 import android.util.TypedValue;
 
-
 public class ScaleAnimation extends Animation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.167 -0500", hash_original_field = "8C221FB485568FEFC5ABDDF092AD743A", hash_generated_field = "8872E9F5EB468B447DB47434F2C2FEC9")
 
     private  Resources mResources;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.169 -0500", hash_original_field = "A7698EADE21741D2C5739B53D16EE931", hash_generated_field = "BB287F46785769B83860D56D8BE9EFD8")
-
 
     private float mFromX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.171 -0500", hash_original_field = "C647943068C62A1ABE17C8AE2FCB54FE", hash_generated_field = "04285F5086DF3EAF7703BA446BC7BACF")
@@ -30,7 +28,6 @@ public class ScaleAnimation extends Animation {
     private float mToY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.177 -0500", hash_original_field = "1B7F7F8CB078C3324C8AB2A9E2A3F8E5", hash_generated_field = "EF5CCFA809ED96BE62A4E7398FA3E7EF")
 
-
     private int mFromXType = TypedValue.TYPE_NULL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.180 -0500", hash_original_field = "E62278171439704A31FB53DC7635F2F7", hash_generated_field = "0DAB7BC0DD34C12139A64FA80B053006")
 
@@ -42,7 +39,6 @@ public class ScaleAnimation extends Animation {
 
     private int mToYType = TypedValue.TYPE_NULL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.186 -0500", hash_original_field = "A66E29BF954CE0404CE4F05DD7319748", hash_generated_field = "78C236BBF3AA3B138CA8A37DA32CAA60")
-
 
     private int mFromXData = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.188 -0500", hash_original_field = "2BC1C22C8E59BD42B08A00E070F23CC0", hash_generated_field = "BFDE8B8EEB4894371DCD5E8AA633C493")
@@ -56,7 +52,6 @@ public class ScaleAnimation extends Animation {
     private int mToYData = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.196 -0500", hash_original_field = "35319F0004C491BB80D5F1742219F20C", hash_generated_field = "EC74AC06B5691B47A1AD5BBF6B15ECE3")
 
-
     private int mPivotXType = ABSOLUTE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.198 -0500", hash_original_field = "15AA19B564953B2E92DF57FC0E988FB4", hash_generated_field = "C9A99ED0A354C0C74E5E29006BD9ED31")
 
@@ -68,7 +63,6 @@ public class ScaleAnimation extends Animation {
 
     private float mPivotYValue = 0.0f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.204 -0500", hash_original_field = "5936761CCB9106C6D82A6436A57EC343", hash_generated_field = "D5598B4EF8A215EC3A51B2F400B272F3")
-
 
     private float mPivotX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.207 -0500", hash_original_field = "6CE864DEEFD86BFE91AA6D818A7F55C0", hash_generated_field = "0971400EDE5A41D2136C532E521A2E57")
@@ -192,6 +186,8 @@ public ScaleAnimation(float fromX, float toX, float fromY, float toY) {
      *        being scaled, specified as an absolute number where 0 is the top
      *        edge. (This point remains fixed while the object changes size.)
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.216 -0500", hash_original_method = "E87B1195FC877E2731C7B2475118F4DC", hash_generated_method = "8F93806C1A6D737E24B2E62611A732BA")
     
 public ScaleAnimation(float fromX, float toX, float fromY, float toY,
@@ -234,6 +230,8 @@ public ScaleAnimation(float fromX, float toX, float fromY, float toY,
      *        size.) This value can either be an absolute number if pivotYType
      *        is ABSOLUTE, or a percentage (where 1.0 is 100%) otherwise.
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.219 -0500", hash_original_method = "D69E90D5037F2660E180F2C8AD5003B6", hash_generated_method = "6001773CF59440E96A2CBF5B1BDF84A3")
     
 public ScaleAnimation(float fromX, float toX, float fromY, float toY,
@@ -305,7 +303,6 @@ float resolveScale(float scale, int type, int data, int size, int psize) {
         mPivotX = resolveSize(mPivotXType, mPivotXValue, width, parentWidth);
         mPivotY = resolveSize(mPivotYType, mPivotYValue, height, parentHeight);
     }
-
     
 }
 

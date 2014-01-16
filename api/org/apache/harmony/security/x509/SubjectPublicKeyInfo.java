@@ -17,18 +17,13 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BitString;
 import org.apache.harmony.security.utils.AlgNameMapper;
 
-
-
-
-
-
 public final class SubjectPublicKeyInfo {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.732 -0400", hash_original_field = "CC42040DA80C5D943F06D4C9E4EAF6E0", hash_generated_field = "48040307EA293E7C22FF1672E7CE9B9C")
 
     public static final ASN1Sequence ASN1 = new ASN1Sequence(new ASN1Type[] {
             AlgorithmIdentifier.ASN1, ASN1BitString.getInstance() }) {
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.179 -0500", hash_original_method = "FD8EB31EDCB420BB285954F02E88B28A", hash_generated_method = "F74A8C1C6455AB0D4AE87615185F053E")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -90,6 +85,7 @@ private SubjectPublicKeyInfo(AlgorithmIdentifier algID,
     /**
      * Returns the value of algorithmIdentifier field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.169 -0500", hash_original_method = "D3585B3653154AD3FE820FC3C464AD5E", hash_generated_method = "6C7E05AE258BF1CF0D65ED29E7EE8FA2")
     
 public AlgorithmIdentifier getAlgorithmIdentifier() {
@@ -99,6 +95,7 @@ public AlgorithmIdentifier getAlgorithmIdentifier() {
     /**
      * Returns the value of subjectPublicKey field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.171 -0500", hash_original_method = "6DD3F56EFCD8D5575183C0DEA4BCE90C", hash_generated_method = "C28A22C9852F0BF7DC4709C89181E268")
     
 public byte[] getSubjectPublicKey() {
@@ -108,6 +105,7 @@ public byte[] getSubjectPublicKey() {
     /**
      * Returns ASN.1 encoded form of this X.509 SubjectPublicKeyInfo value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.173 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {
@@ -121,6 +119,7 @@ public byte[] getEncoded() {
      * Returns The PublicKey corresponding to this SubjectPublicKeyInfo
      * instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.176 -0500", hash_original_method = "FA31FAEA1A381D04C25B0BE6D665660B", hash_generated_method = "1C17CC51F7492063F024E0A427C19372")
     
 public PublicKey getPublicKey() {

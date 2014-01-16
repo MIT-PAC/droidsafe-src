@@ -25,10 +25,6 @@ import android.util.Log;
 import android.util.Xml;
 import android.view.inputmethod.EditorInfo;
 
-
-
-
-
 public final class SearchableInfo implements Parcelable {
 
     /**
@@ -418,6 +414,7 @@ SearchableInfo(Parcel in) {
      * @return The search suggestions authority, or {@code null} if not set.
      * @see android.R.styleable#Searchable_searchSuggestAuthority
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.628 -0500", hash_original_method = "9CC6B7578CF19F95DF8C884BF5987E46", hash_generated_method = "EC23893D732D283C3C3B0ED241B8FC79")
     
 public String getSuggestAuthority() {
@@ -428,6 +425,7 @@ public String getSuggestAuthority() {
      * Gets the name of the package where the suggestion provider lives,
      * or {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.630 -0500", hash_original_method = "BE8BEFD3C329420CF7D6C5DA35EA0FF0", hash_generated_method = "8733289C52BD9CF06204F737FA9CC71A")
     
 public String getSuggestPackage() {
@@ -439,6 +437,7 @@ public String getSuggestPackage() {
      *
      * @return A component name, never {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.632 -0500", hash_original_method = "F3041DF7A3866005E32579E92AEBEE6A", hash_generated_method = "565C255112EEEFB32D36280DE41BEFD1")
     
 public ComponentName getSearchActivity() {
@@ -499,6 +498,7 @@ public boolean shouldRewriteQueryFromText() {
      *
      * @see android.R.styleable#Searchable_searchSettingsDescription
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.643 -0500", hash_original_method = "19684FC2043C1BDB61A3E740D6C19B34", hash_generated_method = "9ABDC05FF9EB4AF11821135B86A7407E")
     
 public int getSettingsDescriptionId() {
@@ -511,6 +511,7 @@ public int getSettingsDescriptionId() {
      * @return The suggestion path, or {@code null} if not set.
      * @see android.R.styleable#Searchable_searchSuggestPath
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.645 -0500", hash_original_method = "E8F19B2AFF47ACFE52244E7315CE6CBA", hash_generated_method = "694A77E95A67DA9C300CA8B4E342FCEB")
     
 public String getSuggestPath() {
@@ -522,6 +523,7 @@ public String getSuggestPath() {
      *
      * @see android.R.styleable#Searchable_searchSuggestSelection
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.647 -0500", hash_original_method = "03B94AF5E978777AF0A4DF7C1D53B2F0", hash_generated_method = "8E8980105DE99008FBE975F1367C2247")
     
 public String getSuggestSelection() {
@@ -539,6 +541,7 @@ public String getSuggestSelection() {
      * @return The default intent action, or {@code null} if not set.
      * @see android.R.styleable#Searchable_searchSuggestIntentAction
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.650 -0500", hash_original_method = "41669F0953535FACC4B7926CFCBDA8A1", hash_generated_method = "E3DA79DD5A382F537A22382E0961CCBC")
     
 public String getSuggestIntentAction() {
@@ -558,6 +561,7 @@ public String getSuggestIntentAction() {
      * @return The default intent data, or {@code null} if not set.
      * @see android.R.styleable#Searchable_searchSuggestIntentData
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.652 -0500", hash_original_method = "E2551EFF005AD652F4CA5C2DEBD8F1C5", hash_generated_method = "B191A4542121F5FC83B78AED5A206150")
     
 public String getSuggestIntentData() {
@@ -570,6 +574,7 @@ public String getSuggestIntentData() {
      * @return The suggestion threshold, or {@code 0} if not set.
      * @see android.R.styleable#Searchable_searchSuggestThreshold
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.654 -0500", hash_original_method = "EC28F48C38E111E12DD92E58268AB4B1", hash_generated_method = "B8209BFF0FA95D93374D8728371F8723")
     
 public int getSuggestThreshold() {
@@ -583,6 +588,7 @@ public int getSuggestThreshold() {
      * @return Returns a context related to the searchable activity
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.657 -0500", hash_original_method = "BBBE2BBFCBFB429E05BB475016E66C58", hash_generated_method = "0140257C35E2179720B258D22385764F")
     
 public Context getActivityContext(Context context) {
@@ -598,6 +604,7 @@ public Context getActivityContext(Context context) {
      * @return Returns a context related to the suggestion provider
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.662 -0500", hash_original_method = "B0B7C6DE2D55DA45CA53022A0C4DE186", hash_generated_method = "49B3D33B3BF55A8DE11EE7CBBEAC6272")
     
 public Context getProviderContext(Context context, Context activityContext) {
@@ -652,6 +659,7 @@ private void addActionKey(ActionKeyInfo keyInfo) {
      *
      * @hide deprecated functionality
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.711 -0500", hash_original_method = "32CB8385CEC61194A5C52A7CECC7153B", hash_generated_method = "D95EDE4D6134068998ECAB898A9C455A")
     
 public int getLabelId() {
@@ -665,6 +673,7 @@ public int getLabelId() {
      * @return A resource id, or {@code 0} if no hint was specified.
      * @see android.R.styleable#Searchable_hint
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.713 -0500", hash_original_method = "DC9D54FA42277F7545187887A5854A7A", hash_generated_method = "151EFC8B2E023C83C7C982701028207B")
     
 public int getHintId() {
@@ -680,6 +689,7 @@ public int getHintId() {
      *
      * @hide deprecated functionality
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.716 -0500", hash_original_method = "B3A2F353BC85020D961D66DA378099D0", hash_generated_method = "1D7E641750F98B9A192889E4F4C7198E")
     
 public int getIconId() {
@@ -691,6 +701,7 @@ public int getIconId() {
      *
      * @see android.R.styleable#Searchable_voiceSearchMode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.718 -0500", hash_original_method = "BD4587B1756B2E1B29D5C797A6E8E884", hash_generated_method = "ED059A87FEB437C33E40B96F0E387EBD")
     
 public boolean getVoiceSearchEnabled() {
@@ -702,16 +713,15 @@ public boolean getVoiceSearchEnabled() {
      *
      * @see android.R.styleable#Searchable_voiceSearchMode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.720 -0500", hash_original_method = "AD4F5DA741FB0C864BEACDD753D4C8F3", hash_generated_method = "CD7F6120C24225F28D37505E9C101ACD")
     
 public boolean getVoiceSearchLaunchWebSearch() {
         return 0 != (mVoiceSearchMode & VOICE_SEARCH_LAUNCH_WEB_SEARCH);
     }
-
     
     public static class ActionKeyInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.669 -0500", hash_original_field = "775BFC50F46781234F24C3F19B2FA89F", hash_generated_field = "6029AC817F6EE7A2286BA05155E91FE2")
-
 
         private  int mKeyCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.671 -0500", hash_original_field = "72B443606CC2E63F536A89200ACE59AE", hash_generated_field = "3B81F8E38011672647005EC28AB6705D")
@@ -778,6 +788,7 @@ private ActionKeyInfo(Parcel in) {
          * Gets the key code that this action key info is for.
          * @see android.R.styleable#SearchableActionKey_keycode
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.685 -0500", hash_original_method = "AA2A4756B9F9E3EBD53F7A185B310C03", hash_generated_method = "56A94946BD2AEB3B4D809B7B1A77DAEE")
         
 public int getKeyCode() {
@@ -788,6 +799,7 @@ public int getKeyCode() {
          * Gets the action message to use for queries.
          * @see android.R.styleable#SearchableActionKey_queryActionMsg
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.687 -0500", hash_original_method = "0A4F0AAE3D0D859714A4EE4638C2A280", hash_generated_method = "93772DDD5F444E7ECB24B24FB39B57D4")
         
 public String getQueryActionMsg() {
@@ -798,6 +810,7 @@ public String getQueryActionMsg() {
          * Gets the action message to use for suggestions.
          * @see android.R.styleable#SearchableActionKey_suggestActionMsg
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.689 -0500", hash_original_method = "EDCBBABEEE2D0A0DD8ABF8A81407A4FD", hash_generated_method = "6C260678E4CB8DDFDB73C6D0E4FFF40F")
         
 public String getSuggestActionMsg() {
@@ -808,6 +821,7 @@ public String getSuggestActionMsg() {
          * Gets the name of the column to get the suggestion action message from.
          * @see android.R.styleable#SearchableActionKey_suggestActionMsgColumn
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.691 -0500", hash_original_method = "94611E44E9C4989C8B71AAF260F46112", hash_generated_method = "E68876731F7EBF1BE300902B85FE5278")
         
 public String getSuggestActionMsgColumn() {
@@ -828,7 +842,6 @@ public void writeToParcel(Parcel dest, int flags) {
             dest.writeString(mSuggestActionMsg);
             dest.writeString(mSuggestActionMsgColumn);
         }
-
         
     }
 
@@ -837,6 +850,7 @@ public void writeToParcel(Parcel dest, int flags) {
      *
      * @see android.R.styleable#Searchable_voiceSearchMode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.722 -0500", hash_original_method = "8242FA220A8F4815DCA2E78C8BAC691A", hash_generated_method = "3E44592355CF85742965CE50A634775D")
     
 public boolean getVoiceSearchLaunchRecognizer() {
@@ -849,6 +863,7 @@ public boolean getVoiceSearchLaunchRecognizer() {
      * @return A resource id, or {@code 0} if no language model was specified.
      * @see android.R.styleable#Searchable_voiceLanguageModel
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.724 -0500", hash_original_method = "AE92C4DB1762FDEF1095AB548D604322", hash_generated_method = "B2ECBB9F354AE606EA6A7E6222E740CE")
     
 public int getVoiceLanguageModeId() {
@@ -861,6 +876,7 @@ public int getVoiceLanguageModeId() {
      * @return A resource id, or {@code 0} if no voice prompt text was specified.
      * @see android.R.styleable#Searchable_voicePromptText
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.726 -0500", hash_original_method = "22DBBDA410168ED4037FF766F7DE7742", hash_generated_method = "E92A73194AA1661CCAAA5221A15DA4FD")
     
 public int getVoicePromptTextId() {
@@ -873,6 +889,7 @@ public int getVoicePromptTextId() {
      * @return A resource id, or {@code 0} if no language was specified.
      * @see android.R.styleable#Searchable_voiceLanguage
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.728 -0500", hash_original_method = "79CDC130EB87863FB2A36D85DFC36EA0", hash_generated_method = "F5B3093EE692CA0BDDF4E0D15FCA34D9")
     
 public int getVoiceLanguageId() {
@@ -886,6 +903,7 @@ public int getVoiceLanguageId() {
      *         activity's metadata, or {@code 0} if not specified.
      * @see android.R.styleable#Searchable_voiceMaxResults
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.730 -0500", hash_original_method = "77BBA2ED9E38231A613E9BF06CBFC2B7", hash_generated_method = "A1DF65056B987F37E85014C20D3AA519")
     
 public int getVoiceMaxResults() {
@@ -899,6 +917,7 @@ public int getVoiceMaxResults() {
      * @see android.R.styleable#Searchable_searchButtonText
      * @hide This feature is deprecated, no need to add it to the API.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.732 -0500", hash_original_method = "A9AA4A30E735A990543D5C1057AC451E", hash_generated_method = "349252A19B395FC5F4401AD7AF5825B8")
     
 public int getSearchButtonText() {
@@ -913,6 +932,7 @@ public int getSearchButtonText() {
      * @return the input type
      * @see android.R.styleable#Searchable_inputType
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.734 -0500", hash_original_method = "4835EFF052D409983E396160FFE84050", hash_generated_method = "E7AFB2F42BD48557E749F8D913AF0DFE")
     
 public int getInputType() {
@@ -927,6 +947,7 @@ public int getInputType() {
      * @return the input type
      * @see android.R.styleable#Searchable_imeOptions
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.736 -0500", hash_original_method = "1FE8811970C0953B1D5BA2B119F61221", hash_generated_method = "569F51AB84521F8E02418CDB78DB70EA")
     
 public int getImeOptions() {
@@ -975,6 +996,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:19.759 -0500", hash_original_method = "72AC80AD69CAD17D9DB571EFE399D945", hash_generated_method = "73F0CEB5436EF5538F6DDFBF17FD1F30")
     
 public void writeToParcel(Parcel dest, int flags) {

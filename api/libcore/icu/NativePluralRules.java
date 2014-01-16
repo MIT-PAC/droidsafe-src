@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Locale;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class NativePluralRules {
@@ -19,20 +15,14 @@ public final class NativePluralRules {
 public static NativePluralRules forLocale(Locale locale) {
         return new NativePluralRules(forLocaleImpl(locale.toString()));
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void finalizeImpl(int address) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int forLocaleImpl(String localeName) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int quantityForIntImpl(int address, int value) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -55,7 +45,6 @@ public static NativePluralRules forLocale(Locale locale) {
 
     public static final int OTHER = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.330 -0500", hash_original_field = "0EFD4B56D5F68F850B84173C34758709", hash_generated_field = "849BAB492558B51E7BC4F1C331A435E4")
-
 
     private  int address;
 

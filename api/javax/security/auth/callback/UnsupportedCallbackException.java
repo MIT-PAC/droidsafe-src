@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class UnsupportedCallbackException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.153 -0500", hash_original_field = "56CE38A38205544B2FE5536B145B6081", hash_generated_field = "FC86D54941A45B4F0C0B942F5184732A")
 
-
     private static final long serialVersionUID = -6873556327655666839L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.155 -0500", hash_original_field = "C574120157192C52B2CACC10319556B7", hash_generated_field = "1B1600DBF2D274518D5E0379C95B483E")
-
 
     private Callback callback;
 
@@ -53,6 +47,7 @@ public UnsupportedCallbackException(Callback callback, String message) {
      *
      * @return the {@code Callback}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:53.168 -0500", hash_original_method = "C52CB6D8F1111BAF8BAA5D6F66319767", hash_generated_method = "17B3C10E1BA6FC648E22A0AAC65F204E")
     
 public Callback getCallback() {

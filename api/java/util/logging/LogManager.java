@@ -19,10 +19,6 @@ import java.util.StringTokenizer;
 
 import libcore.io.IoUtils;
 
-
-
-
-
 public class LogManager {
 
     /**
@@ -31,6 +27,7 @@ public class LogManager {
      *
      * @return the {@code LoggingMXBean} instance
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.302 -0500", hash_original_method = "99854C4284B9CB15C4C88E0DA2C68A20", hash_generated_method = "101D71F5F72FF6847144D9317C1745CB")
     
 public static LoggingMXBean getLoggingMXBean() {
@@ -42,6 +39,7 @@ public static LoggingMXBean getLoggingMXBean() {
      *
      * @return the global {@code LogManager} instance
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.332 -0500", hash_original_method = "A967B00D3DC6A3CAC3067F3E0F5EBD2C", hash_generated_method = "A8A0D9D76BC0BA7CD058F572364881A7")
     
 public static LogManager getLogManager() {
@@ -84,8 +82,7 @@ static Object getInstanceByClass(final String className) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.309 -0500", hash_original_field = "83A69C0A6B959D9FD4B02E07F651A62C", hash_generated_field = "3B43FF39F7B726230E736460CF0CFA39")
 
     private PropertyChangeSupport listeners;
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:16.194 -0400", hash_original_method = "F83269E1889FF9DC50A0440D3CD9234B", hash_generated_method = "25A4D420CCA8D659CCCCE116BE659C0D")
     protected  LogManager() {
         loggers = new Hashtable<String, Logger>();
@@ -134,6 +131,7 @@ public void checkAccess() {
      * @return true if the given logger is added into the namespace
      *         successfully, false if the given logger exists in the namespace.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.321 -0500", hash_original_method = "9E275E191101B6346DE13876068F41E1", hash_generated_method = "377F62B00AC3CF147EA10A2C9C5B5B0E")
     
 public synchronized boolean addLogger(Logger logger) {
@@ -195,6 +193,7 @@ private void addToFamilyTree(Logger logger, String name) {
      *            name of logger
      * @return logger with given name, or {@code null} if nothing is found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.327 -0500", hash_original_method = "7CC5CB7CA011BF34DBD2626C5B91D261", hash_generated_method = "F20E4986C2983349E2180B4EE3433DEF")
     
 public synchronized Logger getLogger(String name) {
@@ -206,6 +205,7 @@ public synchronized Logger getLogger(String name) {
      *
      * @return enumeration of registered logger names
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.329 -0500", hash_original_method = "A3ADDC952F848C9366B53F69C5A416F6", hash_generated_method = "CEF5D0F650774B176491F6A4150D0276")
     
 public synchronized Enumeration<String> getLoggerNames() {
@@ -219,6 +219,7 @@ public synchronized Enumeration<String> getLoggerNames() {
      *            the name of property
      * @return the value of property
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.334 -0500", hash_original_method = "308A02382C1792AE136BBB31488FF7DC", hash_generated_method = "5A74B7D64213EFDDA9B0FD0847C7ABD3")
     
 public String getProperty(String name) {
@@ -386,6 +387,7 @@ public void removePropertyChangeListener(PropertyChangeListener l) {
      * @param resourceBundleName the resource bundle to associate, or null for
      *      no associated resource bundle.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:36.356 -0500", hash_original_method = "B934C7BD7B62C355AF995C71D51E6416", hash_generated_method = "76B6DA62C524B74BADD1C23ED9CD543A")
     
 synchronized Logger getOrCreate(String name, String resourceBundleName) {
@@ -396,7 +398,6 @@ synchronized Logger getOrCreate(String name, String resourceBundleName) {
         }
         return result;
     }
-
 
     /**
      * Sets the parent of this logger in the namespace. Callers must first

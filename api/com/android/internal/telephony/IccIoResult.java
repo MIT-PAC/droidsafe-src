@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class IccIoResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.902 -0500", hash_original_field = "81A80240F451864639A7DEC71565285B", hash_generated_field = "605D00358F6732BF4A4D044EA247A970")
 
@@ -17,7 +13,6 @@ public class IccIoResult {
 
     public int sw2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.908 -0500", hash_original_field = "379AC6F271B60152FF88CC8F1BD43D4B", hash_generated_field = "85C99161735D908FB014CA702C49895B")
-
 
     public byte[] payload;
 
@@ -35,6 +30,7 @@ public IccIoResult(int sw1, int sw2, String hexString) {
         this(sw1, sw2, IccUtils.hexStringToBytes(hexString));
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.916 -0500", hash_original_method = "C2E2D21A49FBAEB09CAD48E279230B17", hash_generated_method = "5F7907B14DF5087E1E3A698D5E1EBBE7")
     
 public String toString() {
@@ -56,6 +52,7 @@ public boolean success() {
     /**
      * Returns exception on error or null if success
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.921 -0500", hash_original_method = "6314A49369EA2E2C83A84515E57327FB", hash_generated_method = "FEE8C406F8DB898558F7556FFBD1BFDB")
     
 public IccException getException() {
@@ -72,7 +69,6 @@ public IccException getException() {
                 return new IccException("sw1:" + sw1 + " sw2:" + sw2);
         }
     }
-
     
 }
 

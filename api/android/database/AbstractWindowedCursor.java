@@ -5,22 +5,18 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class AbstractWindowedCursor extends AbstractCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.409 -0500", hash_original_field = "93AE6FA4C4A8276F74A13C6549F253EE", hash_generated_field = "12D5C423EDB86BC0F7511811E7121A5B")
 
     protected CursorWindow mWindow;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.426 -0400", hash_original_method = "45FA808929D52C3FF25B9987C9B4DFA0", hash_generated_method = "45FA808929D52C3FF25B9987C9B4DFA0")
     public AbstractWindowedCursor ()
     {
         //Synthesized constructor
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.411 -0500", hash_original_method = "87598253341A04422FF4D21C2BB371F4", hash_generated_method = "21FE6FECFF3DC1D03A016E10D2E7469B")
     
 @Override
@@ -29,6 +25,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getBlob(mPos, columnIndex);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.414 -0500", hash_original_method = "80DC04F99A2A57F6C5D41327EC1C50ED", hash_generated_method = "C992940AFCBA03006566656CC0E01999")
     
 @Override
@@ -45,6 +42,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         mWindow.copyStringToBuffer(mPos, columnIndex, buffer);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.419 -0500", hash_original_method = "831E6CBBE62E24F365C378674B05306E", hash_generated_method = "AF601FC0748CE8BD8D2F6BB17BBCC91E")
     
 @Override
@@ -53,6 +51,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getShort(mPos, columnIndex);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.422 -0500", hash_original_method = "A77BC22B3B7D8AA9E2F50FAA1FFFE93C", hash_generated_method = "D9878E6509B31529282362BE1FFF8794")
     
 @Override
@@ -61,6 +60,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getInt(mPos, columnIndex);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.424 -0500", hash_original_method = "32AD2A447F72132C95E38AB4CD7276EC", hash_generated_method = "5C325188E6F256F8EE3948C10BDA5743")
     
 @Override
@@ -69,6 +69,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getLong(mPos, columnIndex);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.427 -0500", hash_original_method = "97A96E7B6D9585C7632D24C9ACC936B0", hash_generated_method = "0324D059EA65C756A5319EA17FA224C9")
     
 @Override
@@ -77,6 +78,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return mWindow.getFloat(mPos, columnIndex);
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.429 -0500", hash_original_method = "5EA94253BE97AB01CBE30DAF30AB624B", hash_generated_method = "C772109F3B2AEBA8C88E7AC2EB6A2C1B")
     
 @Override
@@ -133,6 +135,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         return getType(columnIndex) == Cursor.FIELD_TYPE_FLOAT;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.443 -0500", hash_original_method = "CEEA013C273D2B30A1533873F1614E01", hash_generated_method = "92C7A4CC93BCFF4C40C086DA167A8234")
     
 @Override
@@ -153,6 +156,7 @@ public abstract class AbstractWindowedCursor extends AbstractCursor {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.448 -0500", hash_original_method = "1266B4A96CD75271FEBF68638404515E", hash_generated_method = "DA83358F960B5A246BB2A379BDDBCF42")
     
 @Override
@@ -231,7 +235,6 @@ protected void clearOrCreateWindow(String name) {
         super.onDeactivateOrClose();
         closeWindow();
     }
-
     
 }
 

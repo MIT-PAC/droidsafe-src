@@ -7,30 +7,19 @@ import droidsafe.annotations.*;
 import javax.sip.header.ContentDispositionHeader;
 import javax.sip.header.ContentTypeHeader;
 
-
-
-
-
-
 public class ContentImpl implements Content {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.852 -0500", hash_original_field = "D0B8E49E3D027D4128A52EE40E051281", hash_generated_field = "ACC0ED8FE681AE1F8700C32DE8F586D0")
-
    
     private Object content;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.854 -0500", hash_original_field = "5F126137DAFC04B9EEE2456C3083A67E", hash_generated_field = "ED35814FA47AF2DBDA1D10B34E2A8ED6")
 
-
     private String boundary;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.857 -0500", hash_original_field = "7B62BAB2183AFC63BE405AA34B524EA0", hash_generated_field = "386022F5483C72B1DB3C8AA8A89EDC5E")
-
     
     private ContentTypeHeader contentTypeHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.859 -0500", hash_original_field = "BB26073FB24B5744F17A6A0D5BEEAA0D", hash_generated_field = "97D8B5913638678D3ACBF7B6AE57F828")
-
     
     private ContentDispositionHeader contentDispositionHeader;
-
-    
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.862 -0500", hash_original_method = "BFB297926685FC1F358C134CE06B2B50", hash_generated_method = "034C96C5DD79B98387E33761B7E7FE2D")
     
@@ -39,8 +28,6 @@ public ContentImpl( String content, String boundary ) {
     
         this.boundary = boundary;
     }
-
-    
 
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.message.ContentExt#setContent(java.lang.String)
@@ -54,6 +41,7 @@ public void setContent(Object content) {
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.message.ContentExt#getContentTypeHeader()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.867 -0500", hash_original_method = "F9A2B83B00823C4E5AAD796119B409F3", hash_generated_method = "A547551ABE92E96A766BA1162C174081")
     
 public ContentTypeHeader getContentTypeHeader() {
@@ -64,12 +52,12 @@ public ContentTypeHeader getContentTypeHeader() {
      * (non-Javadoc)
      * @see gov.nist.javax.sip.message.Content#getContent()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.869 -0500", hash_original_method = "29FF4E0F65DE2DF21CD886ED55A6EE33", hash_generated_method = "D65A2268B99672B0C8214FB1AFE13DEC")
     
 public Object getContent() {
         return this.content;
     }
-    
 
     /* (non-Javadoc)
      * @see gov.nist.javax.sip.message.ContentExt#toString()
@@ -91,8 +79,6 @@ public String toString() {
         }
     }
 
-
-
     /**
      * @param contentDispositionHeader the contentDispositionHeader to set
      */
@@ -102,18 +88,15 @@ public void setContentDispositionHeader(ContentDispositionHeader contentDisposit
         this.contentDispositionHeader = contentDispositionHeader;
     }
 
-
-
     /**
      * @return the contentDispositionHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:36.877 -0500", hash_original_method = "5BF192DF8194E4DCDCE4203B3764CB73", hash_generated_method = "8EDAD567081206A6D388CC0FEF8436D1")
     
 public ContentDispositionHeader getContentDispositionHeader() {
         return contentDispositionHeader;
     }
-
-
 
     /**
      * @param contentTypeHeader the contentTypeHeader to set
@@ -123,7 +106,6 @@ public ContentDispositionHeader getContentDispositionHeader() {
 public void setContentTypeHeader(ContentTypeHeader contentTypeHeader) {
         this.contentTypeHeader = contentTypeHeader;
     }
-
     
 }
 

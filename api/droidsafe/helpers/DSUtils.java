@@ -7,8 +7,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 
-
-
 public class DSUtils {
 	public final static String UNKNOWN_STRING = "";
 	public final static int UNKNOWN_INT = 0;
@@ -26,7 +24,7 @@ public class DSUtils {
 	 * @param filter
 	 * @return
 	 */
-	@DSModeled(DSC.BAN)
+	
 	public static Intent[] getIntentFromFilter(IntentFilter filter) {
 		int actionCount = filter.countActions();
 		int catCount = filter.countCategories();

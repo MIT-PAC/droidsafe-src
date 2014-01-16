@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.telephony.PhoneNumberUtils;
 import android.util.Log;
 
-
-
-
-
 public class DriverCall implements Comparable {
 
     /** returns null on error */
@@ -96,7 +92,6 @@ public static int
     static final String LOG_TAG = "RILB";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.031 -0500", hash_original_field = "8BD524D6245D998B3BBC44EB9313082E", hash_generated_field = "AE1343475DB0F2C28979E182E3B11BCC")
 
-
     public int index;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.034 -0500", hash_original_field = "D11CC60C9BF73D8A7B7D7E1236C8B280", hash_generated_field = "1A0B53EAA247DC6719F4EC7AD9624134")
 
@@ -141,6 +136,7 @@ public
     DriverCall() {
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:35.067 -0500", hash_original_method = "7AA84AC8F947102F8EF05D3C97C1753D", hash_generated_method = "25758D42FA7052B410176A40010A8A87")
     
 public String
@@ -156,7 +152,6 @@ public String
                 /*+ "number=" + number */ + ",cli=" + numberPresentation + ","
                 /*+ "name="+ name */ + "," + namePresentation;
     }
-
     
     public enum State {
         ACTIVE,

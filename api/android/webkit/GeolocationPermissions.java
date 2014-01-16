@@ -13,9 +13,6 @@ import java.util.Vector;
 import android.os.Handler;
 import android.os.Message;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class GeolocationPermissions {
@@ -23,6 +20,7 @@ public final class GeolocationPermissions {
     /**
      * Gets the singleton instance of the class.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.193 -0500", hash_original_method = "CF5DE03BD00FE0AD7B0AF2C378080A57", hash_generated_method = "916FC6682CB5E8EDC51BB9668378D669")
     
 public static GeolocationPermissions getInstance() {
@@ -31,33 +29,23 @@ public static GeolocationPermissions getInstance() {
       }
       return sInstance;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static Set nativeGetOrigins() {
         	Set s = new HashSet<>();
         	return s;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeGetAllowed(String origin) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1246562142 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1246562142;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClear(String origin) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeAllow(String origin) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClearAll() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.156 -0500", hash_original_field = "4D2735B1262AC046E5680A52D0A94087", hash_generated_field = "8CF04CB4ECB9AB0455165005BED06537")
@@ -89,7 +77,6 @@ public static GeolocationPermissions getInstance() {
     static final int RETURN_ALLOWED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.183 -0500", hash_original_field = "3A8763FFA79362A6F91CC6D8BB60CC66", hash_generated_field = "A0F0A22ECAE7202D88A4D3804E189136")
 
-
     private static final String ORIGINS = "origins";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.186 -0500", hash_original_field = "983FFBADFC71C6AD0E8CAB8AC6F52330", hash_generated_field = "A2B83EB03A0EE6C64FAB04BF77831BDE")
 
@@ -100,13 +87,11 @@ public static GeolocationPermissions getInstance() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.190 -0500", hash_original_field = "47145455A79115A10E6CDDC929C950C8", hash_generated_field = "C49A555D58D6E46C905036CB1FB4679B")
 
     private static final String ALLOWED = "allowed";
-
     
     public interface Callback {
         public void invoke(String origin, boolean allow, boolean remember);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.160 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
-
 
     private Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:47.163 -0500", hash_original_field = "B89B84C211A49B133FC74A7019F95457", hash_generated_field = "6981106475EB8144679AFAB5874563DD")

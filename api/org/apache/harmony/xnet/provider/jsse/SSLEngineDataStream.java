@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
-
-
-
-
-
 public class SSLEngineDataStream implements DataStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.503 -0500", hash_original_field = "A6220FCD2F083DFC5C0FB7892B85F836", hash_generated_field = "1C70C2AA0A47E98C00D82E05EF21E063")
-
 
     private ByteBuffer[] srcs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.505 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
@@ -23,7 +17,6 @@ public class SSLEngineDataStream implements DataStream {
 
     private int limit;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.510 -0500", hash_original_field = "96F0D4829338588EDBA66E77F8C233B3", hash_generated_field = "6C61B8D89C0034A86F0E7842A74684F8")
-
 
     private int available;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.512 -0500", hash_original_field = "F297D4A4FEAFBF5D8C96F47F68BD926A", hash_generated_field = "0A663A78B7DB557980D9443265FD83B7")
@@ -63,6 +56,7 @@ public boolean hasData() {
         return available > 0;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.524 -0500", hash_original_method = "C75EAA43F8837BF85C32F9A85EFFF2A3", hash_generated_method = "14E7B9E525A28443B8697F7833C40486")
     
 public byte[] getData(int length) {
@@ -92,7 +86,6 @@ public byte[] getData(int length) {
 protected int consumed() {
         return consumed;
     }
-
     
 }
 

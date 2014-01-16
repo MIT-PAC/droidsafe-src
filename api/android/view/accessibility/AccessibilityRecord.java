@@ -10,10 +10,6 @@ import java.util.List;
 import android.os.Parcelable;
 import android.view.View;
 
-
-
-
-
 public class AccessibilityRecord {
 
     /**
@@ -23,6 +19,8 @@ public class AccessibilityRecord {
      *
      * @return An instance.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.090 -0500", hash_original_method = "2CFD6EBEFF813BB567E469C3740E6AAE", hash_generated_method = "832DDE9481661F774B1DBC74C9B1C36D")
     
 public static AccessibilityRecord obtain(AccessibilityRecord record) {
@@ -37,6 +35,8 @@ public static AccessibilityRecord obtain(AccessibilityRecord record) {
      *
      * @return An instance.
      */
+    @DSComment("View state info")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.093 -0500", hash_original_method = "F52296A1A788DF4272F6650232B88A31", hash_generated_method = "60B1C824D4E6E3CA5E531FDBE67AE447")
     
 public static AccessibilityRecord obtain() {
@@ -54,10 +54,8 @@ public static AccessibilityRecord obtain() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.907 -0500", hash_original_field = "8BF5B7BB2C741E6F51882B1E85E5F169", hash_generated_field = "1E642CC81E6D04170ACE577F1365D5E0")
 
-
     private static final int UNDEFINED = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.909 -0500", hash_original_field = "C0F91523AF6FACADA47007AC27ECA341", hash_generated_field = "727FEBC84A7763294879AC67CE69F107")
-
 
     private static final int PROPERTY_CHECKED = 0x00000001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.912 -0500", hash_original_field = "93DBDCFAD69E463227DC2E570C5602BF", hash_generated_field = "BF6BC93B5E6FD2F1AFC97468EC9F79A2")
@@ -92,7 +90,6 @@ public static AccessibilityRecord obtain() {
     private boolean mIsInPool;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.936 -0500", hash_original_field = "4B6C132CC4E1DABC021AFE92BC996668", hash_generated_field = "4B6C132CC4E1DABC021AFE92BC996668")
 
-
     boolean mSealed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.938 -0500", hash_original_field = "16EB928A608E490EDABD6C313699F6E2", hash_generated_field = "16EB928A608E490EDABD6C313699F6E2")
 
@@ -123,7 +120,6 @@ public static AccessibilityRecord obtain() {
     int mMaxScrollY = UNDEFINED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.956 -0500", hash_original_field = "D24F8B9BED9E4999FEFD1D6BDD0A4524", hash_generated_field = "D24F8B9BED9E4999FEFD1D6BDD0A4524")
 
-
     int mAddedCount= UNDEFINED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.958 -0500", hash_original_field = "A726B2E71548B632DFBFAFCC74F6ADEA", hash_generated_field = "A726B2E71548B632DFBFAFCC74F6ADEA")
 
@@ -135,7 +131,6 @@ public static AccessibilityRecord obtain() {
 
     int mSourceWindowId = UNDEFINED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.964 -0500", hash_original_field = "607E22FB74B4A9750077B62E99C7097B", hash_generated_field = "607E22FB74B4A9750077B62E99C7097B")
-
 
     CharSequence mClassName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.967 -0500", hash_original_field = "1D344C00C8D6A0BCC2A3B840B08C53BD", hash_generated_field = "1D344C00C8D6A0BCC2A3B840B08C53BD")
@@ -149,10 +144,8 @@ public static AccessibilityRecord obtain() {
     Parcelable mParcelableData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.973 -0500", hash_original_field = "138B9E96AA00DB5CE70BF8BD81DA37C5", hash_generated_field = "868BA7C98D63B508230C0EC76DFD4DD7")
 
-
     final List<CharSequence> mText = new ArrayList<CharSequence>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.975 -0500", hash_original_field = "8B5A4110581AEE7B543A400E2F63419C", hash_generated_field = "8B5A4110581AEE7B543A400E2F63419C")
-
 
     int mConnectionId = UNDEFINED;
 
@@ -171,6 +164,9 @@ AccessibilityRecord() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.979 -0500", hash_original_method = "948A1D8CF51CA12DCE9E50B8B6FDE838", hash_generated_method = "99A3EBFCDD6EA24818F3FC9C5AE08CD8")
     
 public void setSource(View source) {
@@ -193,6 +189,9 @@ public void setSource(View source) {
      * </p>
      * @return The info of the source.
      */
+    @DSComment("View state info")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.982 -0500", hash_original_method = "D6229F18D386359B7D2ED64A724CE545", hash_generated_method = "E3F4DD62F8EC4943796CD11E7138B5E7")
     
 public AccessibilityNodeInfo getSource() {
@@ -211,6 +210,9 @@ public AccessibilityNodeInfo getSource() {
      *
      * @return The window id.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.984 -0500", hash_original_method = "0167B817243C7300A3E7B07356FC6F77", hash_generated_method = "1970707F9305C75751844A4DD97577B4")
     
 public int getWindowId() {
@@ -222,6 +224,8 @@ public int getWindowId() {
      *
      * @return True if the view is checked, false otherwise.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.986 -0500", hash_original_method = "5A67E197C5983AA9D4F6364A1A3A1EA0", hash_generated_method = "D9CD50EE9CC4C5741F1B86BD0C60AA6A")
     
 public boolean isChecked() {
@@ -235,6 +239,9 @@ public boolean isChecked() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.988 -0500", hash_original_method = "EF363FCE51C9C9A497BD6E689D39B09F", hash_generated_method = "024065D6DB32E5E4B39EDBB43CA9EC86")
     
 public void setChecked(boolean isChecked) {
@@ -247,6 +254,8 @@ public void setChecked(boolean isChecked) {
      *
      * @return True if the view is enabled, false otherwise.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.991 -0500", hash_original_method = "BBEF4BC19B4322B516FB3983E945CAF6", hash_generated_method = "F197DE3582D7DA20C6044E50A654B0C1")
     
 public boolean isEnabled() {
@@ -260,6 +269,9 @@ public boolean isEnabled() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.993 -0500", hash_original_method = "0EAAA686E8658459FDC66C98C4B45340", hash_generated_method = "39F43A8EBABC7BA4E0751BB77CB14027")
     
 public void setEnabled(boolean isEnabled) {
@@ -272,6 +284,8 @@ public void setEnabled(boolean isEnabled) {
      *
      * @return True if the view is a password field, false otherwise.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.995 -0500", hash_original_method = "8ACE5368F7F34FD7A997EC13F4BFCCE5", hash_generated_method = "E655A327F19083075E83F5EF7D96B406")
     
 public boolean isPassword() {
@@ -285,6 +299,9 @@ public boolean isPassword() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.998 -0500", hash_original_method = "8EDA15203F993D6B021832D12354DB70", hash_generated_method = "3E5EE04693246BC59D57449808EA771D")
     
 public void setPassword(boolean isPassword) {
@@ -297,6 +314,8 @@ public void setPassword(boolean isPassword) {
      *
      * @return True if the source is full screen, false otherwise.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.000 -0500", hash_original_method = "C1D751586747941BBE1AE366FE4E3AB5", hash_generated_method = "E9500D5A561ED92F5CC7985376ABE226")
     
 public boolean isFullScreen() {
@@ -310,6 +329,9 @@ public boolean isFullScreen() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.002 -0500", hash_original_method = "8C2BD0FA889006F174A45F3038D20EAE", hash_generated_method = "76FB1ED5F32B5037A395E7539EA6DA2B")
     
 public void setFullScreen(boolean isFullScreen) {
@@ -322,6 +344,8 @@ public void setFullScreen(boolean isFullScreen) {
      *
      * @return True if the source is scrollable, false otherwise.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.004 -0500", hash_original_method = "F5E2B33BAA7F2110DB7AE2D50276D662", hash_generated_method = "E07D899195A0F34DC826BBB3CFA25B61")
     
 public boolean isScrollable() {
@@ -335,6 +359,9 @@ public boolean isScrollable() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.007 -0500", hash_original_method = "C8E19EB47E895659C0D234F60CD63E87", hash_generated_method = "12E034E4311AAEA337DF8A82E5AB3864")
     
 public void setScrollable(boolean scrollable) {
@@ -347,6 +374,9 @@ public void setScrollable(boolean scrollable) {
      *
      * @return The number of items.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.009 -0500", hash_original_method = "5653D3A6C559AE9B846DF6E2B5CE39F8", hash_generated_method = "5ECD654FB9BAD57A8D73E391C83C3123")
     
 public int getItemCount() {
@@ -360,6 +390,8 @@ public int getItemCount() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.012 -0500", hash_original_method = "F4CC562DD5B544AF052C8C7ADD17F3DB", hash_generated_method = "116735580D91EAE92D3C91673D7E4E9F")
     
 public void setItemCount(int itemCount) {
@@ -372,6 +404,9 @@ public void setItemCount(int itemCount) {
      *
      * @return The current item index.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.014 -0500", hash_original_method = "C835140CBE8B50DDD89D13B9DB62A1BF", hash_generated_method = "D5D998EF569924DC3C010FBED5F40CBB")
     
 public int getCurrentItemIndex() {
@@ -385,6 +420,8 @@ public int getCurrentItemIndex() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.016 -0500", hash_original_method = "05A5E897DB8527242E13FEF032CE111F", hash_generated_method = "B16C45DA22270441A95D9890EE01D5D5")
     
 public void setCurrentItemIndex(int currentItemIndex) {
@@ -400,6 +437,9 @@ public void setCurrentItemIndex(int currentItemIndex) {
      * @return The index of the first character or selection
      *        start or the first visible item.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.018 -0500", hash_original_method = "67718C1B588EB57EF05CD90DC3F200D7", hash_generated_method = "4E7F112F58B3AE1475FFA92EB92ECD13")
     
 public int getFromIndex() {
@@ -416,6 +456,8 @@ public int getFromIndex() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.020 -0500", hash_original_method = "BBFD31D579F6E6D46645245CC5F2E354", hash_generated_method = "7E1E3EB41AFFF97FD32BB5D10A3EE109")
     
 public void setFromIndex(int fromIndex) {
@@ -429,6 +471,9 @@ public void setFromIndex(int fromIndex) {
      *
      * @return The index of selection end or last item index.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.022 -0500", hash_original_method = "579D16111E248F454AD7B48F20E18451", hash_generated_method = "2D826AB68D0EEE2CE59753918C365117")
     
 public int getToIndex() {
@@ -441,6 +486,8 @@ public int getToIndex() {
      *
      * @param toIndex The index of selection end or last item index.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.024 -0500", hash_original_method = "E568A8356EF0E74107283370C7553269", hash_generated_method = "FD64A6A68903263361DB0F7B9693A10A")
     
 public void setToIndex(int toIndex) {
@@ -453,6 +500,9 @@ public void setToIndex(int toIndex) {
      *
      * @return The scroll.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.027 -0500", hash_original_method = "37E422003D62C4BD4746E9CFAAF79E84", hash_generated_method = "2966D4C64459925C83CB122456D7422D")
     
 public int getScrollX() {
@@ -464,6 +514,8 @@ public int getScrollX() {
      *
      * @param scrollX The scroll.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.029 -0500", hash_original_method = "39929F8426D84CFC2AAA2E35AFA69688", hash_generated_method = "3F9B251AFE287F55128062A012571B0D")
     
 public void setScrollX(int scrollX) {
@@ -476,6 +528,9 @@ public void setScrollX(int scrollX) {
      *
      * @return The scroll.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.031 -0500", hash_original_method = "1E7AE64F8D32210A6E2C97F4869FB31A", hash_generated_method = "783DF9D98F417D8B625FF8CC53D68860")
     
 public int getScrollY() {
@@ -487,6 +542,8 @@ public int getScrollY() {
      *
      * @param scrollY The scroll.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.034 -0500", hash_original_method = "3D3AC5EAAB87E771122FE10290862D68", hash_generated_method = "CA2C10E297B35E93AB522BF272C6A55A")
     
 public void setScrollY(int scrollY) {
@@ -499,6 +556,9 @@ public void setScrollY(int scrollY) {
      *
      * @return The max scroll.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.036 -0500", hash_original_method = "C4A2F5E4142D8D5EA688446E7513363C", hash_generated_method = "FC8C8B13FB9786F06B237F79CC9DE44D")
     
 public int getMaxScrollX() {
@@ -509,6 +569,8 @@ public int getMaxScrollX() {
      *
      * @param maxScrollX The max scroll.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.039 -0500", hash_original_method = "EE977B785E6D4A7CA733252D06CF32E9", hash_generated_method = "C2DA57E8F40DD4C9A466F4C1AD09BE85")
     
 public void setMaxScrollX(int maxScrollX) {
@@ -521,6 +583,9 @@ public void setMaxScrollX(int maxScrollX) {
      *
      * @return The max scroll.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.041 -0500", hash_original_method = "A3ECA44A0D4150097FAA989997DF13C5", hash_generated_method = "CEFA4C74AA3CC80669494263F97F0A86")
     
 public int getMaxScrollY() {
@@ -532,6 +597,8 @@ public int getMaxScrollY() {
      *
      * @param maxScrollY The max scroll.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.043 -0500", hash_original_method = "49077E92EA018330C2FB0B17E183D4A7", hash_generated_method = "DC8DB112A963D4DD8E318244F0B8840E")
     
 public void setMaxScrollY(int maxScrollY) {
@@ -544,6 +611,9 @@ public void setMaxScrollY(int maxScrollY) {
      *
      * @return The number of added characters.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.045 -0500", hash_original_method = "49E2E44D8419AC51B09A77AC8668D279", hash_generated_method = "97DEE091452250D9492F94DE1B9CB7EB")
     
 public int getAddedCount() {
@@ -557,6 +627,8 @@ public int getAddedCount() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.048 -0500", hash_original_method = "72BB1C08DFA71715A3D1B3E3C0F3D07A", hash_generated_method = "16DCC119DBAD44984751C43034BBF01F")
     
 public void setAddedCount(int addedCount) {
@@ -569,6 +641,9 @@ public void setAddedCount(int addedCount) {
      *
      * @return The number of removed characters.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.050 -0500", hash_original_method = "EBD9E1156BBECE10FD62678D5B5AE958", hash_generated_method = "18F3685DDB7CC812F66D38EC4E0ACA55")
     
 public int getRemovedCount() {
@@ -582,6 +657,8 @@ public int getRemovedCount() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.052 -0500", hash_original_method = "A6A70AD3A3D0C21790CD56D9B41496A2", hash_generated_method = "100F236D74FE8B5CC7DDFEF6CF131078")
     
 public void setRemovedCount(int removedCount) {
@@ -594,6 +671,9 @@ public void setRemovedCount(int removedCount) {
      *
      * @return The class name.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.054 -0500", hash_original_method = "3625856433EBE1C9C9A90132A3C58D3F", hash_generated_method = "26599164AEA75289AA6AEFE666301F84")
     
 public CharSequence getClassName() {
@@ -607,6 +687,8 @@ public CharSequence getClassName() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.057 -0500", hash_original_method = "435BCAB2D716154C6ED3D9D2DD11028E", hash_generated_method = "FED8F14A8D334A8BA08886C8CE2F0CE9")
     
 public void setClassName(CharSequence className) {
@@ -620,6 +702,9 @@ public void setClassName(CharSequence className) {
      *
      * @return The text.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.059 -0500", hash_original_method = "DC632160826FC3F04AF23253967928B9", hash_generated_method = "379A6D4AD7B63386276D4CACD9E2EDDC")
     
 public List<CharSequence> getText() {
@@ -631,6 +716,9 @@ public List<CharSequence> getText() {
      *
      * @return The text before the change.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.061 -0500", hash_original_method = "FE2FD614296585A25D259709588FAD5E", hash_generated_method = "A052B70B6CA03CBA54AC63E969604818")
     
 public CharSequence getBeforeText() {
@@ -644,6 +732,8 @@ public CharSequence getBeforeText() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.063 -0500", hash_original_method = "D6F685CC2DDAD1DA7E7B88F32900AE37", hash_generated_method = "A8FDE895D2647C140185E48ECB9677A9")
     
 public void setBeforeText(CharSequence beforeText) {
@@ -656,6 +746,9 @@ public void setBeforeText(CharSequence beforeText) {
      *
      * @return The description.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.065 -0500", hash_original_method = "6DAFF86A43A6BABA543C66C7DDAE7D00", hash_generated_method = "F956064663F9FEBB2E9D4DEF23399995")
     
 public CharSequence getContentDescription() {
@@ -669,6 +762,8 @@ public CharSequence getContentDescription() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.067 -0500", hash_original_method = "85E1231CCD16E203B9FBFBDBF6F7490E", hash_generated_method = "E1714B81DD2746B9FD1113A5037215C7")
     
 public void setContentDescription(CharSequence contentDescription) {
@@ -681,6 +776,9 @@ public void setContentDescription(CharSequence contentDescription) {
      *
      * @return The parcelable data.
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.069 -0500", hash_original_method = "336F04D02E102717408E8DD7ED329D8E", hash_generated_method = "0D4F1F165FBD3575FEEFEB96DD34A0B0")
     
 public Parcelable getParcelableData() {
@@ -694,6 +792,8 @@ public Parcelable getParcelableData() {
      *
      * @throws IllegalStateException If called from an AccessibilityService.
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.072 -0500", hash_original_method = "1574FBF11672419A058C271D89F97C62", hash_generated_method = "0B0BD5A07D321AFA5EB96E57C2C44645")
     
 public void setParcelableData(Parcelable parcelableData) {
@@ -803,6 +903,8 @@ private void setBooleanProperty(int property, boolean value) {
      *
      * @throws IllegalStateException If the record is already recycled.
      */
+    @DSComment("Data structure/no action")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:52.095 -0500", hash_original_method = "0FDD4277FFE3E2F2D99D4BAB0780A409", hash_generated_method = "04AA46A4E4C0F0C192EB028637BC5E4B")
     
 public void recycle() {

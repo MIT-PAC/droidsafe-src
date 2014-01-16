@@ -13,10 +13,6 @@ import android.telephony.gsm.GsmCellLocation;
 import com.android.internal.telephony.ITelephony;
 import com.android.internal.telephony.Phone;
 
-
-
-
-
 public abstract class CellLocation {
 
     /**
@@ -68,6 +64,7 @@ public static CellLocation newFromBundle(Bundle bundle) {
      * location, or null for unknown/none phone radio types.
      *
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.170 -0500", hash_original_method = "772CDA5B255ED5AFC7BB2F44019BFECD", hash_generated_method = "211FE06CF4C76A637818F279C819EF77")
     
 public static CellLocation getEmpty() {
@@ -102,7 +99,6 @@ public abstract void fillInNotifierBundle(Bundle bundle);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:44.162 -0500", hash_original_method = "9B1CCC3AB82A9C7B7A46C788921405FB", hash_generated_method = "047840219A293BF58358C9060BC573A9")
     
 public abstract boolean isEmpty();
-
     
 }
 

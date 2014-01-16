@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.nio.channels.FileChannel;
 
-
-
-
-
 public final class NioUtils {
 
     /**
@@ -28,6 +24,7 @@ public final class NioUtils {
      * @return the address of the buffer given, or zero if the buffer is not a
      *         direct Buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.550 -0500", hash_original_method = "6FD5A6B6EFE1B654EBBB85A447B00936", hash_generated_method = "B1EC0440B234EDBF99B5A433B378CE46")
     
 public static int getDirectBufferAddress(Buffer buffer) {
@@ -52,6 +49,7 @@ public static void freeDirectBuffer(ByteBuffer buffer) {
     /**
      * Returns the int file descriptor from within the given FileChannel 'fc'.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.557 -0500", hash_original_method = "EDFF18FC78F4764F7133825B9C3635B5", hash_generated_method = "209B46B133CA6BF5240477E289D3CD74")
     
 public static FileDescriptor getFD(FileChannel fc) {
@@ -90,7 +88,6 @@ public static int unsafeArrayOffset(ByteBuffer b) {
     
 private NioUtils() {
     }
-
     
 }
 

@@ -13,15 +13,11 @@ import java.util.List;
 
 import dalvik.system.SocketTagger;
 
-
-
 final class HttpConnectionPool {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.014 -0500", hash_original_field = "91F55BFC2249BA6B68F460ABB48ACE22", hash_generated_field = "590A253342226BF0F52B2AA46E36D139")
 
-
     public static final HttpConnectionPool INSTANCE = new HttpConnectionPool();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.016 -0500", hash_original_field = "CF1F23AB5460D986D85752F07123AEA1", hash_generated_field = "071E397744914F08240B3CDE573A9670")
-
 
     private  int maxConnections;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.019 -0500", hash_original_field = "2CFF140A7C85435FF25FDD386EB8AAD9", hash_generated_field = "8E1D2C60713B625C54295C515F88EF48")
@@ -72,6 +68,7 @@ public HttpConnection get(HttpConnection.Address address, int connectTimeout)
         return address.connect(connectTimeout);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:31.028 -0500", hash_original_method = "96125B0E756F418D511DE46CCDC8F5C6", hash_generated_method = "0AAB80EAFE9742A63EC9D2FAA87FD167")
     
 public void recycle(HttpConnection connection) {

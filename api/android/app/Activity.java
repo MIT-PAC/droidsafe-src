@@ -66,14 +66,8 @@ import com.android.internal.app.ActionBarImpl;
 import com.android.internal.policy.PolicyManager;
 import com.android.internal.view.menu.MenuBuilder;
 
-
-
-
-
 public class Activity extends ContextThemeWrapper implements LayoutInflater.Factory2, Window.Callback, KeyEvent.Callback, OnCreateContextMenuListener, ComponentCallbacks2 {
-
     
-    @DSModeled(DSC.BAN)
     private static String savedDialogKeyFor(int key){
 		// Original method
 		/*
@@ -83,9 +77,7 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 		*/
 		return "";
 	}
-
     
-    @DSModeled(DSC.BAN)
     private static String savedDialogArgsKeyFor(int key){
 		// Original method
 		/*
@@ -109,7 +101,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     public static final int RESULT_FIRST_USER   = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:58.988 -0500", hash_original_field = "7C981B7812486BF80407E00E081725AF", hash_generated_field = "935F741DC4E3364E9A53BE28D1817499")
 
-
     private static final String WINDOW_HIERARCHY_TAG = "android:viewHierarchyState";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.008 -0500", hash_original_field = "13B33411593A705589F2DA04D3DEAA8D", hash_generated_field = "925270CCB66F84A6CC5AD8E1A127DDF5")
 
@@ -127,7 +118,6 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 
     private static final String SAVED_DIALOG_ARGS_KEY_PREFIX = "android:dialog_args_";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.408 -0500", hash_original_field = "8DEF5FAA069262DDDE3E453AF79F9071", hash_generated_field = "98D5104638F2DEE99210C785FE0E500F")
-
     
     protected static final int[] FOCUSED_STATE_SET = {com.android.internal.R.attr.state_focused};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.774 -0500", hash_original_field = "D3CC4E3A93F1E49612038E01336EDC17", hash_generated_field = "45127B126EE2B3619E2DE44F606F53C3")
@@ -216,11 +206,9 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.251 -0500", hash_original_field = "103BD895478A6A40124D791931151EE2", hash_generated_field = "103BD895478A6A40124D791931151EE2")
  NonConfigurationInstances mLastNonConfigurationInstances;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.258 -0500", hash_original_field = "C6B08D42C8EA2CB56500460CAF662F4C", hash_generated_field = "C669AC20EF93035981B8D3BE2898892F")
-
     
     private Window mWindow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.265 -0500", hash_original_field = "83A062836C11DD52DC32F4325712F233", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
-
 
     private WindowManager mWindowManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.271 -0500", hash_original_field = "E1BBD6179BBAC61DB86866A787E8F58C", hash_generated_field = "E1BBD6179BBAC61DB86866A787E8F58C")
@@ -235,17 +223,14 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
  ActionBarImpl mActionBar = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.301 -0500", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
 
-
     private CharSequence mTitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.308 -0500", hash_original_field = "2F27E770C08EAF774B32F60AC1A8D570", hash_generated_field = "CF4E9C052F96C3E80581AE8AF634872B")
 
     private int mTitleColor = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.315 -0500", hash_original_field = "770A646DB3FFD5D268F1207A9B6648B8", hash_generated_field = "694874072698409F6608B46B5D5A3DE1")
 
-
     final FragmentManagerImpl mFragments = new FragmentManagerImpl();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.321 -0500", hash_original_field = "207A321ED3571899F1F73399691FB216", hash_generated_field = "207A321ED3571899F1F73399691FB216")
-
     
     SparseArray<LoaderManagerImpl> mAllLoaderManagers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.326 -0500", hash_original_field = "6EE478DF5473556475C8D09C185A01BC", hash_generated_field = "6EE478DF5473556475C8D09C185A01BC")
@@ -263,10 +248,8 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     Intent mResultData = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.387 -0500", hash_original_field = "C21BE9BD6AAB2237466A80BCA166CA70", hash_generated_field = "AB8AC56D76B8BEA00FC5296846330527")
 
-
     private boolean mTitleReady = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.394 -0500", hash_original_field = "390C7F0981BA84FE37791C6DE18A35AD", hash_generated_field = "B2DD3A4B48EBE858054417FEDBBD4E9F")
-
 
     private int mDefaultKeyMode = DEFAULT_KEYS_DISABLE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.400 -0500", hash_original_field = "22E5427C84A3B37A77D47D71434C1D16", hash_generated_field = "2B1292D0EBD0751B84B1BAFF83080A8F")
@@ -275,19 +258,22 @@ public class Activity extends ContextThemeWrapper implements LayoutInflater.Fact
     private final Object mInstanceTracker = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.421 -0500", hash_original_field = "348A8677E1E3F1084FC4FBEC2A3E1F5D", hash_generated_field = "A94051227A36AE91A6CE3B31BF1DD3E6")
 
-
     private Thread mUiThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.427 -0500", hash_original_field = "AD9C3D1E48D73BF1547D53C4C62401B2", hash_generated_field = "26DE2B72977ADBD047A9853341F26F79")
 
     final Handler mHandler = new Handler();
     
-    @DSModeled(DSC.SAFE)
-	public Activity() {
+	@DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    public Activity() {
 		super();
 		mWindow = PolicyManager.makeNewWindow((Context)this);
 	}
 
     /** Return the intent that started this activity. */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.433 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
     
 public Intent getIntent() {
@@ -304,6 +290,8 @@ public Intent getIntent() {
      * @see #getIntent
      * @see #onNewIntent
      */ 
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.438 -0500", hash_original_method = "CC61C883982068788EAC9DED2F81C9E5", hash_generated_method = "4FCD5B90D6018F4246EC2AA6BF36143F")
     
 public void setIntent(Intent newIntent) {
@@ -311,14 +299,17 @@ public void setIntent(Intent newIntent) {
     }
 
     /** Return the application that owns this activity. */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.444 -0500", hash_original_method = "510D23D8CF054FDAE1D1426C6A1A1500", hash_generated_method = "63791FE33C4BA47B317000A8E62CC095")
     
 public final Application getApplication() {
         return mApplication;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public final boolean isChild(){
 		return getTaintBoolean();
 		// Original method
@@ -330,6 +321,9 @@ public final Application getApplication() {
 	}
     
     /** Return the parent activity if this view is an embedded child. */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.456 -0500", hash_original_method = "9F036901744EF56469FFF11C0925658F", hash_generated_method = "F6946DC3F22C892A127414944808F1FB")
     
 public final Activity getParent() {
@@ -337,6 +331,9 @@ public final Activity getParent() {
     }
 
     /** Retrieve the window manager for showing custom windows. */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.462 -0500", hash_original_method = "1DCFADD2C71F0E408EA049F81A8ACDED", hash_generated_method = "0C79B12DA4736ABBDC4EC55B1426644A")
     
 public WindowManager getWindowManager() {
@@ -351,14 +348,16 @@ public WindowManager getWindowManager() {
      * @return Window The current window, or null if the activity is not
      *         visual.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.468 -0500", hash_original_method = "51ACB33F24592F8ED3FAFF9D96DEAF2A", hash_generated_method = "331876D44C3CE896E388411794B32F6E")
     
 public Window getWindow() {
         return mWindow;
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public LoaderManager getLoaderManager(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, true);
 		return mLoaderManager;
@@ -374,9 +373,7 @@ public Window getWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     LoaderManagerImpl getLoaderManager(int index, boolean started, boolean create){
 		mAllLoaderManagers = new SparseArray<LoaderManagerImpl>();
 		LoaderManagerImpl lm = mAllLoaderManagers.get(index);
@@ -401,9 +398,8 @@ public Window getWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View getCurrentFocus(){
 		return mWindow.getCurrentFocus();
 		// Original method
@@ -413,10 +409,11 @@ public Window getWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	protected void onCreate(Bundle savedInstanceState){
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
 		Parcelable p = savedInstanceState.getParcelable(FRAGMENTS_TAG);
 		mFragments.restoreAllState(p, mLastNonConfigurationInstances.fragments);
@@ -455,9 +452,10 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
         onRestoreInstanceState(savedInstanceState);
         restoreManagedDialogs(savedInstanceState);
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     protected void onRestoreInstanceState(Bundle savedInstanceState){
 		Bundle windowState = savedInstanceState.getBundle(WINDOW_HIERARCHY_TAG); //DSFIXME:  Model method in bundle
 		mWindow.restoreHierarchyState(windowState);
@@ -474,17 +472,13 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void restoreManagedDialogs(Bundle savedInstanceState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private Dialog createDialog(Integer dialogId, Bundle state, Bundle args){
 		final Dialog dialog = onCreateDialog(dialogId, args);
 		dialog.dispatchOnCreate(state);
@@ -501,9 +495,9 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onPostCreate(Bundle savedInstanceState){
 		onTitleChanged(getTitle(), getTitleColor());
 		// Original method
@@ -518,9 +512,9 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onStart(){
 		mLoaderManager = getLoaderManager(-1, mLoadersStarted, false);
 		mLoaderManager.doStart();
@@ -543,9 +537,9 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onRestart(){
 		// Original method
 		/*
@@ -555,10 +549,10 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	protected void onResume(){
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    protected void onResume(){
 		getApplication().dispatchActivityResumed(this);
 		// Original method
 		/*
@@ -569,9 +563,9 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onPostResume(){
 		final Window win = getWindow();
 		win.makeActive();
@@ -609,6 +603,8 @@ final void performRestoreInstanceState(Bundle savedInstanceState) {
      * @see #setIntent 
      * @see #onResume 
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.580 -0500", hash_original_method = "ECA12E6FCFF6C8E6301C9A23FD34F5BD", hash_generated_method = "4ADDCDE3CE740D4C5E6F0A8FD5893823")
     
 protected void onNewIntent(Intent intent) {
@@ -628,9 +624,9 @@ final void performSaveInstanceState(Bundle outState) {
         onSaveInstanceState(outState);
         saveManagedDialogs(outState);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onSaveInstanceState(Bundle outState){
 		outState.putBundle(WINDOW_HIERARCHY_TAG, mWindow.saveHierarchyState());
         Parcelable p = mFragments.saveAllState();
@@ -649,17 +645,15 @@ final void performSaveInstanceState(Bundle outState) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void saveManagedDialogs(Bundle outState){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onPause(){
 		getApplication().dispatchActivityPaused(this);
 		// Original method
@@ -740,10 +734,10 @@ public boolean onCreateThumbnail(Bitmap outBitmap, Canvas canvas) {
 public CharSequence onCreateDescription() {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
-	protected void onStop(){
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    protected void onStop(){
 		mActionBar.setShowHideAnimationEnabled(false);
 		getApplication().dispatchActivityStopped(this);
 		// Original method
@@ -756,17 +750,17 @@ public CharSequence onCreateDescription() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	protected void onDestroy(){
+	@DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    protected void onDestroy(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onConfigurationChanged(Configuration newConfig){
 		mFragments.dispatchConfigurationChanged(newConfig);
 		mWindow.onConfigurationChanged(newConfig);
@@ -786,9 +780,8 @@ public CharSequence onCreateDescription() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getChangingConfigurations(){
 		return getTaintInt();
 		// Original method
@@ -798,9 +791,10 @@ public CharSequence onCreateDescription() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public Object getLastNonConfigurationInstance(){
 		return mLastNonConfigurationInstances.activity;
 		// Original method
@@ -869,9 +863,8 @@ public CharSequence onCreateDescription() {
 public Object onRetainNonConfigurationInstance() {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     HashMap<String, Object> getLastNonConfigurationChildInstances(){
 		return mLastNonConfigurationInstances.children;
 		// Original method
@@ -895,17 +888,15 @@ public Object onRetainNonConfigurationInstance() {
 HashMap<String,Object> onRetainNonConfigurationChildInstances() {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     NonConfigurationInstances retainNonConfigurationInstances(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onLowMemory(){
 		mFragments.dispatchLowMemory();
 		// Original method
@@ -917,9 +908,7 @@ HashMap<String,Object> onRetainNonConfigurationChildInstances() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public void onTrimMemory(int level){
 		mFragments.dispatchTrimMemory(level);
 		// Original method
@@ -936,14 +925,15 @@ HashMap<String,Object> onRetainNonConfigurationChildInstances() {
      * Return the FragmentManager for interacting with fragments associated
      * with this activity.
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.686 -0500", hash_original_method = "C5EB33D6873EE026D87972F02E8EBD4B", hash_generated_method = "564609F83A847B122B44871EAAC2C081")
     
 public FragmentManager getFragmentManager() {
         return mFragments;
     }
-
     
-    @DSModeled(DSC.SPEC)
     void invalidateFragmentIndex(int index){
 		LoaderManagerImpl lm = mAllLoaderManagers.get(0);
 		lm.doDestroy();
@@ -972,9 +962,8 @@ public FragmentManager getFragmentManager() {
     
 public void onAttachFragment(Fragment fragment) {
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, null, sortOrder);
@@ -991,9 +980,10 @@ public void onAttachFragment(Fragment fragment) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("returned DB object")
+    @DSSpec(DSCat.DATABASE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final Cursor managedQuery(Uri uri, String[] projection, String selection,
             String[] selectionArgs, String sortOrder){
 		Cursor c = getContentResolver().query(uri, projection, selection, selectionArgs, sortOrder);
@@ -1010,9 +1000,9 @@ public void onAttachFragment(Fragment fragment) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @Deprecated public void startManagingCursor(Cursor c){
 		// Original method
 		/*
@@ -1024,9 +1014,9 @@ public void onAttachFragment(Fragment fragment) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @Deprecated public void stopManagingCursor(Cursor c){
 		ManagedCursor mc = mManagedCursors.get(0);
 		mManagedCursors.remove(0);
@@ -1053,6 +1043,7 @@ public void onAttachFragment(Fragment fragment) {
      * this is a no-op.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.726 -0500", hash_original_method = "14D9F664592BF6CD2790F336C855BE58", hash_generated_method = "D3F3B9EEC979AA633E423ED004E2194B")
     
 @Deprecated
@@ -1065,6 +1056,8 @@ public void onAttachFragment(Fragment fragment) {
      *
      * @return The view if found or null otherwise.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.731 -0500", hash_original_method = "6A267AF8CD8DFD046F9AA4A840E0F1F1", hash_generated_method = "755E2CA99C821360ADFBADF6E41C3E62")
     
 public View findViewById(int id) {
@@ -1076,15 +1069,16 @@ public View findViewById(int id) {
      *
      * @return The Activity's ActionBar, or null if it does not have one.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.736 -0500", hash_original_method = "EC6DC7C8BFDE6FF47CE21F97E3274EE5", hash_generated_method = "E5E94BEBC452D594395C0CA7D5A6B868")
     
 public ActionBar getActionBar() {
         initActionBar();
         return mActionBar;
     }
-
     
-    @DSModeled(DSC.BAN)
 	private void initActionBar(){
 		Window window = getWindow();
 		window.getDecorView();
@@ -1113,6 +1107,9 @@ public ActionBar getActionBar() {
      * @see #setContentView(android.view.View)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.747 -0500", hash_original_method = "FC4CFA409E0DBC3CD2C86D908686341E", hash_generated_method = "8A18F956B194A0C371BE43C50E45248B")
     
 public void setContentView(int layoutResID) {
@@ -1135,6 +1132,9 @@ public void setContentView(int layoutResID) {
      * @see #setContentView(int)
      * @see #setContentView(android.view.View, android.view.ViewGroup.LayoutParams)
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.752 -0500", hash_original_method = "6143DA20A0E63D3DD26D6D6CC3A0350F", hash_generated_method = "68042BCA2A6984D357903A5C198D5CDB")
     
 public void setContentView(View view) {
@@ -1178,14 +1178,15 @@ public void addContentView(View view, ViewGroup.LayoutParams params) {
      * Sets whether this activity is finished when touched outside its window's
      * bounds.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.768 -0500", hash_original_method = "729048B37138D48F6A74BC6AFCECACEE", hash_generated_method = "A41EB2401D4EFCDB568228C47AA5D8B9")
     
 public void setFinishOnTouchOutside(boolean finish) {
         mWindow.setCloseOnTouchOutside(finish);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public final void setDefaultKeyMode(int mode){
 		addTaint(mode);
 		mDefaultKeySsb = new SpannableStringBuilder();
@@ -1212,9 +1213,7 @@ public void setFinishOnTouchOutside(boolean finish) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     public void droidsafeOnKeyEvents() {
         int action = getTaintInt();
         int code = getTaintInt();
@@ -1231,8 +1230,10 @@ public void setFinishOnTouchOutside(boolean finish) {
         onTrackballEvent(motionEv);
         onGenericMotionEvent(motionEv);
     }
-
-    @DSModeled(DSC.SAFE)
+    
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public boolean onKeyDown(int keyCode, KeyEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -1244,14 +1245,16 @@ public void setFinishOnTouchOutside(boolean finish) {
      * KeyEvent.Callback.onKeyLongPress()}: always returns false (doesn't handle
      * the event).
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.819 -0500", hash_original_method = "2A75FF2C44C4D96068DDAFC2643F0C8B", hash_generated_method = "DCA1BD8CD57F309EE5CB42ADAEA0EA5E")
     
 public boolean onKeyLongPress(int keyCode, KeyEvent event) {
         return false;
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onKeyUp(int keyCode, KeyEvent event){
 		getApplicationInfo();
 		onBackPressed();
@@ -1282,9 +1285,9 @@ public boolean onKeyLongPress(int keyCode, KeyEvent event) {
 public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
         return false;
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onBackPressed(){
 		mFragments.popBackStackImmediate();
 		finish();
@@ -1314,9 +1317,7 @@ public boolean onKeyMultiple(int keyCode, int repeatCount, KeyEvent event) {
 public boolean onKeyShortcut(int keyCode, KeyEvent event) {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean onTouchEvent(MotionEvent event){
 		finish();
 		return mWindow.shouldCloseOnTouch(this, event); //Taint should bubble up
@@ -1406,9 +1407,7 @@ public boolean onGenericMotionEvent(MotionEvent event) {
     
 public void onUserInteraction() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void onWindowAttributesChanged(WindowManager.LayoutParams params){
 		mDecor.getParent();
 		getWindowManager().updateViewLayout(mDecor, params);
@@ -1458,6 +1457,8 @@ public void onContentChanged() {
      * @see #onResume
      * @see View#onWindowFocusChanged(boolean)
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.875 -0500", hash_original_method = "C7622FC561A602386C2112BC0445F7C6", hash_generated_method = "A78A7C6B763B8F194C5AA376EFC516AD")
     
 public void onWindowFocusChanged(boolean hasFocus) {
@@ -1482,13 +1483,13 @@ public void onAttachedToWindow() {
      * for more information.
      * @see View#onDetachedFromWindow
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.885 -0500", hash_original_method = "E592299EBB4DE1D6696EB8C4009A9EF4", hash_generated_method = "2C686A74CA98AB92B59E2086FB62185D")
     
 public void onDetachedFromWindow() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean hasWindowFocus(){
 		Window w = getWindow();
 		View d = w.getDecorView();
@@ -1507,9 +1508,9 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchKeyEvent(KeyEvent event){
 		onUserInteraction();
 		Window win = getWindow();
@@ -1531,9 +1532,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchKeyShortcutEvent(KeyEvent event){
 		onUserInteraction();
 		return (getWindow().superDispatchKeyShortcutEvent(event) || onKeyShortcut(event.getKeyCode(), event));
@@ -1548,9 +1547,9 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     public boolean dispatchTouchEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTouchEvent(ev) || onTouchEvent(ev));
@@ -1567,9 +1566,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchTrackballEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchTrackballEvent(ev) || onTrackballEvent(ev));
@@ -1584,9 +1581,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchGenericMotionEvent(MotionEvent ev){
 		onUserInteraction();
 		return (getWindow().superDispatchGenericMotionEvent(ev) || onGenericMotionEvent(ev));
@@ -1601,9 +1596,7 @@ public void onDetachedFromWindow() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean dispatchPopulateAccessibilityEvent(AccessibilityEvent event){
 		event.setClassName(getClass().getName());
         event.setPackageName(getPackageName());
@@ -1642,9 +1635,9 @@ public void onDetachedFromWindow() {
 public View onCreatePanelView(int featureId) {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onCreatePanelMenu(int featureId, Menu menu){
 		return (onCreateOptionsMenu(menu) || mFragments.dispatchCreateOptionsMenu(menu, getMenuInflater()));
 		// Original method
@@ -1659,9 +1652,9 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPreparePanel(int featureId, View view, Menu menu){
 		return (onPrepareOptionsMenu(menu) || mFragments.dispatchPrepareOptionsMenu(menu) && menu.hasVisibleItems());
 		// Original method
@@ -1676,9 +1669,9 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onMenuOpened(int featureId, Menu menu){
 		initActionBar();
 		mActionBar.dispatchMenuVisibilityChanged(true);
@@ -1699,9 +1692,9 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onMenuItemSelected(int featureId, MenuItem item){
 		EventLog.writeEvent(50000, 0, item.getTitleCondensed());
 		return (onOptionsItemSelected(item) || mFragments.dispatchContextItemSelected(item));
@@ -1727,9 +1720,9 @@ public View onCreatePanelView(int featureId) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onPanelClosed(int featureId, Menu menu){
 		mFragments.dispatchOptionsMenuClosed(menu);
 		onOptionsMenuClosed(menu);
@@ -1761,14 +1754,16 @@ public View onCreatePanelView(int featureId) {
      * The {@link #onCreateOptionsMenu(Menu)} method will be called the next
      * time it needs to be displayed.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.957 -0500", hash_original_method = "319389EBA801B290FB41D02473EB2E9E", hash_generated_method = "D884060298BD2094521858E602829233")
     
 public void invalidateOptionsMenu() {
         mWindow.invalidatePanelMenu(Window.FEATURE_OPTIONS_PANEL);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onCreateOptionsMenu(Menu menu){
 		return mParent.onCreateOptionsMenu(menu);
 		// Original method
@@ -1781,9 +1776,9 @@ public void invalidateOptionsMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onPrepareOptionsMenu(Menu menu){
 		return mParent.onPrepareOptionsMenu(menu);
 		// Original method
@@ -1796,9 +1791,9 @@ public void invalidateOptionsMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onOptionsItemSelected(MenuItem item){
 		return mParent.onOptionsItemSelected(item);
 		// Original method
@@ -1811,9 +1806,9 @@ public void invalidateOptionsMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onOptionsMenuClosed(Menu menu){
 		mParent.onOptionsMenuClosed(menu);
 		// Original method
@@ -1831,14 +1826,16 @@ public void invalidateOptionsMenu() {
      * Programmatically opens the options menu. If the options menu is already
      * open, this method does nothing.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.982 -0500", hash_original_method = "756759165F6AB2C8C6E469E63BE14186", hash_generated_method = "3C023A20572EFC197D0EAE2E2611F4F2")
     
 public void openOptionsMenu() {
         mWindow.openPanel(Window.FEATURE_OPTIONS_PANEL, null);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void closeOptionsMenu(){
 		// Original method
 		/*
@@ -1866,9 +1863,9 @@ public void openOptionsMenu() {
     
 public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuInfo) {
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     public void registerForContextMenu(View view){
         // model the callbacks.  This code is sure to be missing things
         // There are many other types of views and adapters
@@ -1897,6 +1894,8 @@ public void onCreateContextMenu(ContextMenu menu, View v, ContextMenuInfo menuIn
      * @see #registerForContextMenu(View)
      * @param view The view that should stop showing a context menu.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.002 -0500", hash_original_method = "6A7E2B106BB1CEE7C3B668A773DE5A5B", hash_generated_method = "75D2DB67C93B9FA99A912C90753A67CE")
     
 public void unregisterForContextMenu(View view) {
@@ -1910,6 +1909,9 @@ public void unregisterForContextMenu(View view) {
      * 
      * @param view The view to show the context menu for.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.006 -0500", hash_original_method = "D1451DBD5DFD14FAE397660897192E3C", hash_generated_method = "320EBE9DAC491AFFCE2D5802170E7386")
     
 public void openContextMenu(View view) {
@@ -1924,9 +1926,9 @@ public void openContextMenu(View view) {
 public void closeContextMenu() {
         mWindow.closePanel(Window.FEATURE_CONTEXT_MENU);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onContextItemSelected(MenuItem item){
 		return mParent.onContextItemSelected(item);
 		// Original method
@@ -1939,9 +1941,9 @@ public void closeContextMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public void onContextMenuClosed(Menu menu){
 		mParent.onContextMenuClosed(menu);
 		// Original method
@@ -1958,6 +1960,8 @@ public void closeContextMenu() {
     /**
      * @deprecated Old no-arguments version of {@link #onCreateDialog(int, Bundle)}.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.026 -0500", hash_original_method = "5C4ABBE5E4F27E10ACC00467798D80D8", hash_generated_method = "9BF122C6459667CD41B62EBC07FD4E1C")
     
 @Deprecated
@@ -2009,6 +2013,8 @@ public void closeContextMenu() {
      * @deprecated Old no-arguments version of
      * {@link #onPrepareDialog(int, Dialog, Bundle)}.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.036 -0500", hash_original_method = "7779942926F36CBECCFB305682D0E188", hash_generated_method = "C3F52CD22FCD74D322864C49F353283D")
     
 @Deprecated
@@ -2056,15 +2062,16 @@ public void closeContextMenu() {
      * {@link FragmentManager} instead; this is also
      * available on older platforms through the Android compatibility package.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.047 -0500", hash_original_method = "C69337B465910082B7749F46A60AEA22", hash_generated_method = "A523825C3D07C3A197C2A716CB3C1348")
     
 @Deprecated
     public final void showDialog(int id) {
         showDialog(id, null);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Deprecated public final boolean showDialog(int id, Bundle args){
 		mManagedDialogs = new SparseArray<ManagedDialog>();
 		ManagedDialog md = mManagedDialogs.get(id);
@@ -2096,9 +2103,9 @@ public void closeContextMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @Deprecated public final void dismissDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
@@ -2118,9 +2125,7 @@ public void closeContextMenu() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private IllegalArgumentException missingDialog(int id){
 		return new IllegalArgumentException("");
 		// Original method
@@ -2131,9 +2136,9 @@ public void closeContextMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @Deprecated public final void removeDialog(int id){
 		final ManagedDialog md = mManagedDialogs.get(id);
 		md.mDialog.dismiss();
@@ -2152,9 +2157,9 @@ public void closeContextMenu() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public boolean onSearchRequested(){
 		startSearch(null, false, null, false); 
         return getTaintBoolean();
@@ -2166,9 +2171,10 @@ public void closeContextMenu() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void startSearch(String initialQuery, boolean selectInitialQuery, 
             Bundle appSearchData, boolean globalSearch){
     	addTaint(initialQuery.getTaint());
@@ -2230,6 +2236,8 @@ public void takeKeyEvents(boolean get) {
      * 
      * @see android.view.Window#requestFeature
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.093 -0500", hash_original_method = "3CDF417FCD4F33EAE6CFCF0FB6D583A8", hash_generated_method = "881FBD2BDEED0015ADB64FC143BF0105")
     
 public final boolean requestWindowFeature(int featureId) {
@@ -2240,6 +2248,7 @@ public final boolean requestWindowFeature(int featureId) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawableResource}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.097 -0500", hash_original_method = "E7AFD534CB1DF8060614ED36111B2407", hash_generated_method = "77462D4BD7A21F99BAD57C59CACE9BF5")
     
 public final void setFeatureDrawableResource(int featureId, int resId) {
@@ -2260,6 +2269,7 @@ public final void setFeatureDrawableUri(int featureId, Uri uri) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawable(int, Drawable)}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.108 -0500", hash_original_method = "D3FA0A5870730A6F3C959B16FC004BCD", hash_generated_method = "845589EF459B40468B119030F6839003")
     
 public final void setFeatureDrawable(int featureId, Drawable drawable) {
@@ -2270,6 +2280,7 @@ public final void setFeatureDrawable(int featureId, Drawable drawable) {
      * Convenience for calling
      * {@link android.view.Window#setFeatureDrawableAlpha}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.113 -0500", hash_original_method = "4D2A81FF8C2C83F47460DEB3120C04CB", hash_generated_method = "42B6BECB117F777AFB6F11B60A38D749")
     
 public final void setFeatureDrawableAlpha(int featureId, int alpha) {
@@ -2280,14 +2291,18 @@ public final void setFeatureDrawableAlpha(int featureId, int alpha) {
      * Convenience for calling
      * {@link android.view.Window#getLayoutInflater}.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.117 -0500", hash_original_method = "2F200E491A9F2CDC38C392035D21ED48", hash_generated_method = "3A16D6A7B6ED88109371E767B4893157")
     
 public LayoutInflater getLayoutInflater() {
         return getWindow().getLayoutInflater();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public MenuInflater getMenuInflater(){
 		initActionBar();
 		mMenuInflater = new MenuInflater(mActionBar.getThemedContext()); //DSFIXME:  Look at underlying method to determine if this can be colapsed.
@@ -2308,9 +2323,7 @@ public LayoutInflater getLayoutInflater() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     @Override protected void onApplyThemeResource(Resources.Theme theme, int resid,
             boolean first){
 		super.onApplyThemeResource(theme, resid, first);
@@ -2332,10 +2345,11 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
-	public void startActivityForResult(Intent intent, int requestCode){
+	@DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSink({DSSinkKind.START_ACTIVITY})
+    public void startActivityForResult(Intent intent, int requestCode){
 		/*
         The modeling required here will create the call to onActivityResult that 
         could be called as an effect of this call.  onActivityResult will have
@@ -2370,9 +2384,8 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startIntentSenderForResult(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResultInner(intent, requestCode, fillInIntent,
@@ -2393,18 +2406,17 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void startIntentSenderForResultInner(IntentSender intent, int requestCode,
             Intent fillInIntent, int flagsMask, int flagsValues, Activity activity){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @Override public void startActivity(Intent intent){
 		onActivityResult(-1, -1, intent);
 		// Original method
@@ -2434,6 +2446,7 @@ public LayoutInflater getLayoutInflater() {
      *
      * @see #startActivityForResult
      */
+    @DSSink({DSSinkKind.START_ACTIVITY})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.156 -0500", hash_original_method = "E2A55AFC4750254BD88786F18353EE8B", hash_generated_method = "0DAB0CC521B4AF9EA1AD5FA3E319D475")
     
 @Override
@@ -2441,9 +2454,8 @@ public LayoutInflater getLayoutInflater() {
         mInstrumentation.execStartActivities(this, mMainThread.getApplicationThread(),
                 mToken, this, intents);
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startIntentSender(IntentSender intent,
             Intent fillInIntent, int flagsMask, int flagsValues, int extraFlags){
 		startIntentSenderForResult(intent, -1, fillInIntent, flagsMask,
@@ -2457,17 +2469,15 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public boolean startActivityIfNeeded(Intent intent, int requestCode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public boolean startNextMatchingActivity(Intent intent){
 		try {
             intent.setAllowFds(false);
@@ -2493,9 +2503,8 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startActivityFromChild(Activity child, Intent intent, 
             int requestCode){
 		Instrumentation.ActivityResult ar =
@@ -2521,9 +2530,8 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startActivityFromFragment(Fragment fragment, Intent intent, 
             int requestCode){
 	    /*
@@ -2551,9 +2559,8 @@ public LayoutInflater getLayoutInflater() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.START_ACTIVITY})
     public void startIntentSenderFromChild(Activity child, IntentSender intent,
             int requestCode, Intent fillInIntent, int flagsMask, int flagsValues,
             int extraFlags){
@@ -2587,9 +2594,9 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
         } catch (RemoteException e) {
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public final void setResult(int resultCode){
 		addTaint(resultCode);
 		// Original method
@@ -2603,9 +2610,9 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     public final void setResult(int resultCode, Intent data){
 		addTaint(resultCode);
 		mResultData = data;
@@ -2635,6 +2642,9 @@ public void overridePendingTransition(int enterAnim, int exitAnim) {
      * @return The package of the activity that will receive your
      *         reply, or null if none.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.207 -0500", hash_original_method = "88476E01B039440C5805C3F210A00F20", hash_generated_method = "58BEC1DE13ECDF0590CAF7A4888B9BD6")
     
 public String getCallingPackage() {
@@ -2659,6 +2669,9 @@ public String getCallingPackage() {
      * @return String The full name of the activity that will receive your
      *         reply, or null if none.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.212 -0500", hash_original_method = "BA5844B2C9F3C6D12393731B7AECDFB9", hash_generated_method = "7A4424A9746EA476713AFC880E62344D")
     
 public ComponentName getCallingActivity() {
@@ -2668,9 +2681,7 @@ public ComponentName getCallingActivity() {
             return null;
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setVisible(boolean visible){
 		addTaint(visible);
 		makeVisible();
@@ -2689,9 +2700,7 @@ public ComponentName getCallingActivity() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
     void makeVisible(){
 		ViewManager wm = getWindowManager();
         wm.addView(mDecor, getWindow().getAttributes());
@@ -2709,9 +2718,9 @@ public ComponentName getCallingActivity() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public boolean isFinishing(){
 		return getTaintBoolean();
 		// Original method
@@ -2721,9 +2730,7 @@ public ComponentName getCallingActivity() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public boolean isChangingConfigurations(){
 		return getTaintBoolean();
 		// Original method
@@ -2733,9 +2740,7 @@ public ComponentName getCallingActivity() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void recreate(){
 		mMainThread.requestRelaunchActivity(mToken, null, null, 0, false, null, false);
 		// Original method
@@ -2752,9 +2757,9 @@ public ComponentName getCallingActivity() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void finish(){
 		Log.v(TAG, "Finishing self: token=" + mToken);
 		mResultData.setAllowFds(false);
@@ -2807,9 +2812,9 @@ public ComponentName getCallingActivity() {
 public void finishFromChild(Activity child) {
         finish();
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void finishActivity(int requestCode){
 		try {
             ActivityManagerNative.getDefault()
@@ -2875,13 +2880,13 @@ public void finishActivityFromChild(Activity child, int requestCode) {
      * @see #createPendingResult
      * @see #setResult(int)
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.263 -0500", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "62DF0F5F92A373B4F8B7952D89BB1F57")
     
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
-
     
-    @DSModeled(DSC.SPEC)
     public PendingIntent createPendingResult(int requestCode, Intent data,
             int flags){
 		String packageName = getPackageName();
@@ -2914,9 +2919,10 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRequestedOrientation(int requestedOrientation){
 		try {
             ActivityManagerNative.getDefault().setRequestedOrientation(
@@ -2940,9 +2946,10 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getRequestedOrientation(){
 		int retval = 0;
 		try {
@@ -2973,6 +2980,7 @@ protected void onActivityResult(int requestCode, int resultCode, Intent data) {
      * 
      * @return Task identifier, an opaque integer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.284 -0500", hash_original_method = "617D78E91C885EF783A85ACE788D978C", hash_generated_method = "68BFF31C59FC4A6126A189C753232C0A")
     
 public int getTaskId() {
@@ -3012,6 +3020,8 @@ public boolean isTaskRoot() {
      * @return If the task was moved (or it was already at the
      *         back) true is returned, else false.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.293 -0500", hash_original_method = "9A59EFD62BA4B2B1BB27D9BF60C81F37", hash_generated_method = "9A63345DB58A1324761EA6E89EC078E6")
     
 public boolean moveTaskToBack(boolean nonRoot) {
@@ -3023,9 +3033,10 @@ public boolean moveTaskToBack(boolean nonRoot) {
         }
         return false;
     }
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getLocalClassName(){
 		return mComponent.getClassName();
 		// Original method
@@ -3048,6 +3059,9 @@ public boolean moveTaskToBack(boolean nonRoot) {
      * 
      * @return Returns the complete component name for this activity
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.304 -0500", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "0218C20A36476A71EF5D80D906810879")
     
 public ComponentName getComponentName()
@@ -3068,14 +3082,15 @@ public ComponentName getComponentName()
      * @return Returns the single SharedPreferences instance that can be used
      *         to retrieve and modify the preference values.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.308 -0500", hash_original_method = "8FF11253989B916424A8F19A417B9894", hash_generated_method = "6A7862010CB94E91BABA8CAE44E8E9B2")
     
 public SharedPreferences getPreferences(int mode) {
         return getSharedPreferences(getLocalClassName(), mode);
     }
-
     
-    @DSModeled(DSC.BAN)
 	private void ensureSearchManager(){
 		mSearchManager = new SearchManager(this, null);
 		// Original method
@@ -3089,10 +3104,11 @@ public SharedPreferences getPreferences(int mode) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	@Override public Object getSystemService(String name){
+	@DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @Override public Object getSystemService(String name){
        
         if (DroidSafeAndroidRuntime.control || getBaseContext()==null) {
              IllegalStateException exception = new IllegalStateException(
@@ -3128,9 +3144,9 @@ public SharedPreferences getPreferences(int mode) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     public void setTitle(CharSequence title){
 		mTitle = title;  //Preserved
 		onTitleChanged(title, mTitleColor);
@@ -3154,14 +3170,15 @@ public SharedPreferences getPreferences(int mode) {
      * is an embedded activity, the parent can do whatever it wants
      * with it.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.328 -0500", hash_original_method = "A39F8277E51A7F6BD4A471D6255FEBC5", hash_generated_method = "7A9BBE5713B6FFC0915F0D939CBD832F")
     
 public void setTitle(int titleId) {
         setTitle(getText(titleId));
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setTitleColor(int textColor){
 		addTaint(textColor);
 		onTitleChanged(mTitle, textColor);
@@ -3175,14 +3192,16 @@ public void setTitle(int titleId) {
 		//Return nothing
 	}
 
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.337 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "8E68CAEF2DE68CDDD808B8D3534F95EE")
     
 public final CharSequence getTitle() {
         return mTitle;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final int getTitleColor(){
 		return getTaintInt();
 		// Original method
@@ -3192,9 +3211,9 @@ public final CharSequence getTitle() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     protected void onTitleChanged(CharSequence title, int color){
 		final Window win = getWindow();
 		win.setTitle(title);
@@ -3220,9 +3239,10 @@ public final CharSequence getTitle() {
     
 protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -3234,9 +3254,10 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarIndeterminateVisibility(boolean visible){
 		getWindow().setFeatureInt(Window.FEATURE_INDETERMINATE_PROGRESS, Window.PROGRESS_VISIBILITY_ON);
 		// Original method
@@ -3248,9 +3269,10 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgressBarIndeterminate(boolean indeterminate){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_INDETERMINATE_ON);
 		// Original method
@@ -3262,9 +3284,10 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setProgress(int progress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_START);
 		// Original method
@@ -3275,9 +3298,10 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setSecondaryProgress(int secondaryProgress){
 		getWindow().setFeatureInt(Window.FEATURE_PROGRESS, Window.PROGRESS_SECONDARY_START);
 		// Original method
@@ -3289,9 +3313,10 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void setVolumeControlStream(int streamType){
 		getWindow().setVolumeControlStream(0);
 		// Original method
@@ -3311,15 +3336,16 @@ protected void onChildTitleChanged(Activity childActivity, CharSequence title) {
      *         the hardware volume controls.
      * @see #setVolumeControlStream(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.385 -0500", hash_original_method = "03A841DC7655848901B3CE2C14084AAE", hash_generated_method = "0A136881DA0A667DEE6F55CE255E857C")
     
 public final int getVolumeControlStream() {
         return getWindow().getVolumeControlStream();
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public final void runOnUiThread(Runnable action){
+	@DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    public final void runOnUiThread(Runnable action){
 		mHandler.post(action);
 		action.run();
 		// Original method
@@ -3334,9 +3360,9 @@ public final int getVolumeControlStream() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     public View onCreateView(String name, Context context, AttributeSet attrs){
 		// Original method
 		/*
@@ -3346,17 +3372,17 @@ public final int getVolumeControlStream() {
 		*/
 		return new View(context);
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public View onCreateView(View parent, String name, Context context, AttributeSet attrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return new View(context);
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.FILE})
     public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
@@ -3399,6 +3425,7 @@ public boolean isImmersive() {
      * @see android.content.pm.ActivityInfo#FLAG_IMMERSIVE
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.419 -0500", hash_original_method = "9D8EB8E29C9BCD315046F1934B1FF39B", hash_generated_method = "AC115FCF99656DD6FC8752FD11A99796")
     
 public void setImmersive(boolean i) {
@@ -3422,7 +3449,6 @@ public void setImmersive(boolean i) {
 public ActionMode startActionMode(ActionMode.Callback callback) {
         return mWindow.getDecorView().startActionMode(callback);
     }
-
     
     private static class ManagedDialog {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.048 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "0C87BCBAF0D95855709E5BEE2BDBA46D")
@@ -3432,17 +3458,13 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 
         Bundle mArgs;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.926 -0400", hash_original_method = "9DCA77B5D1234925DAEE8DA8399779D6", hash_generated_method = "9DCA77B5D1234925DAEE8DA8399779D6")
         public ManagedDialog ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static final class NonConfigurationInstances {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.220 -0500", hash_original_field = "AE7D68ABA75D09946A953E289939C500", hash_generated_field = "AE7D68ABA75D09946A953E289939C500")
@@ -3464,14 +3486,10 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static final class ManagedCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.341 -0500", hash_original_field = "4A85E902ED72E65A9AF8F6ED265E4F89", hash_generated_field = "6E649D5858461199DBD67FE0A0D43789")
-
 
         private  Cursor mCursor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:47:59.350 -0500", hash_original_field = "3516BB00C88A3ED425D4982D5AEEABA2", hash_generated_field = "6C470EAC7065369BBFA5B5575968482A")
@@ -3481,7 +3499,6 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 
         private boolean mUpdated;
         
-        @DSModeled(DSC.SAFE)
         ManagedCursor(Cursor cursor){
 			mCursor = cursor;
 			/*
@@ -3490,12 +3507,9 @@ public ActionMode startActionMode(ActionMode.Callback callback) {
 			mUpdated = false;
 			*/
 		}
-
         
     }
-
     
-    @DSModeled(DSC.SPEC)
     public ActionMode onWindowStartingActionMode(ActionMode.Callback callback){
 		initActionBar();
 		return mActionBar.startActionMode(callback);
@@ -3550,9 +3564,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
         attach(context, aThread, instr, token, 0, application, intent, info, title, parent, id,
             lastNonConfigurationInstances, config);
     }
-
     
-    @DSModeled(DSC.SPEC)
 	final void attach(Context context, ActivityThread aThread,
             Instrumentation instr, IBinder token, int ident,
             Application application, Intent intent, ActivityInfo info,
@@ -3585,9 +3597,8 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final IBinder getActivityToken(){
 		return mParent.getActivityToken();
 		// Original method
@@ -3597,8 +3608,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
     }
 		*/
 	}
-
-    @DSModeled(DSC.SAFE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.919 -0400", hash_original_method = "DAB379B095765C858B51976FA2FCF6E4", hash_generated_method = "B85FC9CA5FD75BC2569BC7FE820DA2C6")
     final void performCreate(Bundle icicle) {
         performCreate(icicle, this);
@@ -3608,9 +3618,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
                 //com.android.internal.R.styleable.Window_windowNoDisplay, false);
         //mFragments.dispatchActivityCreated();
     }
-
     
-    @DSModeled(DSC.SAFE)
     final void performStart(){
 		mFragments.noteStateNotSaved();
 		mFragments.execPendingActions();
@@ -3643,17 +3651,13 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     final void performRestart(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     final void performResume(){
 		performRestart();
 		mFragments.execPendingActions();
@@ -3687,9 +3691,7 @@ final void attach(Context context, ActivityThread aThread, Instrumentation instr
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     final void performPause(){
 		mFragments.dispatchPause();
 		onPause();
@@ -3719,17 +3721,13 @@ final void performUserLeaving() {
         onUserInteraction();
         onUserLeaveHint();
     }
-
     
-    @DSModeled(DSC.SAFE)
     final void performStop(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     final void performDestroy(){
 		mWindow.destroy();
         mFragments.dispatchDestroy();
@@ -3748,9 +3746,7 @@ final void performUserLeaving() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     public final boolean isResumed(){
 		return getTaintBoolean();
 		// Original method
@@ -3760,9 +3756,7 @@ final void performUserLeaving() {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SPEC)
     void dispatchActivityResult(String who, int requestCode, 
         int resultCode, Intent data){
 		 Log.v(
@@ -3792,13 +3786,13 @@ final void performUserLeaving() {
 		//Return nothing
 	}
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnDestroy() {
 		onDestroy();
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN) //called by dsruntime to perform the onCreate
+     //called by dsruntime to perform the onCreate
 	public final void performCreate(Bundle icicle, Context context){
         addTaint(icicle.getTaint());
         addTaint(context.getTaint());
@@ -3821,29 +3815,27 @@ final void performUserLeaving() {
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void droidsafeOnResume() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onResume();
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void droidsafeOnStop() {
 		//This method is called by droidsafe itself, and should NEVER be called by an app
     	onStop();
     }
-    @DSModeled(DSC.BAN)
+    
     public void setApplication(Application app) { 
             this.mApplication = app;
     }
     
-    @DSModeled(DSC.BAN)
 	public void droidsafeOnSavedInstanceState(Bundle b) {
     	this.onSaveInstanceState(b);
 	}
-
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnPause() {
     	this.onPause();
 	}
@@ -3851,12 +3843,11 @@ final void performUserLeaving() {
     /**
      * addition hooks to allow subactivity onXYZ to be called from droidsafe runtime
      */
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnSubActivityHook() {
         droidsafeOnOthersHook();
 	}
     
-    @DSModeled(DSC.BAN)
     public void droidsafeOnOthersHook() {
         this.onActionModeFinished(ActionMode.droidsafeObtainObject());
         this.onActionModeStarted(ActionMode.droidsafeObtainObject());
@@ -3888,7 +3879,6 @@ final void performUserLeaving() {
         dispatchTrackballEvent(MotionEvent.droidsafeObtainEvent());
         dispatchPopulateAccessibilityEvent(AccessibilityEvent.droidsafeGetEvent());
     }
-
     
 }
 

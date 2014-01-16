@@ -5,14 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public class CornerPathEffect extends PathEffect {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate(float radius) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317499148 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1317499148;
@@ -29,7 +25,6 @@ public class CornerPathEffect extends PathEffect {
 public CornerPathEffect(float radius) {
         native_instance = nativeCreate(radius);
     }
-
     
 }
 

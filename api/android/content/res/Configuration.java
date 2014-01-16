@@ -10,12 +10,10 @@ import android.content.pm.ActivityInfo;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
 public final class Configuration implements Parcelable, Comparable<Configuration> {
 	/** replacing anonymous inner class */
     private static class MyCreator implements Parcelable.Creator<Configuration> {
-        @DSModeled(DSC.SPEC)
+        
         public MyCreator() {
 
         }
@@ -62,7 +60,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
 
     public static final int SCREENLAYOUT_SIZE_XLARGE = 0x04;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.317 -0500", hash_original_field = "68EAAD00DF134F89A66F4D9CA1C6F724", hash_generated_field = "83DF942B9520E78A49689D25D3AA02BF")
-
     
     public static final int SCREENLAYOUT_LONG_MASK = 0x30;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.319 -0500", hash_original_field = "D1ADF9980E3CAC8B93BC575E3249ABBE", hash_generated_field = "E7FBEB3394EED592FB1D4D7B5D023CBC")
@@ -79,7 +76,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
     public static final int SCREENLAYOUT_COMPAT_NEEDED = 0x10000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.334 -0500", hash_original_field = "CEEC978DEB70970BEBA8E38D97DDC503", hash_generated_field = "B0101AA9A1EFC2958B2BD97935F5E43F")
 
-
     public static final int TOUCHSCREEN_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.336 -0500", hash_original_field = "190872D24844E79A8B53F74D5502ABE1", hash_generated_field = "FC751613C0D874E0D62CAD5911C37168")
 
@@ -91,7 +87,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
 
     public static final int TOUCHSCREEN_FINGER = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.345 -0500", hash_original_field = "6F47743FE71154B7FE6211479BFA010D", hash_generated_field = "973D7C88B4953DD48CB18EC38FFA7E40")
-
     
     public static final int KEYBOARD_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.347 -0500", hash_original_field = "FAD80681C1A919CB31948CE570E928EB", hash_generated_field = "ED47AEFC2904A88498A3417274EB5B28")
@@ -104,7 +99,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
 
     public static final int KEYBOARD_12KEY = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.357 -0500", hash_original_field = "5BB073DEC4D3FD2F0F6F71EC25DFE6BA", hash_generated_field = "8D5810494CA6F4A6156ED47E6AE64DB8")
-
     
     public static final int KEYBOARDHIDDEN_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.359 -0500", hash_original_field = "932CD61DABBACEDD430754DFBEBA100F", hash_generated_field = "2FC4FFF97A1D643FBF08B0B36322F8C4")
@@ -117,7 +111,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
 
     public static final int KEYBOARDHIDDEN_SOFT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.369 -0500", hash_original_field = "50E43FBCF9B5C6A85F6C0AB3493BD60F", hash_generated_field = "95E584687387E211D6DEB6D7272BA7E1")
-
     
     public static final int HARDKEYBOARDHIDDEN_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.371 -0500", hash_original_field = "2ED941D7AC3931518761AB8410F95887", hash_generated_field = "498B6D95CC5FFEE7EA277824D6255431")
@@ -127,7 +120,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
 
     public static final int HARDKEYBOARDHIDDEN_YES = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.378 -0500", hash_original_field = "E8EE632CD05BCC59B5CAD9B4A218987C", hash_generated_field = "932D1DB5ECECF03B56E0079FF2C36729")
-
     
     public static final int NAVIGATION_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.380 -0500", hash_original_field = "7433AE12C307F3BA84DAE302D2109344", hash_generated_field = "8D80BAD85677E02C825FEB169936882A")
@@ -143,7 +135,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
 
     public static final int NAVIGATION_WHEEL = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.391 -0500", hash_original_field = "8C8934BCB426CFD1BE2BAA2B435DBFE2", hash_generated_field = "08162A93D56DB79FB6836A1D7BD8E65F")
-
     
     public static final int NAVIGATIONHIDDEN_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.393 -0500", hash_original_field = "28A805EAD48FBBE171AF87CB14539781", hash_generated_field = "E2DD859C53EEC94FC7108000065D16BD")
@@ -153,7 +144,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
 
     public static final int NAVIGATIONHIDDEN_YES = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.400 -0500", hash_original_field = "FF61189BB21652B1AA647AF4366BE51A", hash_generated_field = "C828CE7228710CDEF23518F65ADADABD")
-
     
     public static final int ORIENTATION_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.403 -0500", hash_original_field = "E0C79F65EFFA668408999FD5406A071F", hash_generated_field = "E8BEF95B801ACE9332F80B0F3A2A2E23")
@@ -166,7 +156,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
 
     public static final int ORIENTATION_SQUARE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.412 -0500", hash_original_field = "11E3A8265ADFB95CF5FC3A1370156AED", hash_generated_field = "CE645321C68D6EAE4F20040E151DFEBD")
-
 
     public static final int UI_MODE_TYPE_MASK = 0x0f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.415 -0500", hash_original_field = "2A4094552A5CAB09B4D659B9AD4590CE", hash_generated_field = "75B384221BDBDD1ECBC2C2091A72BCA3")
@@ -186,7 +175,6 @@ public static boolean needNewResources(int configChanges, int interestingChanges
     public static final int UI_MODE_TYPE_TELEVISION = 0x04;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.426 -0500", hash_original_field = "4A230A66B848B28BE4DA1CAD32AF49B0", hash_generated_field = "898C0CEDBB65AA44FBAA229A1058F918")
 
-
     public static final int UI_MODE_NIGHT_MASK = 0x30;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.428 -0500", hash_original_field = "93DC52756C3B404C88F930F7E7BCACBA", hash_generated_field = "85556771939DEED6E975323A05749A53")
 
@@ -199,14 +187,11 @@ public static boolean needNewResources(int configChanges, int interestingChanges
     public static final int UI_MODE_NIGHT_YES = 0x20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.438 -0500", hash_original_field = "D2D67D5AD82B99EAA28FAB4FD7DDBD11", hash_generated_field = "A7CE3388F40BEF0EB84DB64B575D81FB")
 
-
     public static final int SCREEN_WIDTH_DP_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.442 -0500", hash_original_field = "A2F5C3AE2FA542E2DDC78F714A81CA09", hash_generated_field = "4981084D9255AA8DA4E2488051EAD47D")
 
-
     public static final int SCREEN_HEIGHT_DP_UNDEFINED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.447 -0500", hash_original_field = "02D77116F4BA73410F08A540C29C119E", hash_generated_field = "5CB7CC2CFE40F6BFE0C6F652FED847EA")
-
 
     public static final int SMALLEST_SCREEN_WIDTH_DP_UNDEFINED = 0;
     public static final Parcelable.Creator<Configuration> CREATOR = new MyCreator();
@@ -281,6 +266,8 @@ public static boolean needNewResources(int configChanges, int interestingChanges
      * Construct an invalid Configuration.  You must call {@link #setToDefaults}
      * for this object to be valid.  {@more}
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:05.461 -0500", hash_original_method = "7E58BC7E066573DB3913F9DCCD9EE638", hash_generated_method = "BC67040AAA8A5290C3245C58F180ACA4")
     
 public Configuration() {
@@ -322,23 +309,18 @@ public boolean isLayoutSizeAtLeast(int size) {
         if (cur == SCREENLAYOUT_SIZE_UNDEFINED) return false;
         return cur >= size;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTo(Configuration o) {
 	    addTaint(o.getTaint());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public String toString() {
         String str = new String();
         str.addTaint(getTaint());
         return str;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setToDefaults() {
     }
 
@@ -348,9 +330,7 @@ public boolean isLayoutSizeAtLeast(int size) {
 @Deprecated public void makeDefault() {
         setToDefaults();
     }
-
     
-    @DSModeled(DSC.SPEC)
     public int updateFrom(Configuration delta) {
         addTaint(delta.getTaint());
         return getTaintInt();

@@ -11,11 +11,6 @@ import android.util.Log;
 
 import com.android.internal.os.BinderInternal;
 
-
-
-
-
-
 public final class ServiceManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.610 -0500", hash_original_method = "F9571D966715D8BEC70F9E92EB17CF43", hash_generated_method = "766A7A92FFAB823331AD1C30295700FC")
@@ -36,6 +31,7 @@ private static IServiceManager getIServiceManager() {
      * @param name the name of the service to get
      * @return a reference to the service, or <code>null</code> if the service doesn't exist
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.612 -0500", hash_original_method = "91BCD4EDAD58333F9E1C5C4BE842F493", hash_generated_method = "665A4D9D0C5DB2BBC4F41D2423DF834A")
     
 public static IBinder getService(String name) {
@@ -123,7 +119,6 @@ public static void initServiceCache(Map<String, IBinder> cache) {
 
     private static final String TAG = "ServiceManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.605 -0500", hash_original_field = "49E97B67A8135B0FE40C72B6F275884E", hash_generated_field = "3BB7F9DC69203897D3C71ABD26F66EDE")
-
 
     private static IServiceManager sServiceManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:32.607 -0500", hash_original_field = "C28D97969055C58044C0252A8704C292", hash_generated_field = "6C748830FB2F6F43238FB57437EDD7E8")

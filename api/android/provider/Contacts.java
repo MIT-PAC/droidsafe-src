@@ -21,22 +21,17 @@ import android.widget.ImageView;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class Contacts {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.483 -0500", hash_original_field = "BC23690C82568110C6C939C8D483D07C", hash_generated_field = "A7B167268FF1FCDA1ADE660DDE40AF42")
 
     private static final String TAG = "Contacts";
-
     
     public static final class Settings implements BaseColumns, SettingsColumns {
 
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.529 -0500", hash_original_method = "5973496923CC631047F98EE9B88FBD33", hash_generated_method = "7AF81ABDD0AF5532ECED969748843EC8")
         
 @Deprecated
@@ -72,6 +67,7 @@ public class Contacts {
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.532 -0500", hash_original_method = "99C82D4214524155DAD3BF65C95C7ABA", hash_generated_method = "3105C1F67670AF6E8D1EF739E653D9F7")
         
 @Deprecated
@@ -112,8 +108,6 @@ public class Contacts {
         
 private Settings() {}
     }
-
-
     
     public static final class People implements BaseColumns, SyncConstValue, PeopleColumns, PhonesColumns, PresenceColumns {
 
@@ -141,6 +135,7 @@ private Settings() {}
          * @hide Used in vCard parser code.
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.586 -0500", hash_original_method = "3CCBD42AC579830F9F873C0E8E0D59CE", hash_generated_method = "8218AD0872E037DC74692F26BB609A75")
         
 @Deprecated
@@ -190,6 +185,7 @@ private Settings() {}
          * @throws IllegalStateException if the group can't be found
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.592 -0500", hash_original_method = "4B575D0B1951007B3070BB5D97839CB3", hash_generated_method = "98F0ABAF4C6F0C4447D99323EA8403DE")
         
 @Deprecated
@@ -263,6 +259,7 @@ private Settings() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.603 -0500", hash_original_method = "29F7E3FAB1A70735CD2895CF88304289", hash_generated_method = "1C4B13C4ECAF45161678185D3F4BCF2F")
         
 @Deprecated
@@ -278,6 +275,7 @@ private Settings() {}
          * @param data the byte[] that represents the photo
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.606 -0500", hash_original_method = "E1EC7DAC113BEA053C3C92256F092BD9", hash_generated_method = "F5021A5E353FD1015A287A10966DEC2B")
         
 @Deprecated
@@ -356,7 +354,6 @@ private static Bitmap loadPlaceholderPhoto(int placeholderImageResource, Context
         @Deprecated
         public static final Uri CONTENT_URI =
             Uri.parse("content://contacts/people");
-
         
         public static final class Phones implements BaseColumns, PhonesColumns, PeopleColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.621 -0500", hash_original_field = "DCD13422E5AA9D1C547858B3A2EEB0D5", hash_generated_field = "03899653BD7A43165B1BA23AC996EC8A")
@@ -374,8 +371,6 @@ private static Bitmap loadPlaceholderPhoto(int placeholderImageResource, Context
         
 private Phones() {}
         }
-
-
         
         public static final class ContactMethods implements BaseColumns, ContactMethodsColumns, PeopleColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.632 -0500", hash_original_field = "2D259964D5424E85163A2AC197D5B31D", hash_generated_field = "81E2CC782A6DDAF41E6473EED78C8F8B")
@@ -394,8 +389,6 @@ private Phones() {}
         
 private ContactMethods() {}
         }
-
-
         
         public static class Extensions implements BaseColumns, ExtensionsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.643 -0500", hash_original_field = "43E33C8D20BA80197F062DEB32B111CE", hash_generated_field = "CDC7C7C6EDE1E66AA7583233A60C794A")
@@ -458,7 +451,6 @@ private Extensions() {}
         public static final String PRIMARY_ORGANIZATION_ID = "primary_organization";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.598 -0500", hash_original_field = "D8603C42D21B86F67193094503EACCF5", hash_generated_field = "E5BEDAC320AE20FE752EE3B126329BE3")
 
-
         private static final String[] GROUPS_PROJECTION = new String[] {
             Groups._ID,
         };
@@ -470,8 +462,6 @@ private Extensions() {}
         
 private People() {}
     }
-
-
     
     public static final class Groups implements BaseColumns, SyncConstValue, GroupsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.666 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "23A9691CB89BBA676305D424A759F3A9")
@@ -511,14 +501,13 @@ private People() {}
         
 private Groups() {}
     }
-
-
     
     public static final class Phones implements BaseColumns, PhonesColumns, PeopleColumns {
 
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.700 -0500", hash_original_method = "47C658D10C7FF6AFCE9B91D6C434ADDC", hash_generated_method = "27BB02CE86DEC990C9D56E4E3086F939")
         
 @Deprecated
@@ -546,6 +535,7 @@ private Groups() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.703 -0500", hash_original_method = "4BFBBB1A99B20F000C01E55DF4773309", hash_generated_method = "83A79B941A8054E2F7C92228A01B766E")
         
 @Deprecated
@@ -580,14 +570,11 @@ private Groups() {}
         @Deprecated
         public static final String PERSON_ID = "person";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.192 -0400", hash_original_method = "311A54F6C4195C76C43F2FC2F7A3A3E0", hash_generated_method = "E3DEAC6FD2C25762C8DA6828EC61294E")
         private  Phones() {
             // ---------- Original Method ----------
         }
     }
-
-
     
     public static final class GroupMembership implements BaseColumns, GroupsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.728 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "6B56E2959B81E3675B2CD31121EA2F41")
@@ -644,8 +631,6 @@ private Groups() {}
         
 private GroupMembership() {}
     }
-
-
     
     public static final class ContactMethods implements BaseColumns, ContactMethodsColumns, PeopleColumns {
 
@@ -731,6 +716,7 @@ private GroupMembership() {}
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.813 -0500", hash_original_method = "E53FDAD74C5D20D2E7D8CB826DDE0DF9", hash_generated_method = "273F9BDCB1E873F32D2A6734B118D960")
         
 @Deprecated
@@ -785,11 +771,8 @@ private GroupMembership() {}
 
         @Deprecated
         public static final String POSTAL_LOCATION_LONGITUDE = AUX_DATA;
-
         
         interface ProviderNames {
-            
-            
             
             String YAHOO = "Yahoo";
             String GTALK = "GTalk";
@@ -877,7 +860,6 @@ private GroupMembership() {}
         @Deprecated
         public static final String PERSON_ID = "person";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.193 -0400", hash_original_method = "AC0A5CAC5D79A50D0A1A1A7D60109A25", hash_generated_method = "D063488DC4FB276BA82857C6DD5F45E0")
         private  ContactMethods() {
             // ---------- Original Method ----------
@@ -892,6 +874,7 @@ private GroupMembership() {}
          * @param longitude the longitude for the address
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.816 -0500", hash_original_method = "64D6AFA8C969AE169E36B8E60F49300F", hash_generated_method = "E8827757AFCAECC6C86DA304122A27FD")
         
 @Deprecated
@@ -911,8 +894,6 @@ private GroupMembership() {}
             resolver.update(ContentUris.withAppendedId(CONTENT_URI, postalId), values, null, null);
         }
     }
-
-
     
     public static final class Presence implements BaseColumns, PresenceColumns, PeopleColumns {
 
@@ -976,14 +957,13 @@ private GroupMembership() {}
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Organizations implements BaseColumns, OrganizationColumns {
 
         /**
          * @deprecated see {@link android.provider.ContactsContract}
          */
+        @DSSource({DSSourceKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.880 -0500", hash_original_method = "0F2FD9D44DD3D01797BBF65E808710CE", hash_generated_method = "26A7D404DEC02F7963E3CB73E48456F0")
         
 @Deprecated
@@ -1026,8 +1006,6 @@ private GroupMembership() {}
         
 private Organizations() {}
     }
-
-
     
     public static final class Photos implements BaseColumns, PhotosColumns, SyncConstValue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.903 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "1E6F62FC0740C6E1E47B36F2927E14A2")
@@ -1049,8 +1027,6 @@ private Organizations() {}
         
 private Photos() {}
     }
-
-
     
     public static final class Extensions implements BaseColumns, ExtensionsColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.919 -0500", hash_original_field = "04DAC5FD1BD0B97C5BB8885AD5DB5AEE", hash_generated_field = "1BA09A34C7792B6178C2A245D81010D1")
@@ -1075,14 +1051,11 @@ private Photos() {}
         @Deprecated
         public static final String PERSON_ID = "person";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:29.195 -0400", hash_original_method = "4F6254C867328A153FDD5BD23453E816", hash_generated_method = "2F76D83BC2CB495AB0D58C050F1DA969")
         private  Extensions() {
             // ---------- Original Method ----------
         }
     }
-
-
     
     public static final class Intents {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.937 -0500", hash_original_field = "33CFDB338A6D1AB5FC4A11EE40CF181B", hash_generated_field = "04E12F2FF0507DD0A5D05C6AF1ED87B7")
@@ -1090,7 +1063,6 @@ private Photos() {}
         @Deprecated
         public static final String SEARCH_SUGGESTION_CLICKED =
                 ContactsContract.Intents.SEARCH_SUGGESTION_CLICKED;
-
         
         public static final class UI {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:59.964 -0500", hash_original_field = "14AD1BF563D94345932A65D730FD14F0", hash_generated_field = "EC442A7E3DA716150058E48B0D4F24F0")
@@ -1156,8 +1128,6 @@ private Photos() {}
             public UI() {
             }
         }
-
-
         
         public static final class Insert {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:00.002 -0500", hash_original_field = "CE94026F103DDD2DCBDC4D71CB4287FF", hash_generated_field = "BC69E830B187181CA8FDFC1C9BCEE680")
@@ -1329,22 +1299,17 @@ private Photos() {}
         public Intents() {
         }
     }
-
-
     
     @Deprecated public interface SettingsColumns {
         
         @Deprecated
         public static final String _SYNC_ACCOUNT = "_sync_account";
-
         
         @Deprecated
         public static final String _SYNC_ACCOUNT_TYPE = "_sync_account_type";
-
         
         @Deprecated
         public static final String KEY = "key";
-
         
         @Deprecated
         public static final String VALUE = "value";
@@ -1354,43 +1319,33 @@ private Photos() {}
         
         @Deprecated
         public static final String NAME = "name";
-
         
         @Deprecated
         public static final String PHONETIC_NAME = "phonetic_name";
-
         
         @Deprecated
         public static final String DISPLAY_NAME = "display_name";
-
         
         @Deprecated
         public static final String SORT_STRING = "sort_string";
-
         
         @Deprecated
         public static final String NOTES = "notes";
-
         
         @Deprecated
         public static final String TIMES_CONTACTED = "times_contacted";
-
         
         @Deprecated
         public static final String LAST_TIME_CONTACTED = "last_time_contacted";
-
         
         @Deprecated
         public static final String CUSTOM_RINGTONE = "custom_ringtone";
-
         
         @Deprecated
         public static final String SEND_TO_VOICEMAIL = "send_to_voicemail";
-
         
         @Deprecated
         public static final String STARRED = "starred";
-
         
         @Deprecated
         public static final String PHOTO_VERSION = "photo_version";
@@ -1400,15 +1355,12 @@ private Photos() {}
         
         @Deprecated
         public static final String NAME = "name";
-
         
         @Deprecated
         public static final String NOTES = "notes";
-
         
         @Deprecated
         public static final String SHOULD_SYNC = "should_sync";
-
         
         @Deprecated
         public static final String SYSTEM_ID = "system_id";
@@ -1418,7 +1370,6 @@ private Photos() {}
         
         @Deprecated
         public static final String TYPE = "type";
-
         
         @Deprecated
         public static final int TYPE_CUSTOM = 0;
@@ -1443,19 +1394,15 @@ private Photos() {}
         
         @Deprecated
         public static final int TYPE_OTHER = 7;
-
         
         @Deprecated
         public static final String LABEL = "label";
-
         
         @Deprecated
         public static final String NUMBER = "number";
-
         
         @Deprecated
         public static final String NUMBER_KEY = "number_key";
-
         
         @Deprecated
         public static final String ISPRIMARY = "isprimary";
@@ -1465,7 +1412,6 @@ private Photos() {}
         
         @Deprecated
         public static final String KIND = "kind";
-
         
         @Deprecated
         public static final String TYPE = "type";
@@ -1481,27 +1427,21 @@ private Photos() {}
         
         @Deprecated
         public static final int TYPE_OTHER = 3;
-
         
         @Deprecated
         public static final int MOBILE_EMAIL_TYPE_INDEX = 2;
-
         
         @Deprecated
         public static final String MOBILE_EMAIL_TYPE_NAME = "_AUTO_CELL";
-
         
         @Deprecated
         public static final String LABEL = "label";
-
         
         @Deprecated
         public static final String DATA = "data";
-
         
         @Deprecated
         public static final String AUX_DATA = "aux_data";
-
         
         @Deprecated
         public static final String ISPRIMARY = "isprimary";
@@ -1510,10 +1450,8 @@ private Photos() {}
     @Deprecated public interface PresenceColumns {
         
         String PRIORITY = "priority";
-
         
         String PRESENCE_STATUS = ContactsContract.StatusUpdates.PRESENCE;
-
         
         int OFFLINE = ContactsContract.StatusUpdates.OFFLINE;
         int INVISIBLE = ContactsContract.StatusUpdates.INVISIBLE;
@@ -1521,18 +1459,14 @@ private Photos() {}
         int IDLE = ContactsContract.StatusUpdates.IDLE;
         int DO_NOT_DISTURB = ContactsContract.StatusUpdates.DO_NOT_DISTURB;
         int AVAILABLE = ContactsContract.StatusUpdates.AVAILABLE;
-
         
         String PRESENCE_CUSTOM_STATUS = ContactsContract.StatusUpdates.STATUS;
-
         
         @Deprecated
         public static final String IM_PROTOCOL = "im_protocol";
-
         
         @Deprecated
         public static final String IM_HANDLE = "im_handle";
-
         
         @Deprecated
         public static final String IM_ACCOUNT = "im_account";
@@ -1542,7 +1476,6 @@ private Photos() {}
         
         @Deprecated
         public static final String TYPE = "type";
-
         
         @Deprecated
         public static final int TYPE_CUSTOM = 0;
@@ -1552,23 +1485,18 @@ private Photos() {}
         
         @Deprecated
         public static final int TYPE_OTHER = 2;
-
         
         @Deprecated
         public static final String LABEL = "label";
-
         
         @Deprecated
         public static final String COMPANY = "company";
-
         
         @Deprecated
         public static final String TITLE = "title";
-
         
         @Deprecated
         public static final String PERSON_ID = "person";
-
         
         @Deprecated
         public static final String ISPRIMARY = "isprimary";
@@ -1578,23 +1506,18 @@ private Photos() {}
         
         @Deprecated
         public static final String LOCAL_VERSION = "local_version";
-
         
         @Deprecated
         public static final String PERSON_ID = "person";
-
         
         @Deprecated
         public static final String DOWNLOAD_REQUIRED = "download_required";
-
         
         @Deprecated
         public static final String EXISTS_ON_SERVER = "exists_on_server";
-
         
         @Deprecated
         public static final String SYNC_ERROR = "sync_error";
-
         
         @Deprecated
         public static final String DATA = "data";
@@ -1605,7 +1528,6 @@ private Photos() {}
         
         @Deprecated
         public static final String NAME = "name";
-
         
         @Deprecated
         public static final String VALUE = "value";

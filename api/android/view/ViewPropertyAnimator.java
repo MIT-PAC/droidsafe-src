@@ -12,10 +12,6 @@ import android.animation.Animator;
 import android.animation.TimeInterpolator;
 import android.animation.ValueAnimator;
 
-
-
-
-
 public class ViewPropertyAnimator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.811 -0500", hash_original_field = "2393DA295339CE8A5EAF99EBAE1708DF", hash_generated_field = "53FCA486F4B3E72DD422D1A05E64E7D7")
 
@@ -52,7 +48,6 @@ public class ViewPropertyAnimator {
     private static final int ALPHA          = 0x0200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.839 -0500", hash_original_field = "AA5479D90772E462052798FCB9FF1CF5", hash_generated_field = "6B12798A8293494A9A5448AEA6533D12")
 
-
     private static final int TRANSFORM_MASK = TRANSLATION_X | TRANSLATION_Y | SCALE_X | SCALE_Y |
             ROTATION | ROTATION_X | ROTATION_Y | X | Y;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.788 -0500", hash_original_field = "6F4F028D1DE9C463F753A80DD0991753", hash_generated_field = "E606D96B6FC531BB030B680E135C95D0")
@@ -87,16 +82,14 @@ public class ViewPropertyAnimator {
     ArrayList<NameValuesHolder> mPendingAnimations = new ArrayList<NameValuesHolder>();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.253 -0400", hash_original_field = "E77137B6BB2AC6EED35F93F563E9A9A8", hash_generated_field = "DDAE17988E2F7FE309FFBA8222A2CC64")
 
-    private Runnable mAnimationStarter = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    private Runnable mAnimationStarter = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:59.253 -0400", hash_original_method = "FBB53873B37744AA497F2F82BA93513F", hash_generated_method = "B49121F60C78DA005BF63A708AB544D3")
         @Override
         public void run() {
             startAnimation();
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.862 -0500", hash_original_field = "60350FA44FA98050D47E5954263AB745", hash_generated_field = "8AE0B8099C4E7901C63106A6D931EB1C")
@@ -145,6 +138,7 @@ public ViewPropertyAnimator setDuration(long duration) {
      * @see #setDuration(long)
      * @return The duration of animations, in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.881 -0500", hash_original_method = "BFD4BDEC4492EF4D0AE1BFA285B3702C", hash_generated_method = "61ADAD11A07D7EE009448328FC58F753")
     
 public long getDuration() {
@@ -165,6 +159,7 @@ public long getDuration() {
      * @see #setStartDelay(long)
      * @return The startDelay of animations, in milliseconds.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.884 -0500", hash_original_method = "137A1F44FEDEF7DBAEA1EE8251F82E1F", hash_generated_method = "86DE1BBA23FB944616559989A9C60C16")
     
 public long getStartDelay() {
@@ -467,7 +462,6 @@ public ViewPropertyAnimator translationYBy(float value) {
         animatePropertyBy(TRANSLATION_Y, value);
         return this;
     }
-
     
     private static class PropertyBundle {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.848 -0500", hash_original_field = "DD49B26A61D9970E0B1D820803D8F62F", hash_generated_field = "DD49B26A61D9970E0B1D820803D8F62F")
@@ -510,11 +504,8 @@ boolean cancel(int propertyConstant) {
             }
             return false;
         }
-
         
     }
-
-
     
     private static class NameValuesHolder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:27.865 -0500", hash_original_field = "1D2069986089C122C058DF69AE8585A8", hash_generated_field = "1D2069986089C122C058DF69AE8585A8")
@@ -533,11 +524,8 @@ NameValuesHolder(int nameConstant, float fromValue, float deltaValue) {
             mFromValue = fromValue;
             mDeltaValue = deltaValue;
         }
-
         
     }
-
-
     
     private class AnimatorEventListener implements Animator.AnimatorListener, ValueAnimator.AnimatorUpdateListener {
         
@@ -629,7 +617,6 @@ NameValuesHolder(int nameConstant, float fromValue, float deltaValue) {
             // via the call to setAlphaNoInvalidation(), above
             mView.invalidate(alphaHandled);
         }
-
         
     }
 

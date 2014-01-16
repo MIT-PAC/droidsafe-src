@@ -14,10 +14,6 @@ import android.net.NetworkUtils;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class WifiInfo implements Parcelable {
 
    /**
@@ -83,7 +79,6 @@ public WifiInfo[] newArray(int size) {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.669 -0500", hash_original_field = "71E5F11C6C6A357B17335AC29ACEB806", hash_generated_field = "53C0C50586977D30F50A38A02FF5AA68")
 
-
     private SupplicantState mSupplicantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.671 -0500", hash_original_field = "BA4C35C052E8004F528E30414F0190E7", hash_generated_field = "8B037BB299AA86EC9205CCC26093C407")
 
@@ -105,10 +100,8 @@ public WifiInfo[] newArray(int size) {
     private int mLinkSpeed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.687 -0500", hash_original_field = "E9098950DB44B340A14FFBDC4B14A5D7", hash_generated_field = "8748C1AB2EADB5D1897B9503B257BEA4")
 
-
     private InetAddress mIpAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.689 -0500", hash_original_field = "682CA38497F79919D68D1CB6E724CEC5", hash_generated_field = "3901352E95CA91998F9C2F8294C84B42")
-
 
     private String mMacAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.691 -0500", hash_original_field = "1C7D754ADACBB7D4690B7B15CB851C7B", hash_generated_field = "8A066F33F6CB5BC95F526BC987310751")
@@ -164,6 +157,7 @@ void setSSID(String SSID) {
      * SSID may be {@code null} if there is no network currently connected.
      * @return the SSID
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.701 -0500", hash_original_method = "79B89773022C9616E7A28BB8F338ADFD", hash_generated_method = "C2EEA641DC127571BADAA8674E69F26A")
     
 public String getSSID() {
@@ -181,6 +175,7 @@ void setBSSID(String BSSID) {
      * The BSSID may be {@code null} if there is no network currently connected.
      * @return the BSSID, in the form of a six-byte MAC address: {@code XX:XX:XX:XX:XX:XX}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.705 -0500", hash_original_method = "4164893247FD5E84E98B26376E6216D7", hash_generated_method = "33D3B695984FE58097D7766F3B30F4EB")
     
 public String getBSSID() {
@@ -193,6 +188,7 @@ public String getBSSID() {
      * <p><strong>This is not normalized, but should be!</strong></p>
      * @return the RSSI, in the range ??? to ???
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.707 -0500", hash_original_method = "EAA2EB56C456A75F6A36236287457095", hash_generated_method = "941E5DA09E96558F6267EFA8918B8C44")
     
 public int getRssi() {
@@ -210,6 +206,7 @@ void setRssi(int rssi) {
      * @return the link speed.
      * @see #LINK_SPEED_UNITS
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.711 -0500", hash_original_method = "78D01A80334309441C41F6B9CC957D2A", hash_generated_method = "1A12703182C96635CEB77DEB614A9A91")
     
 public int getLinkSpeed() {
@@ -232,6 +229,7 @@ void setMacAddress(String macAddress) {
         this.mMacAddress = macAddress;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.717 -0500", hash_original_method = "3C8E67358ACD99AD783D244CA0276ACD", hash_generated_method = "2DFC50A3778FC48D626A671E77081C38")
     
 public String getMacAddress() {
@@ -243,7 +241,6 @@ public String getMacAddress() {
 void setNetworkId(int id) {
         mNetworkId = id;
     }
-
 
     /**
      * @hide
@@ -263,13 +260,13 @@ public void setExplicitConnect(boolean explicitConnect) {
         this.mExplicitConnect = explicitConnect;
     }
 
-
     /**
      * Each configured network has a unique small integer ID, used to identify
      * the network when performing operations on the supplicant. This method
      * returns the ID for the currently connected network.
      * @return the network ID, or -1 if there is no currently connected network
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.725 -0500", hash_original_method = "B76AAD80CE4B08426894CE7F5D58A537", hash_generated_method = "637E6B0E5E1D730FCF7E33D5A0BB3D16")
     
 public int getNetworkId() {
@@ -281,6 +278,7 @@ public int getNetworkId() {
      * access point, in the form of a {@link SupplicantState SupplicantState} object.
      * @return the current {@link SupplicantState SupplicantState}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.727 -0500", hash_original_method = "8E3F1F3B329B69F39A487C61B59EF2C9", hash_generated_method = "D2362E116557988672F965102DAA1533")
     
 public SupplicantState getSupplicantState() {
@@ -299,6 +297,7 @@ void setInetAddress(InetAddress address) {
         mIpAddress = address;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.734 -0500", hash_original_method = "B90838B740ABA91EEFFDC5A9A5E25B34", hash_generated_method = "E78FF920665B00C85E06520C31C73BB6")
     
 public int getIpAddress() {
@@ -310,6 +309,7 @@ public int getIpAddress() {
      * @return {@code true} if this network does not broadcast its SSID, so an
      * SSID-specific probe request must be used for scans.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.736 -0500", hash_original_method = "C4A754B6DCF0E16A6381A21399FCB1B9", hash_generated_method = "E77E70F9E868C52B9C3502A000851180")
     
 public boolean getHiddenSSID() {
@@ -329,6 +329,7 @@ public void setHiddenSSID(boolean hiddenSSID) {
      * @param stateName the name of the state, as a <code>String</code> returned
      * in an event sent by {@code wpa_supplicant}.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.742 -0500", hash_original_method = "C2C24AA87816421D7C3613D024B55B7F", hash_generated_method = "C2C24AA87816421D7C3613D024B55B7F")
     
 void setSupplicantState(String stateName) {
@@ -378,6 +379,7 @@ public int describeContents() {
     }
 
     /** Implement the Parcelable interface {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:04.752 -0500", hash_original_method = "D24857F81D2FD5D48ED12D74EE96B85F", hash_generated_method = "944E3B9651FC8E61BF18728C60B359E3")
     
 public void writeToParcel(Parcel dest, int flags) {

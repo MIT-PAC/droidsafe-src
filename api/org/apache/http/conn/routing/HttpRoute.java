@@ -8,13 +8,7 @@ import java.net.InetAddress;
 
 import org.apache.http.HttpHost;
 
-
-
-
-
-
 public final class HttpRoute implements RouteInfo, Cloneable {
-
 
     /**
      * Helper to convert a proxy to a proxy chain.
@@ -31,7 +25,6 @@ private static HttpHost[] toChain(HttpHost proxy) {
 
         return new HttpHost[]{ proxy };
     }
-
 
     /**
      * Helper to duplicate and check a proxy chain.
@@ -77,7 +70,6 @@ private static HttpHost[] toChain(HttpHost[] proxies) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.802 -0500", hash_original_field = "63DC6869FF37EDAA23661806B080C4ED", hash_generated_field = "D17DE8BC324386A0F759A8245C34BC17")
 
     private  boolean secure;
-
 
     /**
      * Internal, fully-specified constructor.
@@ -128,7 +120,6 @@ private HttpRoute(InetAddress local,
         this.layered      = layered;
     }
 
-
     /**
      * Creates a new route with all attributes specified explicitly.
      *
@@ -148,7 +139,6 @@ public HttpRoute(HttpHost target, InetAddress local, HttpHost[] proxies,
                      boolean secure, TunnelType tunnelled, LayerType layered) {
         this(local, target, toChain(proxies), secure, tunnelled, layered);
     }
-
 
     /**
      * Creates a new route with at most one proxy.
@@ -174,7 +164,6 @@ public HttpRoute(HttpHost target, InetAddress local, HttpHost proxy,
         this(local, target, toChain(proxy), secure, tunnelled, layered);
     }
 
-
     /**
      * Creates a new direct route.
      * That is a route without a proxy.
@@ -191,7 +180,6 @@ public HttpRoute(HttpHost target, InetAddress local, boolean secure) {
         this(local, target, null, secure, TunnelType.PLAIN, LayerType.PLAIN);
     }
 
-
     /**
      * Creates a new direct insecure route.
      *
@@ -202,7 +190,6 @@ public HttpRoute(HttpHost target, InetAddress local, boolean secure) {
 public HttpRoute(HttpHost target) {
         this(null, target, null, false, TunnelType.PLAIN, LayerType.PLAIN);
     }
-
 
     /**
      * Creates a new route through a proxy.
@@ -230,33 +217,32 @@ public HttpRoute(HttpHost target, InetAddress local, HttpHost proxy,
         }
     }
 
-
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.826 -0500", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "3CF09B50D9FFB38E80EC0DF2754F3C7C")
     
 public final HttpHost getTargetHost() {
         return this.targetHost;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.828 -0500", hash_original_method = "28495B9032685860E947A62701D0E919", hash_generated_method = "B1EF19B51880E604C3C8A9B2EC317276")
     
 public final InetAddress getLocalAddress() {
         return this.localAddress;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.832 -0500", hash_original_method = "8A1F6C82C6946ABA9036325DB5D1093A", hash_generated_method = "4DD0D1204FDBDD220E5D25DF25995F28")
     
 public final int getHopCount() {
         return (proxyChain == null) ? 1 : (proxyChain.length+1);
     }
 
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.834 -0500", hash_original_method = "6FAF652E1C9EAABAB417C8ED32D41F4A", hash_generated_method = "F5EC67181BAC871CE373A5E2083C59AF")
     
 public final HttpHost getHopTarget(int hop) {
@@ -278,14 +264,13 @@ public final HttpHost getHopTarget(int hop) {
         return result;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.836 -0500", hash_original_method = "E9E1E8AC6D9C2477F7E0F63BF0C4ED60", hash_generated_method = "30E7E8E67A319853D2C851FAF279DA52")
     
 public final HttpHost getProxyHost() {
         return (this.proxyChain == null) ? null : this.proxyChain[0];
     }
-
 
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.839 -0500", hash_original_method = "350E5C2EB4A104FE6F444729C8CD5444", hash_generated_method = "34D96FF8C8A24960212FD51CCBD1FAE7")
@@ -294,14 +279,12 @@ public final TunnelType getTunnelType() {
         return this.tunnelled;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.841 -0500", hash_original_method = "5CD3D72A708D2B06B9BD542F01F3D0EE", hash_generated_method = "9C3F884A327393840A81C20C66CDA5A9")
     
 public final boolean isTunnelled() {
         return (this.tunnelled == TunnelType.TUNNELLED);
     }
-
 
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.843 -0500", hash_original_method = "24DDB6A6987422E004B186B027F8E19E", hash_generated_method = "16B0A69A0FDF7D043EE16E0E25CFF1F6")
@@ -310,7 +293,6 @@ public final LayerType getLayerType() {
         return this.layered;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.845 -0500", hash_original_method = "90484F935FB331F087FF42A42BD08719", hash_generated_method = "C6CAA6739334D47F3B176C5B89C711DE")
     
@@ -318,14 +300,12 @@ public final boolean isLayered() {
         return (this.layered == LayerType.LAYERED);
     }
 
-
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.848 -0500", hash_original_method = "F448B780707B5356535204966A8ECD14", hash_generated_method = "D63F92E2829B7A464F6073C5CB36443A")
     
 public final boolean isSecure() {
         return this.secure;
     }
-
 
     /**
      * Compares this route to another.
@@ -370,7 +350,6 @@ public final boolean isSecure() {
         return equal;
     }
 
-
     /**
      * Generates a hash code for this route.
      *
@@ -398,7 +377,6 @@ public final boolean isSecure() {
 
         return hc;
     }
-
 
     /**
      * Obtains a description of this route.
@@ -436,7 +414,6 @@ public final boolean isSecure() {
         return cab.toString();
     }
 
-
     // default implementation of clone() is sufficient
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.858 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
     
@@ -444,7 +421,6 @@ public final boolean isSecure() {
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     
 }
 

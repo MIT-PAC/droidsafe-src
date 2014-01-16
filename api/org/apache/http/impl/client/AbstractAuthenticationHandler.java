@@ -25,14 +25,8 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.protocol.HttpContext;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public abstract class AbstractAuthenticationHandler implements AuthenticationHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.448 -0500", hash_original_field = "18C64D3F166235B368911445AC5F21BA", hash_generated_field = "E23A56881AF7D598302EFE0E841EEF54")
-
     
     private static final List<String> DEFAULT_SCHEME_PRIORITY = Arrays.asList(new String[] {
             "ntlm",
@@ -40,7 +34,6 @@ public abstract class AbstractAuthenticationHandler implements AuthenticationHan
             "basic"
     });
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.446 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
     
@@ -85,6 +78,7 @@ protected Map<String, Header> parseChallenges(
         return map;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.456 -0500", hash_original_method = "8FECC262A845210AB3069E334FB88F27", hash_generated_method = "737B99A2509BDCEBDDD800C4E2F20747")
     
 protected List<String> getAuthPreferences() {
@@ -118,7 +112,7 @@ public AuthScheme selectScheme(
         AuthScheme authScheme = null;
         for (int i = 0; i < authPrefs.size(); i++) {
             String id = (String) authPrefs.get(i);
-            Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH)); 
+            Header challenge = challenges.get(id.toLowerCase(Locale.ENGLISH));
 
             if (challenge != null) {
                 if (this.log.isDebugEnabled()) {

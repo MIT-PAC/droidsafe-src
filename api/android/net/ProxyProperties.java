@@ -10,12 +10,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class ProxyProperties implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.167 -0400", hash_original_field = "8C1BCA5A763B1D293459FDC94947A9DA", hash_generated_field = "37B61C5F5B74C5B267912D84DAC98E0A")
 
@@ -44,7 +39,6 @@ public ProxyProperties[] newArray(int size) {
             }
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.143 -0500", hash_original_field = "608081BE7A68D9B383C7D78BD9FDC0E8", hash_generated_field = "C8F07C3E0F6788C43A05E20D5536D66C")
-
 
     private String mHost;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.145 -0500", hash_original_field = "AAAF8A3C293EA5711E38C28140852BDE", hash_generated_field = "A2873EA11C139FA2F790281AB4EEDB4E")
@@ -86,6 +80,7 @@ public ProxyProperties(ProxyProperties source) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.159 -0500", hash_original_method = "207ACF10C117D35BCDF8E06D043E3E5B", hash_generated_method = "7B7AADB70ACF5CF7CA7C38E0754108F7")
     
 public InetSocketAddress getSocketAddress() {
@@ -96,12 +91,14 @@ public InetSocketAddress getSocketAddress() {
         return inetSocketAddress;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.161 -0500", hash_original_method = "B21C2297C1E60D4D2D92DDE75D931874", hash_generated_method = "6A355E9CFD8CF295DC08D3692B6B0773")
     
 public String getHost() {
         return mHost;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.163 -0500", hash_original_method = "D8DAED2CD8A0984A9202198C71DA9D83", hash_generated_method = "33B8E8C1C43AC396F100852932189626")
     
 public int getPort() {
@@ -109,6 +106,7 @@ public int getPort() {
     }
 
     // comma separated
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.165 -0500", hash_original_method = "A9FE56F63855512203F6AE795614409C", hash_generated_method = "1F8C84F141B71D9D0D4DA10181CF7E55")
     
 public String getExclusionList() {

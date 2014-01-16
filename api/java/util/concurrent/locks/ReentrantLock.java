@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.Collection;
 import java.util.concurrent.TimeUnit;
 
-
-
-
-
-
 public class ReentrantLock implements Lock, java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.067 -0500", hash_original_field = "105DA31A02DCFCBB7E89AF519C897445", hash_generated_field = "190C3E77BD396A2688499FE9C5D2BE14")
 
@@ -24,6 +19,8 @@ public class ReentrantLock implements Lock, java.io.Serializable {
      * Creates an instance of {@code ReentrantLock}.
      * This is equivalent to using {@code ReentrantLock(false)}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.124 -0500", hash_original_method = "CAF4BD8277F97E8E8A833F3DA738B0B2", hash_generated_method = "AEC11EC0D4BB362F107A8D68598F3A34")
     
 public ReentrantLock() {
@@ -36,6 +33,8 @@ public ReentrantLock() {
      *
      * @param fair {@code true} if this lock should use a fair ordering policy
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.127 -0500", hash_original_method = "D5E979A18BF9FB96236498521D2048B7", hash_generated_method = "351877AD8EA12CDBB8C7B872FE29D59C")
     
 public ReentrantLock(boolean fair) {
@@ -56,6 +55,8 @@ public ReentrantLock(boolean fair) {
      * purposes and lies dormant until the lock has been acquired,
      * at which time the lock hold count is set to one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.129 -0500", hash_original_method = "97675D396F33E00D31856AF34DD1ED6B", hash_generated_method = "A5139769638ADB3A94F8F9B0BCDCD0D7")
     
 public void lock() {
@@ -234,6 +235,8 @@ public boolean tryLock(long timeout, TimeUnit unit)
      * @throws IllegalMonitorStateException if the current thread does not
      *         hold this lock
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.138 -0500", hash_original_method = "7AD42B9E2BC6DD4A4DE0EB9EBA3A2515", hash_generated_method = "B39A8E8B3E8EC93EC8CE2E174E9F2264")
     
 public void unlock() {
@@ -279,6 +282,8 @@ public void unlock() {
      *
      * @return the Condition object
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.141 -0500", hash_original_method = "6BB095C6835043568D960ACB9C15058D", hash_generated_method = "9A27C3A2232E4D573B7235B3026E7892")
     
 public Condition newCondition() {
@@ -315,6 +320,7 @@ public Condition newCondition() {
      * @return the number of holds on this lock by the current thread,
      *         or zero if this lock is not held by the current thread
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.143 -0500", hash_original_method = "7FC57D6521874F49E1ACFD5770F280CF", hash_generated_method = "23450A0B964DC4287A7BC5121FF3D992")
     
 public int getHoldCount() {
@@ -408,6 +414,7 @@ public final boolean isFair() {
      *
      * @return the owner, or {@code null} if not owned
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.152 -0500", hash_original_method = "DB009A0944F572B5167ED6D51E109787", hash_generated_method = "7D809D9725AEBCF90CFF1BEB201EC3EB")
     
 protected Thread getOwner() {
@@ -430,7 +437,6 @@ public final boolean hasQueuedThreads() {
         return sync.hasQueuedThreads();
     }
 
-
     /**
      * Queries whether the given thread is waiting to acquire this
      * lock. Note that because cancellations may occur at any time, a
@@ -448,7 +454,6 @@ public final boolean hasQueuedThread(Thread thread) {
         return sync.isQueued(thread);
     }
 
-
     /**
      * Returns an estimate of the number of threads waiting to
      * acquire this lock.  The value is only an estimate because the number of
@@ -459,6 +464,7 @@ public final boolean hasQueuedThread(Thread thread) {
      *
      * @return the estimated number of threads waiting for this lock
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.160 -0500", hash_original_method = "DFFF2C05339152644F00EC2FFC57EFB9", hash_generated_method = "EA91B63888B7C015D6A36669988D4E4A")
     
 public final int getQueueLength() {
@@ -476,6 +482,7 @@ public final int getQueueLength() {
      *
      * @return the collection of threads
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.163 -0500", hash_original_method = "4BC73C35668DA24636BE58FB68209032", hash_generated_method = "D67E7603910B1CF790C49F196A7D918E")
     
 protected Collection<Thread> getQueuedThreads() {
@@ -549,6 +556,7 @@ public int getWaitQueueLength(Condition condition) {
      *         not associated with this lock
      * @throws NullPointerException if the condition is null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.170 -0500", hash_original_method = "29738EA386BFBB41E36C961DB4B1CBE5", hash_generated_method = "5F349F071ADC291E2ABB5B930AB4DBAB")
     
 protected Collection<Thread> getWaitingThreads(Condition condition) {
@@ -558,14 +566,12 @@ protected Collection<Thread> getWaitingThreads(Condition condition) {
             throw new IllegalArgumentException("not owner");
         return sync.getWaitingThreads((AbstractQueuedSynchronizer.ConditionObject)condition);
     }
-
     
     abstract static class Sync extends AbstractQueuedSynchronizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.074 -0500", hash_original_field = "6E08CD9A919DEC260028A9B5B46674A3", hash_generated_field = "11262B0B520D47FEDD0C78D205387B55")
 
         private static final long serialVersionUID = -5179523762034025860L;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.504 -0400", hash_original_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7", hash_generated_method = "88F1B6F2E189B36E0DD98AFBD02FE2C7")
         public Sync ()
         {
@@ -637,12 +643,14 @@ final ConditionObject newCondition() {
 
         // Methods relayed from outer class
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.089 -0500", hash_original_method = "24CA7AAFB844A1400E08D949A036E749", hash_generated_method = "C3C207B7C68025305022EA4618EEB56B")
         
 final Thread getOwner() {
             return getState() == 0 ? null : getExclusiveOwnerThread();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.093 -0500", hash_original_method = "9566A514E32EED07D696F4866CA45F30", hash_generated_method = "A489F0CCF5FF04E581E437641418427E")
         
 final int getHoldCount() {
@@ -667,15 +675,12 @@ private void readObject(java.io.ObjectInputStream s)
             setState(0); // reset to unlocked state
         }
     }
-
-
     
     static final class NonfairSync extends Sync {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.103 -0500", hash_original_field = "EC11B14AA7C16689A52450D54648088D", hash_generated_field = "58C60847CF2F2D2F1CEF07DFE5BA201D")
 
         private static final long serialVersionUID = 7316153563782823691L;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:15.506 -0400", hash_original_method = "92700F1FF079627760B83F1F338B8E6E", hash_generated_method = "92700F1FF079627760B83F1F338B8E6E")
         public NonfairSync ()
         {
@@ -701,8 +706,6 @@ protected final boolean tryAcquire(int acquires) {
             return nonfairTryAcquire(acquires);
         }
     }
-
-
     
     static final class FairSync extends Sync {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:22.113 -0500", hash_original_field = "5702DB143526F6B91894FF398957D169", hash_generated_field = "CB1921210AFFA16906C257D2951975DC")

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.HashMap;
 
-
-
-
-
-
 public class RemoteCallbackList<E extends IInterface> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.311 -0500", hash_original_field = "A3014188D001ACE7213D971AD3B4EFAD", hash_generated_field = "A3014188D001ACE7213D971AD3B4EFAD")
  HashMap<IBinder, Callback> mCallbacks
@@ -254,6 +249,7 @@ public E getBroadcastItem(int index) {
      * 
      * @see #getBroadcastItem
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.350 -0500", hash_original_method = "25A2DBE745AB094B33E63C6F1B03FB52", hash_generated_method = "A8AC5A173DE5A6BAB66262097C68072D")
     
 public Object getBroadcastCookie(int index) {
@@ -285,7 +281,6 @@ public void finishBroadcast() {
         
         mBroadcastCount = -1;
     }
-
     
     private final class Callback implements IBinder.DeathRecipient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.322 -0500", hash_original_field = "C5FF175C3C7088F24551555CDBB26192", hash_generated_field = "C5FF175C3C7088F24551555CDBB26192")
@@ -310,11 +305,8 @@ public void binderDied() {
             }
             onCallbackDied(mCallback, mCookie);
         }
-
         
     }
-
-
     
 }
 

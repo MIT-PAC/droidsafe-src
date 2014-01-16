@@ -12,10 +12,6 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 
-
-
-
-
 public class DeviceAdminReceiver extends BroadcastReceiver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.443 -0500", hash_original_field = "CC2DD932D152DB6D244545AF4CC9B722", hash_generated_field = "9C06F9BEB08AB3677C371FCD749129C1")
 
@@ -65,13 +61,14 @@ public class DeviceAdminReceiver extends BroadcastReceiver {
 
     public static final String DEVICE_ADMIN_META_DATA = "android.app.device_admin";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.471 -0500", hash_original_field = "11AE5A38EFB8870FC22369090EAC76E6", hash_generated_field = "B6CADA07BA29C079D23C0A8EC8039560")
-
     
     private DevicePolicyManager mManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.473 -0500", hash_original_field = "5CA8B308CBEA910AC2B87AA086FB0517", hash_generated_field = "5E0E13E7B1E652015B78D6466E133B40")
 
     private ComponentName mWho;
     
+    @DSComment("device administration")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.610 -0400", hash_original_method = "D22D7983747EBDA5D1157714B0E9C778", hash_generated_method = "D22D7983747EBDA5D1157714B0E9C778")
     public DeviceAdminReceiver ()
     {
@@ -82,6 +79,7 @@ public class DeviceAdminReceiver extends BroadcastReceiver {
      * Retrieve the DevicePolicyManager interface for this administrator to work
      * with the system.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.476 -0500", hash_original_method = "43C291A37A92DFF8A999D859F17AC34F", hash_generated_method = "46601141C2213B359BC865325D3DEED8")
     
 public DevicePolicyManager getManager(Context context) {
@@ -98,6 +96,7 @@ public DevicePolicyManager getManager(Context context) {
      * use in {@link DevicePolicyManager} APIs that require the administrator to
      * identify itself.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.478 -0500", hash_original_method = "EB0C16120CE9EB47FE1BD44BF5A331E9", hash_generated_method = "D627423E91C7D85DE1F630EE7D27FDAD")
     
 public ComponentName getWho(Context context) {
@@ -115,6 +114,8 @@ public ComponentName getWho(Context context) {
      * @param context The running context as per {@link #onReceive}.
      * @param intent The received intent as per {@link #onReceive}.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.480 -0500", hash_original_method = "B5AB3987ECA0392723BA81C8F9C984A4", hash_generated_method = "8B5EE3325DE226B338C2FD08481371E1")
     
 public void onEnabled(Context context, Intent intent) {
@@ -145,6 +146,8 @@ public CharSequence onDisableRequested(Context context, Intent intent) {
      * @param context The running context as per {@link #onReceive}.
      * @param intent The received intent as per {@link #onReceive}.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:50.485 -0500", hash_original_method = "3AE73024A5AE1632BF7BF3FF39ABC61B", hash_generated_method = "F87BC4D3C872A59388EE472A15BF5243")
     
 public void onDisabled(Context context, Intent intent) {

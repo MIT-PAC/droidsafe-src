@@ -15,10 +15,6 @@ import android.view.inputmethod.ExtractedText;
 import android.view.inputmethod.ExtractedTextRequest;
 import android.view.inputmethod.InputConnection;
 
-
-
-
-
 public class InputConnectionWrapper implements InputConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.190 -0500", hash_original_field = "E9873CB098A2C98AC4D1819D0F91D151", hash_generated_field = "E21C9D56222776C7795AA3D88992FF14")
 
@@ -33,6 +29,7 @@ public InputConnectionWrapper(IInputContext inputContext) {
         mIInputContext = inputContext;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.252 -0500", hash_original_method = "E5D9808718D85F214F56B5C74559D92A", hash_generated_method = "EA3159883AB88ED7C0D6815D39259AEB")
     
 public CharSequence getTextAfterCursor(int length, int flags) {
@@ -53,6 +50,7 @@ public CharSequence getTextAfterCursor(int length, int flags) {
         return value;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.255 -0500", hash_original_method = "161B1891DB80E123B2A48225941EF408", hash_generated_method = "6BE8A5259EA2E2E80550F974C27611CE")
     
 public CharSequence getTextBeforeCursor(int length, int flags) {
@@ -73,6 +71,7 @@ public CharSequence getTextBeforeCursor(int length, int flags) {
         return value;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.258 -0500", hash_original_method = "07C2D6CA43F82EBF9A41822F1A0D86D8", hash_generated_method = "3CACE0803BD1CF02DE5BBC803DB93A38")
     
 public CharSequence getSelectedText(int flags) {
@@ -93,6 +92,7 @@ public CharSequence getSelectedText(int flags) {
         return value;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.260 -0500", hash_original_method = "42EA416764DB4DFF051E9040CF49BB73", hash_generated_method = "74FDE82B8EAB8AE4D6B3595F8DB25806")
     
 public int getCursorCapsMode(int reqModes) {
@@ -113,6 +113,7 @@ public int getCursorCapsMode(int reqModes) {
         return value;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.262 -0500", hash_original_method = "305E28329FA220003F7366DA2A6BF238", hash_generated_method = "DC40C86ECBA41B8BD9AF2656F892886F")
     
 public ExtractedText getExtractedText(ExtractedTextRequest request, int flags) {
@@ -166,6 +167,7 @@ public boolean commitCorrection(CorrectionInfo correctionInfo) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.272 -0500", hash_original_method = "7022EC7ED2F239685C7BD3195B6CEAE9", hash_generated_method = "C0273145DEAAAF5E483FE20E58A6EBA3")
     
 public boolean setSelection(int start, int end) {
@@ -177,6 +179,7 @@ public boolean setSelection(int start, int end) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.275 -0500", hash_original_method = "67A8A8F86F1AE5123A01275D8828212B", hash_generated_method = "480A689AD84DA7FBAFED9A0B904DAC65")
     
 public boolean performEditorAction(int actionCode) {
@@ -188,6 +191,7 @@ public boolean performEditorAction(int actionCode) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.277 -0500", hash_original_method = "F7AEA38F9035D01924C8EE6C58DE4221", hash_generated_method = "BE59FAC1E7EBE7A91B6F09A9FE24E9C7")
     
 public boolean performContextMenuAction(int id) {
@@ -199,6 +203,7 @@ public boolean performContextMenuAction(int id) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.280 -0500", hash_original_method = "D57326DB6E974535AC174E0CB4F4F72D", hash_generated_method = "DBE40ED179C98BEF3FE80DBB5AC8D3A3")
     
 public boolean setComposingRegion(int start, int end) {
@@ -254,6 +259,7 @@ public boolean endBatchEdit() {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.293 -0500", hash_original_method = "BDB80433761F466B2EC1080474660009", hash_generated_method = "976159EF6C227ED01611A9ABE8A82929")
     
 public boolean sendKeyEvent(KeyEvent event) {
@@ -297,7 +303,6 @@ public boolean reportFullscreenMode(boolean enabled) {
             return false;
         }
     }
-
     
     static class InputContextCallback extends IInputContextCallback.Stub {
         
@@ -360,7 +365,6 @@ private static InputContextCallback getInstance() {
 
         public int mCursorCapsMode;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:27.785 -0400", hash_original_method = "C2F7B541292D8E4E042270C21CD2A858", hash_generated_method = "C2F7B541292D8E4E042270C21CD2A858")
         public InputContextCallback ()
         {
@@ -485,6 +489,7 @@ void waitForResultLocked() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.308 -0500", hash_original_method = "C4A420F599BD094A8850BEFF4D3FF18D", hash_generated_method = "75255E3CF5D2BCA179DE66E8C41D080F")
     
 public boolean performPrivateCommand(String action, Bundle data) {

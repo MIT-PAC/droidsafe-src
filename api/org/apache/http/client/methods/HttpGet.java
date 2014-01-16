@@ -7,14 +7,9 @@ import droidsafe.annotations.*;
 
 import java.net.URI;
 
-
-
-
-
 @DSVAModeled
 public class HttpGet extends HttpRequestBase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.038 -0500", hash_original_field = "FAA38044AD16F915890905B63FBBCA42", hash_generated_field = "BCFE29A06D4EB94143E09A5AED669A6C")
-
 
     public final static String METHOD_NAME = "GET";
     
@@ -33,9 +28,7 @@ public HttpGet(final URI uri) {
         super();
         setURI(uri);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.426 -0400", hash_original_method = "DACE54F54F01CEE5FF3D25626E7EEBF2", hash_generated_method = "18E73CB6390DC2C709D6D3975107CA40")
     public  HttpGet(final String uri) {
         super();
@@ -49,17 +42,15 @@ public HttpGet(final URI uri) {
         //setURI(URI.create(uri));
     }
     
-    @DSModeled(DSC.SAFE)
     public void setURI(final URI uri) {
         this.theURI = uri;
     }
     
-
-    @DSModeled(DSC.SAFE)
     public URI getURI() {
         return this.theURI;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:44.048 -0500", hash_original_method = "E4A43B2F65721A683997A037549396C3", hash_generated_method = "5FCF2FB47A767785DCEA247A24F7E8BC")
     
 @Override

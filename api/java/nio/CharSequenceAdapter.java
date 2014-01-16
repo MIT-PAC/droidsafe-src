@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 final class CharSequenceAdapter extends CharBuffer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.116 -0500", hash_original_method = "CE7638F70CEF8967E908481EECFBBCC4", hash_generated_method = "11D8B2801D052D618D81829E5684F0D2")
@@ -23,7 +18,6 @@ static CharSequenceAdapter copy(CharSequenceAdapter other) {
         return buf;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.118 -0500", hash_original_field = "FC0228967C2CDD8E28E9C839DAD10434", hash_generated_field = "FC0228967C2CDD8E28E9C839DAD10434")
-
 
      CharSequence sequence;
 
@@ -55,6 +49,7 @@ CharSequenceAdapter(CharSequence chseq) {
         return copy(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.131 -0500", hash_original_method = "2E35B46EACC27C03AFC8C4DE9C6A2F1C", hash_generated_method = "377928340EC4EBB9308C38A26F30A48A")
     
 @Override
@@ -65,6 +60,7 @@ CharSequenceAdapter(CharSequence chseq) {
         return sequence.charAt(position++);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.133 -0500", hash_original_method = "0A3A9E7F0D00C569C240E619540C538B", hash_generated_method = "35D0D77D062428D22952ECB7DB718A2D")
     
 @Override
@@ -73,6 +69,7 @@ CharSequenceAdapter(CharSequence chseq) {
         return sequence.charAt(index);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.137 -0500", hash_original_method = "B46220E47C2CF78231CB9172DECC2B72", hash_generated_method = "565346D738A74AE71F95515AC71B6DD3")
     
 @Override
@@ -174,7 +171,6 @@ CharSequenceAdapter(CharSequence chseq) {
         result.limit = position + end;
         return result;
     }
-
     
 }
 

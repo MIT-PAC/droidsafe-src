@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class OutOfMemoryError extends VirtualMachineError {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.293 -0500", hash_original_field = "DDF9EDA94CA38D92072F6D61C9206F50", hash_generated_field = "6777CAF84C62D33BC871EAE1C16AF151")
-
 
     private static final long serialVersionUID = 8228564086184010517L;
 
@@ -19,6 +14,8 @@ public class OutOfMemoryError extends VirtualMachineError {
      * Constructs a new {@code OutOfMemoryError} that includes the current stack
      * trace.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.297 -0500", hash_original_method = "ADBA576B8D149CC9A483364A3C8F9DE7", hash_generated_method = "083877639DE9124323322433ECA63E75")
     
 public OutOfMemoryError() {

@@ -8,11 +8,6 @@ import java.io.FileDescriptor;
 import java.net.Socket;
 import java.net.SocketException;
 
-
-
-
-
-
 public abstract class SocketTagger {
 
     /**
@@ -30,37 +25,33 @@ public static synchronized void set(SocketTagger tagger) {
     /**
      * Returns this process socket tagger.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:41.453 -0500", hash_original_method = "87B6FC7B35B939DE64706833D2FA396B", hash_generated_method = "9C72E2DCC2A6309C30FA4649268C0529")
     
 public static synchronized SocketTagger get() {
         return tagger;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.778 -0400", hash_original_field = "B97DCF68D320E085515A8D2144D4C814", hash_generated_field = "23BEE6B2224CB13CE066B2939D5005AD")
 
-    private static SocketTagger tagger = new SocketTagger() {        
-        @DSModeled(DSC.BAN)
+    private static SocketTagger tagger = new SocketTagger() {
+        
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.778 -0400", hash_original_method = "8328599569196B30B389F2CEF15714B9", hash_generated_method = "464053965BAB7380A18FB745C85C07DF")
         @Override
         public void tag(FileDescriptor socketDescriptor) throws SocketException {
             addTaint(socketDescriptor.getTaint());
             
         }
-
         
-        @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.778 -0400", hash_original_method = "47AD6090A21FCA2559F757EDA52B92F0", hash_generated_method = "90FFA01302CC5CF4A2BB81B5E73337A0")
         @Override
         public void untag(FileDescriptor socketDescriptor) throws SocketException {
             addTaint(socketDescriptor.getTaint());
             
         }
-
         
 };
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:29.818 -0400", hash_original_method = "3FCBFB017A056A47E7F458C1C015DE98", hash_generated_method = "3FCBFB017A056A47E7F458C1C015DE98")
     public SocketTagger ()
     {

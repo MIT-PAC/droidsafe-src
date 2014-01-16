@@ -15,14 +15,8 @@ import java.nio.channels.Selector;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
-
 public abstract class AbstractSelectableChannel extends SelectableChannel {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.087 -0500", hash_original_field = "1FAD89DFFD062186ACED73A3BBE8E6CF", hash_generated_field = "0234634A410EB36D3E632222798EC314")
-
 
     private  SelectorProvider provider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.089 -0500", hash_original_field = "F8566F79FEAED370132E2A7401856489", hash_generated_field = "3B26D8208E36A3AF954A2D369F214698")
@@ -30,10 +24,8 @@ public abstract class AbstractSelectableChannel extends SelectableChannel {
     private List<SelectionKey> keyList = new ArrayList<SelectionKey>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.091 -0500", hash_original_field = "CF901D17374CD5132A1B66ECD3B7245E", hash_generated_field = "9DDF47310598FEE3BE8DF77A18102341")
 
-
     private final Object blockingLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.094 -0500", hash_original_field = "FBC5E3B60AE9541955B3D463A523710C", hash_generated_field = "FBC5E3B60AE9541955B3D463A523710C")
-
 
     boolean isBlocking = true;
 
@@ -55,6 +47,7 @@ protected AbstractSelectableChannel(SelectorProvider selectorProvider) {
      * @see java.nio.channels.SelectableChannel#provider()
      * @return this channel's selector provider.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.099 -0500", hash_original_method = "B098D2E33834ACCBC46AD074E583FD9B", hash_generated_method = "B1D05E577565AFAE7DA83FF4AD307897")
     
 @Override
@@ -122,6 +115,7 @@ protected AbstractSelectableChannel(SelectorProvider selectorProvider) {
      *             if this channel does not have the same provider as the given
      *             selector.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.108 -0500", hash_original_method = "CA2D38B16FDF21D8F80456FE85BBCC03", hash_generated_method = "6F7C657E2C264E9D3768D58F08A9ECA4")
     
 @Override
@@ -214,6 +208,7 @@ protected abstract void implCloseSelectableChannel() throws IOException;
      *
      * @return the synchronization object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.119 -0500", hash_original_method = "CF2B6308C435D16AFC21EE86C3F92787", hash_generated_method = "FA36D79444E8DDCA69DD1A6EA5C660CB")
     
 @Override
@@ -240,6 +235,7 @@ protected abstract void implCloseSelectableChannel() throws IOException;
      * @throws IOException
      *             if an I/O error occurs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.122 -0500", hash_original_method = "C1D21D3B957CE63BA941CEBC7A89647F", hash_generated_method = "21B65639256F1F8CA1123E5574C8AC64")
     
 @Override
@@ -296,7 +292,6 @@ private synchronized boolean containsValidKeys() {
         }
         return false;
     }
-
     
 }
 

@@ -21,13 +21,7 @@ import org.apache.harmony.security.x501.AttributeTypeAndValue;
 import org.apache.harmony.security.x501.Name;
 import org.apache.harmony.security.x509.AlgorithmIdentifier;
 
-
-
-
-
-
 public final class SignerInfo {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.119 -0400", hash_original_field = "DA5E4B91C5AEA4F649C1E27EF117007C", hash_generated_field = "D0EBCF2AEA22824AC0540C4946A3C7F3")
 
@@ -85,6 +79,7 @@ public final class SignerInfo {
             values[6] = si.unauthenticatedAttributes;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.403 -0500", hash_original_method = "2E0301E2837E45CD6DC61EE3304DFEA2", hash_generated_method = "CF948ABABDB64BFFA2F73C0BCF93487E")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -144,30 +139,35 @@ private SignerInfo(int version,
         this.unauthenticatedAttributes = unauthenticatedAttributes;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.374 -0500", hash_original_method = "4521AB691538FE3E0581DA96E2D306DA", hash_generated_method = "8DC0C60625DB619C930479E0ADEFEA2A")
     
 public X500Principal getIssuer() {
         return issuer;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.377 -0500", hash_original_method = "9420C2CEA2A6F47D515C0AB0605412CD", hash_generated_method = "207C06B8E3C7AEAA1442B3B5D400DFA7")
     
 public BigInteger getSerialNumber() {
         return serialNumber;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.379 -0500", hash_original_method = "E49EED34625AA0C2EE5919DE429AB631", hash_generated_method = "6639FD67F1DAD8895548BF7235F9E2E4")
     
 public String getDigestAlgorithm() {
         return digestAlgorithm.getAlgorithm();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.381 -0500", hash_original_method = "C6CE7835E1C3757C7439121AECC2E59C", hash_generated_method = "D2D4759956000418DD3F8B0E229B3885")
     
 public String getDigestEncryptionAlgorithm() {
         return digestEncryptionAlgorithm.getAlgorithm();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.383 -0500", hash_original_method = "AEBE4A58A31E26ADF89831B320BDD2E7", hash_generated_method = "667AB86BDDD1CFF30E1D6A54AE9F2B14")
     
 public List<AttributeTypeAndValue> getAuthenticatedAttributes() {
@@ -177,6 +177,7 @@ public List<AttributeTypeAndValue> getAuthenticatedAttributes() {
         return authenticatedAttributes.getAttributes();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.385 -0500", hash_original_method = "807A0AFC068DD73DE0C4C3C2177CA7D2", hash_generated_method = "445451BD2553575C42B7FCB48C245298")
     
 public byte[] getEncodedAuthenticatedAttributes() {
@@ -186,12 +187,12 @@ public byte[] getEncodedAuthenticatedAttributes() {
         return authenticatedAttributes.getEncoded();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.388 -0500", hash_original_method = "14A08E1AF72E02B64CEDF5DA67544611", hash_generated_method = "D77B68ACF21F013DC8CD4939F1ACFEFE")
     
 public byte[] getEncryptedDigest() {
         return encryptedDigest;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.390 -0500", hash_original_method = "1FB56313E7A9E641FD4CA0515EC1DCD9", hash_generated_method = "B96333FB62EA5E9B9A7FC18EAABD0052")
     

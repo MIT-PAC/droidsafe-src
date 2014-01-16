@@ -12,19 +12,14 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnLongClickListener;
 
-
-
-
-
 public class ZoomButton extends ImageButton implements OnLongClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.840 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
-
 
     private  Handler mHandler;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.262 -0400", hash_original_field = "65BDCBCF196E90740F940F290BEFAB2D", hash_generated_field = "26FFEDCABD497801FADA41E238F232C4")
 
-    private final Runnable mRunnable = new Runnable() {        
-        @DSModeled(DSC.SAFE)
+    private final Runnable mRunnable = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:17.262 -0400", hash_original_method = "93C4F1AB03EDEC29398EF344D9566441", hash_generated_method = "5D14CBEFC651639CA9AA3FDE1107D5B8")
         public void run() {
             {
@@ -33,18 +28,12 @@ public class ZoomButton extends ImageButton implements OnLongClickListener {
                     callOnClick();
                     mHandler.postDelayed(this, mZoomSpeed);
                 } 
-            } 
-            
-            
-                
-                
+            }
             
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.848 -0500", hash_original_field = "5BD6A3C6061681A352EBF45CA1064557", hash_generated_field = "EEAD05CCF97EA02687293998A0924A76")
-
     
     private long mZoomSpeed = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.851 -0500", hash_original_field = "1636CC6174ED0CAD994EA9D89C7D77F0", hash_generated_field = "D784F636C36BABB7864D79722AD46F05")
@@ -104,6 +93,7 @@ public boolean onLongClick(View v) {
         return super.onKeyUp(keyCode, event);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:45.869 -0500", hash_original_method = "46BB6036120D403ECAC10DF2C7F6C840", hash_generated_method = "90A762EBF729F2A2FBD688B6994E6F19")
     
 @Override
@@ -126,7 +116,6 @@ public boolean onLongClick(View v) {
         clearFocus();
         return super.dispatchUnhandledMove(focused, direction);
     }
-
     
 }
 

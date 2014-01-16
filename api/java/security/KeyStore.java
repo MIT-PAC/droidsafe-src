@@ -25,12 +25,6 @@ import libcore.io.IoUtils;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
-
 public class KeyStore {
 
     /**
@@ -54,6 +48,7 @@ private static void throwNotInitialized() throws KeyStoreException {
      * @throws NullPointerException if {@code type == null}
      * @see #getDefaultType
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.331 -0500", hash_original_method = "8219108C73AF092A133C70DEA775DA97", hash_generated_method = "FEA2A071F474C729EB28D6AA867BFDC0")
     
 public static KeyStore getInstance(String type) throws KeyStoreException {
@@ -89,6 +84,7 @@ public static KeyStore getInstance(String type) throws KeyStoreException {
      *             NoSuchAlgorithmException) as in 1.4 release
      * @see #getDefaultType
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.334 -0500", hash_original_method = "E79F87A65CC661E36FF41DA591B3A31D", hash_generated_method = "A2D39DFE38EA02CB2269278A461D92BA")
     
 public static KeyStore getInstance(String type, String provider)
@@ -126,6 +122,7 @@ public static KeyStore getInstance(String type, String provider)
      *             NoSuchAlgorithmException) as in 1.4 release
      * @see #getDefaultType
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.337 -0500", hash_original_method = "DAE2CFCBAFEE42DE8D4B61EE11C10C65", hash_generated_method = "7B37C796C47FC24BD1C683EC522000C7")
     
 public static KeyStore getInstance(String type, Provider provider) throws KeyStoreException {
@@ -155,6 +152,7 @@ public static KeyStore getInstance(String type, Provider provider) throws KeySto
      *
      * @return the default type for {@code KeyStore} instances
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.340 -0500", hash_original_method = "57AAB0F03057AE1C147A6E60DF4FEF55", hash_generated_method = "C3FA8A029DE61ED9E58516EBD430AC26")
     
 public static final String getDefaultType() {
@@ -210,6 +208,7 @@ protected KeyStore(KeyStoreSpi keyStoreSpi, Provider provider, String type) {
      *
      * @return the provider associated with this {@code KeyStore}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.343 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -221,6 +220,7 @@ public final Provider getProvider() {
      *
      * @return the type of this {@code KeyStore}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.345 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "B5025B3379E65F477B29B0C5C8B783DF")
     
 public final String getType() {
@@ -244,6 +244,7 @@ public final String getType() {
      * @throws UnrecoverableKeyException
      *             if the key can not be recovered.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.348 -0500", hash_original_method = "F59E459BECAEDEBCB13476A41CDEA779", hash_generated_method = "751C9CD1B810F6B88EF7F28DD38570E2")
     
 public final Key getKey(String alias, char[] password)
@@ -265,6 +266,7 @@ public final Key getKey(String alias, char[] password)
      * @throws KeyStoreException
      *             if this {@code KeyStore} is not initialized.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.351 -0500", hash_original_method = "504D1BEC6FF8E94C83F90A431D916244", hash_generated_method = "A35955EFAE9E502B0335F28BADEE42C5")
     
 public final Certificate[] getCertificateChain(String alias) throws KeyStoreException {
@@ -284,6 +286,7 @@ public final Certificate[] getCertificateChain(String alias) throws KeyStoreExce
      * @throws KeyStoreException
      *             if this {@code KeyStore} is not initialized.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.353 -0500", hash_original_method = "7FA5F9282816EB62AB780CC8E8ACBC45", hash_generated_method = "2083E645BA21ECB42FDDE2066CB98A7D")
     
 public final Certificate getCertificate(String alias) throws KeyStoreException {
@@ -303,6 +306,7 @@ public final Certificate getCertificate(String alias) throws KeyStoreException {
      * @throws KeyStoreException
      *             if this {@code KeyStore} is not initialized.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.356 -0500", hash_original_method = "0EAF8EB6AFEC620E9CCB79F4CF9FFE6B", hash_generated_method = "BB29742FB9710FA49E1661D262260608")
     
 public final Date getCreationDate(String alias) throws KeyStoreException {
@@ -333,6 +337,7 @@ public final Date getCreationDate(String alias) throws KeyStoreException {
      * @throws NullPointerException
      *             if {@code alias} is {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.359 -0500", hash_original_method = "7F7563B0251ACD30AE23F02FDE0285F3", hash_generated_method = "53825E022FE210A109204949934C0C15")
     
 public final void setKeyEntry(String alias, Key key, char[] password,
@@ -372,6 +377,7 @@ public final void setKeyEntry(String alias, Key key, char[] password,
      * @throws NullPointerException
      *             if {@code alias} is {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.362 -0500", hash_original_method = "E913EA9574669F2A71A3CC096B53E0CC", hash_generated_method = "BD4405CB0CF9146652DBA2800A88FAD8")
     
 public final void setKeyEntry(String alias, byte[] key, Certificate[] chain)
@@ -398,6 +404,7 @@ public final void setKeyEntry(String alias, byte[] key, Certificate[] chain)
      * @throws NullPointerException
      *             if {@code alias} is {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.364 -0500", hash_original_method = "219C504E98378892F0A1CF69789298BA", hash_generated_method = "6CFC1B4D6B237639B2C802EB0DBEFCF1")
     
 public final void setCertificateEntry(String alias, Certificate cert) throws KeyStoreException {
@@ -528,6 +535,7 @@ public final boolean isCertificateEntry(String alias) throws KeyStoreException {
      * @throws KeyStoreException
      *             if this {@code KeyStore} is not initialized.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.382 -0500", hash_original_method = "2386A451870E6EF1C02A8B8C98B7CB68", hash_generated_method = "8801034168DC0BC1BC8F3AF03EA1E326")
     
 public final String getCertificateAlias(Certificate cert) throws KeyStoreException {
@@ -624,7 +632,6 @@ public final void load(InputStream stream, char[] password)
         implSpi.engineLoad(stream, password);
         isInit = true;
     }
-
     
     public abstract static class Builder {
 
@@ -803,7 +810,6 @@ public abstract KeyStore getKeyStore() throws KeyStoreException;
         
 public abstract ProtectionParameter getProtectionParameter(String alias)
                 throws KeyStoreException;
-
         
         private static class BuilderImpl extends Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.423 -0500", hash_original_field = "4D31A7EB6B508C097C6B9FC4902A8B77", hash_generated_field = "A7031BA8689424ABC672EAE318A6BC51")
@@ -860,6 +866,7 @@ BuilderImpl(KeyStore ks, ProtectionParameter pp, File file,
              *
              * Result KeyStore object is returned.
              */
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.447 -0500", hash_original_method = "ACF5EEE61FC6C7F04EA4DB97E46396E0", hash_generated_method = "9847BB0654BF4D878FC757CE80868BE3")
             
 @Override
@@ -940,11 +947,8 @@ BuilderImpl(KeyStore ks, ProtectionParameter pp, File file,
                 }
                 return protParameter;
             }
-
             
         }
-
-
         
         private static class TmpLSParameter implements LoadStoreParameter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.457 -0500", hash_original_field = "3D0A85BC445BB33BD2E720ECDB112CD0", hash_generated_field = "1BB0FC91976F0354B54BD7DD6D315784")
@@ -969,15 +973,10 @@ public TmpLSParameter(ProtectionParameter protPar) {
 public ProtectionParameter getProtectionParameter() {
                 return protPar;
             }
-
             
         }
-
-
         
     }
-
-
     
     public static class CallbackHandlerProtection implements ProtectionParameter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.473 -0500", hash_original_field = "FE40C24C8725B2D4EE000B726D3ACB84", hash_generated_field = "30CF87E450CC91F7899E85CF6B0C3092")
@@ -1007,23 +1006,20 @@ public CallbackHandlerProtection(CallbackHandler handler) {
          *
          * @return the {@code CallbackHandler}.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.478 -0500", hash_original_method = "0C642C7CCF2E4FDE3C3DD3C1F1B0C85D", hash_generated_method = "19D205C1924C5B485C197F58998EC565")
         
 public CallbackHandler getCallbackHandler() {
             return callbackHandler;
         }
-
         
     }
-
-
     
     public static class PasswordProtection implements ProtectionParameter, Destroyable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.488 -0500", hash_original_field = "21BCD293DE862031F898430214E88677", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
 
         private char[] password;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.491 -0500", hash_original_field = "4213EC5657A5F1A8B33184629C524032", hash_generated_field = "4E9B5F95BF3CB214CC7936EEE230143C")
-
 
         private boolean isDestroyed = false;
 
@@ -1050,6 +1046,7 @@ public PasswordProtection(char[] password) {
          * @throws IllegalStateException
          *             if the password has been destroyed.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.497 -0500", hash_original_method = "6430A16E89645A8E6431B65352266760", hash_generated_method = "0010C94564C21D8A6F9E173A2A8E2796")
         
 public synchronized char[] getPassword() {
@@ -1086,11 +1083,8 @@ public synchronized void destroy() throws DestroyFailedException {
 public synchronized boolean isDestroyed() {
             return isDestroyed;
         }
-
         
     }
-
-
     
     public static final class PrivateKeyEntry implements Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.510 -0500", hash_original_field = "182559F848516BAE32412B11539EE461", hash_generated_field = "FE25B04A839309E9F85BB11D3AB28CB0")
@@ -1169,6 +1163,7 @@ public PrivateKeyEntry(PrivateKey privateKey, Certificate[] chain) {
          *
          * @return the private key.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.520 -0500", hash_original_method = "20D5E1BC38F4066008A03A45816FEC0F", hash_generated_method = "5B753A9A2F3D9D0C05D9306EEE56584A")
         
 public PrivateKey getPrivateKey() {
@@ -1180,6 +1175,7 @@ public PrivateKey getPrivateKey() {
          *
          * @return the certificate chain.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.523 -0500", hash_original_method = "51F3F412A111F70F6F64117AFABD929B", hash_generated_method = "5D73907C575CB9752ADAB42E06C60F4C")
         
 public Certificate[] getCertificateChain() {
@@ -1191,6 +1187,7 @@ public Certificate[] getCertificateChain() {
          *
          * @return the certificate corresponding to the private key.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.525 -0500", hash_original_method = "547F6E4E355F50070DC97734154D15F8", hash_generated_method = "393C75C740F53BCDEF5E713784404FA9")
         
 public Certificate getCertificate() {
@@ -1217,11 +1214,8 @@ public Certificate getCertificate() {
             }
             return sb.toString();
         }
-
         
     }
-
-
     
     public static final class SecretKeyEntry implements Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.534 -0500", hash_original_field = "29947246607A38D09D44A9B15E11C9E0", hash_generated_field = "A5F456CD49483E3B0CB368BDF388AD8F")
@@ -1251,6 +1245,7 @@ public SecretKeyEntry(SecretKey secretKey) {
          *
          * @return the secret key.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.540 -0500", hash_original_method = "086B5E46810BA78C7777CDD972BB99BA", hash_generated_method = "669B0F72C4845C597C9D596CC83DD04D")
         
 public SecretKey getSecretKey() {
@@ -1272,11 +1267,8 @@ public SecretKey getSecretKey() {
             sb.append(secretKey.getAlgorithm());
             return sb.toString();
         }
-
         
     }
-
-
     
     public static final class TrustedCertificateEntry implements Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.548 -0500", hash_original_field = "455D0E3424E3FE17007671D2CCAF5B36", hash_generated_field = "39224D52D2F645BDA1C3AA5572035EB1")
@@ -1306,6 +1298,7 @@ public TrustedCertificateEntry(Certificate trustCertificate) {
          *
          * @return the trusted certificate.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:56.553 -0500", hash_original_method = "4E60EB3F26EAC182CAA181F2D2BA1C01", hash_generated_method = "1AA610F133F8C6ACA25051097875BD31")
         
 public Certificate getTrustedCertificate() {
@@ -1325,11 +1318,8 @@ public Certificate getTrustedCertificate() {
         public String toString() {
             return "Trusted certificate entry:\n" + trustCertificate;
         }
-
         
     }
-
-
     
     public static interface Entry {
     }

@@ -24,14 +24,9 @@ import android.os.SystemClock;
 import android.view.IWindow;
 import android.view.View;
 
-
-
-
-
 public final class AccessibilityManager {
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static AccessibilityManager getInstance(Context context) {
         synchronized (sInstanceSync) {
             if (sInstance == null) {
@@ -45,7 +40,6 @@ public final class AccessibilityManager {
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.968 -0500", hash_original_field = "0C2874A8C4EEF3323242B9F8AD02225D", hash_generated_field = "E825D3EC7EE0EA6950AFB69AFDFEF59C")
 
-
     private static final String LOG_TAG = "AccessibilityManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.970 -0500", hash_original_field = "E22923E7FCE73AEAED2E820C387A5EAD", hash_generated_field = "D5243A58F1614AE46E8FCF29704BEB96")
 
@@ -55,58 +49,47 @@ public final class AccessibilityManager {
     public static final int STATE_FLAG_TOUCH_EXPLORATION_ENABLED = 0x00000002;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.975 -0500", hash_original_field = "B108A6778E6AB8D2378E5FD484DC59BE", hash_generated_field = "550354BCFF9C29DC9E7F54237EA2AF6B")
 
-
     static final Object sInstanceSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.978 -0500", hash_original_field = "13B270C942FDD8A394C54D6B7A199692", hash_generated_field = "5EF143443483818ABB8A01E6EB178491")
-
 
     private static AccessibilityManager sInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.981 -0500", hash_original_field = "FC7EAD3DCAAA9F15D0A79C8F69BDDF7E", hash_generated_field = "F6343BB13CD9B2F97A55F219B8CBF5AA")
 
-
     private static final int DO_SET_STATE = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.983 -0500", hash_original_field = "08912AD6B563D3650D4698A9BA0A6C64", hash_generated_field = "08912AD6B563D3650D4698A9BA0A6C64")
-
 
      IAccessibilityManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.985 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "A163099B522120C606A3CA562F90E927")
 
-
      Handler mHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.987 -0500", hash_original_field = "B3AD351453F3622D7B00E4C698290AE5", hash_generated_field = "B3AD351453F3622D7B00E4C698290AE5")
-
 
     boolean mIsEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.989 -0500", hash_original_field = "1A7CE13BB5E9D8ACA2C85DA567CD9FE9", hash_generated_field = "1A7CE13BB5E9D8ACA2C85DA567CD9FE9")
 
-
     boolean mIsTouchExplorationEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:50.991 -0500", hash_original_field = "515B5BC58FF2988B66C3FE1217453DF2", hash_generated_field = "E13D5254D1B46564E3456F969FF8EC0B")
-
 
     final CopyOnWriteArrayList<AccessibilityStateChangeListener> mAccessibilityStateChangeListeners =
         new CopyOnWriteArrayList<AccessibilityStateChangeListener>();
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.207 -0400", hash_original_field = "376001492716029F3EB64333857C8E7A", hash_generated_field = "5889DF2B944E03DD1D8B216326E04C15")
 
-    final IAccessibilityManagerClient.Stub mClient = new IAccessibilityManagerClient.Stub() {        
-        @DSModeled(DSC.BAN)
+    final IAccessibilityManagerClient.Stub mClient = new IAccessibilityManagerClient.Stub() {
+        
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:01.207 -0400", hash_original_method = "146496CFF3CBEBB0FB17DF578BCDB32A", hash_generated_method = "48E4850B433B838533EE453914DCF418")
         public void setState(int state) {
             mHandler.obtainMessage(DO_SET_STATE, state, 0).sendToTarget();
             addTaint(state);
             
-            
         }
-
         
 };
     //used by getSystemService
-    @DSModeled(DSC.BAN)
+    
     public  AccessibilityManager(Context context) {
         addTaint(context.getTaint());
     }
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.313 -0400", hash_original_method = "3479AC0BFEAC12F432B7D77CBEFC979B", hash_generated_method = "C6F032E5BE56CE806F8E82AF6F80B7BD")
     public  AccessibilityManager(Context context, IAccessibilityManager service) {
         mHandler = new MyHandler(context.getMainLooper());
@@ -139,6 +122,8 @@ public final class AccessibilityManager {
      *
      * @return True if accessibility is enabled, false otherwise.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.014 -0500", hash_original_method = "20CDD5F21F40208C5206265F82FC5959", hash_generated_method = "B15AAE05D6977C39D7FBDF72C26E365F")
     
 public boolean isEnabled() {
@@ -152,6 +137,8 @@ public boolean isEnabled() {
      *
      * @return True if touch exploration is enabled, false otherwise.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.016 -0500", hash_original_method = "7B07E9E942D9981C7AD5D7B1A6A19F18", hash_generated_method = "A8718A2CC02C3A5AB9AF5C341ABC3A78")
     
 public boolean isTouchExplorationEnabled() {
@@ -168,6 +155,7 @@ public boolean isTouchExplorationEnabled() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.018 -0500", hash_original_method = "D3FF4CE091F652B646DDDB1D1AF726B0", hash_generated_method = "375BBA472B129BBB4312C8CF8687327F")
     
 public IAccessibilityManagerClient getClient() {
@@ -181,6 +169,7 @@ public IAccessibilityManagerClient getClient() {
      *
      * @throws IllegalStateException if accessibility is not enabled.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.021 -0500", hash_original_method = "ECD9D39E5E16C36757C6B1E94F274A8A", hash_generated_method = "CA5BF0D0ADC7B8C240FD07115789791C")
     
 public void sendAccessibilityEvent(AccessibilityEvent event) {
@@ -234,6 +223,7 @@ public void interrupt() {
      *
      * @deprecated Use {@link #getInstalledAccessibilityServiceList()}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.027 -0500", hash_original_method = "E2D6992D14607757295701B76C880C8C", hash_generated_method = "D61CF7B1D236D6FF1A3DE7EBF6566E1D")
     
 @Deprecated
@@ -253,6 +243,9 @@ public void interrupt() {
      *
      * @return An unmodifiable list with {@link AccessibilityServiceInfo}s.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.030 -0500", hash_original_method = "4069133ECADF858B249C4B9AC03C2D2A", hash_generated_method = "BEC0F9CC527984268D14449285115DD1")
     
 public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList() {
@@ -281,6 +274,9 @@ public List<AccessibilityServiceInfo> getInstalledAccessibilityServiceList() {
      * @see AccessibilityServiceInfo#FEEDBACK_SPOKEN
      * @see AccessibilityServiceInfo#FEEDBACK_VISUAL
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:51.033 -0500", hash_original_method = "0B36972F320E6D77C70DA2DE64F6CDA9", hash_generated_method = "DC96427724681BD4AFE1360F7CC3ED88")
     
 public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(
@@ -296,7 +292,6 @@ public List<AccessibilityServiceInfo> getEnabledAccessibilityServiceList(
         }
         return Collections.unmodifiableList(services);
     }
-
     
     class MyHandler extends Handler {
 
@@ -318,19 +313,14 @@ MyHandler(Looper mainLooper) {
                     Log.w(LOG_TAG, "Unknown message type: " + message.what);
             }
         }
-
         
     }
-
-
     
     public interface AccessibilityStateChangeListener {
-
         
         public void onAccessibilityStateChanged(boolean enabled);
     }
-
-    @DSModeled(DSC.SPEC)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.318 -0400", hash_original_method = "30ACA46B7331464EC3BADA9B88DE998C", hash_generated_method = "717A666E6BC15313F7DC671F3F29079E")
     public boolean addAccessibilityStateChangeListener(
             AccessibilityStateChangeListener listener) {
@@ -345,9 +335,7 @@ MyHandler(Looper mainLooper) {
         // ---------- Original Method ----------
         //return mAccessibilityStateChangeListeners.add(listener);
     }
-
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.318 -0400", hash_original_method = "253F741B79F5A62D71C9725DE0D51542", hash_generated_method = "DA685E6A5AB504A56BB127F89E0AE3B5")
     public boolean removeAccessibilityStateChangeListener(
             AccessibilityStateChangeListener listener) {

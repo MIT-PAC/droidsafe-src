@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 final class ReadOnlyDirectByteBuffer extends DirectByteBuffer {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.155 -0500", hash_original_method = "5E6A89B0C0F0E4E70CB99EAC68AD2CAC", hash_generated_method = "CDC852E68D158F951897410D08444896")
     
@@ -158,6 +155,7 @@ protected ReadOnlyDirectByteBuffer(MemoryBlock block, int capacity, int offset) 
         return new ReadOnlyDirectByteBuffer(block, remaining(), offset + position);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:59.208 -0500", hash_original_method = "722C56C70277A2AF29EF09DE3FC2E957", hash_generated_method = "2DB086672856E18F41212E7A3F2DAB23")
     
 @Override protected byte[] protectedArray() {
@@ -175,7 +173,6 @@ protected ReadOnlyDirectByteBuffer(MemoryBlock block, int capacity, int offset) 
 @Override protected boolean protectedHasArray() {
         return false;
     }
-
     
 }
 

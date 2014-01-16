@@ -5,14 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ColorFilter {
-
     
-    @DSModeled(DSC.SAFE)
     private static void finalizer(int native_instance, int nativeColorFilter) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.092 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
@@ -22,7 +16,6 @@ public class ColorFilter {
 
     public int nativeColorFilter;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.004 -0400", hash_original_method = "046AE4C958596245478875223EE4194E", hash_generated_method = "046AE4C958596245478875223EE4194E")
     public ColorFilter ()
     {
@@ -38,7 +31,6 @@ protected void finalize() throws Throwable {
             finalizer(native_instance, nativeColorFilter);
         }
     }
-
     
 }
 

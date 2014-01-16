@@ -22,11 +22,6 @@ import android.widget.ExpandableListConnector.PositionMetadata;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class ExpandableListView extends ListView {
     
     /**
@@ -38,6 +33,8 @@ public class ExpandableListView extends ListView {
      *         either {@link #PACKED_POSITION_TYPE_CHILD}, {@link #PACKED_POSITION_TYPE_GROUP}, or
      *         {@link #PACKED_POSITION_TYPE_NULL}.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.869 -0500", hash_original_method = "8F2A6759AB2DE8E848B42C8EAF8E7669", hash_generated_method = "F855F629A016C8C9CDB78C54E5F942B5")
     
 public static int getPackedPositionType(long packedPosition) {
@@ -59,6 +56,8 @@ public static int getPackedPositionType(long packedPosition) {
      * @return The group position portion of the packed position. If this does
      *         not contain a group, returns -1.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.872 -0500", hash_original_method = "E7FEB201B74C7CCB951F4732DACD43EF", hash_generated_method = "82A6DAD2CD3647D08D4E3A69DAB541F7")
     
 public static int getPackedPositionGroup(long packedPosition) {
@@ -80,6 +79,8 @@ public static int getPackedPositionGroup(long packedPosition) {
      * @return The child position portion of the packed position. If this does
      *         not contain a child, returns -1.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.874 -0500", hash_original_method = "A693593CBB4108EEE9837B598724899E", hash_generated_method = "4B7A2B748BF5F662054C05D7FCC5E082")
     
 public static int getPackedPositionChild(long packedPosition) {
@@ -108,6 +109,7 @@ public static int getPackedPositionChild(long packedPosition) {
      * @param childPosition The child position within the group.
      * @return The packed position representation of the child (and parent group).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.876 -0500", hash_original_method = "5B4CC69588F0ACA613873ADA235651BB", hash_generated_method = "38B1A9B54F6D94D6249EFBCEA3BFBEAE")
     
 public static long getPackedPositionForChild(int groupPosition, int childPosition) {
@@ -124,6 +126,7 @@ public static long getPackedPositionForChild(int groupPosition, int childPositio
      * @param groupPosition The child's parent group's position.
      * @return The packed position representation of the group.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.879 -0500", hash_original_method = "27360F23AD3CB4DC8767FCC2C52E81C8", hash_generated_method = "5C2F47FE0AEEA9081AF102D91E7B3CEF")
     
 public static long getPackedPositionForGroup(int groupPosition) {
@@ -168,7 +171,6 @@ public static long getPackedPositionForGroup(int groupPosition) {
 
     public static final int CHILD_INDICATOR_INHERIT = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.758 -0500", hash_original_field = "04CE81C4B23C98A24231852CC8F6705F", hash_generated_field = "75129B8EA8BF65CAF94DB4FCF5C9C901")
-
 
     private static final int[] EMPTY_STATE_SET = {};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.760 -0500", hash_original_field = "F6ECCEB8DB39C8BA76FA90C068771211", hash_generated_field = "04B3A62702CD159E93BDFF5FC821FAC4")
@@ -226,19 +228,15 @@ public static long getPackedPositionForGroup(int groupPosition) {
 
     private final Rect mIndicatorRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.829 -0500", hash_original_field = "770C7B491B95A84C136547BA916527FC", hash_generated_field = "4AE25EFC7015417499591D568114EEE0")
-
     
     private OnGroupCollapseListener mOnGroupCollapseListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.835 -0500", hash_original_field = "DEFBF96B4E7468CF5AF58FABB202B9C4", hash_generated_field = "10562726C639BB35125692F5C4D1ABBF")
-
     
     private OnGroupExpandListener mOnGroupExpandListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.842 -0500", hash_original_field = "ED5403BDB0DECBAEDA94079739CEA4F0", hash_generated_field = "90010A4046DD0FEDC5C052D5BA45FC4D")
-
     
     private OnGroupClickListener mOnGroupClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.849 -0500", hash_original_field = "DC113D4DA592BA2BD7ABFB118E1FBC46", hash_generated_field = "A18EFBC744D484264D8A553D85190EB1")
-
     
     private OnChildClickListener mOnChildClickListener;
 
@@ -283,7 +281,7 @@ public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
     
-    
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.786 -0500", hash_original_method = "7A23721B5E073FBA7FD49FF2A748467D", hash_generated_method = "2184CC6A6CF032182D4C188E0AA9342E")
     
 @Override
@@ -311,7 +309,7 @@ public ExpandableListView(Context context, AttributeSet attrs, int defStyle) {
         
         final int lastChildFlPos = mItemCount - getFooterViewsCount() - headerViewsCount - 1;
 
-        final int myB = mBottom; 
+        final int myB = mBottom;
         
         PositionMetadata pos;
         View item;
@@ -497,6 +495,8 @@ public void setChildDivider(Drawable childDivider) {
     /**
      * This method should not be used, use {@link #getExpandableListAdapter()}.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.798 -0500", hash_original_method = "1C0E40F01B81CC446BCB9E503587C60C", hash_generated_method = "AD4EED210FC927083466B4E53D9186CE")
     
 @Override
@@ -528,6 +528,8 @@ public void setChildDivider(Drawable childDivider) {
      * Sets the adapter that provides data to this view.
      * @param adapter The adapter that provides data to this view.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.803 -0500", hash_original_method = "86A402EAE8E162910BEF1CBB540CA500", hash_generated_method = "27BC0852675A405C13BDC2A25C5C6142")
     
 public void setAdapter(ExpandableListAdapter adapter) {
@@ -549,6 +551,9 @@ public void setAdapter(ExpandableListAdapter adapter) {
      * Gets the adapter that provides data to this view.
      * @return The adapter that provides data to this view.
      */
+    @DSComment("CompoundButton, check modeling")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.805 -0500", hash_original_method = "0DEBB462BC2A68BA86FC192DC719C116", hash_generated_method = "72DC64E495E44B4040054743218614A1")
     
 public ExpandableListAdapter getExpandableListAdapter() {
@@ -592,6 +597,7 @@ private int getAbsoluteFlatPosition(int flatListPosition) {
         return flatListPosition + getHeaderViewsCount();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.814 -0500", hash_original_method = "351E469927E1B73D6D643A520D2ADA68", hash_generated_method = "9F24F27F7D56BF8727788EBA09E35592")
     
 @Override
@@ -748,7 +754,6 @@ public void setOnGroupCollapseListener(
             OnGroupCollapseListener onGroupCollapseListener) {
         mOnGroupCollapseListener = onGroupCollapseListener;
     }
-
     
     public static class ExpandableListContextMenuInfo implements ContextMenu.ContextMenuInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.898 -0500", hash_original_field = "3BB1E86D410535A3C31772C2239AADE8", hash_generated_field = "7EF03B9C3ED3327C63848AE59101E3FF")
@@ -768,15 +773,11 @@ public ExpandableListContextMenuInfo(View targetView, long packedPosition, long 
             this.packedPosition = packedPosition;
             this.id = id;
         }
-
         
     }
-
-
     
     static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.923 -0500", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
-
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
@@ -815,6 +816,7 @@ private SavedState(Parcel in) {
             in.readList(expandedGroupMetadataList, ExpandableListConnector.class.getClassLoader());
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.915 -0500", hash_original_method = "AB17BDA53DFB838896B21BA39777EED2", hash_generated_method = "9B67C97A4F3D4255F986F4E888AD0782")
         
 @Override
@@ -833,8 +835,6 @@ private SavedState(Parcel in) {
             }
         
     }
-
-
     
     public interface OnGroupCollapseListener {
         
@@ -891,6 +891,7 @@ public void setOnChildClickListener(OnChildClickListener onChildClickListener) {
      *         in packed position representation. #PACKED_POSITION_VALUE_NULL if
      *         the position corresponds to a header or a footer item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.853 -0500", hash_original_method = "6797E267DF9CCDAD7E03E9610CE356DD", hash_generated_method = "AE18A2934C271EE4255C042017CEC9B1")
     
 public long getExpandableListPosition(int flatListPosition) {
@@ -916,6 +917,7 @@ public long getExpandableListPosition(int flatListPosition) {
      *            {@link #getPackedPositionForGroup(int)}.
      * @return The flat list position for the given child or group.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.855 -0500", hash_original_method = "C3C2613158D48075F4D80761E996AC8D", hash_generated_method = "48A2E76816F4860724AD3D129C27FAEC")
     
 public int getFlatListPosition(long packedPosition) {
@@ -934,6 +936,7 @@ public int getFlatListPosition(long packedPosition) {
      *         child's position and type. #PACKED_POSITION_VALUE_NULL if no selection
      *         or if selection is on a header or a footer item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.857 -0500", hash_original_method = "249AE284AF367E3E33266910F561E468", hash_generated_method = "8AC1384AD48FD830DFD341409F22EADB")
     
 public long getSelectedPosition() {
@@ -950,6 +953,7 @@ public long getSelectedPosition() {
      * @return The ID of the currently selected group or child. -1 if no
      *         selection.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.859 -0500", hash_original_method = "0F549A577DA8ED79E79C3134155D319B", hash_generated_method = "C40FF77BB392610F0DF40101A5BAB794")
     
 public long getSelectedId() {
@@ -971,6 +975,7 @@ public long getSelectedId() {
      * Sets the selection to the specified group.
      * @param groupPosition The position of the group that should be selected.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.862 -0500", hash_original_method = "89C81106BDF582AFAD7189203633A87D", hash_generated_method = "C2019975B34CB9F1E35D6455C21A0EBD")
     
 public void setSelectedGroup(int groupPosition) {
@@ -994,6 +999,7 @@ public void setSelectedGroup(int groupPosition) {
      *            it is collapsed.
      * @return Whether the selection was successfully set on the child.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:48.865 -0500", hash_original_method = "1A768FE324BC96140FFAB346485D606B", hash_generated_method = "DDFA679849E732890403E14F67AEE509")
     
 public boolean setSelectedChild(int groupPosition, int childPosition, boolean shouldExpandGroup) {
@@ -1005,7 +1011,7 @@ public boolean setSelectedChild(int groupPosition, int childPosition, boolean sh
             // The child's group isn't expanded
             
             // Shouldn't expand the group, so return false for we didn't set the selection
-            if (!shouldExpandGroup) return false; 
+            if (!shouldExpandGroup) return false;
 
             expandGroup(groupPosition);
             

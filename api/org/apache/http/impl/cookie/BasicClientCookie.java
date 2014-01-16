@@ -12,14 +12,8 @@ import java.util.Map;
 import org.apache.http.cookie.ClientCookie;
 import org.apache.http.cookie.SetCookie;
 
-
-
-
-
-
 public class BasicClientCookie implements SetCookie, ClientCookie, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.780 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "C8D0DAE3C1F33EF1956D4324C7266C1E")
-
 
     /** Cookie name */
     private  String name;
@@ -71,6 +65,7 @@ public BasicClientCookie(final String name, final String value) {
      *
      * @return String name The name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.727 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
     
 public String getName() {
@@ -82,6 +77,7 @@ public String getName() {
      *
      * @return String value The current value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.729 -0500", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "FC2353DBE9194DE53203DA3AB851288B")
     
 public String getValue() {
@@ -107,6 +103,7 @@ public void setValue(final String value) {
      *
      * @see #setComment(String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.733 -0500", hash_original_method = "C285B5EE8A6AFFAC313010465DD6E476", hash_generated_method = "BB4933C4A9392027783728A6E515322A")
     
 public String getComment() {
@@ -126,17 +123,16 @@ public String getComment() {
 public void setComment(String comment) {
         cookieComment = comment;
     }
-
     
     /**
      * Returns null. Cookies prior to RFC2965 do not set this attribute
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.737 -0500", hash_original_method = "6B60F393FA3D6EFC64000C911A9295EA", hash_generated_method = "F5B49484CACA7C8E21EAB56749BDB294")
     
 public String getCommentURL() {
         return null;
     }
-
     
     /**
      * Returns the expiration {@link Date} of the cookie, or <tt>null</tt>
@@ -149,6 +145,7 @@ public String getCommentURL() {
      * @see #setExpiryDate(java.util.Date)
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.739 -0500", hash_original_method = "153D1D995EFAB40360B52407F1FDC7D7", hash_generated_method = "9FC259B0CB2D79FD7ED45AB9B521BA7C")
     
 public Date getExpiryDate() {
@@ -172,7 +169,6 @@ public void setExpiryDate (Date expiryDate) {
         cookieExpiryDate = expiryDate;
     }
 
-
     /**
      * Returns <tt>false</tt> if the cookie should be discarded at the end
      * of the "session"; <tt>true</tt> otherwise.
@@ -186,7 +182,6 @@ public boolean isPersistent() {
         return (null != cookieExpiryDate);
     }
 
-
     /**
      * Returns domain attribute of the cookie.
      * 
@@ -194,6 +189,7 @@ public boolean isPersistent() {
      *
      * @see #setDomain(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.746 -0500", hash_original_method = "B5778DA5E5DD3144D1C6A09AC82C1FC8", hash_generated_method = "C097B53CD050DBED1188E4D5B7D72B23")
     
 public String getDomain() {
@@ -207,6 +203,7 @@ public String getDomain() {
      *
      * @see #getDomain
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.748 -0500", hash_original_method = "9546A6CFEBFFD917E6EED03BE1DAE2AE", hash_generated_method = "C6FBD4B37EEB28CB002FD9A82B308549")
     
 public void setDomain(String domain) {
@@ -217,7 +214,6 @@ public void setDomain(String domain) {
         }
     }
 
-
     /**
      * Returns the path attribute of the cookie
      * 
@@ -225,6 +221,7 @@ public void setDomain(String domain) {
      * 
      * @see #setPath(java.lang.String)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.751 -0500", hash_original_method = "EE441836AE1D2ED7AB4F531592BB0685", hash_generated_method = "013643D58A013C6DFDA1ACFD6FFFC389")
     
 public String getPath() {
@@ -273,16 +270,15 @@ public void setSecure (boolean secure) {
         isSecure = secure;
     }
 
-
     /**
      * Returns null. Cookies prior to RFC2965 do not set this attribute
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.759 -0500", hash_original_method = "792AB1F2DAEB6EDF4EEAFF71CFA593C4", hash_generated_method = "BF80BF9EEE804DC77F5CFE62C450CE6F")
     
 public int[] getPorts() {
         return null;
     }
-
     
     /**
      * Returns the version of the cookie specification to which this
@@ -293,6 +289,7 @@ public int[] getPorts() {
      * @see #setVersion(int)
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.761 -0500", hash_original_method = "2C800BF7E3C2BFE0AFF685103351615E", hash_generated_method = "B82AF0320C68319D14C57B9C010BDB4E")
     
 public int getVersion() {
@@ -381,7 +378,6 @@ public boolean containsAttribute(final String name) {
         buffer.append("]");
         return buffer.toString();
     }
-
     
 }
 

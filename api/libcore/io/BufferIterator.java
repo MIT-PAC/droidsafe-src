@@ -5,12 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public abstract class BufferIterator {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:23.996 -0400", hash_original_method = "D18BB79D0D4A277413AB03F78A6D226A", hash_generated_method = "D18BB79D0D4A277413AB03F78A6D226A")
     public BufferIterator ()
     {
@@ -66,7 +62,6 @@ public abstract void readIntArray(int[] dst, int dstOffset, int intCount);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:28.193 -0500", hash_original_method = "79F6E5E535CEEE85EF82C58CF2026A77", hash_generated_method = "20EB2E694EC60D5039A074E2AD400C12")
     
 public abstract short readShort();
-
     
 }
 

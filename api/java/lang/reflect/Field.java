@@ -11,25 +11,17 @@ import org.apache.harmony.kernel.vm.StringUtils;
 import org.apache.harmony.luni.lang.reflect.GenericSignatureParser;
 import org.apache.harmony.luni.lang.reflect.Types;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Field extends AccessibleObject implements Member {
-
     
-    @DSModeled(DSC.SAFE)
     private static Annotation[] getDeclaredAnnotations(Class declaringClass, int slot) {
     	Annotation[] ret = new Annotation[0];
     	ret[0].addTaint(declaringClass.taint);
     	ret[0].addTaint(slot);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static <A extends Annotation> A getAnnotation(
             Class<?> declaringClass, int slot, Class<A> annotationType) {
     	A ret = (A)new Object();
@@ -38,15 +30,12 @@ public final class Field extends AccessibleObject implements Member {
     	ret.addTaint(annotationType.taint);
     	return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isAnnotationPresent(
             Class<?> declaringClass, int slot, Class<? extends Annotation> annotationType) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1800919321 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1800919321;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.020 -0400", hash_original_field = "53D2DF7F6A0025522B6A62D7BCCD362B", hash_generated_field = "FE1CC35DA4EB56C9880DCB488708D9CB")
 
@@ -65,58 +54,44 @@ public final class Field extends AccessibleObject implements Member {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.228 -0500", hash_original_field = "219932C0D186751984D7A1480007F050", hash_generated_field = "0B71E07F68242E0883FB03EAE37B4026")
 
-
     private static final char TYPE_BOOLEAN = 'Z';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.230 -0500", hash_original_field = "A7EA91CACB6C0C9F16D655BBF0959ECF", hash_generated_field = "A2F4D86DAE2B010C8D5C08013F0683CA")
-
 
     private static final char TYPE_BYTE = 'B';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.233 -0500", hash_original_field = "0E07C50E06E50D7993D48617FCA44DF3", hash_generated_field = "AAD9FB3C86B29282B83CDD80DE09CFA0")
 
-
     private static final char TYPE_CHAR = 'C';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.236 -0500", hash_original_field = "1A68B6AA1E43E350649DA67C8CB34C6B", hash_generated_field = "EFF96E3ED8672BC1006A65B4ACD711D8")
-
 
     private static final char TYPE_SHORT = 'S';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.239 -0500", hash_original_field = "AAABE4244B678BB150AB4CE74E91E0D9", hash_generated_field = "6F52E15DB27ACBF8AF1261D87ACDC04B")
 
-
     private static final char TYPE_INTEGER = 'I';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.241 -0500", hash_original_field = "D853A8C8135414E3A4B03729147B3708", hash_generated_field = "7E3646905DF597FA341E03A9809EDF6C")
-
 
     private static final char TYPE_FLOAT = 'F';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.243 -0500", hash_original_field = "DB7796E7A575652F4B6DB1960B2A6838", hash_generated_field = "4C7FC2EC3A51877374490391181D6419")
 
-
     private static final char TYPE_LONG = 'J';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.246 -0500", hash_original_field = "08DD0261DF27D520D3504AD5642E2C73", hash_generated_field = "1C723C993774EE671598C52201355866")
-
 
     private static final char TYPE_DOUBLE = 'D';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.214 -0500", hash_original_field = "241D06F27490B4FC35F16806876AF0D3", hash_generated_field = "EC96049C106D95C970CBF94E8CE21744")
 
-
     private Class<?> declaringClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.216 -0500", hash_original_field = "9D08EA5E8D4745A2564880C6C6CE140D", hash_generated_field = "73346820208B59684010E2508B329B0F")
-
 
     private Class<?> type;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.218 -0500", hash_original_field = "A95822D2306865328E23008716F35B78", hash_generated_field = "DF8CDE4E2FC6AAB2D60A934C2A3F8E04")
 
-
     private Type genericType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.221 -0500", hash_original_field = "882601A2CEBECCB3AC8128B79706E015", hash_generated_field = "89FDBAE6DE2AE55271071C78F774F101")
-
 
     private volatile boolean genericTypesAreInitialized = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.223 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-
     private String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.225 -0500", hash_original_field = "09F7A5BA4BC6B04AB18035FB41A6CB6C", hash_generated_field = "6B06F56F1EB868ADA8CFFD63973A7E09")
-
 
     private int slot;
 
@@ -145,7 +120,7 @@ private Field(Class<?> declaringClass, Class<?> type, String name, int slot) {
         this.slot = slot;
     }
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public Field() {
     	
     }
@@ -167,6 +142,7 @@ private synchronized void initGenericType() {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.256 -0500", hash_original_method = "1CDF5107AC443AA5F8C2E1DA9DF559A0", hash_generated_method = "5A7AC51370A528B541EFB40EFD81B606")
     
 @Override
@@ -179,9 +155,7 @@ private synchronized void initGenericType() {
 
         return StringUtils.combineStrings(annotation);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.759 -0400", hash_original_method = "5161131687230E0D7EE89383FDDF9117", hash_generated_method = "F1BBACEA836E9C65FE0E5D9A22FF7006")
     private Object[] getSignatureAnnotation(Class declaringClass, int slot) {
     	addTaint(declaringClass.taint);
@@ -249,6 +223,7 @@ public boolean isEnumConstant() {
      *             if the generic type points to a type that cannot be
      *             instantiated for some reason
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.271 -0500", hash_original_method = "963F10B2A4697E7A9ECC1BB94066D74F", hash_generated_method = "FD2CCB94E0B27938FC7C6CEA8DFA5A0E")
     
 public Type getGenericType() {
@@ -256,14 +231,13 @@ public Type getGenericType() {
         return Types.getType(genericType);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.273 -0500", hash_original_method = "4122EC91CDDE6FFD9DA08F5ADAF8DB5D", hash_generated_method = "29F60940673BD8877EB2DF97898FD3EA")
     
 @Override public Annotation[] getDeclaredAnnotations() {
         return getDeclaredAnnotations(declaringClass, slot);
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:49.008 -0400", hash_original_method = "C04F97610183E33B13FB9B4273375B6D", hash_generated_method = "5FA34C6FB9279968DCAA09543A6D1EB0")
     @Override
     public <A extends Annotation> A getAnnotation(Class<A> annotationType) {
@@ -337,6 +311,9 @@ A varD37D33C5EE02B81A7F8EF45A88B88039_1884546761 =         getAnnotation(declari
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.294 -0500", hash_original_method = "7AE3BC00249CC99885BB0445C93FB18A", hash_generated_method = "81AB090C4B0E06E8EAE64B54F604EA2C")
     
 public Object get(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -396,6 +373,7 @@ public boolean getBoolean(Object object) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.299 -0500", hash_original_method = "638C7C4918F4FDF5130555C74F583890", hash_generated_method = "F08EE7D873CB6C30199B36D5A03129A0")
     
 public byte getByte(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -425,6 +403,7 @@ public byte getByte(Object object) throws IllegalAccessException, IllegalArgumen
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.302 -0500", hash_original_method = "6648A25494EBFE26376F66DF9331BADB", hash_generated_method = "F2005E402570EBEB89A8181B3E933C42")
     
 public char getChar(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -436,6 +415,7 @@ public char getChar(Object object) throws IllegalAccessException, IllegalArgumen
      *
      * @return the declaring class
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.305 -0500", hash_original_method = "747BEFE9985C4AF4EE3D5630B62185EA", hash_generated_method = "574997FEB7F01E0808800855819F513A")
     
 public Class<?> getDeclaringClass() {
@@ -465,6 +445,7 @@ public Class<?> getDeclaringClass() {
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.307 -0500", hash_original_method = "B22A8667913C0820CACD3D8F78E3B803", hash_generated_method = "C81603E2D1BE2E53E3059A1EFD5E186F")
     
 public double getDouble(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -494,6 +475,7 @@ public double getDouble(Object object) throws IllegalAccessException, IllegalArg
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.310 -0500", hash_original_method = "BFF553DA1989441891013747E355F341", hash_generated_method = "F8F480A05C16CA6CB51B124F3B714944")
     
 public float getFloat(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -523,6 +505,9 @@ public float getFloat(Object object) throws IllegalAccessException, IllegalArgum
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.312 -0500", hash_original_method = "5CB83BC53ADA020FA0FD37C15AAD9E62", hash_generated_method = "9D7296B3392D54E0B4B59D734A1FEECF")
     
 public int getInt(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -552,6 +537,7 @@ public int getInt(Object object) throws IllegalAccessException, IllegalArgumentE
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.314 -0500", hash_original_method = "005A2557A921AA55BF8BDBCBDC639BE4", hash_generated_method = "7AFCB38C335290318905087FBA964B3A")
     
 public long getLong(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -565,6 +551,9 @@ public long getLong(Object object) throws IllegalAccessException, IllegalArgumen
      * @return the modifiers for this field
      * @see Modifier
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.317 -0500", hash_original_method = "5A676A538E8952F6729F0D8423178A33", hash_generated_method = "1327A747177D4EE276A0F6E14A311D56")
     
 public int getModifiers() {
@@ -580,12 +569,14 @@ public int getModifiers() {
     	return getTaintInt();
     }
 
-
     /**
      * Returns the name of this field.
      *
      * @return the name of this field
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.322 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -615,6 +606,7 @@ public String getName() {
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.325 -0500", hash_original_method = "0DDA5605A2464ED398902817D939E3F2", hash_generated_method = "C1F8C1DFD6141C567C3BF4B10E660C5B")
     
 public short getShort(Object object) throws IllegalAccessException, IllegalArgumentException {
@@ -640,6 +632,9 @@ public short getShort(Object object) throws IllegalAccessException, IllegalArgum
      *
      * @return the type of this field
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.330 -0500", hash_original_method = "21C93A7CC51FD6114C8D944747F943F4", hash_generated_method = "0EEEE4F02A27E714D03E663A59C6B204")
     
 public Class<?> getType() {
@@ -693,6 +688,9 @@ public Class<?> getType() {
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.335 -0500", hash_original_method = "6D24AA0F6B01F01D922DBBA93FD91F81", hash_generated_method = "30D8F62F862AD3637A8B07C21E9E5524")
     
 public void set(Object object, Object value) throws IllegalAccessException,
@@ -728,6 +726,9 @@ public void set(Object object, Object value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSComment("Java language reflection")
+    @DSBan(DSCat.REFLECTION)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.337 -0500", hash_original_method = "25FFB4639E444F2A9FD12AF0E909B7A5", hash_generated_method = "50D46A62976E2A32D29DFB63C6D79FD9")
     
 public void setBoolean(Object object, boolean value) throws IllegalAccessException,
@@ -762,6 +763,7 @@ public void setBoolean(Object object, boolean value) throws IllegalAccessExcepti
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.340 -0500", hash_original_method = "AD912B9A4F5D11756FF2F9AE3FC4D6E6", hash_generated_method = "93A31D3D90D062DC6036124FE7AB93E4")
     
 public void setByte(Object object, byte value) throws IllegalAccessException,
@@ -796,6 +798,7 @@ public void setByte(Object object, byte value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.342 -0500", hash_original_method = "97D79EA86FEBB11A4E8B5CD3EFF3DEF5", hash_generated_method = "27D7E83AF7256E0E15F6688E1952724B")
     
 public void setChar(Object object, char value) throws IllegalAccessException,
@@ -830,6 +833,7 @@ public void setChar(Object object, char value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.344 -0500", hash_original_method = "5E12E36ACBA66ADB7DF4FF63170F60C3", hash_generated_method = "C021E230FDFB0E83C2A3E76BB8D4B05D")
     
 public void setDouble(Object object, double value) throws IllegalAccessException,
@@ -864,6 +868,7 @@ public void setDouble(Object object, double value) throws IllegalAccessException
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.347 -0500", hash_original_method = "4860783C5B567E2FC646E7FC5AE81E3C", hash_generated_method = "447B5BAB277B3C4B348F36DA3728A9A7")
     
 public void setFloat(Object object, float value) throws IllegalAccessException,
@@ -898,6 +903,7 @@ public void setFloat(Object object, float value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.350 -0500", hash_original_method = "DA13B1330D08A636280F51E51FF711B2", hash_generated_method = "6392FEF2EBBE8D70E43184E3B192A066")
     
 public void setInt(Object object, int value) throws IllegalAccessException,
@@ -932,6 +938,7 @@ public void setInt(Object object, int value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.353 -0500", hash_original_method = "F703AA23CA1EF460C68B245887B2C6B7", hash_generated_method = "0439D90727AC1452C935573F5082E145")
     
 public void setLong(Object object, long value) throws IllegalAccessException,
@@ -966,6 +973,7 @@ public void setLong(Object object, long value) throws IllegalAccessException,
      * @throws IllegalAccessException
      *             if this field is not accessible
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.355 -0500", hash_original_method = "DEE843BD220F8992FC80A23844FC7C06", hash_generated_method = "E2D3FCC56BE5130B880BE3CC56366F7D")
     
 public void setShort(Object object, short value) throws IllegalAccessException,
@@ -1006,9 +1014,7 @@ public void setShort(Object object, short value) throws IllegalAccessException,
         result.append(name);
         return result.toString();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:51.775 -0400", hash_original_method = "2E771D0497C584665EAFE5039BCB9B58", hash_generated_method = "5DD6344BFC9E3A8D7857167F9BE20F54")
     private Object getField(Object o, Class<?> declaringClass, Class<?> type, int slot,
             boolean noAccessCheck) throws IllegalAccessException {
@@ -1034,7 +1040,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	return getTaintDouble();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.372 -0500", hash_original_method = "9B86AA05444EF83A8159E0D0E3B46582", hash_generated_method = "B74E641A880F7F4CAFE36D8F59671659")
     
     private int getIField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1048,7 +1053,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(descriptor);
     	return getTaintInt();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.377 -0500", hash_original_method = "1F116F930DBB16C5DB58ABA31954B7AA", hash_generated_method = "B9D4C0CDCB4ACFE048039233711F1945")
     
@@ -1064,7 +1068,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	return getTaintLong();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.381 -0500", hash_original_method = "50BE3A9E4BA3ACB6450AF3382B17C97D", hash_generated_method = "EB1F217629CB5D6767561D345CEB3865")
     
     private boolean getZField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1078,7 +1081,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(descriptor);
     	return getTaintBoolean();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.385 -0500", hash_original_method = "94E059571B5D65D86B6231E7D36BF7FA", hash_generated_method = "F0E33CCE67BFFA19486031BD31B1AE93")
     
@@ -1094,7 +1096,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	return getTaintFloat();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.388 -0500", hash_original_method = "9A55E198BD753BB34F159FBC2807D96E", hash_generated_method = "B63920F09E6904E02975DC224E825622")
     
     private char getCField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1108,7 +1109,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(descriptor);
     	return getTaintChar();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.392 -0500", hash_original_method = "9FE268B454DA8902066BFF2BFC132935", hash_generated_method = "6CB0B6B331AB7F25005F8859B3BC7690")
     
@@ -1124,7 +1124,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	return getTaintShort();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.396 -0500", hash_original_method = "B020FC56F3182544B11E7C259C9C5B21", hash_generated_method = "F56E2CFA9BC73845B8AEDDD5EA6CCF55")
     
     private byte getBField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1139,7 +1138,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	return getTaintByte();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.400 -0500", hash_original_method = "D9AA799947323C8F653B1139DF380855", hash_generated_method = "9A3E5817AA51FCFBF3800D6C87BEEE00")
     
     private void setField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1152,7 +1150,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(noAccessCheck);
     	addTaint(value.getTaint());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.404 -0500", hash_original_method = "3CCE00B68111CAA3AA20979F21B904D8", hash_generated_method = "B25ABDFEDB35FEF76162472530BB71EE")
     
@@ -1168,7 +1165,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(v);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.408 -0500", hash_original_method = "32CBAB454E52D8BFC71D6AB87E7BF1FE", hash_generated_method = "E0961D002F94AFBEC9175A9BE22B40BA")
     
     private void setIField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1182,7 +1178,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(descriptor);
     	addTaint(i);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.412 -0500", hash_original_method = "7CE46D8AB646DF2CA9A88ACDCE998029", hash_generated_method = "F492CDB921D7C1073D3C679ADCB53F17")
     
@@ -1198,7 +1193,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(j);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.416 -0500", hash_original_method = "E80188BF0543922F0F2BDA0A103D17F5", hash_generated_method = "08BC613543A152C1628DCF0372279C5A")
     
     private void setZField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1212,7 +1206,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(descriptor);
     	addTaint(z);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.420 -0500", hash_original_method = "570BC71D32CB4741615EF7701079ED2D", hash_generated_method = "8A8ECE7D192F4A5DCFCE15CB7659AF54")
     
@@ -1228,7 +1221,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(f);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.425 -0500", hash_original_method = "ACD0A6EABB934CC5EEECCAB72AA01730", hash_generated_method = "572011FE38AC9D62A97FBEA67172AFB4")
     
     private void setCField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1242,7 +1234,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(descriptor);
     	addTaint(c);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.429 -0500", hash_original_method = "2A0F6C37A6B68BD24BAC15A31879F06F", hash_generated_method = "29AE506210359DB36AA4E8E8A68FA52D")
     
@@ -1258,7 +1249,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(s);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:13.433 -0500", hash_original_method = "4D8B3646C0E699793861ED8487ADC739", hash_generated_method = "637955DC4F54566501CD227F672567C7")
     
     private void setBField(Object o, Class<?> declaringClass, Class<?> type, int slot,
@@ -1272,7 +1262,6 @@ public void setShort(Object object, short value) throws IllegalAccessException,
     	addTaint(descriptor);
     	addTaint(b);
     }
-
     
 }
 

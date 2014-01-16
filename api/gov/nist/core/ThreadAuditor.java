@@ -8,11 +8,6 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-
-
-
-
-
 public class ThreadAuditor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.874 -0500", hash_original_field = "C0954453DE9443D825381060F57A509D", hash_generated_field = "A00A12B2B5536306E22F7FB7287ECF23")
 
@@ -28,6 +23,7 @@ public class ThreadAuditor {
     }
 
     /// Indicates how often monitored threads are supposed to ping (0 = no thread monitoring)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.906 -0500", hash_original_method = "E626588797C11F0AE30EE2336DDF5DDE", hash_generated_method = "325A7BDCD5A9E1DB33EDC3E2D130E002")
     
 public long getPingIntervalInMillisecs() {
@@ -152,7 +148,6 @@ public synchronized String toString() {
         }
         return toString;
     }
-
     
     public class ThreadHandle {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.879 -0500", hash_original_field = "70806230BDAC98ABA704C6088D7869BC", hash_generated_field = "4D9544D57A3ABD008438B9DAA58E4AF5")
@@ -189,6 +184,7 @@ protected void setThreadActive(boolean value) {
         }
 
         /// Return the thread being monitored
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.895 -0500", hash_original_method = "F8B0A54928E7ECAC7F4DBC7FBE8E98A4", hash_generated_method = "78BA0CB0A6EA66A4E6AF70FE95A6D126")
         
 public Thread getThread() {
@@ -203,6 +199,7 @@ public void ping() {
         }
 
         // Helper function to allow threads to get the ping interval directly from this handle
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.900 -0500", hash_original_method = "3E3AA41CAE680C9493787FE6AF60A593", hash_generated_method = "794D0F3E134A5E5E8EE2425424D11A73")
         
 public long getPingIntervalInMillisecs() {
@@ -214,6 +211,7 @@ public long getPingIntervalInMillisecs() {
          *
          * @return a string representation of the object
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:49.902 -0500", hash_original_method = "433F66024AB5F11DDEF8BAC7248248B0", hash_generated_method = "909BCDEC255E3C10659E5129D1CB9A5B")
         
 public String toString() {
@@ -222,11 +220,8 @@ public String toString() {
                     .append(", Alive: ").append(thread.isAlive());
             return toString.toString();
         }
-
         
     }
-
-
     
 }
 

@@ -10,9 +10,6 @@ import android.graphics.Rect;
 import android.view.View;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-
-
-
 class AccessibilityNodeInfoCompatIcs {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.797 -0500", hash_original_method = "24339090B0A4B6721EAAEB1B2705BB62", hash_generated_method = "DF9DE8CEF759A057CF5C066E9B5F75EE")
@@ -185,12 +182,14 @@ public static boolean performAction(Object info, int action) {
         return ((AccessibilityNodeInfo) info).performAction(action);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.897 -0500", hash_original_method = "C86AEC97A0239BCD7249C6FE9FF232E6", hash_generated_method = "0C6BB24F5718629AB7FF2793B538B9B6")
     
 public static void setBoundsInParent(Object info, Rect bounds) {
         ((AccessibilityNodeInfo) info).setBoundsInParent(bounds);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.899 -0500", hash_original_method = "CC390D0E78078429B7D1BD0A0C3E66B4", hash_generated_method = "11D4D414AB00252BE77DD0BC276B75AA")
     
 public static void setBoundsInScreen(Object info, Rect bounds) {
@@ -209,6 +208,7 @@ public static void setChecked(Object info, boolean checked) {
         ((AccessibilityNodeInfo) info).setChecked(checked);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.906 -0500", hash_original_method = "D016C9BD2C049F6FD2C2187F3DF94501", hash_generated_method = "4670A26B5D0AA1FE85452BC17333C6E1")
     
 public static void setClassName(Object info, CharSequence className) {
@@ -221,12 +221,14 @@ public static void setClickable(Object info, boolean clickable) {
         ((AccessibilityNodeInfo) info).setClickable(clickable);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.910 -0500", hash_original_method = "474879C571C870F257CD2FFF61DF2661", hash_generated_method = "D4385D77777F822616DCFF695337BF4C")
     
 public static void setContentDescription(Object info, CharSequence contentDescription) {
         ((AccessibilityNodeInfo) info).setContentDescription(contentDescription);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.913 -0500", hash_original_method = "AF6A8F1D0E43368FC34EBF31EAE60479", hash_generated_method = "056362F3F538347350B1EFCEF202FE46")
     
 public static void setEnabled(Object info, boolean enabled) {
@@ -251,12 +253,14 @@ public static void setLongClickable(Object info, boolean longClickable) {
         ((AccessibilityNodeInfo) info).setLongClickable(longClickable);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.923 -0500", hash_original_method = "44056C5350C39A763BAC2CF1BDE66498", hash_generated_method = "AE7F8131704CDD8872B7AD6487664E48")
     
 public static void setPackageName(Object info, CharSequence packageName) {
         ((AccessibilityNodeInfo) info).setPackageName(packageName);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.926 -0500", hash_original_method = "1018D4F7F39EC9355402FA6416658A04", hash_generated_method = "599C3AD8B577FA429C5504E3F7E3CB26")
     
 public static void setParent(Object info, View parent) {
@@ -304,7 +308,6 @@ public static void recycle(Object info) {
     {
         //Synthesized constructor
     }
-
     
 }
 

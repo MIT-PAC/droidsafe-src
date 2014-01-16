@@ -20,8 +20,6 @@ import java.util.SortedMap;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-
-
 public class MappingFileProvider implements Externalizable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.135 -0500", hash_original_field = "242BE32CA84E9DE0901B0ABC120A2CEA", hash_generated_field = "98909880D8EAD8B8385A6005C50C5E65")
 
@@ -143,7 +141,8 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
    * @param region  two-letter uppercase ISO country codes as defined by ISO 3166-1
    * @return  the name of the file, or empty string if no such file can be found
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.150 -0500", hash_original_method = "F40661B16774EA00988010D992802DCB", hash_generated_method = "F40661B16774EA00988010D992802DCB")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.150 -0500", hash_original_method = "F40661B16774EA00988010D992802DCB", hash_generated_method = "F40661B16774EA00988010D992802DCB")
     
 String getFileName(int countryCallingCode, String language, String script, String region) {
     if (language.length() == 0) {

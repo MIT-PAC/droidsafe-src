@@ -37,18 +37,14 @@ import android.view.inputmethod.EditorInfo;
 import android.view.inputmethod.InputConnection;
 import android.view.inputmethod.InputConnectionWrapper;
 
-
-
-
 public abstract class AbsListView extends AdapterView<ListAdapter> implements TextWatcher, ViewTreeObserver.OnGlobalLayoutListener, Filter.FilterListener, ViewTreeObserver.OnTouchModeChangeListener, RemoteViewsAdapter.RemoteAdapterConnectionCallback {
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     static int getDistance(Rect source, Rect dest, int direction){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return 0;
 	}
-
     
     static View retrieveFromScrap(ArrayList<View> scrapViews, int position){
 		// Original method
@@ -155,10 +151,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private static final int TOUCH_MODE_OFF = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.964 -0500", hash_original_field = "F352B9A1EB51EB0E17E0BAB80DFA9EFA", hash_generated_field = "E7D81FF0F37E8DBAE850DA049B83B27B")
 
-
     private static final boolean PROFILE_SCROLLING = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.968 -0500", hash_original_field = "D037B61D3E48CE32A2444C0D64B1F35A", hash_generated_field = "10908BC5D74B320FCDD3C04619CCD594")
-
 
     private static final boolean PROFILE_FLINGING = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.023 -0500", hash_original_field = "394D213079DFA0C7024EC13F5673BC94", hash_generated_field = "E2DAEB44FC73F85759FCDB42BA10BD3A")
@@ -313,13 +307,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     int mResurrectToPosition = INVALID_POSITION;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.945 -0500", hash_original_field = "11D12765538080AF0A0CA81FE9089107", hash_generated_field = "83C7C32482C7E5A03D695886EA4705D5")
 
-
     private ContextMenuInfo mContextMenuInfo = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.947 -0500", hash_original_field = "CAABAA47CA52B1F5C0386B90B683E22C", hash_generated_field = "CAABAA47CA52B1F5C0386B90B683E22C")
 
     int mOverscrollMax;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.961 -0500", hash_original_field = "779C99950396DC4C08D287054E8C580C", hash_generated_field = "CFC250691336B4B39585FE305D07A5A8")
-
 
     private int mLastTouchMode = TOUCH_MODE_UNKNOWN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.966 -0500", hash_original_field = "D7E6CDDF00C553DE08F1779CBF06BF1C", hash_generated_field = "8AE445FC94FDAEC334CFCA8838E3B70E")
@@ -366,10 +358,8 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private FastScroller mFastScroller;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.997 -0500", hash_original_field = "E92578B5EE90B806FFF8091BF142FC3E", hash_generated_field = "8D12711C83D9C6A8E3A8DA9BEC091FCE")
 
-
     private boolean mGlobalLayoutListenerAddedFilter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:52.999 -0500", hash_original_field = "D11C33EFD56B37B918E01A200C446C59", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
-
 
     private int mTouchSlop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.002 -0500", hash_original_field = "DD9229867FE5117C4B714822940E2834", hash_generated_field = "3CCF90D786BE55C250C6CD780F8D19C3")
@@ -377,13 +367,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private float mDensityScale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.004 -0500", hash_original_field = "0C1E800128D38F93F0B20F8D8033A073", hash_generated_field = "92752ACB14767626BA8FAB32711AE1A6")
 
-
     private InputConnection mDefInputConnection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.006 -0500", hash_original_field = "986DA99674B09AD3A8F3B5206297E53F", hash_generated_field = "048E465914FAB6B457D7426F9FB399BD")
 
     private InputConnectionWrapper mPublicInputConnection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.009 -0500", hash_original_field = "32E744C5D372104B4D0CC46BA30C9D77", hash_generated_field = "20FDBC6BCA9CEE1B1E479A246AC00217")
-
 
     private Runnable mClearScrollingCache;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.011 -0500", hash_original_field = "0DAB51CD5AD14EAFA0DBAE048171A484", hash_generated_field = "7DBE1A18599B8760DC9B67AAFE3499E3")
@@ -396,7 +384,6 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 
     private float mVelocityScale = 1.0f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.017 -0500", hash_original_field = "B6AD59D19B211FC685CE87567BA82386", hash_generated_field = "3A7729712A4A2CC963B04549E3BBA6B5")
-
 
     final boolean[] mIsScrap = new boolean[1];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.019 -0500", hash_original_field = "6ED1AAA72B9DB69535CBA85A01375A9C", hash_generated_field = "79473BC5CF0606B5E3762DA4A5A065CF")
@@ -437,13 +424,11 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
     private boolean mForceTranscriptScroll;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.041 -0500", hash_original_field = "991B01A811EB30155A9AFA3991386833", hash_generated_field = "13A0640F3C08F553786642C29E645CCC")
 
-
     private int mGlowPaddingLeft;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.043 -0500", hash_original_field = "C886710F46A56EC674804984A472C7D2", hash_generated_field = "9E94FEEAC15232AEE61DC08B2319DDAA")
 
     private int mGlowPaddingRight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.046 -0500", hash_original_field = "0AE9C1A4279BD072F201403DCD3CCE4B", hash_generated_field = "740236379897EF8ABD678F65696A25EA")
-
 
     private int mLastAccessibilityScrollEventFromIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.048 -0500", hash_original_field = "15EAB64B9F738CE3B776524FF65E6D3D", hash_generated_field = "9F103C6DB9B3EB29E780CB30462F5591")
@@ -472,15 +457,12 @@ public abstract class AbsListView extends AdapterView<ListAdapter> implements Te
 public AbsListView(Context context, AttributeSet attrs) {
         this(context, attrs, com.android.internal.R.attr.absListViewStyle);
     }
-
     
     public AbsListView(Context context, AttributeSet attrs, int defStyle){
 		super(context, attrs, defStyle);
 		/* Original Method Too Long, Refer to Original Implementation */
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void initAbsListView(){
 		// Original method
 		/*
@@ -501,8 +483,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public void setOverScrollMode(int mode){
 		// Original method
 		/*
@@ -522,7 +504,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
     @Override public void setAdapter(ListAdapter adapter){
 		// Original method
@@ -544,9 +525,10 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getCheckedItemCount(){
 		return getTaintInt();
 		// Original method
@@ -556,8 +538,9 @@ public AbsListView(Context context, AttributeSet attrs) {
     }
 		*/
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public boolean isItemChecked(int position){
 		// Original method
 		/*
@@ -570,8 +553,10 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return false;
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getCheckedItemPosition(){
 		// Original method
 		/*
@@ -584,9 +569,10 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public SparseBooleanArray getCheckedItemPositions(){
 		// Original method
 		/*
@@ -599,8 +585,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return null;
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public long[] getCheckedItemIds(){
 		// Original method
 		/*
@@ -619,7 +605,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return null;
 	}
-
     
     public void clearChoices(){
 		// Original method
@@ -636,23 +621,26 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setItemChecked(int position, boolean value){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public boolean performItemClick(View view, int position, long id){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getChoiceMode(){
 		return getTaintInt();
 		// Original method
@@ -662,8 +650,9 @@ public AbsListView(Context context, AttributeSet attrs) {
     }
 		*/
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setChoiceMode(int choiceMode){
 		addTaint(choiceMode);
 		mChoiceMode = choiceMode;  //Preserved
@@ -691,7 +680,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
     public void setMultiChoiceModeListener(MultiChoiceModeListener listener){
 		// Original method
@@ -705,9 +693,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private boolean contentFits(){
 		// Original method
 		/*
@@ -721,8 +707,9 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return false;
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setFastScrollEnabled(boolean enabled){
 		addTaint(enabled);
 		mFastScrollEnabled = enabled;  //Preserved
@@ -744,8 +731,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFastScrollAlwaysVisible(boolean alwaysShow){
 		// Original method
 		/*
@@ -762,7 +749,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
     public boolean isFastScrollAlwaysVisible(){
 		// Original method
@@ -773,8 +759,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return false;
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override public int getVerticalScrollbarWidth(){
 		// Original method
 		/*
@@ -787,9 +773,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isFastScrollEnabled(){
 		return getTaintBoolean();
 		// Original method
@@ -799,8 +783,8 @@ public AbsListView(Context context, AttributeSet attrs) {
     }
 		*/
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public void setVerticalScrollbarPosition(int position){
 		// Original method
 		/*
@@ -813,7 +797,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected boolean isVerticalScrollBarHidden(){
 		// Original method
@@ -824,9 +807,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setSmoothScrollbarEnabled(boolean enabled){
 		addTaint(enabled);
 		mSmoothScrollbarEnabled = enabled;  //Preserved
@@ -838,9 +819,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isSmoothScrollbarEnabled(){
 		return getTaintBoolean();
 		// Original method
@@ -850,7 +829,6 @@ public AbsListView(Context context, AttributeSet attrs) {
     }
 		*/
 	}
-
     
     public void setOnScrollListener(OnScrollListener l){
 		mOnScrollListener = l;  //Preserved
@@ -865,7 +843,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
     void invokeOnItemScrollListener(){
 		// Original method
@@ -882,8 +859,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public void sendAccessibilityEvent(int eventType){
 		// Original method
 		/*
@@ -904,9 +881,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isScrollingCacheEnabled(){
 		return getTaintBoolean();
 		// Original method
@@ -916,7 +891,6 @@ public AbsListView(Context context, AttributeSet attrs) {
     }
 		*/
 	}
-
     
     public void setScrollingCacheEnabled(boolean enabled){
 		addTaint(enabled);
@@ -932,9 +906,9 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setTextFilterEnabled(boolean textFilterEnabled){
 		addTaint(textFilterEnabled);
 		mTextFilterEnabled = textFilterEnabled;  //Preserved
@@ -946,9 +920,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isTextFilterEnabled(){
 		return getTaintBoolean();
 		// Original method
@@ -958,7 +930,6 @@ public AbsListView(Context context, AttributeSet attrs) {
     }
 		*/
 	}
-
     
     @Override public void getFocusedRect(Rect r){
 		// Original method
@@ -975,9 +946,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void useDefaultSelector(){
 		// Original method
 		/*
@@ -988,9 +957,7 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @ViewDebug.ExportedProperty public boolean isStackFromBottom(){
 		return getTaintBoolean();
 		// Original method
@@ -1000,8 +967,9 @@ public AbsListView(Context context, AttributeSet attrs) {
     }
 		*/
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setStackFromBottom(boolean stackFromBottom){
 		// Original method
 		/*
@@ -1014,7 +982,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
     void requestLayoutIfNecessary(){
 		// Original method
@@ -1029,23 +996,20 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override public Parcelable onSaveInstanceState(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-
     
     @Override public void onRestoreInstanceState(Parcelable state){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private boolean acceptFilter(){
 		// Original method
 		/*
@@ -1056,8 +1020,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return false;
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFilterText(String filterText){
 		// Original method
 		/*
@@ -1079,8 +1043,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public CharSequence getTextFilter(){
 		// Original method
 		/*
@@ -1093,7 +1057,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return null;
 	}
-
     
     @Override protected void onFocusChanged(boolean gainFocus, int direction, Rect previouslyFocusedRect){
 		// Original method
@@ -1112,8 +1075,9 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     @Override public void requestLayout(){
 		// Original method
 		/*
@@ -1125,7 +1089,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
     void resetList(){
 		// Original method
@@ -1147,7 +1110,6 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected int computeVerticalScrollExtent(){
 		// Original method
@@ -1179,14 +1141,12 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return 0;
 	}
-
     
     @Override protected int computeVerticalScrollOffset(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return 0;
 	}
-
     
     @Override protected int computeVerticalScrollRange(){
 		// Original method
@@ -1206,8 +1166,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return 0;
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected float getTopFadingEdgeStrength(){
 		// Original method
 		/*
@@ -1228,8 +1188,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return 0;
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected float getBottomFadingEdgeStrength(){
 		// Original method
 		/*
@@ -1252,14 +1212,12 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		return 0;
 	}
-
     
     @Override protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     @Override protected void onLayout(boolean changed, int l, int t, int r, int b){
 		// Original method
@@ -1284,8 +1242,8 @@ public AbsListView(Context context, AttributeSet attrs) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override protected boolean setFrame(int left, int top, int right, int bottom){
 		// Original method
 		/*
@@ -1310,15 +1268,14 @@ public AbsListView(Context context, AttributeSet attrs) {
     
 protected void layoutChildren() {
     }
-
     
     void updateScrollIndicators(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override @ViewDebug.ExportedProperty public View getSelectedView(){
 		// Original method
 		/*
@@ -1332,9 +1289,10 @@ protected void layoutChildren() {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingTop(){
 		// Original method
 		/*
@@ -1344,9 +1302,10 @@ protected void layoutChildren() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingBottom(){
 		// Original method
 		/*
@@ -1356,9 +1315,8 @@ protected void layoutChildren() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingLeft(){
 		// Original method
 		/*
@@ -1368,9 +1326,8 @@ protected void layoutChildren() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getListPaddingRight(){
 		// Original method
 		/*
@@ -1380,23 +1337,20 @@ protected void layoutChildren() {
 		*/
 		return 0;
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     View obtainView(int position, boolean[] isScrap){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-
     
     void positionSelector(int position, View sel){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void positionSelector(int l, int t, int r, int b){
 		// Original method
 		/*
@@ -1407,16 +1361,14 @@ protected void layoutChildren() {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override protected void dispatchDraw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected boolean isPaddingOffsetRequired(){
 		// Original method
 		/*
@@ -1426,9 +1378,8 @@ protected void layoutChildren() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected int getLeftPaddingOffset(){
 		// Original method
 		/*
@@ -1438,9 +1389,8 @@ protected void layoutChildren() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected int getTopPaddingOffset(){
 		// Original method
 		/*
@@ -1450,9 +1400,8 @@ protected void layoutChildren() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected int getRightPaddingOffset(){
 		// Original method
 		/*
@@ -1462,9 +1411,8 @@ protected void layoutChildren() {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override protected int getBottomPaddingOffset(){
 		// Original method
 		/*
@@ -1474,7 +1422,6 @@ protected void layoutChildren() {
 		*/
 		return 0;
 	}
-
     
     @Override protected void onSizeChanged(int w, int h, int oldw, int oldh){
 		// Original method
@@ -1491,9 +1438,7 @@ protected void layoutChildren() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     boolean touchModeDrawsInPressedState(){
 		// Original method
 		/*
@@ -1509,7 +1454,6 @@ protected void layoutChildren() {
 		*/
 		return false;
 	}
-
     
     boolean shouldShowSelector(){
 		// Original method
@@ -1520,9 +1464,7 @@ protected void layoutChildren() {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void drawSelector(Canvas canvas){
 		// Original method
 		/*
@@ -1536,9 +1478,9 @@ protected void layoutChildren() {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setDrawSelectorOnTop(boolean onTop){
 		addTaint(onTop);
 		mDrawSelectorOnTop = onTop;  //Preserved
@@ -1550,8 +1492,8 @@ protected void layoutChildren() {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setSelector(int resID){
 		// Original method
 		/*
@@ -1561,8 +1503,9 @@ protected void layoutChildren() {
 		*/
 		//Return nothing
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setSelector(Drawable sel){
 		mSelector = sel;  //Preserved
 		// Original method
@@ -1592,12 +1535,12 @@ protected void layoutChildren() {
      *
      * @return the drawable used to display the selector
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.291 -0500", hash_original_method = "021D90A72F3883D0847A93B24BC54541", hash_generated_method = "5B9462028C894E57F330D82415EC1E27")
     
 public Drawable getSelector() {
         return mSelector;
     }
-
     
     void keyPressed(){
 		// Original method
@@ -1611,7 +1554,6 @@ public void setScrollIndicators(View up, View down) {
         mScrollUp = up;
         mScrollDown = down;
     }
-
     
     void updateSelectorState(){
 		// Original method
@@ -1628,7 +1570,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected void drawableStateChanged(){
 		// Original method
@@ -1640,7 +1581,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected int[] onCreateDrawableState(int extraSpace){
 		// Original method
@@ -1667,7 +1607,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		return null;
 	}
-
     
     @Override public boolean verifyDrawable(Drawable dr){
 		// Original method
@@ -1678,7 +1617,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		return false;
 	}
-
     
     @Override public void jumpDrawablesToCurrentState(){
 		// Original method
@@ -1690,7 +1628,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected void onAttachedToWindow(){
 		// Original method
@@ -1714,21 +1651,22 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override protected void onDetachedFromWindow(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @Override public void onWindowFocusChanged(boolean hasWindowFocus){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     ContextMenuInfo createContextMenuInfo(View view, int position, long id){
 		// Original method
@@ -1739,7 +1677,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		return null;
 	}
-
     
     boolean performLongPress(final View child,
             final int longPressPosition, final long longPressId){
@@ -1747,9 +1684,7 @@ public void setScrollIndicators(View up, View down) {
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected ContextMenuInfo getContextMenuInfo(){
 		return (ContextMenuInfo)getTaint();
 		// Original method
@@ -1759,7 +1694,6 @@ public void setScrollIndicators(View up, View down) {
     }
 		*/
 	}
-
     
     @Override public boolean showContextMenu(float x, float y, int metaState){
 		// Original method
@@ -1779,7 +1713,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		return false;
 	}
-
     
     @Override public boolean showContextMenuForChild(View originalView){
 		// Original method
@@ -1793,7 +1726,6 @@ public void setScrollIndicators(View up, View down) {
     public boolean onKeyDown(int keyCode, KeyEvent event) {
         return false;
     }
-
     
     @Override public boolean onKeyUp(int keyCode, KeyEvent event){
 		// Original method
@@ -1831,8 +1763,9 @@ public void setScrollIndicators(View up, View down) {
         // Don't dispatch setPressed to our children. We call setPressed on ourselves to
         // get the selector in the right state, but we don't want to press each child.
     }
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public int pointToPosition(int x, int y){
 		// Original method
 		/*
@@ -1857,7 +1790,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		return 0;
 	}
-
     
     public long pointToRowId(int x, int y){
 		// Original method
@@ -1872,37 +1804,33 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		return 0;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private boolean startScrollIfNeeded(int y){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void scrollIfNeeded(int y){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     public void onTouchModeChanged(boolean isInTouchMode){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override public boolean onTouchEvent(MotionEvent ev){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
     @Override protected void onOverScrolled(int scrollX, int scrollY, boolean clampedX, boolean clampedY){
 		// Original method
@@ -1918,7 +1846,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     @Override public boolean onGenericMotionEvent(MotionEvent event){
 		// Original method
@@ -1944,16 +1871,13 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		return false;
 	}
-
     
     @Override public void draw(Canvas canvas){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setOverScrollEffectPadding(int leftPadding, int rightPadding){
 		addTaint(leftPadding);
 		mGlowPaddingLeft = leftPadding;  //Preserved
@@ -1968,9 +1892,7 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void initOrResetVelocityTracker(){
 		// Original method
 		/*
@@ -1984,9 +1906,7 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void initVelocityTrackerIfNotExists(){
 		// Original method
 		/*
@@ -1998,9 +1918,7 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void recycleVelocityTracker(){
 		// Original method
 		/*
@@ -2013,7 +1931,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     @Override public void requestDisallowInterceptTouchEvent(boolean disallowIntercept){
 		// Original method
@@ -2027,16 +1944,13 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     @Override public boolean onInterceptTouchEvent(MotionEvent ev){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void onSecondaryPointerUp(MotionEvent ev){
 		// Original method
 		/*
@@ -2055,7 +1969,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     @Override public void addTouchables(ArrayList<View> views){
 		// Original method
@@ -2078,7 +1991,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     void reportScrollStateChange(int newState){
 		// Original method
@@ -2094,8 +2006,8 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setFriction(float friction){
 		// Original method
 		/*
@@ -2108,9 +2020,7 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void setVelocityScale(float scale){
 		addTaint(scale);
 		mVelocityScale = scale;  //Preserved
@@ -2122,7 +2032,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     public void smoothScrollToPosition(int position){
 		// Original method
@@ -2136,7 +2045,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     public void smoothScrollToPositionFromTop(int position, int offset, int duration){
 		// Original method
@@ -2150,7 +2058,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     public void smoothScrollToPositionFromTop(int position, int offset){
 		// Original method
@@ -2164,7 +2071,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     public void smoothScrollToPosition(int position, int boundPosition){
 		// Original method
@@ -2178,23 +2084,19 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     public void smoothScrollBy(int distance, int duration){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     void smoothScrollByOffset(int position){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void createScrollingCache(){
 		// Original method
 		/*
@@ -2208,9 +2110,7 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void clearScrollingCache(){
 		// Original method
 		/*
@@ -2236,7 +2136,6 @@ public void setScrollIndicators(View up, View down) {
 		*/
 		//Return nothing
 	}
-
     
     boolean trackMotionScroll(int deltaY, int incrementalDeltaY){
 		// Original method
@@ -2250,6 +2149,7 @@ public void setScrollIndicators(View up, View down) {
      *
      * @return The number of header views, 0 in the default implementation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.563 -0500", hash_original_method = "D1E5D38495D64541AC6B328A03DDBBE5", hash_generated_method = "D1E5D38495D64541AC6B328A03DDBBE5")
     
 int getHeaderViewsCount() {
@@ -2262,6 +2162,7 @@ int getHeaderViewsCount() {
      *
      * @return The number of footer views, 0 in the default implementation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.565 -0500", hash_original_method = "0C261F26A2F08E82991D35E703E8BFEF", hash_generated_method = "0C261F26A2F08E82991D35E703E8BFEF")
     
 int getFooterViewsCount() {
@@ -2279,7 +2180,6 @@ int getFooterViewsCount() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.567 -0500", hash_original_method = "1A0DD5CAE49B88D0010F0706FE7E6BFB", hash_generated_method = "4064B847A8B2BD327A779F8685BB2922")
     
 abstract void fillGap(boolean down);
-
     
     void hideSelector(){
 		// Original method
@@ -2300,7 +2200,6 @@ abstract void fillGap(boolean down);
 		*/
 		//Return nothing
 	}
-
     
     int reconcileSelectedPosition(){
 		return getTaintInt();
@@ -2327,8 +2226,8 @@ abstract void fillGap(boolean down);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.574 -0500", hash_original_method = "E46451AE22F0145DA5E4FBD96B5A06AA", hash_generated_method = "5B8E607A1EC9D001D7764A42BE7A1A5C")
     
 abstract int findMotionRow(int y);
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     int findClosestMotionRow(int y){
 		// Original method
 		/*
@@ -2343,8 +2242,9 @@ abstract int findMotionRow(int y);
 		*/
 		return 0;
 	}
-
     
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void invalidateViews(){
 		// Original method
 		/*
@@ -2357,7 +2257,6 @@ abstract int findMotionRow(int y);
 		*/
 		//Return nothing
 	}
-
     
     boolean resurrectSelectionIfNeeded(){
 		// Original method
@@ -2381,28 +2280,24 @@ abstract int findMotionRow(int y);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.582 -0500", hash_original_method = "298D17F915674885198799233E52EA39", hash_generated_method = "BA596FCCA75DD0D797589AC9E6CEBC56")
     
 abstract void setSelectionInt(int position);
-
     
     boolean resurrectSelection(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
     void confirmCheckedPositionsById(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     @Override protected void handleDataChanged(){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     @Override protected void onDisplayHint(int hint){
 		// Original method
@@ -2426,9 +2321,7 @@ abstract void setSelectionInt(int position);
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void dismissPopup(){
 		// Original method
 		/*
@@ -2440,9 +2333,7 @@ abstract void setSelectionInt(int position);
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void showPopup(){
 		// Original method
 		/*
@@ -2456,11 +2347,9 @@ abstract void setSelectionInt(int position);
 		*/
 		//Return nothing
 	}
-
     
     static class SavedState extends BaseSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.192 -0500", hash_original_field = "AD99978CDC5E698C2A4DD1DC3100EFC5", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
-
 
         public static final Parcelable.Creator<SavedState> CREATOR
                 = new Parcelable.Creator<SavedState>() {
@@ -2511,9 +2400,7 @@ abstract void setSelectionInt(int position);
 SavedState(Parcelable superState) {
             super(superState);
         }
-
         
-        @DSModeled(DSC.BAN)
         private SavedState(Parcel in){
 			super(in);
 			/*
@@ -2537,8 +2424,8 @@ SavedState(Parcelable superState) {
             }
 			*/
 		}
-
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @Override public void writeToParcel(Parcel out, int flags){
 			// Original method
 			/*
@@ -2563,7 +2450,6 @@ SavedState(Parcelable superState) {
 			*/
 			//Return nothing
 		}
-
         
         @Override public String toString(){
 			// Original method
@@ -2583,8 +2469,6 @@ SavedState(Parcelable superState) {
 			return "";
 		}
     }
-
-
     
     private class WindowRunnnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.321 -0500", hash_original_field = "DC42A5BB5254E69570BD1F4A3686FFB9", hash_generated_field = "C8F22F4E13BEEC60720F9AB64A1792E3")
@@ -2597,7 +2481,6 @@ SavedState(Parcelable superState) {
             //Synthesized constructor
         }
 
-
         public void rememberWindowAttachCount(){
 			// Original method
 			/*
@@ -2607,7 +2490,6 @@ SavedState(Parcelable superState) {
 			*/
 			//Return nothing
 		}
-
         
         public boolean sameWindow(){
 			// Original method
@@ -2618,11 +2500,8 @@ SavedState(Parcelable superState) {
 			*/
 			return false;
 		}
-
         
     }
-
-
     
     private class PerformClick extends WindowRunnnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.331 -0500", hash_original_field = "C001E24B1020A024FC58CC124DF01D4E", hash_generated_field = "C001E24B1020A024FC58CC124DF01D4E")
@@ -2634,7 +2513,6 @@ SavedState(Parcelable superState) {
         {
             //Synthesized constructor
         }
-
 
         public void run(){
 			// Original method
@@ -2655,11 +2533,8 @@ SavedState(Parcelable superState) {
 			*/
 			//Return nothing
 		}
-
         
     }
-
-
     
     private class CheckForLongPress extends WindowRunnnable implements Runnable {
         
@@ -2668,7 +2543,6 @@ SavedState(Parcelable superState) {
         {
             //Synthesized constructor
         }
-
 
         public void run(){
 			// Original method
@@ -2695,11 +2569,8 @@ SavedState(Parcelable superState) {
 			*/
 			//Return nothing
 		}
-
         
     }
-
-
     
     private class CheckForKeyLongPress extends WindowRunnnable implements Runnable {
         
@@ -2708,7 +2579,6 @@ SavedState(Parcelable superState) {
         {
             //Synthesized constructor
         }
-
 
         public void run(){
 			// Original method
@@ -2735,11 +2605,8 @@ SavedState(Parcelable superState) {
 			*/
 			//Return nothing
 		}
-
         
     }
-
-
     
     final class CheckForTap implements Runnable {
         
@@ -2749,21 +2616,16 @@ SavedState(Parcelable superState) {
             //Synthesized constructor
         }
 
-
         public void run(){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
-
         
     }
-
-
     
     private class FlingRunnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.443 -0500", hash_original_field = "D1285008815F376C77C6EE6305F1A364", hash_generated_field = "B974BC706FB203D2BBE61C1339EC973E")
-
 
         private static final int FLYWHEEL_TIMEOUT = 40;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.432 -0500", hash_original_field = "63F6CA74EEC786DAEE7A49BF47815C33", hash_generated_field = "7106C69F4E49AB9D7F59F38965DF6036")
@@ -2773,7 +2635,6 @@ SavedState(Parcelable superState) {
 
         private int mLastFlingY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.440 -0500", hash_original_field = "FA53AA3752A220542656F6683D649C3A", hash_generated_field = "F27C63A86D38808CFF0850988FFA3D30")
-
 
         private final Runnable mCheckFlywheel = new Runnable() {
             public void run() {
@@ -2804,7 +2665,6 @@ SavedState(Parcelable superState) {
 FlingRunnable() {
             mScroller = new OverScroller(getContext());
         }
-
         
         void start(int initialVelocity){
 			// Original method
@@ -2829,7 +2689,6 @@ FlingRunnable() {
 			*/
 			//Return nothing
 		}
-
         
         void startSpringback(){
 			// Original method
@@ -2847,7 +2706,6 @@ FlingRunnable() {
 			*/
 			//Return nothing
 		}
-
         
         void startOverfling(int initialVelocity){
 			// Original method
@@ -2862,14 +2720,12 @@ FlingRunnable() {
 			*/
 			//Return nothing
 		}
-
         
         void edgeReached(int delta){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
-
         
         void startScroll(int distance, int duration){
 			// Original method
@@ -2884,7 +2740,6 @@ FlingRunnable() {
 			*/
 			//Return nothing
 		}
-
         
         void endFling(){
 			// Original method
@@ -2904,7 +2759,6 @@ FlingRunnable() {
 			*/
 			//Return nothing
 		}
-
         
         void flywheelTouch(){
 			// Original method
@@ -2915,7 +2769,6 @@ FlingRunnable() {
 			*/
 			//Return nothing
 		}
-
         
         public void run(){
 			// Original method
@@ -2923,15 +2776,12 @@ FlingRunnable() {
 			//Return nothing
 		}
     }
-
-
     
     class PositionScroller implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.473 -0500", hash_original_field = "5D14C8D7590363C2C153C840A2A1ED3D", hash_generated_field = "8760D23EE3F52FD3EFA30CB2F922726A")
 
         private static final int SCROLL_DURATION = 400;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.476 -0500", hash_original_field = "296EE01C7C0311C8B02942BFFDD37B47", hash_generated_field = "DCF6966CB5E1D949B06701433BC1589F")
-
 
         private static final int MOVE_DOWN_POS = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.478 -0500", hash_original_field = "06F16CD7849862678B58921CF4795FFE", hash_generated_field = "F5258406C91B10C35A200A14E23D83E8")
@@ -2947,7 +2797,6 @@ FlingRunnable() {
 
         private static final int MOVE_OFFSET = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.488 -0500", hash_original_field = "556F09336B3BD1BEFE7C8BF0B32BAF35", hash_generated_field = "B9E13EBC2196F570555262A42E5818EF")
-
 
         private int mMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.490 -0500", hash_original_field = "900F81C482C1752F828423C9D7263627", hash_generated_field = "35DC5F27F96B58A562B22555A8E37DA2")
@@ -2967,7 +2816,6 @@ FlingRunnable() {
         private  int mExtraScroll;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.501 -0500", hash_original_field = "50FA5CF54DFCB198C915BA9A2C8369DB", hash_generated_field = "D33BBF09949BE3C4FE4DC46E6E79C30E")
 
-
         private int mOffsetFromTop;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.504 -0500", hash_original_method = "7F3588C5B47E2E7FF0D768230775AB8B", hash_generated_method = "7F3588C5B47E2E7FF0D768230775AB8B")
@@ -2975,7 +2823,6 @@ FlingRunnable() {
 PositionScroller() {
             mExtraScroll = ViewConfiguration.get(mContext).getScaledFadingEdgeLength();
         }
-
         
         void start(int position){
 			addTaint(position);
@@ -2984,8 +2831,8 @@ PositionScroller() {
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
-
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void start(int position, int boundPosition){
 			addTaint(position);
 			mTargetPos = position;  //Preserved
@@ -2995,8 +2842,8 @@ PositionScroller() {
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
-
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void startWithOffset(int position, int offset){
 			// Original method
 			/*
@@ -3006,7 +2853,6 @@ PositionScroller() {
 			*/
 			//Return nothing
 		}
-
         
         void startWithOffset(int position, int offset, int duration){
 			addTaint(position);
@@ -3017,7 +2863,6 @@ PositionScroller() {
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
-
         
         void stop(){
 			// Original method
@@ -3028,7 +2873,6 @@ PositionScroller() {
 			*/
 			//Return nothing
 		}
-
         
         public void run(){
 			// Original method
@@ -3036,8 +2880,6 @@ PositionScroller() {
 			//Return nothing
 		}
     }
-
-
     
     class AdapterDataSetObserver extends AdapterView<ListAdapter>.AdapterDataSetObserver {
         
@@ -3046,7 +2888,6 @@ PositionScroller() {
         {
             //Synthesized constructor
         }
-
 
         @Override public void onChanged(){
             super.onChanged();
@@ -3061,7 +2902,6 @@ PositionScroller() {
 			*/
 			//Return nothing
 		}
-
         
         @Override public void onInvalidated(){
 			// Original method
@@ -3075,11 +2915,8 @@ PositionScroller() {
 			*/
 			//Return nothing
 		}
-
         
     }
-
-
     
     class MultiChoiceModeWrapper implements MultiChoiceModeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.697 -0500", hash_original_field = "C185E064FA7551549A4C3BD77A97BF8B", hash_generated_field = "8BFC2A3FD2E90E6CAECA368B78AA0988")
@@ -3097,7 +2934,6 @@ PositionScroller() {
 public void setWrapped(MultiChoiceModeListener wrapped) {
             mWrapped = wrapped;
         }
-
         
         public boolean onCreateActionMode(ActionMode mode, Menu menu){
 			// Original method
@@ -3112,7 +2948,6 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 			*/
 			return false;
 		}
-
         
         public boolean onPrepareActionMode(ActionMode mode, Menu menu){
 			// Original method
@@ -3123,7 +2958,6 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 			*/
 			return false;
 		}
-
         
         public boolean onActionItemClicked(ActionMode mode, MenuItem item){
 			// Original method
@@ -3134,7 +2968,6 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 			*/
 			return false;
 		}
-
         
         public void onDestroyActionMode(ActionMode mode){
 			// Original method
@@ -3151,7 +2984,6 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 			*/
 			//Return nothing
 		}
-
         
         public void onItemCheckedStateChanged(ActionMode mode,
                 int position, long id, boolean checked){
@@ -3166,11 +2998,8 @@ public void setWrapped(MultiChoiceModeListener wrapped) {
 			*/
 			//Return nothing
 		}
-
         
     }
-
-
     
     public static class LayoutParams extends ViewGroup.LayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.717 -0500", hash_original_field = "943CFBD7D1511435767CCE91EBA9EB7F", hash_generated_field = "D0AF750B588A0A8385D3506BD31A2EB8")
@@ -3198,13 +3027,16 @@ public LayoutParams(Context c, AttributeSet attrs) {
             super(c, attrs);
         }
 
+        @DSComment("Layout params")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.729 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
         
 public LayoutParams(int w, int h) {
             super(w, h);
         }
-
         
+        @DSComment("Layout params")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         public LayoutParams(int w, int h, int viewType){
 			super(w, h);
 			/*
@@ -3217,11 +3049,8 @@ public LayoutParams(int w, int h) {
 public LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
         }
-
         
     }
-
-
     
     class RecycleBin {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.741 -0500", hash_original_field = "2239C5606E861084F73639EC648775DA", hash_generated_field = "6E808820BD4FD463611A15BFE36E91A3")
@@ -3238,10 +3067,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
         private ArrayList<View>[] mScrapViews;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.749 -0500", hash_original_field = "26263325E40D8E8A9DF7684F6FBDACC0", hash_generated_field = "F891A96632BBCEAB30959FDFBD22CDE9")
 
-
         private int mViewTypeCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:53.752 -0500", hash_original_field = "5108F6980753FDAFFC73407E6C793CFF", hash_generated_field = "6256C7755218C1B9CBEA2B18392BAB2B")
-
 
         private ArrayList<View> mCurrentScrap;
         
@@ -3250,7 +3077,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
         {
             //Synthesized constructor
         }
-
 
         public void setViewTypeCount(int viewTypeCount){
 			addTaint(viewTypeCount);
@@ -3272,7 +3098,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			//Return nothing
 		}
-
         
         public void markChildrenDirty(){
 			// Original method
@@ -3298,9 +3123,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			//Return nothing
 		}
-
         
-        @DSModeled(DSC.SAFE)
         public boolean shouldRecycleViewType(int viewType){
 			// Original method
 			/*
@@ -3310,7 +3133,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			return false;
 		}
-
         
         void clear(){
 			// Original method
@@ -3336,7 +3158,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			//Return nothing
 		}
-
         
         void fillActiveViews(int childCount, int firstActivePosition){
 			addTaint(firstActivePosition);
@@ -3360,9 +3181,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			//Return nothing
 		}
-
         
-        @DSModeled(DSC.SAFE)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         View getActiveView(int position){
 			// Original method
 			/*
@@ -3379,8 +3199,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			return null;
 		}
-
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         View getScrapView(int position){
 			// Original method
 			/*
@@ -3398,23 +3218,20 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			return null;
 		}
-
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void addScrapView(View scrap, int position){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
-
         
         void scrapActiveViews(){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
-
         
-        @DSModeled(DSC.BAN)
         private void pruneScrapViews(){
 			// Original method
 			/*
@@ -3435,7 +3252,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			//Return nothing
 		}
-
         
         void reclaimScrapViews(List<View> views){
 			// Original method
@@ -3455,33 +3271,25 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 			*/
 			//Return nothing
 		}
-
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         void setCacheColorHint(int color){
 			// Original method
 			/* Original Method Too Long, Refer to Original Implementation */
 			//Return nothing
 		}
-
         
     }
-
-
     
     public interface OnScrollListener {
-
         
         public static int SCROLL_STATE_IDLE = 0;
-
         
         public static int SCROLL_STATE_TOUCH_SCROLL = 1;
-
         
         public static int SCROLL_STATE_FLING = 2;
-
         
         public void onScrollStateChanged(AbsListView view, int scrollState);
-
         
         public void onScroll(AbsListView view, int firstVisibleItem, int visibleItemCount,
                 int totalItemCount);
@@ -3502,9 +3310,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
         
         void onMovedToScrapHeap(View view);
     }
-
     
-    @DSModeled(DSC.BAN)
     private void positionPopup(){
 		// Original method
 		/*
@@ -3523,9 +3329,7 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected boolean isInFilterMode(){
 		return getTaintBoolean();
 		// Original method
@@ -3535,23 +3339,19 @@ public LayoutParams(ViewGroup.LayoutParams source) {
     }
 		*/
 	}
-
     
     boolean sendToTextFilter(int keyCode, int count, KeyEvent event){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
     @Override public InputConnection onCreateInputConnection(EditorInfo outAttrs){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override public boolean checkInputConnectionProxy(View view){
 		// Original method
 		/*
@@ -3561,15 +3361,12 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void createTextFilter(boolean animateEntrance){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		//Return nothing
 	}
-
     
     public void clearTextFilter(){
 		// Original method
@@ -3586,9 +3383,9 @@ public LayoutParams(ViewGroup.LayoutParams source) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public boolean hasTextFilter(){
 		return getTaintBoolean();
 		// Original method
@@ -3598,7 +3395,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
     }
 		*/
 	}
-
     
     public void onGlobalLayout(){
 		// Original method
@@ -3626,7 +3422,6 @@ public LayoutParams(ViewGroup.LayoutParams source) {
     
 public void beforeTextChanged(CharSequence s, int start, int count, int after) {
     }
-
     
     public void onTextChanged(CharSequence s, int start, int before, int count){
 		// Original method
@@ -3642,7 +3437,6 @@ public void beforeTextChanged(CharSequence s, int start, int count, int after) {
     
 public void afterTextChanged(Editable s) {
     }
-
     
     public void onFilterComplete(int count){
 		// Original method
@@ -3656,7 +3450,6 @@ public void afterTextChanged(Editable s) {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected ViewGroup.LayoutParams generateLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
@@ -3667,7 +3460,6 @@ public void afterTextChanged(Editable s) {
 		*/
 		return null;
 	}
-
     
     @Override public LayoutParams generateLayoutParams(AttributeSet attrs){
 		// Original method
@@ -3678,9 +3470,7 @@ public void afterTextChanged(Editable s) {
 		*/
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected boolean checkLayoutParams(ViewGroup.LayoutParams p){
 		// Original method
 		/*
@@ -3690,9 +3480,9 @@ public void afterTextChanged(Editable s) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
     public void setTranscriptMode(int mode){
 		addTaint(mode);
 		mTranscriptMode = mode;  //Preserved
@@ -3704,9 +3494,8 @@ public void afterTextChanged(Editable s) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public int getTranscriptMode(){
 		return getTaintInt();
 		// Original method
@@ -3716,9 +3505,8 @@ public void afterTextChanged(Editable s) {
     }
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @Override public int getSolidColor(){
 		return getTaintInt();
 		// Original method
@@ -3728,7 +3516,6 @@ public void afterTextChanged(Editable s) {
     }
 		*/
 	}
-
     
     public void setCacheColorHint(int color){
 		// Original method
@@ -3746,9 +3533,10 @@ public void afterTextChanged(Editable s) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Abstract AbsListView")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @ViewDebug.ExportedProperty(category="drawing") public int getCacheColorHint(){
 		return getTaintInt();
 		// Original method
@@ -3758,7 +3546,6 @@ public void afterTextChanged(Editable s) {
     }
 		*/
 	}
-
     
     public void reclaimViews(List<View> views){
 		// Original method
@@ -3782,16 +3569,13 @@ public void afterTextChanged(Editable s) {
 		*/
 		//Return nothing
 	}
-
     
     @Override protected boolean onConsistencyCheck(int consistency){
 		// Original method
 		/* Original Method Too Long, Refer to Original Implementation */
 		return false;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private boolean checkScrap(ArrayList<View> scrap){
 		// Original method
 		/*
@@ -3817,9 +3601,7 @@ public void afterTextChanged(Editable s) {
 		*/
 		return false;
 	}
-
     
-    @DSModeled(DSC.BAN)
     private void finishGlows(){
 		// Original method
 		/*
@@ -3832,9 +3614,8 @@ public void afterTextChanged(Editable s) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setRemoteViewsAdapter(Intent intent){
 		// Original method
 		/*
@@ -3853,9 +3634,7 @@ public void afterTextChanged(Editable s) {
 		*/
 		//Return nothing
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public void deferNotifyDataSetChanged(){
 		// Original method
 		/*
@@ -3865,7 +3644,6 @@ public void afterTextChanged(Editable s) {
 		*/
 		//Return nothing
 	}
-
     
     public boolean onRemoteAdapterConnected(){
 		// Original method
@@ -3900,7 +3678,6 @@ public void onRemoteAdapterDisconnected() {
         // when necessary, as triggered by this view requesting
         // items from the Adapter.
     }
-
     
     public void setRecyclerListener(RecyclerListener listener){
 		// Original method

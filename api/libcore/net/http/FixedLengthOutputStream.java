@@ -8,9 +8,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 
-
-
-
 final class FixedLengthOutputStream extends AbstractHttpOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.485 -0500", hash_original_field = "E040E41AD170B59C0C0B918B5BFE7983", hash_generated_field = "67AC7536EB45CC65D4356C94551DF297")
 
@@ -26,6 +23,7 @@ public FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
         this.bytesRemaining = bytesRemaining;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:34.492 -0500", hash_original_method = "954563C6DA4D081D04FBFCB6C3DCBDF3", hash_generated_method = "2800F8B50156B94FD924ED7965570D8B")
     
 @Override public void write(byte[] buffer, int offset, int count) throws IOException {
@@ -58,7 +56,6 @@ public FixedLengthOutputStream(OutputStream socketOut, int bytesRemaining) {
             throw new IOException("unexpected end of stream");
         }
     }
-
     
 }
 

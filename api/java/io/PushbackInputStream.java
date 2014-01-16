@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class PushbackInputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.544 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "083037218D1B4F9535944A48D3FD1BCA")
 
@@ -31,6 +26,8 @@ public class PushbackInputStream extends FilterInputStream {
      * @param in
      *            the source input stream.
      */
+    @DSComment("Spec is marked when opening raw stream")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.549 -0500", hash_original_method = "AC9553B1FAFFB4A8FBFF65B03BBACC5E", hash_generated_method = "D360854ACE2AA0CA85C5491A466A340C")
     
 public PushbackInputStream(InputStream in) {
@@ -122,6 +119,8 @@ public PushbackInputStream(InputStream in, int size) {
      *             if this stream is closed or an I/O error occurs while reading
      *             from this stream.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.563 -0500", hash_original_method = "146BBECA823F7801A366293B4A5C7497", hash_generated_method = "ABC96A72A8ADD58AE2E0786F9FC8E24B")
     
 @Override
@@ -310,6 +309,8 @@ public void unread(byte[] buffer, int offset, int length) throws IOException {
      *             if this stream is closed or the internal pushback buffer is
      *             full.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:45.578 -0500", hash_original_method = "98848F28DD25FD585D8212E035CA9267", hash_generated_method = "BA3E56535EE8E6396EAC1C1F27A9326F")
     
 public void unread(int oneByte) throws IOException {
@@ -349,7 +350,6 @@ public void unread(int oneByte) throws IOException {
     public void reset() throws IOException {
         throw new IOException();
     }
-
     
 }
 

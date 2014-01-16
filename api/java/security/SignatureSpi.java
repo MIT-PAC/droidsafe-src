@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 import java.security.spec.AlgorithmParameterSpec;
 
-
-
-
-
-
 public abstract class SignatureSpi {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.396 -0500", hash_original_field = "71BC67A1107D981E6D602A0FBDE54913", hash_generated_field = "179FDAA6281D622A7488CD99E06D8FD3")
 
@@ -299,6 +294,7 @@ protected void engineSetParameter(AlgorithmParameterSpec params)
      * @return the {@code AlgorithmParameters} of this {@link SignatureSpi}
      *         instance, maybe {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.429 -0500", hash_original_method = "8524B01EC33E60B2ED7B8CC70F0D409D", hash_generated_method = "990E9C35DED06E56DA23CE6170848F44")
     
 protected AlgorithmParameters engineGetParameters() {
@@ -323,6 +319,7 @@ protected AlgorithmParameters engineGetParameters() {
     protected abstract Object engineGetParameter(String param)
             throws InvalidParameterException;
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.434 -0500", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "3129F61A1AC4738DC9444626172FE7E6")
     
 @Override
@@ -332,7 +329,6 @@ protected AlgorithmParameters engineGetParameters() {
         }
         throw new CloneNotSupportedException();
     }
-
     
 }
 

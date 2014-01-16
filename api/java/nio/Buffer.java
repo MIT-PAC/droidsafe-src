@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class Buffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.624 -0500", hash_original_field = "EE1E1D1DCBD45F5386724204A7B9858F", hash_generated_field = "4FD98D60CF309FB8A0BDD7D63A79939A")
 
@@ -91,6 +87,8 @@ public abstract int arrayOffset();
      *
      * @return the number of elements that are contained in this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.651 -0500", hash_original_method = "BDE11E8E3D76C140A59ECD57AE712B97", hash_generated_method = "EFD11F35F16F958D3B5DB156279B8E62")
     
 public final int capacity() {
@@ -170,6 +168,8 @@ void checkStartEndRemaining(int start, int end) {
      *
      * @return this buffer.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.665 -0500", hash_original_method = "7210DA7B6C2A4BE4693F950CE68DF306", hash_generated_method = "B5A12F365A72B6206D219915F6919D8D")
     
 public final Buffer clear() {
@@ -189,6 +189,9 @@ public final Buffer clear() {
      *
      * @return this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.668 -0500", hash_original_method = "A8519E3C9C4A5F3DEEC9F7CACEDF020E", hash_generated_method = "3784C4CB883262D841A3EF3660F3F0E4")
     
 public final Buffer flip() {
@@ -216,6 +219,8 @@ public abstract boolean hasArray();
      * @return {@code true} if there are elements remaining in this buffer,
      *         {@code false} otherwise.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.673 -0500", hash_original_method = "13F7C083DDE22C46FB0AD1170426F423", hash_generated_method = "AE3E2F3587E0ADADFAEE7D4A57197881")
     
 public final boolean hasRemaining() {
@@ -253,6 +258,8 @@ final void checkWritable() {
      *
      * @return the limit of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.683 -0500", hash_original_method = "D5C1223BE3A23A4695C92DD81173DEDC", hash_generated_method = "471F805B434E1CB66DC1AE378132B944")
     
 public final int limit() {
@@ -274,6 +281,8 @@ public final int limit() {
      * @exception IllegalArgumentException
      *                if <code>newLimit</code> is invalid.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.685 -0500", hash_original_method = "44A9FE5FA1BE9CFEEC46842C8860150F", hash_generated_method = "3750F30122B5D6DE9AF0EC1E1105CF58")
     
 public final Buffer limit(int newLimit) {
@@ -306,6 +315,7 @@ void limitImpl(int newLimit) {
      *
      * @return this buffer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.690 -0500", hash_original_method = "A81425374E4EA5264849380D40913956", hash_generated_method = "36C5BE3A97F8DB052DA4FDAF2129DECE")
     
 public final Buffer mark() {
@@ -318,6 +328,8 @@ public final Buffer mark() {
      *
      * @return the value of this buffer's current position.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.693 -0500", hash_original_method = "DAD201A4DC24D53E1106EBA819979825", hash_generated_method = "8846965B1CB9F84CDD93D980D81838A2")
     
 public final int position() {
@@ -337,6 +349,8 @@ public final int position() {
      * @exception IllegalArgumentException
      *                if <code>newPosition</code> is invalid.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.695 -0500", hash_original_method = "E134461CBBE71A88508EDF7172D7480E", hash_generated_method = "9CCC860571F9BBE2407CB4C15E31AF20")
     
 public final Buffer position(int newPosition) {
@@ -363,6 +377,8 @@ void positionImpl(int newPosition) {
      *
      * @return the number of remaining elements in this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.700 -0500", hash_original_method = "BFA4599854F3739E9A14ABA863ADA9FF", hash_generated_method = "E090FA6FA949940E777B4395FB88B092")
     
 public final int remaining() {
@@ -376,6 +392,7 @@ public final int remaining() {
      * @exception InvalidMarkException
      *                if the mark is not set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.702 -0500", hash_original_method = "2BE1864DF6C90B2A62411C9F7C095DEC", hash_generated_method = "1D2AB15880A52D66321090C37B5864C5")
     
 public final Buffer reset() {
@@ -394,6 +411,9 @@ public final Buffer reset() {
      *
      * @return this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.705 -0500", hash_original_method = "533909B48B402AC142AA1672CC89D5CC", hash_generated_method = "87393F25F4D0CCA65B5273B24AF8B1D0")
     
 public final Buffer rewind() {
@@ -402,6 +422,7 @@ public final Buffer rewind() {
         return this;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:53.708 -0500", hash_original_method = "E469E128CB7197E7BD730454D1CDC172", hash_generated_method = "FEA4BAD8EA8B5C084A519DD34D080B25")
     
 @Override public String toString() {

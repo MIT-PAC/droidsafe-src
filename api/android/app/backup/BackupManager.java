@@ -9,8 +9,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-
-
 public class BackupManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.071 -0500", hash_original_method = "BC0D552591769CED3EC0FA61A524F186", hash_generated_method = "2015B4D91CD8E20A9296C83B2EBCE38E")
@@ -53,7 +51,6 @@ public static void dataChanged(String packageName) {
     private static IBackupManager sService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.066 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private Context mContext;
 
     /**
@@ -64,6 +61,8 @@ public static void dataChanged(String packageName) {
      *                one of your application's {@link android.app.Activity Activities}
      *                was created.
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.074 -0500", hash_original_method = "85561994F0AAB46E3AEAAB82C9107690", hash_generated_method = "6E365403833B142A6AA999CAEB020FAC")
     
 public BackupManager(Context context) {
@@ -76,6 +75,8 @@ public BackupManager(Context context) {
      * {@link android.app.backup.BackupAgent} subclass will be scheduled when you
      * call this method.
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.076 -0500", hash_original_method = "ADE0596EF26D37CE11FFEC5E571C37D4", hash_generated_method = "BF4AC2D842D44FB6ABE35CE29B125D9F")
     
 public void dataChanged() {
@@ -107,6 +108,7 @@ public void dataChanged() {
      *
      * @return Zero on success; nonzero on error.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.081 -0500", hash_original_method = "0F46E379860B99708825D89131970D97", hash_generated_method = "4F9C77C32BC694F410AB977B57EE9DF9")
     
 public int requestRestore(RestoreObserver observer) {
@@ -135,6 +137,7 @@ public int requestRestore(RestoreObserver observer) {
      * {@link android.app.backup.RestoreSession} class for documentation on that process.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.083 -0500", hash_original_method = "4E9AC35DE965C4DA64E27C8C094DFEC3", hash_generated_method = "43192FDADA33ECB0B0000D4A4C95DF09")
     
 public RestoreSession beginRestoreSession() {

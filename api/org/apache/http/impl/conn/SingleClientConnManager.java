@@ -21,10 +21,6 @@ import org.apache.http.params.HttpParams;
 
 import dalvik.system.SocketTagger;
 
-
-
-
-
 public class SingleClientConnManager implements ClientConnectionManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.312 -0500", hash_original_field = "212B0A87EB1D1484BA67339913729EAD", hash_generated_field = "3A54ED9163F39DBD02547DB2ADF36FAA")
 
@@ -32,7 +28,6 @@ public class SingleClientConnManager implements ClientConnectionManager {
     "Invalid use of SingleClientConnManager: connection still allocated.\n" +
     "Make sure to release the connection before allocating another one.";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.310 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.314 -0500", hash_original_field = "FFCBB3FF9A8B5221F5621A7A590508B0", hash_generated_field = "262A27B6B6B1CBF25439CFECC3909997")
@@ -60,9 +55,6 @@ public class SingleClientConnManager implements ClientConnectionManager {
 
     protected volatile boolean isShutDown;
 
-
-
-
     /**
      * Creates a new simple connection manager.
      *
@@ -89,7 +81,6 @@ public SingleClientConnManager(HttpParams params,
 
     } // <constructor>
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.335 -0500", hash_original_method = "0E19810A97EBEE58216EC05F0D60A026", hash_generated_method = "7633383EE29DF3462EC06822CAD53A41")
     
 @Override
@@ -98,14 +89,13 @@ public SingleClientConnManager(HttpParams params,
         super.finalize();
     }
 
-
     // non-javadoc, see interface ClientConnectionManager
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.337 -0500", hash_original_method = "98F37EDA7C4377EF27FBBC8455A5DCE4", hash_generated_method = "F81D1E42481BBD388E0F662F8AE87096")
     
 public SchemeRegistry getSchemeRegistry() {
         return this.schemeRegistry;
     }
-
     
     /**
      * Hook for creating the connection operator.
@@ -119,6 +109,7 @@ public SchemeRegistry getSchemeRegistry() {
      *
      * @return  the connection operator to use
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.340 -0500", hash_original_method = "25E4E60569E24699D7326BD2975E9BC2", hash_generated_method = "CDFBE14A441ACDD32840AD53090D9F1C")
     
 protected ClientConnectionOperator
@@ -126,7 +117,6 @@ protected ClientConnectionOperator
 
         return new DefaultClientConnectionOperator(schreg);
     }
-
 
     /**
      * Asserts that this manager is not shut down.
@@ -141,7 +131,6 @@ protected final void assertStillUp()
         if (this.isShutDown)
             throw new IllegalStateException("Manager is shut down.");
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:35.235 -0400", hash_original_method = "C57EA524B73906635020F1375B79652C", hash_generated_method = "ACFDDA8919D9EA92ACFD0D9859DA5746")
     public final ClientConnectionRequest requestConnection(
@@ -179,7 +168,6 @@ public ManagedClientConnection getConnection(
         //};
     }
 
-
     /**
      * Obtains a connection.
      * This method does not block.
@@ -189,6 +177,7 @@ public ManagedClientConnection getConnection(
      * @return  a connection that can be used to communicate
      *          along the given route
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.353 -0500", hash_original_method = "781D1E313D4AFDE231A72D7CBA370F5D", hash_generated_method = "38849830D340DFE19D1DD85AD4AFB2AB")
     
 public ManagedClientConnection getConnection(HttpRoute route, Object state) {
@@ -254,7 +243,6 @@ public ManagedClientConnection getConnection(HttpRoute route, Object state) {
 
         return managedConn;
     }
-
 
     // non-javadoc, see interface ClientConnectionManager
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.356 -0500", hash_original_method = "ECDB4EF7528DEE3D21C1E4EB659EC445", hash_generated_method = "23C6299D37BFC32F656704593996FC88")
@@ -329,7 +317,6 @@ public void closeExpiredConnections() {
         }
     }
 
-
     // non-javadoc, see interface ClientConnectionManager
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.362 -0500", hash_original_method = "F34DBDBB0F8CB1363DA5802203A9DE31", hash_generated_method = "DF67B8C0B57B0FBF4AB44E8A4500B016")
     
@@ -355,7 +342,6 @@ public void closeIdleConnections(long idletime, TimeUnit tunit) {
         }
     }
 
-
     // non-javadoc, see interface ClientConnectionManager
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.364 -0500", hash_original_method = "3B23C31C02DC0AC3A698CF8CD25A20B9", hash_generated_method = "17A13C2CF7093AC2A663D1E05FB1F408")
     
@@ -376,7 +362,6 @@ public void shutdown() {
             uniquePoolEntry = null;
         }
     }
-
     
     protected class PoolEntry extends AbstractPoolEntry {
 
@@ -403,7 +388,6 @@ protected void close()
                 connection.close();
         }
 
-
         /**
          * Shuts down the connection in this pool entry.
          */
@@ -416,11 +400,8 @@ protected void shutdown()
             if (connection.isOpen())
                 connection.shutdown();
         }
-
         
     }
-
-
     
     protected class ConnAdapter extends AbstractPooledConnAdapter {
 
@@ -437,10 +418,8 @@ protected ConnAdapter(PoolEntry entry, HttpRoute route) {
             markReusable();
             entry.route = route;
         }
-
         
     }
-
 
     /**
      * Revokes the currently issued connection.

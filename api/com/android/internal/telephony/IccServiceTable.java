@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class IccServiceTable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.349 -0500", hash_original_field = "63FE8CC83BB64485B90E615C6ABD7104", hash_generated_field = "890B9A5DF783AEB82BFD936CDBEA6DB7")
 
@@ -50,6 +46,7 @@ protected boolean isAvailable(int service) {
         return (mServiceTable[offset] & (1 << bit)) != 0;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.383 -0500", hash_original_method = "427975D3C71DD8A8E9A905B09CF356ED", hash_generated_method = "363CE653C852FFB0A718CF56B3A3D420")
     
 public String toString() {
@@ -79,7 +76,6 @@ public String toString() {
         }
         return builder.append(" }").toString();
     }
-
     
 }
 

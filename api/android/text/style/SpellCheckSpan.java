@@ -8,13 +8,8 @@ import android.os.Parcel;
 import android.text.ParcelableSpan;
 import android.text.TextUtils;
 
-
-
-
-
 public class SpellCheckSpan implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.444 -0500", hash_original_field = "084B0C868B1F8BD7E3BE83E6B71E75D7", hash_generated_field = "CD03D035E3A34C62C050AB1056925600")
-
 
     private boolean mSpellCheckInProgress;
 
@@ -56,13 +51,13 @@ public boolean isSpellCheckInProgress() {
         dest.writeInt(mSpellCheckInProgress ? 1 : 0);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.464 -0500", hash_original_method = "8BC137FF3CFAC8D1FC70CD10E3E0E733", hash_generated_method = "707A5D23ABAB90A54C1D8C1E36C59126")
     
 @Override
     public int getSpanTypeId() {
         return TextUtils.SPELL_CHECK_SPAN;
     }
-
     
 }
 

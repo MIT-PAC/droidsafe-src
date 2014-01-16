@@ -32,10 +32,6 @@ import com.google.android.collect.Maps;
 
 import dalvik.system.BlockGuard;
 
-
-
-
-
 final class SharedPreferencesImpl implements SharedPreferences {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.838 -0500", hash_original_method = "C980122577ED5655D64E7B6AE9CD1D79", hash_generated_method = "7553570DC3BCA4BBFAE080EB7AEA124E")
@@ -91,7 +87,6 @@ private static FileOutputStream createFileOutputStream(File file) {
     private  int mMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.810 -0500", hash_original_field = "B60D788EBD863DB6EE8FD847584FBB7F", hash_generated_field = "9D9685A7435D44306A90CB052DCBD9B4")
 
-
     private Map<String, Object> mMap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.812 -0500", hash_original_field = "2CA12ECDBDC660DDAEB2B0A2C01D06B2", hash_generated_field = "218913F8CAD5DFBC796CF278F1F6F361")
 
@@ -106,7 +101,6 @@ private static FileOutputStream createFileOutputStream(File file) {
 
     private long mStatSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.821 -0500", hash_original_field = "C4804E1990444728DCF9EED976F9CF6C", hash_generated_field = "D1F20D8D55C67F61CAC77B996641DBA2")
-
 
     private final Object mWritingToDiskLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.826 -0500", hash_original_field = "44072DA2DA212B55C99058EB01B866C3", hash_generated_field = "34D518B65819EB832F27E3847E67CF23")
@@ -249,6 +243,7 @@ private void awaitLoadedLocked() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.851 -0500", hash_original_method = "BA8526BB1455076706AECC9BAC06F7D3", hash_generated_method = "ECB33FC46975FA69CE8C28BBBA3C60BB")
     
 public Map<String, ?> getAll() {
@@ -259,6 +254,7 @@ public Map<String, ?> getAll() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.853 -0500", hash_original_method = "4363C372EF13513A221D5D74A24EBA33", hash_generated_method = "17A5DE3268095F5141810B524316C349")
     
 public String getString(String key, String defValue) {
@@ -269,6 +265,7 @@ public String getString(String key, String defValue) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.856 -0500", hash_original_method = "66BFB743F0303E06F65F01D81F24C82B", hash_generated_method = "3257449D6FCC49EACC659EEDC81B8928")
     
 public Set<String> getStringSet(String key, Set<String> defValues) {
@@ -279,6 +276,7 @@ public Set<String> getStringSet(String key, Set<String> defValues) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.858 -0500", hash_original_method = "ACC29E9B287DA38F520685100499E9BD", hash_generated_method = "793DD6153732330EE594C05370693AC7")
     
 public int getInt(String key, int defValue) {
@@ -288,6 +286,7 @@ public int getInt(String key, int defValue) {
             return v != null ? v : defValue;
         }
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.860 -0500", hash_original_method = "44BE6AE8D3AB2ABE731A78B854B12E07", hash_generated_method = "16DF23A599684AF0C176C7762E0FC2B2")
     
 public long getLong(String key, long defValue) {
@@ -297,6 +296,7 @@ public long getLong(String key, long defValue) {
             return v != null ? v : defValue;
         }
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.862 -0500", hash_original_method = "E216C3CDDFA2EB08E1EA436EA866244B", hash_generated_method = "DC658E8543868358F6E8FDF0101D67FC")
     
 public float getFloat(String key, float defValue) {
@@ -324,7 +324,6 @@ public boolean contains(String key) {
             return mMap.containsKey(key);
         }
     }
-
     
     private static class MemoryCommitResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.872 -0500", hash_original_field = "425E2198510032AC48F945A666365579", hash_generated_field = "847375890450F151D556659ED58991B9")
@@ -346,7 +345,6 @@ public boolean contains(String key) {
 
         public volatile boolean writeToDiskResult = false;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.256 -0400", hash_original_method = "1F3E23CA54BAEE886A8B49EA267FA6D4", hash_generated_method = "1F3E23CA54BAEE886A8B49EA267FA6D4")
         public MemoryCommitResult ()
         {
@@ -359,11 +357,8 @@ public void setDiskWriteResult(boolean result) {
             writeToDiskResult = result;
             writtenToDiskLatch.countDown();
         }
-
         
     }
-
-
     
     public final class EditorImpl implements Editor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.890 -0500", hash_original_field = "3FC71DF7D3FFEA41D867531704814F5E", hash_generated_field = "EAED15AFA724D9B204324BD6499C436E")
@@ -583,7 +578,6 @@ private void notifyListeners(final MemoryCommitResult mcr) {
                     });
             }
         }
-
         
     }
 

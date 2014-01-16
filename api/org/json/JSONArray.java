@@ -8,18 +8,16 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-
-
-
 public class JSONArray {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.118 -0500", hash_original_field = "A3E8C7EC069A9E0F015BF0FA6AB144B4", hash_generated_field = "76A4FC356F020E02D923B1E56C39C10C")
-
 
     private  List<Object> values;
 
     /**
      * Creates a {@code JSONArray} with no values.
      */
+    @DSComment("no input, no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.121 -0500", hash_original_method = "1427CA478AAC933787CA982EEEA58E55", hash_generated_method = "2ECBE9A720E52DB096754778C599BC2A")
     
 public JSONArray() {
@@ -83,6 +81,8 @@ public JSONArray(String json) throws JSONException {
     /**
      * Returns the number of values in this array.
      */
+    @DSComment("no input, no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.131 -0500", hash_original_method = "2C5D59A27A6C313C8872AC341D9D75C0", hash_generated_method = "3AACFABE68E73FA43986B37F3043990F")
     
 public int length() {
@@ -149,6 +149,8 @@ public JSONArray put(long value) {
      *     array to be in an inconsistent state.
      * @return this array.
      */
+    @DSComment("nothing useful in object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.142 -0500", hash_original_method = "1D7645A229713F67337A58F8FF42D21C", hash_generated_method = "82437EE5156066785EE68B7C3A2264D7")
     
 public JSONArray put(Object value) {
@@ -163,6 +165,7 @@ public JSONArray put(Object value) {
      *
      * @return this array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.144 -0500", hash_original_method = "A8D9FD0A2FF792A00A29218BCE37DF7B", hash_generated_method = "3FCD33BB0802F5EBFF717FF4F02EDA89")
     
 public JSONArray put(int index, boolean value) throws JSONException {
@@ -178,6 +181,7 @@ public JSONArray put(int index, boolean value) throws JSONException {
      *     {@link Double#isInfinite() infinities}.
      * @return this array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.146 -0500", hash_original_method = "EB27801A89D2451AEBF6D71C639BF890", hash_generated_method = "0D580EDBEF0BBFF5D77F8DB8DEA5850C")
     
 public JSONArray put(int index, double value) throws JSONException {
@@ -191,6 +195,7 @@ public JSONArray put(int index, double value) throws JSONException {
      *
      * @return this array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.148 -0500", hash_original_method = "95364EFCBA8D50C1E1F228177A921191", hash_generated_method = "D01A68C4E36600A075B12B2BECD6C64A")
     
 public JSONArray put(int index, int value) throws JSONException {
@@ -204,6 +209,7 @@ public JSONArray put(int index, int value) throws JSONException {
      *
      * @return this array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.151 -0500", hash_original_method = "3F2291B7B045A442A1A296D04FF74C3B", hash_generated_method = "331C4CA90A1EF52AEBC951490AF5DF55")
     
 public JSONArray put(int index, long value) throws JSONException {
@@ -221,6 +227,7 @@ public JSONArray put(int index, long value) throws JSONException {
      *     infinities}.
      * @return this array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.154 -0500", hash_original_method = "965F91AFDF1516EF58CC39AD3E1136B7", hash_generated_method = "FB88B16619C2545F5372C618D722FB65")
     
 public JSONArray put(int index, Object value) throws JSONException {
@@ -253,6 +260,9 @@ public boolean isNull(int index) {
      *     that value is the {@code null} reference. This method returns
      *     normally if the value is {@code JSONObject#NULL}.
      */
+    @DSComment("nothing useful in int")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.159 -0500", hash_original_method = "2917FB45D7E32294FB2932AB5B08992C", hash_generated_method = "5EED0C1B528791A5B50CA8E6FBD90F09")
     
 public Object get(int index) throws JSONException {
@@ -327,6 +337,7 @@ public boolean optBoolean(int index, boolean fallback) {
      * @throws JSONException if the value at {@code index} doesn't exist or
      *     cannot be coerced to a double.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.170 -0500", hash_original_method = "6D74AEBF7F111E364BD2DB0E7727FAF6", hash_generated_method = "F5749A7B907974AF24E1731993E89C58")
     
 public double getDouble(int index) throws JSONException {
@@ -367,6 +378,7 @@ public double optDouble(int index, double fallback) {
      * @throws JSONException if the value at {@code index} doesn't exist or
      *     cannot be coerced to a int.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.177 -0500", hash_original_method = "853222C548896141F9D1D8AF0338F5C4", hash_generated_method = "4C51124504E2CD640D7DF46E1E1C6C76")
     
 public int getInt(int index) throws JSONException {
@@ -407,6 +419,7 @@ public int optInt(int index, int fallback) {
      * @throws JSONException if the value at {@code index} doesn't exist or
      *     cannot be coerced to a long.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.183 -0500", hash_original_method = "56F71130ADC070DD70D4CA02CA42F381", hash_generated_method = "48E18E91DB48E9BD0A5BFEC4E7D094C6")
     
 public long getLong(int index) throws JSONException {
@@ -446,6 +459,9 @@ public long optLong(int index, long fallback) {
      *
      * @throws JSONException if no such value exists.
      */
+    @DSComment("nothing useful in int")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.190 -0500", hash_original_method = "7F7D1138F84D636CF19BD9329533631C", hash_generated_method = "0365BDA66A795FC988F6F320537F1441")
     
 public String getString(int index) throws JSONException {
@@ -461,6 +477,8 @@ public String getString(int index) throws JSONException {
      * Returns the value at {@code index} if it exists, coercing it if
      * necessary. Returns the empty string if no such value exists.
      */
+    @DSComment("nothing useful in int")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.192 -0500", hash_original_method = "C31202553EDC4F0A1E4B21CAD06ABEC4", hash_generated_method = "544153A500274940BF25956F852239DC")
     
 public String optString(int index) {
@@ -486,6 +504,7 @@ public String optString(int index, String fallback) {
      * @throws JSONException if the value doesn't exist or is not a {@code
      *     JSONArray}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.197 -0500", hash_original_method = "173A28EF43B750DEF6376D4E3E2F6DD2", hash_generated_method = "459C1ED143E63E9E494C51B86E927624")
     
 public JSONArray getJSONArray(int index) throws JSONException {
@@ -515,6 +534,9 @@ public JSONArray optJSONArray(int index) {
      * @throws JSONException if the value doesn't exist or is not a {@code
      *     JSONObject}.
      */
+    @DSComment("nothing useful in int")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.202 -0500", hash_original_method = "EA5692C9D71198B472B917468564A78A", hash_generated_method = "41FD830A311E39BCE38061C86149FC0E")
     
 public JSONObject getJSONObject(int index) throws JSONException {
@@ -544,6 +566,7 @@ public JSONObject optJSONObject(int index) {
      * strings will be coerced to strings. This method returns null if either
      * array is empty.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.207 -0500", hash_original_method = "CEEBF6D79C62E432FE9EF262922223A6", hash_generated_method = "03989B8AB15D382B730F1AA7C698EEA1")
     
 public JSONObject toJSONObject(JSONArray names) throws JSONException {
@@ -609,6 +632,7 @@ public String join(String separator) throws JSONException {
      * @param indentSpaces the number of spaces to indent for each level of
      *     nesting.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:11.213 -0500", hash_original_method = "161CBAA0F7E505CC65BF62A9F4C8490E", hash_generated_method = "89736320EFA9E85B06F0454670E154AA")
     
 public String toString(int indentSpaces) throws JSONException {
@@ -639,7 +663,6 @@ void writeTo(JSONStringer stringer) throws JSONException {
         // diverge from the original, which doesn't implement hashCode
         return values.hashCode();
     }
-
     
 }
 

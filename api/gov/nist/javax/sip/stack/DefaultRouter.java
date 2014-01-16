@@ -27,18 +27,11 @@ import javax.sip.address.URI;
 import javax.sip.header.ViaHeader;
 import javax.sip.message.Request;
 
-
-
-
-
-
 public class DefaultRouter implements Router {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.132 -0500", hash_original_field = "03821C4D777C0A4AB8577E0C5F2371D6", hash_generated_field = "B028268F85C87F49A0E45B93954BF938")
 
-
     private SipStackImpl sipStack;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.134 -0500", hash_original_field = "F732783B6547E2F4AE4819E261C89621", hash_generated_field = "EB3744EEB0666E12CFAB5865A55F554C")
-
 
     private Hop defaultRoute;
 
@@ -102,6 +95,7 @@ public DefaultRouter(SipStack sipStack, String defaultRoute) {
      *            is the sip request to route.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.144 -0500", hash_original_method = "5920A86ACDD933EC7CFC2B95A34FE620", hash_generated_method = "D3DAE52BFAEF18F6BBC76B854B4C5773")
     
 public Hop getNextHop(Request request) throws SipException {
@@ -233,7 +227,6 @@ public void fixStrictRouting(SIPRequest req) {
      * @return
      */
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.150 -0500", hash_original_method = "1A8C9A0DF77761777787B14E70DB6165", hash_generated_method = "3A7A70F4AA7EA0B40E7A88DF9227401C")
     
 private final Hop createHop(SipURI sipUri, Request request) {
@@ -273,6 +266,7 @@ private final Hop createHop(SipURI sipUri, Request request) {
      *         this.getNextHops((SIPRequest)request); }
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.153 -0500", hash_original_method = "4C71B768C5A06ACD6891DA2692157012", hash_generated_method = "D4FA1AE20F412895E9950D7AAD4B0640")
     
 public javax.sip.address.Hop getOutboundProxy() {
@@ -284,6 +278,7 @@ public javax.sip.address.Hop getOutboundProxy() {
      *
      * @see javax.sip.address.Router#getNextHop(javax.sip.message.Request)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.156 -0500", hash_original_method = "C9341668DF04FCD8B03458AAEB056098", hash_generated_method = "A4BD2AA04B9A90D6BF97BA1652C80190")
     
 public ListIterator getNextHops(Request request) {
@@ -296,7 +291,6 @@ public ListIterator getNextHops(Request request) {
         }
 
     }
-
     
 }
 

@@ -5,35 +5,25 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public class RadialGradient extends Shader {
-
     
-    @DSModeled(DSC.SPEC)
     private static int nativeCreate1(float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate2(float x, float y, float radius,
             int color0, int color1, int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SPEC)
     private static int nativePostCreate1(int native_shader, float x, float y, float radius,
             int colors[], float positions[], int tileMode) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativePostCreate2(int native_shader, float x, float y, float radius,
             int color0, int color1, int tileMode) {
         return DSUtils.UNKNOWN_INT;
@@ -86,7 +76,6 @@ public RadialGradient(float x, float y, float radius,
         native_shader = nativePostCreate2(native_instance, x, y, radius, color0, color1,
                 tile.nativeInt);
     }
-
     
 }
 

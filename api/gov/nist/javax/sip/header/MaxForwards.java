@@ -8,11 +8,6 @@ import javax.sip.InvalidArgumentException;
 import javax.sip.header.MaxForwardsHeader;
 import javax.sip.header.TooManyHopsException;
 
-
-
-
-
-
 public class MaxForwards extends SIPHeader implements MaxForwardsHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.756 -0500", hash_original_field = "D9775AA801F210D5CECF25591E61CB22", hash_generated_field = "A999D5831FAE9A2CB5D83E10B325A89A")
 
@@ -39,6 +34,7 @@ public MaxForwards( int m ) throws InvalidArgumentException {
     /** get the MaxForwards field.
      * @return the maxForwards member.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.781 -0500", hash_original_method = "938FE465D8E1495DA17B5EBE827AE012", hash_generated_method = "5D411B80736C63B0B65BC65395AF0617")
     
 public int getMaxForwards() {

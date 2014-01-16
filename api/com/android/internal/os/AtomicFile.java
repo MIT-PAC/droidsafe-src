@@ -13,10 +13,6 @@ import java.io.IOException;
 
 import android.os.FileUtils;
 
-
-
-
-
 public class AtomicFile {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.284 -0500", hash_original_field = "0EF2CCD9F04729765DB1F68752E0F610", hash_generated_field = "AB7EB62D4846E04C9549A0F948CCC84A")
 
@@ -32,6 +28,7 @@ public AtomicFile(File baseName) {
         mBackupName = new File(baseName.getPath() + ".bak");
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.291 -0500", hash_original_method = "9A558AA4F639B650B9F7EAEB27AD7615", hash_generated_method = "E09F7B21F8463E6D961987C1D71EC0B8")
     
 public File getBaseFile() {
@@ -135,6 +132,7 @@ public FileInputStream openRead() throws FileNotFoundException {
         return new FileInputStream(mBaseName);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:50.309 -0500", hash_original_method = "69475477B3077359758F883E80DC53D4", hash_generated_method = "38F70CCCEE755E1F4C3094935B1F75BA")
     
 public byte[] readFully() throws IOException {
@@ -164,7 +162,6 @@ public byte[] readFully() throws IOException {
             stream.close();
         }
     }
-
     
 }
 

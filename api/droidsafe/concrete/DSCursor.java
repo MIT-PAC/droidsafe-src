@@ -25,8 +25,6 @@ import android.database.DataSetObserver;
 import android.net.Uri;
 import android.os.Bundle;
 
-
-
 /**
  * <P>
  * A mock {@link android.database.Cursor} class that isolates the test code from real
@@ -40,7 +38,6 @@ import android.os.Bundle;
 public class DSCursor implements Cursor {
 	/**/
 	
-	@DSModeled(DSC.SPEC)
 	public DSCursor(Uri uri, String[] projection, String selection, String[] selectionArgs, String sortOrder) {
 		addTaint(uri.getTaint());
 		addTaint(projection.toString().getTaint());
@@ -75,8 +72,7 @@ public class DSCursor implements Cursor {
     public boolean isNull(int columnIndex) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
-
-    @DSModeled(DSC.SPEC)
+    
     public int getInt(int columnIndex) {
         return getTaintInt();
     }
@@ -132,8 +128,7 @@ public class DSCursor implements Cursor {
     public boolean move(int offset) {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
-
-    @DSModeled(DSC.SPEC)
+    
     public boolean moveToFirst() {
         return true;
     }
@@ -161,8 +156,7 @@ public class DSCursor implements Cursor {
     public void deactivate() {
         throw new UnsupportedOperationException("unimplemented mock method");
     }
-
-    @DSModeled(DSC.SPEC)
+    
     public void close() {
     }
 

@@ -5,12 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class DisplayMetrics {
-
     
-    @DSModeled(DSC.BAN)
     private static int getDeviceDensity() {
         return 0;
     }
@@ -75,25 +71,23 @@ public class DisplayMetrics {
 
     public float noncompatYdpi;
 
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.956 -0500", hash_original_method = "72B3D95037FCF3814777C19051FFD99D", hash_generated_method = "29C6DAE2839B5BA5C8B8A981B32ADBD1")
     
 public DisplayMetrics() {
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void setTo(DisplayMetrics o) {
         addTaint(o.getTaint());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setToDefaults() {
     }
-
     
     @Override
-	@DSModeled(DSC.SAFE)
+	
     public String toString() {
         String str = new String();
         str.addTaint(getTaint());

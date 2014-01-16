@@ -6,13 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
 public abstract class ContentHandler {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.311 -0400", hash_original_method = "34235149EC6F1F14A33FF6A78502D340", hash_generated_method = "34235149EC6F1F14A33FF6A78502D340")
     public ContentHandler ()
     {
@@ -44,6 +39,7 @@ public abstract Object getContent(URLConnection uConn) throws IOException;
      *             if an error occurred while obtaining the content.
      */
     // Class arg not generified in the spec.
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.864 -0500", hash_original_method = "8659195BC6B56411F2DC6C9C918B5FC3", hash_generated_method = "1AD0408A977EABBE121234307AE2FBAD")
     
 @SuppressWarnings("unchecked")
@@ -57,7 +53,6 @@ public abstract Object getContent(URLConnection uConn) throws IOException;
         }
         return null;
     }
-
     
 }
 

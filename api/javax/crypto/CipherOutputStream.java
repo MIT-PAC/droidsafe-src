@@ -10,11 +10,8 @@ import java.io.OutputStream;
 
 import libcore.io.Streams;
 
-
-
 public class CipherOutputStream extends FilterOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.306 -0500", hash_original_field = "250DADA90730C7EEAE534A8757581875", hash_generated_field = "2FF9F58B969F4213F59ABA296D3A8FC3")
-
 
     private  Cipher cipher;
 
@@ -27,6 +24,8 @@ public class CipherOutputStream extends FilterOutputStream {
      * @param c
      *            the cipher to process the data with.
      */
+    @DSComment("cipher input stream")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.310 -0500", hash_original_method = "F0906B408310381889BAAA52B967EE5F", hash_generated_method = "0ADA483B9C2CFED5418C77FDF989EE2D")
     
 public CipherOutputStream(OutputStream os, Cipher c) {
@@ -57,6 +56,7 @@ protected CipherOutputStream(OutputStream os) {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.319 -0500", hash_original_method = "C558B2B88CBF261C0FBBE5741F96019C", hash_generated_method = "23C1BFB0F79EE3063A60285E2CC71033")
     
 @Override public void write(int b) throws IOException {
@@ -76,6 +76,8 @@ protected CipherOutputStream(OutputStream os) {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSComment("IO operations")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.322 -0500", hash_original_method = "5836CE17B48698DBC2254777B1086E69", hash_generated_method = "303B5B5237A2689D22F4C6FFC92947DF")
     
 @Override public void write(byte[] b, int off, int len) throws IOException {
@@ -111,6 +113,8 @@ protected CipherOutputStream(OutputStream os) {
      * @throws IOException
      *             if an error occurs.
      */
+    @DSComment("no impacts")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.330 -0500", hash_original_method = "C8083FF618F908C15CB2AD663C443A1B", hash_generated_method = "974459A89F685B5913D32585BCCCECBF")
     
 @Override
@@ -136,7 +140,6 @@ protected CipherOutputStream(OutputStream os) {
             }
         }
     }
-
     
 }
 

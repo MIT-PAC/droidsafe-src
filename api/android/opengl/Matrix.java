@@ -5,20 +5,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Matrix {
-
-
-    @DSModeled(DSC.SAFE)
+    
+    @DSComment("OpenGL Math")
+    @DSSafe(DSCat.GRAPHICS)
     public static void multiplyMM(float[] result, int resultOffset,
             float[] lhs, int lhsOffset, float[] rhs, int rhsOffset) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void multiplyMV(float[] resultVec,
             int resultVecOffset, float[] lhsMat, int lhsMatOffset,
             float[] rhsVec, int rhsVecOffset) {
@@ -192,6 +186,8 @@ public static boolean invertM(float[] mInv, int mInvOffset, float[] m,
      * @param near
      * @param far
      */
+    @DSComment("OpenGL Math")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.007 -0500", hash_original_method = "9787BFCD9D5823D1A5657457A23F3565", hash_generated_method = "12A7B14EF93BB6FE3B723AEAAD02B355")
     
 public static void orthoM(float[] m, int mOffset,
@@ -233,7 +229,6 @@ public static void orthoM(float[] m, int mOffset,
         m[mOffset + 9] = 0.0f;
         m[mOffset + 11] = 0.0f;
     }
-
 
     /**
      * Define a projection matrix in terms of six clip planes
@@ -353,6 +348,8 @@ public static float length(float x, float y, float z) {
      * @param sm returns the result
      * @param smOffset index into sm where the result matrix starts
      */
+    @DSComment("OpenGL Math")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.020 -0500", hash_original_method = "DB27B09118DDFEFAD7162035800A953E", hash_generated_method = "40285225095494248FB4953CF3A8BF53")
     
 public static void setIdentityM(float[] sm, int smOffset) {
@@ -397,6 +394,8 @@ public static void scaleM(float[] sm, int smOffset,
      * @param y scale factor y
      * @param z scale factor z
      */
+    @DSComment("OpenGL Math")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.026 -0500", hash_original_method = "16F064CAB0DDFBE8E594C269928942D4", hash_generated_method = "1CF4E43AAA489B4CF0D3BF2F7D9D5FD5")
     
 public static void scaleM(float[] m, int mOffset,
@@ -443,6 +442,8 @@ public static void translateM(float[] tm, int tmOffset,
      * @param y translation factor y
      * @param z translation factor z
      */
+    @DSComment("OpenGL Math")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.031 -0500", hash_original_method = "F6B39D6DC4A22DAD5E2F42A19BD8984E", hash_generated_method = "831EB332539CEABDF7F91BDE12A154DF")
     
 public static void translateM(
@@ -506,6 +507,8 @@ public static void rotateM(float[] m, int mOffset,
      * @param y scale factor y
      * @param z scale factor z
      */
+    @DSComment("OpenGL Math")
+    @DSSafe(DSCat.GRAPHICS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.041 -0500", hash_original_method = "4AA376E2BF601132BE4BA0B00CFD24B2", hash_generated_method = "5BC8F59C9ED99A339A3210A9285377AB")
     
 public static void setRotateM(float[] rm, int rmOffset,

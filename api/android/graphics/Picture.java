@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Picture {
@@ -25,50 +21,35 @@ public static Picture createFromStream(InputStream stream) {
         return new Picture(
             nativeCreateFromStream(stream, new byte[WORKING_STREAM_STORAGE]));
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int nativeSrcOr0) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromStream(InputStream stream,
                                                 byte[] storage) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeBeginRecording(int nativeCanvas,
                                                     int w, int h) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeEndRecording(int nativeCanvas) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDraw(int nativeCanvas, int nativePicture) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeWriteToStream(int nativePicture,
                                            OutputStream stream, byte[] storage) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int nativePicture) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.310 -0500", hash_original_field = "93DB6FF890F60901303B2AEAD85141C3", hash_generated_field = "16A3D3E1F1A46232673D292E95776672")
-
 
     private static final int WORKING_STREAM_STORAGE = 16 * 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.306 -0500", hash_original_field = "BF90C31505C3DADC28E32235FEACDF52", hash_generated_field = "A1B5C5158D5DEB28A2820BEDFBA48246")
@@ -138,6 +119,8 @@ public void endRecording() {
      * Get the width of the picture as passed to beginRecording. This
      * does not reflect (per se) the content of the picture.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.323 -0500", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "119E6F88A6022FFF8C0BCF10E5D283FB")
     
     public int getWidth(){
@@ -145,18 +128,18 @@ public void endRecording() {
     	return getTaintInt();
     }
 
-
     /**
      * Get the height of the picture as passed to beginRecording. This
      * does not reflect (per se) the content of the picture.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.327 -0500", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "A50AB7B99158205015AA04248040D6D3")
     
     public int getHeight(){
     	//Formerly a native method
     	return getTaintInt();
     }
-
     
     /**
      * Draw this picture on the canvas. The picture may have the side effect
@@ -164,6 +147,8 @@ public void endRecording() {
      * 
      * @param canvas  The picture is drawn to this canvas 
      */
+    @DSComment("Unintended picture could be put here")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.329 -0500", hash_original_method = "DC7CFB067EE80684132B2B92372F3B79", hash_generated_method = "5B34C796B6326931CE918675C2735673")
     
 public void draw(Canvas canvas) {
@@ -195,7 +180,6 @@ public void writeToStream(OutputStream stream) {
 protected void finalize() throws Throwable {
         nativeDestructor(mNativePicture);
     }
-
     
     private static class RecordingCanvas extends Canvas {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.370 -0500", hash_original_field = "52B3607D63396A9BD84D7C31E75E8159", hash_generated_field = "C3E778DE5EE29E2C4788703FE56860BD")
@@ -209,6 +193,7 @@ public RecordingCanvas(Picture pict, int nativeCanvas) {
             mPicture = pict;
         }
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:26.375 -0500", hash_original_method = "6CF0BDC754DD98C47DAA94E49A23367D", hash_generated_method = "AFB1E851686B7B4C837A7226FC3C7F45")
         
 @Override
@@ -227,7 +212,6 @@ public RecordingCanvas(Picture pict, int nativeCanvas) {
             }
             super.drawPicture(picture);
         }
-
         
     }
     

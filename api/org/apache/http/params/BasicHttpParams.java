@@ -9,20 +9,16 @@ import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-
-
-
-
-
 public final class BasicHttpParams extends AbstractHttpParams implements Serializable, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.438 -0500", hash_original_field = "BC5EFD781344EAB47B90C0C271E51038", hash_generated_field = "F3BCAA56010B705CF935A8FD863598FA")
-
 
     private static final long serialVersionUID = -7086398485908701455L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.440 -0500", hash_original_field = "8E1CDF2B2F62A3D8B019D3F373DAEE1F", hash_generated_field = "40F49A62ECB5E9A3DA22A5AD615034CA")
 
     private HashMap parameters;
 
+    @DSComment("Http parameter structures")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:31.443 -0500", hash_original_method = "A376B34D8EF6688DA5CE35D3A9BF9679", hash_generated_method = "8F1AC69ECFF81B618B2B0A098F561EF5")
     
 public BasicHttpParams() {
@@ -64,7 +60,6 @@ public boolean removeParameter(String name) {
             return false;
         }
     }
-
     
     /**
      * Assigns the value to all the parameter with the given names

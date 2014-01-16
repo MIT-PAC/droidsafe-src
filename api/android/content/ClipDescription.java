@@ -10,10 +10,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class ClipDescription implements Parcelable {
 
     /**
@@ -71,7 +67,6 @@ public ClipDescription[] newArray(int size) {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.180 -0500", hash_original_field = "3688992A2E5C86A7BA94DE38FB1043D1", hash_generated_field = "3688992A2E5C86A7BA94DE38FB1043D1")
 
-
      CharSequence mLabel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.182 -0500", hash_original_field = "97CE940966C9ECB62D16CE8136A149A4", hash_generated_field = "97CE940966C9ECB62D16CE8136A149A4")
 
@@ -113,6 +108,7 @@ ClipDescription(Parcel in) {
     /**
      * Return the label for this clip.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.192 -0500", hash_original_method = "4A1E1E1996A16BAAC783C4D4608DA412", hash_generated_method = "BF2D8CE2895BA065BC033E2D2EA0072E")
     
 public CharSequence getLabel() {
@@ -168,6 +164,7 @@ public String[] filterMimeTypes(String mimeType) {
     /**
      * Return the number of MIME types the clip is available in.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.198 -0500", hash_original_method = "B31C73D49DA2B2DFF06E53A9680B864B", hash_generated_method = "7647028CBCA068544A0E30BFAF13D352")
     
 public int getMimeTypeCount() {
@@ -177,6 +174,7 @@ public int getMimeTypeCount() {
     /**
      * Return one of the possible clip MIME types.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.201 -0500", hash_original_method = "764DD8C2717756748E8339CB8965B38B", hash_generated_method = "8A577E5623639225128CB346AD7975B8")
     
 public String getMimeType(int index) {
@@ -207,6 +205,7 @@ public void validate() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:39.208 -0500", hash_original_method = "B91E92C4C4B5B9EF26722F0E8D4A5B80", hash_generated_method = "25810F0526BB75DA5FFC2F84BC3E4C45")
     
 @Override

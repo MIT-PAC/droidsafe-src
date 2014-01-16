@@ -10,16 +10,11 @@ import android.os.HandlerThread;
 import android.os.Looper;
 import android.os.Message;
 
-
-
-
-
 public abstract class Filter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.028 -0500", hash_original_field = "06735F1D7E8213DB4DE5C9BB0F124BC6", hash_generated_field = "793222EB5D405FC1EB1B7701D18817D3")
 
     private static final String LOG_TAG = "Filter";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.031 -0500", hash_original_field = "2CA3CA6B8A881CF91799949F6B4EAC10", hash_generated_field = "5FAF72EED80F110BC27332069A109797")
-
     
     private static final String THREAD_NAME = "Filter";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.033 -0500", hash_original_field = "53A8F98E96147FE8AD28FA0550BDD35D", hash_generated_field = "59508486D6172BE2A85FA3BBA6DCA371")
@@ -30,23 +25,22 @@ public abstract class Filter {
     private static final int FINISH_TOKEN = 0xDEADBEEF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.037 -0500", hash_original_field = "BAEA207645ACF5A576E10EB1F988B5CA", hash_generated_field = "95F8A0CD9492F0837A9DA3FE5B46EFD4")
 
-
     private Handler mThreadHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.039 -0500", hash_original_field = "6E088CB61BF73A2A3667E617035F5D1B", hash_generated_field = "2CD0385D10AF873EE6FED55190565ADB")
 
     private Handler mResultHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.042 -0500", hash_original_field = "17F51DB4A25E80590853906CB798A74A", hash_generated_field = "80A4CE79B874839FC5345637AF2E83E5")
 
-
     private Delayer mDelayer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.044 -0500", hash_original_field = "83DB9DCBBD2D99A708D9A1934D5CD5AB", hash_generated_field = "E59081251AD157907AA4CE8B3D8E654E")
-
 
     private final Object mLock = new Object();
 
     /**
      * <p>Creates a new asynchronous filter.</p>
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.046 -0500", hash_original_method = "3A43B55E5FFADA496A080A897709E281", hash_generated_method = "EE9897E67685D32AA6B24C02E2653ECB")
     
 public Filter() {
@@ -78,12 +72,13 @@ public void setDelayer(Delayer delayer) {
      *
      * @see #filter(CharSequence, android.widget.Filter.FilterListener)
      */
+    @DSComment("Callback invoke happens in this method")
+    @DSSpec(DSCat.CALLBACK_INVOKE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.050 -0500", hash_original_method = "547418F5BDE1A6BA9449D3E97456DC38", hash_generated_method = "D8F21C75E056C2BC79D4899B662ABAFE")
     
 public final void filter(CharSequence constraint) {
         filter(constraint, null);
     }
-
     
     protected static class FilterResults {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.066 -0500", hash_original_field = "FB2332CB3D5BCF18F1EDBBFDCD55F2FA", hash_generated_field = "D3703C87CDEFAF1A6A55F65201CACA1D")
@@ -92,16 +87,15 @@ public final void filter(CharSequence constraint) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.068 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "21B1DF5337CCD3E0731435FB1361ED67")
 
         public int count;
+        @DSComment("not sensitive")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.064 -0500", hash_original_method = "4DBCD611B55919CEC0E695E7409A22D3", hash_generated_method = "CCF8E93BD33E3F617EF0EEFB9A043275")
         
 public FilterResults() {
             // nothing to see here
         }
-
         
     }
-
-
     
     private class RequestHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.075 -0500", hash_original_method = "6F9C1865AABC7FABBD177D227607C2E3", hash_generated_method = "C9051BA25B2E69DF9F2C8C3DDC61B275")
@@ -153,11 +147,8 @@ public void handleMessage(Message msg) {
                     break;
             }
         }
-
         
     }
-
-
     
     private class ResultsHandler extends Handler {
         
@@ -188,11 +179,8 @@ public void handleMessage(Message msg) {
                 args.listener.onFilterComplete(count);
             }
         }
-
         
     }
-
-
     
     private static class RequestArguments {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:37.088 -0500", hash_original_field = "A990B1A3EAE194295F4523C8D67C8224", hash_generated_field = "A990B1A3EAE194295F4523C8D67C8224")
@@ -205,17 +193,13 @@ public void handleMessage(Message msg) {
 
         FilterResults results;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:59.721 -0400", hash_original_method = "6E50E95F99D18D81DCBEFDBA0A1A41EC", hash_generated_method = "6E50E95F99D18D81DCBEFDBA0A1A41EC")
         public RequestArguments ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static interface FilterListener {
         
@@ -223,7 +207,6 @@ public void handleMessage(Message msg) {
     }
     
     public interface Delayer {
-
         
         long getPostingDelay(CharSequence constraint);
     }

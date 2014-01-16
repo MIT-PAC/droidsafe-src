@@ -6,14 +6,12 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
 public class AudioCodec {
 
     /**
      * Returns system supported audio codecs.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.960 -0500", hash_original_method = "A02F235322CEC49098638CFAA7891025", hash_generated_method = "D78F8061E8F13431B3661F566FE40755")
     
 public static AudioCodec[] getCodecs() {
@@ -30,6 +28,7 @@ public static AudioCodec[] getCodecs() {
      *     attribute, or null if it is not available.
      * @return The configured AudioCodec or {@code null} if it is not supported.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.963 -0500", hash_original_method = "4B34E1AD78FB7AEDA5C9AAEBE5789D37", hash_generated_method = "9CDF3EC00B2A7297DFC9321B0E5924EB")
     
 public static AudioCodec getCodec(int type, String rtpmap, String fmtp) {
@@ -87,7 +86,6 @@ public static AudioCodec getCodec(int type, String rtpmap, String fmtp) {
 
     public static final AudioCodec AMR = new AudioCodec(97, "AMR/8000", null);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.956 -0500", hash_original_field = "2D1D7205125A0AC4541043E7654C0C55", hash_generated_field = "C91EA36E4EEB99A1A60AD3DFD8BCE544")
-
 
     private static final AudioCodec[] sCodecs = {GSM_EFR, AMR, GSM, PCMU, PCMA};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.938 -0500", hash_original_field = "961B4204667A4AE2FF8DD374E6728ADE", hash_generated_field = "6AC5CE4BE311ED1283E9BD812937901E")

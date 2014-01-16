@@ -15,36 +15,26 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.ByteArrayBuffer;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public abstract class AbstractSessionOutputBuffer implements SessionOutputBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.241 -0500", hash_original_field = "FDC8CF5A8884568840B214A8BCF86783", hash_generated_field = "CA476214CA171474EF752CDA85E22F31")
 
-
     private static final byte[] CRLF = new byte[] {HTTP.CR, HTTP.LF};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.244 -0500", hash_original_field = "2F7BF5AB23B3C8B81910B9AFFC0C9C4E", hash_generated_field = "3BDE2E6C07EF32014555ADD4B032FE25")
-
     
     private static final int MAX_CHUNK = 256;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.246 -0500", hash_original_field = "F8DA3B27259A7CA8E9C9C224A6A7290E", hash_generated_field = "2BD7176B9CB0EEA2FAA19D55872406A1")
-
     
     private OutputStream outstream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.248 -0500", hash_original_field = "2D83C5E4D1BB2B49287194516D03B007", hash_generated_field = "C6CA0CD2A463E4556B9FE48D8551672D")
 
     private ByteArrayBuffer buffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.250 -0500", hash_original_field = "64A133D796EAE83898A5E51E6D434FEF", hash_generated_field = "76BAEB11C3552BFB23E0B4B99A533DB1")
-
         
     private String charset = HTTP.US_ASCII;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.253 -0500", hash_original_field = "1268E551E2D06835242E1DD85742F5B8", hash_generated_field = "9303ABFC1EF5CEEB446DE036D38A5721")
 
     private boolean ascii = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.255 -0500", hash_original_field = "80498DD6FD825DCA7A9A3D886278D44D", hash_generated_field = "D608E8E883C0ADFB9BB241D869189B8C")
-
     
     private HttpTransportMetricsImpl metrics;
     
@@ -179,6 +169,7 @@ public void writeLine(final CharArrayBuffer s) throws IOException {
         write(CRLF);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.277 -0500", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "0F09664C8D045EB8CE43D8B36FB12762")
     
 public HttpTransportMetrics getMetrics() {

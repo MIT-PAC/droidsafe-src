@@ -9,17 +9,14 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class BackgroundColorSpan extends CharacterStyle implements UpdateAppearance, ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.796 -0500", hash_original_field = "CF1046E2EF6F9B2B63BE18A3B2BC71FD", hash_generated_field = "118704B52DA650C4DCD23A9FC0B970FC")
 
-
     private  int mColor;
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.799 -0500", hash_original_method = "1BABE23E25570DA2EF62C4506697834B", hash_generated_method = "2BE46F90653194AA0EA6BE54B715823F")
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.799 -0500", hash_original_method = "1BABE23E25570DA2EF62C4506697834B", hash_generated_method = "2BE46F90653194AA0EA6BE54B715823F")
     
 public BackgroundColorSpan(int color) {
 		mColor = color;
@@ -31,6 +28,7 @@ public BackgroundColorSpan(Parcel src) {
         mColor = src.readInt();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.804 -0500", hash_original_method = "D24F62EA631AC1AF936FF48E9134FC5B", hash_generated_method = "A571725B2EED3A9BAADBD3F7FF75B3BA")
     
 public int getSpanTypeId() {
@@ -49,7 +47,10 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeInt(mColor);
     }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.812 -0500", hash_original_method = "C57B18EE451723AD85B8F6926D247DF6", hash_generated_method = "EF4C76447B892CD3AFF0D6AAAB37436B")
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.812 -0500", hash_original_method = "C57B18EE451723AD85B8F6926D247DF6", hash_generated_method = "EF4C76447B892CD3AFF0D6AAAB37436B")
     
 public int getBackgroundColor() {
 		return mColor;
@@ -61,7 +62,6 @@ public int getBackgroundColor() {
 	public void updateDrawState(TextPaint ds) {
 		ds.bgColor = mColor;
 	}
-
     
 }
 

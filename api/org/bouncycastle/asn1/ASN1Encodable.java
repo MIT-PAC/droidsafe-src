@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
-
-
-
-
-
 public abstract class ASN1Encodable implements DEREncodable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:18.888 -0500", hash_original_field = "C2DFC7BA8E3848A66D0A9E632D48E16B", hash_generated_field = "8DAACA94B2383555B621C242CE548E3A")
 
@@ -20,7 +15,6 @@ public abstract class ASN1Encodable implements DEREncodable {
 
     public static final String BER = "BER";
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.598 -0400", hash_original_method = "821D90F216C7C1EC15D73655F548D7FA", hash_generated_method = "821D90F216C7C1EC15D73655F548D7FA")
     public ASN1Encodable ()
     {

@@ -9,11 +9,6 @@ import gov.nist.javax.sip.address.AddressImpl;
 
 import javax.sip.header.ReplyToHeader;
 
-
-
-
-
-
 public final class ReplyTo extends AddressParametersHeader implements ReplyToHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.378 -0500", hash_original_field = "3A5B4FE5B18CE7B5DAE5AAAFFDB6AD99", hash_generated_field = "236E3B2333C15B09CBC94B2F5B379AB6")
 
@@ -74,6 +69,7 @@ public String encodeBody() {
      * Conveniance accessor function to get the hostPort field from the address
      * @return HostPort
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.393 -0500", hash_original_method = "44C2A950FA90F046EF96B0A5F25DEA38", hash_generated_method = "F596BC5BA68B5CC2EC3CBFF9B1755A33")
     
 public HostPort getHostPort() {
@@ -84,6 +80,7 @@ public HostPort getHostPort() {
      * Get the display name from the address.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.396 -0500", hash_original_method = "0AF5B36A8F5D506032669B65B9CFDD39", hash_generated_method = "00EBF039D8E78F649651183BA6D3C490")
     
 public String getDisplayName() {

@@ -20,11 +20,6 @@ import java.nio.charset.UnsupportedCharsetException;
 
 import org.xmlpull.v1.XmlSerializer;
 
-
-
-
-
-
 public class FastXmlSerializer implements XmlSerializer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.896 -0500", hash_original_field = "F5DC598791BF8B4F60F09293CF2C8060", hash_generated_field = "0DD90CFC5DE7761A0055893813D05AEB")
 
@@ -40,10 +35,8 @@ public class FastXmlSerializer implements XmlSerializer {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.899 -0500", hash_original_field = "A553C82762327F5371F732A66649DACF", hash_generated_field = "87B505129A889694149659B3C7493691")
 
-
     private static final int BUFFER_LEN = 8192;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.901 -0500", hash_original_field = "741D1F4A31B01ABB1488411D7243B1C1", hash_generated_field = "5E7BC4B7A0E4B0267814CE95DA4CE493")
-
 
     private final char[] mText = new char[BUFFER_LEN];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.903 -0500", hash_original_field = "25A5DEAC26D49039381CEC3AC02D8D8E", hash_generated_field = "649CC94BF1D5A5FECFE4D2F006B35728")
@@ -51,10 +44,8 @@ public class FastXmlSerializer implements XmlSerializer {
     private int mPos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.905 -0500", hash_original_field = "350034FEA94499CFE745BA9E56E8A320", hash_generated_field = "43DF8FED0AB3E82A21BAF8454C91DA12")
 
-
     private Writer mWriter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.907 -0500", hash_original_field = "73A4A3989B1458C88FDAFF3AF49183EC", hash_generated_field = "55417565DD3006A9600CB708A96EDA0C")
-
 
     private OutputStream mOutputStream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.910 -0500", hash_original_field = "5B8E3F0856E05AF3901853F33B659751", hash_generated_field = "7AD13F175ACC49B2AFF8D253EE3A496C")
@@ -64,7 +55,6 @@ public class FastXmlSerializer implements XmlSerializer {
 
     private ByteBuffer mBytes = ByteBuffer.allocate(BUFFER_LEN);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.915 -0500", hash_original_field = "1068FB7D0463ECB09F33F060A8F23290", hash_generated_field = "EF3E29BFAF7BB3B897FCD2054D06CB59")
-
 
     private boolean mInTag;
     
@@ -283,6 +273,7 @@ public void flush() throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.956 -0500", hash_original_method = "06A4B22AA2E8AAA8ED4F22B001D0D1FC", hash_generated_method = "AD1977A95A92321CD3381376A1D9747F")
     
 public int getDepth() {
@@ -295,18 +286,21 @@ public boolean getFeature(String name) {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.960 -0500", hash_original_method = "6A642C9EEC23AC32ED606658DA110E38", hash_generated_method = "8E60C110A76AD76E4BB807BBEC76B8C2")
     
 public String getName() {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.963 -0500", hash_original_method = "8F74E2B7FCD796BC320C8C37775EA11E", hash_generated_method = "CAC7F68CA509D5D9B9EC7821A14D85B3")
     
 public String getNamespace() {
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.965 -0500", hash_original_method = "1ADA26C4B32C10D168CE4DC5A8DC35EC", hash_generated_method = "7029907997E81993C4095770C0BDD6ED")
     
 public String getPrefix(String namespace, boolean generatePrefix)
@@ -314,6 +308,7 @@ public String getPrefix(String namespace, boolean generatePrefix)
         throw new UnsupportedOperationException();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.968 -0500", hash_original_method = "DA8A49250701B8FD4E3C9A3CEF97A891", hash_generated_method = "91167A8B9249FDB989D95C065C15ECAD")
     
 public Object getProperty(String name) {
@@ -333,8 +328,8 @@ public void processingInstruction(String text) throws IOException, IllegalArgume
             IllegalStateException {
         throw new UnsupportedOperationException();
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.725 -0400", hash_original_method = "5124EC4444894C7656E2A35FD8B594F3", hash_generated_method = "80085EF16FCED32BD4AE180445602D71")
     public void setFeature(String name, boolean state) throws IllegalArgumentException,
             IllegalStateException {
@@ -354,6 +349,7 @@ public void processingInstruction(String text) throws IOException, IllegalArgume
         //throw new UnsupportedOperationException();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.982 -0500", hash_original_method = "13E00C790126A70B4466C6B565B1D4E5", hash_generated_method = "106EF766B12A18B9F13C17D752E71FE4")
     
 public void setOutput(OutputStream os, String encoding) throws IOException,
@@ -386,6 +382,7 @@ public void setOutput(Writer writer) throws IOException, IllegalArgumentExceptio
         mWriter = writer;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.986 -0500", hash_original_method = "202C0F3DB21954078DC527D4BA1F5AD5", hash_generated_method = "419950AA9551BB80A1FCF919A85C0843")
     
 public void setPrefix(String prefix, String namespace) throws IOException,
@@ -393,6 +390,7 @@ public void setPrefix(String prefix, String namespace) throws IOException,
         throw new UnsupportedOperationException();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:44.989 -0500", hash_original_method = "C7E5AAECD061448068B655F2A9283D67", hash_generated_method = "83A4EF7FAF51B168AADCC3C30A955C03")
     
 public void setProperty(String name, Object value) throws IllegalArgumentException,

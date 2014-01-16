@@ -18,14 +18,8 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public final class InputMethodSubtype implements Parcelable {
     
-    
-    @DSModeled(DSC.BAN)
     public static InputMethodSubtype droidsafeObtainInputMethodSubtype() {
         InputMethodSubtype subtype = new InputMethodSubtype(0, 0, new String(), new String(), 
                                          new String(), false);
@@ -119,7 +113,6 @@ public static List<InputMethodSubtype> sort(Context context, int flags, InputMet
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.935 -0500", hash_original_field = "E696D958865128B29DF1F55D51A08032", hash_generated_field = "F8E8FA3061A103026C8298FB0F2648C7")
 
-
     private  boolean mIsAuxiliary;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.937 -0500", hash_original_field = "7CD331AB2A4CBBC5A487FB7B5A32FCFE", hash_generated_field = "DF7B3D7F7849CD65A841EA756702E121")
 
@@ -211,6 +204,7 @@ InputMethodSubtype(Parcel source) {
     /**
      * @return the name of the subtype
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.966 -0500", hash_original_method = "C7E80880FBF7E5F0758D048854BC1B6A", hash_generated_method = "26CBCDA99AD203B4314FE6FE708C7FDB")
     
 public int getNameResId() {
@@ -220,6 +214,9 @@ public int getNameResId() {
     /**
      * @return the icon of the subtype
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.968 -0500", hash_original_method = "6A7C5EEB38C0091C7A516BA3C0FACD8B", hash_generated_method = "351869723AD00AED2B9F8013B9ED025F")
     
 public int getIconResId() {
@@ -229,6 +226,7 @@ public int getIconResId() {
     /**
      * @return the locale of the subtype
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.970 -0500", hash_original_method = "945286B5D069547CEB4FBAF8F8B7964A", hash_generated_method = "EE03D54FF1419549D24B5FD49A307399")
     
 public String getLocale() {
@@ -238,6 +236,7 @@ public String getLocale() {
     /**
      * @return the mode of the subtype
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.972 -0500", hash_original_method = "960AAB243B4CAAAE714C0B1CB581C452", hash_generated_method = "93344719B3FF4933F2530358A8074478")
     
 public String getMode() {
@@ -247,6 +246,7 @@ public String getMode() {
     /**
      * @return the extra value of the subtype
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.975 -0500", hash_original_method = "253C17894C35FFAF30C08472F23E48B8", hash_generated_method = "B0B48211E788C5E773FA1B3FFFFC18D8")
     
 public String getExtraValue() {
@@ -284,6 +284,7 @@ public boolean overridesImplicitlyEnabledSubtype() {
      * specified by mSubtypeNameResId. If mSubtypeNameResId is not specified (== 0), it's up to the
      * framework to generate an appropriate display name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.982 -0500", hash_original_method = "968D29448AF0C4C278C68BBABC30BCB9", hash_generated_method = "D9FE477B4AE71540ABA1B09AB9219FF9")
     
 public CharSequence getDisplayName(
@@ -342,6 +343,7 @@ public boolean containsExtraValueKey(String key) {
      * @param key the key of extra value
      * @return the value of the specified key
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.989 -0500", hash_original_method = "E26D6519ACBB2E66A4CA57F07B1B4B16", hash_generated_method = "4E08F5BE11E9A72E0AF217B013CACB68")
     
 public String getExtraValueOf(String key) {

@@ -11,10 +11,6 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.Message;
 
-
-
-
-
 public abstract class IntentService extends Service {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.818 -0500", hash_original_field = "EB66E49061F21B01C586336F5B80897E", hash_generated_field = "33385112DDE0E3E321411FB3B24485E8")
 
@@ -34,6 +30,8 @@ public abstract class IntentService extends Service {
      *
      * @param name Used to name the worker thread, important only for debugging.
      */
+    @DSComment("Standard service for offloading task to background")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.834 -0500", hash_original_method = "65486D76CF06DAF1688CBC9F94DF0A6F", hash_generated_method = "1F8C236D9D024086E13FC09FFC3A3C72")
     
 public IntentService(String name) {
@@ -57,12 +55,16 @@ public IntentService(String name) {
      * {@link Service#START_NOT_STICKY}, and if the process dies, the Intent
      * dies along with it.
      */
+    @DSComment("no impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.836 -0500", hash_original_method = "5DC41098BF9C689ED5E1C1A6B5CD66D3", hash_generated_method = "9819940AC2D0C760DCD334594E90C004")
     
 public void setIntentRedelivery(boolean enabled) {
         mRedelivery = enabled;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.838 -0500", hash_original_method = "D44587B147DECF989C6FA60808062415", hash_generated_method = "7C2E7A3D8CB60D4DD3F2650DD1DE5ABC")
     
 @Override
@@ -95,6 +97,8 @@ public void setIntentRedelivery(boolean enabled) {
      * receives a start request.
      * @see android.app.Service#onStartCommand
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.843 -0500", hash_original_method = "38140402AEC024932D8DF709F80C2AA8", hash_generated_method = "8A862437975BF5D7F532D7E88BD5534F")
     
 @Override
@@ -103,6 +107,8 @@ public void setIntentRedelivery(boolean enabled) {
         return mRedelivery ? START_REDELIVER_INTENT : START_NOT_STICKY;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.845 -0500", hash_original_method = "1A14C95333617FF45AA4B183BFCE9C2C", hash_generated_method = "E0C452F6F9ED4DD053BA58A501C61F28")
     
 @Override
@@ -137,7 +143,6 @@ public void setIntentRedelivery(boolean enabled) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.849 -0500", hash_original_method = "3873E8578EC35B4631BF55BE7B040145", hash_generated_method = "76B2D51F2AC1BE5101F9DFE35DD2D67A")
     
 protected abstract void onHandleIntent(Intent intent);
-
     
     private final class ServiceHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:17.828 -0500", hash_original_method = "66EEB465EED068540EC8804EEAB41C77", hash_generated_method = "3FC585DC347F6956BFDECFB1F53984B6")
@@ -153,11 +158,9 @@ public ServiceHandler(Looper looper) {
             onHandleIntent((Intent)msg.obj);
             stopSelf(msg.arg1);
         }
-
         
     }
-
-    @DSModeled(DSC.BAN)
+    
     public void __ds__onHandleIntent(Intent intent) {
     	onHandleIntent(intent);
     }

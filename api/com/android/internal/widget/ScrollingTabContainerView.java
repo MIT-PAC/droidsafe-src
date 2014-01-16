@@ -29,21 +29,14 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class ScrollingTabContainerView extends HorizontalScrollView implements AdapterView.OnItemSelectedListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.671 -0500", hash_original_field = "6C8728AD27930156AB8B4DB6BE524CA6", hash_generated_field = "8198E33AEA6A4E67CF498CFCEDA7ACFC")
 
     private static final String TAG = "ScrollingTabContainerView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.695 -0500", hash_original_field = "D03B4416DFABD1105B6C0533A6AC7D12", hash_generated_field = "8547110952636D9B94C38943E41DDC94")
 
-
     private static final TimeInterpolator sAlphaInterpolator = new DecelerateInterpolator();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.698 -0500", hash_original_field = "0217F77CCFC1C8AF37A39627A6C46858", hash_generated_field = "2297CD97C5AD861EDC516998785F45D4")
-
 
     private static final int FADE_DURATION = 200;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.673 -0500", hash_original_field = "E682310941753B94BE1FECAC9286C6E9", hash_generated_field = "E682310941753B94BE1FECAC9286C6E9")
@@ -54,7 +47,6 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     private TabClickListener mTabClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.677 -0500", hash_original_field = "117D0428E613CA4EEA398DB816A811C9", hash_generated_field = "E5144854D9186C0CFBAD4E1FE3ACCBAF")
 
-
     private LinearLayout mTabLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.679 -0500", hash_original_field = "A22C7A92FA962667DC46B5E04B2EE18D", hash_generated_field = "992DC55613E9C96C70980F7C6305042C")
 
@@ -64,7 +56,6 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
     private boolean mAllowCollapse;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.683 -0500", hash_original_field = "2536FBAA8D2459579C241F8EA3302AA1", hash_generated_field = "2536FBAA8D2459579C241F8EA3302AA1")
 
-
     int mMaxTabWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.686 -0500", hash_original_field = "6909FC61CEAFC4290968B35F30281B2B", hash_generated_field = "2B9929C05137BEFD1EEE8192DEC02202")
 
@@ -73,7 +64,6 @@ public class ScrollingTabContainerView extends HorizontalScrollView implements A
 
     private int mSelectedTabIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.690 -0500", hash_original_field = "45C08F827C667A6DCF7969318A42238E", hash_generated_field = "9B230B482D363407A6E2031086F40952")
-
 
     protected Animator mVisibilityAnim;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.693 -0500", hash_original_field = "90445405F42A5D20F9DDEB82807E1550", hash_generated_field = "2572558D73FCEA5CB5F54CEC528FD58F")
@@ -390,7 +380,6 @@ public void removeTabAt(int position) {
             requestLayout();
         }
     }
-
     
     private class TabView extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.761 -0500", hash_original_field = "69655022DB10ADBB9DD21379BEC78E47", hash_generated_field = "3557E0B9D4809295D85BAFD572E62004")
@@ -512,11 +501,8 @@ public void update() {
 public ActionBar.Tab getTab() {
             return mTab;
         }
-
         
     }
-
-
     
     private class TabAdapter extends BaseAdapter {
         
@@ -525,6 +511,7 @@ public ActionBar.Tab getTab() {
         {
             //Synthesized constructor
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.788 -0500", hash_original_method = "8A8A2A6470BE340ED0660B0DF0493034", hash_generated_method = "6D18E00BFA47F61562A68013AC1E4863")
         
 @Override
@@ -532,6 +519,7 @@ public ActionBar.Tab getTab() {
             return mTabLayout.getChildCount();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.791 -0500", hash_original_method = "A98679EF5D46D1EF9814D015704A8113", hash_generated_method = "8A104B02EFEC88B3B0789A63A0438694")
         
 @Override
@@ -539,6 +527,7 @@ public ActionBar.Tab getTab() {
             return ((TabView) mTabLayout.getChildAt(position)).getTab();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.793 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "82702E9A3501EE6841B2C5A334199C16")
         
 @Override
@@ -546,6 +535,7 @@ public ActionBar.Tab getTab() {
             return position;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.796 -0500", hash_original_method = "C541E21433CF0B8E7E2EE0D1C892D4E4", hash_generated_method = "2C99808A42375E74B25A4F3F6A493DEE")
         
 @Override
@@ -557,11 +547,8 @@ public ActionBar.Tab getTab() {
             }
             return convertView;
         }
-
         
     }
-
-
     
     private class TabClickListener implements OnClickListener {
         
@@ -581,11 +568,8 @@ public void onClick(View view) {
                 child.setSelected(child == view);
             }
         }
-
         
     }
-
-
     
     protected class VisibilityAnimListener implements Animator.AnimatorListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:40.806 -0500", hash_original_field = "88E0F93494857DA513393E07912CD8CE", hash_generated_field = "67D6DA73468F2D6E84B945FD38F1CC1D")
@@ -639,7 +623,6 @@ public VisibilityAnimListener withFinalVisibility(int visibility) {
 @Override
         public void onAnimationRepeat(Animator animation) {
         }
-
         
     }
 

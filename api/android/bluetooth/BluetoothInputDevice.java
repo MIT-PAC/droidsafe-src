@@ -15,10 +15,6 @@ import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.util.Log;
 
-
-
-
-
 public final class BluetoothInputDevice implements BluetoothProfile {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.403 -0500", hash_original_method = "0EBF7673E44AF610ADC3AB53A65BD597", hash_generated_method = "12E4FDCE2D2661CC6DF9F077D2C0BB73")
@@ -53,7 +49,6 @@ private static void log(String msg) {
 
     public static final int INPUT_OPERATION_SUCCESS = 5004;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.367 -0500", hash_original_field = "AD4810E1EAEE0B4F351A0550C3A3183B", hash_generated_field = "6FCEA0ED39BC377BA765F514A42DFCE9")
-
 
     private ServiceListener mServiceListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.369 -0500", hash_original_field = "367F0BC6BC216C571A7E906A286477DF", hash_generated_field = "6EAF57CC559AB78B0231BFFF469261B9")
@@ -177,6 +172,7 @@ public boolean disconnect(BluetoothDevice device) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.383 -0500", hash_original_method = "DD11A5A037066B819B09B91F048A8292", hash_generated_method = "9A391AB1E165D2D7F2E66AC2620DEF01")
     
 public List<BluetoothDevice> getConnectedDevices() {
@@ -196,6 +192,7 @@ public List<BluetoothDevice> getConnectedDevices() {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.386 -0500", hash_original_method = "8CAF8E68108C6561E50EE464A6851A15", hash_generated_method = "03574918D113C09013F0D3C047AAFCC2")
     
 public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
@@ -215,6 +212,7 @@ public List<BluetoothDevice> getDevicesMatchingConnectionStates(int[] states) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.388 -0500", hash_original_method = "97B42C809342D6C6DAC05DB0DA17D1EC", hash_generated_method = "24265A9A95147640E29D2FCD09078EEF")
     
 public int getConnectionState(BluetoothDevice device) {
@@ -247,6 +245,7 @@ public int getConnectionState(BluetoothDevice device) {
      * @return true if priority is set, false on error
      * @hide
      */
+    @DSSink({DSSinkKind.BLUETOOTH})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.391 -0500", hash_original_method = "9373326E4AC064A071DC5CD973E0011C", hash_generated_method = "8E8F921B7B28BA6EBCCAD2894B168149")
     
 public boolean setPriority(BluetoothDevice device, int priority) {
@@ -281,6 +280,7 @@ public boolean setPriority(BluetoothDevice device, int priority) {
      * @return priority of the device
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.395 -0500", hash_original_method = "1D1EE6052242ABD7AAF16EB7DF8BA827", hash_generated_method = "3B2B8C63890F6885E484B7D7B9CDEE0D")
     
 public int getPriority(BluetoothDevice device) {

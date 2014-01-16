@@ -11,21 +11,14 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.Serializable;
 
-
-
-
-
-
 public class TreeSet<E> extends AbstractSet<E> implements NavigableSet<E>, Cloneable, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.826 -0500", hash_original_field = "F0F45E90FD957A3B68DECCE5AC6BAE9C", hash_generated_field = "31AEFE2A50D43E7000DE1CE15A90AC24")
-
 
     private static final long serialVersionUID = -2479143000061671589L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.828 -0500", hash_original_field = "E2C66E531AD1935404D259785B7A7B33", hash_generated_field = "C78575AC49DB698118FD5EA7F65EAFD3")
 
     private transient NavigableMap<E, Object> backingMap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.831 -0500", hash_original_field = "AA941F50F6CB1178805EC6663D334268", hash_generated_field = "71D5DD9C91D04D73018803CC77A3333A")
-
 
     private transient NavigableSet<E> descendingSet;
 
@@ -39,14 +32,16 @@ TreeSet(NavigableMap<E, Object> map) {
      * Constructs a new empty instance of {@code TreeSet} which uses natural
      * ordering.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.836 -0500", hash_original_method = "A94A461A61DAB692596F2C820B79ED22", hash_generated_method = "327076A149DBADC603C3153C96F5BBC3")
     
 public TreeSet() {
         backingMap = new TreeMap<E, Object>();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.545 -0400", hash_original_method = "98B2B75BFA703DD0E35ED82DE7014603", hash_generated_method = "9295DFAB1B2A4F093CB6CC0F48F4D93E")
     public  TreeSet(Collection<? extends E> collection) {
         this();
@@ -64,6 +59,8 @@ public TreeSet() {
      * @param comparator
      *            the comparator to use.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:02.843 -0500", hash_original_method = "8C746452C9FB7802CDFBFB3337D39F4C", hash_generated_method = "E0BD18821C11565186A14557633F54CF")
     
 public TreeSet(Comparator<? super E> comparator) {
@@ -86,16 +83,17 @@ public TreeSet(SortedSet<E> set) {
             add(it.next());
         }
     }
-
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @Override
-    @DSModeled(DSC.SAFE)
+    
     public boolean add(E object) {
         backingMap.addTaint(object.getTaint());
         return super.add(object);
     }
     
-    @DSModeled(DSC.SAFE)
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.548 -0400", hash_original_method = "BDDE8348BEC59AA11A27D7FE3ECB76D9", hash_generated_method = "037128A946DAF3846E141644E35E59AD")
     @SuppressWarnings("unchecked")
     @Override
@@ -138,8 +136,7 @@ public TreeSet(SortedSet<E> set) {
 public Comparator<? super E> comparator() {
         return backingMap.comparator();
     }
-
-    @DSModeled(DSC.SAFE)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.549 -0400", hash_original_method = "B45AC88DE7B9594C8371B21B65FAB594", hash_generated_method = "861FF20C39960260BA63816D3660E6B9")
     @Override
     public Iterator<E> iterator() {
@@ -147,35 +144,28 @@ public Comparator<? super E> comparator() {
         // ---------- Original Method ----------
         //return backingMap.keySet().iterator();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.549 -0400", hash_original_method = "5A7C74B47E5E24EDAEF18CEBD56ECC34", hash_generated_method = "985B1000856FE0C2D90F59DE62A312F9")
     public Iterator<E> descendingIterator() {
         return super.getReverseIterator();
         // ---------- Original Method ----------
         //return descendingSet().iterator();
     }
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.550 -0400", hash_original_method = "4513FA2253D64848D60CCD34F380731F", hash_generated_method = "326AB076421601A1FA7897EB46E26059")
     public E first() {
         return super.getFirstElement();
         // ---------- Original Method ----------
         //return backingMap.firstKey();
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.550 -0400", hash_original_method = "4FE03970533DF6513B3C509D55D59969", hash_generated_method = "59265760E3EF80DCF16FAD0ABADA19DF")
     public E last() {
             return super.getLastElement();
         // ---------- Original Method ----------
         //return backingMap.lastKey();
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.551 -0400", hash_original_method = "C4703F0CB955C02A45F56DAC0B50011B", hash_generated_method = "430FC412772ED928A0B8CBF86430BEE9")
     public E pollFirst() {
         return super.removeFirstElement();
@@ -183,9 +173,7 @@ public Comparator<? super E> comparator() {
         //Map.Entry<E, Object> entry = backingMap.pollFirstEntry();
         //return (entry == null) ? null : entry.getKey();
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:12.551 -0400", hash_original_method = "F4F5E61D6851DE05B80C97EFA1D29318", hash_generated_method = "EC62C48804D72E4F44AACF87C1322107")
     public E pollLast() {
         return super.removeLastElement();

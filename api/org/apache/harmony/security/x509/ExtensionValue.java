@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.harmony.security.utils.Array;
 
-
-
-
-
-
 public class ExtensionValue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.592 -0500", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "D780785EF370A874C4FD0A663CBEE653")
 
@@ -29,6 +24,7 @@ public ExtensionValue(byte[] encoding) {
     }
 
     /** Returns encoded form of the object. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.599 -0500", hash_original_method = "377D44A9A27BF814250295098F20477B", hash_generated_method = "1FAC514B8B58DEE35114AACC993B54AF")
     
 public byte[] getEncoded() {
@@ -49,12 +45,12 @@ public void dumpValue(StringBuilder sb, String prefix) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.604 -0500", hash_original_method = "6724193923CC6FF1B2BB2E93A0E55B86", hash_generated_method = "D296D2692AE900133BEA982B0CB51ACB")
     
 public void dumpValue(StringBuilder sb) {
         dumpValue(sb, "");
     }
-
     
 }
 

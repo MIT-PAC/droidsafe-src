@@ -16,16 +16,13 @@ import android.os.Looper;
 import android.os.Message;
 import android.view.Surface;
 
-
-
-
-
 public class MediaRecorder {
 
     /**
      * Gets the maximum value for audio sources.
      * @see android.media.MediaRecorder.AudioSource
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.695 -0500", hash_original_method = "AE8B9D0BAF1949AC0D1E2F329A15E5A4", hash_generated_method = "7423A75675172FE805FDDCBC7C47DDDA")
     
 public static final int getAudioSourceMax() { return AudioSource.VOICE_COMMUNICATION; }
@@ -52,9 +49,7 @@ private static void postEventFromNative(Object mediarecorder_ref,
             mr.mEventHandler.sendMessage(m);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final void native_init() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.549 -0500", hash_original_field = "53D9A4726774219B19D0F6C3285BC5F8", hash_generated_field = "9E43FF77760065A7AB714E624C6D69AB")
@@ -120,11 +115,9 @@ private static void postEventFromNative(Object mediarecorder_ref,
     private int mNativeContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.554 -0500", hash_original_field = "718CD3BE0BDD64302FC8F6AC61AA9980", hash_generated_field = "CF56B07A79F79E335B5E31194908A4ED")
 
-
     @SuppressWarnings("unused")
     private Surface mSurface;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.556 -0500", hash_original_field = "1D4D0FAE668EECF10ED75DDC284FFC16", hash_generated_field = "6FACC3B41470C8330B5F0BB43FA7FD9F")
-
 
     private String mPath;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.558 -0500", hash_original_field = "527F974C28D82C3D0AB3A51D40023765", hash_generated_field = "D884398030F13C93CE57AAFBDAC2F9A3")
@@ -143,6 +136,8 @@ private static void postEventFromNative(Object mediarecorder_ref,
     /**
      * Default constructor.
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.569 -0500", hash_original_method = "506D5AE1E4700103A96E723E2F623CDF", hash_generated_method = "13BF1EBB65DB4371328F028432A43C99")
     
 public MediaRecorder() {
@@ -170,13 +165,14 @@ public MediaRecorder() {
      *
      * @param c the Camera to use for recording
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.572 -0500", hash_original_method = "ABDAB49B7FE2D6558157D548CA69CDD8", hash_generated_method = "E9418463AED0C2A483AB8E4400CE5C82")
     
     public void setCamera(Camera c){
     	//Formerly a native method
     	addTaint(c.getTaint());
     }
-
 
     /**
      * Sets a Surface to show a preview of recorded media (video). Calls this
@@ -185,6 +181,8 @@ public MediaRecorder() {
      *
      * @param sv the Surface to use for the preview
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.575 -0500", hash_original_method = "9D12D44BFB2D2426E5261AD40C8A6399", hash_generated_method = "2055335BBC888EB71DF7ABAEF1C7874E")
     
 public void setPreviewDisplay(Surface sv) {
@@ -201,6 +199,8 @@ public void setPreviewDisplay(Surface sv) {
      * @throws IllegalStateException if it is called after setOutputFormat()
      * @see android.media.MediaRecorder.AudioSource
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.692 -0500", hash_original_method = "A371021B9F589CE697BF3A2D834DE3D5", hash_generated_method = "8D6A5BBBF1E8F6463F169491C01E9C02")
     
     public void setAudioSource(int audio_source)
@@ -208,7 +208,6 @@ public void setPreviewDisplay(Surface sv) {
     	//Formerly a native method
     	addTaint(audio_source);
     }
-
 
     /**
      * Sets the video source to be used for recording. If this method is not
@@ -220,6 +219,8 @@ public void setPreviewDisplay(Surface sv) {
      * @throws IllegalStateException if it is called after setOutputFormat()
      * @see android.media.MediaRecorder.VideoSource
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.698 -0500", hash_original_method = "95828B107E82D883B2C1CA5CFF39AF89", hash_generated_method = "E96565FB9BF347FE9A321AF4A60EE43E")
     
     public void setVideoSource(int video_source)
@@ -228,7 +229,6 @@ public void setPreviewDisplay(Surface sv) {
     	addTaint(video_source);
     }
 
-
     /**
      * Uses the settings from a CamcorderProfile object for recording. This method should
      * be called after the video AND audio sources are set, and before setOutputFile().
@@ -236,6 +236,9 @@ public void setPreviewDisplay(Surface sv) {
      * @param profile the CamcorderProfile to use
      * @see android.media.CamcorderProfile
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.701 -0500", hash_original_method = "C41941EDDC1BA172E48D383432866025", hash_generated_method = "DBA2E76270F6FBE67F68B62F5122F887")
     
 public void setProfile(CamcorderProfile profile) {
@@ -269,6 +272,7 @@ public void setProfile(CamcorderProfile profile) {
      * given rate due to camera/encoder limitations. However it tries to be as close as
      * possible.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.704 -0500", hash_original_method = "01590CA235372AAAE94DCADBCD3DAA8F", hash_generated_method = "E2053F72246244DC29705FCAA9160588")
     
 public void setCaptureRate(double fps) {
@@ -293,6 +297,7 @@ public void setCaptureRate(double fps) {
      * @throws IllegalArgumentException if the angle is not supported.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.706 -0500", hash_original_method = "FFEAE3173573A6FB2AF430882DE311CC", hash_generated_method = "40D2B9D8F8DB8B88EF43ADA706ED8C3F")
     
 public void setOrientationHint(int degrees) {
@@ -321,6 +326,7 @@ public void setOrientationHint(int degrees) {
      * longitude is out of range.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.709 -0500", hash_original_method = "95876148111FCD378C0A7171639D46C7", hash_generated_method = "1B9BB420437BA066111BA9FE9F4C456D")
     
 public void setLocation(float latitude, float longitude) {
@@ -354,6 +360,8 @@ public void setLocation(float latitude, float longitude) {
      * setAudioSource()/setVideoSource().
      * @see android.media.MediaRecorder.OutputFormat
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.713 -0500", hash_original_method = "16B1291E62A33A134EF60F37C7D2CCB8", hash_generated_method = "D980BF01D82197C5CCD2F6C89D0437DA")
     
     public void setOutputFormat(int output_format)
@@ -361,7 +369,6 @@ public void setLocation(float latitude, float longitude) {
     	//Formerly a native method
     	addTaint(output_format);
     }
-
 
     /**
      * Sets the width and height of the video to be captured.  Must be called
@@ -381,7 +388,6 @@ public void setLocation(float latitude, float longitude) {
     	addTaint(width);
     	addTaint(height);
     }
-
 
     /**
      * Sets the frame rate of the video to be captured.  Must be called
@@ -403,7 +409,6 @@ public void setLocation(float latitude, float longitude) {
     	addTaint(rate);
     }
 
-
     /**
      * Sets the maximum duration (in ms) of the recording session.
      * Call this after setOutFormat() but before prepare().
@@ -423,7 +428,6 @@ public void setLocation(float latitude, float longitude) {
     	//Formerly a native method
     	addTaint(max_duration_ms);
     }
-
 
     /**
      * Sets the maximum filesize (in bytes) of the recording session.
@@ -445,7 +449,6 @@ public void setLocation(float latitude, float longitude) {
     	addTaint(max_filesize_bytes);
     }
 
-
     /**
      * Sets the audio encoder to be used for recording. If this method is not
      * called, the output file will not contain an audio track. Call this after
@@ -456,6 +459,8 @@ public void setLocation(float latitude, float longitude) {
      * setOutputFormat() or after prepare().
      * @see android.media.MediaRecorder.AudioEncoder
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.733 -0500", hash_original_method = "1CF1181ABC96941035EF958A99727050", hash_generated_method = "6438AF6C2C7E41BBA63EFDD117B77299")
     
     public void setAudioEncoder(int audio_encoder)
@@ -463,7 +468,6 @@ public void setLocation(float latitude, float longitude) {
     	//Formerly a native method
     	addTaint(audio_encoder);
     }
-
 
     /**
      * Sets the video encoder to be used for recording. If this method is not
@@ -475,6 +479,8 @@ public void setLocation(float latitude, float longitude) {
      * setOutputFormat() or after prepare()
      * @see android.media.MediaRecorder.VideoEncoder
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.737 -0500", hash_original_method = "ABD82A110412540080E22D800F212AD9", hash_generated_method = "EFB205858D726411929D01957784679E")
     
     public void setVideoEncoder(int video_encoder)
@@ -482,7 +488,6 @@ public void setLocation(float latitude, float longitude) {
     	//Formerly a native method
     	addTaint(video_encoder);
     }
-
 
     /**
      * Sets the audio sampling rate for recording. Call this method before prepare().
@@ -496,6 +501,7 @@ public void setLocation(float latitude, float longitude) {
      *
      * @param samplingRate the sampling rate for audio in samples per second.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.739 -0500", hash_original_method = "A30D5A78BCFDD0EC33430FA69AAB0135", hash_generated_method = "F195D5B399071C2C18E786C6B6A8F069")
     
 public void setAudioSamplingRate(int samplingRate) {
@@ -513,6 +519,7 @@ public void setAudioSamplingRate(int samplingRate) {
      * @param numChannels the number of audio channels. Usually it is either 1 (mono) or 2
      * (stereo).
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.741 -0500", hash_original_method = "6F6BACC54031B00DCF8168A950EA33D9", hash_generated_method = "FB9AD655B137DC8463C1B26B0138AEB5")
     
 public void setAudioChannels(int numChannels) {
@@ -531,6 +538,7 @@ public void setAudioChannels(int numChannels) {
      *
      * @param bitRate the audio encoding bit rate in bits per second.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.743 -0500", hash_original_method = "3786AB4A2177EE063AA4F526AF23E799", hash_generated_method = "C74D09A9246C5353CAB89C925DC2B28B")
     
 public void setAudioEncodingBitRate(int bitRate) {
@@ -549,6 +557,7 @@ public void setAudioEncodingBitRate(int bitRate) {
      *
      * @param bitRate the video encoding bit rate in bits per second.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.746 -0500", hash_original_method = "1B43BF8F9E62EF0E8125F105BE9509D7", hash_generated_method = "2E4B236D77DB8201A6989B7DB2AF8A73")
     
 public void setVideoEncodingBitRate(int bitRate) {
@@ -563,6 +572,7 @@ public void setVideoEncodingBitRate(int bitRate) {
      * @deprecated Time lapse mode video recording using camera still image capture
      * is not desirable, and will not be supported.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.749 -0500", hash_original_method = "A0B41C1DE963DD2616BE7FC07860DC3A", hash_generated_method = "11EFEF95E368DAB504150D8F68D13C90")
     
 public void setAuxiliaryOutputFile(FileDescriptor fd)
@@ -575,13 +585,13 @@ public void setAuxiliaryOutputFile(FileDescriptor fd)
      * @deprecated Time lapse mode video recording using camera still image capture
      * is not desirable, and will not be supported.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.751 -0500", hash_original_method = "8F81BCAE7FDFB44AAC23771364E7255A", hash_generated_method = "EB63C4A65BE0D6BB1C1D0136FA2F9670")
     
 public void setAuxiliaryOutputFile(String path)
     {
         Log.w(TAG, "setAuxiliaryOutputFile(String) is no longer supported.");
     }
-
     
     public final class AudioSource {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.581 -0500", hash_original_field = "83EA75ECA2D71F21AD72E47BF00B465F", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
@@ -615,8 +625,6 @@ public void setAuxiliaryOutputFile(String path)
         
 private AudioSource() {}
     }
-
-
     
     public final class VideoSource {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.608 -0500", hash_original_field = "83EA75ECA2D71F21AD72E47BF00B465F", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
@@ -635,8 +643,6 @@ private AudioSource() {}
         
 private VideoSource() {}
     }
-
-
     
     public final class OutputFormat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.622 -0500", hash_original_field = "83EA75ECA2D71F21AD72E47BF00B465F", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
@@ -679,8 +685,6 @@ private VideoSource() {}
         
 private OutputFormat() {}
     }
-
-
     
     public final class AudioEncoder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.658 -0500", hash_original_field = "83EA75ECA2D71F21AD72E47BF00B465F", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
@@ -708,8 +712,6 @@ private OutputFormat() {}
         
 private AudioEncoder() {}
     }
-
-
     
     public final class VideoEncoder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.678 -0500", hash_original_field = "83EA75ECA2D71F21AD72E47BF00B465F", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
@@ -731,8 +733,6 @@ private AudioEncoder() {}
         
 private VideoEncoder() {}
     }
-
-
     
     private class EventHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.843 -0500", hash_original_field = "45C88812154FF5D629B54069A694BAB3", hash_generated_field = "9C109692EDE5D079034090A3A5B32D69")
@@ -770,7 +770,6 @@ public EventHandler(MediaRecorder mr, Looper looper) {
             mMediaRecorder = mr;
         }
 
-
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.867 -0500", hash_original_method = "86EEE127740FDFEE4F0B3E353E660995", hash_generated_method = "735214346EF0755B5287857357227450")
         
 @Override
@@ -800,8 +799,6 @@ public EventHandler(MediaRecorder mr, Looper looper) {
             }
         }
     }
-
-
     
     public interface OnErrorListener
     {
@@ -828,6 +825,7 @@ public EventHandler(MediaRecorder mr, Looper looper) {
      * @throws IllegalStateException if it is called before
      * setOutputFormat() or after prepare()
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.753 -0500", hash_original_method = "FA1E1C8AC397C2513A8C4BBA9653310E", hash_generated_method = "20129432203CB4522BC7B5624FBDB421")
     
 public void setOutputFile(FileDescriptor fd) throws IllegalStateException
@@ -844,6 +842,8 @@ public void setOutputFile(FileDescriptor fd) throws IllegalStateException
      * @throws IllegalStateException if it is called before
      * setOutputFormat() or after prepare()
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.756 -0500", hash_original_method = "6471C594BC35F434C75030DABF9E1236", hash_generated_method = "F163D610DEC881F8C19F64DA9DD9F649")
     
 public void setOutputFile(String path) throws IllegalStateException
@@ -869,7 +869,6 @@ public void setOutputFile(String path) throws IllegalStateException
     	//Formerly a native method
     }
 
-
     /**
      * Prepares the recorder to begin capturing and encoding data. This method
      * must be called after setting up the desired audio and video sources,
@@ -879,6 +878,8 @@ public void setOutputFile(String path) throws IllegalStateException
      * start() or before setOutputFormat().
      * @throws IOException if prepare fails otherwise.
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.766 -0500", hash_original_method = "7733A0B67510DBD5B4C9708918E65D9C", hash_generated_method = "119195F284072448E9B84AEEE88AFDF9")
     
 public void prepare() throws IllegalStateException, IOException
@@ -912,12 +913,13 @@ public void prepare() throws IllegalStateException, IOException
      * @throws IllegalStateException if it is called before
      * prepare().
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.770 -0500", hash_original_method = "90417EDC9CEDC2FF729AF34E20BAF720", hash_generated_method = "E1969946DB5A9D768E401BA7A78BBDBA")
     
     public void start() throws IllegalStateException{
     	//Formerly a native method
     }
-
 
     /**
      * Stops recording. Call this after start(). Once recording is stopped,
@@ -931,18 +933,21 @@ public void prepare() throws IllegalStateException, IOException
      *
      * @throws IllegalStateException if it is called before start()
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.774 -0500", hash_original_method = "1A5D84AB4E95B4764520ADCE25158630", hash_generated_method = "385DEB438D351260B720EB353DA8EA98")
     
     public void stop() throws IllegalStateException{
     	//Formerly a native method
     }
 
-
     /**
      * Restarts the MediaRecorder to its idle state. After calling
      * this method, you will have to configure it again as if it had just been
      * constructed.
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.777 -0500", hash_original_method = "67287397491424481E1944D5BA3B8E5C", hash_generated_method = "388AF94EBCD41EBAAA15B5C85A60D9C0")
     
 public void reset() {
@@ -957,7 +962,6 @@ public void reset() {
     private void native_reset(){
     	//Formerly a native method
     }
-
 
     /**
      * Returns the maximum absolute amplitude that was sampled since the last
@@ -974,7 +978,6 @@ public void reset() {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Register a callback to be invoked when an error occurs while
@@ -1020,12 +1023,13 @@ public void setOnInfoListener(OnInfoListener listener)
      * may be expected when unnecessary multiple instances are used
      * at the same time.
      */
+    @DSComment("Media recorder function")
+    @DSSpec(DSCat.MEDIA_RECORDER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.874 -0500", hash_original_method = "1E8C38EACEA1E94FE658824D01FD2A18", hash_generated_method = "278A7E53643DE73F8A80E1A85A107DD5")
     
     public void release(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.884 -0500", hash_original_method = "BCB4106EE2D8724832D2515EFBDE53A4", hash_generated_method = "DCCBFCF985F5394E4853A6A7FE9607CC")
     
@@ -1034,13 +1038,11 @@ public void setOnInfoListener(OnInfoListener listener)
     	addTaint(mediarecorder_this.getTaint());
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.887 -0500", hash_original_method = "B81676966F6941B90240D7A24C9E2FD3", hash_generated_method = "F4F0ABEE314221212592CD2BBD7D2805")
     
     private final void native_finalize(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.891 -0500", hash_original_method = "53992B87F33D5F26EA62BF7D01DBCD08", hash_generated_method = "4E9F2B2D4042AF088A97D4F6280C62E8")
     
@@ -1048,7 +1050,6 @@ public void setOnInfoListener(OnInfoListener listener)
     	//Formerly a native method
     	addTaint(nameValuePair.getTaint());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:34.893 -0500", hash_original_method = "3228EA20CE4FEF9678E1F1862B5AB446", hash_generated_method = "B426276F6755268DFF3429CB984C1F76")
     

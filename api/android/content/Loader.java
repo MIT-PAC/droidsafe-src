@@ -11,10 +11,6 @@ import android.database.ContentObserver;
 import android.os.Handler;
 import android.util.DebugUtils;
 
-
-
-
-
 public class Loader<D> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.622 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
 
@@ -72,6 +68,9 @@ public void deliverResult(D data) {
     /**
      * @return an application context retrieved from the Context passed to the constructor.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.653 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
@@ -81,6 +80,7 @@ public Context getContext() {
     /**
      * @return the ID of this loader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.655 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "11DEA77066B2A20ED28C130805C2B9DE")
     
 public int getId() {
@@ -202,6 +202,8 @@ protected void onStartLoading() {
      *
      * <p>Must be called from the process's main thread.
      */
+    @DSComment("Force loading content, event handler may also be invoked")
+    @DSSpec(DSCat.ANDROID_LOADER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.673 -0500", hash_original_method = "E102AD0C3BB2F8D5B106A9E25CAC340A", hash_generated_method = "7C65C609A676021DC6E00C13415FEFCD")
     
 public void forceLoad() {
@@ -321,6 +323,8 @@ public void reset() {
      * but as a result of a call to {@link #reset()}.
      * This will always be called from the process's main thread.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.687 -0500", hash_original_method = "16611E3F48156A317644CA113F750BCD", hash_generated_method = "7263AB7619FC664C9743FCE8FF63E928")
     
 protected void onReset() {
@@ -331,6 +335,8 @@ protected void onReset() {
      * changed while it was stopped.  If it had, true is returned and the
      * flag is cleared.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.689 -0500", hash_original_method = "C55C1C662CB28045D31932504C1021C3", hash_generated_method = "FB79F93498345AEA72EC028E85462AAE")
     
 public boolean takeContentChanged() {
@@ -373,6 +379,7 @@ public String dataToString(D data) {
         return sb.toString();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.697 -0500", hash_original_method = "7AA2EFEA4BBA4CB5078AB2979053EAD3", hash_generated_method = "35579B681AC67154C4322D5C32537DDC")
     
 @Override
@@ -393,6 +400,7 @@ public String dataToString(D data) {
      * @param writer A PrintWriter to which the dump is to be set.
      * @param args Additional arguments to the dump request.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.699 -0500", hash_original_method = "DC77AF55A2A9006E9EA4E79F1D0E0673", hash_generated_method = "96B5713FB4F642D42FB97E334FFFFC83")
     
 public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] args) {
@@ -403,7 +411,6 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
                 writer.print(" mAbandoned="); writer.print(mAbandoned);
                 writer.print(" mReset="); writer.println(mReset);
     }
-
     
     public final class ForceLoadContentObserver extends ContentObserver {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:41.637 -0500", hash_original_method = "B9E73A5B4B60A8E0702AD317D1848844", hash_generated_method = "D97E27512932796789D4DE052DC12583")
@@ -425,11 +432,8 @@ public ForceLoadContentObserver() {
         public void onChange(boolean selfChange) {
             onContentChanged();
         }
-
         
     }
-
-
     
     public interface OnLoadCompleteListener<D> {
         

@@ -13,9 +13,6 @@ import com.android.internal.telephony.IccUtils;
 import com.android.internal.util.State;
 import com.android.internal.util.StateMachine;
 
-
-
-
 class RilMessageDecoder extends StateMachine {
 
     /**
@@ -25,6 +22,7 @@ class RilMessageDecoder extends StateMachine {
      * @param fh
      * @return RilMesssageDecoder
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.489 -0500", hash_original_method = "903735E0D39211F3CD1FCDD839935A4F", hash_generated_method = "D4496C5954757CE1790873D1D41C4360")
     
 public static synchronized RilMessageDecoder getInstance(Handler caller, IccFileHandler fh) {
@@ -78,6 +76,7 @@ private RilMessageDecoder(Handler caller, IccFileHandler fh) {
      *
      * @param rilMsg
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.493 -0500", hash_original_method = "558F46FD0EDA24F51E513C644847EA22", hash_generated_method = "57CFD73F472AD8C72010E38B2FDA71B6")
     
 public void sendStartDecodingMessageParams(RilMessage rilMsg) {
@@ -85,7 +84,6 @@ public void sendStartDecodingMessageParams(RilMessage rilMsg) {
         msg.obj = rilMsg;
         sendMessage(msg);
     }
-
     
     private class StateStart extends State {
         
@@ -94,6 +92,7 @@ public void sendStartDecodingMessageParams(RilMessage rilMsg) {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.505 -0500", hash_original_method = "57F9642232CB19CA7FAC73C8363E6E1D", hash_generated_method = "E8FE7468543D4E8C2E224F6A2F04575A")
         
 @Override
@@ -108,11 +107,8 @@ public void sendStartDecodingMessageParams(RilMessage rilMsg) {
             }
             return true;
         }
-
         
     }
-
-
     
     private class StateCmdParamsReady extends State {
         
@@ -121,6 +117,7 @@ public void sendStartDecodingMessageParams(RilMessage rilMsg) {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SYSTEM_SETTINGS})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.511 -0500", hash_original_method = "17A6F88C736680351817FD1B07408EDF", hash_generated_method = "8A699B853A56DAD18C5BBE12E0079BFC")
         
 @Override
@@ -137,7 +134,6 @@ public void sendStartDecodingMessageParams(RilMessage rilMsg) {
             }
             return true;
         }
-
         
     }
 
@@ -147,6 +143,7 @@ public void sendStartDecodingMessageParams(RilMessage rilMsg) {
      * @param resCode
      * @param cmdParams
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:08.496 -0500", hash_original_method = "66DFFFB44E1DF2E53F71A8A0807BF75D", hash_generated_method = "E5AF027701615F992BC2C9EB4DE84A43")
     
 public void sendMsgParamsDecoded(ResultCode resCode, CommandParams cmdParams) {

@@ -17,7 +17,8 @@ private static final java.lang.String DESCRIPTOR = "com.android.internal.telepho
  * Cast an IBinder object into an com.android.internal.telephony.ITelephony interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.329 -0500", hash_original_method = "38D7450F09BFFEDD74D63D4EDA496DF5", hash_generated_method = "E55A4A190D898818E1EB3AB99495F477")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.329 -0500", hash_original_method = "38D7450F09BFFEDD74D63D4EDA496DF5", hash_generated_method = "E55A4A190D898818E1EB3AB99495F477")
         
 public static com.android.internal.telephony.ITelephony asInterface(android.os.IBinder obj)
 {
@@ -56,7 +57,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.351 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.351 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -68,7 +70,8 @@ return DESCRIPTOR;
      * @param number the number to be dialed. If null, this
      * would display the Dialer screen with no number pre-filled.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.354 -0500", hash_original_method = "003FA1A16EAD2D2EE413F77BE362604D", hash_generated_method = "8F2D50EA0BEED8C3395B1AFA6004A124")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.354 -0500", hash_original_method = "003FA1A16EAD2D2EE413F77BE362604D", hash_generated_method = "8F2D50EA0BEED8C3395B1AFA6004A124")
             
 public void dial(java.lang.String number) throws android.os.RemoteException
 {
@@ -89,7 +92,8 @@ _data.recycle();
      * Place a call to the specified number.
      * @param number the number to be called.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.357 -0500", hash_original_method = "D6E5363A73046E1F382B3ECD81084431", hash_generated_method = "44E98AAD429DF5DC66489E766205E961")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.357 -0500", hash_original_method = "D6E5363A73046E1F382B3ECD81084431", hash_generated_method = "44E98AAD429DF5DC66489E766205E961")
             
 public void call(java.lang.String number) throws android.os.RemoteException
 {
@@ -384,7 +388,8 @@ _data.recycle();
      * @param pin The pin to check.
      * @return whether the operation was a success.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.390 -0500", hash_original_method = "ED84B459A179E193688C0E44C9D68E21", hash_generated_method = "2925A190FD6A3654AB26163935D0B226")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.390 -0500", hash_original_method = "ED84B459A179E193688C0E44C9D68E21", hash_generated_method = "2925A190FD6A3654AB26163935D0B226")
             
 public boolean supplyPin(java.lang.String pin) throws android.os.RemoteException
 {
@@ -411,7 +416,8 @@ return _result;
      *        pin The new pin to be set in SIM
      * @return whether the operation was a success.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.393 -0500", hash_original_method = "8D56D5A5FEC6AF92C6D4D5AE842C4BC7", hash_generated_method = "2D06224763C07EE638A3402C474DA63B")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.393 -0500", hash_original_method = "8D56D5A5FEC6AF92C6D4D5AE842C4BC7", hash_generated_method = "2D06224763C07EE638A3402C474DA63B")
             
 public boolean supplyPuk(java.lang.String puk, java.lang.String pin) throws android.os.RemoteException
 {
@@ -439,7 +445,8 @@ return _result;
      * @param dialString the MMI command to be executed.
      * @return true if MMI command is executed.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.396 -0500", hash_original_method = "1DB9D81C4A3FD70E32BC316E3DCA2E51", hash_generated_method = "9282EDDB6E7B5622AC951A2B3067A87C")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.396 -0500", hash_original_method = "1DB9D81C4A3FD70E32BC316E3DCA2E51", hash_generated_method = "9282EDDB6E7B5622AC951A2B3067A87C")
             
 public boolean handlePinMmi(java.lang.String dialString) throws android.os.RemoteException
 {
@@ -481,7 +488,8 @@ _data.recycle();
 /**
      * Set the radio to on or off
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.402 -0500", hash_original_method = "C9B04F361F6C128B0681AD7ACF4CFE5F", hash_generated_method = "0097B3D7BE79C6467934C6F1A06927B0")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.402 -0500", hash_original_method = "C9B04F361F6C128B0681AD7ACF4CFE5F", hash_generated_method = "0097B3D7BE79C6467934C6F1A06927B0")
             
 public boolean setRadio(boolean turnOn) throws android.os.RemoteException
 {
@@ -561,7 +569,8 @@ _data.recycle();
 /**
      * Enable a specific APN type.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.413 -0500", hash_original_method = "EBA53F7D8FD8AF8B980927A391845603", hash_generated_method = "FDFE2D65256BE842DE71F8AF87D79589")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.413 -0500", hash_original_method = "EBA53F7D8FD8AF8B980927A391845603", hash_generated_method = "FDFE2D65256BE842DE71F8AF87D79589")
             
 public int enableApnType(java.lang.String type) throws android.os.RemoteException
 {
@@ -584,7 +593,8 @@ return _result;
 /**
      * Disable a specific APN type.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.416 -0500", hash_original_method = "6650FC503684630F8C89748FCDA74E93", hash_generated_method = "1A8D2C405C3E7F59CD935AF852819334")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.416 -0500", hash_original_method = "6650FC503684630F8C89748FCDA74E93", hash_generated_method = "1A8D2C405C3E7F59CD935AF852819334")
             
 public int disableApnType(java.lang.String type) throws android.os.RemoteException
 {
@@ -670,7 +680,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.428 -0500", hash_original_method = "F6CDD54A3D12E036556BAD54534A1F15", hash_generated_method = "2EB675D02DADC17090B5A90EEAA263BC")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.428 -0500", hash_original_method = "F6CDD54A3D12E036556BAD54534A1F15", hash_generated_method = "2EB675D02DADC17090B5A90EEAA263BC")
             
 public android.os.Bundle getCellLocation() throws android.os.RemoteException
 {
@@ -697,7 +708,8 @@ return _result;
 /**
      * Returns the neighboring cell information of the device.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.431 -0500", hash_original_method = "C32B1995B5C81B26073E92199ECBCB4B", hash_generated_method = "5C590D7A105EF2F9FA394159754259A4")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.431 -0500", hash_original_method = "C32B1995B5C81B26073E92199ECBCB4B", hash_generated_method = "5C590D7A105EF2F9FA394159754259A4")
             
 public java.util.List<android.telephony.NeighboringCellInfo> getNeighboringCellInfo() throws android.os.RemoteException
 {
@@ -716,7 +728,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.433 -0500", hash_original_method = "752F861CFB7348040E9FB0CC8D4AE73A", hash_generated_method = "1D4DFCC3212F4A63E9BF49F4CB2CC861")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.433 -0500", hash_original_method = "752F861CFB7348040E9FB0CC8D4AE73A", hash_generated_method = "1D4DFCC3212F4A63E9BF49F4CB2CC861")
             
 public int getCallState() throws android.os.RemoteException
 {
@@ -735,7 +748,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.436 -0500", hash_original_method = "7553F156EA84D297DA3054255E129DB7", hash_generated_method = "A5534AFBED4F5494F3230B1DF5A32B18")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.436 -0500", hash_original_method = "7553F156EA84D297DA3054255E129DB7", hash_generated_method = "A5534AFBED4F5494F3230B1DF5A32B18")
             
 public int getDataActivity() throws android.os.RemoteException
 {
@@ -754,7 +768,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.440 -0500", hash_original_method = "136EEAD0F130E8DFF495C2DEDE865981", hash_generated_method = "23441F62D71419C3B543FC993750E7A3")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.440 -0500", hash_original_method = "136EEAD0F130E8DFF495C2DEDE865981", hash_generated_method = "23441F62D71419C3B543FC993750E7A3")
             
 public int getDataState() throws android.os.RemoteException
 {
@@ -778,7 +793,8 @@ return _result;
      * Returns TelephonyManager.PHONE_TYPE_CDMA if RILConstants.CDMA_PHONE
      * and TelephonyManager.PHONE_TYPE_GSM if RILConstants.GSM_PHONE
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.442 -0500", hash_original_method = "AC08CF0CB27049DF114E2E45FCFE0F96", hash_generated_method = "910AFA78441B4125672FED33D804868B")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.442 -0500", hash_original_method = "AC08CF0CB27049DF114E2E45FCFE0F96", hash_generated_method = "910AFA78441B4125672FED33D804868B")
             
 public int getActivePhoneType() throws android.os.RemoteException
 {
@@ -800,7 +816,8 @@ return _result;
 /**
      * Returns the CDMA ERI icon index to display
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.445 -0500", hash_original_method = "ADB903AC959BF98960741DB738A46562", hash_generated_method = "D72918F4B775F2901A824DE5A3352CD6")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.445 -0500", hash_original_method = "ADB903AC959BF98960741DB738A46562", hash_generated_method = "D72918F4B775F2901A824DE5A3352CD6")
             
 public int getCdmaEriIconIndex() throws android.os.RemoteException
 {
@@ -824,7 +841,8 @@ return _result;
      * 0 - ON
      * 1 - FLASHING
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.448 -0500", hash_original_method = "8F6E280C03D616940524BFDEEE02BB6A", hash_generated_method = "6D625809C75648240B363C001980678C")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.448 -0500", hash_original_method = "8F6E280C03D616940524BFDEEE02BB6A", hash_generated_method = "6D625809C75648240B363C001980678C")
             
 public int getCdmaEriIconMode() throws android.os.RemoteException
 {
@@ -846,7 +864,8 @@ return _result;
 /**
      * Returns the CDMA ERI text,
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.451 -0500", hash_original_method = "2EE419FA3D39B7F1F24E120048C7B42C", hash_generated_method = "2476AFA1B0F86576F0E5FAC7AA9C4352")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.451 -0500", hash_original_method = "2EE419FA3D39B7F1F24E120048C7B42C", hash_generated_method = "2476AFA1B0F86576F0E5FAC7AA9C4352")
             
 public java.lang.String getCdmaEriText() throws android.os.RemoteException
 {
@@ -892,7 +911,8 @@ return _result;
 /**
       * Returns the unread count of voicemails
       */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.456 -0500", hash_original_method = "8C37C2DFEA07A2F8DD58EE7C707B85C7", hash_generated_method = "1C2931D3B98E1AD65AC68B467805163F")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.456 -0500", hash_original_method = "8C37C2DFEA07A2F8DD58EE7C707B85C7", hash_generated_method = "1C2931D3B98E1AD65AC68B467805163F")
             
 public int getVoiceMessageCount() throws android.os.RemoteException
 {
@@ -914,7 +934,8 @@ return _result;
 /**
       * Returns the network type
       */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.459 -0500", hash_original_method = "ABA87574838366AB68E4FD524D3C6179", hash_generated_method = "21A79A110AC3A324830A0AF9634E5CB2")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.459 -0500", hash_original_method = "ABA87574838366AB68E4FD524D3C6179", hash_generated_method = "21A79A110AC3A324830A0AF9634E5CB2")
             
 public int getNetworkType() throws android.os.RemoteException
 {
@@ -963,7 +984,8 @@ return _result;
      * @return {@link Phone#LTE_ON_CDMA_UNKNOWN}, {@link Phone#LTE_ON_CDMA_FALSE}
      * or {@link PHone#LTE_ON_CDMA_TRUE}
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.466 -0500", hash_original_method = "0BA6F7CD63E97EA2676933CA677C1AF5", hash_generated_method = "D209F2088C4D2D0314CE7AE97315D1B9")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.466 -0500", hash_original_method = "0BA6F7CD63E97EA2676933CA677C1AF5", hash_generated_method = "D209F2088C4D2D0314CE7AE97315D1B9")
             
 public int getLteOnCdmaMode() throws android.os.RemoteException
 {
@@ -1101,13 +1123,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.331 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.331 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.338 -0500", hash_original_method = "D9C108DFFD61AEC3A3ACB70B26457A93", hash_generated_method = "DF74E77E4A8C3622DC40D9126ABC3E03")
+@DSSink({DSSinkKind.SYSTEM_SETTINGS})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:22.338 -0500", hash_original_method = "D9C108DFFD61AEC3A3ACB70B26457A93", hash_generated_method = "DF74E77E4A8C3622DC40D9126ABC3E03")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

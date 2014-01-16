@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import java.security.spec.AlgorithmParameterSpec;
 import java.util.Arrays;
 
-
-
-
-
-
 public class IvParameterSpec implements AlgorithmParameterSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.166 -0500", hash_original_field = "E884C91B0186461100A61CCE6B0406E0", hash_generated_field = "EF60E6736481A45AB4AEED35775132C4")
-
 
     private  byte[] iv;
 
@@ -27,6 +21,8 @@ public class IvParameterSpec implements AlgorithmParameterSpec {
      * @throws NullPointerException
      *             if the specified buffer is null.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.168 -0500", hash_original_method = "D9A5990E9ED63A0A9D454C79A44593C3", hash_generated_method = "AC521883E3CA4ADEFFD9410ACEB1F335")
     
 public IvParameterSpec(byte[] iv) {
@@ -65,6 +61,7 @@ public IvParameterSpec(byte[] iv, int offset, int byteCount) {
      *
      * @return a copy of the initialization vector data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.173 -0500", hash_original_method = "A92FDD2E910AFCA63CE828A3161FD7A9", hash_generated_method = "56715BBA579DEC6E511E589A31103886")
     
 public byte[] getIV() {
@@ -72,7 +69,6 @@ public byte[] getIV() {
         System.arraycopy(iv, 0, res, 0, iv.length);
         return res;
     }
-
     
 }
 

@@ -16,13 +16,7 @@ import org.apache.harmony.security.x509.AlgorithmIdentifier;
 import org.apache.harmony.security.x509.Certificate;
 import org.apache.harmony.security.x509.CertificateList;
 
-
-
-
-
-
 public final class SignedData {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.085 -0400", hash_original_field = "66AD73A95F936B6DD0CB325A6F75C006", hash_generated_field = "7C30870EFF5611301CC32AE0B5790DCF")
 
@@ -51,6 +45,7 @@ public final class SignedData {
             values[5] = sd.signerInfos;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.864 -0500", hash_original_method = "EAF9E9892E8B4A07D2257D3D67BC0D9F", hash_generated_method = "008860324E8B66D3ECC8CA51B1362E90")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -97,24 +92,28 @@ private SignedData(int version, List<?> digestAlgorithms, ContentInfo contentInf
         this.signerInfos = signerInfos;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.848 -0500", hash_original_method = "1A3C998CB17E3A8C920AD81B84D716FA", hash_generated_method = "620FAA7733945E23D5E3EFED777E3A37")
     
 public List<Certificate> getCertificates() {
         return certificates;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.850 -0500", hash_original_method = "3C90A6221E72080B8CAD1325BD108F88", hash_generated_method = "5E0DA5D6BCAB96458B82459A8675CC1C")
     
 public List<CertificateList> getCRLs() {
         return crls;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.852 -0500", hash_original_method = "4845FE90A50A204EC6BC5DCC20DC666F", hash_generated_method = "D7C0A291242EC943EAED715DA8544CEA")
     
 public List<SignerInfo> getSignerInfos() {
         return signerInfos;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.854 -0500", hash_original_method = "00A0A81AB162D0816192A8848BD6F0D6", hash_generated_method = "0A6C4E4591BB9051C220BECC5445085D")
     
 public int getVersion() {

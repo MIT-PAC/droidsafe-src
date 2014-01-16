@@ -24,13 +24,8 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.KeyEvent;
 
-
-
-
-
 public class SearchManager implements DialogInterface.OnDismissListener, DialogInterface.OnCancelListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.412 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
-
 
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.414 -0500", hash_original_field = "EC590F4189897A1A0426B9BED7D50C77", hash_generated_field = "98C0772E1BD537CBFF8890EF0E8B5925")
@@ -110,7 +105,6 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.472 -0500", hash_original_field = "097B05FF3EDD917E9AF5C967019C2AD9", hash_generated_field = "2508AA2CC6815F08FDE48C6DB316521B")
 
     public final static String SUGGEST_COLUMN_ICON_2 = "suggest_icon_2";
-
     
     public interface OnDismissListener {
         
@@ -191,7 +185,6 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
     private static ISearchManager mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.524 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.526 -0500", hash_original_field = "34442E2B955F925176D13B350E91112C", hash_generated_field = "E59E6E4A97DB236DE3DC575FA608E392")
 
@@ -205,7 +198,6 @@ public class SearchManager implements DialogInterface.OnDismissListener, DialogI
  OnCancelListener mCancelListener = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.534 -0500", hash_original_field = "B93D728F11520F5ED9A8F4EC523DF611", hash_generated_field = "247F9D3B324680CEDDC332FCA6608926")
 
-
     private SearchDialog mSearchDialog;
 
     /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.537 -0500", hash_original_method = "A1F4172E8F505D7306645B5F1AC929D8", hash_generated_method = "A1F4172E8F505D7306645B5F1AC929D8")
@@ -218,7 +210,7 @@ SearchManager(Context context, Handler handler)  {
     }
     
     // Manually added
-    @DSModeled(DSC.BAN)
+    
     public SearchManager(Context context) {
         mContext = context;
         addTaint(context.getTaint());
@@ -265,6 +257,7 @@ SearchManager(Context context, Handler handler)  {
      * @see android.app.Activity#onSearchRequested
      * @see #stopSearch
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.539 -0500", hash_original_method = "A99B2740D078AE52E51C31205C7D1808", hash_generated_method = "A7C16716E4CF8DFC1749C19EB9862C5A")
     
 public void startSearch(String initialQuery,
@@ -282,6 +275,7 @@ public void startSearch(String initialQuery,
      *
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.542 -0500", hash_original_method = "DA3F20917B57D7E33A815871BCDB23BC", hash_generated_method = "D25455AD659058EDE70278DEE5598F12")
     
 public void startSearch(String initialQuery,
@@ -313,7 +307,8 @@ private void ensureSearchDialog() {
     /**
      * Starts the global search activity.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.547 -0500", hash_original_method = "665629AEED9E4B619C9A8F98A6E670F8", hash_generated_method = "9667A5DFF6E153D9414F2665C36C0D94")
+    /* package */ @DSSink({DSSinkKind.LOG})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.547 -0500", hash_original_method = "665629AEED9E4B619C9A8F98A6E670F8", hash_generated_method = "9667A5DFF6E153D9414F2665C36C0D94")
     
 void startGlobalSearch(String initialQuery, boolean selectInitialQuery,
             Bundle appSearchData, Rect sourceBounds) {
@@ -357,6 +352,7 @@ void startGlobalSearch(String initialQuery, boolean selectInitialQuery,
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.550 -0500", hash_original_method = "C1495B155CB6927BC4386A7FC3D8EFF9", hash_generated_method = "DB4D3219FC41AF33B55F6ADC0B5CAF94")
     
 public List<ResolveInfo> getGlobalSearchActivities() {
@@ -373,6 +369,7 @@ public List<ResolveInfo> getGlobalSearchActivities() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.552 -0500", hash_original_method = "375B46C6B18E608C61AB732BC7ABBFF0", hash_generated_method = "911E93BB9734C43B09BD1541465D5BBB")
     
 public ComponentName getGlobalSearchActivity() {
@@ -393,6 +390,7 @@ public ComponentName getGlobalSearchActivity() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.554 -0500", hash_original_method = "B76C058C1256501309C0E936D28D0087", hash_generated_method = "4F5871C4AEDB3C5562043852E2B4BE8E")
     
 public ComponentName getWebSearchActivity() {
@@ -417,6 +415,7 @@ public ComponentName getWebSearchActivity() {
      *
      * @see #startSearch
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.557 -0500", hash_original_method = "DFA0F52B0EB2C924C24B76A319C2D2A5", hash_generated_method = "D2399AC977803B2C6953C30222A5BBBE")
     
 public void triggerSearch(String query,
@@ -521,6 +520,9 @@ public void setOnCancelListener(OnCancelListener listener) {
      * @return Searchable information, or <code>null</code> if the activity does not
      *         exist, or is not searchable.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.576 -0500", hash_original_method = "BECD96EDDDF4DA2CCA14D2ABA4ED0EE3", hash_generated_method = "0A2930B9F3A3D87660C73C288FF26183")
     
 public SearchableInfo getSearchableInfo(ComponentName componentName) {
@@ -541,6 +543,7 @@ public SearchableInfo getSearchableInfo(ComponentName componentName) {
      *
      * @hide because SearchableInfo is not part of the API.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.578 -0500", hash_original_method = "8998A0F3078F1A486029D8083CC723D6", hash_generated_method = "CFAD615B6C154A9633115783582DB708")
     
 public Cursor getSuggestions(SearchableInfo searchable, String query) {
@@ -558,6 +561,7 @@ public Cursor getSuggestions(SearchableInfo searchable, String query) {
      *
      * @hide because SearchableInfo is not part of the API.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.582 -0500", hash_original_method = "E15CCFC152F5A7E151DA9EBD5A00EC08", hash_generated_method = "124202710E5CB091192B2F7D7FD9040B")
     
 public Cursor getSuggestions(SearchableInfo searchable, String query, int limit) {
@@ -612,6 +616,7 @@ public Cursor getSuggestions(SearchableInfo searchable, String query, int limit)
      *         that have the <code>android:includeInGlobalSearch</code> attribute set
      *         in their searchable meta-data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:58.584 -0500", hash_original_method = "1D69522720A8D25D6502045F710E48DA", hash_generated_method = "614E75FC6E7339B3DE2A2EEE6EF87599")
     
 public List<SearchableInfo> getSearchablesInGlobalSearch() {

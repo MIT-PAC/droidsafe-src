@@ -34,11 +34,6 @@ import org.apache.harmony.security.x509.Extensions;
 import org.apache.harmony.security.x509.TBSCertificate;
 import org.apache.harmony.xnet.provider.jsse.OpenSSLSignature;
 
-
-
-
-
-
 public final class X509CertImpl extends X509Certificate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.329 -0500", hash_original_field = "D07E4E14804DB7179916D91414448DCB", hash_generated_field = "AE4BC6F1CB9BA34159A076A49F034253")
 
@@ -167,12 +162,14 @@ private void checkValidity(long time)
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.384 -0500", hash_original_method = "89D7F1BE0C395C13D4A43DDDB6D84533", hash_generated_method = "1B6A9D404A9BA8CA67C38D4F8D91C208")
     
 public int getVersion() {
         return tbsCert.getVersion() + 1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.386 -0500", hash_original_method = "CC90380181A21ABFD0C1237D9F2C9838", hash_generated_method = "1199A7B57F4E4267AC58B13BDEBD0678")
     
 public BigInteger getSerialNumber() {
@@ -183,12 +180,14 @@ public BigInteger getSerialNumber() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.389 -0500", hash_original_method = "2552251E229FA5F4C4BC8254C0633556", hash_generated_method = "EBA8C8B9CAB304F95B6A01ACB111427C")
     
 public Principal getIssuerDN() {
         return getIssuerX500Principal();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.391 -0500", hash_original_method = "B82B3361EE6501B1AD6CD55F9554225E", hash_generated_method = "71F1BFFB4A7102D8CAA0E079228915EF")
     
 public X500Principal getIssuerX500Principal() {
@@ -200,12 +199,14 @@ public X500Principal getIssuerX500Principal() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.393 -0500", hash_original_method = "57EE376613339C3801C08A778AAA92CE", hash_generated_method = "C62826B4FD94AC083D14C15A363E5647")
     
 public Principal getSubjectDN() {
         return getSubjectX500Principal();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.395 -0500", hash_original_method = "50D7E6DD1BE4A80FFE9B722B1EC59064", hash_generated_method = "FDD8230D45C6725C89C1F220D6884FC5")
     
 public X500Principal getSubjectX500Principal() {
@@ -217,6 +218,7 @@ public X500Principal getSubjectX500Principal() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.397 -0500", hash_original_method = "42D01D75FA3640E76A288F4F69BBD1FB", hash_generated_method = "72127F0B9743A5DA27E49109497022A4")
     
 public Date getNotBefore() {
@@ -233,6 +235,7 @@ private long getNotBeforeInternal() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.402 -0500", hash_original_method = "247B9C82A59BA08F12FC34A8D1043A8F", hash_generated_method = "B45871D78FD8C6F3A097DF6173F6DAA9")
     
 public Date getNotAfter() {
@@ -249,6 +252,7 @@ private long getNotAfterInternal() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.406 -0500", hash_original_method = "713937699882346A31B465214B9B4401", hash_generated_method = "2A84FE76145DAA052F3C634C578E920D")
     
 public byte[] getTBSCertificate() throws CertificateEncodingException {
@@ -265,6 +269,7 @@ private byte[] getTbsCertificateInternal() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.411 -0500", hash_original_method = "EB14E7CDB05E64025ABBA11FDD999629", hash_generated_method = "B81DBD388F1D0E887C7D7D7B161BFD24")
     
 public byte[] getSignature() {
@@ -281,6 +286,7 @@ private byte[] getSignatureInternal() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.416 -0500", hash_original_method = "36C3BDBBAA85C39CA2DA1792DFF67222", hash_generated_method = "DB5C391257E1BBC05C90A6A205BA1331")
     
 public String getSigAlgName() {
@@ -298,6 +304,7 @@ public String getSigAlgName() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.419 -0500", hash_original_method = "C10B97AA2F949E0770EFB417749475D0", hash_generated_method = "778D62D59B6D2A3AD5EE4B55CC71DC2D")
     
 public String getSigAlgOID() {
@@ -309,6 +316,7 @@ public String getSigAlgOID() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.421 -0500", hash_original_method = "A4F68E4A7ABF2F614B271E042CE68DFD", hash_generated_method = "93845529E0B90C234574746244E60D04")
     
 public byte[] getSigAlgParams() {
@@ -327,18 +335,21 @@ public byte[] getSigAlgParams() {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.423 -0500", hash_original_method = "5910DFD7FE416853E5E8B3596C036798", hash_generated_method = "EAAF83AFD4A8D6BFF2CC8D0061803038")
     
 public boolean[] getIssuerUniqueID() {
         return tbsCert.getIssuerUniqueID();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.425 -0500", hash_original_method = "97AECD47F957244BC2EDB08A3DFA1485", hash_generated_method = "4B5FBE50259FE9C84FCA6635A1784E7E")
     
 public boolean[] getSubjectUniqueID() {
         return tbsCert.getSubjectUniqueID();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.428 -0500", hash_original_method = "7963F25A7C6EC878E5FE59792F4927CF", hash_generated_method = "F36E1E92435A3EBFF21A5C1D34F79BC0")
     
 public boolean[] getKeyUsage() {
@@ -348,6 +359,7 @@ public boolean[] getKeyUsage() {
         return extensions.valueOfKeyUsage();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.430 -0500", hash_original_method = "879E6EC12A8ACAB06B48BD9054F744F5", hash_generated_method = "33DB801A575FB28AE8500B7C6BC069D7")
     
 public List<String> getExtendedKeyUsage()
@@ -362,6 +374,7 @@ public List<String> getExtendedKeyUsage()
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.432 -0500", hash_original_method = "338E6CEAECFAB8CF1E7BE34A5E6721D3", hash_generated_method = "E9408E6086C76A4EB83790A2DA4BF4DF")
     
 public int getBasicConstraints() {
@@ -371,6 +384,7 @@ public int getBasicConstraints() {
         return extensions.valueOfBasicConstrains();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.434 -0500", hash_original_method = "73F2B21E8EC8FD1E84C605144B87E477", hash_generated_method = "3D7D7D4650E1696332AF8E9E95CF2D86")
     
 public Collection<List<?>> getSubjectAlternativeNames() throws CertificateParsingException {
@@ -391,6 +405,7 @@ public Collection<List<?>> getSubjectAlternativeNames() throws CertificateParsin
      * @see java.security.cert.X509Certificate#getIssuerAlternativeNames()
      * method documentation for more information.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.437 -0500", hash_original_method = "40F7C32C55156DBF6396CA2C21DA2FF4", hash_generated_method = "B5BE233C797BC4CF987EE5F91E908549")
     
 public Collection<List<?>> getIssuerAlternativeNames() throws CertificateParsingException {
@@ -407,6 +422,7 @@ public Collection<List<?>> getIssuerAlternativeNames() throws CertificateParsing
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.439 -0500", hash_original_method = "4063CD679B717558744A87C021CCD284", hash_generated_method = "E51385EDB6480527A04F58C974576564")
     
 @Override public byte[] getEncoded() throws CertificateEncodingException {
@@ -422,6 +438,7 @@ private byte[] getEncodedInternal() throws CertificateEncodingException {
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.444 -0500", hash_original_method = "C29BF4798FFF05217C70FFE55AFF7469", hash_generated_method = "043BA1F61BA7CFB09029937732338040")
     
 @Override public PublicKey getPublicKey() {
@@ -486,6 +503,7 @@ private byte[] getEncodedInternal() throws CertificateEncodingException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.454 -0500", hash_original_method = "D555F516A4047F5D7C4D53CF443DF432", hash_generated_method = "20D9EB8A8B0FAC7E79DEC4100F37A033")
     
 @Override public Set<String> getNonCriticalExtensionOIDs() {
@@ -496,6 +514,7 @@ private byte[] getEncodedInternal() throws CertificateEncodingException {
         return extensions.getNonCriticalExtensions();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.457 -0500", hash_original_method = "B95147569C30A037580BE18E2484572D", hash_generated_method = "B4F87595567AF751F1BF120C5728B730")
     
 @Override public Set<String> getCriticalExtensionOIDs() {
@@ -506,6 +525,7 @@ private byte[] getEncodedInternal() throws CertificateEncodingException {
         return extensions.getCriticalExtensions();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.459 -0500", hash_original_method = "46B3B0A81D238D78F58FF04050F493C3", hash_generated_method = "947E8F1D0576A94E3DCB126528913FFF")
     
 @Override public byte[] getExtensionValue(String oid) {

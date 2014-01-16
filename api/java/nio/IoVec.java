@@ -10,13 +10,8 @@ import java.io.IOException;
 import libcore.io.ErrnoException;
 import libcore.io.Libcore;
 
-
-
-
-
 final class IoVec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.807 -0500", hash_original_field = "EAA57126CB83C6F63722C70ACD182EC3", hash_generated_field = "8F7E59474A3A47E6FACE7437BBBF16C4")
-
 
     private  ByteBuffer[] byteBuffers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.809 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "EA4C80BAC452228E60AC0DA2D3E0C953")
@@ -27,7 +22,6 @@ final class IoVec {
     private  int bufferCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.815 -0500", hash_original_field = "5ADD99E37B3A3DA9A715D46B0498EC13", hash_generated_field = "27EC5D44122911539EEF00080CA2291C")
 
-
     private  Object[] ioBuffers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.817 -0500", hash_original_field = "558F8D9D196E335F46E7F2341F45A030", hash_generated_field = "E194B71DC943C13E8607B77E79D5CB4E")
 
@@ -36,7 +30,6 @@ final class IoVec {
 
     private  int[] byteCounts;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.823 -0500", hash_original_field = "846FC68BE992F4639E3CFA86583CA8F9", hash_generated_field = "AD22A97F29292C6D1CAA320C6112ECB5")
-
 
     private  Direction direction;
 
@@ -75,6 +68,7 @@ int init() {
         return totalRemaining;
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.830 -0500", hash_original_method = "A7EE0836183CE06C4386DE620F235FAB", hash_generated_method = "A7EE0836183CE06C4386DE620F235FAB")
     
 int doTransfer(FileDescriptor fd) throws IOException {
@@ -107,10 +101,8 @@ void didTransfer(int byteCount) {
             }
         }
     }
-
     
     enum Direction { READV, WRITEV }
-
     
 }
 

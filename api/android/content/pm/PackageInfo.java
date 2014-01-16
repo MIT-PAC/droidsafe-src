@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class PackageInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.763 -0500", hash_original_field = "161FDE75E013CEBD9EA008B9E9176008", hash_generated_field = "0F203621F53B1B2EA90833CEFB6BEB3B")
 
@@ -148,6 +144,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:50.782 -0500", hash_original_method = "F276E90711C385BB34A836DEED976429", hash_generated_method = "BDF5CD297C710E4FFFF333A3F9B79189")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {

@@ -14,11 +14,6 @@ import java.security.interfaces.RSAPrivateKey;
 
 import javax.net.ssl.SSLException;
 
-
-
-
-
-
 public class OpenSSLServerSocketImpl extends javax.net.ssl.SSLServerSocket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.860 -0500", hash_original_field = "8EC89ADA2574F1DBC3DD4508F1BBC0BF", hash_generated_field = "D3BEC3280BC0116C55BDEA33933A255E")
 
@@ -66,6 +61,7 @@ protected OpenSSLServerSocketImpl(int port,
         this.sslParameters = sslParameters;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.880 -0500", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "F0850E2B8F230278D1EE6575AFA464E6")
     
 @Override
@@ -73,6 +69,7 @@ protected OpenSSLServerSocketImpl(int port,
         return sslParameters.getEnableSessionCreation();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.882 -0500", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "3DEA9628617E70F67E1471694350041C")
     
 @Override
@@ -85,6 +82,7 @@ protected OpenSSLServerSocketImpl(int port,
      * connection.
      * @return an array of protocols names
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.885 -0500", hash_original_method = "B10F1AAC80A139AD997D0D8B0338DD89", hash_generated_method = "AC03A33ED96900A1F6F22E082B4D218D")
     
 @Override
@@ -97,6 +95,7 @@ protected OpenSSLServerSocketImpl(int port,
      *
      * @return an array of protocols names
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.887 -0500", hash_original_method = "26510D7872AB5791B4C2075CD3368FCD", hash_generated_method = "F66B93BEA1257A9D34745668F1A12518")
     
 @Override
@@ -113,6 +112,7 @@ protected OpenSSLServerSocketImpl(int port,
      * @throws IllegalArgumentException when one or more of the names in the
      *             array are not supported, or when the array is null.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.889 -0500", hash_original_method = "4F25266A0ABB18E1CEC5E2893BCF6C12", hash_generated_method = "1247E6E288197D24DA3BC8CBC688F7CB")
     
 @Override
@@ -120,6 +120,7 @@ protected OpenSSLServerSocketImpl(int port,
         enabledProtocols = NativeCrypto.checkEnabledProtocols(protocols);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.892 -0500", hash_original_method = "1B8AAFC0DA0BD632205C9BB94F36BE40", hash_generated_method = "FC9C3F1BC74E6756C08730F8099184A3")
     
 @Override
@@ -127,6 +128,7 @@ protected OpenSSLServerSocketImpl(int port,
         return NativeCrypto.getSupportedCipherSuites();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.894 -0500", hash_original_method = "5CCACD4A046B80B9464615B5EFBE522F", hash_generated_method = "9609D63D06C0561070F00E8FC5B0E108")
     
 @Override
@@ -142,6 +144,7 @@ protected OpenSSLServerSocketImpl(int port,
      * @throws IllegalArgumentException when one or more of the ciphers in array
      *         suites are not supported, or when the array is null.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.896 -0500", hash_original_method = "A8F29A0117C2056BB4F12EE1D48F5595", hash_generated_method = "7334BD36327A5C0E4641C62AF79624D8")
     
 @Override
@@ -175,6 +178,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         enabledCompressionMethods = NativeCrypto.checkEnabledCompressionMethods(methods);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.905 -0500", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "C498EFFB7EA33937BE58E3D8E2A82C77")
     
 @Override
@@ -182,6 +186,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         return sslParameters.getWantClientAuth();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.908 -0500", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "21E8FF7B7CE0E4FB146B4F3F0EE91E86")
     
 @Override
@@ -189,6 +194,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         sslParameters.setWantClientAuth(want);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.910 -0500", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "1AC7C5FF07516804848811840A468A8B")
     
 @Override
@@ -196,6 +202,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         return sslParameters.getNeedClientAuth();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.912 -0500", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "C446CA4D04BF46EBA63D06A750C2C8C1")
     
 @Override
@@ -203,6 +210,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         sslParameters.setNeedClientAuth(need);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.915 -0500", hash_original_method = "433F9F6F1671E88E2914017CCCE9CE51", hash_generated_method = "ED0148AE7F6FFE9B057DEA60FFD079FA")
     
 @Override
@@ -210,6 +218,7 @@ public void setEnabledCompressionMethods(String[] methods) {
         sslParameters.setUseClientMode(mode);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.917 -0500", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "C189C4A91AE7529C93E5FE1A68636F7D")
     
 @Override
@@ -294,7 +303,6 @@ private boolean checkForPrivateKey(String keyType, Class keyClass) {
         PrivateKey key = sslParameters.getKeyManager().getPrivateKey(alias);
         return (key != null && keyClass.isAssignableFrom(key.getClass()));
     }
-
     
 }
 

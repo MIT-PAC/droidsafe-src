@@ -12,10 +12,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Printer;
 
-
-
-
-
 public class Location implements Parcelable {
 
     /**
@@ -262,6 +258,8 @@ private static void computeDistanceAndBearing(double lat1, double lon1,
      *
      * @throws IllegalArgumentException if results is null or has length < 1
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.356 -0500", hash_original_method = "8ABFD76C6BB25FBE1C10045F87B30D96", hash_generated_method = "9CA28EB8591627B94C2C841FF158C3E8")
     
 public static void distanceBetween(double startLatitude, double startLongitude,
@@ -312,7 +310,6 @@ public Location[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.286 -0500", hash_original_field = "91E507DC461800B2755826CF50C3CFFF", hash_generated_field = "644895AD43D171E05003EF08DEE63C8C")
-
 
     private String mProvider;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.289 -0500", hash_original_field = "97E03B9680CF23049C36A6B3EB2AC160", hash_generated_field = "39CDFD59B94279CE728BDCF20E03E08D")
@@ -382,6 +379,8 @@ public Location[] newArray(int size) {
      * @param provider the name of the location provider that generated this
      * location fix.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.333 -0500", hash_original_method = "70E7035C56BDBF9C3F6572F798B0D4BF", hash_generated_method = "E58169526819F86AAC7DAC1E5CC765D6")
     
 public Location(String provider) {
@@ -398,6 +397,7 @@ public Location(Location l) {
         set(l);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.331 -0500", hash_original_method = "E894B78E8DAE7217EB8A906829737D1E", hash_generated_method = "73178F331843DA94658E917347F3A67D")
     
 public void dump(Printer pw, String prefix) {
@@ -413,6 +413,7 @@ public void dump(Printer pw, String prefix) {
     /**
      * Sets the contents of the location to the values from the given location.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.338 -0500", hash_original_method = "8A60F1EB9D48909B7AC1F2F058E6CA7B", hash_generated_method = "0D11847C4FAC634F0F15F0182D518FC1")
     
 public void set(Location l) {
@@ -460,6 +461,8 @@ public void reset() {
      * @param dest the destination location
      * @return the approximate distance in meters
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.359 -0500", hash_original_method = "F7D4263990E83377B0F1337DC2A9789F", hash_generated_method = "4462E72B31EDF62C36CD117457DEE7F2")
     
 public float distanceTo(Location dest) {
@@ -514,6 +517,9 @@ public float bearingTo(Location dest) {
      * Returns the name of the provider that generated this fix,
      * or null if it is not associated with a provider.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.363 -0500", hash_original_method = "BFECE3BB8B622B00AFB7A331FE5F6AF2", hash_generated_method = "1CDFB9AF0318DBE18124C0C7933D014A")
     
 public String getProvider() {
@@ -533,6 +539,9 @@ public void setProvider(String provider) {
      * Returns the UTC time of this fix, in milliseconds since January 1,
      * 1970.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.367 -0500", hash_original_method = "997C67A326545139029C9D8F308B45E1", hash_generated_method = "71E6372FD72C471FB7AEA62C47181467")
     
 public long getTime() {
@@ -552,6 +561,9 @@ public void setTime(long time) {
     /**
      * Returns the latitude of this fix.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.372 -0500", hash_original_method = "F25A3F38BD2475F276CF0768419142B9", hash_generated_method = "987B43A327E4AD566B34E7F55EF98D0C")
     
 public double getLatitude() {
@@ -561,6 +573,8 @@ public double getLatitude() {
     /**
      * Sets the latitude of this fix.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.375 -0500", hash_original_method = "1F7F9B57342DE3FD3D5D55490B64EE27", hash_generated_method = "EC3911E7EEDEB215E86576D113AF1BA5")
     
 public void setLatitude(double latitude) {
@@ -570,6 +584,9 @@ public void setLatitude(double latitude) {
     /**
      * Returns the longitude of this fix.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.377 -0500", hash_original_method = "7E07C4F8B2560C863B560B81405E4EA8", hash_generated_method = "551A2DD0F2974646F82A231B1C16543B")
     
 public double getLongitude() {
@@ -579,6 +596,8 @@ public double getLongitude() {
     /**
      * Sets the longitude of this fix.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.379 -0500", hash_original_method = "D382B7FFFC1832B1199A432F05F295AF", hash_generated_method = "0C741959BD2A7C801FE236BB69D8BD17")
     
 public void setLongitude(double longitude) {
@@ -589,6 +608,8 @@ public void setLongitude(double longitude) {
      * Returns true if this fix contains altitude information, false
      * otherwise.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.381 -0500", hash_original_method = "8588CDCF553966E03782186D08715F65", hash_generated_method = "61D93F6C69B04716C494CCB5945DB85B")
     
 public boolean hasAltitude() {
@@ -599,6 +620,9 @@ public boolean hasAltitude() {
      * Returns the altitude of this fix.  If {@link #hasAltitude} is false,
      * 0.0f is returned.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.383 -0500", hash_original_method = "38598EF38BAA57E5BBA23C5814512D64", hash_generated_method = "1FA0FAED8AFB0498ABF93573DAAC0FAA")
     
 public double getAltitude() {
@@ -641,6 +665,9 @@ public boolean hasSpeed() {
      * Returns the speed of the device over ground in meters/second.
      * If hasSpeed() is false, 0.0f is returned.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.393 -0500", hash_original_method = "CA7E551E55E608E59EEFDA2D55C22485", hash_generated_method = "10317FF0C70C1810DD863DFF86B80390")
     
 public float getSpeed() {
@@ -683,6 +710,9 @@ public boolean hasBearing() {
      * Returns the direction of travel in degrees East of true
      * North. If hasBearing() is false, 0.0 is returned.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.404 -0500", hash_original_method = "AC6CB3B684BB76DAFC78CFB4B9F35C9A", hash_generated_method = "F386D9AEFC703337DB5785310B74289E")
     
 public float getBearing() {
@@ -721,6 +751,8 @@ public void removeBearing() {
      * Returns true if the provider is able to report accuracy information,
      * false otherwise.  The default implementation returns false.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.425 -0500", hash_original_method = "25E2CFAA647DEEE085853277B0217FAA", hash_generated_method = "E3F5D709C82F888D13DC27A9FF81A645")
     
 public boolean hasAccuracy() {
@@ -731,6 +763,9 @@ public boolean hasAccuracy() {
      * Returns the accuracy of the fix in meters. If hasAccuracy() is false,
      * 0.0 is returned.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.430 -0500", hash_original_method = "080C41F346C9D7277489423C5A91C89D", hash_generated_method = "A4618DB2E3AC6E93C5056AB62A49CCCE")
     
 public float getAccuracy() {
@@ -773,6 +808,7 @@ public void removeAccuracy() {
      * <li> satellites - the number of satellites used to derive the fix
      * </ul>
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.439 -0500", hash_original_method = "CF33C86C13BFD55DE499066ECC955562", hash_generated_method = "4808B2FAD06A275B25AB6F7116EE8421")
     
 public Bundle getExtras() {
@@ -783,6 +819,7 @@ public Bundle getExtras() {
      * Sets the extra information associated with this fix to the
      * given Bundle.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:01.441 -0500", hash_original_method = "0A734FEAEEC80691783BCF1D3384CC6B", hash_generated_method = "7B33C94C8485B596F89F9E6A5A10A83A")
     
 public void setExtras(Bundle extras) {

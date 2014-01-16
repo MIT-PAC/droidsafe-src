@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 abstract class DoubleArrayBuffer extends DoubleBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.049 -0500", hash_original_field = "DF557CDEA557661E312EE6624F170134", hash_generated_field = "72A67E62C40D09BAE43910B3E5CACC06")
 
-
     protected  double[] backingArray;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.052 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "22BBBB3BDBDCD622FED3EBF1A70B4EC5")
-
 
     protected  int offset;
 
@@ -39,6 +33,7 @@ DoubleArrayBuffer(int capacity, double[] backingArray, int offset) {
         this.offset = offset;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.062 -0500", hash_original_method = "CBBA623098702DBD3F5C6B97B033DEBD", hash_generated_method = "B3440A5BDF7CECE3A1A8DB037413481B")
     
 @Override
@@ -49,6 +44,7 @@ DoubleArrayBuffer(int capacity, double[] backingArray, int offset) {
         return backingArray[offset + position++];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.065 -0500", hash_original_method = "0637023D2B498B1330CE2AA53BD56A5A", hash_generated_method = "E3D15485047DEFFEAA5C31631B0A3500")
     
 @Override
@@ -57,6 +53,7 @@ DoubleArrayBuffer(int capacity, double[] backingArray, int offset) {
         return backingArray[offset + index];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.067 -0500", hash_original_method = "DBA28E4E7AFB8E492F1C52FCFBB2DA2D", hash_generated_method = "60DDA695F6712D9BDB0521D60F26295C")
     
 @Override
@@ -82,7 +79,6 @@ DoubleArrayBuffer(int capacity, double[] backingArray, int offset) {
     public final ByteOrder order() {
         return ByteOrder.nativeOrder();
     }
-
     
 }
 

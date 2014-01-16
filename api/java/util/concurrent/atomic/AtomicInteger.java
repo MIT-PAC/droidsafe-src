@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import sun.misc.Unsafe;
 
-
-
-
-
 public class AtomicInteger extends Number implements java.io.Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.314 -0500", hash_original_field = "EDA2AEC613B19DD5D3B8D8B483F792BA", hash_generated_field = "BC575BADA52C64A5C5C6ADD1B81BACA0")
 
@@ -22,7 +18,6 @@ public class AtomicInteger extends Number implements java.io.Serializable {
     private static  long valueOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.323 -0500", hash_original_field = "2A5EA2B60261C751D318C2CB32BF7CEC", hash_generated_field = "AACF1191CE0421BEFC63226B2561E15D")
 
-
     private volatile int value;
 
     /**
@@ -30,6 +25,8 @@ public class AtomicInteger extends Number implements java.io.Serializable {
      *
      * @param initialValue the initial value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.325 -0500", hash_original_method = "A3EEEE607FBEBD432F4111F47BB23345", hash_generated_method = "F0670CE27A83C450C2A4000B5E8C2390")
     
 public AtomicInteger(int initialValue) {
@@ -49,6 +46,7 @@ public AtomicInteger() {
      *
      * @return the current value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.330 -0500", hash_original_method = "2C5A1089E8025181868581E48D922F38", hash_generated_method = "703E0755BD925C4D70E557B53D2BF771")
     
 public final int get() {
@@ -72,6 +70,7 @@ public final void set(int newValue) {
      * @param newValue the new value
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.336 -0500", hash_original_method = "77EB9E59BE67AA43485FF3A0F0492CB7", hash_generated_method = "4CD52BDA532FC5AB7C0B2B2E1A0C3792")
     
 public final void lazySet(int newValue) {
@@ -84,6 +83,7 @@ public final void lazySet(int newValue) {
      * @param newValue the new value
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.338 -0500", hash_original_method = "EFF79965BA8CD7578F2A5616273687C7", hash_generated_method = "459912E78FA47DBEC8F8D999BA2FBD0D")
     
 public final int getAndSet(int newValue) {
@@ -132,6 +132,9 @@ public final boolean weakCompareAndSet(int expect, int update) {
      *
      * @return the previous value
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.345 -0500", hash_original_method = "621C33BC86CD3122044A53600F895B29", hash_generated_method = "425725E2DE13479856F360A7F13BBBA6")
     
 public final int getAndIncrement() {
@@ -148,6 +151,7 @@ public final int getAndIncrement() {
      *
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.348 -0500", hash_original_method = "D5257E8A410056D1BB1DB7447390EAE5", hash_generated_method = "8C7CA472D5F813D9D0A3E6E453CD9E55")
     
 public final int getAndDecrement() {
@@ -165,6 +169,7 @@ public final int getAndDecrement() {
      * @param delta the value to add
      * @return the previous value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.351 -0500", hash_original_method = "4B803B85C89B0C062A735FA86D4518AE", hash_generated_method = "95C75EF25F3A5B40B217926C833417D1")
     
 public final int getAndAdd(int delta) {
@@ -234,7 +239,6 @@ public final int addAndGet(int delta) {
 public String toString() {
         return Integer.toString(get());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.363 -0500", hash_original_method = "B90EC926C8275C97256DF1E0AD9FC076", hash_generated_method = "78E09736EA0B907CA81C02E14B9D2D57")
     

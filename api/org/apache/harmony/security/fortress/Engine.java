@@ -8,11 +8,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.Provider;
 import java.util.Locale;
 
-
-
-
-
-
 public class Engine {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.054 -0500", hash_original_field = "866C4AC448B39300A873F48EFF03F5C6", hash_generated_field = "CA6B0B1BB271255872AE24F4B60049E7")
 
@@ -73,6 +68,7 @@ public SpiAndProvider getInstance(String algorithm, Object param)
      * instance of the class that implements corresponding Service
      * Provider Interface.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.088 -0500", hash_original_method = "A7EA60582CEFDE50341F39C3F4FF4289", hash_generated_method = "EEDAEC110F992439486E97CEB5A34DB2")
     
 public Object getInstance(String algorithm, Provider provider, Object param)
@@ -86,7 +82,6 @@ public Object getInstance(String algorithm, Provider provider, Object param)
         }
         return service.newInstance(param);
     }
-
     
     private static final class ServiceCacheEntry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.061 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
@@ -108,11 +103,8 @@ private ServiceCacheEntry(String algorithm,
             this.refreshNumber = refreshNumber;
             this.service = service;
         }
-
         
     }
-
-
     
     public static final class SpiAndProvider {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.074 -0500", hash_original_field = "D0259A64FD3599D5A4C36FF7703885A7", hash_generated_field = "3C7DCE9DB87EFC046EAD4A2C44081C3E")
@@ -127,7 +119,6 @@ private SpiAndProvider(Object spi, Provider provider) {
             this.spi = spi;
             this.provider = provider;
         }
-
         
     }
 

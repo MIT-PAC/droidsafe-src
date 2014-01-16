@@ -13,10 +13,6 @@ import android.annotation.SdkConstant.SdkConstantType;
 import android.os.Binder;
 import android.os.RemoteException;
 
-
-
-
-
 public class ConnectivityManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.975 -0500", hash_original_method = "671D0D7730B85BC5935321406BD74923", hash_generated_method = "11074B2D42E47FAF0F3700968E303606")
@@ -26,6 +22,7 @@ public static boolean isNetworkTypeValid(int networkType) {
     }
 
     /** {@hide} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.978 -0500", hash_original_method = "57160226B4CF0D42C9F7F57B79505FFE", hash_generated_method = "0247A70DED0CC0A01F33D476BB55F870")
     
 public static String getNetworkTypeName(int type) {
@@ -188,7 +185,6 @@ public static boolean isNetworkTypeMobile(int networkType) {
     public static final int MAX_NETWORK_TYPE = TYPE_WIFI_P2P;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.970 -0500", hash_original_field = "A591864212287B0F4C2623B6941E302B", hash_generated_field = "693728286830CEC17980B2770B246B92")
 
-
     public static final int DEFAULT_NETWORK_PREFERENCE = TYPE_WIFI;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.050 -0500", hash_original_field = "8C9AEFD4AA83DE991C5D77C913B19CBF", hash_generated_field = "27C649E4F5C0896362843DA1D4CCC9B3")
 
@@ -225,7 +221,6 @@ public static boolean isNetworkTypeMobile(int networkType) {
     public static final int TETHER_ERROR_IFACE_CFG_ERROR      = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.972 -0500", hash_original_field = "D5507596E1C2AEF6056A5DA433C8FD30", hash_generated_field = "91FD67C0243C9CAC51474C01D9540196")
 
-
     private  IConnectivityManager mService;
 
     /**
@@ -237,13 +232,13 @@ public ConnectivityManager(IConnectivityManager service) {
         mService = checkNotNull(service, "missing IConnectivityManager");
     }
     
-    
     //added for Modeling
-    @DSModeled(DSC.BAN)
+    
     public ConnectivityManager(){
         
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.982 -0500", hash_original_method = "20C5B9DE2E49D07D506F0D5479D46C57", hash_generated_method = "705016F11B9CF1B00FA6D0B84A4A127D")
     
 public void setNetworkPreference(int preference) {
@@ -253,6 +248,7 @@ public void setNetworkPreference(int preference) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.985 -0500", hash_original_method = "900E5DCCFD12B740A82ADA5294C949B0", hash_generated_method = "759169DAD21DE8D0E16EBF66531F9DDE")
     
 public int getNetworkPreference() {
@@ -263,6 +259,9 @@ public int getNetworkPreference() {
         }
     }
 
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.987 -0500", hash_original_method = "5E96294DED8896A900AADA5BAA807536", hash_generated_method = "41EC2EBBFB0A8E61C4899BD3B725AE62")
     
 public NetworkInfo getActiveNetworkInfo() {
@@ -274,6 +273,7 @@ public NetworkInfo getActiveNetworkInfo() {
     }
 
     /** {@hide} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.989 -0500", hash_original_method = "EA020BF9EC9A5FD5A107F43E91D20C3E", hash_generated_method = "F217E7BAAF7FC4B1325894C5EC16AA72")
     
 public NetworkInfo getActiveNetworkInfoForUid(int uid) {
@@ -284,6 +284,9 @@ public NetworkInfo getActiveNetworkInfoForUid(int uid) {
         }
     }
 
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.991 -0500", hash_original_method = "96564B6A49DFD6F7048AD1538B907A96", hash_generated_method = "F71292CA1D9F31586813A24788C5814B")
     
 public NetworkInfo getNetworkInfo(int networkType) {
@@ -294,6 +297,7 @@ public NetworkInfo getNetworkInfo(int networkType) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.993 -0500", hash_original_method = "394CF6797F6D312CB8F1ED596C180D8F", hash_generated_method = "33BE518378535A949350F5A4A4146652")
     
 public NetworkInfo[] getAllNetworkInfo() {
@@ -305,6 +309,7 @@ public NetworkInfo[] getAllNetworkInfo() {
     }
 
     /** {@hide} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.995 -0500", hash_original_method = "D6D4DA92D9064C06A48DA2C5EB8FF9D2", hash_generated_method = "8635E571CCE927831735F710D9313227")
     
 public LinkProperties getActiveLinkProperties() {
@@ -316,6 +321,7 @@ public LinkProperties getActiveLinkProperties() {
     }
 
     /** {@hide} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.997 -0500", hash_original_method = "C7AAA0ED9F7BD2D04E30B8A62557C00D", hash_generated_method = "77862D1F6036B72D3773EF80967CA162")
     
 public LinkProperties getLinkProperties(int networkType) {
@@ -327,6 +333,7 @@ public LinkProperties getLinkProperties(int networkType) {
     }
 
     /** {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:19.999 -0500", hash_original_method = "8773F3976862F74C7E8795673CF57A3F", hash_generated_method = "81730442DE198C93F00AD5357E15482A")
     
 public boolean setRadios(boolean turnOn) {
@@ -338,6 +345,7 @@ public boolean setRadios(boolean turnOn) {
     }
 
     /** {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.002 -0500", hash_original_method = "F4DEFED01E737220B0A84C9B3C165EA1", hash_generated_method = "514001308D74667C857CA35F320B4989")
     
 public boolean setRadio(int networkType, boolean turnOn) {
@@ -359,6 +367,7 @@ public boolean setRadio(int networkType, boolean turnOn) {
      * implementation+feature combination, except that the value {@code -1}
      * always indicates failure.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.004 -0500", hash_original_method = "709E7052A14C2A0D29C9219C00073F31", hash_generated_method = "B8D07777FB958A74015C5CF7BC03DA3C")
     
 public int startUsingNetworkFeature(int networkType, String feature) {
@@ -381,6 +390,7 @@ public int startUsingNetworkFeature(int networkType, String feature) {
      * implementation+feature combination, except that the value {@code -1}
      * always indicates failure.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.006 -0500", hash_original_method = "60EB71F5D3B7B41111FE02ED36065292", hash_generated_method = "660B44F86D05392C9D1712D13B2470A7")
     
 public int stopUsingNetworkFeature(int networkType, String feature) {
@@ -449,6 +459,7 @@ public boolean requestRouteToHostAddress(int networkType, InetAddress hostAddres
      *
      * @return Whether background data usage is allowed.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.014 -0500", hash_original_method = "6498894EA2E4C7DBE6A13B3BD05F6504", hash_generated_method = "AAEBF5ACBF892053B714FA4BBD54B26A")
     
 @Deprecated
@@ -468,6 +479,7 @@ public boolean requestRouteToHostAddress(int networkType, InetAddress hostAddres
      * @see #getBackgroundDataSetting()
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.016 -0500", hash_original_method = "C7D66D7319A6F772837F5FAC4582BCF2", hash_generated_method = "AC4F316907C6A856C123A7790060ED3D")
     
 @Deprecated
@@ -482,6 +494,7 @@ public boolean requestRouteToHostAddress(int networkType, InetAddress hostAddres
      *
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.018 -0500", hash_original_method = "2A17F1CC768C6D56971308D1A367AB75", hash_generated_method = "1B8ED4CA714DDB042712317BD3C2D6CC")
     
 public NetworkQuotaInfo getActiveNetworkQuotaInfo() {
@@ -498,6 +511,7 @@ public NetworkQuotaInfo getActiveNetworkQuotaInfo() {
      * @return Whether mobile data is enabled.
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.021 -0500", hash_original_method = "4787FEDAB977985506F4394396606391", hash_generated_method = "58A8EAFE078160517ACBD7DA92AB164F")
     
 public boolean getMobileDataEnabled() {
@@ -515,6 +529,7 @@ public boolean getMobileDataEnabled() {
      *            used or not.
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.023 -0500", hash_original_method = "03BF638942F758314C38E6E89D590F06", hash_generated_method = "261DF7B0ED76F52E39B217245232E798")
     
 public void setMobileDataEnabled(boolean enabled) {
@@ -527,6 +542,7 @@ public void setMobileDataEnabled(boolean enabled) {
     /**
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.028 -0500", hash_original_method = "65586E40689502E42674D85C93789ED5", hash_generated_method = "1524A1C6889FA407CD7898036794577E")
     
 public String[] getTetherableIfaces() {
@@ -540,6 +556,7 @@ public String[] getTetherableIfaces() {
     /**
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.031 -0500", hash_original_method = "1A1AB0AA8E53EB2A72A3BB78A36F79E1", hash_generated_method = "9D347932FEA778AD58444359C24661A5")
     
 public String[] getTetheredIfaces() {
@@ -553,6 +570,7 @@ public String[] getTetheredIfaces() {
     /**
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.033 -0500", hash_original_method = "B4F0365B2F0B873A76FA3BA63C88578F", hash_generated_method = "081CB592E791F9A009E27E780AA940EA")
     
 public String[] getTetheringErroredIfaces() {
@@ -567,6 +585,7 @@ public String[] getTetheringErroredIfaces() {
      * @return error A TETHER_ERROR value indicating success or failure type
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.035 -0500", hash_original_method = "88DA982A0D8C00E6CF08BAB9F849E24F", hash_generated_method = "8DB12DF8511773F1A6926E2F58A20399")
     
 public int tether(String iface) {
@@ -581,6 +600,7 @@ public int tether(String iface) {
      * @return error A TETHER_ERROR value indicating success or failure type
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.037 -0500", hash_original_method = "A16CE7410015543313DA1C15EBE8B863", hash_generated_method = "09CE1873E335A9849718E1C737BEE0DA")
     
 public int untether(String iface) {
@@ -607,6 +627,7 @@ public boolean isTetheringSupported() {
     /**
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.041 -0500", hash_original_method = "DC0367A904D99268D94A314F1CB55B9B", hash_generated_method = "1D22ECDF187484958B6A6894CE6090CC")
     
 public String[] getTetherableUsbRegexs() {
@@ -620,6 +641,7 @@ public String[] getTetherableUsbRegexs() {
     /**
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.043 -0500", hash_original_method = "8DD288EE3D6933895D6454F488DECB73", hash_generated_method = "8746646E29D66BEFF48A0D43327DB8F6")
     
 public String[] getTetherableWifiRegexs() {
@@ -633,6 +655,7 @@ public String[] getTetherableWifiRegexs() {
     /**
      * {@hide}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.046 -0500", hash_original_method = "83E2E43D24B9648666006A701F93D599", hash_generated_method = "2EFF0592C6AB09E9EC8609E4BBE3F10D")
     
 public String[] getTetherableBluetoothRegexs() {
@@ -646,6 +669,7 @@ public String[] getTetherableBluetoothRegexs() {
     /**
      * {@hide}
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.048 -0500", hash_original_method = "952ADB6A2A3AEF46E275F5FA17E284ED", hash_generated_method = "2C41EFBAB494353AB09ACFCBFAE7765F")
     
 public int setUsbTethering(boolean enable) {
@@ -662,6 +686,7 @@ public int setUsbTethering(boolean enable) {
      *               interface
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.077 -0500", hash_original_method = "A91E88C74DCBFDB505B1B5012FAE30D1", hash_generated_method = "B7FA9633C21B661F3672DE0D8F69EEC2")
     
 public int getLastTetherError(String iface) {
@@ -707,6 +732,7 @@ public void reportInetCondition(int networkType, int percentage) {
      * @param proxyProperties The definition for the new global http proxy
      * {@hide}
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.083 -0500", hash_original_method = "0F41E571577973AB5A169120A0CDA859", hash_generated_method = "E1760C896E349F468C2A1BB16793804D")
     
 public void setGlobalProxy(ProxyProperties p) {
@@ -720,6 +746,7 @@ public void setGlobalProxy(ProxyProperties p) {
      * @return proxyProperties for the current global proxy
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.085 -0500", hash_original_method = "7F5BD964F39855F539616DAFB8170A5C", hash_generated_method = "5F3090D7457841318036240AF5DE45DB")
     
 public ProxyProperties getGlobalProxy() {
@@ -734,6 +761,7 @@ public ProxyProperties getGlobalProxy() {
      * @return proxyProperties for the current proxy (global if set, network specific if not)
      * {@hide}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.087 -0500", hash_original_method = "C61C105C2967FBAB6E5B43A96F13A0DE", hash_generated_method = "2E9AF9C87FAA87A74544BCA5583989C2")
     
 public ProxyProperties getProxy() {
@@ -749,6 +777,7 @@ public ProxyProperties getProxy() {
      * @param met Boolean - true if network use is ok, false if not
      * {@hide}
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.089 -0500", hash_original_method = "9D2F7B8AE7DD2651562BD08E17F617DF", hash_generated_method = "46CF3D7367153193ED8E5B3A5F3ECEAE")
     
 public void setDataDependency(int networkType, boolean met) {
@@ -769,6 +798,7 @@ public void setDataDependency(int networkType, boolean met) {
      * @return true if supported, else false
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.091 -0500", hash_original_method = "A6B9FE53FCB83D066C3DAD2A2CD2AA6D", hash_generated_method = "4A0CA3D82DAD09F68F1F4B54C3FB9B45")
     
 public boolean isNetworkSupported(int networkType) {

@@ -8,8 +8,6 @@ import java.io.PrintWriter;
 
 import android.graphics.Matrix;
 
-
-
 public class Transformation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.895 -0500", hash_original_field = "9704FF865769EA95AB8B88F86C46851B", hash_generated_field = "251BA68661EA4866D7BD703B646D7AF6")
 
@@ -25,7 +23,6 @@ public class Transformation {
     public static int TYPE_BOTH = TYPE_ALPHA | TYPE_MATRIX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.905 -0500", hash_original_field = "ECC1E936684D992B258D335000C3D72A", hash_generated_field = "22DB0525CC1913C27DD5ABB85563881B")
 
-
     protected Matrix mMatrix;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.908 -0500", hash_original_field = "1109060D01B8BF804FF00B533C2F6EC9", hash_generated_field = "57D7CB4B870C728DA589BE845D2CCF9A")
 
@@ -34,13 +31,12 @@ public class Transformation {
 
     protected int mTransformationType;
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public Transformation() {
         mMatrix = new Matrix();
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void clear() {
         mAlpha = 1.0f;
         mTransformationType = TYPE_BOTH;
@@ -55,6 +51,7 @@ public class Transformation {
      * @return {@link #TYPE_ALPHA}, {@link #TYPE_MATRIX},
      *         {@link #TYPE_BOTH} or {@link #TYPE_IDENTITY}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.917 -0500", hash_original_method = "8DFDD7EF6072FC95D95C5176557C9475", hash_generated_method = "E83AF2E7467626B14B9AB2FDD1E3526F")
     
 public int getTransformationType() {
@@ -79,6 +76,7 @@ public void setTransformationType(int transformationType) {
      *
      * @param t The transformation to clone.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.922 -0500", hash_original_method = "6A74ACE3E87C2A5E84C908FCAD2903E1", hash_generated_method = "FB97CDADAEF57BCB0A2A4BF697D806B5")
     
 public void set(Transformation t) {
@@ -103,6 +101,9 @@ public void compose(Transformation t) {
      * @return The 3x3 Matrix representing the trnasformation to apply to the
      * coordinates of the object being animated
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.926 -0500", hash_original_method = "2E54F4327BDE93D0CE557FC100DEED67", hash_generated_method = "AC792DF5DA6D0C3559608A10F5A9B778")
     
 public Matrix getMatrix() {
@@ -113,6 +114,8 @@ public Matrix getMatrix() {
      * Sets the degree of transparency
      * @param alpha 1.0 means fully opaqe and 0.0 means fully transparent
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.928 -0500", hash_original_method = "0C33009713633FC103F0B586FD422009", hash_generated_method = "B215FC12BBF0BB31CC65FC8A77253541")
     
 public void setAlpha(float alpha) {
@@ -122,6 +125,9 @@ public void setAlpha(float alpha) {
     /**
      * @return The degree of transparency
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.931 -0500", hash_original_method = "84CA63CC358414A9CD87B6516C604402", hash_generated_method = "BB0D60558DFDFA2BC395B22614DE6493")
     
 public float getAlpha() {

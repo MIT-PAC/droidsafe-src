@@ -45,10 +45,6 @@ import android.net.Uri;
 import android.os.Process;
 import android.os.RemoteException;
 
-
-
-
-
 final class ApplicationPackageManager extends PackageManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.953 -0500", hash_original_method = "CAEBB17CBA604CB35D365427B4123BDD", hash_generated_method = "9AE8A061D889EA13448450E238E2CB9A")
@@ -116,7 +112,6 @@ static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo
     private final static boolean DEBUG_ICONS = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.078 -0500", hash_original_field = "C9A89FF9952633C3C99E6CECFFFB823C", hash_generated_field = "589A8BDF0C7416090F474EA4E832C9BC")
 
-
     private static final Object sSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.080 -0500", hash_original_field = "2C092D064C487286968C29223F0F5DE7", hash_generated_field = "4B02A68E27DCF1DC814B05F533A46F39")
 
@@ -128,10 +123,8 @@ static void handlePackageBroadcast(int cmd, String[] pkgList, boolean hasPkgInfo
             = new HashMap<ResourceName, WeakReference<CharSequence>>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.949 -0500", hash_original_field = "BB74ADCE9FCE390733990F175981A8B2", hash_generated_field = "BB74ADCE9FCE390733990F175981A8B2")
 
-
     int mCachedSafeMode = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.073 -0500", hash_original_field = "C67ABEFF4281FAC71DDED1D793D767D7", hash_generated_field = "9848C26EA3B1FE04FDB0411428C18F0B")
-
 
     private  ContextImpl mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.076 -0500", hash_original_field = "4239121FA32DDE5798881A4F98EFD0C1", hash_generated_field = "7F4B9DC825AA12542DFD4F441E873557")
@@ -146,6 +139,7 @@ ApplicationPackageManager(ContextImpl context,
         mPM = pm;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.815 -0500", hash_original_method = "B0DADC2DBFEC092F753C36E8DEB385A1", hash_generated_method = "429D1BC09D6C96E00B2D6C8FF80CBED6")
     
 @Override
@@ -163,6 +157,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(packageName);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.817 -0500", hash_original_method = "C5CDEAB4FF073C2ACB7E7915B56F1D0F", hash_generated_method = "643BD320ED59BB7E861718CC1C1B4B34")
     
 @Override
@@ -174,6 +169,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.820 -0500", hash_original_method = "9BD980F14E9EC05077595EA826722236", hash_generated_method = "40C1E859834C69340CFEC40EFD3EFB3C")
     
 @Override
@@ -185,6 +181,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.823 -0500", hash_original_method = "A679E3857CF73FF4B9C2EA4F09C7DBB7", hash_generated_method = "B01BB6B6631EE6A1D85C88CFEE32CDAA")
     
 @Override
@@ -215,6 +212,7 @@ ApplicationPackageManager(ContextImpl context,
         return intent;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.826 -0500", hash_original_method = "65CBA80193594BC7AC8CBF648823BDBA", hash_generated_method = "0F272E292E7C40B5A0468005B01B784E")
     
 @Override
@@ -232,6 +230,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(packageName);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.829 -0500", hash_original_method = "16E2B9223A8B92626D3604D0E58E2278", hash_generated_method = "19B3177B3FEDF060F33238286D3488A9")
     
 @Override
@@ -249,6 +248,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(name);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.831 -0500", hash_original_method = "2283AA5BDEF3F8B3341260BB74FBE8C3", hash_generated_method = "2F7B44F8C6375B15106F3E435BAD9929")
     
 @Override
@@ -266,6 +266,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(group);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.833 -0500", hash_original_method = "4E576FD7FE2DDB9674E042581657631F", hash_generated_method = "6810EE6C242562FF0EE5C82467A53636")
     
 @Override
@@ -283,6 +284,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(name);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.836 -0500", hash_original_method = "DD7F1EBA9089D82A0EEA68FDD3DACC66", hash_generated_method = "BD8880EAC086FCED902004DF9A0A2E50")
     
 @Override
@@ -294,6 +296,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.838 -0500", hash_original_method = "8999420BFE5728B346477621EA154ABF", hash_generated_method = "28CDA3F8FDA37851E62A8AF5FDB0583F")
     
 @Override
@@ -311,6 +314,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(packageName);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.841 -0500", hash_original_method = "9B4FC7EA40C0BB7AEEEEEF1D86D28DE8", hash_generated_method = "EF6DFEB0D241F5E7703A22910B5FF935")
     
 @Override
@@ -328,6 +332,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(className.toString());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.843 -0500", hash_original_method = "399255B19735D8EC733B05B14D3B4711", hash_generated_method = "275492280765AF2B23525A74277A1961")
     
 @Override
@@ -345,6 +350,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(className.toString());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.845 -0500", hash_original_method = "50C1BC4F3995D229FF03E27E05E5BE36", hash_generated_method = "4C84035F3B9568676F717AD932363DE2")
     
 @Override
@@ -362,6 +368,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(className.toString());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.848 -0500", hash_original_method = "895E4F29ECA72E6836B6F503A466760A", hash_generated_method = "E7EA74AF4732E6CD387928F614BB196B")
     
 @Override
@@ -379,6 +386,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(className.toString());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.850 -0500", hash_original_method = "E90BE84736723B0914BD9D43484D5AAD", hash_generated_method = "6A022573E5DB8D8134A69788CAB965AA")
     
 @Override
@@ -390,6 +398,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.853 -0500", hash_original_method = "887B55B734ED0895C5FA7D7CF721CE58", hash_generated_method = "068E0D66816DC3F0E6A34FFCBEE2ADE1")
     
 @Override
@@ -401,6 +410,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.855 -0500", hash_original_method = "8E2B8D0B6C29BED8B3E866F74247B636", hash_generated_method = "CC33BF759FE731ABB18CEC609CA75C91")
     
 @Override
@@ -423,6 +433,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.859 -0500", hash_original_method = "7DE747A31A0FDE2C95A03117CF8EC1E2", hash_generated_method = "53CF0ECC0A5A4312544A6B02F4DDAD73")
     
 @Override
@@ -434,6 +445,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.861 -0500", hash_original_method = "BE955F868C92CCDF8275E95FFE2C44B3", hash_generated_method = "63E0759278BCA2935C34D2B0DB2DBB1F")
     
 @Override
@@ -478,6 +490,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.871 -0500", hash_original_method = "A565AD9EB181443BBE8F338808A2E4B9", hash_generated_method = "8C14E4C1D9047E2AC83580FBC7C1BE33")
     
 @Override
@@ -489,6 +502,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.873 -0500", hash_original_method = "107797D329CAA491AA1A678294A11B0E", hash_generated_method = "EDFEC74B1CCB5D8BB60CB53009F2805F")
     
 @Override
@@ -500,6 +514,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.876 -0500", hash_original_method = "BCD62F04CBDED38DF225700C99BB4852", hash_generated_method = "D1EE8D0F2D56AB37593C47E652842282")
     
 @Override
@@ -516,6 +531,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException("No shared userid for user:"+sharedUserName);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.878 -0500", hash_original_method = "2CD6168D318C89447F6184EBDE96189F", hash_generated_method = "6B80AE11CE903FF00AA20B898A12A11A")
     
 @SuppressWarnings("unchecked")
@@ -538,6 +554,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.881 -0500", hash_original_method = "195CA5538214D0B5EDE14A1F47A96E96", hash_generated_method = "C315BAFA2A0A8D0D93CBD7E4BC520D33")
     
 @SuppressWarnings("unchecked")
@@ -574,6 +591,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.886 -0500", hash_original_method = "613ED89A001624360A0EB6B3BD081707", hash_generated_method = "E6D27C03B3B30501BEBA784C89734ADD")
     
 @Override
@@ -589,6 +607,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.889 -0500", hash_original_method = "9B955FD88A95F7C1CCD0CD1DFE6EC270", hash_generated_method = "D36C3B7D2551BE8C07B69642FEFE26D5")
     
 @Override
@@ -623,6 +642,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.891 -0500", hash_original_method = "2B65A8BDA3BE53DC3296D1F5CA76CDFC", hash_generated_method = "DEB52F509FA8AAC88EFE7085313AEFDB")
     
 @Override
@@ -637,6 +657,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.894 -0500", hash_original_method = "D7D4C733DB611C9D18D346868F9BD0BD", hash_generated_method = "9F948CBC2D71DC9F6C84BF1B63866E22")
     
 @Override
@@ -651,6 +672,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.896 -0500", hash_original_method = "EEB4EB852740846BAD76CCDE5FC0C613", hash_generated_method = "839A2E77FB30D1D206A7AC358111BEF2")
     
 @Override
@@ -665,6 +687,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.907 -0500", hash_original_method = "3A6513CB26C2E0AF7DACFC2B8A5D560B", hash_generated_method = "F53A7551C4AA05FB097DA099CB348C9E")
     
 @Override
@@ -677,6 +700,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.910 -0500", hash_original_method = "7B04A4BE8EFECF5209DBE4F77CB67C42", hash_generated_method = "FB2F54F78EFAE668D3377D456FD4CA9A")
     
 @Override
@@ -689,6 +713,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.912 -0500", hash_original_method = "3120887453BFC9391A593077A4EB2D8C", hash_generated_method = "1C2FF161BFF9CCC975104819EBD54B10")
     
 @Override
@@ -708,6 +733,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(className.toString());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.915 -0500", hash_original_method = "0CE547FAA1F9EB003838A9DE59E3AC72", hash_generated_method = "CAAF8D134A63728980C56778B9312EB3")
     
 @Override
@@ -720,6 +746,7 @@ ApplicationPackageManager(ContextImpl context,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.918 -0500", hash_original_method = "350CC4BDDD2E42419F88F44C033409F6", hash_generated_method = "D7EE552257AFCB3884052F65BE9EEE93")
     
 @Override public Drawable getDrawable(String packageName, int resid,
@@ -769,6 +796,7 @@ ApplicationPackageManager(ContextImpl context,
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.921 -0500", hash_original_method = "E8823DE045849946097DF943F50B58DB", hash_generated_method = "04E5C7A2AE8474A337A5572B23A268A8")
     
 @Override public Drawable getActivityIcon(ComponentName activityName)
@@ -776,6 +804,7 @@ ApplicationPackageManager(ContextImpl context,
         return getActivityInfo(activityName, 0).loadIcon(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.923 -0500", hash_original_method = "EF5F409F30F5D50F1964B6AB6B7F75B7", hash_generated_method = "C75839D6E1579E8FC96CA43A864F25D8")
     
 @Override public Drawable getActivityIcon(Intent intent)
@@ -793,6 +822,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(intent.toUri(0));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.926 -0500", hash_original_method = "27F8B828FEA8943560AD77E4760B6964", hash_generated_method = "D59B2387CD92FBB6B3593581086D26BD")
     
 @Override public Drawable getDefaultActivityIcon() {
@@ -800,12 +830,14 @@ ApplicationPackageManager(ContextImpl context,
             com.android.internal.R.drawable.sym_def_app_icon);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.928 -0500", hash_original_method = "C2186A062EDEC18E9DD8F87E8E6291D1", hash_generated_method = "CB3A075E196795909980D831E6793C11")
     
 @Override public Drawable getApplicationIcon(ApplicationInfo info) {
         return info.loadIcon(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.931 -0500", hash_original_method = "49256B647BD52234F52BC973E3B03E0B", hash_generated_method = "E0CB6A2F18DB4FEEC1933E37BC8C24EE")
     
 @Override public Drawable getApplicationIcon(String packageName)
@@ -813,6 +845,7 @@ ApplicationPackageManager(ContextImpl context,
         return getApplicationIcon(getApplicationInfo(packageName, 0));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.933 -0500", hash_original_method = "12128D2FB1F753A28280A7EF3E62F4B2", hash_generated_method = "A96E93CE32257AB8AAB3E397C49DCBBE")
     
 @Override
@@ -821,6 +854,7 @@ ApplicationPackageManager(ContextImpl context,
         return getActivityInfo(activityName, 0).loadLogo(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.935 -0500", hash_original_method = "3B1A86BB5E25FB8EFA7A1AD1A88B3B01", hash_generated_method = "4C84168A232DB11DF78AF3C920822EB8")
     
 @Override
@@ -839,6 +873,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException(intent.toUri(0));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.938 -0500", hash_original_method = "586E62978169D56092172114763F9AD3", hash_generated_method = "3A3A243553D6803DB404BE5963527B50")
     
 @Override
@@ -846,6 +881,7 @@ ApplicationPackageManager(ContextImpl context,
         return info.loadLogo(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.940 -0500", hash_original_method = "6BC85FEDD3936A7851329E2331D0279D", hash_generated_method = "C707B30451200E2116ADE91072AEB254")
     
 @Override
@@ -854,6 +890,7 @@ ApplicationPackageManager(ContextImpl context,
         return getApplicationLogo(getApplicationInfo(packageName, 0));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.943 -0500", hash_original_method = "E07E3E36CD8F79CF4FE12B9F33A40344", hash_generated_method = "9DE06760DFADDC6BE6183CC3F8478B7A")
     
 @Override public Resources getResourcesForActivity(
@@ -862,6 +899,7 @@ ApplicationPackageManager(ContextImpl context,
             getActivityInfo(activityName, 0).applicationInfo);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.945 -0500", hash_original_method = "AC20F77416CABFA638F647DA9F2F230E", hash_generated_method = "42CF644584A8E29C908F22189F5F2CB9")
     
 @Override public Resources getResourcesForApplication(
@@ -878,6 +916,7 @@ ApplicationPackageManager(ContextImpl context,
         throw new NameNotFoundException("Unable to open " + app.publicSourceDir);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.947 -0500", hash_original_method = "ACD444E0FC7FCEAEB5D1FF09DD4A5912", hash_generated_method = "2A143560C5CABE612F980C34B3D25741")
     
 @Override public Resources getResourcesForApplication(
@@ -960,6 +999,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.996 -0500", hash_original_method = "771B010EDE230C24A313E1F6F3869FDB", hash_generated_method = "DA90A79BD2365F3D53B4B86A2343E382")
     
 @Override
@@ -995,6 +1035,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.999 -0500", hash_original_method = "F130C54905A9CE16326CF20EF6E93255", hash_generated_method = "732D1F65E84D1E830E17DCF1032586FD")
     
 @Override
@@ -1023,6 +1064,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.002 -0500", hash_original_method = "4AFDE050276913F392973B277F54706D", hash_generated_method = "6F92466A776DBA6739B13B32017ADBC6")
     
 @Override
@@ -1067,6 +1109,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.012 -0500", hash_original_method = "A168A8E169316429D31E261AD639AED4", hash_generated_method = "3F7C412AAA1A062643D750EAC32C2DBC")
     
 @Override
@@ -1090,6 +1133,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.016 -0500", hash_original_method = "13C0F9FC5FF4142BD538C8A3AADB3621", hash_generated_method = "DD437D44318BC382B9EE50809801B5B8")
     
 @Override
@@ -1167,6 +1211,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
             // Should never happen!
         }
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.033 -0500", hash_original_method = "A9291C102B2FAAEF4C90A57E1B6DE098", hash_generated_method = "D62EBB54E3FC927C0386831AD69D9B62")
     
 @Override
@@ -1189,6 +1234,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.038 -0500", hash_original_method = "4A08CFB9ACE88EAEABD2D18F083F329D", hash_generated_method = "1DCAD4E5E43C7FB91E870457685E77CF")
     
 @Override
@@ -1249,6 +1295,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.050 -0500", hash_original_method = "324289EEBFA692363CEA9B4C548C82A7", hash_generated_method = "34EBF4153AE405446EB1EAF65F614875")
     
 @Override
@@ -1261,6 +1308,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.052 -0500", hash_original_method = "214E6E4C94F679DC0FE6A4159B821EAF", hash_generated_method = "968EA54F0CDFAAF81D392F1B25B69C7E")
     
 @Override
@@ -1273,6 +1321,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         return PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.054 -0500", hash_original_method = "893989AE0F295A10184FE7AD874B7991", hash_generated_method = "2EB016FFA899F3C51681142789C41B3A")
     
 @Override
@@ -1285,6 +1334,7 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.057 -0500", hash_original_method = "786754E395F784476E8D899ABD01121D", hash_generated_method = "2B2BCB023AFB6AEB87E2559829E3D767")
     
 @Override
@@ -1296,7 +1346,6 @@ private void putCachedString(ResourceName name, CharSequence cs) {
         }
         return PackageManager.COMPONENT_ENABLED_STATE_DEFAULT;
     }
-
     
     private static final class ResourceName {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:22.968 -0500", hash_original_field = "6F92EE1B3BCDC0C4179CF5FD998BE046", hash_generated_field = "6F92EE1B3BCDC0C4179CF5FD998BE046")
@@ -1362,7 +1411,6 @@ ResourceName(ResolveInfo rInfo, int _iconId) {
         public String toString() {
             return "{ResourceName " + packageName + " / " + iconId + "}";
         }
-
         
     }
 
@@ -1436,6 +1484,7 @@ ResourceName(ResolveInfo rInfo, int _iconId) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:23.071 -0500", hash_original_method = "05FAEEF75E7B74D35A0F0687A4ACD32C", hash_generated_method = "B9CA90C451A4220706DF20C327605D4E")
     
 @Override

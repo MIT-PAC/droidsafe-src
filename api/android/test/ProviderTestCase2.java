@@ -14,14 +14,8 @@ import android.database.DatabaseUtils;
 import android.test.mock.MockContentResolver;
 import android.test.mock.MockContext;
 
-
-
-
-
 public abstract class ProviderTestCase2<T extends ContentProvider> extends AndroidTestCase {
-
     
-    @DSModeled(DSC.BAN)
     public static <T extends ContentProvider> ContentResolver newResolverWithContentProviderFromSql(
             Context targetContext, String filenamePrefix, Class<T> providerClass, String authority,
             String databaseName, int databaseVersion, String sql) throws IllegalAccessException, InstantiationException {
@@ -39,20 +33,17 @@ public abstract class ProviderTestCase2<T extends ContentProvider> extends Andro
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.146 -0500", hash_original_field = "80508C4473F541BA7DD8E88FF090F868", hash_generated_field = "80508C4473F541BA7DD8E88FF090F868")
 
-
     Class<T> mProviderClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.148 -0500", hash_original_field = "BEAD2AEE0CF9657BCDF9A68447530849", hash_generated_field = "BEAD2AEE0CF9657BCDF9A68447530849")
 
     String mProviderAuthority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.150 -0500", hash_original_field = "6941A905B168EAFA3532C309CAB89195", hash_generated_field = "F2AFD016624F4AFED19D7CDFE10696F8")
 
-
     private IsolatedContext mProviderContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.152 -0500", hash_original_field = "ABB64C0A775F1FCF31401F2204FDA343", hash_generated_field = "A1ED7105D6A1F718EA95D4418CEC8FB7")
 
     private MockContentResolver mResolver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:44.168 -0500", hash_original_field = "B5F4D4E802603D5E3E4860AA47D21BE9", hash_generated_field = "C18D0C38809D3FB8758A98C7C49BCA8E")
-
 
     private T mProvider;
     /**
@@ -146,7 +137,6 @@ public MockContentResolver getMockContentResolver() {
 public IsolatedContext getMockContext() {
         return mProviderContext;
     }
-
     
     private class MockContext2 extends MockContext {
         
@@ -178,11 +168,8 @@ public IsolatedContext getMockContext() {
         public Context getApplicationContext() {
             return this;
         }
-
         
     }
-
-
     
 }
 

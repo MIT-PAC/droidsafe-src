@@ -11,8 +11,6 @@ import java.util.Iterator;
 import android.content.Context;
 import android.webkit.CookieManager.Cookie;
 
-
-
 public final class CookieSyncManager extends WebSyncManager {
 
     /**
@@ -22,6 +20,7 @@ public final class CookieSyncManager extends WebSyncManager {
      * 
      * @return CookieSyncManager
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.503 -0500", hash_original_method = "83EC64FDE4CD3EC572033742220CA586", hash_generated_method = "C0B59F4B2889699A3BE2CD28FC0B4CA9")
     
 public static synchronized CookieSyncManager getInstance() {
@@ -34,6 +33,7 @@ public static synchronized CookieSyncManager getInstance() {
      * @param context
      * @return CookieSyncManager
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.505 -0500", hash_original_method = "FECD0925F77067421139B3F6378E5A1A", hash_generated_method = "D91D0794826C7B69CEA64EF6210C0BA0")
     
 public static synchronized CookieSyncManager createInstance(
@@ -60,7 +60,6 @@ private static void checkInstanceIsCreated() {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.495 -0500", hash_original_field = "EEB1F1468D42B181F568B7BDEF16A397", hash_generated_field = "73C10A9E9156F9CA0177FC69B4C20965")
-
 
     private static CookieSyncManager sRef;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:03.497 -0500", hash_original_field = "932778EB5A230AC63F2530AFAA9ECF3D", hash_generated_field = "67C891CCE0BBDCBA776A2A7129D5A0E9")

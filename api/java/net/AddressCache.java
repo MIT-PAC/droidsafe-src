@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.util.BasicLruCache;
 
-
-
-
-
 class AddressCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.880 -0500", hash_original_field = "2E4A7E0ADB7AD2DD3408B12728E13C2F", hash_generated_field = "5204922FABD23C1FBC7ABD47FD1AA264")
 
@@ -25,7 +21,6 @@ class AddressCache {
     private final BasicLruCache<String, AddressCacheEntry> cache
             = new BasicLruCache<String, AddressCacheEntry>(MAX_ENTRIES);
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.250 -0400", hash_original_method = "FAF57634870A3B339F1CC57081189EF2", hash_generated_method = "FAF57634870A3B339F1CC57081189EF2")
     public AddressCache ()
     {
@@ -46,6 +41,7 @@ public void clear() {
      * about 'hostname'. Returns a String suitable for use as an UnknownHostException detail
      * message if 'hostname' is known not to exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.904 -0500", hash_original_method = "C8196E240B99FD0E66DB7F26CD4EF8D1", hash_generated_method = "93E1795ECF5D8B0742F3159E34FC6CC8")
     
 public Object get(String hostname) {
@@ -63,6 +59,7 @@ public Object get(String hostname) {
      * Associates the given 'addresses' with 'hostname'. The association will expire after a
      * certain length of time.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.906 -0500", hash_original_method = "BAB205076FF7DD8DB52E2A3E48EC287C", hash_generated_method = "FFE39D199E88D962B97D134A047A6004")
     
 public void put(String hostname, InetAddress[] addresses) {
@@ -78,7 +75,6 @@ public void put(String hostname, InetAddress[] addresses) {
 public void put(String hostname, String detailMessage) {
         put(hostname, detailMessage, false);
     }
-
     
     static class AddressCacheEntry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.891 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "D933278613C352684A53A2027DDBD11D")
@@ -95,7 +91,6 @@ AddressCacheEntry(Object value, long expiryNanos) {
             this.value = value;
             this.expiryNanos = expiryNanos;
         }
-
         
     }
 
@@ -118,6 +113,7 @@ public void put(String hostname, Object value, boolean isPositive) {
      * Records that 'hostname' is known not to have any associated addresses. (I.e. insert a
      * negative cache entry.)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:13.914 -0500", hash_original_method = "9E6C3A8E77106C45FBFB86AD320286A9", hash_generated_method = "090A502C5C4A40551CC36324ED090E43")
     
 public void putUnknownHost(String hostname, String detailMessage) {

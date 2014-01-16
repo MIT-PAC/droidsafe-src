@@ -26,9 +26,6 @@ import libcore.io.StructUtsname;
 import dalvik.system.VMRuntime;
 import dalvik.system.VMStack;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class System {
@@ -40,6 +37,7 @@ public final class System {
      *            the user defined input stream to set as the standard input
      *            stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.609 -0500", hash_original_method = "D16452B6B75185BAA61EA9EFA159A8E9", hash_generated_method = "804D735CAAFC7C325DE9B365A0326D69")
     
 public static void setIn(InputStream newIn) {
@@ -53,6 +51,7 @@ public static void setIn(InputStream newIn) {
      *            the user defined output stream to set as the standard output
      *            stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.611 -0500", hash_original_method = "FE0A5054D91BF71787912D03E790C89C", hash_generated_method = "D27468EB0FD43038B70B5EFA0F5EB7C1")
     
 public static void setOut(PrintStream newOut) {
@@ -67,27 +66,26 @@ public static void setOut(PrintStream newOut) {
      *            the user defined output stream to set as the standard error
      *            output stream.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.614 -0500", hash_original_method = "FCF04532D043A59A407255C009845127", hash_generated_method = "EEA56B6E0025CF2A168F8DB5D7DCC840")
     
 public static void setErr(PrintStream newErr) {
         setFieldImpl("err", "Ljava/io/PrintStream;", newErr);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static void arraycopy(Object src, int srcPos, Object dst, int dstPos, int length) {
         dst = src;
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSafe(DSCat.OS_GENERAL)
     public static long currentTimeMillis() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1308733048;
 	}
-
     
-    @DSModeled(DSC.SPEC)
+    @DSSafe(DSCat.OS_GENERAL)
     public static long nanoTime() {
 		long var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111 = DSUtils.UNKNOWN_LONG;
 		return var0F5264038205EDFB1AC05FBB0E8C5E94_1522069111;
@@ -113,6 +111,7 @@ public static void exit(int code) {
      * garbage collector. Note that this is a hint only. There is no guarantee
      * that the garbage collector will actually be run.
      */
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.634 -0500", hash_original_method = "47EC6AE5C259ABE3B4A35CFA178D5702", hash_generated_method = "0709ED4B03A3139DD3527CC62BB2E466")
     
 public static void gc() {
@@ -128,6 +127,7 @@ public static void gc() {
      * @return the value of the specified environment variable or {@code null}
      *         if no variable exists with the given name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.636 -0500", hash_original_method = "79FB251DA8E670830D531170B8BBF153", hash_generated_method = "B7888C30425F3830863039B13886263D")
     
 public static String getenv(String name) {
@@ -143,9 +143,7 @@ private static String getenv(String name, String defaultValue) {
         String value = Libcore.os.getenv(name);
         return (value != null) ? value : defaultValue;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getEnvByName(String name) {
 		return new String();
 	}
@@ -155,6 +153,7 @@ private static String getenv(String name, String defaultValue) {
      *
      * @return the map representing all environment variables.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.646 -0500", hash_original_method = "79B521B2EFD03E1D43F79EA09E867985", hash_generated_method = "14CE62E06E734A72D9890256F415124A")
     
 public static Map<String, String> getenv() {
@@ -191,6 +190,9 @@ public static Channel inheritedChannel() throws IOException {
      *
      * @return the system properties.
      */
+    @DSComment("get JVM operation environment")
+    @DSSafe(DSCat.SYSTEM)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.652 -0500", hash_original_method = "3FDC8784D1C5F7E5946B08E486E63909", hash_generated_method = "1C947DC75EF01852C48A7D3F1ACB061A")
     
 public static Properties getProperties() {
@@ -270,9 +272,7 @@ private static void initSystemProperties() {
 
         systemProperties = p;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String[] specialProperties() {
 		return new String[0];
 	}
@@ -344,6 +344,9 @@ private static void parsePropertyAssignments(Properties p, String[] assignments)
      * @return the value of the specified system property or {@code null} if the
      *         property doesn't exist.
      */
+    @DSComment("JVM/DVM parameters")
+    @DSSpec(DSCat.JAVA_SECURITY)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.664 -0500", hash_original_method = "06C945E6AB6193665AD35FBCA9AFCB6D", hash_generated_method = "766C443FD74124DA91FB9FB0825E934E")
     
 public static String getProperty(String propertyName) {
@@ -362,6 +365,7 @@ public static String getProperty(String propertyName) {
      * @return the value of the specified system property or the {@code
      *         defaultValue} if the property does not exist.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.667 -0500", hash_original_method = "0AD78573C84AE39631B832983C262457", hash_generated_method = "01672AFEB4169F8733E9B7130C897E0E")
     
 public static String getProperty(String prop, String defaultValue) {
@@ -381,6 +385,7 @@ public static String getProperty(String prop, String defaultValue) {
      * @return the old value of the property or {@code null} if the property
      *         didn't exist.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.669 -0500", hash_original_method = "68A3BD921E5BE0343D8AB590A3A0C1ED", hash_generated_method = "8A6ABB9FC5C9F153DD0093091F1EAAA5")
     
 public static String setProperty(String prop, String value) {
@@ -431,14 +436,17 @@ public static Console console() {
      *
      * @return null
      */
+    @DSComment("Android Manager retrieved/accessed")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.678 -0500", hash_original_method = "C8F7CB4F1804392B0063D92E89423E1A", hash_generated_method = "4FDF597B2D74E6DD9D48FFB24DE4E3C9")
     
 public static SecurityManager getSecurityManager() {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static int identityHashCode(Object anObject) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_396439638;
@@ -483,6 +491,8 @@ public static void load(String pathName) {
      * @throws UnsatisfiedLinkError
      *             if the library could not be loaded.
      */
+    @DSComment("Dynamically loading library")
+    @DSSpec(DSCat.JAVA_SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.689 -0500", hash_original_method = "0A3470DEBF4C375636532E38AAF3C5D7", hash_generated_method = "88D9169C5FC0C884DFF6AA876D761784")
     
 public static void loadLibrary(String libName) {
@@ -542,9 +552,7 @@ public static void logW(String message) {
 public static void logW(String message, Throwable th) {
         log('W', message, th);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void log(char type, String message, Throwable th) {
 	}
 
@@ -603,23 +611,18 @@ public static void setSecurityManager(SecurityManager sm) {
             throw new SecurityException();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String mapLibraryName(String userLibName) {
 		String ret = new String();
 		ret.addTaint(userLibName.taint);
 		return ret;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static void setFieldImpl(String fieldName, String signature, Object stream) {
 	}
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.596 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "B443C5C680D4DA0BD118CB991BCB8B38")
 
     public static  InputStream in;
-
     
     static class SystemEnvironment extends AbstractMap<String, String> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.729 -0500", hash_original_field = "B2320E74448A8A8D4C529584B2F6C72E", hash_generated_field = "AEDE8D1FD6B9D7350079530BA211AB11")
@@ -664,7 +667,6 @@ private String toNonNullString(Object o) {
             }
             return (String) o;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.599 -0500", hash_original_field = "3012FF5B828647FA4929921E808B58B8", hash_generated_field = "6D64AE7213A180429B33C84A1527B8AC")
@@ -674,7 +676,6 @@ private String toNonNullString(Object o) {
 
     public static  PrintStream err;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.604 -0500", hash_original_field = "D327D4A790DD1B7EE14E3F55E6B49404", hash_generated_field = "4F120FCF427E27BF79D0B83F7A2E925B")
-
 
     private static  String lineSeparator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:30.606 -0500", hash_original_field = "2692616CA0AD8BEC04ACC8D4CDF6E6AF", hash_generated_field = "1BAE2C7F16338C14042F582AEB6D8AC2")

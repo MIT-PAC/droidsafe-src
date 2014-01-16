@@ -22,16 +22,13 @@ import java.util.Set;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Uri implements Parcelable, Comparable<Uri> {
-
     
-    @DSModeled(DSC.SAFE)
-        public static Uri parse(String uriString) {
+        @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public static Uri parse(String uriString) {
             return new Uri(uriString);
         }
 
@@ -45,6 +42,8 @@ public class Uri implements Parcelable, Comparable<Uri> {
      * @throws NullPointerException if file is null
      * @return a Uri for the given file
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.971 -0500", hash_original_method = "C8E1BC520600654AF7D7DBB518285820", hash_generated_method = "06EDC206A38F612490541C35EAB729B0")
     
 public static Uri fromFile(File file) {
@@ -73,6 +72,8 @@ public static Uri fromFile(File file) {
      *
      * @see Builder if you don't want the ssp and fragment to be encoded
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.083 -0500", hash_original_method = "0AD237FFD29D45E9689601598F4FC92E", hash_generated_method = "9D21685D66E36BC775C6163A2712CC60")
     
 public static Uri fromParts(String scheme, String ssp,
@@ -114,6 +115,8 @@ public static void writeToParcel(Parcel out, Uri uri) {
      * @return an encoded version of s suitable for use as a URI component,
      *  or null if s is null
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.396 -0500", hash_original_method = "49BB482E96A859715BC5C61306FD74C0", hash_generated_method = "C724103AB538903E19E5DE37C9B2FBE9")
     
 public static String encode(String s) {
@@ -241,6 +244,8 @@ private static boolean isAllowed(char c, String allow) {
      * @return the given string with escaped octets decoded, or null if
      *  s is null
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.408 -0500", hash_original_method = "8CA7F37205DBA3826558AF549D47A0C3", hash_generated_method = "CC309B2D382E2C1002242B4B0583B5AD")
     
 public static String decode(String s) {
@@ -354,6 +359,8 @@ public static String decode(String s) {
      *  the path
      * @throws NullPointerException if baseUri is null
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.507 -0500", hash_original_method = "39777FDE2593A579E76592A008126365", hash_generated_method = "F04C9A83020F5098114C752E2F7E0883")
     
 public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
@@ -362,7 +369,6 @@ public static Uri withAppendedPath(Uri baseUri, String pathSegment) {
         return builder.build();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.888 -0500", hash_original_field = "3844FFA99A999BB4EDDD7DE578438A79", hash_generated_field = "CFC1AACEA60AD0E5F3AD35D47126879D")
-
 
     /** Log tag. */
     private static final String LOG = Uri.class.getSimpleName();
@@ -417,7 +423,6 @@ public Uri[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.394 -0500", hash_original_field = "4F2326E262E6A6BF466951D799AF1031", hash_generated_field = "C46B2CD1575F3EFF815653AFF0EA6C73")
 
-
     private static final char[] HEX_DIGITS = "0123456789ABCDEF".toCharArray();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.404 -0500", hash_original_field = "6E3065D20156420EF488BFA36FB1FCC6", hash_generated_field = "EA76FA4E6E39D084A2B31303C1E9D60D")
 
@@ -434,121 +439,97 @@ public Uri[] newArray(int size) {
     
 private Uri() {}
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	public Uri(String uri) {
 		this();
 		uriString = uri;
 	}
-
-    @DSModeled(DSC.SAFE)
+    
 	public boolean isHierarchical() {
 		return getTaintBoolean();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean isOpaque() {
         return getTaintBoolean();
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean isRelative() {
 		// TODO Auto-generated method stub
 		return getTaintBoolean();
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean isAbsolute() {
         return getTaintBoolean();
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public String getScheme() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getScheme() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getSchemeSpecificPart() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedSchemeSpecificPart() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getAuthority() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedAuthority() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public String getUserInfo() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getUserInfo() {
 		// TODO Auto-generated method stub
 		return DSUtils.UNKNOWN_STRING;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedUserInfo() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public String getHost() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getHost() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public int getPort() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public int getPort() {
 		return getTaintInt();
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public String getPath() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getPath() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedPath() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getQuery() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedQuery() {
 		// TODO Auto-generated method stub
 		return uriString;
 	}
-
     
     private static class StringUri extends AbstractHierarchicalUri {
 
@@ -659,26 +640,20 @@ static String parsePath(String uriString, int ssi) {
         private volatile int cachedFsi = NOT_CALCULATED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.003 -0500", hash_original_field = "030FC5261A8EB10381C37C096712C0E9", hash_generated_field = "0E9D0B05543D9BBCEB78240FF4AE88F4")
 
-
         private volatile String scheme = NOT_CACHED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.010 -0500", hash_original_field = "BBAE3713DECE7C8525260DE5E70C46A6", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
-
 
         private Part ssp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.021 -0500", hash_original_field = "9E21E7090446CDE5086844B195D6CB36", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
 
-
         private Part authority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.030 -0500", hash_original_field = "AD52E446D12B30C7A18B4724BD0AE7E6", hash_generated_field = "EEFCA663E12A09EA3C7131B68BE78289")
-
 
         private PathPart path;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.045 -0500", hash_original_field = "3E1F2A3AC6880420E2E1AD742E2B9ADF", hash_generated_field = "D9C517AF157475966407B5CDC5940032")
 
-
         private Part query;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.056 -0500", hash_original_field = "02C0AB2936C6D04A6600CAEE292968AD", hash_generated_field = "8AF52B12247A3EBE638DDC3C88EEE123")
-
 
         private Part fragment;
 
@@ -749,6 +724,7 @@ public boolean isRelative() {
             return findSchemeSeparator() == NOT_FOUND;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.005 -0500", hash_original_method = "96667B7E38635C26F17AC80DC91F9ADB", hash_generated_method = "ABEBD18496B29AF5F92CABFFDDA0861E")
         
 public String getScheme() {
@@ -770,12 +746,14 @@ private Part getSsp() {
             return ssp == null ? ssp = Part.fromEncoded(parseSsp()) : ssp;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.014 -0500", hash_original_method = "55E7C64ABF6A3CC92844508D23C19AB9", hash_generated_method = "6C573169C6465A1D34E7B9EFB56733C9")
         
 public String getEncodedSchemeSpecificPart() {
             return getSsp().getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.017 -0500", hash_original_method = "AC19873BD337CA7E5ADD95E4E1A5F455", hash_generated_method = "37BB1A681E484F8C8E4B8C8EBCB6B0EB")
         
 public String getSchemeSpecificPart() {
@@ -806,12 +784,14 @@ private Part getAuthorityPart() {
             return authority;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.026 -0500", hash_original_method = "B783FB869F9CE6B897E37C2A9B9B4259", hash_generated_method = "996349E684006CBE9E2F442569BE8BEB")
         
 public String getEncodedAuthority() {
             return getAuthorityPart().getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.028 -0500", hash_original_method = "F4404025FB90C68980598D2895AF9578", hash_generated_method = "B8ED49E3BBA5B95DA1FECE1AB8908166")
         
 public String getAuthority() {
@@ -826,18 +806,21 @@ private PathPart getPathPart() {
                     : path;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.035 -0500", hash_original_method = "E8759FDECF433DBBFF0BA03CF3576CC0", hash_generated_method = "2D7DF043E810551E77B13D1BF994FB35")
         
 public String getPath() {
             return getPathPart().getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.037 -0500", hash_original_method = "D26AFC1B9D9DFA82513D9A4C50DD2F0F", hash_generated_method = "D76DEE69566845892394F838DEF42423")
         
 public String getEncodedPath() {
             return getPathPart().getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.039 -0500", hash_original_method = "A1BA2B8DCFFB301EABC725C63F487DC2", hash_generated_method = "6360CFBA859A8146986F6908DA370ACD")
         
 public List<String> getPathSegments() {
@@ -878,6 +861,7 @@ private Part getQueryPart() {
                     ? query = Part.fromEncoded(parseQuery()) : query;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.049 -0500", hash_original_method = "61892B739321CB796D242E9E13C1F033", hash_generated_method = "5E2027BD2C07E5B1E83E0C04CAC1C035")
         
 public String getEncodedQuery() {
@@ -908,6 +892,7 @@ private String parseQuery() {
             return uriString.substring(qsi + 1, fsi);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.054 -0500", hash_original_method = "31EC40ABD8B86D0064329950E060BFBD", hash_generated_method = "413F82C57A2A806E7BB30B2EB4A63439")
         
 public String getQuery() {
@@ -921,6 +906,7 @@ private Part getFragmentPart() {
                     ? fragment = Part.fromEncoded(parseFragment()) : fragment;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.061 -0500", hash_original_method = "C2884F3C25114B1CD652E8CCEF7D7F10", hash_generated_method = "AA2431BFE82B59690CB6FDD7D4C291B6")
         
 public String getEncodedFragment() {
@@ -934,6 +920,7 @@ private String parseFragment() {
             return fsi == NOT_FOUND ? null : uriString.substring(fsi + 1);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.065 -0500", hash_original_method = "4E8163B4F7FDF9829581A99F6274656D", hash_generated_method = "F1715D18395FB9C9CACA110D8EEF2A68")
         
 public String getFragment() {
@@ -964,8 +951,6 @@ public Builder buildUpon() {
             }
         }
     }
-
-
     
     private static class OpaqueUri extends Uri {
 
@@ -983,7 +968,6 @@ static Uri readFrom(Parcel parcel) {
         static final int TYPE_ID = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.088 -0500", hash_original_field = "AF5A968572CEFDCD6FE22E7345201E0B", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
 
-
         private  String scheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.091 -0500", hash_original_field = "BBAE3713DECE7C8525260DE5E70C46A6", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
 
@@ -992,7 +976,6 @@ static Uri readFrom(Parcel parcel) {
 
         private  Part fragment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.146 -0500", hash_original_field = "F33F15A6FD47288E315F6C17BEBC95C3", hash_generated_field = "FCCD4A0FFBA55911A49FB2AEB7548D00")
-
 
         private volatile String cachedString = NOT_CACHED;
 
@@ -1010,6 +993,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.102 -0500", hash_original_method = "8F996E53ADCFC30BFF794C5CEED4DA61", hash_generated_method = "AD03F242E88A5E578C66EA90BAA91E0A")
         
 public void writeToParcel(Parcel parcel, int flags) {
@@ -1031,102 +1015,119 @@ public boolean isRelative() {
             return scheme == null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.109 -0500", hash_original_method = "76031D31C1CA528B8F038117D6808811", hash_generated_method = "8C187E31064D5FC7E4CBD4735C1E35F0")
         
 public String getScheme() {
             return this.scheme;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.111 -0500", hash_original_method = "3C55B6D4F736410AF7A2ACAB5CCC51ED", hash_generated_method = "D9699FBBF6C96E786BA500FDEE919373")
         
 public String getEncodedSchemeSpecificPart() {
             return ssp.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.113 -0500", hash_original_method = "ED3540C8D06E41CD645C58A620F36381", hash_generated_method = "14D5CE5B8CB9F1199BD9A9D6654520F4")
         
 public String getSchemeSpecificPart() {
             return ssp.getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.115 -0500", hash_original_method = "31E41E1CB0338F9BAA50A0AC05D7D02D", hash_generated_method = "9A0C58B5BBE1FCEC366B081238823F0A")
         
 public String getAuthority() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.118 -0500", hash_original_method = "C6F3CA63C6BE518EBD2AA32E2786DD3A", hash_generated_method = "A15C1BE630C4FDCBD71DE4D5DDE0D088")
         
 public String getEncodedAuthority() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.120 -0500", hash_original_method = "F489014FCD27D67260CBEC8AC84559A2", hash_generated_method = "EE57F7E9DBD1DFFCFE37F1B53C90B593")
         
 public String getPath() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.122 -0500", hash_original_method = "F167E35F53D1A5A8B17A8A72FE8359AE", hash_generated_method = "9A03D197F6F1FF001396774924A4EA10")
         
 public String getEncodedPath() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.124 -0500", hash_original_method = "2E34959E1DD3631C67E93F1AE6B31056", hash_generated_method = "58C6480CA69FCA257D3E6360B960D9FA")
         
 public String getQuery() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.126 -0500", hash_original_method = "53661DD2D38C9C2E00E8B8D2FF316BB7", hash_generated_method = "BE25EB7B18FD2ADE6051EDD77F799F57")
         
 public String getEncodedQuery() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.128 -0500", hash_original_method = "9F53DDCB73E71AFF4CF207B49D0689B3", hash_generated_method = "2532A8DADB3FD31CDC6F4B459CA993BE")
         
 public String getFragment() {
             return fragment.getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.131 -0500", hash_original_method = "2FF982E252638134744EE32C0D7F6950", hash_generated_method = "22F080C9855388C8843984CE7CECF20E")
         
 public String getEncodedFragment() {
             return fragment.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.134 -0500", hash_original_method = "08B329AF4FAA2768183F76EC45288C10", hash_generated_method = "C308D1FFE23155846734C76076DE029B")
         
 public List<String> getPathSegments() {
             return Collections.emptyList();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.136 -0500", hash_original_method = "AE7FF2A9DFCB643CF70873B2C08CD5A8", hash_generated_method = "19B1F7448E2299233816958124B540A5")
         
 public String getLastPathSegment() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.138 -0500", hash_original_method = "520FB960E4127ABC7143DD06EFB52356", hash_generated_method = "8DE0BBA69F7A404BBEC99FE1E99B06C9")
         
 public String getUserInfo() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.140 -0500", hash_original_method = "88ECB0B5D6F4AA907FC3666F8C1418EB", hash_generated_method = "A95C49D5677FFFDB10F2DA55FC2AF01B")
         
 public String getEncodedUserInfo() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.142 -0500", hash_original_method = "00C71B0865F91AE7EF71B7BE21B14B9F", hash_generated_method = "22F262111A38CABA0104217396F895C0")
         
 public String getHost() {
             return null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.144 -0500", hash_original_method = "B159430668427C6760C3FB4B772D9F59", hash_generated_method = "044A39B9EF3590AFFFFA54A57D715C0B")
         
 public int getPort() {
@@ -1163,16 +1164,12 @@ public Builder buildUpon() {
                     .fragment(this.fragment);
         }
     }
-
-
     
     static class PathSegments extends AbstractList<String> implements RandomAccess {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.157 -0500", hash_original_field = "59330FF4187274F876811687E6879EEE", hash_generated_field = "E6083199966205833D7B5012129D384D")
 
-
         static final PathSegments EMPTY = new PathSegments(null, 0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.159 -0500", hash_original_field = "D8C8A9DBE80A96D9E735DAA1D195D137", hash_generated_field = "D8C8A9DBE80A96D9E735DAA1D195D137")
-
 
          String[] segments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.162 -0500", hash_original_field = "673BDAEBF4FBC900963E210E042549D6", hash_generated_field = "673BDAEBF4FBC900963E210E042549D6")
@@ -1202,12 +1199,9 @@ public int size() {
             return this.size;
         }
     }
-
-
     
     static class PathSegmentsBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.172 -0500", hash_original_field = "D8C8A9DBE80A96D9E735DAA1D195D137", hash_generated_field = "D8C8A9DBE80A96D9E735DAA1D195D137")
-
 
         String[] segments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.175 -0500", hash_original_field = "689FC3CB9A887B5817C15E9CFDD066DB", hash_generated_field = "689FC3CB9A887B5817C15E9CFDD066DB")
@@ -1215,7 +1209,7 @@ public int size() {
         int size = 0;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.068 -0400", hash_original_method = "CD5B4727D6775EBFE00461F5F237812D", hash_generated_method = "CD5B4727D6775EBFE00461F5F237812D")
-        @DSModeled(DSC.SAFE)
+        
         public PathSegmentsBuilder ()
         {
             //Synthesized constructor
@@ -1249,33 +1243,28 @@ PathSegments build() {
                 segments = null;
             }
         }
-
         
     }
-
-
     
     private abstract static class AbstractHierarchicalUri extends Uri {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.186 -0500", hash_original_field = "E7ECD9A0FC9E62BEC865842D9572366E", hash_generated_field = "87B54E118334D4593A462325E6A65F84")
 
-
         private Part userInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.198 -0500", hash_original_field = "19AC129A72D528D26CDAD281A292D279", hash_generated_field = "539F6E6D25356608852D958A8481FDA5")
-
 
         private volatile String host = NOT_CACHED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.206 -0500", hash_original_field = "8CE6EA1656D08DDFBE4E07A115079F77", hash_generated_field = "3DEE2B327E62FC31F0BA9783EFE62CA9")
 
-
         private volatile int port = NOT_CALCULATED;
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.071 -0400", hash_original_method = "469DE423ED30903E9EDD58224AA80D56", hash_generated_method = "469DE423ED30903E9EDD58224AA80D56")
-        @DSModeled(DSC.BAN)
+        
         public AbstractHierarchicalUri ()
         {
             //Synthesized constructor
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.184 -0500", hash_original_method = "D5E71CFA6EED35AEB9B5F4AEC5287C3B", hash_generated_method = "1F2BC9F5EC821DBA8B733164E9A9E9B7")
         
 public String getLastPathSegment() {
@@ -1297,6 +1286,7 @@ private Part getUserInfoPart() {
                     ? userInfo = Part.fromEncoded(parseUserInfo()) : userInfo;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.191 -0500", hash_original_method = "EADAAD26DC8689BCA10DCA33883B9323", hash_generated_method = "B65DC03815AB8E7C61C492B99EC4A3CC")
         
 public final String getEncodedUserInfo() {
@@ -1315,12 +1305,14 @@ private String parseUserInfo() {
             return end == NOT_FOUND ? null : authority.substring(0, end);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.196 -0500", hash_original_method = "575ECF6860F7EEFE5055BF56F2601A0E", hash_generated_method = "67B026BDA8B421E52FB1B44B539023AC")
         
 public String getUserInfo() {
             return getUserInfoPart().getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.201 -0500", hash_original_method = "2FC22A6CCA0A3F4C0B9E4C09F79A556D", hash_generated_method = "77597C8C7E77DE3FB0EC4F344AD34D95")
         
 public String getHost() {
@@ -1349,6 +1341,7 @@ private String parseHost() {
             return decode(encodedHost);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.208 -0500", hash_original_method = "A497EF38F72042FD9397DCB617BC4BBC", hash_generated_method = "FDB52F3958882AD594D47F375808E87F")
         
 public int getPort() {
@@ -1382,11 +1375,8 @@ private int parsePort() {
                 return -1;
             }
         }
-
         
     }
-
-
     
     private static class HierarchicalUri extends AbstractHierarchicalUri {
 
@@ -1406,7 +1396,6 @@ static Uri readFrom(Parcel parcel) {
         static final int TYPE_ID = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.218 -0500", hash_original_field = "AF5A968572CEFDCD6FE22E7345201E0B", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
 
-
         private  String scheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.220 -0500", hash_original_field = "9E21E7090446CDE5086844B195D6CB36", hash_generated_field = "204632F970E6983D2007A7D2C7B93357")
 
@@ -1422,10 +1411,8 @@ static Uri readFrom(Parcel parcel) {
         private  Part fragment;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.246 -0500", hash_original_field = "BBAE3713DECE7C8525260DE5E70C46A6", hash_generated_field = "7012AD665E5A3250E37E3BF51B044446")
 
-
         private Part ssp;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.285 -0500", hash_original_field = "F774E53212EDF2C0CFC94017CE1A4E2A", hash_generated_field = "9968E15A97464199002C3D2A70E60BF1")
-
 
         private volatile String uriString = NOT_CACHED;
 
@@ -1446,6 +1433,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.NETWORK})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.237 -0500", hash_original_method = "601AB6BE7C1B16F2DB83E078DF9B61DC", hash_generated_method = "C4975111E918C24052F4398AF779DB0F")
         
 public void writeToParcel(Parcel parcel, int flags) {
@@ -1469,6 +1457,7 @@ public boolean isRelative() {
             return scheme == null;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.244 -0500", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "9D11AD0B611F352DC84C8E1A6B825617")
         
 public String getScheme() {
@@ -1482,12 +1471,14 @@ private Part getSsp() {
                     ? ssp = Part.fromEncoded(makeSchemeSpecificPart()) : ssp;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.251 -0500", hash_original_method = "55E7C64ABF6A3CC92844508D23C19AB9", hash_generated_method = "6C573169C6465A1D34E7B9EFB56733C9")
         
 public String getEncodedSchemeSpecificPart() {
             return getSsp().getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.253 -0500", hash_original_method = "AC19873BD337CA7E5ADD95E4E1A5F455", hash_generated_method = "37BB1A681E484F8C8E4B8C8EBCB6B0EB")
         
 public String getSchemeSpecificPart() {
@@ -1504,9 +1495,7 @@ private String makeSchemeSpecificPart() {
             appendSspTo(builder);
             return builder.toString();
         }
-
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:31.093 -0400", hash_original_method = "55EA79AD41E607B8DD0B042A78040234", hash_generated_method = "6482B19B506A7357F59DD4CC14EB48C5")
         private void appendSspTo(StringBuilder builder) {
             addTaint(builder.getTaint());
@@ -1538,54 +1527,63 @@ private String makeSchemeSpecificPart() {
             //}
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.264 -0500", hash_original_method = "4FC7F3346B5C0FC1519928E52B2843FB", hash_generated_method = "6DAFF03A5E15B07027CC73E6C6D6AD17")
         
 public String getAuthority() {
             return this.authority.getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.267 -0500", hash_original_method = "02F0907154122B499105718EFAFFB12D", hash_generated_method = "32A82B6575A426C3A9E8F67E9E1373E8")
         
 public String getEncodedAuthority() {
             return this.authority.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.269 -0500", hash_original_method = "C2F72FED192DF0C1254C49B5EAFF6B37", hash_generated_method = "B5E9BADA276CBA0DAA9FC1B55A587E66")
         
 public String getEncodedPath() {
             return this.path.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.271 -0500", hash_original_method = "6081DF09BF7A0319CE8B8794EF03DD3D", hash_generated_method = "09DC704FF3D2BD0779FFD97841A9109F")
         
 public String getPath() {
             return this.path.getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.273 -0500", hash_original_method = "BB14E9B85B4B70FE8537ADEAEA0F30F8", hash_generated_method = "8601242321E93A0871DB465B77BE5081")
         
 public String getQuery() {
             return this.query.getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.275 -0500", hash_original_method = "4E4841C1D3AAC7E9E3EC5666E1D3BDC7", hash_generated_method = "D563C34DF22A3AADAC2136BC2E298569")
         
 public String getEncodedQuery() {
             return this.query.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.278 -0500", hash_original_method = "BC71EA5136922A2C431D19FA4D7E797E", hash_generated_method = "DCAB9AA3C442CF69C72366A8441484EB")
         
 public String getFragment() {
             return this.fragment.getDecoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.280 -0500", hash_original_method = "D0BDA4E24821D7C40932E823B160DCAD", hash_generated_method = "2379CD52C8BD57FF5E451B5C74D2F1E9")
         
 public String getEncodedFragment() {
             return this.fragment.getEncoded();
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.283 -0500", hash_original_method = "6A1F2A59685BCA2552F3B76D88CB5845", hash_generated_method = "216A1EB87BA78F1931DF87DD6F07CD8B")
         
 public List<String> getPathSegments() {
@@ -1631,12 +1629,9 @@ public Builder buildUpon() {
                     .fragment(fragment);
         }
     }
-
-
     
     public static final class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.298 -0500", hash_original_field = "AF5A968572CEFDCD6FE22E7345201E0B", hash_generated_field = "CBE7A470226A0B2957A605279AD0FD59")
-
 
         private String scheme;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.300 -0500", hash_original_field = "B38EBC2627A503BF98004E270055A1D9", hash_generated_field = "F30F644E178A706F0279AC78D6913562")
@@ -1885,6 +1880,8 @@ public Builder clearQuery() {
          * @throws UnsupportedOperationException if the URI is opaque and the
          *  scheme is null
          */
+        @DSComment("URI exchange is more important")
+        @DSSafe(DSCat.UTIL_FUNCTION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.359 -0500", hash_original_method = "C36CE5067F02DA1F1C7276BF67665A1B", hash_generated_method = "49E0BB8D44C8E87C84F7CDE7E9DE5DF1")
         
 public Uri build() {
@@ -1927,15 +1924,11 @@ private boolean hasSchemeOrAuthority() {
         public String toString() {
             return build().toString();
         }
-
         
     }
-
-
     
     static abstract class AbstractPart {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.421 -0500", hash_original_field = "4F672F59E73887C4AB6D2CB85FA87583", hash_generated_field = "08274B7EEBA921030ECC3D76D1E6ECCB")
-
 
         volatile String encoded;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.423 -0500", hash_original_field = "6D4540C10A5D9188A1CCDEA2E902B48E", hash_generated_field = "B682B941676F7CF6A565D2078C9BC0A9")
@@ -1953,6 +1946,7 @@ AbstractPart(String encoded, String decoded) {
         
 abstract String getEncoded();
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.430 -0500", hash_original_method = "06323BBC323E7F59CEDDE1FAA04ED1F6", hash_generated_method = "03DCF9641223B8656F16E1E81D8C0759")
         
 final String getDecoded() {
@@ -1984,7 +1978,6 @@ final void writeTo(Parcel parcel) {
                 throw new IllegalArgumentException("Neither encoded nor decoded");
             }
         }
-
         
         static class Representation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.412 -0500", hash_original_field = "D91CFF54E7669AFC23076F5A26D733F3", hash_generated_field = "FF4F4E4C6DA0CB1E3DB9C13C6C3A4A5B")
@@ -2003,12 +1996,8 @@ final void writeTo(Parcel parcel) {
                 //Synthesized constructor
             }
         }
-
-
         
     }
-
-
     
     static class Part extends AbstractPart {
 
@@ -2100,7 +2089,6 @@ static Part from(String encoded, String decoded) {
 private Part(String encoded, String decoded) {
             super(encoded, decoded);
         }
-
         
         private static class EmptyPart extends Part {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.461 -0500", hash_original_method = "D79C0256E86C850253FAE782AD9920ED", hash_generated_method = "FDFA040038EB5D1B5BB965FE7838E7F1")
@@ -2115,7 +2103,6 @@ public EmptyPart(String value) {
             boolean isEmpty() {
                 return true;
             }
-
             
         }
 
@@ -2125,6 +2112,7 @@ boolean isEmpty() {
             return false;
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.446 -0500", hash_original_method = "74B8C999E422A266FD890BA259F6B43C", hash_generated_method = "74B8C999E422A266FD890BA259F6B43C")
         
 String getEncoded() {
@@ -2133,13 +2121,9 @@ String getEncoded() {
             return hasEncoded ? encoded : (encoded = encode(decoded));
         }
     }
-
-
     
     static class PathPart extends AbstractPart {
-
         
-        @DSModeled(DSC.SAFE)
         static PathPart appendEncodedSegment(PathPart oldPart,
                 String newSegment) {
             if (oldPart == null) {
@@ -2163,9 +2147,7 @@ String getEncoded() {
             retVal.addTaint(newSegment.getTaint());
             return retVal;
         }
-
         
-        @DSModeled(DSC.SAFE)
         static PathPart appendDecodedSegment(PathPart oldPart, String decoded) {
             String encoded = encode(decoded);
             PathPart retVal = appendEncodedSegment(oldPart, encoded);
@@ -2189,9 +2171,7 @@ static PathPart readFrom(Parcel parcel) {
                     throw new IllegalArgumentException("Bad representation: " + representation);
             }
         }
-
         
-        @DSModeled(DSC.SAFE)
         static PathPart fromEncoded(String encoded) {
         	PathPart retVal = from(encoded, NOT_CACHED);
         	retVal.addTaint(encoded.getTaint());
@@ -2228,9 +2208,7 @@ static PathPart from(String encoded, String decoded) {
 
             return new PathPart(encoded, decoded);
         }
-
         
-        @DSModeled(DSC.SAFE)
         static PathPart makeAbsolute(PathPart oldPart) {
             @SuppressWarnings("StringEquality")
             boolean encodedCached = oldPart.encoded != NOT_CACHED;
@@ -2266,6 +2244,7 @@ private PathPart(String encoded, String decoded) {
             super(encoded, decoded);
         }
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.479 -0500", hash_original_method = "EEE1C5D1C73794B2424FF9B6A794D8BE", hash_generated_method = "78801BE81952A415B8F898DB77CC0059")
         
 String getEncoded() {
@@ -2317,36 +2296,32 @@ PathSegments getPathSegments() {
             return pathSegments = segmentBuilder.build();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public String getFragment() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getFragment() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public String getEncodedFragment() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public List<String> getPathSegments() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public List<String> getPathSegments() {
 		// TODO Auto-generated method stub
 		LinkedList<String> list = new LinkedList<String>();
 		list.add(uriString);
 		return list;
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public String getLastPathSegment() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String getLastPathSegment() {
 		return uriString;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean equals(Object o) {
 		return true;
 	}
@@ -2360,10 +2335,10 @@ PathSegments getPathSegments() {
 public int hashCode() {
         return toString().hashCode();
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public String toString() {
+	@DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    public String toString() {
                 String str = new String();
                 str.addTaint(this.getTaint());
 		return str;
@@ -2374,6 +2349,7 @@ public int hashCode() {
      * to logs and other places where PII should be avoided.
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.955 -0500", hash_original_method = "C2346F0C89241A0BA21735401E86BD49", hash_generated_method = "9D8BBEDD22B431DE0493EAE5382CDD79")
     
 public String toSafeString() {
@@ -2412,9 +2388,7 @@ public String toSafeString() {
         }
         return builder.toString();
     }
-
     
-    @DSModeled(DSC.SPEC)
 	public Builder buildUpon() {
 		return new Builder();
 	}
@@ -2427,6 +2401,7 @@ public String toSafeString() {
      *
      * @return a set of decoded names
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.370 -0500", hash_original_method = "966FC11B97976C170B352F408FA2783F", hash_generated_method = "2EB34DCB1EFDE22317CBB5E752A66BEE")
     
 public Set<String> getQueryParameterNames() {
@@ -2469,6 +2444,7 @@ public Set<String> getQueryParameterNames() {
      * @throws NullPointerException if key is null
      * @return a list of decoded values
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.373 -0500", hash_original_method = "9E05603A6F44EBCC73536B2584976016", hash_generated_method = "3145FC174D8CD639CAD7A13104A0C7E4")
     
 public List<String> getQueryParameters(String key) {
@@ -2531,6 +2507,9 @@ public List<String> getQueryParameters(String key) {
      * @throws NullPointerException if key is null
      * @return the decoded value or null if no parameter is found
      */
+    @DSComment("URI exchange is more important")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.377 -0500", hash_original_method = "72F6B0777F298E12957F6498D8B3E8F1", hash_generated_method = "DE3A435133C1A354744AD6E94234BDA2")
     
 public String getQueryParameter(String key) {
@@ -2586,6 +2565,7 @@ public String getQueryParameter(String key) {
      * @param defaultValue the default value to return if there is no query parameter for key
      * @return the boolean interpretation of the query parameter key
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:08.379 -0500", hash_original_method = "67BE774C17CDAC836698DE4D6D994F1B", hash_generated_method = "6115CE9F0AD02D5FFC89B91CC7DC7087")
     
 public boolean getBooleanQueryParameter(String key, boolean defaultValue) {
@@ -2598,19 +2578,19 @@ public boolean getBooleanQueryParameter(String key, boolean defaultValue) {
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.SPEC)
+    
 	public int describeContents() {
 		return getTaintInt();
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.SPEC)
+    
 	public void writeToParcel(Parcel dest, int flags) {
 		dest.addTaint(getTaint());
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.SPEC)
+    
 	public int compareTo(Uri arg0) {
 		// TODO Auto-generated method stub
 		return getTaintInt();

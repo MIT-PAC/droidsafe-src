@@ -8,29 +8,20 @@ import java.io.IOException;
 import java.nio.charset.Charsets;
 import java.util.Map;
 
-
-
-
-
-
 class InitManifest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.104 -0500", hash_original_field = "001DD3820C6A6A544AB42831C6F17A05", hash_generated_field = "779441B2743BF5C0505B790A17C97DE6")
 
     private  byte[] buf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.106 -0500", hash_original_field = "5780BC7BCF265A6425A5A90F1AD9B24E", hash_generated_field = "74B29150B9CA7F1725D53FF286BFBC4B")
 
-
     private int pos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.108 -0500", hash_original_field = "B6C3F4133101E588C401E9449C3FB888", hash_generated_field = "D7569CAE48A3644A0F728A88E286B99D")
-
 
     private Attributes.Name name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.111 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "424F4435B9052E77589D30873B9A7D2B")
 
-
     private String value;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.113 -0500", hash_original_field = "9C37F6B8A8CF78814560D41B139075FB", hash_generated_field = "E3B6135907F2544C8BA6970CAAB07453")
-
 
     private final UnsafeByteSequence valueBuffer = new UnsafeByteSequence(80);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.116 -0500", hash_original_field = "D7F629BC0E42930C2E4F0450BDD658F7", hash_generated_field = "AC2BE617228FC59BA35299FD9389D19B")
@@ -92,6 +83,7 @@ void initEntries(Map<String, Attributes> entries,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:57.125 -0500", hash_original_method = "DA9F28DCB522B20E2FDE0CD9A032935D", hash_generated_method = "DA9F28DCB522B20E2FDE0CD9A032935D")
     
 int getPos() {
@@ -185,7 +177,6 @@ private void readValue() throws IOException {
         valueBuffer.write(buf, mark, last - mark);
         value = valueBuffer.toString(Charsets.UTF_8);
     }
-
     
 }
 

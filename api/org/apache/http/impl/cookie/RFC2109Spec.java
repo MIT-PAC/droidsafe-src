@@ -19,18 +19,11 @@ import org.apache.http.cookie.SM;
 import org.apache.http.message.BufferedHeader;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class RFC2109Spec extends CookieSpecBase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.996 -0500", hash_original_field = "C1E36DB80477C907988316C7AE3F2667", hash_generated_field = "858B7D4610C97949773EF50E93F05188")
 
-
     private final static CookiePathComparator PATH_COMPARATOR = new CookiePathComparator();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:37.998 -0500", hash_original_field = "9FDFAD601FA4700E0541EA552C868FB0", hash_generated_field = "FBD8DD687539DFF4AAFA7EAA45AC1BE6")
- 
     
     private final static String[] DATE_PATTERNS = {
         DateUtils.PATTERN_RFC1123,
@@ -38,7 +31,6 @@ public class RFC2109Spec extends CookieSpecBase {
         DateUtils.PATTERN_ASCTIME 
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.001 -0500", hash_original_field = "6ECCC683F151EE6CE57F2B5BB3F18FF6", hash_generated_field = "41DF6CEE83D74A6FDB1FAB0DD1A4D526")
- 
     
     private  String[] datepatterns;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.003 -0500", hash_original_field = "9FF87D24DBC0DA1B27533708A63D8684", hash_generated_field = "E82ADEB303AC7BD75F069F4A1A160C67")
@@ -222,12 +214,14 @@ protected void formatCookieAsVer(final CharArrayBuffer buffer,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.029 -0500", hash_original_method = "48398E54A721F2ABBD2AD2C5ED75FBF5", hash_generated_method = "719DB27FE9B3080E562D1961E821ABAC")
     
 public int getVersion() {
         return 1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:38.032 -0500", hash_original_method = "C1FA79C2C3115B4C8F8CB20B10CB9417", hash_generated_method = "1B200382D02120253E20B1BF08CC95D3")
     
 public Header getVersionHeader() {

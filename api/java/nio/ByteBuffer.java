@@ -8,10 +8,6 @@ import java.util.Arrays;
 
 import libcore.io.Memory;
 
-
-
-
-
 public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer> {
 
     /**
@@ -23,6 +19,8 @@ public abstract class ByteBuffer extends Buffer implements Comparable<ByteBuffer
      * @throws IllegalArgumentException
      *             if {@code capacity < 0}.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.776 -0500", hash_original_method = "52AD6B6B7E23BF311D4F636879CBD6FE", hash_generated_method = "78087FDF303403A3D440EB1840BA83C4")
     
 public static ByteBuffer allocate(int capacity) {
@@ -41,6 +39,8 @@ public static ByteBuffer allocate(int capacity) {
      * @throws IllegalArgumentException
      *             if {@code capacity < 0}.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.779 -0500", hash_original_method = "19A737D0A382F54D53A0D74CAB245982", hash_generated_method = "D8573714774DBCCDAD59691ED95DB73A")
     
 public static ByteBuffer allocateDirect(int capacity) {
@@ -60,6 +60,8 @@ public static ByteBuffer allocateDirect(int capacity) {
      *            the byte array which the new buffer will be based on
      * @return the created byte buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.782 -0500", hash_original_method = "644E067849AFA471C056003EF7410F82", hash_generated_method = "935CA5F599322CC4A3A38C0932293EAC")
     
 public static ByteBuffer wrap(byte[] array) {
@@ -84,6 +86,8 @@ public static ByteBuffer wrap(byte[] array) {
      * @exception IndexOutOfBoundsException
      *                if either {@code start} or {@code byteCount} is invalid.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.784 -0500", hash_original_method = "5D8D0E67F592AD30EDF4A2251BAAF655", hash_generated_method = "6D1AB983F7D25AFAF7CDD62A51C18B49")
     
 public static ByteBuffer wrap(byte[] array, int start, int byteCount) {
@@ -112,6 +116,8 @@ ByteBuffer(int capacity, MemoryBlock block) {
      * @exception UnsupportedOperationException
      *                if this buffer is not based on an array.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.792 -0500", hash_original_method = "7344C3769A78C71213763E627C382A16", hash_generated_method = "537451EEC285CE457427409DDF7B387C")
     
 public final byte[] array() {
@@ -131,6 +137,8 @@ public final byte[] array() {
      * @exception UnsupportedOperationException
      *                if this buffer is not based on an array.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.794 -0500", hash_original_method = "0D5EF56CBEA1DA16093A6276D10D9347", hash_generated_method = "28A2D71AE8939DE09018E333ADFF6CAE")
     
 public final int arrayOffset() {
@@ -191,6 +199,8 @@ public abstract DoubleBuffer asDoubleBuffer();
      *
      * @return a float buffer which is based on the content of this byte buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.803 -0500", hash_original_method = "82BC70631BC7EE783D874DCCAAC589A3", hash_generated_method = "C5891CD0BD489591A86B1C772B9ADFC8")
     
 public abstract FloatBuffer asFloatBuffer();
@@ -246,6 +256,8 @@ public abstract LongBuffer asLongBuffer();
      *
      * @return a read-only version of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.810 -0500", hash_original_method = "2C8C703CAF419C058EA637666AEED48B", hash_generated_method = "2947557BD5CB823DB1EF90134782546B")
     
 public abstract ByteBuffer asReadOnlyBuffer();
@@ -281,6 +293,8 @@ public abstract ShortBuffer asShortBuffer();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.815 -0500", hash_original_method = "6034C0C2CF299086DEAB3934133CDE65", hash_generated_method = "0ED3116A7F719F0E8523D8C2365B0391")
     
 public abstract ByteBuffer compact();
@@ -377,6 +391,8 @@ public abstract ByteBuffer duplicate();
      * @exception BufferUnderflowException
      *                if the position is equal or greater than limit.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.827 -0500", hash_original_method = "8963DC023C1EE4FC88DF506D11BD6D89", hash_generated_method = "4826D1D4015CEF7EAC4BBB6F5E4D04A7")
     
 public abstract byte get();
@@ -394,6 +410,9 @@ public abstract byte get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.830 -0500", hash_original_method = "9A475FF9B92E938C1B69F2A1BC2AE724", hash_generated_method = "988551F2BBB206BBDE3A8BA08F16DFB3")
     
 public ByteBuffer get(byte[] dst) {
@@ -417,6 +436,9 @@ public ByteBuffer get(byte[] dst) {
      * @exception IndexOutOfBoundsException if {@code dstOffset < 0 ||  byteCount < 0}
      * @exception BufferUnderflowException if {@code byteCount > remaining()}
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.833 -0500", hash_original_method = "1D8E1FFC265A4E71218B8D81ECBD99D1", hash_generated_method = "A112D08E1771E5017BE9406DD1561DC0")
     
 public ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
@@ -439,6 +461,8 @@ public ByteBuffer get(byte[] dst, int dstOffset, int byteCount) {
      * @exception IndexOutOfBoundsException
      *                if index is invalid.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.836 -0500", hash_original_method = "2CD4CBAECCFACEACBCB0799ADF430E79", hash_generated_method = "04371A8BE0FD7B83C93A247F9BD768E0")
     
 public abstract byte get(int index);
@@ -551,6 +575,8 @@ public abstract float getFloat(int index);
      * @exception BufferUnderflowException
      *                if the position is greater than {@code limit - 4}.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.853 -0500", hash_original_method = "CA56528FA2D7DF3324FC3C7FC98167DB", hash_generated_method = "528E6A2DBEC13A16DD24EBF48B2F49F3")
     
 public abstract int getInt();
@@ -569,6 +595,8 @@ public abstract int getInt();
      * @exception IndexOutOfBoundsException
      *                if {@code index} is invalid.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.856 -0500", hash_original_method = "38C74DC091B9771D568CFC46A07CD694", hash_generated_method = "9F01653E4B5791462ACF08B426146241")
     
 public abstract int getInt(int index);
@@ -615,6 +643,8 @@ public abstract long getLong(int index);
      * @exception BufferUnderflowException
      *                if the position is greater than {@code limit - 2}.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.863 -0500", hash_original_method = "B04961994EADA034A3C810FFB4132367", hash_generated_method = "73784FCE5375F5D233BCBC5A4BF7CD8C")
     
 public abstract short getShort();
@@ -633,10 +663,14 @@ public abstract short getShort();
      * @exception IndexOutOfBoundsException
      *                if {@code index} is invalid.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.866 -0500", hash_original_method = "94161056D9B25788FAC95FC2611DDB43", hash_generated_method = "E4046EA33BB11E2336E53290781CCFDE")
     
 public abstract short getShort(int index);
 
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.868 -0500", hash_original_method = "89C81F0EAF8FCCBFE368437CC8972DD7", hash_generated_method = "9ABCCA1D4392A43B7EAC3713FD39CEA8")
     
 public final boolean hasArray() {
@@ -680,6 +714,7 @@ public abstract boolean isDirect();
      * @return the byte order used by this buffer when converting bytes from/to
      *         other primitive types.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.876 -0500", hash_original_method = "65B1A3EBEA253AF86057FAE15F6D4DB5", hash_generated_method = "EE2ABE1DAA1B6458AFBD3971ED955F67")
     
 public final ByteOrder order() {
@@ -695,6 +730,8 @@ public final ByteOrder order() {
      * @return {@code this}
      * @see ByteOrder
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.879 -0500", hash_original_method = "56B1D3E8961AB315D57FF8A49B63D4AB", hash_generated_method = "BBA106CE496C53C9D30C7C6FE08A840A")
     
 public final ByteBuffer order(ByteOrder byteOrder) {
@@ -753,6 +790,8 @@ abstract boolean protectedHasArray();
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.891 -0500", hash_original_method = "983CB5E1253F102F78ED5C2EA2A5C64E", hash_generated_method = "F8C5B1E091128CE11734F291E1363FC9")
     
 public abstract ByteBuffer put(byte b);
@@ -772,6 +811,8 @@ public abstract ByteBuffer put(byte b);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.893 -0500", hash_original_method = "D20A20C1C5EFB26E81C8757F39019CA4", hash_generated_method = "5C7A4A6063FCAC7DD6D046C669E7256D")
     
 public final ByteBuffer put(byte[] src) {
@@ -799,6 +840,9 @@ public final ByteBuffer put(byte[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.896 -0500", hash_original_method = "D0316A3A41AD4E9576A2DF2983507374", hash_generated_method = "242B2D84BCF2BAED8FD10923575F609F")
     
 public ByteBuffer put(byte[] src, int srcOffset, int byteCount) {
@@ -873,6 +917,8 @@ public ByteBuffer put(ByteBuffer src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.902 -0500", hash_original_method = "2EBD837469F8F98183BF1C66B6EF96DD", hash_generated_method = "7FC9FF03AFC347A0BA849BA2BC07C996")
     
 public abstract ByteBuffer put(int index, byte b);
@@ -969,6 +1015,8 @@ public abstract ByteBuffer putDouble(int index, double value);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.914 -0500", hash_original_method = "CAD20A12FC39C156414E05D321098216", hash_generated_method = "2969CB3CF774700206AF11CCD204054A")
     
 public abstract ByteBuffer putFloat(float value);
@@ -1008,6 +1056,8 @@ public abstract ByteBuffer putFloat(int index, float value);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.919 -0500", hash_original_method = "75EC8C47F9703D9624CB50AF2DF2107C", hash_generated_method = "D017F8503453EA22D1777AB0BA3C4B54")
     
 public abstract ByteBuffer putInt(int value);
@@ -1029,6 +1079,8 @@ public abstract ByteBuffer putInt(int value);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.922 -0500", hash_original_method = "BAA5B108DB4DFB337C242B4B0C63505D", hash_generated_method = "C233F5397E70E5FD99DD79E363B9A340")
     
 public abstract ByteBuffer putInt(int index, int value);
@@ -1086,6 +1138,8 @@ public abstract ByteBuffer putLong(int index, long value);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.929 -0500", hash_original_method = "D52374AE84C378EC795E94F54C620976", hash_generated_method = "BEA8FC1140694CED3060B7B5F6313531")
     
 public abstract ByteBuffer putShort(short value);
@@ -1107,6 +1161,8 @@ public abstract ByteBuffer putShort(short value);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.931 -0500", hash_original_method = "3BAEB9FDE443890D21DF52C9B257B084", hash_generated_method = "EB4251EF9AB7B99B5982F70F15363874")
     
 public abstract ByteBuffer putShort(int index, short value);
@@ -1126,10 +1182,11 @@ public abstract ByteBuffer putShort(int index, short value);
      *
      * @return a sliced buffer that shares its content with this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:03.934 -0500", hash_original_method = "A8BD672FEFA2ADBF23B3E18AD8770B59", hash_generated_method = "3EBFFC9669B52A8EEDB07E9A812B2532")
     
 public abstract ByteBuffer slice();
-
     
 }
 

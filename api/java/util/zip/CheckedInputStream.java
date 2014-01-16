@@ -9,13 +9,8 @@ import java.io.InputStream;
 
 import libcore.io.Streams;
 
-
-
-
-
 public class CheckedInputStream extends java.io.FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.612 -0500", hash_original_field = "4AE29764ABB14C73F8209F7640A7CC1D", hash_generated_field = "17891C0CAF0BD7DDA9A721E3165E41B4")
-
 
     private  Checksum check;
 
@@ -32,6 +27,8 @@ public class CheckedInputStream extends java.io.FilterInputStream {
      * @param csum
      *            an entity implementing the checksum algorithm.
      */
+    @DSComment("IO/Stream accessing")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.615 -0500", hash_original_method = "7E1EA825FE47CC59E068EE04C6081636", hash_generated_method = "D6F3C69C6C1E49B6A76D5C3044EBA8A4")
     
 public CheckedInputStream(InputStream is, Checksum csum) {
@@ -92,6 +89,7 @@ public CheckedInputStream(InputStream is, Checksum csum) {
      *
      * @return the updated checksum.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:31.623 -0500", hash_original_method = "8D60BCB1BD17D4099BEB55CEF28E25BB", hash_generated_method = "ACB993D8534E9018B97946C2173993C4")
     
 public Checksum getChecksum() {
@@ -112,7 +110,6 @@ public Checksum getChecksum() {
     public long skip(long byteCount) throws IOException {
         return Streams.skipByReading(this, byteCount);
     }
-
     
 }
 

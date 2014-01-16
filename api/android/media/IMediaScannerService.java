@@ -60,7 +60,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.687 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.687 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -74,7 +75,8 @@ return DESCRIPTOR;
      * @param listener an optional IMediaScannerListener. 
      * If specified, the caller will be notified when scanning is complete via the listener.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.690 -0500", hash_original_method = "426DDDF6C08440FABBC7DFD10027AFEC", hash_generated_method = "76AAD4EE9DE92DE13BAF3D0084C5CCF3")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.690 -0500", hash_original_method = "426DDDF6C08440FABBC7DFD10027AFEC", hash_generated_method = "76AAD4EE9DE92DE13BAF3D0084C5CCF3")
             
 public void requestScanFile(java.lang.String path, java.lang.String mimeType, android.media.IMediaScannerListener listener) throws android.os.RemoteException
 {
@@ -100,7 +102,8 @@ _data.recycle();
      * @param mimeType  an optional mimeType for the file.
      * If mimeType is null, then the mimeType will be inferred from the file extension.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.693 -0500", hash_original_method = "D0538B7B1393227D6E2924CAF9227DDA", hash_generated_method = "B3939345B662E8390BFB345F96B192DD")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.693 -0500", hash_original_method = "D0538B7B1393227D6E2924CAF9227DDA", hash_generated_method = "B3939345B662E8390BFB345F96B192DD")
             
 public void scanFile(java.lang.String path, java.lang.String mimeType) throws android.os.RemoteException
 {
@@ -119,7 +122,8 @@ _data.recycle();
 }
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.672 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:23.672 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

@@ -8,14 +8,12 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.Collections;
 
-
-
-
 public class DeleteOnExit extends Thread {
 
     /**
      * Returns our singleton instance, creating it if necessary.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:27.371 -0500", hash_original_method = "5F2B916DEBE9B88C4D0351AB645CF666", hash_generated_method = "D55E2D40C001CB12E806F853D6224C5F")
     
 public static synchronized DeleteOnExit getInstance() {
@@ -33,7 +31,6 @@ public static synchronized DeleteOnExit getInstance() {
 
     private ArrayList<String> files = new ArrayList<String>();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.039 -0400", hash_original_method = "80FBB7FC28966FEC5371F3D04A9D4E08", hash_generated_method = "80FBB7FC28966FEC5371F3D04A9D4E08")
     public DeleteOnExit ()
     {

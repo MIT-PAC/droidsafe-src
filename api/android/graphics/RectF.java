@@ -12,11 +12,6 @@ import android.util.FloatMath;
 
 import com.android.internal.util.FastMath;
 
-
-
-
-
-
 public class RectF implements Parcelable {
     
     /**
@@ -35,7 +30,6 @@ public static boolean intersects(RectF a, RectF b) {
         return a.left < b.right && b.left < a.right
                 && a.top < b.bottom && b.top < a.bottom;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:32.336 -0400", hash_original_field = "5E7201C60E05C026DD3550B3101B80A5", hash_generated_field = "C46FA4AE8D434E2146AE8F7264B82507")
 
@@ -76,12 +70,14 @@ public RectF[] newArray(int size) {
     /**
      * Create a new empty RectF. All coordinates are initialized to 0.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.864 -0500", hash_original_method = "D61F570F41294C50B794115B72F287CF", hash_generated_method = "0C35021DCF1E2EEAC4ACC137BA6B97DB")
     
 public RectF() {}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public RectF(float left, float top, float right, float bottom) {    
     	this();
     	addTaint(left);
@@ -89,16 +85,12 @@ public RectF() {}
     	addTaint(right);
     	addTaint(bottom);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public RectF(RectF r) { 
     	this();
     	addTaint(r.getTaint());
     }
-
     
-    @DSModeled(DSC.SAFE)
     public RectF(Rect r) {
     	this();
     	addTaint(r.left);
@@ -106,90 +98,68 @@ public RectF() {}
     	addTaint(r.top);
     	addTaint(r.bottom);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public String toString() {
     	String str = new String();
     	return str;        
     }
-
     
-    @DSModeled(DSC.SAFE)
     public String toShortString() {    	
     	String str = new String("");
         return str;
     }
-
     
-    @DSModeled(DSC.BAN)
     public String toShortString(StringBuilder sb) {    	
     	sb.append(1);
     	return sb.toString();
     }
-
     
-    @DSModeled(DSC.BAN)
     public void printShortString(PrintWriter pw) {
     	char c = 0;
     	pw.append(c);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final boolean isEmpty() {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float width() {
     	return getTaintInt();
         //return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float height() {
     	return getTaintInt();
         //return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float centerX() {
         return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public final float centerY() {
         return 0;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public void setEmpty() {
     	//addTaint(0.getTaint());	//No need to track , just an initializer type function setting things to 0   
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void set(float left, float top, float right, float bottom) {
     	addTaint(left);
     	addTaint(top);
     	addTaint(right);
     	addTaint(bottom);  
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(RectF src) {
     	addTaint(src.getTaint());
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public void set(Rect src) {
     	addTaint(src.left);
     	addTaint(src.top);
@@ -204,6 +174,8 @@ public RectF() {}
      * @param dx The amount to add to the rectangle's left and right coordinates
      * @param dy The amount to add to the rectangle's top and bottom coordinates
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.903 -0500", hash_original_method = "987CF6DAC95BF2616996F2B7580ECF09", hash_generated_method = "209DD68EA03C32B026C6A69EF4BF7652")
     
 public void offset(float dx, float dy) {
@@ -374,6 +346,7 @@ public boolean intersect(RectF r) {
      *              this rectangle to that intersection. If they do not, return
      *              false and do not change this rectangle.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.921 -0500", hash_original_method = "798EF6BEBDE27EE5C0F4552CB6C0BADF", hash_generated_method = "2AF3213ACBAE2E61B84DD66231F68225")
     
 public boolean setIntersect(RectF a, RectF b) {
@@ -471,6 +444,8 @@ public void union(float left, float top, float right, float bottom) {
      *
      * @param r The rectangle being unioned with this rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.936 -0500", hash_original_method = "7333A4F184A018E8DCD665D788936108", hash_generated_method = "DDE001E2C94ED57A95C9B868FAEDFEAD")
     
 public void union(RectF r) {
@@ -559,13 +534,13 @@ public void readFromParcel(Parcel in) {
         bottom = in.readFloat();
     }
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	public final float top() {
 		return getTaintFloat();
 	}
     
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
+    
 	public final float left() {
 		return getTaintFloat();
 	}

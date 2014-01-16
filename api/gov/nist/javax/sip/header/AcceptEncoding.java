@@ -9,11 +9,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.AcceptEncodingHeader;
 
-
-
-
-
-
 public final class AcceptEncoding extends ParametersHeader implements AcceptEncodingHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.234 -0500", hash_original_field = "6EAE0317E22E23A400E78CD4BC4E325D", hash_generated_field = "4930A84A156D9023318126D844288C58")
 
@@ -59,6 +54,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      *
      * @return float
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.248 -0500", hash_original_method = "6B0931DE2FCF1641F5A5332B85279714", hash_generated_method = "A0A867CA28AD6FE1753111449C70A72C")
     
 public float getQValue() {
@@ -70,6 +66,7 @@ public float getQValue() {
      *
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.251 -0500", hash_original_method = "EF1274C134CEA0B72E03DC392C09F299", hash_generated_method = "D5E75F502117767332C80F541C2D5ACA")
     
 public String getEncoding() {
@@ -82,6 +79,7 @@ public String getEncoding() {
      * @param q
      *            double to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:09.253 -0500", hash_original_method = "76C27BE10969A23E1C16A937029760DA", hash_generated_method = "D2DFEF4188403CE62B3FDEC5F1DC109A")
     
 public void setQValue(float q) throws InvalidArgumentException {

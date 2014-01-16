@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Date extends java.util.Date {
 
     /**
@@ -61,10 +57,8 @@ private static long normalizeTime(long theTime) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.251 -0500", hash_original_field = "5D55247CCC38757754CBD23F9C238832", hash_generated_field = "AB50B4CB64B1076350F49E3C7CD4E9DD")
 
-
     private static final long serialVersionUID = 1511598038487230103L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.280 -0500", hash_original_field = "6B63AE749ABE3056A4CC87C225475479", hash_generated_field = "E91DD4FD05D62E2720598D28C18C7C9E")
-
 
     private static final String PADDING = "0000";
 
@@ -113,6 +107,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.259 -0500", hash_original_method = "9D3BFA18991740345E9C4B50C3BC1C7B", hash_generated_method = "B6CC43AFE75FBF41D2D4659E1E0D1F48")
     
 @Deprecated
@@ -128,6 +123,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.262 -0500", hash_original_method = "20D35DA199D26861EF3B1850BF9B2C7B", hash_generated_method = "58BF9117E986858BF62F057055FD3040")
     
 @Deprecated
@@ -143,6 +139,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.264 -0500", hash_original_method = "5B3A8174ABF60BC4DD674AADB526CA5F", hash_generated_method = "7D47E178A24671905EFC2BF8A7641B44")
     
 @Deprecated
@@ -159,6 +156,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.267 -0500", hash_original_method = "8AEDCDA359475E67EC180A6BBC9EA00B", hash_generated_method = "4677C451B586B55518155F6083ED075A")
     
 @Deprecated
@@ -175,6 +173,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.269 -0500", hash_original_method = "C3170E6698742DBDFB0C085047CF3D73", hash_generated_method = "27DE06E63346B337DEAC08462741A1B4")
     
 @Deprecated
@@ -191,6 +190,7 @@ public Date(long theDate) {
      * @throws IllegalArgumentException
      *             if this method is called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.272 -0500", hash_original_method = "90D475806A3C76BA7C308DE5A81BA772", hash_generated_method = "3CFC7943A6A6DD444A1E4FC2D2547F87")
     
 @Deprecated
@@ -206,6 +206,7 @@ public Date(long theDate) {
      * @param theTime
      *            the time in milliseconds since the Epoch.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.275 -0500", hash_original_method = "58DD96CFC8DDA00016DEC24CC6519017", hash_generated_method = "1F810C618BA62488684578EB05C3C6A1")
     
 @Override

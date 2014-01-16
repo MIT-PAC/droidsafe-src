@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public class FileWriter extends OutputStreamWriter {
 
     /**
@@ -16,6 +15,8 @@ public class FileWriter extends OutputStreamWriter {
      * @throws IOException
      *             if {@code file} cannot be opened for writing.
      */
+    @DSComment("FileWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.163 -0500", hash_original_method = "B243913791A4955722C7446949980DA0", hash_generated_method = "D6DAF213F6D3B38533FFD8AF2E1BB16E")
     
 public FileWriter(File file) throws IOException {
@@ -34,6 +35,8 @@ public FileWriter(File file) throws IOException {
      * @throws IOException
      *             if the {@code file} cannot be opened for writing.
      */
+    @DSComment("FileWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.166 -0500", hash_original_method = "79860F10C9F09BC3FC3374E75EC2439D", hash_generated_method = "7EFD327773EA8ABA2873A2E9933FED3A")
     
 public FileWriter(File file, boolean append) throws IOException {
@@ -60,6 +63,8 @@ public FileWriter(FileDescriptor fd) {
      * @throws IOException
      *             if the file cannot be opened for writing.
      */
+    @DSComment("FileWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.172 -0500", hash_original_method = "7A60608F9C8A66E68FB25FC3BD2DB01D", hash_generated_method = "2434875F8167778129CD26B8C797A068")
     
 public FileWriter(String filename) throws IOException {
@@ -78,12 +83,13 @@ public FileWriter(String filename) throws IOException {
      * @throws IOException
      *             if the {@code file} cannot be opened for writing.
      */
+    @DSComment("FileWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:42.174 -0500", hash_original_method = "754E5DA17049F1720720C66817C48E5C", hash_generated_method = "A8E2C54EB46A112F5B8B861711B5F8D6")
     
 public FileWriter(String filename, boolean append) throws IOException {
         super(new FileOutputStream(filename, append));
     }
-
     
 }
 

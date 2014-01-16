@@ -27,21 +27,14 @@ import org.apache.http.io.SessionInputBuffer;
 import org.apache.http.io.SessionOutputBuffer;
 import org.apache.http.params.HttpParams;
 
-
-
-
-
-
 public abstract class AbstractHttpClientConnection implements HttpClientConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.491 -0500", hash_original_field = "FDB5A9B9AD2A7A41FA2463863E97E07B", hash_generated_field = "AB3FDC91331A5753EE17C338AC9D0381")
-
 
     private  EntitySerializer entityserializer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.494 -0500", hash_original_field = "3DB3DE348EF92E8314529FAB3E53A3B1", hash_generated_field = "18C47D09329E968B5EC7364123601CF5")
 
     private  EntityDeserializer entitydeserializer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.496 -0500", hash_original_field = "51AEA610F55961E2DEAE8E33F14CC584", hash_generated_field = "B0D6D00F71FC030A17C26A2601F3BE87")
-
     
     private SessionInputBuffer inbuffer = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.499 -0500", hash_original_field = "D37E01EB8D7F3CC9AD7133D08AB04720", hash_generated_field = "10B58CBE3BBA8B7201F396357A83D45E")
@@ -57,8 +50,6 @@ public abstract class AbstractHttpClientConnection implements HttpClientConnecti
 
     private HttpConnectionMetricsImpl metrics = null;
 
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.508 -0500", hash_original_method = "69689155BD098727A81CB27002CF309C", hash_generated_method = "E5AF705A59AF0D1E36D9FB31C022A11A")
     
 public AbstractHttpClientConnection() {
@@ -71,18 +62,21 @@ public AbstractHttpClientConnection() {
     
 protected abstract void assertOpen() throws IllegalStateException;
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.513 -0500", hash_original_method = "DBD25E48E38888EDD7F8AA52F5A67EB4", hash_generated_method = "F94AC6A6020A76CE5A0CF441214459CB")
     
 protected EntityDeserializer createEntityDeserializer() {
         return new EntityDeserializer(new LaxContentLengthStrategy());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.515 -0500", hash_original_method = "FD78F978388B59B364B21C2EBA485800", hash_generated_method = "C551CB028316DBAB414F232D5A47FCE2")
     
 protected EntitySerializer createEntitySerializer() {
         return new EntitySerializer(new StrictContentLengthStrategy());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.517 -0500", hash_original_method = "104F821730DDF9B7746DC5273A66A390", hash_generated_method = "BD3C38DFD68281D67A8C50CD800A221A")
     
 protected HttpResponseFactory createHttpResponseFactory() {
@@ -133,6 +127,7 @@ protected void init(
                 outbuffer.getMetrics());
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.526 -0500", hash_original_method = "EC2664454103C0151B5CF1E9311C3275", hash_generated_method = "C1DCF2F80EADE6F7C7D86F039D50AEC4")
     
 public boolean isResponseAvailable(int timeout) throws IOException {
@@ -182,6 +177,7 @@ public void flush() throws IOException {
         doFlush();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.538 -0500", hash_original_method = "D806319F8045D19DF3AF6D1ED4567F14", hash_generated_method = "CB962EA7CC6656E0B5EC6E492D1795B3")
     
 public HttpResponse receiveResponseHeader() 
@@ -226,12 +222,12 @@ public boolean isStale() {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.545 -0500", hash_original_method = "B4ACF96912B4372C3DFCBFF37024F952", hash_generated_method = "7AD9A1BFEB710F66C989015EA8C10499")
     
 public HttpConnectionMetrics getMetrics() {
         return this.metrics;
     }
-
     
 }
 

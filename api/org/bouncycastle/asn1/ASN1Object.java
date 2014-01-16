@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
 public abstract class ASN1Object extends DERObject {
     /**
      * Create a base ASN.1 object from a byte stream.
@@ -35,7 +31,6 @@ public static ASN1Object fromByteArray(byte[] data)
         }
     }
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:37.695 -0400", hash_original_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E", hash_generated_method = "79A6503CF02D2BF6CA7C22C7ECE56A0E")
     public ASN1Object ()
     {
@@ -65,7 +60,6 @@ abstract void encode(DEROutputStream out) throws IOException;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:13.519 -0500", hash_original_method = "9B1584085CB3DA0B43C545974B62199A", hash_generated_method = "80B4EC24E81346A160DD4F33616FE8AD")
     
 abstract boolean asn1Equals(DERObject o);
-
     
 }
 

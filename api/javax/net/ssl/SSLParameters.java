@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SSLParameters {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.150 -0500", hash_original_field = "5634EAE1575A171F6E1026AFC44C93D6", hash_generated_field = "411F1A5A89267DD4FA4546E0300DEE75")
-
 
     private String[] cipherSuites;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.153 -0500", hash_original_field = "7D0D65262FBB39DD68DC575C10184699", hash_generated_field = "DC671C4B6787E3B95959CD8B3344C9E7")
@@ -69,6 +64,7 @@ public SSLParameters(String[] cipherSuites,
      * Returns a copy of the cipher suites, or null if none have been
      * specified.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.167 -0500", hash_original_method = "4A4F1106EE48461B88F50C671836AAA1", hash_generated_method = "FD30555C3E201135B1513809C5273D60")
     
 public String[] getCipherSuites() {
@@ -81,6 +77,7 @@ public String[] getCipherSuites() {
     /**
      * Sets the cipher suites to a copy of the input, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.169 -0500", hash_original_method = "9E670D049040F6D0CEE95ADCC5A2BB8E", hash_generated_method = "053B0128F67433F0A151D5CA41C4CC53")
     
 public void setCipherSuites(String[] cipherSuites) {
@@ -93,6 +90,7 @@ public void setCipherSuites(String[] cipherSuites) {
      * Returns a copy of the protocols, or null if none have been
      * specified.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.171 -0500", hash_original_method = "4DAE6AE8C86EF57BE9BF60BD0F445F08", hash_generated_method = "AB882CCD2AD470372C7D7B261FE0FB8F")
     
 public String[] getProtocols() {
@@ -105,6 +103,7 @@ public String[] getProtocols() {
     /**
      * Sets the protocols to a copy of the input, or null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.174 -0500", hash_original_method = "EF8F568BAE6FA22D6783DD8D622D3566", hash_generated_method = "0CD6642FB9F05A58166EFC7478C6075B")
     
 public void setProtocols(String[] protocols) {
@@ -118,6 +117,7 @@ public void setProtocols(String[] protocols) {
      * during handshaking. If this returns true, {@link
      * #getWantClientAuth} will return false.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.176 -0500", hash_original_method = "0562A9D6063DDE1E14D46646F3CBBD06", hash_generated_method = "8C7AC36BF0CBD51C2B7ABE20875E1D7E")
     
 public boolean getNeedClientAuth () {
@@ -140,6 +140,7 @@ public void setNeedClientAuth (boolean needClientAuth) {
      * client during handshaking. If this returns true, {@link
      * #getNeedClientAuth} will return false.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.180 -0500", hash_original_method = "B012F9400DE611969BC8B2969D6766E0", hash_generated_method = "4FCD8CBF74DFCB44AAAF6A45D8039EDC")
     
 public boolean getWantClientAuth () {
@@ -156,7 +157,6 @@ public void setWantClientAuth (boolean wantClientAuth) {
         this.wantClientAuth = wantClientAuth;
         this.needClientAuth = false;
     }
-
     
 }
 

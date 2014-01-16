@@ -8,8 +8,6 @@ import android.content.ComponentName;
 import android.content.Intent;
 import android.os.Build;
 
-
-
 public class IntentCompat {
 
     /**
@@ -39,7 +37,6 @@ public class IntentCompat {
 public static Intent makeMainActivity(ComponentName mainActivity) {
         return IMPL.makeMainActivity(mainActivity);
     }
-
 
     /**
      * Make an Intent for the main activity of an application, without
@@ -90,13 +87,10 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:28.520 -0500", hash_original_field = "0E02DC6B9E12C5D7B4BB1726F7A60CD7", hash_generated_field = "983CC0C3417D6E0A1FAC8FCDBFFB9087")
 
-
     private static  IntentCompatImpl IMPL;
-
     
     static class IntentCompatImplBase implements IntentCompatImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.831 -0400", hash_original_method = "6D338D1BF47181449ED1EB8AE28F9864", hash_generated_method = "6D338D1BF47181449ED1EB8AE28F9864")
         public IntentCompatImplBase ()
         {
@@ -134,15 +128,11 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
                     | IntentCompat.FLAG_ACTIVITY_CLEAR_TASK);
             return intent;
         }
-
         
     }
-
-
     
     static class IntentCompatImplHC extends IntentCompatImplBase {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.833 -0400", hash_original_method = "771759B32AFF7941C560E51066B77792", hash_generated_method = "771759B32AFF7941C560E51066B77792")
         public IntentCompatImplHC ()
         {
@@ -160,15 +150,11 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         public Intent makeRestartActivityTask(ComponentName componentName) {
             return IntentCompatHoneycomb.makeRestartActivityTask(componentName);
         }
-
         
     }
-
-
     
     static class IntentCompatImplIcsMr1 extends IntentCompatImplHC {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.834 -0400", hash_original_method = "26768481DD7BD2C237C8D66F6E165213", hash_generated_method = "26768481DD7BD2C237C8D66F6E165213")
         public IntentCompatImplIcsMr1 ()
         {
@@ -180,11 +166,8 @@ public static Intent makeRestartActivityTask(ComponentName mainActivity) {
         public Intent makeMainSelectorActivity(String selectorAction, String selectorCategory) {
             return IntentCompatIcsMr1.makeMainSelectorActivity(selectorAction, selectorCategory);
         }
-
         
     }
-
-
     
     interface IntentCompatImpl {
         Intent makeMainActivity(ComponentName componentName);

@@ -8,11 +8,6 @@ import java.net.InetAddress;
 
 import org.apache.http.HttpHost;
 
-
-
-
-
-
 public final class RouteTracker implements RouteInfo, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.130 -0500", hash_original_field = "905C01B4FE2157113AE81815E13AB5AC", hash_generated_field = "7B58806231BEF3BA039CB1C0F515C7D6")
 
@@ -39,7 +34,6 @@ public final class RouteTracker implements RouteInfo, Cloneable {
 
     private boolean secure;
 
-
     /**
      * Creates a new route tracker.
      * The target and origin need to be specified at creation time.
@@ -60,7 +54,6 @@ public RouteTracker(HttpHost target, InetAddress local) {
         this.layered      = LayerType.PLAIN;
     }
 
-
     /**
      * Creates a new tracker for the given route.
      * Only target and origin are taken from the route,
@@ -73,7 +66,6 @@ public RouteTracker(HttpHost target, InetAddress local) {
 public RouteTracker(HttpRoute route) {
         this(route.getTargetHost(), route.getLocalAddress());
     }
-
 
     /**
      * Tracks connecting to the target.
@@ -90,7 +82,6 @@ public final void connectTarget(boolean secure) {
         this.connected = true;
         this.secure = secure;
     }
-
 
     /**
      * Tracks connecting to the first proxy.
@@ -113,7 +104,6 @@ public final void connectProxy(HttpHost proxy, boolean secure) {
         this.secure     = secure;
     }
 
-
     /**
      * Tracks tunnelling to the target.
      *
@@ -132,7 +122,6 @@ public final void tunnelTarget(boolean secure) {
         this.tunnelled = TunnelType.TUNNELLED;
         this.secure    = secure;
     }
-
 
     /**
      * Tracks tunnelling to a proxy in a proxy chain.
@@ -166,7 +155,6 @@ public final void tunnelProxy(HttpHost proxy, boolean secure) {
         this.secure     = secure;
     }
 
-
     /**
      * Tracks layering a protocol.
      *
@@ -186,25 +174,24 @@ public final void layerProtocol(boolean secure) {
         this.secure  = secure;
     }
 
-
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.163 -0500", hash_original_method = "00F8E4422BF57DE6758D681F4A99BDB6", hash_generated_method = "3CF09B50D9FFB38E80EC0DF2754F3C7C")
     
 public final HttpHost getTargetHost() {
         return this.targetHost;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.166 -0500", hash_original_method = "28495B9032685860E947A62701D0E919", hash_generated_method = "B1EF19B51880E604C3C8A9B2EC317276")
     
 public final InetAddress getLocalAddress() {
         return this.localAddress;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.168 -0500", hash_original_method = "6ABB5CCC8F0E8E8F1BDF34E043639F85", hash_generated_method = "AD1EC8D5550945F77A5A84A92BB90212")
     
 public final int getHopCount() {
@@ -218,8 +205,8 @@ public final int getHopCount() {
         return hops;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.170 -0500", hash_original_method = "CFC4B3441FDC551CC1F391519968AE1F", hash_generated_method = "357DFC3EEE7A7ACCEF102E9E374192CE")
     
 public final HttpHost getHopTarget(int hop) {
@@ -242,14 +229,13 @@ public final HttpHost getHopTarget(int hop) {
         return result;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.173 -0500", hash_original_method = "E9E1E8AC6D9C2477F7E0F63BF0C4ED60", hash_generated_method = "30E7E8E67A319853D2C851FAF279DA52")
     
 public final HttpHost getProxyHost() {
         return (this.proxyChain == null) ? null : this.proxyChain[0];
     }
-
 
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.175 -0500", hash_original_method = "42622BE2571C040A9FEE72D0CCBA0217", hash_generated_method = "272079035DD4B0E10E8C769843BFB4F3")
@@ -258,14 +244,12 @@ public final boolean isConnected() {
         return this.connected;
     }
 
-
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.177 -0500", hash_original_method = "350E5C2EB4A104FE6F444729C8CD5444", hash_generated_method = "34D96FF8C8A24960212FD51CCBD1FAE7")
     
 public final TunnelType getTunnelType() {
         return this.tunnelled;
     }
-
 
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.180 -0500", hash_original_method = "5CD3D72A708D2B06B9BD542F01F3D0EE", hash_generated_method = "9C3F884A327393840A81C20C66CDA5A9")
@@ -274,14 +258,12 @@ public final boolean isTunnelled() {
         return (this.tunnelled == TunnelType.TUNNELLED);
     }
 
-
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.182 -0500", hash_original_method = "24DDB6A6987422E004B186B027F8E19E", hash_generated_method = "16B0A69A0FDF7D043EE16E0E25CFF1F6")
     
 public final LayerType getLayerType() {
         return this.layered;
     }
-
 
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.184 -0500", hash_original_method = "90484F935FB331F087FF42A42BD08719", hash_generated_method = "C6CAA6739334D47F3B176C5B89C711DE")
@@ -290,14 +272,12 @@ public final boolean isLayered() {
         return (this.layered == LayerType.LAYERED);
     }
 
-
     // non-JavaDoc, see interface RouteInfo
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.186 -0500", hash_original_method = "F448B780707B5356535204966A8ECD14", hash_generated_method = "D63F92E2829B7A464F6073C5CB36443A")
     
 public final boolean isSecure() {
         return this.secure;
     }
-
 
     /**
      * Obtains the tracked route.
@@ -315,7 +295,6 @@ public final HttpRoute toRoute() {
                                  this.proxyChain, this.secure,
                                  this.tunnelled, this.layered);
     }
-
 
     /**
      * Compares this tracked route to another.
@@ -361,7 +340,6 @@ public final HttpRoute toRoute() {
         return equal;
     }
 
-
     /**
      * Generates a hash code for this tracked route.
      * Route trackers are modifiable and should therefore not be used
@@ -395,7 +373,6 @@ public final HttpRoute toRoute() {
 
         return hc;
     }
-
 
     /**
      * Obtains a description of the tracked route.
@@ -435,7 +412,6 @@ public final HttpRoute toRoute() {
         return cab.toString();
     }
 
-
     // default implementation of clone() is sufficient
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:29.201 -0500", hash_original_method = "66DEBDF0D0405CDDBB7BD5DED76064DF", hash_generated_method = "49055EB107CA2B05DED5ACBCE67DF575")
     
@@ -443,7 +419,6 @@ public final HttpRoute toRoute() {
     public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     
 }
 

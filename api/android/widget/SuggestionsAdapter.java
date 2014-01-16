@@ -36,11 +36,6 @@ import android.view.ViewGroup;
 
 import com.android.internal.R;
 
-
-
-
-
-
 class SuggestionsAdapter extends ResourceCursorAdapter implements OnClickListener {
 
     /**
@@ -75,7 +70,6 @@ private static String getStringOrNull(Cursor cursor, int col) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.687 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
-
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.690 -0500", hash_original_field = "13F3B2DF0FCA764230D27EDCE01E4B44", hash_generated_field = "10677C9028A9E03475AECA5E3EA8B569")
 
@@ -85,7 +79,6 @@ private static String getStringOrNull(Cursor cursor, int col) {
     private static final int QUERY_LIMIT = 50;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.694 -0500", hash_original_field = "AE137D8B61EF1E6708FA70587481FB25", hash_generated_field = "98E9087104FBAF95AD5B62C304A0CCFF")
 
-
     static final int REFINE_NONE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.696 -0500", hash_original_field = "49FA411F6050649582B6B5F150971B04", hash_generated_field = "837D31B49612E7145EBEC07CF04BC9EF")
 
@@ -94,7 +87,6 @@ private static String getStringOrNull(Cursor cursor, int col) {
 
     static final int REFINE_ALL = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.718 -0500", hash_original_field = "79922DB043510C9A19B5CA2602F88574", hash_generated_field = "5DFAE43769080A8126AF66611D827CF3")
-
 
     static final int INVALID_INDEX = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.733 -0500", hash_original_field = "D9CBF9BC326274E991E22E4A91A9DC92", hash_generated_field = "BB1484C4960A6B42BEEDB91924AED19E")
@@ -107,7 +99,6 @@ private static String getStringOrNull(Cursor cursor, int col) {
      */
     private static final long DELETE_KEY_POST_DELAY = 500L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.701 -0500", hash_original_field = "8470BADEE289DF0AB053E4469CD24A3C", hash_generated_field = "EC37B561700692089320F9D5E535EAC6")
-
 
     private SearchManager mSearchManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.703 -0500", hash_original_field = "60229949E2319A4FB0EE2E6EFEBE4F16", hash_generated_field = "1366187FE3CF01EF5FC13B6B4154C3DB")
@@ -214,6 +205,7 @@ public void setQueryRefinement(int refineWhat) {
      * Returns the current query refinement preference.
      * @return value of query refinement preference
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.745 -0500", hash_original_method = "986E9EFF340372ED6B6AF1389D87F9A0", hash_generated_method = "8FEA08FFD485B597F21E8838992C3BFE")
     
 public int getQueryRefinement() {
@@ -544,7 +536,6 @@ private void setViewDrawable(ImageView v, Drawable drawable, int nullVisibility)
 
         return null;
     }
-
     
     private final static class ChildViewCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.768 -0500", hash_original_field = "1A08D4AF3119810748DCC283DD7E10BC", hash_generated_field = "3275A8779DDA322EA97597C856F45009")
@@ -572,7 +563,6 @@ public ChildViewCache(View v) {
             mIcon2 = (ImageView) v.findViewById(com.android.internal.R.id.icon2);
             mIconRefine = (ImageView) v.findViewById(com.android.internal.R.id.edit_query);
         }
-
         
     }
 
@@ -582,6 +572,7 @@ public ChildViewCache(View v) {
      *
      * @see android.widget.ListAdapter#getView(int, View, ViewGroup)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:19.805 -0500", hash_original_method = "EC9A6ABF4CBFA211B4EDA728AA0B1D68", hash_generated_method = "6F756B9030C9DE6578298DBB4587359F")
     
 @Override
@@ -600,9 +591,7 @@ public ChildViewCache(View v) {
             return v;
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.637 -0400", hash_original_method = "2062B3ECC79D4C838F6E4FC0FEE6243A", hash_generated_method = "33F8B54B0BC6C5CFE9FBF59E33AB8C39")
     private Drawable getDrawableFromResourceValue(String drawableId) {
         addTaint(drawableId.getTaint());

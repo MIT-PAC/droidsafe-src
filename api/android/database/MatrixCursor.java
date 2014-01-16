@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class MatrixCursor extends AbstractCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.727 -0500", hash_original_field = "6F6E37586C2DA7E268D812D09F34D2FE", hash_generated_field = "E79D10B9148CF1E07E28DC9A748C915B")
-
 
     private  String[] columnNames;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.730 -0500", hash_original_field = "24DCDE757C4239BA31902159E7305DA8", hash_generated_field = "87FB4EC33D38D4927074FCDA32A55471")
@@ -52,6 +46,8 @@ public MatrixCursor(String[] columnNames, int initialCapacity) {
      * @param columnNames names of the columns, the ordering of which
      *  determines column ordering elsewhere in this cursor
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.740 -0500", hash_original_method = "520E9D572328080C8A52E1417D8346F4", hash_generated_method = "139E9284A654A258F94B9F29AED42E95")
     
 public MatrixCursor(String[] columnNames) {
@@ -103,6 +99,8 @@ public RowBuilder newRow() {
      * @param columnValues in the same order as the the column names specified
      *  at cursor construction time
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.748 -0500", hash_original_method = "48B10D52D633E686D99B492C35189F09", hash_generated_method = "87F3E7DEB331588F9FEE85FE0B266C4D")
     
 public void addRow(Object[] columnValues) {
@@ -193,6 +191,7 @@ private void ensureCapacity(int size) {
 
     // AbstractCursor implementation.
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.771 -0500", hash_original_method = "3C738FD66B9E4F046395F2884F1D431C", hash_generated_method = "BD4A1874539187257611830A3697A34B")
     
 @Override
@@ -200,6 +199,7 @@ private void ensureCapacity(int size) {
         return rowCount;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.774 -0500", hash_original_method = "438CBE048C14BFF65A950EB22F18A5DC", hash_generated_method = "CB5FA49AB8B8C47EBAACD85747BB62B4")
     
 @Override
@@ -207,6 +207,7 @@ private void ensureCapacity(int size) {
         return columnNames;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.777 -0500", hash_original_method = "FF3178260B85D85D43C7EA714D59B46B", hash_generated_method = "2DBB0A17A3D1D018DA998CC6AF1F85E3")
     
 @Override
@@ -216,6 +217,7 @@ private void ensureCapacity(int size) {
         return value.toString();
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.779 -0500", hash_original_method = "60FD43E3A8DF3780BF7590D38393B65C", hash_generated_method = "21D6C413E6B369027128722715946B85")
     
 @Override
@@ -226,6 +228,7 @@ private void ensureCapacity(int size) {
         return Short.parseShort(value.toString());
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.781 -0500", hash_original_method = "20798CD66C6EBCBDA86BE86A1F5C23AA", hash_generated_method = "DA727E8C1F17999E71962CC302754E6C")
     
 @Override
@@ -236,6 +239,7 @@ private void ensureCapacity(int size) {
         return Integer.parseInt(value.toString());
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.784 -0500", hash_original_method = "95E2F837C77BDD8697A8850547DFE4D6", hash_generated_method = "CF9F9B512084A7D31A508D7C70439556")
     
 @Override
@@ -246,6 +250,7 @@ private void ensureCapacity(int size) {
         return Long.parseLong(value.toString());
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.786 -0500", hash_original_method = "5F37DCAACCAC42556DC41D90A8D016BB", hash_generated_method = "FA4FCD5C3B1FF317413F4A6444B074A7")
     
 @Override
@@ -256,6 +261,7 @@ private void ensureCapacity(int size) {
         return Float.parseFloat(value.toString());
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.789 -0500", hash_original_method = "C2298AFC87949D13E5DEC28EBEE5D1A6", hash_generated_method = "FFFC7AAB2B4B38FEADFBD27BD10D8573")
     
 @Override
@@ -266,6 +272,7 @@ private void ensureCapacity(int size) {
         return Double.parseDouble(value.toString());
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.791 -0500", hash_original_method = "9C5D46FB06759EAD0808F8E5E3B27C37", hash_generated_method = "88D622D24B64CFBE5969609A61CBC5C2")
     
 @Override
@@ -274,6 +281,7 @@ private void ensureCapacity(int size) {
         return (byte[]) value;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.794 -0500", hash_original_method = "8CE769D01E691B0A57CC7218B148D0E1", hash_generated_method = "562EF6FFF116C251F53E5B67BBE56B11")
     
 @Override
@@ -287,11 +295,9 @@ private void ensureCapacity(int size) {
     public boolean isNull(int column) {
         return get(column) == null;
     }
-
     
     public class RowBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.759 -0500", hash_original_field = "8BD524D6245D998B3BBC44EB9313082E", hash_generated_field = "56A277C77B76B31C1E1045C8C11CA802")
-
 
         private int index;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:37.761 -0500", hash_original_field = "6D7F0689BD6688D0B2099E339DAE197D", hash_generated_field = "CFF06DF4D49F0CFE0C83824C6EB05DF9")
@@ -323,11 +329,8 @@ public RowBuilder add(Object columnValue) {
             data[index++] = columnValue;
             return this;
         }
-
         
     }
-
-
     
 }
 

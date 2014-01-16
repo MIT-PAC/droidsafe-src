@@ -8,11 +8,6 @@ import java.lang.ref.Reference;
 import java.lang.ref.WeakReference;
 import java.util.concurrent.atomic.AtomicInteger;
 
-
-
-
-
-
 public class ThreadLocal<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.344 -0500", hash_original_field = "65EF0C9DFC0E92D7EED5F56DE419D25E", hash_generated_field = "D0904C715877D79D507857C3DBB2EE5E")
 
@@ -30,6 +25,8 @@ public class ThreadLocal<T> {
     /**
      * Creates a new thread-local variable.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.324 -0500", hash_original_method = "CCBA978684365F19FBD68BD48C79C23F", hash_generated_method = "D0C2DD8281FBEC9648419EC2F2A6CF45")
     
 public ThreadLocal() {}
@@ -42,6 +39,9 @@ public ThreadLocal() {}
      *
      * @return the current value of the variable for the calling thread.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.327 -0500", hash_original_method = "17AB1D63AD8B7EADE4880D6FD1744965", hash_generated_method = "487B38E97D772D8EDC85719FC3E88B3F")
     
 @SuppressWarnings("unchecked")
@@ -81,6 +81,9 @@ protected T initialValue() {
      *
      * @param value the new value of the variable for the caller thread.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.332 -0500", hash_original_method = "93D51722B7CB3C8EF0C38EE234F866B9", hash_generated_method = "F4573C2031B961898558E7070BE21319")
     
 public void set(T value) {
@@ -100,6 +103,8 @@ public void set(T value) {
      *
      * @since 1.5
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.334 -0500", hash_original_method = "E12F04AD7D9687B33AD1C273DE0809EB", hash_generated_method = "ACDA24ADC78949A9692E989598D5396F")
     
 public void remove() {
@@ -118,7 +123,6 @@ public void remove() {
 Values initializeValues(Thread current) {
         return current.localValues = new Values();
     }
-
     
     static class Values {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.349 -0500", hash_original_field = "5815EB4F0C5C8D237058EB34C5FEE776", hash_generated_field = "FC71C8361E3E0D880F15510AF5EACDF8")
@@ -409,6 +413,7 @@ void put(ThreadLocal<?> key, Object value) {
          * Gets value for given ThreadLocal after not finding it in the first
          * slot.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:25.395 -0500", hash_original_method = "27C70593962E283B71D24D73AE4C9368", hash_generated_method = "CB49CB1736028974189EF007283FC22C")
         
 Object getAfterMiss(ThreadLocal<?> key) {

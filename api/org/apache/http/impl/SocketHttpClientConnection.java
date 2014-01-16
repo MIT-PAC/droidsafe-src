@@ -17,14 +17,8 @@ import org.apache.http.io.SessionOutputBuffer;
 import org.apache.http.params.HttpConnectionParams;
 import org.apache.http.params.HttpParams;
 
-
-
-
-
-
 public class SocketHttpClientConnection extends AbstractHttpClientConnection implements HttpInetConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.684 -0500", hash_original_field = "B4185B849AB8251A0F1052DF377DB9A2", hash_generated_field = "F8642D5396CC441E503E603D20259781")
-
 
     private volatile boolean open;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.686 -0500", hash_original_field = "E7F90F41B90C8A055F53F64B106EF2DC", hash_generated_field = "9FD10C539AD3B0FAAA147E92379F8AC8")
@@ -100,12 +94,14 @@ public boolean isOpen() {
         return this.open;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.705 -0500", hash_original_method = "B12AAA9EA995C0C9BE2466476E8BAC96", hash_generated_method = "39B5114475E69C5D8CA323CEC1163514")
     
 protected Socket getSocket() {
         return this.socket;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.707 -0500", hash_original_method = "37A4CCD5FC4FE8478033812CF6081247", hash_generated_method = "EA530790EC409832EC35D8CAE50145BF")
     
 public InetAddress getLocalAddress() {
@@ -116,6 +112,7 @@ public InetAddress getLocalAddress() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.709 -0500", hash_original_method = "CB3D09E80AD036DA49A9727AFFCF9E16", hash_generated_method = "3A0C54C4A483F7C7ABC3323E7544AA7B")
     
 public int getLocalPort() {
@@ -126,6 +123,7 @@ public int getLocalPort() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.711 -0500", hash_original_method = "738E936ADE4702B2396BC3DC05386FBD", hash_generated_method = "A53D10A004E6582D7D26BD15F7A46312")
     
 public InetAddress getRemoteAddress() {
@@ -136,6 +134,7 @@ public InetAddress getRemoteAddress() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.714 -0500", hash_original_method = "D939EFD523917F0149002711980337D5", hash_generated_method = "E09502CC817CBCDCE2D379B1FD8CEA55")
     
 public int getRemotePort() {
@@ -146,6 +145,7 @@ public int getRemotePort() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.718 -0500", hash_original_method = "1060FB10CE7965802AECEE442A1DB6DF", hash_generated_method = "EE9131719BF4079CA96A25DB7FDB04A8")
     
 public void setSocketTimeout(int timeout) {
@@ -161,6 +161,7 @@ public void setSocketTimeout(int timeout) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.720 -0500", hash_original_method = "65027FF3AE16248E56640778A6A4578D", hash_generated_method = "655443F0128AABC6EA28FA9B52CC5D57")
     
 public int getSocketTimeout() {
@@ -207,7 +208,6 @@ public void close() throws IOException {
         }
         this.socket.close();
     }
-
     
 }
 
