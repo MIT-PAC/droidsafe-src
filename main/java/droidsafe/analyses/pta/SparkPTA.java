@@ -146,7 +146,8 @@ public class SparkPTA extends PTABridge {
             dumpCallGraph(Project.v().getOutputDir() + File.separator + "callgraph.dot");
         }
 
-        new SparkPTAStats().writeStats();
+        if (Config.v().statsRun)
+            new SparkPTAStats().writeStats();
     }
 
     public CallGraph getCallGraph() {

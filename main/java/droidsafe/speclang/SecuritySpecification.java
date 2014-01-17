@@ -225,6 +225,9 @@ public class SecuritySpecification  {
         List<Method> methods = new ArrayList<Method>(eventBlocks.keySet());
         Collections.sort (methods);
         
+        int numHighLevelFlows = 0;
+        int numActions = 0;
+        
         for (Method ie : methods) {
         	SourceLocationTag line = ie.getDeclSourceLocation();
         	if (line != null) {
@@ -236,6 +239,7 @@ public class SecuritySpecification  {
             List<Method> outm = new ArrayList<Method>(eventBlocks.get(ie));
             Collections.sort (outm);
         	for (Method oe : outm) {
+        	    numActions++;
         		buf.append("\t");
         		//print out the method and flag unsupport (true arg to toString())
         		buf.append(oe.toString(true).replaceAll("\n", "\n\t") + ";\n");
@@ -244,8 +248,10 @@ public class SecuritySpecification  {
         		Set<InfoKind> sources = oe.getSourcesInfoKinds();
         		
         		for (InfoKind sinkKind : sinks) {
-        		    for (InfoKind srcKind : sources)
+        		    for (InfoKind srcKind : sources) {
         		        highLevelFlows.append("\t" + srcKind + " -> " + sinkKind + "\n");
+        		        numHighLevelFlows++;
+        		    }
         		}
         	}
         	
@@ -255,6 +261,9 @@ public class SecuritySpecification  {
         highLevelFlows.append("}\n\n");
         
         buf.insert(0, highLevelFlows.toString());
+        
+        System.out.println("High-level flows: " + numHighLevelFlows);
+        System.out.println("Num output events: " + numActions);
         
         return buf.toString();
 	}
