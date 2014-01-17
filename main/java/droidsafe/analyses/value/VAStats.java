@@ -94,15 +94,12 @@ public class VAStats {
                 }
             }
             for(OutputEvent oe : rcfgNode.getOutputEvents()) {
-                //System.out.println("Output Event: " + oe.toString());
                 InvokeExpr ie = oe.getInvokeExpr();
                 SootMethod sm = ie.getMethod();
-                //System.out.println("Soot Method: " + sm.toString());
                 if(ie != null) {
                     if(oe.hasReceiver()) {
                         // process receiver IAllocNodes
                         Set<IAllocNode> receiverPTSet = oe.getReceiverPTSet(oe.getContext(ContextType.EVENT_CONTEXT));
-                        //System.out.println("receiptPTSet: " + receiverPTSet.toString());
                         for(IAllocNode allocNode : receiverPTSet) {
                             v.markAllocNodeAsReachable(allocNode);
                             v.markMethodAsRelevant(allocNode, sm);
@@ -136,8 +133,7 @@ public class VAStats {
                 if(v.vaResolvedClassNamesAndFields.containsKey(scName)) {
                     // we claim that we don't know the sizes of any field sets if the containing model got invalidated
                     boolean containingModelInvalidated = refVAModel.invalidated();
-                    for(SootField sf : v.vaResolvedClassNamesAndFields.get(scName)){
-
+                    for(SootField sf : RefVAModel.getFieldsToDisplay(refVAModel.getSootClass())){
                         // 1st column - class name and field name
                         List<String> rowEntries = new ArrayList<String>();
                         rowEntries.add(sf.toString());

@@ -160,7 +160,7 @@ public abstract class RefVAModel extends VAModel {
     /**
      * @returns the SootClass for this object model.
      */ 
-    private SootClass getSootClass() {
+    public SootClass getSootClass() {
         // We only model objects, so the type should always be RefType
         return ((RefType)this.getAllocNode().getType()).getSootClass();
     }
@@ -213,7 +213,7 @@ public abstract class RefVAModel extends VAModel {
         return fieldsString;
     }
 
-    private Set<SootField> getFieldsToDisplay(SootClass sootClassParam) {
+    public static Set<SootField> getFieldsToDisplay(SootClass sootClassParam) {
         // the result
         Set<SootField> fieldsToDisplay = new HashSet<SootField>();
 

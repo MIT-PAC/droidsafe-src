@@ -244,17 +244,8 @@ public class Main {
         monitor.worked(1);
         if (monitor.isCanceled())
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-        
-
-        driverMsg("Converting Class.getName calls to class name strings.");
-        monitor.subTask("Converting Class.getName calls to class name strings.");
-        ClassGetNameToClassString.run();
-        monitor.worked(1);
-        if (monitor.isCanceled())
-            return DroidsafeExecutionStatus.CANCEL_STATUS;
 
         // jsa uses pta results in hotspot calculation
-
         if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
 
@@ -303,10 +294,19 @@ public class Main {
         }
        
         //need this pta run to account for object sens and jsa injection
-
         if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
-     
+ 
+        driverMsg("Converting Class.getName calls to class name strings.");
+        monitor.subTask("Converting Class.getName calls to class name strings.");
+        ClassGetNameToClassString.run();
+        monitor.worked(1);
+        if (monitor.isCanceled())
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+    
+        if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
+            return DroidsafeExecutionStatus.CANCEL_STATUS;
+
         ValueAnalysis.setup();
         if (Config.v().runValueAnalysis) {
             monitor.worked(1);
