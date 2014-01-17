@@ -3,12 +3,14 @@ package droidsafe.analyses.value;
 import droidsafe.analyses.pta.ContextType;
 import droidsafe.analyses.pta.PTABridge;
 import droidsafe.analyses.pta.PTAContext;
+import droidsafe.analyses.pta.PointsToAnalysisPackage;
 import droidsafe.analyses.pta.cg.CGContextVisitor;
 import droidsafe.analyses.pta.cg.CGVisitorEntryAnd1CFA;
 import droidsafe.analyses.pta.cg.CallGraphTraversal;
 import droidsafe.analyses.value.primitives.StringVAModel;
 import droidsafe.android.app.Project;
 import droidsafe.android.system.API;
+import droidsafe.main.Config;
 import droidsafe.speclang.Method;
 import droidsafe.transforms.JSAResultInjection;
 import droidsafe.utils.SootUtils;
@@ -58,7 +60,7 @@ import soot.Value;
 public class ValueAnalysis implements CGContextVisitor {
     //if true then for string values, only track jsa resolved strings (so hot spot strings)
     public static final boolean ONLY_TRACK_JSA_STRINGS = true;
-    public static final ContextType CONTEXT_TYPE = ContextType.NONE;
+    public static ContextType CONTEXT_TYPE = ContextType.NONE;
     
     /** Singleton for analysis */
     private static ValueAnalysis am;
@@ -180,6 +182,10 @@ public class ValueAnalysis implements CGContextVisitor {
         }
 
         am.createObjectModels();
+
+        //run with one cfa if using geo
+        if (Config.v().POINTS_TO_ANALYSIS_PACKAGE == PointsToAnalysisPackage.GEOPTA)
+            CONTEXT_TYPE = ContextType.ONE_CFA;
         
         CallGraphTraversal.acceptContext(am, CONTEXT_TYPE);;
                                 

@@ -75,8 +75,7 @@ import soot.SootMethod;
  * 
  */
 public class Main {
-    /** The points to analysis to run */
-    private static final PointsToAnalysisPackage POINTS_TO_ANALYSIS_PACKAGE = PointsToAnalysisPackage.SPARK;
+   
     /** logger field */
     private static final Logger logger = LoggerFactory.getLogger(Main.class);
     /** timing stats container */
@@ -277,7 +276,7 @@ public class Main {
         appStatRowEntries.add(timer1.toString());
         driverMsg("Finished String Analysis: " + timer1);
 
-        if (POINTS_TO_ANALYSIS_PACKAGE != PointsToAnalysisPackage.PADDLE && Config.v().addObjectSensitivity) {
+        if (Config.v().POINTS_TO_ANALYSIS_PACKAGE != PointsToAnalysisPackage.PADDLE && Config.v().addObjectSensitivity) {
             timer1.reset();
             timer1.start();
             driverMsg("Adding Object Sensitivity by cloning...");
@@ -536,7 +535,7 @@ public class Main {
         StopWatch timer = new StopWatch();
         timer.start();
         PTABridge.release();
-        PTABridge.run(POINTS_TO_ANALYSIS_PACKAGE);
+        PTABridge.run(Config.v().POINTS_TO_ANALYSIS_PACKAGE);
         monitor.worked(1);
         if (monitor.isCanceled()) {
             return DroidsafeExecutionStatus.CANCEL_STATUS;
