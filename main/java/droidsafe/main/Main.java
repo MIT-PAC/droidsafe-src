@@ -50,12 +50,14 @@ import droidsafe.utils.JimpleRelationships;
 import droidsafe.utils.SootUtils;
 
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
+import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.time.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -90,21 +92,23 @@ public class Main {
         driverMsg("Starting DroidSafe Run");
         // grab command line args and set some globals
         Config.v().init(args);
-        // need this try catch so that app stats get written even if some phase throws exception
-        try { 
-            run(new DroidsafeDefaultProgressMonitor());
-        } catch (Exception e) {
 
-        } finally {
-            if (appStatWriter != null) {
-                appStatWriter.writeNext(appStatRowEntries.toArray(new String[] {}));                                             
-                try {                                                                                                            
-                    appStatWriter.close();                                                                                       
-                } catch(IOException ie) {                                                                                        
-                    logger.warn("Unable to close app-stats.log: {}", ie);                                                        
-                }        
+        // need this shutdown hook so that app stats get written even if some phase fails or we timeout
+        Runtime.getRuntime().addShutdownHook(new Thread() {
+            @Override
+            public void run() {
+                if (appStatWriter != null) {
+                    appStatWriter.writeNext(appStatRowEntries.toArray(new String[] {}));                                             
+                    try {                                                                                                            
+                        appStatWriter.close();                                                                                       
+                    } catch(IOException ie) {                                                                                        
+                        logger.warn("Unable to close app-stats.log: {}", ie);                                                        
+                    }        
+                }
             }
-        }
+        });
+        
+        run(new DroidsafeDefaultProgressMonitor());
     }
 
     public static DroidsafeExecutionStatus run(IDroidsafeProgressMonitor monitor) {
@@ -142,9 +146,18 @@ public class Main {
        
         // write out headers for columns
         appStatWriter.writeNext(new String[] {"App Name", "String Analysis", "Class Cloning", "Points-to Analysis", "Value Analysis", "Infoflow Analysis"});
+
         // app stat column #1 - app name
-        String[] bits = Config.v().APP_ROOT_DIR.split("/");
-        appStatRowEntries.add(bits[bits.length-1]);
+        try {
+            FileInputStream inputStream = new FileInputStream(Config.v().APP_ROOT_DIR + File.separator + "Makefile");
+            inputStream = new FileInputStream(Config.v().APP_ROOT_DIR + File.separator + "Makefile");
+            String name = IOUtils.toString(inputStream).split("\n")[0].split(" ")[2];
+            appStatRowEntries.add(name);
+            inputStream.close();
+        } catch (IOException e) {
+            logger.warn("Unable to open or close the application's Makefile");
+            System.exit(1);
+        }
 
         driverMsg("Removing identity overrides.");
         monitor.subTask("Removing identity overrides.");
