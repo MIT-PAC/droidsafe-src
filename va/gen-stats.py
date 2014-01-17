@@ -33,7 +33,7 @@ def process_command_line(argv):
     return settings, args
 
 def run(settings, args):
-    path = os.environ['APAC_HOME'] + '/android-apps/'
+    path = os.environ['APAC_HOME'] + '/android-apps/engagements'
     droidsafe_gen_dirs = [os.path.join(dirpath, f) for dirpath, dirnames, files in os.walk(path) for f in
             fnmatch.filter(dirnames, 'droidsafe-gen')]
     
@@ -46,15 +46,22 @@ def run(settings, args):
    
     with open('app-stats.csv', 'wb') as app_stat_csv_file:
         app_stat_csv_writer = csv.writer(app_stat_csv_file)
-        app_stat_csv_writer.writerow(["App Name", "LOCs", "String Analysis", "Class Cloning", "Points-to Analysis", "Value Analysis", "Infoflow Analysis"])
+        app_stat_csv_writer.writerow(["App Name", 
+                                      "LOCs", 
+                                      "String Analysis", 
+                                      "Class Cloning", 
+                                      "Points-to Analysis", 
+                                      "Value Analysis", 
+                                      "Infoflow Analysis"])
 
         for droidsafe_gen_dir in droidsafe_gen_dirs:
             # only keep apps that have va and app stats
             va_stat_file = os.path.join(droidsafe_gen_dir, "va-stats.csv")
             app_stat_file = os.path.join(droidsafe_gen_dir, "app-stats.csv")
             src_dir = os.path.join("/".join(droidsafe_gen_dir.split("/")[:-1]), "src")
-            if not os.path.exists(va_stat_file) or os.stat(va_stat_file).st_size == 0 or not
-                os.path.exists(app_stat_file) or os.stat(app_stat_file).st_size == 0 or not os.path.exists(src_dir):
+            if not os.path.exists(va_stat_file) or os.stat(va_stat_file).st_size == 0 or \
+               not os.path.exists(app_stat_file) or os.stat(app_stat_file).st_size == 0 or \
+               not os.path.exists(src_dir):
                 continue
 
             # get size of app
@@ -92,17 +99,29 @@ def run(settings, args):
                     cls = cls[:-1]
                     if size == "UNKNOWN":
                         ambg[cls][field] += 1
+                        total[cls][field] += 1
                     else:
-                        unambg[cls][field] += 1
-                        setsizesum[cls][field] += int(size)
-                        if size == "1":
-                            setsizeone[cls][field] += 1
-                    total[cls][field] += 1
+                        intsize = int(size)
+                        if intsize > 0:
+                            unambg[cls][field] += 1
+                            setsizesum[cls][field] += intsize
+                            if intsize == 1:
+                                setsizeone[cls][field] += 1
+                            total[cls][field] += 1
 
     # write all app va stats into global va stats file
     with open('va-stats.csv', 'wb') as csvfile:
         csvwriter = csv.writer(csvfile)
-        csvwriter.writerow(["Class", "Field", "Unambiguous", "%", "Ambiguous", "%", "Avg Set Size", "Set Size 1", "%", "Total"])
+        csvwriter.writerow(["Class", 
+                            "Field", 
+                            "Unambiguous", 
+                            "%", 
+                            "Ambiguous", 
+                            "%", 
+                            "Avg Set Size",
+                            "Set Size 1", 
+                            "%", 
+                            "Total"])
         for cls, fields in total.items():
             for field, total in fields.items():
                 unambg_count = unambg[cls][field]
