@@ -1761,8 +1761,8 @@ public Intent() {
         mData = uri;
     }
     
-    @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSComment("Intent creation")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "8A8F598E2C7B57A58F1379D7AFC8B81F", hash_generated_method = "CFC95A750DAD5D8F9B4AF9DD7CFFB32A")
     public  Intent(Context packageContext, Class<?> cls) {
         mComponent = new ComponentName(packageContext, cls.getName());
@@ -1770,8 +1770,8 @@ public Intent() {
         //mComponent = new ComponentName(packageContext, cls);
     }
     
-    @DSComment("Refelction/class loader")
-    @DSBan(DSCat.REFLECTION)
+    @DSComment("Intent creation")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.417 -0400", hash_original_method = "780AF3DA4D357977F460A8077F315476", hash_generated_method = "6432A8C7753059113592629EBEB24128")
     public  Intent(String action, Uri uri,
             Context packageContext, Class<?> cls) {
