@@ -128,15 +128,25 @@ public class SparkPTA extends PTABridge {
 
         QueueReader<MethodOrMethodContext> qr = Scene.v().getReachableMethods().listener();
 
+        long totalIndegree = 0;
+        
         while (qr.hasNext()) {
             MethodOrMethodContext momc = qr.next();
             if (momc instanceof SootMethod) {
                 reachableMethods.add((SootMethod)momc);
+                
+                Iterator<Edge> iterator = callGraph.edgesInto(momc);
+                while (iterator.hasNext()) {
+                    totalIndegree++;
+                    iterator.next();
+                }
             }
         }
 
         System.out.println("Size of reachable methods: " + reachableMethods.size());
         System.out.println("Alloc Nodes: " + newToAllocNodeMap.size());
+        System.out.println("Average Indegree for call graph: " + 
+                ((double)totalIndegree) / ((double)reachableMethods.size()));
 
         if (Config.v().dumpPta){
             dumpPTA(Project.v().getOutputDir() + File.separator +"pta.txt");

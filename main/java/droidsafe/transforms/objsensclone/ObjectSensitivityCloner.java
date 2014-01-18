@@ -226,7 +226,7 @@ public class ObjectSensitivityCloner {
         hasRun = true;
         numClonedClasses = 0;
         AllocationGraph aGraph = new AllocationGraph();
-
+        
         initMasterList();
 
         FileWriter fw = null;
@@ -235,6 +235,8 @@ public class ObjectSensitivityCloner {
             fw = new FileWriter(Project.v().getOutputDir() + File.separator + 
                     "obj-sens-cloner-va-stats.csv");
 
+            fw.write(aGraph.getGraphStats());
+            
             List<SootClass> workList = aGraph.workList();
             fw.write("Total classes to consider: " + workList.size() + "\n");
             fw.write("Class,InDegree,OutDegree,TotalClasses,PercentChange\n");
