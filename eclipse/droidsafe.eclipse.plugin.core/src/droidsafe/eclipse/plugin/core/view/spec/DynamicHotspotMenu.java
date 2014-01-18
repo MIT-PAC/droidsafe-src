@@ -19,7 +19,8 @@ import droidsafe.speclang.model.MethodModel;
 import droidsafe.speclang.model.SecuritySpecModel;
 
 public class DynamicHotspotMenu extends ContributionItem {
-  
+
+  /*
   @SuppressWarnings("unused")
   private static final Logger logger = LoggerFactory.getLogger(DynamicHotspotMenu.class);
 
@@ -109,4 +110,5 @@ public class DynamicHotspotMenu extends ContributionItem {
       }
     });
   }
+  */
 }

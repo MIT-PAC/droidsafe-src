@@ -319,16 +319,7 @@ public class Method implements Comparable<Method> {
         if (!Scene.v().containsMethod(getSignature()))
             return null;
 
-        SootMethod method = Scene.v().getMethod(getSignature());
-
-        if (!method.hasActiveBody())
-            return null;
-
-        LineNumberTag line = (LineNumberTag)method.getActiveBody().getUnits().getFirst().getTag("LineNumberTag");
-        if (line == null) {
-            return null;
-        }
-        return new SourceLocationTag(method.getDeclaringClass().getName(), line.getLineNumber());
+        return SootUtils.getMethodLocation(sootMethod);
     }
 
     /**

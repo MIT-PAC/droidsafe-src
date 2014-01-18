@@ -10,6 +10,7 @@ import java.util.Iterator;
 import java.util.jar.JarEntry;
 import java.util.jar.JarFile;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.LinkedList;
@@ -798,6 +799,8 @@ public class SootUtils {
 
         return null;
     }
+    
+    private static Map<Stmt, SourceLocationTag> stmtToSourceLocMap = new HashMap<Stmt, SourceLocationTag>();
 
     /**
      * Return the source location of a Jimple expression.
@@ -829,6 +832,9 @@ public class SootUtils {
      * Return the source location of a Jimple statement.
      */
     public static SourceLocationTag getSourceLocation(Stmt stmt) {
+        SourceLocationTag line = stmtToSourceLocMap.get(stmt);
+        if (line != null)
+            return line;
         SootMethod method = JimpleRelationships.v().getEnclosingMethod(stmt);
         if (method == null) {
             logger.debug("Cannot find enclosing method for statement: {}", stmt);
@@ -841,17 +847,19 @@ public class SootUtils {
      * Return the source location of a Jimple statement in a soot class.
      */
     public static SourceLocationTag getSourceLocation(Stmt stmt, SootClass clz) {
-        SourceLocationTag line = null;
-
         if (stmt == null || clz == null) {
-            return line;
+            return null;
         }
 
+        SourceLocationTag line = stmtToSourceLocMap.get(stmt);
+        if (line != null)
+            return line;
 
         LineNumberTag tag = (LineNumberTag) stmt.getTag("LineNumberTag");
 
         if (tag != null) {
             line = new SourceLocationTag(clz.toString(),  tag.getLineNumber()); 
+            stmtToSourceLocMap.put(stmt, line);
         } else {
             logger.debug("Cannot find line number tag for {} {}", stmt, clz);
         }

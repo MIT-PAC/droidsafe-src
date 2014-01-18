@@ -39,6 +39,8 @@ import droidsafe.android.system.InfoKind;
 import droidsafe.main.Config;
 import droidsafe.speclang.Method;
 import droidsafe.speclang.SecuritySpecification;
+import droidsafe.utils.SootUtils;
+import droidsafe.utils.SourceLocationTag;
 
 /**
  * This is a wrapper class around the droidsafe.speclang.SecuritySpecification class. This class
@@ -130,11 +132,6 @@ public class SecuritySpecModel extends ModelChangeSupport
       new LinkedHashMap<CodeLocationModel, Map<MethodModel, List<MethodModel>>>();
 
 
-  /**
-   * Map from method soot signature to hotspots.
-   */
-  Map<String, List<HotspotModel>> methodToHotspotMap = new HashMap<String, List<HotspotModel>>();
-
   Map<String, Map<String, Set<MethodModel>>> infoFlowSummaryMap = new TreeMap<String, Map<String, Set<MethodModel>>>();
   
   /**
@@ -160,51 +157,20 @@ public class SecuritySpecModel extends ModelChangeSupport
     return this.inputEventBlocks.get(method);
   }
 
-
-  public Map<String, List<HotspotModel>> getHotspotMap() {
-    return this.methodToHotspotMap;
-  }
-
   public Map<String, Map<String, Set<MethodModel>>> getInfoFlowSummaryMap() {
     return this.infoFlowSummaryMap;
   }
   
-  /**
-   * Auxiliary method to add all previously computed hotspots to the spec.
-   * 
-   * @param signatureToHotspotMap A map from soot method signature to a list of soot value boxes.
-   */
-  private void addHotspotsToSpec(Map<String, List<Hotspot>> signatureToHotspotMap) {
-    for (String sig : signatureToHotspotMap.keySet()) {
-      for (Hotspot hot : signatureToHotspotMap.get(sig)) {
-        for (ValueBox vb : hot.getHotspots()) {
-          HotspotModel model = new HotspotModel(hot, vb);
-          addHotspotToSpec(sig, model);
-        }
-      }
-    }
-  }
+//  public void addHotspot(MethodModel method, int argPosition) {
+//    addHotspotToSpec(method.getSootMethodSignature(), new HotspotModel(method, argPosition));
+//    serializeSpecToFile(this, this.projectRootPath);
+//  }
 
 
-  private void addHotspotToSpec(String sig, HotspotModel model) {
-    List<HotspotModel> hotspotList = this.methodToHotspotMap.get(sig);
-    if (hotspotList == null) {
-      hotspotList = new ArrayList<HotspotModel>();
-      this.methodToHotspotMap.put(sig, hotspotList);
-    }
-    hotspotList.add(model);
-  }
-
-  public void addHotspot(MethodModel method, int argPosition) {
-    addHotspotToSpec(method.getSootMethodSignature(), new HotspotModel(method, argPosition));
-    serializeSpecToFile(this, this.projectRootPath);
-  }
-
-
-  public void removeHotspot(MethodModel method) {
-    this.methodToHotspotMap.remove(method);
-    serializeSpecToFile(this, this.projectRootPath);
-  }
+//  public void removeHotspot(MethodModel method) {
+//    this.methodToHotspotMap.remove(method);
+//    serializeSpecToFile(this, this.projectRootPath);
+//  }
 
 
 
@@ -215,7 +181,6 @@ public class SecuritySpecModel extends ModelChangeSupport
       model.addPropertyChangeListener(this);
     }
     Map<String, List<Hotspot>> signatureToHotspotMap = JSAStrings.v().getSignatureToHotspotMap();
-    addHotspotsToSpec(signatureToHotspotMap);
 
     for (Map.Entry<Method, List<Method>> entry : originalSpec.getEventBlocks().entrySet()) {
       Method inputEvent = entry.getKey();
@@ -229,18 +194,6 @@ public class SecuritySpecModel extends ModelChangeSupport
       model.addPropertyChangeListener(this);
       updateInfoFlowSummaryMap(model, inputEvent);
 
-      List<HotspotModel> hotspots = this.methodToHotspotMap.get(model.getSootMethodSignature());
-      if (hotspots != null) {
-        logger.debug("Hotspot for method {} is in map", model);
-        for (HotspotModel hot : hotspots) {
-          logger
-              .debug(
-                  "String analysis \nSignature {}\nArgument Position {}\nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
-                  new Object[] {hot.getMethodSignature(), hot.getArgumentPosition(),
-                      hot.getValueClass(), hot.getValueSourceFile(), hot.getValueMethodName(),
-                      hot.getValueSourceLine(), hot.getValueRegularExpression()});
-        }
-      }
 
       for (Method outputEvent : outputEvents) {
         MethodModel methodModel = new MethodModel(outputEvent);
@@ -248,29 +201,17 @@ public class SecuritySpecModel extends ModelChangeSupport
         methodModel.addPropertyChangeListener(this);
         updateInfoFlowSummaryMap(methodModel, outputEvent);
 
-        List<HotspotModel> apiHotspots =
-            this.methodToHotspotMap.get(methodModel.getSootMethodSignature());
-
-        if (apiHotspots != null) {
-          logger.debug("Hotspot for method {} is in map", methodModel);
-          for (HotspotModel hot : apiHotspots) {
-            logger
-                .debug(
-                    "String analysis \nSignature {}\nArgument Position {}\nClass {} \nSource File {} \nMethodName {} \nSource Line {} \nRegex {}\n",
-                    new Object[] {hot.getMethodSignature(), hot.getArgumentPosition(),
-                        hot.getValueClass(), hot.getValueSourceFile(), hot.getValueMethodName(),
-                        hot.getValueSourceLine(), hot.getValueRegularExpression()});
-          }
-        }
+        List<Hotspot> apiHotspots = signatureToHotspotMap.get(model.getSootMethodSignature());
+        Map<SourceLocationTag, List<HotspotModel>> map = computeSourceLocToHotspotsMap(apiHotspots);      
 
         for (CodeLocationModel line : methodModel.getLines()) {
           line.addPropertyChangeListener(this);
-          if (apiHotspots != null) {
+          if (map != null) {
             logger.debug("Hotspot for method {} is in map", methodModel);
-            for (HotspotModel hot : apiHotspots) {
-              if (line.getClz().equals(hot.getValueClass())
-                  && line.getLine() == Integer.parseInt(hot.getValueSourceLine())) {
-                line.addHotspot(hot);
+            for (SourceLocationTag loc : map.keySet()) {
+              if (line.getClz().equals(loc.getClz())
+                  && line.getLine() == loc.getLine()) {
+                line.addHotspots(map.get(loc));
               }
             }
           }
@@ -284,6 +225,30 @@ public class SecuritySpecModel extends ModelChangeSupport
       // Integer.toString(modelOutputEvents.size()));
     }
     // logger.debug("{}", printSpecModel());
+  }
+
+  /**
+   * Auxiliary method to add all previously computed hotspots to the spec.
+   * 
+   * @param signatureToHotspotMap A map from soot method signature to a list of soot value boxes.
+   */
+  private Map<SourceLocationTag, List<HotspotModel>> computeSourceLocToHotspotsMap(List<Hotspot> hotspots) {
+    if (hotspots == null)
+      return null;
+    Map<SourceLocationTag, List<HotspotModel>> map = new HashMap<SourceLocationTag, List<HotspotModel>>();
+    for (Hotspot hot : hotspots) {
+      for (ValueBox vb : hot.getHotspots()) {
+        SourceLocationTag loc = SootUtils.getSourceLocation(vb);
+        List<HotspotModel> hotspotModels = map.get(loc);
+        if (hotspotModels == null) {
+          hotspotModels = new ArrayList<HotspotModel>();
+          map.put(loc, hotspotModels);
+        }
+        HotspotModel hotspotModel = new HotspotModel(hot.getArgumentPosition(), JSAStrings.v().getRegex(vb.getValue()));
+        hotspotModels.add(hotspotModel);
+      }
+    }
+    return map;
   }
 
   private void updateInfoFlowSummaryMap(MethodModel methodModel, Method method) {

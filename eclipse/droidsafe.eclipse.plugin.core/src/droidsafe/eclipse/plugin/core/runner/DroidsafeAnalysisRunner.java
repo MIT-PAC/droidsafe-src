@@ -2,8 +2,6 @@ package droidsafe.eclipse.plugin.core.runner;
 
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.runtime.FileLocator;
@@ -17,45 +15,15 @@ import org.osgi.framework.Bundle;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import soot.G;
-import soot.Scene;
-import soot.SootClass;
-import soot.SootMethod;
 import ch.qos.logback.classic.LoggerContext;
 import ch.qos.logback.classic.joran.JoranConfigurator;
 import ch.qos.logback.core.joran.spi.JoranException;
 import ch.qos.logback.core.util.StatusPrinter;
-import droidsafe.analyses.RCFGToSSL;
-import droidsafe.analyses.RequiredModeling;
-import droidsafe.analyses.infoflow.InformationFlowAnalysis;
-import droidsafe.analyses.infoflow.InjectedSourceFlows;
-import droidsafe.analyses.infoflow.InterproceduralControlFlowGraph;
-import droidsafe.analyses.rcfg.RCFG;
-import droidsafe.analyses.strings.JSAStrings;
-import droidsafe.analyses.strings.JSAUtils;
-import droidsafe.analyses.value.ValueAnalysis;
-import droidsafe.android.app.EntryPoints;
-import droidsafe.android.app.Harness;
-import droidsafe.android.app.Project;
-import droidsafe.android.app.TagImplementedSystemMethods;
-import droidsafe.android.app.resources.Resources;
-import droidsafe.android.app.resources.ResourcesSoot;
-import droidsafe.android.system.API;
-import droidsafe.android.system.Permissions;
 import droidsafe.eclipse.plugin.core.Activator;
 import droidsafe.eclipse.plugin.core.preferences.PreferenceConstants;
-import droidsafe.eclipse.plugin.core.util.DroidsafePluginUtilities;
 import droidsafe.main.Config;
 import droidsafe.main.Main;
-import droidsafe.main.SootConfig;
-import droidsafe.speclang.SecuritySpecification;
-import droidsafe.speclang.model.SecuritySpecModel;
-import droidsafe.transforms.IntegrateXMLLayouts;
-import droidsafe.transforms.LocalForStringConstantArguments;
-import droidsafe.transforms.ResolveStringConstants;
-import droidsafe.transforms.ScalarAppOptimizations;
 import droidsafe.utils.DroidsafeExecutionStatus;
-import droidsafe.utils.SootUtils;
 
 /*
  * This is the main run class for Droidsafe Eclipse Plugin. It is based on droidsafe.Main.java
@@ -352,54 +320,6 @@ public class DroidsafeAnalysisRunner extends Main {
 //    logger.debug("Time for droidsafe analysis = " + runTime + " String Analysis " + jsaRunTime);
 //    return Status.OK_STATUS;
 //  }
-
-
-  /**
-   * Run the JSA analysis
-   */
-  private static void jsaAnalysis() {
-    JSAUtils.setUpHotspots();
-    JSAUtils.setupSpecHotspots();
-    // Adds hotspots added manually by the user.
-    /*
-     * SecuritySpecModel previousSpec =
-     * SecuritySpecModel.deserializeSpecFromFile(Config.v().APP_ROOT_DIR); if (previousSpec != null)
-     * { Map<String, List<HotspotModel>> hotspotMap = previousSpec.getHotspotMap(); if (hotspotMap
-     * != null) { for (String sig : hotspotMap.keySet()) { List<HotspotModel> hotspots =
-     * hotspotMap.get(sig); List<Integer> argumentsAlreadySeen = new ArrayList<Integer>(); if
-     * (hotspots != null) { for (HotspotModel hotspot : hotspots) { int position =
-     * hotspot.getArgumentPosition(); if (!argumentsAlreadySeen.contains(position)) { if (position
-     * == -1) { // JSAStrings.v().addReturnHotspot(sig);
-     * logger.debug("\n\nJSAStrings.v().addReturnHotspot({});\n", sig);
-     * argumentsAlreadySeen.add(position); } else { JSAStrings.v().addArgumentHotspots(sig,
-     * position); logger.debug("\n\nJSAStrings.v().addArgumentHotspot({},{});\n", sig, position);
-     * argumentsAlreadySeen.add(position); } } } } } } }
-     */
-    JSAStrings.run();
-    JSAStrings.v().log();
-  }
-
-
-  /**
-   * Set's harness as entry point for Soot. Run after EntryPoints.
-   */
-  private void setHarnessMainAsEntryPoint() {
-    List<SootMethod> entryPoints = new LinkedList<SootMethod>();
-    entryPoints.add(Harness.v().getMain());
-    Scene.v().setEntryPoints(entryPoints);
-  }
-
-  /**
-   * Dump jimple files for all application classes.
-   */
-  private void writeAllAppClasses() {
-    for (SootClass clz : Scene.v().getClasses()) {
-      if (clz.isApplicationClass()) {
-        SootUtils.writeByteCodeAndJimple(
-            Project.v().getOutputDir() + File.separator + clz.toString(), clz);
-      }
-    }
-  }
 
   /**
    * Sets the location of the xml file to be used by the logging infrastructure.

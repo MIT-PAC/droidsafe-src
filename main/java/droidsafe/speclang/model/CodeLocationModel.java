@@ -6,6 +6,7 @@ package droidsafe.speclang.model;
 import java.beans.PropertyChangeListener;
 import java.beans.PropertyChangeSupport;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -126,6 +127,10 @@ public class CodeLocationModel extends SourceLocationTag implements IModelChange
 
   public void addHotspot(HotspotModel hot) {
     this.hotspots.add(hot);
+  }
+
+  public void addHotspots(Collection<HotspotModel> hotspots) {
+    this.hotspots.addAll(hotspots);
   }
 
   public void removeHotspot(HotspotModel hot) {

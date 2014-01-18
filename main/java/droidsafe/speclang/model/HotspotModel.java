@@ -28,7 +28,7 @@ public class HotspotModel extends ModelChangeSupport implements Serializable {
   /**
    * The soot method signature of the hotspot.
    */
-  private String methodSignature;
+//  private String methodSignature;
 
   /**
    * The argument position for the object we want to analyze or have analyzed.
@@ -38,17 +38,17 @@ public class HotspotModel extends ModelChangeSupport implements Serializable {
   /**
    * The class for the location where this string hotspot was called.
    */
-  private String valueClass;
+//  private String valueClass;
 
   /**
    * The source file for the location where this string hotspot was called.
    */
-  private String valueSourceFile;
+//  private String valueSourceFile;
 
   /**
    * The number of the line for the location where this string hotspot was called.
    */
-  private String valueSourceLine;
+//  private int valueSourceLine;
 
   /**
    * The regular expression computed by the string analysis for this location.
@@ -58,7 +58,7 @@ public class HotspotModel extends ModelChangeSupport implements Serializable {
   /**
    * The method for the location where this string hotspot was called.
    */
-  private String valueMethodName;
+//  private String valueMethodName;
 
 
   /**
@@ -67,22 +67,22 @@ public class HotspotModel extends ModelChangeSupport implements Serializable {
    * @param originalHotspot The droidsafe original hotspot we want to model.
    * @param vb The soot value box location for which we have a regex computed.
    */
-  public HotspotModel(Hotspot originalHotspot, ValueBox vb) {
-    this.methodSignature = originalHotspot.getMethodSignature();
-    this.argumentPosition = originalHotspot.getArgumentPosition();
-    this.valueClass = JSAStrings.v().getClassName(vb);
-    this.valueSourceFile = JSAStrings.v().getSourceFile(vb);
-    
-    SourceLocationTag sourceLine = SootUtils.getSourceLocation(vb); 
-    
-    if (sourceLine != null)
-        this.valueSourceLine = Integer.toString(sourceLine.getLine());
-    else
-        this.valueSourceLine = "0";
-        
-    this.valueRegularExpression = JSAStrings.v().getRegex(vb.getValue());
-    this.valueMethodName = JSAStrings.v().getMetodName(vb);
-  }
+//  public HotspotModel(Hotspot originalHotspot, ValueBox vb) {
+//    this.methodSignature = originalHotspot.getMethodSignature();
+//    this.argumentPosition = originalHotspot.getArgumentPosition();
+//    this.valueClass = JSAStrings.v().getClassName(vb);
+//    this.valueSourceFile = JSAStrings.v().getSourceFile(vb);
+//    
+//    SourceLocationTag sourceLine = SootUtils.getSourceLocation(vb); 
+//    
+//    if (sourceLine != null)
+//        this.valueSourceLine = sourceLine.getLine();
+//    else
+//        this.valueSourceLine = 0;
+//        
+//    this.valueRegularExpression = JSAStrings.v().getRegex(vb.getValue());
+//    this.valueMethodName = JSAStrings.v().getMetodName(vb);
+//  }
 
   /**
    * Constructor used to add a hotspot from the user interface to be used during analysis.
@@ -91,17 +91,28 @@ public class HotspotModel extends ModelChangeSupport implements Serializable {
    * @param argumentPosition The position of the argument in the list of method arguments. 0 is the
    *        first argument. -1 is used if we want to analyze the method return value.
    */
-  public HotspotModel(MethodModel method, int argumentPosition) {
-    this.methodSignature = method.getSootMethodSignature();
+//  public HotspotModel(MethodModel method, int argumentPosition) {
+//    this.methodSignature = method.getSootMethodSignature();
+//    this.argumentPosition = argumentPosition;
+//  }
+
+  /**
+   * Main constructor.
+   * 
+   * @param originalHotspot The droidsafe original hotspot we want to model.
+   * @param vb The soot value box location for which we have a regex computed.
+   */
+  public HotspotModel(int argumentPosition, String valueRegularExpression) {
     this.argumentPosition = argumentPosition;
+    this.valueRegularExpression = valueRegularExpression;
   }
 
   /**
    * @return the methodSignature
    */
-  public String getMethodSignature() {
-    return methodSignature;
-  }
+//  public String getMethodSignature() {
+//    return methodSignature;
+//  }
 
 
   /**
@@ -115,25 +126,25 @@ public class HotspotModel extends ModelChangeSupport implements Serializable {
   /**
    * @return the valueClass
    */
-  public String getValueClass() {
-    return valueClass;
-  }
+//  public String getValueClass() {
+//    return valueClass;
+//  }
 
 
   /**
    * @return the valueSourceFile
    */
-  public String getValueSourceFile() {
-    return valueSourceFile;
-  }
+//  public String getValueSourceFile() {
+//    return valueSourceFile;
+//  }
 
 
   /**
    * @return the valueSourceLine
    */
-  public String getValueSourceLine() {
-    return valueSourceLine;
-  }
+//  public int getValueSourceLine() {
+//    return valueSourceLine;
+//  }
 
 
   /**
@@ -147,11 +158,11 @@ public class HotspotModel extends ModelChangeSupport implements Serializable {
   /**
    * @return the valueMethodName
    */
-  public String getValueMethodName() {
-    return valueMethodName;
-  }
+//  public String getValueMethodName() {
+//    return valueMethodName;
+//  }
 
-  public String toString() {
-    return methodSignature + "[" + argumentPosition + "] = " + valueRegularExpression;
-  }
+//  public String toString() {
+//    return methodSignature + "[" + argumentPosition + "] = " + valueRegularExpression;
+//  }
 }

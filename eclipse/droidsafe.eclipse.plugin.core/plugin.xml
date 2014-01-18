@@ -265,6 +265,7 @@
                label="Collapse Node(s)"
                style="push">
          </command>
+         <!--
          <separator
                name="droidsafe.eclipse.plugin.core.outlineview.popupmenu.separator2"
                visible="true">
@@ -273,7 +274,8 @@
                class="droidsafe.eclipse.plugin.core.view.spec.DynamicHotspotMenu"
                id="droidsafe.eclipse.plugin.core.view.DynamicHotspotMenu">
          </dynamic>
-   </menuContribution> -->
+         -->
+   </menuContribution>
       <menuContribution
             allPopups="false"
             locationURI="menu:droidsafe.eclipse.plugin.core.view.DroidsafeSpecView">
