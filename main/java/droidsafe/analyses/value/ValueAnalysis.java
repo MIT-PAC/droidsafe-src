@@ -264,7 +264,9 @@ public class ValueAnalysis implements CGContextVisitor {
         }
         if(model != null) {
             this.allocNodeToVAModelMap.put(newExpr, model);
-            SootClass allocType = ((RefType)allocNode.getType()).getSootClass();
+            RefType refT = (RefType)allocNode.getType();
+            this.vaModeledTypesAndParents.add(refT);
+            SootClass allocType = refT.getSootClass();
             for (SootClass parent : SootUtils.getParents(allocType)) {
                 this.vaModeledTypesAndParents.add(RefType.v(parent));
             }
@@ -273,13 +275,13 @@ public class ValueAnalysis implements CGContextVisitor {
 
     @Override
     public void visit(SootMethod sootMethod, PTAContext ptaContext) {
-                
+              
         if(!sootMethod.isConcrete())
             return;
 
         if(!sootMethod.hasActiveBody())
             sootMethod.retrieveActiveBody();
-
+        
         for(Iterator stmts = sootMethod.getActiveBody().getUnits().iterator(); stmts.hasNext();) {
             Stmt stmt = (Stmt) stmts.next();
             if(stmt instanceof AssignStmt) {
@@ -291,8 +293,9 @@ public class ValueAnalysis implements CGContextVisitor {
                     Value baseValue = instanceFieldRef.getBase();
                     //use a quick type search to see if we need to look at the pta for this value
                     //if its types is not possibly one that could be tracked, then continue;
-                    if (!vaModeledTypesAndParents.contains(baseValue.getType()))
+                    if (!vaModeledTypesAndParents.contains(baseValue.getType())) {
                         continue;
+                    }
                                         
                     //this call here is expensive!!
                     Set<? extends IAllocNode> baseAllocNodes = PTABridge.v().getPTSet(baseValue, ptaContext);
@@ -354,7 +357,6 @@ public class ValueAnalysis implements CGContextVisitor {
      */
     private void handleString(AssignStmt assignStmt, PrimVAModel fieldPrimVAModel, PTAContext eventContext) {
         //Found string
-        //System.out.println("Found String!!: " + fieldObject);
         Set<? extends IAllocNode> rhsNodes;
 
         //get the string nodes the rhs expression could possibly point to

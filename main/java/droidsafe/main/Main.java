@@ -294,7 +294,7 @@ public class Main {
         }
        
         //need this pta run to account for object sens and jsa injection
-        if (afterTransform(monitor, true) == DroidsafeExecutionStatus.CANCEL_STATUS)
+        if (afterTransform(monitor, false) == DroidsafeExecutionStatus.CANCEL_STATUS)
             return DroidsafeExecutionStatus.CANCEL_STATUS;
  
         driverMsg("Converting Class.getName calls to class name strings.");
