@@ -412,7 +412,7 @@ public Window getWindow() {
     
 	@DSComment("normal android callback")
     @DSSafe(DSCat.ANDROID_CALLBACK)
-    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+	@DSVerified("Modeled Lifecycle Event")
     protected void onCreate(Bundle savedInstanceState){
 		mAllLoaderManagers = mLastNonConfigurationInstances.loaders;
 		Parcelable p = savedInstanceState.getParcelable(FRAGMENTS_TAG);
@@ -2881,9 +2881,9 @@ public void finishActivityFromChild(Activity child, int requestCode) {
      * @see #setResult(int)
      */
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:48:00.263 -0500", hash_original_method = "6D8F676326F7C192A2903AC6F4C36AC9", hash_generated_method = "62DF0F5F92A373B4F8B7952D89BB1F57")
-    
+    @DSVerified("Activity Callback")
 protected void onActivityResult(int requestCode, int resultCode, Intent data) {
     }
     

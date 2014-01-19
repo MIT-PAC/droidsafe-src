@@ -2830,7 +2830,7 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
     }
     
 	@DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.INTENT_EXCHANGE)
     public Intent setData(Uri data) {
         mData = data;
         addTaint(data.getTaint());
@@ -2841,7 +2841,7 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
     }
     
 	@DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.INTENT_EXCHANGE)
     public Intent setType(String type) {
             mData=null;
             mType = type;
@@ -2850,7 +2850,7 @@ public ActivityInfo resolveActivityInfo(PackageManager pm, int flags) {
     }
     
     @DSComment("Potential intent to trigger other processing")
-    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSafe(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.441 -0400", hash_original_method = "43AA0CE5E260B0FA5B26C9FC36ABF327", hash_generated_method = "00584B9FB3605C6799D9DC350D63DE8B")
     public Intent setDataAndType(Uri data, String type) {
         mData = data;
