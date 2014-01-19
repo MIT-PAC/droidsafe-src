@@ -612,6 +612,8 @@ public class Harness {
 	            SootField field = globalsMap.get(clazz);
 	            //create the call to the entry point method
 	            logger.info("Missing modeling.  Had to create a dummy call for: {}", entryPoint);
+	            logger.info("Closest Parent: {}, modeled? {}", closestParent, API.v().isAPIModeledMethod(closestParent));
+	            
 	            createCallWithNewArgs(entryPoint, body, field);
 	        }
 	    }

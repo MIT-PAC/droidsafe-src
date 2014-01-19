@@ -397,6 +397,8 @@ public class API {
 
             Classification c = Classification.NONE;
             boolean verified = false;
+            boolean sink = false;
+            boolean source = false;
             String category = "";
             for (Tag tag : method.getTags()) {
                 if (tag instanceof VisibilityAnnotationTag) {
@@ -423,9 +425,11 @@ public class API {
                         } else if (at.getType().contains("droidsafe/annotations/DSSink")) {
                             logger.info("Found sink method: {}", method);
                             addSinkSourceTag(method, at, sinksMapping);
+                            sink = true;
                         } else if (at.getType().contains("droidsafe/annotations/DSSource")) {
                             logger.info("Found sink method: {}", method); 
                             addSinkSourceTag(method, at, srcsMapping);
+                            source = true; 
                         }
                     }
                 }

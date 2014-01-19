@@ -33,7 +33,10 @@ public class AvgInfoFlowSetSize {
     }
 
     private AvgInfoFlowSetSize() {
+        
+        
         for (RCFGNode inputNode : RCFG.v().getNodes()) {
+            
             for (OutputEvent oe : inputNode.getOutputEvents()) {
                 PTAContext context = oe.getContext(ContextType.EVENT_CONTEXT);
                 InvokeExpr invoke = oe.getInvokeExpr();
@@ -42,15 +45,21 @@ public class AvgInfoFlowSetSize {
                     Stmt enclosing = JimpleRelationships.v().getEnclosingStmt(invoke); 
                     
                     if (invoke instanceof InstanceInvokeExpr) {
-                        totalSetsSize += InformationFlowAnalysis.v().getTaintsBeforeRecursively(context, 
+                        int thisSetSize = InformationFlowAnalysis.v().getTaintsBeforeRecursively(context, 
                             enclosing, (Local)((InstanceInvokeExpr)invoke).getBase()).size();
-                        totalSets++;
+                        if (thisSetSize > 0) {
+                            totalSetsSize += thisSetSize; 
+                            totalSets++;
+                        }
                     }
                     
                     for (int i = 0; i < oe.getNumArgs(); i++) {
-                        totalSetsSize += InformationFlowAnalysis.v().getTaintsBeforeRecursively(context, 
+                        int thisSetSize = InformationFlowAnalysis.v().getTaintsBeforeRecursively(context, 
                             enclosing, (Local)invoke.getArg(i)).size();
-                        totalSets++;
+                        if (thisSetSize > 0) {
+                            totalSetsSize += thisSetSize; 
+                            totalSets++;
+                        }
                     }
                     
                     
