@@ -122,12 +122,14 @@ public ActivityGroup(boolean singleActivityMode) {
         return mLocalActivityManager.dispatchRetainNonConfigurationInstance();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.829 -0500", hash_original_method = "4ED9D3000426A44D3C2FDE7055259431", hash_generated_method = "91577E33D1EFA741A0E12EC6A3E6F14D")
     
 public Activity getCurrentActivity() {
         return mLocalActivityManager.getCurrentActivity();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2014-01-07 12:46:31.837 -0500", hash_original_method = "CFB60E0F317D2819B9F1EACC62E429D4", hash_generated_method = "82DCFA9AC80EE5D276D959C484530AC3")
     
 public final LocalActivityManager getLocalActivityManager() {

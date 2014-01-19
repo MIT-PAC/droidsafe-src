@@ -73,8 +73,10 @@ public class MapView extends ViewGroup
         return overlays;
     }
     
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     public int getLatitudeSpan() { return getTaintInt(); }
     
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     public int getLongitudeSpan() { return getTaintInt();}
     
     public void setReticleDrawMode(ReticleDrawMode paramReticleDrawMode) {  }

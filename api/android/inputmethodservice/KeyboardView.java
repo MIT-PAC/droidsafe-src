@@ -317,7 +317,6 @@ switch(msg.what){
                     //break;
             //}
         }
-
         
 };
     
@@ -328,7 +327,6 @@ switch(msg.what){
         addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.794 -0400", hash_original_method = "80CA0EE637E9962775AB4968127C795F", hash_generated_method = "2751E8359B3FC69B2C71DD40BB4907EA")
     public  KeyboardView(Context context, AttributeSet attrs, int defStyle) {
@@ -418,7 +416,6 @@ switch(attr){
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.811 -0400", hash_original_method = "EB7C68519BBD5935E699A038D5D44150", hash_generated_method = "B48049B66BF8F951F384E441F62028D6")
     private void initGestureDetector() {
@@ -522,7 +519,6 @@ switch(attr){
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.814 -0400", hash_original_method = "7AD9DD428DF8E7D6E8D91417D6DB1819", hash_generated_method = "7B9A6FF4EA2CC942E6DB354B5A69D299")
     public void setOnKeyboardActionListener(OnKeyboardActionListener listener) {
@@ -530,7 +526,6 @@ switch(attr){
         // ---------- Original Method ----------
         //mKeyboardActionListener = listener;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.815 -0400", hash_original_method = "23010A325BF7C5CE115AD6532E7DE613", hash_generated_method = "EBA85B6AD2BFDBA82A5114535F7F12A3")
     protected OnKeyboardActionListener getOnKeyboardActionListener() {
@@ -540,7 +535,6 @@ OnKeyboardActionListener varCA74E3A39D116C170964E820A8E794C6_425890983 =        
         // ---------- Original Method ----------
         //return mKeyboardActionListener;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.818 -0400", hash_original_method = "27CAF8C973D7E7FB8A9EAE6FDFA442C5", hash_generated_method = "1C3E2C2CE8719181831FDD2D5E70144F")
     public void setKeyboard(Keyboard keyboard) {
@@ -573,8 +567,8 @@ OnKeyboardActionListener varCA74E3A39D116C170964E820A8E794C6_425890983 =        
         //mMiniKeyboardCache.clear();
         //mAbortKey = true;
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.820 -0400", hash_original_method = "984E33167FBB351AF6D207D6648DD7BE", hash_generated_method = "E07063A84AF8BC6549A47C5285A9A8AE")
     public Keyboard getKeyboard() {
 Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
@@ -583,8 +577,8 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         // ---------- Original Method ----------
         //return mKeyboard;
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.822 -0400", hash_original_method = "0E720862875FB23B0F0CBA22C126D93A", hash_generated_method = "E09099A4E467DF0C4F45E1920975DAEB")
     public boolean setShifted(boolean shifted) {
         addTaint(shifted);
@@ -610,7 +604,6 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         //}
         //return false;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.824 -0400", hash_original_method = "7ABCACB0E9394FD000A197B9A8A05ED8", hash_generated_method = "6CD372EC1EE980D24A5D51C61B3B961A")
     public boolean isShifted() {
@@ -629,7 +622,6 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         //}
         //return false;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.826 -0400", hash_original_method = "C5C34401DC7A97A27F769460DD216E94", hash_generated_method = "75B9BD5E7EDBF74C6A58EF54379BE458")
     public void setPreviewEnabled(boolean previewEnabled) {
@@ -637,7 +629,6 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         // ---------- Original Method ----------
         //mShowPreview = previewEnabled;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.827 -0400", hash_original_method = "37653BB5A476BD19CD2E3B8897347B3C", hash_generated_method = "3FCE320DE83AD975B21AE174A9D528A0")
     public boolean isPreviewEnabled() {
@@ -647,14 +638,13 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         // ---------- Original Method ----------
         //return mShowPreview;
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.829 -0400", hash_original_method = "A44B8176E58DC2FB7752B0C5D42CC6EF", hash_generated_method = "673B634C9B7052C0DE7A8B0553908B37")
     public void setVerticalCorrection(int verticalOffset) {
         addTaint(verticalOffset);
         // ---------- Original Method ----------
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.830 -0400", hash_original_method = "5971AB78FF80F5C9F5F808051286A0E1", hash_generated_method = "E98FDE4E324E0BDFA9B02B9798E539A7")
     public void setPopupParent(View v) {
@@ -662,7 +652,6 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         // ---------- Original Method ----------
         //mPopupParent = v;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.833 -0400", hash_original_method = "1FBDD4D1B50AEDEAA839E9B93FCC4616", hash_generated_method = "39B35421F6A8D7841443D6ED5B38BED2")
     public void setPopupOffset(int x, int y) {
@@ -679,7 +668,6 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
             //mPreviewPopup.dismiss();
         //}
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.834 -0400", hash_original_method = "3DEAD8B7804C545A2916420746E3D700", hash_generated_method = "75C7F8FFCB02A1EA7D13B163235B0AF6")
     public void setProximityCorrectionEnabled(boolean enabled) {
@@ -687,7 +675,6 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         // ---------- Original Method ----------
         //mProximityCorrectOn = enabled;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.836 -0400", hash_original_method = "1081F6AA68205DB94C7EE73A028D936B", hash_generated_method = "FAD214229031488675A39501BC67E535")
     public boolean isProximityCorrectionEnabled() {
@@ -697,7 +684,6 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         // ---------- Original Method ----------
         //return mProximityCorrectOn;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.837 -0400", hash_original_method = "517EB00C96BF10223527FB74EBBA7FDF", hash_generated_method = "9059545EF5777B113E36EB07F7C216AC")
     public void onClick(View v) {
@@ -707,7 +693,6 @@ Keyboard var0FC80BD37FFC31C3C7A9C3E1A563FDB2_798529270 =         mKeyboard;
         // ---------- Original Method ----------
         //dismissPopupKeyboard();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.839 -0400", hash_original_method = "781A450D3FB76D72B6A6868D87C7E6E3", hash_generated_method = "223BF3C711E3AF5E372F106B8C544192")
     private CharSequence adjustCase(CharSequence label) {
@@ -727,7 +712,6 @@ CharSequence var057F26F90053C562EFC08298AB91C2B1_45947701 =         label;
         //}
         //return label;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.841 -0400", hash_original_method = "D28640CD963FD005E83EC8007612A403", hash_generated_method = "55605C2673A5D5197BD71E33BDA152C4")
     @Override
@@ -759,7 +743,6 @@ CharSequence var057F26F90053C562EFC08298AB91C2B1_45947701 =         label;
             //setMeasuredDimension(width, mKeyboard.getHeight() + mPaddingTop + mPaddingBottom);
         //}
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.845 -0400", hash_original_method = "896596FB10EC8067ADB1D8FA588FB3CE", hash_generated_method = "CB6B30A7695FD03554653930ECF5E080")
     private void computeProximityThreshold(Keyboard keyboard) {
@@ -794,7 +777,6 @@ for(int i = 0;i < length;i++)
         //mProximityThreshold = (int) (dimensionSum * 1.4f / length);
         //mProximityThreshold *= mProximityThreshold;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.847 -0400", hash_original_method = "4D975CF749492A65803F979B31DB3531", hash_generated_method = "51251E47A0AA514CFCB3EC6F2431052C")
     @Override
@@ -817,7 +799,6 @@ for(int i = 0;i < length;i++)
         //}
         //mBuffer = null;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.849 -0400", hash_original_method = "5BAC2E0CA78C3668D6E66F6C464B766C", hash_generated_method = "90C2037A062ABADDE0B0CE54F8A99DE1")
     @Override
@@ -837,7 +818,6 @@ for(int i = 0;i < length;i++)
         //}
         //canvas.drawBitmap(mBuffer, 0, 0, null);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.856 -0400", hash_original_method = "96C74DEE432C032C16FED8A3134743B1", hash_generated_method = "782D67B96A64AE57B51FAB00B98600A7")
     private void onBufferDraw() {
@@ -956,7 +936,6 @@ for(int i = 0;i < keyCount;i++)
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.866 -0400", hash_original_method = "C473D2B758AAFCD419620D01C48167B2", hash_generated_method = "BF565A8EE941932988FCCA723D0C720E")
     private int getKeyIndices(int x, int y, int[] allKeys) {
@@ -1020,7 +999,6 @@ for(int c = 0;c < nCodes;c++)
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.872 -0400", hash_original_method = "52A7E92418C73C96342342851CFE760F", hash_generated_method = "66EA3FB640CCA98BE76C80AB1A9A68C3")
     private void detectAndSendKey(int index, int x, int y, long eventTime) {
@@ -1061,7 +1039,6 @@ for(int c = 0;c < nCodes;c++)
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.875 -0400", hash_original_method = "B99959843F38A619DEB8B37FB5314914", hash_generated_method = "FD777586D9264390F8623139AE7626E4")
     private CharSequence getPreviewText(Key key) {
@@ -1089,7 +1066,6 @@ CharSequence var205FABBFF9568819CAC3C3C1D98F3426_1990994969 =             adjust
             //return adjustCase(key.label);
         //}
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.878 -0400", hash_original_method = "561BE5D178CD3CF93CA2FD4A1DFD5618", hash_generated_method = "1384ECD5FC4436B355FB412BB4C85278")
     private void showPreview(int keyIndex) {
@@ -1145,7 +1121,6 @@ CharSequence var205FABBFF9568819CAC3C3C1D98F3426_1990994969 =             adjust
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.889 -0400", hash_original_method = "100F18AFE995DB5043CBE9D74CDBF0D2", hash_generated_method = "F5D0F7245054714EFCED54CCEEBD2394")
     private void showKey(final int keyIndex) {
@@ -1234,7 +1209,6 @@ CharSequence var205FABBFF9568819CAC3C3C1D98F3426_1990994969 =             adjust
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.904 -0400", hash_original_method = "D0CD4F0361B047F25CB522F4E5EFF159", hash_generated_method = "5C70E794E0816DB716C4ADE1BFF1C3C5")
     private void sendAccessibilityEventForUnicodeCharacter(int eventType, int code) {
@@ -1295,7 +1269,6 @@ switch(code){
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.907 -0400", hash_original_method = "6A419C09C1C26C01E94194577A06CA69", hash_generated_method = "9E4E531665E1667C8F619B8422A6898B")
     public void invalidateAllKeys() {
@@ -1307,7 +1280,6 @@ switch(code){
         //mDrawPending = true;
         //invalidate();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.909 -0400", hash_original_method = "62674C0D32D49DFA23BF647483C8F7FF", hash_generated_method = "6D9E6D6D9EB918DB843B293BDA55BD7B")
     public void invalidateKey(int keyIndex) {
@@ -1338,7 +1310,6 @@ switch(code){
         //invalidate(key.x + mPaddingLeft, key.y + mPaddingTop, 
                 //key.x + key.width + mPaddingLeft, key.y + key.height + mPaddingTop);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.913 -0400", hash_original_method = "841EEC9CDBD0499FCF82CCA315D0D684", hash_generated_method = "6FB28206CFFD447FAA23A76C88870DC6")
     private boolean openPopupIfRequired(MotionEvent me) {
@@ -1380,7 +1351,6 @@ switch(code){
         //}
         //return result;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.933 -0400", hash_original_method = "C27421F2D68DD4C608F1154E69D7AFFC", hash_generated_method = "17F164436A03D3432183A1CC8F973127")
     protected boolean onLongPress(Key popupKey) {
@@ -1502,7 +1472,6 @@ switch(code){
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.938 -0400", hash_original_method = "58E4B1A222A0D006A4E4D0141419C090", hash_generated_method = "C7D7E4A272F83F48526E52152A8F0E08")
     @Override
@@ -1535,7 +1504,6 @@ switch(action){
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.944 -0400", hash_original_method = "4507CAB5EBD3B0A30CFA795E6B0CE2F1", hash_generated_method = "B83D5177D9B513B071BD22ADF0D52F60")
     @Override
@@ -1586,7 +1554,6 @@ switch(action){
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.966 -0400", hash_original_method = "9A66FA1609D53EFA58150B8A0FCB8ECB", hash_generated_method = "71A0593054DFE2EFD8625BF60B194E14")
     private boolean onModifiedTouchEvent(MotionEvent me, boolean possiblePoly) {
@@ -1746,7 +1713,6 @@ switch(action){
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.971 -0400", hash_original_method = "1824B07D0D1DC18D1C7F955965AE03DE", hash_generated_method = "1AC2977B02DE860E7FCD6489165C7749")
     private boolean repeatKey() {
@@ -1760,7 +1726,6 @@ switch(action){
         //detectAndSendKey(mCurrentKey, key.x, key.y, mLastTapTime);
         //return true;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.972 -0400", hash_original_method = "E311EE99DFD17FF74F47149470BADF24", hash_generated_method = "C70BB149F257C665B91AC5BA279A8756")
     protected void swipeRight() {
@@ -1768,7 +1733,6 @@ switch(action){
         // ---------- Original Method ----------
         //mKeyboardActionListener.swipeRight();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.973 -0400", hash_original_method = "F06A9E8E8529ED6F027C708A6E561BF3", hash_generated_method = "F8012F525DECDA873C133E697FF87608")
     protected void swipeLeft() {
@@ -1776,7 +1740,6 @@ switch(action){
         // ---------- Original Method ----------
         //mKeyboardActionListener.swipeLeft();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.974 -0400", hash_original_method = "B4EE4270465E482F662B868F04086F2D", hash_generated_method = "B8384E6F74BBA9453048C2E8D6BECA81")
     protected void swipeUp() {
@@ -1784,7 +1747,6 @@ switch(action){
         // ---------- Original Method ----------
         //mKeyboardActionListener.swipeUp();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.974 -0400", hash_original_method = "046102819DD48F6283DB67AFBCA217CC", hash_generated_method = "08C06EF013D5A31989B3238AAE68F51A")
     protected void swipeDown() {
@@ -1792,7 +1754,6 @@ switch(action){
         // ---------- Original Method ----------
         //mKeyboardActionListener.swipeDown();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.976 -0400", hash_original_method = "9B9565973EC4CEC52B4AC42A01803AEB", hash_generated_method = "0D91FD57E088FC766265DFC572EA7131")
     public void closing() {
@@ -1815,7 +1776,6 @@ switch(action){
         //mCanvas = null;
         //mMiniKeyboardCache.clear();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.977 -0400", hash_original_method = "661EA634037C92A538704E54EC4A3BC8", hash_generated_method = "0EA65AC3B065DBCA0F9A546F8F02DCAA")
     private void removeMessages() {
@@ -1827,7 +1787,6 @@ switch(action){
         //mHandler.removeMessages(MSG_LONGPRESS);
         //mHandler.removeMessages(MSG_SHOW_PREVIEW);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.978 -0400", hash_original_method = "A62DD8F04C5EF3B1149CE1914F7FCC79", hash_generated_method = "C5BAEFCB862F1D47F9D253C194640647")
     @Override
@@ -1839,7 +1798,6 @@ switch(action){
         //super.onDetachedFromWindow();
         //closing();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.980 -0400", hash_original_method = "37A5173B1277346D2A06873E9E98265E", hash_generated_method = "9496DD948A554A0C105F7D3BD0C0F717")
     private void dismissPopupKeyboard() {
@@ -1856,7 +1814,6 @@ switch(action){
             //invalidateAllKeys();
         //}
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.981 -0400", hash_original_method = "A0DF881C3AD902D34564DDF5FF7CBB70", hash_generated_method = "3B41E334BA73F9D02D326EDC3F5296AA")
     public boolean handleBack() {
@@ -1877,7 +1834,6 @@ switch(action){
         //}
         //return false;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.984 -0400", hash_original_method = "B7FA68F3C9665AB1B34A8D3EB9A4B77C", hash_generated_method = "EAD2309AFEC83CE70B5554355405C08B")
     private void resetMultiTap() {
@@ -1891,7 +1847,6 @@ switch(action){
         //mLastTapTime = -1;
         //mInMultiTap = false;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.987 -0400", hash_original_method = "E40865BB0F35C5555FD5AC7537827099", hash_generated_method = "C9B452B942C387ED0EA6B017A3DE7459")
     private void checkMultiTap(long eventTime, int keyIndex) {
@@ -1937,7 +1892,6 @@ switch(action){
             //resetMultiTap();
         //}
     }
-
     
     private static class SwipeTracker {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.989 -0400", hash_original_field = "8E2320838462AAF0B979C70F2E4730CE", hash_generated_field = "15EA52766B855930F76C72872830E734")
@@ -1962,14 +1916,12 @@ switch(action){
             //Synthesized constructor
         }
 
-
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.992 -0400", hash_original_method = "53CB847D3AF872A20B25A4493987B7C1", hash_generated_method = "360FC756F6122E290B4EC178C9185CA5")
         public void clear() {
             mPastTime[0] = 0;
             // ---------- Original Method ----------
             //mPastTime[0] = 0;
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.993 -0400", hash_original_method = "6761B86D824AFFDB272486FC738A5AFC", hash_generated_method = "5CB9A511718E9DE42873FD7C65718539")
         public void addMovement(MotionEvent ev) {
@@ -1991,7 +1943,6 @@ for(int i=0;i<N;i++)
             //}
             //addPoint(ev.getX(), ev.getY(), time);
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.998 -0400", hash_original_method = "10CA611D62B6CE89EF867344E70F5656", hash_generated_method = "A18366D5D589C3688BDF46FD62468511")
         private void addPoint(float x, float y, long time) {
@@ -2041,7 +1992,6 @@ for(i=0;i<NUM_PAST;i++)
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:45.000 -0400", hash_original_method = "7AE3C8D32C98F8CD6F4600C66E9D240E", hash_generated_method = "0B65994CCFD349DB937547C3EC7594E2")
         public void computeCurrentVelocity(int units) {
@@ -2050,7 +2000,6 @@ for(i=0;i<NUM_PAST;i++)
             // ---------- Original Method ----------
             //computeCurrentVelocity(units, Float.MAX_VALUE);
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:45.006 -0400", hash_original_method = "8F744F2FA9C814B5018077599CE9EBAA", hash_generated_method = "6DB1C69B43D24DC90DC3C0FDDE9A16D0")
         public void computeCurrentVelocity(int units, float maxVelocity) {
@@ -2098,8 +2047,8 @@ for(int i=1;i < N;i++)
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
-
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:45.008 -0400", hash_original_method = "2F66357DD043F67D50DC8377A1F70BC4", hash_generated_method = "1325127EBC5B4B50FA70009334932821")
         public float getXVelocity() {
             float var57D4948CA406D75DAFBA90C0882083E1_388183928 = (mXVelocity);
@@ -2108,8 +2057,8 @@ for(int i=1;i < N;i++)
             // ---------- Original Method ----------
             //return mXVelocity;
         }
-
         
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:45.010 -0400", hash_original_method = "73AA3D89DA3C408C7388B69E1FFC2A00", hash_generated_method = "70DDD5D7FABDFC2C4F1B92D8245EF258")
         public float getYVelocity() {
             float varBC25413923BE9DD3356C08F88CF628DC_2109502741 = (mYVelocity);
@@ -2118,7 +2067,6 @@ for(int i=1;i < N;i++)
             // ---------- Original Method ----------
             //return mYVelocity;
         }
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:45.010 -0400", hash_original_field = "E87B2955D3D2D729117CD4417214288A", hash_generated_field = "13CDE29C1460BF3EB0746B2A1E98B45B")
 
@@ -2127,32 +2075,22 @@ for(int i=1;i < N;i++)
 
         static final int LONGEST_PAST_TIME = 200;
     }
-
-
     
     public interface OnKeyboardActionListener {
         
-        
         void onPress(int primaryCode);
         
-        
         void onRelease(int primaryCode);
-
         
         void onKey(int primaryCode, int[] keyCodes);
-
         
         void onText(CharSequence text);
         
-        
         void swipeLeft();
-        
         
         void swipeRight();
         
-        
         void swipeDown();
-        
         
         void swipeUp();
     }

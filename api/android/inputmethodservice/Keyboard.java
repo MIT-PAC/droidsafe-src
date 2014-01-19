@@ -94,7 +94,6 @@ public class Keyboard {
         addTaint(context.getTaint());
         // ---------- Original Method ----------
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.237 -0400", hash_original_method = "FC11E9ED9DE485D5CB801CC8BD3E666A", hash_generated_method = "9889912C7E2959D4E63032A25674BD41")
     public  Keyboard(Context context, int xmlLayoutResId, int modeId, int width, int height) {
@@ -122,7 +121,6 @@ public class Keyboard {
         //mKeyboardMode = modeId;
         //loadKeyboard(context, context.getResources().getXml(xmlLayoutResId));
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.247 -0400", hash_original_method = "BBB05B12455B659AA4CB792848FE2BA1", hash_generated_method = "B75E4EF58CC6CBACD4AAB0037B8ED094")
     public  Keyboard(Context context, int xmlLayoutResId, int modeId) {
@@ -152,7 +150,6 @@ public class Keyboard {
         //mKeyboardMode = modeId;
         //loadKeyboard(context, context.getResources().getXml(xmlLayoutResId));
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.264 -0400", hash_original_method = "397F7AF852698A44CD282AED80891D0E", hash_generated_method = "0DE680FB9B16F7C7AC7EF4C2039009D8")
     public  Keyboard(Context context, int layoutTemplateResId, 
@@ -203,7 +200,6 @@ for(int i = 0;i < characters.length();i++)
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.273 -0400", hash_original_method = "4FB4FF088ED0C4D1CB4E59C58676D824", hash_generated_method = "8E9D337D5386C919F5772CEC1D08908C")
     final void resize(int newWidth, int newHeight) {
@@ -241,8 +237,8 @@ for(int keyIndex = 0;keyIndex < numKeys;++keyIndex)
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.276 -0400", hash_original_method = "9C5EC889910FC63E2BE3F348DAE4AAAD", hash_generated_method = "6A1C99C56D0E6437E54B114688BD2F7B")
     public List<Key> getKeys() {
 List<Key> var5AEE71826958DB6E612956708AF0BFCD_1356398994 =         mKeys;
@@ -251,8 +247,8 @@ List<Key> var5AEE71826958DB6E612956708AF0BFCD_1356398994 =         mKeys;
         // ---------- Original Method ----------
         //return mKeys;
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.278 -0400", hash_original_method = "E40925805CEC2A064551415A821E0FB9", hash_generated_method = "4EAEA954F4A3DA048442B2088B01A4FA")
     public List<Key> getModifierKeys() {
 List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
@@ -261,8 +257,8 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //return mModifierKeys;
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.279 -0400", hash_original_method = "55D65ED4C1F27D39714A25D8EDD1319F", hash_generated_method = "4C8C68526B6BC25E8E3A8A235A7C8E92")
     protected int getHorizontalGap() {
         int varC79D914900B3B6C61E5B360316CBA655_1518276091 = (mDefaultHorizontalGap);
@@ -271,7 +267,6 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //return mDefaultHorizontalGap;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.281 -0400", hash_original_method = "4192371F5213E482193A428CA71C34EA", hash_generated_method = "452FA50DD6F5DC0602C2E1EC1C2FFD09")
     protected void setHorizontalGap(int gap) {
@@ -279,8 +274,8 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //mDefaultHorizontalGap = gap;
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.283 -0400", hash_original_method = "232957D9F7E6BFBC8E2B05B34F9668F2", hash_generated_method = "183A2F3999BC9AF05C99A33B35BEB238")
     protected int getVerticalGap() {
         int varB90FCDDDE2B86F29C97A0A7D6A048733_359082145 = (mDefaultVerticalGap);
@@ -289,7 +284,6 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //return mDefaultVerticalGap;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.285 -0400", hash_original_method = "598BAA2C92908786CB17AA934B082365", hash_generated_method = "BB777769CA689EA87D616F2789664971")
     protected void setVerticalGap(int gap) {
@@ -297,8 +291,8 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //mDefaultVerticalGap = gap;
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.287 -0400", hash_original_method = "8CEE4CDE272B313204033BF04DE43200", hash_generated_method = "B8546B56780D6CDF2C569229B852DCAE")
     protected int getKeyHeight() {
         int var22A67E3B3D6F0C9D7F9CD85B78FCFD44_1819774508 = (mDefaultHeight);
@@ -307,7 +301,6 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //return mDefaultHeight;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.289 -0400", hash_original_method = "E8399B39ECFD9C5BC5903E5145B67E65", hash_generated_method = "15727C77D45671C833AED60A4B45CC9A")
     protected void setKeyHeight(int height) {
@@ -315,8 +308,8 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //mDefaultHeight = height;
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.295 -0400", hash_original_method = "68A61D79825E54979EFE7EA876A84FC9", hash_generated_method = "07F5C6C5B066899BBF1C90B31C61EA09")
     protected int getKeyWidth() {
         int var9F08E280D393D29F1CE1738D374DF945_1013774024 = (mDefaultWidth);
@@ -325,7 +318,6 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //return mDefaultWidth;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.297 -0400", hash_original_method = "F6D0490D947FC5165E76986F052B51DE", hash_generated_method = "FEA2B57F93421C7445B7B9A839F3B3F1")
     protected void setKeyWidth(int width) {
@@ -333,8 +325,8 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //mDefaultWidth = width;
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.298 -0400", hash_original_method = "D150DA54A75C2BA86B65582A3A41C5A6", hash_generated_method = "CA1DF79121F29C143D5A0F624251960C")
     public int getHeight() {
         int var8EF93AC90BB3417A4396010B3DF77EE9_1946702634 = (mTotalHeight);
@@ -343,8 +335,8 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //return mTotalHeight;
     }
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.300 -0400", hash_original_method = "113BBBBB846096B3AB050F232D720DB4", hash_generated_method = "99D0D64B620DE32CF993871A6278691F")
     public int getMinWidth() {
         int var9F615BB0FE3FE6CA5A459E9D388E8B15_910006225 = (mTotalWidth);
@@ -353,7 +345,6 @@ List<Key> var8E2232677A0F8985EDE331E3DBDCDCE0_365756968 =         mModifierKeys;
         // ---------- Original Method ----------
         //return mTotalWidth;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.304 -0400", hash_original_method = "16BA6B5E2038A1F5E624AA7B21CEE0CD", hash_generated_method = "2B947C7A811B823AB9B4073B6672987C")
     public boolean setShifted(boolean shiftState) {
@@ -386,7 +377,6 @@ for(Key shiftKey : mShiftKeys)
         //}
         //return false;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.306 -0400", hash_original_method = "EACA0ECEFEB42C937A9D56634AD800E3", hash_generated_method = "CA066D08DCEED6E28DD125605FA1C382")
     public boolean isShifted() {
@@ -396,8 +386,8 @@ for(Key shiftKey : mShiftKeys)
         // ---------- Original Method ----------
         //return mShifted;
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.308 -0400", hash_original_method = "91DF01E3B8C10F94CBF3B151E0DB8E32", hash_generated_method = "475718D9ADAC90FDEFDB8DE868F2D45D")
     public int[] getShiftKeyIndices() {
         int[] var16CC8CC8AD90E69615E18685CCE3D353_32761915 = (mShiftKeyIndices);
@@ -406,8 +396,8 @@ for(Key shiftKey : mShiftKeys)
         // ---------- Original Method ----------
         //return mShiftKeyIndices;
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.310 -0400", hash_original_method = "82B171C39309CF9EDE40413656430B43", hash_generated_method = "A2E685F250BC6E1E70B6308C7389D603")
     public int getShiftKeyIndex() {
         int var0902804C1B4968253FC8F47DBCBBE2B2_1576048204 = (mShiftKeyIndices[0]);
@@ -416,7 +406,6 @@ for(Key shiftKey : mShiftKeys)
         // ---------- Original Method ----------
         //return mShiftKeyIndices[0];
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.320 -0400", hash_original_method = "B148C84FA2E3F9F5A1A02C8218F6C9F6", hash_generated_method = "25D85FE0AFD5DF95B315D8C3F8F56B28")
     private void computeNearestNeighbors() {
@@ -451,8 +440,8 @@ for(int i = 0;i < mKeys.size();i++)
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.324 -0400", hash_original_method = "9099142BCFA8D4BBDACC6C89C180FADC", hash_generated_method = "AB115BD961CFFEA0C7C063CDBE8DE68B")
     public int[] getNearestKeys(int x, int y) {
         addTaint(y);
@@ -482,7 +471,6 @@ for(int i = 0;i < mKeys.size();i++)
         //}
         //return new int[0];
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.326 -0400", hash_original_method = "ADC7EEE1D5CC40EB06869D36925A8A51", hash_generated_method = "81D9E5A24B88775869E296BDCFC66B08")
     protected Row createRowFromXml(Resources res, XmlResourceParser parser) {
@@ -494,7 +482,6 @@ Row var7FB2305D944DF0E13CD0B9F32571CD82_217922640 =         new Row(res, this, p
         // ---------- Original Method ----------
         //return new Row(res, this, parser);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.328 -0400", hash_original_method = "7C30A8D931433BEC83D450C4892EA38E", hash_generated_method = "065CFC740585DAAA22F517B11248C727")
     protected Key createKeyFromXml(Resources res, Row parent, int x, int y, 
@@ -510,7 +497,6 @@ Key varE985980EDE73F0AE27A28D587669E369_495507450 =         new Key(res, parent,
         // ---------- Original Method ----------
         //return new Key(res, parent, x, y, parser);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.341 -0400", hash_original_method = "0682C3FA4A49194161BF3A995754C5A7", hash_generated_method = "97A1C9A2834A8DBC5450342245B710F5")
     private void loadKeyboard(Context context, XmlResourceParser parser) {
@@ -614,7 +600,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.347 -0400", hash_original_method = "0E562BFCE15C1E3AC6B0A8EF6F890819", hash_generated_method = "DE299EB0C5B44C47D0ABD180617C2264")
     private void skipToEndOfRow(XmlResourceParser parser) throws XmlPullParserException, IOException {
@@ -638,7 +623,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
             //}
         //}
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.353 -0400", hash_original_method = "215B5FFF32E25431B5AACD69551E6B9E", hash_generated_method = "512CB2503541FE767D96F3AF79B154B2")
     private void parseKeyboardAttributes(Resources res, XmlResourceParser parser) {
@@ -664,9 +648,9 @@ for(int i = 0;i < mShiftKeys.length;i++)
         // ---------- Original Method ----------
         // Original Method Too Long, Refer to Original Implementation
     }
-
     
-        static int getDimensionOrFraction(TypedArray a, int index, int base, int defValue) {
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    static int getDimensionOrFraction(TypedArray a, int index, int base, int defValue) {
         TypedValue value = a.peekValue(index);
         if (value == null) return defValue;
         if (value.type == TypedValue.TYPE_DIMENSION) {
@@ -676,7 +660,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
         }
         return defValue;
     }
-
     
     public static class Row {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.355 -0400", hash_original_field = "B1A0839A70AFA61664B9A94F7B7C0F75", hash_generated_field = "A96204A8425B32C1F84986D87F5052CF")
@@ -710,7 +693,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
             // ---------- Original Method ----------
             //this.parent = parent;
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.367 -0400", hash_original_method = "328FC2DFF8AD8E9D0620885E13D17104", hash_generated_method = "79D1FD1F032B4B6CBFFE67668D27AE10")
         public  Row(Resources res, Keyboard parent, XmlResourceParser parser) {
@@ -740,11 +722,8 @@ for(int i = 0;i < mShiftKeys.length;i++)
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
-
         
     }
-
-
     
     public static class Key {
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.370 -0400", hash_original_field = "76034A9F5BEF30B9DEE701711D30BED6", hash_generated_field = "816E16893109F7A2D1F430C780DBBA02")
@@ -819,7 +798,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
             //gap = parent.defaultHorizontalGap;
             //edgeFlags = parent.rowEdgeFlags;
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.398 -0400", hash_original_method = "830941FBCB4391B83C4612526668A64E", hash_generated_method = "03544F08109C281026311ABE2223E3C8")
         public  Key(Resources res, Row parent, int x, int y, XmlResourceParser parser) {
@@ -890,7 +868,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
             // ---------- Original Method ----------
             // Original Method Too Long, Refer to Original Implementation
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.401 -0400", hash_original_method = "EFEB5D5E48E6D7DF231600A54B22CA47", hash_generated_method = "44FF42A871C6238C7170E65DD82E4031")
         public void onPressed() {
@@ -899,7 +876,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
             // ---------- Original Method ----------
             //pressed = !pressed;
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.403 -0400", hash_original_method = "8C534B266C13BA38876EAA9999644CF9", hash_generated_method = "01321ADAFEEEAF22E081016D56D3B254")
         public void onReleased(boolean inside) {
@@ -916,7 +892,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
                 //on = !on;
             //}
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.406 -0400", hash_original_method = "7B51E12ECAEC0CF836B26BA3AD3CC811", hash_generated_method = "9FE3FFC47FB4B80C123C478633E2D702")
          int[] parseCSV(String value) {
@@ -970,7 +945,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
             //}
             //return values;
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.410 -0400", hash_original_method = "9971CE43B16389831BA636E5AD76DCEB", hash_generated_method = "DC1FEDF6D4321006BE666AC693CC8E83")
         public boolean isInside(int x, int y) {
@@ -1009,7 +983,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
                 //return false;
             //}
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.413 -0400", hash_original_method = "C0CF70FF2C5619B3CD017BF04C6EEC63", hash_generated_method = "6A74ED2AD3DFC0E5A5DA3A92349279D0")
         public int squaredDistanceFrom(int x, int y) {
@@ -1025,8 +998,8 @@ for(int i = 0;i < mShiftKeys.length;i++)
             //int yDist = this.y + height / 2 - y;
             //return xDist * xDist + yDist * yDist;
         }
-
         
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.417 -0400", hash_original_method = "A312018CFE68CC41CED7C34A2BAC04C3", hash_generated_method = "815782FCC891DA1DF269592299EFAEB9")
         public int[] getCurrentDrawableState() {
             int[] states = KEY_STATE_NORMAL;
@@ -1088,7 +1061,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
             //}
             //return states;
         }
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.420 -0400", hash_original_field = "1F0F754F606663C991356B37BABF0DB5", hash_generated_field = "0FBA4127AF3BD7D5AE1B160EB1508675")
 
@@ -1124,8 +1096,6 @@ for(int i = 0;i < mShiftKeys.length;i++)
             android.R.attr.state_pressed
         };
     }
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-10-28 20:33:44.423 -0400", hash_original_field = "20A7B5BEEC4CEEC197C774F3CF7FEDBE", hash_generated_field = "5DB368AB1F0561AD5D71B248E817F10A")
 
