@@ -46,20 +46,17 @@ public class DhcpInfoInternal {
     public int prefixLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.896 -0500", hash_original_field = "DECD515C39266B6E455A2945E7B6E788", hash_generated_field = "6BA23B4699424291896C2FAB8F71E4ED")
 
-
     public String dns1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.899 -0500", hash_original_field = "3BACE6B3C988B24EAA427D1E5476EBA9", hash_generated_field = "6E1E48638CF1AA462ECA9ACEB7A55A1E")
 
     public String dns2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.905 -0500", hash_original_field = "D5280BD2879FEE9E6B031D97BBD9BA13", hash_generated_field = "31817BAB043228C64B0C1E44D880EEB3")
 
-
     public String serverAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.908 -0500", hash_original_field = "24726342E9CB33AC125472BB0EF00AFE", hash_generated_field = "7EE02913D8BA0209DD0BF7B47A6FCC6D")
 
     public int leaseDuration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.911 -0500", hash_original_field = "7FC020484225451DACED235B89B450B3", hash_generated_field = "0B305BD316BC734DE6D262B5BB826CC8")
-
 
     private Collection<RouteInfo> mRoutes;
 
@@ -73,6 +70,7 @@ public class DhcpInfoInternal {
         mRoutes.add(routeInfo);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:49.919 -0500", hash_original_method = "A7B26240781BB7C0E135CB45CD0D9800", hash_generated_method = "7304006BADE7268B32CBBD8D9383478F")
     public Collection<RouteInfo> getRoutes() {
         return Collections.unmodifiableCollection(mRoutes);

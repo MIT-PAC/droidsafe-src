@@ -27,7 +27,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import java.io.IOException;
 
-
 /**
  * This class represents ASN.1 Set type.
  *
@@ -55,6 +54,7 @@ public final class ASN1Set extends ASN1TypeCollection {
         out.encodeSet(this);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-29 15:18:51.163 -0500", hash_original_method = "62CA35C05045F2F590FB1A8FC47ABB46", hash_generated_method = "A212AB4DA23B5EFF40A5501960F496F5")
     public final void setEncodingContent(BerOutputStream out) {
         out.getSetLength(this);

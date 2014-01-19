@@ -26,6 +26,7 @@ public final class ProcessBuilder
         command(command);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public List<String> command() { 
         List<String> ret = new LinkedList<String>();
         ret.add(commands);
@@ -72,6 +73,7 @@ public final class ProcessBuilder
         return this;
     }
     
+    @DSSink({DSSinkKind.OS_COMMAND})
     public Process start() throws IOException { 
         return new DroidSafeProcess();
     }
