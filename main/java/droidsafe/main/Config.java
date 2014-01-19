@@ -81,6 +81,8 @@ public class Config {
     public String[] infoFlowDotMethods;
     /** If true, track all methods (excluding those in java.lang) regardless of APIInfoKindMapping.hasSourceInfoKind() */
     public boolean infoFlowTrackAll = false;
+    /** If true, analyze memory addresses to be read (a.k.a. access analysis) */
+    public boolean memoryReadAnalysis = true;
     /** if true, use event context, otherwise, use insensitive result */
     public boolean eventContextPTA = false;
 
@@ -255,7 +257,7 @@ public class Config {
 
 
         Option noInfoFlow = new Option("noinfoflow", 
-                "True off information flow analysis");
+                "Turn off information flow analysis");
         options.addOption(noInfoFlow);
 
         Option infoFlowDotMethod =
@@ -271,6 +273,10 @@ public class Config {
         Option infoFlowTrackAll = new Option("trackallflows", 
                 "Track all methods (excluding those in java.lang) during information flow analysis");
         options.addOption(infoFlowTrackAll);
+
+        Option noMemoryRead = new Option("nomemoryread",
+                "Turn off memory read analysis (a.k.a. access analysis)");
+        options.addOption(noMemoryRead);
 
         Option approot =
                 OptionBuilder.withArgName("dir").hasArg()
@@ -353,6 +359,10 @@ public class Config {
         if (cmd.hasOption("infoflow-dot-method")) {
             assert this.infoFlow;
             this.infoFlowDotMethods = cmd.getOptionValues("infoflow-dot-method");
+        }
+
+        if (cmd.hasOption("nomemoryread")) {
+            this.memoryReadAnalysis = false;
         }
 
         if (cmd.hasOption("pta")) {

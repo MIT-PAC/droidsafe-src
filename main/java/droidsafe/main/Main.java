@@ -424,7 +424,9 @@ public class Main {
                 return DroidsafeExecutionStatus.CANCEL_STATUS;
             }
 
-            MemoryReadAnalysis.run();
+            if (Config.v().memoryReadAnalysis) {
+                MemoryReadAnalysis.run();
+            }
 
             try {
                 String[] infoFlowDotMethods = Config.v().infoFlowDotMethods;

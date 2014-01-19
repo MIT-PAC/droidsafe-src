@@ -113,18 +113,18 @@ public class InformationFlowAnalysis {
         logger.info("Finished Information Flow Analysis...");
     }
 
-    public Set<InfoValue> getTaintsBefore(PTAContext context, Unit unit, Local local) {
-        HashSet<InfoValue> values = new HashSet<InfoValue>();
-        State state = getStateBefore(unit);
-        if (local.getType() instanceof RefLikeType) {
-            for (IAllocNode allocNode : PTABridge.v().getPTSet(local, context)) {
-                values.addAll(state.instances.get(context, Address.v(allocNode), ObjectUtils.v().taint));
-            }
-        } else {
-            values.addAll(evaluate(context, local, state.locals));
-        }
-        return values;
-    }
+    // public Set<InfoValue> getTaintsBefore(PTAContext context, Unit unit, Local local) {
+    //     HashSet<InfoValue> values = new HashSet<InfoValue>();
+    //     State state = getStateBefore(unit);
+    //     if (local.getType() instanceof RefLikeType) {
+    //         for (IAllocNode allocNode : PTABridge.v().getPTSet(local, context)) {
+    //             values.addAll(state.instances.get(context, Address.v(allocNode), ObjectUtils.v().taint));
+    //         }
+    //     } else {
+    //         values.addAll(evaluate(context, local, state.locals));
+    //     }
+    //     return values;
+    // }
 
     public Set<InfoValue> getTaintsBeforeRecursively(PTAContext context, Unit unit, Local local) {
         HashSet<InfoValue> values = new HashSet<InfoValue>();
@@ -132,22 +132,30 @@ public class InformationFlowAnalysis {
         Type type = local.getType();
         if (type instanceof RefLikeType) {
             Set<IAllocNode> reachableAllocNodes = AllocNodeUtils.v().reachable((Set<IAllocNode>)PTABridge.v().getPTSet(local, context));
-            Iterator<MethodOrMethodContext> targets = new Targets(Scene.v().getCallGraph().edgesOutOf(unit));
-            while (targets.hasNext()) {
-                SootMethod tgtMethod = (SootMethod)targets.next();
-                ImmutableList<AddressField> addressFields = MemoryReadAnalysis.v().addressFieldsReadRecursively(tgtMethod);
-                for (AddressField addressField : addressFields) {
-                    Address address = addressField.address;
-                    if (reachableAllocNodes.contains(address.allocNode)) {
-                        values.addAll(state.instances.get(context, address, addressField.field));
-                    }
-                }
-                ImmutableList<Address> addresses = MemoryReadAnalysis.v().arraysReadRecursively(tgtMethod);
-                for (Address address : addresses) {
-                    if (reachableAllocNodes.contains(address.allocNode)) {
-                        values.addAll(state.arrays.get(context, address));
-                    }
-                }
+	    if (Config.v().memoryReadAnalysis) {
+		Iterator<MethodOrMethodContext> targets = new Targets(Scene.v().getCallGraph().edgesOutOf(unit));
+		while (targets.hasNext()) {
+		    SootMethod tgtMethod = (SootMethod)targets.next();
+		    ImmutableList<AddressField> addressFields = MemoryReadAnalysis.v().addressFieldsReadRecursively(tgtMethod);
+		    for (AddressField addressField : addressFields) {
+			Address address = addressField.address;
+			if (reachableAllocNodes.contains(address.allocNode)) {
+			    values.addAll(state.instances.get(context, address, addressField.field));
+			}
+		    }
+		    ImmutableList<Address> addresses = MemoryReadAnalysis.v().arraysReadRecursively(tgtMethod);
+		    for (Address address : addresses) {
+			if (reachableAllocNodes.contains(address.allocNode)) {
+			    values.addAll(state.arrays.get(context, address));
+			}
+		    }
+		}
+	    } else {
+		for (IAllocNode allocNode : reachableAllocNodes) {
+		    Address address = Address.v(allocNode);
+		    values.addAll(state.instances.get(context, address, ObjectUtils.v().taint));
+		    values.addAll(state.arrays.get(context, address));
+		}
             }
         } else {
             if (Config.v().strict) {
