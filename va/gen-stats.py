@@ -40,9 +40,10 @@ def run(settings, args):
 
     ambg =  defaultdict(lambda : defaultdict(int))
     unambg = defaultdict(lambda : defaultdict(int))
-    total = defaultdict(lambda : defaultdict(int))
+    set_size_zero_dict = defaultdict(lambda : defaultdict(int))
+    total_dict = defaultdict(lambda : defaultdict(int))
     setsizesum = defaultdict(lambda : defaultdict(int))
-    setsizeone = defaultdict(lambda : defaultdict(int))
+    set_size_one_dict = defaultdict(lambda : defaultdict(int))
    
     with open('app-stats.csv', 'wb') as app_stat_csv_file:
         app_stat_csv_writer = csv.writer(app_stat_csv_file)
@@ -99,15 +100,16 @@ def run(settings, args):
                     cls = cls[:-1]
                     if size == "UNKNOWN":
                         ambg[cls][field] += 1
-                        total[cls][field] += 1
                     else:
                         intsize = int(size)
+                        unambg[cls][field] += 1
                         if intsize > 0:
-                            unambg[cls][field] += 1
                             setsizesum[cls][field] += intsize
                             if intsize == 1:
-                                setsizeone[cls][field] += 1
-                            total[cls][field] += 1
+                                set_size_one_dict[cls][field] += 1
+                        else:
+                            set_size_zero_dict[cls][field] += 1
+                    total_dict[cls][field] += 1
 
     # write all app va stats into global va stats file
     with open('va-stats.csv', 'wb') as csvfile:
@@ -118,22 +120,47 @@ def run(settings, args):
                             "%", 
                             "Ambiguous", 
                             "%", 
-                            "Avg Set Size",
+                            "Avg Set Size (of set size > 0)",
                             "Set Size 1", 
                             "%", 
+                            "Set Size 0",
+                            "%",
                             "Total"])
-        for cls, fields in total.items():
+        for cls, fields in total_dict.items():
             for field, total in fields.items():
+                set_size_zero = set_size_zero_dict[cls][field]
+                set_size_one = set_size_one_dict[cls][field]
                 unambg_count = unambg[cls][field]
-                unambg_per = '{:.2%}'.format(float(unambg_count)/total)
                 ambg_count = ambg[cls][field]
-                ambg_per = '{:.2%}'.format(float(ambg_count)/total)
+                over_zero_count = total-set_size_zero
+
+                if total == 0:
+                    unambg_perc = "n/a"
+                else:
+                    unambg_perc = '{:.2%}'.format(float(unambg_count)/total)
+
+                if total == 0:
+                    ambg_perc = "n/a"
+                else:
+                    ambg_perc = '{:.2%}'.format(float(ambg_count)/total)
+               
+                if total == 0:
+                    set_size_zero_perc = "n/a"
+                else:
+                    set_size_zero_perc = '{:.2%}'.format(float((set_size_zero))/total)
+
                 if unambg_count != 0:
                     avg_setsize = setsizesum[cls][field]/unambg_count
                 else:
                     avg_setsize = "n/a"
-                csvwriter.writerow([cls, field, unambg_count, unambg_per, ambg_count, ambg_per, avg_setsize,
-                    setsizeone[cls][field], '{:.2%}'.format(float(setsizeone[cls][field])/total), total])
+                
+                if over_zero_count == 0:
+                    set_size_one_perc = "0%"
+                else:
+                    set_size_one_perc = '{:.2%}'.format(float(set_size_one)/over_zero_count)
+
+                csvwriter.writerow([cls, field, unambg_count, unambg_perc, ambg_count, ambg_perc, avg_setsize,
+                                    set_size_one, set_size_one_perc, set_size_zero, set_size_zero_perc, total])
     
 def main(argv=None):
     settings, args = process_command_line(argv)
