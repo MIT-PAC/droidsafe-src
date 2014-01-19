@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Annotation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.203 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "D3245881F91753AD0C508E1E9B72D31F")
-
 
     private Object value;
 
@@ -32,6 +27,7 @@ public Annotation(Object attribute) {
      *
      * @return the value of this annotation or {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:10.208 -0500", hash_original_method = "B4F085CF9776332A868AEA05C2B06886", hash_generated_method = "8F1C34090E292F1C2F621B605A6DF10D")
     
 public Object getValue() {
@@ -49,7 +45,6 @@ public Object getValue() {
     public String toString() {
         return getClass().getName() + "[value=" + value + ']';
     }
-
     
 }
 

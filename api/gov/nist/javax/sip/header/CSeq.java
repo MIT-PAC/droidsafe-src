@@ -11,11 +11,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.CSeqHeader;
 
-
-
-
-
-
 public class CSeq extends SIPHeader implements javax.sip.header.CSeqHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.108 -0500", hash_original_field = "A542DD63EDA49DE553CE1CB41D57F431", hash_generated_field = "666558DE3DB38737E2687424E9321784")
 
@@ -99,6 +94,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
      * Get the method.
      * @return String the method.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.136 -0500", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "BC38B478E0AED2517A3460750CABA307")
     
 public String getMethod() {
@@ -109,6 +105,7 @@ public String getMethod() {
      * (non-Javadoc)
      * @see javax.sip.header.CSeqHeader#setSequenceNumber(long)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.139 -0500", hash_original_method = "0BFD480B5A908D011772234303C89701", hash_generated_method = "7D257CF8E83E7143F46A893E14E3A70E")
     
 public void setSeqNumber(long sequenceNumber)
@@ -128,6 +125,7 @@ public void setSeqNumber(long sequenceNumber)
     /**
      * For backwards compatibility
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.142 -0500", hash_original_method = "AC14810648D4561552145A0674E118CB", hash_generated_method = "82BC4025E6FE027ADDEE5507FB824AC6")
     
 public void setSequenceNumber(int sequenceNumber) throws InvalidArgumentException {
@@ -138,6 +136,7 @@ public void setSequenceNumber(int sequenceNumber) throws InvalidArgumentExceptio
      * (non-Javadoc)
      * @see javax.sip.header.CSeqHeader#setMethod(java.lang.String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.145 -0500", hash_original_method = "5BC8CE15D24F53FCB65EDFE00EEC2F3C", hash_generated_method = "162809E923160350903383D42A12AB5B")
     
 public void setMethod(String meth) throws ParseException {
@@ -152,6 +151,7 @@ public void setMethod(String meth) throws ParseException {
      * (non-Javadoc)
      * @see javax.sip.header.CSeqHeader#getSequenceNumber()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.147 -0500", hash_original_method = "C444FE335840CD646F9A52EE546690DB", hash_generated_method = "C2243BD144024DC88366725A24D8FF2E")
     
 public int getSequenceNumber() {
@@ -161,9 +161,7 @@ public int getSequenceNumber() {
             return this.seqno.intValue();
     }
 
-
-
-
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:06.150 -0500", hash_original_method = "6A4C94B16343774E5C3F1252C6DA6DFA", hash_generated_method = "768B4BA1E0575D104C97AF9DDDA811B4")
     
 public long getSeqNumber() {

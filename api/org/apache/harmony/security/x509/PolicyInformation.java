@@ -11,13 +11,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-
-
-
-
-
 public final class PolicyInformation {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.662 -0400", hash_original_field = "5F2D8C5221F74D1DF86123C2DA677D6B", hash_generated_field = "BFFF063EC30CEABB951E1244D2EB5617")
 
@@ -27,6 +21,7 @@ public final class PolicyInformation {
             setOptional(1);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.527 -0500", hash_original_method = "8501EA7BFA173E6518BAFB2356927122", hash_generated_method = "09D687E9F905A831F5B25FAAFF17A479")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -57,6 +52,7 @@ public PolicyInformation(String policyIdentifier) {
     /**
      * Returns the value of policyIdentifier field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.519 -0500", hash_original_method = "012FFA67DCC82ECD3E1505D0CB12E6E1", hash_generated_method = "637BB49A56CB3A3EEA0763BCBC98422F")
     
 public String getPolicyIdentifier() {
@@ -66,6 +62,7 @@ public String getPolicyIdentifier() {
     /**
      * Returns ASN.1 encoded form of this X.509 PolicyInformation value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:56.521 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

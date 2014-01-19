@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.697 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.697 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -67,7 +68,8 @@ return DESCRIPTOR;
      *
      * @param session the session object that carries out the transaction
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.699 -0500", hash_original_method = "761DEFE470D7375487A75E55E83030C8", hash_generated_method = "42A9F11D99CEC8C686C671FCB1F4DE3B")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.699 -0500", hash_original_method = "761DEFE470D7375487A75E55E83030C8", hash_generated_method = "42A9F11D99CEC8C686C671FCB1F4DE3B")
             
 public void onCalling(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
@@ -91,7 +93,8 @@ _data.recycle();
      * @param caller the SIP profile of the caller
      * @param sessionDescription the caller's session description
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.702 -0500", hash_original_method = "1963D7EC46FAC9D90263CC0D16B8E993", hash_generated_method = "BD729882A357C81845EF52A677ABE0C1")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.702 -0500", hash_original_method = "1963D7EC46FAC9D90263CC0D16B8E993", hash_generated_method = "BD729882A357C81845EF52A677ABE0C1")
             
 public void onRinging(android.net.sip.ISipSession session, android.net.sip.SipProfile caller, java.lang.String sessionDescription) throws android.os.RemoteException
 {
@@ -121,7 +124,8 @@ _data.recycle();
      *
      * @param session the session object that carries out the transaction
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.705 -0500", hash_original_method = "2713D0E35A1935D3F41D48C1C7F579A6", hash_generated_method = "B2A138693FE9FD208354C56638C0B303")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.705 -0500", hash_original_method = "2713D0E35A1935D3F41D48C1C7F579A6", hash_generated_method = "B2A138693FE9FD208354C56638C0B303")
             
 public void onRingingBack(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
@@ -144,7 +148,8 @@ _data.recycle();
      * @param session the session object that is associated with the dialog
      * @param sessionDescription the peer's session description
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.708 -0500", hash_original_method = "A21D32F3C1CF12195E2EA3E294F5CB1B", hash_generated_method = "0D7B1B3ACB3E8AE61B4D95927E66EEB3")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.708 -0500", hash_original_method = "A21D32F3C1CF12195E2EA3E294F5CB1B", hash_generated_method = "0D7B1B3ACB3E8AE61B4D95927E66EEB3")
             
 public void onCallEstablished(android.net.sip.ISipSession session, java.lang.String sessionDescription) throws android.os.RemoteException
 {
@@ -167,7 +172,8 @@ _data.recycle();
      *
      * @param session the session object that is associated with the dialog
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.710 -0500", hash_original_method = "40799F3ADCC57A31E383131D63C8778F", hash_generated_method = "D455971F7B4BA0BBCA7C32A34E720B5D")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.710 -0500", hash_original_method = "40799F3ADCC57A31E383131D63C8778F", hash_generated_method = "D455971F7B4BA0BBCA7C32A34E720B5D")
             
 public void onCallEnded(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
@@ -189,7 +195,8 @@ _data.recycle();
      *
      * @param session the session object that carries out the transaction
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.713 -0500", hash_original_method = "44D790E3A18B638D3871F5A2EEC09488", hash_generated_method = "182F1C8338C8AA9F97302D6D796A31C8")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.713 -0500", hash_original_method = "44D790E3A18B638D3871F5A2EEC09488", hash_generated_method = "182F1C8338C8AA9F97302D6D796A31C8")
             
 public void onCallBusy(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
@@ -212,7 +219,8 @@ _data.recycle();
      * @param newSession the new session that the call will be transferred to
      * @param sessionDescription the new peer's session description
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.715 -0500", hash_original_method = "04421EA7FEBB2163D9E64796D081E257", hash_generated_method = "452513E3305A3E8F7576EE0814002BF0")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.715 -0500", hash_original_method = "04421EA7FEBB2163D9E64796D081E257", hash_generated_method = "452513E3305A3E8F7576EE0814002BF0")
             
 public void onCallTransferring(android.net.sip.ISipSession newSession, java.lang.String sessionDescription) throws android.os.RemoteException
 {
@@ -238,7 +246,8 @@ _data.recycle();
      * @param errorCode error code defined in {@link SipErrorCode}
      * @param errorMessage error message
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.718 -0500", hash_original_method = "0BD912CCA877C51B95421544F3142456", hash_generated_method = "A6E1A5F3FDACAC4219EF1CF014B6CB57")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.718 -0500", hash_original_method = "0BD912CCA877C51B95421544F3142456", hash_generated_method = "A6E1A5F3FDACAC4219EF1CF014B6CB57")
             
 public void onError(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
 {
@@ -264,7 +273,8 @@ _data.recycle();
      * @param errorCode error code defined in {@link SipErrorCode}
      * @param errorMessage error message
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.721 -0500", hash_original_method = "25E7D2AD65D6CA798C113C35EF60E3D3", hash_generated_method = "5520FFEEF20790C49626AB50E8745167")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.721 -0500", hash_original_method = "25E7D2AD65D6CA798C113C35EF60E3D3", hash_generated_method = "5520FFEEF20790C49626AB50E8745167")
             
 public void onCallChangeFailed(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
 {
@@ -288,7 +298,8 @@ _data.recycle();
      *
      * @param session the session object that carries out the transaction
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.724 -0500", hash_original_method = "EE227007666629D18CC82F10AB08ECB2", hash_generated_method = "B9BB83F8BC489287718E9D232398AF6F")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.724 -0500", hash_original_method = "EE227007666629D18CC82F10AB08ECB2", hash_generated_method = "B9BB83F8BC489287718E9D232398AF6F")
             
 public void onRegistering(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
@@ -311,7 +322,8 @@ _data.recycle();
      * @param session the session object that carries out the transaction
      * @param duration duration in second before the registration expires
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.727 -0500", hash_original_method = "0DF66C8678F5E7B56AD6324DBDE7829C", hash_generated_method = "B56281405C21412CD6F869C8F1A1D882")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.727 -0500", hash_original_method = "0DF66C8678F5E7B56AD6324DBDE7829C", hash_generated_method = "B56281405C21412CD6F869C8F1A1D882")
             
 public void onRegistrationDone(android.net.sip.ISipSession session, int duration) throws android.os.RemoteException
 {
@@ -336,7 +348,8 @@ _data.recycle();
      * @param errorCode error code defined in {@link SipErrorCode}
      * @param errorMessage error message
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.730 -0500", hash_original_method = "35EF36F5DA39F334174D31E2A9CBCE4A", hash_generated_method = "B342D094C750DB9610C8D0840E7E235E")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.730 -0500", hash_original_method = "35EF36F5DA39F334174D31E2A9CBCE4A", hash_generated_method = "B342D094C750DB9610C8D0840E7E235E")
             
 public void onRegistrationFailed(android.net.sip.ISipSession session, int errorCode, java.lang.String errorMessage) throws android.os.RemoteException
 {
@@ -360,7 +373,8 @@ _data.recycle();
      *
      * @param session the session object that carries out the transaction
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.732 -0500", hash_original_method = "C9BAB9B532E37BF39F5CA1664FA819D1", hash_generated_method = "EBC31CD02A03573E4F7DA40434BF3AED")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.732 -0500", hash_original_method = "C9BAB9B532E37BF39F5CA1664FA819D1", hash_generated_method = "EBC31CD02A03573E4F7DA40434BF3AED")
             
 public void onRegistrationTimeout(android.net.sip.ISipSession session) throws android.os.RemoteException
 {
@@ -415,7 +429,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.681 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:26.681 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

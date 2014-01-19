@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.UUID;
 
-
-
-
-
-
 public final class ParcelUuid implements Parcelable {
 
     /**
@@ -29,7 +24,6 @@ public final class ParcelUuid implements Parcelable {
 public static ParcelUuid fromString(String uuid) {
         return new ParcelUuid(UUID.fromString(uuid));
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.158 -0400", hash_original_field = "DAF10E97A432AC719FB06B3080752505", hash_generated_field = "BB5540FFC228809144D41EB7EDD6B529")
 
@@ -52,7 +46,6 @@ public ParcelUuid[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.524 -0500", hash_original_field = "AFE074E0052115B31F5D8A3FD1E72383", hash_generated_field = "318090B38C1325AB0A6BDE7565479F55")
 
-
     private  UUID mUuid;
 
     /**
@@ -72,6 +65,7 @@ public ParcelUuid(UUID uuid) {
      *
      * @return UUID contained in the ParcelUuid.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.531 -0500", hash_original_method = "0CE9C43DAF663B7B5A7713ED255C5D05", hash_generated_method = "CD4C404E34D314168EA75627745609DF")
     
 public UUID getUuid() {
@@ -90,7 +84,6 @@ public UUID getUuid() {
     public String toString() {
         return mUuid.toString();
     }
-
 
    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.535 -0500", hash_original_method = "3F38019E558A882D8ACF21219C1A6CB1", hash_generated_method = "D482F257FB9D39C233BA23B515F5D841")
     

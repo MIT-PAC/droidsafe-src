@@ -9,11 +9,6 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.util.Arrays;
 
-
-
-
-
-
 final class ChunkedOutputStream extends AbstractHttpOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.824 -0500", hash_original_field = "0708F15A26A4B9328B7DA0A1ADD69C0D", hash_generated_field = "4B60FF730AF43EA9F22E2DB05173F202")
 
@@ -31,7 +26,6 @@ final class ChunkedOutputStream extends AbstractHttpOutputStream {
     private final byte[] hex = { 0, 0, 0, 0, 0, 0, 0, 0, '\r', '\n' };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.834 -0500", hash_original_field = "E040E41AD170B59C0C0B918B5BFE7983", hash_generated_field = "67AC7536EB45CC65D4356C94551DF297")
 
-
     private  OutputStream socketOut;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.836 -0500", hash_original_field = "8EC177D2A833548FA8A58828E89211B5", hash_generated_field = "0770750E9DA495C2C14F0337E32B0F75")
 
@@ -39,7 +33,6 @@ final class ChunkedOutputStream extends AbstractHttpOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.838 -0500", hash_original_field = "A696C8FD5DA65FB2C8ABA0FB4B272CB8", hash_generated_field = "23546DAF85E308782CACA02F261440D5")
 
     private  ByteArrayOutputStream bufferedChunk;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.841 -0500", hash_original_method = "B36B9312ECC7FB1AB37744B06B5B016C", hash_generated_method = "15E51A573FD7238D4AEF9752A64DE3CF")
     
@@ -64,6 +57,7 @@ private int dataLength(int dataPlusHeaderLength) {
         return dataPlusHeaderLength - headerLength;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:33.846 -0500", hash_original_method = "B30C627643BAEC8E45C685D7AFD0614D", hash_generated_method = "DF933EA00B9F278BEF508C46A19942B0")
     
 @Override public synchronized void write(byte[] buffer, int offset, int count)

@@ -9,70 +9,49 @@ import android.util.AndroidRuntimeException;
 import android.util.SparseArray;
 import android.util.SparseIntArray;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class KeyCharacterMap {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeLoad(String file) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_123601077;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int ptr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char nativeGetCharacter(int ptr, int keyCode, int metaState) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1244637250 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1244637250;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeGetFallbackAction(int ptr, int keyCode, int metaState,
             FallbackAction outFallbackAction) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_185696657 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_185696657;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char nativeGetNumber(int ptr, int keyCode) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1984588844 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1984588844;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char nativeGetMatch(int ptr, int keyCode, char[] chars, int metaState) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1376476993 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1376476993;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static char nativeGetDisplayLabel(int ptr, int keyCode) {
                 char varA87DEB01C5F539E6BDA34829C8EF2368_1718283332 = DSUtils.UNKNOWN_CHAR;
         return varA87DEB01C5F539E6BDA34829C8EF2368_1718283332;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetKeyboardType(int ptr) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1471314073;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static KeyEvent[] nativeGetEvents(int ptr, int deviceId, char[] chars) {
     	KeyEvent[] k = new KeyEvent[1];
     	return  k;
@@ -87,6 +66,8 @@ public class KeyCharacterMap {
      * could not be loaded because it was malformed or the default key character map
      * is missing from the system.
      */
+    @DSComment("device physical access/control")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.794 -0500", hash_original_method = "55A25C535CCD0059748A82385B0A19D3", hash_generated_method = "A58F77895EF8459FD95FA9B4DF308629")
     
 public static KeyCharacterMap load(int deviceId) {
@@ -119,6 +100,8 @@ public static KeyCharacterMap load(int deviceId) {
      * @param c The basic character.
      * @return The combined character, or 0 if the characters cannot be combined.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.812 -0500", hash_original_method = "C6F5470D92A32D0EFDBBA89CAC321185", hash_generated_method = "2AE83191FAC6404F3E8E4CE7A1860567")
     
 public static int getDeadChar(int accent, int c) {
@@ -199,7 +182,6 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
     public static final int MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.741 -0500", hash_original_field = "65E14CBA7CCCF9D8B2FCC49DA88A3227", hash_generated_field = "A41BDDB2AF8DD199AC0801E6FA90000D")
 
-
     private static SparseArray<KeyCharacterMap> sInstances = new SparseArray<KeyCharacterMap>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.846 -0500", hash_original_field = "4AF8DA2BCB82FF845E7161D3C609B79D", hash_generated_field = "11B1384F451F38AFF9AFE2392F709751")
 
@@ -210,7 +192,6 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.852 -0500", hash_original_field = "A854142F03CFDE8432625F3B51B2CDEB", hash_generated_field = "4F036169C638098B73313599D908CEB4")
 
     private static final int ACUTE = '\u00B4' << 16;
-
     
     public static class KeyData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.815 -0500", hash_original_field = "0CE8BAF2BE88BD999E28B3599817EA44", hash_generated_field = "B7B5BF1414600355D7BF1611E9967D65")
@@ -226,14 +207,14 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
 
         public char[] meta = new char[META_LENGTH];
         
+        @DSComment("not sensitive/not an action")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.182 -0400", hash_original_method = "AA20F851FEA58DFB4FCE42162FC7E15E", hash_generated_method = "AA20F851FEA58DFB4FCE42162FC7E15E")
         public KeyData ()
         {
             //Synthesized constructor
         }
     }
-
-
     
     public static class UnavailableException extends AndroidRuntimeException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.877 -0500", hash_original_method = "463842D1BF3FEF123617A569E3B89D0B", hash_generated_method = "C9A1C51EC97A12950DBCAD76008DE8A1")
@@ -241,11 +222,8 @@ public static boolean[] deviceHasKeys(int[] keyCodes) {
 public UnavailableException(String msg) {
             super(msg);
         }
-
         
     }
-
-
     
     public static final class FallbackAction {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.882 -0500", hash_original_field = "AF3F60A45836C339EA3C11B5C54720AC", hash_generated_field = "000F6935635EB02934CE0DE5E09F2D3E")
@@ -260,7 +238,6 @@ public UnavailableException(String msg) {
         {
             //Synthesized constructor
         }
-
 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.854 -0500", hash_original_field = "3F3BDB109C209513958B4A39E13F9DDC", hash_generated_field = "637F3AC3B0EEC3847F5FCA990AF1E992")
@@ -282,7 +259,6 @@ public UnavailableException(String msg) {
 
     public static final int COMBINING_ACCENT_MASK = 0x7FFFFFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.744 -0500", hash_original_field = "9C5D5B4697BA4F2BAA6617B930737C8B", hash_generated_field = "AE8D59B3F804A7C4665D164A31D2B414")
-
 
     private  int mDeviceId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.747 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")
@@ -327,6 +303,7 @@ private KeyCharacterMap(int deviceId, int ptr) {
      * @param metaState The meta key modifier state.
      * @return The associated character or combining accent, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.796 -0500", hash_original_method = "9130955DF84228D9EE103102BFA3B17A", hash_generated_method = "95DBC8174377B728E7B9CD47D1EE7503")
     
 public int get(int keyCode, int metaState) {
@@ -392,6 +369,7 @@ public boolean getFallbackAction(int keyCode, int metaState,
      * @param keyCode The key code.
      * @return The associated numeric or symbolic character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.801 -0500", hash_original_method = "6DABCB0117446A751E56C996ECEF0096", hash_generated_method = "5F76969C0A8A0FCEADEFDE23621138C4")
     
 public char getNumber(int keyCode) {
@@ -410,6 +388,7 @@ public char getNumber(int keyCode) {
      * @param chars The array of matching characters to consider.
      * @return The matching associated character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.804 -0500", hash_original_method = "BB5B7EBB644AED6B3730BD9151F78F69", hash_generated_method = "1E3A1D349365A4F4AD6D1A185C63C70D")
     
 public char getMatch(int keyCode, char[] chars) {
@@ -426,6 +405,7 @@ public char getMatch(int keyCode, char[] chars) {
      * @param metaState The preferred meta key modifier state.
      * @return The matching associated character, or 0 if none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.807 -0500", hash_original_method = "41D073D91107291EA05310027D49190C", hash_generated_method = "864F7C53F01A376E8CC647D468667FDF")
     
 public char getMatch(int keyCode, char[] chars, int metaState) {
@@ -444,6 +424,7 @@ public char getMatch(int keyCode, char[] chars, int metaState) {
      * @param keyCode The key code.
      * @return The display label character, or 0 if none (eg. for non-printing keys).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.809 -0500", hash_original_method = "6DD5621B8D7662BB0D5EEF29B875BDA1", hash_generated_method = "D5B10648A10DEBE7C9F0083D1A39CEE2")
     
 public char getDisplayLabel(int keyCode) {
@@ -505,6 +486,7 @@ public char getDisplayLabel(int keyCode) {
      * @return An array of {@link KeyEvent} objects, or null if the given char array
      *         can not be generated using the current key character map.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.830 -0500", hash_original_method = "75C550EBD18DF5C6523832F5B0CC290D", hash_generated_method = "394B6C4094D20194266ECC24C5A8F978")
     
 public KeyEvent[] getEvents(char[] chars) {
@@ -548,6 +530,9 @@ public boolean isPrintingKey(int keyCode) {
      *
      * @return The keyboard type.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.835 -0500", hash_original_method = "BA716E54E3F5777C121637287957F9E5", hash_generated_method = "FE100288A2D20E0D214B24C766084AAA")
     
 public int getKeyboardType() {
@@ -586,6 +571,7 @@ public int getKeyboardType() {
      * @see {@link #MODIFIER_BEHAVIOR_CHORDED}
      * @see {@link #MODIFIER_BEHAVIOR_CHORDED_OR_TOGGLED}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:58.837 -0500", hash_original_method = "1B54B22E072CCA54689C03A0F5698E81", hash_generated_method = "C0C6529640A4872EA7A78E5ACE87222F")
     
 public int getModifierBehavior() {

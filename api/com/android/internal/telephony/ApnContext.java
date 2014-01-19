@@ -10,29 +10,20 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 import android.util.Log;
 
-
-
-
-
 public class ApnContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.577 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
-
 
     protected static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.574 -0500", hash_original_field = "B23F1213336A6A9687543ED87A15B656", hash_generated_field = "ECDEFF9B6CB4BCFAFA2FE8B349514FEA")
 
-
     public  String LOG_TAG;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.580 -0500", hash_original_field = "B0A863D1AC6C9BBFF7822E3133909DCC", hash_generated_field = "E6D70564297809B18BA965DA7C073C2C")
-
 
     private  String mApnType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.582 -0500", hash_original_field = "0060A1604C723C476FE80C0CA051224B", hash_generated_field = "8314DAC98A967D1AB7A1CD299AD174DC")
 
-
     private DataConnectionTracker.State mState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.584 -0500", hash_original_field = "AA26CE8157BAF4028334246260079124", hash_generated_field = "CC4F30E279FD0801D82BAEF762A46736")
-
 
     private ArrayList<ApnSetting> mWaitingApns = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.587 -0500", hash_original_field = "9E131B63493E328E8259BBC6DCAAD77A", hash_generated_field = "B5157DDA21B34763981CBBE88F87086B")
@@ -40,18 +31,14 @@ public class ApnContext {
     private AtomicInteger mWaitingApnsPermanentFailureCountDown;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.589 -0500", hash_original_field = "2054EB63740ABDC30216347FAB06645D", hash_generated_field = "86A7EB1C5FF99A38BD88921D61EE85B9")
 
-
     private ApnSetting mApnSetting;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.591 -0500", hash_original_field = "75547A706E7CDC7AD9FCAF765698D548", hash_generated_field = "75547A706E7CDC7AD9FCAF765698D548")
-
 
     DataConnection mDataConnection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.593 -0500", hash_original_field = "B625B818D1D9F9AC9BEE968DD70B8D50", hash_generated_field = "B625B818D1D9F9AC9BEE968DD70B8D50")
 
-
     DataConnectionAc mDataConnectionAc;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.595 -0500", hash_original_field = "9E1DC384E07D434791BB93D42EBB3641", hash_generated_field = "9E1DC384E07D434791BB93D42EBB3641")
-
 
     String mReason;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.598 -0500", hash_original_field = "F0B5227E84C28EFE9FA32D974847CDB6", hash_generated_field = "F0B5227E84C28EFE9FA32D974847CDB6")
@@ -73,31 +60,35 @@ public ApnContext(String apnType, String logTag) {
         LOG_TAG = logTag;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.606 -0500", hash_original_method = "0F76476B5A4DDD20A8502B6237356474", hash_generated_method = "404D87534D9D6DFDB599986D9136CBCD")
     
 public String getApnType() {
         return mApnType;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.609 -0500", hash_original_method = "D5BD92E96A7D4915CF46215470E9C147", hash_generated_method = "F145C487474C22A69650797E15C94A84")
     
 public synchronized DataConnection getDataConnection() {
         return mDataConnection;
     }
 
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.611 -0500", hash_original_method = "DF99AB9AA9AC235054504D7946927384", hash_generated_method = "F00681E3D65D505BC484107E966B0BDC")
     
 public synchronized void setDataConnection(DataConnection dataConnection) {
         mDataConnection = dataConnection;
     }
 
-
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.614 -0500", hash_original_method = "5BBBEC6A4F77592BB47CD138BBF3A7B6", hash_generated_method = "3A587714334DB694F4AADAE7B1B5285E")
     
 public synchronized DataConnectionAc getDataConnectionAc() {
         return mDataConnectionAc;
     }
 
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.616 -0500", hash_original_method = "68AD8513BB7965F642E8B7E782864662", hash_generated_method = "8AB43152D3BA28A37C1A119942B7D86C")
     
 public synchronized void setDataConnectionAc(DataConnectionAc dcac) {
@@ -109,18 +100,21 @@ public synchronized void setDataConnectionAc(DataConnectionAc dcac) {
         mDataConnectionAc = dcac;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.619 -0500", hash_original_method = "2BB406053D6E60D1A0AB6AAF52F2E2C8", hash_generated_method = "79B5AE2F0E940A9A251BE86E13D477B9")
     
 public synchronized ApnSetting getApnSetting() {
         return mApnSetting;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.621 -0500", hash_original_method = "C7A08CF02723304D4F2917AE84902158", hash_generated_method = "0101C626A636BF108B6000EAAEB92CC8")
     
 public synchronized void setApnSetting(ApnSetting apnSetting) {
         mApnSetting = apnSetting;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.624 -0500", hash_original_method = "87360F576DD9D6135C262B5A31FCEAAD", hash_generated_method = "19215258C040B9E43058894B69FE56CF")
     
 public synchronized void setWaitingApns(ArrayList<ApnSetting> waitingApns) {
@@ -128,6 +122,7 @@ public synchronized void setWaitingApns(ArrayList<ApnSetting> waitingApns) {
         mWaitingApnsPermanentFailureCountDown.set(mWaitingApns.size());
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.627 -0500", hash_original_method = "BB542F2E9EBFB107E0306A16FFD4893E", hash_generated_method = "6056CBF86CD8C31D706AF32B0CD7909A")
     
 public int getWaitingApnsPermFailCount() {
@@ -140,6 +135,7 @@ public void decWaitingApnsPermFailCount() {
         mWaitingApnsPermanentFailureCountDown.decrementAndGet();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.633 -0500", hash_original_method = "8169EBCA601DA0905CCE375C31CE1E4C", hash_generated_method = "A3548EA292AAEEF602F75177AF1F794F")
     
 public synchronized ApnSetting getNextWaitingApn() {
@@ -162,6 +158,7 @@ public synchronized void removeNextWaitingApn() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.637 -0500", hash_original_method = "3EEE20ABAF340D832C1A12335FDE6C3B", hash_generated_method = "0C2653FA62790458AA1255D1F53409DB")
     
 public synchronized ArrayList<ApnSetting> getWaitingApns() {
@@ -198,6 +195,7 @@ public boolean isDisconnected() {
                     currentState == DataConnectionTracker.State.FAILED);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.648 -0500", hash_original_method = "8C307D0C19BB4E3FFA53F46CA299668C", hash_generated_method = "91C70B724680E1069A170F07A3E70EE1")
     
 public synchronized void setReason(String reason) {
@@ -207,6 +205,7 @@ public synchronized void setReason(String reason) {
         mReason = reason;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.650 -0500", hash_original_method = "2809EBE4FEE36399CFA439CAAE81BBAE", hash_generated_method = "03C2A6500E0CD509D7AF782E38E4C6E9")
     
 public synchronized String getReason() {
@@ -219,6 +218,7 @@ public boolean isReady() {
         return mDataEnabled.get() && mDependencyMet.get();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.655 -0500", hash_original_method = "B2C9522D54285815DBD14240ADC4089E", hash_generated_method = "1846DDF243E46B16BBD4E2CF6EACFC21")
     
 public void setEnabled(boolean enabled) {
@@ -235,6 +235,7 @@ public boolean isEnabled() {
         return mDataEnabled.get();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.660 -0500", hash_original_method = "6EC044B2F5DDFA155CCF046B06C94163", hash_generated_method = "F2C7BC760E8982DD7C966EC32AFD52BE")
     
 public void setDependencyMet(boolean met) {
@@ -245,6 +246,7 @@ public void setDependencyMet(boolean met) {
         mDependencyMet.set(met);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:38.663 -0500", hash_original_method = "0BCF198B460FB01FAD42E5667908EAA7", hash_generated_method = "53C8FAA7C1157222FCA8E53EB189B98E")
     
 public boolean getDependencyMet() {

@@ -11,12 +11,7 @@ import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class Menu implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.446 -0400", hash_original_field = "F280FAF502E3EC830C212739EA877C0E", hash_generated_field = "55BC0B4641874E81A5D070AF9C451A82")
 
@@ -107,6 +102,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:04.346 -0500", hash_original_method = "B96ACF1C9395307298AAD1BDB077B52A", hash_generated_method = "BBD87D434EAE7BDE803BA8138E825E35")
     
 public void writeToParcel(Parcel dest, int flags) {

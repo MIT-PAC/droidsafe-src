@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.graphics.Bitmap;
 
-
-
-
-
 abstract class GLES20Layer extends HardwareLayer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.058 -0500", hash_original_field = "ADD2D11ABDFD02268E62F53E7A576EE2", hash_generated_field = "ADD2D11ABDFD02268E62F53E7A576EE2")
 
@@ -34,6 +30,7 @@ GLES20Layer(int width, int height, boolean opaque) {
      * 
      * @return A pointer to the native layer object, or 0 if the object is NULL
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.067 -0500", hash_original_method = "1433CF09BAF49EB0158C4CBA390321AC", hash_generated_method = "100FF04436870172DF760F03F5BFF8CA")
     
 public int getLayer() {
@@ -64,7 +61,6 @@ public int getLayer() {
         }
         mLayer = 0;
     }
-
     
     static class Finalizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.077 -0500", hash_original_field = "87B98882F1AA0DC12DBEC859DA06C635", hash_generated_field = "01A3B0B17EC6AEBA31ACE6507CBA418F")
@@ -96,11 +92,8 @@ void destroy() {
             GLES20Canvas.nDestroyLayer(mLayerId);
             mLayerId = 0;
         }
-
         
     }
-
-
     
 }
 

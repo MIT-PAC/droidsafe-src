@@ -12,10 +12,6 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.Uri;
 
-
-
-
-
 public abstract class PackageMonitor extends android.content.BroadcastReceiver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.539 -0500", hash_original_field = "23048AC18AB04B887013EC8849A530D3", hash_generated_field = "56A19F93A3F7255DA0A5F6B04E15448B")
 
@@ -27,7 +23,6 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
 
     static final IntentFilter sExternalFilt = new IntentFilter();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.592 -0500", hash_original_field = "0933F023446D3345869435957C85B5C9", hash_generated_field = "8232CD067D5F85E52993832A4B17BC33")
-
     
     public static final int PACKAGE_UNCHANGED = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.595 -0500", hash_original_field = "13CC11EAB5598B3EF622FDCE4DC660AA", hash_generated_field = "88CE097186BDA0F0E034E77CD2A1A59F")
@@ -40,11 +35,9 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
 
     public static final int PACKAGE_PERMANENT_CHANGE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.546 -0500", hash_original_field = "327872E9D71A4FBB076B68AEC4DC350D", hash_generated_field = "3EFEE6E30F796A9234094824403FC953")
-
     
     final HashSet<String> mUpdatingPackages = new HashSet<String>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.548 -0500", hash_original_field = "B1FD6A03CA5DD472B118BDCF0E45CD8B", hash_generated_field = "B1FD6A03CA5DD472B118BDCF0E45CD8B")
-
     
     Context mRegisteredContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.551 -0500", hash_original_field = "B67CEBC1AF1D5EACC126D5234F158FB7", hash_generated_field = "B67CEBC1AF1D5EACC126D5234F158FB7")
@@ -63,7 +56,6 @@ public abstract class PackageMonitor extends android.content.BroadcastReceiver {
 
     boolean mSomePackagesChanged;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.562 -0500", hash_original_field = "2062FD0DE539271A0379A79E22B23E21", hash_generated_field = "2062FD0DE539271A0379A79E22B23E21")
-
     
     String[] mTempArray = new String[1];
     
@@ -251,6 +243,7 @@ public void onSomePackagesChanged() {
 public void onFinishPackageChanges() {
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.627 -0500", hash_original_method = "19E02459BAFEB1E910E6AB68B93B5860", hash_generated_method = "19E02459BAFEB1E910E6AB68B93B5860")
     
 String getPackageName(Intent intent) {

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class JsPromptResult extends JsResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.310 -0500", hash_original_field = "2053E8C09D9532D7178A8C6035EA0C79", hash_generated_field = "EBA696E93844251FD8576C3F0CF71EE9")
 
@@ -30,7 +26,8 @@ public void confirm(String result) {
         confirm();
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.317 -0500", hash_original_method = "A6887DA895C48DFEB95F5B019D028B73", hash_generated_method = "A6887DA895C48DFEB95F5B019D028B73")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:15.317 -0500", hash_original_method = "A6887DA895C48DFEB95F5B019D028B73", hash_generated_method = "A6887DA895C48DFEB95F5B019D028B73")
     
 String getStringResult() {
         return mStringResult;
@@ -43,7 +40,6 @@ String getStringResult() {
         mStringResult = null;
         super.handleDefault();
     }
-
     
 }
 

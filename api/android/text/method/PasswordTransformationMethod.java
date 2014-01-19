@@ -19,12 +19,11 @@ import android.text.TextWatcher;
 import android.text.style.UpdateLayout;
 import android.view.View;
 
-
-
-
-
 public class PasswordTransformationMethod implements TransformationMethod, TextWatcher {
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.836 -0500", hash_original_method = "AA586779493D0903CD5D98EFA63FCB15", hash_generated_method = "15A79EC119B711DE3CE66CEF2A96A5AC")
     
 public static PasswordTransformationMethod getInstance() {
@@ -45,18 +44,17 @@ private static void removeVisibleSpans(Spannable sp) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.898 -0500", hash_original_field = "F9A096E457BF4DBE8BDA2B5A971BDD43", hash_generated_field = "1FFE1A33712E744FBA36248DA7E399EB")
 
-
     private static PasswordTransformationMethod sInstance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.901 -0500", hash_original_field = "D233CB3C5DA5D67DABE4BD8181A5C4FB", hash_generated_field = "C2C57B7CF6BBB168D84B800403D461E8")
 
     private static char DOT = '\u2022';
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.520 -0400", hash_original_method = "D8EF6B070A80A550C154BD7630CF21E0", hash_generated_method = "D8EF6B070A80A550C154BD7630CF21E0")
     public PasswordTransformationMethod ()
     {
         //Synthesized constructor
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.832 -0500", hash_original_method = "46C31F1840FDB44A1F40EC87B2DB5960", hash_generated_method = "6F5BB88E5202740C45B7E1BE13CC66A3")
     
 public CharSequence getTransformation(CharSequence source, View view) {
@@ -132,11 +130,9 @@ public void onTextChanged(CharSequence s, int start,
             }
         }
     }
-
     
     private static class PasswordCharSequence implements CharSequence, GetChars {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.872 -0500", hash_original_field = "EBB181D64752DA6F9BB9A9E1DB00BBD4", hash_generated_field = "1DB65A9625E780B230F7C604C99C0F5D")
-
 
         private CharSequence mSource;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.854 -0500", hash_original_method = "4CDD8381D1031BF5EFE2F94225E565AD", hash_generated_method = "172FA83AAFF0B372C914B8903421CA79")
@@ -241,15 +237,11 @@ public void getChars(int start, int end, char[] dest, int off) {
                 }
             }
         }
-
         
     }
-
-
     
     private static class Visible extends Handler implements UpdateLayout, Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.885 -0500", hash_original_field = "071D340B69B4C02750694E000D06B19D", hash_generated_field = "9BDF71D4F7023B7CA73EE663EDAF283F")
-
 
         private Spannable mText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.888 -0500", hash_original_field = "88D6027FCCB55372770CD3F0744ABFA8", hash_generated_field = "ACBDFE8CB9902234B1CF9642C13663A8")
@@ -268,11 +260,8 @@ public Visible(Spannable sp, PasswordTransformationMethod ptm) {
 public void run() {
             mText.removeSpan(this);
         }
-
         
     }
-
-
     
     private static class ViewReference extends WeakReference<View> implements NoCopySpan {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.893 -0500", hash_original_method = "8A425A895F2F15617289F8E7C481E0F9", hash_generated_method = "32C09C84E993DB72736F91D4F9FF9F9E")
@@ -280,7 +269,6 @@ public void run() {
 public ViewReference(View v) {
             super(v);
         }
-
         
     }
 

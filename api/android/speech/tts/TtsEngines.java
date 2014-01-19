@@ -34,10 +34,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.util.Xml;
 
-
-
-
-
 public class TtsEngines {
 
     /**
@@ -94,13 +90,11 @@ private static String parseEnginePrefFromList(String prefValue, String engineNam
     private static final boolean DBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.311 -0500", hash_original_field = "F1F93309F8E75D7CDA845D47EAE38B84", hash_generated_field = "187C46D90E30A2E475FC964C28714A03")
 
-
     private static final String LOCALE_DELIMITER = "-";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.335 -0500", hash_original_field = "F29860D3044F1EF29EC8009E2AF8D3F3", hash_generated_field = "FD63E60582DCF4480EDEA7A7945C3DEB")
 
     private static final String XML_TAG_NAME = "tts-engine";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.313 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 
@@ -115,6 +109,7 @@ public TtsEngines(Context ctx) {
      *         is available on the device, the default is returned. Otherwise,
      *         the highest ranked engine is returned as per {@link EngineInfoComparator}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.319 -0500", hash_original_method = "F86D04A99B76CBDE409709AB3B031B49", hash_generated_method = "4BA4F2F70C1D0F3413201B1629743251")
     
 public String getDefaultEngine() {
@@ -127,6 +122,7 @@ public String getDefaultEngine() {
      * @return the package name of the highest ranked system engine, {@code null}
      *         if no TTS engines were present in the system image.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.321 -0500", hash_original_method = "19A7DAF08EA8F2C03F3D1884DA46504A", hash_generated_method = "A0A5C91EB98676D24A30E75581A275B5")
     
 public String getHighestRankedEngineName() {
@@ -166,6 +162,7 @@ public EngineInfo getEngineInfo(String packageName) {
      *
      * @return A list of engine info objects. The list can be empty, but never {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.326 -0500", hash_original_method = "DACAAA1F42C7CE1B11C8FF369696D83F", hash_generated_method = "D5ED98CF1D32E4C22E8559F1DE73DABF")
     
 public List<EngineInfo> getEngines() {
@@ -211,6 +208,7 @@ public boolean isEngineInstalled(String engine) {
     /**
      * @return an intent that can launch the settings activity for a given tts engine.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.332 -0500", hash_original_method = "081B98AA3A6A550A7C51DCB59AD3D4CC", hash_generated_method = "BC93E349D01BD4E6582A8A24E1D8D6CE")
     
 public Intent getSettingsIntent(String engine) {
@@ -317,6 +315,7 @@ private EngineInfo getEngineInfo(ResolveInfo resolve, PackageManager pm) {
      * @return the locale string preference for this engine. Will be non null
      *         and non empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.353 -0500", hash_original_method = "18ECF8DE6689127C36214444D644F0A3", hash_generated_method = "ECB39A856209F10C9247485E724483BD")
     
 public String getLocalePrefForEngine(String engineName) {
@@ -333,11 +332,9 @@ public String getLocalePrefForEngine(String engineName) {
 
         return locale;
     }
-
     
     private static class EngineInfoComparator implements Comparator<EngineInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.346 -0500", hash_original_field = "E0DE08AA64E04B0EC8D9439B823C00DF", hash_generated_field = "0CA244E03083D2D3306A1733CBDEDA51")
-
 
         static EngineInfoComparator INSTANCE = new EngineInfoComparator();
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.344 -0500", hash_original_method = "81257836895CDB49D308B7B95E17876A", hash_generated_method = "A5F988DF903195CFB8B4DE0BB7877772")
@@ -431,6 +428,7 @@ private String getDefaultLocale() {
         return defaultLocale;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.366 -0500", hash_original_method = "9D847C860A473B48E829C1EE33625F6B", hash_generated_method = "F69B3596A9FA4C27A22C922F21A2DB9C")
     
 public synchronized void updateLocalePrefForEngine(String name, String newLocale) {

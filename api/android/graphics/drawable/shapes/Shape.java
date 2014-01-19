@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.graphics.Canvas;
 import android.graphics.Paint;
 
-
-
-
-
 public abstract class Shape implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.793 -0500", hash_original_field = "8BEDDF49B8B9212E63E741BD6656B2A4", hash_generated_field = "08D9327CB0A0089C173FB95F7B57B648")
 
@@ -19,7 +15,6 @@ public abstract class Shape implements Cloneable {
 
     private float mHeight;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:12.862 -0400", hash_original_method = "DE7169FFA3F4BAA3781895C367880AD0", hash_generated_method = "DE7169FFA3F4BAA3781895C367880AD0")
     public Shape ()
     {
@@ -29,6 +24,9 @@ public abstract class Shape implements Cloneable {
     /**
      * Returns the width of the Shape.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.797 -0500", hash_original_method = "AE68E159D936DCF4407D65307DCA00BB", hash_generated_method = "2EBC100F8EEA435FCFB1D71DF02003DC")
     
 public final float getWidth() {
@@ -38,12 +36,14 @@ public final float getWidth() {
     /**
      * Returns the height of the Shape.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.799 -0500", hash_original_method = "DE764EE6028A1B0E9211313F1870FFB9", hash_generated_method = "CE68295D107697A1A2FEF1CEA5826C51")
     
 public final float getHeight() {
         return mHeight;
     }
-
 
     /**
      * Draw this shape into the provided Canvas, with the provided Paint.
@@ -55,7 +55,6 @@ public final float getHeight() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.801 -0500", hash_original_method = "4FF66B2B9CB8872729DAA8331BAA7F65", hash_generated_method = "186226CA2153FE9A17149A68400BA41E")
     
 public abstract void draw(Canvas canvas, Paint paint);
-    
 
     /**
      * Resizes the dimensions of this shape.
@@ -64,6 +63,8 @@ public abstract void draw(Canvas canvas, Paint paint);
      * @param width the width of the shape (in pixels)
      * @param height the height of the shape (in pixels)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.804 -0500", hash_original_method = "479131B2F6B84573C2C45F62E9B9CD93", hash_generated_method = "A96EE469A7660E14176DAC899CD05FF0")
     
 public final void resize(float width, float height) {
@@ -102,13 +103,13 @@ public boolean hasAlpha() {
     
 protected void onResize(float width, float height) {}
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:18.810 -0500", hash_original_method = "581DCFE006AA020FE949D9FFE91E7EA5", hash_generated_method = "9FCC5714555E11C6EA6BBEBB14179B05")
     
 @Override
     public Shape clone() throws CloneNotSupportedException {
         return (Shape) super.clone();
     }
-
     
 }
 

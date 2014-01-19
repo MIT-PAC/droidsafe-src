@@ -28,11 +28,6 @@ import com.android.i18n.phonenumbers.Phonemetadata.PhoneNumberDesc;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber.CountryCodeSource;
 
-
-
-
-
-
 public class PhoneNumberUtil {
 
   /**
@@ -228,7 +223,8 @@ private static String normalizeHelper(String number,
     return normalizedNumber.toString();
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.600 -0500", hash_original_method = "B02D8B233D913131328D345E9D5C7AB1", hash_generated_method = "991F6C3EA19CDE01D5A23171EB1323D7")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.600 -0500", hash_original_method = "B02D8B233D913131328D345E9D5C7AB1", hash_generated_method = "991F6C3EA19CDE01D5A23171EB1323D7")
     
 static synchronized PhoneNumberUtil getInstance(
       String baseFileLocation,
@@ -260,7 +256,8 @@ static synchronized void resetInstance() {
    *
    * @return a PhoneNumberUtil instance
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.608 -0500", hash_original_method = "45DACE940983711BED948D6127B59415", hash_generated_method = "36E845520BBE50256B72281DE5C5AD05")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.608 -0500", hash_original_method = "45DACE940983711BED948D6127B59415", hash_generated_method = "36E845520BBE50256B72281DE5C5AD05")
     
 public static synchronized PhoneNumberUtil getInstance() {
     if (instance == null) {
@@ -299,7 +296,6 @@ public static synchronized PhoneNumberUtil getInstance() {
   static final char PLUS_SIGN = '+';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.438 -0500", hash_original_field = "2D88DAECEBE32D45C56B629647529DAB", hash_generated_field = "0D4345D843431079FA3A87145DDC0F83")
 
-
   private static final String RFC3966_EXTN_PREFIX = ";ext=";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.441 -0500", hash_original_field = "6965DFBCDFC480639A05054173361ED6", hash_generated_field = "AC50CA36F96F68F3E68F8306B67F17A6")
 
@@ -330,7 +326,6 @@ public static synchronized PhoneNumberUtil getInstance() {
   static final String VALID_PUNCTUATION = "-x\u2010-\u2015\u2212\u30FC\uFF0D-\uFF0F " +
       "\u00A0\u200B\u2060\u3000()\uFF08\uFF09\uFF3B\uFF3D.\\[\\]/~\u2053\u223C\uFF5E";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.455 -0500", hash_original_field = "B73158DA109438B9AAE73E11F3A97553", hash_generated_field = "711CAD69779EE34D5918FEE07224547C")
-
 
   private static final String DIGITS = "\\p{Nd}";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.458 -0500", hash_original_field = "50285C30179D9C48D2A80776E6E54475", hash_generated_field = "8C02DF099CE2D84C3EB4B1BAFB9529C4")
@@ -426,7 +421,6 @@ public static synchronized PhoneNumberUtil getInstance() {
       Pattern.compile(VALID_PHONE_NUMBER + "(?:" + EXTN_PATTERNS_FOR_PARSING + ")?", REGEX_FLAGS);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.509 -0500", hash_original_field = "4607230F4F71F1298C5350C2695ACEB4", hash_generated_field = "FC9AE1E47D90D61831285D6FD294822D")
 
-
   private static final Pattern NON_DIGITS_PATTERN = Pattern.compile("(\\D+)");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.512 -0500", hash_original_field = "6B9D1F91A31C0162B2C238BD1C3124FC", hash_generated_field = "AA36E7D11D96CAEB20FCF9BCC0C06DA2")
 
@@ -444,7 +438,6 @@ public static synchronized PhoneNumberUtil getInstance() {
 
   private static final Pattern CC_PATTERN = Pattern.compile("\\$CC");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.523 -0500", hash_original_field = "236890104E115C57EC7AE6F9C0068317", hash_generated_field = "90932A776869C6233A72E88783493EDF")
-
 
   private static PhoneNumberUtil instance = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.420 -0500", hash_original_field = "68123B7DAB8881BE14176B37EE8647CB", hash_generated_field = "01E27589414D4F00E028D65F7226ED03")
@@ -658,7 +651,8 @@ public int getLengthOfNationalDestinationCode(PhoneNumber number) {
   /**
    * Convenience method to enable tests to get a list of what regions the library has metadata for.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.606 -0500", hash_original_method = "8806D3371D9E306571E478F8E387F5F6", hash_generated_method = "7A63E47DA7C73A68176E74926A7271A6")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.606 -0500", hash_original_method = "8806D3371D9E306571E478F8E387F5F6", hash_generated_method = "7A63E47DA7C73A68176E74926A7271A6")
     
 public Set<String> getSupportedRegions() {
     return supportedRegions;
@@ -1325,7 +1319,6 @@ private void maybeGetFormattedExtension(PhoneNumber number, String regionCode,
       }
     }
   }
-
     
     public enum PhoneNumberFormat {
     E164,
@@ -1333,7 +1326,6 @@ private void maybeGetFormattedExtension(PhoneNumber number, String regionCode,
     NATIONAL,
     RFC3966
   }
-
     
     public enum PhoneNumberType {
     FIXED_LINE,
@@ -1348,7 +1340,6 @@ private void maybeGetFormattedExtension(PhoneNumber number, String regionCode,
     UAN,
     UNKNOWN
   }
-
     
     public enum MatchType {
     NOT_A_NUMBER,
@@ -1357,7 +1348,6 @@ private void maybeGetFormattedExtension(PhoneNumber number, String regionCode,
     NSN_MATCH,
     EXACT_MATCH,
   }
-
     
     public enum ValidationResult {
     IS_POSSIBLE,
@@ -1365,7 +1355,6 @@ private void maybeGetFormattedExtension(PhoneNumber number, String regionCode,
     TOO_SHORT,
     TOO_LONG,
   }
-
     
     public enum Leniency {
     POSSIBLE {
@@ -1772,7 +1761,8 @@ private String getRegionCodeForNumberFromRegionList(PhoneNumber number,
    * region code being found, ZZ will be returned. In the case of multiple regions, the one
    * designated in the metadata as the "main" region for this calling code will be returned.
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.692 -0500", hash_original_method = "DA9951AEFEAF4242112AA6281301B32F", hash_generated_method = "8488CEAF9850C5426C53E0A970837380")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.692 -0500", hash_original_method = "DA9951AEFEAF4242112AA6281301B32F", hash_generated_method = "8488CEAF9850C5426C53E0A970837380")
     
 public String getRegionCodeForCountryCode(int countryCallingCode) {
     List<String> regionCodes = countryCallingCodeToRegionCodeMap.get(countryCallingCode);
@@ -1786,7 +1776,8 @@ public String getRegionCodeForCountryCode(int countryCallingCode) {
    * @param regionCode  the region that we want to get the country calling code for
    * @return  the country calling code for the region denoted by regionCode
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.695 -0500", hash_original_method = "D7076C7EB39C8978E29A5CA27F40EEC9", hash_generated_method = "5479A83A074A348AA03CF81256B68614")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.695 -0500", hash_original_method = "D7076C7EB39C8978E29A5CA27F40EEC9", hash_generated_method = "5479A83A074A348AA03CF81256B68614")
     
 public int getCountryCodeForRegion(String regionCode) {
     if (!isValidRegionCode(regionCode)) {
@@ -1810,7 +1801,8 @@ public int getCountryCodeForRegion(String regionCode) {
    * @param stripNonDigits  true to strip non-digits from the national dialling prefix
    * @return  the dialling prefix for the region denoted by regionCode
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.697 -0500", hash_original_method = "E58B423D76AD6194B45901E123DB6EBF", hash_generated_method = "E3446F52EF7100B483C4297680A90C2F")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.697 -0500", hash_original_method = "E58B423D76AD6194B45901E123DB6EBF", hash_generated_method = "E3446F52EF7100B483C4297680A90C2F")
     
 public String getNddPrefixForRegion(String regionCode, boolean stripNonDigits) {
     if (!isValidRegionCode(regionCode)) {
@@ -2096,7 +2088,8 @@ public boolean truncateTooLongNumber(PhoneNumber number) {
    * @return  an {@link com.android.i18n.phonenumbers.AsYouTypeFormatter} object, which can be used
    *     to format phone numbers in the specific region "as you type"
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.718 -0500", hash_original_method = "719F2F8970F4EB169BEDB2820A702606", hash_generated_method = "A219F2B4619339D7BEE9C93951E5EC0D")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:03.718 -0500", hash_original_method = "719F2F8970F4EB169BEDB2820A702606", hash_generated_method = "A219F2B4619339D7BEE9C93951E5EC0D")
     
 public AsYouTypeFormatter getAsYouTypeFormatter(String regionCode) {
     return new AsYouTypeFormatter(regionCode);

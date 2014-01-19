@@ -72,10 +72,6 @@ import java.util.Arrays;
 
 import libcore.util.MutableInt;
 
-
-
-
-
 public final class IoBridge {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.717 -0500", hash_original_method = "F5E1297626E5726FCF09E7D108051912", hash_generated_method = "5752EC3E1B8F0583083618205851C532")
@@ -103,7 +99,7 @@ public static int available(FileDescriptor fd) throws IOException {
         }
     }
 
-
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.720 -0500", hash_original_method = "4065E166A2EE8DF2180E214A3A00FE79", hash_generated_method = "A1E16A208351B7B64AD7AAC2BAD3A0AE")
     
 public static void bind(FileDescriptor fd, InetAddress address, int port) throws SocketException {
@@ -125,7 +121,6 @@ public static void bind(FileDescriptor fd, InetAddress address, int port) throws
             throw new BindException(errnoException.getMessage(), errnoException);
         }
     }
-
 
     /**
      * Connects socket 'fd' to 'inetAddress' on 'port', with no timeout. The lack of a timeout
@@ -272,6 +267,7 @@ public static boolean isConnected(FileDescriptor fd, InetAddress inetAddress, in
      * java.net has its own socket options similar to the underlying Unix ones. We paper over the
      * differences here.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.748 -0500", hash_original_method = "74DA8B934B42DF1434422A79C632FDCA", hash_generated_method = "B62EE3B4242D7FAA79A003F0B21082F4")
     
 public static Object getSocketOption(FileDescriptor fd, int option) throws SocketException {
@@ -347,6 +343,7 @@ private static int booleanToInt(boolean b) {
      * java.net has its own socket options similar to the underlying Unix ones. We paper over the
      * differences here.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.759 -0500", hash_original_method = "D1D4E8DBA6D654F543011AA2E0693355", hash_generated_method = "E819F22DACDD5354471A4540582C3197")
     
 public static void setSocketOption(FileDescriptor fd, int option, Object value) throws SocketException {
@@ -496,6 +493,7 @@ public static int read(FileDescriptor fd, byte[] bytes, int byteOffset, int byte
      * java.io always writes every byte it's asked to, or fails with an error. (That is, unlike
      * Unix it never just writes as many bytes as happens to be convenient.)
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.773 -0500", hash_original_method = "11CB195F3B96E0AC481420CD2EA50370", hash_generated_method = "F9701C25E71A197B713A220C3D33D83B")
     
 public static void write(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount) throws IOException {
@@ -514,6 +512,7 @@ public static void write(FileDescriptor fd, byte[] bytes, int byteOffset, int by
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.775 -0500", hash_original_method = "84DABDA1F34253D93066BE07C9B186E6", hash_generated_method = "42FC2CE952C7C17B3BEDF0B7F3649432")
     
 public static int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int byteCount, int flags, InetAddress inetAddress, int port) throws IOException {
@@ -530,6 +529,7 @@ public static int sendto(FileDescriptor fd, byte[] bytes, int byteOffset, int by
         return result;
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.778 -0500", hash_original_method = "E255F65F53E0BAB1C0BBB756BEB3B433", hash_generated_method = "4BB845D641E4FE065B812012172F527E")
     
 public static int sendto(FileDescriptor fd, ByteBuffer buffer, int flags, InetAddress inetAddress, int port) throws IOException {
@@ -651,6 +651,7 @@ public static FileDescriptor socket(boolean stream) throws SocketException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.797 -0500", hash_original_method = "BF91E659ADCCEA5E83B593E3412077DF", hash_generated_method = "ACE4CC37C7327B704B665A55B9FBFBDF")
     
 public static InetAddress getSocketLocalAddress(FileDescriptor fd) {
@@ -663,6 +664,7 @@ public static InetAddress getSocketLocalAddress(FileDescriptor fd) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:27.800 -0500", hash_original_method = "935731650AFF466956FA2EB59931508E", hash_generated_method = "AE1F49FB6A56778B936D57D0C7372D6F")
     
 public static int getSocketLocalPort(FileDescriptor fd) {

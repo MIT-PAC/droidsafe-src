@@ -9,16 +9,12 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Locale;
 
-
-
-
-
-
 public final class LocaleData {
 
     /**
      * Returns a shared LocaleData for the given locale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.457 -0500", hash_original_method = "454901B37172A9DA196A9083C6F7CD55", hash_generated_method = "CA340BBB1FC2BAF9920FC327A2533A9C")
     
 public static LocaleData get(Locale locale) {
@@ -106,7 +102,6 @@ private static LocaleData initLocaleData(Locale locale) {
     public String[] eras;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.381 -0500", hash_original_field = "224B21F3D147051C73AA3CCBB5FD6E9A", hash_generated_field = "4185736CD0C48B464D4536B3488BB3C2")
 
-
     public String[] longMonthNames;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.383 -0500", hash_original_field = "C003915A1925D77E2FA6F245B23833AD", hash_generated_field = "C9B0BE34CCC3507AA77C40623159A080")
 
@@ -118,7 +113,6 @@ private static LocaleData initLocaleData(Locale locale) {
 
     public String[] shortStandAloneMonthNames;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.390 -0500", hash_original_field = "E5D80B2F48FF250F244A5F4434051709", hash_generated_field = "C3AE2E018004F552B964BCCAFD874935")
-
 
     public String[] longWeekdayNames;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.392 -0500", hash_original_field = "B30592ADC5B3D987042D44C4C2B9C401", hash_generated_field = "F94D89296B2F63E5B79A74F258E30993")
@@ -132,7 +126,6 @@ private static LocaleData initLocaleData(Locale locale) {
     public String[] shortStandAloneWeekdayNames;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.399 -0500", hash_original_field = "E807C7A6DAB331E6AC21137D1141B78A", hash_generated_field = "1E68C4F12D0CF34DDE7994AB138806E1")
 
-
     public String fullTimeFormat;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.401 -0500", hash_original_field = "589CA08DA4C237B50D1295BB307B1921", hash_generated_field = "78D3925C0C39754AEC93A487210285B8")
 
@@ -144,7 +137,6 @@ private static LocaleData initLocaleData(Locale locale) {
 
     public String shortTimeFormat;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.408 -0500", hash_original_field = "82696F27F0B18A040AA0D686AB0100DF", hash_generated_field = "4D53B22725CC478319F8EB2DB917D8D8")
-
 
     public String fullDateFormat;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.410 -0500", hash_original_field = "EB927B54EF5A3F623E86C33AE9CE4A48", hash_generated_field = "C5A04CB5D384F7C0638BF2C80E7F94E7")
@@ -372,6 +364,7 @@ private void overrideWithDataFrom(LocaleData overrides) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.470 -0500", hash_original_method = "348F1EE4DC68FC97E057A91A2366FE0E", hash_generated_method = "71ED4BCB4598FFB10DC0C402FADA9D5D")
     
 public String getDateFormat(int style) {
@@ -388,6 +381,7 @@ public String getDateFormat(int style) {
         throw new AssertionError();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:17.472 -0500", hash_original_method = "381AB0475AE772D0631EAF7DD6B1FBEE", hash_generated_method = "DA8A3C0334E8EF93209CB0402B09C9BF")
     
 public String getTimeFormat(int style) {

@@ -10,11 +10,6 @@ import org.apache.http.io.HttpTransportMetrics;
 import org.apache.http.io.SessionInputBuffer;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class LoggingSessionInputBuffer implements SessionInputBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.683 -0500", hash_original_field = "70993BC56EC5FB33DD67D98C82018650", hash_generated_field = "1D4C1FD37762DA513250BEA823E156F5")
 
@@ -94,12 +89,12 @@ public int readLine(final CharArrayBuffer buffer) throws IOException {
         return l;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:33.239 -0500", hash_original_method = "CFF2A55480460235D568A691407E3D1A", hash_generated_method = "DCFED0A8BE0589CC98CEF3B1A38B7114")
     
 public HttpTransportMetrics getMetrics() {
         return this.in.getMetrics();
     }
-
     
 }
 

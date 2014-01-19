@@ -23,8 +23,6 @@ import javax.security.auth.x500.X500Principal;
 
 import libcore.io.IoUtils;
 
-
-
 public final class TrustedCertificateStore {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.099 -0500", hash_original_method = "DCFE2389161714EAAF8DB201DCF52E7A", hash_generated_method = "4C7F23B9176E1DC598B611118400DA46")
@@ -39,13 +37,11 @@ public static final boolean isUser(String alias) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.094 -0500", hash_original_field = "F3E18CFBD6E10A11C58BAF834F98AC54", hash_generated_field = "98B968CCA96375701AE00045F4565AA4")
 
-
     private static final String PREFIX_SYSTEM = "system:";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.097 -0500", hash_original_field = "4ABBF2BD67F6106F67853F289ED5A5B1", hash_generated_field = "CC133772DAA5E2094775535E65584148")
 
     private static final String PREFIX_USER = "user:";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.104 -0500", hash_original_field = "283E40FD62CEAE6CD294616694784DBA", hash_generated_field = "FC1AC5B6AA36D7E7E6ACAACF0F236293")
-
 
     private static  File CA_CERTS_DIR_SYSTEM;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.115 -0500", hash_original_field = "BF33E266D6D36F606699147B1B5D9E19", hash_generated_field = "0B21C402CC49FA93FF2ACC6C155EF2F1")
@@ -58,7 +54,6 @@ public static final boolean isUser(String alias) {
 
     private static  CertificateFactory CERT_FACTORY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.123 -0500", hash_original_field = "34188D02504A9FC008F2E9AE5CDC85C4", hash_generated_field = "1804575DE1991A78118271CC161871B9")
-
 
     private  File systemDir;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.125 -0500", hash_original_field = "9E2FDF4E928303B14E3CF5401639ABCD", hash_generated_field = "309006457656B9EBA077D0AA58889218")
@@ -82,12 +77,14 @@ public TrustedCertificateStore(File systemDir, File addedDir, File deletedDir) {
         this.deletedDir = deletedDir;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.135 -0500", hash_original_method = "DCFF226F6C2C4D0E26660E34EC9EC374", hash_generated_method = "80DAB13D18C0F0299AE527FFDDBCA6C8")
     
 public Certificate getCertificate(String alias) {
         return getCertificate(alias, false);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.137 -0500", hash_original_method = "5E5623CDAE6C2674E4A1581BA2487353", hash_generated_method = "10372BE868B27952F552BCB0D85BE0FA")
     
 public Certificate getCertificate(String alias, boolean includeDeletedSystem) {
@@ -178,6 +175,7 @@ private boolean isDeletedSystemCertificate(X509Certificate x) {
         return getCertificateFile(deletedDir, x).exists();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.151 -0500", hash_original_method = "CCEB88AE1C59EF9C3585E776EAD03DC2", hash_generated_method = "BB1CD994B45F8387544C37547817291B")
     
 public Date getCreationDate(String alias) {
@@ -258,6 +256,7 @@ private boolean containsAlias(String alias, boolean includeDeletedSystem) {
         return getCertificate(alias, includeDeletedSystem) != null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.168 -0500", hash_original_method = "2147628C71E1D1C09BD2609FCF8F152B", hash_generated_method = "ED845C999F772E40D43E7C63FA21BA7E")
     
 public String getCertificateAlias(Certificate c) {
@@ -359,14 +358,11 @@ public X509Certificate findIssuer(final X509Certificate c) {
         }
         return null;
     }
-
     
     private static interface CertSelector {
         public boolean match(X509Certificate cert);
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:33.053 -0400", hash_original_method = "3F71F2007BD6B23A9969AFA8B1C7C7C7", hash_generated_method = "99D663D2CC257420CD184BE738D2B62A")
     private <T> T findCert(
             File dir, X500Principal subject, CertSelector selector, Class<T> desiredReturnType) {
@@ -453,6 +449,7 @@ private File file(File dir, String hash, int index) {
      * silently ignores the certificate if it already exists in the
      * store.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.197 -0500", hash_original_method = "895D177FC3F042016815EFE0F89E89FF", hash_generated_method = "BA65781A5D71CB269E48C49B20458D7A")
     
 public void installCertificate(X509Certificate cert) throws IOException, CertificateException {

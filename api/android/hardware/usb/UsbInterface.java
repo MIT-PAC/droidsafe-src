@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class UsbInterface implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:13.997 -0400", hash_original_field = "DFC34D6D0E087B75AAD32CD74CF57FEE", hash_generated_field = "EBD090A5A2DA9FF41ABEC28EE6AA86B7")
 
@@ -36,7 +31,6 @@ public UsbInterface[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.555 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
-
 
     private  int mId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.558 -0500", hash_original_field = "E48DAE8D69C6B9F32DD524643B0838E9", hash_generated_field = "6544EE8866FC2E4C41A3A39948F7A47D")
@@ -73,6 +67,7 @@ public UsbInterface(int id, int Class, int subClass, int protocol,
      *
      * @return the interface's ID
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.575 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "11DEA77066B2A20ED28C130805C2B9DE")
     
 public int getId() {
@@ -85,6 +80,7 @@ public int getId() {
      *
      * @return the interface's class
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.577 -0500", hash_original_method = "3020C5CBFA8B36FE57B171E2A093C23C", hash_generated_method = "F084F917BD36F5F150E5FEF414D76DE8")
     
 public int getInterfaceClass() {
@@ -96,6 +92,7 @@ public int getInterfaceClass() {
      *
      * @return the interface's subclass
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.580 -0500", hash_original_method = "7088B4DB86E16F91D699838E45BCCE2E", hash_generated_method = "1E54D215BE7714F90AC262CB27F6163E")
     
 public int getInterfaceSubclass() {
@@ -107,6 +104,7 @@ public int getInterfaceSubclass() {
      *
      * @return the interface's protocol
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.582 -0500", hash_original_method = "095D314DB549CF9B46225B9A82ECAABC", hash_generated_method = "B89BD7465AD9F4374B5CCBDAFF3E3223")
     
 public int getInterfaceProtocol() {
@@ -118,6 +116,7 @@ public int getInterfaceProtocol() {
      *
      * @return the number of endpoints
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.584 -0500", hash_original_method = "B83541EC17993A78C7733C982BB94257", hash_generated_method = "3328415BA9D3C0CF5911E4537FAC5893")
     
 public int getEndpointCount() {
@@ -129,6 +128,7 @@ public int getEndpointCount() {
      *
      * @return the endpoint
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.587 -0500", hash_original_method = "10BF694D0DC13FB211A1D4B783AFDCB8", hash_generated_method = "1E8D05651F37ECEF5B154A2425D3B720")
     
 public UsbEndpoint getEndpoint(int index) {

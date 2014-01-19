@@ -14,10 +14,6 @@ import android.nfc.Tag;
 import android.nfc.TagLostException;
 import android.os.RemoteException;
 
-
-
-
-
 public final class MifareClassic extends BasicTagTechnology {
 
     /**
@@ -30,6 +26,9 @@ public final class MifareClassic extends BasicTagTechnology {
      * @param tag an MIFARE Classic compatible tag
      * @return MIFARE Classic object
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.500 -0500", hash_original_method = "E256682DB559ACD3975BBE21D7BE6E4D", hash_generated_method = "9F064CCAD2CBFBF1159E2F336F20BB74")
     
 public static MifareClassic get(Tag tag) {
@@ -116,13 +115,11 @@ private static void validateValueOperand(int value) {
     public static final int BLOCK_SIZE = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.489 -0500", hash_original_field = "52FA28BBF5C30D3FFD109260D6B78CCB", hash_generated_field = "BC260A9D029BA6EDF18C45D0AF8942E9")
 
-
     private static final int MAX_BLOCK_COUNT = 256;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.491 -0500", hash_original_field = "18D1231F189EEF295B834E3AC6952D5E", hash_generated_field = "D29CA245349D4EF940C9F42785B91E3A")
 
     private static final int MAX_SECTOR_COUNT = 40;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.493 -0500", hash_original_field = "A8195C44C78CB64F7BEB74D57C77637D", hash_generated_field = "A5FF4684C8ADE9FC7594EE2E1226C64D")
-
 
     private boolean mIsEmulated;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.496 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
@@ -201,6 +198,7 @@ public MifareClassic(Tag tag) throws RemoteException {
      *
      * @return type
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.506 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
     
 public int getType() {
@@ -214,6 +212,7 @@ public int getType() {
      * <p>Does not cause any RF activity and does not block.
      * @return size in bytes
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.508 -0500", hash_original_method = "2098B918320D3D5229820CAB47C60E59", hash_generated_method = "5C0A5CB4DD3116647C99AA4ADB19626C")
     
 public int getSize() {
@@ -237,6 +236,9 @@ public boolean isEmulated() {
      * <p>Does not cause any RF activity and does not block.
      * @return number of sectors
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.512 -0500", hash_original_method = "4AAA3C3D329C939FDD63EF1F58378EDA", hash_generated_method = "4D2FADE42AC7537391D9250404E1EABD")
     
 public int getSectorCount() {
@@ -259,6 +261,7 @@ public int getSectorCount() {
      * <p>Does not cause any RF activity and does not block.
      * @return total number of blocks
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.514 -0500", hash_original_method = "94025DFC316C8F4CE80BFCF15B00E224", hash_generated_method = "702BC6C3AD9C09E630E017F6B5D91E64")
     
 public int getBlockCount() {
@@ -272,6 +275,9 @@ public int getBlockCount() {
      * @param sectorIndex index of sector, starting from 0
      * @return number of blocks in the sector
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.516 -0500", hash_original_method = "4046C9F5F79A621BBA2F7BE2C9D1103D", hash_generated_method = "73213613B5EED476EAA815B3DE45523F")
     
 public int getBlockCountInSector(int sectorIndex) {
@@ -343,6 +349,8 @@ public int sectorToBlock(int sectorIndex) {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.524 -0500", hash_original_method = "88C199BE0D888C3B911ED6B5CDCE45B3", hash_generated_method = "2F30C532D366C8631223F424EE7BD491")
     
 public boolean authenticateSectorWithKeyA(int sectorIndex, byte[] key) throws IOException {
@@ -431,6 +439,9 @@ private boolean authenticate(int sector, byte[] key, boolean keyA) throws IOExce
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSComment("NFC technology implementation")
+    @DSSpec(DSCat.NFC)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.532 -0500", hash_original_method = "540E686F2680F6F111FB5FE029F249C7", hash_generated_method = "ED987BFD8349BF414FD2365B04E64336")
     
 public byte[] readBlock(int blockIndex) throws IOException {
@@ -486,6 +497,7 @@ public void writeBlock(int blockIndex, byte[] data) throws IOException {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.537 -0500", hash_original_method = "B8563CE393F659B55E0B9D3772EFE7A6", hash_generated_method = "5AF5E8C91CAD8B0F8CC6116D65C3A94A")
     
 public void increment(int blockIndex, int value) throws IOException {
@@ -516,6 +528,7 @@ public void increment(int blockIndex, int value) throws IOException {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or the operation is canceled
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.539 -0500", hash_original_method = "FAA38C9F5E4C186E0FA530C9A1909DAD", hash_generated_method = "A92A75E89900C5ABB49245ACA28AF5B3")
     
 public void decrement(int blockIndex, int value) throws IOException {
@@ -598,6 +611,7 @@ public void restore(int blockIndex) throws IOException {
      *
      * @see NfcA#transceive
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.546 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
     
 public byte[] transceive(byte[] data) throws IOException {
@@ -608,6 +622,7 @@ public byte[] transceive(byte[] data) throws IOException {
      * Return the maximum number of bytes that can be sent with {@link #transceive}.
      * @return the maximum number of bytes that can be sent with {@link #transceive}.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.548 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
     
 public int getMaxTransceiveLength() {
@@ -628,6 +643,7 @@ public int getMaxTransceiveLength() {
      *
      * @param timeout timeout value in milliseconds
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.551 -0500", hash_original_method = "F9EC6D04AED06B3DFE22DC9A2A8AC0C3", hash_generated_method = "9E5730519065B43D0F999CFF9537BF7D")
     
 public void setTimeout(int timeout) {
@@ -648,6 +664,7 @@ public void setTimeout(int timeout) {
      *
      * @return timeout value in milliseconds
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.553 -0500", hash_original_method = "59718E6CF1FABD433F7C060A44E5C453", hash_generated_method = "502A195A8ADED54A1910871BDD9CE087")
     
 public int getTimeout() {

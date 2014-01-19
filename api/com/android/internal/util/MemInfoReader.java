@@ -8,16 +8,11 @@ import java.io.FileInputStream;
 
 import android.os.StrictMode;
 
-
-
-
-
 public class MemInfoReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.237 -0500", hash_original_field = "D8DB14FD2FF72CF1AA09DD3099C7A5AC", hash_generated_field = "D8DB14FD2FF72CF1AA09DD3099C7A5AC")
 
     byte[] mBuffer = new byte[1024];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.239 -0500", hash_original_field = "6D00962622134601C809BF42998E8D12", hash_generated_field = "7929D370BBAA2A6043EF739E265C3242")
-
 
     private long mTotalSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.242 -0500", hash_original_field = "1AAFE5F5E1A8763ED987466D6531C05E", hash_generated_field = "BCCA6254E80514BD4181C138C6D39F8D")
@@ -27,7 +22,6 @@ public class MemInfoReader {
 
     private long mCachedSize;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:26.772 -0400", hash_original_method = "0A3FF658B31652AA0351B8E33261A030", hash_generated_method = "0A3FF658B31652AA0351B8E33261A030")
     public MemInfoReader ()
     {
@@ -109,24 +103,26 @@ public void readMemInfo() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.253 -0500", hash_original_method = "3434AB33F130B66E857E66B11D583682", hash_generated_method = "9B29D867E46F40BDB379803D4131A9AA")
     
 public long getTotalSize() {
         return mTotalSize;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.255 -0500", hash_original_method = "FACB48AE3A5EF9A0F8A782DC112E6801", hash_generated_method = "468BB80E6307F748437203E2B7FEE575")
     
 public long getFreeSize() {
         return mFreeSize;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:45.257 -0500", hash_original_method = "67C7373745CA2083B77127FB7F7EF9BE", hash_generated_method = "F4400F45D0DD65E2B797051FE78FA6D2")
     
 public long getCachedSize() {
         return mCachedSize;
     }
-
     
 }
 

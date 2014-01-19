@@ -7,23 +7,15 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.Arrays;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Character implements Serializable, Comparable<Character> {
-
     
-    @DSModeled(DSC.SAFE)
     private static int forNameImpl(String blockName) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915900274 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1915900274;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static int ofImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771157942 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_771157942;
@@ -61,6 +53,8 @@ public static int compare(char lhs, char rhs) {
      * @return the {@code Character} instance for {@code c}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.088 -0500", hash_original_method = "F129BF1AA7DEE10DECE549FDC9BFFE92", hash_generated_method = "F095D9571C020E30A8442C3CF921848D")
     
 public static Character valueOf(char c) {
@@ -109,6 +103,8 @@ public static boolean isSupplementaryCodePoint(int codePoint) {
      * @see #isLowSurrogate(char)
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.099 -0500", hash_original_method = "CC2888AF1D68C86A10FED4F68E6B3B15", hash_generated_method = "5022015EDECC9C66A07B22D3E30C04ED")
     
 public static boolean isHighSurrogate(char ch) {
@@ -127,6 +123,8 @@ public static boolean isHighSurrogate(char ch) {
      * @see #isHighSurrogate(char)
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.102 -0500", hash_original_method = "3EEAD604696AB011239EDF6A0C629A36", hash_generated_method = "13C6BD12B5D49A39AA4098D4426B9EFD")
     
 public static boolean isLowSurrogate(char ch) {
@@ -179,6 +177,8 @@ public static boolean isSurrogatePair(char high, char low) {
      * @see #isSupplementaryCodePoint(int)
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.110 -0500", hash_original_method = "C9BC23458AD053A48381AE5B5A527C8A", hash_generated_method = "EAFC8B8ACD0113BDB3495417AB6F646D")
     
 public static int charCount(int codePoint) {
@@ -232,6 +232,8 @@ public static int toCodePoint(char high, char low) {
      *             the length of {@code seq}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.115 -0500", hash_original_method = "E6242CB8B89CA1A001F7CADF5983DA48", hash_generated_method = "0802AD80AE830467DC5804D51189595A")
     
 public static int codePointAt(CharSequence seq, int index) {
@@ -542,6 +544,8 @@ public static int toChars(int codePoint, char[] dst, int dstIndex) {
      * @throws IllegalArgumentException if {@code codePoint} is not a valid code point.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.136 -0500", hash_original_method = "43D4C7C89B9FD66F7552269DD4A67BA9", hash_generated_method = "E62196F0F1B9A536655AF36CC4AFAA5D")
     
 public static char[] toChars(int codePoint) {
@@ -816,6 +820,8 @@ public static int offsetByCodePoints(char[] seq, int start, int count,
      * @return the value of {@code c} in {@code radix} if {@code radix} lies
      *         between {@link #MIN_RADIX} and {@link #MAX_RADIX}; -1 otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.152 -0500", hash_original_method = "189278FA1F864DD1FE3339B81D19112D", hash_generated_method = "67C2BE3190053B65E97FF514C4E35C39")
     
 public static int digit(char c, int radix) {
@@ -855,9 +861,7 @@ public static int digit(int codePoint, int radix) {
         }
         return digitImpl(codePoint, radix);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int digitImpl(int codePoint, int radix) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350347683 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_350347683;
@@ -907,6 +911,7 @@ public static char forDigit(int digit, int radix) {
      * @since 1.7
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.168 -0500", hash_original_method = "80CBCF21777696C5A7AD973BF83A0B43", hash_generated_method = "8200EE38F7E81468A3DFC3D4AC2B222F")
     
 public static String getName(int codePoint) {
@@ -921,9 +926,7 @@ public static String getName(int codePoint) {
         }
         return result;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String getNameImpl(int codePoint) {
 		return new String();
 	}
@@ -987,9 +990,7 @@ public static int getNumericValue(int codePoint) {
         }
         return getNumericValueImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getNumericValueImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154176117 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_154176117;
@@ -1002,6 +1003,8 @@ public static int getNumericValue(int codePoint) {
      *            the character to get the category of.
      * @return the Unicode category of {@code c}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.184 -0500", hash_original_method = "472C14EA76E66AD56E145417CB2E2E09", hash_generated_method = "3428CD451743D99B6397CAAE215673E8")
     
 public static int getType(char c) {
@@ -1025,9 +1028,7 @@ public static int getType(int codePoint) {
         }
         return (type + 1);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int getTypeImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750496757 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_750496757;
@@ -1040,6 +1041,7 @@ public static int getType(int codePoint) {
      *            the character to get the directionality of.
      * @return the Unicode directionality of {@code c}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.194 -0500", hash_original_method = "BAAC4031CE67ACBF5435C0572C9451C4", hash_generated_method = "B52A40EC5B7F7D5A95A5416ED7B666B9")
     
 public static byte getDirectionality(char c) {
@@ -1053,6 +1055,7 @@ public static byte getDirectionality(char c) {
      *            the Unicode code point to get the directionality of.
      * @return the Unicode directionality of {@code codePoint}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.196 -0500", hash_original_method = "B9E955EF2712E02C1EDBC21B558449AF", hash_generated_method = "EEF8D7AA68CE492EFDDA0E97E21487CA")
     
 public static byte getDirectionality(int codePoint) {
@@ -1066,9 +1069,7 @@ public static byte getDirectionality(int codePoint) {
         }
         return DIRECTIONALITY[directionality];
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static byte getDirectionalityImpl(int codePoint) {
 		byte var40EA57D3EE3C07BF1C102B466E1C3091_330183665 = DSUtils.UNKNOWN_BYTE;
 		return var40EA57D3EE3C07BF1C102B466E1C3091_330183665;
@@ -1101,9 +1102,7 @@ public static boolean isMirrored(char c) {
 public static boolean isMirrored(int codePoint) {
         return isMirroredImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isMirroredImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1579042988 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1579042988;
@@ -1154,6 +1153,8 @@ public static boolean isBmpCodePoint(int codePoint) {
      * @return {@code true} if the general Unicode category of the character is
      *         not {@code UNASSIGNED}; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.223 -0500", hash_original_method = "81B97EFCB1899F0273732CB1D268DB36", hash_generated_method = "2DD6EE83234FA7757A7B606FC293F43B")
     
 public static boolean isDefined(char c) {
@@ -1174,9 +1175,7 @@ public static boolean isDefined(char c) {
 public static boolean isDefined(int codePoint) {
         return isDefinedImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isDefinedImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1918835177 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1918835177;
@@ -1190,6 +1189,8 @@ public static boolean isDefined(int codePoint) {
      * @return {@code true} if {@code c} is a digit; {@code false}
      *         otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.233 -0500", hash_original_method = "5ADE199AB33D628FF4C86910DA36B8AB", hash_generated_method = "42E12700736BB9E065543D5A29400F0E")
     
 public static boolean isDigit(char c) {
@@ -1216,9 +1217,7 @@ public static boolean isDigit(int codePoint) {
         }
         return isDigitImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isDigitImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_79933192 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_79933192;
@@ -1257,9 +1256,7 @@ public static boolean isIdentifierIgnorable(int codePoint) {
         }
         return isIdentifierIgnorableImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isIdentifierIgnorableImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_370417676 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_370417676;
@@ -1273,6 +1270,8 @@ public static boolean isIdentifierIgnorable(int codePoint) {
      * @return {@code true} if {@code c} is an ISO control character;
      *         {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.252 -0500", hash_original_method = "02471F94F8A872CAA5DBEB3E98DF50DE", hash_generated_method = "C1662F72DC398FF54402916FC18586AB")
     
 public static boolean isISOControl(char c) {
@@ -1413,6 +1412,8 @@ public static boolean isJavaIdentifierStart(int codePoint) {
      *            the character to check.
      * @return {@code true} if {@code c} is a letter; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.275 -0500", hash_original_method = "7F4F394B7A0F8301F44F921567D26367", hash_generated_method = "32A3D276372BDCAB04526997529A6AE5")
     
 public static boolean isLetter(char c) {
@@ -1438,9 +1439,7 @@ public static boolean isLetter(int codePoint) {
         }
         return isLetterImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isLetterImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1317859906 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1317859906;
@@ -1454,6 +1453,8 @@ public static boolean isLetter(int codePoint) {
      * @return {@code true} if {@code c} is a letter or a digit; {@code false}
      *         otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.284 -0500", hash_original_method = "07424AD55498F7F8FBBB544D5FCCF9DD", hash_generated_method = "1530ABD48035BF9C774F5A5B50B67F62")
     
 public static boolean isLetterOrDigit(char c) {
@@ -1483,9 +1484,7 @@ public static boolean isLetterOrDigit(int codePoint) {
         }
         return isLetterOrDigitImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isLetterOrDigitImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_331892654 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_331892654;
@@ -1499,6 +1498,8 @@ public static boolean isLetterOrDigit(int codePoint) {
      * @return {@code true} if {@code c} is a lower case letter; {@code false}
      *         otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.294 -0500", hash_original_method = "73BDBCA2665627024F8A18D3318C8DB8", hash_generated_method = "19BA20C32B3AE4D5ACF17271CBFDC670")
     
 public static boolean isLowerCase(char c) {
@@ -1525,9 +1526,7 @@ public static boolean isLowerCase(int codePoint) {
         }
         return isLowerCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isLowerCaseImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1079247224 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1079247224;
@@ -1590,9 +1589,7 @@ public static boolean isSpaceChar(int codePoint) {
         }
         return isSpaceCharImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isSpaceCharImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_684024122 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_684024122;
@@ -1606,6 +1603,8 @@ public static boolean isSpaceChar(int codePoint) {
      * @return {@code true} if {@code c} is a titlecase character, {@code false}
      *         otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.316 -0500", hash_original_method = "084F70F38BAFAA7D7D5DCCB7F82C794B", hash_generated_method = "1C03C37486F31D9697FC7EBA06712FA0")
     
 public static boolean isTitleCase(char c) {
@@ -1625,9 +1624,7 @@ public static boolean isTitleCase(char c) {
 public static boolean isTitleCase(int codePoint) {
         return isTitleCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isTitleCaseImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1687158249 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1687158249;
@@ -1662,9 +1659,7 @@ public static boolean isUnicodeIdentifierPart(char c) {
 public static boolean isUnicodeIdentifierPart(int codePoint) {
         return isUnicodeIdentifierPartImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isUnicodeIdentifierPartImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1167587608 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1167587608;
@@ -1699,9 +1694,7 @@ public static boolean isUnicodeIdentifierStart(char c) {
 public static boolean isUnicodeIdentifierStart(int codePoint) {
         return isUnicodeIdentifierStartImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isUnicodeIdentifierStartImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_389180321 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_389180321;
@@ -1715,6 +1708,8 @@ public static boolean isUnicodeIdentifierStart(int codePoint) {
      * @return {@code true} if {@code c} is a upper case letter; {@code false}
      *         otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.345 -0500", hash_original_method = "51D2DA544BFD2481CED21FC5653231F0", hash_generated_method = "28E52AFBCAA76F5FEED65620D475D8C5")
     
 public static boolean isUpperCase(char c) {
@@ -1741,9 +1736,7 @@ public static boolean isUpperCase(int codePoint) {
         }
         return isUpperCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isUpperCaseImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1247968420 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1247968420;
@@ -1758,6 +1751,8 @@ public static boolean isUpperCase(int codePoint) {
      * @return {@code true} if the supplied {@code c} is a whitespace character
      *         in Java; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.354 -0500", hash_original_method = "BD70D8F0870A48AB1ECFE4339B84BFEA", hash_generated_method = "E1645C1CBF3CF8A2D112E678E849FCD6")
     
 public static boolean isWhitespace(char c) {
@@ -1792,9 +1787,7 @@ public static boolean isWhitespace(int codePoint) {
         }
         return isWhitespaceImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean isWhitespaceImpl(int codePoint) {
 		boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1925136494 = DSUtils.UNKNOWN_BOOLEAN;
 		return var84E2C64F38F78BA3EA5C905AB5A2DA27_1925136494;
@@ -1824,6 +1817,8 @@ public static char reverseBytes(char c) {
      * @return if {@code c} is an upper case character then its lower case
      *         counterpart, otherwise just {@code c}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.368 -0500", hash_original_method = "0D897DDA68232C66EB5005BC13278698", hash_generated_method = "39DD3E0FE93DCB6CA8480854DA182439")
     
 public static char toLowerCase(char c) {
@@ -1852,9 +1847,7 @@ public static int toLowerCase(int codePoint) {
         }
         return toLowerCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int toLowerCaseImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257147218 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_257147218;
@@ -1867,6 +1860,8 @@ public static int toLowerCase(int codePoint) {
      *            the character to convert.
      * @return the character converted to a string.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.380 -0500", hash_original_method = "C0C76FDDC989F4AB02663C4A842CB735", hash_generated_method = "AEAE79DA8922F05782BBF3E4E55FD854")
     
 public static String toString(char value) {
@@ -1882,6 +1877,8 @@ public static String toString(char value) {
      * @return the title case equivalent of {@code c} if it exists, otherwise
      *         {@code c}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.382 -0500", hash_original_method = "A4A9BAD50031A130761CE8D0E963613C", hash_generated_method = "04803B384C02AE9AAB58419BB2A08A22")
     
 public static char toTitleCase(char c) {
@@ -1902,9 +1899,7 @@ public static char toTitleCase(char c) {
 public static int toTitleCase(int codePoint) {
         return toTitleCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int toTitleCaseImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465695862 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1465695862;
@@ -1920,6 +1915,8 @@ public static int toTitleCase(int codePoint) {
      * @return if {@code c} is a lower case character then its upper case
      *         counterpart, otherwise just {@code c}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.392 -0500", hash_original_method = "6F70DC22D940915BC069D6212605A1EF", hash_generated_method = "BEA5EA638AFD1B864D7F6CBC205605AF")
     
 public static char toUpperCase(char c) {
@@ -1936,6 +1933,8 @@ public static char toUpperCase(char c) {
      * @return if {@code codePoint} is a lower case character then its upper
      *         case counterpart, otherwise just {@code codePoint}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.395 -0500", hash_original_method = "8C765A659D796CF19325E431E5641ECE", hash_generated_method = "2C8FA2E8822547DB6A05E97353B073C7")
     
 public static int toUpperCase(int codePoint) {
@@ -1948,9 +1947,7 @@ public static int toUpperCase(int codePoint) {
         }
         return toUpperCaseImpl(codePoint);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int toUpperCaseImpl(int codePoint) {
 		int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328761199 = DSUtils.UNKNOWN_INT;
 		return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1328761199;
@@ -1983,7 +1980,6 @@ public static int toUpperCase(int codePoint) {
      * Unicode category constant Cn.
      */
     public static final byte UNASSIGNED = 0;
-
     
     public static class Subset {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.651 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "BF45F7481B8091DE3CBF80E94F7F940B")
@@ -2045,11 +2041,8 @@ protected Subset(String string) {
         public final String toString() {
             return name;
         }
-
         
     }
-
-
     
     public static final class UnicodeBlock extends Subset {
 
@@ -2835,7 +2828,6 @@ private UnicodeBlock(String blockName, int start, int end) {
     public static final int SIZE = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.648 -0500", hash_original_field = "2896E5C0CC76D537CC3B13493B0E8B47", hash_generated_field = "504A101457658254DD8C38E597554F90")
 
-
     private static final byte[] DIRECTIONALITY = new byte[] {
             DIRECTIONALITY_LEFT_TO_RIGHT, DIRECTIONALITY_RIGHT_TO_LEFT,
             DIRECTIONALITY_EUROPEAN_NUMBER,
@@ -2858,7 +2850,6 @@ private UnicodeBlock(String blockName, int start, int end) {
     private static final Character[] SMALL_VALUES = new Character[128];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:22.461 -0500", hash_original_field = "116C54C63A0999E8859ECE8A2FFB8D84", hash_generated_field = "747ED88C4962B4F2D5A7D8AD1452F805")
 
-
     private  char value;
 
     /**
@@ -2868,6 +2859,8 @@ private UnicodeBlock(String blockName, int start, int end) {
      * @param value
      *            the primitive char value to store in the new instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.075 -0500", hash_original_method = "8DEFF913326DC7F74512EFD131579B65", hash_generated_method = "7C63A56BD2050D9DFD23DCA01F1FAB4D")
     
 public Character(char value) {
@@ -2879,6 +2872,8 @@ public Character(char value) {
      *
      * @return this object's primitive value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.077 -0500", hash_original_method = "1972D57F3C05C7BADF696B9ADC3E34F9", hash_generated_method = "BA9A46CE526C5E63D2D926F1CB99EE3C")
     
 public char charValue() {
@@ -2929,6 +2924,8 @@ public int compareTo(Character c) {
         return value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:23.377 -0500", hash_original_method = "27F3E47E60B1213ECE72A0C1452319D1", hash_generated_method = "B864B858E73245729E2A2FF424814054")
     
 @Override

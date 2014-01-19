@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class Byte extends Number implements Comparable<Byte> {
 
     /**
@@ -56,6 +52,8 @@ public static Byte decode(String string) throws NumberFormatException {
      * @throws NumberFormatException
      *             if {@code string} can not be parsed as a byte value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.456 -0500", hash_original_method = "3E3DB9EACBAEC53C68BCBB24FE69AB14", hash_generated_method = "30051DC3AE22E7DDA2FF507800CF7FBE")
     
 public static byte parseByte(String string) throws NumberFormatException {
@@ -163,13 +161,14 @@ public static Byte valueOf(String string, int radix) throws NumberFormatExceptio
      * @return a {@code Byte} instance containing {@code b}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.478 -0500", hash_original_method = "ED2DBBC22F9957F86BC9FC2AC655A3C8", hash_generated_method = "BF35DA0FF2C2C3C53A13663AA1B29BBE")
     
 public static Byte valueOf(byte b) {
         return VALUES[b + 128];
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.408 -0500", hash_original_field = "A5E8E87A2BAF29AAB1D89B635C5626F8", hash_generated_field = "0B9495765198BD47B32DBC3AF8355DF1")
-
 
     private static final long serialVersionUID = -7183698231559129828L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.413 -0500", hash_original_field = "D286ABE0B8AC1631D46190A8813DFB99", hash_generated_field = "0BA33D8AB14923CFCC8563593CF17893")
@@ -216,6 +215,8 @@ public Byte(byte value) {
      *             if {@code string} cannot be parsed as a byte value.
      * @see #parseByte(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.428 -0500", hash_original_method = "6A41489347990CAADB010180F3DA4F08", hash_generated_method = "66A20A3FACCD57C473E8A1F62EA3004B")
     
 public Byte(String string) throws NumberFormatException {
@@ -227,6 +228,8 @@ public Byte(String string) throws NumberFormatException {
      *
      * @return this object's primitive value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:29.431 -0500", hash_original_method = "A44A96B9BD8D4010644191EEAB137884", hash_generated_method = "3A43018D3145FE8B120819AE494DA742")
     
 @Override

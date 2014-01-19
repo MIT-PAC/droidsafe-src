@@ -34,11 +34,6 @@ import com.android.internal.app.IUsageStats;
 import com.android.internal.os.PkgUsageStats;
 import com.android.internal.util.MemInfoReader;
 
-
-
-
-
-
 public class ActivityManager {
     
     /** @hide */
@@ -174,13 +169,11 @@ public static boolean isRunningInTestHarness() {
     public static final int MOVE_TASK_NO_USER_ACTION = 0x00000002;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.492 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.494 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
     private  Handler mHandler;
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.844 -0400", hash_original_method = "5B4171109A2201F1FE14E6225146AB80", hash_generated_method = "8ADD7487E2C46628C6CC7A69BA117746")
       ActivityManager(Context context, Handler handler) {
         mContext = context;
@@ -191,10 +184,9 @@ public static boolean isRunningInTestHarness() {
         //mContext = context;
         //mHandler = handler;
     }
-
         
     // used by modeling to provide shortcut to ActivityManager from getSystemService
-    @DSModeled(DSC.BAN)
+    
     public ActivityManager(Context context) {
         mContext = context;
         mHandler = new Handler();
@@ -205,6 +197,7 @@ public static boolean isRunningInTestHarness() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.512 -0500", hash_original_method = "BCFF8F5D8C51374E31DC49464CB803A5", hash_generated_method = "7147E5D063D453632BAA10DFE32BD995")
     
 public int getFrontActivityScreenCompatMode() {
@@ -217,6 +210,7 @@ public int getFrontActivityScreenCompatMode() {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.514 -0500", hash_original_method = "1AD781893C5FA74DDB5BF5981AAFC282", hash_generated_method = "1BCE96E8EEF6FC4B3C89D0A6B176B773")
     
 public void setFrontActivityScreenCompatMode(int mode) {
@@ -228,6 +222,7 @@ public void setFrontActivityScreenCompatMode(int mode) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.517 -0500", hash_original_method = "08DE0842CE89FB88CEE40B6F1F1D5D8A", hash_generated_method = "FC34AB39A4DB3E8277789D547942BC21")
     
 public int getPackageScreenCompatMode(String packageName) {
@@ -240,6 +235,7 @@ public int getPackageScreenCompatMode(String packageName) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.519 -0500", hash_original_method = "6272BC343B5B54EAA927E2C6A7A229FA", hash_generated_method = "C6A9A04F5260B1F4DBB8EDAE25A389F8")
     
 public void setPackageScreenCompatMode(String packageName, int mode) {
@@ -251,6 +247,7 @@ public void setPackageScreenCompatMode(String packageName, int mode) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.521 -0500", hash_original_method = "43CD4547C63AA5BA08A4BB7431262A61", hash_generated_method = "C8218C0A35214662E3CB614E20A24E22")
     
 public boolean getPackageAskScreenCompat(String packageName) {
@@ -263,6 +260,7 @@ public boolean getPackageAskScreenCompat(String packageName) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.524 -0500", hash_original_method = "3BC1D3C0234B303E106B1ACB51D8D800", hash_generated_method = "BFDF5B5127E7B8E1B3922B52FBADDAB7")
     
 public void setPackageAskScreenCompat(String packageName, boolean ask) {
@@ -281,6 +279,7 @@ public void setPackageAskScreenCompat(String packageName, boolean ask) {
      * 16 (which happens to be the Java heap limit of those devices); some
      * device with more memory may return 24 or even higher numbers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.526 -0500", hash_original_method = "B7DBD08AF6CFCEAABC628A74B78E8B6F", hash_generated_method = "2A65ECED72771E6A999F1DB95B197E00")
     
 public int getMemoryClass() {
@@ -300,6 +299,7 @@ public int getMemoryClass() {
      * <p>The is the size of the application's Dalvik heap if it has
      * specified <code>android:largeHeap="true"</code> in its manifest.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.531 -0500", hash_original_method = "50F084ADAAFF8EB942A9D9EB0C93D87F", hash_generated_method = "52BB61958CE79139C1D107CBBC67DD7B")
     
 public int getLargeMemoryClass() {
@@ -322,6 +322,7 @@ public int getLargeMemoryClass() {
      * @throws SecurityException Throws SecurityException if the caller does
      * not hold the {@link android.Manifest.permission#GET_TASKS} permission.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.580 -0500", hash_original_method = "F8BE7228FE8A06DB7E3F7EC0517EBE16", hash_generated_method = "9400E85ACDB142B0C8BF5AC206C1533C")
     
 public List<RecentTaskInfo> getRecentTasks(int maxNum, int flags)
@@ -361,6 +362,7 @@ public List<RecentTaskInfo> getRecentTasks(int maxNum, int flags)
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.622 -0500", hash_original_method = "324273237D89470A473FD6EC5C103A40", hash_generated_method = "4CC0E1DB103FC85AF064A4B9351776BF")
     
 public List<RunningTaskInfo> getRunningTasks(int maxNum, int flags, IThumbnailReceiver receiver)
@@ -391,6 +393,9 @@ public List<RunningTaskInfo> getRunningTasks(int maxNum, int flags, IThumbnailRe
      * @throws SecurityException Throws SecurityException if the caller does
      * not hold the {@link android.Manifest.permission#GET_TASKS} permission.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.624 -0500", hash_original_method = "048E08D6499B0F81FA41B243F96225CE", hash_generated_method = "9EA36A3CB742AACDBA1BFA26BA5542A6")
     
 public List<RunningTaskInfo> getRunningTasks(int maxNum)
@@ -487,6 +492,9 @@ public void moveTaskToFront(int taskId, int flags) {
      * @return Returns a list of RunningServiceInfo records describing each of
      * the running tasks.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.741 -0500", hash_original_method = "93643A575557EDD801C5647B318BA97A", hash_generated_method = "730538D1525354C0CB955120CEF75E1F")
     
 public List<RunningServiceInfo> getRunningServices(int maxNum)
@@ -505,6 +513,7 @@ public List<RunningServiceInfo> getRunningServices(int maxNum)
      * given running service.  If the service does not have a control panel,
      * null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.743 -0500", hash_original_method = "3F37B5EEA2E0ADFF7012B4DB8D3BC71C", hash_generated_method = "905C130F701F2C78078A137D52E4A68A")
     
 public PendingIntent getRunningServiceControlPanel(ComponentName service)
@@ -540,10 +549,8 @@ public boolean clearApplicationUserData(String packageName, IPackageDataObserver
             return false;
         }
     }
-
     
     public static class RecentTaskInfo implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.904 -0400", hash_original_field = "DA99927A07743B1B8E96157497F59A82", hash_generated_field = "144243CA012A4B8ABF03F2F1B5702AF7")
 
@@ -593,6 +600,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.556 -0500", hash_original_method = "A024AE935060D48D15B6110668C59DDF", hash_generated_method = "5FC8B5C660AB23A97C6AACE082FD0EFC")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -633,11 +641,8 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class RunningTaskInfo implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.919 -0400", hash_original_field = "B9911C96575F25BA7EB7A3422AE8B6F1", hash_generated_field = "8DCFCF5E1FAAD8B612615CB5CB186FEC")
 
@@ -692,6 +697,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.604 -0500", hash_original_method = "224D236A6A210D9CABF5D7D423C96E97", hash_generated_method = "D157A3711B1E2F0974BC1BEEAF5EEB2F")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -736,12 +742,9 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class TaskThumbnails implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.659 -0500", hash_original_field = "0D0E90E785E7E36440F0FAEB5BF0DF21", hash_generated_field = "A7CA2C3264BCA3B8EB9304642C9D25D2")
-
 
         public static final Creator<TaskThumbnails> CREATOR = new Creator<TaskThumbnails>() {
             public TaskThumbnails createFromParcel(Parcel source) {
@@ -755,7 +758,6 @@ public void readFromParcel(Parcel source) {
 
         public Bitmap mainThumbnail;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.636 -0500", hash_original_field = "6406357CFD8F220660894067E9EF968A", hash_generated_field = "B493724A74ED3FB14A03B4D585258CEB")
-
 
         public int numSubThumbbails;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.638 -0500", hash_original_field = "60ED97CAB35B3472FCB1C66D0D76D2C6", hash_generated_field = "F26B03B078059BC2048093DDC93DD417")
@@ -773,6 +775,7 @@ private TaskThumbnails(Parcel source) {
             readFromParcel(source);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.643 -0500", hash_original_method = "C8A1C6791C443D43BB18F989CA6219B6", hash_generated_method = "A682F3C0E63282513A4027F898482BFD")
         
 public Bitmap getSubThumbnail(int index) {
@@ -789,6 +792,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.647 -0500", hash_original_method = "1641949793D35FD49D0AD46DB3E00603", hash_generated_method = "E0DBFE1F972950FDB8CBE569DDEF98B8")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -824,8 +828,6 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class RunningServiceInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.700 -0500", hash_original_field = "96CCA988EF3323D868CD174581F3C681", hash_generated_field = "C5EE28BB616EBCBE67B4A8F8CA4F4F8C")
@@ -914,6 +916,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.723 -0500", hash_original_method = "048D37EC670A88D2663FCC084087D5E3", hash_generated_method = "21251E31D432B92AD733BA2F789EAB8E")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -962,11 +965,8 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class MemoryInfo implements Parcelable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:36.965 -0400", hash_original_field = "7B937244499DDD6DE8E8DD078A54CA42", hash_generated_field = "8D5A5BE61EBADDE649E9CD81EA9451BA")
 
@@ -1005,6 +1005,8 @@ public MemoryInfo[] newArray(int size) {
 
         public long foregroundAppThreshold;
 
+        @DSComment("no impact")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.762 -0500", hash_original_method = "09AE2D253AD01F5533857164DB70587D", hash_generated_method = "1FF0633BAB808AAABE7DEEC0DAD3D78E")
         
 public MemoryInfo() {
@@ -1056,8 +1058,6 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class ProcessErrorStateInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.790 -0500", hash_original_field = "3619BBC96356F263661221785A00D6E9", hash_generated_field = "B8303B3F0D63DDF614BF107FEB77E81A")
@@ -1070,7 +1070,6 @@ public void readFromParcel(Parcel source) {
 
         public static final int NOT_RESPONDING = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.833 -0500", hash_original_field = "91AB574E33C21EA70276AD1217009353", hash_generated_field = "B4E73E729A49A48B48C5C4D400C68AB6")
-
         
         public static final Creator<ProcessErrorStateInfo> CREATOR = 
                 new Creator<ProcessErrorStateInfo>() {
@@ -1162,8 +1161,6 @@ public void readFromParcel(Parcel source) {
             }
         
     }
-
-
     
     public static class RunningAppProcessInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.852 -0500", hash_original_field = "9BE6615EBB56D9C8259444171E5CDE46", hash_generated_field = "1647EC87F14B5F86D8632AD2EF6C5824")
@@ -1203,7 +1200,6 @@ public void readFromParcel(Parcel source) {
 
         public static final int REASON_SERVICE_IN_USE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.918 -0500", hash_original_field = "7E2C8075040E69EE35A8468DD047D60C", hash_generated_field = "A62C347FADB0FAEE0097CA208AB4C94F")
-
 
         public static final Creator<RunningAppProcessInfo> CREATOR = 
             new Creator<RunningAppProcessInfo>() {
@@ -1275,6 +1271,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.907 -0500", hash_original_method = "DDF0D3D0D0B3E35B68DDE155F98679B3", hash_generated_method = "DE83D9B8BD94E1616547A0FAEA49FAEC")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -1326,6 +1323,7 @@ public void readFromParcel(Parcel source) {
      * current error conditions (it will not return an empty list).  This list ordering is not
      * specified.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.840 -0500", hash_original_method = "F53E97F522CAE83DA0CBCF957085AF2C", hash_generated_method = "E3595DD9BF7FB62750F6222551E2A07E")
     
 public List<ProcessErrorStateInfo> getProcessesInErrorState() {
@@ -1344,6 +1342,7 @@ public List<ProcessErrorStateInfo> getProcessesInErrorState() {
      * This list ordering is not specified.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.926 -0500", hash_original_method = "5737B6241A3389A78D86162B5C5BDB02", hash_generated_method = "3F3F5E427564E12662B6A5EA495C0309")
     
 public List<ApplicationInfo> getRunningExternalApplications() {
@@ -1361,6 +1360,9 @@ public List<ApplicationInfo> getRunningExternalApplications() {
      * running processes (it will not return an empty list).  This list ordering is not
      * specified.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.928 -0500", hash_original_method = "BB41AA7EC02A452F0653300FBA1EFF8A", hash_generated_method = "9EC32489CD95F6B4ED507EAF40FA8F6E")
     
 public List<RunningAppProcessInfo> getRunningAppProcesses() {
@@ -1455,6 +1457,7 @@ public void forceStopPackage(String packageName) {
     /**
      * Get the device configuration attributes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.939 -0500", hash_original_method = "002CA49339A7476A8E8EF41ECCC37BDD", hash_generated_method = "B98F41EE884ECD470B7FFFD2442DC678")
     
 public ConfigurationInfo getDeviceConfigurationInfo() {
@@ -1471,6 +1474,7 @@ public ConfigurationInfo getDeviceConfigurationInfo() {
      *
      * @return density in terms of DPI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.942 -0500", hash_original_method = "E6A8DEADBC97DC6A083D1FDDD3BF2E4E", hash_generated_method = "E42C12E45B8F008EFA277E1635B3A100")
     
 public int getLauncherLargeIconDensity() {
@@ -1502,6 +1506,7 @@ public int getLauncherLargeIconDensity() {
      *
      * @return dimensions of square icons in terms of pixels
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.944 -0500", hash_original_method = "1ABECD33DDCEDD9654A62357CF29D109", hash_generated_method = "EBB978165087C19E26C36D61882BC16F")
     
 public int getLauncherLargeIconSize() {
@@ -1534,6 +1539,7 @@ public int getLauncherLargeIconSize() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.952 -0500", hash_original_method = "2575FA7FD2518D90A93FBC6E066D35C1", hash_generated_method = "45F620370F10841A9529E9278FB76218")
     
 public Map<String, Integer> getAllPackageLaunchCounts() {
@@ -1566,6 +1572,7 @@ public Map<String, Integer> getAllPackageLaunchCounts() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:30.954 -0500", hash_original_method = "97D195D4FE7E8BCA1AFB9969B53F0E5E", hash_generated_method = "6926BB531D1845BB835A389339F5ADD4")
     
 public PkgUsageStats[] getAllPackageUsageStats() {

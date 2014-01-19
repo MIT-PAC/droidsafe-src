@@ -13,11 +13,6 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class IssuingDistributionPoint extends ExtensionValue {
 
     /**
@@ -32,7 +27,6 @@ public static IssuingDistributionPoint decode(byte[] encoding)
         idp.encoding = encoding;
         return idp;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.458 -0400", hash_original_field = "DFF85DC774D5EF73A048B0D504801D92", hash_generated_field = "5BA18BFCED65E5DF9764BC88362AA883")
 
@@ -55,6 +49,7 @@ public static IssuingDistributionPoint decode(byte[] encoding)
             setDefault(Boolean.FALSE, 5);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.395 -0500", hash_original_method = "F5189D21B9E9E64EECA520233F4C56C2", hash_generated_method = "05C4211F8BEB1A8FE9513910D1DB27C8")
         
 protected Object getDecodedObject(BerInputStream in) {
@@ -157,6 +152,7 @@ public void setOnlyContainsAttributeCerts(
         this.onlyContainsAttributeCerts = onlyContainsAttributeCerts;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.388 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {
@@ -166,6 +162,7 @@ public void setOnlyContainsAttributeCerts(
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.390 -0500", hash_original_method = "CFA4D64F052CACDD48400E19E895ABEB", hash_generated_method = "19E139B2248082A1E760369FB681E48E")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

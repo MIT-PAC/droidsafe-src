@@ -25,17 +25,11 @@ import com.android.internal.telephony.gsm.GsmSMSDispatcher;
 import com.android.internal.telephony.gsm.SimCard;
 import com.android.internal.telephony.ims.IsimRecords;
 
-
-
-
-
-
 public class CDMALTEPhone extends CDMAPhone {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.624 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
     static final String LOG_TAG = "CDMA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.627 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "B7707D757F0604821CCAF673B2122320")
-
 
     private static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.629 -0500", hash_original_field = "27F27AE32D7151DB014BA8DF2F1FF61C", hash_generated_field = "27F27AE32D7151DB014BA8DF2F1FF61C")
@@ -225,6 +219,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
     }
 
     // return IMSI from USIM as subscriber ID.
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.667 -0500", hash_original_method = "418ED398A6A3FF53B03B4C5008FE3F90", hash_generated_method = "61DF0D8CEEED037CC4021D8AFBCFEC9E")
     
 @Override
@@ -232,6 +227,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mIccRecords.getIMSI();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.670 -0500", hash_original_method = "2BFB931234EFCBDA06B75AE314A70B6B", hash_generated_method = "F2ACFCEBB390ABDC4340F05E7FFDBB5C")
     
 @Override
@@ -239,6 +235,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mImei;
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.672 -0500", hash_original_method = "14B7BB34E0FC203F73344BD326AAB989", hash_generated_method = "F74607AC6D3291B5D40293274DA80CCB")
     
 @Override
@@ -246,6 +243,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mImeiSv;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.675 -0500", hash_original_method = "9816ECED47475DB23BCECA20DA4E2B5A", hash_generated_method = "78B92215C2B85EF5F14717FCDA18017C")
     
 @Override
@@ -253,6 +251,7 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mIccRecords.getIsimRecords();
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.677 -0500", hash_original_method = "0F1A42666FEB7039E59CE38A804A2571", hash_generated_method = "C643750F6EC44E71120807E5FC6FB0C0")
     
 @Override
@@ -260,13 +259,13 @@ private void handleSetSelectNetwork(AsyncResult ar) {
         return mIccRecords.getMsisdnNumber();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.680 -0500", hash_original_method = "4DC55439AC7C450EEFD22BFFC07D3CE9", hash_generated_method = "4B89959CC41D0CB5D374F11DBE99A97A")
     
 @Override
     public void getAvailableNetworks(Message response) {
         mCM.getAvailableNetworks(response);
     }
-
     
     private static class NetworkSelectMessage {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:52.632 -0500", hash_original_field = "917CC93E170BCDBC06457BE4F50622BF", hash_generated_field = "81254C6170A9E52E0AD3BB76A481765A")
@@ -279,13 +278,11 @@ private void handleSetSelectNetwork(AsyncResult ar) {
 
         public String operatorAlphaLong;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:21.873 -0400", hash_original_method = "3039E12EC83A8AA31D55051619D54055", hash_generated_method = "3039E12EC83A8AA31D55051619D54055")
         public NetworkSelectMessage ()
         {
             //Synthesized constructor
         }
-
 
     }
 

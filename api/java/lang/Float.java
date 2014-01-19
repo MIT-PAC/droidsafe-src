@@ -5,27 +5,24 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Float extends Number implements Comparable<Float> {
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static int floatToIntBits(float value) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static int floatToRawIntBits(float value) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public static float intBitsToFloat(int bits) {
         return DSUtils.UNKNOWN_FLOAT;
     }
@@ -38,6 +35,8 @@ public final class Float extends Number implements Comparable<Float> {
      * @return {@code true} if the value of {@code f} is positive or negative
      *         infinity; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.286 -0500", hash_original_method = "F3C86372B308CB7AC0FC99B1DB4B622C", hash_generated_method = "683D8A9E5B30B40DB742F066FBD6598C")
     
 public static boolean isInfinite(float f) {
@@ -53,6 +52,8 @@ public static boolean isInfinite(float f) {
      * @return {@code true} if {@code f} is <em>Not-a-Number</em>;
      *         {@code false} if it is a (potentially infinite) float number.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.291 -0500", hash_original_method = "797988AA09B377AAD595A673B0C7988B", hash_generated_method = "D920FE10DB13EBBC00F5D9F8CC7066A9")
     
 public static boolean isNaN(float f) {
@@ -70,6 +71,8 @@ public static boolean isNaN(float f) {
      * @see #valueOf(String)
      * @since 1.2
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.296 -0500", hash_original_method = "E332FB0E1CB7130552914B4D301DE791", hash_generated_method = "5A5D0EA79CAFDCAECA35E7E93C07C205")
     
 public static float parseFloat(String string) throws NumberFormatException {
@@ -84,6 +87,8 @@ public static float parseFloat(String string) throws NumberFormatException {
      *             the float to convert to a string.
      * @return a printable representation of {@code f}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.304 -0500", hash_original_method = "B7E1BCC1B7A5845C5179DE746CBEEF71", hash_generated_method = "D5F9E6B59E5CA5AC8021B7D7B2DC2734")
     
 public static String toString(float f) {
@@ -101,6 +106,8 @@ public static String toString(float f) {
      *             if {@code string} can not be parsed as a float value.
      * @see #parseFloat(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.306 -0500", hash_original_method = "642ABD7E73780470D384DD3A60166E0E", hash_generated_method = "0A0CF9F1A77E65FC8EAE564F16A81F7F")
     
 public static Float valueOf(String string) throws NumberFormatException {
@@ -124,6 +131,8 @@ public static Float valueOf(String string) throws NumberFormatException {
      *         value if {@code float1} is greater than {@code float2}.
      * @since 1.4
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.309 -0500", hash_original_method = "437B20A71BAFB5FA99C486D62470A20A", hash_generated_method = "A08FC7329D3A6C2C7FB657184679034A")
     
 public static int compare(float float1, float float2) {
@@ -165,6 +174,8 @@ public static int compare(float float1, float float2) {
      * @return a {@code Float} instance containing {@code f}.
      * @since 1.5
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.311 -0500", hash_original_method = "D6416EFEFB750655A8B1DFB2823F2602", hash_generated_method = "63606CBCD564F19C028A0CDFCD104D78")
     
 public static Float valueOf(float f) {
@@ -269,7 +280,6 @@ public static String toHexString(float f) {
     static final int EXPONENT_BIAS = 127;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.200 -0500", hash_original_field = "9C9ADE8D52CD0B7FC8528B4F8D9CB261", hash_generated_field = "AAB44785F4FC3A37C42CA63B6A8EBE86")
 
-
     static final int EXPONENT_BITS = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.202 -0500", hash_original_field = "A12356A8AA5F8FA4D03DECCC97E6061F", hash_generated_field = "F67817DD7050153A96F45168E72D8F28")
 
@@ -279,7 +289,6 @@ public static String toHexString(float f) {
     static final int NON_MANTISSA_BITS = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.207 -0500", hash_original_field = "16837E81C0CF60EDEAF65F3912719CFA", hash_generated_field = "7094B89EE6D925DFA81EF867594CF0A9")
 
-
     static final int SIGN_MASK     = 0x80000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.209 -0500", hash_original_field = "3086487D2ED25E30450466E77AC5232F", hash_generated_field = "D091E878ED0F3CCC802CE44713C89F6E")
 
@@ -288,7 +297,6 @@ public static String toHexString(float f) {
 
     static final int MANTISSA_MASK = 0x007fffff;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.215 -0500", hash_original_field = "E786B752FBB96B26566832DAA0B711C5", hash_generated_field = "1967804242F606EDCF5ADE6EBC54C263")
-
 
     private static final long serialVersionUID = -2671257302660747028L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.220 -0500", hash_original_field = "C683BBFDDFFB87EA94B20502D7B915D5", hash_generated_field = "64A78D592CBFAAAD64B3A3BFB1932908")
@@ -341,6 +349,8 @@ public static String toHexString(float f) {
      * @param value
      *            the primitive float value to store in the new instance.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.246 -0500", hash_original_method = "5ED6E2A1D35592501FD060BC19F5CA5B", hash_generated_method = "BCBFF272BF6FC28A9014B170F0FCF64F")
     
 public Float(float value) {
@@ -368,6 +378,8 @@ public Float(double value) {
      *             if {@code string} can not be parsed as a float value.
      * @see #parseFloat(String)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.252 -0500", hash_original_method = "4BD76BD235C983014B5B86B98889672F", hash_generated_method = "BC72A168338795CF3C7F860F2F0279BB")
     
 public Float(String string) throws NumberFormatException {
@@ -438,6 +450,8 @@ public int compareTo(Float object) {
      *
      * @return this object's primitive value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.273 -0500", hash_original_method = "9E2C0918A44EC11D2232D0B603F66A6B", hash_generated_method = "0138C4AD160C9AAF1F0B41D5F85236C8")
     
 @Override
@@ -465,6 +479,8 @@ public int compareTo(Float object) {
      * @return {@code true} if the value of this float is positive or negative
      *         infinity; {@code false} otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.284 -0500", hash_original_method = "82C3193F23F6D7770C948A8F860700C8", hash_generated_method = "ECFDA70CD333AB189AE460B59374A49D")
     
 public boolean isInfinite() {
@@ -477,6 +493,8 @@ public boolean isInfinite() {
      * @return {@code true} if this float is <em>Not-a-Number</em>;
      *         {@code false} if it is a (potentially infinite) float number.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.289 -0500", hash_original_method = "9E74C322CF79FFEBE378AFAB98D56D96", hash_generated_method = "AD43DA09B8F6BB6058A22755BDBA989F")
     
 public boolean isNaN() {
@@ -497,6 +515,8 @@ public boolean isNaN() {
         return (short) value;
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:32.301 -0500", hash_original_method = "A363CDE834C704519FC1C85052C83F92", hash_generated_method = "61B50C37391F52970D25A3753BBCA35D")
     
 @Override

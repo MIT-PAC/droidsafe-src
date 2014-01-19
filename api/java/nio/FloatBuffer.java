@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class FloatBuffer extends Buffer implements Comparable<FloatBuffer> {
 
     /**
@@ -245,6 +241,7 @@ public abstract float get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.911 -0500", hash_original_method = "5C1BC742B784E1F54201A6BFE04FB3C1", hash_generated_method = "A25DC9A0C575B997CCD28575DD9FA6AF")
     
 public FloatBuffer get(float[] dst) {
@@ -270,6 +267,7 @@ public FloatBuffer get(float[] dst) {
      * @exception BufferUnderflowException
      *                if {@code floatCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.914 -0500", hash_original_method = "62E3FD5BE0E5A19BF5F39022D7154217", hash_generated_method = "CFEDBCC4F65A19B096EA2EB2DAE7FBC4")
     
 public FloatBuffer get(float[] dst, int dstOffset, int floatCount) {
@@ -406,6 +404,8 @@ public abstract FloatBuffer put(float f);
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.937 -0500", hash_original_method = "5B7E9D4E0A0B3CF72C892C67E2CB78B1", hash_generated_method = "364B08C6990445194E4D43237CB05BC7")
     
 public final FloatBuffer put(float[] src) {
@@ -433,6 +433,7 @@ public final FloatBuffer put(float[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.940 -0500", hash_original_method = "DFC1F5A8B9B8E6C8478049F847BE00DC", hash_generated_method = "ADFFCE20F56DE416B180F9199E877E04")
     
 public FloatBuffer put(float[] src, int srcOffset, int floatCount) {
@@ -491,6 +492,8 @@ public FloatBuffer put(FloatBuffer src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSComment("memory buffer only")
+    @DSSafe(DSCat.MEM_BUFFER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.946 -0500", hash_original_method = "E055474EFA3FA7B3EA940C5865B7DADC", hash_generated_method = "FF72BFC456E313F487B3F4301D2E435E")
     
 public abstract FloatBuffer put(int index, float f);
@@ -513,7 +516,6 @@ public abstract FloatBuffer put(int index, float f);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:07.948 -0500", hash_original_method = "BDB0C51DF50027D80732B423FDACD53A", hash_generated_method = "AD1D105D90B144C73812BDD3ADD1779B")
     
 public abstract FloatBuffer slice();
-
     
 }
 

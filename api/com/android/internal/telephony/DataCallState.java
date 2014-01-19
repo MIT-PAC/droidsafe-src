@@ -17,11 +17,6 @@ import android.util.Log;
 
 import com.android.internal.telephony.DataConnection.FailCause;
 
-
-
-
-
-
 public class DataCallState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.542 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "7A94A86038D93EBBF047FD36678A7A07")
 
@@ -30,7 +25,6 @@ public class DataCallState {
 
     private final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.547 -0500", hash_original_field = "4A57C041D9A7B4C6067DB09D0C7831F4", hash_generated_field = "86EB4D9378DBDAFCDCF6A04185238499")
-
 
     public int version = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.549 -0500", hash_original_field = "E32E8D8C27E399D4E50FABD41DE37761", hash_generated_field = "37B5BCF0BCD2F93BD4AA15407BF7DBA3")
@@ -67,6 +61,7 @@ public class DataCallState {
         //Synthesized constructor
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.580 -0500", hash_original_method = "CAAE2D86A06B83EE392B769B8D61B847", hash_generated_method = "4D6FF0647DDF910FB4E7699D22BB705B")
     
 @Override
@@ -241,7 +236,6 @@ public SetupResult setLinkProperties(LinkProperties linkProperties,
 
         return result;
     }
-
     
     public enum SetupResult {
         SUCCESS,
@@ -251,7 +245,6 @@ public SetupResult setLinkProperties(LinkProperties linkProperties,
         ERR_Stale,
         ERR_RilError;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:18.570 -0500", hash_original_field = "C29D8CA47A6232BA935F4E94D32CF5E3", hash_generated_field = "4ED90328C936AFECF6596A638B2DEDB0")
-
 
         public FailCause mFailCause;
 
@@ -268,7 +261,6 @@ SetupResult() {
             return name() + "  SetupResult.mFailCause=" + mFailCause;
         }
     }
-
     
 }
 

@@ -11,11 +11,6 @@ import java.nio.Buffer;
 import java.nio.ByteBuffer;
 import java.nio.ByteOrder;
 
-
-
-
-
-
 public class ETC1Util {
     /**
      * Convenience method to load an ETC1 texture whether or not the active OpenGL context
@@ -31,6 +26,8 @@ public class ETC1Util {
      * @param input the input stream containing an ETC1 texture in PKM format.
      * @throws IOException
      */
+    @DSComment("seems harmless")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.378 -0500", hash_original_method = "ACCA642D1FA9BF396A2137FABFB57E8E", hash_generated_method = "D7B2AD787E61C65024C69BB205A2F498")
     
 public static void loadTexture(int target, int level, int border,
@@ -199,11 +196,9 @@ public static void writeTexture(ETC1Texture texture, OutputStream output) throws
     {
         //Synthesized constructor
     }
-
     
     public static class ETC1Texture {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.398 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
-
 
         private int mWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.401 -0500", hash_original_field = "7DDAE255893B528E7BEBEC203BC2D9F3", hash_generated_field = "9A13F430E09A05B31C551CE62B9A37C1")
@@ -243,11 +238,8 @@ public int getHeight() { return mHeight; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:10.395 -0500", hash_original_method = "137D4A62628C4DE393FDFDF6B76B5AB1", hash_generated_method = "FC12873DAC55231F326D166DACA7A1AD")
         
 public ByteBuffer getData() { return mData; }
-
         
     }
-
-
     
 }
 

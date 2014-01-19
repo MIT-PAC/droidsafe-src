@@ -11,11 +11,6 @@ import java.io.OutputStream;
 import org.apache.http.HttpEntity;
 import org.apache.http.entity.HttpEntityWrapper;
 
-
-
-
-
-
 public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionReleaseTrigger, EofSensorWatcher {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.586 -0500", hash_original_field = "ECC1A1A1F3BB31DE20717F98D44EFC60", hash_generated_field = "A39C84F92F3A7EA4C05EE395EC188DAE")
 
@@ -23,7 +18,6 @@ public class BasicManagedEntity extends HttpEntityWrapper implements ConnectionR
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.589 -0500", hash_original_field = "F6FDC975DEEC1249FFD0EA5446B40A56", hash_generated_field = "E3C3E883F50FA4994DDE044495909683")
 
     protected  boolean attemptReuse;
-
 
     /**
      * Creates a new managed entity that can release a connection.
@@ -50,7 +44,6 @@ public BasicManagedEntity(HttpEntity entity,
         this.attemptReuse = reuse;
     }
 
-
     // non-javadoc, see interface HttpEntity
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.594 -0500", hash_original_method = "731D88F5D8865617BA362DCED4C30896", hash_generated_method = "47668CDFF1A9B2EE068B1E9BA916D5E5")
     
@@ -59,8 +52,8 @@ public BasicManagedEntity(HttpEntity entity,
         return false;
     }
 
-
     // non-javadoc, see interface HttpEntity
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.596 -0500", hash_original_method = "5A535D8BC3EB290E639D312782FBEB37", hash_generated_method = "90F1E79E69DFB56FB823CA4316A9689D")
     
 @Override
@@ -68,7 +61,6 @@ public BasicManagedEntity(HttpEntity entity,
 
         return new EofSensorInputStream(wrappedEntity.getContent(), this);
     }
-
 
     // non-javadoc, see interface HttpEntity
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.599 -0500", hash_original_method = "58D11A845FE872643BE2CB7CB3DAF1D5", hash_generated_method = "F15A6B3C510AB5FB5DADA0E286F65EBE")
@@ -89,7 +81,6 @@ public BasicManagedEntity(HttpEntity entity,
             releaseManagedConnection();
         }
     }
-
     
     // non-javadoc, see interface HttpEntity
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.601 -0500", hash_original_method = "7A0C9BF6AEBE62A6A7FD18951D7BE860", hash_generated_method = "11C367E33E31870466F18902685DDE85")
@@ -100,7 +91,6 @@ public BasicManagedEntity(HttpEntity entity,
         consumeContent();
     }
 
-
     // non-javadoc, see interface ConnectionReleaseTrigger
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.603 -0500", hash_original_method = "4116E5CDB1EF6E698D2E6ADBA9E28033", hash_generated_method = "9AF32D04EE78CE1862893894E8F33CA9")
     
@@ -109,7 +99,6 @@ public void releaseConnection()
 
         this.consumeContent();
     }
-
 
     // non-javadoc, see interface ConnectionReleaseTrigger
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.605 -0500", hash_original_method = "09E9D1BA9D6B3D57F6131522158659B5", hash_generated_method = "86A1D2DA47C2A83DAA24927F9C4902F8")
@@ -125,7 +114,6 @@ public void abortConnection()
             }
         }
     }
-
 
     // non-javadoc, see interface EofSensorWatcher
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.608 -0500", hash_original_method = "5A64D16D6F2B869D7FBA53B05FD87C82", hash_generated_method = "5F8B1813E47A177890C2FFA6FB13A1BC")
@@ -146,7 +134,6 @@ public boolean eofDetected(InputStream wrapped)
         return false;
     }
 
-
     // non-javadoc, see interface EofSensorWatcher
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.610 -0500", hash_original_method = "317830EACA4241C6C1785BE58FAD1AFA", hash_generated_method = "1B854B0A0646232CE31EB499FA13E306")
     
@@ -166,7 +153,6 @@ public boolean streamClosed(InputStream wrapped)
         return false;
     }
 
-
     // non-javadoc, see interface EofSensorWatcher
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.613 -0500", hash_original_method = "BAB258C2D5F3651DF9A25667D27EF99D", hash_generated_method = "39E33C173783F5A2873CE6B781025A7A")
     
@@ -178,7 +164,6 @@ public boolean streamAbort(InputStream wrapped)
         }
         return false;
     }
-
 
     /**
      * Releases the connection gracefully.
@@ -201,7 +186,6 @@ protected void releaseManagedConnection()
             }
         }
     }
-
     
 }
 

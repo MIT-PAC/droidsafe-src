@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public class ContentEncoding extends SIPHeader implements javax.sip.header.ContentEncodingHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.650 -0500", hash_original_field = "7C03D5110AD07BA3A5BDC24C12533FBC", hash_generated_field = "A6105BB7D9606B15FED8D5EA58524006")
 
@@ -53,6 +48,7 @@ public String encodeBody() {
      * Get the ContentEncoding field.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.664 -0500", hash_original_method = "13F27076508F7754A69639743C7567EC", hash_generated_method = "BA6542BA89565E59728F6E58B857CC11")
     
 public String getEncoding() {

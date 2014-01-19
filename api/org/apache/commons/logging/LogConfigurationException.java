@@ -5,15 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class LogConfigurationException extends RuntimeException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.654 -0500", hash_original_field = "7C503CF3045C4248B962E55347083A4A", hash_generated_field = "79DAA8AEAC199268F25EDA892CFE191F")
 
     protected Throwable cause = null;
-
 
     /**
      * Construct a new exception with <code>null</code> as its detail message.
@@ -25,7 +20,6 @@ public LogConfigurationException() {
         super();
 
     }
-
 
     /**
      * Construct a new exception with the specified detail message.
@@ -40,7 +34,6 @@ public LogConfigurationException(String message) {
 
     }
 
-
     /**
      * Construct a new exception with the specified cause and a derived
      * detail message.
@@ -54,7 +47,6 @@ public LogConfigurationException(Throwable cause) {
         this((cause == null) ? null : cause.toString(), cause);
 
     }
-
 
     /**
      * Construct a new exception with the specified detail message and cause.
@@ -71,10 +63,10 @@ public LogConfigurationException(String message, Throwable cause) {
 
     }
 
-
     /**
      * Return the underlying cause of this exception (if any).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:51.656 -0500", hash_original_method = "9EB82C3F9FB6AE0D2962237AF0B1061E", hash_generated_method = "D8E404B2144DA9DC918822CCACE81477")
     
 public Throwable getCause() {
@@ -82,7 +74,6 @@ public Throwable getCause() {
         return (this.cause);
 
     }
-
     
 }
 

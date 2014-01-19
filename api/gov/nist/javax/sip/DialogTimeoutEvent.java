@@ -8,11 +8,6 @@ import java.util.EventObject;
 
 import javax.sip.Dialog;
 
-
-
-
-
-
 public class DialogTimeoutEvent extends EventObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.872 -0500", hash_original_field = "4E60203B4DB539F45FE33C01A35E5E05", hash_generated_field = "4FAFB1344CC4F2D19A9E7C7572E679D4")
 
@@ -47,14 +42,14 @@ public DialogTimeoutEvent(Object source, Dialog dialog, Reason reason) {
      * @return the dialog associated with the response event or null if there is no dialog.
      * @since v1.2
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:51.887 -0500", hash_original_method = "7F25FD43FBEFC286B46F28F64DA890F2", hash_generated_method = "461D59BAFB28542F8DB52DC490C14AF5")
     
 public Dialog getDialog() {
         return m_dialog;
     }
-
     
-    public enum Reason {AckNotReceived, AckNotSent,ReInviteTimeout}    
+    public enum Reason {AckNotReceived, AckNotSent,ReInviteTimeout}
     
     /**
      * The reason for the Dialog Timeout Event being delivered to the application.

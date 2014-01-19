@@ -9,11 +9,6 @@ import org.apache.commons.codec.BinaryEncoder;
 import org.apache.commons.codec.DecoderException;
 import org.apache.commons.codec.EncoderException;
 
-
-
-
-
-
 public class Base64 implements BinaryEncoder, BinaryDecoder {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.942 -0500", hash_original_method = "A822EBC4FB6E69A8F1BB99F6026DF203", hash_generated_method = "42463F56890B4DE57C93AFF61468CC38")
@@ -304,6 +299,7 @@ public static byte[] decodeBase64(byte[] base64Data) {
      * from.
      * @return The data, less whitespace (see RFC 2045).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.965 -0500", hash_original_method = "9BCC1A7457934BC771EBD3626A0DE18B", hash_generated_method = "3CBB1FFB63A50C335D002AC2738F9D2B")
     
 static byte[] discardWhitespace(byte[] data) {
@@ -338,6 +334,7 @@ static byte[] discardWhitespace(byte[] data) {
      * @param data The base-64 encoded data to groom
      * @return The data, less non-base64 characters (see RFC 2045).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.968 -0500", hash_original_method = "94A8BA1BB14E20FE8AAE958A036048A6", hash_generated_method = "03DE6BA56337AAD75057F043E8AE104E")
     
 static byte[] discardNonBase64(byte[] data) {
@@ -400,7 +397,6 @@ static byte[] discardNonBase64(byte[] data) {
         //Synthesized constructor
     }
 
-
     /**
      * Decodes an Object using the base64 algorithm.  This method
      * is provided in order to satisfy the requirements of the
@@ -429,12 +425,12 @@ public Object decode(Object pObject) throws DecoderException {
      * @param pArray A byte array containing Base64 character data
      * @return a byte array containing binary data
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.953 -0500", hash_original_method = "E9A5741B84FE67E582817B8B79597420", hash_generated_method = "C17AE6177C5668A0F0E5EE932AEF930C")
     
 public byte[] decode(byte[] pArray) {
         return decodeBase64(pArray);
     }
-
 
     // Implementation of the Encoder Interface
 
@@ -467,6 +463,7 @@ public Object encode(Object pObject) throws EncoderException {
      * @param pArray a byte array containing binary data
      * @return A byte array containing only Base64 character data
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:52.972 -0500", hash_original_method = "D3EC39ECED0CD0D362D80F2CDBB3BB21", hash_generated_method = "067C5861BBE1F6A7C3E18A7150299C2B")
     
 public byte[] encode(byte[] pArray) {

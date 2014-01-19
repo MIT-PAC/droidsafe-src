@@ -33,10 +33,6 @@ import android.os.IBinder;
 import android.os.Looper;
 import android.os.RemoteException;
 
-
-
-
-
 public final class KeyChain {
 
     /**
@@ -102,6 +98,7 @@ public static Intent createInstallIntent() {
      * @param alias The alias to preselect if available, or null if
      *     unavailable.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.653 -0500", hash_original_method = "E907821151711095569DC644B61BB753", hash_generated_method = "7C98775AC542C6D186951CA07D4D010A")
     
 public static void choosePrivateKeyAlias(Activity activity, KeyChainAliasCallback response,
@@ -151,6 +148,7 @@ public static void choosePrivateKeyAlias(Activity activity, KeyChainAliasCallbac
      * returned via {@link KeyChainAliasCallback#alias}.
      * @throws KeyChainException if the alias was valid but there was some problem accessing it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.669 -0500", hash_original_method = "DF062E6FA636775439DA598053BC2C74", hash_generated_method = "2D9A8B83BCA9D73C008133748AF8F217")
     
 public static PrivateKey getPrivateKey(Context context, String alias)
@@ -184,6 +182,7 @@ public static PrivateKey getPrivateKey(Context context, String alias)
      * returned via {@link KeyChainAliasCallback#alias}.
      * @throws KeyChainException if the alias was valid but there was some problem accessing it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.672 -0500", hash_original_method = "E3D944E68CC612365472BFA8499DA506", hash_generated_method = "84ACC2912769A26659673923B13D8A9A")
     
 public static X509Certificate[] getCertificateChain(Context context, String alias)
@@ -248,9 +247,7 @@ private static X509Certificate toCertificate(byte[] bytes) {
             throw new AssertionError(e);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static KeyChainConnection bind(Context context) throws InterruptedException {
         if (context == null) {
             throw new NullPointerException("context == null");
@@ -297,9 +294,7 @@ private static void ensureNotOnMainThread(Context context) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.611 -0500", hash_original_field = "5ECC530E410AC78FFBA3C9F8F2A0C707", hash_generated_field = "DB4CC18D22127F06448B97E6BAD252CD")
 
-
     private static final String TAG = "KeyChain";
-
     
     private static class AliasResponse extends IKeyChainAliasCallback.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.657 -0500", hash_original_field = "9CC5013B5B2A8FBBD02E50EB12848B32", hash_generated_field = "3B8D8D094E0DD386140E6419313FE34D")
@@ -315,11 +310,8 @@ private AliasResponse(KeyChainAliasCallback keyChainAliasResponse) {
 @Override public void alias(String alias) {
             keyChainAliasResponse.alias(alias);
         }
-
         
     }
-
-
     
     public final static class KeyChainConnection implements Closeable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.682 -0500", hash_original_field = "571FE4403DDA9BF54693EBF4F0D6639D", hash_generated_field = "FFC623C2EA984831A33BAADC181E897E")
@@ -345,12 +337,12 @@ private KeyChainConnection(Context context,
 @Override public void close() {
             context.unbindService(serviceConnection);
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.698 -0500", hash_original_method = "954EE7241574324971051CDC9EEAAD50", hash_generated_method = "53CF2DA78B8B234F9251222D09CDC4A6")
         
 public IKeyChainService getService() {
             return service;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:56.614 -0500", hash_original_field = "99DAEC3D78ED5C74CEB7FF0ADC0BD30F", hash_generated_field = "2855009EDDCADE85D95C102D96763D94")

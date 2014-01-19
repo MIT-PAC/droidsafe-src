@@ -74,11 +74,6 @@ import com.android.internal.view.IInputMethodCallback;
 import com.android.internal.view.IInputMethodSession;
 import com.android.internal.view.RootViewSurfaceTaker;
 
-
-
-
-
-
 public final class ViewRootImpl extends Handler implements ViewParent, View.AttachInfo.Callbacks, HardwareRenderer.HardwareDrawCallbacks {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.930 -0500", hash_original_method = "6204018B0410883FB8966B71E80E7FF6", hash_generated_method = "559F65FDCB3510E740B6FB09ECC8C64F")
@@ -267,7 +262,6 @@ static RunQueue getRunQueue() {
     private static final String PROPERTY_PROFILE_RENDERING = "viewancestor.profile_rendering";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.679 -0500", hash_original_field = "35CA87112098D6BE37E3F9B4C11506DC", hash_generated_field = "E5342F079514828E15AB01F9FA97BF6C")
     
-    
     private static final boolean MEASURE_LATENCY = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.681 -0500", hash_original_field = "8EB22E526FB1BA616C8A564A7CD1E92B", hash_generated_field = "4C70E88FDA504CF3924879E0993C2C35")
 
@@ -277,10 +271,8 @@ static RunQueue getRunQueue() {
     static final int MAX_TRACKBALL_DELAY = 250;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.686 -0500", hash_original_field = "3646CDC8A0F4ABA91184151AB781CE21", hash_generated_field = "CE60587CF2EE3A6FA7BC23F1967EFA78")
 
-
     static IWindowSession sWindowSession;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.688 -0500", hash_original_field = "C68E4B016BCA6DA44EAB66E68E44F858", hash_generated_field = "906814A8DD92904364CC348726E82FDF")
-
 
     static final Object mStaticInit = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.690 -0500", hash_original_field = "D7228C282593CDC77734D668B23541D3", hash_generated_field = "536734E2DD91AB5EDF1F3B60AFB40B7C")
@@ -288,17 +280,14 @@ static RunQueue getRunQueue() {
     static boolean mInitialized = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.693 -0500", hash_original_field = "EB74D664B6F34E96581A3014C0D2DD2E", hash_generated_field = "B17B98FA673511F1A0E4D0FB5118C35F")
 
-
     static final ThreadLocal<RunQueue> sRunQueues = new ThreadLocal<RunQueue>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.695 -0500", hash_original_field = "5B886CFD8B1F84A5BCAEA0BF6DBF9E58", hash_generated_field = "B99793B7C0D11503969031E3D368FFEC")
-
 
     static final ArrayList<Runnable> sFirstDrawHandlers = new ArrayList<Runnable>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.697 -0500", hash_original_field = "D1427451CF3CC911FF7398FBDDF056DC", hash_generated_field = "63BD0028405F2577A6800DED464B8A3B")
 
     static boolean sFirstDrawComplete = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.699 -0500", hash_original_field = "CF2D77B0C20F9FED69CB3AF200586529", hash_generated_field = "7E01A30DB4DBEA8BAA84FC6A8EA8B318")
-
     
     static final ArrayList<ComponentCallbacks> sConfigCallbacks
             = new ArrayList<ComponentCallbacks>();
@@ -306,7 +295,6 @@ static RunQueue getRunQueue() {
 
     static final Interpolator mResizeInterpolator = new AccelerateDecelerateInterpolator();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.106 -0500", hash_original_field = "D8F1561FDEA4B83DA0EEAE255A6A064D", hash_generated_field = "3EB90E2F993B9CB287747FD7EEEF5D90")
-
 
     public final static int DO_TRAVERSAL = 1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.108 -0500", hash_original_field = "6F750DD5D40451E60181CD4E6BE2A893", hash_generated_field = "F0BCA4B075D24D0FF66A6916CC127271")
@@ -383,7 +371,6 @@ static RunQueue getRunQueue() {
     public final static int PROCESS_INPUT_EVENTS = 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.702 -0500", hash_original_field = "843FBE1A9F9CBF827094CA7CF070DBDE", hash_generated_field = "843FBE1A9F9CBF827094CA7CF070DBDE")
 
-
     long mLastTrackballTime = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.704 -0500", hash_original_field = "4975D6254B2DF93656DFB71CA7D5B2B5", hash_generated_field = "8405ACA924158429D7DAF509E106E80E")
 
@@ -392,7 +379,6 @@ static RunQueue getRunQueue() {
 
     final TrackballAxis mTrackballAxisY = new TrackballAxis();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.708 -0500", hash_original_field = "1F6F035B05518F799CC4A631830DEA24", hash_generated_field = "1F6F035B05518F799CC4A631830DEA24")
-
 
     int mLastJoystickXDirection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.710 -0500", hash_original_field = "FAD79A20871B99E6C09DCA8C579054AF", hash_generated_field = "FAD79A20871B99E6C09DCA8C579054AF")
@@ -406,14 +392,11 @@ static RunQueue getRunQueue() {
     int mLastJoystickYKeyCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.717 -0500", hash_original_field = "18ECE134BF0FC41944D7DF74E92F279C", hash_generated_field = "192CBA0F154C36DD2A24DDE2AD97DD40")
 
-
     final int[] mTmpLocation = new int[2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.719 -0500", hash_original_field = "3E9DE2CC62973C980770A1C51776F761", hash_generated_field = "F4896FA60EAF46F89D1B23DB39A94469")
 
-
     final TypedValue mTmpValue = new TypedValue();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.722 -0500", hash_original_field = "B902B282F1853C48591AA333FC5C6930", hash_generated_field = "B902B282F1853C48591AA333FC5C6930")
-
     
      InputMethodCallback mInputMethodCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.724 -0500", hash_original_field = "31E1A5605EFB6D554CCADEAB55CCF516", hash_generated_field = "598B68B7DF6E876D9AF774185C389FF7")
@@ -424,30 +407,23 @@ static RunQueue getRunQueue() {
     int mPendingEventSeq = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.728 -0500", hash_original_field = "8CE20653889294789C714060A391C40F", hash_generated_field = "8CE20653889294789C714060A391C40F")
 
-
      Thread mThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.730 -0500", hash_original_field = "F0FFEA60326B2D639F57F2EAC1D83F2E", hash_generated_field = "F0FFEA60326B2D639F57F2EAC1D83F2E")
-
 
      WindowLeaked mLocation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.732 -0500", hash_original_field = "D292E6945091564B50F91497CC02D2E3", hash_generated_field = "FBA586EC47BBF8235BA69538A45A084C")
 
-
     final WindowManager.LayoutParams mWindowAttributes = new WindowManager.LayoutParams();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.735 -0500", hash_original_field = "17DBBC35D1D58356620B06871EA80682", hash_generated_field = "17DBBC35D1D58356620B06871EA80682")
-
 
      W mWindow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.737 -0500", hash_original_field = "B8EEE6865DFA2D11E19D316E427BCF57", hash_generated_field = "B8EEE6865DFA2D11E19D316E427BCF57")
 
-
      int mTargetSdkVersion;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.739 -0500", hash_original_field = "8913F44A11D4302ED7B203F0CF0BA11B", hash_generated_field = "8913F44A11D4302ED7B203F0CF0BA11B")
 
-
     int mSeq;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.741 -0500", hash_original_field = "6F4F028D1DE9C463F753A80DD0991753", hash_generated_field = "6F4F028D1DE9C463F753A80DD0991753")
-
 
     View mView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.743 -0500", hash_original_field = "A476C52E6AE87C5E9FAFA76F8149063E", hash_generated_field = "A476C52E6AE87C5E9FAFA76F8149063E")
@@ -470,11 +446,9 @@ static RunQueue getRunQueue() {
     // so the window should no longer be active.
     boolean mStopped = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.756 -0500", hash_original_field = "23B6B29357EB27D126E7D0E5137E40A2", hash_generated_field = "23B6B29357EB27D126E7D0E5137E40A2")
-
     
     boolean mLastInCompatMode = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.758 -0500", hash_original_field = "D3FE6DB201CFE61D34745A493F584192", hash_generated_field = "D3FE6DB201CFE61D34745A493F584192")
-
 
     SurfaceHolder.Callback2 mSurfaceHolderCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.760 -0500", hash_original_field = "F864CA3F05AD6C8A628535B131A61BBF", hash_generated_field = "F864CA3F05AD6C8A628535B131A61BBF")
@@ -487,14 +461,12 @@ static RunQueue getRunQueue() {
 
     boolean mDrawingAllowed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.766 -0500", hash_original_field = "C0C52C8769544E33D239458B4880FB79", hash_generated_field = "C0C52C8769544E33D239458B4880FB79")
-
     
      Region mTransparentRegion;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.769 -0500", hash_original_field = "6DD5B69EF744EC321638C5B663EA67C0", hash_generated_field = "6DD5B69EF744EC321638C5B663EA67C0")
 
      Region mPreviousTransparentRegion;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.771 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "AF6410B200BC05DCA2CF0BE65165448A")
-
 
     int mWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.773 -0500", hash_original_field = "7DDAE255893B528E7BEBEC203BC2D9F3", hash_generated_field = "7DDAE255893B528E7BEBEC203BC2D9F3")
@@ -514,10 +486,8 @@ static RunQueue getRunQueue() {
     boolean mIsAnimating;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.783 -0500", hash_original_field = "A237DD2C3AA1799B8037D96788707A83", hash_generated_field = "A237DD2C3AA1799B8037D96788707A83")
 
-
     CompatibilityInfo.Translator mTranslator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.785 -0500", hash_original_field = "86473EE91D5723F9F75E2A56F39C84CF", hash_generated_field = "86473EE91D5723F9F75E2A56F39C84CF")
-
 
      View.AttachInfo mAttachInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.788 -0500", hash_original_field = "19DDA5FF34DEE6F036F3E0F6D18E8BCF", hash_generated_field = "19DDA5FF34DEE6F036F3E0F6D18E8BCF")
@@ -533,14 +503,12 @@ static RunQueue getRunQueue() {
 
     FallbackEventHandler mFallbackEventHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.796 -0500", hash_original_field = "9F1BD97088B2257F3EF12D8B258FBB69", hash_generated_field = "9F1BD97088B2257F3EF12D8B258FBB69")
-
     
      Rect mTempRect;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.798 -0500", hash_original_field = "75DE7B8E36E8E0070CF83B97AE3C5ADD", hash_generated_field = "75DE7B8E36E8E0070CF83B97AE3C5ADD")
 
      Rect mVisRect;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.800 -0500", hash_original_field = "5CAC89A6B43ECD32B0872A407087A6F4", hash_generated_field = "5CAC89A6B43ECD32B0872A407087A6F4")
-
 
     boolean mTraversalScheduled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.802 -0500", hash_original_field = "EB355C7A896FD8B8387186109992F2B8", hash_generated_field = "EB355C7A896FD8B8387186109992F2B8")
@@ -578,7 +546,6 @@ static RunQueue getRunQueue() {
     InputEventMessage mPendingInputEvents = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.825 -0500", hash_original_field = "06BBA4AD1FBDA3B0B33CE36EFE1027EA", hash_generated_field = "06BBA4AD1FBDA3B0B33CE36EFE1027EA")
 
-
     boolean mWindowAttributesChanged = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.827 -0500", hash_original_field = "546953AC84915AC28C8B7DAF9502F5E5", hash_generated_field = "546953AC84915AC28C8B7DAF9502F5E5")
 
@@ -589,13 +556,11 @@ static RunQueue getRunQueue() {
     private final Surface mSurface = new Surface();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.832 -0500", hash_original_field = "CE47E8E592EB95BEB04FBBE625E99A8D", hash_generated_field = "CE47E8E592EB95BEB04FBBE625E99A8D")
 
-
     boolean mAdded;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.834 -0500", hash_original_field = "3272EA4F55AF2134E76D819B48B053D5", hash_generated_field = "3272EA4F55AF2134E76D819B48B053D5")
 
     boolean mAddedTouchMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.836 -0500", hash_original_field = "5EAC126C193FC41ACB184C1D10F2C250", hash_generated_field = "5EAC126C193FC41ACB184C1D10F2C250")
-
 
     CompatibilityInfoHolder mCompatibilityInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.838 -0500", hash_original_field = "4FAA064DF54D7CC2DBADC1DAB51471A6", hash_generated_field = "4FAA064DF54D7CC2DBADC1DAB51471A6")
@@ -604,7 +569,6 @@ static RunQueue getRunQueue() {
 
      Rect mWinFrame;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.842 -0500", hash_original_field = "3A62E2465C42A041582A8F996B30D0C5", hash_generated_field = "D7BF56D7D1AA140BE857C621B183EA1F")
-
 
     final Rect mPendingVisibleInsets = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.844 -0500", hash_original_field = "2DBB5B29E06A200A500EA494E8B10F6A", hash_generated_field = "1B6C360B3EA1E6006390DB0BE53A7892")
@@ -616,13 +580,11 @@ static RunQueue getRunQueue() {
             = new ViewTreeObserver.InternalInsetsInfo();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.849 -0500", hash_original_field = "0AE764505D70C71201355F8E003EA193", hash_generated_field = "34376B54378B9B3D43FDDE460CA57C87")
 
-
     final Configuration mLastConfiguration = new Configuration();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.852 -0500", hash_original_field = "AF2F98385216AA3B630DCA8E7C84587C", hash_generated_field = "8DF7E1052933D1F73177C1BFC385AA74")
 
     final Configuration mPendingConfiguration = new Configuration();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.862 -0500", hash_original_field = "F73A2E8B0FBF1242431CC31A3DD9702B", hash_generated_field = "F73A2E8B0FBF1242431CC31A3DD9702B")
-
     
     boolean mScrollMayChange;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.864 -0500", hash_original_field = "CF8B89DFEF5F4625A0C19FC1D32C3421", hash_generated_field = "CF8B89DFEF5F4625A0C19FC1D32C3421")
@@ -654,7 +616,6 @@ static RunQueue getRunQueue() {
     private ArrayList<LayoutTransition> mPendingTransitions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.886 -0500", hash_original_field = "ABA78699C698034369F90645C9496674", hash_generated_field = "ABA78699C698034369F90645C9496674")
 
-
      ViewConfiguration mViewConfiguration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.888 -0500", hash_original_field = "CC0FC278B71622219C45AD52C9FB53C8", hash_generated_field = "CC0FC278B71622219C45AD52C9FB53C8")
 
@@ -672,7 +633,6 @@ static RunQueue getRunQueue() {
 
     final PointF mLastTouchPoint = new PointF();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.900 -0500", hash_original_field = "DCA9C1CEBF044A84AF8953B73A6A1ADA", hash_generated_field = "2A75F6FAF247C6A563147144451919B0")
-
     
     private boolean mProfileRendering;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.902 -0500", hash_original_field = "EC4E206DABCE7F859A73029FA578044C", hash_generated_field = "2967540D832074C93AFE31D56D615C87")
@@ -695,22 +655,17 @@ static RunQueue getRunQueue() {
     AudioManager mAudioManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.916 -0500", hash_original_field = "2467CDF4E5E89FDAF3ABD83B3362838B", hash_generated_field = "2467CDF4E5E89FDAF3ABD83B3362838B")
 
-
      AccessibilityManager mAccessibilityManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.918 -0500", hash_original_field = "326964F84FEA789C7EA69B5AD84D099B", hash_generated_field = "326964F84FEA789C7EA69B5AD84D099B")
-
 
     AccessibilityInteractionController mAccessibilityInteractionController;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.920 -0500", hash_original_field = "1EE07D7B37AEA69E13942B821067B159", hash_generated_field = "1EE07D7B37AEA69E13942B821067B159")
 
-
     AccessibilityInteractionConnectionManager mAccessibilityInteractionConnectionManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.922 -0500", hash_original_field = "ED6865A95E9BDB4B92489EC925B4337E", hash_generated_field = "ED6865A95E9BDB4B92489EC925B4337E")
 
-
     SendWindowContentChangedAccessibilityEvent mSendWindowContentChangedAccessibilityEvent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.925 -0500", hash_original_field = "1BC8B61E3A2F357D4B64E56AC3996805", hash_generated_field = "CB41FCB74021FD4BA0B8B886D751AB3B")
-
 
     private  int mDensity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.927 -0500", hash_original_field = "91D8782EBDEF9C65BF9D8D5A67EE9546", hash_generated_field = "FBF46F0211B74BEC9C47C5EFFAF36A72")
@@ -723,7 +678,6 @@ static RunQueue getRunQueue() {
     private boolean mProfile = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.047 -0500", hash_original_field = "771F3E0240CB2201808586E811799152", hash_generated_field = "771F3E0240CB2201808586E811799152")
 
-
     int mHardwareYOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.049 -0500", hash_original_field = "43FB9582B41438DE11C8033508791B9A", hash_generated_field = "43FB9582B41438DE11C8033508791B9A")
 
@@ -732,7 +686,6 @@ static RunQueue getRunQueue() {
 
     final Paint mResizePaint = new Paint();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.308 -0500", hash_original_field = "AF2FFCD79E691AE8D5AA2A68A21816E0", hash_generated_field = "7265E6F2381DF6B2AD9FD72699DAD27A")
-
 
     private long mInputEventReceiveTimeNanos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.311 -0500", hash_original_field = "3B87B2AB0EA6015126DB8BAD718103A2", hash_generated_field = "B12640E94E9B6FC4860989B653C215E6")
@@ -746,8 +699,8 @@ static RunQueue getRunQueue() {
     private InputQueue.FinishedCallback mFinishedCallback;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.016 -0400", hash_original_field = "18C98C39E8D3C77B924AFC1D76DB38D1", hash_generated_field = "10425C1D99C9B3E146C1BBB81040F9EF")
 
-    private final InputHandler mInputHandler = new InputHandler() {        
-        @DSModeled(DSC.SPEC)
+    private final InputHandler mInputHandler = new InputHandler() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.016 -0400", hash_original_method = "DA8B85C0B97B283164189BFC107A0C51", hash_generated_method = "FF89E1B449B2A3760D958F63C22C8E1D")
         public void handleKey(KeyEvent event, InputQueue.FinishedCallback finishedCallback) {
             startInputEvent(finishedCallback);
@@ -755,12 +708,8 @@ static RunQueue getRunQueue() {
             addTaint(event.getTaint());
             addTaint(finishedCallback.getTaint());
             
-            
-            
         }
-
         
-        @DSModeled(DSC.SPEC)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.016 -0400", hash_original_method = "BA251C4BE7EEF8348B6DA839AE6C5F99", hash_generated_method = "6D32680B0C65B263C80F930005E38CDC")
         public void handleMotion(MotionEvent event, InputQueue.FinishedCallback finishedCallback) {
             startInputEvent(finishedCallback);
@@ -768,15 +717,13 @@ static RunQueue getRunQueue() {
             addTaint(event.getTaint());
             addTaint(finishedCallback.getTaint());
             
-            
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.021 -0400", hash_original_field = "09A95A1FC3FF30F6E7CF942F1FC6A265", hash_generated_field = "99F32DA5E56A393932E6EDF801E99038")
 
     private SurfaceHolder mHolder = new SurfaceHolder() {        
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.017 -0400", hash_original_method = "FB03EEF08A419E6F5E4B7D4C32AA13C8", hash_generated_method = "13BADEA14E6A49BCC17141EB1CC9ABAB")
         public Surface getSurface() {
             Surface varB4EAC82CA7396A68D541C85D26508E83_1564047814 = null; 
@@ -784,32 +731,26 @@ static RunQueue getRunQueue() {
             varB4EAC82CA7396A68D541C85D26508E83_1564047814.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1564047814;
             
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.017 -0400", hash_original_method = "111414E0BC27432A58777D8D7A8A5313", hash_generated_method = "404CE96BADDBDD106E676659F86D0C86")
         public boolean isCreating() {
             boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_116664615 = getTaintBoolean();
             return var84E2C64F38F78BA3EA5C905AB5A2DA27_116664615;
             
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.017 -0400", hash_original_method = "1534EBA7EE38BC120F6309F5A1B3FF9E", hash_generated_method = "1D39A8EC720482719F771CC26E2A5136")
         public void addCallback(Callback callback) {
             addTaint(callback.getTaint());
             
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.017 -0400", hash_original_method = "1D7F6566A3906AFA0AB54EE06949ABBB", hash_generated_method = "4529A5CE4ECB0918530466545BD7FADC")
         public void removeCallback(Callback callback) {
             addTaint(callback.getTaint());
             
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.018 -0400", hash_original_method = "0FF9F7AB4B875AE8A0C5A8C3535F85C8", hash_generated_method = "D84D02E4950B7C76C7CC605634C9A5E7")
         public void setFixedSize(int width, int height) {
@@ -817,34 +758,29 @@ static RunQueue getRunQueue() {
             addTaint(height);
             
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.018 -0400", hash_original_method = "0794758F1C90C59C5D7A2C0BDE8FAA38", hash_generated_method = "2283705EABC76CCAA7D98B4015CCD0EC")
         public void setSizeFromLayout() {
             
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.018 -0400", hash_original_method = "CF1EA2FC05AD6DEBDFA26DEE8FD9DB43", hash_generated_method = "7A8B1BC0D08BE1C3FCDE74335C415748")
         public void setFormat(int format) {
             addTaint(format);
             
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.018 -0400", hash_original_method = "B37A48D0CAD6F4AF8C78DA1B2A495A29", hash_generated_method = "F16672983FBE594CFFF27796E8300DE9")
         public void setType(int type) {
             addTaint(type);
             
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.019 -0400", hash_original_method = "46E48CC06FE228B4151C3D83F1499F0C", hash_generated_method = "2B4B08250D222564E5F449F984CD77F8")
         public void setKeepScreenOn(boolean screenOn) {
             addTaint(screenOn);
             
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.020 -0400", hash_original_method = "3082759B8090FD86F4392C9CC2C4FBD0", hash_generated_method = "42B586D14B6CE5A0CCC956C7A302F059")
         public Canvas lockCanvas() {
@@ -853,9 +789,7 @@ static RunQueue getRunQueue() {
             varB4EAC82CA7396A68D541C85D26508E83_949446256.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_949446256;
             
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.021 -0400", hash_original_method = "3E84C9B445B974E90BE60751B0E8F5B3", hash_generated_method = "E3CA96D4EA0FD882850C6F6D5D588F7B")
         public Canvas lockCanvas(Rect dirty) {
@@ -865,17 +799,15 @@ static RunQueue getRunQueue() {
             varB4EAC82CA7396A68D541C85D26508E83_1552549708.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1552549708;
             
-            
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.021 -0400", hash_original_method = "398534786B4B68CC68F8CE8B2E298404", hash_generated_method = "069FC062D6BD12CF8E4DC29D8D01209E")
         public void unlockCanvasAndPost(Canvas canvas) {
             addTaint(canvas.getTaint());
             
         }
-
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:00.021 -0400", hash_original_method = "0458ACEC2C801E19AE11DF373ED70BEE", hash_generated_method = "C1182B7EEE68E099E2C5404841EDF4EE")
         public Rect getSurfaceFrame() {
             Rect varB4EAC82CA7396A68D541C85D26508E83_1346833247 = null; 
@@ -883,9 +815,7 @@ static RunQueue getRunQueue() {
             varB4EAC82CA7396A68D541C85D26508E83_1346833247.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1346833247;
             
-            
         }
-
         
 };
     
@@ -1198,12 +1128,14 @@ private void enableHardwareAcceleration(WindowManager.LayoutParams attrs) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.975 -0500", hash_original_method = "23562CAF30DEA91689886E5D0DFB3D0F", hash_generated_method = "08E70AA8D2F1647EC2EEAF8AC8218386")
     
 public View getView() {
         return mView;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.977 -0500", hash_original_method = "6C3085A5B27688C16B5F48D71E61D048", hash_generated_method = "4D88FED1FAE2FE688EFF93CB94610127")
     
 final WindowLeaked getLocation() {
@@ -1326,6 +1258,7 @@ void setStopped(boolean stopped) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.998 -0500", hash_original_method = "DCC308262D5800610A000228CF8970A4", hash_generated_method = "B63E6487D1CD4BEC29A92A9071D59DCB")
     
 public ViewParent getParent() {
@@ -1382,6 +1315,7 @@ public void unscheduleTraversals() {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.013 -0500", hash_original_method = "27A276950AD49DC3B2BCAC57214867E1", hash_generated_method = "27A276950AD49DC3B2BCAC57214867E1")
     
 int getHostVisibility() {
@@ -2808,7 +2742,6 @@ public void clearChildFocus(View child) {
         }
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.090 -0500", hash_original_method = "8AB5F5420D903C559791A9BF9B9BF8FD", hash_generated_method = "02B28F50617ED08F3B19BEA4BD084AD1")
     
 public void focusableViewAvailable(View v) {
@@ -3367,7 +3300,6 @@ private boolean enterTouchMode() {
         return false;
     }
 
-
     /**
      * Find an ancestor of focused that wants focus after its descendants and is
      * focusable in touch mode.
@@ -3779,7 +3711,6 @@ private boolean checkForLeavingTouchModeAndConsume(KeyEvent event) {
 
         return false;
     }
-
     
     class ResizedInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.854 -0500", hash_original_field = "47DADDCDE2ABE98E0EA742CE6D950BCA", hash_generated_field = "47DADDCDE2ABE98E0EA742CE6D950BCA")
@@ -3798,10 +3729,7 @@ private boolean checkForLeavingTouchModeAndConsume(KeyEvent event) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static final class SystemUiVisibilityInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:31.932 -0500", hash_original_field = "C4ECE7ED8A0F11C4F90796D05BE13ED7", hash_generated_field = "C4ECE7ED8A0F11C4F90796D05BE13ED7")
@@ -3823,10 +3751,7 @@ private boolean checkForLeavingTouchModeAndConsume(KeyEvent event) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static class InputEventMessage {
 
@@ -3851,7 +3776,6 @@ public static InputEventMessage obtain(Message msg) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.332 -0500", hash_original_field = "FF70C662CB92BB1987F6CF4637424D6E", hash_generated_field = "D5B99AC4B86CE940DBBD3CF3FA1D542C")
 
-
         private static final Object sPoolSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.334 -0500", hash_original_field = "2190A130115C70EB39DEF863014CD391", hash_generated_field = "3276E3FE464DBE4BDC4F9753A4DD418D")
 
@@ -3860,7 +3784,6 @@ public static InputEventMessage obtain(Message msg) {
 
         private static int sPoolSize = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.339 -0500", hash_original_field = "3257F81BBFE679E3360141AA5EA9D518", hash_generated_field = "FB8E412EAB46029C42E8E38ED918C6D9")
-
 
         private static final int MAX_POOL_SIZE = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.326 -0500", hash_original_field = "2D41D548AF5E6C9BAD3BF2AC7B0EDE61", hash_generated_field = "2D41D548AF5E6C9BAD3BF2AC7B0EDE61")
@@ -3894,8 +3817,6 @@ public void recycle() {
 
         }
     }
-
-
     
     class TakenSurfaceHolder extends BaseSurfaceHolder {
         
@@ -3918,12 +3839,14 @@ public void recycle() {
             // Not currently interesting -- from changing between fixed and layout size.
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.415 -0500", hash_original_method = "E07C2927AF02C0614ECCFDEAF72047C2", hash_generated_method = "6D23CB0D78B1D93FF14D1303BE528EE1")
         
 public void setFormat(int format) {
             ((RootViewSurfaceTaker)mView).setSurfaceFormat(format);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.417 -0500", hash_original_method = "EE34E0B82BE2B114D60991753727E9A6", hash_generated_method = "5D83BAA8B38B494ACB639C1B18C6C59C")
         
 public void setType(int type) {
@@ -3944,6 +3867,7 @@ public boolean isCreating() {
             return mIsCreating;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.425 -0500", hash_original_method = "DFAAE278D74727ACF1AA5508094F804D", hash_generated_method = "84AB21DCAB4D19CE1C040E40DEDE3BD0")
         
 @Override
@@ -3952,16 +3876,14 @@ public boolean isCreating() {
                     "Currently only support sizing from layout");
         }
         
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.428 -0500", hash_original_method = "21F6CF6D8B53BD856057ED05ABC33177", hash_generated_method = "85AFB2D0337BC8298CA8AFC8C1EB3A0D")
         
 public void setKeepScreenOn(boolean screenOn) {
             ((RootViewSurfaceTaker)mView).setSurfaceKeepScreenOn(screenOn);
         }
-
         
     }
-
-
     
     static class InputMethodCallback extends IInputMethodCallback.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.433 -0500", hash_original_field = "05FBD81E4992DDDFF83F422E6000AD3C", hash_generated_field = "E7FFD6E9BC298C91066F7F076BB25FC3")
@@ -3988,11 +3910,8 @@ public void finishedEvent(int seq, boolean handled) {
 public void sessionCreated(IInputMethodSession session) {
             // Stub -- not for use in the client.
         }
-
         
     }
-
-
     
     static class W extends IWindow.Stub {
 
@@ -4027,6 +3946,7 @@ public void resized(int w, int h, Rect coveredInsets, Rect visibleInsets,
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.453 -0500", hash_original_method = "EB98E21C67C8D9A44F58CD671F491CDA", hash_generated_method = "1AA5B0E3B90059952EB2E33BF602E2DD")
         
 public void dispatchAppVisibility(boolean visible) {
@@ -4108,6 +4028,7 @@ public void dispatchWallpaperOffsets(float x, float y, float xStep, float yStep,
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.472 -0500", hash_original_method = "084CB00632E8F4F79253F4CBB0703969", hash_generated_method = "92756D8FB0326E7357CC798315ACE1D5")
         
 public void dispatchWallpaperCommand(String action, int x, int y,
@@ -4130,6 +4051,7 @@ public void dispatchDragEvent(DragEvent event) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.477 -0500", hash_original_method = "0BC30404A661769E03F23017D2DE8196", hash_generated_method = "236E1F5FB1F72E71A81D18D8C086CDA0")
         
 public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility,
@@ -4140,11 +4062,8 @@ public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility,
                         localValue, localChanges);
             }
         }
-
         
     }
-
-
     
     static final class TrackballAxis {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.483 -0500", hash_original_field = "00B8383B31D675C12A672A6EA615A40E", hash_generated_field = "973768C090750F2E47DF477502675CB2")
@@ -4157,7 +4076,6 @@ public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility,
 
         static final float ACCEL_MOVE_SCALING_FACTOR = (1.0f/40);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.490 -0500", hash_original_field = "722609B4032E08961786F0112C7E37CB", hash_generated_field = "722609B4032E08961786F0112C7E37CB")
-
 
         float position;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.492 -0500", hash_original_field = "2BC82C89B8860ABF3FA89A1E7B3206F3", hash_generated_field = "2BC82C89B8860ABF3FA89A1E7B3206F3")
@@ -4327,8 +4245,6 @@ int generate(float precision) {
             } while (true);
         }
     }
-
-
     
     public static final class CalledFromWrongThreadException extends AndroidRuntimeException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.520 -0500", hash_original_method = "D704015D17B148E0274888D3BE6B5A1B", hash_generated_method = "F83B8D5A7B44F0573183674A6D02059D")
@@ -4336,18 +4252,14 @@ int generate(float precision) {
 public CalledFromWrongThreadException(String msg) {
             super(msg);
         }
-
         
     }
-
-
     
     static final class RunQueue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.564 -0500", hash_original_field = "C81BE78E8F41CF30B45F189A5C4E6E4A", hash_generated_field = "F821D9D70BB932D42D3D9D491D5A29A1")
 
         private final ArrayList<HandlerAction> mActions = new ArrayList<HandlerAction>();
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.767 -0400", hash_original_method = "9D853D73EE638AB90ACD5CD9573763A9", hash_generated_method = "9D853D73EE638AB90ACD5CD9573763A9")
         public RunQueue ()
         {
@@ -4402,7 +4314,6 @@ void executeActions(Handler handler) {
                 actions.clear();
             }
         }
-
         
         private static class HandlerAction {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.577 -0500", hash_original_field = "6E604B84976ABCF0C30A63D2F996D309", hash_generated_field = "6E604B84976ABCF0C30A63D2F996D309")
@@ -4412,7 +4323,6 @@ void executeActions(Handler handler) {
 
             long delay;
             
-            @DSModeled(DSC.BAN)
             @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:47.769 -0400", hash_original_method = "30472C53850B994B9A76B3EFD24AA1BA", hash_generated_method = "30472C53850B994B9A76B3EFD24AA1BA")
             public HandlerAction ()
             {
@@ -4439,15 +4349,10 @@ void executeActions(Handler handler) {
                 result = 31 * result + (int) (delay ^ (delay >>> 32));
                 return result;
             }
-
             
         }
-
-
         
     }
-
-
     
     final class AccessibilityInteractionConnectionManager implements AccessibilityStateChangeListener {
         
@@ -4486,11 +4391,8 @@ public void ensureNoConnection() {
                 mAccessibilityManager.removeAccessibilityInteractionConnection(mWindow);
             }
         }
-
         
     }
-
-
     
     static final class AccessibilityInteractionConnection extends IAccessibilityInteractionConnection.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.603 -0500", hash_original_field = "38FE20C8D892B3E40E6344420E266A42", hash_generated_field = "53CC87D794214F8DCA645D22E8A949F9")
@@ -4554,18 +4456,14 @@ public void findAccessibilityNodeInfosByViewText(String text, int accessibilityI
                             interactionId, callback, interrogatingPid, interrogatingTid);
             }
         }
-
         
     }
-
-
     
     final class AccessibilityInteractionController {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.621 -0500", hash_original_field = "C19CA3CBA263B3369E1B280768D70DF1", hash_generated_field = "9C5EE85F599ECE1BA2255910141DCB18")
 
         private static final int POOL_SIZE = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.623 -0500", hash_original_field = "9F66DF5D60BD13D318D252FC7D95B048", hash_generated_field = "2FD14E145489DD00A8E7926145DAD829")
-
 
         private ArrayList<AccessibilityNodeInfo> mTempAccessibilityNodeInfoList =
             new ArrayList<AccessibilityNodeInfo>();
@@ -4886,7 +4784,6 @@ private boolean performActionClearSelection(int accessibilityId) {
             target.setSelected(false);
             return !target.isSelected();
         }
-
         
         public class SomeArgs implements Poolable<SomeArgs> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.638 -0500", hash_original_field = "10DB3D8812253573640BF0D1F91398D4", hash_generated_field = "DA4F0B9DBC6F4431600CE5D0AA462E29")
@@ -4896,7 +4793,6 @@ private boolean performActionClearSelection(int accessibilityId) {
 
             private boolean mIsPooled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.644 -0500", hash_original_field = "524E284308787C3B27AB4CD560A816CF", hash_generated_field = "F8BED0DABC2D7EE357C5667A5634389E")
-
 
             public Object arg1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.646 -0500", hash_original_field = "2CC0C93F38D97721E695C73C9F8BA144", hash_generated_field = "1AFBA2F52DF215183028C3B28AF50E99")
@@ -4951,7 +4847,6 @@ private void clear() {
                 argi2 = 0;
                 argi3 = 0;
             }
-
             
         }
 
@@ -4969,8 +4864,6 @@ private View findViewByAccessibilityId(int accessibilityId) {
             return foundView;
         }
     }
-
-
     
     private class SendWindowContentChangedAccessibilityEvent implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.714 -0500", hash_original_field = "FED94FB1EAA0AA5EA7631CA7B3A3B650", hash_generated_field = "8E5087238AE27D181E6487D7D8E8CADB")
@@ -4991,7 +4884,6 @@ public void run() {
                 mIsPending = false;
             }
         }
-
         
     }
 
@@ -5337,6 +5229,7 @@ private AudioManager getAudioManager() {
         return mAudioManager;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.272 -0500", hash_original_method = "C22EE439EF1C63381F42BE80F34ED0C5", hash_generated_method = "B893A28442E5CDB7E26D9A570432816A")
     
 public AccessibilityInteractionController getAccessibilityInteractionController() {
@@ -5436,6 +5329,7 @@ public void playSoundEffect(int effectId) {
     /**
      * {@inheritDoc}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:32.280 -0500", hash_original_method = "B8D922B767BD06C4283BB3EF0BFA3172", hash_generated_method = "FAF2F69C5B351D77F913414E28CD64E0")
     
 public boolean performHapticFeedback(int effectId, boolean always) {

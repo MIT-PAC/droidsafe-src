@@ -28,17 +28,11 @@ import android.view.animation.AnimationUtils;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class ScrollView extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.443 -0500", hash_original_field = "95ED7F4260F6B91A51F75452B47C3723", hash_generated_field = "0DB9E46E1BC530D48AB4117911138FC2")
 
     static final int ANIMATED_SCROLL_GAP = 250;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.446 -0500", hash_original_field = "EE6BC8505BE3AB86FCE986149FCEF1E9", hash_generated_field = "58258D94D76BAF55ECF7DADE8930E574")
-
 
     static final float MAX_SCROLL_FACTOR = 0.5f;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.494 -0500", hash_original_field = "394D213079DFA0C7024EC13F5673BC94", hash_generated_field = "E2DAEB44FC73F85759FCDB42BA10BD3A")
@@ -46,10 +40,8 @@ public class ScrollView extends FrameLayout {
     private static final int INVALID_POINTER = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.448 -0500", hash_original_field = "D9542227DCB2FC07C7FAE482DB504F32", hash_generated_field = "507FF60BF6AED501221786F4F9B1C4CE")
 
-
     private long mLastScroll;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.451 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
-
 
     private final Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.453 -0500", hash_original_field = "63F6CA74EEC786DAEE7A49BF47815C33", hash_generated_field = "7106C69F4E49AB9D7F59F38965DF6036")
@@ -85,7 +77,6 @@ public class ScrollView extends FrameLayout {
     private boolean mSmoothScrollingEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.477 -0500", hash_original_field = "D11C33EFD56B37B918E01A200C446C59", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
 
-
     private int mTouchSlop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.479 -0500", hash_original_field = "0DAB51CD5AD14EAFA0DBAE048171A484", hash_generated_field = "7DBE1A18599B8760DC9B67AAFE3499E3")
 
@@ -94,7 +85,6 @@ public class ScrollView extends FrameLayout {
 
     private int mMaximumVelocity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.483 -0500", hash_original_field = "3140A319F32CA873045621864B655537", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
-
 
     private int mOverscrollDistance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.485 -0500", hash_original_field = "F239C82AEB45C28104273F86A78E6F04", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
@@ -110,12 +100,16 @@ public class ScrollView extends FrameLayout {
 
     private StrictMode.Span mFlingStrictSpan = null;
 
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.496 -0500", hash_original_method = "4713E1355E9C805E185DB05E4B4B9810", hash_generated_method = "5052070C631A712E44E5380A0FCF7A04")
     
 public ScrollView(Context context) {
         this(context, null);
     }
 
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.499 -0500", hash_original_method = "D709104905B863FC98F9383546426518", hash_generated_method = "EB37E6BB4BEA7A68E2A5672B3FF621CF")
     
 public ScrollView(Context context, AttributeSet attrs) {
@@ -143,6 +137,7 @@ public ScrollView(Context context, AttributeSet attrs, int defStyle) {
         return true;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.506 -0500", hash_original_method = "2B5BCBF9645A95C024C3D4122E8D2438", hash_generated_method = "EFD05FF19BA5135ED5A0DC8C8B557651")
     
 @Override
@@ -159,6 +154,7 @@ public ScrollView(Context context, AttributeSet attrs, int defStyle) {
         return 1.0f;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.509 -0500", hash_original_method = "F0E4C184CA27C21FD42267E77DCA1374", hash_generated_method = "A37B03FC4AF30D5AF00CD2A3FA17AB0E")
     
 @Override
@@ -181,12 +177,12 @@ public ScrollView(Context context, AttributeSet attrs, int defStyle) {
      * @return The maximum amount this scroll view will scroll in response to
      *   an arrow event.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.512 -0500", hash_original_method = "13CC3D3BB67006B8B223FEAA5CEB8AD3", hash_generated_method = "F4B27DCC3FC0D9E1A9D6D278F1CEE295")
     
 public int getMaxScrollAmount() {
         return (int) (MAX_SCROLL_FACTOR * (mBottom - mTop));
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.514 -0500", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "A421A744020FEE9AE61BC6A77CA31282")
     
@@ -203,6 +199,8 @@ private void initScrollView() {
         mOverflingDistance = configuration.getScaledOverflingDistance();
     }
 
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.517 -0500", hash_original_method = "C2B46C856A31C41C5B4609404338EFA0", hash_generated_method = "9987C85F19F47E670CB55B48F8F89207")
     
 @Override
@@ -455,7 +453,8 @@ private void recycleVelocityTracker() {
         super.requestDisallowInterceptTouchEvent(disallowIntercept);
     }
 
-
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.558 -0500", hash_original_method = "A618CDF234D118EA8A225B0CD965AEA3", hash_generated_method = "9D234685BE993702B58F556422EA1590")
     
 @Override
@@ -1410,7 +1409,6 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         super.requestChildFocus(child, focused);
     }
 
-
     /**
      * When looking for focus in children of a scroll view, need to be a little
      * more careful not to give focus to something that is scrolled off screen.
@@ -1585,6 +1583,8 @@ private void endDrag() {
      *
      * <p>This version also clamps the scrolling to the bounds of our child.
      */
+    @DSComment("ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.653 -0500", hash_original_method = "748C5914370A5F8CDD8109B6F4611B5B", hash_generated_method = "3A1797599400A01D35584D2148E07111")
     
 @Override
@@ -1600,6 +1600,7 @@ private void endDrag() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.656 -0500", hash_original_method = "3BD104A12D7CF3E01CAF1DA422C489F3", hash_generated_method = "D4408673955EDD70B8EB81E03039D730")
     
 @Override
@@ -1617,6 +1618,7 @@ private void endDrag() {
         super.setOverScrollMode(mode);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:01.659 -0500", hash_original_method = "50FAD524FA6B782881C70ABEF15C4DDF", hash_generated_method = "7D0ACC1B57C66D1DE7B0C8A395103AD8")
     
 @Override

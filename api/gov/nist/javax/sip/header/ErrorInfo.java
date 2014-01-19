@@ -11,17 +11,11 @@ import java.text.ParseException;
 import javax.sip.address.URI;
 import javax.sip.header.ErrorInfoHeader;
 
-
-
-
-
-
 public final class ErrorInfo extends ParametersHeader implements ErrorInfoHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.829 -0500", hash_original_field = "791D536489C514903E76DAA4549A6C80", hash_generated_field = "9BD0FFEC94B76824606332C7C1A80F81")
 
     private static final long serialVersionUID = -6347702901964436362L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.832 -0500", hash_original_field = "E209D51164376F85929B22203A06B026", hash_generated_field = "8F903FEA2C89EDECE455B9C7E7CF07FC")
-
 
     protected GenericURI errorInfo;
 
@@ -80,6 +74,7 @@ public void setErrorInfo(javax.sip.address.URI errorInfo) {
      *
      * @return the URI representing the ErrorInfo.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.847 -0500", hash_original_method = "4A04B5BB24A371C2D4F0F24F47A1F48A", hash_generated_method = "A2C85436611C1E6C971751A5AE9C48FD")
     
 public URI getErrorInfo() {
@@ -94,6 +89,7 @@ public URI getErrorInfo() {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the error message.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.849 -0500", hash_original_method = "E1313AE37E1C05DA9102D36DED16DFCA", hash_generated_method = "9DFBC8F57ECFEEC783E54C15958523F0")
     
 public void setErrorMessage(String message) throws ParseException {
@@ -109,6 +105,7 @@ public void setErrorMessage(String message) throws ParseException {
      *
      * @return the stringified version of the ErrorInfo header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.852 -0500", hash_original_method = "9D1A3E324FFC9C131D1ACF2EBA93FC69", hash_generated_method = "D8BBA929BDD3DFB34137BEC9E30DBE62")
     
 public String getErrorMessage() {

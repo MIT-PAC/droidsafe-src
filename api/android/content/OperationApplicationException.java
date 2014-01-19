@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class OperationApplicationException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.375 -0500", hash_original_field = "B084F1694C2F42B2E12BD00B22F90D87", hash_generated_field = "394223B065D0D359C43F3F4B72BA8F23")
 
@@ -51,12 +47,12 @@ public OperationApplicationException(String message, int numSuccessfulYieldPoint
         mNumSuccessfulYieldPoints = numSuccessfulYieldPoints;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.393 -0500", hash_original_method = "0D03973B4F1A76863E3DF446BDE01596", hash_generated_method = "7518C00CB505EC052EC9E46B85323AC3")
     
 public int getNumSuccessfulYieldPoints() {
         return mNumSuccessfulYieldPoints;
     }
-
     
 }
 

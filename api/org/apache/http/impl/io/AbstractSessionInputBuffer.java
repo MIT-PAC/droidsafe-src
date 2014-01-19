@@ -16,14 +16,8 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.ByteArrayBuffer;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.869 -0500", hash_original_field = "ABC191480B217CDD4C9CD0F134BDA16A", hash_generated_field = "9B0F52B8C31A449A2E624B8847C753E5")
-
 
     private InputStream instream;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.871 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
@@ -36,11 +30,9 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
 
     private int bufferlen;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.878 -0500", hash_original_field = "5BE7446BA22AC876A96460A896625418", hash_generated_field = "0CC6340E9144F7E622BCBFBE8F5F5CB5")
-
     
     private ByteArrayBuffer linebuffer = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.880 -0500", hash_original_field = "64A133D796EAE83898A5E51E6D434FEF", hash_generated_field = "76BAEB11C3552BFB23E0B4B99A533DB1")
-
     
     private String charset = HTTP.US_ASCII;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.882 -0500", hash_original_field = "1268E551E2D06835242E1DD85742F5B8", hash_generated_field = "9303ABFC1EF5CEEB446DE036D38A5721")
@@ -50,7 +42,6 @@ public abstract class AbstractSessionInputBuffer implements SessionInputBuffer {
 
     private int maxLineLen = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.886 -0500", hash_original_field = "80498DD6FD825DCA7A9A3D886278D44D", hash_generated_field = "D608E8E883C0ADFB9BB241D869189B8C")
-
     
     private HttpTransportMetricsImpl metrics;
     
@@ -273,6 +264,7 @@ private int lineFromReadBuffer(final CharArrayBuffer charbuffer, int pos)
         return len;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.914 -0500", hash_original_method = "40CE76C5D842CFEF27650CABF8F97946", hash_generated_method = "D432802EC1C592DE7FCE122012E97D0E")
     
 public String readLine() throws IOException {
@@ -285,12 +277,12 @@ public String readLine() throws IOException {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:42.916 -0500", hash_original_method = "E82E77AA369AC2B118042C614F644F5C", hash_generated_method = "0F09664C8D045EB8CE43D8B36FB12762")
     
 public HttpTransportMetrics getMetrics() {
         return this.metrics;
     }
-
     
 }
 

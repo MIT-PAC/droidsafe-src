@@ -16,21 +16,16 @@ import android.content.res.Resources;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-
-
 class SyncAdaptersCache extends RegisteredServicesCache<SyncAdapterType> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.687 -0500", hash_original_field = "6DC951A766331AA637AABD8353624C22", hash_generated_field = "DFD9C75B63090EAAE5A4E1D087E8824B")
 
     private static final String TAG = "Account";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.689 -0500", hash_original_field = "98A15733B14CA4344A0B58C3DD90FE0F", hash_generated_field = "59887A17F3D56328CE5921EE7BAC7208")
 
-
     private static final String SERVICE_INTERFACE = "android.content.SyncAdapter";
-
     
     static class MySerializer implements XmlSerializerAndParser<SyncAdapterType> {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.933 -0400", hash_original_method = "6E1FAE6E6E9693B60CA712A8476AA1E6", hash_generated_method = "6E1FAE6E6E9693B60CA712A8476AA1E6")
         public MySerializer ()
         {
@@ -51,7 +46,6 @@ public SyncAdapterType createFromXml(XmlPullParser parser)
             final String accountType = parser.getAttributeValue(null, "accountType");
             return SyncAdapterType.newKey(authority, accountType);
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:32.691 -0500", hash_original_field = "C650BBA7E35ACCA34B98B85CDBC673BB", hash_generated_field = "B965CC9F2D58B5F29B59B422674E8A41")

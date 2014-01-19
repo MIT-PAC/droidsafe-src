@@ -9,11 +9,6 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.regex.Pattern;
 
-
-
-
-
-
 public class Timestamp extends Date {
 
     /**
@@ -139,13 +134,11 @@ private static IllegalArgumentException badTimestampString(String s) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.588 -0500", hash_original_field = "85130567E01D776BB425A7E2B6DDD69E", hash_generated_field = "5666E37C9E24829F13915667F1E900D0")
 
-
     private static final long serialVersionUID = 2745179027874758501L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.593 -0500", hash_original_field = "7DA69D00556E43AC749EDD5D759ED918", hash_generated_field = "1DE35ED5D2701F5BA25ACDF3A3E82857")
 
     private static final String TIME_FORMAT_REGEX = "[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}.*";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.633 -0500", hash_original_field = "889B8613D7221EB67E3BCB1C4A118158", hash_generated_field = "7CD6F5F30BFE0B9B9FCAF17A4B57A1F7")
-
 
     private static final String PADDING = "000000000";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.591 -0500", hash_original_field = "9BEB14807E9BD25C91ACC11514BF28AE", hash_generated_field = "02AA9EFEAC0A700829C2BFFE89AB3713")
@@ -198,6 +191,8 @@ private static IllegalArgumentException badTimestampString(String s) {
      *            a time value in the format of milliseconds since the Epoch
      *            (January 1 1970 00:00:00.000 GMT).
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:11.599 -0500", hash_original_method = "86C700BF2C693DDDD6950F4A0D10E64A", hash_generated_method = "1906AE39ACDEF7A3327208E54D6A248D")
     
 public Timestamp(long theTime) {

@@ -13,11 +13,6 @@ import java.util.Map.Entry;
 import java.util.Set;
 import java.util.TreeMap;
 
-
-
-
-
-
 public final class RawHeaders {
 
     /**
@@ -40,12 +35,11 @@ public static RawHeaders fromMultimap(Map<String, List<String>> map) {
         }
         return result;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.375 -0400", hash_original_field = "FA7582AED8A9C6860ED135540F90AAFE", hash_generated_field = "F018DC0E2BA01C80BAE5B1A83407ABAC")
 
-    private static final Comparator<String> FIELD_NAME_COMPARATOR = new Comparator<String>() {        
-        @DSModeled(DSC.SAFE)
+    private static final Comparator<String> FIELD_NAME_COMPARATOR = new Comparator<String>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:29.375 -0400", hash_original_method = "97A4263BD250C85D737E56C91BCF9DB2", hash_generated_method = "87FDB9F6A8C83D84768E8CB65F606488")
         @FindBugsSuppressWarnings("ES_COMPARING_PARAMETER_STRING_WITH_EQ")
         @Override
@@ -58,21 +52,10 @@ public static RawHeaders fromMultimap(Map<String, List<String>> map) {
             int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1091903691 = getTaintInt();
             return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1091903691;
             
-            
-                
-            
-                
-            
-                
-            
-                
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.284 -0500", hash_original_field = "07F428528BFEF71A200897A68EEF9185", hash_generated_field = "E294623D0BEE32E5166A91061EFF3F0C")
-
 
     private final List<String> namesAndValues = new ArrayList<String>(20);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.287 -0500", hash_original_field = "A523116C573EF8EFB44D14B8D098B78E", hash_generated_field = "3535C618FCAB072DA70F443EC8961E3F")
@@ -106,6 +89,7 @@ public RawHeaders(RawHeaders copyFrom) {
      * Sets the response status line (like "HTTP/1.0 200 OK") or request line
      * (like "GET / HTTP/1.1").
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.301 -0500", hash_original_method = "A034EBBE3F64C8F074A3B6C276AAF223", hash_generated_method = "239C992354690A143B33A6E7F66A1BCC")
     
 public void setStatusLine(String statusLine) {
@@ -133,6 +117,7 @@ public void setStatusLine(String statusLine) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.303 -0500", hash_original_method = "A2AF11C5A8C661AB11C9AC7FDCDD9C73", hash_generated_method = "9CC8C34428E7A8BFCD11806466340D3D")
     
 public String getStatusLine() {
@@ -143,6 +128,7 @@ public String getStatusLine() {
      * Returns the status line's HTTP minor version. This returns 0 for HTTP/1.0
      * and 1 for HTTP/1.1. This returns 1 if the HTTP version is unknown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.306 -0500", hash_original_method = "DB8BE97BE5124EB81D65BC5698249D9B", hash_generated_method = "2BEDDFED387FAAC6F8BB5D71134CC577")
     
 public int getHttpMinorVersion() {
@@ -152,6 +138,7 @@ public int getHttpMinorVersion() {
     /**
      * Returns the HTTP status code or -1 if it is unknown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.308 -0500", hash_original_method = "9E4A5E9FF258EB24BD25F51C84D6D494", hash_generated_method = "92048A1B8E5D48E862679EB1DB17FC18")
     
 public int getResponseCode() {
@@ -161,6 +148,7 @@ public int getResponseCode() {
     /**
      * Returns the HTTP status message or null if it is unknown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.311 -0500", hash_original_method = "84763A1C87A993ECD4976A3E0463024E", hash_generated_method = "301C2D9B6AB506E40ACBEDDC935861DB")
     
 public String getResponseMessage() {
@@ -227,6 +215,7 @@ public void addAll(String fieldName, List<String> headerFields) {
      * Set a field with the specified value. If the field is not found, it is
      * added. If the field is found, the existing values are replaced.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.323 -0500", hash_original_method = "A964C2ABDA70C3696494D217AFF90E69", hash_generated_method = "A2225165535D6A2ABCF867FA2CC2086E")
     
 public void set(String fieldName, String value) {
@@ -246,6 +235,7 @@ public int length() {
     /**
      * Returns the field at {@code position} or null if that is out of range.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.328 -0500", hash_original_method = "BE23DD7B1410D37DAEEAE51D9DBF75EB", hash_generated_method = "56C6E0712AF3471B5AB2875C9BB88C47")
     
 public String getFieldName(int index) {
@@ -259,6 +249,7 @@ public String getFieldName(int index) {
     /**
      * Returns the value at {@code index} or null if that is out of range.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.330 -0500", hash_original_method = "B22E5B19D625D7A351EC2F77115E183E", hash_generated_method = "D103C4940BD1D8B4D8F4506E535D97C8")
     
 public String getValue(int index) {
@@ -272,6 +263,7 @@ public String getValue(int index) {
     /**
      * Returns the last value corresponding to the specified field, or null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.333 -0500", hash_original_method = "5CE86F73873B18464F6757EE122420F2", hash_generated_method = "B5864FFFC52610C7B478D7A0201FA4C9")
     
 public String get(String fieldName) {
@@ -286,6 +278,7 @@ public String get(String fieldName) {
     /**
      * @param fieldNames a case-insensitive set of HTTP header field names.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:32.335 -0500", hash_original_method = "DFF30A75B51A172BE4172930F32BB680", hash_generated_method = "F866F29DDC94BA144419BC2D0696D255")
     
 public RawHeaders getAll(Set<String> fieldNames) {

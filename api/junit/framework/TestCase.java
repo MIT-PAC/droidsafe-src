@@ -8,11 +8,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
 
-
-
-
-
-
 public abstract class TestCase extends Assert implements Test {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.818 -0500", hash_original_field = "8B24F7B8CD3FDAC03422CA6338432D3D", hash_generated_field = "44478883D7DC475A853C092E4F2639C3")
 
@@ -48,6 +43,7 @@ public int countTestCases() {
      *
      * @see TestResult
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.828 -0500", hash_original_method = "974B8EFFC4FED3C302A251DC7978304A", hash_generated_method = "F9E6293C38B6A411D0A3D8B4F70C0426")
     
 protected TestResult createResult() {
@@ -59,6 +55,7 @@ protected TestResult createResult() {
      *
      * @see TestResult
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.830 -0500", hash_original_method = "961A5CFC9275837B3D79C86ECF9A0692", hash_generated_method = "635F9BB5EC31EC20435F9A758E3D2B16")
     
 public TestResult run() {
@@ -142,6 +139,7 @@ protected void tearDown() throws Exception {
     /**
      * Returns a string representation of the test case
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.844 -0500", hash_original_method = "25D47A11917433AAC827E07C052136CF", hash_generated_method = "F70E6BECEBE68D29D42E13A82E32E01C")
     
 public String toString() {
@@ -151,6 +149,7 @@ public String toString() {
      * Gets the name of a TestCase
      * @return returns a String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:43.846 -0500", hash_original_method = "2EA0F9602490A1D20696A18728516755", hash_generated_method = "9612DF40335A1D2D9A9BC76824AF292F")
     
 public String getName() {
@@ -165,7 +164,6 @@ public String getName() {
 public void setName(String name) {
         fName= name;
     }
-
     
 }
 

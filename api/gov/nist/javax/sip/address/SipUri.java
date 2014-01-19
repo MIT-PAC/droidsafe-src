@@ -20,19 +20,11 @@ import javax.sip.address.SipURI;
 import javax.sip.header.Header;
 import javax.sip.header.HeaderFactory;
 
-
-
-
-
-
 public class SipUri extends GenericURI implements javax.sip.address.SipURI, SipURIExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.574 -0500", hash_original_field = "8FC6527BA99010599F5B30018ECB1D0B", hash_generated_field = "2F69FD556F8E9767DDE2D2177EBF6C40")
-
-
  
     private static final long serialVersionUID = 7749781076218987044L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.577 -0500", hash_original_field = "9DBC425F3635DA6CB30834F07F3E129E", hash_generated_field = "AD4D5BC0220CFD82443737C52505C486")
-
 
     protected Authority authority;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.580 -0500", hash_original_field = "A5A50FDAB8265AE4028202FF5DC412E9", hash_generated_field = "F6A59563ED5E856D9CD91C684F4FC813")
@@ -57,6 +49,7 @@ public SipUri() {
     /** Constructor given the scheme.
     * The scheme must be either Sip or Sips
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.591 -0500", hash_original_method = "40F35B976B5ABD0FB641A4F1A08DC6DF", hash_generated_method = "4D70B9DD05DE37768124621E277D03A6")
     
 public void setScheme(String scheme) {
@@ -68,6 +61,7 @@ public void setScheme(String scheme) {
 
     /** Get the scheme.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.594 -0500", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "9D11AD0B611F352DC84C8E1A6B825617")
     
 public String getScheme() {
@@ -98,6 +92,7 @@ public void clearPassword() {
 
     /** Get the authority.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.601 -0500", hash_original_method = "92C8D5BE70E6877E725894DF3752DAAD", hash_generated_method = "1426884E5ABC071DBB8D5A0DD4939808")
     
 public Authority getAuthority() {
@@ -257,6 +252,7 @@ public String toString() {
      *
      * Peter Musgrave - handle null user
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.620 -0500", hash_original_method = "000995A40BE4F62572B4CEC75CD27D06", hash_generated_method = "F153F4BB4AD53CE7808D7FA7A16B21FD")
     
 public String getUserAtHost() {
@@ -278,6 +274,7 @@ public String getUserAtHost() {
      * getUser@host
      * @return user@host portion of the uri (null if none exists).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.623 -0500", hash_original_method = "6F248E410BDCE844EE042BFFA98482C9", hash_generated_method = "0B2B4D7DDDA1BC4B146FF64C448A6027")
     
 public String getUserAtHostPort() {
@@ -306,6 +303,7 @@ public String getUserAtHostPort() {
      * @param parmname Name of the parameter to get.
      * @return Parameter of the given name (null if none exists).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.626 -0500", hash_original_method = "208FE04DEC7ECCEEFC5A47E5D08BA557", hash_generated_method = "EBBB0573D9EA29221B55C057A3D774A0")
     
 public Object getParm(String parmname) {
@@ -317,6 +315,7 @@ public Object getParm(String parmname) {
      * Get the method parameter.
      * @return Method parameter.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.628 -0500", hash_original_method = "DA8D1E67518AA478AB8C96314B0F321C", hash_generated_method = "0E7912D3CBABC340B8A574D732787776")
     
 public String getMethod() {
@@ -327,6 +326,7 @@ public String getMethod() {
      * Accessor for URI parameters
      * @return A name-value list containing the parameters.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.631 -0500", hash_original_method = "5EDAD210CE239248A46B40B8A7E4E067", hash_generated_method = "A0587C0605869DEB0FED11174C98A2F3")
     
 public NameValueList getParameters() {
@@ -347,6 +347,7 @@ public void removeParameters() {
      * @return Get the query headers (that appear after the ? in
      * the URL)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.636 -0500", hash_original_method = "69A77D050D6DE602ACFB758F18CE1C2E", hash_generated_method = "4D8BDCD095F52C5984E59A24BB5FB672")
     
 public NameValueList getQheaders() {
@@ -357,6 +358,7 @@ public NameValueList getQheaders() {
      * Get the urse parameter.
      * @return User parameter (user= phone or user=ip).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.638 -0500", hash_original_method = "C4F4158359E9C3CE01C658AE1B903AEE", hash_generated_method = "A1206154083433ACC39B41A99B363CDD")
     
 public String getUserType() {
@@ -368,6 +370,7 @@ public String getUserType() {
      * @return User password when it embedded as part of the uri
      * ( a very bad idea).
      */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.640 -0500", hash_original_method = "F7BA3F65C36127DC85DBDC366FBE67EC", hash_generated_method = "3198E0B0083B25F8D5ECFD56BB42716A")
     
 public String getUserPassword() {
@@ -379,6 +382,7 @@ public String getUserPassword() {
     /** Set the user password.
      *@param password - password to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.643 -0500", hash_original_method = "EB4E37E6319716C20DB55C1D8565711A", hash_generated_method = "6177871D7FFD769C6D15225FED5F602C")
     
 public void setUserPassword(String password) {
@@ -393,6 +397,7 @@ public void setUserPassword(String password) {
      * @return TelephoneNumber part of the url (only makes sense
      * when user = phone is specified)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.646 -0500", hash_original_method = "FBB7E1AC9741B23BB5B3EA84041A8793", hash_generated_method = "AA9F8D8AB2E83E2208B7C6067D0DD769")
     
 public TelephoneNumber getTelephoneSubscriber() {
@@ -408,6 +413,7 @@ public TelephoneNumber getTelephoneSubscriber() {
      * @return get the host:port part of the url parsed into a
      * structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.648 -0500", hash_original_method = "B2DE769DC5E0088684B143D456F129CF", hash_generated_method = "9A76B9A647B4D17E09229A81F38940E2")
     
 public HostPort getHostPort() {
@@ -423,6 +429,7 @@ public HostPort getHostPort() {
     *
     *@return the port from the authority field.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.651 -0500", hash_original_method = "7F780725D3A26A9FAAA917ED82465734", hash_generated_method = "2F442A3DD0B302A67DBC465080665272")
     
 public int getPort() {
@@ -435,6 +442,7 @@ public int getPort() {
     /** Get the host protion of the URI.
     * @return the host portion of the url.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.653 -0500", hash_original_method = "40B106F658B1B0B8AE55FF744395EB77", hash_generated_method = "B04DD2CCF03CA392865EE9C7B30DAC52")
     
 public String getHost() {
@@ -563,6 +571,7 @@ public void removeMethod() {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the user value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.680 -0500", hash_original_method = "8653C52476DAA9902FEC7B8799779AA0", hash_generated_method = "63003664D5AA30FDB649405CEA049D71")
     
 public void setUser(String uname) {
@@ -587,6 +596,7 @@ public void removeUser() {
      * @param name Name of the parameter to set.
      * @param value value of the parameter to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.686 -0500", hash_original_method = "29256DC0D79112DA6F3456FF1FC7A4DA", hash_generated_method = "6B510269C355509DD2140207D680C604")
     
 public void setDefaultParm(String name, Object value) {
@@ -608,6 +618,7 @@ public void setAuthority(Authority authority) {
     /** Set the host for this URI.
      * @param h host to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.693 -0500", hash_original_method = "448F841326C9DE5F0C1061A977ECCF57", hash_generated_method = "ED2475C2F34131C9C21B4A010FBAB612")
     
 public void setHost(Host h) {
@@ -631,6 +642,7 @@ public void setUriParms(NameValueList parms) {
      * @param name Name of the parameter to set.
      * @param value value of the parameter to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.699 -0500", hash_original_method = "B486DF9BA471DAAE60D8533B7C47A65D", hash_generated_method = "FDBA0DF4C5293E07053A04A6D3C509C9")
     
 public void setUriParm(String name, Object value) {
@@ -651,6 +663,7 @@ public void setQheaders(NameValueList parms) {
      * Set the MADDR parameter .
      * @param mAddr Host Name to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.705 -0500", hash_original_method = "5C181333E4641A8C388789644A11AD43", hash_generated_method = "BD528FF3D72DD4DD780458FB41AD237B")
     
 public void setMAddr(String mAddr) {
@@ -671,6 +684,7 @@ public void setMAddr(String mAddr) {
      *
      * @param usertype New value String value of the method parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.707 -0500", hash_original_method = "FBDBB9DDA2030458399AB3B5F3F4F0C6", hash_generated_method = "2AE57B42599260DE26C77E8F61C6D30D")
     
 public void setUserParam(String usertype) {
@@ -681,6 +695,7 @@ public void setUserParam(String usertype) {
      * Set the Method
      * @param method method parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.710 -0500", hash_original_method = "4C629B888B40F45F11F6D780770DFFA5", hash_generated_method = "56C3B2E442DABACE0D9424C9AB6A89F5")
     
 public void setMethod(String method) {
@@ -691,6 +706,7 @@ public void setMethod(String method) {
     * Sets ISDN subaddress of SipURL
     * @param isdnSubAddress ISDN subaddress
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.713 -0500", hash_original_method = "E57262682E1156419367692D3CFC45F4", hash_generated_method = "70852EF590789211AB949EBEE0BF81E6")
     
 public void setIsdnSubAddress(String isdnSubAddress) {
@@ -712,6 +728,7 @@ public void setTelephoneSubscriber(TelephoneNumber tel) {
     /** set the port to a given value.
      * @param p Port to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.718 -0500", hash_original_method = "92A3A80BC1BE07F5BFACEB6CB4FB4561", hash_generated_method = "1DCA256BF4481228A256AF576C42080F")
     
 public void setPort(int p) {
@@ -736,6 +753,7 @@ public boolean hasParameter(String name) {
      * Set the query header when provided as a name-value pair.
      * @param nameValue qeuery header provided as a name,value pair.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.724 -0500", hash_original_method = "93D043490BF44801AA76F19310D9D034", hash_generated_method = "66A76546B57CA50A4685E8DF29B937E3")
     
 public void setQHeader(NameValue nameValue) {
@@ -745,6 +763,7 @@ public void setQHeader(NameValue nameValue) {
     /** Set the parameter as given.
      *@param nameValue - parameter to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.726 -0500", hash_original_method = "CF8B8270AAB7EE0DBD09C8A6E6FE77D2", hash_generated_method = "30E9CB7D077E4A0723FC18546E233B53")
     
 public void setUriParameter(NameValue nameValue) {
@@ -773,6 +792,7 @@ public void removeParameter(String name) {
     /** Set the hostPort field of the imbedded authority field.
      *@param hostPort is the hostPort to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.733 -0500", hash_original_method = "C8CB16861890EEF599D006A2C41B9058", hash_generated_method = "7962EDBDF0FC82223AEFE2DDFF175610")
     
 public void setHostPort(HostPort hostPort) {
@@ -808,6 +828,7 @@ public Object clone() {
      * @param name name of header to retrieve
      * @return the value of specified header
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.740 -0500", hash_original_method = "D620A31F761EF988C6C51AF3A40C0F6E", hash_generated_method = "F81B4EFFB4E35ADC74FC53F4333AC738")
     
 public String getHeader(String name) {
@@ -823,6 +844,7 @@ public String getHeader(String name) {
      *
      * @return an Iterator over all the header names
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.744 -0500", hash_original_method = "4530375C3CFB28EF39A61BC561477425", hash_generated_method = "6969B372148BA3049D74099420B0849A")
     
 public Iterator<String> getHeaderNames() {
@@ -835,6 +857,7 @@ public Iterator<String> getHeaderNames() {
      *
      * @return the value of the <code>lr</code> parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.747 -0500", hash_original_method = "3F7D698AA93119CDF4AD07DDC087B33E", hash_generated_method = "3B4CFBD9F30A387255478993C0A4662F")
     
 public String getLrParam() {
@@ -847,6 +870,7 @@ public String getLrParam() {
      *
      * @return the value of the <code>maddr</code> parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.750 -0500", hash_original_method = "8D33CC87FEAA658432B140BA930B3AED", hash_generated_method = "793752ABBD69F6775299093FC3661F51")
     
 public String getMAddrParam() {
@@ -863,6 +887,7 @@ public String getMAddrParam() {
      *
      * @return  the value of the <code>method</code> parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.752 -0500", hash_original_method = "B0014A6E847FE8E425D38FE4F75F3375", hash_generated_method = "D998DF3FFBD04FB85DBAEA756C7F0352")
     
 public String getMethodParam() {
@@ -876,6 +901,7 @@ public String getMethodParam() {
      * @param name name of parameter to retrieve
      * @return the value of specified parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.755 -0500", hash_original_method = "B72E21D53820BAFF3F91285B817E8F6B", hash_generated_method = "04E7B029CC7CCD88DBBA92BCBBC6C127")
     
 public String getParameter(String name) {
@@ -898,6 +924,7 @@ public String getParameter(String name) {
      * @return an Iterator over all the parameter names
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.760 -0500", hash_original_method = "6E1DB232C6AA1FEC4050F87B0DECFBEC", hash_generated_method = "65E4AF5DE91728ED57E1EB67554FDA4A")
     
 public Iterator<String> getParameterNames() {
@@ -909,6 +936,7 @@ public Iterator<String> getParameterNames() {
      *
      * @return the value of the <code>ttl</code> parameter
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.765 -0500", hash_original_method = "EE7A560BCE3AD39DE27697785FE9A0B4", hash_generated_method = "5DC10E5CD22F6A46A88A89FC8068C315")
     
 public int getTTLParam() {
@@ -924,6 +952,7 @@ public int getTTLParam() {
      *
      * @return the transport paramter of the SipURI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.769 -0500", hash_original_method = "D0FE42FB772BF560666581278B9E7996", hash_generated_method = "86AFA584DB8DF0B35D94A7A4290661D2")
     
 public String getTransportParam() {
@@ -940,6 +969,7 @@ public String getTransportParam() {
      *
      * @return the value of the <code>userParam</code> of the SipURI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.773 -0500", hash_original_method = "3B107DCD343091F4FCEB3378B44D2024", hash_generated_method = "6B08B9AAAB1C1CB971802CA51EE1212F")
     
 public String getUser() {
@@ -975,6 +1005,7 @@ public boolean isSipURI() {
      * @param name - a String specifying the header name
      * @param value - a String specifying the header value
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.789 -0500", hash_original_method = "DE18AAB14C75B00C0640CE3E9515471C", hash_generated_method = "5BF345169800E2FFD384D6DA1B8960C0")
     
 public void setHeader(String name, String value) {
@@ -988,6 +1019,7 @@ public void setHeader(String name, String value) {
      *
      * @param host host to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.794 -0500", hash_original_method = "8BEE64CFFA20AF8C2536A2ECB59F51EE", hash_generated_method = "AE47CB57CE9C4A7A6032B064D0A33169")
     
 public void setHost(String host) throws ParseException {
@@ -1016,6 +1048,7 @@ public void setLrParam() {
      *
      * @param  maddr New value of the <code>maddr</code> parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.802 -0500", hash_original_method = "E9B55C57ECC7FC0F2DF8B4804D377AFB", hash_generated_method = "149BAB467FDECD9C9B4CAE4B2AC0A408")
     
 public void setMAddrParam(String maddr) throws ParseException {
@@ -1030,6 +1063,7 @@ public void setMAddrParam(String maddr) throws ParseException {
      *
      * @param  method - new value String value of the method parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.805 -0500", hash_original_method = "378F5AA5131E869E77C4B19F60BAAC21", hash_generated_method = "02F6F7679ADB179237F5249E5A8F3B28")
     
 public void setMethodParam(String method) throws ParseException {
@@ -1054,6 +1088,7 @@ public void setMethodParam(String method) throws ParseException {
      * unexpectedly while parsing the parameter name or value.
      *
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.809 -0500", hash_original_method = "B29E45FE1B913173FAF4035EBB51958B", hash_generated_method = "B1A01C9FE12E3F0EB6A143B030EF7629")
     
 public void setParameter(String name, String value) throws ParseException {
@@ -1072,6 +1107,7 @@ public void setParameter(String name, String value) throws ParseException {
      *
      * @param secure - the boolean value indicating if the SipURI is secure.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.814 -0500", hash_original_method = "93EA8C8ECDAC523AC50E68B355F469C8", hash_generated_method = "EB21546D579EBE3159181A9CF431946C")
     
 public void setSecure(boolean secure) {
@@ -1087,6 +1123,7 @@ public void setSecure(boolean secure) {
      *
      * @param ttl - new value of the <code>ttl</code> parameter
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.819 -0500", hash_original_method = "8785DA0B69A8C30F98EFE6C5EB1879AC", hash_generated_method = "7C22C62870F0267AAFBA0F1D9DC5466F")
     
 public void setTTLParam(int ttl) {
@@ -1108,6 +1145,7 @@ public void setTTLParam(int ttl) {
      * @param transport - new value for the "transport" parameter
      * @see javax.sip.ListeningPoint
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.823 -0500", hash_original_method = "D4B3823C982965112DA168F305C25048", hash_generated_method = "67CC949E1BF328DBD8A8A59151181D4A")
     
 public void setTransportParam(String transport) throws ParseException {
@@ -1127,6 +1165,7 @@ public void setTransportParam(String transport) throws ParseException {
      *
      * @return  the user part of this SipURI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.826 -0500", hash_original_method = "1E6ECA3F7C52B01B50446520797B0E33", hash_generated_method = "592D7439DF0BD2FABF65063EA9267E9B")
     
 public String getUserParam() {
@@ -1145,7 +1184,6 @@ public String getUserParam() {
 public boolean hasLrParam() {
         return uriParms.getNameValue("lr") != null;
     }
-
   
     /**
      * Returns whether the <code>gr</code> parameter is set.
@@ -1163,6 +1201,7 @@ public boolean hasGrParam() {
      *
      * Not part on the interface since gruu is not part of the base RFC3261.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.834 -0500", hash_original_method = "80955EE8A827F28D322398606EB833AF", hash_generated_method = "0F86E415816F091A3DDA3D6E7696C59C")
     
 public void setGrParam(String value) {
@@ -1174,6 +1213,7 @@ public void setGrParam(String value) {
      *
      * Not part on the interface since gruu is not part of the base RFC3261.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:32.837 -0500", hash_original_method = "215DF01DBB1883D8F30CF584508D27CC", hash_generated_method = "8E2E8A04F3A66CEA3D4EE2B4869C3C03")
     
 public String getGrParam() {

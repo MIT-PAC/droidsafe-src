@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.BreakIterator;
 
-
-
-
-
-
 public class Selection {
 
     /*
@@ -21,6 +16,8 @@ public class Selection {
      * Return the offset of the selection anchor or cursor, or -1 if
      * there is no selection or cursor.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.409 -0500", hash_original_method = "AE65575D1ABDE1468485A6F2E77003DF", hash_generated_method = "25B05716B0D487078AAC70698DB0BA65")
     
 public static final int getSelectionStart(CharSequence text) {
@@ -34,6 +31,8 @@ public static final int getSelectionStart(CharSequence text) {
      * Return the offset of the selection edge or cursor, or -1 if
      * there is no selection or cursor.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.412 -0500", hash_original_method = "C524353125947C233CA15DF73D6EE511", hash_generated_method = "851A86FBF7D5056402BF1421167A187F")
     
 public static final int getSelectionEnd(CharSequence text) {
@@ -76,6 +75,8 @@ public static void setSelection(Spannable text, int start, int stop) {
     /**
      * Move the cursor to offset <code>index</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.417 -0500", hash_original_method = "3915D6810DC93FECF1A478B2D9E7D4AB", hash_generated_method = "1FB3050D4C3B69ED05E56D2A516E307D")
     
 public static final void setSelection(Spannable text, int index) {
@@ -481,37 +482,27 @@ private static int chooseHorizontal(Layout layout, int direction,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:12.483 -0500", hash_original_field = "5F0304F279BDCB14306EA284635B7405", hash_generated_field = "04FE8A24144505FFA1AFEFD56C38D3B7")
 
-
     public static final Object SELECTION_START = new START();
-
     
     private static final class START implements NoCopySpan {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.156 -0400", hash_original_method = "BDCC342EB9C4EC0E36898772F96B3376", hash_generated_method = "BDCC342EB9C4EC0E36898772F96B3376")
         public START ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static final class END implements NoCopySpan {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.157 -0400", hash_original_method = "6839406E8175B705075FBD95CC87C416", hash_generated_method = "6839406E8175B705075FBD95CC87C416")
         public END ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public static interface PositionIterator {
         public static final int DONE = BreakIterator.DONE;

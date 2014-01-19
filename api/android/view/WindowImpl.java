@@ -21,8 +21,7 @@ import droidsafe.annotations.*;
 public class WindowImpl extends Window {
 
 	public Context context = null;
-
-	@DSModeled(DSC.BAN)
+	
     public WindowImpl(Context context) {
 		super(context);
 		this.context = context;
@@ -56,15 +55,13 @@ public class WindowImpl extends Window {
 		// TODO Auto-generated method stub
 
 	}
-
-	@DSModeled(DSC.BAN)
+	
     @Override
 	public void setContentView(int layoutResID) {
 		// TODO Auto-generated method stub
 
 	}
-
-	@DSModeled(DSC.SAFE)
+	
     @Override
 	public void setContentView(View view) {
 		// TODO Auto-generated method stub
@@ -124,8 +121,7 @@ public class WindowImpl extends Window {
 		// TODO Auto-generated method stub
 
 	}
-
-	@DSModeled(DSC.BAN)
+	
     @Override
 	public void invalidatePanelMenu(int featureId) {
 		// TODO Auto-generated method stub
@@ -156,8 +152,7 @@ public class WindowImpl extends Window {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@DSModeled(DSC.SAFE)
+	
     @Override
 	public void onConfigurationChanged(Configuration newConfig) {
 		// TODO Auto-generated method stub
@@ -235,15 +230,13 @@ public class WindowImpl extends Window {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@DSModeled(DSC.BAN)
+	
     @Override
 	public View getDecorView() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
-	@DSModeled(DSC.BAN)
+	
 	@Override
 	public View peekDecorView() {
 		// TODO Auto-generated method stub
@@ -251,8 +244,7 @@ public class WindowImpl extends Window {
 	    view.addTaint(getTaint());
 	    return view;
 	}
-
-	@DSModeled(DSC.BAN)
+	
     @Override
 	public Bundle saveHierarchyState() {
 		// TODO Auto-generated method stub
@@ -288,8 +280,7 @@ public class WindowImpl extends Window {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
-	@DSModeled(DSC.SAFE)
+	
     @Override
 	public void setVolumeControlStream(int streamType) {
 		// TODO Auto-generated method stub

@@ -9,28 +9,19 @@ import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.Log;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class SQLiteQuery extends SQLiteProgram {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeFillWindow(int databasePtr, int statementPtr, int windowPtr,
             int startPos, int offsetParam) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeColumnCount(int statementPtr) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static String nativeColumnName(int statementPtr, int columnIndex) {
         	return new String();
     }
@@ -41,7 +32,6 @@ public class SQLiteQuery extends SQLiteProgram {
 
     private int mOffsetIndex = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:39.486 -0500", hash_original_field = "68E7C3569E191B98218FD7A043574AEA", hash_generated_field = "0FB4858B613824FE6FDA94A379EBC4D0")
-
 
     private boolean mClosed = false;
 

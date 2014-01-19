@@ -9,14 +9,7 @@ import java.util.Locale;
 import org.apache.http.HttpStatus;
 import org.apache.http.ReasonPhraseCatalog;
 
-
-
-
-
-
 public class EnglishReasonPhraseCatalog implements ReasonPhraseCatalog {
-
-
 
     /**
      * Stores the given reason phrase, by status code.
@@ -33,7 +26,6 @@ private static void setReason(int status, String reason) {
         REASON_PHRASES[category][subcode] = reason;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.171 -0500", hash_original_field = "3F04E5126E1D1968D1E674ED94439EAD", hash_generated_field = "28FD85E5B9D69DCFAD3C72A1C0490DAE")
-
 
     /**
      * The default instance of this catalog.
@@ -53,7 +45,6 @@ private static void setReason(int status, String reason) {
         new String[8]   // 5xx
     };
 
-
     /**
      * Restricted default constructor, for derived classes.
      * If you need an instance of this class, use {@link #INSTANCE INSTANCE}.
@@ -64,7 +55,6 @@ protected EnglishReasonPhraseCatalog() {
         // no body
     }
 
-
     /**
      * Obtains the reason phrase for a status code.
      *
@@ -73,6 +63,7 @@ protected EnglishReasonPhraseCatalog() {
      *
      * @return  the reason phrase, or <code>null</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.176 -0500", hash_original_method = "4DBCBC4442F2A5E0C839147542392D36", hash_generated_method = "D8BA9FE692BA584DC67C4A9211465EE3")
     
 public String getReason(int status, Locale loc) {

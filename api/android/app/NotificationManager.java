@@ -11,11 +11,10 @@ import android.os.IBinder;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
-
-
 public class NotificationManager {
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.189 -0500", hash_original_method = "8C9794E934F900D55FFF5E23F579E814", hash_generated_method = "F053B00216AF2D6058566E132404B134")
     
 static public INotificationManager getService()
@@ -35,10 +34,8 @@ static public INotificationManager getService()
     private static boolean localLOGV = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.187 -0500", hash_original_field = "2143D8EEECB82E176C0D26D54E4D19A4", hash_generated_field = "F81A4B790E53712C35BD5EDD5A7B2761")
 
-
     private static INotificationManager sService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.205 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 
@@ -49,8 +46,6 @@ NotificationManager(Context context, Handler handler)
         mContext = context;
     }
     
-    
-    @DSModeled(DSC.BAN)
     public NotificationManager(Context context) {
         addTaint(context.getTaint());
         mContext = context;
@@ -66,6 +61,9 @@ NotificationManager(Context context, Handler handler)
      * @param notification A {@link Notification} object describing what to show the user. Must not
      *        be null.
      */
+    @DSComment("Notification can only go to screen")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.194 -0500", hash_original_method = "8A4CA4E7E43847BF1836AE50422D1EC2", hash_generated_method = "11BB02842F74EFA0B750E0E2DC061F0E")
     
 public void notify(int id, Notification notification)
@@ -84,6 +82,7 @@ public void notify(int id, Notification notification)
      * @param notification A {@link Notification} object describing what to
      *        show the user. Must not be null.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.196 -0500", hash_original_method = "825D6C1D97F576BD7D887B295C793809", hash_generated_method = "285DCA988B4614C883FFF0F662B28DF3")
     
 public void notify(String tag, int id, Notification notification)
@@ -106,6 +105,8 @@ public void notify(String tag, int id, Notification notification)
      * will be hidden.  If it's persistent, it will be removed from the status
      * bar.
      */
+    @DSComment("Notification can only go to screen")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.198 -0500", hash_original_method = "C3E2CA3977B6A0DFE40EA0B5D969CEEE", hash_generated_method = "90EF31815973B3B19C436849AC0958EC")
     
 public void cancel(int id)
@@ -135,6 +136,8 @@ public void cancel(String tag, int id)
      * Cancel all previously shown notifications. See {@link #cancel} for the
      * detailed behavior.
      */
+    @DSComment("Notification can only go to screen")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:55.203 -0500", hash_original_method = "755B5F96474649FA97E86F2D74D1F0A8", hash_generated_method = "2717E11980BDDD051D19092201B56ACE")
     
 public void cancelAll()

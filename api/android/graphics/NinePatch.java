@@ -5,40 +5,27 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class NinePatch {
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean isNinePatchChunk(byte[] chunk) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void validateNinePatchChunk(int bitmap, byte[] chunk) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDraw(int canvas_instance, RectF loc, int bitmap_instance,
                                           byte[] c, int paint_instance_or_null,
                                           int destDensity, int srcDensity) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDraw(int canvas_instance, Rect loc, int bitmap_instance,
                                           byte[] c, int paint_instance_or_null,
                                           int destDensity, int srcDensity) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetTransparentRegion(
             int bitmap, byte[] chunk, Rect location) {
         return DSUtils.UNKNOWN_INT;
@@ -160,18 +147,21 @@ public void draw(Canvas canvas, Rect location, Paint paint) {
      * Return the underlying bitmap's density, as per
      * {@link Bitmap#getDensity() Bitmap.getDensity()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.461 -0500", hash_original_method = "27EBBFC0A49FBB6B32AE88535DB257BA", hash_generated_method = "27DE3D32201225D1AA4CA39CCE7D66F4")
     
 public int getDensity() {
         return mBitmap.mDensity;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.463 -0500", hash_original_method = "248DEDBBF8E87ACAD7F5460B83DB8F69", hash_generated_method = "3FB4A85E6F6A135BC5724E72DB79F048")
     
 public int getWidth() {
         return mBitmap.getWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.465 -0500", hash_original_method = "2785E3A64A823A27985D4386D66934E2", hash_generated_method = "FB6AC04B8078DB77AC5BC660237D10BC")
     
 public int getHeight() {
@@ -184,13 +174,13 @@ public final boolean hasAlpha() {
         return mBitmap.hasAlpha();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:05.470 -0500", hash_original_method = "057B771D19C75A7C087A15EB64E8E6F2", hash_generated_method = "9DBBD34840F49148A1CA4BBFC7879982")
     
 public final Region getTransparentRegion(Rect location) {
         int r = nativeGetTransparentRegion(mBitmap.ni(), mChunk, location);
         return r != 0 ? new Region(r) : null;
     }
-
     
 }
 

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.lang.ref.WeakReference;
 
-
-
-
-
-
 public class ObjectStreamField implements Comparable<Object> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.869 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
@@ -26,10 +21,8 @@ public class ObjectStreamField implements Comparable<Object> {
     private String typeString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.878 -0500", hash_original_field = "2148EF25429F0A769B21F87169D2187F", hash_generated_field = "1925D0B4ADBD655AA714AC16DE1F0973")
 
-
     private boolean unshared;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.881 -0500", hash_original_field = "919B3BD1453766B88BBD276CC2C58C43", hash_generated_field = "B10B376FF3C60E9314732C46A8CA6340")
-
 
     private boolean isDeserialized;
 
@@ -134,6 +127,7 @@ public int compareTo(Object o) {
      *
      * @return the field's name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.896 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -145,6 +139,7 @@ public String getName() {
      *
      * @return this field's offset.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.898 -0500", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "270B62274502DD6D664C5F8775886061")
     
 public int getOffset() {
@@ -158,7 +153,8 @@ public int getOffset() {
      * @return A Class object representing the type of the field
      */
     // Changed from private to default visibility for usage in ObjectStreamClass
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.900 -0500", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "FF08482EB56AA685DDAE41A39E334998")
+    /* package */ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.900 -0500", hash_original_method = "FF08482EB56AA685DDAE41A39E334998", hash_generated_method = "FF08482EB56AA685DDAE41A39E334998")
     
 Class<?> getTypeInternal() {
         if (type instanceof WeakReference) {
@@ -172,6 +168,7 @@ Class<?> getTypeInternal() {
      *
      * @return a {@code Class} object representing the type of the field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.903 -0500", hash_original_method = "9634509EF2A12286AE62950CEFC0E304", hash_generated_method = "82D243212D47306A7AC7BAAF5532CDBE")
     
 public Class<?> getType() {
@@ -201,6 +198,7 @@ public Class<?> getType() {
      *
      * @return the field's type code.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.905 -0500", hash_original_method = "6C03FA17A8A9EDC07915A4F462B31BC8", hash_generated_method = "79EF9B37AC1424BDB4A7FB22D5F396BA")
     
 public char getTypeCode() {
@@ -240,6 +238,7 @@ private char typeCodeOf(Class<?> type) {
      * @return the signature of this field's class or {@code null} if this
      *         field's type is primitive.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:50.910 -0500", hash_original_method = "AF834EA72E67DF4239AA5209B5DE5F81", hash_generated_method = "1C6D01020ED07C1AF4E4BDBCF0B8E26B")
     
 public String getTypeString() {
@@ -383,7 +382,6 @@ private boolean defaultResolve() {
             return false;
         }
     }
-
     
 }
 

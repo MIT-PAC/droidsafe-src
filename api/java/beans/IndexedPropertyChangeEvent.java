@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class IndexedPropertyChangeEvent extends PropertyChangeEvent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.620 -0500", hash_original_field = "6D3B98F4853D9FAFDBF67D5E996F7D2E", hash_generated_field = "15EE4A8E739861F82460428634C59170")
 
-
     private static final long serialVersionUID = -320227448495806870L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.623 -0500", hash_original_field = "8BD524D6245D998B3BBC44EB9313082E", hash_generated_field = "56A277C77B76B31C1E1045C8C11CA802")
-
 
     private  int index;
 
@@ -50,6 +44,7 @@ public IndexedPropertyChangeEvent(Object source, String propertyName,
     /**
      * Returns the index of the property that was changed in this event.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.629 -0500", hash_original_method = "398BD1DDC3618561F914960ED7D21764", hash_generated_method = "96CCC69099797392A28F97F5383D17E0")
     
 public int getIndex() {

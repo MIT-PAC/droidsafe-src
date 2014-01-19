@@ -27,11 +27,6 @@ import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.SmsHeader;
 import com.android.internal.telephony.SmsMessageBase;
 
-
-
-
-
-
 public class SmsMessage extends SmsMessageBase {
 
     /**
@@ -133,6 +128,7 @@ public static SmsMessage createFromEfRecord(int index, byte[] data) {
      * Get the TP-Layer-Length for the given SMS-SUBMIT PDU Basically, the
      * length in bytes (not hex chars) less the SMSC header
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.021 -0500", hash_original_method = "C944CD27F2D3E7001043FCCEFD128BFD", hash_generated_method = "46461381B45FD8583C9EA7263AB16736")
     
 public static int getTPLayerLengthForPDU(String pdu) {
@@ -159,7 +155,6 @@ public static SubmitPdu getSubmitPdu(String scAddress,
         return getSubmitPdu(scAddress, destinationAddress, message, statusReportRequested, header,
                 ENCODING_UNKNOWN, 0, 0);
     }
-
 
     /**
      * Get an SMS-SUBMIT PDU for a destination address and a message using the
@@ -480,7 +475,6 @@ public static TextEncodingDetails calculateLength(CharSequence msgBody,
     static final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.977 -0500", hash_original_field = "421620B201E2BB659AD5EC901E601942", hash_generated_field = "7857416028EC39FBC0A39F3682AC483E")
 
-
     private MessageClass messageClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:21.980 -0500", hash_original_field = "CE5CBFD362994E794710FDA486A7FC14", hash_generated_field = "E7356B822A8D6EAF5A79AC5BFB93BA7C")
 
@@ -533,6 +527,7 @@ public boolean isTypeZero() {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.100 -0500", hash_original_method = "E7C032F027F70A1B6B025F651AAD0755", hash_generated_method = "D0A3376B6F4063092AC4655CAD816EF4")
     
 @Override
@@ -544,6 +539,7 @@ public boolean isTypeZero() {
      * Returns the TP-Data-Coding-Scheme byte, for acknowledgement of SMS-PP download messages.
      * @return the TP-DCS field of the SMS header
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.102 -0500", hash_original_method = "5E449C3565950C318CBD3ECE2F1F0BD6", hash_generated_method = "5E449C3565950C318CBD3ECE2F1F0BD6")
     
 int getDataCodingScheme() {
@@ -618,6 +614,7 @@ int getDataCodingScheme() {
     }
 
     /** {@inheritDoc} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.118 -0500", hash_original_method = "A6874122EB6D2A9BF852845259D73D4C", hash_generated_method = "6725D3B3E5383D07C3E186E5387548AF")
     
 @Override
@@ -935,7 +932,6 @@ private void parseUserData(PduParser p, boolean hasUserDataHeader) {
     public MessageClass getMessageClass() {
         return messageClass;
     }
-
     
     public static class SubmitPdu extends SubmitPduBase {
         
@@ -945,10 +941,7 @@ private void parseUserData(PduParser p, boolean hasUserDataHeader) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class PduParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.044 -0500", hash_original_field = "19D13A40BDDB2C7F8CD159EA0077CC93", hash_generated_field = "19D13A40BDDB2C7F8CD159EA0077CC93")
@@ -982,6 +975,7 @@ PduParser(byte[] pdu) {
          * Parse and return the SC address prepended to SMS messages coming via
          * the TS 27.005 / AT interface.  Returns null on invalid address
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.061 -0500", hash_original_method = "99E23657D695EA8C595E80B24F474921", hash_generated_method = "243F2B931658B5001F9E98F7D11774DD")
         
 String getSCAddress() {
@@ -1013,6 +1007,7 @@ String getSCAddress() {
         /**
          * returns non-sign-extended byte value
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.064 -0500", hash_original_method = "2F75C981EB64A28A85FF5D6FE13A88A1", hash_generated_method = "2F75C981EB64A28A85FF5D6FE13A88A1")
         
 int getByte() {
@@ -1023,6 +1018,7 @@ int getByte() {
          * Any address except the SC address (eg, originating address) See TS
          * 23.040 9.1.2.5
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.066 -0500", hash_original_method = "F408E9DA0C4025DEBACF10CB13B7E7DC", hash_generated_method = "70AAB02D2D20B1391B02DB280AF4CC74")
         
 GsmSmsAddress getAddress() {
@@ -1047,6 +1043,7 @@ GsmSmsAddress getAddress() {
          * timestamp
          */
 
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.070 -0500", hash_original_method = "E4DF9155D0C40868D52456F5AA0ADEBA", hash_generated_method = "6D607DB2DE95B38F8D534CC70486F143")
         
 long getSCTimestampMillis() {
@@ -1154,6 +1151,7 @@ int constructUserData(boolean hasUserDataHeader, boolean dataInSeptets) {
          *
          * @return the user data payload, not including the headers
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.075 -0500", hash_original_method = "832EF14448695517A54541076D502A0C", hash_generated_method = "832EF14448695517A54541076D502A0C")
         
 byte[] getUserData() {
@@ -1167,6 +1165,7 @@ byte[] getUserData() {
          * @return the number of padding bits at the beginning of the user data
          * array before the start of the septets
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.077 -0500", hash_original_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9", hash_generated_method = "904FFB9CBF6AC3FF663F8EA296F9CEA9")
         
 int getUserDataSeptetPadding() {
@@ -1178,6 +1177,7 @@ int getUserDataSeptetPadding() {
          *
          * {@hide}
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.079 -0500", hash_original_method = "4DA43BCCB17FE826B675411D64594E85", hash_generated_method = "4DA43BCCB17FE826B675411D64594E85")
         
 SmsHeader getUserDataHeader() {
@@ -1191,6 +1191,7 @@ SmsHeader getUserDataHeader() {
          * @param septetCount the number of septets in the user data payload
          * @return a String with the decoded characters
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.082 -0500", hash_original_method = "51731F422A9CB8603202E115B88733FC", hash_generated_method = "51731F422A9CB8603202E115B88733FC")
         
 String getUserDataGSM7Bit(int septetCount, int languageTable,
@@ -1212,6 +1213,7 @@ String getUserDataGSM7Bit(int septetCount, int languageTable,
          * @param byteCount the number of bytes in the user data payload
          * @return a String with the decoded characters
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.085 -0500", hash_original_method = "97FC9E20E0F795CD7B2A52C595E2E8DE", hash_generated_method = "97FC9E20E0F795CD7B2A52C595E2E8DE")
         
 String getUserDataUCS2(int byteCount) {
@@ -1235,6 +1237,7 @@ String getUserDataUCS2(int byteCount) {
          * @param byteCount the number of bytes in the user data payload
          * @return a String with the decoded characters
          */
+        @DSSource({DSSourceKind.NETWORK_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.088 -0500", hash_original_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F", hash_generated_method = "D8D8AF92C3889C36EC89CBE6C5FEE71F")
         
 String getUserDataKSC5601(int byteCount) {
@@ -1256,7 +1259,6 @@ String getUserDataKSC5601(int byteCount) {
 boolean moreDataPresent() {
             return (pdu.length > cur);
         }
-
         
     }
 

@@ -9,11 +9,6 @@ import java.util.Comparator;
 
 import org.apache.harmony.security.utils.ObjectIdentifier;
 
-
-
-
-
-
 public class AttributeTypeAndValueComparator implements Comparator, Serializable {
 
     /**
@@ -54,10 +49,8 @@ private static int compateOids(ObjectIdentifier oid1, ObjectIdentifier oid2) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.268 -0500", hash_original_field = "B4233DEB3183D4BBD895A0DA12ED5529", hash_generated_field = "D4ECDC5A87F7ADFE1C3A33CD3F11715D")
 
-
     private static final long serialVersionUID = -1286471842007103132L;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.531 -0400", hash_original_method = "A875CA77DCF86273FF83ADF73F0AA798", hash_generated_method = "A875CA77DCF86273FF83ADF73F0AA798")
     public AttributeTypeAndValueComparator ()
     {

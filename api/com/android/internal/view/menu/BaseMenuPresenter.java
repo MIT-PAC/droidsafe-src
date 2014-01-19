@@ -11,10 +11,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-
-
-
-
 public abstract class BaseMenuPresenter implements MenuPresenter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.743 -0500", hash_original_field = "A498D7B6B951074CC260EAF09122A9CD", hash_generated_field = "9BBD2C5E70A5CAEEE85328B585C6EDD6")
 
@@ -36,17 +32,14 @@ public abstract class BaseMenuPresenter implements MenuPresenter {
     private Callback mCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.756 -0500", hash_original_field = "E3964B9758FE9C658990669AD0A92FF6", hash_generated_field = "4FE937236E901E4D73D88B87E9D305E0")
 
-
     private int mMenuLayoutRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.758 -0500", hash_original_field = "892636E3A464AFFB770DCFC2EBD216F3", hash_generated_field = "C816B664A95F5226F0E062333FAD6D81")
 
     private int mItemLayoutRes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.760 -0500", hash_original_field = "00AFA7C304AE938B0557AD18697A687E", hash_generated_field = "09958BB4E6973250CC3EA4C3B0BA7E7B")
 
-
     protected MenuView mMenuView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.764 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9AA2EA3A2433F5D6F841BEFD54A673B4")
-
 
     private int mId;
 
@@ -75,6 +68,7 @@ public BaseMenuPresenter(Context context, int menuLayoutRes, int itemLayoutRes) 
         mMenu = menu;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.771 -0500", hash_original_method = "5077062D5DDD15E91EAE389A4058EA7D", hash_generated_method = "1077D46E647EF37B394E907CE57C69D9")
     
 @Override
@@ -187,6 +181,7 @@ public MenuView.ItemView createItemView(ViewGroup parent) {
      * @param parent Intended parent view - use for inflation.
      * @return View that presents the requested menu item
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.785 -0500", hash_original_method = "4524E542CCB3CEBB00AD430A4F472D75", hash_generated_method = "A5DAD7C08BF23E3E718E9F606CA7F4DA")
     
 public View getItemView(MenuItemImpl item, View convertView, ViewGroup parent) {
@@ -258,6 +253,7 @@ public boolean collapseItemActionView(MenuBuilder menu, MenuItemImpl item) {
         return false;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:32.804 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "11DEA77066B2A20ED28C130805C2B9DE")
     
 public int getId() {
@@ -269,7 +265,6 @@ public int getId() {
 public void setId(int id) {
         mId = id;
     }
-
     
 }
 

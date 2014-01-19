@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.781 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.781 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.784 -0500", hash_original_method = "1DC05C107F015B862168D7045BFA60F3", hash_generated_method = "7999ACB5C5684B53D68BB5FA99473DBB")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.784 -0500", hash_original_method = "1DC05C107F015B862168D7045BFA60F3", hash_generated_method = "7999ACB5C5684B53D68BB5FA99473DBB")
             
 public void set(int type, long triggerAtTime, android.app.PendingIntent operation) throws android.os.RemoteException
 {
@@ -87,7 +89,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.786 -0500", hash_original_method = "7E92E548EB73359F421E8CBA533E7E15", hash_generated_method = "9A72531E1C935502AD127344FD2F6996")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.786 -0500", hash_original_method = "7E92E548EB73359F421E8CBA533E7E15", hash_generated_method = "9A72531E1C935502AD127344FD2F6996")
             
 public void setRepeating(int type, long triggerAtTime, long interval, android.app.PendingIntent operation) throws android.os.RemoteException
 {
@@ -113,7 +116,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.789 -0500", hash_original_method = "7E9F1B843C5588AA72BBC55E16EB2500", hash_generated_method = "8942C52394E96D5C212203517E9DCE78")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.789 -0500", hash_original_method = "7E9F1B843C5588AA72BBC55E16EB2500", hash_generated_method = "8942C52394E96D5C212203517E9DCE78")
             
 public void setInexactRepeating(int type, long triggerAtTime, long interval, android.app.PendingIntent operation) throws android.os.RemoteException
 {
@@ -139,7 +143,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.791 -0500", hash_original_method = "B36AF32B24065383BC1E25527AF82158", hash_generated_method = "9D3A4EAA599A67862021C8B90AE0651B")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.791 -0500", hash_original_method = "B36AF32B24065383BC1E25527AF82158", hash_generated_method = "9D3A4EAA599A67862021C8B90AE0651B")
             
 public void setTime(long millis) throws android.os.RemoteException
 {
@@ -156,7 +161,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.794 -0500", hash_original_method = "6EC57E73D108B2E02F320191BAC177C9", hash_generated_method = "DCD936525768544BB862312EC1E911C3")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.794 -0500", hash_original_method = "6EC57E73D108B2E02F320191BAC177C9", hash_generated_method = "DCD936525768544BB862312EC1E911C3")
             
 public void setTimeZone(java.lang.String zone) throws android.os.RemoteException
 {
@@ -213,7 +219,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.766 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:11.766 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

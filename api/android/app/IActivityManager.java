@@ -204,7 +204,6 @@ public interface IActivityManager extends IInterface {
     public void killAllBackgroundProcesses() throws RemoteException;
     public void forceStopPackage(final String packageName) throws RemoteException;
     
-    
     public void goingToSleep() throws RemoteException;
     public void wakingUp() throws RemoteException;
     
@@ -223,24 +222,17 @@ public interface IActivityManager extends IInterface {
     
     public boolean killPids(int[] pids, String reason, boolean secure) throws RemoteException;
     
-    
     public void startRunning(String pkg, String cls, String action,
             String data) throws RemoteException;
     public void handleApplicationCrash(IBinder app,
             ApplicationErrorReport.CrashInfo crashInfo) throws RemoteException;
     public boolean handleApplicationWtf(IBinder app, String tag,
             ApplicationErrorReport.CrashInfo crashInfo) throws RemoteException;
-
-    
-    
-    
     
     public void handleApplicationStrictModeViolation(IBinder app, int violationMask,
             StrictMode.ViolationInfo crashInfo) throws RemoteException;
-
     
     public void signalPersistentProcesses(int signal) throws RemoteException;
-    
     
     public List<ActivityManager.RunningAppProcessInfo> getRunningAppProcesses()
             throws RemoteException;
@@ -249,7 +241,6 @@ public interface IActivityManager extends IInterface {
             throws RemoteException;
     
     public ConfigurationInfo getDeviceConfigurationInfo() throws RemoteException;
-    
     
     public boolean profileControl(String process, boolean start,
             String path, ParcelFileDescriptor fd, int profileType) throws RemoteException;
@@ -300,7 +291,6 @@ public interface IActivityManager extends IInterface {
 
     public int checkGrantUriPermission(int callingUid, String targetPkg,
             Uri uri, int modeFlags) throws RemoteException;
-
     
     public boolean dumpHeap(String process, boolean managed, String path,
         ParcelFileDescriptor fd) throws RemoteException;
@@ -318,7 +308,6 @@ public interface IActivityManager extends IInterface {
     public boolean getPackageAskScreenCompat(String packageName) throws RemoteException;
     public void setPackageAskScreenCompat(String packageName, boolean ask)
             throws RemoteException;
-    
     
     public boolean switchUser(int userid) throws RemoteException;
     
@@ -338,10 +327,8 @@ public interface IActivityManager extends IInterface {
     public void showBootMessage(CharSequence msg, boolean always) throws RemoteException;
 
     public void dismissKeyguardOnNextActivity() throws RemoteException;
-
     
      boolean testIsSystemReady();
-    
     
     public static class ContentProviderHolder implements Parcelable {
 
@@ -390,6 +377,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.770 -0500", hash_original_method = "055D811374FBB4701F1DF02FE6919DFE", hash_generated_method = "E9AA09AA7C5B9119AB2904A18446C7D3")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -402,7 +390,6 @@ public void writeToParcel(Parcel dest, int flags) {
             dest.writeInt(noReleaseNeeded ? 1:0);
         }
     };
-
     
     public static class WaitResult implements Parcelable {
 
@@ -457,6 +444,7 @@ public int describeContents() {
             return 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.800 -0500", hash_original_method = "059F0DB3E5849A4C215FC265F792E051", hash_generated_method = "02A382C8D808C11880F61CB350332938")
         
 public void writeToParcel(Parcel dest, int flags) {
@@ -469,15 +457,12 @@ public void writeToParcel(Parcel dest, int flags) {
     };
 
     String descriptor = "android.app.IActivityManager";
-
-    
     
     int START_RUNNING_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION;
     int HANDLE_APPLICATION_CRASH_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+1;
     int START_ACTIVITY_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+2;
     int UNHANDLED_BACK_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+3;
     int OPEN_CONTENT_URI_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+4;
-
     
     int FINISH_ACTIVITY_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+10;
     int REGISTER_RECEIVER_TRANSACTION = IBinder.FIRST_CALL_TRANSACTION+11;

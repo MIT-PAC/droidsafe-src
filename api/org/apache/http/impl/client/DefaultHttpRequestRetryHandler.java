@@ -15,11 +15,6 @@ import org.apache.http.client.HttpRequestRetryHandler;
 import org.apache.http.protocol.ExecutionContext;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
-
-
 public class DefaultHttpRequestRetryHandler implements HttpRequestRetryHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.141 -0500", hash_original_field = "D9FEB852094E33F39686A155B39B7EAB", hash_generated_field = "1D6143EFD067DE65E0F1632FD027ED68")
 
@@ -108,12 +103,12 @@ public boolean isRequestSentRetryEnabled() {
     /**
      * @return the maximum number of times a method will be retried
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.157 -0500", hash_original_method = "C82A3B7CA490A8560B081A320AF1EB0A", hash_generated_method = "64E61A17028D879E6ECB4FA7147907DE")
     
 public int getRetryCount() {
         return retryCount;
     }
-
     
 }
 

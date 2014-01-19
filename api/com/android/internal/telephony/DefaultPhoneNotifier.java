@@ -13,10 +13,6 @@ import android.telephony.ServiceState;
 import android.telephony.TelephonyManager;
 import android.util.Log;
 
-
-
-
-
 public class DefaultPhoneNotifier implements PhoneNotifier {
 
     /**
@@ -134,7 +130,6 @@ public static Phone.DataActivityState convertDataActivityState(int state) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.545 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "B8386CD6D900777C9D6A0A5CA1D0B217")
 
-
     static final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.547 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "B7707D757F0604821CCAF673B2122320")
 
@@ -151,6 +146,7 @@ DefaultPhoneNotifier() {
                     "telephony.registry"));
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.555 -0500", hash_original_method = "B1B04D5C561E6616E6BB5E666E01B9EA", hash_generated_method = "75B353FDF9C269FD78B6050AF826F7C4")
     
 public void notifyPhoneState(Phone sender) {
@@ -166,6 +162,7 @@ public void notifyPhoneState(Phone sender) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.557 -0500", hash_original_method = "8120B7915F3C7B653A108168FE940FC9", hash_generated_method = "FC7CEA322F05FB608F63A479FA15C8C3")
     
 public void notifyServiceState(Phone sender) {
@@ -181,6 +178,7 @@ public void notifyServiceState(Phone sender) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.560 -0500", hash_original_method = "51C3EBD9D5F86649F01134EE2C844096", hash_generated_method = "53B417BF970B7F12F1FC27F427569B2E")
     
 public void notifySignalStrength(Phone sender) {
@@ -191,6 +189,7 @@ public void notifySignalStrength(Phone sender) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.563 -0500", hash_original_method = "EEA6E3D036FE30A21A0E7B01738A2091", hash_generated_method = "C2D38217FCD840C7437FDEE1D53082FE")
     
 public void notifyMessageWaitingChanged(Phone sender) {
@@ -201,6 +200,7 @@ public void notifyMessageWaitingChanged(Phone sender) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.565 -0500", hash_original_method = "61F204C17435F73A0638C1B2194C11D4", hash_generated_method = "8545250FCA24CA8B809D0BF17E0D6803")
     
 public void notifyCallForwardingChanged(Phone sender) {
@@ -211,6 +211,7 @@ public void notifyCallForwardingChanged(Phone sender) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.568 -0500", hash_original_method = "6186BE83E934F018920409C47A141A66", hash_generated_method = "375686E4CD9931079B003861D3AE79A0")
     
 public void notifyDataActivity(Phone sender) {
@@ -263,6 +264,7 @@ private void doNotifyDataConnection(Phone sender, String reason, String apnType,
         }
     }
 
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.575 -0500", hash_original_method = "67482F4F9D9E6F44C4639F27C32CCD68", hash_generated_method = "E94B950F7188F9DDEE7FC4532B511B75")
     
 public void notifyDataConnectionFailed(Phone sender, String reason, String apnType) {
@@ -285,6 +287,7 @@ public void notifyCellLocation(Phone sender) {
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.580 -0500", hash_original_method = "E58B6ECC0D24F432EA477897C3B146BA", hash_generated_method = "ED0BE3664FB78F8DE0E5B3A241483969")
     
 public void notifyOtaspChanged(Phone sender, int otaspMode) {

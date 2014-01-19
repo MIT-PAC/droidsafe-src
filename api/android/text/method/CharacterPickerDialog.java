@@ -23,11 +23,6 @@ import android.widget.GridView;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class CharacterPickerDialog extends Dialog implements OnItemClickListener, OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.197 -0500", hash_original_field = "6F4F028D1DE9C463F753A80DD0991753", hash_generated_field = "E606D96B6FC531BB030B680E135C95D0")
 
@@ -53,6 +48,8 @@ public class CharacterPickerDialog extends Dialog implements OnItemClickListener
      * <code>options</code> for insertion or replacement (depending on
      * the sense of <code>insert</code>) into <code>text</code>.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.215 -0500", hash_original_method = "B85B2CE2D9925643AD72FE26FAC534DC", hash_generated_method = "B2136AFE62B7246CAB629FD53700B2CA")
     
 public CharacterPickerDialog(Context context, View view,
@@ -124,7 +121,6 @@ public void onClick(View v) {
             replaceCharacterAndClose(result);
         }
     }
-
     
     private class OptionsAdapter extends BaseAdapter {
 
@@ -134,6 +130,7 @@ public OptionsAdapter(Context context) {
             super();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.235 -0500", hash_original_method = "2F3D5346969689C1B0E524EA0F83CDB3", hash_generated_method = "3D5D618B2C4A90AC83411EF5C6ACE585")
         
 public View getView(int position, View convertView, ViewGroup parent) {
@@ -144,28 +141,28 @@ public View getView(int position, View convertView, ViewGroup parent) {
             return b;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.238 -0500", hash_original_method = "DE59A8E1295F8E334D75F62942CFDC7D", hash_generated_method = "068ECB1C09DB1EEA27AC6685EFD58AE6")
         
 public final int getCount() {
             return mOptions.length();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.241 -0500", hash_original_method = "8B0C0E62DBC532F544A3C62A19BF4060", hash_generated_method = "80F71820F60B1DF2BFF86DB8B119223E")
         
 public final Object getItem(int position) {
             return String.valueOf(mOptions.charAt(position));
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:59.244 -0500", hash_original_method = "7144EF990F660E75AA61001CF21A1CD5", hash_generated_method = "EACE94B0A96EDF0E9405B246169ACAA0")
         
 public final long getItemId(int position) {
             return position;
         }
-
         
     }
-
-
     
 }
 

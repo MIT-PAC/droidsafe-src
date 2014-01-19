@@ -5,9 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class InternalErrorHandler {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.407 -0500", hash_original_method = "7A81082C7995C3F4388AC0936F2411E4", hash_generated_method = "5B16CCB15F07EA81FF5DF93B47D20CC8")
@@ -35,6 +32,7 @@ public static void handleException(Exception ex, StackLogger stackLogger) {
     * Handle an unexpected condition (and print the error code).
     */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.413 -0500", hash_original_method = "4AB3E5449D99DD32AC91751756F3538E", hash_generated_method = "E9497FD0935A8BACBD1519C33DF11025")
     
 public static void handleException(String emsg) {
@@ -60,7 +58,6 @@ public static void handleException(String emsg, StackLogger stackLogger) {
     {
         //Synthesized constructor
     }
-
     
 }
 

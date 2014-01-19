@@ -42,12 +42,9 @@ import android.view.Surface;
 import android.view.ViewRootImpl;
 import android.view.WindowManager;
 
-
-
-
-
 class BrowserFrame extends Handler {
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.218 -0500", hash_original_method = "50372AB6BB6BBC5DF6CA1B50375B707C", hash_generated_method = "5692FCEFB6C8D382EA8E9E6F92A30F1B")
+    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.218 -0500", hash_original_method = "50372AB6BB6BBC5DF6CA1B50375B707C", hash_generated_method = "5692FCEFB6C8D382EA8E9E6F92A30F1B")
     
 static String getRawResFilename(int id, Context context) {
         int resid;
@@ -99,7 +96,6 @@ static String getRawResFilename(int id, Context context) {
         return value.string.toString();
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.984 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
-
 
     private static final String LOGTAG = "webkit";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.986 -0500", hash_original_field = "9C4E0AF5855BCD67106C8565B25B662F", hash_generated_field = "07C45052F371F817A6E9C7129020689B")
@@ -179,7 +175,6 @@ static String getRawResFilename(int id, Context context) {
 
     private static final int FILE_UPLOAD_NO_FILE_CHOSEN = 7;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.988 -0500", hash_original_field = "C50B804397335F4C59F495D6A5AAA565", hash_generated_field = "62789CA10670C708EA4D387AB18C5F89")
-
 
     private  CallbackProxy mCallbackProxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:11.991 -0500", hash_original_field = "A5E24FAE08D22101EAD3684EE47BCBA3", hash_generated_field = "D4F7B9B886C1ADC785C82D3DD8AF3DFF")
@@ -646,9 +641,7 @@ public void externalRepresentation(Message callback) {
         callback.obj = externalRepresentation();;
         callback.sendToTarget();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.717 -0400", hash_original_method = "818D4287AF55B155FD9BEC63FC9BB14D", hash_generated_method = "2CE36722D89C9AAE233D32794227C266")
     private String externalRepresentation() {
     	String s = new String();
@@ -676,18 +669,14 @@ public void documentAsText(Message callback) {
         callback.obj = text.toString();
         callback.sendToTarget();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "79942AAFA346C254C5198053B4C683D6", hash_generated_method = "07D5EDE5120089FA81790CBAAE4B851E")
     private String documentAsText() {
     	String s = new String();
     	s.addTaint(taint);
     	return s;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.718 -0400", hash_original_method = "BAA59F57B83FBAF7CC9F5BD462BDF4D7", hash_generated_method = "81DE64B9D9AB653AFA9FD34037C2102D")
     private String childFramesAsText() {
     	String s = new String();
@@ -808,9 +797,7 @@ private int getFile(String uri, byte[] buffer, int offset,
         }
         return size;
     }
-
-    
-        @DSModeled(DSC.BAN)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.297 -0400", hash_original_method = "60CA323AEDF7C276FF8B65BEFBD4FA69", hash_generated_method = "7D89BCA3D4AB00A29B991E0D9B7AA4A5")
     private InputStream inputStreamForAndroidResource(String url) {
         addTaint(url.getTaint());
@@ -1185,7 +1172,8 @@ private void updateVisitedHistory(String url, boolean isReload) {
     /**
      * Get the CallbackProxy for sending messages to the UI thread.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.194 -0500", hash_original_method = "D3ED977A3BCAC48329E24D7D69689852", hash_generated_method = "D3ED977A3BCAC48329E24D7D69689852")
+    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.194 -0500", hash_original_method = "D3ED977A3BCAC48329E24D7D69689852", hash_generated_method = "D3ED977A3BCAC48329E24D7D69689852")
     
 CallbackProxy getCallbackProxy() {
         return mCallbackProxy;
@@ -1194,6 +1182,7 @@ CallbackProxy getCallbackProxy() {
     /**
      * Returns the User Agent used by this frame
      */
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.197 -0500", hash_original_method = "F09A8DE53C03EAD5D6B2D7442C92246E", hash_generated_method = "F09A8DE53C03EAD5D6B2D7442C92246E")
     
 String getUserAgentString() {
@@ -1211,9 +1200,7 @@ private String getRawResFilename(int id) {
 private float density() {
         return mContext.getResources().getDisplayMetrics().density;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:50.300 -0400", hash_original_method = "468A4DE23411D07F152B7955301757EE", hash_generated_method = "EF6FBD3E66E53A2039127B1AC512D427")
     private void didReceiveAuthenticationChallenge(
             final int handle, String host, String realm, final boolean useCachedCredentials,
@@ -1275,7 +1262,6 @@ private float density() {
         //};
         //mCallbackProxy.onReceivedHttpAuthRequest(handler, host, realm);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:57.044 -0400", hash_original_method = "BF59E951CBFF79EB5A7A07D0C7840C24", hash_generated_method = "56CA8B86B76D265AAC63B7DA59AFC465")
     private void reportSslCertError(final int handle, final int certError, byte certDER[],
@@ -1452,7 +1438,6 @@ private void autoLogin(String realm, String account, String args) {
     	addTaint(list.getTaint());
     }
 
-
     /**
      * Destroy the native frame.
      */
@@ -1461,8 +1446,6 @@ private void autoLogin(String realm, String account, String args) {
     public void nativeDestroyFrame(){
     	//Formerly a native method
     }
-
-
     
     private static class ConfigCallback implements ComponentCallbacks {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.059 -0500", hash_original_field = "9BDCFD1DEC1E58C555C4893FB1A5089E", hash_generated_field = "939312DE689389EC63468038A0B3966B")
@@ -1537,7 +1520,6 @@ public void onConfigurationChanged(Configuration newConfig) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.072 -0500", hash_original_method = "4F0E380BE715BF5B2ECCDB1794C8905E", hash_generated_method = "79F592DC22C7A97AE301DB7CC367A921")
         
 public void onLowMemory() {}
-
         
     }
 
@@ -1550,7 +1532,6 @@ public void onLowMemory() {}
     	addTaint(decision);
     }
 
-
     /**
      * Reload the current main frame.
      */
@@ -1560,7 +1541,6 @@ public void onLowMemory() {}
     	//Formerly a native method
     	addTaint(allowStale);
     }
-
 
     /**
      * Go back or forward the number of steps given.
@@ -1573,11 +1553,9 @@ public void onLowMemory() {}
     	//Formerly a native method
     	addTaint(steps);
     }
-
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.739 -0400", hash_original_method = "F143225F39CB01C1D802EC565271C419", hash_generated_method = "29BBC25C86CDC16E4793C63D3F6022F4")
-    @DSModeled(DSC.SAFE)
+    
     public String stringByEvaluatingJavaScriptFromString(String script) {
     	String s = new String();
     	s.addTaint(taint);
@@ -1597,7 +1575,6 @@ public void onLowMemory() {}
     	addTaint(interfaceName.getTaint());
     }
 
-
     /**
      * Enable or disable the native cache.
      */
@@ -1610,7 +1587,6 @@ public void onLowMemory() {}
     	addTaint(disabled);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.293 -0500", hash_original_method = "8B7AAFA05BB3F3ED8C594AA78F708D08", hash_generated_method = "4C9B88273F8B44A312577AE9D65BDD2E")
     
     public boolean cacheDisabled(){
@@ -1618,13 +1594,11 @@ public void onLowMemory() {}
     	return getTaintBoolean();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.296 -0500", hash_original_method = "055468486DD4D3FA9B64A316B50FA6FA", hash_generated_method = "B3EA28451694567278DBB7B8C5898FA0")
     
     public void clearCache(){
     	//Formerly a native method
     }
-
 
     /**
      * Returns false if the url is bad.
@@ -1637,7 +1611,6 @@ public void onLowMemory() {}
     	addTaint(headers.getTaint());
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.305 -0500", hash_original_method = "4DAAE38A658B1BBD069DC4A366A0C462", hash_generated_method = "9B6613BA10C56B29898E9C3B20F75C07")
     
     private void nativePostUrl(String url, byte[] postData){
@@ -1645,7 +1618,6 @@ public void onLowMemory() {}
     	addTaint(url.getTaint());
     	addTaint(postData[0]);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.308 -0500", hash_original_method = "8945167C96AD091C5C39DEC108C4839D", hash_generated_method = "70E1BAD91CD52B6C68F6253B2A952D74")
     
@@ -1658,7 +1630,6 @@ public void onLowMemory() {}
     	addTaint(encoding.getTaint());
     	addTaint(historyUrl.getTaint());
     }
-
 
     /**
      * Stop loading the current page.
@@ -1678,7 +1649,6 @@ public void stopLoading() {
     	//Formerly a native method
     }
 
-
     /**
      * Return true if the document has images.
      */
@@ -1689,7 +1659,6 @@ public void stopLoading() {
     	return getTaintBoolean();
     }
 
-
     /**
      * @return TRUE if there is a password field in the current frame
      */
@@ -1699,10 +1668,7 @@ public void stopLoading() {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "865B533AFC1748A162575C4402C4E1D7", hash_generated_method = "649B5EB499FF582D6D8E126787969B7F")
     private String[] getUsernamePassword() {
     	String[] s = new String[1];
@@ -1722,10 +1688,7 @@ public void stopLoading() {
     	addTaint(username.getTaint());
     	addTaint(password.getTaint());
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:03.743 -0400", hash_original_method = "74581984BB5BC192860C6547F8D5036F", hash_generated_method = "1313694DA1B47EE7DE9BC757D7889251")
     private String nativeSaveWebArchive(String basename, boolean autoname) {
     	addTaint(autoname);
@@ -1741,7 +1704,6 @@ public void stopLoading() {
     	//Formerly a native method
     	addTaint(orientation);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.340 -0500", hash_original_method = "68B2D8AE5CF2C1C845D97B94EDB581CC", hash_generated_method = "C0C0561BBCCD82FBB7D90A7C0971E34C")
     
@@ -1759,7 +1721,6 @@ public void stopLoading() {
     	addTaint(handle);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.347 -0500", hash_original_method = "DFE86F393FFB1B33336576462A995D77", hash_generated_method = "78CBB94BAAC06C870BCF54AF7BFB0C64")
     
     private void nativeSslCertErrorProceed(int handle){
@@ -1775,7 +1736,6 @@ public void stopLoading() {
     	addTaint(certError);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.355 -0500", hash_original_method = "81F222D4FD7D3F4B597DBD7F9BD0D106", hash_generated_method = "52BA7D1750B8229E20200613F672C566")
     
     void nativeSslClientCert(int handle,
@@ -1787,7 +1747,6 @@ public void stopLoading() {
     	addTaint(asn1DerEncodedCertificateChain[0][0]);
     }
 
-
     /**
      * Returns true when the contents of the frame is an RTL or vertical-rl
      * page. This is used for determining whether a frame should be initially
@@ -1795,7 +1754,8 @@ public void stopLoading() {
      * @return true when the frame should be initially scrolled right-most
      * based on the text direction and writing mode.
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.357 -0500", hash_original_method = "154F1DF98163CFE18EB2585F133E4CD5", hash_generated_method = "154F1DF98163CFE18EB2585F133E4CD5")
+    /* package */ @DSSource({DSSourceKind.BROWSER_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:12.357 -0500", hash_original_method = "154F1DF98163CFE18EB2585F133E4CD5", hash_generated_method = "154F1DF98163CFE18EB2585F133E4CD5")
     
 boolean getShouldStartScrolledRight() {
         return nativeGetShouldStartScrolledRight(mNativeFrame);

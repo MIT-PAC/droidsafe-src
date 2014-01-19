@@ -8,14 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
-
-
-
-
 public class BasicHttpEntity extends AbstractHttpEntity {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.270 -0500", hash_original_field = "843941CC0104424A71E5291E659CC007", hash_generated_field = "E10265C22C3282384A3FF9B20A322BFE")
-
 
     private InputStream content;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.272 -0500", hash_original_field = "119C40B1C90EE8408989DFB3E8902B9E", hash_generated_field = "F83D62FF33880A5C9450BAF66AEC5A3C")
@@ -38,6 +32,7 @@ public BasicHttpEntity() {
     }
 
     // non-javadoc, see interface HttpEntity
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.282 -0500", hash_original_method = "120309BFFDD6935F8B30886147626A04", hash_generated_method = "9233A3153FC331D80C5DADB9AF36C94A")
     
 public long getContentLength() {
@@ -54,6 +49,7 @@ public long getContentLength() {
      *          if the content has been obtained before, or
      *          has not yet been provided
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.285 -0500", hash_original_method = "DD43DF1BE34625633489098C75403E56", hash_generated_method = "7699A858A6F34F95A95A5ED2ACB23D2A")
     
 public InputStream getContent()
@@ -135,7 +131,6 @@ public void consumeContent() throws IOException {
             content.close(); // reads to the end of the entity
         }
     }
-
     
 }
 

@@ -38,11 +38,6 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class NumberPicker extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:34.928 -0500", hash_original_field = "C99F9313F0CFB71F24AA867E6BD38BE4", hash_generated_field = "1DD6DB2DBAAEAD209FC944EF9017AB32")
 
@@ -112,10 +107,8 @@ public class NumberPicker extends LinearLayout {
         final StringBuilder mBuilder = new StringBuilder();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:34.977 -0500", hash_original_field = "3494047018E224F0F75D04075CB9A448", hash_generated_field = "395AFDC9AC7C0E0287626B6E7F5FF0D6")
 
-
         final java.util.Formatter mFmt = new java.util.Formatter(mBuilder, java.util.Locale.US);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:34.979 -0500", hash_original_field = "4B395FF7B30F2D92E6BE8B1A0CE35518", hash_generated_field = "301E27E37994F137A8ACC75A8DFB4033")
-
 
         final Object[] mArgs = new Object[1];
 
@@ -726,6 +719,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.154 -0500", hash_original_method = "B6D6495EF8D39EBA8CC69BAAD1076261", hash_generated_method = "779A92564B3688AA0B13025B127F20C5")
     
 @Override
@@ -773,6 +767,7 @@ public NumberPicker(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.159 -0500", hash_original_method = "A5D52728D322EA76B9FE19A001AC2619", hash_generated_method = "C018A36B3FBB8F24D1A26C1A669111FA")
     
 @Override
@@ -853,6 +848,9 @@ public void setFormatter(Formatter formatter) {
      * @see #setMinValue(int)
      * @see #setMaxValue(int)
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.168 -0500", hash_original_method = "27A138A3602AD1BB9BCFA8883739C2F3", hash_generated_method = "893E9699FA71383E5011E5628D2A71A2")
     
 public void setValue(int value) {
@@ -925,6 +923,7 @@ private void tryComputeMaxWidth() {
      * @see #getMinValue()
      * @see #getMaxValue()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.173 -0500", hash_original_method = "0DE9A61E4C9F0206942BD1BD5DBB2993", hash_generated_method = "0221C9177B13D161F2561604D228B1D0")
     
 public boolean getWrapSelectorWheel() {
@@ -976,6 +975,9 @@ public void setOnLongPressUpdateInterval(long intervalMillis) {
      *
      * @return The value.
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.179 -0500", hash_original_method = "873C7D38131A035B7F6055170D432634", hash_generated_method = "612E588787E3A1FC08CE2E1A6D34D03A")
     
 public int getValue() {
@@ -987,6 +989,7 @@ public int getValue() {
      *
      * @return The min value
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.181 -0500", hash_original_method = "734B6103B2E180B236F243E5AD573634", hash_generated_method = "E14ACFAD17E885847B2037E16680637A")
     
 public int getMinValue() {
@@ -998,6 +1001,8 @@ public int getMinValue() {
      *
      * @param minValue The min value.
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.184 -0500", hash_original_method = "661BFF8A6967E0A91919CA7BDDDCFF35", hash_generated_method = "0338F44D18DDB51B5FD43C86081D4560")
     
 public void setMinValue(int minValue) {
@@ -1023,6 +1028,7 @@ public void setMinValue(int minValue) {
      *
      * @return The max value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.186 -0500", hash_original_method = "D9333690652DA8538B4523261E9BBD48", hash_generated_method = "DD027431AD01220BDC2FE04331979B71")
     
 public int getMaxValue() {
@@ -1034,6 +1040,8 @@ public int getMaxValue() {
      *
      * @param maxValue The max value.
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.188 -0500", hash_original_method = "1C3BC534ADC5B8B2FC50C2F4D93BA1C9", hash_generated_method = "C6D513856698137C57403435D5F031D3")
     
 public void setMaxValue(int maxValue) {
@@ -1059,6 +1067,7 @@ public void setMaxValue(int maxValue) {
      *
      * @return The displayed values.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.190 -0500", hash_original_method = "7D8D8A804F018648196BF68A974CA568", hash_generated_method = "B96951674B1895E71860C1345553F46F")
     
 public String[] getDisplayedValues() {
@@ -1070,6 +1079,8 @@ public String[] getDisplayedValues() {
      *
      * @param displayedValues The displayed values.
      */
+    @DSComment("UI of number picker")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.193 -0500", hash_original_method = "0435EA5A97E8A7F818A581EB86B2390D", hash_generated_method = "94AEBEA8E7AEAF521D2FBBE7422FC808")
     
 public void setDisplayedValues(String[] displayedValues) {
@@ -1089,6 +1100,7 @@ public void setDisplayedValues(String[] displayedValues) {
         tryComputeMaxWidth();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.195 -0500", hash_original_method = "26009EEE98735F9AF4C2D76E4A1AFAB0", hash_generated_method = "A03901498805A97FB2D760D2745E3B9F")
     
 @Override
@@ -1096,6 +1108,7 @@ public void setDisplayedValues(String[] displayedValues) {
         return TOP_AND_BOTTOM_FADING_EDGE_STRENGTH;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.197 -0500", hash_original_method = "A0CE61C0CAF5846D2D470684E7070854", hash_generated_method = "AEA22FDB25FBE08D00CEC16A202992CC")
     
 @Override
@@ -1432,7 +1445,6 @@ private void initializeFadingEdges() {
         setVerticalFadingEdgeEnabled(true);
         setFadingEdgeLength((mBottom - mTop - mTextSize) / 2);
     }
-
     
     class InputTextFilter extends NumberKeyListener {
         
@@ -1444,12 +1456,14 @@ private void initializeFadingEdges() {
 
         // XXX This doesn't allow for range limits when controlled by a
         // soft input method!
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.288 -0500", hash_original_method = "5619839AC48FF521F5D3DA01ED2E4A22", hash_generated_method = "940AAB34C11FCB7F502A92348EEE42B0")
         
 public int getInputType() {
             return InputType.TYPE_CLASS_TEXT;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.290 -0500", hash_original_method = "42F7B3A0BEAF29BB6B3A7A3A6D3C7695", hash_generated_method = "E4A04209D0F261E6F67F991F41CD7354")
         
 @Override
@@ -1504,18 +1518,14 @@ public int getInputType() {
                 return "";
             }
         }
-
         
     }
-
-
     
     class SetSelectionCommand implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.298 -0500", hash_original_field = "690988B4898F88F06C3BC5A9EDD0C189", hash_generated_field = "F02C1BE48395D503EBA5C8443CFA9BF4")
 
         private int mSelectionStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.301 -0500", hash_original_field = "8317BA26C0ECC48C376AB95A0520113E", hash_generated_field = "C8C5CBC35C679AC5A64E276363F892A9")
-
 
         private int mSelectionEnd;
         
@@ -1530,11 +1540,8 @@ public int getInputType() {
 public void run() {
             mInputText.setSelection(mSelectionStart, mSelectionEnd);
         }
-
         
     }
-
-
     
     class AdjustScrollerCommand implements Runnable {
         
@@ -1560,11 +1567,8 @@ public void run() {
             mAdjustScroller.startScroll(0, 0, 0, deltaY, SELECTOR_ADJUSTMENT_DURATION_MILLIS);
             invalidate();
         }
-
         
     }
-
-
     
     class ChangeCurrentByOneFromLongPressCommand implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:35.311 -0500", hash_original_field = "FE89541634657061438129675F17A777", hash_generated_field = "729B17CE9B5C6450F7852DCD6B7829FA")
@@ -1589,35 +1593,26 @@ public void run() {
             changeCurrentByOne(mIncrement);
             postDelayed(this, mLongPressUpdateInterval);
         }
-
         
     }
-
-
     
     public interface OnValueChangeListener {
-
         
         void onValueChange(NumberPicker picker, int oldVal, int newVal);
     }
     
     public interface OnScrollListener {
-
         
         public static int SCROLL_STATE_IDLE = 0;
-
         
         public static int SCROLL_STATE_TOUCH_SCROLL = 1;
-
         
         public static int SCROLL_STATE_FLING = 2;
-
         
         public void onScrollStateChange(NumberPicker view, int scrollState);
     }
     
     public interface Formatter {
-
         
         public String format(int value);
     }

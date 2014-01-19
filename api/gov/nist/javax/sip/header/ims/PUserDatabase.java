@@ -8,14 +8,8 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
-
-
-
 public class PUserDatabase extends gov.nist.javax.sip.header.ParametersHeader implements PUserDatabaseHeader, SIPHeaderNamesIms, ExtensionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.849 -0500", hash_original_field = "1D4A58FFF7AA38B6C9A27CCC6771A449", hash_generated_field = "86C05D139AEEDD5C16FB836B4667558E")
-
 
     private String databaseName;
 
@@ -40,15 +34,14 @@ public PUserDatabase() {
         super(P_USER_DATABASE);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.860 -0500", hash_original_method = "1786B1376B4CD3FEAEBCAB28A560C6C6", hash_generated_method = "670AFE2F9B8340580BECCDB06D8BB4C6")
     
 public String getDatabaseName() {
 
         return this.databaseName;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:35.314 -0400", hash_original_method = "D51F20AACD3B656F6DA8A7AF0FAAC017", hash_generated_method = "91E5237D80F9174CB1590C4B10B03A2D")
     public void setDatabaseName(String databaseName) {
         if((databaseName==null)||(databaseName.equals(" ")))        
@@ -96,7 +89,6 @@ public boolean equals(Object other)
 
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.873 -0500", hash_original_method = "0C530D20B34B6FA1A3EDDB9B09D02FD1", hash_generated_method = "6D9B725C8901044875E10FB3FDDD193C")
     
 public Object clone() {
@@ -104,13 +96,13 @@ public Object clone() {
         return retval;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:57.876 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "014FE50D8A9A4F50DCF1C9E31F934432")
     
 public void setValue(String value) throws ParseException {
         throw new ParseException(value,0);
 
     }
-
     
 }
 

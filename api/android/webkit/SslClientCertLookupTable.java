@@ -9,11 +9,9 @@ import java.util.HashSet;
 import java.util.Map;
 import java.util.Set;
 
-
-
-
 final class SslClientCertLookupTable {
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:44.339 -0500", hash_original_method = "19519BEA477C884A878A69699B4A2178", hash_generated_method = "52A111EE5449CDDBB8C2E7E813D8B995")
     
 public static synchronized SslClientCertLookupTable getInstance() {

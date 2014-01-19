@@ -16,9 +16,6 @@ import com.android.server.NetworkManagementSocketTagger;
 
 import dalvik.system.SocketTagger;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class TrafficStats {
@@ -34,6 +31,9 @@ public class TrafficStats {
      * used internally by system services like {@link DownloadManager} when
      * performing traffic on behalf of an application.
      */
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.258 -0500", hash_original_method = "8A6683AC46C482376EDB137406895EA4", hash_generated_method = "82DCC980DC0931619D28A669069BC53B")
     
 public static void setThreadStatsTag(int tag) {
@@ -45,12 +45,17 @@ public static void setThreadStatsTag(int tag) {
      * from the current thread. Only one active tag per thread is supported.
      * {@link #tagSocket(Socket)}.
      */
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.261 -0500", hash_original_method = "241455C0E3DABE2C90F976AA351D8F6B", hash_generated_method = "D358E2458BE1AB76C109717C0B831B41")
     
 public static int getThreadStatsTag() {
         return NetworkManagementSocketTagger.getThreadSocketStatsTag();
     }
 
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.264 -0500", hash_original_method = "6E8825218B2DFD130436D4F78968BA20", hash_generated_method = "9CF251DF482A98A69EB969015F5F34D1")
     
 public static void clearThreadStatsTag() {
@@ -70,6 +75,7 @@ public static void clearThreadStatsTag() {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.266 -0500", hash_original_method = "2465ECE023EA6F6315B38940B5A27E11", hash_generated_method = "FB4612769C2D600C361EC2D31F9241CD")
     
 public static void setThreadStatsUid(int uid) {
@@ -92,6 +98,8 @@ public static void clearThreadStatsUid() {
      * @see #setThreadStatsTag(int)
      * @see #setThreadStatsUid(int)
      */
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.270 -0500", hash_original_method = "821AB37695B594727ABEEFF11698960F", hash_generated_method = "DB98BE8A084ABCF5B145BA68E9905BB0")
     
 public static void tagSocket(Socket socket) throws SocketException {
@@ -101,6 +109,8 @@ public static void tagSocket(Socket socket) throws SocketException {
     /**
      * Remove any statistics parameters from the given {@link Socket}.
      */
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.273 -0500", hash_original_method = "554BE569F7BDC3C8D27CCE859115D1B1", hash_generated_method = "A68AAA62167732901D231CB17AB81680")
     
 public static void untagSocket(Socket socket) throws SocketException {
@@ -160,6 +170,8 @@ public static NetworkStats stopDataProfiling(Context context) {
      *
      * @param operationCount Number of operations to increment count by.
      */
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.280 -0500", hash_original_method = "DBD8969F9F8A15C1B81C767022D4A852", hash_generated_method = "5221A9A6564F97816880393CB890BC0A")
     
 public static void incrementOperationCount(int operationCount) {
@@ -174,6 +186,8 @@ public static void incrementOperationCount(int operationCount) {
      * @param tag Accounting tag used in {@link #setThreadStatsTag(int)}.
      * @param operationCount Number of operations to increment count by.
      */
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.282 -0500", hash_original_method = "171C5D5D16A1A39BAF8B5EAF02935E25", hash_generated_method = "9D87F629693BDA83CCD42A680700F21C")
     
 public static void incrementOperationCount(int tag, int operationCount) {
@@ -186,147 +200,119 @@ public static void incrementOperationCount(int tag, int operationCount) {
             throw new RuntimeException(e);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getMobileTxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getMobileRxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getMobileTxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getMobileRxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getTxPackets(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getRxPackets(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getTxBytes(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getRxBytes(String iface) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getTotalTxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getTotalRxPackets() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getTotalTxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     public static long getTotalRxBytes() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
     public static long getUidTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Traffic statistics")
+    @DSSpec(DSCat.NETWORK_STATS)
     public static long getUidRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidRxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTcpTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTcpRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidUdpTxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidUdpRxBytes(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTcpTxSegments(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidTcpRxSegments(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidUdpTxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static long getUidUdpRxPackets(int uid) {
         return DSUtils.UNKNOWN_LONG;
     }
@@ -369,7 +355,6 @@ private static NetworkStats getDataLayerSnapshotForUid(Context context) {
 
     private static NetworkStats sActiveProfilingStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:23.256 -0500", hash_original_field = "F20A45A0061992FE154D37C68124F98C", hash_generated_field = "A1F5981D31D6D64C0FB7AA0C9780DCFC")
-
 
     private static Object sProfilingLock = new Object();
     

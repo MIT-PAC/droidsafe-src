@@ -21,14 +21,8 @@ import org.apache.http.conn.OperatedClientConnection;
 import org.apache.http.conn.routing.HttpRoute;
 import org.apache.http.impl.conn.IdleConnectionHandler;
 
-
-
-
-
-
 public abstract class AbstractConnPool implements RefQueueHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.193 -0500", hash_original_field = "0DA7E40E862C937570CA6B0D96D2555A", hash_generated_field = "3FCE5BFF671FE7B3BB3E2D744C5E5D2C")
-
 
     private final Log log = LogFactory.getLog(getClass());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.196 -0500", hash_original_field = "BD228968E2BFC0FF16EFA26B0026E962", hash_generated_field = "89BB43C794864E61314387B43B6FF59C")
@@ -66,7 +60,6 @@ protected AbstractConnPool() {
         poolLock = new ReentrantLock(fair);
     }
 
-
     /**
      * Enables connection garbage collection (GC).
      * This method must be called immediately after creating the
@@ -103,7 +96,6 @@ public void enableConnectionGC()
         t.start();
     }
 
-
     /**
      * Obtains a pool entry with a connection within the given timeout.
      *
@@ -119,6 +111,7 @@ public void enableConnectionGC()
      * @throws InterruptedException
      *         if the calling thread was interrupted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.217 -0500", hash_original_method = "0742A6A1F2B8CF3FE44B75781825E20C", hash_generated_method = "7A9300082717AC1F8ACEB82037F3311E")
     
 public final
@@ -139,7 +132,6 @@ public final
     
 public abstract PoolEntryRequest requestPoolEntry(HttpRoute route, Object state);
 
-
     /**
      * Returns an entry into the pool.
      * The connection of the entry is expected to be in a suitable state,
@@ -156,8 +148,6 @@ public abstract PoolEntryRequest requestPoolEntry(HttpRoute route, Object state)
     
 public abstract void freeEntry(BasicPoolEntry entry, boolean reusable, long validDuration, TimeUnit timeUnit)
         ;
-
-
 
     // non-javadoc, see interface RefQueueHandler
 // BEGIN android-changed
@@ -188,7 +178,6 @@ public void handleReference(Reference ref) {
         }
     }
 
-
     /**
      * Handles cleaning up for a lost pool entry with the given route.
      * A lost pool entry corresponds to a connection that was
@@ -200,7 +189,6 @@ public void handleReference(Reference ref) {
     
 protected abstract void handleLostEntry(HttpRoute route)
         ;
-
 
     /**
      * Closes idle connections.
@@ -236,7 +224,6 @@ public void closeExpiredConnections() {
             poolLock.unlock();
         }
     }
-
         
     //@@@ revise this cleanup stuff (closeIdle+deleteClosed), it's not good
 
@@ -247,7 +234,6 @@ public void closeExpiredConnections() {
     
 public abstract void deleteClosedConnections()
         ;
-
 
     /**
      * Shuts down this pool and all associated resources.
@@ -289,7 +275,6 @@ public void shutdown() {
         }
     }
 
-
     /**
      * Closes a connection from this pool.
      *
@@ -306,7 +291,6 @@ protected void closeConnection(final OperatedClientConnection conn) {
             }
         }
     }
-
     
 }
 

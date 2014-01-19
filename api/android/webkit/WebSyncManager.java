@@ -11,10 +11,6 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.Process;
 
-
-
-
-
 abstract class WebSyncManager implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.814 -0500", hash_original_field = "4BAA0CB66D08A8BBAE9C2CC4CE58A502", hash_generated_field = "E4D765345E06BE3C2527370BFAB10263")
 
@@ -61,6 +57,7 @@ protected WebSyncManager(Context context, String name) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:17.842 -0500", hash_original_method = "192983167FE22E48CC26A3CAFDDD8D6B", hash_generated_method = "6D3F334E8E934FE8B33726A6E75490EE")
     
 protected Object clone() throws CloneNotSupportedException {
@@ -116,7 +113,6 @@ public void resetSync() {
         Message msg = mHandler.obtainMessage(SYNC_MESSAGE);
         mHandler.sendMessageDelayed(msg, SYNC_LATER_INTERVAL);
     }
-
     
     private class SyncHandler extends Handler {
         
@@ -140,7 +136,6 @@ public void resetSync() {
                 sendMessageDelayed(newmsg, SYNC_LATER_INTERVAL);
             }
         }
-
         
     }
 

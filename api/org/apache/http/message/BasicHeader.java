@@ -8,11 +8,6 @@ import org.apache.http.Header;
 import org.apache.http.HeaderElement;
 import org.apache.http.ParseException;
 
-
-
-
-
-
 public class BasicHeader implements Header, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.022 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
@@ -43,6 +38,7 @@ public BasicHeader(final String name, final String value) {
      *
      * @return String name The name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.035 -0500", hash_original_method = "6F5A80252F54E883F3837DA0C6833E69", hash_generated_method = "10AFD575EA26BE807F18801FAC02C531")
     
 public String getName() {
@@ -54,6 +50,7 @@ public String getName() {
      *
      * @return String value The current value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.037 -0500", hash_original_method = "ADE49245CA79B6D6B3F4663E953C8CD9", hash_generated_method = "FC2353DBE9194DE53203DA3AB851288B")
     
 public String getValue() {
@@ -81,6 +78,7 @@ public String toString() {
      *
      * @throws ParseException   in case of a parse error
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.042 -0500", hash_original_method = "4A0D34AA034E5A375AA25DFEEA935661", hash_generated_method = "61A026959CCC674DD9FC42315072C554")
     
 public HeaderElement[] getElements() throws ParseException {
@@ -97,7 +95,6 @@ public HeaderElement[] getElements() throws ParseException {
 public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     
 }
 

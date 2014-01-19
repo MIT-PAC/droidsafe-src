@@ -14,9 +14,6 @@ import java.util.Locale;
 import java.util.Map;
 import java.util.TimeZone;
 
-
-
-
 public final class DateUtils {
     
     /**
@@ -147,7 +144,6 @@ public static String formatDate(Date date, String pattern) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.438 -0500", hash_original_field = "C98385C9500782E8D6C619F2F4D4E34D", hash_generated_field = "4C394D5CADCD628D7373F95DB7006036")
 
     public static final String PATTERN_RFC1123 = "EEE, dd MMM yyyy HH:mm:ss zzz";
-
     
     final static class DateFormatHolder {
 
@@ -163,6 +159,7 @@ public static String formatDate(Date date, String pattern) {
          *         to {@link SimpleDateFormat#applyPattern(String) apply} to a
          *         different pattern.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.478 -0500", hash_original_method = "5D9163D62347670BAA9E97E0E486304F", hash_generated_method = "7A3EE3BE3184BA33E3F3130D3FFC2663")
         
 public static SimpleDateFormat formatFor(String pattern) {
@@ -183,7 +180,6 @@ public static SimpleDateFormat formatFor(String pattern) {
 
             return format;
         }
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:41.159 -0400", hash_original_field = "F739AADE8F0088A4E58211C56C35F437", hash_generated_field = "ADAA82333267496F40F5112F0DF68EE8")
 
@@ -196,11 +192,8 @@ public static SimpleDateFormat formatFor(String pattern) {
                         new HashMap<String, SimpleDateFormat>());
                 varB4EAC82CA7396A68D541C85D26508E83_353515551.addTaint(getTaint()); 
                 return varB4EAC82CA7396A68D541C85D26508E83_353515551;
-                
-                
                         
             }
-
             
 };
         
@@ -218,7 +211,6 @@ public static SimpleDateFormat formatFor(String pattern) {
     public static final String PATTERN_ASCTIME = "EEE MMM d HH:mm:ss yyyy";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.447 -0500", hash_original_field = "BD911E5E75510CD3E4D8D0D0A8F185FC", hash_generated_field = "4BA37EA834B7C65E3B0C18FFD5AC8C26")
 
-
     private static final String[] DEFAULT_PATTERNS = new String[] {
     	PATTERN_RFC1036,
     	PATTERN_RFC1123,
@@ -226,10 +218,8 @@ public static SimpleDateFormat formatFor(String pattern) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.449 -0500", hash_original_field = "0C3FAA0B9C64436A4C6BA72E28AC89A5", hash_generated_field = "5E940A040DBE4448C9671F88AC75ED62")
 
-
     private static  Date DEFAULT_TWO_DIGIT_YEAR_START;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:36.452 -0500", hash_original_field = "1805E39C3A2BD113B25018C5FFF99805", hash_generated_field = "3A278BEAEB75318EBD87EA7DAAF24AD0")
-
     
     public static final TimeZone GMT = TimeZone.getTimeZone("GMT");
     

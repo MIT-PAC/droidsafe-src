@@ -24,16 +24,13 @@ import org.apache.http.protocol.HttpContext;
 import android.content.Context;
 import android.os.SystemClock;
 
-
-
-
-
 abstract class Connection {
 
     /**
      * connection factory: returns an HTTP or HTTPS connection as
      * necessary
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.896 -0500", hash_original_method = "9385B9D6EC74D1C750DAFAFBFBD94573", hash_generated_method = "4C4D93138F5E3927E852882E8218A1A2")
     
 static Connection getConnection(
@@ -51,7 +48,6 @@ static Connection getConnection(
 
     static final int SOCKET_TIMEOUT = 60000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.847 -0500", hash_original_field = "F03FB3615DA5BF50A18AAB161B1A8121", hash_generated_field = "1685A8AED473B8DB89C64DD70F6B2006")
-
 
     private static final int SEND = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.849 -0500", hash_original_field = "22DB8F0A7F00930967DA2F9685488B5E", hash_generated_field = "22E96ACD2E5356C19B3A4C8936496A0F")
@@ -77,7 +73,6 @@ static Connection getConnection(
     private final static int RETRY_REQUEST_LIMIT = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.879 -0500", hash_original_field = "3F533F5B9DFB580B7A178A760163083C", hash_generated_field = "8470675918FC5BC85BDE71A8C20A9EED")
 
-
     private static final int MIN_PIPE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.882 -0500", hash_original_field = "A3EC94B7D7D734A1A12DE0CFE823E426", hash_generated_field = "5FBC745DF7014C47FBE8E03B5689C9AC")
 
@@ -86,7 +81,6 @@ static Connection getConnection(
 
     private static final String HTTP_CONNECTION = "http.connection";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.858 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")
-
 
     Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.860 -0500", hash_original_field = "5527CB508C917F64359E36ED9BE59363", hash_generated_field = "89DB88E2A4BA8B129AFC783A277DC972")
@@ -109,7 +103,6 @@ static Connection getConnection(
     private int mActive = STATE_NORMAL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.887 -0500", hash_original_field = "537B204D0FD240DD08711E1D73085387", hash_generated_field = "537B204D0FD240DD08711E1D73085387")
 
-
     RequestFeeder mRequestFeeder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.889 -0500", hash_original_field = "CCCDB98A97C1303EEF1EDB8DB6C44807", hash_generated_field = "29FB82D1D2E75901C37B9EDD1B81BDDE")
 
@@ -127,6 +120,7 @@ protected Connection(Context context, HttpHost host,
         mHttpContext = new BasicHttpContext(null);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.893 -0500", hash_original_method = "9B5E41A5FF20333698838F3F6DF6BCD6", hash_generated_method = "9B5E41A5FF20333698838F3F6DF6BCD6")
     
 HttpHost getHost() {
@@ -137,7 +131,8 @@ HttpHost getHost() {
      * @return The server SSL certificate associated with this
      * connection (null if the connection is not secure)
      */
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.898 -0500", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "7F448377575EC929DDEDD2BF1EB435C4")
+    /* package */ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.898 -0500", hash_original_method = "7F448377575EC929DDEDD2BF1EB435C4", hash_generated_method = "7F448377575EC929DDEDD2BF1EB435C4")
     
 SslCertificate getCertificate() {
         return mCertificate;
@@ -465,6 +460,7 @@ private boolean httpFailure(Request req, int errorId, Exception e) {
         return ret;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.915 -0500", hash_original_method = "510B2315D285A4B8D2701F50BEED692F", hash_generated_method = "510B2315D285A4B8D2701F50BEED692F")
     
 HttpContext getHttpContext() {
@@ -517,6 +513,7 @@ void setCanPersist(boolean canPersist) {
         mCanPersist = canPersist;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.923 -0500", hash_original_method = "5B21A605E2B59BE630988FE4FC055560", hash_generated_method = "5B21A605E2B59BE630988FE4FC055560")
     
 boolean getCanPersist() {
@@ -544,6 +541,7 @@ public synchronized String toString() {
         return mHost.toString();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:14.934 -0500", hash_original_method = "ED2ED37A31E0A6859AF61C011936FDA1", hash_generated_method = "ED2ED37A31E0A6859AF61C011936FDA1")
     
 byte[] getBuf() {

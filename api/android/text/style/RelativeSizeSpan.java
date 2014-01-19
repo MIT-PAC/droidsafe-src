@@ -9,17 +9,14 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class RelativeSizeSpan extends MetricAffectingSpan implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.083 -0500", hash_original_field = "859F89A95EA81D453D987D576B8DE2B6", hash_generated_field = "F3DE0713F398F5B7918E6C35C0AAE054")
 
-
 	private  float mProportion;
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.086 -0500", hash_original_method = "A7FADA85249F1B8943B2C3745C9AD73C", hash_generated_method = "DDB2669CFC4AE8ADAE8FB516D9CF6198")
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.086 -0500", hash_original_method = "A7FADA85249F1B8943B2C3745C9AD73C", hash_generated_method = "DDB2669CFC4AE8ADAE8FB516D9CF6198")
     
 public RelativeSizeSpan(float proportion) {
 		mProportion = proportion;
@@ -31,6 +28,7 @@ public RelativeSizeSpan(Parcel src) {
         mProportion = src.readFloat();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.091 -0500", hash_original_method = "D2254CF1E8362BBCA36C2E8295131004", hash_generated_method = "1972884810E209123C5BD1C346BEDA83")
     
 public int getSpanTypeId() {
@@ -49,7 +47,10 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeFloat(mProportion);
     }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.100 -0500", hash_original_method = "E89C4B67E9A9CE5F6854A6F0C8388FE6", hash_generated_method = "6BB9212972B7C36B9AE0E94B2ACC0633")
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.100 -0500", hash_original_method = "E89C4B67E9A9CE5F6854A6F0C8388FE6", hash_generated_method = "6BB9212972B7C36B9AE0E94B2ACC0633")
     
 public float getSizeChange() {
 		return mProportion;
@@ -68,7 +69,6 @@ public float getSizeChange() {
 	public void updateMeasureState(TextPaint ds) {
 		ds.setTextSize(ds.getTextSize() * mProportion);
 	}
-
     
 }
 

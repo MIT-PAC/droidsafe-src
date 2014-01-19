@@ -10,11 +10,6 @@ import java.security.Principal;
 import java.security.cert.Certificate;
 import java.security.cert.X509Certificate;
 
-
-
-
-
-
 public abstract class HttpsURLConnection extends HttpURLConnection {
 
     /**
@@ -39,6 +34,7 @@ public static void setDefaultHostnameVerifier(HostnameVerifier v) {
      *
      * @return the default hostname verifier.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.183 -0500", hash_original_method = "9773880A22E0FF5FEB0CB3C2DD62EB7C", hash_generated_method = "EF086D70565AD9528DCD5271EDDF2CB1")
     
 public static HostnameVerifier getDefaultHostnameVerifier() {
@@ -67,6 +63,7 @@ public static void setDefaultSSLSocketFactory(SSLSocketFactory sf) {
      *
      * @return the default SSL socket factory for new instances.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.188 -0500", hash_original_method = "0C4AC921BD810A2538DD22B55DBA6FF8", hash_generated_method = "53164AF3D676979B296AA9010EFA1DCF")
     
 public static SSLSocketFactory getDefaultSSLSocketFactory() {
@@ -74,10 +71,8 @@ public static SSLSocketFactory getDefaultSSLSocketFactory() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.176 -0500", hash_original_field = "0368DF931E21EFF8B8EA339956928A43", hash_generated_field = "7D4EC90B6C0CC97A49BDB74C867F8D18")
 
-
     private static HostnameVerifier defaultHostnameVerifier = new DefaultHostnameVerifier();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.178 -0500", hash_original_field = "50856B5A89398D7A4AAC40329DA7CE25", hash_generated_field = "E0EF4240F4797BAB1451A0AF02E6DCCF")
-
 
     private static SSLSocketFactory defaultSSLSocketFactory = (SSLSocketFactory) SSLSocketFactory
             .getDefault();
@@ -85,7 +80,6 @@ public static SSLSocketFactory getDefaultSSLSocketFactory() {
 
     protected HostnameVerifier hostnameVerifier;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.192 -0500", hash_original_field = "873903B7FC49F40C02995A48B85609AA", hash_generated_field = "87C1504631DE52B6388145B4A5898443")
-
 
     private SSLSocketFactory sslSocketFactory;
 
@@ -152,6 +146,7 @@ public abstract Certificate[] getServerCertificates() throws SSLPeerUnverifiedEx
      * @throws IllegalStateException
      *             if no connection has been established yet.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.204 -0500", hash_original_method = "3002E4037B6FC8FCCD4931764B6D5235", hash_generated_method = "7BE5E2E075ECE16B006FC69EB7F43891")
     
 public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
@@ -170,6 +165,7 @@ public Principal getPeerPrincipal() throws SSLPeerUnverifiedException {
      * @throws IllegalStateException
      *             if no connection has been established yet.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.207 -0500", hash_original_method = "F7626DF75E46EFB83E8F38373F84B563", hash_generated_method = "FE654D242EC3115C1E96C637F477F508")
     
 public Principal getLocalPrincipal() {
@@ -202,6 +198,7 @@ public void setHostnameVerifier(HostnameVerifier v) {
      *
      * @return the hostname verifier used by this instance.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.217 -0500", hash_original_method = "ECCA6A5C3EF4993C1CFD64A0404A993B", hash_generated_method = "B8A5A4F3990265E819A337A7913404A0")
     
 public HostnameVerifier getHostnameVerifier() {
@@ -230,6 +227,7 @@ public void setSSLSocketFactory(SSLSocketFactory sf) {
      *
      * @return the SSL socket factory used by this instance.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.221 -0500", hash_original_method = "9F872E117F4FD1E88D0B5BA15C4E96B2", hash_generated_method = "61398E1F9DEC81EB60CD942D4C5C21F7")
     
 public SSLSocketFactory getSSLSocketFactory() {

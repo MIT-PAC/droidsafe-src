@@ -5,218 +5,141 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Path {
-
     
-    @DSModeled(DSC.SAFE)
     private static int init1() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1576785566 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1576785566;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int init2(int nPath) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_107083419 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_107083419;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_reset(int nPath) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_rewind(int nPath) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_set(int native_dst, int native_src) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_getFillType(int nPath) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765210493 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1765210493;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setFillType(int nPath, int ft) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_isEmpty(int nPath) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1520183094 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1520183094;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_isRect(int nPath, RectF rect) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_682948170 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_682948170;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_computeBounds(int nPath, RectF bounds) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_incReserve(int nPath, int extraPtCount) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_moveTo(int nPath, float x, float y) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_rMoveTo(int nPath, float dx, float dy) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_lineTo(int nPath, float x, float y) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_rLineTo(int nPath, float dx, float dy) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_quadTo(int nPath, float x1, float y1,
                                              float x2, float y2) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_rQuadTo(int nPath, float dx1, float dy1,
                                               float dx2, float dy2) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_cubicTo(int nPath, float x1, float y1,
                                         float x2, float y2, float x3, float y3) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_rCubicTo(int nPath, float x1, float y1,
                                         float x2, float y2, float x3, float y3) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_arcTo(int nPath, RectF oval,
                     float startAngle, float sweepAngle, boolean forceMoveTo) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_close(int nPath) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addRect(int nPath, RectF rect, int dir) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addRect(int nPath, float left, float top,
                                             float right, float bottom, int dir) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addOval(int nPath, RectF oval, int dir) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addCircle(int nPath, float x, float y,
                                                 float radius, int dir) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addArc(int nPath, RectF oval,
                                             float startAngle, float sweepAngle) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addRoundRect(int nPath, RectF rect,
                                                    float rx, float ry, int dir) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addRoundRect(int nPath, RectF r,
                                                    float[] radii, int dir) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addPath(int nPath, int src, float dx,
                                               float dy) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addPath(int nPath, int src) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_addPath(int nPath, int src, int matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_offset(int nPath, float dx, float dy,
                                              int dst_path) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_offset(int nPath, float dx, float dy) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setLastPoint(int nPath, float dx, float dy) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_transform(int nPath, int matrix,
                                                 int dst_path) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_transform(int nPath, int matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void finalizer(int nPath) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.181 -0500", hash_original_field = "A65348C57F03ABAAC20448834387B31A", hash_generated_field = "66C300B8D77E06A5BCE8FE4DD0DAFB70")
@@ -243,11 +166,10 @@ public class Path {
 
     private Direction mLastDirection = null;
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public Path() {}
-
     
-    @DSModeled(DSC.SAFE)
     public Path(Path src) {
         // src.mNativePath is passed through init2() and the result is stored
         // within this object's mNativePath.  init2 is a native call,
@@ -260,6 +182,8 @@ public class Path {
      * Clear any lines and curves from the path, making it empty.
      * This does NOT change the fill-type setting.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.167 -0500", hash_original_method = "2D6F810980DCFBBC547D7B9A11965950", hash_generated_method = "832A9429C16C86298C91242E8C17B8AB")
     
 public void reset() {
@@ -288,6 +212,7 @@ public void rewind() {
 
     /** Replace the contents of this with the contents of src.
     */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.172 -0500", hash_original_method = "B685542335E97A84BA9D0A3AD0CEB866", hash_generated_method = "90F1B9EE81732DFF84414BAF401516D8")
     
 public void set(Path src) {
@@ -403,6 +328,8 @@ public void incReserve(int extraPtCount) {
      * @param x The x-coordinate of the start of a new contour
      * @param y The y-coordinate of the start of a new contour
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.201 -0500", hash_original_method = "732AD0D6CB11A9ADE203372D23E48872", hash_generated_method = "D02CEE4CBF36DAA6F8F680D2D5C12B04")
     
 public void moveTo(float x, float y) {
@@ -433,6 +360,8 @@ public void rMoveTo(float dx, float dy) {
      * @param x The x-coordinate of the end of a line
      * @param y The y-coordinate of the end of a line
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.205 -0500", hash_original_method = "58E5C3E4C7F046934AC91F8FDFBACD2C", hash_generated_method = "E0070DBC57868727B629F1FD39E2DF76")
     
 public void lineTo(float x, float y) {
@@ -548,9 +477,7 @@ public void arcTo(RectF oval, float startAngle, float sweepAngle,
         isSimplePath = false;
         native_arcTo(mNativePath, oval, startAngle, sweepAngle, forceMoveTo);
     }
-
-    
-    @DSModeled(DSC.SAFE) 
+     
     public void arcTo(RectF oval, float startAngle, float sweepAngle) {
         addTaint(oval.getTaint());
         addTaint(startAngle);
@@ -561,6 +488,8 @@ public void arcTo(RectF oval, float startAngle, float sweepAngle,
      * Close the current contour. If the current point is not equal to the
      * first point of the contour, a line segment is automatically added.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.222 -0500", hash_original_method = "E16C5D29E703AEBAB6CAF17A68A08F6B", hash_generated_method = "9EB7EFD517B4F19AFC5BCF612FA2F8F9")
     
 public void close() {
@@ -777,6 +706,7 @@ public void offset(float dx, float dy) {
      * @param dx The new X coordinate for the last point
      * @param dy The new Y coordinate for the last point
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:09.265 -0500", hash_original_method = "DE0F6A19984A9351DC908B14944CEA04", hash_generated_method = "24EFCFC7818241CE2618509261F697F1")
     
 public void setLastPoint(float dx, float dy) {
@@ -812,11 +742,8 @@ public void transform(Matrix matrix, Path dst) {
 public void transform(Matrix matrix) {
         native_transform(mNativePath, matrix.native_instance);
     }
-
     
-    @DSModeled(DSC.SAFE)
     protected void finalize() {}
-
     
     public enum FillType {
         WINDING         (0),
@@ -833,7 +760,6 @@ FillType(int ni) {
 
          int nativeInt;
     }
-
     
     public enum Direction {
         CW  (0),    
@@ -848,9 +774,7 @@ Direction(int ni) {
 
          int nativeInt;
     }
-
     
-    @DSModeled(DSC.SAFE)
     final int ni() {
         return getTaintInt(); 
     }

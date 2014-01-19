@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
 public class ASN1Sequence extends ASN1TypeCollection {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.270 -0500", hash_original_method = "610127CDCC1D4C9ACAEBD8E4C31C3ADC", hash_generated_method = "E3D9E781E2F6BEA87826AFD0C7A39EA9")
@@ -35,12 +31,12 @@ public final void encodeContent(BerOutputStream out) {
         out.encodeSequence(this);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:53.277 -0500", hash_original_method = "1B7230BCE7873794BACD95464198B69E", hash_generated_method = "320D19F1A70738F13D82D9CFAD821FA5")
     
 public final void setEncodingContent(BerOutputStream out) {
         out.getSequenceLength(this);
     }
-
     
 }
 

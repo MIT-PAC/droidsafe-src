@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-
-
-
-
 class NewInstance {
 
     /**
@@ -37,6 +33,7 @@ static Object newInstance (ClassLoader classLoader, String className)
      * Figure out which ClassLoader to use.  For JDK 1.2 and later use
      * the context ClassLoader.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.128 -0500", hash_original_method = "2CFACACB756B4314AD1F2CA20DF63100", hash_generated_method = "11C0FACD4CD318CFF0EE0DC9788E26E7")
     
 static ClassLoader getClassLoader ()
@@ -66,7 +63,6 @@ static ClassLoader getClassLoader ()
     {
         //Synthesized constructor
     }
-
     
 }
 

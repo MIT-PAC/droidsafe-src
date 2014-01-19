@@ -5,13 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class ArgbEvaluator implements TypeEvaluator {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.508 -0400", hash_original_method = "2B314B5188522F79C40FC502122E5F12", hash_generated_method = "2B314B5188522F79C40FC502122E5F12")
-    @DSModeled(DSC.SAFE)
+    
     public ArgbEvaluator ()
     {
         //Synthesized constructor
@@ -53,7 +50,6 @@ public Object evaluate(float fraction, Object startValue, Object endValue) {
                 (int)((startG + (int)(fraction * (endG - startG))) << 8) |
                 (int)((startB + (int)(fraction * (endB - startB))));
     }
-
     
 }
 

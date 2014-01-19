@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
-
 public abstract class ASN1Type implements ASN1Constants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.019 -0500", hash_original_field = "53E65FEF28E32C7EDCD1B07B4F5A0DE3", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
 
@@ -63,12 +58,14 @@ public ASN1Type(int tagClass, int tagNumber) {
         this.constrId = this.id + PC_CONSTRUCTED;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.029 -0500", hash_original_method = "DD7F9B0A8E4884CD611E54C95FCD3DA3", hash_generated_method = "43CA87A37D26352F3F1C1C1A408EBCFA")
     
 public final Object decode(byte[] encoded) throws IOException {
         return decode(new DerInputStream(encoded));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.032 -0500", hash_original_method = "F94AEF08BB5C9E1C82DE4BF1B9366E55", hash_generated_method = "3DCD0C0AFF46A919107BDD870D07862C")
     
 public final Object decode(byte[] encoded, int offset, int encodingLen)
@@ -76,6 +73,7 @@ public final Object decode(byte[] encoded, int offset, int encodingLen)
         return decode(new DerInputStream(encoded, offset, encodingLen));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.034 -0500", hash_original_method = "602847E19184C464832C69984B020DF7", hash_generated_method = "611576D661E8D5A1C77855D938480709")
     
 public final Object decode(InputStream in) throws IOException {
@@ -98,6 +96,7 @@ public final void verify(InputStream in) throws IOException {
         decode(decoder);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.041 -0500", hash_original_method = "53BC043E630E35D0E0B116BF28EF4348", hash_generated_method = "FC8C4208DE2E98C13E7C0E4CA10087C0")
     
 public final byte[] encode(Object object) {
@@ -132,6 +131,7 @@ public abstract boolean checkTag(int identifier);
      *
      * The default implementation returns an object created by decoding stream.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.049 -0500", hash_original_method = "C98349FCBC509D9B5E2186CE1C87C57F", hash_generated_method = "C4DBDC501064870C85035356B22A192C")
     
 protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -153,6 +153,7 @@ public abstract void encodeContent(BerOutputStream out);
     
 public abstract void setEncodingContent(BerOutputStream out);
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.058 -0500", hash_original_method = "FA7F24CC02CDE7C91DB883C7C7C15F71", hash_generated_method = "67E874CBB6BB6CADA52D130B2754A953")
     
 public int getEncodedLength(BerOutputStream out) { //FIXME name
@@ -174,13 +175,13 @@ public int getEncodedLength(BerOutputStream out) { //FIXME name
         return len;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.060 -0500", hash_original_method = "54C9519AE58EE8A367BF831B5FC731FF", hash_generated_method = "0944A0978714CD338D7E5A13830E66DA")
     
 @Override public String toString() {
         // TODO decide whether this method is necessary
         return getClass().getName() + "(tag: 0x" + Integer.toHexString(0xff & this.id) + ")";
     }
-
     
 }
 

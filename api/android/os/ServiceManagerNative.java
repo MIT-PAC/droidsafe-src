@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class ServiceManagerNative extends Binder implements IServiceManager {
     /**
      * Cast a Binder object into a service manager interface, generating
@@ -37,6 +33,7 @@ public ServiceManagerNative()
         attachInterface(this, descriptor);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.146 -0500", hash_original_method = "77391B19BF1D318FBD43A52170DD3D86", hash_generated_method = "1BDAB90CF42E81C0C6659F856F69AB0F")
     
 public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
@@ -89,19 +86,18 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
         return false;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.148 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
     
 public IBinder asBinder()
     {
         return this;
     }
-
     
 }
 
 class ServiceManagerProxy implements IServiceManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.167 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
-
 
     private IBinder mRemote;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.152 -0500", hash_original_method = "84032B28A83A581245FB022389F526C9", hash_generated_method = "42C47AAA2A67021810601EC88D7ED961")
@@ -116,6 +112,7 @@ public IBinder asBinder() {
         return mRemote;
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.156 -0500", hash_original_method = "02C17092CC4D0E934B4324BDE37272C4", hash_generated_method = "B28DEB8DAA227469176CA94BEABBA96A")
     
 public IBinder getService(String name) throws RemoteException {
@@ -130,6 +127,7 @@ public IBinder getService(String name) throws RemoteException {
         return binder;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.158 -0500", hash_original_method = "5C8E64034E0715CC0FF2A576ACC0AB5A", hash_generated_method = "3EF57A4C129AB110D97F51CF0514509A")
     
 public IBinder checkService(String name) throws RemoteException {
@@ -171,6 +169,7 @@ public String[] listServices() throws RemoteException {
         return list;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.164 -0500", hash_original_method = "8A24F25196050E86CC22CCEE8401DF5F", hash_generated_method = "74E430F0695CEE5C5E0EC98EA4FD630A")
     
 public void setPermissionController(IPermissionController controller)
@@ -183,7 +182,6 @@ public void setPermissionController(IPermissionController controller)
         reply.recycle();
         data.recycle();
     }
-
     
 }
 

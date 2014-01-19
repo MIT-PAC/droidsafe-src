@@ -12,10 +12,6 @@ import android.nfc.Tag;
 import android.nfc.TransceiveResult;
 import android.os.RemoteException;
 
-
-
-
-
 abstract class BasicTagTechnology implements TagTechnology {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.939 -0500", hash_original_field = "76B42502A850F1BA8F9A78C316486025", hash_generated_field = "BC8F11E4AEAD11E0412B7B53DF0CA6C8")
 
@@ -34,6 +30,7 @@ BasicTagTechnology(Tag tag, int tech) throws RemoteException {
         mSelectedTechnology = tech;
     }
 
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.950 -0500", hash_original_method = "FC84E29499397B8918F938A8205313A1", hash_generated_method = "509C94592268C673EF77C66918B38D54")
     
 @Override
@@ -136,6 +133,7 @@ void checkConnected() {
     }
 
     /** Internal getMaxTransceiveLength() */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.965 -0500", hash_original_method = "34B3E57F39840A6B37FC716C1405DA5D", hash_generated_method = "34B3E57F39840A6B37FC716C1405DA5D")
     
 int getMaxTransceiveLengthInternal() {
@@ -147,7 +145,8 @@ int getMaxTransceiveLengthInternal() {
         }
     }
     /** Internal transceive */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.967 -0500", hash_original_method = "8FB7A232CD74B358E0C2332FDF0D5629", hash_generated_method = "8FB7A232CD74B358E0C2332FDF0D5629")
+    /*package*/ @DSSource({DSSourceKind.NFC})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.967 -0500", hash_original_method = "8FB7A232CD74B358E0C2332FDF0D5629", hash_generated_method = "8FB7A232CD74B358E0C2332FDF0D5629")
     
 byte[] transceive(byte[] data, boolean raw) throws IOException {
         checkConnected();

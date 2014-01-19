@@ -47,25 +47,17 @@ import javax.sip.address.Router;
 import javax.sip.header.HeaderFactory;
 import javax.sip.message.Request;
 
-
-
-
-
-
 public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipStack, SipStackExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.587 -0500", hash_original_field = "37FD84666920824F7C1E8C2BF1715713", hash_generated_field = "DC1BA291E655CE21E8210560B23E074D")
 
 	public static final Integer MAX_DATAGRAM_SIZE = 8 * 1024;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.579 -0500", hash_original_field = "69E36DC2AAFBF80C0D45C129628BD358", hash_generated_field = "B13D933CCB9027F950F0F782A6866769")
 
-
 	private EventScanner eventScanner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.581 -0500", hash_original_field = "D78D26E4029046D32144DBB64200532C", hash_generated_field = "3AEF05BEBD52A17EF95A5D808F4FFFA4")
 
-
 	private Hashtable<String, ListeningPointImpl> listeningPoints;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.584 -0500", hash_original_field = "6BEBC7E786F8A9BD33EB606A20200A7E", hash_generated_field = "4D9EE92C5E84922DC5B8DC3AD8BDEAEF")
-
 
 	private LinkedList<SipProviderImpl> sipProviders;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.589 -0500", hash_original_field = "C05D7B5683B60CB11426E6CCECD30C55", hash_generated_field = "4A9068D8EC31DF0150BC24FF654DE497")
@@ -73,7 +65,6 @@ public class SipStackImpl extends SIPTransactionStack implements javax.sip.SipSt
 	// Use this flag with caution.
 	boolean reEntrantListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.591 -0500", hash_original_field = "B9D95CF1DDB3EF5E2FB32454D5FBE60B", hash_generated_field = "B9D95CF1DDB3EF5E2FB32454D5FBE60B")
-
 
 	SipListener sipListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.594 -0500", hash_original_field = "14BC1D7F6107A47B988CB81CBFA69682", hash_generated_field = "36858158C63585F0CA9C60A9D20D534C")
@@ -134,7 +125,8 @@ protected SipStackImpl() {
 	 *            extensions.
 	 * @throws PeerUnavailableException
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.624 -0500", hash_original_method = "31E9570F9C2C0C73DA51527B7C89A7AA", hash_generated_method = "6758CD25A3623EADF6671D563F37C326")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.624 -0500", hash_original_method = "31E9570F9C2C0C73DA51527B7C89A7AA", hash_generated_method = "6758CD25A3623EADF6671D563F37C326")
 	
 public SipStackImpl(Properties configurationProperties)
 			throws PeerUnavailableException {
@@ -331,8 +323,6 @@ public SipStackImpl(Properties configurationProperties)
 		} else {
 			super.maxListenerResponseTime = -1;
 		}
-
-		
 
 		this.deliverTerminatedEventForAck = configurationProperties
 				.getProperty(
@@ -653,7 +643,6 @@ public SipStackImpl(Properties configurationProperties)
 		super.isDialogTerminatedEventDeliveredForNullDialog = (Boolean.parseBoolean(configurationProperties.getProperty("gov.nist.javax.sip.DELIVER_TERMINATED_EVENT_FOR_NULL_DIALOG",
 		        Boolean.FALSE.toString())));
 		
-		
 		super.maxForkTime = Integer.parseInt(
 		        configurationProperties.getProperty("gov.nist.javax.sip.MAX_FORK_TIME_SECONDS","0"));
 		
@@ -691,7 +680,8 @@ boolean isAutomaticDialogSupportEnabled() {
 	 * @see javax.sip.SipStack#createListeningPoint(java.lang.String, int,
 	 * java.lang.String)
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.628 -0500", hash_original_method = "20194A28F7CD206898B50945BA95F1CA", hash_generated_method = "669CAF6AD7E3C887112FB3DF071280FE")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.628 -0500", hash_original_method = "20194A28F7CD206898B50945BA95F1CA", hash_generated_method = "669CAF6AD7E3C887112FB3DF071280FE")
 	
 public synchronized ListeningPoint createListeningPoint(String address,
 			int port, String transport) throws TransportNotSupportedException,
@@ -760,7 +750,8 @@ public synchronized ListeningPoint createListeningPoint(String address,
 	 * 
 	 * @see javax.sip.SipStack#createSipProvider(javax.sip.ListeningPoint)
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.631 -0500", hash_original_method = "BBB69BC5565AF0A227A798564DF93404", hash_generated_method = "ED75EB15C897AE04B37A90E28D617156")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.631 -0500", hash_original_method = "BBB69BC5565AF0A227A798564DF93404", hash_generated_method = "ED75EB15C897AE04B37A90E28D617156")
 	
 public SipProvider createSipProvider(ListeningPoint listeningPoint)
 			throws ObjectInUseException {
@@ -839,7 +830,8 @@ public void deleteSipProvider(SipProvider sipProvider)
 	 * @see javax.sip.SipStack#getIPAddress()
 	 * @deprecated
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.640 -0500", hash_original_method = "81685A4D06B7F9B5E6CCB2DE2C1BD9F0", hash_generated_method = "3FCB29A879796788E0D660F1D5F0287A")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.640 -0500", hash_original_method = "81685A4D06B7F9B5E6CCB2DE2C1BD9F0", hash_generated_method = "3FCB29A879796788E0D660F1D5F0287A")
 	
 public String getIPAddress() {
 		return super.getHostAddress();
@@ -850,7 +842,8 @@ public String getIPAddress() {
 	 * 
 	 * @see javax.sip.SipStack#getListeningPoints()
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.642 -0500", hash_original_method = "287349EDD4D46CE4DB7C5F6D8E2D772E", hash_generated_method = "C4A044E2D05BB74F932C795398C1AB93")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.642 -0500", hash_original_method = "287349EDD4D46CE4DB7C5F6D8E2D772E", hash_generated_method = "C4A044E2D05BB74F932C795398C1AB93")
 	
 public java.util.Iterator getListeningPoints() {
 		return this.listeningPoints.values().iterator();
@@ -873,7 +866,8 @@ public boolean isRetransmissionFilterActive() {
 	 * 
 	 * @see javax.sip.SipStack#getSipProviders()
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.647 -0500", hash_original_method = "88A6DC9DED9CE5F7635E348CD4A3C5F8", hash_generated_method = "99C037C51F80037D9165675CE1D386BD")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.647 -0500", hash_original_method = "88A6DC9DED9CE5F7635E348CD4A3C5F8", hash_generated_method = "99C037C51F80037D9165675CE1D386BD")
 	
 public java.util.Iterator<SipProviderImpl> getSipProviders() {
 		return this.sipProviders.iterator();
@@ -884,7 +878,8 @@ public java.util.Iterator<SipProviderImpl> getSipProviders() {
 	 * 
 	 * @see javax.sip.SipStack#getStackName()
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.650 -0500", hash_original_method = "98CDA556C50A8E057D89E8EADBB5B35E", hash_generated_method = "B8626D5DB02CCCFA3FFB57D151DD02D1")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.650 -0500", hash_original_method = "98CDA556C50A8E057D89E8EADBB5B35E", hash_generated_method = "B8626D5DB02CCCFA3FFB57D151DD02D1")
 	
 public String getStackName() {
 		return this.stackName;
@@ -909,7 +904,8 @@ protected void finalize() {
 	 *      java.lang.String)
 	 * @deprecated
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.655 -0500", hash_original_method = "E9BAFB829F6434607FADA475E44C9773", hash_generated_method = "61E86E51AB142C9AB603C2EE2DC86D2A")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.655 -0500", hash_original_method = "E9BAFB829F6434607FADA475E44C9773", hash_generated_method = "61E86E51AB142C9AB603C2EE2DC86D2A")
 	
 public ListeningPoint createListeningPoint(int port, String transport)
 			throws TransportNotSupportedException, InvalidArgumentException {
@@ -966,7 +962,8 @@ public void start() throws ProviderDoesNotExistException, SipException {
 	 * @return -- the stack SipListener
 	 * 
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.663 -0500", hash_original_method = "007AB23FB90DEFAA901334391BCA8574", hash_generated_method = "1EDE2942A56DCC6F94B54FC9E7276D02")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.663 -0500", hash_original_method = "007AB23FB90DEFAA901334391BCA8574", hash_generated_method = "1EDE2942A56DCC6F94B54FC9E7276D02")
 	
 public SipListener getSipListener() {
 		return this.sipListener;
@@ -977,7 +974,8 @@ public SipListener getSipListener() {
 	 * 
 	 * @return -- the messageLogFactory of the stack.
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.665 -0500", hash_original_method = "41341CEB98E5DA012DCAACB9910CCA31", hash_generated_method = "398B161D7AFEA30AA4E99EFF2C24F6E4")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.665 -0500", hash_original_method = "41341CEB98E5DA012DCAACB9910CCA31", hash_generated_method = "398B161D7AFEA30AA4E99EFF2C24F6E4")
 	
 public LogRecordFactory getLogRecordFactory() {
 		return super.logRecordFactory;
@@ -1010,7 +1008,8 @@ public LogRecordFactory getLogRecordFactory() {
 	 * @return  the log4j logger.
 	 * @deprecated TODO: This method will be removed May 11, 2010.
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.667 -0500", hash_original_method = "DD6917F16C5DC825A79D8F74525C77AA", hash_generated_method = "3F5155FA615770326CAC12881792C099")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.667 -0500", hash_original_method = "DD6917F16C5DC825A79D8F74525C77AA", hash_generated_method = "3F5155FA615770326CAC12881792C099")
 	
 @Deprecated
         // BEGIN andoird-deleted
@@ -1035,7 +1034,8 @@ public LogRecordFactory getLogRecordFactory() {
 	 * gov.nist.javax.sip.SipStackExt#getAuthenticationHelper(gov.nist.javax
 	 * .sip.clientauthutils.AccountManager, javax.sip.header.HeaderFactory)
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.670 -0500", hash_original_method = "DDBB9B823124CA2B241AC7D56A934729", hash_generated_method = "E9106E527CEC1456C6DCAED2D1E3F1B8")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.670 -0500", hash_original_method = "DDBB9B823124CA2B241AC7D56A934729", hash_generated_method = "E9106E527CEC1456C6DCAED2D1E3F1B8")
 	
 public AuthenticationHelper getAuthenticationHelper(
 			AccountManager accountManager, HeaderFactory headerFactory) {
@@ -1049,7 +1049,8 @@ public AuthenticationHelper getAuthenticationHelper(
 	 * gov.nist.javax.sip.SipStackExt#getAuthenticationHelper(gov.nist.javax
 	 * .sip.clientauthutils.AccountManager, javax.sip.header.HeaderFactory)
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.672 -0500", hash_original_method = "9BC4A63758F96D1DFC890C8072E9A8F9", hash_generated_method = "A094C07BC0B5B3898DEA26F2F72B2B4F")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.672 -0500", hash_original_method = "9BC4A63758F96D1DFC890C8072E9A8F9", hash_generated_method = "A094C07BC0B5B3898DEA26F2F72B2B4F")
 	
 public AuthenticationHelper getSecureAuthenticationHelper(
 			SecureAccountManager accountManager, HeaderFactory headerFactory) {
@@ -1087,7 +1088,8 @@ public void setEnabledCipherSuites(String[] newCipherSuites) {
 	 * 
 	 * @return The currently enabled cipher suites.
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.677 -0500", hash_original_method = "15C35F67057574B0384681051DA88AFD", hash_generated_method = "6EA108A4A8E52057B8581D69859CD646")
+	@DSSource({DSSourceKind.SYSTEM_SETTINGS})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.677 -0500", hash_original_method = "15C35F67057574B0384681051DA88AFD", hash_generated_method = "6EA108A4A8E52057B8581D69859CD646")
 	
 public String[] getEnabledCipherSuites() {
 		return cipherSuites;
@@ -1124,7 +1126,8 @@ public void setEnabledProtocols(String[] newProtocols) {
 	 * 
 	 * @return The currently enabled protocols.
 	 */
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.682 -0500", hash_original_method = "36B040AE4C1B32E20301E5CF570A7C53", hash_generated_method = "C0D2C7F9B9343B90BB8EB0FBED0208A4")
+	@DSSource({DSSourceKind.SYSTEM_SETTINGS})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.682 -0500", hash_original_method = "36B040AE4C1B32E20301E5CF570A7C53", hash_generated_method = "C0D2C7F9B9343B90BB8EB0FBED0208A4")
 	
 public String[] getEnabledProtocols() {
 		return enabledProtocols;

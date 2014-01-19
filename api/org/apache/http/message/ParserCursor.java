@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.apache.http.util.CharArrayBuffer;
 
-
-
-
-
-
 public class ParserCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.852 -0500", hash_original_field = "543086182FD473524F324F448DE00B3C", hash_generated_field = "3D31A0897353409A28F764FE6D5203CA")
-
 
     private  int lowerBound;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.856 -0500", hash_original_field = "DB5F1F75F81625EB0D055946E9FAE4C6", hash_generated_field = "944B6A2B0A5719EC12B474F8C5AB43E8")
@@ -38,18 +32,21 @@ public ParserCursor(int lowerBound, int upperBound) {
         this.pos = lowerBound;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.863 -0500", hash_original_method = "B6CD36FF17D4C577E642B4E01F194082", hash_generated_method = "A06AEDE3BA278E173A1C92E13723E624")
     
 public int getLowerBound() {
         return this.lowerBound;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.865 -0500", hash_original_method = "66602FD2E118973F9E6D21C36C521447", hash_generated_method = "4F91692B0A98954D5271D88A5F45EAE6")
     
 public int getUpperBound() {
         return this.upperBound;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:49.867 -0500", hash_original_method = "1216C5DA6D96C0F767DB071179C12F61", hash_generated_method = "C0A8457CF7D1D926C1FD5FAADEDCB170")
     
 public int getPos() {
@@ -87,7 +84,6 @@ public String toString() {
         buffer.append(']');
         return buffer.toString();
     }
-
     
 }
 

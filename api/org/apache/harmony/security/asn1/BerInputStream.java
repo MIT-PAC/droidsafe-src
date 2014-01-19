@@ -8,16 +8,12 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class BerInputStream {
 
     /**
      * Returns the length of the encoding
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.832 -0500", hash_original_method = "0FB1A1C4D911EA5AEA102491DDF03FDC", hash_generated_method = "6646F2D5F31AFA5B8CC7AB9E51AFAFE7")
     
 public static int getLength(byte[] encoding) {
@@ -42,7 +38,6 @@ public static int getLength(byte[] encoding) {
 
     protected static final int INDEFINIT_LENGTH = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.792 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
-
 
     private  InputStream in;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.795 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "FBA3E90E1AEF84B9DE40F7F93AE8B84B")
@@ -73,7 +68,6 @@ public static int getLength(byte[] encoding) {
 
     public int[] times;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.862 -0500", hash_original_field = "647293CF90373655D1AC2C7923B61AC3", hash_generated_field = "022E0C44AE6A598FC1C18F39EC6A5FAB")
-
 
     public int oidElement;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.896 -0500", hash_original_field = "F646C758AA6F4358F9A1160050DDC9A9", hash_generated_field = "7DEBAA72E1DC386A76CC44BDD6E3E330")
@@ -694,6 +688,7 @@ public void readString(ASN1StringType type) throws IOException {
      *
      * MUST be invoked after decoding corresponding ASN.1 notation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.883 -0500", hash_original_method = "34E54E473055277C13E19CBB4B194845", hash_generated_method = "9F7D27206220B1C6BB0A3D2077D8922B")
     
 public byte[] getEncoded() {
@@ -705,6 +700,7 @@ public byte[] getEncoded() {
     /**
      * Returns internal buffer used for decoding
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.885 -0500", hash_original_method = "6B125A4F0D6B27C0C7AD41FB42F4DE53", hash_generated_method = "C7AA0F3765AE0D7530A2123ADC8CD16C")
     
 public final byte[] getBuffer() {
@@ -714,6 +710,7 @@ public final byte[] getBuffer() {
     /**
      * Returns length of the current content for decoding
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.887 -0500", hash_original_method = "A993727E7D5DC0CA2BB581135F7F678B", hash_generated_method = "457BD045D11BE603E9FA82675B77CCA1")
     
 public final int getLength() {
@@ -723,6 +720,7 @@ public final int getLength() {
     /**
      * Returns the current offset
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.889 -0500", hash_original_method = "ACEB13DAA855070296BA592FB1ADADA1", hash_generated_method = "55949A0CABF96E769EA6A463034457D4")
     
 public final int getOffset() {
@@ -732,6 +730,7 @@ public final int getOffset() {
     /**
      * Returns end offset for the current encoded type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.892 -0500", hash_original_method = "1367D9753B97C5C3A102B7D6550881B9", hash_generated_method = "1302397FD0CD46F574A94D04F7233E3D")
     
 public final int getEndOffset() {
@@ -741,6 +740,7 @@ public final int getEndOffset() {
     /**
      * Returns start offset for the current encoded type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.894 -0500", hash_original_method = "1FDDE163F1BBA6CDA778E0FD08E430DE", hash_generated_method = "37CD9E2F6EB7780DBCCB9488B3F60BC8")
     
 public final int getTagOffset() {
@@ -855,6 +855,7 @@ public void put(Object key, Object entry) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.915 -0500", hash_original_method = "5B069BEEA06FE3B546FE9A5858249664", hash_generated_method = "7E6E220E3DBFA6208B9C98B1EDDD7533")
     
 public Object get(Object key) {

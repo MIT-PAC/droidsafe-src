@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public final class Allow extends SIPHeader implements javax.sip.header.AllowHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.309 -0500", hash_original_field = "403105A958860DB5616FD28C593F6288", hash_generated_field = "85C85A2237A84342C80D2A96596481BF")
 
@@ -40,6 +35,7 @@ public Allow(String m) {
     /** get the method field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.322 -0500", hash_original_method = "A65B682B0B822D8527FBE88A2FCA60FC", hash_generated_method = "BC38B478E0AED2517A3460750CABA307")
     
 public String getMethod() {

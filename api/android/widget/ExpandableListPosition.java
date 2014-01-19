@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.ArrayList;
 
-
-
-
-
-
 class ExpandableListPosition {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.519 -0500", hash_original_method = "F62027CF607D9C773A832245726377F9", hash_generated_method = "0EDAAA239E56E3025A3A7C8708AE6740")
@@ -70,7 +65,6 @@ private static ExpandableListPosition getRecycledOrCreate() {
         return elp;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.494 -0500", hash_original_field = "73A7DB4BA52C41C46FF2526949A8CECE", hash_generated_field = "7127A67374BF405D0F01EEB2429B1D48")
-
     
     private static final int MAX_POOL_SIZE = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.496 -0500", hash_original_field = "2497B91150CE738D981B2112EE504A93", hash_generated_field = "13B9F617BBB013357274E6300FD7AEA8")
@@ -110,6 +104,7 @@ private void resetState() {
         type = 0;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:12.517 -0500", hash_original_method = "C8676DC8E5CB906E204449634591A777", hash_generated_method = "C8676DC8E5CB906E204449634591A777")
     
 long getPackedPosition() {

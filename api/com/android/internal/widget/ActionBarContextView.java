@@ -27,17 +27,11 @@ import com.android.internal.view.menu.ActionMenuPresenter;
 import com.android.internal.view.menu.ActionMenuView;
 import com.android.internal.view.menu.MenuBuilder;
 
-
-
-
-
-
 public class ActionBarContextView extends AbsActionBarView implements AnimatorListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.072 -0500", hash_original_field = "4903F05D59AFFD00260A63A4EC905F53", hash_generated_field = "C45604C41252B81A800ABE94C507699D")
 
     private static final String TAG = "ActionBarContextView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.103 -0500", hash_original_field = "F4D2F1B228E9CC66BE59AEB5714DFD77", hash_generated_field = "2A63476C517D08BD976212871A960624")
-
 
     private static final int ANIMATE_IDLE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.106 -0500", hash_original_field = "33D78AF0979B298E43A05E2384D0B7FD", hash_generated_field = "822EF0AC3705B18FD672B9EE2414E019")
@@ -48,13 +42,11 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
     private static final int ANIMATE_OUT = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.074 -0500", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
 
-
     private CharSequence mTitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.076 -0500", hash_original_field = "AB153FEBC9BAB866EB9D9BD858F863D7", hash_generated_field = "775125B4EBC8ED0F3E5FBA051277E18D")
 
     private CharSequence mSubtitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.078 -0500", hash_original_field = "9E5ABA39447839CB8750D1879400036C", hash_generated_field = "24F281CC402C90EA9D9EB00DDCF618F4")
-
 
     private View mClose;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.081 -0500", hash_original_field = "ADD711F109703E2EAF61E2AD917F3FB6", hash_generated_field = "58BF9FCCDFB47B7346A31DF060279244")
@@ -79,7 +71,6 @@ public class ActionBarContextView extends AbsActionBarView implements AnimatorLi
 
     private Drawable mSplitBackground;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.096 -0500", hash_original_field = "46ED3AB600B5BE887F6EA524F7C38FC0", hash_generated_field = "33771BEA3F609DD1955FEC169216294A")
-
 
     private Animator mCurrentAnimation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.099 -0500", hash_original_field = "3D2A0FA08A835C522985A23EBD1EB076", hash_generated_field = "8265308A3A327A796C7CC259CBBF12AC")
@@ -134,6 +125,7 @@ public ActionBarContextView(Context context, AttributeSet attrs, int defStyle) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.121 -0500", hash_original_method = "E552720A78112C3EB9A59B322D8064C9", hash_generated_method = "49BAA6D56EACC40A43915DA120FC42EB")
     
 @Override
@@ -206,12 +198,14 @@ public void setSubtitle(CharSequence subtitle) {
         initTitle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.133 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "E948C46F1704FC1F24545ED5A725BEE6")
     
 public CharSequence getTitle() {
         return mTitle;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:42.135 -0500", hash_original_method = "8334E54E49A430BB5E2CB9D01857CDC7", hash_generated_method = "3773E52DB2B3822F51D6A3F2CB66D7C2")
     
 public CharSequence getSubtitle() {

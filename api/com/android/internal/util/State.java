@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.os.Message;
 
-
-
-
 public class State implements IState {
 
     /**
@@ -59,6 +56,7 @@ protected State() {
      *
      * @see com.android.internal.util.IState#processMessage(android.os.Message)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.970 -0500", hash_original_method = "F20278175B30FDA9C7EB84130BA3C8FE", hash_generated_method = "98BD1CF5439F96260CFE47E80D38DB06")
     
 @Override
@@ -67,7 +65,6 @@ protected State() {
         int lastDollar = name.lastIndexOf('$');
         return name.substring(lastDollar + 1);
     }
-
     
 }
 

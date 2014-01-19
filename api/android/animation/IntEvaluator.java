@@ -5,13 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class IntEvaluator implements TypeEvaluator<Integer> {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.616 -0400", hash_original_method = "2EF7111110D38FEB0992107126625CBA", hash_generated_method = "2EF7111110D38FEB0992107126625CBA")
-    @DSModeled(DSC.SAFE)
+    
     public IntEvaluator ()
     {
         //Synthesized constructor
@@ -37,7 +34,6 @@ public Integer evaluate(float fraction, Integer startValue, Integer endValue) {
         int startInt = startValue;
         return (int)(startInt + fraction * (endValue - startInt));
     }
-
     
 }
 

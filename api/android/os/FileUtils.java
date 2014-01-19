@@ -16,10 +16,6 @@ import java.util.regex.Pattern;
 import java.util.zip.CRC32;
 import java.util.zip.CheckedInputStream;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class FileUtils {
@@ -38,33 +34,23 @@ public static boolean getFileStatus(String path, FileStatus status) {
         StrictMode.noteDiskRead();
         return getFileStatusNative(path, status);
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean getFileStatusNative(String path, FileStatus status) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int setPermissions(String file, int mode, int uid, int gid) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getPermissions(String file, int[] outPermissions) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int setUMask(int mask) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int getFatVolumeId(String mountPoint) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -109,6 +95,7 @@ public static boolean copyFile(File srcFile, File destFile) {
      * Copy data from a source stream to destFile.
      * Return true if succeed, return false if failed.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.086 -0500", hash_original_method = "75A6708119FD051685C400EDBE70E7B1", hash_generated_method = "FA5E98C53996F1C8C9BECBAA845B2245")
     
 public static boolean copyToFile(InputStream inputStream, File destFile) {
@@ -158,6 +145,7 @@ public static boolean isFilenameSafe(File file) {
      * @return the contents of the file, possibly truncated
      * @throws IOException if something goes wrong reading the file
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.091 -0500", hash_original_method = "E16E904B564260AEFFEF8BC8F6F4E16A", hash_generated_method = "311465B2200E7484981B486871B50005")
     
 public static String readTextFile(File file, int max, String ellipsis) throws IOException {
@@ -214,6 +202,7 @@ public static String readTextFile(File file, int max, String ellipsis) throws IO
      * @param string
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.094 -0500", hash_original_method = "F847A87F54B2C1AF9220E117BEF97E96", hash_generated_method = "D3453BFCD0BC9D1F554A950B1C0DBA5D")
     
 public static void stringToFile(String filename, String string) throws IOException {
@@ -257,7 +246,6 @@ public static long checksumCrc32(File file) throws FileNotFoundException, IOExce
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.998 -0500", hash_original_field = "B197139365886252127F5AA47ABC83DE", hash_generated_field = "2CAA2AB0FB95A97A6D80E1DB09F06B27")
 
     public static final int S_IRWXU = 00700;
-
     
     public static final class FileStatus {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.026 -0500", hash_original_field = "EA6E4E5EB18E8B542120B7930F12DA66", hash_generated_field = "3BC0BF1E48D184447842CF72C7D76352")
@@ -306,7 +294,6 @@ public static long checksumCrc32(File file) throws FileNotFoundException, IOExce
             //Synthesized constructor
         }
 
-
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.000 -0500", hash_original_field = "3959CDB55E23F33259E6AC10E977A6C3", hash_generated_field = "1A5EC998FAB60A99871D172797E6F2F0")
 
@@ -319,7 +306,6 @@ public static long checksumCrc32(File file) throws FileNotFoundException, IOExce
     public static final int S_IXUSR = 00100;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.007 -0500", hash_original_field = "C9F3BC2F524574048AE14FA153D4F2B3", hash_generated_field = "60E756ED22C8A2FB318B1943A6859175")
 
-
     public static final int S_IRWXG = 00070;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.010 -0500", hash_original_field = "E83991E3B70508D1939B5D52ECF9B627", hash_generated_field = "E618992BDF03868A4382EF0566C198A9")
 
@@ -331,7 +317,6 @@ public static long checksumCrc32(File file) throws FileNotFoundException, IOExce
 
     public static final int S_IXGRP = 00010;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.016 -0500", hash_original_field = "8BE5FB87E4A59E8C1BE7852ACBC0EB05", hash_generated_field = "5EB8920CEED5B987667569018535F803")
-
 
     public static final int S_IRWXO = 00007;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:28.018 -0500", hash_original_field = "46D7F3A4E6C9FCEF70C792555E459245", hash_generated_field = "4A3456D50196BD4CE9FF4B01EBC6C175")

@@ -10,10 +10,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.os.Message;
 
-
-
-
-
 public class SurfaceTexture {
 
     /**
@@ -34,13 +30,10 @@ public class SurfaceTexture {
             st.mEventHandler.sendMessage(m);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.179 -0500", hash_original_field = "48DBEFEB1D57D7425F34775E3B0822FD", hash_generated_field = "04D6DC37F0EF901EF71A528809491D49")
-
 
     private EventHandler mEventHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.181 -0500", hash_original_field = "8C003C2DD0140FDBFDC288A6D938BB1D", hash_generated_field = "294E295D0012756EF3396CAF3BBC347B")
@@ -117,6 +110,7 @@ public void setOnFrameAvailableListener(OnFrameAvailableListener l) {
      * An error due to invalid dimensions might not be reported until
      * updateTexImage() is called.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.203 -0500", hash_original_method = "73040EC5A717DD03B1E2713EBAC256DF", hash_generated_method = "2D2F3EB45AF1663225A76358B63576B4")
     
 public void setDefaultBufferSize(int width, int height) {
@@ -176,6 +170,7 @@ public void getTransformMatrix(float[] mtx) {
      * invocations. It is mostly useful for determining time offsets between subsequent frames.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.209 -0500", hash_original_method = "1E06887ADD0CA49D5969AE26836E85A4", hash_generated_method = "36978C2484E3480C52E7A3E8D343B4CB")
     
 public long getTimestamp() {
@@ -269,8 +264,6 @@ protected void finalize() throws Throwable {
     private void nativeRelease(){
     	//Formerly a native method
     }
-
-
     
     public static class OutOfResourcesException extends Exception {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.189 -0500", hash_original_method = "61F4EF1E830289140B20E24C64AAB8C1", hash_generated_method = "61E15EE14C5CBDE674C8414A5D82F699")
@@ -282,11 +275,8 @@ public OutOfResourcesException() {
 public OutOfResourcesException(String name) {
             super(name);
         }
-
         
     }
-
-
     
     private class EventHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.217 -0500", hash_original_method = "4C7A877E4BE32D4145A967F6B988F2F0", hash_generated_method = "47CCB5A82C902FC2B6115310FA279718")
@@ -303,11 +293,8 @@ public EventHandler(Looper looper) {
                 mOnFrameAvailableListener.onFrameAvailable(SurfaceTexture.this);
             }
         }
-
         
     }
-
-
     
     public interface OnFrameAvailableListener {
         void onFrameAvailable(SurfaceTexture surfaceTexture);

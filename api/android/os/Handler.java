@@ -7,10 +7,6 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import android.util.Printer;
 
-
-
-
-
 public class Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.007 -0500", hash_original_field = "EF077B080E17BA8045DEC02712518733", hash_generated_field = "0511AC5400F6AB0B4374BEAACA5C07BE")
 
@@ -19,7 +15,6 @@ public class Handler {
 
     private static final String TAG = "Handler";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.106 -0500", hash_original_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED", hash_generated_field = "331CAFDD37154BFFB4C27FB1EC4DE2ED")
-
 
      MessageQueue mQueue;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.108 -0500", hash_original_field = "4C6A73D1D5351706C43659B423CF9288", hash_generated_field = "4C6A73D1D5351706C43659B423CF9288")
@@ -32,8 +27,9 @@ public class Handler {
 
     IMessenger mMessenger;
     
-    @DSModeled(DSC.SAFE)
-	public Handler(){
+	@DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    public Handler(){
 		mLooper = Looper.myLooper();
 		//mQueue = mLooper.mQueue;
 		mCallback = null;
@@ -55,9 +51,7 @@ public class Handler {
 		mCallback = null;
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public Handler(Callback callback){
 		mLooper = Looper.myLooper();
 		//mQueue = mLooper.mQueue;
@@ -80,17 +74,15 @@ public class Handler {
 		mCallback = callback;
 		*/
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public Handler(Looper looper){
+	@DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    public Handler(Looper looper){
 		mLooper = looper;
 		//mQueue = looper.mQueue;
 		mCallback = null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public Handler(Looper looper, Callback callback){
 		mLooper = looper;
 		//mQueue = looper.mQueue;
@@ -100,11 +92,12 @@ public class Handler {
     /**
      * Subclasses must implement this to receive messages.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.014 -0500", hash_original_method = "C13ECA453D39BD1621DCBD4764283A41", hash_generated_method = "C6FC13FE8E92DCBE16F162867E28E817")
     
 public void handleMessage(Message msg) {
     }
-
     
     public void dispatchMessage(Message msg){
 		// Original method
@@ -124,8 +117,8 @@ public void handleMessage(Message msg) {
 		*/
 		//Return nothing
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public String getMessageName(Message message){
 		// Original method
 		/*
@@ -150,9 +143,9 @@ public final Message obtainMessage()
     {
         return Message.obtain(this);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final Message obtainMessage(int what){
 		// Original method
 		/*
@@ -163,9 +156,9 @@ public final Message obtainMessage()
     	addTaint(what);
     	return Message.obtain(this, what);
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final Message obtainMessage(int what, Object obj){
 		// Original method
 		/*
@@ -177,9 +170,7 @@ public final Message obtainMessage()
     	addTaint(obj.getTaint());
     	return Message.obtain(this, what, obj);
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final Message obtainMessage(int what, int arg1, int arg2){
 		// Original method
 		/*
@@ -192,9 +183,7 @@ public final Message obtainMessage()
     	addTaint(arg2);
     	return Message.obtain(this, what, arg1, arg2);
 	}
-
     
-    @DSModeled(DSC.SAFE)
     public final Message obtainMessage(int what, int arg1, int arg2, Object obj){
 		// Original method
 		/*
@@ -208,10 +197,10 @@ public final Message obtainMessage()
     	addTaint(obj.getTaint());
     	return Message.obtain(this, what, arg1, arg2, obj);
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public final boolean post(Runnable r){
+	@DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    public final boolean post(Runnable r){
 		// Original method
 		/*
 		{
@@ -221,9 +210,9 @@ public final Message obtainMessage()
     	addTaint(r.getTaint());
        return  sendMessageDelayed(getPostMessage(r), 0);
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean postAtTime(Runnable r, long uptimeMillis){
 		// Original method
 		/*
@@ -235,7 +224,6 @@ public final Message obtainMessage()
     	addTaint(uptimeMillis);
     	return sendMessageAtTime(getPostMessage(r), uptimeMillis);
 	}
-
     
     public final boolean postAtTime(Runnable r, Object token, long uptimeMillis){
 		// Original method
@@ -249,8 +237,9 @@ public final Message obtainMessage()
     	addTaint(uptimeMillis);
     	return sendMessageAtTime(getPostMessage(r, token), uptimeMillis);
 	}
-
     
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     public final boolean postDelayed(Runnable r, long delayMillis){
 		// Original method
 		/*
@@ -262,7 +251,6 @@ public final Message obtainMessage()
     	addTaint(delayMillis);
     	return sendMessageDelayed(getPostMessage(r), delayMillis);
 	}
-
     
     public final boolean postAtFrontOfQueue(Runnable r){
 		// Original method
@@ -274,9 +262,9 @@ public final Message obtainMessage()
     	addTaint(r.getTaint());
     	return sendMessageAtFrontOfQueue(getPostMessage(r));
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final void removeCallbacks(Runnable r){
 		// Original method
 		/*
@@ -288,7 +276,6 @@ public final Message obtainMessage()
     	addTaint(r.getTaint());
     	mQueue.removeMessages(this, r, null);
 	}
-
     
     public final void removeCallbacks(Runnable r, Object token){
 		// Original method
@@ -302,10 +289,11 @@ public final Message obtainMessage()
     	addTaint(token.getTaint());
     	mQueue.removeMessages(this, r, token);
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public final boolean sendMessage(Message msg){
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendMessage(Message msg){
 		// Original method
 		/*
 		{
@@ -315,10 +303,11 @@ public final Message obtainMessage()
     	addTaint(msg.getTaint());
         return sendMessageDelayed(msg, 0);
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public final boolean sendEmptyMessage(int what){
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendEmptyMessage(int what){
 		// Original method
 		/*
 		{
@@ -328,10 +317,11 @@ public final Message obtainMessage()
     	addTaint(what);
         return sendEmptyMessageDelayed(what, 0);
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public final boolean sendEmptyMessageDelayed(int what, long delayMillis){
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendEmptyMessageDelayed(int what, long delayMillis){
 		// Original method
 		/*
 		{
@@ -346,10 +336,11 @@ public final Message obtainMessage()
         msg.what = what;
         return sendMessageDelayed(msg, delayMillis);
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis){
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendEmptyMessageAtTime(int what, long uptimeMillis){
 		// Original method
 		/*
 		{
@@ -364,10 +355,11 @@ public final Message obtainMessage()
         msg.what = what;
         return sendMessageAtTime(msg, uptimeMillis);
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public final boolean sendMessageDelayed(Message msg, long delayMillis){
+	@DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    public final boolean sendMessageDelayed(Message msg, long delayMillis){
 		// Original method
 		/*
 		{
@@ -381,9 +373,7 @@ public final Message obtainMessage()
     	addTaint(delayMillis);
         return sendMessageAtTime(msg, SystemClock.uptimeMillis() + delayMillis);
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	public boolean sendMessageAtTime(Message msg, long uptimeMillis){
 		// Original method
 		/*
@@ -408,7 +398,6 @@ public final Message obtainMessage()
 		msg.callback.run();
 		return true;
 	}
-
     
     public final boolean sendMessageAtFrontOfQueue(Message msg){
 		// Original method
@@ -441,9 +430,9 @@ public final Message obtainMessage()
         }
 		return getTaintBoolean();
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final void removeMessages(int what){
 		// Original method
 		/*
@@ -455,7 +444,6 @@ public final Message obtainMessage()
     	addTaint(what);
     	mQueue.removeMessages(this, what, null, true);
 	}
-
     
     public final void removeMessages(int what, Object object){
 		// Original method
@@ -469,8 +457,9 @@ public final Message obtainMessage()
     	addTaint(object.getTaint());
     	mQueue.removeMessages(this, what, object, true);
 	}
-
     
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final void removeCallbacksAndMessages(Object token){
 		// Original method
 		/*
@@ -482,9 +471,9 @@ public final Message obtainMessage()
     	addTaint(token.getTaint());
     	mQueue.removeCallbacksAndMessages(this, token);
 	}
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public final boolean hasMessages(int what){
 		// Original method
 		/*
@@ -495,7 +484,6 @@ public final Message obtainMessage()
     	mQueue.removeMessages(this, what, null, false);
 		return getTaintBoolean();
 	}
-
     
     public final boolean hasMessages(int what, Object object){
 		// Original method
@@ -510,13 +498,16 @@ public final Message obtainMessage()
 
     // if we can get rid of this method, the handler need not remember its loop
     // we could instead export a getMessageQueue() method... 
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.087 -0500", hash_original_method = "6CA5860A95ACD9BB8C844ECC1E567192", hash_generated_method = "98064444349E07D7BAA3C9B4FAC15DC7")
     
 public final Looper getLooper() {
         return mLooper;
     }
-
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     public final void dump(Printer pw, String prefix){
 		// Original method
 		/*
@@ -539,7 +530,6 @@ public final Looper getLooper() {
             mLooper.dump(pw, prefix + "  ");
         }
 	}
-
     
     @Override public String toString(){
 		// Original method
@@ -556,8 +546,8 @@ public final Looper getLooper() {
     	retVal.addTaint(getTaint());
 		return retVal;
 	}
-
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     final IMessenger getIMessenger(){
 		// Original method
 		/*
@@ -582,9 +572,7 @@ public final Looper getLooper() {
     	retVal.addTaint(getTaint());
     	return retVal;
 	}
-
     
-    @DSModeled(DSC.BAN)
 	private final Message getPostMessage(Runnable r) {
     	addTaint(r.getTaint());
         Message m = new Message();
@@ -592,7 +580,6 @@ public final Looper getLooper() {
         m.addTaint(getTaint());
         return m;
     }
-
     
     private final class MessengerImpl extends IMessenger.Stub {
         
@@ -601,16 +588,14 @@ public final Looper getLooper() {
         {
             //Synthesized constructor
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:39.097 -0500", hash_original_method = "CF11BADC884B068E4FC98150B23E5EB1", hash_generated_method = "F786300E27C986F542B94E2D484AD33A")
         
 public void send(Message msg) {
             Handler.this.sendMessage(msg);
         }
-
         
     }
-
-
     
     public interface Callback {
         public boolean handleMessage(Message msg);

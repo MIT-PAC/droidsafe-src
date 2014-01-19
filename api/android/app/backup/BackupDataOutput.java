@@ -7,39 +7,25 @@ import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 import java.io.IOException;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class BackupDataOutput {
-
     
-    @DSModeled(DSC.SAFE)
     private static int ctor(FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void dtor(int mBackupWriter) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int writeEntityHeader_native(int mBackupWriter, String key, int dataSize) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int writeEntityData_native(int mBackupWriter, byte[] data, int size) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void setKeyPrefix_native(int mBackupWriter, String keyPrefix) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.323 -0500", hash_original_field = "B54359389579FCBEAD7641AAB8EECDC6", hash_generated_field = "B54359389579FCBEAD7641AAB8EECDC6")
@@ -66,6 +52,9 @@ public BackupDataOutput(FileDescriptor fd) {
      * @return The number of bytes written to the backup stream
      * @throws IOException if the write failed
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.328 -0500", hash_original_method = "64DACF34CA37B4EE5BF2F213E613C915", hash_generated_method = "D2499C3A5BB8DA1EA6861FFEBC25BB19")
     
 public int writeEntityHeader(String key, int dataSize) throws IOException {
@@ -84,6 +73,9 @@ public int writeEntityHeader(String key, int dataSize) throws IOException {
      * @return the number of bytes written
      * @throws IOException if the write failed
      */
+    @DSComment("Backup subsystem")
+    @DSSpec(DSCat.BACKUP_SUBSYSTEM)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.332 -0500", hash_original_method = "1F7BD9065C295005115986DC5C5FEFFC", hash_generated_method = "79DE7E7815DF8F409EA7961CDB1960A7")
     
 public int writeEntityData(byte[] data, int size) throws IOException {
@@ -96,6 +88,7 @@ public int writeEntityData(byte[] data, int size) throws IOException {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:47.335 -0500", hash_original_method = "BD5511530074677855FB5F031E6A0A48", hash_generated_method = "BA9AA9367BD1C1EAD3DB26039BF520B2")
     
 public void setKeyPrefix(String keyPrefix) {
@@ -112,7 +105,6 @@ protected void finalize() throws Throwable {
             super.finalize();
         }
     }
-
     
 }
 

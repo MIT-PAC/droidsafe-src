@@ -17,13 +17,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.KeyEvent;
 
-
-
-
-
 public class InstrumentationTestCase extends TestCase {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.649 -0500", hash_original_field = "5CBE0F2EE224A7AD181F35AE16EC5D56", hash_generated_field = "B2267B39A1EB39D35FC793A28FB486AB")
-
 
     private Instrumentation mInstrumentation;
     
@@ -65,14 +60,13 @@ public void injectInstrumentation(Instrumentation instrumentation) {
      * Inheritors can access the instrumentation using this.
      * @return instrumentation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.657 -0500", hash_original_method = "84F87CEBEDE5D31C88CD24E066F68A95", hash_generated_method = "952CE09D28EE4A9669353A5E94B20293")
     
 public Instrumentation getInstrumentation() {
         return mInstrumentation;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.607 -0400", hash_original_method = "764789E220BD6FE52FAEF894EB0B5A08", hash_generated_method = "710852519DD88120CD28D5D10E1FD0EE")
     public final <T extends Activity> T launchActivity(
             String pkg,
@@ -96,9 +90,7 @@ T varE7F6C12080F9D8EF62DC3FF8BA750C63_1561275626 =         launchActivityWithInt
         //}
         //return launchActivityWithIntent(pkg, activityCls, intent);
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:35.608 -0400", hash_original_method = "D43C82D18E60F413349E4558A24D84A0", hash_generated_method = "5C16BDB114961A64AC91C4910467BFFD")
     @SuppressWarnings("unchecked")
     public final <T extends Activity> T launchActivityWithIntent(
@@ -254,6 +246,7 @@ private void runMethod(Method runMethod, int tolerance, boolean isRepetitive) th
      *
      * @param keysSequence The sequence of keys.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.681 -0500", hash_original_method = "F1A2611A7518798734124BE0FA3DC184", hash_generated_method = "2954BED3906FA26E267504074A939ECD")
     
 public void sendKeys(String keysSequence) {
@@ -308,6 +301,7 @@ public void sendKeys(String keysSequence) {
      *
      * @param keys The series of key codes to send through instrumentation.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.683 -0500", hash_original_method = "25439235D86C904EDC7CD1B76214296A", hash_generated_method = "1C437CDD5C62F5899CF06D0019BF182B")
     
 public void sendKeys(int... keys) {
@@ -334,6 +328,7 @@ public void sendKeys(int... keys) {
      *
      * @param keys The series of key repeats and codes to send through instrumentation.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:42.686 -0500", hash_original_method = "FBC03E5CDE4AF992F9EAA065B65F23C0", hash_generated_method = "7F19AE149B5B43D49DC16C43F00EF024")
     
 public void sendRepeatedKeys(int... keys) {
@@ -378,7 +373,6 @@ public void sendRepeatedKeys(int... keys) {
         Runtime.getRuntime().gc();
         super.tearDown();
     }
-
     
 }
 

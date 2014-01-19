@@ -14,11 +14,6 @@ import com.android.internal.telephony.PhoneBase;
 import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.RetryManager;
 
-
-
-
-
-
 public class GsmDataConnection extends DataConnection {
 
     /**
@@ -41,7 +36,6 @@ static GsmDataConnection makeDataConnection(PhoneBase phone, int id, RetryManage
         return gsmDc;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.592 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "D922E4732DF1A8050A7A55C2D62EC423")
-
 
     private static final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.594 -0500", hash_original_field = "44E14CB3E13357C148A024CEA0362E03", hash_generated_field = "4B86B7A6BB3954D8A0D6116E4CC1760F")
@@ -110,6 +104,7 @@ public void setProfileId(int profileId) {
         mProfileId = profileId;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.610 -0500", hash_original_method = "F4D053905D2BF654ACB2CC18D573B985", hash_generated_method = "6B1707CDF475C85B362C7245C61A4BBE")
     
 public int getProfileId() {

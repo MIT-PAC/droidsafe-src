@@ -12,14 +12,11 @@ import android.os.ServiceManager;
 import android.view.IOnKeyguardExitResult;
 import android.view.IWindowManager;
 
-
-
 public class KeyguardManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.636 -0500", hash_original_field = "71165EAD9C083BBFAF16999CC816A558", hash_generated_field = "900206E0E1CB232AC9B36B78FD174716")
 
     private IWindowManager mWM;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "5B69E23112A7A32F8407EC1FFE36B34D", hash_generated_method = "3C92E03D678C4B924547CF2813CCA769")
     public KeyguardManager() {
         //mWM = IWindowManager.Stub.asInterface(ServiceManager.getService(Context.WINDOW_SERVICE));
@@ -49,7 +46,6 @@ public class KeyguardManager {
     public KeyguardLock newKeyguardLock(String tag) {
         return new KeyguardLock(tag);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "A2184A2736F97B1687D11E2CDBE84F5B", hash_generated_method = "3D2D001658EBF59BB5DB37E17C504095")
     public boolean isKeyguardLocked() {
@@ -61,7 +57,6 @@ public class KeyguardManager {
             //return false;
         //}
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.547 -0400", hash_original_method = "D9B1D6FBA38958F439C4BED06843FB22", hash_generated_method = "F8860485DA1511952057E7BEF480512D")
     public boolean isKeyguardSecure() {
@@ -73,8 +68,9 @@ public class KeyguardManager {
             //return false;
         //}
     }
-
     
+    @DSComment("device control")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.548 -0400", hash_original_method = "4D76893BACDA286FED51AB2B592BACEE", hash_generated_method = "35AC64A1ADCA8D6D4F4AC5E9F5EA7C98")
     public boolean inKeyguardRestrictedInputMode() {
         return getTaintBoolean();
@@ -120,7 +116,6 @@ public class KeyguardManager {
 
         }
     }
-
     
     public class KeyguardLock {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:34.639 -0500", hash_original_field = "0DA9108D2E2A711522F589279D2F355A", hash_generated_field = "0A3D50E0763C2392A4FD5877627E0D78")
@@ -136,13 +131,10 @@ KeyguardLock(String tag) {
             mTag = tag;
         }
         
-        @DSModeled(DSC.BAN)
         public KeyguardLock() {
             
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.549 -0400", hash_original_method = "D57DA4E953B853BFA2A0F53D32EDF463", hash_generated_method = "D28A2D90780DAE2B162143289BBBC835")
         public void disableKeyguard() {
             addTaint(false);
@@ -161,7 +153,6 @@ KeyguardLock(String tag) {
             //} catch (RemoteException ex) {
             //}
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.549 -0400", hash_original_method = "A230379C02A7A7A26A0484D5752F5D3C", hash_generated_method = "6EFC040D730E4BC7C0E18A5339E6A4D2")
         public void reenableKeyguard() {
@@ -183,11 +174,8 @@ KeyguardLock(String tag) {
         }
         
     }
-
-
     
     public interface OnKeyguardExitResult {
-
         
         void onKeyguardExitResult(boolean success);
     }

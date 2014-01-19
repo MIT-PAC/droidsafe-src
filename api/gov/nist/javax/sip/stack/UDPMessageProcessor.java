@@ -17,18 +17,11 @@ import java.net.SocketTimeoutException;
 import java.net.UnknownHostException;
 import java.util.LinkedList;
 
-
-
-
-
-
 public class UDPMessageProcessor extends MessageProcessor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.805 -0500", hash_original_field = "31666E6E3E5C4C26BFC0A376D4995E68", hash_generated_field = "174D18645F1F98D2E6C01C2210EC5A14")
-
     
     private static final int HIGHWAT=5000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.807 -0500", hash_original_field = "E9A642E1E18EC1B098FBB67D335F80A1", hash_generated_field = "A95D179CF5D63D2E6F42DEFD017C99EB")
-
     
     private static final int LOWAT=2500;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.788 -0500", hash_original_field = "5A948EF636511EF149269A68FE278AED", hash_generated_field = "D40522EE9D0571A9162D4F847D658065")
@@ -44,7 +37,6 @@ public class UDPMessageProcessor extends MessageProcessor {
 
     protected int threadPoolSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.799 -0500", hash_original_field = "570524509F5F5D66C6CE0605580E6777", hash_generated_field = "43E95EAF82890431E324C86C2CA01A7C")
-
 
     protected DatagramSocket sock;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.802 -0500", hash_original_field = "5EBE085FDB38216257993802E75ABBBF", hash_generated_field = "911E18F9BE05473489F5F21C894DF579")
@@ -96,13 +88,12 @@ protected UDPMessageProcessor(InetAddress ipAddress,
         }
     }
 
-
-
     /**
      * Get port on which to listen for incoming stuff.
      *
      * @return port on which I am listening.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.813 -0500", hash_original_method = "1804D4B8ED6914D43C8BF926A65BA4F9", hash_generated_method = "2827709310D4A6354CC4E0B95B5C1D5F")
     
 public int getPort() {
@@ -115,7 +106,6 @@ public int getPort() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.817 -0500", hash_original_method = "5E3073F0FEC53FA8E5673A840E14FE8B", hash_generated_method = "E9579E9C6D35736EB98E8A83BB7E0C9E")
     
 public void start() throws IOException {
-
 
         this.isRunning = true;
         Thread thread = new Thread(this);
@@ -160,8 +150,6 @@ public void run() {
                 byte message[] = new byte[bufsize];
                 DatagramPacket packet = new DatagramPacket(message, bufsize);
                 sock.receive(packet);
-
-           
              
              // This is a simplistic congestion control algorithm.
              // It accepts packets if queuesize is < LOWAT. It drops
@@ -194,8 +182,6 @@ public void run() {
 
                 }
              }
-                
-                
                 
                 // Count of # of packets in process.
                 // this.useCount++;
@@ -254,7 +240,6 @@ public void stop() {
             this.messageQueue.notifyAll();
             sock.close();
 
-
         }
     }
 
@@ -263,6 +248,7 @@ public void stop() {
      *
      * @return the transport string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.828 -0500", hash_original_method = "026D790579A301E1D49F85E52A57E43F", hash_generated_method = "CD9CE3D74F8F4DF958703CD9EEEFCC32")
     
 public String getTransport() {
@@ -274,6 +260,7 @@ public String getTransport() {
      *
      * @return my sip stack.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.831 -0500", hash_original_method = "4789C177AC8ECE60B231BA8A866F9D66", hash_generated_method = "7DFF2B9EFB272B5F349D68AD73E9A18C")
     
 public SIPTransactionStack getSIPStack() {
@@ -301,6 +288,7 @@ public MessageChannel createMessageChannel(InetAddress host, int port)
     /**
      * Default target port for UDP
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.839 -0500", hash_original_method = "549BD73BE1E8477C39668DF3AD0A0CF5", hash_generated_method = "A974BC08491FBE134376CBCCEE27369D")
     
 public int getDefaultTargetPort() {
@@ -319,6 +307,7 @@ public boolean isSecure() {
     /**
      * UDP can handle a message as large as the MAX_DATAGRAM_SIZE.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:12.845 -0500", hash_original_method = "DB826EFA52B3A7F2C697730E780269B9", hash_generated_method = "BE8008A8AE67B0186FA945333D8EF3B1")
     
 public int getMaximumMessageSize() {

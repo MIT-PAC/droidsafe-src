@@ -9,11 +9,6 @@ import java.net.InetAddress;
 import java.net.ServerSocket;
 import java.net.SocketException;
 
-
-
-
-
-
 public abstract class ServerSocketFactory {
 
     /**
@@ -22,6 +17,7 @@ public abstract class ServerSocketFactory {
      *
      * @return the system default server socket factory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.867 -0500", hash_original_method = "C92005BA8F3770F4486A33380A281994", hash_generated_method = "6378783AC72B921B197960106AE63FE3")
     
 public static synchronized ServerSocketFactory getDefault() {
@@ -51,6 +47,7 @@ protected ServerSocketFactory() {
      * @throws IOException
      *             if an error occurs while creating a new server socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.872 -0500", hash_original_method = "698CB8A5B4145A1BDB9AB7D216CE6832", hash_generated_method = "645F49532259ED5D3E10FF5BC0C9C237")
     
 public ServerSocket createServerSocket() throws IOException {

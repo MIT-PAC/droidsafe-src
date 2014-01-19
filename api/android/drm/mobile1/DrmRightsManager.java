@@ -9,11 +9,6 @@ import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
-
-
 public class DrmRightsManager {
 
     /**
@@ -21,6 +16,7 @@ public class DrmRightsManager {
      *
      * @return the instance of DrmRightsManager.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.773 -0500", hash_original_method = "095E7D0D739AFBC4C7C2B3342244FF59", hash_generated_method = "31B289F91CC273E0691212480DDBC7FD")
     
 public static synchronized DrmRightsManager getInstance() {
@@ -55,7 +51,6 @@ public static synchronized DrmRightsManager getInstance() {
 
     private static DrmRightsManager singleton = null;
 
-
     /**
      * Construct a DrmRightsManager
      */
@@ -72,6 +67,7 @@ protected DrmRightsManager() {
      *
      * @return the instance of the installed DrmRights.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.776 -0500", hash_original_method = "DFEBA1171CC4BD5C340A5F7D201F4250", hash_generated_method = "610FFE162E37F945B00BEE3FEF30478F")
     
 public synchronized DrmRights installRights(InputStream rightsData, int len, String mimeTypeStr) throws DrmException, IOException {
@@ -126,6 +122,7 @@ public synchronized DrmRights queryRights(DrmRawContent content) {
      *
      * @return the list of all the rights object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.782 -0500", hash_original_method = "2F13CE15153AB575E5C66B8C7F8BCB6B", hash_generated_method = "2CE4D9CFC038DCB7907C246976D7299E")
     
 public synchronized List getRightsList() {
@@ -173,7 +170,6 @@ public synchronized void deleteRights(DrmRights rights) {
             return;
     }
 
-
     /**
      * native method: install rights object to local client.
      *
@@ -198,7 +194,6 @@ public synchronized void deleteRights(DrmRights rights) {
     	return getTaintInt();
     }
 
-
     /**
      * native method: query the given DRM content's rights object.
      *
@@ -217,7 +212,6 @@ public synchronized void deleteRights(DrmRights rights) {
     	return getTaintInt();
     }
 
-
     /**
      * native method: get how many rights object in current DRM agent.
      *
@@ -230,7 +224,6 @@ public synchronized void deleteRights(DrmRights rights) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * native method: get all the rights object in current local agent.
@@ -249,7 +242,6 @@ public synchronized void deleteRights(DrmRights rights) {
     	addTaint(numRights);
     	return getTaintInt();
     }
-
 
     /**
      * native method: delete a specified rights object.

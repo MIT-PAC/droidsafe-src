@@ -15,9 +15,6 @@ import android.net.LocalSocketAddress;
 import android.util.Log;
 import dalvik.system.Zygote;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class ZygoteStartFailedEx extends Exception {
@@ -34,7 +31,6 @@ ZygoteStartFailedEx(String s) {super(s);}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.595 -0500", hash_original_method = "52F849A7EB3457C94980CDA061114152", hash_generated_method = "52F849A7EB3457C94980CDA061114152")
     
 ZygoteStartFailedEx(Throwable cause) {super(cause);}
-
     
 }
 
@@ -315,39 +311,27 @@ private static ProcessStartResult startViaZygote(final String processClass,
             return zygoteSendArgsAndGetResult(argsForZygote);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final long getElapsedCpuTime() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int myPid() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int myTid() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int myUid() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getUidForName(String name) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getGidForName(String name) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -383,34 +367,24 @@ public static final int getParentPid(int pid) {
         Process.readProcLines("/proc/" + pid + "/status", procStatusLabels, procStatusValues);
         return (int) procStatusValues[0];
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void setThreadPriority(int tid, int priority) throws IllegalArgumentException, SecurityException {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void setCanSelfBackground(boolean backgroundOk) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void setThreadGroup(int tid, int group) throws IllegalArgumentException, SecurityException {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void setProcessGroup(int pid, int group) throws IllegalArgumentException, SecurityException {
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     public static final void setThreadPriority(int priority) throws IllegalArgumentException, SecurityException {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getThreadPriority(int tid) throws IllegalArgumentException {
         return DSUtils.UNKNOWN_INT;
     }
@@ -429,15 +403,11 @@ public static final int getParentPid(int pid) {
     public static final boolean supportsProcesses() {
         return true;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final boolean setOomAdj(int pid, int amt) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void setArgV0(String text) {
     }
 
@@ -457,21 +427,15 @@ public static final int getParentPid(int pid) {
 public static final void killProcess(int pid) {
         sendSignal(pid, SIGNAL_KILL);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int setUid(int uid) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int setGid(int uid) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void sendSignal(int pid, int signal) {
     }
     
@@ -486,54 +450,39 @@ public static final void killProcess(int pid) {
 public static final void killProcessQuiet(int pid) {
         sendSignalQuiet(pid, SIGNAL_KILL);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void sendSignalQuiet(int pid, int signal) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final long getFreeMemory() {
         return DSUtils.UNKNOWN_LONG;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void readProcLines(String path,
             String[] reqFields, long[] outSizes) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int[] getPids(String path, int[] lastArray) {
         int[] ret = {DSUtils.UNKNOWN_INT};
         return ret;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final boolean readProcFile(String file, int[] format,
             String[] outStrings, long[] outLongs, float[] outFloats) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final boolean parseProcLine(byte[] buffer, int startIndex, 
             int endIndex, int[] format, String[] outStrings, long[] outLongs, float[] outFloats) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final long getPss(int pid) {
         return DSUtils.UNKNOWN_LONG;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.598 -0500", hash_original_field = "BC44B407F4C10F9EDAD581BF2B8CACF3", hash_generated_field = "5F9C7257A217587A990699F8AF46B2EF")
 
     private static final String LOG_TAG = "Process";
-
     
     public static final class ProcessStartResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.831 -0500", hash_original_field = "3D9A6B8E69012AA56F160CA7CCE3CF4F", hash_generated_field = "E33048D7FE0F6F6881E45039884DFF61")
@@ -549,10 +498,8 @@ public static final void killProcessQuiet(int pid) {
             //Synthesized constructor
         }
 
-
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.601 -0500", hash_original_field = "5F49BC332E084FB1C9E2AFC7AC214330", hash_generated_field = "CE66396F822D4FD2A7CF04726540D0D0")
-
 
     private static final String ZYGOTE_SOCKET = "zygote";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.603 -0500", hash_original_field = "89EBEBA9E79690E123389B59799D9B82", hash_generated_field = "210CABEAA190359A5716CF54A12A257E")
@@ -601,7 +548,6 @@ public static final void killProcessQuiet(int pid) {
 
     public static final int THREAD_PRIORITY_DEFAULT = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.640 -0500", hash_original_field = "4005FF6AD38E5EC97FF1B3CFCA590565", hash_generated_field = "A91B5DD2EC5D00C8F89F68C86374E239")
-
     
     /**
      * Lowest available thread priority.  Only for those who really, really
@@ -646,7 +592,6 @@ public static final void killProcessQuiet(int pid) {
     public static final int THREAD_GROUP_FG_BOOST = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.669 -0500", hash_original_field = "22B0CAC921B7721A47ADE107E57354A7", hash_generated_field = "C51440743E6DDF10403B243D1ACF601D")
 
-
     public static final int SIGNAL_QUIT = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.672 -0500", hash_original_field = "4A182571ED67D09251F8928C4AF15F77", hash_generated_field = "741221352869D91C1AB404E572F62911")
 
@@ -655,7 +600,6 @@ public static final void killProcessQuiet(int pid) {
 
     public static final int SIGNAL_USR1 = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.677 -0500", hash_original_field = "E448F9D9CB2F80C6A426EAD760A86568", hash_generated_field = "AB09C6CAD8D12BE44F83E1BDDA5C3263")
-
 
     static LocalSocket sZygoteSocket;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:26.679 -0500", hash_original_field = "CB38541FAC4726A6F5ECE041FE2A9E24", hash_generated_field = "AB34448A875466B78D25B22E95B7A947")

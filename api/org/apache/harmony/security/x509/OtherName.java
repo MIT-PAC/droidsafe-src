@@ -12,13 +12,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-
-
-
-
-
 public final class OtherName {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.569 -0400", hash_original_field = "1D500C6DBA2251A558BBCB0545FF091B", hash_generated_field = "DB5EBDABA98F44EB3E15AA9BA7B3778D")
 
@@ -26,6 +20,7 @@ public final class OtherName {
             ASN1Oid.getInstance(),
             new ASN1Explicit(0, ASN1Any.getInstance()) }) {
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.919 -0500", hash_original_method = "FC6D2FA23EC46C968D9824F16BF66498", hash_generated_method = "7881AF0D8906B9CDB42F375775C678CF")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -69,6 +64,7 @@ private OtherName(String typeID, byte[] value, byte[] encoding) {
     /**
      * Returns the value of value field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.913 -0500", hash_original_method = "7B542DE43DC21978E6F04336AAB05EBD", hash_generated_method = "97650376B82B1489652C66F91FF1242D")
     
 public byte[] getValue() {
@@ -78,6 +74,7 @@ public byte[] getValue() {
     /**
      * Returns ASN.1 encoded form of this X.509 OtherName value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.916 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

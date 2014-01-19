@@ -26,11 +26,6 @@ import android.view.inputmethod.InputMethodManager;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class AutoCompleteTextView extends EditText implements Filter.FilterListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.984 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "F09208C088E716A2CD36A97B937BB5EA")
 
@@ -40,10 +35,8 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     static final String TAG = "AutoCompleteTextView";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.988 -0500", hash_original_field = "278B86F4E21489565DB89494073B789E", hash_generated_field = "50DC5A53A7642176DA288042E8938B92")
 
-
     static final int EXPAND_MAX = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.990 -0500", hash_original_field = "D9985579330390AE8290FE29DE0EF688", hash_generated_field = "1FDB4027FDC409C38C96D7C7129240A3")
-
 
     private CharSequence mHintText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.992 -0500", hash_original_field = "CA453DA8168AD73BA8AAAB4C1D94E39C", hash_generated_field = "3A9494D52ECD891CDD06D9FB033B0410")
@@ -54,7 +47,6 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     private int mHintResource;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.996 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "90F29768206AB431EA361CD94838716F")
 
-
     private ListAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:58.998 -0500", hash_original_field = "E9FBEB72F5336AFA25831B1B3CB2A4B4", hash_generated_field = "A13F7A33CB1B9B8C8BC52C7A25894515")
 
@@ -64,13 +56,11 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     private int mThreshold;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.004 -0500", hash_original_field = "4DA234AE6542EB8CE34753F7DEA560C5", hash_generated_field = "8997F2E1258B500A89588C7ED08EDAF2")
 
-
     private ListPopupWindow mPopup;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.006 -0500", hash_original_field = "2D95AAF1E2AEB6DBA83C660BDDE73F76", hash_generated_field = "AA79DCF4F4AF02E5E4FD88F114FC4A45")
 
     private int mDropDownAnchorId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.008 -0500", hash_original_field = "C3BCFE8177AEF338D4004A6DD4D2D8EF", hash_generated_field = "91F251C39E992AB6E9A1F97E1DB2D65A")
-
 
     private AdapterView.OnItemClickListener mItemClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.010 -0500", hash_original_field = "95D49B221C26B1A3334D3BD6A6E6E61A", hash_generated_field = "B20A14E839638431419A27C6FA2EB183")
@@ -78,17 +68,14 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     private AdapterView.OnItemSelectedListener mItemSelectedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.012 -0500", hash_original_field = "F3626448EBBBD7C8DF8388361FA4C097", hash_generated_field = "F2A9684F0F8098ECC6D91A395F94C973")
 
-
     private boolean mDropDownDismissedOnCompletion = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.014 -0500", hash_original_field = "42F0BE50EE4EAA127551894E1C861A8F", hash_generated_field = "202A96DE332795BB4B1FEBF0146D898F")
-
 
     private int mLastKeyCode = KeyEvent.KEYCODE_UNKNOWN;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.016 -0500", hash_original_field = "8EC18D8C56BE58C3AEB1159EBA595EC9", hash_generated_field = "DF21E3DF0E1F480F88152014C172C190")
 
     private boolean mOpenBefore;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.018 -0500", hash_original_field = "0E68BF28727A92D3ED40E3FAF1710C9D", hash_generated_field = "174452E4EA6CBBEFAC61139138443140")
-
 
     private Validator mValidator = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.020 -0500", hash_original_field = "6D60824235355A8B322627882F3A5E35", hash_generated_field = "F75A9D78378413BAF88541599A31BF41")
@@ -99,7 +86,6 @@ public class AutoCompleteTextView extends EditText implements Filter.FilterListe
     // Set to false when the list is hidden to prevent asynchronous updates to popup the list again.
     private boolean mPopupCanBeUpdated = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.024 -0500", hash_original_field = "7D303B16C326C90EA8482AA23C590B95", hash_generated_field = "EBF3BC0102B69BA2B0B114608A6AF073")
-
 
     private PassThroughClickListener mPassThroughClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.027 -0500", hash_original_field = "CE1C8FF88DD224C2604D8448F5044A3A", hash_generated_field = "0623EBBCEF1FE0FD7F127A32EDBCAFCC")
@@ -240,6 +226,7 @@ public void setCompletionHint(CharSequence hint) {
      * 
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownWidth
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.044 -0500", hash_original_method = "0FF617112E6940852CA340238B035B28", hash_generated_method = "247259A32CDB55B911557833DCE6FDAC")
     
 public int getDropDownWidth() {
@@ -255,6 +242,7 @@ public int getDropDownWidth() {
      * 
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownWidth
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.047 -0500", hash_original_method = "B270189DDD36B930B898EDE5BD590C69", hash_generated_method = "E55EDD4E31E177747521386D45E056CD")
     
 public void setDropDownWidth(int width) {
@@ -271,6 +259,7 @@ public void setDropDownWidth(int width) {
      *
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownHeight
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.049 -0500", hash_original_method = "ED81905DF1626AD5BC656BEBB27BE880", hash_generated_method = "2A536E1053D7425939D8951FC2FDBAD3")
     
 public int getDropDownHeight() {
@@ -287,6 +276,7 @@ public int getDropDownHeight() {
      *
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownHeight
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.051 -0500", hash_original_method = "7CEF092BABE0725B932F9B439F9A3AFD", hash_generated_method = "856B2F95F412E5E4A940FCE97E3D1A9C")
     
 public void setDropDownHeight(int height) {
@@ -300,6 +290,7 @@ public void setDropDownHeight(int height) {
      * 
      * @attr ref android.R.styleable#AutoCompleteTextView_dropDownAnchor
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.053 -0500", hash_original_method = "983C379A49D6519E05BB04A2322E89F2", hash_generated_method = "47B37E22C0C8134B5DD2F1C2D09AD204")
     
 public int getDropDownAnchor() {
@@ -329,6 +320,7 @@ public void setDropDownAnchor(int id) {
      * 
      * @attr ref android.R.styleable#PopupWindow_popupBackground
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.058 -0500", hash_original_method = "AF968841F9ADA345DD97E068FA7BD610", hash_generated_method = "B9F5A4E86C16A1269D847E12A60592B2")
     
 public Drawable getDropDownBackground() {
@@ -342,6 +334,7 @@ public Drawable getDropDownBackground() {
      * 
      * @attr ref android.R.styleable#PopupWindow_popupBackground
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.060 -0500", hash_original_method = "B18D529A578176AD889BDFBA197D2FE9", hash_generated_method = "72828885475402233A1065AA4238F0B0")
     
 public void setDropDownBackgroundDrawable(Drawable d) {
@@ -355,6 +348,7 @@ public void setDropDownBackgroundDrawable(Drawable d) {
      * 
      * @attr ref android.R.styleable#PopupWindow_popupBackground
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.062 -0500", hash_original_method = "58B212667945303F92E76684E6DBBAC3", hash_generated_method = "5C1C1861F58F15C596D520ED54C07A96")
     
 public void setDropDownBackgroundResource(int id) {
@@ -366,6 +360,7 @@ public void setDropDownBackgroundResource(int id) {
      * 
      * @param offset the vertical offset
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.064 -0500", hash_original_method = "AFE41A06E9A754A352572FB9B075CCA0", hash_generated_method = "F998023443B69F9CACF43A7FE224C147")
     
 public void setDropDownVerticalOffset(int offset) {
@@ -377,6 +372,7 @@ public void setDropDownVerticalOffset(int offset) {
      * 
      * @return the vertical offset
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.067 -0500", hash_original_method = "CD8747B9F2476A0A6006DC41A664E503", hash_generated_method = "DE383788E4FDCB2B215C3C806573CB68")
     
 public int getDropDownVerticalOffset() {
@@ -388,6 +384,7 @@ public int getDropDownVerticalOffset() {
      * 
      * @param offset the horizontal offset
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.069 -0500", hash_original_method = "6A22527360686DE12C48E20144984DC3", hash_generated_method = "7D53B2885E28A76B6CAEC543641AFBEC")
     
 public void setDropDownHorizontalOffset(int offset) {
@@ -399,6 +396,7 @@ public void setDropDownHorizontalOffset(int offset) {
      * 
      * @return the horizontal offset
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.071 -0500", hash_original_method = "A7584484859282D74A751422BD935CE2", hash_generated_method = "7E8C8CA6329EF47BA0A3EA2027EC0765")
     
 public int getDropDownHorizontalOffset() {
@@ -417,6 +415,7 @@ public int getDropDownHorizontalOffset() {
      *
      * @hide Pending API council approval
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.073 -0500", hash_original_method = "AB6AF7AB4438F2936FAB5E115855ABD1", hash_generated_method = "2C41EAEA804D3D5F5683493CD2859ABC")
     
 public void setDropDownAnimationStyle(int animationStyle) {
@@ -431,6 +430,7 @@ public void setDropDownAnimationStyle(int animationStyle) {
      *
      * @hide Pending API council approval
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.075 -0500", hash_original_method = "348942C9B29D455789FBCF016CC929C3", hash_generated_method = "3EE54AD2789BC1F54D5F2D236311658A")
     
 public int getDropDownAnimationStyle() {
@@ -461,6 +461,7 @@ public boolean isDropDownAlwaysVisible() {
      *
      * @hide Pending API council approval
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.079 -0500", hash_original_method = "9D048710298E272B53CC3CA9B767E12A", hash_generated_method = "1BA9B13157BB69F6E30D4DF2BAB035EC")
     
 public void setDropDownAlwaysVisible(boolean dropDownAlwaysVisible) {
@@ -500,6 +501,7 @@ public void setDropDownDismissedOnCompletion(boolean dropDownDismissedOnCompleti
      *
      * @see #setThreshold(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.085 -0500", hash_original_method = "D355B3B251BB91FAED293791929579AC", hash_generated_method = "3394DC2838DC305525F1033F25137CAE")
     
 public int getThreshold() {
@@ -613,14 +615,13 @@ public AdapterView.OnItemSelectedListener getOnItemSelectedListener() {
      *
      * @return a data adapter used for auto completion
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.103 -0500", hash_original_method = "0E1A05724C497F45D7FB6AC34C501814", hash_generated_method = "A4011003FD32FA617AD815FC289B0759")
     
 public ListAdapter getAdapter() {
         return mAdapter;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:58.696 -0400", hash_original_method = "18CB1EEAAEFB5BC2DC3ECE426EBE9928", hash_generated_method = "F0E69E1084FD7B774906C79EDAFD6B58")
     public <T extends ListAdapter & Filterable> void setAdapter(T adapter) {
         if(mObserver == null)        
@@ -845,6 +846,7 @@ public void clearListSelection() {
      * 
      * @param position The position to move the selector to.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.138 -0500", hash_original_method = "133DE5DB01039801737429C3DDB0411B", hash_generated_method = "511115DE2EE242D3198E20B99BBA03EF")
     
 public void setListSelection(int position) {
@@ -861,6 +863,7 @@ public void setListSelection(int position) {
      * 
      * @see ListView#getSelectedItemPosition()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.140 -0500", hash_original_method = "FACA63936D6E82D9A31B7F667F19A5C4", hash_generated_method = "494BAF6C10428ED1B29905126FB73382")
     
 public int getListSelection() {
@@ -895,6 +898,7 @@ public void performCompletion() {
         performCompletion(null, -1, -1);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.147 -0500", hash_original_method = "4C402F357E20A5DEEC78C01A554F2E74", hash_generated_method = "AAEE5FBA5E30CB675A68D36EB2E22393")
     
 @Override
@@ -1168,6 +1172,7 @@ public void showDropDown() {
      * 
      * @hide used only by SearchDialog
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.189 -0500", hash_original_method = "3BAD4610337E0EF5F8BF22A9BBBB2B17", hash_generated_method = "AD6E1537BA196DC650F4C225B5A8FB83")
     
 public void setForceIgnoreOutsideTouch(boolean forceIgnoreOutsideTouch) {
@@ -1218,7 +1223,6 @@ private void buildImeCompletions() {
 public void setValidator(Validator validator) {
         mValidator = validator;
     }
-
     
     private class MyWatcher implements TextWatcher {
         
@@ -1241,11 +1245,8 @@ public void beforeTextChanged(CharSequence s, int start, int count, int after) {
         
 public void onTextChanged(CharSequence s, int start, int before, int count) {
         }
-
         
     }
-
-
     
     private class DropDownItemClickListener implements AdapterView.OnItemClickListener {
         
@@ -1259,15 +1260,11 @@ public void onTextChanged(CharSequence s, int start, int before, int count) {
 public void onItemClick(AdapterView parent, View v, int position, long id) {
             performCompletion(v, position, id);
         }
-
         
     }
-
-
     
     private class PassThroughClickListener implements OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.211 -0500", hash_original_field = "4B266FAAAFEF787B089CC94471039413", hash_generated_field = "7D6A8796716A6CBC9C60BD4061851E68")
-
 
         private View.OnClickListener mWrapped;
         
@@ -1285,11 +1282,8 @@ public void onClick(View v) {
 
             if (mWrapped != null) mWrapped.onClick(v);
         }
-
         
     }
-
-
     
     private class PopupDataSetObserver extends DataSetObserver {
         
@@ -1319,16 +1313,12 @@ public void onClick(View v) {
                 });
             }
         }
-
         
     }
-
-
     
     public interface Validator {
         
         boolean isValid(CharSequence text);
-
         
         CharSequence fixText(CharSequence invalidText);
     }
@@ -1370,6 +1360,7 @@ public void performValidation() {
      * or <code>null</code> if {@link #setAdapter} was not called with
      * a Filterable.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.201 -0500", hash_original_method = "A182F1708C145D57F0135D6BE7F61F0B", hash_generated_method = "20C2962FE0F60E0FBED755951BC8FDD8")
     
 protected Filter getFilter() {

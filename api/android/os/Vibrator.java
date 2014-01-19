@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import android.util.Log;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Vibrator {
@@ -17,19 +14,15 @@ public class Vibrator {
     private static final String TAG = "Vibrator";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.203 -0500", hash_original_field = "6D5176DB6DC642185DCF8E32C5EC1BC9", hash_generated_field = "6D5176DB6DC642185DCF8E32C5EC1BC9")
 
-
     IVibratorService mService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:42.205 -0500", hash_original_field = "B6655DE5A418A8AD5DE782E8D5BD3E0A", hash_generated_field = "338AF9C7C3937329885532B2150C11ED")
 
     private final Binder mToken = new Binder();
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "EB80C050D853B4D9B5A1231C0F61B7C6", hash_generated_method = "4A65C1EF3E63664EB269704222364679")
     public  Vibrator() {
     }
-
-    
-        @DSModeled(DSC.SPEC)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "340743421AEB659E5123D51116E8257B", hash_generated_method = "151D3F2E4276DA07BF42252D33EAFAD7")
     public boolean hasVibrator() {
         return DSUtils.UNKNOWN_BOOLEAN;
@@ -44,10 +37,10 @@ public class Vibrator {
         //}
         //return false;
     }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "923B04A13431F62D932999C01EF768BD")
+        
+@DSComment("only vibrating the device")
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7274B01F62B26782B2CB11F21188B55D", hash_generated_method = "923B04A13431F62D932999C01EF768BD")
     public void vibrate(long milliseconds) {
         //End block
         // ---------- Original Method ----------
@@ -61,8 +54,9 @@ public class Vibrator {
             //Log.w(TAG, "Failed to vibrate.", e);
         //}
     }
-
-    @DSModeled(DSC.SAFE)
+    
+    @DSComment("only vibrating the device")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:27.819 -0400", hash_original_method = "7A7D54B587DD258FAC49023E7C932C75", hash_generated_method = "4FEC1D25C674D0C4EBF3B684610D737E")
     public void vibrate(long[] pattern, int repeat) {
     	//End block

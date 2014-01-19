@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.content.Context;
 
-
-
-
-
 public abstract class ActionProvider {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.115 -0500", hash_original_field = "0CC45A8F2A3DE3D79B6417F1C5FAF5C0", hash_generated_field = "B0B6D637F5D44582200E582C4D2D6000")
 
@@ -20,6 +16,8 @@ public abstract class ActionProvider {
      *
      * @param context Context for accessing resources.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.118 -0500", hash_original_method = "AD51B37569819E728EA786F52DA39151", hash_generated_method = "01703FE4B54B2BD302FDF7CE9511AF87")
     
 public ActionProvider(Context context) {
@@ -128,7 +126,6 @@ public void subUiVisibilityChanged(boolean isVisible) {
 public void setSubUiVisibilityListener(SubUiVisibilityListener listener) {
         mSubUiVisibilityListener = listener;
     }
-
     
     public interface SubUiVisibilityListener {
         public void onSubUiVisibilityChanged(boolean isVisible);

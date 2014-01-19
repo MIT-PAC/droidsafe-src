@@ -10,14 +10,8 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.net.SocketOptions;
 
-
-
-
-
-
 public class LocalSocket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.174 -0500", hash_original_field = "C64187E1E8E3968144AF18D9B41A1645", hash_generated_field = "9FC425CCAE80D9162FEB6CEC3E95B3C0")
-
 
     private LocalSocketImpl impl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.177 -0500", hash_original_field = "E6D504C945AB3F2AFF7B311813DA0B9F", hash_generated_field = "40B4D44783DDD878FE14964CDFAD9280")
@@ -138,6 +132,7 @@ public void bind(LocalSocketAddress bindpoint) throws IOException {
      *
      * @return Local address or null if anonymous
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.199 -0500", hash_original_method = "E608923787A6482FF0ABAB03074C01F6", hash_generated_method = "7955BA736BD8AD783B98FFDED7E574D5")
     
 public LocalSocketAddress getLocalSocketAddress() {
@@ -150,6 +145,7 @@ public LocalSocketAddress getLocalSocketAddress() {
      * @return input stream
      * @throws IOException if socket has been closed or cannot be created.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.202 -0500", hash_original_method = "DEA6C893F972103692387A11DBA05C46", hash_generated_method = "5AD8E3B5C2D779A9393A4F7C2DDFB805")
     
 public InputStream getInputStream() throws IOException {
@@ -163,6 +159,7 @@ public InputStream getInputStream() throws IOException {
      * @return output stream
      * @throws IOException if socket has been closed or cannot be created.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.204 -0500", hash_original_method = "7FCFFCB2ACC45D6472F8A8A9AE347E00", hash_generated_method = "7312EA749E0D01671F2B6C4BB1603CB7")
     
 public OutputStream getOutputStream() throws IOException {
@@ -206,36 +203,42 @@ public void shutdownOutput() throws IOException {
         impl.shutdownOutput();
     }
     
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.213 -0500", hash_original_method = "BF44A21BC401EF66CAA8945E3668C8DF", hash_generated_method = "18A71FAC606DBE0F3A474D08FDFA87D6")
     
 public void setReceiveBufferSize(int size) throws IOException {
         impl.setOption(SocketOptions.SO_RCVBUF, Integer.valueOf(size));
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.215 -0500", hash_original_method = "AB50F13A01F63FCA35BB3E86415EBFEF", hash_generated_method = "D62B9310802CED4E0D138E813EAC13DC")
     
 public int getReceiveBufferSize() throws IOException {
         return ((Integer) impl.getOption(SocketOptions.SO_RCVBUF)).intValue();
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.217 -0500", hash_original_method = "4BF0B1F38FAF8905C2B3E64A190023C5", hash_generated_method = "F273B34F49DF4F5C1F3103C7278215AD")
     
 public void setSoTimeout(int n) throws IOException {
         impl.setOption(SocketOptions.SO_TIMEOUT, Integer.valueOf(n));
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.219 -0500", hash_original_method = "669C21804ABD7497EBD82667408E0CF6", hash_generated_method = "1EFD550F4DC4E177E51EA27BBA198AD6")
     
 public int getSoTimeout() throws IOException {
         return ((Integer) impl.getOption(SocketOptions.SO_TIMEOUT)).intValue();
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.221 -0500", hash_original_method = "93F75C1311E324895F90364DB9A8A768", hash_generated_method = "9F34F14204F89F22F15013FCABE45C50")
     
 public void setSendBufferSize(int n) throws IOException {
         impl.setOption(SocketOptions.SO_SNDBUF, Integer.valueOf(n));
     }
     
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.223 -0500", hash_original_method = "68B16714CB779407E8A17B8680E487D9", hash_generated_method = "042A9BCE624D4B2E9CDB22F5FB0D6F9F")
     
 public int getSendBufferSize() throws IOException {
@@ -243,6 +246,7 @@ public int getSendBufferSize() throws IOException {
     }
 
     //???SEC
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.225 -0500", hash_original_method = "F9B2122C93F2E3BBD4E1C8511037E48C", hash_generated_method = "B54A71310F000EE8A50629AFA7C35DCB")
     
 public LocalSocketAddress getRemoteSocketAddress() {
@@ -300,6 +304,7 @@ public void connect(LocalSocketAddress endpoint, int timeout)
      *
      * @param fds non-null; file descriptors to send.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.240 -0500", hash_original_method = "27C53C8DB31C3FA2B713C3C2CC55D90F", hash_generated_method = "30A303B268E40703E12176C1F74DEC1C")
     
 public void setFileDescriptorsForSend(FileDescriptor[] fds) {
@@ -316,6 +321,7 @@ public void setFileDescriptorsForSend(FileDescriptor[] fds) {
      * @return null or file descriptor array
      * @throws IOException
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.242 -0500", hash_original_method = "447681287166469914CD051884431B5F", hash_generated_method = "61D7A75BC659D9F6621B870A3FAB763A")
     
 public FileDescriptor[] getAncillaryFileDescriptors() throws IOException {
@@ -329,6 +335,7 @@ public FileDescriptor[] getAncillaryFileDescriptors() throws IOException {
      * @return non-null; peer credentials
      * @throws IOException
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.244 -0500", hash_original_method = "4616CE50DFB82618FF8C3056DF06E72F", hash_generated_method = "4707C5AFA3100045C28BF3EEE5B466D0")
     
 public Credentials getPeerCredentials() throws IOException {
@@ -340,12 +347,12 @@ public Credentials getPeerCredentials() throws IOException {
      *
      * @return fd or null
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:10.246 -0500", hash_original_method = "48E5039C4FB2B8BAB81B3561EAA65E0E", hash_generated_method = "0FA483774DCFD89C5E0A6792E5C45D30")
     
 public FileDescriptor getFileDescriptor() {
         return impl.getFileDescriptor();
     }
-
     
 }
 

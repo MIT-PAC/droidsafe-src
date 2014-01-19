@@ -15,11 +15,6 @@ import java.io.Writer;
 import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 
-
-
-
-
-
 public class HTMLScanner implements Scanner, Locator {
 
 	/**
@@ -37,7 +32,6 @@ public static void main(String[] argv) throws IOException, SAXException {
 		s.scan(r, pw);
 		w.close();
 		}
-
 
 	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.401 -0500", hash_original_method = "6185991F32A594F12E5499FEE0E2DB19", hash_generated_method = "F9E9DA837D2ACF24723CDE3E9BD9E281")
 	
@@ -408,7 +402,6 @@ private static String nicechar(int in) {
 	private static final String[] debug_statenames = { "", "S_ANAME", "S_APOS", "S_AVAL", "S_BB", "S_BBC", "S_BBCD", "S_BBCDA", "S_BBCDAT", "S_BBCDATA", "S_CDATA", "S_CDATA2", "S_CDSECT", "S_CDSECT1", "S_CDSECT2", "S_COM", "S_COM2", "S_COM3", "S_COM4", "S_DECL", "S_DECL2", "S_DONE", "S_EMPTYTAG", "S_ENT", "S_EQ", "S_ETAG", "S_GI", "S_NCR", "S_PCDATA", "S_PI", "S_PITARGET", "S_QUOT", "S_STAGC", "S_TAG", "S_TAGWS", "S_XNCR"};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.345 -0500", hash_original_field = "5C707ECB339F23EAEEC892B0212CE645", hash_generated_field = "5DE7612FB52B4C7CD7CF6BE3E02E09B6")
 
-
 	private String thePublicid;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.347 -0500", hash_original_field = "8E986C2E3C2DBAB0669078F2DDD53CDD", hash_generated_field = "9A678ABFCD87282CEC96ECE7EA2137F4")
 
@@ -426,7 +419,6 @@ private static String nicechar(int in) {
 
 	private int theCurrentColumn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.359 -0500", hash_original_field = "2A9B3707FE4B47A183CA387F06CD96C3", hash_generated_field = "2A9B3707FE4B47A183CA387F06CD96C3")
-
 
 	int theState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.361 -0500", hash_original_field = "B539E59DE16ED9BC0EA86219F312D4FD", hash_generated_field = "B539E59DE16ED9BC0EA86219F312D4FD")
@@ -462,27 +454,30 @@ private void unread(PushbackReader r, int c) throws IOException {
 
 	// Locator implementation
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.373 -0500", hash_original_method = "17D8C6B884298309CDBB8C115CEF45AD", hash_generated_method = "279B434579FFA4459D3046F7F45DAFB9")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.373 -0500", hash_original_method = "17D8C6B884298309CDBB8C115CEF45AD", hash_generated_method = "279B434579FFA4459D3046F7F45DAFB9")
 	
 public int getLineNumber() {
 		return theLastLine;
 		}
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.375 -0500", hash_original_method = "CC76CCC6A19838EC65870F98307D39F4", hash_generated_method = "1A30DEA5198B61D0D33235193B0CF6FB")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.375 -0500", hash_original_method = "CC76CCC6A19838EC65870F98307D39F4", hash_generated_method = "1A30DEA5198B61D0D33235193B0CF6FB")
 	
 public int getColumnNumber() {
 		return theLastColumn;
 		}
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.377 -0500", hash_original_method = "EE9557AC8121925813378C18555B01E0", hash_generated_method = "06235A262FCF60358C59DC0A29A6CC50")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.377 -0500", hash_original_method = "EE9557AC8121925813378C18555B01E0", hash_generated_method = "06235A262FCF60358C59DC0A29A6CC50")
 	
 public String getPublicId() {
 		return thePublicid;
 		}
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.379 -0500", hash_original_method = "B52DC32D5FB92F39EE1C6D62A566FA39", hash_generated_method = "DABDB33649964195ACD2BAF147D39707")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.379 -0500", hash_original_method = "B52DC32D5FB92F39EE1C6D62A566FA39", hash_generated_method = "DABDB33649964195ACD2BAF147D39707")
 	
 public String getSystemId() {
 		return theSystemid;
 		}
-
 
 	// Scanner implementation
 
@@ -506,7 +501,8 @@ public void resetDocumentLocator(String publicid, String systemid) {
 	@param h ScanHandler that accepts lexical events.
 	*/
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.388 -0500", hash_original_method = "D85CBFA2F1A37C13B743BA6B1C12F2CC", hash_generated_method = "1CD5DECB5B3EECBD930281411C62A36B")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:43.388 -0500", hash_original_method = "D85CBFA2F1A37C13B743BA6B1C12F2CC", hash_generated_method = "1CD5DECB5B3EECBD930281411C62A36B")
 	
 public void scan(Reader r0, ScanHandler h) throws IOException, SAXException {
 		theState = S_PCDATA;

@@ -28,11 +28,6 @@ import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.Array;
 import org.apache.harmony.security.x501.Name;
 
-
-
-
-
-
 public final class GeneralName {
 
     /**
@@ -206,6 +201,7 @@ public static String ipBytesToStr(byte[] ip) {
            new ASN1Implicit(7, ASN1OctetString.getInstance()),
            new ASN1Implicit(8, ASN1Oid.getInstance()) }) {
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.715 -0500", hash_original_method = "AE1A845D7B5FC61789A7A47373288F1A", hash_generated_method = "FF468AD20423F0EC93B386AEBEEB9073")
         
 public Object getObjectToEncode(Object value) {
@@ -218,6 +214,7 @@ public int getIndex(java.lang.Object object) {
             return  ((GeneralName) object).tag;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.722 -0500", hash_original_method = "F81949FDBF37D96CDDCB4E743948B628", hash_generated_method = "001B33F88632E38C130B96A06B3206EC")
         
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -405,6 +402,7 @@ public GeneralName(int tag, byte[] name) throws IOException {
     /**
      * Returns the tag of the name in the structure
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.676 -0500", hash_original_method = "749703D76C1808D33D4CAAFA8A986840", hash_generated_method = "FE377F96B9123DA66C921247212B9DB8")
     
 public int getTag() {
@@ -430,6 +428,7 @@ public int getTag() {
      *  component is doubled (to 8 and 32 bytes respectively).
      * [8] registeredID - String.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.678 -0500", hash_original_method = "20B60556BB46EC823C9319E49D0425A2", hash_generated_method = "96182F595C314861F48236C53D12CC54")
     
 public Object getName() {
@@ -487,9 +486,7 @@ public int hashCode() {
             return super.hashCode();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.330 -0400", hash_original_method = "3054283C8DAE746EB9FE98BB22A2F7C2", hash_generated_method = "852FE137F6F8AECE97D724D129D4876D")
     public boolean isAcceptable(GeneralName gname) {
         addTaint(gname.getTaint());
@@ -614,6 +611,7 @@ for(int i = 0;i < _address.length;i++)
      * otherName, X400Address, ediPartyName returned as byte arrays
      * containing the ASN.1 DER encoded form of the name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.690 -0500", hash_original_method = "8BC63B983D4898BF725054A3D5D39730", hash_generated_method = "2446E4509090C5B540928BC651648147")
     
 public List<Object> getAsList() {
@@ -694,6 +692,7 @@ public String toString() {
     /**
      * Returns ASN.1 encoded form of this X.509 GeneralName value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.696 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {
@@ -719,6 +718,7 @@ public byte[] getEncoded() {
      *         with the name in the GeneralName structure
      * @throws  IOException
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:59.698 -0500", hash_original_method = "37C9CC72170749FE2E2B5C9DA460C3BB", hash_generated_method = "3B82B692C63AE5D0F4CBB7ECCA75E3CB")
     
 public byte[] getEncodedName() {

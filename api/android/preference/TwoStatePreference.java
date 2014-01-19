@@ -14,13 +14,8 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityManager;
 import android.widget.TextView;
 
-
-
-
-
 public abstract class TwoStatePreference extends Preference {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.335 -0500", hash_original_field = "79F956D2046D3349120E2925E931AB04", hash_generated_field = "0A63C4508093BBBDC63A916183312B21")
-
 
     private CharSequence mSummaryOn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.337 -0500", hash_original_field = "C9C703DAFAF0CC0824DEBF823C9E9923", hash_generated_field = "7936F2388E5FECE5D26263562952AF1C")
@@ -35,7 +30,6 @@ public abstract class TwoStatePreference extends Preference {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.344 -0500", hash_original_field = "6DE548F910A03AB37C1AA22EC9C7CFC6", hash_generated_field = "A45150049825FDCDA3DE269C67272345")
 
     private boolean mDisableDependentsState;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.346 -0500", hash_original_method = "9308B3B15F4DE8F7508C8EA50D56D8AD", hash_generated_method = "258A6CAC93AAD14C03652E28A1D45CF7")
     
@@ -55,6 +49,8 @@ public TwoStatePreference(Context context) {
         this(context, null);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.353 -0500", hash_original_method = "41BF424D5DCED4AFC88BB1561E7758B1", hash_generated_method = "7A03287DCF28281EA2B997AF41CC167E")
     
 @Override
@@ -77,6 +73,8 @@ public TwoStatePreference(Context context) {
      *
      * @param checked The checked state.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.356 -0500", hash_original_method = "12D9CEBA0208655576D33A98ED54981A", hash_generated_method = "784176010AB6914D1ADE8C4FD8CEA97D")
     
 public void setChecked(boolean checked) {
@@ -93,6 +91,8 @@ public void setChecked(boolean checked) {
      *
      * @return The checked state.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.358 -0500", hash_original_method = "1057BD246BBC96B40BF6B862055C5AB8", hash_generated_method = "7DBC96472843914D224753BAD760B683")
     
 public boolean isChecked() {
@@ -112,6 +112,8 @@ public boolean isChecked() {
      *
      * @param summary The summary to be shown when checked.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.363 -0500", hash_original_method = "ABD6122B04EABCC29A2D57307245871E", hash_generated_method = "C46997D2300F9B96A75CB0A2563ADC11")
     
 public void setSummaryOn(CharSequence summary) {
@@ -125,6 +127,7 @@ public void setSummaryOn(CharSequence summary) {
      * @see #setSummaryOn(CharSequence)
      * @param summaryResId The summary as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.365 -0500", hash_original_method = "840A2DF332BCD4D47FC113ECD5767E5E", hash_generated_method = "2AD79D3C20A788609781E3D3765ED605")
     
 public void setSummaryOn(int summaryResId) {
@@ -135,6 +138,7 @@ public void setSummaryOn(int summaryResId) {
      * Returns the summary to be shown when checked.
      * @return The summary.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.367 -0500", hash_original_method = "53022197E36EDF9F1FD4F6F19ADFC277", hash_generated_method = "1BBE5CF26238E024D5A2941A62474B93")
     
 public CharSequence getSummaryOn() {
@@ -146,6 +150,8 @@ public CharSequence getSummaryOn() {
      *
      * @param summary The summary to be shown when unchecked.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.369 -0500", hash_original_method = "D2C60679B7A2716D92F9A6A90EE31D5E", hash_generated_method = "7D192ED844E9ECE7FDC04FC71260413E")
     
 public void setSummaryOff(CharSequence summary) {
@@ -159,6 +165,7 @@ public void setSummaryOff(CharSequence summary) {
      * @see #setSummaryOff(CharSequence)
      * @param summaryResId The summary as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.372 -0500", hash_original_method = "A777E36B9565634072F09AB599AD44D9", hash_generated_method = "76D16EE5D58E9509BE497B7372C08656")
     
 public void setSummaryOff(int summaryResId) {
@@ -169,6 +176,7 @@ public void setSummaryOff(int summaryResId) {
      * Returns the summary to be shown when unchecked.
      * @return The summary.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.374 -0500", hash_original_method = "71CAEB9E0C109885D80E1240FC68BC2D", hash_generated_method = "1620D3A9C805C85EA5E74E56DD32733F")
     
 public CharSequence getSummaryOff() {
@@ -182,6 +190,7 @@ public CharSequence getSummaryOff() {
      * @return Whether dependents are disabled when this preference is on ({@code true})
      *         or when this preference is off ({@code false}).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.376 -0500", hash_original_method = "3884E74D45C3003321F5E57E22265849", hash_generated_method = "DF82E5FF12077E56CA645577AFB253B0")
     
 public boolean getDisableDependentsState() {
@@ -270,6 +279,7 @@ void syncSummaryView(View view) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.390 -0500", hash_original_method = "128E228DA264F73B8973AB4629CC5B53", hash_generated_method = "0E47EB36BA3D571B10DE0502F108D59F")
     
 @Override
@@ -299,10 +309,8 @@ void syncSummaryView(View view) {
         super.onRestoreInstanceState(myState.getSuperState());
         setChecked(myState.checked);
     }
-
     
     static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.937 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -337,6 +345,7 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:22.400 -0500", hash_original_method = "5F0C2D7310332C4BBDEFEA2518DC2D5F", hash_generated_method = "D7BCD3CA61BA8DBE593392F304F188F0")
         
 @Override
@@ -355,8 +364,6 @@ public SavedState(Parcelable superState) {
             }
         
     }
-
-
     
 }
 

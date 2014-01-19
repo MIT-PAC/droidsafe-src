@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class FieldPosition {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:57.507 -0400", hash_original_field = "4E5C9DDEA6C3DDCCF3C5EDA0B8239137", hash_generated_field = "23EE03EB10CD3D7DC8D790288DD8B044")
 
@@ -20,7 +16,6 @@ public class FieldPosition {
 
     private int endIndex;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.945 -0500", hash_original_field = "E9A28BA7E1938925A10371FD5B4FC16C", hash_generated_field = "8BA725474492CE8940933D456B128051")
-
 
     private Format.Field myAttribute;
 
@@ -100,6 +95,7 @@ void clear() {
      *
      * @return the first index of the field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.961 -0500", hash_original_method = "D73EFD1B11663E2F20B33728384A7709", hash_generated_method = "2F90CE977F6454CCD742CC39E5800B3F")
     
 public int getBeginIndex() {
@@ -111,6 +107,7 @@ public int getBeginIndex() {
      *
      * @return one past the index of the last character in the field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.964 -0500", hash_original_method = "9236177A75F6147947B59829E100715E", hash_generated_method = "E2DB6089C9C1CB197EEB6F119595567F")
     
 public int getEndIndex() {
@@ -122,6 +119,7 @@ public int getEndIndex() {
      *
      * @return the field constant.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.967 -0500", hash_original_method = "FA0D18F7CDA71089ACF7D0CA54DB97A6", hash_generated_method = "312D8615450594C16427A36E55E25569")
     
 public int getField() {
@@ -184,7 +182,6 @@ public void setEndIndex(int index) {
                 + myField + ", beginIndex=" + beginIndex + ", endIndex="
                 + endIndex + "]";
     }
-
     
 }
 

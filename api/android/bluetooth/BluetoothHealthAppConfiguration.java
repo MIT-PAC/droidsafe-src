@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class BluetoothHealthAppConfiguration implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:58.468 -0400", hash_original_field = "2BE8692C9178D30C9DCDD9CC7988AB07", hash_generated_field = "046D0AF0A47A6EB4E988F771AFCCFD7B")
 
@@ -132,6 +127,7 @@ public int describeContents() {
      *
      * @return dataType
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.811 -0500", hash_original_method = "238D6A24727CDBAF0BB96C458473CE4A", hash_generated_method = "A376AFBE00C80EC13EC53892DF8520C5")
     
 public int getDataType() {
@@ -143,6 +139,7 @@ public int getDataType() {
      *
      * @return String name
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.813 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {
@@ -155,6 +152,7 @@ public String getName() {
      * @return One of {@link BluetoothHealth#SOURCE_ROLE} or
      *                         {@link BluetoothHealth#SINK_ROLE}
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.815 -0500", hash_original_method = "5596828740BFEA579FE112D16B3097DF", hash_generated_method = "B22B7AD6CD5EA9BCC6DF90A98D2B00E4")
     
 public int getRole() {
@@ -169,6 +167,7 @@ public int getRole() {
      *                         {@link BluetoothHealth#CHANNEL_TYPE_ANY}.
      * @hide
      */
+    @DSSource({DSSourceKind.BLUETOOTH_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:32.817 -0500", hash_original_method = "1B2362EE05FDF056E4EF857CCB8AB5A5", hash_generated_method = "BF9035B14ADAE37045CC372D93A6D079")
     
 public int getChannelType() {

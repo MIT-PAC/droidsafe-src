@@ -22,13 +22,8 @@ import javax.net.ssl.SSLException;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class DigitalSignature {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.081 -0500", hash_original_field = "7CC4ADADCF5B81E1EEBC5F8C930336A6", hash_generated_field = "B22BEAD2E03E6DC9EC1B452A01F5C921")
-
 
     private  MessageDigest md5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.084 -0500", hash_original_field = "592D6316376DEACF69E66590DC353E6F", hash_generated_field = "4A489BD95B8D8991536BCB0FDC9BD1C9")
@@ -41,7 +36,6 @@ public class DigitalSignature {
 
     private  Cipher cipher;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.090 -0500", hash_original_field = "6D7F1C9781B034E9B4D3A26FE78DE093", hash_generated_field = "ECDEF14A5FC64303858BAA6FBF50E641")
-
 
     private byte[] md5_hash;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.092 -0500", hash_original_field = "8A714E63FEDBB082B1F2333567E3203D", hash_generated_field = "433DF2E11EA67703110F7E1DEC3E0303")
@@ -123,6 +117,7 @@ public void init(Certificate cert) {
      * Update Signature hash
      * @param data
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.102 -0500", hash_original_method = "D74E9B3F4153C40FBC49F204F5B3A569", hash_generated_method = "861F80BA57DAB6188BC7528574E17ECD")
     
 public void update(byte[] data) {
@@ -158,6 +153,7 @@ public void setSHA(byte[] data) {
      * Sign hash
      * @return Signature bytes
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.109 -0500", hash_original_method = "15C049C524B86A812CBA705875D88ECC", hash_generated_method = "BD32B7EA335E67CCD4B57B00481C37AC")
     
 public byte[] sign() {
@@ -246,7 +242,6 @@ public boolean verifySignature(byte[] data) {
             return false;
         }
     }
-
     
 }
 

@@ -12,10 +12,6 @@ import android.view.ViewConfiguration;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
-
-
-
-
 public class Scroller {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.189 -0500", hash_original_method = "CF44D29393F8CF17D456596D4EDD821D", hash_generated_method = "610DC32ACEA41D734955CF13C80E48E5")
@@ -35,7 +31,6 @@ static float viscousFluid(float x)
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.112 -0500", hash_original_field = "582653CA594E9011AB41A4FCE5484EDB", hash_generated_field = "71A034DCC41856FE859BC1F065FC4DA6")
 
-
     private static final int DEFAULT_DURATION = 250;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.116 -0500", hash_original_field = "3D6FED5899F5F015C1131133F50D0489", hash_generated_field = "A767E7A0CD4C56577AF1FE7F420CA686")
 
@@ -44,7 +39,6 @@ static float viscousFluid(float x)
 
     private static final int FLING_MODE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.120 -0500", hash_original_field = "7C81A121BF1E57C28684452243FEDE29", hash_generated_field = "2564FD12FAC96B1440815F377BD8C411")
-
 
     private static float DECELERATION_RATE = (float) (Math.log(0.75) / Math.log(0.9));
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.123 -0500", hash_original_field = "E9FCD93A41F4EF4635D4415113CCF888", hash_generated_field = "D1E55FA511AC8DBB15DE29964200AC6B")
@@ -64,7 +58,6 @@ static float viscousFluid(float x)
     private static final float[] SPLINE = new float[NB_SAMPLES + 1];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.139 -0500", hash_original_field = "CFDDA46428719A93C3DE7EB47B4CA167", hash_generated_field = "1C432C24B5FBB274ECE9C0B14CF36243")
 
-
     private static float sViscousFluidScale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.141 -0500", hash_original_field = "EA276757CC0DADEE519A4E9CDE52A6B2", hash_generated_field = "4E11B8A84F2C6FEABC4146BC9CB98208")
 
@@ -73,7 +66,6 @@ static float viscousFluid(float x)
 
     private int mMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.072 -0500", hash_original_field = "7F2FA150F8D8A76C750DD698B8BF6CB5", hash_generated_field = "28E51E686EEF26C8A77C03ED820E724F")
-
 
     private int mStartX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.074 -0500", hash_original_field = "81022B59B7942B83F7EE5FF6915DB938", hash_generated_field = "2C4FD2F4594E993A1C0AA896A5F50971")
@@ -87,7 +79,6 @@ static float viscousFluid(float x)
     private int mFinalY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.081 -0500", hash_original_field = "2AF40A235D5BECD19E81C37ACF5040F4", hash_generated_field = "AD8B01E82643B27CD370F8D831F238C1")
 
-
     private int mMinX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.083 -0500", hash_original_field = "58ADC8006C6A2C2CFC185F4EA3589EFB", hash_generated_field = "B2C478BEE6C183081971A9B0A8AE4922")
 
@@ -99,7 +90,6 @@ static float viscousFluid(float x)
 
     private int mMaxY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.090 -0500", hash_original_field = "9CD3C946F3F5B3EE742F6639B7C05CBB", hash_generated_field = "060DFB2652993DA63F3C736F2D32C4A0")
-
 
     private int mCurrX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.092 -0500", hash_original_field = "B99C14A83C470C2345E5C37F1F3D5B47", hash_generated_field = "DBCFB0FF1F686A6075CBC61640B46359")
@@ -131,10 +121,8 @@ static float viscousFluid(float x)
     private boolean mFlywheel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.110 -0500", hash_original_field = "42B50432F3F5C6ABEA6F4A8A32D47427", hash_generated_field = "4B9AC7BF5E01DBE21607C260ED737A0D")
 
-
     private float mVelocity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.134 -0500", hash_original_field = "94A6EE72E23F9750788C83A9DEAFE695", hash_generated_field = "C2BDDF1F4D015B5A70949ADE337CCAA9")
-
 
     private float mDeceleration;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.136 -0500", hash_original_field = "69EFFC925D6B4105436F7B705DD526A1", hash_generated_field = "C099BB189EED7BFC70ED32FE3657313E")
@@ -144,6 +132,8 @@ static float viscousFluid(float x)
     /**
      * Create a Scroller with the default duration and interpolator.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.143 -0500", hash_original_method = "F0B1F091C7D17598674B0DE91138DFE8", hash_generated_method = "5D5978B521B426BD09D0BCE0882F736E")
     
 public Scroller(Context context) {
@@ -155,6 +145,8 @@ public Scroller(Context context) {
      * null, the default (viscous) interpolator will be used. "Flywheel" behavior will
      * be in effect for apps targeting Honeycomb or newer.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.145 -0500", hash_original_method = "26C129B43F046C683A3A546D94D7B25F", hash_generated_method = "16550742F281D93BA8322B35FFE8DACF")
     
 public Scroller(Context context, Interpolator interpolator) {
@@ -205,6 +197,8 @@ private float computeDeceleration(float friction) {
      * 
      * @return True if the scroller has finished scrolling, false otherwise.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.155 -0500", hash_original_method = "FC91CF543B97ECA9AF0E75894ECCBF47", hash_generated_method = "E5DEF0A79033BC9B5EEB0B8F9DB1463F")
     
 public final boolean isFinished() {
@@ -227,6 +221,9 @@ public final void forceFinished(boolean finished) {
      * 
      * @return The duration of the scroll in milliseconds.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.159 -0500", hash_original_method = "C5CB9F23218BD0303C05492AF6E52DA2", hash_generated_method = "435A63AD7A59A60E85ECBFA35C286957")
     
 public final int getDuration() {
@@ -238,6 +235,9 @@ public final int getDuration() {
      * 
      * @return The new X offset as an absolute distance from the origin.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.162 -0500", hash_original_method = "BBE38D2570F755B77B8BCEE3883878A8", hash_generated_method = "4E41D36F526AAF68C1E1DC2FBC513434")
     
 public final int getCurrX() {
@@ -249,6 +249,9 @@ public final int getCurrX() {
      * 
      * @return The new Y offset as an absolute distance from the origin.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.164 -0500", hash_original_method = "F6ADC6344D48E201FCE3042AD823C1E1", hash_generated_method = "0FA9E998037FCAAD2F3E776A3158CAED")
     
 public final int getCurrY() {
@@ -261,6 +264,9 @@ public final int getCurrY() {
      * @return The original velocity less the deceleration. Result may be
      * negative.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.166 -0500", hash_original_method = "B027DED22A5B5763CA61B11517344C6D", hash_generated_method = "FBD30219A263B76C72919EC369B7C1FE")
     
 public float getCurrVelocity() {
@@ -272,6 +278,7 @@ public float getCurrVelocity() {
      * 
      * @return The start X offset as an absolute distance from the origin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.168 -0500", hash_original_method = "E9E5B4E6E70EEEC71B101472B8ED332D", hash_generated_method = "F4D774EE2D7DC7B6AC7D4A359A10AB9E")
     
 public final int getStartX() {
@@ -283,6 +290,7 @@ public final int getStartX() {
      * 
      * @return The start Y offset as an absolute distance from the origin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.170 -0500", hash_original_method = "96DB239ADDDE6565887119C487206B3B", hash_generated_method = "EA10829488B72BE8CDA25C0F10795591")
     
 public final int getStartY() {
@@ -294,6 +302,9 @@ public final int getStartY() {
      * 
      * @return The final X offset as an absolute distance from the origin.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.172 -0500", hash_original_method = "FA811E85285FC4A5EAEC6F3CADDA829D", hash_generated_method = "BDFA12568F79C06B41890291C1FF1C7E")
     
 public final int getFinalX() {
@@ -305,6 +316,9 @@ public final int getFinalX() {
      * 
      * @return The final Y offset as an absolute distance from the origin.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.175 -0500", hash_original_method = "39F49202EF2D412808D46FE4B1B455BA", hash_generated_method = "B4E63B164A6B85616E03240C535C53EE")
     
 public final int getFinalY() {
@@ -316,6 +330,8 @@ public final int getFinalY() {
      * the animation is not yet finished.  loc will be altered to provide the
      * new location.
      */ 
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.178 -0500", hash_original_method = "1D0B82032F5CA4B8FBC2BBD45CD555A7", hash_generated_method = "2E1962A007DD75268BA5B7E4A9EF347B")
     
 public boolean computeScrollOffset() {
@@ -386,6 +402,9 @@ public boolean computeScrollOffset() {
      * @param dy Vertical distance to travel. Positive numbers will scroll the
      *        content up.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.181 -0500", hash_original_method = "2558578E34A043045AE1AF32A3800D82", hash_generated_method = "F9CD515A4E2C5B16D0DE692CF1A61742")
     
 public void startScroll(int startX, int startY, int dx, int dy) {
@@ -405,6 +424,8 @@ public void startScroll(int startX, int startY, int dx, int dy) {
      *        content up.
      * @param duration Duration of the scroll in milliseconds.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.183 -0500", hash_original_method = "81DB7D22C5A12E34B7101A322373D8F4", hash_generated_method = "42CF4D719D6A7D98303F02A1CB9DDB63")
     
 public void startScroll(int startX, int startY, int dx, int dy, int duration) {
@@ -440,6 +461,8 @@ public void startScroll(int startX, int startY, int dx, int dy, int duration) {
      * @param maxY Maximum Y value. The scroller will not scroll past this
      *        point.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.186 -0500", hash_original_method = "9117CBBBDEAEC710E4E0E8355A758A12", hash_generated_method = "ED21D2C461F3D1D44AE129ABEA513092")
     
 public void fling(int startX, int startY, int velocityX, int velocityY,
@@ -505,6 +528,8 @@ public void fling(int startX, int startY, int velocityX, int velocityY,
      *
      * @see #forceFinished(boolean)
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.191 -0500", hash_original_method = "685B5069D17FA4EA234CACB4808C2E58", hash_generated_method = "315D83D17C9C118149A9AC4942A6E0B8")
     
 public void abortAnimation() {
@@ -535,6 +560,8 @@ public void extendDuration(int extend) {
      *
      * @return The elapsed time in milliseconds.
      */
+    @DSComment("Scroller")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:11.195 -0500", hash_original_method = "2E2DDE91830A97E8B4307DB61F63C9CC", hash_generated_method = "120744DD3BD019BAAB244E786A2D5C27")
     
 public int timePassed() {

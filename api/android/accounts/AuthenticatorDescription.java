@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class AuthenticatorDescription implements Parcelable {
 
     /**
@@ -24,7 +20,6 @@ public static AuthenticatorDescription newKey(String type) {
         if (type == null) throw new IllegalArgumentException("type cannot be null");
         return new AuthenticatorDescription(type);
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:13.532 -0400", hash_original_field = "12B3D1AC0AFD24255EEB56CB064F61F9", hash_generated_field = "EF0A236923C6371C92756878CC1C0C5A")
 
@@ -137,6 +132,7 @@ public boolean equals(Object o) {
         return type.equals(other.type);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:49.118 -0500", hash_original_method = "E530FC0646EA4443AB0B477A8261002A", hash_generated_method = "8AF5CC66264B7D020ED61FFB05C5E3BB")
     
 public String toString() {

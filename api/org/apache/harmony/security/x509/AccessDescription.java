@@ -10,13 +10,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-
-
-
-
-
 public final class AccessDescription {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.767 -0400", hash_original_field = "0862F44506F85070A10D10975AA6FE0E", hash_generated_field = "FF02B80E4F6E40830B394661F3CF20D9")
 
@@ -24,6 +18,7 @@ public final class AccessDescription {
             ASN1Oid.getInstance(),
             GeneralName.ASN1 }) {
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.810 -0500", hash_original_method = "1D159E6CCAE0893CDD0658CA6C34CFD2", hash_generated_method = "7F6DBA94211427DFB6406F56E96D2B8A")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -49,7 +44,6 @@ public final class AccessDescription {
     private  GeneralName accessLocation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.799 -0500", hash_original_field = "B36A946B5145D992E53209BC6743765D", hash_generated_field = "ACB189C73E1A6432570001B3B9D3D516")
 
-
     private byte[] encoding;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.801 -0500", hash_original_method = "FB49FC0C1C39F6A3E5A7CF2545478BA4", hash_generated_method = "33E6883F4A012F90A26EF68EA8241D6A")
@@ -63,6 +57,7 @@ private AccessDescription(String accessMethod, GeneralName accessLocation, byte[
     /**
      * Returns ASN.1 encoded form of this X.509 AccessDescription.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.803 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

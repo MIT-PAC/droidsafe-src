@@ -25,14 +25,8 @@ import android.view.Window;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchModeChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.546 -0500", hash_original_field = "E56A6850DB8693E101A91E8FC52A23DC", hash_generated_field = "216F44777CE4F68AB739BEBE93C294F9")
-
 
     private TabWidget mTabWidget;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.548 -0500", hash_original_field = "76AB0AFD077B380DA1E6B7F01A200A4B", hash_generated_field = "77FD3C218A6BAD9F714CE5CA95EA4CA6")
@@ -58,7 +52,6 @@ public class TabHost extends FrameLayout implements ViewTreeObserver.OnTouchMode
     private OnKeyListener mTabKeyListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.564 -0500", hash_original_field = "9F469B5D970EFA700EDCC2DC0C2A8761", hash_generated_field = "EC3CB9EB63ECAC6215AE20410DD9CC0F")
 
-
     private int mTabLayoutId;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.567 -0500", hash_original_method = "81177E2AB2CE2AADA9E4D9B57D5EE61E", hash_generated_method = "1974FB29BBEE5CBE2B7611BE4D2F4E31")
@@ -68,6 +61,8 @@ public TabHost(Context context) {
         initTabHost();
     }
 
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.570 -0500", hash_original_method = "6A9D0785655056C88014FFCBE8AF5DF8", hash_generated_method = "C057BB56C35A71EA0AE296190D007541")
     
 public TabHost(Context context, AttributeSet attrs) {
@@ -109,8 +104,6 @@ public TabSpec newTabSpec(String tag) {
         return new TabSpec(tag);
     }
 
-
-
     /**
       * <p>Call setup() before adding tabs if loading TabHost using findViewById().
       * <i><b>However</i></b>: You do not need to call setup() after getTabHost()
@@ -120,6 +113,8 @@ public TabSpec newTabSpec(String tag) {
 mTabHost.setup();
 mTabHost.addTab(TAB_TAG_1, "Hello, world!", "Tab 1");
       */
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.583 -0500", hash_original_method = "11DAEE90670B382AFFC7A5048665264E", hash_generated_method = "374CEFE29F9971D694CA48BB7801411A")
     
 public void setup() {
@@ -166,6 +161,7 @@ public void setup() {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.585 -0500", hash_original_method = "F557CD251A66C23831BE55ECFE0FD6EB", hash_generated_method = "A3F584E5571A8A23D51BC2163CD7463A")
     
 @Override
@@ -180,6 +176,8 @@ public void setup() {
      * This is done for you if you extend {@link android.app.TabActivity}.
      * @param activityGroup Used to launch activities for tab content.
      */
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.587 -0500", hash_original_method = "7224354A386E6E21E9006426BE4B5FE4", hash_generated_method = "FF0C2418470E83B5D3CE17E1B5910722")
     
 public void setup(LocalActivityManager activityGroup) {
@@ -187,7 +185,8 @@ public void setup(LocalActivityManager activityGroup) {
         mLocalActivityManager = activityGroup;
     }
 
-
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.589 -0500", hash_original_method = "1749A697E4E6C7318205DA9AE02BC223", hash_generated_method = "1AF86CC162390F94E1650FCDAF567B2A")
     
 @Override
@@ -197,6 +196,8 @@ public void setup(LocalActivityManager activityGroup) {
         treeObserver.addOnTouchModeChangeListener(this);
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.591 -0500", hash_original_method = "56196D931FB093B5A1146C07A075CA12", hash_generated_method = "34C0FFC8212596F5B35A5046055DAE23")
     
 @Override
@@ -253,7 +254,6 @@ public void addTab(TabSpec tabSpec) {
         }
     }
 
-
     /**
      * Removes all tabs from the tab widget associated with this tab host.
      */
@@ -268,18 +268,23 @@ public void clearAllTabs() {
         invalidate();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.602 -0500", hash_original_method = "43D996FE1B0AF9FB74C6533DD719F381", hash_generated_method = "1500F7CDDAB81EE80C1A4BEEAAC5FB07")
     
 public TabWidget getTabWidget() {
         return mTabWidget;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.604 -0500", hash_original_method = "715443AB3E5984F89EAA89C58AA4B1A0", hash_generated_method = "17F33289529B0E89B7B16D65A713E3E1")
     
 public int getCurrentTab() {
         return mCurrentTab;
     }
 
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.606 -0500", hash_original_method = "4BF4FAE03E9E8C0B1DA1E933710D00F0", hash_generated_method = "A6FB86ECEB48E046478F1C51BFB94634")
     
 public String getCurrentTabTag() {
@@ -289,6 +294,7 @@ public String getCurrentTabTag() {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.608 -0500", hash_original_method = "42AE505B98E20EE6CD2716BFC7687421", hash_generated_method = "C527EC015A9F0DEAD429CF82FD09D1E8")
     
 public View getCurrentTabView() {
@@ -298,12 +304,16 @@ public View getCurrentTabView() {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.610 -0500", hash_original_method = "EEE501665EA90FABC7BF921A8CA32190", hash_generated_method = "02BE3B7229DE1654F2F7D5C6FFE9334F")
     
 public View getCurrentView() {
         return mCurrentView;
     }
 
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.612 -0500", hash_original_method = "8C15D02B8DC442237A4CA8C57AA1B8BD", hash_generated_method = "FB2B46C880E73551097555E51328B111")
     
 public void setCurrentTabByTag(String tag) {
@@ -319,6 +329,7 @@ public void setCurrentTabByTag(String tag) {
     /**
      * Get the FrameLayout which holds tab content
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.614 -0500", hash_original_method = "14B19444D2789515B31F45C4D21A2D48", hash_generated_method = "C37F4FCE614239D54240897980162ECE")
     
 public FrameLayout getTabContentView() {
@@ -347,7 +358,6 @@ public FrameLayout getTabContentView() {
         return handled;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.619 -0500", hash_original_method = "96A22F6DD8439F6A02086A8F9D6622C9", hash_generated_method = "9F9444F67FA0AD52D1456040C9B57F83")
     
 @Override
@@ -357,6 +367,8 @@ public FrameLayout getTabContentView() {
         }
     }
 
+    @DSComment("TabHost, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.622 -0500", hash_original_method = "E2648DF1C44758803127AAF509A8077D", hash_generated_method = "F8A7159B9E24FFC79BACDC551729E18F")
     
 public void setCurrentTab(int index) {
@@ -421,15 +433,12 @@ private void invokeOnTabChangeListener() {
             mOnTabChangeListener.onTabChanged(getCurrentTabTag());
         }
     }
-
     
     public class TabSpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.633 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
 
-
         private String mTag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.635 -0500", hash_original_field = "3814A1D9EFAA5246CD482C76DBA110B1", hash_generated_field = "50BB928D871FCE30C43D2A945AFF6AB0")
-
 
         private IndicatorStrategy mIndicatorStrategy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.637 -0500", hash_original_field = "67D66349C25C421BEE2889A1B604B902", hash_generated_field = "D26BEBF611E08BB218DC29C4D4842A86")
@@ -504,21 +513,19 @@ public TabSpec setContent(Intent intent) {
             return this;
         }
 
-
+        @DSComment("not sensitive/not an action")
+        @DSSafe(DSCat.SAFE_OTHERS)
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.657 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "0B538D6B7E10340EACEB66882A3752E4")
         
 public String getTag() {
             return mTag;
         }
-
         
     }
-
-
     
     private class LabelIndicatorStrategy implements IndicatorStrategy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.666 -0500", hash_original_field = "3688992A2E5C86A7BA94DE38FB1043D1", hash_generated_field = "35633BB7C9814BC2D57023D255065F26")
-
 
         private  CharSequence mLabel;
 
@@ -549,15 +556,11 @@ public View createIndicatorView() {
 
             return tabIndicator;
         }
-
         
     }
-
-
     
     private class LabelAndIconIndicatorStrategy implements IndicatorStrategy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.677 -0500", hash_original_field = "3688992A2E5C86A7BA94DE38FB1043D1", hash_generated_field = "35633BB7C9814BC2D57023D255065F26")
-
 
         private  CharSequence mLabel;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.679 -0500", hash_original_field = "D2DFC3A60DC024AFBB674A2D69ECB436", hash_generated_field = "FFB83F2A7C9A877B036AAEB7C21DDF6E")
@@ -603,15 +606,11 @@ public View createIndicatorView() {
 
             return tabIndicator;
         }
-
         
     }
-
-
     
     private class ViewIndicatorStrategy implements IndicatorStrategy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.690 -0500", hash_original_field = "6F4F028D1DE9C463F753A80DD0991753", hash_generated_field = "E606D96B6FC531BB030B680E135C95D0")
-
 
         private  View mView;
 
@@ -626,15 +625,11 @@ private ViewIndicatorStrategy(View view) {
 public View createIndicatorView() {
             return mView;
         }
-
         
     }
-
-
     
     private class ViewIdContentStrategy implements ContentStrategy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.699 -0500", hash_original_field = "6F4F028D1DE9C463F753A80DD0991753", hash_generated_field = "E606D96B6FC531BB030B680E135C95D0")
-
 
         private  View mView;
 
@@ -650,6 +645,7 @@ private ViewIdContentStrategy(int viewId) {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.704 -0500", hash_original_method = "FAF9C6C424D99CBF1D87945750D97718", hash_generated_method = "8F6BBD0D58C50FC93A6B0F73FC034728")
         
 public View getContentView() {
@@ -662,11 +658,8 @@ public View getContentView() {
 public void tabClosed() {
             mView.setVisibility(View.GONE);
         }
-
         
     }
-
-
     
     private class FactoryContentStrategy implements ContentStrategy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.711 -0500", hash_original_field = "43ACCCA62A6557420E47915617C1E09E", hash_generated_field = "26B32329200530E6945EB791CCFA7B16")
@@ -686,6 +679,7 @@ public FactoryContentStrategy(CharSequence tag, TabContentFactory factory) {
             mFactory = factory;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.721 -0500", hash_original_method = "ED11D1341C028F4F2DA686CA9100CB0F", hash_generated_method = "D3E27D5F5789C8EFBB4F418168A8FD30")
         
 public View getContentView() {
@@ -701,22 +695,17 @@ public View getContentView() {
 public void tabClosed() {
             mTabContent.setVisibility(View.GONE);
         }
-
         
     }
-
-
     
     private class IntentContentStrategy implements ContentStrategy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.727 -0500", hash_original_field = "05B32B05746742D3A5261C827E7D8852", hash_generated_field = "0950070738D23525D6B35F116326FC98")
-
 
         private  String mTag;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.729 -0500", hash_original_field = "1811495D939DB843870F6315E04555CC", hash_generated_field = "5782C825DA3F61D408DF2DCA63E7F54A")
 
         private  Intent mIntent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.732 -0500", hash_original_field = "C7DE39C5195196B9EBD4993B626F168F", hash_generated_field = "88756EAB8F8EDEB0E827033676248AB0")
-
 
         private View mLaunchedView;
 
@@ -727,6 +716,7 @@ private IntentContentStrategy(String tag, Intent intent) {
             mIntent = intent;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:49.737 -0500", hash_original_method = "FE3CC83835F910E93083BF6BA67BB115", hash_generated_method = "EE601A01F8FEDE25BB02740BFCAF76FE")
         
 public View getContentView() {
@@ -765,11 +755,8 @@ public void tabClosed() {
                 mLaunchedView.setVisibility(View.GONE);
             }
         }
-
         
     }
-
-
     
     public interface OnTabChangeListener {
         void onTabChanged(String tabId);
@@ -781,16 +768,13 @@ public void tabClosed() {
     }
     
     private static interface IndicatorStrategy {
-
         
         View createIndicatorView();
     }
     
     private static interface ContentStrategy {
-
         
         View getContentView();
-
         
         void tabClosed();
     }

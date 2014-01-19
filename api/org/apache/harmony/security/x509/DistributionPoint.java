@@ -12,13 +12,7 @@ import org.apache.harmony.security.asn1.ASN1Sequence;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class DistributionPoint {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.056 -0400", hash_original_field = "D0D4FB4612A1D50FBE270F1BA985DAFD", hash_generated_field = "8675B31B16460D164F08080CE00E38A4")
 
@@ -33,6 +27,7 @@ public final class DistributionPoint {
             setOptional(2);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.106 -0500", hash_original_method = "074F2887793442CCAD72B944F0DE7380", hash_generated_method = "BF35355F573F820D12174E439F03035F")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -72,6 +67,7 @@ public DistributionPoint(DistributionPointName distributionPoint,
         this.cRLIssuer = cRLIssuer;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:00.103 -0500", hash_original_method = "190306EE5A9877A74E1ACB7BA25B44A2", hash_generated_method = "7363A89488A26AAF143654B3CEAA3411")
     
 public void dumpValue(StringBuilder sb, String prefix) {

@@ -11,10 +11,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.RemoteException;
 
-
-
-
-
 public final class InputDevice implements Parcelable {
 
     /**
@@ -22,6 +18,7 @@ public final class InputDevice implements Parcelable {
      * @param id The device id.
      * @return The input device or null if not found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.367 -0500", hash_original_method = "617D080CD74F90AAB540B4EFDECA9911", hash_generated_method = "7BC6C5EBD73EE06C676013B0BD6BF4AD")
     
 public static InputDevice getDevice(int id) {
@@ -38,6 +35,7 @@ public static InputDevice getDevice(int id) {
      * Gets the ids of all input devices in the system.
      * @return The input device ids.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.369 -0500", hash_original_method = "716B8A04ACA0E57FD1299C1099CDE32D", hash_generated_method = "33B8A268DD6909CE1CFA3F327E40702A")
     
 public static int[] getDeviceIds() {
@@ -120,7 +118,6 @@ public static int[] getDeviceIds() {
 
     @Deprecated
     public static final int MOTION_RANGE_TOUCH_MAJOR = MotionEvent.AXIS_TOUCH_MAJOR;
-
     
     public static final class MotionRange {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.397 -0500", hash_original_field = "DE6B5F8A8E01B01D6955CFF5AC6A1196", hash_generated_field = "291186BF7CD64560031686367E49FDA6")
@@ -157,6 +154,7 @@ private MotionRange(int axis, int source, float min, float max, float flat, floa
          * Gets the axis id.
          * @return The axis id.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.413 -0500", hash_original_method = "7AA123496C72318A01ADA9E2FDF13D66", hash_generated_method = "119033B1332952A1AB2AB0A3BDCBA63F")
         
 public int getAxis() {
@@ -167,6 +165,7 @@ public int getAxis() {
          * Gets the source for which the axis is defined.
          * @return The source.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.416 -0500", hash_original_method = "7037355E864C633C32E117AF9FFED93E", hash_generated_method = "37E408648F09142C829775B047DEE782")
         
 public int getSource() {
@@ -177,6 +176,7 @@ public int getSource() {
          * Gets the inclusive minimum value for the axis.
          * @return The inclusive minimum value.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.418 -0500", hash_original_method = "5BD2FEA7B11B9283C78F11EA439073DF", hash_generated_method = "BB3E176470B5D4510F6AC0C42EBA7AC2")
         
 public float getMin() {
@@ -187,6 +187,7 @@ public float getMin() {
          * Gets the inclusive maximum value for the axis.
          * @return The inclusive maximum value.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.421 -0500", hash_original_method = "CDE9D2624870C8EBE80058272C14174B", hash_generated_method = "344FD9D59085229F8DB479FE996BF4B7")
         
 public float getMax() {
@@ -197,6 +198,7 @@ public float getMax() {
          * Gets the range of the axis (difference between maximum and minimum).
          * @return The range of values.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.423 -0500", hash_original_method = "FCC48134B6B008CC9CD869CCEF03FE5F", hash_generated_method = "E6A895AA8F92AA489C5ADBB451AE25A9")
         
 public float getRange() {
@@ -211,6 +213,7 @@ public float getRange() {
          * </p>
          * @return The extent of the center flat position.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.426 -0500", hash_original_method = "6E70447A0F19559DDEE9B218BFC4E0A9", hash_generated_method = "D8AF144CC29FD5DA02EAA9D5412C0267")
         
 public float getFlat() {
@@ -225,12 +228,12 @@ public float getFlat() {
          * </p>
          * @return The error tolerance.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.428 -0500", hash_original_method = "6C32BE9CB35AEE464A215A2BDA6324A6", hash_generated_method = "E9B070ECFE6804903E47CE7EACE19667")
         
 public float getFuzz() {
             return mFuzz;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.343 -0500", hash_original_field = "7182ADA3CE1BFB2D7797DE987827A330", hash_generated_field = "D4E5B4D1F104C8CA42C6BF23E778DEB1")
@@ -293,7 +296,6 @@ public InputDevice[] newArray(int size) {
     private String mKeyCharacterMapFile;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.283 -0500", hash_original_field = "2F49349C025260EF41839D257CCFC6D8", hash_generated_field = "3D9ACF5B843900F5B90A6C764A13538C")
 
-
     private final ArrayList<MotionRange> mMotionRanges = new ArrayList<MotionRange>();
 
     // Called by native code.
@@ -306,6 +308,7 @@ private InputDevice() {
      * Gets the input device id.
      * @return The input device id.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.371 -0500", hash_original_method = "849E83C6BA01C72387E236CA4FAA38B9", hash_generated_method = "11DEA77066B2A20ED28C130805C2B9DE")
     
 public int getId() {
@@ -316,6 +319,7 @@ public int getId() {
      * Gets the name of this input device.
      * @return The input device name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.373 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {
@@ -326,6 +330,7 @@ public String getName() {
      * Gets the input sources supported by this input device as a combined bitfield.
      * @return The supported input sources.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.376 -0500", hash_original_method = "3BD5CDD2AD0F6E345998577876EA9513", hash_generated_method = "4CB920375ED755DF3F38DFDF5E3AB986")
     
 public int getSources() {
@@ -336,6 +341,7 @@ public int getSources() {
      * Gets the keyboard type.
      * @return The keyboard type.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.379 -0500", hash_original_method = "3E019E9C92E6EAD3726AE49F913F1619", hash_generated_method = "AB4393F0105E67E42064EBE153D95003")
     
 public int getKeyboardType() {
@@ -346,6 +352,7 @@ public int getKeyboardType() {
      * Gets the key character map associated with this input device.
      * @return The key character map.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.381 -0500", hash_original_method = "88E280A067EB975F01B9806455B5FBF9", hash_generated_method = "611B2D839650BD7D423E37BCD24B6D45")
     
 public KeyCharacterMap getKeyCharacterMap() {
@@ -420,6 +427,7 @@ public MotionRange getMotionRange(int axis, int source) {
      *
      * @see #getMotionRange(int, int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.390 -0500", hash_original_method = "8F0147E430687E8511683E1D47819832", hash_generated_method = "4D77AE38450C3F67B77C0E16C81B1C69")
     
 public List<MotionRange> getMotionRanges() {
@@ -452,6 +460,7 @@ private void readFromParcel(Parcel in) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:17.444 -0500", hash_original_method = "91853B6BABA9CBC4F027C3C314DDF153", hash_generated_method = "44644FE9A20EECDBA3A08DD54B874281")
     
 @Override

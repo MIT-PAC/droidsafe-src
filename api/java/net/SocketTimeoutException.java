@@ -6,12 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.InterruptedIOException;
 
-
-
-
 public class SocketTimeoutException extends InterruptedIOException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.050 -0500", hash_original_field = "D93F9799DEBA44686D0657CA13AF8ABA", hash_generated_field = "8C635471367BCD967F4DCF81C8430878")
-
 
     private static final long serialVersionUID = -8846654841826352300L;
 
@@ -26,6 +22,8 @@ public SocketTimeoutException() {
     /**
      * Constructs a new instance with the given detail message.
      */
+    @DSComment("no suspicious activity, just sets class variable")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:12.055 -0500", hash_original_method = "09713AE8E462C0BAD085649F546AAF7D", hash_generated_method = "55E366EE8A7AA79983A756D644DF43C1")
     
 public SocketTimeoutException(String detailMessage) {

@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class ByteArrayBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.882 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
-
     
     private byte[] buffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.884 -0500", hash_original_field = "EF721EE4D9006031C7456130341457B7", hash_generated_field = "6B317AC04635B3FCED4BC37586F98E37")
@@ -107,6 +102,7 @@ public void clear() {
         this.len = 0;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.903 -0500", hash_original_method = "1D2E8B5D0002EFCBEC9528FA90BDCD1E", hash_generated_method = "4BE9C0A1CB6703C8061E10B7DEE0AC8F")
     
 public byte[] toByteArray() {
@@ -135,6 +131,7 @@ public int length() {
         return this.len;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:50.912 -0500", hash_original_method = "7FCD7FDEC66BB92B19CC1167E6D11C2F", hash_generated_method = "BA10C71EE899852EAB3F7B8D5857311F")
     
 public byte[] buffer() {
@@ -161,7 +158,6 @@ public boolean isEmpty() {
 public boolean isFull() {
         return this.len == this.buffer.length; 
     }
-
     
 }
 

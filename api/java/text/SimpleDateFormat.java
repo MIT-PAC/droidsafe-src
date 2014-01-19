@@ -20,10 +20,6 @@ import java.util.TimeZone;
 import libcore.icu.LocaleData;
 import libcore.icu.TimeZones;
 
-
-
-
-
 public class SimpleDateFormat extends DateFormat {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.087 -0500", hash_original_method = "F209DE6039C95F3ED32C483A7FAB87E8", hash_generated_method = "242A0445AD9B8EA038A867E60E2CF70F")
@@ -63,7 +59,6 @@ private static String convertPattern(String template, String fromChars, String t
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.021 -0500", hash_original_field = "B1180D5D305974942CDBE002F428B05D", hash_generated_field = "56D5BE14208D23988E9004C5F0B78F0A")
 
-
     private static final long serialVersionUID = 4774881970558875024L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.024 -0500", hash_original_field = "A744F4AD3CAB1EC97E99CD0EC93B275B", hash_generated_field = "768BF8FACCCDAD6AF5C419EAE423D264")
 
@@ -82,7 +77,6 @@ private static String convertPattern(String template, String fromChars, String t
     private static final int STAND_ALONE_DAY_OF_WEEK_FIELD = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.172 -0500", hash_original_field = "91C32C5F865B6F47A29144104E3459E7", hash_generated_field = "9ECCA64B643BE0EF052CE0F624B781F1")
 
-
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("defaultCenturyStart", Date.class),
         new ObjectStreamField("formatData", DateFormatSymbols.class),
@@ -91,18 +85,14 @@ private static String convertPattern(String template, String fromChars, String t
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.035 -0500", hash_original_field = "57C08BF52FBB9452CE610A98F88E4F24", hash_generated_field = "8AE769BFE2CAD1B10C494CCD4D4D489A")
 
-
     private String pattern;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.037 -0500", hash_original_field = "EF4E0D3E20F3E15FB11A62D7FC251010", hash_generated_field = "8EEEF9C78A0C692C98D78AB64DB0C20D")
-
 
     private DateFormatSymbols formatData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.040 -0500", hash_original_field = "458A3ADAD63C38186017676F3CEBA899", hash_generated_field = "6DC58B2FFCD396D044D4105C5E7E21CC")
 
-
     transient private int creationYear;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.043 -0500", hash_original_field = "FCD1B3625B07CC098656859762932F2F", hash_generated_field = "7490904CE4798294C2932FA3B8A81D84")
-
 
     private Date defaultCenturyStart;
 
@@ -111,6 +101,8 @@ private static String convertPattern(String template, String fromChars, String t
      * dates and times in the {@code SHORT} style for the user's default locale.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.046 -0500", hash_original_method = "55288B23256ED63825B1D49B41027576", hash_generated_method = "39B68D1F56D4EBE9F4B1205B0CE3AF97")
     
 public SimpleDateFormat() {
@@ -133,6 +125,8 @@ public SimpleDateFormat() {
      *            if {@code pattern} is not considered to be usable by this
      *            formatter.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.048 -0500", hash_original_method = "DF79561AB8D44B187C9CA04B354315AC", hash_generated_method = "F3014B31121A74282CEB26A187F51EA5")
     
 public SimpleDateFormat(String pattern) {
@@ -177,6 +171,8 @@ public SimpleDateFormat(String template, DateFormatSymbols value) {
      * @throws IllegalArgumentException
      *            if the pattern is invalid.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.074 -0500", hash_original_method = "1BCD123DF2A5414BB2A2ECF5D3357D25", hash_generated_method = "D1932A3E010E48695122576E5363C257")
     
 public SimpleDateFormat(String template, Locale locale) {
@@ -301,6 +297,8 @@ public void applyLocalizedPattern(String template) {
      * @throws IllegalArgumentException
      *                if the pattern is invalid.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.081 -0500", hash_original_method = "3EFD18F746D60C3172C5216CCD625C1E", hash_generated_method = "F2F9C2909A53DF682B6C07C7CC473170")
     
 public void applyPattern(String template) {
@@ -746,6 +744,7 @@ private Date error(ParsePosition position, int offset, TimeZone zone) {
      * Returns the date which is the start of the one hundred year period for two-digit year values.
      * See {@link #set2DigitYearStart} for details.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.124 -0500", hash_original_method = "71AF220EE7B6857040DD249E69ABFBDC", hash_generated_method = "E74FAA143E85741BE4E1784A56BEBA05")
     
 public Date get2DigitYearStart() {
@@ -757,6 +756,7 @@ public Date get2DigitYearStart() {
      *
      * @return the {@code DateFormatSymbols} object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.127 -0500", hash_original_method = "CB6B47612D51E0A5BF8CB9FEBD927C3E", hash_generated_method = "205D974A5D75894D76F8CEEF2351B5EF")
     
 public DateFormatSymbols getDateFormatSymbols() {
@@ -929,6 +929,9 @@ private int parseMonth(String string, int offset, int count, int absolute, Strin
      * @throws IllegalArgumentException
      *             if there are invalid characters in the pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.144 -0500", hash_original_method = "7359DD4332D8271AC0BCC2D6C59D8B62", hash_generated_method = "EB55FA63405C87E1036FE69E8D3600F0")
     
 @Override
@@ -1156,6 +1159,7 @@ private int parseTimeZone(String string, int offset) {
      * interpreted literally, regardless of the number of digits. So using the
      * pattern {@code MM/dd/yyyy}, {@code "01/11/12"} is parsed as Jan 11, 12 A.D.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.159 -0500", hash_original_method = "893CAD0A3A74697E4DAD4463A5252E56", hash_generated_method = "48F4698F555F5A8A349303AFDE857911")
     
 public void set2DigitYearStart(Date date) {
@@ -1171,6 +1175,7 @@ public void set2DigitYearStart(Date date) {
      * @param value
      *            the new {@code DateFormatSymbols} object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.161 -0500", hash_original_method = "4ECB9E8EB801E57F7682FCC8E531C475", hash_generated_method = "88A555D21095717934BB05D273D92D69")
     
 public void setDateFormatSymbols(DateFormatSymbols value) {
@@ -1195,6 +1200,8 @@ public String toLocalizedPattern() {
      *
      * @return the non-localized pattern.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:04.169 -0500", hash_original_method = "35D638E960413F452190EF441C98A34C", hash_generated_method = "5CD84E1ED88608B4AC68B8A630BD6A44")
     
 public String toPattern() {

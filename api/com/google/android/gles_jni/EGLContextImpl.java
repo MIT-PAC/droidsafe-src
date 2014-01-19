@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import javax.microedition.khronos.egl.EGLContext;
 import javax.microedition.khronos.opengles.GL;
 
-
-
-
-
-
 public class EGLContextImpl extends EGLContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.717 -0500", hash_original_field = "10175383E59D6C3A32BFD1FFB183EA20", hash_generated_field = "1753C0D2BD5296C308BB3830FFA0D688")
 
@@ -27,6 +22,7 @@ public EGLContextImpl(int ctx) {
         mGLContext = new GLImpl();
     }
  
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.725 -0500", hash_original_method = "128F5F8CB79090E8F4914FDDEA205182", hash_generated_method = "3A3307A1C5AFA7A42119E9C3BC08F29E")
     
 @Override
@@ -52,7 +48,6 @@ public EGLContextImpl(int ctx) {
     public int hashCode() {
         return mEGLContext;
     }
-
     
 }
 

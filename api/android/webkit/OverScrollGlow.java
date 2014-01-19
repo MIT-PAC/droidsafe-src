@@ -9,16 +9,11 @@ import android.graphics.Canvas;
 import android.view.View;
 import android.widget.EdgeEffect;
 
-
-
-
-
 public class OverScrollGlow {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.052 -0500", hash_original_field = "A259E25B56B1E2C249B25928B3EAB4CE", hash_generated_field = "1629930CD96E325649F3C70757D5A77E")
 
     private WebView mHostView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.054 -0500", hash_original_field = "EBA81B43EFC8B93C48CA8AD590604F1F", hash_generated_field = "E572968A85247BF2ECB5635FFF539C2E")
-
 
     private EdgeEffect mEdgeGlowTop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.056 -0500", hash_original_field = "726BFD4CA9E773D9EEEE503CF0DA68EC", hash_generated_field = "D2A4A7BE91BF29EB90E114C9648825A6")
@@ -31,7 +26,6 @@ public class OverScrollGlow {
 
     private EdgeEffect mEdgeGlowRight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.062 -0500", hash_original_field = "E38814A3396356DC25699ED6493A8FE8", hash_generated_field = "BEE327B00350EFBA85A5178322BF5A0D")
-
 
     private int mOverScrollDeltaX;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.064 -0500", hash_original_field = "1BFC9036B4E52C707EC789B14D85613F", hash_generated_field = "E1700EBF6A8242E4CC987AD366097B8C")
@@ -162,6 +156,7 @@ public void absorbGlow(int x, int y, int oldX, int oldY, int rangeX, int rangeY)
      * @param canvas Canvas to draw into, transformed into view coordinates.
      * @return true if glow effects are still animating and the view should invalidate again.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:41.078 -0500", hash_original_method = "3B1E2223EF9E382987FDA8605560E6C8", hash_generated_method = "D66AB9153BDBC7F8146A05E91D86891E")
     
 public boolean drawEdgeGlows(Canvas canvas) {
@@ -232,7 +227,6 @@ public void releaseAll() {
         mEdgeGlowLeft.onRelease();
         mEdgeGlowRight.onRelease();
     }
-
     
 }
 

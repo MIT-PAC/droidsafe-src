@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 abstract class FloatArrayBuffer extends FloatBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.575 -0500", hash_original_field = "67EDE1E2A7FE11E96B68099B2642708D", hash_generated_field = "8679C1DDE03C0998C5B4254D7B007554")
 
-
     protected  float[] backingArray;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.577 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "22BBBB3BDBDCD622FED3EBF1A70B4EC5")
-
 
     protected  int offset;
 
@@ -39,6 +33,7 @@ FloatArrayBuffer(int capacity, float[] backingArray, int offset) {
         this.offset = offset;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.588 -0500", hash_original_method = "27C2E9E0DC08E8F6369DBB2405A9C20A", hash_generated_method = "181A66CCB98469B492AE11B3D0C540A9")
     
 @Override
@@ -49,6 +44,7 @@ FloatArrayBuffer(int capacity, float[] backingArray, int offset) {
         return backingArray[offset + position++];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.590 -0500", hash_original_method = "7B23CE1A9B110702665631EFEB3A42BD", hash_generated_method = "1BB0C085EF3424014FE54FCBB67A6985")
     
 @Override
@@ -57,6 +53,7 @@ FloatArrayBuffer(int capacity, float[] backingArray, int offset) {
         return backingArray[offset + index];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.593 -0500", hash_original_method = "0E5CD729EA86ED4C8F1722765DDD0E33", hash_generated_method = "113C4A0C69CBDDB9ADAFCA46CB755894")
     
 @Override
@@ -82,7 +79,6 @@ FloatArrayBuffer(int capacity, float[] backingArray, int offset) {
     public final ByteOrder order() {
         return ByteOrder.nativeOrder();
     }
-
     
 }
 

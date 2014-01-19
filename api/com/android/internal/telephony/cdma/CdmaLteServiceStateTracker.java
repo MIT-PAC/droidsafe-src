@@ -18,17 +18,11 @@ import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.TelephonyProperties;
 import com.android.internal.telephony.gsm.GsmDataConnectionTracker;
 
-
-
-
-
-
 public class CdmaLteServiceStateTracker extends CdmaServiceStateTracker {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.448 -0500", hash_original_field = "879F4AF456AD7D7A9BB5520F0BAD6F62", hash_generated_field = "879F4AF456AD7D7A9BB5520F0BAD6F62")
 
     CDMALTEPhone mCdmaLtePhone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.450 -0500", hash_original_field = "30863065C53EF2AE7F6D6E713A334376", hash_generated_field = "CCE1FE524FD9420E4F8B07A4C62521E0")
-
 
     private ServiceState  mLteSS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.453 -0500", hash_original_field = "C7C433963F4B4A5906B8318911ECA31F", hash_generated_field = "33DD1D28F358EBB2DB6B0718CE46393E")
@@ -106,6 +100,7 @@ public CdmaLteServiceStateTracker(CDMALTEPhone phone) {
     /**
      * Set the cdmaSS for EVENT_POLL_STATE_REGISTRATION_CDMA
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:49.463 -0500", hash_original_method = "F7DAEBCFC7E85FA3AD1692EAA757E22A", hash_generated_method = "0F2F03D179DB5107AF9DDE5CA61A118A")
     
 @Override
@@ -549,7 +544,6 @@ private boolean isInHomeSidNid(int sid, int nid) {
     protected void loge(String s) {
         Log.e(LOG_TAG, "[CdmaLteSST] " + s);
     }
-
     
 }
 

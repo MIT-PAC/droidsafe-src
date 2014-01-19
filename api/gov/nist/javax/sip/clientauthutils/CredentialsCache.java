@@ -14,9 +14,6 @@ import java.util.concurrent.ConcurrentHashMap;
 
 import javax.sip.header.AuthorizationHeader;
 
-
-
-
 class CredentialsCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.100 -0500", hash_original_field = "643240A21F660338BE03E6E7FF605C37", hash_generated_field = "D736F54F12D200A8D25CC8A65E13F0DE")
 
@@ -25,8 +22,6 @@ class CredentialsCache {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.102 -0500", hash_original_field = "738C3D18449F14F8BF2AE2302B0A1011", hash_generated_field = "02D2240A23798B540E9F3183DC11EA33")
 
     private Timer timer;
-
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.118 -0500", hash_original_method = "27F7597F884C45C17FD9F63A315334B1", hash_generated_method = "27F7597F884C45C17FD9F63A315334B1")
     
@@ -43,6 +38,7 @@ CredentialsCache (Timer timer) {
      * @param authorization
      *            the authorization header that we'd like to cache.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.121 -0500", hash_original_method = "557183176EBBC482C2193E58BCF0D460", hash_generated_method = "557183176EBBC482C2193E58BCF0D460")
     
 void cacheAuthorizationHeader(String callId,
@@ -71,7 +67,6 @@ void cacheAuthorizationHeader(String callId,
         if ( cacheTime != -1)
             this.timer.schedule(timeoutTask, cacheTime*1000);
 
-
     }
 
     /**
@@ -85,6 +80,7 @@ void cacheAuthorizationHeader(String callId,
      * @return authorization header corresponding to that user for the given
      *         proxy domain.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.124 -0500", hash_original_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB", hash_generated_method = "0B5572B5CD4E87519D0DA5EDF97CD6AB")
     
 Collection<AuthorizationHeader> getCachedAuthorizationHeaders(
@@ -106,7 +102,6 @@ public void removeAuthenticationHeader(String callId) {
         this.authorizationHeaders.remove(callId);
 
     }
-
     
     class TimeoutTask extends TimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:41.105 -0500", hash_original_field = "2657C3812CAC2EE2FF30C5C628C0A470", hash_generated_field = "2657C3812CAC2EE2FF30C5C628C0A470")
@@ -130,11 +125,8 @@ public TimeoutTask(String userName, String proxyDomain) {
             authorizationHeaders.remove(callId);
 
         }
-
         
     }
-
-
     
 }
 

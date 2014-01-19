@@ -5,11 +5,9 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class Array {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.950 -0500", hash_original_method = "FA034E4EBC074D0021BF09B925B81D45", hash_generated_method = "378E379754A9699AAC53073DD4B4E1A8")
     
 public static String getBytesAsString(byte[] data) {
@@ -96,7 +94,6 @@ public static String toString(byte[] array, String prefix) {
     
 private Array() {
     }
-
     
 }
 

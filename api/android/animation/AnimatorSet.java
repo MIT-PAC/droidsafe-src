@@ -9,14 +9,8 @@ import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
 
-
-
-
-
-
 public final class AnimatorSet extends Animator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.634 -0500", hash_original_field = "A85391E1318E9B34A06626338A98E52F", hash_generated_field = "26355D432757D1DCAD1F3A8161B362B0")
-
 
     /**
      * Tracks animations currently being played, so that we know what to
@@ -37,7 +31,6 @@ public final class AnimatorSet extends Animator {
     private boolean mNeedsSort = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.644 -0500", hash_original_field = "58AD0945D207E1633DA082A0109BE7B0", hash_generated_field = "E140240C038E8A4BB9AE350DA570B1A7")
 
-
     private AnimatorSetListener mSetListener = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.646 -0500", hash_original_field = "6D37E5BBEF916EC90B750BBB805CC32B", hash_generated_field = "6D37E5BBEF916EC90B750BBB805CC32B")
 
@@ -57,13 +50,14 @@ public final class AnimatorSet extends Animator {
     // set, it is passed along to the child animations.
     private long mDuration = -1;
     
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.245 -0400", hash_original_method = "A9DDD8ED58932E64D4F5BE029FA05ABF", hash_generated_method = "A9DDD8ED58932E64D4F5BE029FA05ABF")
-    @DSModeled(DSC.SAFE)
+    
     public AnimatorSet ()
     {
         //Synthesized constructor
     }
-
 
     /**
      * Sets up this AnimatorSet to play all of the supplied animations at the same time.
@@ -87,6 +81,8 @@ public void playTogether(Animator... items) {
      *
      * @param items The animations that will be started simultaneously.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.659 -0500", hash_original_method = "D25B7AF36D80C3FC72EA4BF2A0177D1E", hash_generated_method = "064165BD6D85884EDB47418B01A2DFE7")
     
 public void playTogether(Collection<Animator> items) {
@@ -130,6 +126,8 @@ public void playSequentially(Animator... items) {
      *
      * @param items The animations that will be started one after another.
      */
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.663 -0500", hash_original_method = "2D5A2EE93DC881BBD9D776B2A4798185", hash_generated_method = "9EDBF079BDA4DB6789DFE0B6F4168013")
     
 public void playSequentially(List<Animator> items) {
@@ -153,6 +151,7 @@ public void playSequentially(List<Animator> items) {
      *
      * @return ArrayList<Animator> The list of child animations of this AnimatorSet.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.665 -0500", hash_original_method = "BD23BC3E594C29615E84753B4F440C27", hash_generated_method = "2D4705973B2649AE7AAEC42728BA3D86")
     
 public ArrayList<Animator> getChildAnimations() {
@@ -170,6 +169,7 @@ public ArrayList<Animator> getChildAnimations() {
      *
      * @param target The object being animated
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.668 -0500", hash_original_method = "41A215E076D4B9AE460EA29EBF85AEE2", hash_generated_method = "27AD7CDF9DD5695E6D47CA2D34A747AD")
     
 @Override
@@ -346,6 +346,7 @@ public Builder play(Animator anim) {
      *
      * @return the number of milliseconds to delay running the animation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.685 -0500", hash_original_method = "36807B48FC1321C96D3D559AECDD954B", hash_generated_method = "ADFAEA717F81E2F47389FF62E9B3E4EF")
     
 @Override
@@ -374,6 +375,7 @@ public Builder play(Animator anim) {
      * @return The length of the animation, in milliseconds, of each of the child
      * animations of this AnimatorSet.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.690 -0500", hash_original_method = "5E13B5E872677B59408FA3E6BB94A9F6", hash_generated_method = "D26D7CF613CC4D9C0140800DFCFE09CB")
     
 @Override
@@ -422,9 +424,9 @@ public Builder play(Animator anim) {
             node.animation.setupEndValues();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Animation class")
+    @DSSafe(DSCat.ANDROID_ANIMATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:14.352 -0400", hash_original_method = "BC0D581AF5A0D28CE21AB6B82F02A4C9", hash_generated_method = "9F6799C08C8007AC04C3BA424C228110")
     @SuppressWarnings("unchecked")
     @Override
@@ -684,11 +686,9 @@ private void sortNodes() {
             }
         }
     }
-
     
     private static class DependencyListener implements AnimatorListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.716 -0500", hash_original_field = "D714D2C5468EB747703A2C0F7E744D58", hash_generated_field = "26BB44EB69421663EACF2A18D0E63EFE")
-
 
         private AnimatorSet mAnimatorSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.718 -0500", hash_original_field = "83519156A5C550DBE6FE5C6058996232", hash_generated_field = "298BE469E9769EF16537BF922B91FDA5")
@@ -720,6 +720,7 @@ public void onAnimationCancel(Animator animation) {
         /**
          * An end event is received - see if this is an event we are listening for
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.728 -0500", hash_original_method = "E0F66F3A2F7DEFA05E43170D7FDC6E81", hash_generated_method = "42514359CDD00951D89B9ED5670B7B09")
         
 public void onAnimationEnd(Animator animation) {
@@ -739,6 +740,7 @@ public void onAnimationRepeat(Animator animation) {
         /**
          * A start event is received - see if this is an event we are listening for
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.732 -0500", hash_original_method = "C319AA8CE810AC3271C178BB34DF8E30", hash_generated_method = "2E86170B59EB6BEEE710D4737E27B5A4")
         
 public void onAnimationStart(Animator animation) {
@@ -780,15 +782,11 @@ private void startIfReady(Animator dependencyAnimation) {
                 mAnimatorSet.mPlayingSet.add(mNode.animation);
             }
         }
-
         
     }
-
-
     
     private class AnimatorSetListener implements AnimatorListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.740 -0500", hash_original_field = "D714D2C5468EB747703A2C0F7E744D58", hash_generated_field = "26BB44EB69421663EACF2A18D0E63EFE")
-
 
         private AnimatorSet mAnimatorSet;
 
@@ -862,11 +860,8 @@ public void onAnimationRepeat(Animator animation) {
         
 public void onAnimationStart(Animator animation) {
         }
-
         
     }
-
-
     
     private static class Dependency {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.761 -0500", hash_original_field = "727982CBEA696B80A4FAE212C4BDBE6D", hash_generated_field = "D2E63A1F901C713BA822C6F070CEAD0C")
@@ -876,7 +871,6 @@ public void onAnimationStart(Animator animation) {
 
         static final int AFTER = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.766 -0500", hash_original_field = "D4FCE8012659E56145F1753A3BD8D56E", hash_generated_field = "C8A632366A29618A29C7EE12E15819C8")
-
 
         // The node that the other node with this Dependency is dependent upon
         public Node node;
@@ -891,8 +885,6 @@ public Dependency(Node node, int rule) {
             this.rule = rule;
         }
     }
-
-
     
     private static class Node implements Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.775 -0500", hash_original_field = "94032F0292DB21EF61AC0A36FDD04147", hash_generated_field = "85D1EE31923D44CB9D3110ADDD29D65D")
@@ -962,11 +954,8 @@ public void addDependency(Dependency dependency) {
                throw new AssertionError();
             }
         }
-
         
     }
-
-
     
     public class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:34.799 -0500", hash_original_field = "7BF0EF0DFDDEC52446DEF44E6956307E", hash_generated_field = "A3A3172265405E9566BFFCC4660589E1")
@@ -1073,11 +1062,8 @@ public Builder after(long delay) {
             after(anim);
             return this;
         }
-
         
     }
-
-
     
 }
 

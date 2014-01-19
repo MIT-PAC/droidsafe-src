@@ -35,10 +35,6 @@ import libcore.io.IoBridge;
 import libcore.io.IoUtils;
 import libcore.io.Libcore;
 
-
-
-
-
 class SocketChannelImpl extends SocketChannel implements FileDescriptorChannel {
 
     /*
@@ -77,7 +73,6 @@ static InetSocketAddress validateAddress(SocketAddress socketAddress) {
     private static final int SOCKET_STATUS_CLOSED = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.541 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "B11DAE17AB1D35227E8CB61CED7BC01D")
 
-
     private  FileDescriptor fd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.543 -0500", hash_original_field = "95D393BBB81183F055CBC6185FF145FD", hash_generated_field = "99CA27ADD3E21B5E0B3E73B3D40E63C8")
 
@@ -87,13 +82,11 @@ static InetSocketAddress validateAddress(SocketAddress socketAddress) {
     private InetSocketAddress connectAddress = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.549 -0500", hash_original_field = "34544088F51F552C1D73815B7917D076", hash_generated_field = "DBBBD6A1106DBEC2B30B9A1EF113618A")
 
-
     private InetAddress localAddress = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.551 -0500", hash_original_field = "B2492D7ECB702A5F09554B8EDF522849", hash_generated_field = "B1420775EE6B172A515A5BC10BFFE633")
 
     private int localPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.553 -0500", hash_original_field = "4D406B93B4F3A4C72646DB5C8E5DF07C", hash_generated_field = "60CA0FDD070D9706A5FF0681764E3085")
-
 
     private int status = SOCKET_STATUS_UNINITIALIZED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.556 -0500", hash_original_field = "F9AB7682F64A4F93F6F4A7A435A5AA53", hash_generated_field = "A5CF5255096CFE4A8B3A025A6EBE0953")
@@ -101,10 +94,8 @@ static InetSocketAddress validateAddress(SocketAddress socketAddress) {
     private volatile boolean isBound = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.559 -0500", hash_original_field = "250488CBE536209C574C50F3A29378C0", hash_generated_field = "E06B9588EA49DFE66B571508521E184B")
 
-
     private final Object readLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.562 -0500", hash_original_field = "4280965CC4B75048AF13050687F80AFE", hash_generated_field = "4EB051AF8374C9B2C038ADD375A89D80")
-
 
     private final Object writeLock = new Object();
 
@@ -313,6 +304,7 @@ void finishAccept() {
         return readImpl(dst);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.597 -0500", hash_original_method = "CFA00AB281069164ECAB790C179DF3F9", hash_generated_method = "FE3857A82DD1EA3A1C4BEAA5C06E7F35")
     
 @Override
@@ -365,6 +357,7 @@ private int readImpl(ByteBuffer dst) throws IOException {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.604 -0500", hash_original_method = "DCFA2CB99033209FD40A6F8FA617CF19", hash_generated_method = "BDCC9FD4CADB5B4F70B9ADBCC529354B")
     
 @Override
@@ -379,6 +372,7 @@ private int readImpl(ByteBuffer dst) throws IOException {
         return writeImpl(src);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.607 -0500", hash_original_method = "92D26B18BB75EB8AD284E7DC348B13D6", hash_generated_method = "857E6DC60E4C264C3B91D4A7844C4B63")
     
 @Override
@@ -448,7 +442,6 @@ synchronized private void checkOpenConnected() throws ClosedChannelException {
             throw new NotYetConnectedException();
         }
     }
-
     
     private static class SocketAdapter extends Socket {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.631 -0500", hash_original_field = "6119781C5880D39B55FCA4668D676DC5", hash_generated_field = "BDD8BAEA23E522D57D04980987295CB9")
@@ -473,6 +466,7 @@ PlainSocketImpl socketImpl() {
             return socketImpl;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.643 -0500", hash_original_method = "379CE4067399395F02052517F4DCE995", hash_generated_method = "6A27C1E95BC16D7FF7CBB98FB1BD6E05")
         
 @Override
@@ -494,6 +488,7 @@ PlainSocketImpl socketImpl() {
             return channel.isConnected();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.651 -0500", hash_original_method = "B0018340FF02F226576061EFB596D2DE", hash_generated_method = "73ECBDB77D7E6EE5FEEFF702462CB2D8")
         
 @Override
@@ -523,6 +518,7 @@ PlainSocketImpl socketImpl() {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.656 -0500", hash_original_method = "B60964A84DDE0034E73C148BED7594EB", hash_generated_method = "56043DB998F837DADD13C1440F901E8D")
         
 @Override
@@ -552,6 +548,7 @@ PlainSocketImpl socketImpl() {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.662 -0500", hash_original_method = "33C0B42780F1E273103B5BBAE79F7408", hash_generated_method = "F092860FCBE6F007E971FB6662A9E26E")
         
 @Override
@@ -563,6 +560,7 @@ PlainSocketImpl socketImpl() {
             return new SocketChannelOutputStream(channel);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.665 -0500", hash_original_method = "84598A158E9BC4BA9724B2EC04F9ADAB", hash_generated_method = "AA831EBE9B2E8B2D763E53B6D1EC4BC8")
         
 @Override
@@ -585,17 +583,15 @@ private void checkOpenAndConnected() throws SocketException {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.670 -0500", hash_original_method = "7907395A2BDEF0093C42980D22D2F1FF", hash_generated_method = "7EBFBEFAFB8F26F143BEF760FDE7A089")
         
 @Override
         public FileDescriptor getFileDescriptor$() {
             return socketImpl.getFD$();
         }
-
         
     }
-
-
     
     private static class SocketChannelOutputStream extends OutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.676 -0500", hash_original_field = "5E901D9543237E36B714C4017BFBBD17", hash_generated_field = "E9077990D7B99E1545AE06215D5C5888")
@@ -620,6 +616,7 @@ public SocketChannelOutputStream(SocketChannel channel) {
             channel.close();
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.684 -0500", hash_original_method = "376EE3F97840D4205E91F242BC3F90AA", hash_generated_method = "B7F4008F4C032918D15D490AB4F3EE60")
         
 @Override
@@ -643,11 +640,8 @@ public SocketChannelOutputStream(SocketChannel channel) {
             buffer.put(0, (byte) (oneByte & 0xFF));
             channel.write(buffer);
         }
-
         
     }
-
-
     
     private static class SocketChannelInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.693 -0500", hash_original_field = "5E901D9543237E36B714C4017BFBBD17", hash_generated_field = "E9077990D7B99E1545AE06215D5C5888")
@@ -693,7 +687,6 @@ public SocketChannelInputStream(SocketChannel channel) {
             ByteBuffer buf = ByteBuffer.wrap(buffer, offset, byteCount);
             return channel.read(buf);
         }
-
         
     }
 
@@ -717,6 +710,7 @@ synchronized private void checkUnconnected() throws IOException {
     /*
      * Get local address.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.620 -0500", hash_original_method = "C580647FE4D156BB3A20DD6B3069A7D0", hash_generated_method = "73F0C9573BC5C9680B1EEB1DF5D743D4")
     
 public InetAddress getLocalAddress() throws UnknownHostException {
@@ -751,6 +745,7 @@ public InetAddress getLocalAddress() throws UnknownHostException {
     /*
      * Get the fd.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:06.627 -0500", hash_original_method = "A16D8AC033B12AF5E337D988C94AB7BA", hash_generated_method = "8F9C1BA6B62D105E8F557BE8D56765AF")
     
 public FileDescriptor getFD() {

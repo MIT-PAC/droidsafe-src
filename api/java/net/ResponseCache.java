@@ -8,16 +8,12 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
-
-
-
-
-
 public abstract class ResponseCache {
 
     /**
      * Returns the system's default response cache, or null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.194 -0500", hash_original_method = "5D4B10CEEF902A15EE482FB7322F92B2", hash_generated_method = "05EA587265C5DA8650C5DD9F2E66D93D")
     
 public static ResponseCache getDefault() {

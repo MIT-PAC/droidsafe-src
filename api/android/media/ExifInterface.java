@@ -12,11 +12,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.TimeZone;
 
-
-
-
-
-
 public class ExifInterface {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.756 -0500", hash_original_method = "573AE63C3A0AF83AD37E730AD0812C4F", hash_generated_method = "676407259D5C96EB17D75B26EC89E30A")
@@ -145,7 +140,6 @@ private static float convertRationalLatLonToFloat(
     public static final int ORIENTATION_ROTATE_270 = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.704 -0500", hash_original_field = "A7E86E86F1AA0EDAD59C65F62597F9E9", hash_generated_field = "9B8E4CF6290372C2BA9E2BF3FF429632")
 
-
     // Constants used for white balance
     public static final int WHITEBALANCE_AUTO = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.707 -0500", hash_original_field = "5823096C798F429609DD7E20D3E371BB", hash_generated_field = "5D553B9F3B502118D7C36B75FB6B44A4")
@@ -162,7 +156,6 @@ private static float convertRationalLatLonToFloat(
     private static Object sLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.712 -0500", hash_original_field = "01856C66627D09247F481E00F22C2A41", hash_generated_field = "85FF07821F4F75AB23CF084EAB4F73FE")
 
-
     private String mFilename;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.714 -0500", hash_original_field = "3850CCEF5B1FE87BBC3EDADD93876182", hash_generated_field = "B2443E5A90D740226468DBF2C0CBD314")
 
@@ -171,8 +164,9 @@ private static float convertRationalLatLonToFloat(
 
     private boolean mHasThumbnail;
     
-    @DSModeled(value = DSC.SAFE)
-	public ExifInterface(String filename) throws IOException {
+	@DSComment("Get Exif from a file")
+    @DSSpec(DSCat.IO)
+    public ExifInterface(String filename) throws IOException {
 		addTaint(filename.getTaint());
         //mFilename = filename;
 		/*
@@ -187,17 +181,18 @@ private static float convertRationalLatLonToFloat(
 		 */
         loadAttributes();
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public String getAttribute(String tag) {
+	@DSComment("getting the ExifInterface is already SPEC")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.IMAGE})
+    public String getAttribute(String tag) {
         String str = new String();
         str.addTaint(getTaint());
         return str;
         //return mAttributes.get(tag);
     }
-
     
+    @DSSource({DSSourceKind.IMAGE})
     public int getAttributeInt(String tag, int defaultValue) {
 		return getTaintInt();
 	}
@@ -210,6 +205,7 @@ private static float convertRationalLatLonToFloat(
      * @param tag the name of the tag.
      * @param defaultValue the value to return if the tag is not available.
      */
+    @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.729 -0500", hash_original_method = "2C50E27E79C50FB255BC7327C78A0595", hash_generated_method = "BBB74CB96CAF937FBBCB988AF143A519")
     
 public double getAttributeDouble(String tag, double defaultValue) {
@@ -233,14 +229,15 @@ public double getAttributeDouble(String tag, double defaultValue) {
      * @param tag the name of the tag.
      * @param value the value of the tag.
      */
+    @DSComment("nothing happens until saveAttributes")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.731 -0500", hash_original_method = "B68A317BC0B14013541CB1D016F585DF", hash_generated_method = "E5B7A4C2160F0B1762C23311F5766F9A")
     
 public void setAttribute(String tag, String value) {
         mAttributes.put(tag, value);
     }
-
     
-    @DSModeled(DSC.BAN)
 	private void loadAttributes() throws IOException {
 		addTaint("string attribute taint".getTaint()); //Implicit taint for getAttribute
 		//addTaint(-1.getTaint()); //Implicit taint for getAttributeInt
@@ -299,6 +296,7 @@ public boolean hasThumbnail() {
      * The returned data is in JPEG format and can be decoded using
      * {@link android.graphics.BitmapFactory#decodeByteArray(byte[],int,int)}
      */
+    @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.742 -0500", hash_original_method = "EEA91D6F373CFE491F29E5705A223E24", hash_generated_method = "7D87F6AF051C0C4F5DECB547D74A174C")
     
 public byte[] getThumbnail() {
@@ -312,6 +310,9 @@ public byte[] getThumbnail() {
      * the latitude, and the second element is the longitude. Returns false if the
      * Exif tags are not available.
      */
+    @DSComment("GPS location from recorded picture")
+    @DSSpec(DSCat.SECURITY)
+    @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.745 -0500", hash_original_method = "E57539251757696DAF9B1A2137150B59", hash_generated_method = "4EF1C3E6E9DC7AFCCD00387EE25E6D6E")
     
 public boolean getLatLong(float output[]) {
@@ -339,6 +340,7 @@ public boolean getLatLong(float output[]) {
      *
      * @param defaultValue the value to return if the tag is not available.
      */
+    @DSSource({DSSourceKind.IMAGE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.747 -0500", hash_original_method = "7FF577F1262A20E1F7C9D9D9BE845A85", hash_generated_method = "455BC0CAADB360D042876898A2EAEE37")
     
 public double getAltitude(double defaultValue) {
@@ -357,6 +359,7 @@ public double getAltitude(double defaultValue) {
      * Returns -1 if the date time information if not available.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.750 -0500", hash_original_method = "E8E77BF544503216344BBA6B3C85FE94", hash_generated_method = "A268731B6306C3B5642516836FC513B1")
     
 public long getDateTime() {
@@ -378,6 +381,7 @@ public long getDateTime() {
      * Returns -1 if the date time information if not available.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.753 -0500", hash_original_method = "E20B898080FF0A84D7C05898F2A9273F", hash_generated_method = "469395D0EE5FE02AFD07DEC668A58A91")
     
 public long getGpsDateTime() {
@@ -408,7 +412,6 @@ public long getGpsDateTime() {
     	return getTaintBoolean();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.764 -0500", hash_original_method = "1943C005EEA560A6DA7650C63E13B4C3", hash_generated_method = "EA5F35D637E602509C693931F9B6A33F")
     
     private void saveAttributesNative(String fileName,
@@ -417,7 +420,6 @@ public long getGpsDateTime() {
     	addTaint(fileName.getTaint());
     	addTaint(compressedAttributes.getTaint());
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:33.772 -0500", hash_original_method = "97BA6F84691FEC7044D96C3EF30411A0", hash_generated_method = "80E74A688A748996FA3E2A2FEFB9B353")
     

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class CallIdentifier extends SIPObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.766 -0500", hash_original_field = "6E8CDB98589AEC6B3E29C92534CD2B41", hash_generated_field = "A04AE76734793B24A3254EFC13B52182")
 
@@ -113,6 +109,7 @@ public boolean equals(Object other) {
     /** get the LocalId field
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.799 -0500", hash_original_method = "842945DA69DE126BDF81117018A1E298", hash_generated_method = "A851EA4F670C431087A51EE458194FF5")
     
 public String getLocalId() {
@@ -122,6 +119,7 @@ public String getLocalId() {
     /** get the host field
      * @return host member String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.802 -0500", hash_original_method = "2F2AEDD17A97DC05E80343AAC323BA28", hash_generated_method = "1B655222E0C0F88C57DF58BCA9BFA498")
     
 public String getHost() {

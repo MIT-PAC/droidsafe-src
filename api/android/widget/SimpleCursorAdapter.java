@@ -9,10 +9,6 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.view.View;
 
-
-
-
-
 public class SimpleCursorAdapter extends ResourceCursorAdapter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.880 -0500", hash_original_field = "AFCDB43F15D9604C60DF81DB309311CD", hash_generated_field = "6AD876BF1B2A93FF841DC0A6CDF82D53")
 
@@ -22,7 +18,6 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
     protected int[] mTo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.884 -0500", hash_original_field = "14E762043CB48AC077260FF08B82CF80", hash_generated_field = "76FAAB307CBAB2502A74F2FD4809A2B4")
 
-
     private int mStringConversionColumn = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.886 -0500", hash_original_field = "F8263407921113CB7A610A2339B65BA8", hash_generated_field = "9EC5CDC29EBE32FECD7EDABDB5C61341")
 
@@ -31,7 +26,6 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
 
     private ViewBinder mViewBinder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.889 -0500", hash_original_field = "393D022CD0A88B84A417682AA08505E2", hash_generated_field = "393D022CD0A88B84A417682AA08505E2")
-
 
     String[] mOriginalFrom;
 
@@ -43,6 +37,8 @@ public class SimpleCursorAdapter extends ResourceCursorAdapter {
      * responsiveness or even Application Not Responding errors.  As an alternative,
      * use {@link android.app.LoaderManager} with a {@link android.content.CursorLoader}.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.892 -0500", hash_original_method = "4CA266072E0BEF58A4BC70323B402D31", hash_generated_method = "6B7F935D2F35D8A0B1A77449115435C4")
     
 @Deprecated
@@ -105,6 +101,8 @@ public SimpleCursorAdapter(Context context, int layout, Cursor c, String[] from,
      * @see #setViewImage(ImageView, String)
      * @see #setViewText(TextView, String)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.899 -0500", hash_original_method = "DC8B275A35A5B1D2099C370F56E50BB9", hash_generated_method = "01273149BA86C6FD86C6E74045C8A8EE")
     
 @Override
@@ -185,6 +183,7 @@ public void setViewBinder(ViewBinder viewBinder) {
      * @param v ImageView to receive an image
      * @param value the value retrieved from the cursor
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.905 -0500", hash_original_method = "31A5526470C992FDAE212BFFA88B0730", hash_generated_method = "A3BA9232B932A48C4241116FDADFE82E")
     
 public void setViewImage(ImageView v, String value) {
@@ -206,6 +205,7 @@ public void setViewImage(ImageView v, String value) {
      * @param v TextView to receive text
      * @param text the text to be set for the TextView
      */    
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.907 -0500", hash_original_method = "5AA8DD17AC94ADB8D267F5D4267EA13E", hash_generated_method = "78A796D1AAAB9527A328641E2AF2A0ED")
     
 public void setViewText(TextView v, String text) {
@@ -223,6 +223,7 @@ public void setViewText(TextView v, String text) {
      * @see #setCursorToStringConverter(android.widget.SimpleCursorAdapter.CursorToStringConverter)
      * @see #getCursorToStringConverter()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.909 -0500", hash_original_method = "505C15BD7A524BAA123874B0B6BE7D4B", hash_generated_method = "4748C86A8A294C786E42F1CAB875D0E2")
     
 public int getStringConversionColumn() {
@@ -373,7 +374,6 @@ public void changeCursorAndColumns(Cursor c, String[] from, int[] to) {
         super.changeCursor(c);
         findColumns(mOriginalFrom);
     }
-
     
     public static interface ViewBinder {
         

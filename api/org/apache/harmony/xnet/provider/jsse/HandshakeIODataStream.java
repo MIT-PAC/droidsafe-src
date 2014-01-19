@@ -10,11 +10,6 @@ import java.util.Arrays;
 
 import javax.net.ssl.SSLHandshakeException;
 
-
-
-
-
-
 public class HandshakeIODataStream extends SSLInputStream implements org.apache.harmony.xnet.provider.jsse.Appendable, DataStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.371 -0500", hash_original_field = "7CC4ADADCF5B81E1EEBC5F8C930336A6", hash_generated_field = "BD1BCB7BF1C44FE529E5F55EB4873757")
 
@@ -34,7 +29,6 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
     private byte[] buffer = new byte[buff_size];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.386 -0500", hash_original_field = "B44B513F7513D01C85BAD454F81E6997", hash_generated_field = "3723889C9DF91DF516DBD9F68532380B")
 
-
     // position of the next byte to read
     private int read_pos;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.388 -0500", hash_original_field = "1721C61D21E2B39C66264FC8044ED7BD", hash_generated_field = "27AC92782C57CF0B819B2420AE5376F7")
@@ -44,7 +38,6 @@ public class HandshakeIODataStream extends SSLInputStream implements org.apache.
 
     private int read_pos_end;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.424 -0500", hash_original_field = "7C9CC79F0E03280A2531A49A058EF4F4", hash_generated_field = "FD92541B7DDFA167E4A40EB132AF1B49")
-
 
     // position in the buffer available for write
     private int write_pos;
@@ -125,6 +118,7 @@ protected void removeFromMarkedPosition() {
      * @param   new:    long
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.410 -0500", hash_original_method = "91CEDBDE7A81F4DCE85242430A46DCF1", hash_generated_method = "E43FE0F770A94438D408F0C9100BE8BD")
     
 @Override
@@ -352,6 +346,7 @@ public boolean hasData() {
      * @param   length: int
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.450 -0500", hash_original_method = "E6D2A8CE9FA7080A42A1984AB4D903A3", hash_generated_method = "E8A72FF6E6ED35CC96D217AC0467E4A0")
     
 public byte[] getData(int length) {
@@ -375,6 +370,7 @@ public byte[] getData(int length) {
      * Returns the MD5 digest of the data passed throught the stream
      * @return MD5 digest
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.452 -0500", hash_original_method = "9B1F555F297B463533438E17CA1DA8BA", hash_generated_method = "11655AC8DF3624148C8D3CE61B7397D3")
     
 protected byte[] getDigestMD5() {
@@ -391,6 +387,7 @@ protected byte[] getDigestMD5() {
      * Returns the SHA-1 digest of the data passed throught the stream
      * @return SHA-1 digest
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.455 -0500", hash_original_method = "74B8780B4340381F62E79DEE30B1C1C3", hash_generated_method = "4B33D838D16F92375073E508CB3E8540")
     
 protected byte[] getDigestSHA() {
@@ -408,6 +405,7 @@ protected byte[] getDigestSHA() {
      * except last message
      * @return MD5 digest
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.457 -0500", hash_original_method = "DDBF067C5B2E3F42A7068CF9EE336859", hash_generated_method = "4934288DA3A7A5B17526178A66DD209F")
     
 protected byte[] getDigestMD5withoutLast() {
@@ -422,6 +420,7 @@ protected byte[] getDigestMD5withoutLast() {
      * except last message
      * @return SHA-1 digest
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.459 -0500", hash_original_method = "BE851090505272B625E52E095FDF236D", hash_generated_method = "926537779BC4D855D1E43BE7E48CB244")
     
 protected byte[] getDigestSHAwithoutLast() {
@@ -435,6 +434,7 @@ protected byte[] getDigestSHAwithoutLast() {
      * Returns all the data passed throught the stream
      * @return all the data passed throught the stream at the moment
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:13.461 -0500", hash_original_method = "B51805E12EB2284C59279E2C362DB00D", hash_generated_method = "2BC8CC20EEE33EEDE53FB16B96FB6AAA")
     
 protected byte[] getMessages() {

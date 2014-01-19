@@ -7,21 +7,14 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
-
 public class BackupDataInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.233 -0500", hash_original_field = "FFE7EE17DFA37A68070A0F0495753B29", hash_generated_field = "FFE7EE17DFA37A68070A0F0495753B29")
-
 
     String key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.235 -0500", hash_original_field = "BE50627D89367B94B26C95254370D367", hash_generated_field = "BE50627D89367B94B26C95254370D367")
 
     int dataSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.237 -0500", hash_original_field = "E3D8EC927026C22AB4F4A51B7D52DBD7", hash_generated_field = "E3D8EC927026C22AB4F4A51B7D52DBD7")
-
 
     BackupDataInput mData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.239 -0500", hash_original_field = "741CFBB37C334A9DBBB5084AC407FBC5", hash_generated_field = "741CFBB37C334A9DBBB5084AC407FBC5")
@@ -93,6 +86,7 @@ public int read(byte[] b) throws IOException {
      * @return The key string for this entity, equivalent to calling
      *   {@link BackupDataInput#getKey()} on the underlying {@link BackupDataInput}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.250 -0500", hash_original_method = "EC81A9ECDA808FF062BB2254D312B94E", hash_generated_method = "1F9E4BFB97B0FD054EDF7E1DE43DB6DC")
     
 public String getKey() {
@@ -110,7 +104,6 @@ public String getKey() {
 public int size() {
         return this.dataSize;
     }
-
     
 }
 

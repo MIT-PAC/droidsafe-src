@@ -23,9 +23,6 @@ import android.view.IRotationWatcher;
 import android.view.IWindowManager;
 import android.view.Surface;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class SensorManager {
@@ -163,6 +160,9 @@ public class SensorManager {
      * @see #remapCoordinateSystem(float[], int, int, float[])
      */
 
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.037 -0500", hash_original_method = "80FFBDA32F1CA6FB68C3B24B9C01CA42", hash_generated_method = "C2361A9E50FB5E2540C47B2203847598")
     
 public static boolean getRotationMatrix(float[] R, float[] I,
@@ -242,6 +242,7 @@ public static boolean getRotationMatrix(float[] R, float[] I,
      * @see GeomagneticField
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.040 -0500", hash_original_method = "FC0D372BF97A5B9BCD6915691825C261", hash_generated_method = "D5A70E08C36B24C4FBB1CE4753C03A9A")
     
 public static float getInclination(float[] I) {
@@ -327,6 +328,8 @@ public static float getInclination(float[] I) {
      * @see #getRotationMatrix(float[], float[], float[], float[])
      */
 
+    @DSComment("Sensor accessing")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.043 -0500", hash_original_method = "FE2484DC0236D6664EA6E4EA310B2D70", hash_generated_method = "646AF5810B2BD63319A7EC849D82CDA3")
     
 public static boolean remapCoordinateSystem(float[] inR, int X, int Y,
@@ -448,6 +451,9 @@ private static boolean remapCoordinateSystemImpl(float[] inR, int X, int Y,
      * @see #getRotationMatrix(float[], float[], float[], float[])
      * @see GeomagneticField
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.051 -0500", hash_original_method = "48D1C344F1CE2628DE4C68ABB227A1F6", hash_generated_method = "5E0C14D6CF43554F17C02DEA9C8592AA")
     
 public static float[] getOrientation(float[] R, float values[]) {
@@ -505,7 +511,8 @@ public static float[] getOrientation(float[] R, float values[]) {
      * @param p atmospheric pressure
      * @return Altitude in meters
      */
-   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.056 -0500", hash_original_method = "8E6E2A16641CB1071F07CC6C84B1A29D", hash_generated_method = "D7502A3FF04FED1BC8DD49FCBA47C0F0")
+   @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.056 -0500", hash_original_method = "8E6E2A16641CB1071F07CC6C84B1A29D", hash_generated_method = "D7502A3FF04FED1BC8DD49FCBA47C0F0")
     
 public static float getAltitude(float p0, float p) {
         final float coef = 1.0f / 5.255f;
@@ -519,7 +526,6 @@ static int getRotation() {
             return sRotation;
         }
     }
-
 
     /** Helper function to compute the angle change between two rotation matrices.
      *  Given a current rotation matrix (R) and a previous rotation matrix
@@ -547,6 +553,7 @@ static int getRotation() {
      * @param angleChange an array of floats in which the angle change is stored
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.136 -0500", hash_original_method = "8B9F6F99770AC610A78817CE4E6CAD01", hash_generated_method = "DA05D51C781FC5B8E1C100A7D07F55C5")
     
 public static void getAngleChange( float[] angleChange, float[] R, float[] prevR) {
@@ -633,6 +640,7 @@ public static void getAngleChange( float[] angleChange, float[] R, float[] prevR
      *  @param rotationVector the rotation vector to convert
      *  @param R an array of floats in which to store the rotation matrix
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.141 -0500", hash_original_method = "3DB3B83767C3E6A9B01AB274AC444879", hash_generated_method = "E7F235E6710EC91A1B9F031414035CE8")
     
 public static void getRotationMatrixFromVector(float[] R, float[] rotationVector) {
@@ -698,6 +706,7 @@ public static void getRotationMatrixFromVector(float[] R, float[] rotationVector
      *  @param rv the rotation vector to convert
      *  @param Q an array of floats in which to store the computed quaternion
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.144 -0500", hash_original_method = "E42DD1F670DB7ECCA034D643DAC17008", hash_generated_method = "98D073E2E19CF9FB680FC2B559C5C6F5")
     
 public static void getQuaternionFromVector(float[] Q, float[] rv) {
@@ -711,46 +720,32 @@ public static void getQuaternionFromVector(float[] Q, float[] rv) {
         Q[2] = rv[1];
         Q[3] = rv[2];
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {  //Formerly a native method
 		//Noop
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static int sensors_module_init() {  //Formerly a native method
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     private static int sensors_module_get_next_sensor(Sensor sensor, int next) { //Formerly a native method
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     static int sensors_create_queue() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_712978663 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_712978663;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static void sensors_destroy_queue(int queue) {
     }
-
     
-    @DSModeled(DSC.SAFE)
 	static boolean sensors_enable_sensor(int queue, String name, int sensor, int enable) {
 		//Formerly a native method.  Generated a very simple stub.
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     static int sensors_data_poll(int queue, float[] values, int[] status, long[] timestamp) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_723860276;
@@ -762,7 +757,6 @@ public static void getQuaternionFromVector(float[] Q, float[] rv) {
 
     private static final float[] mTempMatrix = new float[16];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.676 -0500", hash_original_field = "7E2C4804440171BD36FEDD5BB2831735", hash_generated_field = "A0DE0A8A0FC5776ACAE714CB5CB82A30")
-
 
     /**
      * A constant describing an orientation sensor. See
@@ -843,7 +837,6 @@ public static void getQuaternionFromVector(float[] Q, float[] rv) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.727 -0500", hash_original_field = "D1546F1F14C4F148FCC710883E43DA0E", hash_generated_field = "E677BD9FA81EE77A42D6C83D3FCA7A4B")
 
     public static final float STANDARD_GRAVITY = 9.80665f;
-
     
     private class SensorEventPool {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.872 -0500", hash_original_field = "0B96CD9DFF232155CFA3C38B1074C08A", hash_generated_field = "845BC6592821AED77B94BBB0FC4DDA9D")
@@ -870,6 +863,7 @@ private SensorEvent createSensorEvent() {
             return new SensorEvent(3);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.888 -0500", hash_original_method = "91BAA7B0EF8F8AB0DA2081F8E926B4FD", hash_generated_method = "CDF0E9A5B31422BAAA42CC13D50BE134")
         
 SensorEvent getFromPool() {
@@ -904,15 +898,11 @@ void returnToPool(SensorEvent t) {
                 }
             }
         }
-
         
     }
-
-
     
     static private class SensorThread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.900 -0500", hash_original_field = "8CE20653889294789C714060A391C40F", hash_generated_field = "8CE20653889294789C714060A391C40F")
-
 
         Thread mThread;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.902 -0500", hash_original_field = "08100F1ACCE57FCB9D4D360616E4C0FE", hash_generated_field = "08100F1ACCE57FCB9D4D360616E4C0FE")
@@ -951,7 +941,6 @@ boolean startLocked() {
             }
             return mThread == null ? false : true;
         }
-
         
         private class SensorThreadRunnable implements Runnable {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.916 -0500", hash_original_method = "E6F9E1FFFEF800CB7D3BCE3C8792674F", hash_generated_method = "E6F9E1FFFEF800CB7D3BCE3C8792674F")
@@ -1026,15 +1015,10 @@ public void run() {
                 }
                 //Log.d(TAG, "exiting main sensor thread");
             }
-
             
         }
-
-
         
     }
-
-
     
     private class ListenerDelegate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.933 -0500", hash_original_field = "DA0D09A56B45B5F18D80D9C6B8BA2BC0", hash_generated_field = "7CDF70F92784BF2F50B0C9C6E0D50D7E")
@@ -1097,7 +1081,6 @@ ListenerDelegate(SensorEventListener listener, Sensor sensor, Handler handler) {
             };
             addSensor(sensor);
         }
-
         
         // orphaned legacy method
         private ListenerDelegate() {
@@ -1152,8 +1135,6 @@ void onSensorChangedLocked(Sensor sensor, float[] values, long[] timestamp, int 
         }
         
     }
-
-
     
     private class LegacyListener implements SensorEventListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.064 -0500", hash_original_field = "2E436FBDD820B5DD767FF627A4256884", hash_generated_field = "B920C0767E790BC8A809EAECA2930561")
@@ -1306,11 +1287,8 @@ private void mapSensorDataToWindow(int sensor,
                 }
             }
         }
-
         
     }
-
-
     
     class LmsFilter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.104 -0500", hash_original_field = "AE642BD24B30C3C139354DE3F04260BB", hash_generated_field = "289D3DCA2BB33F6334CDC99A63CB75B6")
@@ -1512,7 +1490,6 @@ public float filter(long time, float in) {
     public static final int AXIS_MINUS_Z = AXIS_Z | 0x80;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.845 -0500", hash_original_field = "3A8EF2E0FE3F53F483877DA766E705E6", hash_generated_field = "0B37599A21C0B41121A764FFBD9EADED")
 
-
     private static final int SENSOR_DISABLE = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.847 -0500", hash_original_field = "37A81B3FE5155C44FD558B83628C65EA", hash_generated_field = "239E704B77E2A22CC375A94A4D19171C")
 
@@ -1544,10 +1521,8 @@ public float filter(long time, float in) {
         new ArrayList<ListenerDelegate>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.897 -0500", hash_original_field = "83C95BE42F985C78660A3F043DB1C2A2", hash_generated_field = "15CA115588C710DFD7C46B04856CF02D")
 
-
     private static SensorEventPool sPool;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.840 -0500", hash_original_field = "22AA67C96F8F7AD7DFD89E53DF216F9A", hash_generated_field = "22AA67C96F8F7AD7DFD89E53DF216F9A")
-
 
     Looper mMainLooper;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.842 -0500", hash_original_field = "D7D5A1F785EF215E867A24EB8A82EC5F", hash_generated_field = "0F9F236B24164523848440F1C5249FC1")
@@ -1556,7 +1531,6 @@ public float filter(long time, float in) {
     private HashMap<SensorListener, LegacyListener> mLegacyListenersMap =
         new HashMap<SensorListener, LegacyListener>();
     
-    @DSModeled(value = DSC.SAFE)
 	public SensorManager(Looper mainLooper) {
 		/*
 		 * The rest of the original implementation is simply setting
@@ -1608,12 +1582,10 @@ public void onRotationChanged(int rotation) {
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
 	public SensorManager() {
 	}
-
     
-    @DSModeled(DSC.BAN)
     private int getLegacySensorType(int type) {
 		/*
         switch (type) {
@@ -1635,6 +1607,7 @@ public void onRotationChanged(int rotation) {
      * @deprecated This method is deprecated, use
      *             {@link SensorManager#getSensorList(int)} instead
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.983 -0500", hash_original_method = "9387EF1577B9728CF6A87474164955A1", hash_generated_method = "DCEA3E6A9BE2244BFDB501B6A5CEBD04")
     
 @Deprecated
@@ -1672,6 +1645,9 @@ public void onRotationChanged(int rotation) {
      * @see #getDefaultSensor(int)
      * @see Sensor
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:52.987 -0500", hash_original_method = "D388F11CBE90143BC36FA3E001809013", hash_generated_method = "A24E18E8BD8A929CC1A4EAD97C533099")
     
 public List<Sensor> getSensorList(int type) {
@@ -1907,6 +1883,8 @@ public List<Sensor> getSensorList(int type) {
      * @see #registerListener(SensorEventListener, Sensor, int)
      *
      */
+    @DSComment("no action when removing callback")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.013 -0500", hash_original_method = "A245758148D9D81E2CADBC67CD903CC7", hash_generated_method = "097D859FD01791F8FF42C752BCE68E9A")
     
 public void unregisterListener(SensorEventListener listener, Sensor sensor) {
@@ -1923,15 +1901,17 @@ public void unregisterListener(SensorEventListener listener, Sensor sensor) {
      * @see #registerListener(SensorEventListener, Sensor, int)
      *
      */
+    @DSComment("no action when removing callback")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:53.016 -0500", hash_original_method = "C9A0C02866BC64B5017A48A301526982", hash_generated_method = "66E71156F28D2F602815D9F161A4681D")
     
 public void unregisterListener(SensorEventListener listener) {
         unregisterListener((Object)listener);
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
+	@DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
+    public boolean registerListener(SensorEventListener listener, Sensor sensor, int rate) {
 		SensorEvent se = new SensorEvent(0);
 		se.sensor = sensor;
 		listener.onSensorChanged(se);
@@ -2116,9 +2096,7 @@ private void unregisterListener(Object listener) {
             }
         }
     }
-
     
-    @DSModeled(DSC.BAN)
     public void onRotationChanged(int rotation) {
         synchronized(sListeners) {
         	addTaint(rotation);
@@ -2126,8 +2104,11 @@ private void unregisterListener(Object listener) {
         }
     }
     // orphaned legacy method
-    @DSModeled(DSC.SAFE)
-	public Sensor getDefaultSensor(int i) {
+    
+	@DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public Sensor getDefaultSensor(int i) {
 		return new Sensor(i);
 	}
     

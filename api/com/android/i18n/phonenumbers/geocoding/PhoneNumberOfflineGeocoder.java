@@ -16,8 +16,6 @@ import java.util.logging.Logger;
 import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-
-
 public class PhoneNumberOfflineGeocoder {
 
   /**
@@ -29,7 +27,8 @@ public class PhoneNumberOfflineGeocoder {
    *
    * @return  a {@link PhoneNumberOfflineGeocoder} instance
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.408 -0500", hash_original_method = "11308A387889B73C32B03C7C263563B6", hash_generated_method = "2B8705EE691AE17B84209E4C26A63A00")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.408 -0500", hash_original_method = "11308A387889B73C32B03C7C263563B6", hash_generated_method = "2B8705EE691AE17B84209E4C26A63A00")
     
 public static synchronized PhoneNumberOfflineGeocoder getInstance() {
     if (instance == null) {
@@ -48,7 +47,6 @@ public static synchronized PhoneNumberOfflineGeocoder getInstance() {
 
   private static final Logger LOGGER = Logger.getLogger(PhoneNumberOfflineGeocoder.class.getName());
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.387 -0500", hash_original_field = "77B7FB9FF47C6498ED40292699F59FD1", hash_generated_field = "BE506E133CCC4FF41A3A629A7B84F9C7")
-
 
   private final PhoneNumberUtil phoneUtil = PhoneNumberUtil.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.389 -0500", hash_original_field = "243A08E8BE8BA33A48E49C999E36965E", hash_generated_field = "92760DB70C2CE2B3E4C70D256B78E2F9")

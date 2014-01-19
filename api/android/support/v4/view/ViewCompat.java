@@ -8,10 +8,6 @@ import android.support.v4.view.accessibility.AccessibilityNodeInfoCompat;
 import android.view.View;
 import android.view.accessibility.AccessibilityEvent;
 
-
-
-
-
 public class ViewCompat {
 
     /**
@@ -196,6 +192,7 @@ public static void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeIn
      *
      * @see android.view.View.AccessibilityDelegate
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.247 -0500", hash_original_method = "4280E8CA0A8375D977DD927F0A6FE108", hash_generated_method = "FDC098EF58DE2FA81B05DBE4DBC3A2B4")
     
 public static void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
@@ -204,11 +201,9 @@ public static void setAccessibilityDelegate(View v, AccessibilityDelegateCompat 
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.170 -0500", hash_original_field = "361BC31D07AD9559F194AE7DCEA363BD", hash_generated_field = "8F276B4C86F06142AEDE0C97A7FE2F68")
 
     public static final int OVER_SCROLL_ALWAYS = 0;
-
     
     static class BaseViewCompatImpl implements ViewCompatImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.378 -0400", hash_original_method = "41ADABC234167BF75948986C00D7164F", hash_generated_method = "41ADABC234167BF75948986C00D7164F")
         public BaseViewCompatImpl ()
         {
@@ -234,6 +229,7 @@ public int getOverScrollMode(View v) {
 public void setOverScrollMode(View v, int mode) {
             // Do nothing; API doesn't exist
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.191 -0500", hash_original_method = "122EA5B596C8B5B38E62AE02215B1570", hash_generated_method = "6A75086B4569BF9320FFF3DCBB097973")
         
 public void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
@@ -254,15 +250,11 @@ public void onInitializeAccessibilityEvent(View v, AccessibilityEvent event) {
 public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
             // Do nothing; API doesn't exist
         }
-
         
     }
-
-
     
     static class GBViewCompatImpl extends BaseViewCompatImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.379 -0400", hash_original_method = "B29ABB75D45C38E68F6507295346B5B9", hash_generated_method = "B29ABB75D45C38E68F6507295346B5B9")
         public GBViewCompatImpl ()
         {
@@ -280,15 +272,11 @@ public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompa
         public void setOverScrollMode(View v, int mode) {
             ViewCompatGingerbread.setOverScrollMode(v, mode);
         }
-
         
     }
-
-
     
     static class ICSViewCompatImpl extends GBViewCompatImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:33.379 -0400", hash_original_method = "F82CC7286340E827BB3F02C5F17E58C8", hash_generated_method = "F82CC7286340E827BB3F02C5F17E58C8")
         public ICSViewCompatImpl ()
         {
@@ -324,17 +312,15 @@ public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompa
         public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompat info) {
             ViewCompatICS.onInitializeAccessibilityNodeInfo(v, info.getImpl());
         }
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.224 -0500", hash_original_method = "256253E870D0A3AB828902545E88A8B8", hash_generated_method = "F1CD4EE679299C08237982AF52A9291D")
         
 @Override
         public void setAccessibilityDelegate(View v, AccessibilityDelegateCompat delegate) {
             ViewCompatICS.setAccessibilityDelegate(v, delegate.getBridge());
         }
-
         
     }
-
-
     
     interface ViewCompatImpl {
         public boolean canScrollHorizontally(View v, int direction);
@@ -353,7 +339,6 @@ public void onInitializeAccessibilityNodeInfo(View v, AccessibilityNodeInfoCompa
 
     public static final int OVER_SCROLL_NEVER = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:19.228 -0500", hash_original_field = "8C7B75196624F10657FDCEE6792BBCF8", hash_generated_field = "BBDF66702D3CCA930AA785B97237B8E4")
-
 
     static  ViewCompatImpl IMPL;
     

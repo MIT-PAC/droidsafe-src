@@ -13,16 +13,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.FrameLayout;
 
-
-
-
-
 class PluginFullScreenHolder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.277 -0500", hash_original_field = "F97327940BAC1A9A686D2CDF9F9158DF", hash_generated_field = "EC81EA8D286B414AA1CD47542082E4E5")
 
     private static CustomFrameLayout mLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.270 -0500", hash_original_field = "E044D69EE05B24F4B93E3A3B208F5343", hash_generated_field = "99346B50377E115231263981E00655CA")
-
 
     private  WebView mWebView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.272 -0500", hash_original_field = "F53BD2B3EC5E3962A4CCBC614C0496FA", hash_generated_field = "45011ACC14043CAE74E463FA1B23DC39")
@@ -33,12 +28,11 @@ class PluginFullScreenHolder {
     private  int mOrientation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:39.279 -0500", hash_original_field = "A280952DD6B837BA6E44884878875510", hash_generated_field = "9EE0242EB014EEED0CD7F44EEE7EA48F")
 
-
     private View mContentView;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.362 -0400", hash_original_field = "C38F623FA144FAC5E071C48A78CE544C", hash_generated_field = "284DEB13BE43A32C1123FC3056C8BC7C")
 
-    private final WebChromeClient.CustomViewCallback mCallback = new WebChromeClient.CustomViewCallback() {        
-        @DSModeled(DSC.SAFE)
+    private final WebChromeClient.CustomViewCallback mCallback = new WebChromeClient.CustomViewCallback() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:05.362 -0400", hash_original_method = "7559615123D16B3285B6BD8B271A29E1", hash_generated_method = "BD33C753C20DB6DE78D6B94FE6CCA305")
         public void onCustomViewHidden() {
             
@@ -50,15 +44,7 @@ class PluginFullScreenHolder {
             mLayout = null;
             mWebView.getViewManager().showAll();
             
-            
-                    
-            
-                        
-            
-            
-            
         }
-
         
 };
 
@@ -108,7 +94,6 @@ public void show() {
         WebChromeClient client = mWebView.getWebChromeClient();
         client.onShowCustomView(mLayout, mOrientation, mCallback);
     }
-
     
     private class CustomFrameLayout extends FrameLayout {
 
@@ -158,7 +143,6 @@ CustomFrameLayout(Context context) {
             // always return true as we are the handler
             return true;
         }
-
         
     }
 

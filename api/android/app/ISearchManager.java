@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.437 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.437 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.440 -0500", hash_original_method = "EAD3F49B66EEAA021C67A273D2AB7E4A", hash_generated_method = "FFB72799741795FCB61D837430B99E5B")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.440 -0500", hash_original_method = "EAD3F49B66EEAA021C67A273D2AB7E4A", hash_generated_method = "FFB72799741795FCB61D837430B99E5B")
             
 public android.app.SearchableInfo getSearchableInfo(android.content.ComponentName launchActivity) throws android.os.RemoteException
 {
@@ -93,7 +95,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.443 -0500", hash_original_method = "868D6CF9DDCAE02A6BB3963E8B3F0BA3", hash_generated_method = "89837DD9D4A37217B607022B383C257B")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.443 -0500", hash_original_method = "868D6CF9DDCAE02A6BB3963E8B3F0BA3", hash_generated_method = "89837DD9D4A37217B607022B383C257B")
             
 public java.util.List<android.app.SearchableInfo> getSearchablesInGlobalSearch() throws android.os.RemoteException
 {
@@ -112,7 +115,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.446 -0500", hash_original_method = "B2BC7ABF4F4D4E838487A39402A346A2", hash_generated_method = "3A5851D410CD57618D4DC5B60A3C9642")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.446 -0500", hash_original_method = "B2BC7ABF4F4D4E838487A39402A346A2", hash_generated_method = "3A5851D410CD57618D4DC5B60A3C9642")
             
 public java.util.List<android.content.pm.ResolveInfo> getGlobalSearchActivities() throws android.os.RemoteException
 {
@@ -131,13 +135,15 @@ _data.recycle();
 }
 return _result;
 }
-            @DSModeled(DSC.BAN)
+            
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             public android.content.ComponentName getGlobalSearchActivity() throws android.os.RemoteException
             {
                 android.content.ComponentName cn = new android.content.ComponentName("android.app", "SearchManager");
                 return cn;
             }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.452 -0500", hash_original_method = "3D16FAD592053EDC352B66C633AA75A8", hash_generated_method = "B601969D218ABB109E928ED68576B94B")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.452 -0500", hash_original_method = "3D16FAD592053EDC352B66C633AA75A8", hash_generated_method = "B601969D218ABB109E928ED68576B94B")
             
 public android.content.ComponentName getWebSearchActivity() throws android.os.RemoteException
 {
@@ -175,13 +181,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.422 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.422 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.426 -0500", hash_original_method = "F83A7C3F8CE8E1FFA11C0B01CBB0101C", hash_generated_method = "BA48B0CA6A46F0B82381B7BCAD9068F8")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:54.426 -0500", hash_original_method = "F83A7C3F8CE8E1FFA11C0B01CBB0101C", hash_generated_method = "BA48B0CA6A46F0B82381B7BCAD9068F8")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

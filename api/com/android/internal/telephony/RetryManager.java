@@ -11,10 +11,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.util.Pair;
 
-
-
-
-
 public class RetryManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.926 -0500", hash_original_field = "16E20B3652E3AE24507B42FF6157DF9C", hash_generated_field = "3ABD7D9314FBBFD996D5BF26C38898E4")
 
@@ -190,6 +186,7 @@ public boolean isRetryNeeded() {
     /**
      * Return the timer that should be used to trigger the data reconnection
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.965 -0500", hash_original_method = "FDEB093A88716C2A22E1A70262EC26E6", hash_generated_method = "CEDDFEBEC8D9728456D728063F197A7C")
     
 public int getRetryTimer() {
@@ -214,6 +211,7 @@ public int getRetryTimer() {
     /**
      * @return retry count
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.967 -0500", hash_original_method = "7864A3188C49B1562B5127F41B9781EB", hash_generated_method = "326DE1F25DCF12CC873B034629E47978")
     
 public int getRetryCount() {
@@ -329,11 +327,9 @@ private boolean validateNonNegativeInt(String name, int value) {
         if (DBG) log("validateNonNegative: " + name + ", " + value + ", " + retVal);
         return retVal;
     }
-
     
     private static class RetryRec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.934 -0500", hash_original_field = "913DCF5FCF05A4BC45E2B52ED338322E", hash_generated_field = "913DCF5FCF05A4BC45E2B52ED338322E")
-
 
         int mDelayTime;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.937 -0500", hash_original_field = "C0F0244DB495C4F7A8A1EB5174BBEC44", hash_generated_field = "C0F0244DB495C4F7A8A1EB5174BBEC44")
@@ -345,7 +341,6 @@ RetryRec(int delayTime, int randomizationTime) {
             mDelayTime = delayTime;
             mRandomizationTime = randomizationTime;
         }
-
         
     }
 

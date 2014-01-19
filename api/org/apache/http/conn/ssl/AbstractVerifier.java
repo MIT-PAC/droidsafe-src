@@ -24,11 +24,6 @@ import javax.net.ssl.SSLSocket;
 
 import org.apache.http.conn.util.InetAddressUtils;
 
-
-
-
-
-
 public abstract class AbstractVerifier implements X509HostnameVerifier {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.010 -0500", hash_original_method = "FE150C1B8C346B276109DA6F46173FD5", hash_generated_method = "4C7676112EF7BD2FF22BD50093232E1B")
@@ -48,6 +43,7 @@ public static boolean acceptableCountryWildcard(String cn) {
         return true;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.012 -0500", hash_original_method = "C25ECD7D454DB4AB3277245C5D270567", hash_generated_method = "657A26BB04447AE8348C0B39BD6AB467")
     
 public static String[] getCNs(X509Certificate cert) {
@@ -92,7 +88,6 @@ public static String[] getCNs(X509Certificate cert) {
         }
     }
 
-
     /**
      * Extracts the array of SubjectAlt DNS names from an X509Certificate.
      * Returns null if there aren't any.
@@ -107,6 +102,7 @@ public static String[] getCNs(X509Certificate cert) {
      * @param cert X509Certificate
      * @return Array of SubjectALT DNS names stored in the certificate.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:28.015 -0500", hash_original_method = "65DFD545582BECEFB6B5BE93EC963DC7", hash_generated_method = "02924B578253271BF7E3344A6F4C2C76")
     
 public static String[] getDNSSubjectAlts(X509Certificate cert) {

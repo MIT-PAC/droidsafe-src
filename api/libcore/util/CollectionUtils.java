@@ -10,16 +10,12 @@ import java.util.Comparator;
 import java.util.Iterator;
 import java.util.List;
 
-
-
 public final class CollectionUtils {
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Iterable<T> dereferenceIterable(
             final Iterable<? extends Reference<T>> iterable, final boolean trim) {
         return new Iterable<T>() {
-            @DSModeled(DSC.SAFE)
+            
         public Iterator<T> iterator() {
                 return new Iterator<T>() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.088 -0500", hash_original_field = "FC1841E2B61E0112C65F1A7B40112CCF", hash_generated_field = "BA3AF217822442F4EBB0D4F80E08231E")
@@ -75,9 +71,7 @@ public void remove() {
             }
         };
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> void removeDuplicates(List<T> list, Comparator<? super T> comparator) {
         Collections.sort(list, comparator);
         int j = 1;
@@ -94,7 +88,6 @@ public void remove() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.084 -0500", hash_original_method = "01B59B68B4B802DAB48FA08289978867", hash_generated_method = "9ECF08C0F15D4899C88459A1B3061187")
     
 private CollectionUtils() {}
-
     
 }
 

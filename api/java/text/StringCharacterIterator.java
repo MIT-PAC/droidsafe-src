@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class StringCharacterIterator implements CharacterIterator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.480 -0500", hash_original_field = "38EA5C212184AA9651934368805B840B", hash_generated_field = "38EA5C212184AA9651934368805B840B")
-
 
     String string;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:58.313 -0400", hash_original_field = "EA2B2676C28C0DB26D39331A336C6B92", hash_generated_field = "A420862623A673AB42FCEC90A616158F")
@@ -175,6 +170,7 @@ public char first() {
      *
      * @return the index of the first character of the iteration.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.504 -0500", hash_original_method = "C91A51EED2BDD0863CA60178FB31B7F7", hash_generated_method = "61BB8D523DF35DF9979CE39259FD5564")
     
 public int getBeginIndex() {
@@ -186,6 +182,7 @@ public int getBeginIndex() {
      *
      * @return the index one past the last character of the iteration.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.506 -0500", hash_original_method = "2693C2AA223CB37D0504CD257C6327BC", hash_generated_method = "ACC8D1B1439CA809AB08C45ABAB29DED")
     
 public int getEndIndex() {
@@ -197,6 +194,7 @@ public int getEndIndex() {
      *
      * @return the current index.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.508 -0500", hash_original_method = "0952456464DB8DF9DBB7507E3C2ED53C", hash_generated_method = "78C6B22E21CF81415ABD0C7B74926529")
     
 public int getIndex() {
@@ -296,7 +294,6 @@ public void setText(String value) {
         start = offset = 0;
         end = value.length();
     }
-
     
 }
 

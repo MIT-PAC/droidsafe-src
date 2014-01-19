@@ -8,11 +8,6 @@ import javax.xml.validation.Schema;
 
 import org.apache.harmony.xml.parsers.DocumentBuilderFactoryImpl;
 
-
-
-
-
-
 public abstract class DocumentBuilderFactory {
 
     /**
@@ -22,6 +17,8 @@ public abstract class DocumentBuilderFactory {
      *
      * @return a new DocumentBuilderFactory.
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.033 -0500", hash_original_method = "A299BC4F50290936C6E9B976A12D85C4", hash_generated_method = "88A6006A7BD6774B22C77C0E457E635C")
     
 public static DocumentBuilderFactory newInstance() {
@@ -61,7 +58,6 @@ public static DocumentBuilderFactory newInstance(String factoryClassName,
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.017 -0500", hash_original_field = "C056FD2FDA0F7E8A6B7443BDF09FC0F0", hash_generated_field = "5A58AB4C6A46398C035EC9B72D104783")
 
-
     private boolean validating = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.019 -0500", hash_original_field = "6BDE859F4B3849644ED8212C15F2301D", hash_generated_field = "5485D5F0CEEDFBCE5E10558A9D6EF469")
 
@@ -97,7 +93,6 @@ protected DocumentBuilderFactory () {
     
 public abstract DocumentBuilder newDocumentBuilder()
         throws ParserConfigurationException;
-
 
     /**
      * Specifies that the parser produced by this code will
@@ -407,6 +402,7 @@ public abstract boolean getFeature(String name)
      *
      * @since 1.5
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.078 -0500", hash_original_method = "0EC7A1CF3FE0EA75043A7D33C5A41123", hash_generated_method = "C60ED8DAAB20A1D1EE8BC81FA5C06DA4")
     
 public Schema getSchema() {
@@ -475,6 +471,7 @@ public Schema getSchema() {
      *
      * @since 1.5
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.080 -0500", hash_original_method = "15A4A50F8E3104FAC414471F9078A720", hash_generated_method = "7F4E43F28FCAA4F27CDFFBBB38B303F1")
     
 public void setSchema(Schema schema) {
@@ -541,7 +538,6 @@ public boolean isXIncludeAware() {
             + "\""
             );
     }
-
     
 }
 

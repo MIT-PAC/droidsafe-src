@@ -14,13 +14,7 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.x501.Name;
 
-
-
-
-
-
 public final class DistributionPointName {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:29.067 -0400", hash_original_field = "6AB95919FF6969F19A1F57D938CE073E", hash_generated_field = "E1D3EB61AA41EF10FB1A477FAFE3C6A4")
 
@@ -35,6 +29,7 @@ public int getIndex(java.lang.Object object) {
             return (dpn.fullName == null) ? 1 : 0;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.219 -0500", hash_original_method = "B70947C42A22D0E920DBED92C52DD304", hash_generated_method = "978DB3CF9D8D4F4B618C4CD99A928895")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -49,6 +44,7 @@ public int getIndex(java.lang.Object object) {
             return result;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.222 -0500", hash_original_method = "BCC068DF66100A597C835FC62DF6AFA1", hash_generated_method = "0627774CAAA840FA87FCE90359A4F9C2")
         
 public Object getObjectToEncode(Object object) {
@@ -81,6 +77,7 @@ public DistributionPointName(Name nameRelativeToCRLIssuer) {
         this.nameRelativeToCRLIssuer = nameRelativeToCRLIssuer;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.213 -0500", hash_original_method = "F96CAEAAF8BF6CA887E583CF87D57244", hash_generated_method = "DCB5BF0C860615A312844CC7823C8602")
     
 public void dumpValue(StringBuilder sb, String prefix) {

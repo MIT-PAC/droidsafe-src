@@ -21,11 +21,6 @@ import org.xmlpull.v1.XmlPullParserException;
 import org.xmlpull.v1.XmlPullParserFactory;
 import org.xmlpull.v1.XmlSerializer;
 
-
-
-
-
-
 public class Xml {
 
     /**
@@ -48,6 +43,8 @@ public static void parse(String xml, ContentHandler contentHandler)
      * Parses xml from the given reader and fires events on the given SAX
      * handler.
      */
+    @DSComment("I/O activity")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.331 -0500", hash_original_method = "82BCADC868B280559F217E3557A725A7", hash_generated_method = "422FFC525900FA0AAD1FCE2F59538D50")
     
 public static void parse(Reader in, ContentHandler contentHandler)
@@ -75,6 +72,8 @@ public static void parse(InputStream in, Encoding encoding,
     /**
      * Returns a new pull parser with namespace support.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.336 -0500", hash_original_method = "F9ED2F3CC1A3E5AAFC55A34E4134AE5C", hash_generated_method = "3042A9D3F410CF5B615273264EA8BCBD")
     
 public static XmlPullParser newPullParser() {
@@ -91,6 +90,8 @@ public static XmlPullParser newPullParser() {
     /**
      * Creates a new xml serializer.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.339 -0500", hash_original_method = "01B773645C99A4A75AE8FF989ECB51E3", hash_generated_method = "B92B51CE45AEE8F572792599DBFF4411")
     
 public static XmlSerializer newSerializer() {
@@ -135,6 +136,8 @@ public static Encoding findEncodingByName(String encodingName)
      *
      * @see AttributeSet
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.358 -0500", hash_original_method = "5DC1275450A355C1DC130895BF0B045F", hash_generated_method = "E048853307992D93F474B7024676B12D")
     
 public static AttributeSet asAttributeSet(XmlPullParser parser) {
@@ -145,7 +148,6 @@ public static AttributeSet asAttributeSet(XmlPullParser parser) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.327 -0500", hash_original_field = "AC931071D95E82345B9DC68F28085490", hash_generated_field = "21348723A34C602952749C00F7C301A8")
 
     public static String FEATURE_RELAXED = "http://xmlpull.org/v1/doc/features.html#relaxed";
-
     
     static class XmlSerializerFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.342 -0500", hash_original_field = "63CAAA423D36124FC0D7AB38D10C8F15", hash_generated_field = "9CE64B1BB229C601E95DA1B9B95DEB0E")
@@ -170,8 +172,6 @@ public static AttributeSet asAttributeSet(XmlPullParser parser) {
         }
         
     }
-
-
     
     public enum Encoding {
         US_ASCII("US-ASCII"),
@@ -179,7 +179,6 @@ public static AttributeSet asAttributeSet(XmlPullParser parser) {
         UTF_16("UTF-16"),
         ISO_8859_1("ISO-8859-1");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.349 -0500", hash_original_field = "D2C19659B9B437333207087E9CF9E18E", hash_generated_field = "D2C19659B9B437333207087E9CF9E18E")
-
 
          String expatName;
 

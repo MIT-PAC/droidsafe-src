@@ -11,9 +11,6 @@ import java.io.FileDescriptor;
 import android.content.Context;
 import android.os.ParcelFileDescriptor;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class FileBackupHelperBase {
@@ -54,33 +51,23 @@ static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutpu
             throw new RuntimeException("Backup failed 0x" + Integer.toHexString(err));
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int ctor() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void dtor(int ptr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int performBackup_native(FileDescriptor oldState,
             int data, FileDescriptor newState, String[] files, String[] keys) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int writeFile_native(int ptr, String filename, int backupReader) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int writeSnapshot_native(int ptr, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -88,7 +75,6 @@ static void performBackup_checked(ParcelFileDescriptor oldState, BackupDataOutpu
 
     private static final String TAG = "FileBackupHelperBase";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.030 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "42C21A18FB5976D4C67962413781C35D")
-
 
     int mPtr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:45.032 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "B997E37019471EC8FC5B98148C7A8AD7")

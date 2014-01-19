@@ -14,13 +14,7 @@ import android.os.Parcelable;
 import android.text.TextUtils;
 import android.util.Printer;
 
-
-
-
-
 public class ResolveInfo implements Parcelable {
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.678 -0400", hash_original_field = "C8E3508AADB06B7F78F470F3288D5470", hash_generated_field = "699B00262ABFFA011EC34065A2FBCAFD")
 
@@ -125,6 +119,8 @@ private ResolveInfo(Parcel source) {
      * @return Returns a CharSequence containing the resolutions's label.  If the
      * item does not have a label, its name is returned.
      */
+    @DSComment("get string associated resolution")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.595 -0500", hash_original_method = "A33400D9D27D1859CAE2B97E545C2635", hash_generated_method = "42C3E3BCE3653378560C9036E33DF328")
     
 public CharSequence loadLabel(PackageManager pm) {
@@ -164,6 +160,8 @@ public CharSequence loadLabel(PackageManager pm) {
      * @return Returns a Drawable containing the resolution's icon.  If the
      * item does not have an icon, the default activity icon is returned.
      */
+    @DSComment("Accessing App Resource")
+    @DSSpec(DSCat.APP_RESOURCE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.598 -0500", hash_original_method = "D0D8D8B431D77A14F0DBD9F876D36006", hash_generated_method = "FB44EDEB4A97D53F1E4B44FF2793ABA6")
     
 public Drawable loadIcon(PackageManager pm) {
@@ -192,6 +190,7 @@ public Drawable loadIcon(PackageManager pm) {
      * 
      * @return The icon associated with this match.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.600 -0500", hash_original_method = "A025A0B4AEE2574644D8C11C73D3261F", hash_generated_method = "83F53CEDFC4E582C85161F5611B1829E")
     
 public final int getIconResource() {
@@ -201,6 +200,7 @@ public final int getIconResource() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.604 -0500", hash_original_method = "64245509A5FC137877FB50AC88C4351E", hash_generated_method = "0F66FE95F8591EFB1AC1F94F7B759082")
     
 public void dump(Printer pw, String prefix) {
@@ -230,6 +230,8 @@ public void dump(Printer pw, String prefix) {
         }
     }
 
+    @DSComment("string out of intent resolution, safe")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.608 -0500", hash_original_method = "E9277D5F5F8618A42CE604147E3605E2", hash_generated_method = "0D2A4E70211D71BA8C1449AEED9CBAE2")
     
 public String toString() {
@@ -245,16 +247,16 @@ public String toString() {
 public int describeContents() {
         return 0;
     }
-
     
     public static class DisplayNameComparator implements Comparator<ResolveInfo> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.632 -0500", hash_original_field = "EE5E44F3B728B272AD02D50E8F128A4E", hash_generated_field = "0F522A2F9FEC0AE6C7C0EFB2E65868E6")
-
 
         private final Collator   sCollator = Collator.getInstance();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.635 -0500", hash_original_field = "D7E1102720CC9E76648EB86B25CA5216", hash_generated_field = "B9590FAB3CF140F08C9CD4E0309ED58A")
 
         private PackageManager   mPM;
+        @DSComment("only compare method available, not too useful")
+        @DSSafe(DSCat.SAFE_OTHERS)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.626 -0500", hash_original_method = "01BC6A405956ED34F2FEA27AD8C34186", hash_generated_method = "93A18F8F07DA31EBC88951995E1C514A")
         
 public DisplayNameComparator(PackageManager pm) {
@@ -271,10 +273,10 @@ public final int compare(ResolveInfo a, ResolveInfo b) {
             
             return sCollator.compare(sa.toString(), sb.toString());
         }
-
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:56.613 -0500", hash_original_method = "C265C7C58C207232A576E6DBECFC3E71", hash_generated_method = "D7C990A0F582AB30875ADB820A7D0F47")
     
 public void writeToParcel(Parcel dest, int parcelableFlags) {

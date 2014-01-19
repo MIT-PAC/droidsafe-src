@@ -8,12 +8,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.PatternMatcher;
 
-
-
-
-
 public final class ProviderInfo extends ComponentInfo implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.436 -0400", hash_original_field = "DD4D4FCA6B950B464A88C210AA1AB627", hash_generated_field = "1363713E47A8A9D4D7DB3FBE464E5623")
 
@@ -101,6 +96,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:48.941 -0500", hash_original_method = "45D9E31DA8DC0720E2897CA268CD8E20", hash_generated_method = "73D8B8C603E33D973013EB0774B0CFD7")
     
 @Override public void writeToParcel(Parcel out, int parcelableFlags) {

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class WorkSource implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.533 -0500", hash_original_field = "92DF17FEEC783F6E98B6D93E0935841C", hash_generated_field = "AA8D498AF94840F5BEE625F2A0A49393")
 
@@ -92,6 +88,7 @@ public int size() {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.551 -0500", hash_original_method = "2BE27D9B96D07A7F769CE0AAEC8A3019", hash_generated_method = "7D5AEA3260FB38A576CE71FD6B892EB6")
     
 public int get(int index) {
@@ -134,6 +131,7 @@ public boolean diff(WorkSource other) {
      * work source.  If <var>other</var> is null, the current work source
      * will be made empty.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.558 -0500", hash_original_method = "0302228CCB49F7DB617DC3822F50D404", hash_generated_method = "1C9FC984F5D8779C72B02AC57F227ED9")
     
 public void set(WorkSource other) {
@@ -154,6 +152,7 @@ public void set(WorkSource other) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.561 -0500", hash_original_method = "7924E91892F2F47DFBA42DC07794F83E", hash_generated_method = "1F98821148EA42E4BEB37FF360612333")
     
 public void set(int uid) {
@@ -163,6 +162,7 @@ public void set(int uid) {
     }
 
     /** @hide */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.563 -0500", hash_original_method = "7CA4549360AB4144F4EE2A696452CCBF", hash_generated_method = "3C1F0E8BD99C0BAE23DBC6A6B186C219")
     
 public WorkSource[] setReturningDiffs(WorkSource other) {
@@ -186,6 +186,7 @@ public WorkSource[] setReturningDiffs(WorkSource other) {
      * @param other The other WorkSource whose contents are to be merged.
      * @return Returns true if any new sources were added.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.565 -0500", hash_original_method = "8F95FC70B656D084C5E20FAE69C56CE9", hash_generated_method = "4D020F8E048BBBAD0CFCC7AE746BF3E2")
     
 public boolean add(WorkSource other) {
@@ -195,6 +196,7 @@ public boolean add(WorkSource other) {
     }
 
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.567 -0500", hash_original_method = "3C62D026004765F6E3FE84798605B705", hash_generated_method = "658CCB4AA1CDC494BFC6106BAAA40EE0")
     
 public WorkSource addReturningNewbs(WorkSource other) {

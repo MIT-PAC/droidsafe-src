@@ -9,16 +9,10 @@ import java.io.IOException;
 import java.io.ObjectInput;
 import java.io.ObjectOutput;
 
-
-
-
-
-
 public final class Phonemetadata {
   @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:00.990 -0500", hash_original_method = "AA2168146A79C42118444B1AF1D13430", hash_generated_method = "26CABAE6A5BDA9723B655D1D4AA748A5")
     
 private Phonemetadata() {}
-
     
     public static class NumberFormat implements Externalizable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.004 -0500", hash_original_method = "40C91A2B40702DA09592EFF9D16C1F5D", hash_generated_method = "9482C4B711FD5BDB71268D84C7181C9E")
@@ -62,7 +56,8 @@ public NumberFormat() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.011 -0500", hash_original_method = "0246232EE6FB2A92C361AD6A40430F9A", hash_generated_method = "D2A81631EB56DA96A36627C9E8CD5E38")
         
 public boolean hasPattern() { return hasPattern; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.013 -0500", hash_original_method = "42C6A53B1E4394F40C706B46BCE960D0", hash_generated_method = "67A3034CAACA541F7DD9AB6CE498F1CD")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.013 -0500", hash_original_method = "42C6A53B1E4394F40C706B46BCE960D0", hash_generated_method = "67A3034CAACA541F7DD9AB6CE498F1CD")
         
 public String getPattern() { return pattern_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.015 -0500", hash_original_method = "ED9D042141B07F3A02D73E93DCCEE4F0", hash_generated_method = "BECDAEFE71EAF6660B58F7BB3F4F9C15")
@@ -75,7 +70,8 @@ public NumberFormat setPattern(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.022 -0500", hash_original_method = "68B5595866A3AC066C218CEE1670E78C", hash_generated_method = "7F321ABB04C5E159799BF6DE7D931CAD")
         
 public boolean hasFormat() { return hasFormat; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.025 -0500", hash_original_method = "77809F0555E410001A5868E71E8924BD", hash_generated_method = "DB48F2DF6B5B9A8F6AFF3B7E65FB6D73")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.025 -0500", hash_original_method = "77809F0555E410001A5868E71E8924BD", hash_generated_method = "DB48F2DF6B5B9A8F6AFF3B7E65FB6D73")
         
 public String getFormat() { return format_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.028 -0500", hash_original_method = "791160F9BB3B0A81AD0DFEC24C1732C9", hash_generated_method = "E028C8B978E6BF1E1295088BE6A9EB0A")
@@ -85,7 +81,8 @@ public NumberFormat setFormat(String value) {
       format_ = value;
       return this;
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.032 -0500", hash_original_method = "E6A52876E9E1328523A23CDD4ADD6081", hash_generated_method = "69B5C0EE96377478F94E375CEF1A5599")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.032 -0500", hash_original_method = "E6A52876E9E1328523A23CDD4ADD6081", hash_generated_method = "69B5C0EE96377478F94E375CEF1A5599")
         
 public java.util.List<String> leadingDigitPatterns() {
       return leadingDigitsPattern_;
@@ -93,7 +90,8 @@ public java.util.List<String> leadingDigitPatterns() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.034 -0500", hash_original_method = "A7BC4264224DD72A69FEDA104C14570A", hash_generated_method = "CE546619910E95FE11C17D1A53524C81")
         
 public int leadingDigitsPatternSize() { return leadingDigitsPattern_.size(); }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.036 -0500", hash_original_method = "F45A9318A15D3A63FB863C1586B0A383", hash_generated_method = "787034B4DF3A2FFB6E82127DD0C96253")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.036 -0500", hash_original_method = "F45A9318A15D3A63FB863C1586B0A383", hash_generated_method = "787034B4DF3A2FFB6E82127DD0C96253")
         
 public String getLeadingDigitsPattern(int index) {
       return leadingDigitsPattern_.get(index);
@@ -110,7 +108,8 @@ public NumberFormat addLeadingDigitsPattern(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.046 -0500", hash_original_method = "A0F401EEBE63541205F643F348AC0373", hash_generated_method = "3347C7D2CC099DE3F21E95EDCF9CA905")
         
 public boolean hasNationalPrefixFormattingRule() { return hasNationalPrefixFormattingRule; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.049 -0500", hash_original_method = "4B4C80C20D7D7C0D6F8A6AA39111D13B", hash_generated_method = "40533399D98C7D79F505AAA1935BD685")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.049 -0500", hash_original_method = "4B4C80C20D7D7C0D6F8A6AA39111D13B", hash_generated_method = "40533399D98C7D79F505AAA1935BD685")
         
 public String getNationalPrefixFormattingRule() { return nationalPrefixFormattingRule_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.051 -0500", hash_original_method = "6C67B9000B21FDC6ACFC6210DBD720A7", hash_generated_method = "3B2C8D1EF27E4C842724645A7C205BDB")
@@ -131,7 +130,8 @@ public NumberFormat clearNationalPrefixFormattingRule() {
         
 public boolean hasDomesticCarrierCodeFormattingRule() {
       return hasDomesticCarrierCodeFormattingRule; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.063 -0500", hash_original_method = "1D78023CBBDF63A0A2ACC33925BD120F", hash_generated_method = "17E6632F19F48F6630686507067D127A")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.063 -0500", hash_original_method = "1D78023CBBDF63A0A2ACC33925BD120F", hash_generated_method = "17E6632F19F48F6630686507067D127A")
         
 public String getDomesticCarrierCodeFormattingRule() {
       return domesticCarrierCodeFormattingRule_; }
@@ -185,7 +185,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
         objectOutput.writeUTF(domesticCarrierCodeFormattingRule_);
       }
     }
-
         
         public static final class Builder extends NumberFormat {
             
@@ -199,7 +198,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
 public NumberFormat build() {
         return this;
       }
-
             
         }
 
@@ -220,8 +218,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
       }
     }
     }
-
-
     
     public static class PhoneNumberDesc implements Externalizable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.091 -0500", hash_original_method = "40C91A2B40702DA09592EFF9D16C1F5D", hash_generated_method = "9482C4B711FD5BDB71268D84C7181C9E")
@@ -256,7 +252,8 @@ public PhoneNumberDesc() {}
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.097 -0500", hash_original_method = "7AE951C08CA66D0892FA0795F4703C0D", hash_generated_method = "740669F056F891565FA1250881F9960D")
         
 public boolean hasNationalNumberPattern() { return hasNationalNumberPattern; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.100 -0500", hash_original_method = "AE5307416A342E6E51B0D8AFEA64E005", hash_generated_method = "B4761B265520004CC04647A731B285AC")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.100 -0500", hash_original_method = "AE5307416A342E6E51B0D8AFEA64E005", hash_generated_method = "B4761B265520004CC04647A731B285AC")
         
 public String getNationalNumberPattern() { return nationalNumberPattern_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.102 -0500", hash_original_method = "5843589EEE5242B872EEFCA090E2182C", hash_generated_method = "39ABB1DB04BC25F1A0C655EDE0B73935")
@@ -269,7 +266,8 @@ public PhoneNumberDesc setNationalNumberPattern(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.109 -0500", hash_original_method = "0D2D12A828079BB292F0B693EDB7AA61", hash_generated_method = "7B0F9A6506887BF68538A63DAC38A623")
         
 public boolean hasPossibleNumberPattern() { return hasPossibleNumberPattern; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.112 -0500", hash_original_method = "69E173398B553B507060BBCC25879496", hash_generated_method = "20CB4BE17CE408121602C669651F3C42")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.112 -0500", hash_original_method = "69E173398B553B507060BBCC25879496", hash_generated_method = "20CB4BE17CE408121602C669651F3C42")
         
 public String getPossibleNumberPattern() { return possibleNumberPattern_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.114 -0500", hash_original_method = "E6F0FD7A3910EDF596B66C25C9FCACCB", hash_generated_method = "06B2DDE9DECE88A10381D9605A689C3A")
@@ -282,7 +280,8 @@ public PhoneNumberDesc setPossibleNumberPattern(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.121 -0500", hash_original_method = "9EA98547022BA9B31E373C0BBC90B4AD", hash_generated_method = "145B824BF8E9E4C79B7A6BEE466D7A17")
         
 public boolean hasExampleNumber() { return hasExampleNumber; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.123 -0500", hash_original_method = "4F2E88760366816D23F2792FF3D4D910", hash_generated_method = "4ACE8B1C15DF80DEEAB045FA52442AA1")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.123 -0500", hash_original_method = "4F2E88760366816D23F2792FF3D4D910", hash_generated_method = "4ACE8B1C15DF80DEEAB045FA52442AA1")
         
 public String getExampleNumber() { return exampleNumber_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.125 -0500", hash_original_method = "99D22C86FFDC5E436BCE118592FFD464", hash_generated_method = "C090CA5080F184796F8535F7BE3C1FF1")
@@ -334,7 +333,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
         objectOutput.writeUTF(exampleNumber_);
       }
     }
-
         
         public static final class Builder extends PhoneNumberDesc {
             
@@ -348,7 +346,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
 public PhoneNumberDesc build() {
         return this;
       }
-
             
         }
 
@@ -368,8 +365,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
       }
     }
     }
-
-
     
     public static class PhoneMetadata implements Externalizable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.152 -0500", hash_original_method = "40C91A2B40702DA09592EFF9D16C1F5D", hash_generated_method = "9482C4B711FD5BDB71268D84C7181C9E")
@@ -707,7 +702,8 @@ public PhoneMetadata setNoInternationalDialling(PhoneNumberDesc value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.290 -0500", hash_original_method = "4B670822089DE57CBF3DD8C644F8C3E5", hash_generated_method = "A599150D5EFA57A273C0341642881FB1")
         
 public boolean hasId() { return hasId; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.292 -0500", hash_original_method = "C805C797DAF63B59CBD999295B2F5158", hash_generated_method = "69E46C92D3C4BB43A711C0914DB88A47")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.292 -0500", hash_original_method = "C805C797DAF63B59CBD999295B2F5158", hash_generated_method = "69E46C92D3C4BB43A711C0914DB88A47")
         
 public String getId() { return id_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.294 -0500", hash_original_method = "6B3AD7A8DB5994F94639D3A9A0778D2B", hash_generated_method = "F86EF675A6B0779EA12BB9E3DC0BF79D")
@@ -720,7 +716,8 @@ public PhoneMetadata setId(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.301 -0500", hash_original_method = "F49410E49FF0F4105142DBDFDDA2C341", hash_generated_method = "AD6664713D77220A89A09E0596063EF4")
         
 public boolean hasCountryCode() { return hasCountryCode; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.303 -0500", hash_original_method = "919900A7E94AD27066F6B024991185E0", hash_generated_method = "C37DB593B1646041EDA64981C3456204")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.303 -0500", hash_original_method = "919900A7E94AD27066F6B024991185E0", hash_generated_method = "C37DB593B1646041EDA64981C3456204")
         
 public int getCountryCode() { return countryCode_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.305 -0500", hash_original_method = "1AB7F6532DA188CC62A13C45F2B9ADF3", hash_generated_method = "5ED50221A52D9ACB5EBAE59143F556B1")
@@ -733,7 +730,8 @@ public PhoneMetadata setCountryCode(int value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.312 -0500", hash_original_method = "B89BF9592A7F16BE6654C3883F9898E5", hash_generated_method = "9AB103EE9054B9749C97E3B50FFE87EC")
         
 public boolean hasInternationalPrefix() { return hasInternationalPrefix; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.314 -0500", hash_original_method = "09123B0A33DF502700CE0BB29A84EB95", hash_generated_method = "0046F8E7C02E22B22DC3E83ACF1F49C9")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.314 -0500", hash_original_method = "09123B0A33DF502700CE0BB29A84EB95", hash_generated_method = "0046F8E7C02E22B22DC3E83ACF1F49C9")
         
 public String getInternationalPrefix() { return internationalPrefix_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.317 -0500", hash_original_method = "3DE0D2253FD6A81DEABED2BF406E5650", hash_generated_method = "3EA011B6D10DF97BC612DFDC09499CBD")
@@ -746,7 +744,8 @@ public PhoneMetadata setInternationalPrefix(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.323 -0500", hash_original_method = "3A1D043D6BB606ABB758EEC975A83919", hash_generated_method = "781DE35ADA269697D865E56A447708BE")
         
 public boolean hasPreferredInternationalPrefix() { return hasPreferredInternationalPrefix; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.326 -0500", hash_original_method = "3992DDBA34CC5C49CFC74CF0545FF343", hash_generated_method = "2F5D665E2C2E16E2C92A223056A77E04")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.326 -0500", hash_original_method = "3992DDBA34CC5C49CFC74CF0545FF343", hash_generated_method = "2F5D665E2C2E16E2C92A223056A77E04")
         
 public String getPreferredInternationalPrefix() { return preferredInternationalPrefix_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.329 -0500", hash_original_method = "2F2A95A6FC37FC6A654CD2ED9E105058", hash_generated_method = "F1B73395F314D72E6B05C813F2F4F881")
@@ -759,7 +758,8 @@ public PhoneMetadata setPreferredInternationalPrefix(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.336 -0500", hash_original_method = "3FEC8563D97FEF0C0B81201609B8C138", hash_generated_method = "156C9EA63954771E4D5CE6029C4EBF38")
         
 public boolean hasNationalPrefix() { return hasNationalPrefix; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.338 -0500", hash_original_method = "3F6DDEA7E91472B57F47F7AA42FF40A4", hash_generated_method = "57850ECDEFE293E840A743DE22637115")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.338 -0500", hash_original_method = "3F6DDEA7E91472B57F47F7AA42FF40A4", hash_generated_method = "57850ECDEFE293E840A743DE22637115")
         
 public String getNationalPrefix() { return nationalPrefix_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.340 -0500", hash_original_method = "F24C638CA5CEB8CDF3416D52787AAB8D", hash_generated_method = "19A829D140929F4CCC32EA6B1682B790")
@@ -772,7 +772,8 @@ public PhoneMetadata setNationalPrefix(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.347 -0500", hash_original_method = "E23165194A0E40A98A75B1CB3195C323", hash_generated_method = "8A2EC5404C0438EF39DF628CA6E42111")
         
 public boolean hasPreferredExtnPrefix() { return hasPreferredExtnPrefix; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.349 -0500", hash_original_method = "54C0428B3277F86E8CEE26D4467F5D32", hash_generated_method = "2A6DFC50DDFA8AA987980C501BA7054A")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.349 -0500", hash_original_method = "54C0428B3277F86E8CEE26D4467F5D32", hash_generated_method = "2A6DFC50DDFA8AA987980C501BA7054A")
         
 public String getPreferredExtnPrefix() { return preferredExtnPrefix_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.351 -0500", hash_original_method = "6AE031AAEF0021BEEE5C7C14D7E5ADEE", hash_generated_method = "EA47A8E9A3AAB4E1C875144FB60B096F")
@@ -785,7 +786,8 @@ public PhoneMetadata setPreferredExtnPrefix(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.359 -0500", hash_original_method = "079D2F6BDFB9C83E975C341D5D3984E8", hash_generated_method = "D115F95F67719E4DFD01EA8DF6629B75")
         
 public boolean hasNationalPrefixForParsing() { return hasNationalPrefixForParsing; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.361 -0500", hash_original_method = "049975D1EC97C98DFAFD92CBA7A3DB4E", hash_generated_method = "CE244CCEE36EEBE0FD84D5BFA7A64CEA")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.361 -0500", hash_original_method = "049975D1EC97C98DFAFD92CBA7A3DB4E", hash_generated_method = "CE244CCEE36EEBE0FD84D5BFA7A64CEA")
         
 public String getNationalPrefixForParsing() { return nationalPrefixForParsing_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.364 -0500", hash_original_method = "9C0BD3F3F0877996BC57F1866741042E", hash_generated_method = "D4508E703DD96450EA43AE500A889AC6")
@@ -798,7 +800,8 @@ public PhoneMetadata setNationalPrefixForParsing(String value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.370 -0500", hash_original_method = "1810BCBEB4974245D7BFFA09C69DD621", hash_generated_method = "887F25A4F2F63A81E17964868D1CEDFB")
         
 public boolean hasNationalPrefixTransformRule() { return hasNationalPrefixTransformRule; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.373 -0500", hash_original_method = "55DE6447BA6383DE2B8CA08949083559", hash_generated_method = "4AE367E9086F24B5EF2C01BE81793A7F")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.373 -0500", hash_original_method = "55DE6447BA6383DE2B8CA08949083559", hash_generated_method = "4AE367E9086F24B5EF2C01BE81793A7F")
         
 public String getNationalPrefixTransformRule() { return nationalPrefixTransformRule_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.375 -0500", hash_original_method = "F0F297723C8F168223FB62622F5A1EB6", hash_generated_method = "9F14F29F49D3916B3FCC1942A59F6B48")
@@ -821,7 +824,8 @@ public PhoneMetadata setSameMobileAndFixedLinePattern(boolean value) {
       sameMobileAndFixedLinePattern_ = value;
       return this;
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.391 -0500", hash_original_method = "84A1634AEDD3ABF2CF1A3014B5D415EB", hash_generated_method = "5489E9242974C50747F05F61B55C577E")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.391 -0500", hash_original_method = "84A1634AEDD3ABF2CF1A3014B5D415EB", hash_generated_method = "5489E9242974C50747F05F61B55C577E")
         
 public java.util.List<NumberFormat> numberFormats() {
       return numberFormat_;
@@ -843,7 +847,8 @@ public PhoneMetadata addNumberFormat(NumberFormat value) {
       numberFormat_.add(value);
       return this;
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.403 -0500", hash_original_method = "AE158E1AC846181939D70DB177BF740E", hash_generated_method = "03B5EC9CCD8C26FC0905344395B25A9A")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.403 -0500", hash_original_method = "AE158E1AC846181939D70DB177BF740E", hash_generated_method = "03B5EC9CCD8C26FC0905344395B25A9A")
         
 public java.util.List<NumberFormat> intlNumberFormats() {
       return intlNumberFormat_;
@@ -880,7 +885,8 @@ public boolean hasMainCountryForCode() { return hasMainCountryForCode; }
 public boolean isMainCountryForCode() { return mainCountryForCode_; }
     // Method that lets this class have the same interface as the one generated by Protocol Buffers
     // which is used by C++ build tools.
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.424 -0500", hash_original_method = "8B579A48BF103BAE8E5F2D34ABF5A62F", hash_generated_method = "0F0CDA12A0234683C4782EA470062EC6")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.424 -0500", hash_original_method = "8B579A48BF103BAE8E5F2D34ABF5A62F", hash_generated_method = "0F0CDA12A0234683C4782EA470062EC6")
         
 public boolean getMainCountryForCode() { return mainCountryForCode_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.427 -0500", hash_original_method = "0E977089CAAEFAD04CCCDA9E72421381", hash_generated_method = "0C3D6EE0AFF67D524837549AB77C882D")
@@ -893,7 +899,8 @@ public PhoneMetadata setMainCountryForCode(boolean value) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.433 -0500", hash_original_method = "46DBCF13AB23890B1C354034C02AAE0D", hash_generated_method = "8B057D1EC13BC888894F7FDB1E341B3B")
         
 public boolean hasLeadingDigits() { return hasLeadingDigits; }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.436 -0500", hash_original_method = "BA0CBA2DFD34C6F845467DDF3F7503AD", hash_generated_method = "8FA6A1222CC588520E535620E447E7C8")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.436 -0500", hash_original_method = "BA0CBA2DFD34C6F845467DDF3F7503AD", hash_generated_method = "8FA6A1222CC588520E535620E447E7C8")
         
 public String getLeadingDigits() { return leadingDigits_; }
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.438 -0500", hash_original_method = "1B8095B1499A1300CC7FD6395528DFB9", hash_generated_method = "C0D98860E1D9CE1F34483E93E7817149")
@@ -917,7 +924,8 @@ public PhoneMetadata setLeadingZeroPossible(boolean value) {
       return this;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.453 -0500", hash_original_method = "82C82662DE792F1D24D935E7D9A568AC", hash_generated_method = "16C03757178D7F85C1AE533A256354C4")
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.453 -0500", hash_original_method = "82C82662DE792F1D24D935E7D9A568AC", hash_generated_method = "16C03757178D7F85C1AE533A256354C4")
         
 public void writeExternal(ObjectOutput objectOutput) throws IOException {
       objectOutput.writeBoolean(hasGeneralDesc);
@@ -1017,7 +1025,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
 
       objectOutput.writeBoolean(leadingZeroPossible_);
     }
-
         
         public static final class Builder extends PhoneMetadata {
             
@@ -1031,7 +1038,6 @@ public void writeExternal(ObjectOutput objectOutput) throws IOException {
 public PhoneMetadata build() {
         return this;
       }
-
             
         }
 
@@ -1160,8 +1166,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
       setLeadingZeroPossible(objectInput.readBoolean());
     }
     }
-
-
     
     public static class PhoneMetadataCollection implements Externalizable {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.479 -0500", hash_original_method = "40C91A2B40702DA09592EFF9D16C1F5D", hash_generated_method = "9482C4B711FD5BDB71268D84C7181C9E")
@@ -1179,12 +1183,14 @@ public static Builder newBuilder() {
         
 public PhoneMetadataCollection() {}
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.484 -0500", hash_original_method = "C5ECD645F70FA9D5A2A9EB8CBA32ADEF", hash_generated_method = "19C3C4CE823C1BC802CF8B760B7FD03C")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.484 -0500", hash_original_method = "C5ECD645F70FA9D5A2A9EB8CBA32ADEF", hash_generated_method = "19C3C4CE823C1BC802CF8B760B7FD03C")
         
 public java.util.List<PhoneMetadata> getMetadataList() {
       return metadata_;
     }
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.486 -0500", hash_original_method = "95419ED058599C84B2A0103C5C8B3F30", hash_generated_method = "71E863C649392CC9AB1BB5A6068913A6")
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.486 -0500", hash_original_method = "95419ED058599C84B2A0103C5C8B3F30", hash_generated_method = "71E863C649392CC9AB1BB5A6068913A6")
         
 public int getMetadataCount() { return metadata_.size(); }
 
@@ -1198,7 +1204,8 @@ public PhoneMetadataCollection addMetadata(PhoneMetadata value) {
       return this;
     }
 
-    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.491 -0500", hash_original_method = "BDFB00F39A05DC0D50872248169D293E", hash_generated_method = "02A84DA131F38BB4F5CF16B6992C642D")
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:01.491 -0500", hash_original_method = "BDFB00F39A05DC0D50872248169D293E", hash_generated_method = "02A84DA131F38BB4F5CF16B6992C642D")
         
 public void writeExternal(ObjectOutput objectOutput) throws IOException {
       int size = getMetadataCount();
@@ -1218,7 +1225,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
         metadata_.add(metadata);
       }
     }
-
         
         public static final class Builder extends PhoneMetadataCollection {
             
@@ -1232,7 +1238,6 @@ public void readExternal(ObjectInput objectInput) throws IOException {
 public PhoneMetadataCollection build() {
         return this;
       }
-
             
         }
 
@@ -1243,8 +1248,6 @@ public PhoneMetadataCollection clear() {
       return this;
     }
     }
-
-
     
 }
 

@@ -21,14 +21,8 @@ import android.util.Xml;
 import com.android.internal.telephony.PhoneBase;
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
-
 public final class EriManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.537 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "1718F4DE7305211326235C8400C02ED3")
-
 
     private static final String LOG_TAG = "CDMA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.540 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "B7707D757F0604821CCAF673B2122320")
@@ -39,7 +33,6 @@ public final class EriManager {
     private static final boolean VDBG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.545 -0500", hash_original_field = "9D9EA018F8884BE17D03C350A78CB644", hash_generated_field = "00C3C5EFF0729D5E68BE0BDCAA7114C6")
 
-
     public static final int ERI_FROM_XML          = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.548 -0500", hash_original_field = "84D2D928253E1F2C1EEBDC6516282ACA", hash_generated_field = "02B1498635DB5093BFD38B42915E1A9B")
 
@@ -48,7 +41,6 @@ public final class EriManager {
 
     public static final int ERI_FROM_MODEM        = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.552 -0500", hash_original_field = "B504049739EC0253F0006BF183324917", hash_generated_field = "E7BDAD23CF4F53103B9ED94B380FFE2A")
-
 
     private PhoneBase mPhone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.554 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
@@ -79,7 +71,6 @@ public void dispose() {
         mEriFile = new EriFile();
         isEriFileLoaded = false;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.574 -0500", hash_original_method = "79759E789BC701587754CBB5AD9F0BEC", hash_generated_method = "3C7EF608253C170AEE60036A66D54C69")
     
@@ -220,6 +211,7 @@ private void loadEriFileFromXml() {
      * Returns the version of the ERI file
      *
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.585 -0500", hash_original_method = "C9469B68514D99711DF201C8FE7DFBA7", hash_generated_method = "D1E7158C97910CA51D94C509924F2A50")
     
 public int getEriFileVersion() {
@@ -230,6 +222,7 @@ public int getEriFileVersion() {
      * Returns the number of ERI entries parsed
      *
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.588 -0500", hash_original_method = "61A833F46D3B8953A540625C42A0EB37", hash_generated_method = "3BF13A25945591AC4447C2719D699FAB")
     
 public int getEriNumberOfEntries() {
@@ -240,16 +233,15 @@ public int getEriNumberOfEntries() {
      * Returns the ERI file type value ( 0 for Phase 0, 1 for Phase 1)
      *
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.590 -0500", hash_original_method = "1FA8D7F59FB6C59B7F4FF404D7CADD99", hash_generated_method = "691B7E4EBBD1F924EBB5DC55E73A9D4A")
     
 public int getEriFileType() {
         return mEriFile.mEriFileType;
     }
-
     
     class EriFile {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.505 -0500", hash_original_field = "50A355229BEB69A5D0974EAF2DAAD1F5", hash_generated_field = "7213E6068BB9156E973788AD57203866")
-
 
         public int mVersionNumber;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.508 -0500", hash_original_field = "7F68781EE7955FA9B68FC91B68B82E84", hash_generated_field = "FDCC1E3B4FD2295A26ED5003CFA706F3")
@@ -276,11 +268,8 @@ public EriFile() {
             this.mCallPromptId = new String[] { "", "", "" };
             this.mRoamIndTable = new HashMap<Integer, EriInfo>();
         }
-
         
     }
-
-
     
     class EriDisplayInformation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.523 -0500", hash_original_field = "08F80C000B9ED2BFAD3A7730AFC97B9F", hash_generated_field = "D41D6FF190F02ADC6B00CBC4CA09758B")
@@ -314,7 +303,6 @@ public EriDisplayInformation(int eriIconIndex, int eriIconMode, String eriIconTe
             return "EriDisplayInformation: {" + " IconIndex: " + mEriIconIndex + " EriIconMode: "
                     + mEriIconMode + " EriIconText: " + mEriIconText + " }";
         }
-
         
     }
 
@@ -382,7 +370,6 @@ private EriDisplayInformation getEriDisplayInformation(int roamInd, int defRoamI
                     EriInfo.ROAMING_ICON_MODE_FLASH,
                     mContext.getText(com.android.internal.R.string.roamingText2).toString());
             break;
-
 
         // Handling the standard ERI
         case 3:
@@ -539,18 +526,21 @@ private EriDisplayInformation getEriDisplayInformation(int roamInd, int defRoamI
         return ret;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.602 -0500", hash_original_method = "0CC10569A68EA715FF25360AD6D9EC97", hash_generated_method = "0DE45E1248F6209B92F10815DEF40E4B")
     
 public int getCdmaEriIconIndex(int roamInd, int defRoamInd){
         return getEriDisplayInformation(roamInd, defRoamInd).mEriIconIndex;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.604 -0500", hash_original_method = "9AB048E0DEB3BE0C35B104EC83429815", hash_generated_method = "2306462A913835AD68AEA1F9EECEAB05")
     
 public int getCdmaEriIconMode(int roamInd, int defRoamInd){
         return getEriDisplayInformation(roamInd, defRoamInd).mEriIconMode;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:00.607 -0500", hash_original_method = "180B939948D08F85119E751A7703AC82", hash_generated_method = "840339AD107E413B35E633678D9C4D67")
     
 public String getCdmaEriText(int roamInd, int defRoamInd){

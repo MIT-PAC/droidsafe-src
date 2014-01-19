@@ -15,11 +15,6 @@ import java.util.List;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class CertificateFactory {
 
     /**
@@ -159,6 +154,7 @@ protected CertificateFactory(CertificateFactorySpi certFacSpi,
      *
      * @return the provider of this certificate factory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.899 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -170,6 +166,7 @@ public final Provider getProvider() {
      *
      * @return type of certificate being used.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.902 -0500", hash_original_method = "0E0B07C7C3039087C9D268CAF8DACC19", hash_generated_method = "B5025B3379E65F477B29B0C5C8B783DF")
     
 public final String getType() {
@@ -201,6 +198,7 @@ public final Certificate generateCertificate(InputStream inStream)
      * @return an iterator over supported {@link CertPath} encodings (as
      *         Strings).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:58.908 -0500", hash_original_method = "E0154FCC8B9DF343492D74548A8DABBF", hash_generated_method = "95471670040F9731176EC96070384C81")
     
 public final Iterator<String> getCertPathEncodings() {

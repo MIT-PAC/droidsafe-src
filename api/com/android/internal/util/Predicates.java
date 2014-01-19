@@ -6,34 +6,24 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
 public class Predicates {
-
     
     public static <T> Predicate<T> and(Predicate<? super T>... components) {
         return and(Arrays.asList(components));
     }
-
     
     public static <T> Predicate<T> and(Iterable<? extends Predicate<? super T>> components) {
         return new AndPredicate(components);
     }
-
     
-    @DSModeled(DSC.BAN)
     public static <T> Predicate<T> or(Predicate<? super T>... components) {
         return or(Arrays.asList(components));
     }
-
     
-    @DSModeled(DSC.BAN)
     public static <T> Predicate<T> or(Iterable<? extends Predicate<? super T>> components) {
         return new OrPredicate(components);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T> Predicate<T> not(Predicate<? super T> predicate) {
         return new NotPredicate<T>(predicate);
     }
@@ -42,7 +32,6 @@ public class Predicates {
     
 private Predicates() {
     }
-
     
     private static class AndPredicate<T> implements Predicate<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.828 -0500", hash_original_field = "2D7BCA6A49180D21641A6C27CEFDAAD6", hash_generated_field = "0796151CBA0A8A363E453698674B2FF1")
@@ -65,11 +54,8 @@ public boolean apply(T t) {
             }
             return true;
         }
-
         
     }
-
-
     
     private static class OrPredicate<T> implements Predicate<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.843 -0500", hash_original_field = "2D7BCA6A49180D21641A6C27CEFDAAD6", hash_generated_field = "0796151CBA0A8A363E453698674B2FF1")
@@ -92,11 +78,8 @@ public boolean apply(T t) {
             }
             return false;
         }
-
         
     }
-
-
     
     private static class NotPredicate<T> implements Predicate<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.853 -0500", hash_original_field = "6EAE66C7ACCB91F69508E701685F652C", hash_generated_field = "1F2E335622F7CC2AFE3755D1E7E5B593")
@@ -114,11 +97,8 @@ private NotPredicate(Predicate<? super T> predicate) {
 public boolean apply(T t) {
             return !predicate.apply(t);
         }
-
         
     }
-
-
     
 }
 

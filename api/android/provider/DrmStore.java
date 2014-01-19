@@ -21,10 +21,6 @@ import android.drm.mobile1.DrmRightsManager;
 import android.net.Uri;
 import android.util.Log;
 
-
-
-
-
 public final class DrmStore {
 
     /**
@@ -73,6 +69,7 @@ public static final Intent addDrmFile(ContentResolver cr, File file, String titl
      * @param title The title for the content (or null)
      * @return uri to the DRM record or null
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.749 -0500", hash_original_method = "4CDEA202B3139E78A079F62F7879F788", hash_generated_method = "1F0B839B8FD566BE358767B61EF6803A")
     
 public static final Intent addDrmFile(ContentResolver cr, FileInputStream fis, String title) {
@@ -152,18 +149,14 @@ public static void enforceAccessDrmPermission(Context context) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.729 -0500", hash_original_field = "A25F543E1D7DA769D205B9BDD55D1DC0", hash_generated_field = "432FBE01DD1C069C6C057D9BD9F228FE")
 
     private static final String TAG = "DrmStore";
-
     
     public interface Columns extends BaseColumns {
         
         public static final String DATA = "_data";
-
         
         public static final String SIZE = "_size";
-
         
         public static final String TITLE = "title";
-
         
         public static final String MIME_TYPE = "mime_type";
 
@@ -179,7 +172,6 @@ public static void enforceAccessDrmPermission(Context context) {
         public static final Uri CONTENT_URI = Uri.parse("content://" + AUTHORITY + "/audio");
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.731 -0500", hash_original_field = "94E342F666953DA9539DE438F6A82261", hash_generated_field = "F95243080EDD554C30FC0476DD98FCCD")
-
 
     public static final String AUTHORITY = "drm";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:44.734 -0500", hash_original_field = "8A0D99AA222FD2CEDB130CEF0C95EBE4", hash_generated_field = "A4BF6B5761EC4106BC7C8CE9325687FB")

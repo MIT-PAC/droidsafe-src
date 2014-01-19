@@ -8,13 +8,8 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-
-
-
-
 public class CycleInterpolator implements Interpolator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.045 -0500", hash_original_field = "17F18B8547C8163B564A93FA0327FF9E", hash_generated_field = "B899AFE094BA9FE27B31C93546E211F2")
-
     
     private float mCycles;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.037 -0500", hash_original_method = "B3C740F3395BC63F138ED104BB72F5FF", hash_generated_method = "973DCFF905BD2075568557E5E8B5113D")
@@ -34,12 +29,12 @@ public CycleInterpolator(Context context, AttributeSet attrs) {
         a.recycle();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.042 -0500", hash_original_method = "C854E7122C234C45B08A1B645C47BE34", hash_generated_method = "0A1DAC5C284DAAFDA01827EDA9C33BCE")
     
 public float getInterpolation(float input) {
         return (float)(Math.sin(2 * mCycles * Math.PI * input));
     }
-
     
 }
 

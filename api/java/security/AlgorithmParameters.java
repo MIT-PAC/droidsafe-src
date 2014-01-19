@@ -10,11 +10,6 @@ import java.security.spec.InvalidParameterSpecException;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class AlgorithmParameters {
 
     /**
@@ -30,6 +25,9 @@ public class AlgorithmParameters {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}.
      */
+    @DSComment("no suspicious activity, just creating an object")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.942 -0500", hash_original_method = "DC5D93AFAABA216D2504A813B834D6CA", hash_generated_method = "AFA69B810C3CBBDCFED9F1B8680D5F5B")
     
 public static AlgorithmParameters getInstance(String algorithm)
@@ -59,6 +57,7 @@ public static AlgorithmParameters getInstance(String algorithm)
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.945 -0500", hash_original_method = "C2C2EC01024A6B49BB2E941E05C66526", hash_generated_method = "26833208D3CE93A392B1E964F664C4BF")
     
 public static AlgorithmParameters getInstance(String algorithm,
@@ -90,6 +89,7 @@ public static AlgorithmParameters getInstance(String algorithm,
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.948 -0500", hash_original_method = "7B13EBBD6929DB755B15BB9995ABE950", hash_generated_method = "83F482073F167CCE99F2558E019CE775")
     
 public static AlgorithmParameters getInstance(String algorithm,
@@ -147,6 +147,7 @@ protected AlgorithmParameters(AlgorithmParametersSpi algPramSpi,
      *
      * @return the provider associated with this {@code AlgorithmParameters}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.951 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -158,6 +159,7 @@ public final Provider getProvider() {
      *
      * @return the name of the algorithm.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.953 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -175,6 +177,8 @@ public final String getAlgorithm() {
      *             initialized or the given {@code paramSpec} is not appropriate
      *             for initializing this {@code AlgorithmParameters}.
      */
+    @DSComment("no suspicious activity, just creating an object")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.955 -0500", hash_original_method = "7E6C59119732596BEFEB2E6E8A90EC10", hash_generated_method = "44D0FA33002C5953CDB40B19856ABC88")
     
 public final void init(AlgorithmParameterSpec paramSpec)
@@ -228,7 +232,6 @@ public final void init(byte[] params, String format) throws IOException {
         spiImpl.engineInit(params, format);
         initialized = true;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:54.765 -0400", hash_original_method = "9BE0AC13DE94D992E08BA6CD89DD9D38", hash_generated_method = "DAA561BDD29669502F20C03B7972ADA6")
     public final <T extends AlgorithmParameterSpec> T getParameterSpec(Class<T> paramSpec) throws InvalidParameterSpecException {
@@ -258,6 +261,7 @@ T var85314A191FE096CEB6FC1BB15A481DB0_510525874 =         spiImpl.engineGetParam
      *             if this {@code AlgorithmParameters} has already been
      *             initialized, or if this parameters could not be encoded.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.965 -0500", hash_original_method = "2345D83B19F14D228FA4A748BB5C0696", hash_generated_method = "5798FBF69FA064167E6238428A1B2D3B")
     
 public final byte[] getEncoded() throws IOException {
@@ -278,6 +282,7 @@ public final byte[] getEncoded() throws IOException {
      *             if this {@code AlgorithmParameters} has already been
      *             initialized, or if this parameters could not be encoded.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.968 -0500", hash_original_method = "5F0B9F7B1E2AFA510F6DA0646E7306FA", hash_generated_method = "361CDB3F64F8985DC91A54ED6E0860A7")
     
 public final byte[] getEncoded(String format) throws IOException {

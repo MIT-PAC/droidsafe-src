@@ -22,11 +22,6 @@ import org.apache.http.message.BufferedHeader;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.EncodingUtils;
 
-
-
-
-
-
 public class DigestScheme extends RFC2617Scheme {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.706 -0500", hash_original_method = "252E19077B2ABBDBE3896311A0C6F0E7", hash_generated_method = "5C54E299EA1AAC8B088F1E26B683997C")
@@ -54,7 +49,7 @@ private static MessageDigest createMessageDigest(
 private static String encode(byte[] binaryData) {
         if (binaryData.length != 16) {
             return null;
-        } 
+        }
 
         char[] buffer = new char[32];
         for (int i = 0; i < 16; i++) {
@@ -67,13 +62,13 @@ private static String encode(byte[] binaryData) {
         return new String(buffer);
     }
 
-
     /**
      * Creates a random cnonce value based on the current time.
      * 
      * @return The cnonce value as String.
      * @throws UnsupportedDigestAlgorithmException if MD5 algorithm is not supported.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.721 -0500", hash_original_method = "A4DA9D6458699868D83920107CCFA8FD", hash_generated_method = "468CC97B5B32B43115FE9AA120C34125")
     
 public static String createCnonce() {
@@ -108,7 +103,6 @@ public static String createCnonce() {
 
     private boolean complete;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.681 -0500", hash_original_field = "0DAA7721A139829C14712DFFA240735E", hash_generated_field = "3842BF6B6403917837D5616C0B4C3C6A")
-
 
     private int qopVariant = QOP_MISSING;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.683 -0500", hash_original_field = "3FC5E51B0E9C58AD59076F7008FEB0E3", hash_generated_field = "A436BD0723F1A8DF0FBA775815BA03FC")
@@ -163,7 +157,7 @@ public DigestScheme() {
                     unsupportedQop = true;
                 }     
             }
-        }        
+        }
         
         if (unsupportedQop && (qopVariant == QOP_MISSING)) {
             throw new MalformedChallengeException("None of the qop methods is supported");   
@@ -195,6 +189,7 @@ public boolean isComplete() {
      * 
      * @return <code>digest</code>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:35.693 -0500", hash_original_method = "590EDC4C396D176AA70267B4181524CE", hash_generated_method = "EC1CDF4C4F65BE7EF179619AEB3ECF31")
     
 public String getSchemeName() {

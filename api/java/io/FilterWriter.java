@@ -18,6 +18,8 @@ public abstract class FilterWriter extends Writer {
      * @param out
      *            the target Writer to filter writes on.
      */
+    @DSComment("IO reader/writer construtor")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.142 -0500", hash_original_method = "C9832951E5B51AA5FF45C56E637B6353", hash_generated_method = "512D40C5894D17A76D1DCE0C5DD17367")
     
 protected FilterWriter(Writer out) {
@@ -118,7 +120,6 @@ protected FilterWriter(Writer out) {
             out.write(str, offset, count);
         }
     }
-
     
 }
 

@@ -10,10 +10,6 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
 
-
-
-
-
 public final class NfcV extends BasicTagTechnology {
 
     /**
@@ -25,6 +21,7 @@ public final class NfcV extends BasicTagTechnology {
      * @param tag an NFC-V compatible tag
      * @return NFC-V object
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.407 -0500", hash_original_method = "F21DE175E97C7CA6B5016046F850B598", hash_generated_method = "BA04E11D3E7F4732245DDA59CAEC2390")
     
 public static NfcV get(Tag tag) {
@@ -42,7 +39,6 @@ public static NfcV get(Tag tag) {
 
     public static final String EXTRA_DSFID = "dsfid";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.402 -0500", hash_original_field = "2C0FB919660C0D7D01CA14F5FDEF08F9", hash_generated_field = "121CAF4F22F2DB7E3FE6590C2E29C484")
-
 
     private byte mRespFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.404 -0500", hash_original_field = "6A0E644AD48A7A11D3A50934FD1C3DD6", hash_generated_field = "22B4F1B6769CD74A976FDA7EB332E5E3")
@@ -66,6 +62,7 @@ public NfcV(Tag tag) throws RemoteException {
      *
      * @return Response Flag bytes
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.412 -0500", hash_original_method = "19D3A3646C1C2655B316DC5413F4466A", hash_generated_method = "B7AEDAE18B3D311E741259AABC364993")
     
 public byte getResponseFlags() {
@@ -79,6 +76,7 @@ public byte getResponseFlags() {
      *
      * @return DSF ID bytes
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.414 -0500", hash_original_method = "9F53E6713A0959247C46979AAE2F100E", hash_generated_method = "CF1C00DE1C7700C1728A76B01F027DE7")
     
 public byte getDsfId() {
@@ -106,17 +104,18 @@ public byte getDsfId() {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or this operation is canceled
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.416 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
     
 public byte[] transceive(byte[] data) throws IOException {
         return transceive(data, true);
     }
 
-
     /**
      * Return the maximum number of bytes that can be sent with {@link #transceive}.
      * @return the maximum number of bytes that can be sent with {@link #transceive}.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.418 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
     
 public int getMaxTransceiveLength() {

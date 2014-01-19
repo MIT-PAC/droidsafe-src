@@ -15,11 +15,6 @@ import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.utils.Array;
 
-
-
-
-
-
 public final class AuthorityKeyIdentifier extends ExtensionValue {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.012 -0500", hash_original_method = "2C8925F53FCE2757A0E41E22228FD95C", hash_generated_method = "E8AAD59E4FF368F29BAAAFEB23FAE189")
@@ -29,7 +24,6 @@ public static AuthorityKeyIdentifier decode(byte[] encoding) throws IOException 
         aki.encoding = encoding;
         return aki;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.823 -0400", hash_original_field = "614641B23F87DF30A1DD861AAD515E47", hash_generated_field = "E137446FB1207E7CEC699888878370F5")
 
@@ -45,6 +39,7 @@ public static AuthorityKeyIdentifier decode(byte[] encoding) throws IOException 
             setOptional(2);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.021 -0500", hash_original_method = "8440A55DE3509FBE8D7DFB533886663B", hash_generated_method = "E5290763EB1AD0F43939086843EA730B")
         
 @Override protected Object getDecodedObject(BerInputStream in) throws IOException {
@@ -91,6 +86,7 @@ public AuthorityKeyIdentifier(byte[] keyIdentifier,
         this.authorityCertSerialNumber = authorityCertSerialNumber;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.014 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {
@@ -100,6 +96,7 @@ public AuthorityKeyIdentifier(byte[] keyIdentifier,
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.017 -0500", hash_original_method = "8E2FBEC1389F8AD5C10937DA32053F15", hash_generated_method = "EF17429EA57A95E149D4C834A6D5A4BB")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

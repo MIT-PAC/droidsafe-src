@@ -13,58 +13,39 @@ import java.lang.reflect.Modifier;
 
 import android.util.Log;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Binder implements IBinder {
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getCallingPid() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213128804 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_213128804;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getCallingUid() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889067269 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_889067269;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final long clearCallingIdentity() {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1969549158 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1969549158;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void restoreCallingIdentity(long token) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void setThreadStrictModePolicy(int policyMask) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getThreadStrictModePolicy() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372633461 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1372633461;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void flushPendingCommands() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final void joinThreadPool() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.106 -0500", hash_original_field = "EF077B080E17BA8045DEC02712518733", hash_generated_field = "0511AC5400F6AB0B4374BEAACA5C07BE")
@@ -74,7 +55,6 @@ public class Binder implements IBinder {
 
     private static final String TAG = "Binder";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.110 -0500", hash_original_field = "099BEA65529558F891E66B800CD4AD52", hash_generated_field = "2791292652EE289D4D904A77FF17FBF6")
-
 
     private int mObject;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.112 -0500", hash_original_field = "A7CA8FFEE56AE2617FD1EF74724DB612", hash_generated_field = "61E718D71E9BC4B7ED6B8BF7906FFCC9")
@@ -87,6 +67,8 @@ public class Binder implements IBinder {
     /**
      * Default constructor initializes the object.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.148 -0500", hash_original_method = "E9C0CAF28240B0B259339EF455808C3F", hash_generated_method = "3D5C65FE180F867DB2040729AD77C600")
     
 public Binder() {
@@ -108,6 +90,8 @@ public Binder() {
      * to return the given owner IInterface when the corresponding
      * descriptor is requested.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.150 -0500", hash_original_method = "FF7CD905415FB665DAB37EF33B177901", hash_generated_method = "EA06BD2476989BF4DB475E54AC02F660")
     
 public void attachInterface(IInterface owner, String descriptor) {
@@ -118,6 +102,7 @@ public void attachInterface(IInterface owner, String descriptor) {
     /**
      * Default implementation returns an empty interface name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.153 -0500", hash_original_method = "D3E904DAC6E3F35A0A15305E093649D7", hash_generated_method = "851E22E704239ADEFBCD1E61F06C7294")
     
 public String getInterfaceDescriptor() {
@@ -166,6 +151,8 @@ public IInterface queryLocalInterface(String descriptor) {
      *
      * <p>If you want to call this, call transact().
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.161 -0500", hash_original_method = "0CF6D9F1E08225F80F6CBB6DE559E3A9", hash_generated_method = "1C003B722C02AF5B148F4AC3DEDD3455")
     
 protected boolean onTransact(int code, Parcel data, Parcel reply,
@@ -202,6 +189,7 @@ protected boolean onTransact(int code, Parcel data, Parcel reply,
      * Implemented to call the more convenient version
      * {@link #dump(FileDescriptor, PrintWriter, String[])}.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.164 -0500", hash_original_method = "062423BD3F619586ADD6FBBF398B1A78", hash_generated_method = "A93C1D716934E3F725A1746D785E8C4E")
     
 public void dump(FileDescriptor fd, String[] args) {
@@ -243,6 +231,7 @@ public void dumpAsync(final FileDescriptor fd, final String[] args) {
      * closed for you after you return.
      * @param args additional arguments to the dump request.
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.172 -0500", hash_original_method = "8E1D6FEDF1AFEDBCDCF9E63EFF23CA00", hash_generated_method = "F6D7C174AEA7671EB5A5529CC69A276B")
     
 protected void dump(FileDescriptor fd, PrintWriter fout, String[] args) {
@@ -306,7 +295,6 @@ protected void finalize() throws Throwable {
     	//Formerly a native method
     }
 
-
     // Entry point from android_util_Binder.cpp's onTransact
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.191 -0500", hash_original_method = "F07199776E11DA2675C840AC9A2F2A30", hash_generated_method = "0587CA39AE5CA44638259C157AE9E508")
     
@@ -352,7 +340,6 @@ private static final void sendDeathNotice(DeathRecipient recipient) {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.235 -0500", hash_original_field = "B6AD301DEBECEEA98E0E9725D5C64B16", hash_generated_field = "4EB287DD111C153F1E6F56591B54BB33")
-
     
      private WeakReference mSelf;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.237 -0500", hash_original_field = "099BEA65529558F891E66B800CD4AD52", hash_generated_field = "2791292652EE289D4D904A77FF17FBF6")
@@ -380,16 +367,13 @@ BinderProxy() {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.202 -0500", hash_original_method = "B707B72714522D5F23CBE8D4C77B554B", hash_generated_method = "DB9A5309E19F1DA01E9E9CCD2E3F347D")
     
 public IInterface queryLocalInterface(String descriptor) {
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:41.892 -0400", hash_original_method = "6A74CDB8273CEC1C9569965EF003EFCB", hash_generated_method = "EA4B3F54BFD9578B1A4BA99DF2C0FDB9")
     public String getInterfaceDescriptor() throws RemoteException {
         String s = new String();
@@ -425,7 +409,6 @@ public IInterface queryLocalInterface(String descriptor) {
     	addTaint(flags);
     	return getTaintBoolean();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.219 -0500", hash_original_method = "C4F8E51C715A0CBA59E063E00B1AFC6F", hash_generated_method = "D3572BDB8A72D93CE954CDFF82F510A1")
     
@@ -475,8 +458,6 @@ public void dumpAsync(FileDescriptor fd, String[] args) throws RemoteException {
     private final void destroy(){
     	//Formerly a native method
     }
-
-
     
 }
 

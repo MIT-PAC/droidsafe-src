@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class HandlerThread extends Thread {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.197 -0500", hash_original_field = "1D8CA7654CC48BAF402334392A1619BF", hash_generated_field = "1D8CA7654CC48BAF402334392A1619BF")
 
@@ -20,6 +16,8 @@ public class HandlerThread extends Thread {
 
     Looper mLooper;
 
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.204 -0500", hash_original_method = "E5F101A858C2AB40D5C2E9617BFE5E37", hash_generated_method = "3E0C0881ECB68AF6855B784013C5EA28")
     
 public HandlerThread(String name) {
@@ -70,6 +68,9 @@ public void run() {
      * has been started, this method will block until the looper has been initialized.  
      * @return The looper.
      */
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.214 -0500", hash_original_method = "0FC13809696BA2D6DC441C842770D0F1", hash_generated_method = "4B1708DC77C7D7E3B2BA2EC8692FAEBE")
     
 public Looper getLooper() {
@@ -95,6 +96,8 @@ public Looper getLooper() {
      * null), then false is returned.  Otherwise the looper is asked to
      * quit and true is returned.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.216 -0500", hash_original_method = "45988F35C3EAC3EE4988825F5EC29D45", hash_generated_method = "61D5C501697D0C9B0E5B1637868ED248")
     
 public boolean quit() {
@@ -109,12 +112,12 @@ public boolean quit() {
     /**
      * Returns the identifier of this thread. See Process.myTid().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:30.219 -0500", hash_original_method = "EC4E0EE5AEE6B394A49A3FA195776A82", hash_generated_method = "8D563438E811E72E71A9B78483890840")
     
 public int getThreadId() {
         return mTid;
     }
-
     
 }
 

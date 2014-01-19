@@ -43,11 +43,6 @@ import javax.sip.header.RouteHeader;
 import javax.sip.header.TimeStampHeader;
 import javax.sip.message.Request;
 
-
-
-
-
-
 public class SIPClientTransaction extends SIPTransaction implements ServerResponseInterface, javax.sip.ClientTransaction, gov.nist.javax.sip.ClientTransactionExt {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.931 -0500", hash_original_field = "58283386B675010F4891CF27E94157D3", hash_generated_field = "1487DE1D87B4F987EFCACDA15F312B17")
 
@@ -57,14 +52,11 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     private ConcurrentHashMap<String,SIPDialog> sipDialogs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.933 -0500", hash_original_field = "49DD22F94DF245317ED1A2BD8A02CFDB", hash_generated_field = "609F87DF574B03997F5F114A0B9D153C")
 
-
     private SIPRequest lastRequest;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.936 -0500", hash_original_field = "D6A71000355B6BFBB50B46A66F901937", hash_generated_field = "EBCE51BBA382AA4A4CBC72431B4DD4F6")
 
-
     private int viaPort;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.938 -0500", hash_original_field = "4BA0D9B2BD51634788CE72CB007A32A1", hash_generated_field = "638E6682C500E41733363C20AADC9C2B")
-
 
     private String viaHost;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.941 -0500", hash_original_field = "65AD11AD54A2F67B68FF72DF0F0B9619", hash_generated_field = "D5BADECCFB140300052474F1FF053995")
@@ -72,22 +64,17 @@ public class SIPClientTransaction extends SIPTransaction implements ServerRespon
     private transient ServerResponseInterface respondTo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.945 -0500", hash_original_field = "4CD2877ACCF9846A4F145B6AB6FC362C", hash_generated_field = "9DA006915F9968E7F19F133BB3970E72")
 
-
     private SIPDialog defaultDialog;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.948 -0500", hash_original_field = "3566D4B8C0AEF966330B649D87EC260C", hash_generated_field = "B633077E034AF130A4E0928C373CBB0D")
-
 
     private Hop nextHop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.950 -0500", hash_original_field = "9C492E8F94C2A6777DDA6DBC2C27E513", hash_generated_field = "F8A9EE3383846FA140533EA0DC849D5A")
 
-
     private boolean notifyOnRetransmit;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.953 -0500", hash_original_field = "36DCA919BF89F587B06884FD9CF79079", hash_generated_field = "3AFD3FC295AA4B6D90EAF77E52351862")
 
-
     private boolean timeoutIfStillInCallingState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.955 -0500", hash_original_field = "5AD8D84FA0FEEAB1970AAD286406ABD6", hash_generated_field = "5D7F837D171773BD9460FE3577E94E41")
-
 
     private int callingStateTimeoutCount;
 
@@ -148,6 +135,7 @@ public void setResponseInterface(ServerResponseInterface newRespondTo) {
     /**
      * Returns this transaction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.974 -0500", hash_original_method = "2565B9EE896335E27EEEABBB213A9C77", hash_generated_method = "52A37846A02A7017E22F7016E885C2EF")
     
 public MessageChannel getRequestChannel() {
@@ -221,6 +209,7 @@ public boolean isMessagePartOfTransaction(SIPMessage messageToTest) {
      * 
      * @param messageToSend Request to process and send.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:28.981 -0500", hash_original_method = "1DFD8968C3CA232EAF5E448E3048EE02", hash_generated_method = "4218F1362D3FAC8D5423CCE43D04CC05")
     
 public void sendMessage(SIPMessage messageToSend) throws IOException {
@@ -938,6 +927,7 @@ protected void fireTimeoutTimer() {
      * 
      * @see javax.sip.ClientTransaction#createCancel()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.008 -0500", hash_original_method = "2914559B80386C20A981D1BD82B7352B", hash_generated_method = "A21D87919D52D9CBE60F4041F8BFD612")
     
 public Request createCancel() throws SipException {
@@ -961,6 +951,7 @@ public Request createCancel() throws SipException {
      * 
      * @see javax.sip.ClientTransaction#createAck()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.013 -0500", hash_original_method = "59092618FB848453FA0559AC58047778", hash_generated_method = "194F8DAA60D5DA096C3626DF64E87588")
     
 public Request createAck() throws SipException {
@@ -1091,6 +1082,7 @@ protected void setViaHost(String host) {
     /**
      * Get the port of the recipient.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.024 -0500", hash_original_method = "133D8E60A07873D19335FF91037EC663", hash_generated_method = "47E8349AAEDCC463643334B5373A918E")
     
 public int getViaPort() {
@@ -1100,6 +1092,7 @@ public int getViaPort() {
     /**
      * Get the host of the recipient.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.027 -0500", hash_original_method = "BFF3BD5D9B7619BE758B5D7001336743", hash_generated_method = "039119DB2163C31C729A57BCE7626576")
     
 public String getViaHost() {
@@ -1109,6 +1102,7 @@ public String getViaHost() {
     /**
      * get the via header for an outgoing request.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.029 -0500", hash_original_method = "0750F8DA140E6BEE450B9743ACFD7E44", hash_generated_method = "9C92BA4FD41355353691977C36D2DA21")
     
 public Via getOutgoingViaHeader() {
@@ -1137,6 +1131,7 @@ public void clearState() {
      * connection for outgoing requests in this time period) and calls the superclass to set
      * state.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.035 -0500", hash_original_method = "513C7C1329620A072B43100259C2C5F6", hash_generated_method = "DA1A7D4A616512B8A2170ABC61DA0D9D")
     
 public void setState(TransactionState newState) {
@@ -1218,6 +1213,7 @@ public boolean checkFromTag(SIPResponse sipResponse) {
      * @see gov.nist.javax.sip.stack.ServerResponseInterface#processResponse(gov.nist.javax.sip.message.SIPResponse,
      *      gov.nist.javax.sip.stack.MessageChannel)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.047 -0500", hash_original_method = "38065D3AA78F19CFA0459E8A308EC067", hash_generated_method = "2822CB128B646821D5C13237EF91297F")
     
 public void processResponse(SIPResponse sipResponse, MessageChannel incomingChannel) {
@@ -1321,6 +1317,7 @@ public void processResponse(SIPResponse sipResponse, MessageChannel incomingChan
      * 
      * @see gov.nist.javax.sip.stack.SIPTransaction#getDialog()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.050 -0500", hash_original_method = "A455A41B989A73F91883A443A89AF007", hash_generated_method = "FD23868559BDFE18A1336D5F8FE31CBF")
     
 public  Dialog getDialog() {
@@ -1352,6 +1349,7 @@ public  Dialog getDialog() {
      * @see gov.nist.javax.sip.stack.SIPTransaction#setDialog(gov.nist.javax.sip.stack.SIPDialog,
      *      gov.nist.javax.sip.message.SIPMessage)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.053 -0500", hash_original_method = "7CA3466B3B290C9233529520194EB8A2", hash_generated_method = "0C9B6900A90B5B2C0B76494AD7ADD1FE")
     
 public SIPDialog getDialog(String dialogId) {
@@ -1366,6 +1364,7 @@ public SIPDialog getDialog(String dialogId) {
      * @see gov.nist.javax.sip.stack.SIPTransaction#setDialog(gov.nist.javax.sip.stack.SIPDialog,
      *      gov.nist.javax.sip.message.SIPMessage)
      */
+    @DSSink({DSSinkKind.VOIP})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.056 -0500", hash_original_method = "9816411304542A0CA40176674DC457D1", hash_generated_method = "2023AC5D58B374E7D429DAC7185BF846")
     
 public void setDialog(SIPDialog sipDialog, String dialogId) {
@@ -1391,6 +1390,7 @@ public void setDialog(SIPDialog sipDialog, String dialogId) {
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.059 -0500", hash_original_method = "EC86D15857564E1427115ADA6B1A0784", hash_generated_method = "21F9EDBC8D80BE52B8A821DB6AFCF3E9")
     
 public SIPDialog getDefaultDialog() {
@@ -1414,6 +1414,7 @@ public void setNextHop(Hop hop) {
      * 
      * @return -- next hop previously computed.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:29.064 -0500", hash_original_method = "F8BB258224ADAD4254DDBC66AEC6C06F", hash_generated_method = "6CA26D0EC82CDBAA9FD6A788CFF1CBCE")
     
 public Hop getNextHop() {
@@ -1447,7 +1448,6 @@ public void alertIfStillInCallingStateBy(int count) {
         this.timeoutIfStillInCallingState = true;
         this.callingStateTimeoutCount = count;
     }
-
     
     public class TransactionTimer extends SIPStackTimerTask {
 
@@ -1519,11 +1519,8 @@ protected void runTask() {
             }
 
         }
-
         
     }
-
-
     
 }
 

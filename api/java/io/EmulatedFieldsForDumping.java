@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class EmulatedFieldsForDumping extends ObjectOutputStream.PutField {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.391 -0500", hash_original_field = "4A739C08808C5C928B9834A591DB34F0", hash_generated_field = "5423796031E51D6FB469318D4F31ADED")
 
@@ -53,6 +49,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.400 -0500", hash_original_method = "BEEEBC5D4806AB4D59848CAB89CBF72F", hash_generated_method = "198A31971150A22083A9CA76595D1221")
     
 @Override
@@ -69,6 +66,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.403 -0500", hash_original_method = "19C83E4EF6515D56E4873B39EA152436", hash_generated_method = "D5D9B81CB4D09B5832746306331C8117")
     
 @Override
@@ -85,6 +83,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.406 -0500", hash_original_method = "AC456BDE0EE43978AFAB7EF96C2FFCE8", hash_generated_method = "71C955E2605880817A43E46E9C624B08")
     
 @Override
@@ -101,6 +100,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.408 -0500", hash_original_method = "821340AFE72172F29B54D2C504849DA8", hash_generated_method = "10E01ABCDA8BF240954901B8EE6E120F")
     
 @Override
@@ -117,6 +117,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.411 -0500", hash_original_method = "63AD54FC39DDE8BE3BBE5131906AC91A", hash_generated_method = "8FEBD7F0FD6B5B81CFD174CB6858AB6D")
     
 @Override
@@ -133,6 +134,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.413 -0500", hash_original_method = "7C91E467656A70134D915DC378A85E85", hash_generated_method = "97A13C6E13CC458A400E21741040D166")
     
 @Override
@@ -149,6 +151,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.416 -0500", hash_original_method = "B27C87FCD55A2BEDEC6F0B351B72701B", hash_generated_method = "694EDD3C37321D8FD47F2FE108FF2D7A")
     
 @Override
@@ -165,6 +168,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.418 -0500", hash_original_method = "8872C66D19E491C8A24E1F3793E76CF5", hash_generated_method = "CD09FE4DC07B71735E833151673F9B1F")
     
 @Override
@@ -181,6 +185,7 @@ EmulatedFields emulatedFields() {
      * @param value
      *            New value for the field.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.420 -0500", hash_original_method = "7776E04A4027209B01392EB6C3502FA8", hash_generated_method = "E6D266A43FA0FAD230541ED94B8906A6")
     
 @Override
@@ -230,7 +235,6 @@ EmulatedFields emulatedFields() {
             }
         }
     }
-
     
 }
 

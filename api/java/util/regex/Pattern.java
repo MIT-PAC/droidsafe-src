@@ -8,10 +8,6 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.Serializable;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Pattern implements Serializable {
@@ -31,6 +27,8 @@ public final class Pattern implements Serializable {
      * @see #UNICODE_CASE
      * @see #UNIX_LINES
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.881 -0500", hash_original_method = "029800E42310A5C751B07B4109A52530", hash_generated_method = "480AB8A4C0BB731089E7125A8D3EDCD6")
     
 public static Pattern compile(String regularExpression, int flags) throws PatternSyntaxException {
@@ -40,6 +38,8 @@ public static Pattern compile(String regularExpression, int flags) throws Patter
     /**
      * Equivalent to {@code Pattern.compile(pattern, 0)}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.883 -0500", hash_original_method = "F247F5CF281C5F9996F6C94B5EA92FED", hash_generated_method = "314F6EA271F181E366513165FAC3D0EC")
     
 public static Pattern compile(String pattern) {
@@ -55,6 +55,8 @@ public static Pattern compile(String pattern) {
      * @see Pattern#compile(java.lang.String, int)
      * @see Matcher#matches()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.891 -0500", hash_original_method = "3E791313A82E18EC1ADA7594E9746E1F", hash_generated_method = "A62C31C049A9EDD862B1DBC9F26CF5B2")
     
 public static boolean matches(String regularExpression, CharSequence input) {
@@ -68,6 +70,8 @@ public static boolean matches(String regularExpression, CharSequence input) {
      * is to be passed verbatim to {@link #compile}, it's usually clearer
      * to use the {@link #LITERAL} flag instead.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.895 -0500", hash_original_method = "B294BEEA973D4CB6A8EA737C4F56E6F2", hash_generated_method = "91B1AE274685940131731B45422E6FFE")
     
 public static String quote(String string) {
@@ -81,19 +85,14 @@ public static String quote(String string) {
         }
         return sb.append(string.substring(apos)).append("\\E").toString();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void closeImpl(int addr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int compileImpl(String regex, int flags) {
         return DSUtils.UNKNOWN_INT;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.833 -0500", hash_original_field = "28B78F8205583CDA257F5D62102A6F9A", hash_generated_field = "89AAD938CC344AC32E4A8CD5D4DF86F6")
-
 
     private static final long serialVersionUID = 5073258162644648461L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.836 -0500", hash_original_field = "4CAF10EDA129FF0E1AD4D046D1BC9195", hash_generated_field = "F6F493319E476C50F27832143F659D81")
@@ -122,13 +121,11 @@ public static String quote(String string) {
     public static final int CANON_EQ = 0x80;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.858 -0500", hash_original_field = "57C08BF52FBB9452CE610A98F88E4F24", hash_generated_field = "8AE769BFE2CAD1B10C494CCD4D4D489A")
 
-
     private  String pattern;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.860 -0500", hash_original_field = "E0CDE1A38A40425C446F52269E5723DC", hash_generated_field = "C01DA7975DA485EEDBF522635D053B3B")
 
     private  int flags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.863 -0500", hash_original_field = "0EFD4B56D5F68F850B84173C34758709", hash_generated_field = "837A3237EDA74EDFA4F880469076F652")
-
 
     transient int address;
 
@@ -149,6 +146,8 @@ private Pattern(String pattern, int flags) throws PatternSyntaxException {
      * whole input, find occurrences of the {@code Pattern} in the input, or
      * replace parts of the input.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.865 -0500", hash_original_method = "82136F98856305B5433C94AE9E660844", hash_generated_method = "6247DAB9589B3A3E075EEED0324C9415")
     
 public Matcher matcher(CharSequence input) {
@@ -183,6 +182,8 @@ public Matcher matcher(CharSequence input) {
      *            not apply there.)
      *            </ul>
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.868 -0500", hash_original_method = "F7B5873C63BE8AA500AA3CBEE5803928", hash_generated_method = "210B3786FCACE3FBF89CF5B32240270F")
     
 public String[] split(CharSequence input, int limit) {
@@ -192,6 +193,8 @@ public String[] split(CharSequence input, int limit) {
     /**
      * Equivalent to {@code split(input, 0)}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.871 -0500", hash_original_method = "B852F916561127A3CF7FAAC0D8165D0A", hash_generated_method = "B84ECDD806870D0D60721DE823F133D8")
     
 public String[] split(CharSequence input) {

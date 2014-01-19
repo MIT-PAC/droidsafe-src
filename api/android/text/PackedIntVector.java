@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 class PackedIntVector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.250 -0500", hash_original_field = "5D305AA3AFBCC646419732255616147E", hash_generated_field = "75F4039C98FB52077D38E34F530EB3FF")
 
@@ -20,13 +15,11 @@ class PackedIntVector {
     private int mRows;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.256 -0500", hash_original_field = "9828EB158F3AF7FD600C6FEB32A01FE4", hash_generated_field = "EA98696F1B775619308B0863F513F9F1")
 
-
     private int mRowGapStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.258 -0500", hash_original_field = "4E829280F69229C952DC0CF8B0968F13", hash_generated_field = "EB5D193EB3BD0BD6791276EC10232CBE")
 
     private int mRowGapLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.261 -0500", hash_original_field = "AF95716C8E1CC9A8A1F58D24EE9BA3AC", hash_generated_field = "99CDF6DB2A492E619A6F25FAC593741C")
-
 
     private int[] mValues;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.264 -0500", hash_original_field = "F47FD65A9315F1951CA9C187E3074B88", hash_generated_field = "8A8172715F1B9899286D01C54C2B982A")
@@ -64,6 +57,7 @@ public PackedIntVector(int columns) {
      *         (row &lt; 0 || row >= size()) or the column is out of range
      *         (column &lt; 0 || column >= width()).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.270 -0500", hash_original_method = "127603F69B46B56B0057C44974C5D0F5", hash_generated_method = "25992ED288C0F37472A84C3C142CBF49")
     
 public int getValue(int row, int column) {
@@ -97,6 +91,7 @@ public int getValue(int row, int column) {
      *         (row &lt; 0 || row >= size()) or the column is out of range
      *         (column &lt; 0 || column >= width()).
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.272 -0500", hash_original_method = "DF9491EC74B5A8AD3F1F814A7288BD27", hash_generated_method = "D24C1DCEA3381CFC0115DCF0FBDFB7B0")
     
 public void setValue(int row, int column, int value) {
@@ -138,7 +133,6 @@ private void setValueInternal(int row, int column, int value) {
 
         mValues[row * mColumns + column] = value;
     }
-
 
     /**
      * Increments all values in the specified column whose row >= the
@@ -388,7 +382,6 @@ private final void moveRowGapTo(int where) {
 
         mRowGapStart = where;
     }
-
     
 }
 

@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.net.SocketException;
 
-
-
-
 public final class ErrnoException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.436 -0500", hash_original_field = "4E55026DE98CFA86DA317EEAE8A270FB", hash_generated_field = "3A7419DC5D02B665865D1D41C31D2769")
 
@@ -38,6 +35,7 @@ public ErrnoException(String functionName, int errno, Throwable cause) {
      * We do this here rather than in the constructor so that callers only pay for
      * this if they need it.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:26.446 -0500", hash_original_method = "911EB712B1CEA729911922ADFC942179", hash_generated_method = "53A9666ACEFF8B8418191A69426AAC6E")
     
 @Override public String getMessage() {
@@ -62,7 +60,6 @@ public IOException rethrowAsIOException() throws IOException {
 public SocketException rethrowAsSocketException() throws SocketException {
         throw new SocketException(getMessage(), this);
     }
-
     
 }
 

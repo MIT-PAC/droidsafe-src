@@ -34,11 +34,6 @@ import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.RetryManager;
 import com.android.internal.util.AsyncChannel;
 
-
-
-
-
-
 public final class CdmaDataConnectionTracker extends DataConnectionTracker {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.910 -0500", hash_original_field = "39593F3F283A7C4E599199A281E0F77E", hash_generated_field = "026E142D8E01249707E04DC78D4EFF35")
 
@@ -49,11 +44,9 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     private static final int DATA_CONNECTION_POOL_SIZE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.915 -0500", hash_original_field = "658C3720E0EDB4870346917DDEC41F5B", hash_generated_field = "20166A867EF23E7504249EF3C9B5AB3C")
 
-
     private static final String INTENT_RECONNECT_ALARM =
         "com.android.internal.telephony.cdma-reconnect";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.918 -0500", hash_original_field = "067A82CB4288FFC7439862C475B01EE5", hash_generated_field = "6C8FF74EEDEE440F89F3FC7EF70C27D7")
-
 
     private static final String INTENT_DATA_STALL_ALARM =
         "com.android.internal.telephony.cdma-data-stall";
@@ -68,7 +61,6 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
      private static final int DATA_CONNECTION_ACTIVE_PH_LINK_UP = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.928 -0500", hash_original_field = "9F1EC5C41D884C2EB60146BB4B86F872", hash_generated_field = "48ED62C0AD71722F4945340F0A7FF5F9")
 
-
     private static final String[] mSupportedApnTypes = {
             Phone.APN_TYPE_DEFAULT,
             Phone.APN_TYPE_MMS,
@@ -76,13 +68,11 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
             Phone.APN_TYPE_HIPRI };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.930 -0500", hash_original_field = "B8846B9D4E1BB9C3DFAF6E36AE018CA1", hash_generated_field = "561E37C406B565A7F36A37780ECC9AAF")
 
-
     private static final String[] mDefaultApnTypes = {
             Phone.APN_TYPE_DEFAULT,
             Phone.APN_TYPE_MMS,
             Phone.APN_TYPE_HIPRI };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.933 -0500", hash_original_field = "43F75A3DC81C24126AB60DAC70098E0E", hash_generated_field = "897EE016BFDB188E89DEC9B85F66301D")
-
 
     private static final int mDefaultApnId = DataConnectionTracker.APN_DEFAULT_ID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.901 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "692A09C40EE40FAEE399CBCFE2A5ACE4")
@@ -90,19 +80,17 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
     protected final String LOG_TAG = "CDMA";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.903 -0500", hash_original_field = "341D8271DE8DA7FEB72F6D3E11054C49", hash_generated_field = "A784BE3C2CA8A9A5385EEA88DD6D3A29")
 
-
     private CDMAPhone mCdmaPhone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.905 -0500", hash_original_field = "95AD106586328D2DAF794DA1FDEF09F0", hash_generated_field = "EEA8F8B0B01EEAD84F4D26DF11EB97B7")
 
     private CdmaDataConnection mPendingDataConnection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.907 -0500", hash_original_field = "38D50769CBD57FF7142F92BED5EFF055", hash_generated_field = "BCBF943C87814D8571E314787E73F3AA")
 
-
     private boolean mPendingRestartRadio = false;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.687 -0400", hash_original_field = "68EB667E7E7B7993A857B9AAE78D0D14", hash_generated_field = "27B43CDF8D3F1F6F3904923441B9E353")
 
-    private Runnable mPollNetStat = new Runnable() {        
-        @DSModeled(DSC.BAN)
+    private Runnable mPollNetStat = new Runnable() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:26.687 -0400", hash_original_method = "2461514E52B21E636B4BA6EEA10AC2AC", hash_generated_method = "123F17F6A359605D3CB3DF7D7D153FFC")
         public void run() {
             long sent;
@@ -173,11 +161,9 @@ public final class CdmaDataConnectionTracker extends DataConnectionTracker {
             } 
             {
                 mDataConnectionTracker.postDelayed(this, mNetStatPollPeriod);
-            } 
-            
+            }
             
         }
-
         
 };
 
@@ -240,6 +226,7 @@ CdmaDataConnectionTracker(CDMAPhone p) {
         if(DBG) log("CdmaDataConnectionTracker finalized");
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.944 -0500", hash_original_method = "477FAE9A0F7056536F0C43A4344C1E00", hash_generated_method = "58DC5E0B547B76E3202A7DA74D639207")
     
 @Override
@@ -247,6 +234,7 @@ CdmaDataConnectionTracker(CDMAPhone p) {
         return INTENT_RECONNECT_ALARM;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:02.947 -0500", hash_original_method = "BBE23E9137760572C0B9E85F7DE2F87D", hash_generated_method = "CFB7B25A01C80653B18E3F8820B6F01C")
     
 @Override
@@ -729,6 +717,7 @@ protected void onNVReady() {
     /**
      * @override com.android.internal.telephony.DataConnectionTracker
      */
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.027 -0500", hash_original_method = "F38E677B8F89E946D32F2D1EC6556506", hash_generated_method = "EA8D515A427E4949045167C284AF051B")
     
 @Override
@@ -757,6 +746,7 @@ protected void onNVReady() {
     /**
      * Called when EVENT_DISCONNECT_DONE is received.
      */
+    @DSSink({DSSinkKind.PHONE_CONNECTION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:03.030 -0500", hash_original_method = "B64AD173877EB61F2BA995A6B9586953", hash_generated_method = "3BEC82F339A99D67F7E9DDFDF498F7D3")
     
 @Override

@@ -19,11 +19,6 @@ import com.android.internal.telephony.IccConstants;
 import com.android.internal.telephony.IccUtils;
 import com.android.internal.telephony.PhoneBase;
 
-
-
-
-
-
 public class UsimPhoneBookManager extends Handler implements IccConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.961 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "D922E4732DF1A8050A7A55C2D62EC423")
 
@@ -32,7 +27,6 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
 
     private static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.995 -0500", hash_original_field = "67D3C61E42C2CC1F4738B79A29401BB4", hash_generated_field = "1C7072F210A9F01872115E74B443A7C2")
-
 
     private static final int EVENT_PBR_LOAD_DONE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.997 -0500", hash_original_field = "D8C2E83D1734B5BAD21CF993799AB823", hash_generated_field = "8B8127A364BC154368D2CA94E199826A")
@@ -45,7 +39,6 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
 
     private static final int EVENT_EMAIL_LOAD_DONE = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.006 -0500", hash_original_field = "3509C5A9471EBD0F2620C8E68315F470", hash_generated_field = "AB49351C0C67D5101FE6BCA8B9ED3322")
-
 
     private static final int USIM_TYPE1_TAG   = 0xA8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.008 -0500", hash_original_field = "C5131E2F23DE86525681896EFB7A89C1", hash_generated_field = "FFA29DCAF13AB805CCCC449C8F474D63")
@@ -108,7 +101,6 @@ public class UsimPhoneBookManager extends Handler implements IccConstants {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.978 -0500", hash_original_field = "DA7E3E27D27D5822213A8739441AE260", hash_generated_field = "F015F032A7EB90DEA83FE0426648EF9F")
 
     private ArrayList<AdnRecord> mPhoneBookRecords;
-
     
     private class PbrFile {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.090 -0500", hash_original_field = "DD2BC0CCB77C9B04C419C3A18FB77046", hash_generated_field = "DD2BC0CCB77C9B04C419C3A18FB77046")
@@ -128,6 +120,7 @@ PbrFile(ArrayList<byte[]> records) {
             }
         }
 
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.095 -0500", hash_original_method = "D93ED3119C94191277253FF2EE0C71AD", hash_generated_method = "40B384586491343441CBA49466163935")
         
 void parseTag(SimTlv tlv, int recNum) {
@@ -150,6 +143,7 @@ void parseTag(SimTlv tlv, int recNum) {
             mFileIds.put(recNum, val);
         }
 
+        @DSSink({DSSinkKind.CONTACT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.098 -0500", hash_original_method = "27E6C520D8DED1C5B5FE1A348EAE7100", hash_generated_method = "27E6C520D8DED1C5B5FE1A348EAE7100")
         
 void parseEf(SimTlv tlv, Map<Integer, Integer> val, int parentTag) {
@@ -183,7 +177,6 @@ void parseEf(SimTlv tlv, Map<Integer, Integer> val, int parentTag) {
                 tagNumberWithinParentTag ++;
             } while(tlv.nextObject());
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:31.981 -0500", hash_original_field = "24FF176E5D2A32D148A86CDFC84A9C5F", hash_generated_field = "8920C02D769F140478E3FF9AAD342322")
@@ -228,6 +221,7 @@ public void reset() {
         mRefreshCache = false;
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:32.050 -0500", hash_original_method = "B81A15F32DE42ED7FA5FD76607998109", hash_generated_method = "72E3A9E53221461FE1E851CA9BE744D1")
     
 public ArrayList<AdnRecord> loadEfFilesFromUsim() {
@@ -459,7 +453,6 @@ private void readAdnFileAndWait(int recNum) {
         Map <Integer,Integer> fileIds;
         fileIds = mPbrFile.mFileIds.get(recNum);
         if (fileIds == null || fileIds.isEmpty()) return;
-
 
         int extEf = 0;
         // Only call fileIds.get while EFEXT1_TAG is available

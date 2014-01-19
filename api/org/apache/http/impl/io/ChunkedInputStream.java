@@ -15,9 +15,6 @@ import org.apache.http.protocol.HTTP;
 import org.apache.http.util.CharArrayBuffer;
 import org.apache.http.util.ExceptionUtils;
 
-
-
-
 public class ChunkedInputStream extends InputStream {
     
     /**
@@ -45,7 +42,6 @@ static void exhaustInputStream(final InputStream inStream) throws IOException {
     private SessionInputBuffer in;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.172 -0500", hash_original_field = "350F4DBD74AB8DD54F1F983317E69056", hash_generated_field = "2D6B54E04F26AA35A63824F1627650C8")
 
-
     private  CharArrayBuffer buffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.175 -0500", hash_original_field = "8D4654446C9DD3E766BE07B4267F3234", hash_generated_field = "47235E9A35474F8DBDD6D8DBB4AB5B6A")
 
@@ -63,7 +59,6 @@ static void exhaustInputStream(final InputStream inStream) throws IOException {
 
     private boolean closed = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.185 -0500", hash_original_field = "18F5AA99B5063C2655DD04975F7C54A5", hash_generated_field = "A74851231E6F66E8990234BC00C8E61F")
-
     
     private Header[] footers = new Header[] {};
 
@@ -259,12 +254,12 @@ public void close() throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:43.208 -0500", hash_original_method = "7163A37F445D9A153E08F6B88D28A6E4", hash_generated_method = "06FFEACFF7B2DF64E7931EEAD93BB078")
     
 public Header[] getFooters() {
         return (Header[])this.footers.clone();
     }
-
     
 }
 

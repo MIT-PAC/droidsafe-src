@@ -9,17 +9,11 @@ import java.util.Arrays;
 
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class Inflater {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.288 -0500", hash_original_field = "A2FC62482F8FC5A7B00D9127EAC6F44C", hash_generated_field = "0E7AF8D739309A330EB7DABC780C6592")
 
-
     private int inLength;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.291 -0500", hash_original_field = "26AE1163BD027CE87ED65D36070B90DA", hash_generated_field = "04384C2608AA53E3C7DB2B14F64353DB")
-
 
     private int inRead;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.293 -0500", hash_original_field = "59CD61E3A383ACAD01F8F1AA33285180", hash_generated_field = "3E2B0E3E2E572DECE0B20D77E19B79CF")
@@ -30,10 +24,8 @@ public class Inflater {
     private boolean needsDictionary;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.298 -0500", hash_original_field = "29B64591123A903836B90C66F6149507", hash_generated_field = "96E9A434433050A3F1202A32F9BF2C55")
 
-
     private long streamHandle = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.301 -0500", hash_original_field = "759D7885648499D4F341C13F7C4AA861", hash_generated_field = "E7FAF2CA4E8E292A9B5FAAE3D4817EEC")
-
 
     private final CloseGuard guard = CloseGuard.get();
 
@@ -42,6 +34,8 @@ public class Inflater {
      * stream. Use {@link #Inflater(boolean)} if the input comes without a ZLIB
      * header.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.303 -0500", hash_original_method = "52564046B1BB792C24EFCB3BD00F948F", hash_generated_method = "8EDD147117DB7DE8BA64CEAE40395168")
     
 public Inflater() {
@@ -71,7 +65,6 @@ public Inflater(boolean noHeader) {
     	return getTaintLong();
     }
 
-
     /**
      * Releases resources associated with this {@code Inflater}. Any unused
      * input or output is discarded. This method should be called explicitly in
@@ -96,7 +89,6 @@ public synchronized void end() {
     	//Formerly a native method
     	addTaint(handle);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.320 -0500", hash_original_method = "C6D54AF1AC1AC75675A3D536A7405AD5", hash_generated_method = "D608C6F2150995D96F3D1297805B81FD")
     
@@ -134,6 +126,7 @@ public synchronized boolean finished() {
      * Returns the {@link Adler32} checksum of the bytes inflated so far, or the
      * checksum of the preset dictionary if {@link #needsDictionary} returns true.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.325 -0500", hash_original_method = "DDE5644D46702B730F5378ABED0CC02C", hash_generated_method = "82F839CE56BEDC13EDBA911A4636B0D0")
     
 public synchronized int getAdler() {
@@ -149,12 +142,12 @@ public synchronized int getAdler() {
     	return getTaintInt();
     }
 
-
     /**
      * Returns the total number of bytes read by the {@code Inflater}. This
      * method is the same as {@link #getTotalIn} except that it returns a
      * {@code long} value instead of an integer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.332 -0500", hash_original_method = "B419E0AF253F709FCCBF4031C175C3E0", hash_generated_method = "FCE91DCC2F170EFCCC587BDC96E02BDA")
     
 public synchronized long getBytesRead() {
@@ -167,6 +160,7 @@ public synchronized long getBytesRead() {
      * method is the same as {@code getTotalOut} except it returns a
      * {@code long} value instead of an integer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.334 -0500", hash_original_method = "B14826F1D1678AA7FAF007D6D8541F5C", hash_generated_method = "6759B83D7E1BB8BF4188E4F21BEAB91C")
     
 public synchronized long getBytesWritten() {
@@ -178,6 +172,7 @@ public synchronized long getBytesWritten() {
      * Returns the number of bytes of current input remaining to be read by this
      * inflater.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.337 -0500", hash_original_method = "32C3A4ADD77E37876C3BDB6A1F021118", hash_generated_method = "9A84D4A4AEB0773F1C62663156C386B1")
     
 public synchronized int getRemaining() {
@@ -188,6 +183,7 @@ public synchronized int getRemaining() {
      * Returns the total number of bytes of input read by this {@code Inflater}. This
      * method is limited to 32 bits; use {@link #getBytesRead} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.340 -0500", hash_original_method = "9AAB506621EC0609B7127649800D2F50", hash_generated_method = "1A53CA58166D1EB399DA650885596A85")
     
 public synchronized int getTotalIn() {
@@ -203,11 +199,11 @@ public synchronized int getTotalIn() {
     	return getTaintLong();
     }
 
-
     /**
      * Returns the total number of bytes written to the output buffer by this {@code
      * Inflater}. The method is limited to 32 bits; use {@link #getBytesWritten} instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.347 -0500", hash_original_method = "FABA8B5ADD5ED280AE5319590E5362F9", hash_generated_method = "A3D7A2E164A55A300A14496BC870B17F")
     
 public synchronized int getTotalOut() {
@@ -222,7 +218,6 @@ public synchronized int getTotalOut() {
     	addTaint(handle);
     	return getTaintLong();
     }
-
 
     /**
      * Inflates bytes from the current input and stores them in {@code buf}.
@@ -280,7 +275,6 @@ public synchronized int inflate(byte[] buf, int offset, int byteCount) throws Da
     	return getTaintInt();
     }
 
-
     /**
      * Returns true if the input bytes were compressed with a preset
      * dictionary. This method should be called if the first call to {@link #inflate} returns 0,
@@ -324,11 +318,11 @@ public synchronized void reset() {
     	addTaint(handle);
     }
 
-
     /**
      * Sets the preset dictionary to be used for inflation to {@code dictionary}.
      * See {@link #needsDictionary} for details.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.375 -0500", hash_original_method = "49DAD22714BA16C1AC9D80CF714D4798", hash_generated_method = "F6FF8080941571D4EFC7702CBA6FE6E3")
     
 public synchronized void setDictionary(byte[] dictionary) {
@@ -340,6 +334,7 @@ public synchronized void setDictionary(byte[] dictionary) {
      * starting at {@code offset} and continuing for {@code byteCount} bytes. See {@link
      * #needsDictionary} for details.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.378 -0500", hash_original_method = "568AFB946554DE560CCB8443B419A0F6", hash_generated_method = "342670F05D2F90ED6E0980D6B3D2DA3A")
     
 public synchronized void setDictionary(byte[] dictionary, int offset, int byteCount) {
@@ -358,11 +353,11 @@ public synchronized void setDictionary(byte[] dictionary, int offset, int byteCo
     	addTaint(handle);
     }
 
-
     /**
      * Sets the current input to to be decompressed. This method should only be
      * called if {@link #needsInput} returns {@code true}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.384 -0500", hash_original_method = "76E6701B8618856CEE42A14EB071C689", hash_generated_method = "2F3B40F86F19A07DE7F3CED216B3F40D")
     
 public synchronized void setInput(byte[] buf) {
@@ -393,7 +388,7 @@ public synchronized void setInput(byte[] buf, int offset, int byteCount) {
     	addTaint(handle);
     }
 
-
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.394 -0500", hash_original_method = "AC4A3418B937D51D6E31ACAFC1E07B42", hash_generated_method = "D7FD83AC4F4EC149280CBB982D991F10")
     
 synchronized int setFileInput(FileDescriptor fd, long offset, int byteCount) {
@@ -414,7 +409,6 @@ synchronized int setFileInput(FileDescriptor fd, long offset, int byteCount) {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:32.401 -0500", hash_original_method = "477FE56B6846A3E6E3ED71C242A2D9F4", hash_generated_method = "F4E3EB0422165BBFE20A7C412A60C694")
     
 private void checkOpen() {
@@ -422,7 +416,6 @@ private void checkOpen() {
             throw new IllegalStateException("attempt to use Inflater after calling end");
         }
     }
-
     
 }
 

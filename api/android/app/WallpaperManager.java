@@ -33,10 +33,6 @@ import android.util.DisplayMetrics;
 import android.util.Log;
 import android.view.ViewRootImpl;
 
-
-
-
-
 public class WallpaperManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.161 -0500", hash_original_method = "C193488ECC93C5DEAFD0BA2DBD2772CE", hash_generated_method = "3443D20D6A8561FDE63D74DBB5E22A62")
@@ -52,6 +48,9 @@ static void initGlobals(Looper looper) {
     /**
      * Retrieve a WallpaperManager associated with the given Context.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.165 -0500", hash_original_method = "97C230F92BF2EA74D74E57D6E151F317", hash_generated_method = "E122D877CAEF7F74721B46251971E070")
     
 public static WallpaperManager getInstance(Context context) {
@@ -138,7 +137,6 @@ static Bitmap generateBitmap(Bitmap bm, int width, int height) {
 
     public static final String COMMAND_DROP = "android.home.drop";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.156 -0500", hash_original_field = "1F537EBE3F70741DBD8752B11EFDF613", hash_generated_field = "EECB5088E51D82E124490D50E038120E")
-
     
     private static final Object sSync = new Object[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.158 -0500", hash_original_field = "638429B68A172D5320A3987A26A35185", hash_generated_field = "FAC961618570B702A278896949F1B020")
@@ -151,7 +149,6 @@ static Bitmap generateBitmap(Bitmap bm, int width, int height) {
 
     private float mWallpaperYStep = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.072 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
     
     private  Context mContext;
     
@@ -163,6 +160,7 @@ WallpaperManager(Context context, Handler handler) {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.167 -0500", hash_original_method = "6F9497943DE7A2ADCF716329D67D9BA7", hash_generated_method = "B314011C435ED4886132C5E44A8576FD")
     
 public IWallpaperManager getIWallpaperManager() {
@@ -178,6 +176,7 @@ public IWallpaperManager getIWallpaperManager() {
      *
      * @return Returns a Drawable object that will draw the wallpaper.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.169 -0500", hash_original_method = "983E953189104E5D3E1EF4C33892C5EB", hash_generated_method = "6DE9679FD9FBB6EEEC4F39D6EC1D951A")
     
 public Drawable getDrawable() {
@@ -199,6 +198,7 @@ public Drawable getDrawable() {
      * @return Returns a Drawable object that will draw the wallpaper or a
      * null pointer if these is none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.172 -0500", hash_original_method = "EA4956080FAF0CF8E371329CB76D5A40", hash_generated_method = "4BD624D90F73EF099C6F4BC3376B0CB8")
     
 public Drawable peekDrawable() {
@@ -224,6 +224,9 @@ public Drawable peekDrawable() {
      *
      * @return Returns a Drawable object that will draw the wallpaper.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.174 -0500", hash_original_method = "8FF7C2E7F253EDCD7E0E3FAE36FB4E5D", hash_generated_method = "A6D743C421A5C86C17A201B614B9B698")
     
 public Drawable getFastDrawable() {
@@ -241,6 +244,7 @@ public Drawable getFastDrawable() {
      * @return Returns an optimized Drawable object that will draw the
      * wallpaper or a null pointer if these is none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.176 -0500", hash_original_method = "8A28F31302CE106CFE820B9CBC0915AE", hash_generated_method = "1B034DBE7C2BC82F8D04A47A0A347A32")
     
 public Drawable peekFastDrawable() {
@@ -256,6 +260,7 @@ public Drawable peekFastDrawable() {
      * 
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.178 -0500", hash_original_method = "214C7E80807DBED0084465B1D80DE965", hash_generated_method = "9CD8850D0BA7D5EE6B1F7F7301A72EF5")
     
 public Bitmap getBitmap() {
@@ -279,6 +284,7 @@ public void forgetLoadedWallpaper() {
      * information about that wallpaper.  Otherwise, if it is a static image,
      * simply return null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.182 -0500", hash_original_method = "BFBEA651CA003E449BAD7FB6481A127E", hash_generated_method = "F709B650601FE8788463DDA118E96837")
     
 public WallpaperInfo getWallpaperInfo() {
@@ -300,6 +306,7 @@ public WallpaperInfo getWallpaperInfo() {
      * @throws IOException If an error occurs reverting to the default
      * wallpaper.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.185 -0500", hash_original_method = "A9B0C110F9B2DD6C9D3DF08018F94DD2", hash_generated_method = "6B1E8FE27DC47B3466150DB417D923EE")
     
 public void setResource(int resid) throws IOException {
@@ -334,6 +341,7 @@ public void setResource(int resid) throws IOException {
      * @throws IOException If an error occurs reverting to the default
      * wallpaper.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.188 -0500", hash_original_method = "24319E223B48D297B4260CBD63DF9776", hash_generated_method = "57AEDF5C0763A9F93D7C19FE4354966F")
     
 public void setBitmap(Bitmap bitmap) throws IOException {
@@ -368,6 +376,7 @@ public void setBitmap(Bitmap bitmap) throws IOException {
      * @throws IOException If an error occurs reverting to the default
      * wallpaper.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.190 -0500", hash_original_method = "201E3B54F176FDB2F716DB9554E16862", hash_generated_method = "65E54A0B70FFEC5FD6DA252984147B4E")
     
 public void setStream(InputStream data) throws IOException {
@@ -389,7 +398,6 @@ public void setStream(InputStream data) throws IOException {
             // Ignore
         }
     }
-
     
     static class FastBitmapDrawable extends Drawable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.075 -0500", hash_original_field = "46C0A7FFF0FFB93D952536F8E8BA5C29", hash_generated_field = "4EFA3179E01F3A6C04DAAC2298E5BFE4")
@@ -431,6 +439,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             canvas.drawBitmap(mBitmap, mDrawLeft, mDrawTop, mPaint);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.094 -0500", hash_original_method = "20937ACEFD1116260A9689661466F3F7", hash_generated_method = "6905288CC17C7D82D00D5533E4517C30")
         
 @Override
@@ -438,6 +447,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return PixelFormat.OPAQUE;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.097 -0500", hash_original_method = "AD75C11A4E8AD86B9F9EB3DCD5857128", hash_generated_method = "62CD9A0B7E991E8654963885750F8159")
         
 @Override
@@ -446,6 +456,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             mDrawTop = top + (bottom-top - mHeight) / 2;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.099 -0500", hash_original_method = "51482143A770E9CBA4E27420DA4BB83A", hash_generated_method = "CDB6E320C266D3E3D9C1320C38F789E5")
         
 @Override
@@ -453,6 +464,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.102 -0500", hash_original_method = "6EF98891DC00D446E5280E44B83BE80B", hash_generated_method = "A65311E361BA6DB95DA06BF61E62EE59")
         
 @Override
@@ -460,6 +472,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.104 -0500", hash_original_method = "BBAE54C669BC97BDF73F051E3161B7DC", hash_generated_method = "FB07992368D4A2B40B2DFAA6C014E0E3")
         
 @Override
@@ -467,6 +480,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.106 -0500", hash_original_method = "072B9683A9FDD22E6BC18017D9B8BE50", hash_generated_method = "DD3B2DE6389CE1500BF931787345BEFA")
         
 @Override
@@ -474,6 +488,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             throw new UnsupportedOperationException("Not supported with this drawable");
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.108 -0500", hash_original_method = "7C6E7C05DAF2C7C11CBD631A19BA11F2", hash_generated_method = "39278CB6B9C6547F27484D81F3EDE677")
         
 @Override
@@ -481,6 +496,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mWidth;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.110 -0500", hash_original_method = "3C735D6B09C7947D1D4F4735F7E16410", hash_generated_method = "0269A8752CCD1CA35B4E1D43155EB161")
         
 @Override
@@ -488,6 +504,7 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mHeight;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.113 -0500", hash_original_method = "6C36D8FD6C4DA506CC2056E38D29BDE3", hash_generated_method = "47EC8A0025261E6AF82A087E108CE991")
         
 @Override
@@ -495,21 +512,18 @@ private FastBitmapDrawable(Bitmap bitmap) {
             return mWidth;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.116 -0500", hash_original_method = "F7F1B37FEC841079758C9B817D6DD4F6", hash_generated_method = "8343B0F17FD22297CF3F42DBD8628A43")
         
 @Override
         public int getMinimumHeight() {
             return mHeight;
         }
-
         
     }
-
-
     
     static class Globals extends IWallpaperManagerCallback.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.128 -0500", hash_original_field = "12191AA107C8AF466787A7E732BFB527", hash_generated_field = "C11BAEA45DDA2586D27A4A6A9EBDE72E")
-
         
         private static final int MSG_CLEAR_WALLPAPER = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.121 -0500", hash_original_field = "8503206D1FF0CFB5D6EC319F272DF4BA", hash_generated_field = "5245D2ACF9BCB6EB2851F6A6EAF2BF16")
@@ -522,7 +536,6 @@ private FastBitmapDrawable(Bitmap bitmap) {
 
         private Bitmap mDefaultWallpaper;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.130 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
-
         
         private  Handler mHandler;
         
@@ -687,6 +700,7 @@ private void setWallpaper(InputStream data, FileOutputStream fos)
      * be honored by applications that set the wallpaper but it is not
      * mandatory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.195 -0500", hash_original_method = "D1A5F81505B1F3B03FABBA4410A80898", hash_generated_method = "74541DCCB60B34A5B4B5411867669D39")
     
 public int getDesiredMinimumWidth() {
@@ -712,6 +726,7 @@ public int getDesiredMinimumWidth() {
      * be honored by applications that set the wallpaper but it is not
      * mandatory.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.197 -0500", hash_original_method = "B18A5C89DB794D80A7E1B5CE60755D7A", hash_generated_method = "78B9329E0F1A91388BB9BC78870E3688")
     
 public int getDesiredMinimumHeight() {
@@ -754,6 +769,7 @@ public void suggestDesiredDimensions(int minimumWidth, int minimumHeight) {
      * @param xOffset The offset along the X dimension, from 0 to 1.
      * @param yOffset The offset along the Y dimension, from 0 to 1.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.204 -0500", hash_original_method = "50451375F0F7110E301C30296ACA8A65", hash_generated_method = "2B39E3618D2A8DCCE3CCE83472EB1153")
     
 public void setWallpaperOffsets(IBinder windowToken, float xOffset, float yOffset) {
@@ -805,6 +821,7 @@ public void setWallpaperOffsetSteps(float xStep, float yStep) {
      * @param z Arbitrary integer argument based on command.
      * @param extras Optional additional information for the command, or null.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:49.209 -0500", hash_original_method = "5FDBB12430A98A22274A04FEE86533CB", hash_generated_method = "1C68CDE5282EEAC0E6F1FE0611879BA3")
     
 public void sendWallpaperCommand(IBinder windowToken, String action,

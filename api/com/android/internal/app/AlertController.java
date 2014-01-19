@@ -43,11 +43,6 @@ import android.widget.TextView;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class AlertController {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.504 -0500", hash_original_method = "72DE9F1667F0AC69B84EC6B497C20732", hash_generated_method = "8B4C999718DE3CFEA840007E7081B23B")
@@ -84,7 +79,6 @@ static boolean canTextInput(View v) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.404 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.406 -0500", hash_original_field = "9B7EA35002D8CFBAE566C5A6F1FEF945", hash_generated_field = "2B4497FE8D3BE69F04001AB183F843A0")
 
@@ -93,119 +87,90 @@ static boolean canTextInput(View v) {
 
     private  Window mWindow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.410 -0500", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
-
     
     private CharSequence mTitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.412 -0500", hash_original_field = "63AD8EC50650F4FC1A994F2CF8879BF9", hash_generated_field = "B242999524A78B5E31650BFBB7850632")
 
-
     private CharSequence mMessage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.414 -0500", hash_original_field = "564994122F8B404810DDCD714146F030", hash_generated_field = "7E41BBAA7AC45D61F96A7CC2A5AFF94F")
 
-
     private ListView mListView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.417 -0500", hash_original_field = "6F4F028D1DE9C463F753A80DD0991753", hash_generated_field = "E606D96B6FC531BB030B680E135C95D0")
-
     
     private View mView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.419 -0500", hash_original_field = "2CF3E38AC479CF7DC9414424A4186819", hash_generated_field = "19A8BE4EA4CB90940A5BCBECC9F99055")
 
-
     private int mViewSpacingLeft;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.422 -0500", hash_original_field = "976BC4F473C472616CC6AEF3B3BB1773", hash_generated_field = "6557ACD495F3B6484326AC57AECFA558")
-
     
     private int mViewSpacingTop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.424 -0500", hash_original_field = "A0153DFFF914D7E3767800DDD5367256", hash_generated_field = "47FEE73BA7B0F5642CD916931DB4B990")
-
     
     private int mViewSpacingRight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.426 -0500", hash_original_field = "386C34F4001746DAA3939E8E126B9579", hash_generated_field = "E6D3207EA728175311B7208886F6CFF1")
-
     
     private int mViewSpacingBottom;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.428 -0500", hash_original_field = "6ADF7C1F4575C08C987BB9C48C3376ED", hash_generated_field = "0F9BEABC6DA1B172890E35E612ED5285")
-
     
     private boolean mViewSpacingSpecified = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.430 -0500", hash_original_field = "75B52113A6D5C3EB151C16101C4A6C05", hash_generated_field = "2DE16827139A20C2B2C0D130D64C1F22")
-
     
     private Button mButtonPositive;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.432 -0500", hash_original_field = "7EB1A770C105FC98881C436D73151FF3", hash_generated_field = "ADEC89EC1C6163464CAB74778BA7F455")
 
-
     private CharSequence mButtonPositiveText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.435 -0500", hash_original_field = "AF9872F1284FB38C953DBADE44C54B68", hash_generated_field = "4C64AEB4AC17D726F0EC573D273C85E4")
-
 
     private Message mButtonPositiveMessage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.437 -0500", hash_original_field = "133DE2C59C343AFAA6F1C251D0D078CF", hash_generated_field = "B5032704B1FD6BFE5557786C4C3D3EFC")
 
-
     private Button mButtonNegative;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.439 -0500", hash_original_field = "5BABAC81AA58472B57285AFB238B9A83", hash_generated_field = "D91959E3DC6E2952E856CD3FA0A399C6")
-
 
     private CharSequence mButtonNegativeText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.441 -0500", hash_original_field = "3FC1A72596615EA31669FEABD97F0D63", hash_generated_field = "41F19F2D8C745871D17F5F9D098B77CB")
 
-
     private Message mButtonNegativeMessage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.443 -0500", hash_original_field = "C06B82C562FC34C9AE636C0D7FDE445C", hash_generated_field = "C9AFBBF32C64214706F68A15A4CC359B")
-
 
     private Button mButtonNeutral;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.445 -0500", hash_original_field = "CBBD856E8B9D3DE8DF34C1CA44686861", hash_generated_field = "16D3F864CF92B4D23F4B348C46186A72")
 
-
     private CharSequence mButtonNeutralText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.448 -0500", hash_original_field = "040561749CACE5542A0B57CFF0248FB1", hash_generated_field = "DE3A282A2612C858747AAF0293D78E5E")
-
 
     private Message mButtonNeutralMessage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.450 -0500", hash_original_field = "B7306C5499512DEC892EA20F4301F947", hash_generated_field = "48D52DD8E91130A1127C5E6751BAFC93")
 
-
     private ScrollView mScrollView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.453 -0500", hash_original_field = "C0615F41CF51A97CD409B5FC231BDFAF", hash_generated_field = "B9362750FD7578B98AC9480BFD1C22E4")
-
     
     private int mIconId = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.455 -0500", hash_original_field = "D2DFC3A60DC024AFBB674A2D69ECB436", hash_generated_field = "FFB83F2A7C9A877B036AAEB7C21DDF6E")
-
     
     private Drawable mIcon;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.457 -0500", hash_original_field = "069158469BB60C88A2C4A541C6AFB8D2", hash_generated_field = "411E3339296CF54457E86988903AF1A7")
-
     
     private ImageView mIconView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.459 -0500", hash_original_field = "B3B1177DB6C3A24EAC74C6705FD25300", hash_generated_field = "3B26FAD098CFEC3A217F2BF71097A83E")
-
     
     private TextView mTitleView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.461 -0500", hash_original_field = "3C68F58819B50F04C23C7889C2B27482", hash_generated_field = "461DDCE97AF551A1C6803EBC4533C15B")
 
-
     private TextView mMessageView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.463 -0500", hash_original_field = "754616A8D9EF9E33715AD37C44D8A17C", hash_generated_field = "E82D7636327F928026C806257B855F78")
 
-
     private View mCustomTitleView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.466 -0500", hash_original_field = "87E1F65C64A2775382E85229E9AAE3D2", hash_generated_field = "5757562CC2DDACDF9B83AC60F3588BE8")
-
     
     private boolean mForceInverseBackground;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.468 -0500", hash_original_field = "CBDD62EF585589E92C0E00AE9F4F22E2", hash_generated_field = "90F29768206AB431EA361CD94838716F")
-
     
     private ListAdapter mAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.470 -0500", hash_original_field = "DE1EDD1BAE16FBBE89B10E88AACE9CEA", hash_generated_field = "7A33F03E17B63A6DBC30C9361577261E")
-
     
     private int mCheckedItem = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.472 -0500", hash_original_field = "DD4807035BCAA15DCADD8673868E6B6E", hash_generated_field = "C70E5EEEC2873FFD1D1516A4074C73D3")
-
 
     private int mAlertDialogLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.474 -0500", hash_original_field = "51DA4AD6454408A5ADBCBCB363DF258B", hash_generated_field = "386A7DC9605332794254886861F5C37D")
@@ -221,7 +186,6 @@ static boolean canTextInput(View v) {
 
     private int mListItemLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.484 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
-
 
     private Handler mHandler;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:18.870 -0400", hash_original_field = "64F9D11F1E11AE4CE243EDB97198552B", hash_generated_field = "A4A348A11ABF8F43A17AFAE144216A4B")
@@ -246,22 +210,8 @@ static boolean canTextInput(View v) {
             mHandler.obtainMessage(ButtonHandler.MSG_DISMISS_DIALOG, mDialogInterface)
                     .sendToTarget();
             addTaint(v.getTaint());
-            
-            
-            
-                
-            
-                
-            
-                
-            
-            
-                
-            
-            
                     
         }
-
         
 };
 
@@ -437,12 +387,14 @@ public void setInverseBackgroundForced(boolean forceInverseBackground) {
         mForceInverseBackground = forceInverseBackground;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.535 -0500", hash_original_method = "3273CA9467A607A59D9BD9C18D0394BC", hash_generated_method = "F103D805F94DC1063FF9887BFC2DF752")
     
 public ListView getListView() {
         return mListView;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.538 -0500", hash_original_method = "3833583B80F66F9531985629B1AE2E3F", hash_generated_method = "0C0AC5F0A0CCBFB5A9ADE60497530B17")
     
 public Button getButton(int whichButton) {
@@ -818,14 +770,12 @@ private void setBackground(LinearLayout topPanel, LinearLayout contentPanel,
             }
         }
     }
-
     
     private static final class ButtonHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.493 -0500", hash_original_field = "E6044B58D33A24BD8C03989D9BFC6755", hash_generated_field = "837E07B94F9B99EC5A8E2663317A1F02")
 
         private static final int MSG_DISMISS_DIALOG = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.495 -0500", hash_original_field = "DC7483C81552C4D76DF4759BE53BA423", hash_generated_field = "436872B12AE04B06D18A845CB0719BC2")
-
         
         private WeakReference<DialogInterface> mDialog;
 
@@ -852,8 +802,6 @@ public ButtonHandler(DialogInterface dialog) {
             }
         }
     }
-
-
     
     public static class RecycleListView extends ListView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.565 -0500", hash_original_field = "3DD4A4EF0D713F0ADFB04515FD02F627", hash_generated_field = "3DD4A4EF0D713F0ADFB04515FD02F627")
@@ -884,11 +832,8 @@ public RecycleListView(Context context, AttributeSet attrs, int defStyle) {
         protected boolean recycleOnMeasure() {
             return mRecycleOnMeasure;
         }
-
         
     }
-
-
     
     public static class AlertParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.581 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "DE8577C1C990964647332D172A1FAC00")
@@ -898,7 +843,6 @@ public RecycleListView(Context context, AttributeSet attrs, int defStyle) {
 
         public  LayoutInflater mInflater;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.587 -0500", hash_original_field = "EA052C7000713EBD5CB241A285D3399E", hash_generated_field = "C2DC3CCA222E71D43D27ECAB851034A0")
-
         
         public int mIconId = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:56.589 -0500", hash_original_field = "D2DFC3A60DC024AFBB674A2D69ECB436", hash_generated_field = "E5243F47D3999E8E6530788895E90100")
@@ -1080,7 +1024,8 @@ private void createListView(final AlertController dialog) {
                 if (mCursor == null) {
                     adapter = new ArrayAdapter<CharSequence>(
                             mContext, dialog.mMultiChoiceItemLayout, R.id.text1, mItems) {
-                        @Override
+                        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @Override
                         public View getView(int position, View convertView, ViewGroup parent) {
                             View view = super.getView(position, convertView, parent);
                             if (mCheckedItems != null) {
@@ -1175,17 +1120,13 @@ private void createListView(final AlertController dialog) {
             listView.mRecycleOnMeasure = mRecycleOnMeasure;
             dialog.mListView = listView;
         }
-
         
         public interface OnPrepareListViewListener {
-            
             
             void onPrepareListView(ListView listView);
         }
         
     }
-
-
     
 }
 

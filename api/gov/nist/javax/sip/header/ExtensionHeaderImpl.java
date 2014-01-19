@@ -5,16 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ExtensionHeaderImpl extends SIPHeader implements javax.sip.header.ExtensionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.362 -0500", hash_original_field = "E26E48B78C14AE0E08B98124495F2F94", hash_generated_field = "2299100AA92F5021DFDAE61FD8547A67")
 
     private static final long serialVersionUID = -8693922839612081849L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.367 -0500", hash_original_field = "EE6B270D979EDA88DA18EA680B9EE570", hash_generated_field = "67AFEE1CECFFBA6E89413397161A2E7D")
-
 
     protected String value;
 
@@ -56,6 +51,7 @@ public void setValue(String value) {
      * Get the value of the extension header.
      * @return the value of the extension header.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:53.391 -0500", hash_original_method = "1D785F814110552974451EFCFA0C5F26", hash_generated_method = "4D7EEBBCEC030C07FBDF544F2D7D1052")
     
 public String getHeaderValue() {

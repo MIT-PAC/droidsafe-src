@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.text.ParseException;
 
-
-
-
-
-
 public final class AllowEvents extends SIPHeader implements javax.sip.header.AllowEventsHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.892 -0500", hash_original_field = "E0457E9B6122AB6EB61F0CA98E9F08B0", hash_generated_field = "AC25BA32AE0E1E6630D2239F784D525D")
 
@@ -60,6 +55,7 @@ public void setEventType(String eventType) throws ParseException {
      *
      * @return the String object identifing the eventTypes of AllowEventsHeader.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:54.910 -0500", hash_original_method = "801AF3F6658A2A453A4D4DA9830DAF46", hash_generated_method = "0EA18A09E98FC5671017BB747A3A08BC")
     
 public String getEventType() {

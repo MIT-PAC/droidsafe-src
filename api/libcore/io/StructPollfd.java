@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.FileDescriptor;
 
-
-
-
 public final class StructPollfd {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.184 -0500", hash_original_field = "DC35B29CA7114A0CAB311A30B93CBE5F", hash_generated_field = "4ED9B7CD0F5862CC649C5C4B2E5F5F51")
 
@@ -23,7 +20,6 @@ public final class StructPollfd {
 
     public Object userData;
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.801 -0400", hash_original_method = "46E26FF7732270460330521087FDEE88", hash_generated_method = "46E26FF7732270460330521087FDEE88")
     public StructPollfd ()
     {
@@ -35,7 +31,6 @@ public final class StructPollfd {
 @Override public String toString() {
         return "StructPollfd[fd=" + fd + ",events=" + events + ",revents=" + revents + "]";
     }
-
     
 }
 

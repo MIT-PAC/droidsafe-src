@@ -5,26 +5,19 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 public class Pools {
-
     
     public static <T extends Poolable<T>> Pool<T> simplePool(PoolableManager<T> manager) {
         return new FinitePool<T>(manager);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T extends Poolable<T>> Pool<T> finitePool(PoolableManager<T> manager, int limit) {
         return new FinitePool<T>(manager, limit);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static <T extends Poolable<T>> Pool<T> synchronizedPool(Pool<T> pool) {
         return new SynchronizedPool<T>(pool);
     }
-
     
     public static <T extends Poolable<T>> Pool<T> synchronizedPool(Pool<T> pool, Object lock) {
         return new SynchronizedPool<T>(pool, lock);
@@ -33,7 +26,6 @@ public class Pools {
     
 private Pools() {
     }
-
     
 }
 

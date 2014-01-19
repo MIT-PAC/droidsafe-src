@@ -8,9 +8,6 @@ import java.io.File;
 
 import android.content.res.AssetManager;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Typeface {
@@ -26,6 +23,8 @@ public class Typeface {
      *               e.g. NORMAL, BOLD, ITALIC, BOLD_ITALIC
      * @return The best matching typeface.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.659 -0500", hash_original_method = "17B527703375EC0E18C6C2B14F73239B", hash_generated_method = "978A8D227C75F06C0F72123179F370E8")
     
 public static Typeface create(String familyName, int style) {
@@ -43,6 +42,9 @@ public static Typeface create(String familyName, int style) {
      *               e.g. NORMAL, BOLD, ITALIC, BOLD_ITALIC
      * @return The best matching typeface.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.661 -0500", hash_original_method = "440330E00D63CA8C46C2D2C8DF2C6AC6", hash_generated_method = "6ADE5CB6ADC5D7A39E399D5D4E6783C5")
     
 public static Typeface create(Typeface family, int style) {
@@ -58,6 +60,8 @@ public static Typeface create(Typeface family, int style) {
      *
      * @return the default typeface that corresponds to the style
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.663 -0500", hash_original_method = "B06912E79E41E10797503036CC965799", hash_generated_method = "9D914BF564A8989D727B0640BD894E02")
     
 public static Typeface defaultFromStyle(int style) {
@@ -70,6 +74,8 @@ public static Typeface defaultFromStyle(int style) {
      * @param path  The file name of the font data in the assets directory
      * @return The new typeface.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.666 -0500", hash_original_method = "B7B625088F029DD3EB2D5292E983F6DF", hash_generated_method = "0A54A29A95BB9391FFC250FC66E26A42")
     
 public static Typeface createFromAsset(AssetManager mgr, String path) {
@@ -99,44 +105,30 @@ public static Typeface createFromFile(File path) {
 public static Typeface createFromFile(String path) {
         return new Typeface(nativeCreateFromFile(path));
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate(String familyName, int style) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromTypeface(int native_instance, int style) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeUnref(int native_instance) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeGetStyle(int native_instance) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromAsset(AssetManager mgr, String path) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreateFromFile(String path) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void setGammaForText(float blackGamma, float whiteGamma) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.627 -0500", hash_original_field = "8DF784A9F5E85BEBD0698D4CB91805F5", hash_generated_field = "0B2DA0B843E1AF20E33C18AF2C026319")
@@ -182,6 +174,7 @@ private Typeface(int ni) {
     }
 
     /** Returns the typeface's intrinsic style attributes */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:06.652 -0500", hash_original_method = "49E10597FC0BC827A75ECB0B721408FD", hash_generated_method = "B1A319B88CE99D3D37B0A0D49A11FA23")
     
 public int getStyle() {

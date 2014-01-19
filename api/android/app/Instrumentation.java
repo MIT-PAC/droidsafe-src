@@ -32,10 +32,6 @@ import android.view.MotionEvent;
 import android.view.ViewConfiguration;
 import android.view.Window;
 
-
-
-
-
 public class Instrumentation {
     
     /**
@@ -95,11 +91,9 @@ static void checkStartActivityResult(int res, Object intent) {
 
     public static final String REPORT_KEY_STREAMRESULT = "stream";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.007 -0500", hash_original_field = "7DAF15C2214938E7EB8B8D6BA4BA65F6", hash_generated_field = "A6549731053B582294DF4842CC523BD8")
-
     
     private static final String TAG = "Instrumentation";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.009 -0500", hash_original_field = "349D1EAD6A3DD6EDFBBB76E7AC55FC2F", hash_generated_field = "E2A875EF987A77EEC850F20D740B8615")
-
     
     private final Object mSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.011 -0500", hash_original_field = "1DCC86ACED37EA88F412C3388F4C9815", hash_generated_field = "4DECD94BE6B0174DE36067CBF50C84C9")
@@ -297,6 +291,7 @@ public void onDestroy() {
      * 
      * @see #getTargetContext
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.061 -0500", hash_original_method = "0612F59C08E6EE31E243F52D2CCB68AA", hash_generated_method = "CED92F4D868F4EE82F3F4B62AE9813BA")
     
 public Context getContext() {
@@ -308,6 +303,7 @@ public Context getContext() {
      * 
      * @return Returns the complete component name for this instrumentation.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.063 -0500", hash_original_method = "6C1D36E28C0C97736EA4779A7FB1715C", hash_generated_method = "0218C20A36476A71EF5D80D906810879")
     
 public ComponentName getComponentName() {
@@ -325,6 +321,7 @@ public ComponentName getComponentName() {
      * 
      * @see #getContext
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.065 -0500", hash_original_method = "D1026223DF11B7056861FB0AA4B64828", hash_generated_method = "4B2320D69B2781FFCE4561936A920812")
     
 public Context getTargetContext() {
@@ -376,6 +373,7 @@ public void stopProfiling() {
      * @param inTouch Set to true to be in touch mode, false to be in
      * focus mode.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.074 -0500", hash_original_method = "EEC5F78C5E75C7158C64611E1694E1A0", hash_generated_method = "29441361A373C07D4DBF7405867532BB")
     
 public void setInTouchMode(boolean inTouch) {
@@ -452,6 +450,7 @@ public void runOnMainSync(Runnable runner) {
      * 
      * @see Context#startActivity
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.084 -0500", hash_original_method = "834B647755C86ED587A771C499B38AF8", hash_generated_method = "15B067D8E4EB48AB10815059D86B5E66")
     
 public Activity startActivitySync(Intent intent) {
@@ -749,7 +748,7 @@ public boolean invokeContextMenuAction(Activity targetActivity, int id, int flag
                             flags);                
             }
             
-        }        
+        }
         
         ContextMenuRunnable cmr = new ContextMenuRunnable(targetActivity, id, flag);
         runOnMainSync(cmr);
@@ -762,6 +761,7 @@ public boolean invokeContextMenuAction(Activity targetActivity, int id, int flag
      * 
      * @param text The text to be sent. 
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.182 -0500", hash_original_method = "029397BC692B989F9FCA48D48FDB9479", hash_generated_method = "D01052788D1D7136B5EB7BB540B7EA01")
     
 public void sendStringSync(String text) {
@@ -804,6 +804,7 @@ public void sendKeySync(KeyEvent event) {
      * 
      * @param key The integer keycode for the event.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.187 -0500", hash_original_method = "EAB0936DFBB6258C56105993043121F1", hash_generated_method = "9C2BED586BE6C8197B38E42163E685FD")
     
 public void sendKeyDownUpSync(int key) {        
@@ -819,6 +820,7 @@ public void sendKeyDownUpSync(int key) {
      * 
      * @param keyCode The key code of the character to send.
      */
+    @DSSink({DSSinkKind.SYNCHRONIZATION_DATA})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.189 -0500", hash_original_method = "481470F7D6C4847394865E9F06AE8ED8", hash_generated_method = "D9872B287C6362313EDE1BBF6B3D5BD2")
     
 public void sendCharacterSync(int keyCode) {
@@ -967,6 +969,7 @@ public Activity newActivity(ClassLoader cl, String className,
      * @param icicle The previously frozen state (or null) to pass through to
      *               onCreate().
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.207 -0500", hash_original_method = "5B22BAF104CC01C4555866A70EB5D211", hash_generated_method = "2ED36F90DC21FCD558045E853E94DAF2")
     
 public void callActivityOnCreate(Activity activity, Bundle icicle) {
@@ -1036,6 +1039,7 @@ public void callActivityOnDestroy(Activity activity) {
      * @param activity The activity being restored.
      * @param savedInstanceState The previously saved state being restored.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.212 -0500", hash_original_method = "E084363C345B4BF61D861FC0D5D07D15", hash_generated_method = "B4FB84BC846C006AD4E1972742F988A2")
     
 public void callActivityOnRestoreInstanceState(Activity activity, Bundle savedInstanceState) {
@@ -1135,6 +1139,7 @@ public void callActivityOnStop(Activity activity) {
      * @param activity The activity being saved.
      * @param outState The bundle to pass to the call.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.227 -0500", hash_original_method = "E8ECFB0E3E7F6A98F4E3FE19FF7167B5", hash_generated_method = "AED061B9009FBECDDBCBDF33F2A7EC03")
     
 public void callActivityOnSaveInstanceState(Activity activity, Bundle outState) {
@@ -1220,6 +1225,7 @@ private void addValue(String key, int value, Bundle results) {
     /**
      * Returns a bundle with the current results from the allocation counting.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.241 -0500", hash_original_method = "733DA96DDB5CBA410EC33155388CAA51", hash_generated_method = "D1EB78DE0220B18E485959E42814D16A")
     
 public Bundle getAllocCounts() {
@@ -1236,6 +1242,7 @@ public Bundle getAllocCounts() {
      * Returns a bundle with the counts for various binder counts for this process. Currently the only two that are
      * reported are the number of send and the number of received transactions.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.244 -0500", hash_original_method = "C29A199041D930C7B60D186159DABF9F", hash_generated_method = "9779A2A3D8077F781D01772052366265")
     
 public Bundle getBinderCounts() {
@@ -1362,7 +1369,6 @@ public void execStartActivities(Context who, IBinder contextThread,
         } catch (RemoteException e) {
         }
     }
-
     
     public static class ActivityMonitor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.087 -0500", hash_original_field = "BBC2EC8A86140B6608C1C3575B806A81", hash_generated_field = "AF74A86DAFFBC4B54B5C18398CFDAB42")
@@ -1433,6 +1439,7 @@ public ActivityMonitor(
         /**
          * Retrieve the filter associated with this ActivityMonitor.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.106 -0500", hash_original_method = "5CEC767AFA0B77CA42139688DDFFE7D0", hash_generated_method = "EEB89DB80307814A28C25480A6DDC5DE")
         
 public final IntentFilter getFilter() {
@@ -1462,6 +1469,7 @@ public final boolean isBlocking() {
         /**
          * Retrieve the number of times the monitor has been hit so far.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.113 -0500", hash_original_method = "6A2B57F4CCAF664CD709CE454AF8AF4E", hash_generated_method = "3A06AB8C5E844F44218627C35EB91D88")
         
 public final int getHits() {
@@ -1472,6 +1480,7 @@ public final int getHits() {
          * Retrieve the most recent activity class that was seen by this 
          * monitor. 
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.115 -0500", hash_original_method = "1AD813C5DE346D876C42D8A64F1E0FB4", hash_generated_method = "E5FD8926AB241950AE5A04CCCD6C1785")
         
 public final Activity getLastActivity() {
@@ -1558,15 +1567,11 @@ final boolean match(Context who,
                 return true;
             }
         }
-
         
     }
-
-
     
     public static final class ActivityResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.254 -0500", hash_original_field = "457E6BFD9A88F809DF3F4A88B9B7B893", hash_generated_field = "77069BAE5867220B0011AB47341F29C2")
-
 
         private  int mResultCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.257 -0500", hash_original_field = "DCB68FC375C4B54ED333BF58AF1CBC8A", hash_generated_field = "2ACA4EFB7F1C3D021D8C2319D9F4A1B0")
@@ -1591,6 +1596,7 @@ public ActivityResult(int resultCode, Intent resultData) {
         /**
          * Retrieve the result code contained in this result.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.249 -0500", hash_original_method = "DAC102A9F551BEDDEF83F16167EFAEA6", hash_generated_method = "BAB089F9DACBDE2D78C92F55EB927359")
         
 public int getResultCode() {
@@ -1600,16 +1606,14 @@ public int getResultCode() {
         /**
          * Retrieve the data contained in this result.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.252 -0500", hash_original_method = "230B95D397C0359A2CE808B90BABA149", hash_generated_method = "2A136C66111909BAFC222981163E4C89")
         
 public Intent getResultData() {
             return mResultData;
         }
-
         
     }
-
-
     
     private final class InstrumentationThread extends Thread {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.277 -0500", hash_original_method = "63270DA70BB76F2F3E4D4969BE7BFAFC", hash_generated_method = "293BD817EDA05D9BBEAA1ABDE32EAE9A")
@@ -1632,15 +1636,11 @@ public void run() {
             }
             onStart();
         }
-
         
     }
-
-
     
     private static final class EmptyRunnable implements Runnable {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:54.475 -0400", hash_original_method = "9351A801773C8F1D9056187EA700F8B4", hash_generated_method = "9351A801773C8F1D9056187EA700F8B4")
         public EmptyRunnable ()
         {
@@ -1650,11 +1650,8 @@ public void run() {
         
 public void run() {
         }
-
         
     }
-
-
     
     private static final class SyncRunnable implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.289 -0500", hash_original_field = "849A4B4B1A94E30A6CA7F95681D7068B", hash_generated_field = "B38DEE567D624A06D39175E911A12BE6")
@@ -1692,11 +1689,8 @@ public void waitForComplete() {
                 }
             }
         }
-
         
     }
-
-
     
     private static final class ActivityWaiter {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.304 -0500", hash_original_field = "170FCA7A98A65D8003A3D20D5B3C245D", hash_generated_field = "5DEDAC72AD89B3864945324786195E0B")
@@ -1711,11 +1705,8 @@ public void waitForComplete() {
 public ActivityWaiter(Intent _intent) {
             intent = _intent;
         }
-
         
     }
-
-
     
     private final class ActivityGoing implements MessageQueue.IdleHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.312 -0500", hash_original_field = "40B01AA85CFA6EB01F9D7192B9DB9003", hash_generated_field = "D1D9DBA4EB12F84FE5F9E1BF6FFC4059")
@@ -1737,11 +1728,8 @@ public final boolean queueIdle() {
             }
             return false;
         }
-
         
     }
-
-
     
     private static final class Idler implements MessageQueue.IdleHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:44.323 -0500", hash_original_field = "A96DAF5C1D70171F409ED450DEACFE0A", hash_generated_field = "A3563124F239CF73FFEC0EB79C97D4FC")
@@ -1783,7 +1771,6 @@ public void waitForIdle() {
                 }
             }
         }
-
         
     }
 

@@ -10,11 +10,8 @@ import android.content.res.Configuration;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
-
-
 public class UiModeManager {
     
-    @DSModeled(DSC.BAN)
     public static UiModeManager createInstance() {
         return new UiModeManager();
     }
@@ -50,10 +47,8 @@ public class UiModeManager {
     public static final int DISABLE_CAR_MODE_GO_HOME = 0x0001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.312 -0500", hash_original_field = "375F4CDB96C235DF550526331454121A", hash_generated_field = "AC5296BC9334BAEB9DDA5E503BF7ECAF")
 
-
     private IUiModeManager mService;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:56.317 -0400", hash_original_method = "885E2DF97B9D4497B2AC3BA2EAEC628B", hash_generated_method = "056F639D47467015E4958DFADC7377FD")
       UiModeManager() {
         /*
@@ -71,6 +66,7 @@ public class UiModeManager {
      * the mode switch.
      * @param flags Must be 0.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.319 -0500", hash_original_method = "A4DA8672EE11B64C720877911E862CCA", hash_generated_method = "DD466E571F8813B6A90B31373C9D4E21")
     
 public void enableCarMode(int flags) {
@@ -106,6 +102,7 @@ public void disableCarMode(int flags) {
      * {@link Configuration#UI_MODE_TYPE_CAR Configuration.UI_MODE_TYPE_CAR}, or
      * {@link Configuration#UI_MODE_TYPE_TELEVISION Configuration.UI_MODE_TYPE_TV}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.326 -0500", hash_original_method = "0CD456741A85C32EF5CC7E71365FBB20", hash_generated_method = "D4DE81443170D2B9821E2F6BCEEA8330")
     
 public int getCurrentModeType() {
@@ -133,6 +130,7 @@ public int getCurrentModeType() {
      *       depending on the location and certain other sensors.</li>
      * </ul>
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.328 -0500", hash_original_method = "D2225F0EDD53710765C544C38EED4B1C", hash_generated_method = "42638A30BD8F188BC6646A1676028C8E")
     
 public void setNightMode(int mode) {
@@ -151,6 +149,7 @@ public void setNightMode(int mode) {
      * @return {@link #MODE_NIGHT_NO}, {@link #MODE_NIGHT_YES}, or
      *  {@link #MODE_NIGHT_AUTO}.  When an error occurred -1 is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:14.332 -0500", hash_original_method = "9AFE4882A5DD35A0B7234D31EDC0BDFC", hash_generated_method = "1959474A613E71E942C1471438107391")
     
 public int getNightMode() {

@@ -42,6 +42,8 @@ public class PopupMenu implements MenuBuilder.Callback, MenuPresenter.Callback {
      * @param anchor Anchor view for this popup. The popup will appear below the anchor if there
      *               is room, or above it if there is not.
      */
+    @DSComment("Popup menu, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.863 -0500", hash_original_method = "A76A00F33E7790D7B562E67F217733EF", hash_generated_method = "721D2A368E6E5CDB86845C4F82E441BD")
     
 public PopupMenu(Context context, View anchor) {
@@ -61,6 +63,9 @@ public PopupMenu(Context context, View anchor) {
      * @see #show()
      * @see #getMenuInflater()
      */
+    @DSComment("Popup menu, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.865 -0500", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "DCDBC063D5B5258CB417C095AA16E240")
     
 public Menu getMenu() {
@@ -73,6 +78,9 @@ public Menu getMenu() {
      *
      * @see #getMenu()
      */
+    @DSComment("Popup menu, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.867 -0500", hash_original_method = "2A6E49189DE888CD2A1EA8645E922DD3", hash_generated_method = "8B59BD3ACAAFE27A11209CD7DFB743D4")
     
 public MenuInflater getMenuInflater() {
@@ -94,6 +102,8 @@ public void inflate(int menuRes) {
      * Show the menu popup anchored to the view specified during construction.
      * @see #dismiss()
      */
+    @DSComment("Popup menu, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:36.871 -0500", hash_original_method = "2CE72B1B8EF107541CE02DFAE137C08B", hash_generated_method = "2AC55B0840C7CB20A1C02EC9E675B338")
     
 public void show() {
@@ -187,7 +197,6 @@ public void onCloseSubMenu(SubMenuBuilder menu) {
     
 public void onMenuModeChange(MenuBuilder menu) {
     }
-
     
     public interface OnDismissListener {
         

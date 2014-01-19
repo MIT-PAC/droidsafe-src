@@ -22,17 +22,13 @@ import android.text.style.TabStopSpan;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public abstract class Layout {
 
     /**
      * Return how wide a layout must be in order to display the
      * specified text with one line per paragraph.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.252 -0500", hash_original_method = "1597B0DF539C50975D1094B78D7BA08C", hash_generated_method = "2413E4414C0FEBD348BCD3878230BC25")
     
 public static float getDesiredWidth(CharSequence source,
@@ -44,6 +40,7 @@ public static float getDesiredWidth(CharSequence source,
      * Return how wide a layout must be in order to display the
      * specified text slice with one line per paragraph.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.255 -0500", hash_original_method = "70F93B7B36BD9F1CA7DABE2B88F9D9BC", hash_generated_method = "E19698407338714928F82BF4B18339BF")
     
 public static float getDesiredWidth(CharSequence source,
@@ -162,9 +159,8 @@ static float nextTab(CharSequence text, int start, int end,
 
         return ((int) ((h + TAB_INCREMENT) / TAB_INCREMENT)) * TAB_INCREMENT;
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     static <T> T[] getParagraphSpans(Spanned text, int start, int end, Class<T> type) {
     	T[] retVal;
         if (start == end && start > 0) {
@@ -195,7 +191,6 @@ static float nextTab(CharSequence text, int start, int end,
     private static final Rect sTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.562 -0500", hash_original_field = "274988CFFC045452B8896268E0741F10", hash_generated_field = "52D12843713C54C6D6FE037A484C039E")
 
-
     public static final int DIR_LEFT_TO_RIGHT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.566 -0500", hash_original_field = "61933AD26617D6849CFAE952C72D8914", hash_generated_field = "E624F93AD27646BB22CB05444CE41FB7")
 
@@ -218,7 +213,6 @@ static float nextTab(CharSequence text, int start, int end,
  static final int RUN_RTL_FLAG = 1 << RUN_LEVEL_SHIFT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.590 -0500", hash_original_field = "523B437B66E94D47C6D3407D5611D3C9", hash_generated_field = "D5E340FF9F0E2C74F920DF02A6624213")
 
-
     private static final int TAB_INCREMENT = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.592 -0500", hash_original_field = "8699269872F199A33E89295A39FFEB1B", hash_generated_field = "C8BA6950A23558C64F9FDDA3186A39D3")
  static final Directions DIRS_ALL_LEFT_TO_RIGHT =
@@ -227,7 +221,6 @@ static float nextTab(CharSequence text, int start, int end,
  static final Directions DIRS_ALL_RIGHT_TO_LEFT =
         new Directions(new int[] { 0, RUN_LENGTH_MASK | RUN_RTL_FLAG });
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.538 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "E579ED9F2DADADEB46C981CAFDEE5BA5")
-
 
     private CharSequence mText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.540 -0500", hash_original_field = "956DBF43153BA67BCB0E9C5A7787D348", hash_generated_field = "B5BC396C7010734D6B4B6ED34A2846AE")
@@ -654,6 +647,7 @@ private int getLineStartPos(int line, int left, int right) {
     /**
      * Return the text that is displayed by this Layout.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.280 -0500", hash_original_method = "D3D56665E0CC0B43413FBFB4C720E96C", hash_generated_method = "AD41DE29B1C2DCE99B6C37C431B0FBB9")
     
 public final CharSequence getText() {
@@ -665,6 +659,7 @@ public final CharSequence getText() {
      * Do NOT change the paint, which may result in funny
      * drawing for this layout.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.282 -0500", hash_original_method = "7064C5093467A23605D5C425E4D25B83", hash_generated_method = "A1B666BE245BAE87971A84F2CF98551B")
     
 public final TextPaint getPaint() {
@@ -674,6 +669,7 @@ public final TextPaint getPaint() {
     /**
      * Return the width of this layout.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.285 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "22D52A618BDF0D88616879C17C111A4F")
     
 public final int getWidth() {
@@ -684,6 +680,7 @@ public final int getWidth() {
      * Return the width to which this Layout is ellipsizing, or
      * {@link #getWidth} if it is not doing anything special.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.287 -0500", hash_original_method = "90F96A059D406483E44444E82D555D1F", hash_generated_method = "E7219D99AC51B07E456390F92E1768EC")
     
 public int getEllipsizedWidth() {
@@ -708,6 +705,7 @@ public final void increaseWidthTo(int wid) {
     /**
      * Return the total height of this layout.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.292 -0500", hash_original_method = "5212B162F472F11B6A60B5BD891C860A", hash_generated_method = "01D9C5CB97CB8F7EF4A0983825580515")
     
 public int getHeight() {
@@ -726,6 +724,7 @@ public final Alignment getAlignment() {
     /**
      * Return what the text height is multiplied by to get the line height.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.296 -0500", hash_original_method = "F861D6694D511E0A8AF4CE2A5552F333", hash_generated_method = "6D96E1ECB0C174A9EDA879AB77379863")
     
 public final float getSpacingMultiplier() {
@@ -735,6 +734,7 @@ public final float getSpacingMultiplier() {
     /**
      * Return the number of units of leading that are added to each line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.299 -0500", hash_original_method = "E15AF37508F3C3C8F31DF2917343152C", hash_generated_method = "2E7B3A64CBB02E47FC166BB25D32A16B")
     
 public final float getSpacingAdd() {
@@ -745,6 +745,7 @@ public final float getSpacingAdd() {
      * Return the heuristic used to determine paragraph text direction.
      * @hide
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.302 -0500", hash_original_method = "CEF29A1F61D81E3972548E19A0D7158C", hash_generated_method = "37EDBC3BC62434E13DFAD301F3A917B2")
     
 public final TextDirectionHeuristic getTextDirectionHeuristic() {
@@ -766,6 +767,7 @@ public abstract int getLineCount();
      * @param bounds Optional. If not null, it returns the extent of the line
      * @return the Y-coordinate of the baseline
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.307 -0500", hash_original_method = "6295516BE4612811C14BD1DCED80BAB8", hash_generated_method = "728D9A8BCD139769BF63031581888C94")
     
 public int getLineBounds(int line, Rect bounds) {
@@ -848,7 +850,6 @@ public abstract int getTopPadding();
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.327 -0500", hash_original_method = "36186ABA54E56DB57B8D8035164D19BC", hash_generated_method = "EF263A3F424EDC36F744E769CE4C50BB")
     
 public abstract int getBottomPadding();
-
 
     /**
      * Returns true if the character at offset and the preceding character
@@ -971,6 +972,7 @@ private boolean primaryIsTrailingPrevious(int offset) {
      * This is the location where a new character would be inserted in
      * the paragraph's primary direction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.340 -0500", hash_original_method = "80ABC300097314837E01431F08FED39C", hash_generated_method = "9B4AE6B1658DB85323FD2387B1068EB8")
     
 public float getPrimaryHorizontal(int offset) {
@@ -983,6 +985,7 @@ public float getPrimaryHorizontal(int offset) {
      * This is the location where a new character would be inserted in
      * the direction other than the paragraph's primary direction.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.343 -0500", hash_original_method = "5EA78F3566FFC0563802F8455C66332C", hash_generated_method = "0F79438CEB1C5845DC66AA4C325AE230")
     
 public float getSecondaryHorizontal(int offset) {
@@ -1032,6 +1035,7 @@ private float getHorizontal(int offset, boolean trailing, int line) {
      * Get the leftmost position that should be exposed for horizontal
      * scrolling on the specified line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.351 -0500", hash_original_method = "185391EA60FA7533A9126C3E791BF275", hash_generated_method = "E620055286D6375EB43D2B6D4A244CA1")
     
 public float getLineLeft(int line) {
@@ -1065,6 +1069,7 @@ public float getLineLeft(int line) {
      * Get the rightmost position that should be exposed for horizontal
      * scrolling on the specified line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.354 -0500", hash_original_method = "D344E3703EA76C4344B547792AB00F8E", hash_generated_method = "46B4D0C776DD5C5CEB17F101A7835895")
     
 public float getLineRight(int line) {
@@ -1098,6 +1103,7 @@ public float getLineRight(int line) {
      * Gets the unsigned horizontal extent of the specified line, including
      * leading margin indent, but excluding trailing whitespace.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.357 -0500", hash_original_method = "F9A5FD2221E6CC8B07379CD2792C3C3D", hash_generated_method = "B119E3440FEDD3D9F499A55C08208B73")
     
 public float getLineMax(int line) {
@@ -1110,6 +1116,7 @@ public float getLineMax(int line) {
      * Gets the unsigned horizontal extent of the specified line, including
      * leading margin indent and trailing whitespace.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.359 -0500", hash_original_method = "71AEB5E1BA96E910342AC0DBF85E1ED1", hash_generated_method = "0F4F8FF2C0501E3545D1A964E3770028")
     
 public float getLineWidth(int line) {
@@ -1185,6 +1192,7 @@ private float getLineExtent(int line, TabStops tabStops, boolean full) {
      * below the bottom of the text, you get the last line.
      */
     // FIXME: It may be faster to do a linear search for layouts without many lines.
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.368 -0500", hash_original_method = "10EB5BCC671C8F4E5C56CFC3872691D1", hash_generated_method = "03B80EC8F72E3FD463EC8F7A28676827")
     
 public int getLineForVertical(int vertical) {
@@ -1210,6 +1218,7 @@ public int getLineForVertical(int vertical) {
      * If you ask for a position before 0, you get 0; if you ask for a position
      * beyond the end of the text, you get the last line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.371 -0500", hash_original_method = "42BF795D8C0B31EF6FC35C1F4CBE0EBA", hash_generated_method = "675029A7C11075C6493BDAB680B9A9A1")
     
 public int getLineForOffset(int offset) {
@@ -1234,6 +1243,7 @@ public int getLineForOffset(int offset) {
      * Get the character offset on the specified line whose position is
      * closest to the specified horizontal position.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.374 -0500", hash_original_method = "C7C29A2E2D90FB22FF824A86EA8883C4", hash_generated_method = "2E4CD0C95026F5FA47AD3EC34C1D28F1")
     
 public int getOffsetForHorizontal(int line, float horiz) {
@@ -1311,6 +1321,7 @@ public int getOffsetForHorizontal(int line, float horiz) {
     /**
      * Return the text offset after the last character on the specified line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.378 -0500", hash_original_method = "AEF50F2FA9A7358F560FC7521C77962F", hash_generated_method = "22CFA665CDFB6F4B3B14333123EEF8CC")
     
 public final int getLineEnd(int line) {
@@ -1321,6 +1332,7 @@ public final int getLineEnd(int line) {
      * Return the text offset after the last visible character (so whitespace
      * is not counted) on the specified line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.380 -0500", hash_original_method = "A5D943CCC73667A904F00DFE82793835", hash_generated_method = "02BF3C4D49F3653C5D7AC1B51F0F0C1F")
     
 public int getLineVisibleEnd(int line) {
@@ -1351,7 +1363,6 @@ private int getLineVisibleEnd(int line, int start, int end) {
 
         return end;
     }
-
     
     static class TabStops {
 
@@ -1423,11 +1434,8 @@ float nextTab(float h) {
             }
             return nextDefaultStop(h, mIncrement);
         }
-
         
     }
-
-
     
     public static class Directions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.462 -0500", hash_original_field = "75E76BC0D205B7AB08D04B9BD6A8D5F6", hash_generated_field = "34A5B6DB41500E828BF17A544F4CA0A5")
@@ -1448,11 +1456,8 @@ float nextTab(float h) {
 Directions(int[] dirs) {
             mDirections = dirs;
         }
-
         
     }
-
-
     
     static class Ellipsizer implements CharSequence, GetChars {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.486 -0500", hash_original_field = "A59BBC07E5E46996D793B2F37E80BD24", hash_generated_field = "A59BBC07E5E46996D793B2F37E80BD24")
@@ -1516,11 +1521,8 @@ public CharSequence subSequence(int start, int end) {
             getChars(0, length(), s, 0);
             return new String(s);
         }
-
         
     }
-
-
     
     static class SpannedEllipsizer extends Ellipsizer implements Spanned {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.515 -0500", hash_original_field = "4D9A388EBF42337B3D4B4C24F8CD74B1", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
@@ -1533,10 +1535,9 @@ public SpannedEllipsizer(CharSequence display) {
             super(display);
             mSpanned = (Spanned) display;
         }
-
-        
-                @DSModeled(DSC.BAN)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.968 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "1366812328FC382F5B8FE3423F551FD8")
+                
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.968 -0400", hash_original_method = "E8AB479016A2E00AFF48AA43F345FA2A", hash_generated_method = "1366812328FC382F5B8FE3423F551FD8")
         public <T> T[] getSpans(int start, int end, Class<T> type) {
             addTaint(type.getTaint());
             addTaint(end);
@@ -1548,18 +1549,21 @@ T[] varF03F51B4D510CEB709FCAEAB771CF011_1441501040 =             mSpanned.getSpa
             //return mSpanned.getSpans(start, end, type);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.523 -0500", hash_original_method = "2071284CDE64572D4D3F80F80EB4C823", hash_generated_method = "2F1F23BF4970036AFC2624FBD0A76667")
         
 public int getSpanStart(Object tag) {
             return mSpanned.getSpanStart(tag);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.526 -0500", hash_original_method = "B1DC38D90632AE4EB220020E4C5B16DF", hash_generated_method = "352085C78F363920AB38A9623804477C")
         
 public int getSpanEnd(Object tag) {
             return mSpanned.getSpanEnd(tag);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.528 -0500", hash_original_method = "A386D5CC8A9C15386840381A75E4D6FD", hash_generated_method = "94AA2E2AFBFE0A83C771FF66CD53D9D5")
         
 public int getSpanFlags(Object tag) {
@@ -1583,11 +1587,8 @@ public int nextSpanTransition(int start, int limit, Class type) {
             TextUtils.copySpansFrom(mSpanned, start, end, Object.class, ss, 0);
             return ss;
         }
-
         
     }
-
-
     
     public enum Alignment {
         ALIGN_NORMAL,
@@ -1600,6 +1601,7 @@ public int nextSpanTransition(int start, int limit, Class type) {
     /**
      * Return the vertical position of the bottom of the specified line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.385 -0500", hash_original_method = "230C56044F8D52E3D0BA17DE5C72A914", hash_generated_method = "5AA61C33C934D24188B590F9EFA8E350")
     
 public final int getLineBottom(int line) {
@@ -1609,6 +1611,7 @@ public final int getLineBottom(int line) {
     /**
      * Return the vertical position of the baseline of the specified line.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.388 -0500", hash_original_method = "BC6E93964E3CCD0D48881D9F9ABB9170", hash_generated_method = "E006075DD2B455D8358F062B9DB5CA39")
     
 public final int getLineBaseline(int line) {
@@ -1620,6 +1623,7 @@ public final int getLineBaseline(int line) {
      * Get the ascent of the text on the specified line.
      * The return value is negative to match the Paint.ascent() convention.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.390 -0500", hash_original_method = "577197C969745092B110831C30EF14E9", hash_generated_method = "7AD521E7EB701309FB90AE02B66B8FDC")
     
 public final int getLineAscent(int line) {
@@ -1627,6 +1631,7 @@ public final int getLineAscent(int line) {
         return getLineTop(line) - (getLineTop(line+1) - getLineDescent(line));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.393 -0500", hash_original_method = "AA9B5ECC044BD491182BF4F86B4B2DB2", hash_generated_method = "A5B1C788954A6D00176A51427C30F232")
     
 public int getOffsetToLeftOf(int offset) {
@@ -1642,6 +1647,7 @@ public int getOffsetToLeftOf(int offset) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.395 -0500", hash_original_method = "684E6D0185E1F1B7C4ABCAB8ADBE45B0", hash_generated_method = "3A5E3ABAD545AC94C3EBCA81E4FEFA9C")
     
 public int getOffsetToRightOf(int offset) {
@@ -1742,6 +1748,7 @@ private int getOffsetAtStartOf(int offset) {
      * but can be multiple discontinuous lines in text with multiple
      * directionalities.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.406 -0500", hash_original_method = "B9C7ED4514D9377B34881167E2C24E2C", hash_generated_method = "1FA24D84E3B80DB4D7943082439729D7")
     
 public void getCursorPath(int point, Path dest,
@@ -1859,6 +1866,7 @@ private void addSelection(int line, int start, int end,
      * or a potentially discontinuous set of rectangles.  If the start
      * and end are the same, the returned path is empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.413 -0500", hash_original_method = "E504AED84523F80835FFB88244A923D5", hash_generated_method = "C2ECEA2506433BADE7235E6563771D35")
     
 public void getSelectionPath(int start, int end, Path dest) {
@@ -1940,6 +1948,7 @@ public final Alignment getParagraphAlignment(int line) {
     /**
      * Get the left edge of the specified paragraph, inset by left margins.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.418 -0500", hash_original_method = "D8249C79FD486A8037899C5A02304321", hash_generated_method = "DD14FCDD99E2D75016AA9A63367F42E2")
     
 public final int getParagraphLeft(int line) {
@@ -1954,6 +1963,7 @@ public final int getParagraphLeft(int line) {
     /**
      * Get the right edge of the specified paragraph, inset by right margins.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:11.421 -0500", hash_original_method = "4AFE65CA85EFF9BA5DD1726E8E021AC9", hash_generated_method = "FE964169DB4009211AF47BA549E9B1DB")
     
 public final int getParagraphRight(int line) {

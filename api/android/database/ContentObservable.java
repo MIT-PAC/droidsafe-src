@@ -5,12 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class ContentObservable extends Observable<ContentObserver> {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:07.555 -0400", hash_original_method = "0D8C230D46EFDA6222B6D152F7216617", hash_generated_method = "0D8C230D46EFDA6222B6D152F7216617")
     public ContentObservable ()
     {
@@ -45,6 +41,7 @@ public void dispatchChange(boolean selfChange) {
      * invokes onChange on each observer
      * @param selfChange
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:45.834 -0500", hash_original_method = "6E785AECA168F3220756C0C7D730B7FB", hash_generated_method = "EEEAAD5A170D7CCE5625A72FA61DF131")
     
 public void notifyChange(boolean selfChange) {
@@ -54,7 +51,6 @@ public void notifyChange(boolean selfChange) {
             }
         }
     }
-
     
 }
 

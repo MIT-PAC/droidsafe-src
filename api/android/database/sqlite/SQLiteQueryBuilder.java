@@ -16,10 +16,6 @@ import android.provider.BaseColumns;
 import android.text.TextUtils;
 import android.util.Log;
 
-
-
-
-
 public class SQLiteQueryBuilder {
 
     /**
@@ -122,7 +118,6 @@ public static void appendColumns(StringBuilder s, String[] columns) {
             Pattern.compile("\\s*\\d+\\s*(,\\s*\\d+\\s*)?");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.095 -0500", hash_original_field = "DD1007F99755848BE13ED87D9635B873", hash_generated_field = "769F77C34DE42382B188666E269E7701")
 
-
     private Map<String, String> mProjectionMap = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.097 -0500", hash_original_field = "F82DC55178AF9E82B2CF77FF772C5CD0", hash_generated_field = "8F885C16B9BDADDFD8C26FCD5BE5228C")
 
@@ -140,6 +135,8 @@ public static void appendColumns(StringBuilder s, String[] columns) {
 
     private boolean mStrict;
 
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.110 -0500", hash_original_method = "841FC2D35CC9552E307358F36A673D72", hash_generated_method = "2AEC253E7142AD2F66BF83F76E98F9AA")
     
 public SQLiteQueryBuilder() {
@@ -163,6 +160,7 @@ public void setDistinct(boolean distinct) {
      *
      * @return the list of tables being queried
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.116 -0500", hash_original_method = "71A35CB8526DF402EA58F5074639A5D5", hash_generated_method = "13D8072364158B36631FA2ACBC56A17F")
     
 public String getTables() {
@@ -177,6 +175,8 @@ public String getTables() {
      *
      * @param inTables the list of tables to query on
      */
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.118 -0500", hash_original_method = "3D5C8D5A2DF23857F8B36CBC126449F5", hash_generated_method = "6D71291B909000BAACAB49C5B7A12499")
     
 public void setTables(String inTables) {
@@ -192,6 +192,8 @@ public void setTables(String inTables) {
      *
      * @param inWhere the chunk of text to append to the WHERE clause.
      */
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.123 -0500", hash_original_method = "4066C27D90FD6AEEDB747E2D0A255B82", hash_generated_method = "AE5516F5F592B31E19612BE6B9DC745C")
     
 public void appendWhere(CharSequence inWhere) {
@@ -214,6 +216,8 @@ public void appendWhere(CharSequence inWhere) {
      * @param inWhere the chunk of text to append to the WHERE clause. it will be escaped
      * to avoid SQL injection attacks
      */
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.127 -0500", hash_original_method = "CD89033A6A424354FBAEE4A7B7BB0312", hash_generated_method = "F2E378748E2C287D92424CD85C2A7EE1")
     
 public void appendWhereEscapeString(String inWhere) {
@@ -237,6 +241,8 @@ public void appendWhereEscapeString(String inWhere) {
      *
      * @param columnMap maps from the user column names to the database column names
      */
+    @DSComment("Build SQL queries")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.129 -0500", hash_original_method = "DDD8D9F6C39192C696789E3C5816355A", hash_generated_method = "242D53A391A616E52B1C81C51E3570BE")
     
 public void setProjectionMap(Map<String, String> columnMap) {
@@ -312,6 +318,9 @@ public void setStrict(boolean flag) {
      * @see android.content.ContentResolver#query(android.net.Uri, String[],
      *      String, String[], String)
      */
+    @DSComment("Database access")
+    @DSSpec(DSCat.DATABASE)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.146 -0500", hash_original_method = "C851DFBDB6501381AF55260B14586647", hash_generated_method = "60B42FCF91B7DAFA84B5EEAB5AFFEF11")
     
 public Cursor query(SQLiteDatabase db, String[] projectionIn,
@@ -353,6 +362,7 @@ public Cursor query(SQLiteDatabase db, String[] projectionIn,
      * @see android.content.ContentResolver#query(android.net.Uri, String[],
      *      String, String[], String)
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:44.149 -0500", hash_original_method = "A22563797EE8B98D8D2C96F4FC0F2C77", hash_generated_method = "EB9D53584F352AD6AC60DCC4EDA82399")
     
 public Cursor query(SQLiteDatabase db, String[] projectionIn,

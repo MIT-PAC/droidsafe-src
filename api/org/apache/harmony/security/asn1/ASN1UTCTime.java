@@ -9,11 +9,6 @@ import java.nio.charset.Charsets;
 import java.text.SimpleDateFormat;
 import java.util.TimeZone;
 
-
-
-
-
-
 public final class ASN1UTCTime extends ASN1Time {
 
     /**
@@ -24,6 +19,7 @@ public final class ASN1UTCTime extends ASN1Time {
      *
      * @return ASN.1 UTCTime type default implementation
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.569 -0500", hash_original_method = "88789DA35EC0F29C4ECE5348C3C6879B", hash_generated_method = "92C7BBDA37B2445AD79175E4A83E872F")
     
 public static ASN1UTCTime getInstance() {
@@ -83,6 +79,7 @@ public ASN1UTCTime() {
         out.encodeUTCTime();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.581 -0500", hash_original_method = "DF1F65526ADDCB7D66CE158126525DF9", hash_generated_method = "788569727504E38F0D5DDEE9ADB4A6E3")
     
 @Override public void setEncodingContent(BerOutputStream out) {

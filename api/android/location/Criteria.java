@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class Criteria implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.251 -0500", hash_original_field = "63CBE5A41264DBB1C341FCA49432714F", hash_generated_field = "26610DC2B1083D7D7A6C941CAD5368F1")
 
@@ -67,7 +63,6 @@ public Criteria[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.274 -0500", hash_original_field = "E2741479255CBADB4ACA5A82DB917D12", hash_generated_field = "1A506D6FCBAE89E5ED8986984C204EDF")
 
-
     private int mHorizontalAccuracy    = NO_REQUIREMENT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.276 -0500", hash_original_field = "D302B9EC3FF6A3B0F1FD7C3A3214A831", hash_generated_field = "9C948891D51E1ECED7D5B42EA88A1980")
 
@@ -100,6 +95,8 @@ public Criteria[] newArray(int size) {
      * require altitude, speed, or bearing; and will not allow monetary
      * cost.
      */
+    @DSComment("Used for thresholding")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.293 -0500", hash_original_method = "56D25A23ADD1F3C93CB7F827DA5DFB02", hash_generated_method = "B843D41D9AC4259E19148AB7E4644051")
     
 public Criteria() {}
@@ -143,6 +140,7 @@ public void setHorizontalAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_MEDIUM},
      * {@link #ACCURACY_HIGH} or {@link #NO_REQUIREMENT}.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.300 -0500", hash_original_method = "2F566A20A5A9A3E4947DCE83AA9DF67E", hash_generated_method = "EB8464243AF7ED99CEFF9EF12492C38F")
     
 public int getHorizontalAccuracy() {
@@ -171,6 +169,7 @@ public void setVerticalAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
      * or {@link #NO_REQUIREMENT}.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.305 -0500", hash_original_method = "E46E133CF34270F0210C8D2BD309B3F5", hash_generated_method = "94819062ECBCBB5F4BA9A798966004AB")
     
 public int getVerticalAccuracy() {
@@ -199,6 +198,7 @@ public void setSpeedAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
      * or {@link #NO_REQUIREMENT}.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.309 -0500", hash_original_method = "87339E07174611DFFFF3AC3EA0F5BF3F", hash_generated_method = "D84B90D39E5AACB43C21888DD25278A3")
     
 public int getSpeedAccuracy() {
@@ -227,6 +227,7 @@ public void setBearingAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_LOW}, {@link #ACCURACY_HIGH},
      * or {@link #NO_REQUIREMENT}.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.313 -0500", hash_original_method = "0A4814C8F779184929A4F3680AE62C8F", hash_generated_method = "7697EC11E830EBC0BE062129992E126B")
     
 public int getBearingAccuracy() {
@@ -241,6 +242,9 @@ public int getBearingAccuracy() {
      *
      * @throws IllegalArgumentException if accuracy is not one of the supported constants
      */
+    @DSComment("Used for thresholding")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.316 -0500", hash_original_method = "F2B3644622DFC41E9C3EF3B6293185D6", hash_generated_method = "1A102D596F6E2D9DAE1D224E05ADE788")
     
 public void setAccuracy(int accuracy) {
@@ -259,6 +263,7 @@ public void setAccuracy(int accuracy) {
      * Accuracy may be {@link #ACCURACY_FINE} if desired location
      * is fine, else it can be {@link #ACCURACY_COARSE}.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.318 -0500", hash_original_method = "738CC4C555122D617CAE26F950A7954B", hash_generated_method = "00869F8EC38CFA4A6F3EE3578ACFA369")
     
 public int getAccuracy() {
@@ -274,6 +279,8 @@ public int getAccuracy() {
      * must be one of NO_REQUIREMENT, POWER_LOW, POWER_MEDIUM, or
      * POWER_HIGH.
      */
+    @DSComment("Used for thresholding")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.320 -0500", hash_original_method = "91C2D38607A4F9F70C65E1811565AAD2", hash_generated_method = "0EF8DF914CF98349FC7CDF24CF89D3FA")
     
 public void setPowerRequirement(int level) {
@@ -287,6 +294,7 @@ public void setPowerRequirement(int level) {
      * Returns a constant indicating the desired power requirement.  The
      * returned
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.323 -0500", hash_original_method = "50AB5D6061392E8FAC8A81CA41B14FB2", hash_generated_method = "3E881DFE958F83CAFAEFC8ECCCA7BA30")
     
 public int getPowerRequirement() {
@@ -296,6 +304,8 @@ public int getPowerRequirement() {
     /**
      * Indicates whether the provider is allowed to incur monetary cost.
      */
+    @DSComment("Used for thresholding")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.325 -0500", hash_original_method = "F89CAE570739AB3028DA707B2893B5C5", hash_generated_method = "6C6BEAC76587EDC68F07B4308B80DDA6")
     
 public void setCostAllowed(boolean costAllowed) {
@@ -315,6 +325,8 @@ public boolean isCostAllowed() {
      * Indicates whether the provider must provide altitude information.
      * Not all fixes are guaranteed to contain such information.
      */
+    @DSComment("Used for thresholding")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.329 -0500", hash_original_method = "22D4EC779FEBEFBD7A04B35673FD6242", hash_generated_method = "57CCF4C061CD44F3AC28D9C851A3B818")
     
 public void setAltitudeRequired(boolean altitudeRequired) {
@@ -335,6 +347,8 @@ public boolean isAltitudeRequired() {
      * Indicates whether the provider must provide speed information.
      * Not all fixes are guaranteed to contain such information.
      */
+    @DSComment("Used for thresholding")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.333 -0500", hash_original_method = "6A27513D0E2583F73F00042D0FDBD9E3", hash_generated_method = "ED70CA5983122935A64226B480B75ED9")
     
 public void setSpeedRequired(boolean speedRequired) {
@@ -355,6 +369,8 @@ public boolean isSpeedRequired() {
      * Indicates whether the provider must provide bearing information.
      * Not all fixes are guaranteed to contain such information.
      */
+    @DSComment("Used for thresholding")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:02.337 -0500", hash_original_method = "B68158C6EC7F405A349EABCD21ABA300", hash_generated_method = "CCFB5BA3E59FE9614A29061580CF2070")
     
 public void setBearingRequired(boolean bearingRequired) {

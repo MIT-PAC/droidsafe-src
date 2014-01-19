@@ -10,11 +10,6 @@ import java.security.KeyFactory;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.RSAPublicKeySpec;
 
-
-
-
-
-
 public class ServerKeyExchange extends Message {
 
     /**
@@ -45,13 +40,11 @@ public static byte[] toUnsignedByteArray(BigInteger bi) {
      byte[] bytes1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.659 -0500", hash_original_field = "49DF98649AA30F777A7B9E97B2259031", hash_generated_field = "49DF98649AA30F777A7B9E97B2259031")
 
-
      BigInteger par2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.662 -0500", hash_original_field = "A1E23DAADE58A1B5E338B97B1B783D02", hash_generated_field = "A1E23DAADE58A1B5E338B97B1B783D02")
 
      byte[] bytes2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.664 -0500", hash_original_field = "04ADECD493FBEAF3F6DA9C0D47888E6A", hash_generated_field = "04ADECD493FBEAF3F6DA9C0D47888E6A")
-
 
      BigInteger par3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.666 -0500", hash_original_field = "A96D0DD7D69372A4FE08B07AE1E6E7B2", hash_generated_field = "A96D0DD7D69372A4FE08B07AE1E6E7B2")
@@ -61,7 +54,6 @@ public static byte[] toUnsignedByteArray(BigInteger bi) {
 
      byte[] hash;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.670 -0500", hash_original_field = "F63DCAD7F3A074B3619ED6D0D6ADB2CE", hash_generated_field = "2C21B14519E4B3866FCF3554754DEBAE")
-
 
     private RSAPublicKey key;
 
@@ -144,6 +136,7 @@ public ServerKeyExchange(HandshakeIODataStream in, int length,
      * Sends message
      * @param out
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.682 -0500", hash_original_method = "2B7BAEA20D94561E69BFE5897EA1BEB9", hash_generated_method = "316B677311269FE7A70880051EF64718")
     
 @Override
@@ -168,6 +161,7 @@ public ServerKeyExchange(HandshakeIODataStream in, int length,
      *
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.684 -0500", hash_original_method = "72FB1E0FC95B638A772EDD07E458B713", hash_generated_method = "5CC42133DB9D05A4256503D09C60F486")
     
 public RSAPublicKey getRSAPublicKey() {
@@ -188,13 +182,13 @@ public RSAPublicKey getRSAPublicKey() {
      * Returns message type
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:17.687 -0500", hash_original_method = "620B9D3699DFA1CCAA0EB56AC40BC192", hash_generated_method = "5AF29C62290EC2907F6A69FAFE3ED111")
     
 @Override
     public int getType() {
         return Handshake.SERVER_KEY_EXCHANGE;
     }
-
     
 }
 

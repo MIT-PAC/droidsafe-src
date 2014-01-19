@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.889 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.889 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.892 -0500", hash_original_method = "7224459B2FB171AD560AA8DA622A14B6", hash_generated_method = "EB60030E85258629A1E6F77EC5A99438")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.892 -0500", hash_original_method = "7224459B2FB171AD560AA8DA622A14B6", hash_generated_method = "EB60030E85258629A1E6F77EC5A99438")
             
 public java.util.List<android.net.wifi.WifiConfiguration> getConfiguredNetworks() throws android.os.RemoteException
 {
@@ -107,7 +109,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.898 -0500", hash_original_method = "A2D879A312B92175D373B3DDDFC3FB74", hash_generated_method = "15E0DF47A10F0A9EAF0888A815C67777")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.898 -0500", hash_original_method = "A2D879A312B92175D373B3DDDFC3FB74", hash_generated_method = "15E0DF47A10F0A9EAF0888A815C67777")
             
 public boolean removeNetwork(int netId) throws android.os.RemoteException
 {
@@ -127,7 +130,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.901 -0500", hash_original_method = "2F01ADE0D5238742A2A06430CA5FDA2A", hash_generated_method = "090ECFEA207DA08E13ABFEC48B5B8127")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.901 -0500", hash_original_method = "2F01ADE0D5238742A2A06430CA5FDA2A", hash_generated_method = "090ECFEA207DA08E13ABFEC48B5B8127")
             
 public boolean enableNetwork(int netId, boolean disableOthers) throws android.os.RemoteException
 {
@@ -148,7 +152,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.903 -0500", hash_original_method = "712036BC1E5B461021925866225BA9A6", hash_generated_method = "AD0599445B6282BFCF47D1ED61BBBD8C")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.903 -0500", hash_original_method = "712036BC1E5B461021925866225BA9A6", hash_generated_method = "AD0599445B6282BFCF47D1ED61BBBD8C")
             
 public boolean disableNetwork(int netId) throws android.os.RemoteException
 {
@@ -204,7 +209,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.911 -0500", hash_original_method = "05F4B4B956B6077DC22A1733AEF1C28F", hash_generated_method = "B99D06BDC54C9E1D5E4BA8A6D573A3B5")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.911 -0500", hash_original_method = "05F4B4B956B6077DC22A1733AEF1C28F", hash_generated_method = "B99D06BDC54C9E1D5E4BA8A6D573A3B5")
             
 public java.util.List<android.net.wifi.ScanResult> getScanResults() throws android.os.RemoteException
 {
@@ -271,7 +277,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.921 -0500", hash_original_method = "979CB2E743FC92CA350898E1F54FCD04", hash_generated_method = "50FE9638A34C9E6BC3291E5389F45DD3")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.921 -0500", hash_original_method = "979CB2E743FC92CA350898E1F54FCD04", hash_generated_method = "50FE9638A34C9E6BC3291E5389F45DD3")
             
 public android.net.wifi.WifiInfo getConnectionInfo() throws android.os.RemoteException
 {
@@ -295,7 +302,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.924 -0500", hash_original_method = "E38116801EBEEAFF405131D95791C467", hash_generated_method = "DFB0A7694C85919A8B9030BFAAAD212D")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.924 -0500", hash_original_method = "E38116801EBEEAFF405131D95791C467", hash_generated_method = "DFB0A7694C85919A8B9030BFAAAD212D")
             
 public boolean setWifiEnabled(boolean enable) throws android.os.RemoteException
 {
@@ -315,7 +323,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.927 -0500", hash_original_method = "5B565B0B8C2E2305A1BBE16A7E4A11F8", hash_generated_method = "C8C8A3EA5F69C0E3EE6A9958B7D2EDCE")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.927 -0500", hash_original_method = "5B565B0B8C2E2305A1BBE16A7E4A11F8", hash_generated_method = "C8C8A3EA5F69C0E3EE6A9958B7D2EDCE")
             
 public int getWifiEnabledState() throws android.os.RemoteException
 {
@@ -334,7 +343,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.929 -0500", hash_original_method = "BA29774759066895F50E599F0D8A9CBC", hash_generated_method = "5B572771EF2ED4BC760829541F18A15B")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.929 -0500", hash_original_method = "BA29774759066895F50E599F0D8A9CBC", hash_generated_method = "5B572771EF2ED4BC760829541F18A15B")
             
 public void setCountryCode(java.lang.String country, boolean persist) throws android.os.RemoteException
 {
@@ -352,7 +362,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.933 -0500", hash_original_method = "29C27631151EC35EA5CF80AF64AD0DCA", hash_generated_method = "A78285BC239949E4B8C3C84AB7A43DD7")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.933 -0500", hash_original_method = "29C27631151EC35EA5CF80AF64AD0DCA", hash_generated_method = "A78285BC239949E4B8C3C84AB7A43DD7")
             
 public void setFrequencyBand(int band, boolean persist) throws android.os.RemoteException
 {
@@ -370,7 +381,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.935 -0500", hash_original_method = "12DB500C126AE98092B540C6E89D4377", hash_generated_method = "EAB5F0174AAADCB537B433C4B55FAE9A")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.935 -0500", hash_original_method = "12DB500C126AE98092B540C6E89D4377", hash_generated_method = "EAB5F0174AAADCB537B433C4B55FAE9A")
             
 public int getFrequencyBand() throws android.os.RemoteException
 {
@@ -427,7 +439,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.943 -0500", hash_original_method = "7F8B92FD955BC1E10FEF328A45F74BBA", hash_generated_method = "955A02C7081109C3E3ED0E5848B4AC86")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.943 -0500", hash_original_method = "7F8B92FD955BC1E10FEF328A45F74BBA", hash_generated_method = "955A02C7081109C3E3ED0E5848B4AC86")
             
 public android.net.DhcpInfo getDhcpInfo() throws android.os.RemoteException
 {
@@ -451,7 +464,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.946 -0500", hash_original_method = "F3590FCF850A842EBDF486D6D170A182", hash_generated_method = "47184626C2194ECE28B2DA5E4E137D79")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.946 -0500", hash_original_method = "F3590FCF850A842EBDF486D6D170A182", hash_generated_method = "47184626C2194ECE28B2DA5E4E137D79")
             
 public boolean acquireWifiLock(android.os.IBinder lock, int lockType, java.lang.String tag, android.os.WorkSource ws) throws android.os.RemoteException
 {
@@ -480,7 +494,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.948 -0500", hash_original_method = "09749AF7214DFF05F760A29A17BEF910", hash_generated_method = "183F69D883C52525CDAEC19D05F67F05")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.948 -0500", hash_original_method = "09749AF7214DFF05F760A29A17BEF910", hash_generated_method = "183F69D883C52525CDAEC19D05F67F05")
             
 public void updateWifiLockWorkSource(android.os.IBinder lock, android.os.WorkSource ws) throws android.os.RemoteException
 {
@@ -504,7 +519,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.951 -0500", hash_original_method = "05C7F0623232DE5161FA9A10D90928B0", hash_generated_method = "9EAD9C7E5BCB06EA89E5607EDDD80A84")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.951 -0500", hash_original_method = "05C7F0623232DE5161FA9A10D90928B0", hash_generated_method = "9EAD9C7E5BCB06EA89E5607EDDD80A84")
             
 public boolean releaseWifiLock(android.os.IBinder lock) throws android.os.RemoteException
 {
@@ -559,7 +575,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.958 -0500", hash_original_method = "F0405C2C686D95F89984CC62DA7F4AB2", hash_generated_method = "44B79B53DB10D941C7D174344CD96458")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.958 -0500", hash_original_method = "F0405C2C686D95F89984CC62DA7F4AB2", hash_generated_method = "44B79B53DB10D941C7D174344CD96458")
             
 public void acquireMulticastLock(android.os.IBinder binder, java.lang.String tag) throws android.os.RemoteException
 {
@@ -593,7 +610,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.964 -0500", hash_original_method = "9B8A894AA8BD2F0CCD1815FE47F3609A", hash_generated_method = "A370A8BC4976367A3ACE35EC0D44699B")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.964 -0500", hash_original_method = "9B8A894AA8BD2F0CCD1815FE47F3609A", hash_generated_method = "A370A8BC4976367A3ACE35EC0D44699B")
             
 public void setWifiApEnabled(android.net.wifi.WifiConfiguration wifiConfig, boolean enable) throws android.os.RemoteException
 {
@@ -617,7 +635,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.967 -0500", hash_original_method = "52F768A33D659ED3D3EC812487DB576C", hash_generated_method = "2131B687AC2FC3DFC20631712A5E6C21")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.967 -0500", hash_original_method = "52F768A33D659ED3D3EC812487DB576C", hash_generated_method = "2131B687AC2FC3DFC20631712A5E6C21")
             
 public int getWifiApEnabledState() throws android.os.RemoteException
 {
@@ -636,7 +655,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.970 -0500", hash_original_method = "47E381783395EBE4F8BB5E78E6C0DC95", hash_generated_method = "60D6044E67D32E7E3A760D14B9909108")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.970 -0500", hash_original_method = "47E381783395EBE4F8BB5E78E6C0DC95", hash_generated_method = "60D6044E67D32E7E3A760D14B9909108")
             
 public android.net.wifi.WifiConfiguration getWifiApConfiguration() throws android.os.RemoteException
 {
@@ -660,7 +680,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.973 -0500", hash_original_method = "B8662F4E8872C92EBC31C9FD4BB01DC6", hash_generated_method = "BDE48C511CAD97DBF969501666C7DBA8")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.973 -0500", hash_original_method = "B8662F4E8872C92EBC31C9FD4BB01DC6", hash_generated_method = "BDE48C511CAD97DBF969501666C7DBA8")
             
 public void setWifiApConfiguration(android.net.wifi.WifiConfiguration wifiConfig) throws android.os.RemoteException
 {
@@ -715,7 +736,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.980 -0500", hash_original_method = "A95A2F6537EDB001A82898C0F16435B5", hash_generated_method = "86AB1780E1EDCF2E63575050B7ADC394")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.980 -0500", hash_original_method = "A95A2F6537EDB001A82898C0F16435B5", hash_generated_method = "86AB1780E1EDCF2E63575050B7ADC394")
             
 public void addToBlacklist(java.lang.String bssid) throws android.os.RemoteException
 {
@@ -772,7 +794,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.988 -0500", hash_original_method = "FB5865C63169ED7F200C6670E7908954", hash_generated_method = "453ABDE7E94E64C9ABD20495891D5353")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.988 -0500", hash_original_method = "FB5865C63169ED7F200C6670E7908954", hash_generated_method = "453ABDE7E94E64C9ABD20495891D5353")
             
 public java.lang.String getConfigFile() throws android.os.RemoteException
 {
@@ -901,13 +924,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.870 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.870 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.879 -0500", hash_original_method = "91790B824725080608292A62C65F32E4", hash_generated_method = "DE048F12673804EC8E7802FE586D13CF")
+@DSSink({DSSinkKind.NETWORK})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:02.879 -0500", hash_original_method = "91790B824725080608292A62C65F32E4", hash_generated_method = "DE048F12673804EC8E7802FE586D13CF")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

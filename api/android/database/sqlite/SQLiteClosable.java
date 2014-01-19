@@ -6,16 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.database.CursorWindow;
 
-
-
-
-
 public abstract class SQLiteClosable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.232 -0500", hash_original_field = "75771A365A5811FB0582BD66B20EC330", hash_generated_field = "DCE5AF4DC7C8F75088B97A64E4AB1192")
 
     private int mReferenceCount = 1;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.179 -0400", hash_original_method = "A9F6E0E907A2CB5A9B2E32487BA16D84", hash_generated_method = "A9F6E0E907A2CB5A9B2E32487BA16D84")
     public SQLiteClosable ()
     {
@@ -84,7 +79,6 @@ private String getObjInfo() {
         buff.append(") ");
         return buff.toString();
     }
-
     
 }
 

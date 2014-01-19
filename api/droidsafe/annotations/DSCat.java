@@ -3,16 +3,17 @@ package droidsafe.annotations;
 public enum DSCat {
     //Safe Categories */
     ANDROID_ANIMATION,
+    ANDROID_CALLBACK,   //methods like onClick 
     OS_GENERAL,
     DATA_STRUCTURE,  
-    FRAMEWORK_FINAL,  //cannot override
+    MEM_BUFFER,
     SAFE_LIST,
     GUI,    
     GRAPHICS,
     NO_ACTION,
     DATA_GENERAL,
     SAFE_OTHERS,
-    ANDROID_CALLBACK,
+    UTIL_FUNCTION,
     
     //Ban Categories
     DALVIK,
@@ -20,6 +21,7 @@ public enum DSCat {
     REFLECTION,
     CLASS_LOADER,
     SECURITY_VIOLATION,
+    BAN_OTHERS,
     
     //Spec Categories
     ABSTRACT_METHOD,
@@ -33,6 +35,10 @@ public enum DSCat {
     APP_RESOURCE,
     CALLBACK_INVOKE,
     
+    BACKUP_SUBSYSTEM,
+    BLUETOOTH,
+    NFC,
+    CONTACT,
     CONTENT,
     TO_MODEL, //once the method is modeled, it will be safe
 
@@ -48,22 +54,32 @@ public enum DSCat {
     INTERGUI_ACTION,
     IO,
     IO_ACTION_METHOD,
+    IPC,
+    SERVICE,
     JAVA_SECURITY,
     LOGGING,
     LOCATION,    
     MEDIA_RECORDER,
     NETWORK_STATS,
+    NETWORK,
     NETWORKING,
     
     OS_LOW_LEVEL,    
     PHONE_CALL,
     RESOURCE,
+    RTP_CALL,
     SENSOR,
     SMS,
     SHARING,
     STORAGE,
     SYSTEM_SETTING,    
     SYSTEM_SERVICE,
+    STORAGE_ACCESS,
+    SYSTEM,
+    SYSTEM_PREFERENCES,
+    SYSTEM_SETTINGS,
+    SECURITY,
+    SERIALIZATION,
     TELEPHONY,
     URI_EXCHANGE,
     WIFI,

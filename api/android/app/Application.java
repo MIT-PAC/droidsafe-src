@@ -13,10 +13,6 @@ import android.content.ContextWrapper;
 import android.content.res.Configuration;
 import android.os.Bundle;
 
-
-
-
-
 public class Application extends ContextWrapper implements ComponentCallbacks2 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.735 -0500", hash_original_field = "52837140401BB64310DD4D38EE64CEAC", hash_generated_field = "16B69693C5E15AB94DE4137F3E4501E9")
 
@@ -30,6 +26,8 @@ public class Application extends ContextWrapper implements ComponentCallbacks2 {
 
     public LoadedApk mLoadedApk;
 
+    @DSComment("Safe, check callback modeling")
+    @DSSafe(DSCat.ANDROID_APPLICATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.744 -0500", hash_original_method = "C931B33981954029459F423E4A87FAC0", hash_generated_method = "F0E4FB0F5E319AAF30983CD5CD1CB19D")
     
 public Application() {
@@ -44,6 +42,8 @@ public Application() {
      * first activity, service, or receiver in a process.
      * If you override this method, be sure to call super.onCreate().
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.746 -0500", hash_original_method = "A550D0299CAB894F5185E5356A7BB697", hash_generated_method = "9687CB6D9F1B2A9EE9EE5E6EB201E78C")
     
 public void onCreate() {
@@ -55,11 +55,15 @@ public void onCreate() {
      * removed by simply killing them; no user code (including this callback)
      * is executed when doing so.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.748 -0500", hash_original_method = "9A007B9204A4409A01090B4582DB84FC", hash_generated_method = "0CFB0DE44CBDF4B9B5900A2A835F1B37")
     
 public void onTerminate() {
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:48.750 -0500", hash_original_method = "2D485B4C1AE5E3664AA314F747191250", hash_generated_method = "54485CB360746CF2B2E2C51891FDCFE0")
     
 public void onConfigurationChanged(Configuration newConfig) {
@@ -242,7 +246,6 @@ private Object[] collectActivityLifecycleCallbacks() {
         }
         return callbacks;
     }
-
     
     public interface ActivityLifecycleCallbacks {
         void onActivityCreated(Activity activity, Bundle savedInstanceState);
@@ -255,21 +258,19 @@ private Object[] collectActivityLifecycleCallbacks() {
     }
     
 	// ------------- Droidsafe Hooks -------------
-    @DSModeled(DSC.BAN)
+    
  	public void droidsafeAttach(Context context) {
  		attach(context);
  	}
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnCreate() {
 		onCreate();
 	}
-	
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnTerminate() {
 		onTerminate();
 	}
-	
-    @DSModeled(DSC.BAN)
+    
 	public void droidsafeOnEverythingElse() {
 		onTrimMemory(getTaintInt());
 		onLowMemory();

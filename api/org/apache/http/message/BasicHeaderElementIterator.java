@@ -15,14 +15,12 @@ import org.apache.http.util.CharArrayBuffer;
 
 public class BasicHeaderElementIterator implements HeaderElementIterator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.337 -0500", hash_original_field = "8A85502E058E78CBD7CD2C77295C667A", hash_generated_field = "681B665373B1CBEA8829DF2690903333")
-
     
     private  HeaderIterator headerIt;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.339 -0500", hash_original_field = "AE9E6BC118AE71CB538FB6EBA19891A8", hash_generated_field = "FD033C82BEBC8E8A0B95CC65BD0BF608")
 
     private  HeaderValueParser parser;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.342 -0500", hash_original_field = "ADF89976800B1740565555F6A9531A33", hash_generated_field = "231DE4F2E10C59C340873284ECC7C9AF")
-
     
     private HeaderElement currentElement = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.344 -0500", hash_original_field = "169EEA34A539E7153A0DC09FA5984F0F", hash_generated_field = "53E15FD8A31F799570449598E4AA1AA4")
@@ -49,14 +47,12 @@ public BasicHeaderElementIterator(
         this.headerIt = headerIterator;
         this.parser = parser;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.352 -0500", hash_original_method = "301A478E2A86B8C402F0249D1AC3F9AF", hash_generated_method = "0E3689E1E24ADF9EA9627E65DAB44B62")
     
 public BasicHeaderElementIterator(final HeaderIterator headerIterator) {
         this(headerIterator, BasicHeaderValueParser.DEFAULT);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.356 -0500", hash_original_method = "C8E28B138A9C5D591B033922ABD8E30E", hash_generated_method = "6FFD397A68944DC958D03E859EB4B5C4")
     
@@ -111,37 +107,29 @@ private void parseNextElement() {
             }
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
 	@Override
 	public boolean hasNext() {
 		// TODO Auto-generated method stub
 		return false;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public HeaderElement nextElement() {
 		// TODO Auto-generated method stub
 		return null;
 	}
-
     
-    @DSModeled(DSC.SAFE)
 	@Override
 	public Object next() {
 		// TODO Auto-generated method stub
 		return new Object();
 	}
-
     
     @Override
 	public void remove() {
 		// TODO Auto-generated method stub
 	}
-
     
 }
 

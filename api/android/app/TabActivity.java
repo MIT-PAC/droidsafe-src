@@ -22,6 +22,8 @@ public class TabActivity extends ActivityGroup {
 
     private int mDefaultTabIndex = -1;
 
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.672 -0500", hash_original_method = "7656B1DA8F939C27E9A82F1B44C0847D", hash_generated_method = "58E71EE30CE038A7E54BAFF2C3030AF5")
     
 public TabActivity() {
@@ -51,6 +53,8 @@ public void setDefaultTab(int index) {
         mDefaultTabIndex = index;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.679 -0500", hash_original_method = "43FC78560A264DC47797D8670D9C3246", hash_generated_method = "6AC89BFAC49F7EC91737BA5CBAE8C9FA")
     
 @Override
@@ -83,6 +87,8 @@ public void setDefaultTab(int index) {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.685 -0500", hash_original_method = "7A1E5FF4358126AE2CED70B78C4AF1EE", hash_generated_method = "800834DA05538FBD581E6F9367E60777")
     
 @Override
@@ -142,6 +148,8 @@ private void ensureTabHost() {
      *
      * @return the {@link TabHost} the activity is using to host its tabs.
      */
+    @DSComment("Normal GUI")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:43.693 -0500", hash_original_method = "6AC0503CD9EB9D407A1E8CBC0E0E9255", hash_generated_method = "854FCBF35F834D6C10A8AC36ED9F2611")
     
 public TabHost getTabHost() {
@@ -159,7 +167,6 @@ public TabHost getTabHost() {
 public TabWidget getTabWidget() {
         return mTabHost.getTabWidget();
     }
-
     
 }
 

@@ -13,10 +13,6 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class TextAppearanceSpan extends MetricAffectingSpan implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.544 -0500", hash_original_field = "09F52ED154F9A85ECF27E5DE83FC66E9", hash_generated_field = "5282170AD2743DECEA0FF0876CABC714")
 
@@ -136,6 +132,7 @@ public TextAppearanceSpan(Parcel src) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.571 -0500", hash_original_method = "06416282EB1641FCC18F44A861BC9EFB", hash_generated_method = "5820CFA4EE5DA8B5A7814A237A6DD6C3")
     
 public int getSpanTypeId() {
@@ -148,6 +145,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.576 -0500", hash_original_method = "5C4A27F4DE181F367842F0367978AD5D", hash_generated_method = "C6D466EB680329C8888856F55D33E7A0")
     
 public void writeToParcel(Parcel dest, int flags) {
@@ -172,6 +170,7 @@ public void writeToParcel(Parcel dest, int flags) {
      * Returns the typeface family specified by this span, or <code>null</code>
      * if it does not specify one.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.579 -0500", hash_original_method = "15042A588BD36B3AABC957E25B6ABB68", hash_generated_method = "4AB3A6DA8541DBE92DCA2D2683522159")
     
 public String getFamily() {
@@ -182,6 +181,7 @@ public String getFamily() {
      * Returns the text color specified by this span, or <code>null</code>
      * if it does not specify one.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.581 -0500", hash_original_method = "BEF77474BA0C11C6EB44F1454E52790F", hash_generated_method = "9575CAE1AB7C631C9C79687563375B9B")
     
 public ColorStateList getTextColor() {
@@ -192,6 +192,7 @@ public ColorStateList getTextColor() {
      * Returns the link color specified by this span, or <code>null</code>
      * if it does not specify one.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.584 -0500", hash_original_method = "9E3E27CD0F13B768F4263E5569C857AD", hash_generated_method = "242170C0CE7903861CC2ABF1C2ABA3F4")
     
 public ColorStateList getLinkTextColor() {
@@ -202,6 +203,7 @@ public ColorStateList getLinkTextColor() {
      * Returns the text size specified by this span, or <code>-1</code>
      * if it does not specify one.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.587 -0500", hash_original_method = "AB3DB1BB0D199EBBBA8548C5EC0C310E", hash_generated_method = "5F28BA7CEBEC3E497D8525F54BB31DC9")
     
 public int getTextSize() {
@@ -212,12 +214,14 @@ public int getTextSize() {
      * Returns the text style specified by this span, or <code>0</code>
      * if it does not specify one.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.589 -0500", hash_original_method = "3C882FE9CECBB039C8EAD0BA2E56F794", hash_generated_method = "23EFD0FF59218581C82FF50B58AECE14")
     
 public int getTextStyle() {
         return mStyle;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.592 -0500", hash_original_method = "91F606F0F4AED8EEECD78BF397028020", hash_generated_method = "8D3D05CD6A573AE4E201562175EA137B")
     
 @Override
@@ -272,7 +276,6 @@ public int getTextStyle() {
             ds.setTextSize(mTextSize);
         }
     }
-
     
 }
 

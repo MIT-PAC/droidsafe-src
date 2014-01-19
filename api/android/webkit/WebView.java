@@ -114,10 +114,6 @@ import android.widget.ListView;
 import android.widget.OverScroller;
 import android.widget.Toast;
 
-
-
-
-
 public class WebView extends AbsoluteLayout implements ViewTreeObserver.OnGlobalFocusChangeListener, ViewGroup.OnHierarchyChangeListener {
 
     /*
@@ -291,6 +287,7 @@ private static int computeDuration(int dx, int dy) {
     * @hide
     * @deprecated This was used for Gears, which has been deprecated.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.936 -0500", hash_original_method = "DCC8025B0D65015CFA8097991E635157", hash_generated_method = "1ADD4122EC3C36802F56A241F84FF6AC")
     
 @Deprecated
@@ -312,14 +309,10 @@ private static void checkThread() {
             StrictMode.onWebViewMethodCalledOnWrongThread(throwable);
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeOnTrimMemory(int level) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetPauseDrawing(int instance, boolean pause) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.807 -0500", hash_original_field = "E2BFD1A81A3612483C464EF0BFEA4A9A", hash_generated_field = "E443A86E3B234F65E60B42BE78CD50FA")
@@ -327,7 +320,6 @@ private static void checkThread() {
     // the screen all-the-time. Good for profiling our drawing code
     static private final boolean AUTO_REDRAW_HACK = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.813 -0500", hash_original_field = "93D99CDED393B48383B191F5FB29A7B0", hash_generated_field = "3DDB64784E4CB9C9D138ACE428331F35")
-
 
     static final String LOGTAG = "webview";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.893 -0500", hash_original_field = "AA7848649BDB090157B9326CB2249C17", hash_generated_field = "18A327C2449F72346CC969AA861F8DED")
@@ -437,13 +429,11 @@ private static void checkThread() {
     private static final int MOTIONLESS_IGNORE          = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.046 -0500", hash_original_field = "FDEA5BC550463273ECA809BD733F1CD4", hash_generated_field = "56E82801D034FBA81618FDC04F23AD89")
 
-
     static final boolean USE_JAVA_TEXT_SELECTION = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.049 -0500", hash_original_field = "96B5906EBFB1C2E386C1914807CC29D2", hash_generated_field = "76611AB1485AA5FC8BD8987CF3E25BA9")
 
     static final boolean DEBUG_TEXT_HANDLES = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.059 -0500", hash_original_field = "606D62CC0AD7EC1ECAD7109D60414614", hash_generated_field = "F714A1E692291741531539A5847EE5E7")
-
 
     static final boolean USE_WEBKIT_RINGS = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.062 -0500", hash_original_field = "C395C34F6D670443278357A279170786", hash_generated_field = "D99D6450883933EC3EDB9D544EA20E89")
@@ -489,8 +479,6 @@ private static void checkThread() {
 
     private static final int SCROLL_SELECT_TEXT         = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.115 -0500", hash_original_field = "835356710355F48DA47BDBAA5CBE92ED", hash_generated_field = "C4C2FB6BF24B5B91EE6F668B637E3F5E")
-
-
 
     private static final int FIRST_PRIVATE_MSG_ID = REMEMBER_PASSWORD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.117 -0500", hash_original_field = "3283265B7383E0B2B6F21237C4897008", hash_generated_field = "CC36E89D4F3E8BDB7A3B14B8623FFDC6")
@@ -585,13 +573,11 @@ private static void checkThread() {
     static final int SAVE_WEBARCHIVE_FINISHED           = 132;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.185 -0500", hash_original_field = "07C3DFA1ED1D627F79FAFAAEFE798183", hash_generated_field = "FFD1C9BADD0FACA49935CBF0B35A5383")
 
-
     static final int SET_AUTOFILLABLE                   = 133;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.188 -0500", hash_original_field = "09D0D3E8265FC919D9975F292DF33BDF", hash_generated_field = "BC4DF909BBCB4938EDEA9A6C5ED1E05E")
 
     static final int AUTOFILL_COMPLETE                  = 134;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.190 -0500", hash_original_field = "E21ECB6258D90D0BD176B2E3E7677FCA", hash_generated_field = "1A34A6FEE310D5268F65BDDC9AB9E463")
-
 
     static final int SELECT_AT                          = 135;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.193 -0500", hash_original_field = "01C67DA284F3D37D58FD0B1F97EC8D1E", hash_generated_field = "170B2EC041BE3DE273500B68E73B6761")
@@ -608,13 +594,11 @@ private static void checkThread() {
     static final int UPDATE_ZOOM_DENSITY                = 139;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.201 -0500", hash_original_field = "F8EEE6146FD6B0A00FD6923A73FCCAC7", hash_generated_field = "8C572792B03EEB5427DEDA49100454ED")
 
-
     private static final int FIRST_PACKAGE_MSG_ID = SCROLL_TO_MSG_ID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.204 -0500", hash_original_field = "63E6AB032F5F6E6F91430BCFC446A983", hash_generated_field = "4E7D46918644EB2075A696C11D88350A")
 
     private static final int LAST_PACKAGE_MSG_ID = SET_TOUCH_HIGHLIGHT_RECTS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.206 -0500", hash_original_field = "4146704713F20BC59F311BDE394CB7B9", hash_generated_field = "602447B2C284F14CC78DF7DCCA7E9F60")
-
 
     static final String[] HandlerPrivateDebugString = {
         "REMEMBER_PASSWORD", //              = 1;
@@ -630,7 +614,6 @@ private static void checkThread() {
         "SCROLL_SELECT_TEXT" //              = 11;
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.210 -0500", hash_original_field = "291DA55D15990632E6364B01E2AAFC31", hash_generated_field = "47084986896DE9C949E7B48A7C384372")
-
 
     static final String[] HandlerPackageDebugString = {
         "SCROLL_TO_MSG_ID", //               = 101;
@@ -747,7 +730,6 @@ private static void checkThread() {
  static boolean mLogEvent = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.291 -0500", hash_original_field = "4999C69190E2FB28A4B1A09C5D9F533C", hash_generated_field = "EED2A629500C8CA0653CD2F48FDAD9D7")
 
-
     private static boolean sNotificationsEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.293 -0500", hash_original_field = "7A6051C7A409BC8C34B1DA3FEBAB46BF", hash_generated_field = "1105526185EEB7FC5A898096FC617896")
 
@@ -759,7 +741,6 @@ private static void checkThread() {
 
     public static final String SCHEME_GEO = "geo:0,0?q=";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.303 -0500", hash_original_field = "B52CE17756400F6A79418D3CCD978702", hash_generated_field = "12AA7BB1627971F332190446E320A104")
-
 
     private static final long SELECT_SCROLL_INTERVAL = 1000 / 60;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.323 -0500", hash_original_field = "00A2255F0712BE3F5D01E8F8251DB432", hash_generated_field = "E9A626874BEA31BC13B6B41907D72FD5")
@@ -784,7 +765,6 @@ private static void checkThread() {
 
     private static final int ANYWHERE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.002 -0500", hash_original_field = "D2DF6B355BA28BE77388D81EB1103769", hash_generated_field = "2489EBB9D342B040697800D9D9593C68")
-
 
     private static final int ZOOM_BITS = Paint.FILTER_BITMAP_FLAG |
                                          Paint.DITHER_FLAG |
@@ -863,10 +843,8 @@ private static void checkThread() {
     private AlertDialog mListBoxDialog = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.816 -0500", hash_original_field = "89F04BCF2CEF2FF9614BE546923CA10D", hash_generated_field = "9B99C2FE2EA0A3C0CAEC1D267CB6150C")
 
-
     private ZoomManager mZoomManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.819 -0500", hash_original_field = "4CAD59BBE5135E0C04805AC625DC489E", hash_generated_field = "36ADFB8E74B62C4DEE5D800A76CE9C6D")
-
 
     private final Rect mGLRectViewport = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.821 -0500", hash_original_field = "E1D4E69789F4E138950C37C99A5CACF5", hash_generated_field = "FB5FB956134A1E202B8B65301622285A")
@@ -882,7 +860,6 @@ private static void checkThread() {
 
     private  CallbackProxy mCallbackProxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.857 -0500", hash_original_field = "2DFBDBD4347FE4E3543384465B3B797C", hash_generated_field = "7BDDBEC30F299EE26388591EE1BF8D76")
-
 
     private  WebViewDatabase mDatabase;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.859 -0500", hash_original_field = "8722B9770017213537D317FB65A9919D", hash_generated_field = "B46B2FBDC77E7FD9B4E8141E1595B5DC")
@@ -996,7 +973,6 @@ private static void checkThread() {
     private boolean mIsPaused;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.971 -0500", hash_original_field = "17F3994BC8262A545F662CC87E616634", hash_generated_field = "9F291EA33B1111436C86DAFA7D749E10")
 
-
     private HitTestResult mInitialHitTestResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.973 -0500", hash_original_field = "22908E064AB773A0D025345BB08C461C", hash_generated_field = "72C2872022E176C2DE96D122AA6A9BD4")
 
@@ -1027,13 +1003,11 @@ private static void checkThread() {
     int mLastActualHeightSent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.003 -0500", hash_original_field = "E53904AD377D72960D8A5847D00D2A72", hash_generated_field = "5F8C94CB44AF6FE0EF7A765D1E3AFD13")
 
-
     private int mContentWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.005 -0500", hash_original_field = "6909FC61CEAFC4290968B35F30281B2B", hash_generated_field = "2B9929C05137BEFD1EEE8192DEC02202")
 
     private int mContentHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.008 -0500", hash_original_field = "0D47A503CDF7DFC01B4E415C7E81D77A", hash_generated_field = "4C8021BC04DD55EDACC8DEA77A9DDCF8")
-
 
     // Need to have the separate control for horizontal and vertical scrollbar
     // style than the View's single scrollbar style
@@ -1043,15 +1017,12 @@ private static void checkThread() {
     private boolean mOverlayVerticalScrollbar = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.019 -0500", hash_original_field = "63F6CA74EEC786DAEE7A49BF47815C33", hash_generated_field = "BA331B1B58497FA7AEC038701D51D669")
 
-
     // Used by OverScrollGlow
     OverScroller mScroller;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.022 -0500", hash_original_field = "B5FE60493D824E3762B730930C148F9F", hash_generated_field = "3C483E4AA361608032CA95612E8DD525")
 
-
     private boolean mInOverScrollMode = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.028 -0500", hash_original_field = "29AE1E96A888E254154D1CC9F943ACC8", hash_generated_field = "DC1AD28F6DE5AE5C8271D33DC8A73FB4")
-
 
     private boolean mWrapContent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.040 -0500", hash_original_field = "A75EC86DBEE2CD8C39770CE3CEA2CD20", hash_generated_field = "9FDC3D0BB72A7D1D7962780902257BB3")
@@ -1114,7 +1085,6 @@ private static void checkThread() {
     private boolean mSendScrollEvent = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.220 -0500", hash_original_field = "76A1E7095A9987EF2220F359971FA43A", hash_generated_field = "006CA1330A69406C602E466B10C43D72")
 
-
     private int mSnapScrollMode = SNAP_NONE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.232 -0500", hash_original_field = "37B867A4DDC39CA1ADBC92ED64E2D59D", hash_generated_field = "761337948FA4302FD3F9FCADBD7D6775")
 
@@ -1139,7 +1109,6 @@ private static void checkThread() {
     private int mOverflingDistance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.280 -0500", hash_original_field = "A17F2B2FA2811A21667D5D4B17E262B3", hash_generated_field = "8B88748678D320254190188B25A37155")
 
-
     private OverScrollGlow mOverScrollGlow;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.282 -0500", hash_original_field = "F2252D08978A4F88484B28F6BC24D74B", hash_generated_field = "6DAF40C63FBB9494FA268E54C51A621E")
 
@@ -1149,10 +1118,8 @@ private static void checkThread() {
     private long mLastTouchUpTime = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.289 -0500", hash_original_field = "EDFEBBF17BD799FAA6D0096BF64BC979", hash_generated_field = "EF5F7F128924D81624F7C082EE5C57AB")
 
-
     private WebViewCore.AutoFillData mAutoFillData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.300 -0500", hash_original_field = "FE9D0827027BBBA62864073D294FED0E", hash_generated_field = "72384577DFC3FC75A8B033CE6FF0A482")
-
 
     private int mBackgroundColor = Color.WHITE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.305 -0500", hash_original_field = "9F6013B513913A5B063CE0950D5BC501", hash_generated_field = "ABB6666AC59D2544A6D12F224E33C262")
@@ -1190,7 +1157,6 @@ private static void checkThread() {
     private PictureListener mPictureListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.488 -0500", hash_original_field = "714E88D1E99B4DF5F0767E40B341D50F", hash_generated_field = "4EFDB68AF38CE1FE479B1628CB5C7FFE")
 
-
     private int mCachedOverlappingActionModeHeight = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.677 -0500", hash_original_field = "D19A1A00A0D109530E04604537DE7857", hash_generated_field = "3E16AF791F0C585BB692C30369E75608")
 
@@ -1215,10 +1181,8 @@ private static void checkThread() {
     private Point mScrollOffset = new Point();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.731 -0500", hash_original_field = "9AA4B9AE03BF45798C8FEA9679CC2EE3", hash_generated_field = "B98693B51D24477EB14AD942E0AB2A10")
 
-
     private Point mGlobalVisibleOffset = new Point();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.737 -0500", hash_original_field = "134E75239DFB27E8D645B4C21AA0CC85", hash_generated_field = "E9C8FCC78A563BE608DAE1158D0138F1")
-
 
     private Rect mContentVisibleRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.844 -0500", hash_original_field = "A163A27568A49C47CADE3DF4B989D87A", hash_generated_field = "18201BE28AF4897CDDE04B91A8BAC40D")
@@ -1240,13 +1204,11 @@ private static void checkThread() {
     private int mYDistanceToSlideTitleOffScreen;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.970 -0500", hash_original_field = "592F2B75BE96A8C89DA4630BFA1EF590", hash_generated_field = "A47FD3369D923B9B9858ECC0900495AB")
 
-
     private int mOrientation = Configuration.ORIENTATION_UNDEFINED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.974 -0500", hash_original_field = "A3587DA3E8EA3B1EB7A45C48E73CDA9B", hash_generated_field = "CFB51504048F92C552B87D79FF631083")
 
     private SelectActionModeCallback mSelectCallback;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.006 -0500", hash_original_field = "BDDA94154EA60E6632321BDF2C6655B0", hash_generated_field = "588110A2CFA9E9678107331C0D2C96FA")
-
 
     private final DrawFilter mZoomFilter =
             new PaintFlagsDrawFilter(ZOOM_BITS, Paint.LINEAR_TEXT_FLAG);
@@ -1275,7 +1237,6 @@ private static void checkThread() {
     // Computed in init().
     private float DRAG_LAYER_INVERSE_DENSITY_SQUARED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.255 -0500", hash_original_field = "B4F1FDDA37D4A45101E61FBB4D71B902", hash_generated_field = "C1BDD4A6558DC5330CEE7B5578017A71")
-
 
     private long mTrackballFirstTime = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.257 -0500", hash_original_field = "450DF8152367BE31AF83C3E5EB78FD27", hash_generated_field = "7A8E9CA6466F4282ADE2CFEAB9543F99")
@@ -1333,13 +1294,11 @@ private static void checkThread() {
     private boolean mMapTrackballToArrowKeys = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.315 -0500", hash_original_field = "CD984ABC64946E4B835D5113248CD18C", hash_generated_field = "AD498406B1DE6FEBF53F73747731D143")
 
-
     private DrawData mDelaySetPicture;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.317 -0500", hash_original_field = "3F25451B046159B2132C4100362049AE", hash_generated_field = "200C54AE573D3744441934A403CEA512")
 
     private DrawData mLoadedPicture;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.633 -0500", hash_original_field = "2566C588E6FF76067851190285C7A7E7", hash_generated_field = "0BBC35906DDA57724DA9629F2934A2C3")
-
 
     private Message mListBoxMessage;
 
@@ -1347,6 +1306,8 @@ private static void checkThread() {
      * Construct a new WebView with a Context object.
      * @param context A Context object used to access application assets.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.378 -0500", hash_original_method = "21880E8B1C262D01AA21DDC9EA2C3D9A", hash_generated_method = "94935CB70AC87EEF477D2A7E00A939D8")
     
 public WebView(Context context) {
@@ -1358,6 +1319,8 @@ public WebView(Context context) {
      * @param context A Context object used to access application assets.
      * @param attrs An AttributeSet passed to our parent.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.381 -0500", hash_original_method = "2BC47759F145D8E46BE84713D18EFE55", hash_generated_method = "43DB8C8BA5135CBEB119F61A45FD4BC7")
     
 public WebView(Context context, AttributeSet attrs) {
@@ -1370,6 +1333,8 @@ public WebView(Context context, AttributeSet attrs) {
      * @param attrs An AttributeSet passed to our parent.
      * @param defStyle The default style resource ID.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.383 -0500", hash_original_method = "8D09D1B25D4C4E3EEA9DADC46EE54404", hash_generated_method = "EA32C4710F079B331868A4E93EB1D69F")
     
 public WebView(Context context, AttributeSet attrs, int defStyle) {
@@ -1615,6 +1580,7 @@ private boolean isScrollableForAccessibility() {
                 || contentToViewY(getContentHeight()) > getHeight() - mPaddingTop - mPaddingBottom);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.446 -0500", hash_original_method = "54B3F9F93CD715ABE05B0EE7E2D97801", hash_generated_method = "A9A3F5834D6532D7E3329353C7A555B3")
     
 @Override
@@ -1700,6 +1666,7 @@ boolean onSavePassword(String schemePlusHost, String username,
        return rVal;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.468 -0500", hash_original_method = "B1C529B2D720558A64029A0709B532B0", hash_generated_method = "0A0ED11EBC73AD94DD08C440385BAC74")
     
 @Override
@@ -1717,6 +1684,7 @@ boolean onSavePassword(String schemePlusHost, String username,
      * Specify whether the horizontal scrollbar has overlay style.
      * @param overlay TRUE if horizontal scrollbar should have overlay style.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.470 -0500", hash_original_method = "9DB949F09AC5FC0CFB5C5FAD8F7F9B82", hash_generated_method = "21703057F2A35A4D675BF414B5EA11EC")
     
 public void setHorizontalScrollbarOverlay(boolean overlay) {
@@ -1728,6 +1696,7 @@ public void setHorizontalScrollbarOverlay(boolean overlay) {
      * Specify whether the vertical scrollbar has overlay style.
      * @param overlay TRUE if vertical scrollbar should have overlay style.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.473 -0500", hash_original_method = "19F76FAFECC3C2E007D4C97071DFD1B7", hash_generated_method = "33BE12E87D717C855E56F47214AAD605")
     
 public void setVerticalScrollbarOverlay(boolean overlay) {
@@ -1788,6 +1757,7 @@ protected int getTitleHeight() {
      *
      * @deprecated This method is now obsolete.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.484 -0500", hash_original_method = "1C2BE72B33EB5D6AC861291319186F00", hash_generated_method = "8FEF6CB4E4BB3A5D8F7D7506ECFF7D30")
     
 public int getVisibleTitleHeight() {
@@ -1842,6 +1812,7 @@ int getViewHeightWithTitle() {
      * @return The SSL certificate for the main top-level page or null if
      * there is no certificate (the site is not secure).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.496 -0500", hash_original_method = "AD476A7428E3DA09ACFA510788381864", hash_generated_method = "D941CDE9C26B68DCB706441D31F03D27")
     
 public SslCertificate getCertificate() {
@@ -1852,6 +1823,7 @@ public SslCertificate getCertificate() {
     /**
      * Sets the SSL certificate for the main top-level page.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.498 -0500", hash_original_method = "9F5F4C3FB4149381051B5B6E8EFEC316", hash_generated_method = "022380724AE1DF7EC69704110ED4A6D0")
     
 public void setCertificate(SslCertificate certificate) {
@@ -1874,6 +1846,7 @@ public void setCertificate(SslCertificate certificate) {
      * @param username The username for the given host.
      * @param password The password for the given host.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.501 -0500", hash_original_method = "B1F295415F58B1AD64D910B9D074F1EA", hash_generated_method = "DCE70F7D8B048425164C9BFABA4B339A")
     
 public void savePassword(String host, String username, String password) {
@@ -1890,6 +1863,7 @@ public void savePassword(String host, String username, String password) {
      *                 password can't be saved.
      * @param password The password
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.503 -0500", hash_original_method = "BDA26C26689AA9615ED03418D91ABD81", hash_generated_method = "5B3154C7A2F4E54356EE4258F81BBF6F")
     
 public void setHttpAuthUsernamePassword(String host, String realm,
@@ -1907,6 +1881,7 @@ public void setHttpAuthUsernamePassword(String host, String realm,
      * @return String[] if found, String[0] is username, which can be null and
      *         String[1] is password. Return null if it can't find anything.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.506 -0500", hash_original_method = "ECF11FA1B5D29EA7B85A642A97A37762", hash_generated_method = "9D31C73646B1A70D9F25CA4D7C8FC1AC")
     
 public String[] getHttpAuthUsernamePassword(String host, String realm) {
@@ -2023,6 +1998,7 @@ public void setJsFlags(String flags) {
      * generates the online/offline event as specified in HTML5, sec. 5.7.7
      * @param networkUp boolean indicating if network is available
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.527 -0500", hash_original_method = "D24B46DD870FF327FD5851F64F7AA698", hash_generated_method = "C4FB567BD9DB029C43008B7C7E3A025F")
     
 public void setNetworkAvailable(boolean networkUp) {
@@ -2057,6 +2033,9 @@ public void setNetworkType(String type, String subtype) {
      * @see #savePicture
      * @see #restorePicture
      */
+    @DSComment("Storage access indirectly")
+    @DSSpec(DSCat.STORAGE_ACCESS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.533 -0500", hash_original_method = "D76FC1BD4962410EDA97F2F673ACB95E", hash_generated_method = "BE9ECAD12A01D1D3F1757D031FD2DCD0")
     
 public WebBackForwardList saveState(Bundle outState) {
@@ -2186,6 +2165,7 @@ private void restoreHistoryPictureFields(Picture p, Bundle b) {
      * @return True if the picture was successfully restored.
      * @deprecated This method is now obsolete.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.552 -0500", hash_original_method = "7C45A69236EC18D01E70EB4417CC5ECC", hash_generated_method = "0EF4CA64CA7B36D278D473D83D2E8541")
     
 @Deprecated
@@ -2296,6 +2276,9 @@ public void clearViewState() {
      * @see #savePicture
      * @see #restorePicture
      */
+    @DSComment("Storage access indirectly")
+    @DSSpec(DSCat.STORAGE_ACCESS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.563 -0500", hash_original_method = "99FE452D222A3AA897B1F81F94FFC5BD", hash_generated_method = "54F47ABA8CB052ABA402D246AF43C583")
     
 public WebBackForwardList restoreState(Bundle inState) {
@@ -2383,6 +2366,8 @@ private void loadUrlImpl(String url, Map<String, String> extraHeaders) {
      * Load the given URL.
      * @param url The URL of the resource to load.
      */
+    @DSComment("I/O load/store/Internet")
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.569 -0500", hash_original_method = "900343F64392479D278DAE2853AD0CAD", hash_generated_method = "AACBEEE0E28FE1B64F1E9BC46034B940")
     
 public void loadUrl(String url) {
@@ -2449,6 +2434,8 @@ public void postUrl(String url, byte[] postData) {
      * @param mimeType The MIME type of the data, e.g. 'text/html'.
      * @param encoding The encoding of the data.
      */
+    @DSComment("I/O load/store")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.576 -0500", hash_original_method = "36CBAFDF58E1CD9C6313A9EA95B15170", hash_generated_method = "7129D2CE5481188BA506D152E5DF4298")
     
 public void loadData(String data, String mimeType, String encoding) {
@@ -2491,6 +2478,8 @@ private void loadDataImpl(String data, String mimeType, String encoding) {
      * @param historyUrl URL to use as the history entry, if null defaults to
      *            'about:blank'.
      */
+    @DSComment("I/O load/store/Internet")
+    @DSSpec(DSCat.INTERNET)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.581 -0500", hash_original_method = "1E8C089561768F21EB025C4FB395A147", hash_generated_method = "89BE15BE04FA3CB1EBB257D74C48283E")
     
 public void loadDataWithBaseURL(String baseUrl, String data,
@@ -2517,6 +2506,7 @@ public void loadDataWithBaseURL(String baseUrl, String data,
      *
      * @param filename The filename where the archive should be placed.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.583 -0500", hash_original_method = "701452CD8FBCF1E85233BEC49B4E7329", hash_generated_method = "224FBE9D1D33F8B534D7E01F2035F554")
     
 public void saveWebArchive(String filename) {
@@ -2536,6 +2526,7 @@ public void saveWebArchive(String filename) {
      *                 under which the file was saved, or null if saving the
      *                 file failed.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.599 -0500", hash_original_method = "7D135A62D01ADC63E34527E77FB3A29E", hash_generated_method = "FBFD33E9478DDA726A4B14BBDD4B02E5")
     
 public void saveWebArchive(String basename, boolean autoname, ValueCallback<String> callback) {
@@ -2580,6 +2571,8 @@ public void reload() {
      * Return true if this WebView has a back history item.
      * @return True iff this WebView has a back history item.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.609 -0500", hash_original_method = "88FE306DA6AFC5714A3F873305A6EA3E", hash_generated_method = "BEDE549A4BAFA5CCD660B7D3056AD972")
     
 public boolean canGoBack() {
@@ -2597,6 +2590,8 @@ public boolean canGoBack() {
     /**
      * Go back in the history of this WebView.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.611 -0500", hash_original_method = "2B11D82AA68F54138F546C5942C42E38", hash_generated_method = "18A10E214FD6EAE3B511451CDCE1E568")
     
 public void goBack() {
@@ -2744,6 +2739,8 @@ public boolean pageUp(boolean top) {
      * @param bottom true to jump to bottom of page
      * @return true if the page was scrolled
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.635 -0500", hash_original_method = "8C3AB4FBBE1760CE6D8647585D27DDAF", hash_generated_method = "F6F74AE01233898F0996E6AE36F9881A")
     
 public boolean pageDown(boolean bottom) {
@@ -2827,6 +2824,7 @@ private void clearTextEntry() {
      * Return the current scale of the WebView
      * @return The current scale.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.646 -0500", hash_original_method = "7CCA6028A56577FC53B8EAA02010B4CB", hash_generated_method = "4DC5F3DA68044F56F453CE22567A3B36")
     
 public float getScale() {
@@ -2862,6 +2860,7 @@ float getReadingLevelScale() {
      *
      * @param scaleInPercent The initial scale in percent.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.653 -0500", hash_original_method = "71F885EF6D599D2C56A5D45C189C25F2", hash_generated_method = "C8FF0437D49A072D9ADA314256540104")
     
 public void setInitialScale(int scaleInPercent) {
@@ -3426,6 +3425,8 @@ private int computeRealHorizontalScrollRange() {
         }
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.770 -0500", hash_original_method = "7C4F278B6BD93271722857221FD0D9C8", hash_generated_method = "B129A0A2DA3C35A75BA8F112EFBB4714")
     
 @Override
@@ -3462,6 +3463,8 @@ private int computeRealVerticalScrollRange() {
         }
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.777 -0500", hash_original_method = "95D066BAD337A1BCD6552EF2CEEE5772", hash_generated_method = "DF848DEEC15F38C424325849F24E9234")
     
 @Override
@@ -3487,6 +3490,8 @@ private int computeRealVerticalScrollRange() {
         return Math.max(mScrollY - getTitleHeight(), 0);
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.782 -0500", hash_original_method = "9B8C40BC2B17CAA747C155F52C82160F", hash_generated_method = "CEA40E73D7F29F4763F5FA915429E8B3")
     
 @Override
@@ -3548,6 +3553,7 @@ private int computeRealVerticalScrollRange() {
      * that url has begun, the current page may not have changed.
      * @return The url for the current page.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.790 -0500", hash_original_method = "C4EBBFF9818941C5D5824E8B3F51971E", hash_generated_method = "F38C676B99E9ECCC987DAE6C3277ADF4")
     
 public String getUrl() {
@@ -3564,6 +3570,7 @@ public String getUrl() {
      * originally requested.
      * @return The url that was originally requested for the current page.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.792 -0500", hash_original_method = "FC3C6716276F1756949A9C3C5723F4FD", hash_generated_method = "424B9AB1E79C41732C4BF4BCE610F2EF")
     
 public String getOriginalUrl() {
@@ -3577,6 +3584,9 @@ public String getOriginalUrl() {
      * until WebViewClient.onReceivedTitle is called.
      * @return The title for the current page.
      */
+    @DSComment("information may be on internet")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.794 -0500", hash_original_method = "D4595F49299490B58C966C4A02CB7245", hash_generated_method = "E7ECFF7699D3EBB5771FCAA8FB697708")
     
 public String getTitle() {
@@ -3590,6 +3600,7 @@ public String getTitle() {
      * page until WebViewClient.onReceivedIcon is called.
      * @return The favicon for the current page.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.796 -0500", hash_original_method = "A06DF5A940D8D02EBDDFDE57ABD78936", hash_generated_method = "9904D0BE4E94A746B828E528232FD56B")
     
 public Bitmap getFavicon() {
@@ -3604,6 +3615,7 @@ public Bitmap getFavicon() {
      * touch icon.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.798 -0500", hash_original_method = "12FD5D0FD740156EA8AA35C005AD1672", hash_generated_method = "5EAE3AD6DA2B5ABB5FAAC467647CAF57")
     
 public String getTouchIconUrl() {
@@ -3615,6 +3627,7 @@ public String getTouchIconUrl() {
      * Get the progress for the current page.
      * @return The progress for the current page between 0 and 100.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.801 -0500", hash_original_method = "1FE22EBDB3E8C56C40A407C1A0E083D0", hash_generated_method = "74E145D876EA6155A260B96B198D0831")
     
 public int getProgress() {
@@ -3625,6 +3638,9 @@ public int getProgress() {
     /**
      * @return the height of the HTML content.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.803 -0500", hash_original_method = "9280AE473B4D22C8C4242E7098408E11", hash_generated_method = "D1270718E2C8F4E88C999AB896253809")
     
 public int getContentHeight() {
@@ -3636,6 +3652,7 @@ public int getContentHeight() {
      * @return the width of the HTML content.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.805 -0500", hash_original_method = "CC08B3036F1FD603613A57F943902091", hash_generated_method = "D6A17C41237228432A494BE3184F037A")
     
 public int getContentWidth() {
@@ -3981,6 +3998,8 @@ public void stopScroll() {
         mLastVelocity = 0;
     }
 
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.870 -0500", hash_original_method = "397FDDDC8F121B7E1915BEE82ADAC8FD", hash_generated_method = "8C9886F2D775D857649089B89A57EE10")
     
 @Override
@@ -4373,6 +4392,9 @@ private void contentSizeChanged(boolean updateLayout) {
      * requests. This will replace the current handler.
      * @param client An implementation of WebViewClient.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.908 -0500", hash_original_method = "769F6743ED2D17827D8530B0462AC06C", hash_generated_method = "62BFFE4108BE3AC6FAE4A3DFA32B6093")
     
 public void setWebViewClient(WebViewClient client) {
@@ -4411,6 +4433,9 @@ public void setDownloadListener(DownloadListener listener) {
      * This will replace the current handler.
      * @param client An implementation of WebChromeClient.
      */
+    @DSComment("Webview display, no IO access to outside world")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.914 -0500", hash_original_method = "2B899D0DAE9F57DC761251705A20EE74", hash_generated_method = "4EEA2E22B4A1041289EAF3F896446D14")
     
 public void setWebChromeClient(WebChromeClient client) {
@@ -4508,6 +4533,8 @@ public void documentAsText(Message callback) {
      * @param interfaceName The name to used to expose the instance in
      *                      JavaScript.
      */
+    @DSComment("System settings/policy")
+    @DSSpec(DSCat.SYSTEM)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.929 -0500", hash_original_method = "F8CD5D2DFF3A220BC823A466CE0A8012", hash_generated_method = "3C2BF336734549FA2F6035BA7DE9224F")
     
 public void addJavascriptInterface(Object obj, String interfaceName) {
@@ -4542,6 +4569,9 @@ public void removeJavascriptInterface(String interfaceName) {
      * @return A WebSettings object that can be used to control this WebView's
      *         settings.
      */
+    @DSComment("Spec classification done at the Setting manipulation level")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.933 -0500", hash_original_method = "AE8854F55F54F48403D38F822FA4F88C", hash_generated_method = "A532D40D6A49AAE15F166EE8766438A8")
     
 public WebSettings getSettings() {
@@ -5741,6 +5771,8 @@ private boolean isEnterActionKey(int keyCode) {
         return false;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.113 -0500", hash_original_method = "64393B626C93173F66EDDE91781ECC7E", hash_generated_method = "B117E42AB9A0C0868602CFBF46853AF0")
     
 @Override
@@ -6179,6 +6211,8 @@ void setActive(boolean active) {
 
     // To avoid drawing the cursor ring, and remove the TextView when our window
     // loses focus.
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.149 -0500", hash_original_method = "41ADC5D401D396C45811340AC3A1CFB7", hash_generated_method = "E8F00BA2B6F2130275F5EE2C371431EF")
     
 @Override
@@ -6279,6 +6313,7 @@ void setGLRectViewport() {
     /**
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.160 -0500", hash_original_method = "DC0F97319FBB396763626C12AC61DD09", hash_generated_method = "69A59C5C4A0568EC5BAE8C1504F6B848")
     
 @Override
@@ -6461,6 +6496,8 @@ private void startScrollingLayer(float x, float y) {
         return true;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.209 -0500", hash_original_method = "4ABFBBEB2C120C2EC8658D81232A5900", hash_generated_method = "2679FA7075D2EC221912DDD2609E8353")
     
 @Override
@@ -7313,6 +7350,7 @@ private void cancelTouch() {
         return super.onGenericMotionEvent(event);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.319 -0500", hash_original_method = "38B49C08CE5650B743168C2E2BE5CA65", hash_generated_method = "12B92825F9AB7F7D77767E0280BB77E2")
     
 public void setMapTrackballToArrowKeys(boolean setMap) {
@@ -7761,6 +7799,7 @@ private void doFling() {
      * @deprecated The built-in zoom mechanism is preferred, see
      *             {@link WebSettings#setBuiltInZoomControls(boolean)}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.355 -0500", hash_original_method = "086CD418AC6EC8E39C422734998A48D8", hash_generated_method = "964523E253442494AEA3E70586655998")
     
 @Deprecated
@@ -8115,7 +8154,6 @@ void centerFitRect(Rect rect) {
 private void overrideLoading(String url) {
         mCallbackProxy.uiOverrideUrlLoading(url);
     }
-
     
     private class InnerGlobalLayoutListener implements ViewTreeObserver.OnGlobalLayoutListener {
         
@@ -8131,11 +8169,8 @@ public void onGlobalLayout() {
                 setGLRectViewport();
             }
         }
-
         
     }
-
-
     
     private class InnerScrollChangedListener implements ViewTreeObserver.OnScrollChangedListener {
         
@@ -8151,11 +8186,8 @@ public void onScrollChanged() {
                 setGLRectViewport();
             }
         }
-
         
     }
-
-
     
     public class WebViewTransport {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.828 -0500", hash_original_field = "69F56ECFFE5C02CC8F0B3FC5EA1BB2E9", hash_generated_field = "CE9B7FCDD03C866BC3B0AB067564E1E9")
@@ -8182,16 +8214,14 @@ public synchronized void setWebView(WebView webview) {
          * Return the WebView object.
          * @return WebView The transported WebView object.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:50.833 -0500", hash_original_method = "FCFE2F49718195B26DF12E8855D16060", hash_generated_method = "A0DB45617F9F631D03655490812037B3")
         
 public synchronized WebView getWebView() {
             return mWebview;
         }
-
         
     }
-
-
     
     private static class OnTrimMemoryListener implements ComponentCallbacks2 {
 
@@ -8236,8 +8266,6 @@ private OnTrimMemoryListener(Context c) {
             WebView.nativeOnTrimMemory(level);
         }
     }
-
-
     
     public class HitTestResult {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.334 -0500", hash_original_field = "BF0D048310629F0B0A94E17878AE69F2", hash_generated_field = "66339D0C16D16517633DFB08461D5C3F")
@@ -8274,7 +8302,6 @@ private OnTrimMemoryListener(Context c) {
         public static final int EDIT_TEXT_TYPE = 9;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.360 -0500", hash_original_field = "B93BF1EFA6B57CC598632E54B97CD147", hash_generated_field = "E6B4AC7A48E0E54E09A504C828AF50C5")
 
-
         private int mType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.362 -0500", hash_original_field = "BFADF59C1E8D2C274055FF05797F3DBF", hash_generated_field = "7473B88E9A243CF8ACFD2DDF98031A9D")
 
@@ -8298,24 +8325,23 @@ private void setExtra(String extra) {
             mExtra = extra;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.371 -0500", hash_original_method = "E9AD68D49398B2B9D86D12D221B14582", hash_generated_method = "32498FCDA3AC1E9A676800B51A331335")
         
 public int getType() {
             return mType;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.374 -0500", hash_original_method = "993DAEFB4C11E7BC5E9CBC52DC4B1BBC", hash_generated_method = "8AD83B51BD7C90F61A9349C76A343A68")
         
 public String getExtra() {
             return mExtra;
         }
     }
-
-
     
     private static class ProxyReceiver extends BroadcastReceiver {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.518 -0400", hash_original_method = "81C64DA14CD8ADA6B639EE9F61F2A898", hash_generated_method = "81C64DA14CD8ADA6B639EE9F61F2A898")
         public ProxyReceiver ()
         {
@@ -8329,15 +8355,11 @@ public String getExtra() {
                 handleProxyBroadcast(intent);
             }
         }
-
         
     }
-
-
     
     private static class PackageListener extends BroadcastReceiver {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.518 -0400", hash_original_method = "F623A53A552E0B02B7648231F682A935", hash_generated_method = "F623A53A552E0B02B7648231F682A935")
         public PackageListener ()
         {
@@ -8368,11 +8390,8 @@ public String getExtra() {
                 pm.refreshPlugins(Intent.ACTION_PACKAGE_ADDED.equals(action));
             }
         }
-
         
     }
-
-
     
     static class SaveWebArchiveMessage {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.588 -0500", hash_original_field = "05C64ACC3BAB92D2CCE8178ABA3FDAE1", hash_generated_field = "05C64ACC3BAB92D2CCE8178ABA3FDAE1")
@@ -8390,11 +8409,8 @@ SaveWebArchiveMessage (String basename, boolean autoname, ValueCallback<String> 
             mAutoname = autoname;
             mCallback = callback;
         }
-
         
     }
-
-
     
     static class ViewSizeData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:51.743 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "AF6410B200BC05DCA2CF0BE65165448A")
@@ -8431,10 +8447,7 @@ SaveWebArchiveMessage (String basename, boolean autoname, ValueCallback<String> 
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private class RequestFormData implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.064 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
@@ -8503,11 +8516,8 @@ public void run() {
                 mUpdateMessage.sendToTarget();
             }
         }
-
         
     }
-
-
     
     private static class QueuedTouch {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.423 -0500", hash_original_field = "B8B6644602DD2683A7B0A4778A62DE29", hash_generated_field = "B8B6644602DD2683A7B0A4778A62DE29")
@@ -8521,10 +8531,8 @@ public void run() {
         TouchEventData mTed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.429 -0500", hash_original_field = "BEE6F088ABCC206EAF882A35EEC82861", hash_generated_field = "BEE6F088ABCC206EAF882A35EEC82861")
 
-
         QueuedTouch mNext;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:55.521 -0400", hash_original_method = "FA8EC88E2AD519ABBE81A37B882E4019", hash_generated_method = "FA8EC88E2AD519ABBE81A37B882E4019")
         public QueuedTouch ()
         {
@@ -8567,11 +8575,8 @@ public QueuedTouch add(QueuedTouch other) {
             insertAt.mNext = other;
             return this;
         }
-
         
     }
-
-
     
     private class TouchEventQueue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.460 -0500", hash_original_field = "F4A9DF668B7A94CFA2D2E931761130BA", hash_generated_field = "BB5877DC49413A9228D8F9DC3EDA4B0C")
@@ -8602,7 +8607,6 @@ public QueuedTouch add(QueuedTouch other) {
 
         private int mQueuedTouchRecycleCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.457 -0500", hash_original_field = "03EE4966C06B2E42E229C964520CAC5A", hash_generated_field = "1E79D4489BE43CB9AEB55D3B13DF96A3")
-
 
         private long mLastEventTime = Long.MAX_VALUE;
         
@@ -9049,8 +9053,6 @@ private void handleQueuedTouchEventData(TouchEventData ted) {
             }
         }
     }
-
-
     
     class PrivateHandler extends Handler {
         
@@ -9524,11 +9526,8 @@ private void handleQueuedTouchEventData(TouchEventData ted) {
                     break;
             }
         }
-
         
     }
-
-
     
     private class InvokeListBox implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.541 -0500", hash_original_field = "908F5FE8BBD699691C1178E68199AA34", hash_generated_field = "44EE6B10D8B13CA54299546EDE76F988")
@@ -9543,7 +9542,6 @@ private void handleQueuedTouchEventData(TouchEventData ted) {
         // where the initial selection is.
         private int         mSelection;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.548 -0500", hash_original_field = "408895D39EB3CCF81038A7F275604DBD", hash_generated_field = "9EF3ABDF3C19BF934708240D666FC0CB")
-
 
         private Container[] mContainers;
 
@@ -9650,7 +9648,6 @@ public void run() {
             });
             mListBoxDialog.show();
         }
-
         
         private class Container extends Object {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.551 -0500", hash_original_field = "32A64B52EEC419131339C020DEEDECB6", hash_generated_field = "286E6252D1F55A019AFE2E7F01596CD3")
@@ -9663,7 +9660,6 @@ public void run() {
 
             final static int OPTION_ENABLED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.558 -0500", hash_original_field = "0DD8A30A5B66E3389BB7F1641026A732", hash_generated_field = "0DD8A30A5B66E3389BB7F1641026A732")
-
 
             String  mString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.560 -0500", hash_original_field = "3811FA45E31C1288EF4A5CD0AF26B346", hash_generated_field = "3811FA45E31C1288EF4A5CD0AF26B346")
@@ -9686,8 +9682,6 @@ public void run() {
                 return mString;
             }
         }
-
-
         
         private class MyArrayListAdapter extends ArrayAdapter<Container> {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.571 -0500", hash_original_method = "F310EECB41F4E7684327810A6A6A37C7", hash_generated_method = "1BEDBA549DAB70D94F1AA91F52B3A3E0")
@@ -9795,11 +9789,8 @@ private Container item(int position) {
                 }
                 return Container.OPTION_ENABLED == item.mEnabled;
             }
-
             
         }
-
-
         
         private class SingleDataSetObserver extends DataSetObserver {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.598 -0500", hash_original_field = "490DC12F7ABEDDE28793D57E20084CB1", hash_generated_field = "2D84C7F454FDE105876BFC5F1B67C86D")
@@ -9849,15 +9840,10 @@ public SingleDataSetObserver(long id, ListView l, Adapter a) {
                     }
                 }
             }
-
             
         }
-
-
         
     }
-
-
     
     @Deprecated public interface PictureListener {
         
@@ -9907,6 +9893,8 @@ public SingleDataSetObserver(long id, ListView l, Adapter a) {
         return result;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.410 -0500", hash_original_method = "B3C79783D1B73E1F2F2D459408EF6637", hash_generated_method = "C81A99A0F578F9B2FECF377A3153192E")
     
 @Override
@@ -10292,7 +10280,6 @@ private void sendMotionUp(int touchGeneration,
         mWebViewCore.sendMessage(EventHub.TOUCH_UP, touchUpData);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.649 -0500", hash_original_method = "97CBEAC381039721C67FB90272936008", hash_generated_method = "EAFD820DBFC12066704F2241B81E358D")
     
 private int getScaledMaxXScroll() {
@@ -10440,6 +10427,9 @@ private boolean accessibilityScriptInjected() {
      * zero to make the view transparent.
      * @param color   the ARGB color described by Color.java
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:52.664 -0500", hash_original_method = "7544C03241648A3354186187AA9F4EF5", hash_generated_method = "C525087A89B637AE8141ADDBFDBC0EDC")
     
 @Override
@@ -10603,10 +10593,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.294 -0400", hash_original_method = "C7D338FF64B881B2FAA82154B2896288", hash_generated_method = "C211C5C405AAE9953CCBBEEF22D45B31")
     private Rect nativeCacheHitNodeBounds() {
     	return new Rect();
@@ -10639,10 +10626,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.295 -0400", hash_original_method = "843882909A38B2FC0D8F4867EE2AC0A0", hash_generated_method = "E271E918D4C574FDDE4719E4B98A8B2B")
     private Rect nativeCursorNodeBounds() {
     	return new Rect();
@@ -10675,17 +10659,12 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "CB263EC43145C659054742CE0640D198", hash_generated_method = "2045A184BB97A2996B1887CC917B0804")
     private Point nativeCursorPosition() {
     	return new Point();
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.296 -0400", hash_original_method = "05985317D344F6F01EE48FCED9442B85", hash_generated_method = "3E24BE9E7EBDB8C5312CC587887CD85C")
     private String nativeCursorText() {
     	return new String();
@@ -10712,7 +10691,6 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     private void     nativeDestroy(){
     	//Formerly a native method
     }
-
 
     /**
      * Draw the picture set with a background color and extra. If
@@ -10853,28 +10831,21 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "86B0A32819E6798AA0F2F34418D25901", hash_generated_method = "482EB255509BA82D443BAA9D71623788")
      String nativeFocusCandidateName() {
     	String s = new String();
     	s.addTaint(taint);
     	return s;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "784E4422EBCAC3915206737F2EF978E9", hash_generated_method = "E9FE505188BFAFC647C681A775DCAAFD")
     private Rect nativeFocusCandidateNodeBounds() {
     	Rect r = new Rect();
     	r.addTaint(taint);
     	return r;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "D493BA74B0D04E6E35C47B87F2973345", hash_generated_method = "8CA80E2A60FEEA9061A61B09DA68625A")
     private Rect nativeFocusCandidatePaddingRect() {
     	Rect r = new Rect();
@@ -10887,10 +10858,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.300 -0400", hash_original_method = "AA9102676E28CA1EE920093EBAB8030A", hash_generated_method = "B8D2D3434495629B87849A0DDE9761CA")
     private String nativeFocusCandidateText() {
     	String s = new String();
@@ -10935,10 +10903,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.301 -0400", hash_original_method = "899095159EA7E211C628ECE871CC9E5E", hash_generated_method = "65244A088D15DCA1F0C3C7F2D973DFD4")
     private Rect nativeFocusNodeBounds() {
     	Rect r = new Rect();
@@ -10951,19 +10916,14 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	//Formerly a native method
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "6FF91C20F7461FC76B80187F5F0D17F4", hash_generated_method = "68114054688AC2ACF3B41A1E50F28F3A")
     private Rect nativeGetCursorRingBounds() {
     	Rect r = new Rect();
     	r.addTaint(taint);
     	return r;
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "B8443DF7AEBDC7EB5C8A06305D57CB4B", hash_generated_method = "CAEC1387621E6EAAC0BBE851878D90E6")
     private String nativeGetSelection() {
     	String s = new String();
@@ -10998,10 +10958,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	addTaint(y);
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.302 -0400", hash_original_method = "D8C9CADCD399CD2B0D790CF6CE41AE1A", hash_generated_method = "68E20D0E121FE807EF3A683540460D64")
     private String nativeImageURI(int x, int y) {
     	String s = new String();
@@ -11013,10 +10970,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     private void     nativeInstrumentReport(){
     	//Formerly a native method
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.303 -0400", hash_original_method = "BE6268DADB8C47F15DBBDF42ECD48F77", hash_generated_method = "0EF9BAF6479325B7AFB630E9F288D638")
     private Rect nativeLayerBounds(int layer) {
     	Rect r = new Rect();
@@ -11099,10 +11053,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     private void     nativeResetSelection(){
     	//Formerly a native method
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.304 -0400", hash_original_method = "F89A02659B72CC4FB73CF3CB2176116A", hash_generated_method = "4FCCB0475B387C1F5318EC92944C45EC")
     private Point nativeSelectableText() {
     	Point p = new Point();
@@ -11254,10 +11205,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     private void     nativeStopGL(){
     	//Formerly a native method
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.308 -0400", hash_original_method = "BB5930F93E7BD301B785F374DEB45F7F", hash_generated_method = "59C253F3D708B1AEFB61B74588B1BC4B")
     private Rect nativeSubtractLayers(Rect content) {
     	Rect r = new Rect();
@@ -11361,14 +11309,12 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	return getTaintInt();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:53.048 -0500", hash_original_method = "AB72670D7F17311A218110AB090BFE5C", hash_generated_method = "9D0FE0F2692FD31CE8FCE2C8E073ABB3")
     
     private void     nativeUseHardwareAccelSkia(boolean enabled){
     	//Formerly a native method
     	addTaint(enabled);
     }
-
 
     // Returns a pointer to the scrollable LayerAndroid at the given point.
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:53.052 -0500", hash_original_method = "E3322754F569B0B21B53AD98F12F9737", hash_generated_method = "D3ECD2A482E17F929789F45B9E5A2D44")
@@ -11422,10 +11368,7 @@ public float tileProfilingGetFloat(int frame, int tile, String key) {
     	addTaint(value.getTaint());
     	return getTaintBoolean();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:07.311 -0400", hash_original_method = "11B431686EC785B8746B288CFEF25EFA", hash_generated_method = "2CDC971A436EF25C108C6D2B163E982B")
      String nativeGetProperty(String key) {
     	String s = new String();

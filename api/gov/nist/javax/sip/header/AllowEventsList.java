@@ -11,17 +11,10 @@ import java.util.ListIterator;
 
 import javax.sip.header.AllowEventsHeader;
 
-
-
-
-
-
 public class AllowEventsList extends SIPHeaderList<AllowEvents> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.816 -0500", hash_original_field = "F850C344EE0C5124FED83C597CBFB673", hash_generated_field = "86B6C308D3FCCC18BA910315347C5416")
 
-
     private static final long serialVersionUID = -684763195336212992L;
-
 
     /** default constructor
      */
@@ -52,6 +45,7 @@ public Object clone() {
      *
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.825 -0500", hash_original_method = "8BAEE8E3A5391DDA801BF0B845B6BCD7", hash_generated_method = "FDEA2FDB650D04EE5EB88AA720957BD1")
     
 public ListIterator<String> getMethods() {

@@ -37,10 +37,6 @@ import org.apache.harmony.security.provider.cert.X509CertImpl;
 import dalvik.system.BlockGuard;
 import dalvik.system.CloseGuard;
 
-
-
-
-
 public class OpenSSLSocketImpl extends javax.net.ssl.SSLSocket implements NativeCrypto.SSLHandshakeCallbacks {
 
     /**
@@ -64,7 +60,6 @@ private static X509Certificate[] createCertChain(byte[][] certificatesBytes) {
         return certificates;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.340 -0500", hash_original_field = "B6F754963517A8E24052D31CA5B96417", hash_generated_field = "748A6049ACB01D98F85E21799F2EB11A")
-
 
     private int sslNativePointer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.342 -0500", hash_original_field = "B25CAE9BF82BA95FEFAA4B1FEB647560", hash_generated_field = "2E5ED6972CC94407ADA802F01B2A91D3")
@@ -120,13 +115,11 @@ private static X509Certificate[] createCertChain(byte[][] certificatesBytes) {
     private boolean handshakeCompleted = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.383 -0500", hash_original_field = "62277C468EB34D88444F90B52C9C2418", hash_generated_field = "18AE5B2EA1E4D2608E5F816AEC3235B3")
 
-
     private ArrayList<HandshakeCompletedListener> listeners;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.385 -0500", hash_original_field = "2FF78E4028756639B46028940691AE6C", hash_generated_field = "D9040C82E2DDED5191E6D7AE598F1DB8")
 
     private int timeoutMilliseconds = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.388 -0500", hash_original_field = "BDDB36D409EA0D64A6A41682D7A84874", hash_generated_field = "924BC0B5E41E0BD4B8C4C178AB494DA8")
-
 
     private int handshakeTimeoutMilliseconds = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.390 -0500", hash_original_field = "18D966D008FF5B53642F609B9F98BF6D", hash_generated_field = "6FB2C77C604FE1268BFA3B979F3F3054")
@@ -170,7 +163,6 @@ protected OpenSSLSocketImpl(InetAddress address, int port, SSLParametersImpl ssl
         this.socket = this;
         init(sslParameters);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.405 -0500", hash_original_method = "3EB3C6E00E78F272783CA82B1518096D", hash_generated_method = "1E0A9FE4CD04F94470CC5376B30473D7")
     
@@ -656,6 +648,7 @@ private void notifyHandshakeCompletedListeners() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.448 -0500", hash_original_method = "E61C85BF5C63F4E04D0D50BF3BBE2593", hash_generated_method = "9C95B417085D7551D5EC0712704BED9B")
     
 @Override public InputStream getInputStream() throws IOException {
@@ -669,6 +662,7 @@ private void notifyHandshakeCompletedListeners() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.451 -0500", hash_original_method = "5EE71E3DCC35A33F08AD90BC3313950F", hash_generated_method = "6CE39E410CF8CCCF59840355AC2838A9")
     
 @Override public OutputStream getOutputStream() throws IOException {
@@ -682,7 +676,7 @@ private void notifyHandshakeCompletedListeners() {
         }
     }
 
-
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.474 -0500", hash_original_method = "E137442CFB021C112EB3F3EAC9C4FE47", hash_generated_method = "5404D5B750F5D910F78A2D18A8E4A5C7")
     
 @Override public SSLSession getSession() {
@@ -728,48 +722,56 @@ private void notifyHandshakeCompletedListeners() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.482 -0500", hash_original_method = "67C983FA387520F5F3AF315C719B29E4", hash_generated_method = "F0850E2B8F230278D1EE6575AFA464E6")
     
 @Override public boolean getEnableSessionCreation() {
         return sslParameters.getEnableSessionCreation();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.484 -0500", hash_original_method = "CCC6382646A49B02E626A26467D69493", hash_generated_method = "3DEA9628617E70F67E1471694350041C")
     
 @Override public void setEnableSessionCreation(boolean flag) {
         sslParameters.setEnableSessionCreation(flag);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.486 -0500", hash_original_method = "1B8AAFC0DA0BD632205C9BB94F36BE40", hash_generated_method = "FC9C3F1BC74E6756C08730F8099184A3")
     
 @Override public String[] getSupportedCipherSuites() {
         return NativeCrypto.getSupportedCipherSuites();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.488 -0500", hash_original_method = "5CCACD4A046B80B9464615B5EFBE522F", hash_generated_method = "9609D63D06C0561070F00E8FC5B0E108")
     
 @Override public String[] getEnabledCipherSuites() {
         return enabledCipherSuites.clone();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.491 -0500", hash_original_method = "A8F29A0117C2056BB4F12EE1D48F5595", hash_generated_method = "7334BD36327A5C0E4641C62AF79624D8")
     
 @Override public void setEnabledCipherSuites(String[] suites) {
         enabledCipherSuites = NativeCrypto.checkEnabledCipherSuites(suites);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.493 -0500", hash_original_method = "B10F1AAC80A139AD997D0D8B0338DD89", hash_generated_method = "AC03A33ED96900A1F6F22E082B4D218D")
     
 @Override public String[] getSupportedProtocols() {
         return NativeCrypto.getSupportedProtocols();
     }
 
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.495 -0500", hash_original_method = "26510D7872AB5791B4C2075CD3368FCD", hash_generated_method = "F66B93BEA1257A9D34745668F1A12518")
     
 @Override public String[] getEnabledProtocols() {
         return enabledProtocols.clone();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.498 -0500", hash_original_method = "4F25266A0ABB18E1CEC5E2893BCF6C12", hash_generated_method = "1247E6E288197D24DA3BC8CBC688F7CB")
     
 @Override public void setEnabledProtocols(String[] protocols) {
@@ -833,12 +835,14 @@ public void setHostname(String hostname) {
         this.hostname = hostname;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.511 -0500", hash_original_method = "01F03276D647357C499C358366605A7A", hash_generated_method = "C189C4A91AE7529C93E5FE1A68636F7D")
     
 @Override public boolean getUseClientMode() {
         return sslParameters.getUseClientMode();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.513 -0500", hash_original_method = "796A366B3F70011E31FF500388066E2F", hash_generated_method = "DD2B09427C90AA110167FA1F9789AFAE")
     
 @Override public void setUseClientMode(boolean mode) {
@@ -849,36 +853,42 @@ public void setHostname(String hostname) {
         sslParameters.setUseClientMode(mode);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.516 -0500", hash_original_method = "BFCFACF4683D2DA63944456ACA1AFE4C", hash_generated_method = "C498EFFB7EA33937BE58E3D8E2A82C77")
     
 @Override public boolean getWantClientAuth() {
         return sslParameters.getWantClientAuth();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.519 -0500", hash_original_method = "01CDFCACAD6C113BE18D967A4C320F8F", hash_generated_method = "1AC7C5FF07516804848811840A468A8B")
     
 @Override public boolean getNeedClientAuth() {
         return sslParameters.getNeedClientAuth();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.522 -0500", hash_original_method = "87B99BB5E16802D75B8230FD21E2413F", hash_generated_method = "C446CA4D04BF46EBA63D06A750C2C8C1")
     
 @Override public void setNeedClientAuth(boolean need) {
         sslParameters.setNeedClientAuth(need);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.524 -0500", hash_original_method = "C4BE9213AE4AE3AE8B3FD470CA7DBEA1", hash_generated_method = "21E8FF7B7CE0E4FB146B4F3F0EE91E86")
     
 @Override public void setWantClientAuth(boolean want) {
         sslParameters.setWantClientAuth(want);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.526 -0500", hash_original_method = "76A321423E9827230577FC78A6A38E86", hash_generated_method = "B7DDBD1D342472346CC4D037D1CE3585")
     
 @Override public void sendUrgentData(int data) throws IOException {
         throw new SocketException("Method sendUrgentData() is not supported.");
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.529 -0500", hash_original_method = "274CE2EF30305C6385D88E550D3E79A6", hash_generated_method = "B9FF049CD8864259C2E7D0184D2DD414")
     
 @Override public void setOOBInline(boolean on) throws SocketException {
@@ -892,6 +902,7 @@ public void setHostname(String hostname) {
         this.timeoutMilliseconds = timeoutMilliseconds;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.533 -0500", hash_original_method = "5DC72E2D363A272A051BD7C43DA762A2", hash_generated_method = "D32334B4CD482D6200A332CBDFCB967B")
     
 @Override public int getSoTimeout() throws SocketException {
@@ -1015,6 +1026,7 @@ private void free() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.546 -0500", hash_original_method = "E6BCE3543B6D551909C5B870C6A9DC54", hash_generated_method = "EDAEE0423D9B231EEFFA718C2EB95FD7")
     
 @Override
@@ -1025,7 +1037,6 @@ private void free() {
             return socket.getFileDescriptor$();
         }
     }
-
     
     private class SSLInputStream extends InputStream {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.454 -0500", hash_original_method = "B153503C58DDB9DC7588696F0617BD77", hash_generated_method = "16F7E00F57CCEFC91E5AB324805F2083")
@@ -1071,11 +1082,8 @@ SSLInputStream() throws IOException {
                         OpenSSLSocketImpl.this, buf, offset, byteCount, getSoTimeout());
             }
         }
-
         
     }
-
-
     
     private class SSLOutputStream extends OutputStream {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.464 -0500", hash_original_method = "1E1541DFFE880DA1B7719D7E370B4D89", hash_generated_method = "4443FB3358873B4291D48BB3A1033CEF")
@@ -1092,6 +1100,7 @@ SSLOutputStream() throws IOException {
          * Method acts as described in spec for superclass.
          * @see java.io.OutputStream#write(int)
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:09.466 -0500", hash_original_method = "C7F824EB5C9CE82C3E815BE1E94821BC", hash_generated_method = "2F6F8FCE8DC2AA447CE6E550ABE70F33")
         
 @Override
@@ -1118,11 +1127,8 @@ SSLOutputStream() throws IOException {
                         OpenSSLSocketImpl.this, buf, offset, byteCount);
             }
         }
-
         
     }
-
-
     
 }
 

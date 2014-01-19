@@ -32,10 +32,6 @@ import android.util.Printer;
 import android.util.SparseArray;
 import android.util.Xml;
 
-
-
-
-
 public final class DeviceAdminInfo implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.298 -0500", hash_original_field = "1D0B73C8A1604964DC268CCF29F3B3AC", hash_generated_field = "EF54ADA6F74B065C52190993EC3B85DD")
 
@@ -68,7 +64,6 @@ public final class DeviceAdminInfo implements Parcelable {
 
     public static final int USES_POLICY_DISABLE_CAMERA = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.337 -0500", hash_original_field = "008E81DBF25DA74651DE3A1DD0D235AD", hash_generated_field = "5BE1EFEEF690A563A986877DACAE99BD")
-
     
     static ArrayList<PolicyInfo> sPoliciesDisplayOrder = new ArrayList<PolicyInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.339 -0500", hash_original_field = "DB782502208588BCE8856E6D63253BCF", hash_generated_field = "33B4C32B2D5C5AE03E24E067E342238A")
@@ -194,6 +189,7 @@ DeviceAdminInfo(Parcel source) {
     /**
      * Return the .apk package that implements this device admin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.356 -0500", hash_original_method = "15D7F1C05476F5ABD61BE7FA06DD15FF", hash_generated_method = "B03B6C7AB7C74F5F2B6B2A6BF5024941")
     
 public String getPackageName() {
@@ -204,6 +200,7 @@ public String getPackageName() {
      * Return the class name of the receiver component that implements
      * this device admin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.358 -0500", hash_original_method = "DA104755B25D83C27775D5E8DE9A1BBA", hash_generated_method = "1315B33408538A0F3BCEC0441C3BB0C9")
     
 public String getReceiverName() {
@@ -214,12 +211,12 @@ public String getReceiverName() {
      * Return the raw information about the receiver implementing this
      * device admin.  Do not modify the returned object.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.361 -0500", hash_original_method = "841DC64081A3A73FAF123BE852CFB557", hash_generated_method = "7FE6CA6A34D9C48885B628AF1D3E310A")
     
 public ActivityInfo getActivityInfo() {
         return mReceiver.activityInfo;
     }
-
     
     public static class PolicyInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.322 -0500", hash_original_field = "D6522CF0EB0B8A28ECDAD3A7DBFFD747", hash_generated_field = "3ED5BE6AB29FB35B15159E9F367B83D4")
@@ -243,13 +240,13 @@ public PolicyInfo(int identIn, String tagIn, int labelIn, int descriptionIn) {
             label = labelIn;
             description = descriptionIn;
         }
-
         
     }
 
     /**
      * Return the component of the receiver that implements this device admin.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.363 -0500", hash_original_method = "D8CD91DC98C1B02E60FA507EA4460E94", hash_generated_method = "A0DC67A908DBE8989A95916CA6E6CE19")
     
 public ComponentName getComponent() {
@@ -333,6 +330,7 @@ public boolean usesPolicy(int policyIdent) {
      * are as per {@link #usesPolicy(int)}.  If the given identifier is not
      * known, null is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.377 -0500", hash_original_method = "535AB0E7EF604572B28232B709525301", hash_generated_method = "454DE004557814BE7724602F32BD3F3F")
     
 public String getTagForPolicy(int policyIdent) {
@@ -340,6 +338,7 @@ public String getTagForPolicy(int policyIdent) {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.379 -0500", hash_original_method = "ED92B1C7E9AB1C3DE434E84362F61420", hash_generated_method = "4942C81192F83DF82F633E5FEB22759B")
     
 public ArrayList<PolicyInfo> getUsedPolicies() {
@@ -370,6 +369,7 @@ public void readPoliciesFromXml(XmlPullParser parser)
                 parser.getAttributeValue(null, "flags"));
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.386 -0500", hash_original_method = "B6CA0FCEADAF7A26300AC5E399081259", hash_generated_method = "93FD6697C6D46EE7253F14E9BE51F139")
     
 public void dump(Printer pw, String prefix) {
@@ -390,6 +390,7 @@ public void dump(Printer pw, String prefix) {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:53.391 -0500", hash_original_method = "3425AE1C08CE1294933DDD04C3D7531A", hash_generated_method = "24A3BE9083E34B5DADE32B816241C040")
     
 public void writeToParcel(Parcel dest, int flags) {

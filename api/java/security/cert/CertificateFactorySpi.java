@@ -9,10 +9,6 @@ import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
 
-
-
-
-
 public abstract class CertificateFactorySpi {
 
     /**
@@ -150,12 +146,12 @@ public CertPath engineGenerateCertPath(List<? extends Certificate>  certificates
      * @return an iterator over supported {@code CertPath} encodings (as
      *         Strings).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:59.677 -0500", hash_original_method = "D60EF50967AE5C5FE3CD2559F27951D5", hash_generated_method = "1CA69DF50450DA8AB9EA04C7BC236B79")
     
 public Iterator<String> engineGetCertPathEncodings() {
         throw new UnsupportedOperationException();
     }
-
     
 }
 

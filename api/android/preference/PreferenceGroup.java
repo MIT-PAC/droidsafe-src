@@ -14,24 +14,17 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-
-
-
-
 public abstract class PreferenceGroup extends Preference implements GenericInflater.Parent<Preference> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.963 -0500", hash_original_field = "AA94F4A4BB2311E5FFF451A9F8B32E0B", hash_generated_field = "18F192958EC897931FD8B3DA5BF85A77")
 
     private List<Preference> mPreferenceList;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.965 -0500", hash_original_field = "EF6436D4AA102956E4336C640C78C9D8", hash_generated_field = "C2971599AC8149900D387CCAE8E63B08")
 
-
     private boolean mOrderingAsAdded = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.967 -0500", hash_original_field = "409474000390D5B61F8A6A16539E8BC0", hash_generated_field = "89C3262ADB33D2CAACE003244FE80C06")
 
-
     private int mCurrentPreferenceOrder = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.969 -0500", hash_original_field = "8EFBD00F7D5F5CC77C63FE080498A166", hash_generated_field = "5A686733D92531666006F9E403A759CD")
-
 
     private boolean mAttachedToActivity = false;
     
@@ -97,6 +90,9 @@ public void addItemFromInflater(Preference preference) {
      * Returns the number of children {@link Preference}s.
      * @return The number of preference children in this group.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.983 -0500", hash_original_method = "389AB97985CD6F44D465D155E8399BE9", hash_generated_method = "E7DB08B274C9259DE3854E25D9D2A0CD")
     
 public int getPreferenceCount() {
@@ -109,6 +105,9 @@ public int getPreferenceCount() {
      * @param index The index of the {@link Preference} to retrieve.
      * @return The {@link Preference}.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.985 -0500", hash_original_method = "109559B57B2B04AB981EEA935073C7C0", hash_generated_method = "996B696A80D0B5186DA171C96FE413E5")
     
 public Preference getPreference(int index) {
@@ -122,6 +121,8 @@ public Preference getPreference(int index) {
      * @param preference The preference to add.
      * @return Whether the preference is now in this group.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.988 -0500", hash_original_method = "6848FE69024CCCF475A64E7D742A1E83", hash_generated_method = "72854703B35A3CDBA10D0B8803BD4FDF")
     
 public boolean addPreference(Preference preference) {
@@ -172,6 +173,8 @@ public boolean addPreference(Preference preference) {
      * @param preference The preference to remove.
      * @return Whether the preference was found and removed.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.990 -0500", hash_original_method = "72E836216B00BC7CD61ADE8B9836B308", hash_generated_method = "10C1FE01868DD10D0DB4D8BFF205AEDD")
     
 public boolean removePreference(Preference preference) {
@@ -192,6 +195,8 @@ private boolean removePreferenceInt(Preference preference) {
     /**
      * Removes all {@link Preference Preferences} from this group.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.995 -0500", hash_original_method = "70997B14FB6DABF4C7D8165F55B0B7BF", hash_generated_method = "6B5525D33BE28D16BF09599FCD753CCC")
     
 public void removeAll() {
@@ -233,6 +238,8 @@ protected boolean onPrepareAddPreference(Preference preference) {
      * @param key The key of the preference to retrieve.
      * @return The {@link Preference} with the key, or null.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.001 -0500", hash_original_method = "28FD4F6AEC9563866A4A8A8A3B9D4A51", hash_generated_method = "610323619310552A4DB208919917AD46")
     
 public Preference findPreference(CharSequence key) {
@@ -300,6 +307,7 @@ protected boolean isOnSameScreenAsChildren() {
         mAttachedToActivity = false;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.010 -0500", hash_original_method = "10614F6B57E80AB6C964E551AE06AF94", hash_generated_method = "C311D30DF36A23FA5C6362FA5BAC7096")
     
 @Override
@@ -346,7 +354,6 @@ void sortPreferences() {
             getPreference(i).dispatchRestoreInstanceState(container);
         }
     }
-
     
 }
 

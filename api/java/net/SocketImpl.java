@@ -9,11 +9,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 
-
-
-
-
-
 public abstract class SocketImpl implements SocketOptions {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.273 -0500", hash_original_field = "FDCE7272CFC91A6374FBF7F54D5CC8E4", hash_generated_field = "3EF85E4B8326DFDFB5F1248DB5848FBE")
 
@@ -32,7 +27,6 @@ public abstract class SocketImpl implements SocketOptions {
     @DSVAModeled
     protected int localport;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:51.521 -0400", hash_original_method = "64E339C1199B48FCA9D5B6162E68A4EE", hash_generated_method = "64E339C1199B48FCA9D5B6162E68A4EE")
     public SocketImpl ()
     {
@@ -137,6 +131,7 @@ protected abstract void create(boolean isStreaming) throws IOException;
      *
      * @return the file descriptor of this socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.299 -0500", hash_original_method = "C1B4172ED9A628993584DE4384B8AF55", hash_generated_method = "C8664C638E6E7676776FC905B50F6CA8")
     
 protected FileDescriptor getFileDescriptor() {
@@ -146,6 +141,7 @@ protected FileDescriptor getFileDescriptor() {
     /**
      * @hide used by java.nio
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.302 -0500", hash_original_method = "D80DA3748C8C317EA54CA4C7D2D15552", hash_generated_method = "451E90B848B53AC66CF1CF9E4293CFFC")
     
 public FileDescriptor getFD$() {
@@ -157,6 +153,7 @@ public FileDescriptor getFD$() {
      *
      * @return the remote address of this socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.304 -0500", hash_original_method = "9059089CB1C35AC3C53D636B58746A1E", hash_generated_method = "A76BD5A3A0567AC89CB96B150B9A1D96")
     
 protected InetAddress getInetAddress() {
@@ -181,6 +178,7 @@ protected abstract InputStream getInputStream() throws IOException;
      *
      * @return the local port number this socket is bound to.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.310 -0500", hash_original_method = "01F8313D57DE36AB40371D3553F872FB", hash_generated_method = "AF64DAFDACDB1E0D6A98E42A80A3630E")
     
 protected int getLocalPort() {
@@ -204,6 +202,7 @@ protected abstract OutputStream getOutputStream() throws IOException;
      *
      * @return the remote port this socket is connected to.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.314 -0500", hash_original_method = "A5F7344FAECBE0D6DB15D1F6E7BEBC6E", hash_generated_method = "FD3C86BDDAB9A6DA7A4F92F97CB82D65")
     
 protected int getPort() {
@@ -231,6 +230,7 @@ protected abstract void listen(int backlog) throws IOException;
      *
      * @return the textual representation of this socket.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.319 -0500", hash_original_method = "2E2A133215115434551D3BB5177B3CB7", hash_generated_method = "F27A04F4DEA11ED1EBC3CB8C865D5A4C")
     
 @Override
@@ -320,11 +320,11 @@ protected abstract void sendUrgentData(int value) throws IOException;
      * @param bandwidth
      *            the importance of bandwidth.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:07.333 -0500", hash_original_method = "EE4DCDA11944F25F3B6AAA6A92D8AD2F", hash_generated_method = "8007148E8E33A2E2AD01814FEF5B1086")
     
 protected void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {
     }
-
     
 }
 

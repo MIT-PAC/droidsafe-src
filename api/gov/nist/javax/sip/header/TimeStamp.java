@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.TimeStampHeader;
 
-
-
-
-
-
 public class TimeStamp extends SIPHeader implements TimeStampHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.127 -0500", hash_original_field = "200E26A351C67B18CDC5632502CF9A3F", hash_generated_field = "5580840BB5EA0CAD9750B3DAADA2FC56")
 
@@ -24,10 +19,8 @@ public class TimeStamp extends SIPHeader implements TimeStampHeader {
     protected int delay = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.136 -0500", hash_original_field = "500AF7AD3D80BC4C3A574B7252D677A2", hash_generated_field = "C6AE286F90939B3ECC1A3783181F9CAA")
 
-
     protected float delayFloat = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.139 -0500", hash_original_field = "CA7FFB4F8D811B82C28C8652BA4974CA", hash_generated_field = "496F7FE859855CC3A1459131085C2D33")
-
 
     private float timeStampFloat = -1;
 
@@ -104,8 +97,6 @@ public void removeDelay() {
         delay = -1;
     }
 
-
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.160 -0500", hash_original_method = "4E9675E31226E40B31535DE558B43882", hash_generated_method = "7FCB4D348C3A341B2CEE288BF1B76C98")
     
 public void setTimeStamp(float timeStamp) throws InvalidArgumentException {
@@ -117,7 +108,7 @@ public void setTimeStamp(float timeStamp) throws InvalidArgumentException {
         this.timeStampFloat = timeStamp;
     }
 
-
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.163 -0500", hash_original_method = "01E7C97794DF2BDF54B9432179BAF6F0", hash_generated_method = "5B691A70EC900BD1387290E3D1501697")
     
 public float getTimeStamp() {
@@ -125,8 +116,7 @@ public float getTimeStamp() {
                 : this.timeStampFloat;
     }
 
-
-
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.166 -0500", hash_original_method = "E76077CCC1CFE0A65C8B9469FD12F639", hash_generated_method = "6A3013F75E7C29D59DCC6F2E7A9E0583")
     
 public float getDelay() {
@@ -155,12 +145,14 @@ public void setDelay(float delay) throws InvalidArgumentException {
         this.delay = -1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.173 -0500", hash_original_method = "21D089BD1FDC44EC84A18CFADDD04289", hash_generated_method = "D1AAA7D8709930CC17821C70BD7AB8B1")
     
 public long getTime() {
         return this.timeStamp == -1 ? (long) timeStampFloat : timeStamp;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.176 -0500", hash_original_method = "BF53496596C6E194CBAA97C816B19B22", hash_generated_method = "CBF35642663A04BE3CA35224E85730E9")
     
 public int getTimeDelay() {

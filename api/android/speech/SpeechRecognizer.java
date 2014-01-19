@@ -23,10 +23,6 @@ import android.provider.Settings;
 import android.text.TextUtils;
 import android.util.Log;
 
-
-
-
-
 public class SpeechRecognizer {
 
     /**
@@ -152,7 +148,6 @@ private static void checkIsCalledFromMainThread() {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.678 -0500", hash_original_field = "D468AD0EA1184CE89FA8A45254E2CDD6", hash_generated_field = "619FD7E303013DFEE90F58DA7C3DCACD")
 
     private Connection mConnection;
-
     
     private class Connection implements ServiceConnection {
         
@@ -182,15 +177,11 @@ public void onServiceDisconnected(final ComponentName name) {
             mPendingTasks.clear();
             if (DBG) Log.d(TAG, "onServiceDisconnected - Success");
         }
-
         
     }
-
-
     
     private class InternalListener extends IRecognitionListener.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.743 -0500", hash_original_field = "0CE94EF9B286F194AC25B36B8EA3F00B", hash_generated_field = "032590BC15DCDDF98F63DDEB5918C116")
-
 
         private final static int MSG_BEGINNING_OF_SPEECH = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.745 -0500", hash_original_field = "C899B06BA48C740C11DFD1FF7158CD76", hash_generated_field = "709FAE9C1F800DF37CB07F4272287D9D")
@@ -260,7 +251,6 @@ public void onServiceDisconnected(final ComponentName name) {
                         break;
                 }
             }
-
             
 };
         
@@ -353,7 +343,6 @@ public void onEvent(final int eventType, final Bundle params) {
                     break;
             }
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.690 -0500", hash_original_field = "E954EEFB23BAEBF8F27439147A5EB1D5", hash_generated_field = "D14056CF3275CCA582D9C7C6EA3A3C33")
@@ -382,6 +371,9 @@ private SpeechRecognizer(final Context context, final ComponentName serviceCompo
      * @param listener listener that will receive all the callbacks from the created
      *        {@link SpeechRecognizer}, this must not be null.
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:55.713 -0500", hash_original_method = "F27BB062A778ED5EBCB2B3B868E059E6", hash_generated_method = "51B58CFA8B31AC91F1DF1953A495C0C7")
     
 public void setRecognitionListener(RecognitionListener listener) {

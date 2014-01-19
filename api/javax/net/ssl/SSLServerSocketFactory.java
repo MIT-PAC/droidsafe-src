@@ -9,11 +9,6 @@ import java.security.Security;
 
 import javax.net.ServerSocketFactory;
 
-
-
-
-
-
 public abstract class SSLServerSocketFactory extends ServerSocketFactory {
 
     /**
@@ -23,6 +18,7 @@ public abstract class SSLServerSocketFactory extends ServerSocketFactory {
      *
      * @return the default {@code SSLServerSocketFactory} instance.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.529 -0500", hash_original_method = "A7F1CDDCECEE4B1BBC83F94321EC50FE", hash_generated_method = "1FB4E1E4CDB0F0EE29F19CB3F8E71013")
     
 public static synchronized ServerSocketFactory getDefault() {
@@ -63,11 +59,9 @@ public static synchronized ServerSocketFactory getDefault() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.524 -0500", hash_original_field = "7F967218D10CD1AC03791A88D0EBB0BA", hash_generated_field = "D22A92C7866CD49D60974132EDB6FF22")
 
-
     // The default SSL socket factory
     private static ServerSocketFactory defaultServerSocketFactory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:01.527 -0500", hash_original_field = "84BC5372A12AA239726FB6B8D530CCAC", hash_generated_field = "B5EAD347CF9492DD929521E60E38417F")
-
 
     private static String defaultName;
 

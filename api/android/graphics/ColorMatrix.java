@@ -6,13 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.util.FloatMath;
 
-
-
-
-
 public class ColorMatrix {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.551 -0500", hash_original_field = "1B9AE67EA9C44659A4D1BB6336966CD5", hash_generated_field = "EB497EE5AD03BD0F08D38D6437611B86")
-
 
     private final float[] mArray = new float[20];
 
@@ -20,6 +15,8 @@ public class ColorMatrix {
      * Create a new colormatrix initialized to identity (as if reset() had
      * been called).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.554 -0500", hash_original_method = "7C280C0D6BD3CA85A908B9065390FD08", hash_generated_method = "DB971D5BC54B5A31AD0846AFF0400420")
     
 public ColorMatrix() {
@@ -47,6 +44,9 @@ public ColorMatrix(ColorMatrix src) {
     /**
      * Return the array of floats representing this colormatrix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.560 -0500", hash_original_method = "C51050FB528280ED78B19148B7D68B9E", hash_generated_method = "63C6B2BBD63D99F1D2FEFB03B9401E16")
     
 public final float[] getArray() { return mArray; }
@@ -72,6 +72,7 @@ public void reset() {
     /**
      * Assign the src colormatrix into this matrix, copying all of its values.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.565 -0500", hash_original_method = "9919D3B45BE014B7359BBBE4E1EE27A7", hash_generated_method = "1D3FAA46DE81B1D61BD927E059A5DBCD")
     
 public void set(ColorMatrix src) {
@@ -81,6 +82,7 @@ public void set(ColorMatrix src) {
     /**
      * Assign the array of floats into this matrix, copying all of its values.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.567 -0500", hash_original_method = "1B16B7E11AFFA7F8CD6600BA7D48EFFB", hash_generated_method = "0BB84B094E6971328C21B16B46E9F34A")
     
 public void set(float[] src) {
@@ -90,6 +92,7 @@ public void set(float[] src) {
     /**
      * Set this colormatrix to scale by the specified values.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.570 -0500", hash_original_method = "0974414711261BF80A4D723D743AAB06", hash_generated_method = "BE8F1B9FD3D4F59B4EE52CC2CAD72E8F")
     
 public void setScale(float rScale, float gScale, float bScale,
@@ -111,6 +114,7 @@ public void setScale(float rScale, float gScale, float bScale,
      * axis=1 correspond to a rotation around the GREEN color
      * axis=2 correspond to a rotation around the BLUE color
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.572 -0500", hash_original_method = "F365836E7CADE057885AC91CF063AD58", hash_generated_method = "612FFBFFC9FED1E8E244AA6DB7FD59A1")
     
 public void setRotate(int axis, float degrees) {
@@ -148,6 +152,7 @@ public void setRotate(int axis, float degrees) {
      * as applying matB and then applying matA. It is legal for either matA or
      * matB to be the same colormatrix as this.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.575 -0500", hash_original_method = "843BB575BEC1DC3153103BA70AD6226C", hash_generated_method = "E3DA8F9DABD88AC3112E4758BB05B6BC")
     
 public void setConcat(ColorMatrix matA, ColorMatrix matB) {
@@ -204,6 +209,7 @@ public void postConcat(ColorMatrix postmatrix) {
      * Set the matrix to affect the saturation of colors. A value of 0 maps the
      * color to gray-scale. 1 is identity.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.582 -0500", hash_original_method = "4B5CDCAEBB0220A2068E2CB6AD49DF79", hash_generated_method = "7DDADE0AF9C68CC685E7E9244C5D45A3")
     
 public void setSaturation(float sat) {
@@ -223,6 +229,8 @@ public void setSaturation(float sat) {
     /**
      * Set the matrix to convert RGB to YUV
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:10.584 -0500", hash_original_method = "5B1F12450A5CDB7BE7A8B64628B4B21E", hash_generated_method = "7190FA541C0D10FAB02D0B7E3C36D680")
     
 public void setRGB2YUV() {
@@ -247,7 +255,6 @@ public void setYUV2RGB() {
         m[5] = 1;   m[6] = -0.34414f;   m[7] = -0.71414f;
         m[10] = 1;  m[11] = 1.772f;     m[12] = 0;
     }
-
     
 }
 

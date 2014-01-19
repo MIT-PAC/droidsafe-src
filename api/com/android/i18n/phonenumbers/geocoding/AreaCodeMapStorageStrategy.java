@@ -10,11 +10,6 @@ import java.io.ObjectOutput;
 import java.util.SortedMap;
 import java.util.TreeSet;
 
-
-
-
-
-
 abstract class AreaCodeMapStorageStrategy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.958 -0500", hash_original_field = "00F1381F548F3A5295097F2401ADFC52", hash_generated_field = "A8A65EF4F8315577299BC66787FEAF93")
 
@@ -40,7 +35,8 @@ public abstract boolean isFlyweight();
   /**
    * @return  the number of entries contained in the area code map
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.968 -0500", hash_original_method = "67028691C3A13A3B8C6995CB53BC17C2", hash_generated_method = "EFB1CF74F5BD00D02AAAED4029EEF8F9")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.968 -0500", hash_original_method = "67028691C3A13A3B8C6995CB53BC17C2", hash_generated_method = "EFB1CF74F5BD00D02AAAED4029EEF8F9")
     
 public int getNumOfEntries() {
     return numOfEntries;
@@ -49,7 +45,8 @@ public int getNumOfEntries() {
   /**
    * @return  the set containing the possible lengths of prefixes
    */
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.970 -0500", hash_original_method = "9B53A77A841456041603E3D119D30EB4", hash_generated_method = "E9E126B336B9EFA67D1946B657F3667B")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.970 -0500", hash_original_method = "9B53A77A841456041603E3D119D30EB4", hash_generated_method = "E9E126B336B9EFA67D1946B657F3667B")
     
 public TreeSet<Integer> getPossibleLengths() {
     return possibleLengths;
@@ -124,7 +121,6 @@ public abstract void writeExternal(ObjectOutput objectOutput) throws IOException
     }
     return output.toString();
   }
-
     
 }
 

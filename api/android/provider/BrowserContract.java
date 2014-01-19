@@ -15,22 +15,16 @@ import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Pair;
 
-
-
-
-
 public class BrowserContract {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.281 -0500", hash_original_field = "2A25262717489890CBEBAF94D3AA5F5F", hash_generated_field = "3226F8D573C55538143AADDEDE9BEDF1")
 
     public static final String AUTHORITY = "com.android.browser";
-
 
     public static final class ChromeSyncColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.300 -0500", hash_original_field = "B5CE1614C744C7D7ABCA33717FE0B401", hash_generated_field = "BA004DD6C732A9DE7AE9F50F0365E343")
 
         public static final String SERVER_UNIQUE = BaseSyncColumns.SYNC3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.303 -0500", hash_original_field = "B20F4CDDA61C99CD459240E7EEBD4910", hash_generated_field = "8F8B59E19C1BFC825B3CFF4F6E7D2455")
-
 
         public static final String FOLDER_NAME_ROOT = "google_chrome";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.305 -0500", hash_original_field = "DA3DBC41138BEBA5B2614655370140C3", hash_generated_field = "7D7F7FF342C4D3964B81AA9C29FE0797")
@@ -49,8 +43,6 @@ public class BrowserContract {
         
 private ChromeSyncColumns() {}
     }
-
-
     
     public static final class Bookmarks implements CommonColumns, ImageColumns, SyncColumns {
 
@@ -113,8 +105,6 @@ public static final Uri buildFolderUri(long folderId) {
         
 private Bookmarks() {}
     }
-
-
     
     public static final class Accounts {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.379 -0500", hash_original_field = "794B6192C53E9ECC4C05DB65201B19BC", hash_generated_field = "F05ADCBC4299E845D0DE19D5F81FDF47")
@@ -137,8 +127,6 @@ private Bookmarks() {}
             //Synthesized constructor
         }
     }
-
-
     
     public static final class History implements CommonColumns, HistoryColumns, ImageColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.394 -0500", hash_original_field = "CBB02B8090ABD11ACEDB3F582D2659CD", hash_generated_field = "8F6F422DADF0DFB5E5A398B59F81E1C8")
@@ -157,8 +145,6 @@ private Bookmarks() {}
         
 private History() {}
     }
-
-
     
     public static final class Searches {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.407 -0500", hash_original_field = "7B85A876F43C6C2E7D1B6B06CDDFB3B7", hash_generated_field = "FF24A32B9829C11115FDBD2035181FF7")
@@ -183,14 +169,13 @@ private History() {}
         
 private Searches() {}
     }
-
-
     
     public static final class SyncState implements SyncStateContract.Columns {
 
         /**
          * @see android.provider.SyncStateContract.Helpers#get
          */
+        @DSSource({DSSourceKind.BROWSER_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.431 -0500", hash_original_method = "466578A19F0FCF2DD10FDB6DAFFC0887", hash_generated_method = "2968688090F0A89899005B639287D49D")
         
 public static byte[] get(ContentProviderClient provider, Account account)
@@ -201,6 +186,7 @@ public static byte[] get(ContentProviderClient provider, Account account)
         /**
          * @see android.provider.SyncStateContract.Helpers#get
          */
+        @DSSource({DSSourceKind.BROWSER_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.434 -0500", hash_original_method = "B9E8FB5AB055D4E1E45E9949F3C016CF", hash_generated_method = "6E822DD6634A9EBA8F5FA49F5EB38784")
         
 public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Account account)
@@ -211,6 +197,7 @@ public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Accou
         /**
          * @see android.provider.SyncStateContract.Helpers#set
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.437 -0500", hash_original_method = "579F427E12689D3799FB7240CB2CED7E", hash_generated_method = "0929C6A0E720D5E2073DF205F65D7551")
         
 public static void set(ContentProviderClient provider, Account account, byte[] data)
@@ -228,7 +215,6 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.427 -0500", hash_original_field = "E8C57D74C792F88386CA3DAD09DDB1BA", hash_generated_field = "B8243A9F992B1927826CEDCE0876B770")
 
-
         public static final String CONTENT_DIRECTORY =
                 SyncStateContract.Constants.CONTENT_DIRECTORY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.429 -0500", hash_original_field = "C1EA74B2428365CED3D656387FEA49B7", hash_generated_field = "D7D188013240FCCAF388869D2E2EBFDE")
@@ -242,8 +228,6 @@ public static ContentProviderOperation newSetOperation(Account account, byte[] d
         
 private SyncState() {}
     }
-
-
     
     public static final class Images implements ImageColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.448 -0500", hash_original_field = "8C95442A5BA581DDA4838D9481963330", hash_generated_field = "D17D0AFDB034395CE800191266DC06B2")
@@ -259,8 +243,6 @@ private SyncState() {}
         
 private Images() {}
     }
-
-
     
     public static final class Combined implements CommonColumns, HistoryColumns, ImageColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:02.457 -0500", hash_original_field = "82D02F41998C8D9693D6B51D3940DDCE", hash_generated_field = "E5846D12A80FEBBC2EE6D3A1124B69D3")
@@ -276,8 +258,6 @@ private Images() {}
         
 private Combined() {}
     }
-
-
     
     public static final class Settings {
 
@@ -330,8 +310,6 @@ static public void setSyncEnabled(Context context, boolean enabled) {
         
 private Settings() {}
     }
-
-
     
     interface BaseSyncColumns {
         
@@ -349,19 +327,14 @@ private Settings() {}
     interface SyncColumns extends BaseSyncColumns {
         
         public static final String ACCOUNT_NAME = "account_name";
-
         
         public static final String ACCOUNT_TYPE = "account_type";
-
         
         public static final String SOURCE_ID = "sourceid";
-
         
         public static final String VERSION = "version";
-
         
         public static final String DIRTY = "dirty";
-
         
         public static final String DATE_MODIFIED = "modified";
     }
@@ -369,13 +342,10 @@ private Settings() {}
     interface CommonColumns {
         
         public static final String _ID = "_id";
-
         
         public static final String URL = "url";
-
         
         public static final String TITLE = "title";
-
         
         public static final String DATE_CREATED = "created";
     }
@@ -383,10 +353,8 @@ private Settings() {}
     interface ImageColumns {
         
         public static final String FAVICON = "favicon";
-
         
         public static final String THUMBNAIL = "thumbnail";
-
         
         public static final String TOUCH_ICON = "touch_icon";
     }
@@ -394,7 +362,6 @@ private Settings() {}
     interface HistoryColumns {
         
         public static final String DATE_LAST_VISITED = "date";
-
         
         public static final String VISITS = "visits";
 

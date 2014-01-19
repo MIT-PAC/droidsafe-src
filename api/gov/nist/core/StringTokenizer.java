@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.text.ParseException;
 import java.util.Vector;
 
-
-
-
-
-
 public class StringTokenizer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.413 -0500", hash_original_method = "D59BD2FA8BCAA8F295BA9C3EB4B8AFB2", hash_generated_method = "CF587A23EF72B905CEA0BC90656AF9D5")
@@ -62,6 +57,7 @@ public static boolean isAlphaDigit(char ch) {
     /** get the SDP field name of the line
      *  @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.448 -0500", hash_original_method = "7A10C3E016CC004EAF4F29E4A9D459FE", hash_generated_method = "CA4E7625FD3E7EB7CD1E90666AC79C43")
     
 public static String getSDPFieldName(String line) {
@@ -77,7 +73,6 @@ public static String getSDPFieldName(String line) {
         return fieldName;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.392 -0500", hash_original_field = "5691B23D11017F76E02A170C10F2BD89", hash_generated_field = "ED717DDCA3146879332E3CB1E590C4E3")
-
 
     protected String buffer;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.395 -0500", hash_original_field = "08B12890D20EE0820616653E031FE559", hash_generated_field = "5E4B7A8AC8566734721FEEDF567651D1")
@@ -125,6 +120,7 @@ public boolean hasMoreChars() {
         return ptr < bufferLen;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.424 -0500", hash_original_method = "4D480BDC007302EAB6B0602B0495288F", hash_generated_method = "CDBA0B6A16BCA3D24BA2D531DC6B7E61")
     
 public String getLine() {
@@ -165,6 +161,7 @@ public char lookAhead(int k) throws ParseException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.435 -0500", hash_original_method = "D29CC80BBA7473591484322BC854C4EB", hash_generated_method = "FFE99E8753ADAC44D4D9B464C2DC77A1")
     
 public char getNextChar() throws ParseException {
@@ -190,6 +187,7 @@ public void consume(int k) {
 
     /** Get a Vector of the buffer tokenized by lines
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.442 -0500", hash_original_method = "790B12C2E8304128473A5E51B3B58D54", hash_generated_method = "CC392EE82C80CDC1182CF47135ADAA15")
     
 public Vector<String> getLines() {
@@ -203,6 +201,7 @@ public Vector<String> getLines() {
 
     /** Get the next token from the buffer.
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.445 -0500", hash_original_method = "758FF66D123B700B938FDF74929D0C7F", hash_generated_method = "DEC02768A488301A544CA126DE10B91E")
     
 public String getNextToken(char delim) throws ParseException {
@@ -217,7 +216,6 @@ public String getNextToken(char delim) throws ParseException {
         }
         return buffer.substring(startIdx, ptr);
     }
-
     
 }
 

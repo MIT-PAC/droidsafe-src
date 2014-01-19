@@ -18,14 +18,8 @@ import android.content.pm.IPackageManager;
 import android.os.Build;
 import android.util.Log;
 
-
-
-
-
 public class GLImpl implements GL10, GL10Ext, GL11, GL11Ext, GL11ExtensionPack {
-
     
-    @DSModeled(DSC.SAFE)
     private static void _nativeClassInit() {
     }
 
@@ -53,7 +47,6 @@ private static boolean allowIndirectBuffers(String appName) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.987 -0500", hash_original_field = "15CBD0DB05354E49FA41EDA6F6894843", hash_generated_field = "15CBD0DB05354E49FA41EDA6F6894843")
 
-
     Buffer _colorPointer = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.990 -0500", hash_original_field = "1D9638494227294B6707A326980392B7", hash_generated_field = "1D9638494227294B6707A326980392B7")
 
@@ -74,7 +67,6 @@ private static boolean allowIndirectBuffers(String appName) {
 
     Buffer _weightPointerOES = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.003 -0500", hash_original_field = "73A1F70905A1BE33646C96B7C05B64F3", hash_generated_field = "AF11D4A762D9150D29527EF81F1566DE")
-
     
     private boolean haveCheckedExtensions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.006 -0500", hash_original_field = "0C660BE3729DC93ABED19DDBD7A37606", hash_generated_field = "84E67FD7C266DDF7D2E0C04DAF1F0E62")
@@ -112,7 +104,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(texture);
     }
 
-
     // C function void glAlphaFunc ( GLenum func, GLclampf ref )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.028 -0500", hash_original_method = "E7B4134F951CACA5D3E260E6C8389AD6", hash_generated_method = "C5168120B38BA72F7BE4D976201F8B93")
@@ -125,7 +116,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(func);
     	addTaint(ref);
     }
-
 
     // C function void glAlphaFuncx ( GLenum func, GLclampx ref )
 
@@ -140,7 +130,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(ref);
     }
 
-
     // C function void glBindTexture ( GLenum target, GLuint texture )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.036 -0500", hash_original_method = "F26D066144D77B7F711F4AD20988DF70", hash_generated_method = "C73E8721A849242A56365AB35218C20C")
@@ -153,7 +142,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(target);
     	addTaint(texture);
     }
-
 
     // C function void glBlendFunc ( GLenum sfactor, GLenum dfactor )
 
@@ -168,7 +156,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(dfactor);
     }
 
-
     // C function void glClear ( GLbitfield mask )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.044 -0500", hash_original_method = "CEF5782DE326F4639690136522E382D5", hash_generated_method = "5177EC30EAFA0F898076FB6D3A77D7C2")
@@ -179,7 +166,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	//Formerly a native method
     	addTaint(mask);
     }
-
 
     // C function void glClearColor ( GLclampf red, GLclampf green, GLclampf blue, GLclampf alpha )
 
@@ -198,7 +184,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(alpha);
     }
 
-
     // C function void glClearColorx ( GLclampx red, GLclampx green, GLclampx blue, GLclampx alpha )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.053 -0500", hash_original_method = "275A5B33E1A225983A518F82979B2F68", hash_generated_method = "7619B5ACBB76D9730A14EDB110B21B74")
@@ -216,7 +201,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(alpha);
     }
 
-
     // C function void glClearDepthf ( GLclampf depth )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.057 -0500", hash_original_method = "1EB7D9BA90DAFE23078810226BAE8C0C", hash_generated_method = "8FCB3131F3E51472F3EC329B10BFD2C8")
@@ -227,7 +211,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	//Formerly a native method
     	addTaint(depth);
     }
-
 
     // C function void glClearDepthx ( GLclampx depth )
 
@@ -240,7 +223,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(depth);
     }
 
-
     // C function void glClearStencil ( GLint s )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.065 -0500", hash_original_method = "0B981F79246B08586C7CE02E0CA71119", hash_generated_method = "DCA4DF71FD50A733261078992B7B41A1")
@@ -252,7 +234,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(s);
     }
 
-
     // C function void glClientActiveTexture ( GLenum texture )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.069 -0500", hash_original_method = "0F933753B69BA360F13E4FB9F8E0065B", hash_generated_method = "78E2341CF250B5EBBB9EFDD3009DE0D8")
@@ -263,7 +244,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	//Formerly a native method
     	addTaint(texture);
     }
-
 
     // C function void glColor4f ( GLfloat red, GLfloat green, GLfloat blue, GLfloat alpha )
 
@@ -282,7 +262,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(alpha);
     }
 
-
     // C function void glColor4x ( GLfixed red, GLfixed green, GLfixed blue, GLfixed alpha )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.081 -0500", hash_original_method = "74951C5E7B28BB879C844C1CB4A28E26", hash_generated_method = "1ECBCF11BA6E32695A29C123766970B0")
@@ -300,7 +279,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(alpha);
     }
 
-
     // C function void glColorMask ( GLboolean red, GLboolean green, GLboolean blue, GLboolean alpha )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.088 -0500", hash_original_method = "35F5236562E70DF9BC2799C8D2FADA8F", hash_generated_method = "C836ED1323D0CD8392F19BB75F121492")
@@ -317,7 +295,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(blue);
     	addTaint(alpha);
     }
-
 
     // C function void glColorPointer ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
@@ -337,7 +314,6 @@ public void glGetPointerv(int pname, java.nio.Buffer[] params) {
     	addTaint(pointer.getTaint());
     	addTaint(remaining);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.097 -0500", hash_original_method = "BE0504B13DA269CA089182E44C7F834B", hash_generated_method = "0A000298EA6D049157E5BBB4051BF9F9")
     
@@ -388,7 +364,6 @@ public void glColorPointer(
     	addTaint(data.getTaint());
     }
 
-
     // C function void glCompressedTexSubImage2D ( GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLsizei imageSize, const GLvoid *data )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.105 -0500", hash_original_method = "5F3B11428832BB3EDC7989E25F3372FC", hash_generated_method = "DFC7696B63DB31547EC142232A5C781D")
@@ -416,7 +391,6 @@ public void glColorPointer(
     	addTaint(data.getTaint());
     }
 
-
     // C function void glCopyTexImage2D ( GLenum target, GLint level, GLenum internalformat, GLint x, GLint y, GLsizei width, GLsizei height, GLint border )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.109 -0500", hash_original_method = "842526CAA5B5EF81DE180C77C64E9061", hash_generated_method = "A015856E8941C769E22B6D7F88137138")
@@ -441,7 +415,6 @@ public void glColorPointer(
     	addTaint(height);
     	addTaint(border);
     }
-
 
     // C function void glCopyTexSubImage2D ( GLenum target, GLint level, GLint xoffset, GLint yoffset, GLint x, GLint y, GLsizei width, GLsizei height )
 
@@ -468,7 +441,6 @@ public void glColorPointer(
     	addTaint(height);
     }
 
-
     // C function void glCullFace ( GLenum mode )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.117 -0500", hash_original_method = "BF058CF8285375279C20F1E97C513D8F", hash_generated_method = "A023E9FC3C8494DB4ADE2D5887E29F1F")
@@ -479,7 +451,6 @@ public void glColorPointer(
     	//Formerly a native method
     	addTaint(mode);
     }
-
 
     // C function void glDeleteTextures ( GLsizei n, const GLuint *textures )
 
@@ -496,7 +467,6 @@ public void glColorPointer(
     	addTaint(offset);
     }
 
-
     // C function void glDeleteTextures ( GLsizei n, const GLuint *textures )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.126 -0500", hash_original_method = "D095348CAE17C3691EC094768112CBAF", hash_generated_method = "94959CAF323EF44EB8E5A4A1A66344FC")
@@ -510,7 +480,6 @@ public void glColorPointer(
     	addTaint(textures.getTaint());
     }
 
-
     // C function void glDepthFunc ( GLenum func )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.130 -0500", hash_original_method = "8C02F7FAED1907F361FD59A628ECBD22", hash_generated_method = "BDFF66F82487D16850CC21912C45AAB7")
@@ -522,7 +491,6 @@ public void glColorPointer(
     	addTaint(func);
     }
 
-
     // C function void glDepthMask ( GLboolean flag )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.134 -0500", hash_original_method = "C2DFC52E0130222A386062E7C36C540C", hash_generated_method = "96ED65E3EB60D232B48CA251AC1A8840")
@@ -533,7 +501,6 @@ public void glColorPointer(
     	//Formerly a native method
     	addTaint(flag);
     }
-
 
     // C function void glDepthRangef ( GLclampf zNear, GLclampf zFar )
 
@@ -548,7 +515,6 @@ public void glColorPointer(
     	addTaint(zFar);
     }
 
-
     // C function void glDepthRangex ( GLclampx zNear, GLclampx zFar )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.141 -0500", hash_original_method = "E32ECE36BCFE7480D9AC74D264F5EFCB", hash_generated_method = "1871F6EBB7CD5F18475D2F4B58AEC6BB")
@@ -562,7 +528,6 @@ public void glColorPointer(
     	addTaint(zFar);
     }
 
-
     // C function void glDisable ( GLenum cap )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.145 -0500", hash_original_method = "256D91725811492CC49701A657A0BEE5", hash_generated_method = "003A969863429C1AEEEE9465FCEC2B03")
@@ -574,7 +539,6 @@ public void glColorPointer(
     	addTaint(cap);
     }
 
-
     // C function void glDisableClientState ( GLenum array )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.148 -0500", hash_original_method = "45A7662FE3309DCB52E9D50B8B88E585", hash_generated_method = "37C33353C2EB36E449AD9FA72A50B296")
@@ -585,7 +549,6 @@ public void glColorPointer(
     	//Formerly a native method
     	addTaint(array);
     }
-
 
     // C function void glDrawArrays ( GLenum mode, GLint first, GLsizei count )
 
@@ -601,7 +564,6 @@ public void glColorPointer(
     	addTaint(first);
     	addTaint(count);
     }
-
 
     // C function void glDrawElements ( GLenum mode, GLsizei count, GLenum type, const GLvoid *indices )
 
@@ -620,7 +582,6 @@ public void glColorPointer(
     	addTaint(indices.getTaint());
     }
 
-
     // C function void glEnable ( GLenum cap )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.161 -0500", hash_original_method = "DA63A528B7CE4387E843DC02AB39FA4E", hash_generated_method = "D9F80F8D24656D37C8368128FFA0C2BE")
@@ -631,7 +592,6 @@ public void glColorPointer(
     	//Formerly a native method
     	addTaint(cap);
     }
-
 
     // C function void glEnableClientState ( GLenum array )
 
@@ -644,7 +604,6 @@ public void glColorPointer(
     	addTaint(array);
     }
 
-
     // C function void glFinish ( void )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.169 -0500", hash_original_method = "B245C18D1679C9F54DA6F9DB4AB7671B", hash_generated_method = "1E29E5E52DCE953B11B35317ED42906C")
@@ -654,7 +613,6 @@ public void glColorPointer(
     	//Formerly a native method
     }
 
-
     // C function void glFlush ( void )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.172 -0500", hash_original_method = "0DC82BEA9D8586E19F2791A82FAA6841", hash_generated_method = "FAAEF6F7F644A398A44B4BE0A342A89A")
@@ -663,7 +621,6 @@ public void glColorPointer(
         ){
     	//Formerly a native method
     }
-
 
     // C function void glFogf ( GLenum pname, GLfloat param )
 
@@ -677,7 +634,6 @@ public void glColorPointer(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glFogfv ( GLenum pname, const GLfloat *params )
 
@@ -694,7 +650,6 @@ public void glColorPointer(
     	addTaint(offset);
     }
 
-
     // C function void glFogfv ( GLenum pname, const GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.185 -0500", hash_original_method = "AD37BF249EE97473580D297C4497D098", hash_generated_method = "6B46FC8B7A190FD10777D13521F87EBA")
@@ -708,7 +663,6 @@ public void glColorPointer(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glFogx ( GLenum pname, GLfixed param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.189 -0500", hash_original_method = "D2A635C8556AD8704E3B26380CA4E66B", hash_generated_method = "CA57CC54A0EE0E44305F2931F9E503B4")
@@ -721,7 +675,6 @@ public void glColorPointer(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glFogxv ( GLenum pname, const GLfixed *params )
 
@@ -738,7 +691,6 @@ public void glColorPointer(
     	addTaint(offset);
     }
 
-
     // C function void glFogxv ( GLenum pname, const GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.197 -0500", hash_original_method = "D9ACE5927E1ADC9EC43FDBC1C3AFD392", hash_generated_method = "6EF281F0C8416D6A9A43C857E7423973")
@@ -752,7 +704,6 @@ public void glColorPointer(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glFrontFace ( GLenum mode )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.201 -0500", hash_original_method = "58E66F9B437E228FC7F553B01D901911", hash_generated_method = "AEAF4DE7CE2D4837C7AD0611B7378256")
@@ -763,7 +714,6 @@ public void glColorPointer(
     	//Formerly a native method
     	addTaint(mode);
     }
-
 
     // C function void glFrustumf ( GLfloat left, GLfloat right, GLfloat bottom, GLfloat top, GLfloat zNear, GLfloat zFar )
 
@@ -786,7 +736,6 @@ public void glColorPointer(
     	addTaint(zFar);
     }
 
-
     // C function void glFrustumx ( GLfixed left, GLfixed right, GLfixed bottom, GLfixed top, GLfixed zNear, GLfixed zFar )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.209 -0500", hash_original_method = "B647E46DB6CC0EF9C5D63CE945C7426B", hash_generated_method = "7E0C69C358071B4AACB3E8CDA3521A3C")
@@ -808,7 +757,6 @@ public void glColorPointer(
     	addTaint(zFar);
     }
 
-
     // C function void glGenTextures ( GLsizei n, GLuint *textures )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.213 -0500", hash_original_method = "F376BD874C5726C877C78955E3906803", hash_generated_method = "90FE1082ACDF4C81B626C7E7CB7AF7DB")
@@ -824,7 +772,6 @@ public void glColorPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGenTextures ( GLsizei n, GLuint *textures )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.217 -0500", hash_original_method = "5433EB0BD32825204D952206851671B4", hash_generated_method = "F9E95B58CC6666C5EB7BF5FCB846D4F0")
@@ -838,7 +785,6 @@ public void glColorPointer(
     	addTaint(textures.getTaint());
     }
 
-
     // C function GLenum glGetError ( void )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.221 -0500", hash_original_method = "3AEB3B830A2084F227EAFBC906BD9186", hash_generated_method = "DD793727C886A722DC5BC460149DF529")
@@ -848,7 +794,6 @@ public void glColorPointer(
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     // C function void glGetIntegerv ( GLenum pname, GLint *params )
 
@@ -865,7 +810,6 @@ public void glColorPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetIntegerv ( GLenum pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.230 -0500", hash_original_method = "773ECB86C0D6C008ED75815E0C485FED", hash_generated_method = "C9E07D5B699DDB20C3AE0B409F4F4B2A")
@@ -878,10 +822,7 @@ public void glColorPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.464 -0400", hash_original_method = "C8F5D66A4A0C233120B2D99EA024C798", hash_generated_method = "C8637FC1886E81608EB74A6761675B8E")
     public String _glGetString(
         int name
@@ -917,7 +858,6 @@ public String glGetString(
     	addTaint(mode);
     }
 
-
     // C function void glLightModelf ( GLenum pname, GLfloat param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.244 -0500", hash_original_method = "5B55D240600D2347D0B596E98C1FD03E", hash_generated_method = "998FD76EB23BBBDAA0275B04386BDF65")
@@ -930,7 +870,6 @@ public String glGetString(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glLightModelfv ( GLenum pname, const GLfloat *params )
 
@@ -947,7 +886,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glLightModelfv ( GLenum pname, const GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.252 -0500", hash_original_method = "F43364E33E247B9D84BA159B372B4002", hash_generated_method = "2FE2D7248B594F9C1A38967EEA71B381")
@@ -961,7 +899,6 @@ public String glGetString(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glLightModelx ( GLenum pname, GLfixed param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.256 -0500", hash_original_method = "9B3A746FED707CC1F39424E3DA8ABB06", hash_generated_method = "1C68A1588A0EE06E26C3813D726BE126")
@@ -974,7 +911,6 @@ public String glGetString(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glLightModelxv ( GLenum pname, const GLfixed *params )
 
@@ -991,7 +927,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glLightModelxv ( GLenum pname, const GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.263 -0500", hash_original_method = "4983CEF3084132F982716E77E65DA0DC", hash_generated_method = "0E003E79E83DFDF08A91600C2421B376")
@@ -1004,7 +939,6 @@ public String glGetString(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glLightf ( GLenum light, GLenum pname, GLfloat param )
 
@@ -1020,7 +954,6 @@ public String glGetString(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glLightfv ( GLenum light, GLenum pname, const GLfloat *params )
 
@@ -1039,7 +972,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glLightfv ( GLenum light, GLenum pname, const GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.278 -0500", hash_original_method = "BBD1B83CF877B43B7D98E2E20B1FA8F5", hash_generated_method = "FF901289A1292E27F88E592262E05E01")
@@ -1055,7 +987,6 @@ public String glGetString(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glLightx ( GLenum light, GLenum pname, GLfixed param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.283 -0500", hash_original_method = "1636FACE953A8B90B672FD6B8B82E049", hash_generated_method = "9978E3CE176C95A0C96F3303FEDEB716")
@@ -1070,7 +1001,6 @@ public String glGetString(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glLightxv ( GLenum light, GLenum pname, const GLfixed *params )
 
@@ -1089,7 +1019,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glLightxv ( GLenum light, GLenum pname, const GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.292 -0500", hash_original_method = "A87D0BD27836CABD7E83A0BE50712B19", hash_generated_method = "27D4ED54B672E4D7DDF8EC9B274C9253")
@@ -1105,7 +1034,6 @@ public String glGetString(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glLineWidth ( GLfloat width )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.296 -0500", hash_original_method = "418A5E015C9F0EF8168906698F676B52", hash_generated_method = "1FF020BF762BD692B345FDAF2C148C39")
@@ -1116,7 +1044,6 @@ public String glGetString(
     	//Formerly a native method
     	addTaint(width);
     }
-
 
     // C function void glLineWidthx ( GLfixed width )
 
@@ -1129,7 +1056,6 @@ public String glGetString(
     	addTaint(width);
     }
 
-
     // C function void glLoadIdentity ( void )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.304 -0500", hash_original_method = "D042F9F6A97E88B9C214C3163B975280", hash_generated_method = "6FD172E341982713333485DFCE9F383C")
@@ -1138,7 +1064,6 @@ public String glGetString(
         ){
     	//Formerly a native method
     }
-
 
     // C function void glLoadMatrixf ( const GLfloat *m )
 
@@ -1153,7 +1078,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glLoadMatrixf ( const GLfloat *m )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.312 -0500", hash_original_method = "837F28F7EEECF84ECA621818DC3C637A", hash_generated_method = "B51E27632D82AE01FA56A4CDA75C7858")
@@ -1164,7 +1088,6 @@ public String glGetString(
     	//Formerly a native method
     	addTaint(m.getTaint());
     }
-
 
     // C function void glLoadMatrixx ( const GLfixed *m )
 
@@ -1179,7 +1102,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glLoadMatrixx ( const GLfixed *m )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.320 -0500", hash_original_method = "3F7B33E669417D7583090F577D211E45", hash_generated_method = "09992BA3780D6B662D48DCE01C937CF1")
@@ -1191,7 +1113,6 @@ public String glGetString(
     	addTaint(m.getTaint());
     }
 
-
     // C function void glLogicOp ( GLenum opcode )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.324 -0500", hash_original_method = "EFB3D7E34F512A452A0388AA3929F12A", hash_generated_method = "0618C06D3E051C37DED8F39653D86DF8")
@@ -1202,7 +1123,6 @@ public String glGetString(
     	//Formerly a native method
     	addTaint(opcode);
     }
-
 
     // C function void glMaterialf ( GLenum face, GLenum pname, GLfloat param )
 
@@ -1218,7 +1138,6 @@ public String glGetString(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glMaterialfv ( GLenum face, GLenum pname, const GLfloat *params )
 
@@ -1237,7 +1156,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glMaterialfv ( GLenum face, GLenum pname, const GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.336 -0500", hash_original_method = "0C556B2BE454B86C9858160252C402E3", hash_generated_method = "852F17F41C53E4326462B5598A370427")
@@ -1253,7 +1171,6 @@ public String glGetString(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glMaterialx ( GLenum face, GLenum pname, GLfixed param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.340 -0500", hash_original_method = "061C8AE3D5B422D4FA509AC9BB661EA2", hash_generated_method = "E976E526230214EF62761B1314398DE9")
@@ -1268,7 +1185,6 @@ public String glGetString(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glMaterialxv ( GLenum face, GLenum pname, const GLfixed *params )
 
@@ -1287,7 +1203,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glMaterialxv ( GLenum face, GLenum pname, const GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.347 -0500", hash_original_method = "C8896486401C23A34B9A8815791ACA5F", hash_generated_method = "98D68D9D9CD53A2AF29F0DBEF9E8795E")
@@ -1303,7 +1218,6 @@ public String glGetString(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glMatrixMode ( GLenum mode )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.352 -0500", hash_original_method = "071A0DE8AF455560D084B2FEE6249056", hash_generated_method = "B8C961B5A1DCFA9635274245018A477C")
@@ -1314,7 +1228,6 @@ public String glGetString(
     	//Formerly a native method
     	addTaint(mode);
     }
-
 
     // C function void glMultMatrixf ( const GLfloat *m )
 
@@ -1329,7 +1242,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glMultMatrixf ( const GLfloat *m )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.360 -0500", hash_original_method = "9713DC69CB7C2DDBF435393A004F3DD4", hash_generated_method = "C40EBD29A1F4FD873389B79CAC6E7A00")
@@ -1340,7 +1252,6 @@ public String glGetString(
     	//Formerly a native method
     	addTaint(m.getTaint());
     }
-
 
     // C function void glMultMatrixx ( const GLfixed *m )
 
@@ -1355,7 +1266,6 @@ public String glGetString(
     	addTaint(offset);
     }
 
-
     // C function void glMultMatrixx ( const GLfixed *m )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.368 -0500", hash_original_method = "DF5EC04F6F5FD65FC1A3F65FA14E17AE", hash_generated_method = "9FDAFEE34D6B1E280292C3E4CB56C15F")
@@ -1366,7 +1276,6 @@ public String glGetString(
     	//Formerly a native method
     	addTaint(m.getTaint());
     }
-
 
     // C function void glMultiTexCoord4f ( GLenum target, GLfloat s, GLfloat t, GLfloat r, GLfloat q )
 
@@ -1387,7 +1296,6 @@ public String glGetString(
     	addTaint(q);
     }
 
-
     // C function void glMultiTexCoord4x ( GLenum target, GLfixed s, GLfixed t, GLfixed r, GLfixed q )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.376 -0500", hash_original_method = "23E284E29F32FC21C7A0FCFA0D22DEB6", hash_generated_method = "24E73D61D15D7C001A675E06CF6D41E6")
@@ -1407,7 +1315,6 @@ public String glGetString(
     	addTaint(q);
     }
 
-
     // C function void glNormal3f ( GLfloat nx, GLfloat ny, GLfloat nz )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.380 -0500", hash_original_method = "9DE586E6F695FF88688A307035F39CA5", hash_generated_method = "6A16A7B10082CF75F20EE810FA1F6649")
@@ -1423,7 +1330,6 @@ public String glGetString(
     	addTaint(nz);
     }
 
-
     // C function void glNormal3x ( GLfixed nx, GLfixed ny, GLfixed nz )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.384 -0500", hash_original_method = "20119369DE227042EDEFDBE3270C3DE9", hash_generated_method = "F87183CB92D1EADD091A2D24E979DBFA")
@@ -1438,7 +1344,6 @@ public String glGetString(
     	addTaint(ny);
     	addTaint(nz);
     }
-
 
     // C function void glNormalPointer ( GLenum type, GLsizei stride, const GLvoid *pointer )
 
@@ -1456,7 +1361,6 @@ public String glGetString(
     	addTaint(pointer.getTaint());
     	addTaint(remaining);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.391 -0500", hash_original_method = "B0279F28E501DAEA74F3B8688C94AB46", hash_generated_method = "19EABBC95EEF8C07A7F0D28523485046")
     
@@ -1501,7 +1405,6 @@ public void glNormalPointer(
     	addTaint(zFar);
     }
 
-
     // C function void glOrthox ( GLfixed left, GLfixed right, GLfixed bottom, GLfixed top, GLfixed zNear, GLfixed zFar )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.399 -0500", hash_original_method = "779BA3AE3934F2C0E0D6CD9B22925617", hash_generated_method = "4274F8550201A11AC81C3498DD87A08C")
@@ -1523,7 +1426,6 @@ public void glNormalPointer(
     	addTaint(zFar);
     }
 
-
     // C function void glPixelStorei ( GLenum pname, GLint param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.404 -0500", hash_original_method = "9F46DCF7880A291F21EA87295ECFB64D", hash_generated_method = "5A300AA59F8253B41974F3B402B8AD7B")
@@ -1537,7 +1439,6 @@ public void glNormalPointer(
     	addTaint(param);
     }
 
-
     // C function void glPointSize ( GLfloat size )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.408 -0500", hash_original_method = "70E088306D05927B07E2ED10F48C457E", hash_generated_method = "792138F828092EDFA9F58F9AC931E5B5")
@@ -1549,7 +1450,6 @@ public void glNormalPointer(
     	addTaint(size);
     }
 
-
     // C function void glPointSizex ( GLfixed size )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.411 -0500", hash_original_method = "8990BB5170BD865165F8304AE65CA7D9", hash_generated_method = "800B311D33080704B324D541ED8B68A7")
@@ -1560,7 +1460,6 @@ public void glNormalPointer(
     	//Formerly a native method
     	addTaint(size);
     }
-
 
     // C function void glPolygonOffset ( GLfloat factor, GLfloat units )
 
@@ -1575,7 +1474,6 @@ public void glNormalPointer(
     	addTaint(units);
     }
 
-
     // C function void glPolygonOffsetx ( GLfixed factor, GLfixed units )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.419 -0500", hash_original_method = "627C0C70B067DF76C0A65620B55C9D89", hash_generated_method = "FD5C57AD169B755876AEA8E1544E4C89")
@@ -1589,7 +1487,6 @@ public void glNormalPointer(
     	addTaint(units);
     }
 
-
     // C function void glPopMatrix ( void )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.423 -0500", hash_original_method = "7B9DD6E697258B776092627B483BEC50", hash_generated_method = "5DF85316C471AA8A268E12BEFACFA67A")
@@ -1599,7 +1496,6 @@ public void glNormalPointer(
     	//Formerly a native method
     }
 
-
     // C function void glPushMatrix ( void )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.427 -0500", hash_original_method = "5E9492F1A35F4DB85CB36C12255394B9", hash_generated_method = "2E8BDA7973E6FD7EA6FFB691486E1EF6")
@@ -1608,7 +1504,6 @@ public void glNormalPointer(
         ){
     	//Formerly a native method
     }
-
 
     // C function void glReadPixels ( GLint x, GLint y, GLsizei width, GLsizei height, GLenum format, GLenum type, GLvoid *pixels )
 
@@ -1633,7 +1528,6 @@ public void glNormalPointer(
     	addTaint(pixels.getTaint());
     }
 
-
     // C function void glRotatef ( GLfloat angle, GLfloat x, GLfloat y, GLfloat z )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.435 -0500", hash_original_method = "1C954364937B2BCE355EFA4F5D15232D", hash_generated_method = "C67ADE2187752927725BB72FC4C1CBFD")
@@ -1650,7 +1544,6 @@ public void glNormalPointer(
     	addTaint(y);
     	addTaint(z);
     }
-
 
     // C function void glRotatex ( GLfixed angle, GLfixed x, GLfixed y, GLfixed z )
 
@@ -1669,7 +1562,6 @@ public void glNormalPointer(
     	addTaint(z);
     }
 
-
     // C function void glSampleCoverage ( GLclampf value, GLboolean invert )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.443 -0500", hash_original_method = "AA4B2DFEFBE4905278A3F5AA24D3A995", hash_generated_method = "DDD7499ABCE8843956F4CD027F47DF48")
@@ -1683,7 +1575,6 @@ public void glNormalPointer(
     	addTaint(invert);
     }
 
-
     // C function void glSampleCoveragex ( GLclampx value, GLboolean invert )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.447 -0500", hash_original_method = "44B6D2540DFD3AA85A51F37AE0763C78", hash_generated_method = "6F412F5048872574FCE9CFCF8FA27EB7")
@@ -1696,7 +1587,6 @@ public void glNormalPointer(
     	addTaint(value);
     	addTaint(invert);
     }
-
 
     // C function void glScalef ( GLfloat x, GLfloat y, GLfloat z )
 
@@ -1713,7 +1603,6 @@ public void glNormalPointer(
     	addTaint(z);
     }
 
-
     // C function void glScalex ( GLfixed x, GLfixed y, GLfixed z )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.456 -0500", hash_original_method = "84D2C12CD2738F500F416AFA5567D4F0", hash_generated_method = "E02E7AAEF99B1D46AB012600E3FB68D0")
@@ -1728,7 +1617,6 @@ public void glNormalPointer(
     	addTaint(y);
     	addTaint(z);
     }
-
 
     // C function void glScissor ( GLint x, GLint y, GLsizei width, GLsizei height )
 
@@ -1747,7 +1635,6 @@ public void glNormalPointer(
     	addTaint(height);
     }
 
-
     // C function void glShadeModel ( GLenum mode )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.463 -0500", hash_original_method = "06D4AD727137B397BA1C790AE88392D9", hash_generated_method = "CD89EA5551BC0AB5B2948CA5E10A8A84")
@@ -1758,7 +1645,6 @@ public void glNormalPointer(
     	//Formerly a native method
     	addTaint(mode);
     }
-
 
     // C function void glStencilFunc ( GLenum func, GLint ref, GLuint mask )
 
@@ -1775,7 +1661,6 @@ public void glNormalPointer(
     	addTaint(mask);
     }
 
-
     // C function void glStencilMask ( GLuint mask )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.471 -0500", hash_original_method = "7094BBA3123BF4E1DB187F35149B8AFA", hash_generated_method = "1944F549D08418430DEFE197D24DFF38")
@@ -1786,7 +1671,6 @@ public void glNormalPointer(
     	//Formerly a native method
     	addTaint(mask);
     }
-
 
     // C function void glStencilOp ( GLenum fail, GLenum zfail, GLenum zpass )
 
@@ -1802,7 +1686,6 @@ public void glNormalPointer(
     	addTaint(zfail);
     	addTaint(zpass);
     }
-
 
     // C function void glTexCoordPointer ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
@@ -1822,7 +1705,6 @@ public void glNormalPointer(
     	addTaint(pointer.getTaint());
     	addTaint(remaining);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.481 -0500", hash_original_method = "76ED75F6FDC0A5E37C32F775B196CB2D", hash_generated_method = "26C6BFF8153E5DCD917E5120E9C37958")
     
@@ -1866,7 +1748,6 @@ public void glTexCoordPointer(
     	addTaint(param);
     }
 
-
     // C function void glTexEnvfv ( GLenum target, GLenum pname, const GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.490 -0500", hash_original_method = "17EB1D9A37B75139BEBB3A24236CA174", hash_generated_method = "40FDD770A1C2C8056F9D00051AFF8868")
@@ -1884,7 +1765,6 @@ public void glTexCoordPointer(
     	addTaint(offset);
     }
 
-
     // C function void glTexEnvfv ( GLenum target, GLenum pname, const GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.494 -0500", hash_original_method = "7DAA860F4B0103CB3FBE5370186D423C", hash_generated_method = "6F9A1A6B33C95615CF7F52DDFC0C7B58")
@@ -1900,7 +1780,6 @@ public void glTexCoordPointer(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glTexEnvx ( GLenum target, GLenum pname, GLfixed param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.498 -0500", hash_original_method = "0B4A8E67F48DF299AEE127C1D6D6E842", hash_generated_method = "6AC40C415FBA2B74B39D343716AF35A3")
@@ -1915,7 +1794,6 @@ public void glTexCoordPointer(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glTexEnvxv ( GLenum target, GLenum pname, const GLfixed *params )
 
@@ -1934,7 +1812,6 @@ public void glTexCoordPointer(
     	addTaint(offset);
     }
 
-
     // C function void glTexEnvxv ( GLenum target, GLenum pname, const GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.506 -0500", hash_original_method = "A182AF661C6E3504BF48BA26E70CC975", hash_generated_method = "75AFBB6F813B4BD012026D3ACB65178B")
@@ -1949,7 +1826,6 @@ public void glTexCoordPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glTexImage2D ( GLenum target, GLint level, GLint internalformat, GLsizei width, GLsizei height, GLint border, GLenum format, GLenum type, const GLvoid *pixels )
 
@@ -1978,7 +1854,6 @@ public void glTexCoordPointer(
     	addTaint(pixels.getTaint());
     }
 
-
     // C function void glTexParameterf ( GLenum target, GLenum pname, GLfloat param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.516 -0500", hash_original_method = "F2C35EB1905189AC842F73F625C9049E", hash_generated_method = "266ED5630C9ED820F5E89680B900131D")
@@ -1994,7 +1869,6 @@ public void glTexCoordPointer(
     	addTaint(param);
     }
 
-
     // C function void glTexParameterx ( GLenum target, GLenum pname, GLfixed param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.520 -0500", hash_original_method = "679BAE0DF1765F687A0745B0BA3EC234", hash_generated_method = "242773463266767E0F42C7A7591BD3CF")
@@ -2009,7 +1883,6 @@ public void glTexCoordPointer(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glTexSubImage2D ( GLenum target, GLint level, GLint xoffset, GLint yoffset, GLsizei width, GLsizei height, GLenum format, GLenum type, const GLvoid *pixels )
 
@@ -2038,7 +1911,6 @@ public void glTexCoordPointer(
     	addTaint(pixels.getTaint());
     }
 
-
     // C function void glTranslatef ( GLfloat x, GLfloat y, GLfloat z )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.528 -0500", hash_original_method = "8D88726507AA19B9B9ECE00EF0AA6770", hash_generated_method = "1B9079C9148C75565007DB0C6735BF8B")
@@ -2054,7 +1926,6 @@ public void glTexCoordPointer(
     	addTaint(z);
     }
 
-
     // C function void glTranslatex ( GLfixed x, GLfixed y, GLfixed z )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.532 -0500", hash_original_method = "156D8083E2F48E9E423D17537DC8B72A", hash_generated_method = "A5954711FC5C76BC4E894E932B3CA897")
@@ -2069,7 +1940,6 @@ public void glTexCoordPointer(
     	addTaint(y);
     	addTaint(z);
     }
-
 
     // C function void glVertexPointer ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
@@ -2089,7 +1959,6 @@ public void glTexCoordPointer(
     	addTaint(pointer.getTaint());
     	addTaint(remaining);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.538 -0500", hash_original_method = "EB50FBD03587D2E27B120FC4C1DFD2C5", hash_generated_method = "CDF0571CE5F50C239BEA09013418FAFA")
     
@@ -2135,7 +2004,6 @@ public void glVertexPointer(
     	addTaint(height);
     }
 
-
     // C function GLbitfield glQueryMatrixxOES ( GLfixed *mantissa, GLint *exponent )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.548 -0500", hash_original_method = "9B92240362A0C24B54C7BFD4F1CE5714", hash_generated_method = "58AE92BB11DD724F78776160263270A7")
@@ -2154,7 +2022,6 @@ public void glVertexPointer(
     	return getTaintInt();
     }
 
-
     // C function GLbitfield glQueryMatrixxOES ( GLfixed *mantissa, GLint *exponent )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.552 -0500", hash_original_method = "101C06E84233F4A43BD578F661A40864", hash_generated_method = "B66AA64622887D181247BB5C164241C1")
@@ -2169,7 +2036,6 @@ public void glVertexPointer(
     	return getTaintInt();
     }
 
-
     // C function void glBindBuffer ( GLenum target, GLuint buffer )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.556 -0500", hash_original_method = "8D2FB6E82772953815CBFED3E425025F", hash_generated_method = "31B1BB640D23890685FA42191A2D1429")
@@ -2182,7 +2048,6 @@ public void glVertexPointer(
     	addTaint(target);
     	addTaint(buffer);
     }
-
 
     // C function void glBufferData ( GLenum target, GLsizeiptr size, const GLvoid *data, GLenum usage )
 
@@ -2201,7 +2066,6 @@ public void glVertexPointer(
     	addTaint(usage);
     }
 
-
     // C function void glBufferSubData ( GLenum target, GLintptr offset, GLsizeiptr size, const GLvoid *data )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.564 -0500", hash_original_method = "8950BE5BF752428FF824E4C8DAF2F401", hash_generated_method = "118829D44C033D9DA9F9A2B950EBC6ED")
@@ -2219,7 +2083,6 @@ public void glVertexPointer(
     	addTaint(data.getTaint());
     }
 
-
     // C function void glClipPlanef ( GLenum plane, const GLfloat *equation )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.568 -0500", hash_original_method = "155F1B281020C8D1BB6048C36DD6FADD", hash_generated_method = "D92BB11FBF1A874BBFAF7B8D9A34B9FC")
@@ -2235,7 +2098,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glClipPlanef ( GLenum plane, const GLfloat *equation )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.572 -0500", hash_original_method = "BFAF1ADDEE7B010F7D84F768A9758F4D", hash_generated_method = "6203E14D40A86A1EA6302762B623FB4A")
@@ -2248,7 +2110,6 @@ public void glVertexPointer(
     	addTaint(plane);
     	addTaint(equation.getTaint());
     }
-
 
     // C function void glClipPlanex ( GLenum plane, const GLfixed *equation )
 
@@ -2265,7 +2126,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glClipPlanex ( GLenum plane, const GLfixed *equation )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.580 -0500", hash_original_method = "0DA6B6D2978A64F63583FC89A46DD2C9", hash_generated_method = "D3121A4BEE0DDF7228AD3D830A6DAB8C")
@@ -2278,7 +2138,6 @@ public void glVertexPointer(
     	addTaint(plane);
     	addTaint(equation.getTaint());
     }
-
 
     // C function void glColor4ub ( GLubyte red, GLubyte green, GLubyte blue, GLubyte alpha )
 
@@ -2297,7 +2156,6 @@ public void glVertexPointer(
     	addTaint(alpha);
     }
 
-
     // C function void glColorPointer ( GLint size, GLenum type, GLsizei stride, GLint offset )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.589 -0500", hash_original_method = "BFA7C744F4E209AD9E46A7063445C612", hash_generated_method = "FA145892E5BEDDA20B5B5CDCB3032FCE")
@@ -2315,7 +2173,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glDeleteBuffers ( GLsizei n, const GLuint *buffers )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.593 -0500", hash_original_method = "E5E400D8B0DD28099195D126630AE3F3", hash_generated_method = "A43E15E7AF53934924E33EE424E01064")
@@ -2331,7 +2188,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glDeleteBuffers ( GLsizei n, const GLuint *buffers )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.597 -0500", hash_original_method = "70C001894D0487E1FC16B5A8E3289001", hash_generated_method = "0CE03670317027DA011CD738769E5300")
@@ -2344,7 +2200,6 @@ public void glVertexPointer(
     	addTaint(n);
     	addTaint(buffers.getTaint());
     }
-
 
     // C function void glDrawElements ( GLenum mode, GLsizei count, GLenum type, GLint offset )
 
@@ -2363,7 +2218,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGenBuffers ( GLsizei n, GLuint *buffers )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.606 -0500", hash_original_method = "FA01B6EEE9A8B6C56F123033DDBB027C", hash_generated_method = "AA9BF7F1582100C83D14090A58CA03A2")
@@ -2379,7 +2233,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGenBuffers ( GLsizei n, GLuint *buffers )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.609 -0500", hash_original_method = "A06F6445182A854FF9614FEACAA08BDA", hash_generated_method = "40433EF458C765EC776E0F9467D20D4B")
@@ -2392,7 +2245,6 @@ public void glVertexPointer(
     	addTaint(n);
     	addTaint(buffers.getTaint());
     }
-
 
     // C function void glGetBooleanv ( GLenum pname, GLboolean *params )
 
@@ -2409,7 +2261,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetBooleanv ( GLenum pname, GLboolean *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.618 -0500", hash_original_method = "6AE434FF80C80956E80241A5F3448A43", hash_generated_method = "4AB2BA038585DEF1AE5F89D98D5003C2")
@@ -2422,7 +2273,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetBufferParameteriv ( GLenum target, GLenum pname, GLint *params )
 
@@ -2441,7 +2291,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetBufferParameteriv ( GLenum target, GLenum pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.626 -0500", hash_original_method = "72ED25126A92670FCEBB1B4962677465", hash_generated_method = "C22840F6B606CF4A31746F6A85248864")
@@ -2456,7 +2305,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetClipPlanef ( GLenum pname, GLfloat *eqn )
 
@@ -2473,7 +2321,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetClipPlanef ( GLenum pname, GLfloat *eqn )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.635 -0500", hash_original_method = "1C111E4CC3829517C17B35EA499D5BFD", hash_generated_method = "B705A752299A506A0C28C8F3722F1240")
@@ -2486,7 +2333,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(eqn.getTaint());
     }
-
 
     // C function void glGetClipPlanex ( GLenum pname, GLfixed *eqn )
 
@@ -2503,7 +2349,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetClipPlanex ( GLenum pname, GLfixed *eqn )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.643 -0500", hash_original_method = "4DB3F0354D2E2FDC4D6C7551700566FD", hash_generated_method = "35825992D09D4B75B58E8BBF13CC11FE")
@@ -2516,7 +2361,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(eqn.getTaint());
     }
-
 
     // C function void glGetFixedv ( GLenum pname, GLfixed *params )
 
@@ -2533,7 +2377,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetFixedv ( GLenum pname, GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.652 -0500", hash_original_method = "D5438CEA44EE048204E6C055FB0ADA7A", hash_generated_method = "3DCCB10EC603B358B9A870CE805ADB4F")
@@ -2546,7 +2389,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetFloatv ( GLenum pname, GLfloat *params )
 
@@ -2563,7 +2405,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetFloatv ( GLenum pname, GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.660 -0500", hash_original_method = "3B5B54F3207F36DC8458C2C22ECF19A7", hash_generated_method = "3991BA1A775456E37F0CAB1DCCE0997C")
@@ -2576,7 +2417,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetLightfv ( GLenum light, GLenum pname, GLfloat *params )
 
@@ -2595,7 +2435,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetLightfv ( GLenum light, GLenum pname, GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.668 -0500", hash_original_method = "6D38AF1876F30D3A6786EFE90DF09285", hash_generated_method = "7BEDE3058B0EA1763B1385D85AC5D95A")
@@ -2610,7 +2449,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetLightxv ( GLenum light, GLenum pname, GLfixed *params )
 
@@ -2629,7 +2467,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetLightxv ( GLenum light, GLenum pname, GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.676 -0500", hash_original_method = "858C4450F94D83CD8A405C5DA4478E6B", hash_generated_method = "1BF6316E4C1060F7715EAC602B45DB52")
@@ -2644,7 +2481,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetMaterialfv ( GLenum face, GLenum pname, GLfloat *params )
 
@@ -2663,7 +2499,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetMaterialfv ( GLenum face, GLenum pname, GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.684 -0500", hash_original_method = "AAEA106163ADE72C9EC108D40BEC96F3", hash_generated_method = "6245D365492906F66B5D98708897D6B1")
@@ -2678,7 +2513,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetMaterialxv ( GLenum face, GLenum pname, GLfixed *params )
 
@@ -2697,7 +2531,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetMaterialxv ( GLenum face, GLenum pname, GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.692 -0500", hash_original_method = "77D07CA7E363A44E04443485884C5B13", hash_generated_method = "94ACC39CD79FD9888707AA623F263899")
@@ -2712,7 +2545,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetTexEnviv ( GLenum env, GLenum pname, GLint *params )
 
@@ -2731,7 +2563,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetTexEnviv ( GLenum env, GLenum pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.700 -0500", hash_original_method = "E065D6D8A539FB0D184E951B3A77BFAF", hash_generated_method = "6629A53BFA4BB2D456B613180B5B787C")
@@ -2746,7 +2577,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetTexEnvxv ( GLenum env, GLenum pname, GLfixed *params )
 
@@ -2765,7 +2595,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetTexEnvxv ( GLenum env, GLenum pname, GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.709 -0500", hash_original_method = "4763956A6FE09C8FE7B17EE79BBD7E20", hash_generated_method = "FE97EBCC2DE28A98B0133904B0530872")
@@ -2780,7 +2609,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetTexParameterfv ( GLenum target, GLenum pname, GLfloat *params )
 
@@ -2799,7 +2627,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetTexParameterfv ( GLenum target, GLenum pname, GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.716 -0500", hash_original_method = "4367C68441A9AA98F01515FDC90FDB44", hash_generated_method = "7A7A9E49CB9AA0CF1B828B34A367161C")
@@ -2814,7 +2641,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetTexParameteriv ( GLenum target, GLenum pname, GLint *params )
 
@@ -2833,7 +2659,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetTexParameteriv ( GLenum target, GLenum pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.725 -0500", hash_original_method = "71368889A06C9E1744E4E25318DA6058", hash_generated_method = "14B503906C43DAF9055719AC89E05CED")
@@ -2848,7 +2673,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetTexParameterxv ( GLenum target, GLenum pname, GLfixed *params )
 
@@ -2867,7 +2691,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glGetTexParameterxv ( GLenum target, GLenum pname, GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.733 -0500", hash_original_method = "374E464895B48D2BEAC554053928B2AF", hash_generated_method = "53E9DD10B71C2B31ECAF925626FDC011")
@@ -2883,7 +2706,6 @@ public void glVertexPointer(
     	addTaint(params.getTaint());
     }
 
-
     // C function GLboolean glIsBuffer ( GLuint buffer )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.737 -0500", hash_original_method = "5CBCE22A13679DB40202021E228060B4", hash_generated_method = "E623043B3115F13D1F67EF02DEA718A4")
@@ -2895,7 +2717,6 @@ public void glVertexPointer(
     	addTaint(buffer);
     	return getTaintBoolean();
     }
-
 
     // C function GLboolean glIsEnabled ( GLenum cap )
 
@@ -2909,7 +2730,6 @@ public void glVertexPointer(
     	return getTaintBoolean();
     }
 
-
     // C function GLboolean glIsTexture ( GLuint texture )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.745 -0500", hash_original_method = "B0774EFDFDF7E34E3A748242DEA5FF75", hash_generated_method = "CF2615EFCC4B47B35A6D097235D79AE6")
@@ -2921,7 +2741,6 @@ public void glVertexPointer(
     	addTaint(texture);
     	return getTaintBoolean();
     }
-
 
     // C function void glNormalPointer ( GLenum type, GLsizei stride, GLint offset )
 
@@ -2938,7 +2757,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glPointParameterf ( GLenum pname, GLfloat param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.754 -0500", hash_original_method = "E63CD7975861B2CCB6AD8F16DA976646", hash_generated_method = "31B3D2BF2CC08D5A9E1EA4A5AE034F6E")
@@ -2951,7 +2769,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glPointParameterfv ( GLenum pname, const GLfloat *params )
 
@@ -2968,7 +2785,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glPointParameterfv ( GLenum pname, const GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.761 -0500", hash_original_method = "6E76F6C08D9C74E626F785B0CF4DDD86", hash_generated_method = "8C91BBD2E346D3DA3DD90F4D8DFF47BA")
@@ -2982,7 +2798,6 @@ public void glVertexPointer(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glPointParameterx ( GLenum pname, GLfixed param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.765 -0500", hash_original_method = "2BB54735F90AB9973C6E35C2068C71E7", hash_generated_method = "199C98310F2B16AD70A2E76C58E65C27")
@@ -2995,7 +2810,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glPointParameterxv ( GLenum pname, const GLfixed *params )
 
@@ -3012,7 +2826,6 @@ public void glVertexPointer(
     	addTaint(offset);
     }
 
-
     // C function void glPointParameterxv ( GLenum pname, const GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.774 -0500", hash_original_method = "C6C705CE06675FCC62C044DF88D7C5DF", hash_generated_method = "CBA580E32C927287A79E1F83FADE4A9A")
@@ -3025,7 +2838,6 @@ public void glVertexPointer(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glPointSizePointerOES ( GLenum type, GLsizei stride, const GLvoid *pointer )
 
@@ -3043,7 +2855,6 @@ public void glVertexPointer(
     	addTaint(pointer.getTaint());
     	addTaint(remaining);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.780 -0500", hash_original_method = "EC0D07F3AF47DBC4190CF008FCA93E16", hash_generated_method = "573822153179A8174E41A0B8AB94E64C")
     
@@ -3082,7 +2893,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glTexEnvi ( GLenum target, GLenum pname, GLint param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.788 -0500", hash_original_method = "D87BE224D969AEA6EA7B6B5DC106EE96", hash_generated_method = "478D76EEF06E16C314742767064F78B9")
@@ -3097,7 +2907,6 @@ public void glPointSizePointerOES(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glTexEnviv ( GLenum target, GLenum pname, const GLint *params )
 
@@ -3116,7 +2925,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glTexEnviv ( GLenum target, GLenum pname, const GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.799 -0500", hash_original_method = "5C6F79AEDC5DC4EAF22C5D32A1DF3A50", hash_generated_method = "75073F3880CCE911B645B76017140F32")
@@ -3131,7 +2939,6 @@ public void glPointSizePointerOES(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glTexParameterfv ( GLenum target, GLenum pname, const GLfloat *params )
 
@@ -3150,7 +2957,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glTexParameterfv ( GLenum target, GLenum pname, const GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.806 -0500", hash_original_method = "6A0800686C986953231F118EFA89B68E", hash_generated_method = "D0A76304B8B71557E96E180094ED8B7A")
@@ -3166,7 +2972,6 @@ public void glPointSizePointerOES(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glTexParameteri ( GLenum target, GLenum pname, GLint param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.811 -0500", hash_original_method = "1ACB3111112291A939213D1C616FDF01", hash_generated_method = "A00888CC17F98BAC3BB05680DCFE3142")
@@ -3181,7 +2986,6 @@ public void glPointSizePointerOES(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glTexParameteriv ( GLenum target, GLenum pname, const GLint *params )
 
@@ -3200,7 +3004,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glTexParameteriv ( GLenum target, GLenum pname, const GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.819 -0500", hash_original_method = "14BFADF901BE034B97F27EFDB7249EC5", hash_generated_method = "362AE167B60B8D17F1D233E424CF1727")
@@ -3215,7 +3018,6 @@ public void glPointSizePointerOES(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glTexParameterxv ( GLenum target, GLenum pname, const GLfixed *params )
 
@@ -3234,7 +3036,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glTexParameterxv ( GLenum target, GLenum pname, const GLfixed *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.828 -0500", hash_original_method = "04A367584151D9D9FD975F225EE885B4", hash_generated_method = "BE8C03AD9C7B0EB3149391F7F09820F4")
@@ -3249,7 +3050,6 @@ public void glPointSizePointerOES(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glVertexPointer ( GLint size, GLenum type, GLsizei stride, GLint offset )
 
@@ -3268,7 +3068,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glCurrentPaletteMatrixOES ( GLuint matrixpaletteindex )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.837 -0500", hash_original_method = "95BA1F07B3AEB4D134CCBDFFE0DB7EE4", hash_generated_method = "DB151D95BCB48DAC6D6F0BD013C8A282")
@@ -3279,7 +3078,6 @@ public void glPointSizePointerOES(
     	//Formerly a native method
     	addTaint(matrixpaletteindex);
     }
-
 
     // C function void glDrawTexfOES ( GLfloat x, GLfloat y, GLfloat z, GLfloat width, GLfloat height )
 
@@ -3300,7 +3098,6 @@ public void glPointSizePointerOES(
     	addTaint(height);
     }
 
-
     // C function void glDrawTexfvOES ( const GLfloat *coords )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.845 -0500", hash_original_method = "1910442FB838D19DD4C27DB699DB4D46", hash_generated_method = "315CDF7E83469E9E156A98E8012ED4AB")
@@ -3314,7 +3111,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glDrawTexfvOES ( const GLfloat *coords )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.848 -0500", hash_original_method = "831C162EE3D2DC1DF6F1AE6669ECD44A", hash_generated_method = "1B06CC971A9A00374A3E6478D496FA4A")
@@ -3325,7 +3121,6 @@ public void glPointSizePointerOES(
     	//Formerly a native method
     	addTaint(coords.getTaint());
     }
-
 
     // C function void glDrawTexiOES ( GLint x, GLint y, GLint z, GLint width, GLint height )
 
@@ -3346,7 +3141,6 @@ public void glPointSizePointerOES(
     	addTaint(height);
     }
 
-
     // C function void glDrawTexivOES ( const GLint *coords )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.858 -0500", hash_original_method = "38C985EB15B5E699CFA5800CE9313B6C", hash_generated_method = "5167A7D49CC26DBD171ABE8BA204A738")
@@ -3360,7 +3154,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glDrawTexivOES ( const GLint *coords )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.862 -0500", hash_original_method = "2E2E2E76797892659616F6D96EE421EA", hash_generated_method = "8C9C317B46D5534672A63517F607D7AB")
@@ -3371,7 +3164,6 @@ public void glPointSizePointerOES(
     	//Formerly a native method
     	addTaint(coords.getTaint());
     }
-
 
     // C function void glDrawTexsOES ( GLshort x, GLshort y, GLshort z, GLshort width, GLshort height )
 
@@ -3392,7 +3184,6 @@ public void glPointSizePointerOES(
     	addTaint(height);
     }
 
-
     // C function void glDrawTexsvOES ( const GLshort *coords )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.870 -0500", hash_original_method = "91E6CBADB398633A4383C31A0AD86296", hash_generated_method = "4439971046D5E58B667222CA4FDA4D03")
@@ -3406,7 +3197,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glDrawTexsvOES ( const GLshort *coords )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.873 -0500", hash_original_method = "0954B7C7035D691303E55E25D6EFB672", hash_generated_method = "27E2A4117FE9AA8E7348DB6BBBEE1460")
@@ -3417,7 +3207,6 @@ public void glPointSizePointerOES(
     	//Formerly a native method
     	addTaint(coords.getTaint());
     }
-
 
     // C function void glDrawTexxOES ( GLfixed x, GLfixed y, GLfixed z, GLfixed width, GLfixed height )
 
@@ -3438,7 +3227,6 @@ public void glPointSizePointerOES(
     	addTaint(height);
     }
 
-
     // C function void glDrawTexxvOES ( const GLfixed *coords )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.881 -0500", hash_original_method = "2F7A3F5025DF5EF064319814B3209A3C", hash_generated_method = "0CDF2DF76A5C389DFBCB3F6F95017F5C")
@@ -3452,7 +3240,6 @@ public void glPointSizePointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glDrawTexxvOES ( const GLfixed *coords )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.886 -0500", hash_original_method = "51D917B4A8B9530FF8924BF2E6AF392B", hash_generated_method = "D7E655B256849F097DFDF59CA829763F")
@@ -3464,7 +3251,6 @@ public void glPointSizePointerOES(
     	addTaint(coords.getTaint());
     }
 
-
     // C function void glLoadPaletteFromModelViewMatrixOES ( void )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.890 -0500", hash_original_method = "0DEF4FDA31B693FD58B4F5466D1F6B2D", hash_generated_method = "2A346EF012D053D9993CB1ACC0E78FF4")
@@ -3473,7 +3259,6 @@ public void glPointSizePointerOES(
         ){
     	//Formerly a native method
     }
-
 
     // C function void glMatrixIndexPointerOES ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
@@ -3493,7 +3278,6 @@ public void glPointSizePointerOES(
     	addTaint(pointer.getTaint());
     	addTaint(remaining);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.896 -0500", hash_original_method = "A2DEF3847665EA2F7AE241D0B05BBB08", hash_generated_method = "98EE92C9ACB66EF29A184648B207D31C")
     
@@ -3539,7 +3323,6 @@ public void glMatrixIndexPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glWeightPointerOES ( GLint size, GLenum type, GLsizei stride, const GLvoid *pointer )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.905 -0500", hash_original_method = "733A86C2F1705E763179D2C64FE1F559", hash_generated_method = "E24695617E5C147F5AC582DB338C49E7")
@@ -3558,7 +3341,6 @@ public void glMatrixIndexPointerOES(
     	addTaint(pointer.getTaint());
     	addTaint(remaining);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.908 -0500", hash_original_method = "DA1591FF7EA6F5F9EAE67C123814B637", hash_generated_method = "CCD8573B351DECAD987D3711506887B5")
     
@@ -3594,7 +3376,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glBindFramebufferOES ( GLint target, GLint framebuffer )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.916 -0500", hash_original_method = "7012E0C28CAA85B7F547C387DC5490BF", hash_generated_method = "A78DC9B5762312C65B39F79D1511A1A4")
@@ -3607,7 +3388,6 @@ public void glWeightPointerOES(
     	addTaint(target);
     	addTaint(framebuffer);
     }
-
 
     // C function void glBindRenderbufferOES ( GLint target, GLint renderbuffer )
 
@@ -3622,7 +3402,6 @@ public void glWeightPointerOES(
     	addTaint(renderbuffer);
     }
 
-
     // C function void glBlendEquation ( GLint mode )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.924 -0500", hash_original_method = "96629AB18523F1B8BD5CC1F0B06C9A3A", hash_generated_method = "00DA7C4CC0C2CCCEC590F04CA5D41206")
@@ -3633,7 +3412,6 @@ public void glWeightPointerOES(
     	//Formerly a native method
     	addTaint(mode);
     }
-
 
     // C function void glBlendEquationSeparate ( GLint modeRGB, GLint modeAlpha )
 
@@ -3647,7 +3425,6 @@ public void glWeightPointerOES(
     	addTaint(modeRGB);
     	addTaint(modeAlpha);
     }
-
 
     // C function void glBlendFuncSeparate ( GLint srcRGB, GLint dstRGB, GLint srcAlpha, GLint dstAlpha )
 
@@ -3666,7 +3443,6 @@ public void glWeightPointerOES(
     	addTaint(dstAlpha);
     }
 
-
     // C function GLint glCheckFramebufferStatusOES ( GLint target )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.936 -0500", hash_original_method = "B1A4A768D52CA135614FAA74BF2A89E7", hash_generated_method = "D6481D07FAE147CB83604D702015BD27")
@@ -3678,7 +3454,6 @@ public void glWeightPointerOES(
     	addTaint(target);
     	return getTaintInt();
     }
-
 
     // C function void glDeleteFramebuffersOES ( GLint n, GLuint *framebuffers )
 
@@ -3695,7 +3470,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glDeleteFramebuffersOES ( GLint n, GLuint *framebuffers )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.944 -0500", hash_original_method = "0DFDB8F7E46ED0CE9E0FCF78465DA298", hash_generated_method = "A9AA34096737E48D22F6168A0953F8C0")
@@ -3708,7 +3482,6 @@ public void glWeightPointerOES(
     	addTaint(n);
     	addTaint(framebuffers.getTaint());
     }
-
 
     // C function void glDeleteRenderbuffersOES ( GLint n, GLuint *renderbuffers )
 
@@ -3725,7 +3498,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glDeleteRenderbuffersOES ( GLint n, GLuint *renderbuffers )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.952 -0500", hash_original_method = "46CFE024939DBAEA7FE408A9C7C03F41", hash_generated_method = "D0725E2523DB512623E2FB6886C360CE")
@@ -3738,7 +3510,6 @@ public void glWeightPointerOES(
     	addTaint(n);
     	addTaint(renderbuffers.getTaint());
     }
-
 
     // C function void glFramebufferRenderbufferOES ( GLint target, GLint attachment, GLint renderbuffertarget, GLint renderbuffer )
 
@@ -3756,7 +3527,6 @@ public void glWeightPointerOES(
     	addTaint(renderbuffertarget);
     	addTaint(renderbuffer);
     }
-
 
     // C function void glFramebufferTexture2DOES ( GLint target, GLint attachment, GLint textarget, GLint texture, GLint level )
 
@@ -3777,7 +3547,6 @@ public void glWeightPointerOES(
     	addTaint(level);
     }
 
-
     // C function void glGenerateMipmapOES ( GLint target )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.965 -0500", hash_original_method = "CF3BBC0690535D9ACEDA510E7C25FE93", hash_generated_method = "3AEDC1F8D9073C10B9A51E13977999E5")
@@ -3788,7 +3557,6 @@ public void glWeightPointerOES(
     	//Formerly a native method
     	addTaint(target);
     }
-
 
     // C function void glGenFramebuffersOES ( GLint n, GLuint *framebuffers )
 
@@ -3805,7 +3573,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glGenFramebuffersOES ( GLint n, GLuint *framebuffers )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.973 -0500", hash_original_method = "4BB7994AB48E0E49BC5DEE99DDBE64C7", hash_generated_method = "CE668B7C044DDA5C52DC2CF2295D41CD")
@@ -3818,7 +3585,6 @@ public void glWeightPointerOES(
     	addTaint(n);
     	addTaint(framebuffers.getTaint());
     }
-
 
     // C function void glGenRenderbuffersOES ( GLint n, GLuint *renderbuffers )
 
@@ -3835,7 +3601,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glGenRenderbuffersOES ( GLint n, GLuint *renderbuffers )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.981 -0500", hash_original_method = "7033C2CDCB61F1BA8BB94D8B8850FD60", hash_generated_method = "AC7FFEE97F82353A42C5C1D00A12BE5E")
@@ -3848,7 +3613,6 @@ public void glWeightPointerOES(
     	addTaint(n);
     	addTaint(renderbuffers.getTaint());
     }
-
 
     // C function void glGetFramebufferAttachmentParameterivOES ( GLint target, GLint attachment, GLint pname, GLint *params )
 
@@ -3869,7 +3633,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glGetFramebufferAttachmentParameterivOES ( GLint target, GLint attachment, GLint pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.989 -0500", hash_original_method = "80E3B7662123EAE7B5048632F9E3C14B", hash_generated_method = "40597A13972A9B4125F0C71BDEF8C94C")
@@ -3886,7 +3649,6 @@ public void glWeightPointerOES(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetRenderbufferParameterivOES ( GLint target, GLint pname, GLint *params )
 
@@ -3905,7 +3667,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glGetRenderbufferParameterivOES ( GLint target, GLint pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:17.998 -0500", hash_original_method = "D4443F3E98C9A915B5F88EF6379DF720", hash_generated_method = "BE37D9B816D0D50C81B057692966EAC6")
@@ -3920,7 +3681,6 @@ public void glWeightPointerOES(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetTexGenfv ( GLint coord, GLint pname, GLfloat *params )
 
@@ -3939,7 +3699,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glGetTexGenfv ( GLint coord, GLint pname, GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.007 -0500", hash_original_method = "BA57774F60DC2980B7FF38B0A2E8016F", hash_generated_method = "98071483354F54C1FBAEFD71E463E3B1")
@@ -3954,7 +3713,6 @@ public void glWeightPointerOES(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetTexGeniv ( GLint coord, GLint pname, GLint *params )
 
@@ -3973,7 +3731,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glGetTexGeniv ( GLint coord, GLint pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.015 -0500", hash_original_method = "EF430454571D4D94946D5978BDE708A5", hash_generated_method = "3E565924B658838906CCB702EEE802E0")
@@ -3988,7 +3745,6 @@ public void glWeightPointerOES(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
 
     // C function void glGetTexGenxv ( GLint coord, GLint pname, GLint *params )
 
@@ -4007,7 +3763,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glGetTexGenxv ( GLint coord, GLint pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.024 -0500", hash_original_method = "AA312740D7D8B86852FA57EC0F935C49", hash_generated_method = "1E4F245335D342999EE3157A2DD5CDEC")
@@ -4023,7 +3778,6 @@ public void glWeightPointerOES(
     	addTaint(params.getTaint());
     }
 
-
     // C function GLboolean glIsFramebufferOES ( GLint framebuffer )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.029 -0500", hash_original_method = "0A5D6A2632DB9C567FFD91F0ACA40965", hash_generated_method = "3B4190DAD4FA0F3A408498E1B5034E74")
@@ -4036,7 +3790,6 @@ public void glWeightPointerOES(
     	return getTaintBoolean();
     }
 
-
     // C function GLboolean glIsRenderbufferOES ( GLint renderbuffer )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.033 -0500", hash_original_method = "B2AFE473D5090C2AFBF0DD5218613E24", hash_generated_method = "BAE1CE66980EBA598856A52EF42007CB")
@@ -4048,7 +3801,6 @@ public void glWeightPointerOES(
     	addTaint(renderbuffer);
     	return getTaintBoolean();
     }
-
 
     // C function void glRenderbufferStorageOES ( GLint target, GLint internalformat, GLint width, GLint height )
 
@@ -4067,7 +3819,6 @@ public void glWeightPointerOES(
     	addTaint(height);
     }
 
-
     // C function void glTexGenf ( GLint coord, GLint pname, GLfloat param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.043 -0500", hash_original_method = "DF1DDF095262CB65042B8B6E4ACB5D83", hash_generated_method = "EBE13106BC643AD7F752C84BCFC8EB0C")
@@ -4082,7 +3833,6 @@ public void glWeightPointerOES(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glTexGenfv ( GLint coord, GLint pname, GLfloat *params )
 
@@ -4101,7 +3851,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glTexGenfv ( GLint coord, GLint pname, GLfloat *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.051 -0500", hash_original_method = "D8B15F6B92AF3D4541AFD7FC1F3284DA", hash_generated_method = "10B5F3AC69C73D40BC528D8671403C00")
@@ -4117,7 +3866,6 @@ public void glWeightPointerOES(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glTexGeni ( GLint coord, GLint pname, GLint param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.055 -0500", hash_original_method = "53C8322668092422760AEEABF3A0A50D", hash_generated_method = "69FF5F5E1517C97751828CAC43F4C1B2")
@@ -4132,7 +3880,6 @@ public void glWeightPointerOES(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glTexGeniv ( GLint coord, GLint pname, GLint *params )
 
@@ -4151,7 +3898,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glTexGeniv ( GLint coord, GLint pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.063 -0500", hash_original_method = "E7AA7F75A0A7E8AB84868E171B6AFAE8", hash_generated_method = "18FC549CAF8EACFC7C49BD599B902003")
@@ -4167,7 +3913,6 @@ public void glWeightPointerOES(
     	addTaint(params.getTaint());
     }
 
-
     // C function void glTexGenx ( GLint coord, GLint pname, GLint param )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.067 -0500", hash_original_method = "231B06A212F7462B4A9045C185C5C0A0", hash_generated_method = "84E04F840384BFEAF55501E594108E16")
@@ -4182,7 +3927,6 @@ public void glWeightPointerOES(
     	addTaint(pname);
     	addTaint(param);
     }
-
 
     // C function void glTexGenxv ( GLint coord, GLint pname, GLint *params )
 
@@ -4201,7 +3945,6 @@ public void glWeightPointerOES(
     	addTaint(offset);
     }
 
-
     // C function void glTexGenxv ( GLint coord, GLint pname, GLint *params )
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:18.077 -0500", hash_original_method = "33A72688981BB5774C2892D6B098DC19", hash_generated_method = "A0830F82FA1193AF1347E5FEE837F96D")
@@ -4216,8 +3959,6 @@ public void glWeightPointerOES(
     	addTaint(pname);
     	addTaint(params.getTaint());
     }
-
-
     
     static {
 	_nativeClassInit();

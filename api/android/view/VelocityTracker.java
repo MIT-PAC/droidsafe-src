@@ -9,53 +9,34 @@ import android.util.Poolable;
 import android.util.PoolableManager;
 import android.util.Pools;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class VelocityTracker implements Poolable<VelocityTracker> {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeInitialize() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDispose(int ptr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClear(int ptr) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeAddMovement(int ptr, MotionEvent event) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeComputeCurrentVelocity(int ptr, int units, float maxVelocity) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetXVelocity(int ptr, int id) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static float nativeGetYVelocity(int ptr, int id) {
         return DSUtils.UNKNOWN_FLOAT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeGetEstimator(int ptr, int id,
             int degree, int horizonMillis, Estimator outEstimator) {
         return DSUtils.UNKNOWN_BOOLEAN;
@@ -69,13 +50,13 @@ public final class VelocityTracker implements Poolable<VelocityTracker> {
      *
      * @return Returns a new VelocityTracker.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.331 -0500", hash_original_method = "83965EAF73271D6A9CB89F99F2C4B6CA", hash_generated_method = "CA09BFD1026C74084FB63F043FC190B2")
     
 static public VelocityTracker obtain() {
         return sPool.acquire();
     }
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:44.287 -0400", hash_original_field = "7D322AC6B02AE1303D1EE66F45C4A4CD", hash_generated_field = "B8A4DDDA4C487415D4255708CB5FC0DF")
 
@@ -100,10 +81,8 @@ public void onReleased(VelocityTracker element) {
             }, 2));
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.287 -0500", hash_original_field = "A95286ACA8C408D15B5D383D6EEFACF5", hash_generated_field = "FF8FF6E56B8D783C306CE7F0923B38D1")
 
-
     private static final int ACTIVE_POINTER_ID = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.289 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "E9A8054C2C57C0CE861FDCA982433D1A")
-
 
     private int mPtr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.292 -0500", hash_original_field = "0A4BF458203BDE753039342AAF95A5A1", hash_generated_field = "5B4B8EC4C61CE05CF5BB2F5E71D6C6C3")
@@ -123,6 +102,8 @@ private VelocityTracker() {
      * Return a VelocityTracker object back to be re-used by others.  You must
      * not touch the object after calling this function.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.333 -0500", hash_original_method = "E0F67E3C99A5EE80DA0668A59C0EFAE4", hash_generated_method = "670C7475CA1A8676109F0146EDF2835F")
     
 public void recycle() {
@@ -141,6 +122,7 @@ public void setNextPoolable(VelocityTracker element) {
     /**
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.338 -0500", hash_original_method = "DEA3C3D2ED346DE60DC91CC9918022D0", hash_generated_method = "42A1357B7A96D732A658235D653E2787")
     
 public VelocityTracker getNextPoolable() {
@@ -182,6 +164,8 @@ public void setPooled(boolean isPooled) {
     /**
      * Reset the velocity tracker back to its initial state.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.351 -0500", hash_original_method = "3EB8DC396E0D228312A300339405C305", hash_generated_method = "06F1896A45565DE0EEB2186E14C17B70")
     
 public void clear() {
@@ -197,6 +181,8 @@ public void clear() {
      * 
      * @param event The MotionEvent you received and would like to track.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.356 -0500", hash_original_method = "47F4DCEEC62F25E97556D9BB3D79B1AA", hash_generated_method = "5DE818E3E8CB4728E4973FF1EEA10BAD")
     
 public void addMovement(MotionEvent event) {
@@ -212,6 +198,8 @@ public void addMovement(MotionEvent event) {
      * 
      * @see #computeCurrentVelocity(int, float) 
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.359 -0500", hash_original_method = "2C861C2E66E6C5ED5AC5356AA16D4AE7", hash_generated_method = "822CA4AF8508A5C0866EC9F8560F295B")
     
 public void computeCurrentVelocity(int units) {
@@ -231,6 +219,8 @@ public void computeCurrentVelocity(int units) {
      * This value must be declared in the same unit as the units parameter. This value
      * must be positive.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.361 -0500", hash_original_method = "AAC1E150F0714A1C0618591FDBA33AD9", hash_generated_method = "6B3A46916073D4ABA6A4E47C14ECD24E")
     
 public void computeCurrentVelocity(int units, float maxVelocity) {
@@ -243,6 +233,9 @@ public void computeCurrentVelocity(int units, float maxVelocity) {
      * 
      * @return The previously computed X velocity.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.364 -0500", hash_original_method = "175B9FF596A60DD4A27A3E2F4F8FB36B", hash_generated_method = "94CCC2DA112CB63C65BA90B4DDA5148C")
     
 public float getXVelocity() {
@@ -255,6 +248,9 @@ public float getXVelocity() {
      * 
      * @return The previously computed Y velocity.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.366 -0500", hash_original_method = "7522D7DB1CC0324C793DB225FECF96EF", hash_generated_method = "80CFA04123F5CBED265101B2C2CBD499")
     
 public float getYVelocity() {
@@ -268,12 +264,14 @@ public float getYVelocity() {
      * @param id Which pointer's velocity to return.
      * @return The previously computed X velocity.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.368 -0500", hash_original_method = "E88E46619158ECDA6CFC39862B1412B8", hash_generated_method = "B748F5D2BE8C4D50D5F5618A39676648")
     
 public float getXVelocity(int id) {
         return nativeGetXVelocity(mPtr, id);
     }
-
     
     public static final class Estimator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.377 -0500", hash_original_field = "1727E1F87535EEC2DDCF786FF13901B9", hash_generated_field = "6B300D0F1610BC31482D34A0922264D0")
@@ -340,6 +338,9 @@ private float estimate(float time, float[] c) {
      * @param id Which pointer's velocity to return.
      * @return The previously computed Y velocity.
      */
+    @DSComment("Touch event tracking")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.370 -0500", hash_original_method = "3A1681E069274B63F81D41BA2ABBDF60", hash_generated_method = "E7C14CBE4FCD8C82AF134F1984CE7BE0")
     
 public float getYVelocity(int id) {

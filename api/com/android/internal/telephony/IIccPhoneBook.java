@@ -17,7 +17,8 @@ private static final java.lang.String DESCRIPTOR = "com.android.internal.telepho
  * Cast an IBinder object into an com.android.internal.telephony.IIccPhoneBook interface,
  * generating a proxy if needed.
  */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.634 -0500", hash_original_method = "051A91FF6481BF92BDBCA66144A6F50C", hash_generated_method = "FFA663671B84543DC9462829AA857A04")
+@DSSource({DSSourceKind.CONTACT_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.634 -0500", hash_original_method = "051A91FF6481BF92BDBCA66144A6F50C", hash_generated_method = "FFA663671B84543DC9462829AA857A04")
         
 public static com.android.internal.telephony.IIccPhoneBook asInterface(android.os.IBinder obj)
 {
@@ -56,7 +57,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.653 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.653 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -69,7 +71,8 @@ return DESCRIPTOR;
      * @param efid the EF id of a ADN-like SIM
      * @return List of AdnRecord
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.656 -0500", hash_original_method = "1087187EA88A0FA0C7119DE2C3CAD628", hash_generated_method = "AF0D072B8934CCA37A67CE52B07EFB81")
+@DSSource({DSSourceKind.CONTACT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.656 -0500", hash_original_method = "1087187EA88A0FA0C7119DE2C3CAD628", hash_generated_method = "AF0D072B8934CCA37A67CE52B07EFB81")
             
 public java.util.List<com.android.internal.telephony.AdnRecord> getAdnRecordsInEf(int efid) throws android.os.RemoteException
 {
@@ -107,7 +110,8 @@ return _result;
      * @param pin2 required to update EF_FDN, otherwise must be null
      * @return true for success
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.660 -0500", hash_original_method = "57C77BA299B396EE0E106B99D9516114", hash_generated_method = "9E50DC52BDEAA2B0B9C46A46D9320CB8")
+@DSSink({DSSinkKind.CONTACT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.660 -0500", hash_original_method = "57C77BA299B396EE0E106B99D9516114", hash_generated_method = "9E50DC52BDEAA2B0B9C46A46D9320CB8")
             
 public boolean updateAdnRecordsInEfBySearch(int efid, java.lang.String oldTag, java.lang.String oldPhoneNumber, java.lang.String newTag, java.lang.String newPhoneNumber, java.lang.String pin2) throws android.os.RemoteException
 {
@@ -147,7 +151,8 @@ return _result;
      * @param pin2 required to update EF_FDN, otherwise must be null
      * @return true for success
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.663 -0500", hash_original_method = "91281558576364C85BE46F0079CA820C", hash_generated_method = "BCDF32329AFCC1C932F143E93CF11FA9")
+@DSSink({DSSinkKind.CONTACT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.663 -0500", hash_original_method = "91281558576364C85BE46F0079CA820C", hash_generated_method = "BCDF32329AFCC1C932F143E93CF11FA9")
             
 public boolean updateAdnRecordsInEfByIndex(int efid, java.lang.String newTag, java.lang.String newPhoneNumber, int index, java.lang.String pin2) throws android.os.RemoteException
 {
@@ -180,7 +185,8 @@ return _result;
      *            recordSizes[1]  is the total length of the EF file
      *            recordSizes[2]  is the number of records in the EF file
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.666 -0500", hash_original_method = "BF5F15589ED225EF4BE651856D8EC959", hash_generated_method = "D611BB6BB4B7286B89E52C3136EB3CF8")
+@DSSource({DSSourceKind.CONTACT_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.666 -0500", hash_original_method = "BF5F15589ED225EF4BE651856D8EC959", hash_generated_method = "D611BB6BB4B7286B89E52C3136EB3CF8")
             
 public int[] getAdnRecordsSize(int efid) throws android.os.RemoteException
 {
@@ -211,13 +217,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.637 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.CONTACT_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.637 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.641 -0500", hash_original_method = "11BCFDA3CD5B05CDBD41BE36B711C193", hash_generated_method = "40A9B7703A04A44038037C58907FE8E2")
+@DSSink({DSSinkKind.CONTACT_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:45.641 -0500", hash_original_method = "11BCFDA3CD5B05CDBD41BE36B711C193", hash_generated_method = "40A9B7703A04A44038037C58907FE8E2")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

@@ -14,9 +14,6 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.SSLProtocolException;
 
-
-
-
 public class ConnectionStateSSLv3 extends ConnectionState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.980 -0500", hash_original_field = "4E8A5D540F861204E8032EC19BEBF1B2", hash_generated_field = "FCEAD5705B5DC9FB1937BC2FCBBCA9AF")
 
@@ -49,6 +46,7 @@ public class ConnectionStateSSLv3 extends ConnectionState {
      * to the SSL v3 Protocol specification.
      * (http://www.mozilla.org/projects/security/pki/nss/ssl/draft302.txt)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:04.997 -0500", hash_original_method = "1B482CA9527A6F5074105168D7DF9619", hash_generated_method = "73AA028CE3FAAE6C1391FDD4E75C022F")
     
 protected ConnectionStateSSLv3(SSLSessionImpl session) {
@@ -218,6 +216,7 @@ protected ConnectionStateSSLv3(SSLSessionImpl session) {
      * data structure for specified data of specified type.
      * @throws AlertException if alert was occurred.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.001 -0500", hash_original_method = "3F84D57F957CA4DCEBAF95364A0886D3", hash_generated_method = "0E8AC2BD0EC1AA0C121FCD5C79498A68")
     
 @Override
@@ -280,6 +279,7 @@ protected ConnectionStateSSLv3(SSLSessionImpl session) {
      * the specified type from the provided data.
      * @throws AlertException if alert was occured.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:05.005 -0500", hash_original_method = "227FECEA7131D056EF18EE2E9369B9A1", hash_generated_method = "459DC1330B09FE06A09C222972E31D1D")
     
 @Override
@@ -356,7 +356,6 @@ protected ConnectionStateSSLv3(SSLSessionImpl session) {
         Arrays.fill(mac_read_secret, (byte) 0);
         super.shutdown();
     }
-
     
 }
 

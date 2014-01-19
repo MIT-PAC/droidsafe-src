@@ -17,13 +17,8 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.Gravity;
 
-
-
-
-
 public class ClipDrawable extends Drawable implements Drawable.Callback {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.831 -0500", hash_original_field = "0020CD8DE9DFD5D0CFED10065302AB91", hash_generated_field = "EACA224B8385161B605A2E64A4D16B8A")
-
 
     public static final int HORIZONTAL = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.833 -0500", hash_original_field = "7966AE174603303B802964D7ABB3D5E8", hash_generated_field = "D756A470A2986330BFAB916722475532")
@@ -45,6 +40,8 @@ ClipDrawable() {
     /**
      * @param orientation Bitwise-or of {@link #HORIZONTAL} and/or {@link #VERTICAL}
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.838 -0500", hash_original_method = "5201E74D3B1AF986B1DE2C301B497FD9", hash_generated_method = "CC0C7583D1B4ABD557AEAD7FABEE0988")
     
 public ClipDrawable(Drawable drawable, int gravity, int orientation) {
@@ -135,6 +132,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
     // overrides from Drawable
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.850 -0500", hash_original_method = "67F829CCE512EF7E67F091FC7A5204DA", hash_generated_method = "8A256D9F79B6BAEB843B0FCF12982054")
     
 @Override
@@ -152,6 +150,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return mClipState.mDrawable.getPadding(padding);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.855 -0500", hash_original_method = "BCB1CA235EA7FE91BD623275B8F06E4E", hash_generated_method = "F0935F9585B83C7BD0CE2361BAD62EDF")
     
 @Override
@@ -160,6 +159,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         return super.setVisible(visible, restart);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.858 -0500", hash_original_method = "8A8063C7E15313BD8D8740621EFCD055", hash_generated_method = "7C6ADA654B631B11FD4F0798B18AB8FD")
     
 @Override
@@ -167,6 +167,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mClipState.mDrawable.setAlpha(alpha);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.860 -0500", hash_original_method = "4805CD50FD09C28529E6873146205090", hash_generated_method = "3D00BC1A221472AD6CD0382F594FE967")
     
 @Override
@@ -174,6 +175,7 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         mClipState.mDrawable.setColorFilter(cf);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.862 -0500", hash_original_method = "D50D875832F26A4F5A2E593F0458B980", hash_generated_method = "72B579365ACCAD695F2BC30D27BC5ABF")
     
 @Override
@@ -244,13 +246,13 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.876 -0500", hash_original_method = "042D8C5B60AD594AE3EBCE13D95C97E6", hash_generated_method = "7E230DF2E11C7F8B00C95E2275E9A6D2")
     
 @Override
     public int getIntrinsicWidth() {
         return mClipState.mDrawable.getIntrinsicWidth();
     }
-
     
     final static class ClipState extends ConstantState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.883 -0500", hash_original_field = "38BA53DD394F85639C99ED8E666FF8FB", hash_generated_field = "38BA53DD394F85639C99ED8E666FF8FB")
@@ -266,7 +268,6 @@ public void unscheduleDrawable(Drawable who, Runnable what) {
 
         int mGravity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.892 -0500", hash_original_field = "04605894B57F7B3414AF620BF4AC040E", hash_generated_field = "63D49323436A33301C0DA6EDF88627FF")
-
 
         private boolean mCheckedConstantState;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.894 -0500", hash_original_field = "09212A3A30B7E6D48DEECC4F4639CCBC", hash_generated_field = "F62F8D22C4EDE8B8E63C376677BD915C")
@@ -303,6 +304,7 @@ ClipState(ClipState orig, ClipDrawable owner, Resources res) {
             return new ClipDrawable(this, res);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.904 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "3AB30668ED270F2EDF2E0129C706FE4D")
         
 @Override
@@ -320,10 +322,10 @@ boolean canConstantState() {
 
             return mCanConstantState;
         }
-
         
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.878 -0500", hash_original_method = "2200041BC151EB15073098E0A2FD1970", hash_generated_method = "CE5AA58D714843DA41C50DA832F1880F")
     
 @Override

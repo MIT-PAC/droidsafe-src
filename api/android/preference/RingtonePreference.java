@@ -12,17 +12,11 @@ import android.net.Uri;
 import android.text.TextUtils;
 import android.util.AttributeSet;
 
-
-
-
-
 public class RingtonePreference extends Preference implements PreferenceManager.OnActivityResultListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.708 -0500", hash_original_field = "56A1992F57CD1924005ABC17085148FA", hash_generated_field = "03561407E8406E5A39E47D0AFC27E984")
 
-
     private static final String TAG = "RingtonePreference";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.711 -0500", hash_original_field = "4B2A2895326A27589C2FEFC503436FF2", hash_generated_field = "94A7358A6004BBA5ED4F762F8CB38E98")
-
 
     private int mRingtoneType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.713 -0500", hash_original_field = "02BFEC04AE288B6525C13AF6E6319CDD", hash_generated_field = "130B43374579980A9579B58E0CD66AF8")
@@ -32,7 +26,6 @@ public class RingtonePreference extends Preference implements PreferenceManager.
 
     private boolean mShowSilent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.717 -0500", hash_original_field = "7DFBC3B390A93C26F8D09A6E08442EF1", hash_generated_field = "475686F1F8A4FC0EFBA10CFC5E693B3C")
-
     
     private int mRequestCode;
 
@@ -52,6 +45,8 @@ public RingtonePreference(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSComment("General android operation, no security concern")
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.723 -0500", hash_original_method = "AC92DB267D2F88D8705E896D57E3E92B", hash_generated_method = "04CF2FA73D484A47A33A7546CDEE1CEF")
     
 public RingtonePreference(Context context, AttributeSet attrs) {
@@ -70,6 +65,7 @@ public RingtonePreference(Context context) {
      * @return The sound type(s) that are shown in the picker.
      * @see #setRingtoneType(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.728 -0500", hash_original_method = "1A2D4AB1416848B6CAAD7584C5AE9825", hash_generated_method = "B0885575A71B774A9C6DE91C037D49AE")
     
 public int getRingtoneType() {
@@ -93,6 +89,7 @@ public void setRingtoneType(int type) {
      * 
      * @return Whether to show an item for the default sound/ringtone.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.732 -0500", hash_original_method = "1EDF917BBB16A2DD7FDEFF560CC91C95", hash_generated_method = "9597BC61ABE2DEF8B403E3EDC453F4F9")
     
 public boolean getShowDefault() {
@@ -117,6 +114,7 @@ public void setShowDefault(boolean showDefault) {
      * 
      * @return Whether to show an item for 'Silent'.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.736 -0500", hash_original_method = "78493F49FCDC7F2B17EDE4C6D3C9ED80", hash_generated_method = "BC7E753E10F078BC1EC5A10CD6185A35")
     
 public boolean getShowSilent() {

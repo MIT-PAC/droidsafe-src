@@ -9,7 +9,6 @@ import android.view.View.AccessibilityDelegate;
 import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 
-
 class ViewCompatICS {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.453 -0500", hash_original_method = "C0522BEF843F9666532A0434F680BA88", hash_generated_method = "648BD5B5BBEE5B1A7F8F78DB2F04EA13")
@@ -24,6 +23,7 @@ public static boolean canScrollVertically(View v, int direction) {
         return v.canScrollVertically(direction);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:20.457 -0500", hash_original_method = "C38D781B3ABC8EC09DCBB566904A04E2", hash_generated_method = "F65664608C88027274EBD1A17E341D54")
     
 public static void setAccessibilityDelegate(View v, Object delegate) {
@@ -53,7 +53,6 @@ public static void onInitializeAccessibilityNodeInfo(View v, Object info) {
     {
         //Synthesized constructor
     }
-
     
 }
 

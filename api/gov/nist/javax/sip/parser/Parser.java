@@ -11,10 +11,6 @@ import gov.nist.core.Token;
 
 import java.text.ParseException;
 
-
-
-
-
 public abstract class Parser extends ParserCore implements TokenTypes {
 
     /**
@@ -55,12 +51,14 @@ protected ParseException createParseException(String exceptionString) {
             lexer.getPtr());
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.161 -0500", hash_original_method = "46F79D05E02F5C322F83A2BCE13C7B55", hash_generated_method = "0546A9D6EA2C9BFC49AE3B508DBA66A7")
     
 protected Lexer getLexer() {
         return (Lexer) this.lexer;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.163 -0500", hash_original_method = "2745F417C183E90B52AF06D41C98230A", hash_generated_method = "75C20F86026E83C96214FCC10B09D203")
     
 protected String sipVersion() throws ParseException {
@@ -85,6 +83,7 @@ protected String sipVersion() throws ParseException {
     /**
      * parses a method. Consumes if a valid method has been found.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:48.166 -0500", hash_original_method = "DFEA7962E8FE3DE66D00681F9A6D11E3", hash_generated_method = "D4A582748A1256222F0353A380EFF1E4")
     
 protected String method() throws ParseException {
@@ -114,7 +113,6 @@ protected String method() throws ParseException {
                 dbg_leave("method");
         }
     }
-
     
 }
 

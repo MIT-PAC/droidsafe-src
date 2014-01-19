@@ -14,10 +14,6 @@ import junit.framework.TestListener;
 import junit.framework.TestResult;
 import junit.runner.BaseTestRunner;
 
-
-
-
-
 public class ResultPrinter implements TestListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.679 -0500", hash_original_field = "90CE234F29B6C3026D5A6A62F5D28F59", hash_generated_field = "90CE234F29B6C3026D5A6A62F5D28F59")
 
@@ -107,7 +103,8 @@ protected void printDefectTrace(TestFailure booBoo) {
 		getWriter().print(BaseTestRunner.getFilteredTrace(booBoo.trace()));
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.707 -0500", hash_original_method = "EE49A8AE172A75BE26948C083027FB54", hash_generated_method = "4F02EA31208E2D2ACDC0DD7ED7F65910")
+	@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.707 -0500", hash_original_method = "EE49A8AE172A75BE26948C083027FB54", hash_generated_method = "4F02EA31208E2D2ACDC0DD7ED7F65910")
     
 protected void printFooter(TestResult result) {
 		if (result.wasSuccessful()) {
@@ -125,7 +122,6 @@ protected void printFooter(TestResult result) {
 	    getWriter().println();
 	}
 
-
 	/**
 	 * Returns the formatted string of the elapsed time.
 	 * Duplicated from BaseTestRunner. Fix it.
@@ -138,7 +134,8 @@ protected String elapsedTimeAsString(long runTime) {
 	    return Double.toString((double)runTime/1000);
 	}
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.712 -0500", hash_original_method = "E39F1A78CDD5A4CC126B77217AA8CF1F", hash_generated_method = "5BCCDE690011F2BA809001DBBEE7B089")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:42.712 -0500", hash_original_method = "E39F1A78CDD5A4CC126B77217AA8CF1F", hash_generated_method = "5BCCDE690011F2BA809001DBBEE7B089")
     
 public PrintStream getWriter() {
 		return fWriter;
@@ -181,7 +178,6 @@ public void startTest(Test test) {
 			fColumn= 0;
 		}
 	}
-
     
 }
 

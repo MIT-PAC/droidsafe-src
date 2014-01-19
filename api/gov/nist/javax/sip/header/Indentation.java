@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 class Indentation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.099 -0500", hash_original_field = "286452610CAD998336F0009181E4D242", hash_generated_field = "008AF28A46BB87C2DFA1C38C4F2D39CE")
-
 
     private int indentation;
 
@@ -53,6 +48,7 @@ protected void setIndentation(int initval) {
      *
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.111 -0500", hash_original_method = "8C516A01A1E7AEB883F43E447DEEB28B", hash_generated_method = "88E060C72D3FDD5F4DBA6C40D22247F7")
     
 protected int getCount() {
@@ -82,6 +78,7 @@ protected void decrement() {
      *
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.120 -0500", hash_original_method = "F608522BE2D902628C253AAC05B9941D", hash_generated_method = "BDD6C135FB07D8AC261FA4D2B4D2AE55")
     
 protected String getIndentation() {
@@ -89,7 +86,6 @@ protected String getIndentation() {
         java.util.Arrays.fill(chars, ' ');
         return new String(chars);
     }
-
     
 }
 

@@ -25,10 +25,6 @@ import android.provider.Settings;
 import android.view.KeyEvent;
 import android.view.VolumePanel;
 
-
-
-
-
 public class AudioManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.020 -0500", hash_original_method = "4C7645D232D763BA4F570538A2273FAB", hash_generated_method = "167786996F36B4A84FAE42E57D8CB72B")
@@ -162,7 +158,6 @@ public static boolean isValidRingerMode(int ringerMode) {
     public static final int ADJUST_SAME = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.968 -0500", hash_original_field = "65A6FAEF45CB5B7A6A305A380ECEF2AE", hash_generated_field = "83E150229CC16679B413CA217F76E27E")
 
-
     /**
      * Show a toast containing the current volume.
      *
@@ -218,7 +213,6 @@ public static boolean isValidRingerMode(int ringerMode) {
 
     public static final int USE_DEFAULT_STREAM_TYPE = Integer.MIN_VALUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.014 -0500", hash_original_field = "84E547D659D421C1515D62D6E0D7BBA4", hash_generated_field = "7D19457E3AE9FEB13C4F40FE79C55E2E")
-
 
     private static IAudioService sService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.083 -0500", hash_original_field = "45646E4FB1E10F2893DE0CE3D75B0BCA", hash_generated_field = "0B475D305F4267613131ACEDF7B1C2B5")
@@ -340,7 +334,6 @@ public static boolean isValidRingerMode(int ringerMode) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.236 -0500", hash_original_field = "432FCA8B8C830B836E103662824873C2", hash_generated_field = "7F15B1B0A87277F3E076311AB3C08BE4")
 
     public static final int FX_KEYPRESS_DELETE = 7;
-
     
     private class FocusEventHandlerDelegate {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.291 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
@@ -374,16 +367,14 @@ FocusEventHandlerDelegate() {
             }
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.300 -0500", hash_original_method = "10E7D4FA7AE5C5A4DFE91478AE111D01", hash_generated_method = "10E7D4FA7AE5C5A4DFE91478AE111D01")
         
 Handler getHandler() {
             return mHandler;
         }
-
         
     }
-
-
     
     public interface OnAudioFocusChangeListener {
         
@@ -533,7 +524,6 @@ Handler getHandler() {
     public static final int DEVICE_OUT_DEFAULT = AudioSystem.DEVICE_OUT_DEFAULT;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.882 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.884 -0500", hash_original_field = "A163099B522120C606A3CA562F90E927", hash_generated_field = "03E47BA0CE42772601F0A13D178B12B5")
 
@@ -565,10 +555,7 @@ Handler getHandler() {
             addTaint(focusChange);
             addTaint(id.getTaint());
             
-            
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.371 -0500", hash_original_field = "CE687D84F2945E95EFC9DBCEBF93B198", hash_generated_field = "F0463229CC92165D569BCDFE5CB835D0")
@@ -760,6 +747,9 @@ public void adjustSuggestedStreamVolume(int direction, int suggestedStreamType, 
      *         {@link #RINGER_MODE_SILENT}, or {@link #RINGER_MODE_VIBRATE}.
      * @see #setRingerMode(int)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.039 -0500", hash_original_method = "A5416468537A862277C3CD80415076F6", hash_generated_method = "5508A15A9CD18629BD82A5D09E2BE0FC")
     
 public int getRingerMode() {
@@ -779,6 +769,9 @@ public int getRingerMode() {
      * @return The maximum valid volume index for the stream.
      * @see #getStreamVolume(int)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.044 -0500", hash_original_method = "87CF12BF10581D3FEA634AA8128A64C7", hash_generated_method = "D1A410D383D783C0D9ECE5ABB503CCAC")
     
 public int getStreamMaxVolume(int streamType) {
@@ -799,6 +792,9 @@ public int getStreamMaxVolume(int streamType) {
      * @see #getStreamMaxVolume(int)
      * @see #setStreamVolume(int, int, int)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.047 -0500", hash_original_method = "E78E6899167FF196E0675E8746CEB32F", hash_generated_method = "E3E7BF2BF3BF4D619324530229989FA7")
     
 public int getStreamVolume(int streamType) {
@@ -816,6 +812,7 @@ public int getStreamVolume(int streamType) {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.049 -0500", hash_original_method = "16B6103C3931EF2B68A7F288EB86CE17", hash_generated_method = "F8414039E19C3249B75280A911E5EA4D")
     
 public int getLastAudibleStreamVolume(int streamType) {
@@ -839,6 +836,9 @@ public int getLastAudibleStreamVolume(int streamType) {
      *            {@link #RINGER_MODE_SILENT}, or {@link #RINGER_MODE_VIBRATE}.
      * @see #getRingerMode()
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.052 -0500", hash_original_method = "3C2FC6CE4E6D1CA9BA044809D37E86F6", hash_generated_method = "4FE4A71AD9B3F5C6EAF6698ABA966799")
     
 public void setRingerMode(int ringerMode) {
@@ -863,6 +863,9 @@ public void setRingerMode(int ringerMode) {
      * @see #getStreamMaxVolume(int)
      * @see #getStreamVolume(int)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.055 -0500", hash_original_method = "3749020B5128F4562E7A795FA2ED06F0", hash_generated_method = "E0E11CD3E1CBD290ADC87872A152CFE6")
     
 public void setStreamVolume(int streamType, int index, int flags) {
@@ -891,6 +894,9 @@ public void setStreamVolume(int streamType, int index, int flags) {
      * @param streamType The stream to be soloed/unsoloed.
      * @param state The required solo state: true for solo ON, false for solo OFF
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.058 -0500", hash_original_method = "68979401C5E5A9876842A31A718D3CC1", hash_generated_method = "99B7183570C5B98772F75EA5FDDFE9E0")
     
 public void setStreamSolo(int streamType, boolean state) {
@@ -922,6 +928,9 @@ public void setStreamSolo(int streamType, boolean state) {
      * @param streamType The stream to be muted/unmuted.
      * @param state The required mute state: true for mute ON, false for mute OFF
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.060 -0500", hash_original_method = "D5FC01CA83C5AD93EBE0673BD699E427", hash_generated_method = "2AC3B35A5984620F11972D93563B9F92")
     
 public void setStreamMute(int streamType, boolean state) {
@@ -1007,6 +1016,9 @@ public boolean shouldVibrate(int vibrateType) {
      * @see #setVibrateSetting(int, int)
      * @see #shouldVibrate(int)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.071 -0500", hash_original_method = "8D15AC5DC8AF10C8514FCDAE7CA188DE", hash_generated_method = "7C4DCB2CA5105643EB611B5B1EC0F03D")
     
 public int getVibrateSetting(int vibrateType) {
@@ -1035,6 +1047,9 @@ public int getVibrateSetting(int vibrateType) {
      * @see #getVibrateSetting(int)
      * @see #shouldVibrate(int)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.074 -0500", hash_original_method = "1BAA841F73A90E0BDF1DD9E6546FAE92", hash_generated_method = "1F5F1271B636AE869F7D5F8E5CA394F6")
     
 public void setVibrateSetting(int vibrateType, int vibrateSetting) {
@@ -1055,6 +1070,9 @@ public void setVibrateSetting(int vibrateType, int vibrateSetting) {
      * @param on set <var>true</var> to turn on speakerphone;
      *           <var>false</var> to turn it off
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.076 -0500", hash_original_method = "4CC8C4119BF3E8CF0A2DBE18005271BE", hash_generated_method = "ACD83D7B9DEB910D0556879B545A0EC3")
     
 public void setSpeakerphoneOn(boolean on){
@@ -1071,6 +1089,8 @@ public void setSpeakerphoneOn(boolean on){
      *
      * @return true if speakerphone is on, false if it's off
      */
+    @DSComment("Controlling audio")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.079 -0500", hash_original_method = "87629A828DADB356D60EBD8A4600C927", hash_generated_method = "D077C518E4BDB4122F836C65B703F4BC")
     
 public boolean isSpeakerphoneOn() {
@@ -1082,7 +1102,6 @@ public boolean isSpeakerphoneOn() {
             return false;
         }
      }
-
 
     /**
      * Indicates if current platform supports use of SCO for off call use cases.
@@ -1180,6 +1199,9 @@ public void stopBluetoothSco(){
      * @param on set <var>true</var> to use bluetooth SCO for communications;
      *               <var>false</var> to not use bluetooth SCO for communications
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.116 -0500", hash_original_method = "606F2494E176D702B95CCB0A4567DEDE", hash_generated_method = "191F72459DB23E24CCD4BB0FAD06BA9A")
     
 public void setBluetoothScoOn(boolean on){
@@ -1197,6 +1219,8 @@ public void setBluetoothScoOn(boolean on){
      * @return true if SCO is used for communications;
      *         false if otherwise
      */
+    @DSComment("Controlling audio")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.119 -0500", hash_original_method = "F2AF5947C2E51F8D76A34ACBB4A97B98", hash_generated_method = "58AD9CFDE6A3BBD405926CD1354CB40F")
     
 public boolean isBluetoothScoOn() {
@@ -1214,6 +1238,7 @@ public boolean isBluetoothScoOn() {
      *           headset; <var>false</var> disable A2DP audio
      * @deprecated Do not use.
      */
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.122 -0500", hash_original_method = "6E721A6BE84D0B991FC9D97F8410EE50", hash_generated_method = "1F2A41A31F689E43D60C1C6FB5A16B32")
     
 @Deprecated public void setBluetoothA2dpOn(boolean on){
@@ -1225,6 +1250,8 @@ public boolean isBluetoothScoOn() {
      * @return true if A2DP audio is being routed to/from Bluetooth headset;
      *         false if otherwise
      */
+    @DSComment("Controlling audio")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.124 -0500", hash_original_method = "61CE342F240529F54025E3EC55BEFF02", hash_generated_method = "04156A819F09A72B9F265424EBD8F6C6")
     
 public boolean isBluetoothA2dpOn() {
@@ -1243,6 +1270,7 @@ public boolean isBluetoothA2dpOn() {
      *           headset; <var>false</var> disable wired headset audio
      * @deprecated Do not use.
      */
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.128 -0500", hash_original_method = "9CDD23DC97597F87B0409849BA69DD8F", hash_generated_method = "A24CF4EE215A501ADA40C929B9F4254A")
     
 @Deprecated public void setWiredHeadsetOn(boolean on){
@@ -1257,6 +1285,8 @@ public boolean isBluetoothA2dpOn() {
      *         false if otherwise
      * @deprecated Use only to check is a headset is connected or not.
      */
+    @DSComment("Controlling audio")
+    @DSSpec(DSCat.DEVICE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.132 -0500", hash_original_method = "602A1375ADE38071033B07AD6C9212C8", hash_generated_method = "369BD7EA15C82661233D042DE965F1B5")
     
 public boolean isWiredHeadsetOn() {
@@ -1279,6 +1309,9 @@ public boolean isWiredHeadsetOn() {
      * @param on set <var>true</var> to mute the microphone;
      *           <var>false</var> to turn mute off
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.136 -0500", hash_original_method = "5FCC6D659A56B470BF76AF68D12DD9BE", hash_generated_method = "8840E668EFF3FC76AD6E4F7CA0453893")
     
 public void setMicrophoneMute(boolean on){
@@ -1290,6 +1323,7 @@ public void setMicrophoneMute(boolean on){
      *
      * @return true if microphone is muted, false if it's not
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.140 -0500", hash_original_method = "82EFB94D4DB567BF9AF21B9F2B827F69", hash_generated_method = "3B8CA7A03DE36C7844164E70C7E27715")
     
 public boolean isMicrophoneMute() {
@@ -1311,6 +1345,9 @@ public boolean isMicrophoneMute() {
      *              Informs the HAL about the current audio state so that
      *              it can route the audio appropriately.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.144 -0500", hash_original_method = "FB0F50379150B9BD346003DA9FF4B8A5", hash_generated_method = "55E83D2F7F0E9E2B2B08EBD375909C08")
     
 public void setMode(int mode) {
@@ -1329,6 +1366,9 @@ public void setMode(int mode) {
      *              {@link #MODE_IN_CALL} or {@link #MODE_IN_COMMUNICATION}).
      *              Returns the current current audio state from the HAL.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.149 -0500", hash_original_method = "F6FC0C8FF20094842E05491DBD00A26F", hash_generated_method = "E888A19FEC2A5C84E6E8B23167B4189A")
     
 public int getMode() {
@@ -1353,6 +1393,7 @@ public int getMode() {
      * @deprecated   Do not set audio routing directly, use setSpeakerphoneOn(),
      * setBluetoothScoOn() methods instead.
      */
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.200 -0500", hash_original_method = "646817F3B93E4871A7A7D1BE098C87AE", hash_generated_method = "7CB172CD813C7EB894FCD13056B35D52")
     
 @Deprecated
@@ -1368,6 +1409,7 @@ public int getMode() {
      * @deprecated   Do not query audio routing directly, use isSpeakerphoneOn(),
      * isBluetoothScoOn(), isBluetoothA2dpOn() and isWiredHeadsetOn() methods instead.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.203 -0500", hash_original_method = "6C4959DBE0B2C4B0BA15108AAD8EE45D", hash_generated_method = "B42A0EAEB2162061F1B63BDCBF19275A")
     
 @Deprecated
@@ -1380,6 +1422,7 @@ public int getMode() {
      *
      * @return true if any music tracks are active.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.206 -0500", hash_original_method = "AF4716567EA0644FB4FB307583193A2C", hash_generated_method = "4517CA27CFD8EF82FE32EB42CBB9AF39")
     
 public boolean isMusicActive() {
@@ -1401,6 +1444,7 @@ public boolean isMusicActive() {
      * @hide
      * @deprecated Use {@link #setPrameters(String)} instead
      */
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.208 -0500", hash_original_method = "FB00D8D09EE0A42D5615E8AEAC323753", hash_generated_method = "FE7D713FB68EC1C32BEBFFDD433534AF")
     
 @Deprecated public void setParameter(String key, String value) {
@@ -1414,6 +1458,7 @@ public boolean isMusicActive() {
      *    key1=value1;key2=value2;...
      *
      */
+    @DSSink({DSSinkKind.AUDIO})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.211 -0500", hash_original_method = "18224FDA7DBAF634E3113700EF6FFA3D", hash_generated_method = "0D0A2C5AD4B9060D1787C06F6753D7CE")
     
 public void setParameters(String keyValuePairs) {
@@ -1427,6 +1472,7 @@ public void setParameters(String keyValuePairs) {
      * @return list of parameters key value pairs in the form:
      *    key1=value1;key2=value2;...
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.213 -0500", hash_original_method = "9B4E69B0951CD7555E74053B3F2A7F5E", hash_generated_method = "8DB2EFAC6FD3C2DFB5450609F9EFCE50")
     
 public String getParameters(String keys) {
@@ -1509,7 +1555,6 @@ private boolean querySoundEffectsEnabled() {
         return Settings.System.getInt(mContext.getContentResolver(), Settings.System.SOUND_EFFECTS_ENABLED, 0) != 0;
     }
 
-
     /**
      *  Load Sound effects.
      *  This method must be called when sound effects are enabled.
@@ -1590,7 +1635,6 @@ public void unregisterAudioFocusListener(OnAudioFocusChangeListener l) {
         }
     }
 
-
     /**
      *  Request audio focus.
      *  Send a request to obtain the audio focus
@@ -1627,7 +1671,6 @@ public int requestAudioFocus(OnAudioFocusChangeListener l, int streamType, int d
         return status;
     }
 
-
     /**
      *  Abandon audio focus. Causes the previous focus owner, if any, to receive focus.
      *  @param l the listener with which focus was requested.
@@ -1647,7 +1690,6 @@ public int abandonAudioFocus(OnAudioFocusChangeListener l) {
         }
         return status;
     }
-
 
     //====================================================================
     // Remote Control
@@ -1910,6 +1952,7 @@ public boolean isSilentMode() {
      *
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:22.416 -0500", hash_original_method = "039E984EE545D8462E074EC6768B62D9", hash_generated_method = "10A5D5FCC997CCA92895D4640CEB8888")
     
 public int getDevicesForStream(int streamType) {

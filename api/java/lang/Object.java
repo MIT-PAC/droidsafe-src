@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSTaintObject;
 
 public class Object {
@@ -16,14 +14,16 @@ public class Object {
     /**
      * Constructs a new instance of {@code Object}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.129 -0500", hash_original_method = "1035BC9FD37C3D2AC57825226BBB0539", hash_generated_method = "D31E84B79A4FC29F631370F22BA60293")
     
 public Object() {
     }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.382 -0400", hash_original_method = "6E1D6DBADCF2AAA505FF9A52A4C04C6C", hash_generated_method = "7BD08C4B7BD9668043F5624AF55451A4")
+        
+@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:47.382 -0400", hash_original_method = "6E1D6DBADCF2AAA505FF9A52A4C04C6C", hash_generated_method = "7BD08C4B7BD9668043F5624AF55451A4")
     protected Object clone() throws CloneNotSupportedException {
         if(!(this instanceof Cloneable))        
         {
@@ -41,10 +41,9 @@ public Object() {
         //}
         //return internalClone((Cloneable) this);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.633 -0400", hash_original_method = "DC17854DB4C4786A4B8C4AFD2060B404", hash_generated_method = "A43E05FEA5D61737BBCA795F23B88103")
-    @DSModeled(DSC.SAFE)
+    
     private Object internalClone(Cloneable o) {
     	 //Object retVal = new Object();
     	//retVal.addTaint(getTaint());
@@ -77,6 +76,8 @@ public Object() {
      *         Object}; {@code false} otherwise.
      * @see #hashCode
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.140 -0500", hash_original_method = "9AE1611573D7E7CF89E7E933B2D1DCAF", hash_generated_method = "9814B1EDD6A309DF77DC31113B9908C5")
     
 public boolean equals(Object o) {
@@ -111,15 +112,16 @@ public boolean equals(Object o) {
      *
      * See <i>Effective Java</i> Item 7, "Avoid finalizers" for more.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.142 -0500", hash_original_method = "D7EA50355B500A6304213C79BC9E9E09", hash_generated_method = "7BAE00D5214727B96165F35F1A10FDEF")
     
 @FindBugsSuppressWarnings("FI_EMPTY")
     protected void finalize() throws Throwable {
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 13:18:45.696 -0400", hash_original_method = "45F37CFDFF4C9798D584EC7971F96E39", hash_generated_method = "626427EC1E11FF0AD97BEE85D9A44D76")
-    @DSModeled(DSC.SAFE)
+    
     public final native Class<?> getClass();
 
     /**
@@ -138,13 +140,14 @@ public boolean equals(Object o) {
      * @return this object's hash code.
      * @see #equals
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.150 -0500", hash_original_method = "55C270AB7FB96DF5C59CA61A88D62880", hash_generated_method = "1752793FA5EABF016299BFC6474E6534")
     
     public int hashCode(){
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Causes a thread which is waiting on this object's monitor (by means of
@@ -172,12 +175,13 @@ public boolean equals(Object o) {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.154 -0500", hash_original_method = "2491F7F734B89141B57F81CC2F5A48BA", hash_generated_method = "31FCE39B0D76E1315FFF2B02B5E02276")
     
     public final void notify(){
     	//Formerly a native method
     }
-
 
     /**
      * Causes all threads which are waiting on this object's monitor (by means
@@ -206,12 +210,13 @@ public boolean equals(Object o) {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.158 -0500", hash_original_method = "4A0AA061C7039561E8E17F1D3678B2F2", hash_generated_method = "7C450C91A6344FB734DC7E279E95B4D0")
     
     public final void notifyAll(){
     	//Formerly a native method
     }
-
 
     /**
      * Returns a string containing a concise, human-readable description of this
@@ -226,6 +231,8 @@ public boolean equals(Object o) {
      *
      * @return a printable representation of this object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.161 -0500", hash_original_method = "7905F5E0624643BB59BB03B2872919E1", hash_generated_method = "2078E1806981FD5222134E2086EC67E9")
     
 public String toString() {
@@ -260,6 +267,8 @@ public String toString() {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.163 -0500", hash_original_method = "6FE2BE558DA9BAF1A2BFC29AD62222DA", hash_generated_method = "A38D1B1FBB7E81A6F5CC0EDFC909A7FB")
     
 public final void wait() throws InterruptedException {
@@ -299,6 +308,8 @@ public final void wait() throws InterruptedException {
      * @see #wait(long,int)
      * @see java.lang.Thread
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:28.166 -0500", hash_original_method = "4BB57D31A4F088800B6AE0C762E042CC", hash_generated_method = "EE97E942915A85089DFA80C469394C60")
     
 public final void wait(long millis) throws InterruptedException {
@@ -349,86 +360,84 @@ public final void wait(long millis) throws InterruptedException {
     	addTaint(millis);
     	addTaint(nanos);
     }
-
-
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public DSTaintObject getTaint() {
         
         return taint;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public int getTaintInt() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void addTaint(DSTaintObject taint) {
         
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public short getTaintShort() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public byte getTaintByte() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void addTaint(boolean taint) {
       
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public boolean getTaintBoolean() {
         
         return true;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public char getTaintChar() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public float getTaintFloat() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public double getTaintDouble() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public long getTaintLong() {
         
         return 0;
     }
     
     // orphaned legacy method
-    @DSModeled(DSC.BAN)
+    
     public void addTaint(double taint) {
         
     }

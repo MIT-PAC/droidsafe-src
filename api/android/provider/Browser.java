@@ -19,8 +19,6 @@ import android.provider.BrowserContract.Searches;
 import android.util.Log;
 import android.webkit.WebIconDatabase;
 
-
-
 public class Browser {
 
     /**
@@ -31,6 +29,7 @@ public class Browser {
      *  @param title    Title for the bookmark. Can be null or empty string.
      *  @param url      Url for the bookmark. Can be null or empty string.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.629 -0500", hash_original_method = "05CB0469E06BEBC8972F8D92F854C7D5", hash_generated_method = "AA0F34F1CF918B76A7AD216B81334502")
     
 public static final void saveBookmark(Context c, 
@@ -49,6 +48,7 @@ public static final void saveBookmark(Context c,
      * @param context the context used to start the activity
      * @param string the string to send
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.639 -0500", hash_original_method = "F04DBF4F64C92357C727D860AE16AEA9", hash_generated_method = "C2462AC33BD3842546B4A0F1E024D433")
     
 public static final void sendString(Context context, String string) {
@@ -65,6 +65,7 @@ public static final void sendString(Context context, String string) {
      *  the string.
      *  @hide pending API council approval
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.641 -0500", hash_original_method = "A937CDF4977A6CFA8A3A1B3C5B973338", hash_generated_method = "C837F7FAA76CC9E5CBEA50EF512EA5E0")
     
 public static final void sendString(Context c,
@@ -109,6 +110,7 @@ public static final Cursor getAllBookmarks(ContentResolver cr) throws
      *
      *  @param cr   The ContentResolver used to access the database.
      */
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.647 -0500", hash_original_method = "1C34E1025D9BC4CE20E5F812E4CB7964", hash_generated_method = "066798A98A0074B24CF48F0C0D8D8823")
     
 public static final Cursor getAllVisitedUrls(ContentResolver cr) throws
@@ -175,6 +177,7 @@ private static final Cursor getVisitedLike(ContentResolver cr, String url) {
      *  @param real If true, this is an actual visit, and should add to the
      *              number of visits.  If false, the user entered it manually.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.656 -0500", hash_original_method = "2ED29FEE8D5C9E40AA00A7CBA9632197", hash_generated_method = "7781E8A0CDC61659ABD7A1430AEBF950")
     
 public static final void updateVisitedHistory(ContentResolver cr,
@@ -227,6 +230,7 @@ public static final void updateVisitedHistory(ContentResolver cr,
      *  @param cr   The ContentResolver used to access the database.
      *  @hide pending API council approval
      */
+    @DSSource({DSSourceKind.BROWSER_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.659 -0500", hash_original_method = "26718D5F7CBBEBA2A18502A7EAB90E54", hash_generated_method = "A62CC9FC8896E9F46A9A6269E28A1C3E")
     
 public static final String[] getVisitedHistory(ContentResolver cr) {
@@ -462,7 +466,6 @@ public static final void requestAllIcons(ContentResolver cr, String where,
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.570 -0500", hash_original_field = "7945DE8AC52A4D82824DB6DABEBBB6A3", hash_generated_field = "AB95A4C9380218C135F9857A6B666B57")
 
     private static final String LOGTAG = "browser";
-
     
     public static class BookmarkColumns implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.686 -0500", hash_original_field = "8D1B43EDD925FB0F61F6B3415E7511F8", hash_generated_field = "D4B533878C2C6A734F3A7F2C927B92AE")
@@ -502,8 +505,6 @@ public static final void requestAllIcons(ContentResolver cr, String where,
             //Synthesized constructor
         }
     }
-
-
     
     public static class SearchColumns implements BaseColumns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.713 -0500", hash_original_field = "8D1B43EDD925FB0F61F6B3415E7511F8", hash_generated_field = "5D63C2FA270EB949351722671D81CB69")
@@ -583,7 +584,6 @@ public static final void requestAllIcons(ContentResolver cr, String where,
             BookmarkColumns.DATE,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.611 -0500", hash_original_field = "3C97A64CDD3FA513F922E8530844B5E7", hash_generated_field = "06E26CC9D35A26BA9C8C79D7FCAE260F")
-
 
     public static final int TRUNCATE_HISTORY_PROJECTION_ID_INDEX = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:01.614 -0500", hash_original_field = "426E8B8603B2C6CA915CA795D720D971", hash_generated_field = "B86AD1698DC59B89082AF8FA951227C7")

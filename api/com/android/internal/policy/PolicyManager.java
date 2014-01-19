@@ -15,19 +15,16 @@ import droidsafe.annotations.DSGeneratedField;
 import droidsafe.annotations.DSGenerator;
 import droidsafe.annotations.DSModeled;
 
-
 public final class PolicyManager {
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static Window makeNewWindow(Context context) {
     	return new WindowImpl(context);
     	//return new PhoneWindow(context);
         //return sPolicy.makeNewWindow(context);
     }
-
     
-    @DSModeled(DSC.BAN)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public static LayoutInflater makeNewLayoutInflater(Context context) {
         return new MyLayoutInflater(context);
         /*
@@ -41,6 +38,7 @@ public static WindowManagerPolicy makeNewWindowManager() {
         return sPolicy.makeNewWindowManager();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.940 -0500", hash_original_method = "2FC59449732FB8F4271558BE9548F773", hash_generated_method = "2F685FEDCD500870706279D01512C43E")
     
 public static FallbackEventHandler makeNewFallbackEventHandler(Context context) {
@@ -51,7 +49,6 @@ public static FallbackEventHandler makeNewFallbackEventHandler(Context context) 
     private static final String POLICY_IMPL_CLASS_NAME =
         "com.android.internal.policy.impl.Policy";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:39.921 -0500", hash_original_field = "A3CC4162A3CE5448C65A9A659D94B53C", hash_generated_field = "100BB36640E39269E598568BB8ACACA8")
-
 
     private static  IPolicy sPolicy;
 
@@ -76,14 +73,13 @@ private PolicyManager() {}
     }
     
     private static class MyLayoutInflater extends LayoutInflater {
-
-        @DSModeled(DSC.BAN)
+        
         public MyLayoutInflater(Context context){
             super(context);
         }
 
         @Override
-        @DSModeled(DSC.SAFE)
+        
         public LayoutInflater cloneInContext(Context newContext) {
             MyLayoutInflater newCopy = new MyLayoutInflater(newContext);
             newCopy.addTaint(getTaint());

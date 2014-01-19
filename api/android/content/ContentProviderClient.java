@@ -14,10 +14,6 @@ import android.os.Bundle;
 import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 
-
-
-
-
 public class ContentProviderClient {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.178 -0500", hash_original_field = "07B30FADFA6E4AFA7D12BE53D83FAFCA", hash_generated_field = "B614D226FB5223D135A9D332098A34A4")
 
@@ -37,6 +33,7 @@ ContentProviderClient(ContentResolver contentResolver, IContentProvider contentP
     }
 
     /** See {@link ContentProvider#query ContentProvider.query} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.186 -0500", hash_original_method = "4948470E164D98D1C187E8F0772E2690", hash_generated_method = "E86B9E0F44812AC9B40F980309A73492")
     
 public Cursor query(Uri url, String[] projection, String selection,
@@ -45,6 +42,7 @@ public Cursor query(Uri url, String[] projection, String selection,
     }
 
     /** See {@link ContentProvider#getType ContentProvider.getType} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.188 -0500", hash_original_method = "4D009E8B711C29FD69591B2F9B4F00E0", hash_generated_method = "3E71355EFCEDE306613FA0B240C80FDD")
     
 public String getType(Uri url) throws RemoteException {
@@ -52,6 +50,7 @@ public String getType(Uri url) throws RemoteException {
     }
 
     /** See {@link ContentProvider#getStreamTypes ContentProvider.getStreamTypes} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.190 -0500", hash_original_method = "FB59FC7223A39B6B6F90441FA7E5A170", hash_generated_method = "16FA7E8564F6D91FA1DE3487C66594DE")
     
 public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException {
@@ -59,6 +58,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteExce
     }
 
     /** See {@link ContentProvider#insert ContentProvider.insert} */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.192 -0500", hash_original_method = "DCF792BA3D706C57D023C460ED11C34C", hash_generated_method = "C8C374393429951A54DCEE7E6858D073")
     
 public Uri insert(Uri url, ContentValues initialValues)
@@ -154,12 +154,12 @@ public boolean release() {
      * @return If the associated {@link ContentProvider} is local, returns it.
      * Otherwise returns null.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.213 -0500", hash_original_method = "50EB5374A057DC07A98B18D14BEE701F", hash_generated_method = "17F4323B120E66BE3CBAFB397569796A")
     
 public ContentProvider getLocalContentProvider() {
         return ContentProvider.coerceToLocalContentProvider(mContentProvider);
     }
-
     
 }
 

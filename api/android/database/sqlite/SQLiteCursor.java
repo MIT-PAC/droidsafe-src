@@ -12,10 +12,6 @@ import android.database.CursorWindow;
 import android.os.StrictMode;
 import android.util.Log;
 
-
-
-
-
 public class SQLiteCursor extends AbstractWindowedCursor {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.001 -0500", hash_original_field = "3A0C7CEFD5D785775A84ED015B93C1D0", hash_generated_field = "BF7B5B2F2106B38369133C49B98E70AF")
 
@@ -126,6 +122,7 @@ public SQLiteCursor(SQLiteCursorDriver driver, String editTable, SQLiteQuery que
     /**
      * @return the SQLiteDatabase that this cursor is associated with.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.031 -0500", hash_original_method = "AF759727D3C973E194D48B5E653874F6", hash_generated_method = "D01FE6FFC520D1360670F278B0363796")
     
 public SQLiteDatabase getDatabase() {
@@ -147,6 +144,7 @@ public SQLiteDatabase getDatabase() {
         return true;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.036 -0500", hash_original_method = "D7810D185EEBB48990AE6D5077F6CEAD", hash_generated_method = "E2C9ABE586EE9B6644157D6DF551AE43")
     
 @Override
@@ -180,6 +178,7 @@ private synchronized SQLiteQuery getQuery() {
         return mQuery;
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.045 -0500", hash_original_method = "96C3F6AE90641303728CA2622AC00A1C", hash_generated_method = "B8802CA6B8E38FE4EB87568ADFC00A2E")
     
 @Override
@@ -211,6 +210,7 @@ private synchronized SQLiteQuery getQuery() {
         }
     }
 
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.047 -0500", hash_original_method = "6996FDAE7F544E3AE18BC0C5BC1EECAC", hash_generated_method = "ED979C997B8D7B0EAFCF8DA1443034CC")
     
 @Override
@@ -315,6 +315,7 @@ private synchronized SQLiteQuery getQuery() {
         return result;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.059 -0500", hash_original_method = "5E8FFACADD72707A480415823E5A0DF8", hash_generated_method = "0FEFDF0AF3FD942ADF49C6291434BC82")
     
 @Override
@@ -326,6 +327,7 @@ private synchronized SQLiteQuery getQuery() {
     /**
      * Changes the selection arguments. The new values take effect after a call to requery().
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.061 -0500", hash_original_method = "F2A62A4628FC6852210F2ED0EED8C7EA", hash_generated_method = "0FA948D4E0ED78418E3872CE76C7197D")
     
 public void setSelectionArguments(String[] selectionArgs) {

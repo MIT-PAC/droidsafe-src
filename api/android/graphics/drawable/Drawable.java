@@ -31,10 +31,6 @@ import android.util.TypedValue;
 import android.util.Xml;
 import android.view.View;
 
-
-
-
-
 public abstract class Drawable {
 
     /**
@@ -73,6 +69,7 @@ public static int resolveOpacity(int op1, int op2) {
     /**
      * Create a drawable from an inputstream
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.996 -0500", hash_original_method = "F698992CDA7CE4CFA6270F08869E33EB", hash_generated_method = "EA31CB41043D98187A4334DCA5BDDCB4")
     
 public static Drawable createFromStream(InputStream is, String srcName) {
@@ -83,6 +80,7 @@ public static Drawable createFromStream(InputStream is, String srcName) {
      * Create a drawable from an inputstream, using the given resources and
      * value to determine density information.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.998 -0500", hash_original_method = "6539199B7E5EF78E3B150794D858A2C9", hash_generated_method = "D8B91DF7BE5D083150AB363B8A4B7E47")
     
 public static Drawable createFromResourceStream(Resources res, TypedValue value,
@@ -137,6 +135,7 @@ public static Drawable createFromResourceStream(Resources res, TypedValue value,
      * create resources in XML, see
      * <a href="{@docRoot}guide/topics/resources/drawable-resource.html">Drawable Resources</a>.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.003 -0500", hash_original_method = "86675DFFF0A0A811727E3034212032EE", hash_generated_method = "1C83BEE8B00F8FC24EADC94BA921020F")
     
 public static Drawable createFromXml(Resources r, XmlPullParser parser)
@@ -222,10 +221,11 @@ public static Drawable createFromXmlInner(Resources r, XmlPullParser parser, Att
         return drawable;
     }
 
-
     /**
      * Create a drawable from file path name.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.010 -0500", hash_original_method = "BFC9B5CBB4F35E84FED6A1D240D75B82", hash_generated_method = "0731BFA5FCCFB319677220F34322AFEB")
     
 public static Drawable createFromPath(String pathName) {
@@ -257,7 +257,6 @@ private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
     private static final Rect ZERO_BOUNDS_RECT = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.888 -0500", hash_original_field = "CFC560F37067E026FD0B768F137AF7B3", hash_generated_field = "5E6D3F09C1210458D0C754595BB30DAC")
 
-
     private int[] mStateSet = StateSet.WILD_CARD;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.890 -0500", hash_original_field = "9308AE6FD010F418842CB5F45F406B14", hash_generated_field = "D66D669C7CB840BE2CC0AE88CB04AECF")
 
@@ -275,7 +274,8 @@ private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
 
     private boolean mVisible = true;
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.573 -0400", hash_original_method = "31C0F11C44C8FA6382C02786623A036E", hash_generated_method = "31C0F11C44C8FA6382C02786623A036E")
     public Drawable ()
     {
@@ -288,6 +288,8 @@ private static Drawable drawableFromBitmap(Resources res, Bitmap bm, byte[] np,
      *
      * @param canvas The canvas to draw into
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.901 -0500", hash_original_method = "E7E2918BC47750A7683807E138C9FCF4", hash_generated_method = "DC73F3A81D382705FEE7B6D1EB5964B5")
     
 public abstract void draw(Canvas canvas);
@@ -296,6 +298,9 @@ public abstract void draw(Canvas canvas);
      * Specify a bounding rectangle for the Drawable. This is where the drawable
      * will draw when its draw() method is called.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.903 -0500", hash_original_method = "16D67C97CF930C94423B2F0ABE9E2FB8", hash_generated_method = "5DAE90321A04C30BBDBF694E00F0AABC")
     
 public void setBounds(int left, int top, int right, int bottom) {
@@ -316,6 +321,9 @@ public void setBounds(int left, int top, int right, int bottom) {
      * Specify a bounding rectangle for the Drawable. This is where the drawable
      * will draw when its draw() method is called.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.905 -0500", hash_original_method = "343A23DF727C21562F2BBDB7DAA5F811", hash_generated_method = "6874DBC0AAB6A4D64EC3FDE9608CF73D")
     
 public void setBounds(Rect bounds) {
@@ -344,6 +352,7 @@ public final void copyBounds(Rect bounds) {
      *
      * @return A copy of the drawable's bounds
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.909 -0500", hash_original_method = "A623AF26CC98262C126F58F99B918C3F", hash_generated_method = "8398153568D8B0C1C8AE601AF1652DDD")
     
 public final Rect copyBounds() {
@@ -365,6 +374,9 @@ public final Rect copyBounds() {
      * @see #copyBounds()
      * @see #copyBounds(android.graphics.Rect) 
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.912 -0500", hash_original_method = "F9C4E095C08A855B9547E5FC046C50BF", hash_generated_method = "BB0D4C947EFB311B6298FBD3B2491C35")
     
 public final Rect getBounds() {
@@ -384,6 +396,8 @@ public final Rect getBounds() {
      *
      * @see android.content.res.Configuration
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.913 -0500", hash_original_method = "E7340D87AE9D08581CEC5A0FAA0552EE", hash_generated_method = "9F4E013A3B7A5088FF0C842FD0E94E98")
     
 public void setChangingConfigurations(int configs) {
@@ -403,6 +417,9 @@ public void setChangingConfigurations(int configs) {
      *
      * @see android.content.res.Configuration
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.917 -0500", hash_original_method = "9E7D7C67EAC365FF19BD4971762612A5", hash_generated_method = "1EFD981CB6D64D2240E5805425A8136B")
     
 public int getChangingConfigurations() {
@@ -414,6 +431,9 @@ public int getChangingConfigurations() {
      * with fewer than 8-bits per color component. This can improve the look on
      * those devices, but can also slow down the drawing a little.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.919 -0500", hash_original_method = "A73E6D639014FDB13967AD6B494837C8", hash_generated_method = "885C8677A0ED029E797386D2040088D8")
     
 public void setDither(boolean dither) {}
@@ -424,6 +444,9 @@ public void setDither(boolean dither) {}
      * this call is ignored. This can improve the look when scaled or rotated,
      * but also slows down the drawing.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.921 -0500", hash_original_method = "D611F7535670B80ECD8BF210909C26D1", hash_generated_method = "72A4AA63A3BDB8FE50798AE60EFC3156")
     
 public void setFilterBitmap(boolean filter) {}
@@ -468,6 +491,8 @@ public Callback getCallback() {
      * @see #getCallback() 
      * @see #setCallback(android.graphics.drawable.Drawable.Callback) 
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.933 -0500", hash_original_method = "9D9FDBFF51AC2DBEF3B6FA3B8569CCD5", hash_generated_method = "6067FFF2C9B2415C286F1561F4B86863")
     
 public void invalidateSelf() {
@@ -487,6 +512,8 @@ public void invalidateSelf() {
      *
      * @see Callback#scheduleDrawable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.935 -0500", hash_original_method = "4BA44AAA8396AA668795CA7F4E916174", hash_generated_method = "645CD8E13DFF195E2A50EF26B04B7799")
     
 public void scheduleSelf(Runnable what, long when) {
@@ -505,6 +532,8 @@ public void scheduleSelf(Runnable what, long when) {
      *
      * @see Callback#unscheduleDrawable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.937 -0500", hash_original_method = "40D05A483A091B37888582EA72925B1D", hash_generated_method = "B2509450AF14B422766505826ABCA424")
     
 public void unscheduleSelf(Runnable what) {
@@ -534,6 +563,8 @@ public int getResolvedLayoutDirectionSelf() {
      * Specify an alpha value for the drawable. 0 means fully transparent, and
      * 255 means fully opaque.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.942 -0500", hash_original_method = "552C47BA233D82B224568BE44106808F", hash_generated_method = "BA237553E37FDD6A99627044600E8CEA")
     
 public abstract void setAlpha(int alpha);
@@ -542,6 +573,8 @@ public abstract void setAlpha(int alpha);
      * Specify an optional colorFilter for the drawable. Pass null to remove
      * any filters.
     */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.944 -0500", hash_original_method = "BDC70B2F57B8B4271211A6F4E36828D5", hash_generated_method = "4C4D56B62B5030A0B2B533B25B3B132E")
     
 public abstract void setColorFilter(ColorFilter cf);
@@ -556,6 +589,8 @@ public void setColorFilter(int color, PorterDuff.Mode mode) {
         setColorFilter(new PorterDuffColorFilter(color, mode));
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.948 -0500", hash_original_method = "B358CFD4AAFD748C624F742F21F12081", hash_generated_method = "53A6D5BB937B1FBBD9F855C97CE94E0F")
     
 public void clearColorFilter() {
@@ -572,6 +607,8 @@ public void clearColorFilter() {
      *
      * @see #setState(int[])
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.950 -0500", hash_original_method = "5AE02876CD642F1B59606A09240D1BD0", hash_generated_method = "87BE84D342AB9204B08094A38F81BC23")
     
 public boolean isStateful() {
@@ -617,6 +654,9 @@ public boolean setState(final int[] stateSet) {
      * Some drawables may modify their imagery based on the selected state.
      * @return An array of resource Ids describing the current state.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.954 -0500", hash_original_method = "2C3685292135F2FEA5B926C5A0764B84", hash_generated_method = "D1403FC1339289634B9EBC210DF55847")
     
 public int[] getState() {
@@ -627,6 +667,8 @@ public int[] getState() {
      * If this Drawable does transition animations between states, ask that
      * it immediately jump to the current state and skip any active animations.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.956 -0500", hash_original_method = "1A9E62CA8A2399C6C2BEF07B26352781", hash_generated_method = "547C7222D80D4C7214DF0DC279408F30")
     
 public void jumpToCurrentState() {
@@ -638,6 +680,9 @@ public void jumpToCurrentState() {
      *         {@link StateListDrawable} and {@link LevelListDrawable} this will be the child drawable
      *         currently in use.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.958 -0500", hash_original_method = "00D08FCE0657F40CBD93DF1CB810B766", hash_generated_method = "A9832292CF51056A0946F9B8A2FBC09B")
     
 public Drawable getCurrent() {
@@ -660,6 +705,8 @@ public Drawable getCurrent() {
      * of the Drawable to change (hence requiring an invalidate), otherwise
      * returns false.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.961 -0500", hash_original_method = "9037BFCAC5FB09B2A9E758C0533961C8", hash_generated_method = "CAC49DCDC50EEE63A7A5AA74566C9A29")
     
 public final boolean setLevel(int level) {
@@ -675,6 +722,7 @@ public final boolean setLevel(int level) {
      *
      * @return int Current level, from 0 (minimum) to 10000 (maximum).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.964 -0500", hash_original_method = "3688C6710C4CB9729612AA02E692BC0A", hash_generated_method = "920139CD38512EC2764B3D291ADD9FB8")
     
 public final int getLevel() {
@@ -695,6 +743,8 @@ public final int getLevel() {
      * @return boolean Returns true if the new visibility is different than
      *         its previous state.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.966 -0500", hash_original_method = "385D529E13116BE326F07B115E2B9363", hash_generated_method = "5E48D3139FE4584E32634293062CC314")
     
 public boolean setVisible(boolean visible, boolean restart) {
@@ -736,6 +786,8 @@ public final boolean isVisible() {
      *
      * @see android.graphics.PixelFormat
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.970 -0500", hash_original_method = "9662DD8C5FEE80BC1339C77EC72BA687", hash_generated_method = "7B9E49E8EE3D72D401142B9347C6D2DA")
     
 public abstract int getOpacity();
@@ -753,6 +805,9 @@ public abstract int getOpacity();
      * report, else a Region holding the parts of the Drawable's bounds that
      * are transparent.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.975 -0500", hash_original_method = "6885EC41EEEA48BF379C9186E23112DE", hash_generated_method = "0957E709FBCC66345B992BB3BA42C3DF")
     
 public Region getTransparentRegion() {
@@ -793,6 +848,9 @@ protected void onBoundsChange(Rect bounds) {}
      * Return the intrinsic width of the underlying drawable object.  Returns
      * -1 if it has no intrinsic width, such as with a solid color.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.983 -0500", hash_original_method = "EB5466611B82CCCED48E9C76B5992F82", hash_generated_method = "5707369824F06C6C8C5FEA2B9FD95BE8")
     
 public int getIntrinsicWidth() {
@@ -803,6 +861,9 @@ public int getIntrinsicWidth() {
      * Return the intrinsic height of the underlying drawable object. Returns
      * -1 if it has no intrinsic height, such as with a solid color.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.985 -0500", hash_original_method = "4249F2736881F978DCEB3B683D79E5C9", hash_generated_method = "6747FB53BFD3B8723F7B12E72210E2E9")
     
 public int getIntrinsicHeight() {
@@ -818,6 +879,9 @@ public int getIntrinsicHeight() {
      * @return The minimum width suggested by this Drawable. If this Drawable
      *         doesn't have a suggested minimum width, 0 is returned.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.987 -0500", hash_original_method = "5035EEEA88B512A7AC30F75048C2F85A", hash_generated_method = "183DCB9F3F0F8DF0D0212348E7E9BD2A")
     
 public int getMinimumWidth() {
@@ -834,6 +898,9 @@ public int getMinimumWidth() {
      * @return The minimum height suggested by this Drawable. If this Drawable
      *         doesn't have a suggested minimum height, 0 is returned.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.990 -0500", hash_original_method = "FB4CD88D7DE1F0713A1472841A364838", hash_generated_method = "5B123336F6C1DD1678925B456108326F")
     
 public int getMinimumHeight() {
@@ -848,6 +915,9 @@ public int getMinimumHeight() {
      * actually has a padding, else false. When false is returned, the padding
      * is always set to 0.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.992 -0500", hash_original_method = "3EEC3E25F33F4D98A0E1482CE3BAC48C", hash_generated_method = "E4E30BC5A2B586C28356FBCCF2EDD2FC")
     
 public boolean getPadding(Rect padding) {
@@ -869,6 +939,9 @@ public boolean getPadding(Rect padding) {
      * @see ConstantState
      * @see #getConstantState()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:11.994 -0500", hash_original_method = "4655CA169BE542FE87BF20A0D63A5DAC", hash_generated_method = "EA3B8D5BED8B8DA7D11E65B56B105C84")
     
 public Drawable mutate() {
@@ -878,6 +951,8 @@ public Drawable mutate() {
     /**
      * Inflate this Drawable from an XML resource.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.012 -0500", hash_original_method = "A7AA835959A57BB8EBB74755836F5541", hash_generated_method = "011ED454E37B98397BD93D35F88D7B33")
     
 public void inflate(Resources r, XmlPullParser parser, AttributeSet attrs)
@@ -902,11 +977,11 @@ void inflateWithAttributes(Resources r, XmlPullParser parser,
 
         mVisible = attrs.getBoolean(visibleAttr, mVisible);
     }
-
     
     public static abstract class ConstantState {
         
-        @DSModeled(DSC.SAFE)
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:11.603 -0400", hash_original_method = "1DBA432D049F8FB288727BCBD6197568", hash_generated_method = "1DBA432D049F8FB288727BCBD6197568")
         public ConstantState ()
         {
@@ -919,6 +994,8 @@ void inflateWithAttributes(Resources r, XmlPullParser parser,
          * density correctly. One should use {@link #newDrawable(Resources)}
          * instead to provide a resource.
          */
+        @DSComment("From safe class list")
+        @DSSafe(DSCat.SAFE_LIST)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.017 -0500", hash_original_method = "8AAC9AC676CAA292B513ED599D29AE60", hash_generated_method = "B86729DCAC25EA47F6FEDC3DE3D49986")
         
 public abstract Drawable newDrawable();
@@ -940,19 +1017,14 @@ public Drawable newDrawable(Resources res) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:12.022 -0500", hash_original_method = "45D95E7A5F5F7D451E51E9095BE8F693", hash_generated_method = "8A4BA37C2E536863D0CAC6B3C245CFD2")
         
 public abstract int getChangingConfigurations();
-
         
     }
-
-
     
     public static interface Callback {
         
         public void invalidateDrawable(Drawable who);
-
         
         public void scheduleDrawable(Drawable who, Runnable what, long when);
-
         
         public void unscheduleDrawable(Drawable who, Runnable what);
     }

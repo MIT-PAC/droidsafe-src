@@ -11,10 +11,6 @@ import android.text.InputType;
 import android.text.TextUtils;
 import android.util.Printer;
 
-
-
-
-
 public class EditorInfo implements InputType, Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:20.512 -0500", hash_original_field = "7BF4B04BD512732B1FDB8AD3EABEFE45", hash_generated_field = "A9521826A0927A20AC089A01E6C4AF30")
 
@@ -137,7 +133,6 @@ public EditorInfo[] newArray(int size) {
 
     public Bundle extras;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:49.352 -0400", hash_original_method = "B9ADFD40DF801C34FF4D54782A68254E", hash_generated_method = "B9ADFD40DF801C34FF4D54782A68254E")
     public EditorInfo ()
     {
@@ -184,6 +179,7 @@ public final void makeCompatible(int targetSdkVersion) {
     /**
      * Write debug output of this object.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:20.650 -0500", hash_original_method = "52E48D457BDB05F3C0DFF77F15A840F2", hash_generated_method = "FB07D72B8069FE0A14A3A9637B87ABED")
     
 public void dump(Printer pw, String prefix) {
@@ -210,6 +206,7 @@ public void dump(Printer pw, String prefix) {
      * @param dest The {@link Parcel} to be written.
      * @param flags The flags used for parceling.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:20.654 -0500", hash_original_method = "0DCEB67BA2166B08F017930A62049273", hash_generated_method = "51094617EEA2A8D3BBFA055E5F321769")
     
 public void writeToParcel(Parcel dest, int flags) {

@@ -26,10 +26,6 @@ import android.util.Log;
 import dalvik.system.PathClassLoader;
 import dalvik.system.Zygote;
 
-
-
-
-
 class ZygoteConnection {
 
     /**
@@ -93,7 +89,6 @@ private static void applyUidSecurityPolicy(Arguments args, Credentials peer)
             args.gidSpecified = true;
         }
     }
-
 
     /**
      * Applies debugger system properties to the zygote arguments.
@@ -323,6 +318,7 @@ ZygoteConnection(LocalSocket socket) throws IOException {
      *
      * @return null-ok; file descriptor
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.789 -0500", hash_original_method = "D031047267A17F3FBDEAA6E5A25F7FEC", hash_generated_method = "D031047267A17F3FBDEAA6E5A25F7FEC")
     
 FileDescriptor getFileDesciptor() {
@@ -475,7 +471,6 @@ boolean runOnce() throws ZygoteInit.MethodAndArgsCaller {
             IoUtils.closeQuietly(serverPipeFd);
         }
     }
-
     
     static class Arguments {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:51.802 -0500", hash_original_field = "8E7F39D78C11D0D620F5769854F95AD4", hash_generated_field = "8E7F39D78C11D0D620F5769854F95AD4")
@@ -696,7 +691,6 @@ private void parseArgs(String args[])
             System.arraycopy(args, curArg, remainingArgs, 0,
                     remainingArgs.length);
         }
-
         
     }
 

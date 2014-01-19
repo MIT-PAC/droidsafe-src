@@ -17,10 +17,6 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class SuggestionSpan extends CharacterStyle implements ParcelableSpan {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.898 -0500", hash_original_method = "19A242C347BA804206F8CA950CA33C4A", hash_generated_method = "0C8639614D1C222AC84A8F5F0321AC10")
@@ -41,7 +37,6 @@ private static int hashCodeInternal(String[] suggestions, String locale,
     public static final int FLAG_AUTO_CORRECTION = 0x0004;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.817 -0500", hash_original_field = "C2C4C65430A0254E14DAB7AC833F36C9", hash_generated_field = "6BE9D6FF7EA9AFB0E6D33742E0643DAC")
 
-
     public static final String ACTION_SUGGESTION_PICKED = "android.text.style.SUGGESTION_PICKED";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.820 -0500", hash_original_field = "E5256340D9295C3A0D6AA883A5237971", hash_generated_field = "1F2C143752BB6DB9A8D30C9B306CEF3A")
 
@@ -53,7 +48,6 @@ private static int hashCodeInternal(String[] suggestions, String locale,
 
     public static final String SUGGESTION_SPAN_PICKED_HASHCODE = "hashcode";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.828 -0500", hash_original_field = "E41E5467D8AC444668FE62E51E55FF12", hash_generated_field = "AF65BC39A44E7D93F9365DF1A5F722E1")
-
 
     public static final int SUGGESTIONS_MAX_SIZE = 5;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:40.224 -0400", hash_original_field = "D7626C6BE860F29C41E36E880CF9437E", hash_generated_field = "368BEC2D23997E875633673B3BD26F7D")
@@ -76,7 +70,6 @@ private static int hashCodeInternal(String[] suggestions, String locale,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.830 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "43F71E9173849705E01112D0229448B4")
 
-
     private int mFlags;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.832 -0500", hash_original_field = "D25184D4A2C602FEC3892EB70177EB91", hash_generated_field = "5DB4DA08FB0C173A250A5596D6A803F5")
 
@@ -92,20 +85,17 @@ private static int hashCodeInternal(String[] suggestions, String locale,
     private  int mHashCode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.843 -0500", hash_original_field = "06BC6A858E238A790B3DB49A52AE943B", hash_generated_field = "D8E4A74236F36CDFABEB6618E7713838")
 
-
     private float mEasyCorrectUnderlineThickness;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.846 -0500", hash_original_field = "DD1A84731880B8DEA80E239CCCA8EE38", hash_generated_field = "905A94AA135811911825782A2E1D2D0E")
 
     private int mEasyCorrectUnderlineColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.848 -0500", hash_original_field = "7BDD2761EAB8EB4D336D07B75D25A9BF", hash_generated_field = "7C6B77EA496ACC5A6845012167698141")
 
-
     private float mMisspelledUnderlineThickness;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.850 -0500", hash_original_field = "000078B6D48A012D7A9CBB72782DD459", hash_generated_field = "BDDD9AB7CE31E6C68EA76F54C1C6C56E")
 
     private int mMisspelledUnderlineColor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.852 -0500", hash_original_field = "FB092D1F7EE550B296F688594379B53A", hash_generated_field = "C319F61C6ED6657EDFE1CE012D16B907")
-
 
     private float mAutoCorrectionUnderlineThickness;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.855 -0500", hash_original_field = "7499AB346189BD34077419B0E098498D", hash_generated_field = "EA8BF259BCC9D5320AD9DAB8BD56682E")
@@ -223,6 +213,7 @@ private void initStyle(Context context) {
     /**
      * @return an array of suggestion texts for this span
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.872 -0500", hash_original_method = "04652F77FFC7CAE5D602B0C4E1FED158", hash_generated_method = "013629CE7E363B170006B500CA4D5D7A")
     
 public String[] getSuggestions() {
@@ -232,6 +223,7 @@ public String[] getSuggestions() {
     /**
      * @return the locale of the suggestions
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.875 -0500", hash_original_method = "A5C216C37271149997104A3E25E89F54", hash_generated_method = "8A75BE64309CC11E6E9FB3F5754CC8E4")
     
 public String getLocale() {
@@ -247,12 +239,14 @@ public String getLocale() {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.877 -0500", hash_original_method = "248A1CDF1DF25C4245B012EBF128264F", hash_generated_method = "B9AB09A78E3DAC7EFDC7AA4B2768F922")
     
 public String getNotificationTargetClassName() {
         return mNotificationTargetClassName;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.879 -0500", hash_original_method = "CE8F8E5E4A30C515D6BD9049A49703B9", hash_generated_method = "A2E92201CC64F45D5B306C5445EC4739")
     
 public int getFlags() {
@@ -289,6 +283,7 @@ public void setFlags(int flags) {
         dest.writeFloat(mAutoCorrectionUnderlineThickness);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.890 -0500", hash_original_method = "DBAA6553895459183AA1E1C35310F256", hash_generated_method = "F8E6266376A4F6A7AF437EF4875BA636")
     
 @Override
@@ -338,6 +333,7 @@ public void setFlags(int flags) {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.913 -0500", hash_original_method = "6F69CCF79C26CDB5AAE1758554866B40", hash_generated_method = "05D7DDAE757CC59D61ACFA08D764FD8C")
     
 public int getUnderlineColor() {

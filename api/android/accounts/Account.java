@@ -8,12 +8,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class Account implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:12.359 -0400", hash_original_field = "DE2599644EF9112EA03F6AEF302C05E0", hash_generated_field = "E8FF743E340A29709E9F49FE249853DC")
 
@@ -88,6 +83,7 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(type);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:47.382 -0500", hash_original_method = "E40D22A387A231E7FC5FB70BCBB60906", hash_generated_method = "7190CE6F6B01E485C4D2655A294C13CC")
     
 public String toString() {

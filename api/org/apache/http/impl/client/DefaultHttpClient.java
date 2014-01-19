@@ -59,7 +59,6 @@ import org.apache.http.util.VersionInfo;
 
 public class DefaultHttpClient extends AbstractHttpClient {
 
-
     /**
      * Creates a new HTTP client from parameters and a connection manager.
      *
@@ -73,21 +72,20 @@ public DefaultHttpClient(
             final HttpParams params) {
         super(conman, params);
     }
-    
        
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.249 -0500", hash_original_method = "E0C829A12DCA716ADA587F6BA150989E", hash_generated_method = "A8A0D17BBC5D360DC78B763D6D829C3F")
     
 public DefaultHttpClient(final HttpParams params) {
         super(null, params);
     }
-
     
+    @DSComment("creates connection ability")
+    @DSSpec(DSCat.NETWORKING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.252 -0500", hash_original_method = "750193D90CA0949C0C735B3486D9889C", hash_generated_method = "C2281E91FF5D0B24DBCBA793897CD3E2")
     
 public DefaultHttpClient() {
         super(null, null);
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.254 -0500", hash_original_method = "7CB663CBD5778E22C9AD8E80132ECD7C", hash_generated_method = "DE507A8477EB121C42A0C5C9CEDDAA35")
     
@@ -118,7 +116,6 @@ public DefaultHttpClient() {
 
         return params;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.257 -0500", hash_original_method = "F3505412AB0839480CB671E1A4D22DAB", hash_generated_method = "E9610A148495136FA39A2DA7FA60A8D2")
     
@@ -126,7 +123,6 @@ public DefaultHttpClient() {
     protected HttpRequestExecutor createRequestExecutor() {
         return new HttpRequestExecutor();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.259 -0500", hash_original_method = "C42A8A1E8C3C461006C6920C87D13C0A", hash_generated_method = "3E64F6DEC5D7C9369A75074C865804E3")
     
@@ -172,7 +168,6 @@ public DefaultHttpClient() {
         return connManager;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.262 -0500", hash_original_method = "25CB6129B8FDB94E4986C80A494E2B06", hash_generated_method = "71D3088C96B76CD02A26BBF639087B59")
     
 @Override
@@ -192,7 +187,6 @@ public DefaultHttpClient() {
                 getCredentialsProvider());
         return context;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.264 -0500", hash_original_method = "D717E5D917BACE4DBA9E14F0AD65F48C", hash_generated_method = "CA80DE746762F1F3E3B77968ACD0DEF1")
     
@@ -207,7 +201,6 @@ public DefaultHttpClient() {
     protected ConnectionKeepAliveStrategy createConnectionKeepAliveStrategy() {
         return new DefaultConnectionKeepAliveStrategy();
     }
-    
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.270 -0500", hash_original_method = "75C52B493B32BA0931FDF11A10703B36", hash_generated_method = "A08E4CEFEFCDA0F606B484044E5ACF91")
     
@@ -222,7 +215,6 @@ public DefaultHttpClient() {
                 new DigestSchemeFactory());
         return registry;
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.273 -0500", hash_original_method = "2986BF87A2DD05E6E31FCC1654EB03B5", hash_generated_method = "D63B13F5E8799427A74AE56B7D1986FF")
     
@@ -247,7 +239,6 @@ public DefaultHttpClient() {
         return registry;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.276 -0500", hash_original_method = "2E7E8D0B83423FC6C240BF5D6DCBDE4D", hash_generated_method = "53E5A9C9A3A4D1547625AA77B59D3219")
     
 @Override
@@ -270,14 +261,12 @@ public DefaultHttpClient() {
         return httpproc;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.278 -0500", hash_original_method = "060CC3B74841E3F6FC79CC89E59C47D3", hash_generated_method = "8D23531C58A175032AAA9585BA2458A8")
     
 @Override
     protected HttpRequestRetryHandler createHttpRequestRetryHandler() {
         return new DefaultHttpRequestRetryHandler();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.280 -0500", hash_original_method = "4B5E8754A7C96AB1D27440EE21EB62A0", hash_generated_method = "3936A0EFE17DEFBE6BE049B78DE41FED")
     
@@ -286,14 +275,12 @@ public DefaultHttpClient() {
         return new DefaultRedirectHandler();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.282 -0500", hash_original_method = "CE20EA4DC0B433CD2AE1F8D13D6593E2", hash_generated_method = "0D1DB14A76C5E9993A866BCE7B5F13EE")
     
 @Override
     protected AuthenticationHandler createTargetAuthenticationHandler() {
         return new DefaultTargetAuthenticationHandler();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.285 -0500", hash_original_method = "B6E682DFDA0487EF6FFF82AF7B123D48", hash_generated_method = "2000DF83F4553BBEBFA78113D7C26D09")
     
@@ -302,7 +289,6 @@ public DefaultHttpClient() {
         return new DefaultProxyAuthenticationHandler();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.287 -0500", hash_original_method = "EF2D14C866EAD04A4C29973169C02328", hash_generated_method = "759B155884309A8EE0C3C657632F751E")
     
 @Override
@@ -310,14 +296,12 @@ public DefaultHttpClient() {
         return new BasicCookieStore();
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.289 -0500", hash_original_method = "7086A691E773C3CE0961AEAF5E488C24", hash_generated_method = "D07D683464361168E4F95A15CCA51123")
     
 @Override
     protected CredentialsProvider createCredentialsProvider() {
         return new BasicCredentialsProvider();
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.291 -0500", hash_original_method = "0D3A0E833E374EE9EB01454019D72BDB", hash_generated_method = "D8922D903E864F05F9C7126ABAAFE25B")
     
@@ -329,15 +313,12 @@ public DefaultHttpClient() {
         // END android-changed
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:40.293 -0500", hash_original_method = "B64DD33A238620F5CE58C192C71660B3", hash_generated_method = "0C859D64B57A153ED8D6BE57ED159972")
     
 @Override
     protected UserTokenHandler createUserTokenHandler() {
         return new DefaultUserTokenHandler();
     }
-
-    
     
 }
 

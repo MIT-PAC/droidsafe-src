@@ -8,8 +8,6 @@ import java.util.ArrayList;
 
 import android.util.Log;
 
-
-
 public class MessageQueue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.789 -0500", hash_original_field = "4CD2256F13C791768C1C46ADDB2DD4CF", hash_generated_field = "4CD2256F13C791768C1C46ADDB2DD4CF")
 
@@ -31,7 +29,6 @@ public class MessageQueue {
     private boolean mBlocked;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:38.802 -0500", hash_original_field = "42C21A18FB5976D4C67962413781C35D", hash_generated_field = "F6CBBCA427D08C52E84BEBFADDF6C4B3")
 
-
     @SuppressWarnings("unused")
     private int mPtr;
     
@@ -40,31 +37,22 @@ public class MessageQueue {
 MessageQueue() {
         nativeInit();
     }
-
     
-    @DSModeled(DSC.SAFE)
     private void nativeInit(){
         //Formerly a native function
     }
-
     
-    @DSModeled(DSC.SAFE)
     private void nativeDestroy(){
         //Formerly a native function
     }
-
     
-    @DSModeled(DSC.SAFE)
     private void nativePollOnce(int ptr, int timeoutMillis){
         //Formerly a native function
     }
-
     
-    @DSModeled(DSC.SAFE)
     private void nativeWake(int ptr){
         //Formerly a native function
     }
-
     
     public final void addIdleHandler(IdleHandler handler){
         //throw new NullPointerException("Can't add a null IdleHandler");
@@ -81,7 +69,6 @@ MessageQueue() {
     }
         */
     }
-
     
     public final void removeIdleHandler(IdleHandler handler){
         mIdleHandlers.remove(handler);
@@ -94,9 +81,7 @@ MessageQueue() {
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override protected void finalize(){
         nativeDestroy();
         try {
@@ -115,9 +100,7 @@ MessageQueue() {
     }
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     final Message next(){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
         //int pendingIdleHandlerCount = -1;
@@ -142,7 +125,6 @@ MessageQueue() {
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */
     }
-
     
     final boolean enqueueMessage(Message msg, long when){
         //throw new AndroidRuntimeException(msg + " This message is already in use.");
@@ -162,7 +144,6 @@ MessageQueue() {
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */
     }
-
     
     final boolean removeMessages(Handler h, int what, Object object,
             boolean doRemove){
@@ -182,7 +163,6 @@ MessageQueue() {
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */
     }
-
     
     final void removeMessages(Handler h, Runnable r, Object object){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
@@ -198,7 +178,6 @@ MessageQueue() {
         // Original method
         /* Original Method Too Long, Refer to Original Implementation */
     }
-
     
     final void removeCallbacksAndMessages(Handler h, Object object){
         //DSFIXME:  CODE0004: Local variable requires review, uncomment if needed
@@ -239,7 +218,6 @@ MessageQueue() {
     }
         */
     }
-
     
     public static interface IdleHandler {
         

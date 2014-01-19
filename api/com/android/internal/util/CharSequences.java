@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 public class CharSequences {
-
-
-    @DSModeled(DSC.SAFE)
+    
     public static CharSequence forAsciiBytes(final byte[] bytes) {
         return new CharSequence() {
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:46.168 -0500", hash_original_method = "7182E2CD4878FCE5F8BD74EF7161C3FC", hash_generated_method = "53F8F55F89153BC1B927409211C341B4")
@@ -39,9 +34,7 @@ public String toString() {
             }
         };
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static CharSequence forAsciiBytes(final byte[] bytes,
             final int start, final int end) {
         validate(start, end, bytes.length);
@@ -132,7 +125,6 @@ public static int compareToIgnoreCase(CharSequence me, CharSequence another) {
     {
         //Synthesized constructor
     }
-
     
 }
 

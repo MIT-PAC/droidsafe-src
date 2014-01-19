@@ -34,16 +34,11 @@ import libcore.io.IoUtils;
 import libcore.io.Libcore;
 import libcore.io.StructPollfd;
 
-
-
-
-
 final class SelectorImpl extends AbstractSelector {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.977 -0500", hash_original_field = "4799F2FA87D10E2424DB0D9E99F61148", hash_generated_field = "6DE612B35C9E8808CBEC2658E9286A57")
 
     final Object keysLock = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.979 -0500", hash_original_field = "BC6F6BAB7C8D703BA0EF1E6FB9669BEF", hash_generated_field = "FC886FA77928694F4640D640BCFDF7BE")
-
 
     private final Set<SelectionKeyImpl> mutableKeys = new HashSet<SelectionKeyImpl>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.982 -0500", hash_original_field = "0A023B17E701A8F999194659EECDACA7", hash_generated_field = "3DBE34F9B4C5E57002A17A3BD0063AA5")
@@ -51,7 +46,6 @@ final class SelectorImpl extends AbstractSelector {
     private final Set<SelectionKey> unmodifiableKeys = Collections
             .<SelectionKey>unmodifiableSet(mutableKeys);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.984 -0500", hash_original_field = "28E6010F5DD2CB1505084E056C78CC21", hash_generated_field = "2D8093EE2318D28CDED981CA87DED90A")
-
 
     private final Set<SelectionKey> mutableSelectedKeys = new HashSet<SelectionKey>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.987 -0500", hash_original_field = "3EF55FCF65B970351E0A63253C122DCE", hash_generated_field = "451F342BD781ADBAA504C0DDB5A78C6B")
@@ -65,7 +59,6 @@ final class SelectorImpl extends AbstractSelector {
 
     private  FileDescriptor wakeupOut;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.994 -0500", hash_original_field = "2B7103EC06FD9EFCB085BDE297812B2F", hash_generated_field = "EFB3CC6DFEED71DE9DAD42AA06EB7441")
-
 
     private final UnsafeArrayList<StructPollfd> pollFds = new UnsafeArrayList<StructPollfd>(StructPollfd.class, 8);
 
@@ -337,11 +330,9 @@ private int doCancel() {
         }
         return this;
     }
-
     
     private static class UnaddableSet<E> implements Set<E> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:02.040 -0500", hash_original_field = "1B7D8B9EFD416D2DA50204CC5903E05E", hash_generated_field = "9C45C0B407AF9ECDDC9EEE7EDB68F0BC")
-
 
         private  Set<E> set;
 
@@ -436,9 +427,7 @@ public int size() {
 public Object[] toArray() {
             return set.toArray();
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:53.903 -0400", hash_original_method = "820308A08287454AD26ACE5A2E12E893", hash_generated_method = "C858378E5DE3F08ADC16EF2E7BFADF34")
         public <T> T[] toArray(T[] a) {
             addTaint(a[0].getTaint());
@@ -448,11 +437,8 @@ T[] varBD37699932362128D1DCA08F9CDDCC12_2067346240 =             set.toArray(a);
             // ---------- Original Method ----------
             //return set.toArray(a);
         }
-
         
     }
-
-
     
 }
 

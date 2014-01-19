@@ -107,16 +107,12 @@ import javax.sip.header.ViaHeader;
 import javax.sip.header.WWWAuthenticateHeader;
 import javax.sip.header.WarningHeader;
 
-
-
-
-
-
 public class ParserFactory {
 
     /**
      * create a parser for a header. This is the parser factory.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.109 -0500", hash_original_method = "6AFE9CBA6B56E35C594D2C594C957D14", hash_generated_method = "EBE6484005C937078EB2F255949EA23A")
     
 public static HeaderParser createParser(String line)
@@ -151,7 +147,6 @@ public static HeaderParser createParser(String line)
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.098 -0500", hash_original_field = "EDA93F77CCF1F9B25EBF295EE61751F5", hash_generated_field = "0A3C66CA4CD5AF69A34601C4EB5A6186")
-
 
     private static Hashtable<String,Class<? extends HeaderParser>> parserTable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:43.101 -0500", hash_original_field = "7321F45FBFF47190C0E578923D62E147", hash_generated_field = "AA78F4096AC7D2050F7D84F484AF823F")

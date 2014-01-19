@@ -17,17 +17,11 @@ import java.util.Locale;
 import libcore.icu.LocaleData;
 import libcore.icu.NativeDecimalFormat;
 
-
-
-
-
 public class DecimalFormat extends NumberFormat {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.788 -0500", hash_original_field = "7E9991E76AE7823245F4755D2CD04E34", hash_generated_field = "942EFADCEB0CE1279370395E6155A826")
 
-
     private static final long serialVersionUID = 864413376551465018L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.873 -0500", hash_original_field = "49E5436FA4A84D9C467485AABDE306FD", hash_generated_field = "932CCB84649F025E2FD30B1EDEB9D654")
-
 
     private static final Double NEGATIVE_ZERO_DOUBLE = new Double(-0.0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.922 -0500", hash_original_field = "B584027FAD5CBF24485B1BF95027D3DC", hash_generated_field = "27E2EF88F203E0B05638B8EC99836A70")
@@ -58,16 +52,14 @@ public class DecimalFormat extends NumberFormat {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.791 -0500", hash_original_field = "C290400CD00A6BC2E6DE4CB472105427", hash_generated_field = "52EBB9EA358F4A29D5EE09E100128428")
 
-
     private transient DecimalFormatSymbols symbols;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.793 -0500", hash_original_field = "2D2126BF0AB22AEB6CD9FBDCCD0DC70F", hash_generated_field = "311D958CADB5DD8F5620B5C0287903DF")
-
 
     private transient NativeDecimalFormat dform;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.076 -0400", hash_original_field = "56B4B01527B4EB5F82F59EBDEC4AAB14", hash_generated_field = "13F8C455B70342D0BE0D104687A9B188")
 
-    private final Object finalizerGuardian = new Object() {        
-        @DSModeled(DSC.SAFE)
+    private final Object finalizerGuardian = new Object() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:59.076 -0400", hash_original_method = "1A366D9719473F2399B539B354BB787B", hash_generated_method = "ABC3A607675036C5172AEFC1575529C6")
         @Override
         protected void finalize() throws Throwable {
@@ -78,19 +70,12 @@ public class DecimalFormat extends NumberFormat {
             finally 
             {
                 super.finalize();
-            } 
-            
-            
-                
-            
-                
+            }
             
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.801 -0500", hash_original_field = "1D26322835C5517479F83C610EBD2681", hash_generated_field = "F8D485A47161940F89EC9F4328B1DE40")
-
 
     private transient RoundingMode roundingMode = RoundingMode.HALF_EVEN;
 
@@ -116,6 +101,8 @@ public DecimalFormat() {
      * @throws IllegalArgumentException
      *            if the pattern cannot be parsed.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.806 -0500", hash_original_method = "35AB5293961F9B593ADD183E8B6B3242", hash_generated_method = "F48FB803D27D0D027D76017074F2D40B")
     
 public DecimalFormat(String pattern) {
@@ -328,6 +315,7 @@ private void checkBufferAndFieldPosition(StringBuffer buffer, FieldPosition posi
      * @return a copy of the {@code DecimalFormatSymbols} used by this decimal
      *         format.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.841 -0500", hash_original_method = "8DCCB340D185077EABFD1E6BFE3DB36F", hash_generated_method = "1433923B36B9154D97E82E9D22FE1CE7")
     
 public DecimalFormatSymbols getDecimalFormatSymbols() {
@@ -340,6 +328,7 @@ public DecimalFormatSymbols getDecimalFormatSymbols() {
      * @return the currency used by this decimal format.
      * @see DecimalFormatSymbols#getCurrency()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.843 -0500", hash_original_method = "58EEC1F79BF01CD73E1939B30FC9554A", hash_generated_method = "2A671B166B9C52E05AEA409008D31548")
     
 @Override
@@ -354,6 +343,7 @@ public DecimalFormatSymbols getDecimalFormatSymbols() {
      *
      * @return the number of digits grouped together.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.846 -0500", hash_original_method = "3224B3D9278B5F6729F4AC0FDDE7BC48", hash_generated_method = "7D3B4A6BB4FC8548C8F20EC568FF33BB")
     
 public int getGroupingSize() {
@@ -366,6 +356,7 @@ public int getGroupingSize() {
      *
      * @return the multiplier.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.848 -0500", hash_original_method = "20055FC91A272014560FDC07D160C285", hash_generated_method = "609694A207934005FBE331D55076A117")
     
 public int getMultiplier() {
@@ -377,6 +368,7 @@ public int getMultiplier() {
      *
      * @return the negative prefix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.851 -0500", hash_original_method = "1F7C0591D1187101B5F5E6FCEBFE4BA7", hash_generated_method = "5C877E6936A26C55B8ED55C2EA134572")
     
 public String getNegativePrefix() {
@@ -388,6 +380,7 @@ public String getNegativePrefix() {
      *
      * @return the negative suffix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.853 -0500", hash_original_method = "61D6D48706CC87AEEF19B015AC798361", hash_generated_method = "E98B91806F33E1C69FFBF95588EEA304")
     
 public String getNegativeSuffix() {
@@ -399,6 +392,7 @@ public String getNegativeSuffix() {
      *
      * @return the positive prefix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.855 -0500", hash_original_method = "55B5FDB79399831D6973F7F1358A3E99", hash_generated_method = "6123F5F858C9E0A71F6C85B843802FDC")
     
 public String getPositivePrefix() {
@@ -410,6 +404,7 @@ public String getPositivePrefix() {
      *
      * @return the positive suffix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.857 -0500", hash_original_method = "2B5CAE95AEB5D456BD3378DDAC8D9097", hash_generated_method = "A930653E4CD5FFE5AF01038AAEF4DDA8")
     
 public String getPositiveSuffix() {
@@ -463,6 +458,7 @@ public boolean isParseBigDecimal() {
      *            will be of type {@code java.lang.Integer} except for the
      *            special cases described above.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.867 -0500", hash_original_method = "7481DA5537EE3F9956B6D5D3C7A225D0", hash_generated_method = "96EEA52003F882ABA75B21AC104A853A")
     
 @Override
@@ -548,6 +544,7 @@ public boolean isParseBigDecimal() {
      * @param value
      *            the {@code DecimalFormatSymbols} to set.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.878 -0500", hash_original_method = "86D86A0FD4BCEEB43D34AB98DA52821C", hash_generated_method = "ABDCE81DD5C3B5AB0732C3F903CDAF3F")
     
 public void setDecimalFormatSymbols(DecimalFormatSymbols value) {
@@ -566,6 +563,7 @@ public void setDecimalFormatSymbols(DecimalFormatSymbols value) {
      *            the currency this {@code DecimalFormat} should use.
      * @see DecimalFormatSymbols#setCurrency(Currency)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.880 -0500", hash_original_method = "4395CDF7142532C86BE10F65050BB217", hash_generated_method = "9E20FF6281BB59E1A6BD1061B4B24737")
     
 @Override
@@ -582,6 +580,7 @@ public void setDecimalFormatSymbols(DecimalFormatSymbols value) {
      *            {@code true} if the decimal separator should always be
      *            formatted; {@code false} otherwise.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.882 -0500", hash_original_method = "3B253ED7615AA8E014EF753B3801D05C", hash_generated_method = "060F41BAE7BBC4890552C3951687DD37")
     
 public void setDecimalSeparatorAlwaysShown(boolean value) {
@@ -596,6 +595,7 @@ public void setDecimalSeparatorAlwaysShown(boolean value) {
      * @param value
      *            the number of digits grouped together.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.884 -0500", hash_original_method = "C7D074F8D378A670A8F54B2C99810E6C", hash_generated_method = "3D87E646FC705306EBDAD2F06F9DFEB8")
     
 public void setGroupingSize(int value) {
@@ -609,6 +609,7 @@ public void setGroupingSize(int value) {
      * @param value
      *            {@code true} if grouping is used; {@code false} otherwise.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.887 -0500", hash_original_method = "ABE655961F79B3C1FE3443634AA21C37", hash_generated_method = "91004DDDF771A6CC7CFB13627495F367")
     
 @Override
@@ -635,6 +636,7 @@ public void setGroupingSize(int value) {
      *
      * @param value the maximum number of fraction digits.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.892 -0500", hash_original_method = "D0C418C01DBD33DD29A18941B68BCBF7", hash_generated_method = "1C7EB6C8394959EECD4657CE2A97FE38")
     
 @Override
@@ -652,6 +654,9 @@ public void setGroupingSize(int value) {
      *
      * @param value the maximum number of integer digits.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.895 -0500", hash_original_method = "D5AFAB41905B13F7AD20D2FADDE73669", hash_generated_method = "836F4C4A51D27A61D4C060CA61C33E7B")
     
 @Override
@@ -667,6 +672,7 @@ public void setGroupingSize(int value) {
      *
      * @param value the minimum number of fraction digits.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.897 -0500", hash_original_method = "9EB52B7EEE1D2B50BAA9500CCA3AFB4E", hash_generated_method = "2E01BA5752DCDC86BCBE258A1F10D793")
     
 @Override
@@ -682,6 +688,7 @@ public void setGroupingSize(int value) {
      *
      * @param value the minimum number of integer digits.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.901 -0500", hash_original_method = "6EFC03984672E7D89A36C9F22F2AAB3B", hash_generated_method = "F01D9D9066CB5833B173FA2BD15528ED")
     
 @Override
@@ -697,6 +704,7 @@ public void setGroupingSize(int value) {
      * @param value
      *            the multiplier.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.903 -0500", hash_original_method = "2E4C739E2F1CFFD7C6A061AD5BB9ADF4", hash_generated_method = "F52AB94F5BFF1732FE3D52414C16FB4B")
     
 public void setMultiplier(int value) {
@@ -709,6 +717,7 @@ public void setMultiplier(int value) {
      * @param value
      *            the negative prefix.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.905 -0500", hash_original_method = "2C739DF56DF29E81D815FC52FA901BFF", hash_generated_method = "EF37A221B1E24DB8C1D8DAE150DD672E")
     
 public void setNegativePrefix(String value) {
@@ -721,6 +730,7 @@ public void setNegativePrefix(String value) {
      * @param value
      *            the negative suffix.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.907 -0500", hash_original_method = "A51B4E91EE1B92D26334E28FF3A003CC", hash_generated_method = "0C504B3533959647AE16EF7F33AA9734")
     
 public void setNegativeSuffix(String value) {
@@ -733,6 +743,7 @@ public void setNegativeSuffix(String value) {
      * @param value
      *            the positive prefix.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.910 -0500", hash_original_method = "7DA87D841FEB1EB829AC578209C7D87B", hash_generated_method = "518FFAC2C72B0CF0D4BC6FDEDECE4039")
     
 public void setPositivePrefix(String value) {
@@ -745,6 +756,7 @@ public void setPositivePrefix(String value) {
      * @param value
      *            the positive suffix.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.912 -0500", hash_original_method = "740675349A091E1D283FD9B9350AE3AA", hash_generated_method = "3564C6115BA1159AF36A66E4124816C6")
     
 public void setPositiveSuffix(String value) {
@@ -759,6 +771,7 @@ public void setPositiveSuffix(String value) {
      *            {@code true} if all the returned objects should be of type
      *            {@code BigDecimal}; {@code false} otherwise.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.914 -0500", hash_original_method = "DD680A2A91BAA011B854EB3CE1AE2AEF", hash_generated_method = "93345C76FD275887E99A63959B05FBDB")
     
 public void setParseBigDecimal(boolean newValue) {
@@ -886,6 +899,7 @@ private void readObject(ObjectInputStream stream) throws IOException, ClassNotFo
      * Returns the {@code RoundingMode} used by this {@code NumberFormat}.
      * @since 1.6
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:09.931 -0500", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "6D523F860AF5DA84DA6E20F0C7E0AAFA")
     
 public RoundingMode getRoundingMode() {

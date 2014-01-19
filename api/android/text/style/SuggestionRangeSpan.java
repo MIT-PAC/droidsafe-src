@@ -9,10 +9,6 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class SuggestionRangeSpan extends CharacterStyle implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.595 -0500", hash_original_field = "9413B7CAD54A5CFB690F08E0547B483E", hash_generated_field = "CC64588E1E08B8E0993874A8A69D251D")
 
@@ -45,6 +41,7 @@ public SuggestionRangeSpan(Parcel src) {
         dest.writeInt(mBackgroundColor);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.609 -0500", hash_original_method = "C317BC4F0E850D3D8EACD128701AD14B", hash_generated_method = "30B28F1C3E21EAB670C42B16DFC6F4C0")
     
 @Override
@@ -64,7 +61,6 @@ public void setBackgroundColor(int backgroundColor) {
     public void updateDrawState(TextPaint tp) {
         tp.bgColor = mBackgroundColor;
     }
-
     
 }
 

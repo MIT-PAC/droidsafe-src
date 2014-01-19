@@ -14,9 +14,6 @@ import java.util.HashMap;
 import android.os.ParcelFileDescriptor;
 import android.util.TypedValue;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class AssetManager {
@@ -38,63 +35,47 @@ private static void ensureSystemAssets() {
      * system assets (no application assets).
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.874 -0500", hash_original_method = "2E03DF1E56EAF45D52AE236031E99A60", hash_generated_method = "F2D62EEBC23D93EF792674B4D7052CF7")
     
 public static AssetManager getSystem() {
         ensureSystemAssets();
         return sSystem;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final boolean applyStyle(int theme,
             int defStyleAttr, int defStyleRes, int xmlParser,
             int[] inAttrs, int[] outValues, int[] outIndices) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getGlobalAssetCount() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final String getAssetAllocations() {
         	return "";
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static final int getGlobalAssetManagerCount() {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final void applyThemeStyle(int theme, int styleRes, boolean force) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final void copyTheme(int dest, int source) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final int loadThemeAttributeValue(int theme, int ident,
                                                                 TypedValue outValue,
                                                                 boolean resolve) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     static final void dumpTheme(int theme, int priority, String tag, String prefix) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.827 -0500", hash_original_field = "8596CD11A7036DFAE2B55A84F7B1821E", hash_generated_field = "F0F16F15C40F285B8A0645A0BC532026")
-
 
     /**
      * Mode for {@link #open(String, int)}: no specific information about how
@@ -112,17 +93,14 @@ public static AssetManager getSystem() {
     public static final int ACCESS_BUFFER = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.836 -0500", hash_original_field = "E972EA7E59D95929329EC1DEC67C521E", hash_generated_field = "FDC75AE01ED37E059BA4F54E9509C8D2")
 
-
     private static final String TAG = "AssetManager";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.838 -0500", hash_original_field = "E7B97A2CD2A2512D00373A5F856DE18B", hash_generated_field = "776D75E65C0F716B6889BA4A8C683647")
 
     private static final boolean localLOGV = false || false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.842 -0500", hash_original_field = "95CE7AF2D96DFE943A20EC8DD4F46B72", hash_generated_field = "C4EDA31E106597348022664C2B4AE055")
-
     
     private static final boolean DEBUG_REFS = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.844 -0500", hash_original_field = "C9A89FF9952633C3C99E6CECFFFB823C", hash_generated_field = "589A8BDF0C7416090F474EA4E832C9BC")
-
     
     private static final Object sSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.846 -0500", hash_original_field = "5ED009B0F5F554186AF81AAAA3241365", hash_generated_field = "D0731D8853FB150972B9C951A1F661AE")
@@ -143,7 +121,6 @@ public static AssetManager getSystem() {
  static final int STYLE_DENSITY = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.848 -0500", hash_original_field = "654366000D5436FE48B31EFBD0B3756D", hash_generated_field = "184B6A2C79F6E655DC652C734EA9E31F")
 
-
     private final TypedValue mValue = new TypedValue();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.851 -0500", hash_original_field = "59ECEE1C2A1FB4549E5B598845357CC5", hash_generated_field = "427FE67122035B768BAE648A2E98CFF3")
 
@@ -156,10 +133,8 @@ public static AssetManager getSystem() {
     private int mNObject;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.857 -0500", hash_original_field = "6C1539D17F126AB4029EDA5DABC059CB", hash_generated_field = "EC37C879DC6C6530C4627CE0DC66498D")
 
-
     private StringBlock mStringBlocks[] = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.860 -0500", hash_original_field = "E99A23F0EC90447AD6B830636570319F", hash_generated_field = "32DC8A24B3C6E9B83A49CEC09007226E")
-
     
     private int mNumRefs = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.862 -0500", hash_original_field = "C88AEDA1700F461F9D03C7F9BF16FB2E", hash_generated_field = "A2271578EE597A5B87471FA73E6D159F")
@@ -167,7 +142,7 @@ public static AssetManager getSystem() {
     private boolean mOpen = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.864 -0500", hash_original_field = "753A5D0F1D46E813F708908D07B1A3D1", hash_generated_field = "057DB168549C247D4E5C64EC3B4E7B98")
 
-    private HashMap<Integer, RuntimeException> mRefStacks; 
+    private HashMap<Integer, RuntimeException> mRefStacks;
  
     /**
      * Create a new AssetManager containing only the basic system assets.
@@ -223,7 +198,8 @@ public void close() {
      * Retrieve the string value associated with a particular resource
      * identifier for the current configuration / skin.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.878 -0500", hash_original_method = "CB81F9A1A3C0416B5CF420A3F62514E3", hash_generated_method = "566D02F833DEB90675A04751BE80B06E")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.878 -0500", hash_original_method = "CB81F9A1A3C0416B5CF420A3F62514E3", hash_generated_method = "566D02F833DEB90675A04751BE80B06E")
     
 final CharSequence getResourceText(int ident) {
         synchronized (this) {
@@ -243,7 +219,8 @@ final CharSequence getResourceText(int ident) {
      * Retrieve the string value associated with a particular resource
      * identifier for the current configuration / skin.
      */
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.880 -0500", hash_original_method = "2C5FA72B5D3C88AECCC2C4639A2FC63C", hash_generated_method = "5990EC8BFC2A29BA9FF2C6D7D17ECF89")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.880 -0500", hash_original_method = "2C5FA72B5D3C88AECCC2C4639A2FC63C", hash_generated_method = "5990EC8BFC2A29BA9FF2C6D7D17ECF89")
     
 final CharSequence getResourceBagText(int ident, int bagEntryId) {
         synchronized (this) {
@@ -271,8 +248,8 @@ final String[] getResourceStringArray(final int id) {
         return retArray;
     }
 
-
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.885 -0500", hash_original_method = "880DADF9021E8E0236DAC9AB890DE1A9", hash_generated_method = "6635CC9A9B1559C72E90550A8A0A4FE6")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.885 -0500", hash_original_method = "880DADF9021E8E0236DAC9AB890DE1A9", hash_generated_method = "6635CC9A9B1559C72E90550A8A0A4FE6")
     
 final boolean getResourceValue(int ident,
                                                int density,
@@ -312,7 +289,8 @@ final CharSequence[] getResourceTextArray(final int id) {
         return retArray;
     }
     
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.890 -0500", hash_original_method = "257E397E5CF934BBA53C0ACDE849DFE1", hash_generated_method = "158919A99B960BE9FE30781401A26982")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.890 -0500", hash_original_method = "257E397E5CF934BBA53C0ACDE849DFE1", hash_generated_method = "158919A99B960BE9FE30781401A26982")
     
 final boolean getThemeValue(int theme, int ident,
             TypedValue outValue, boolean resolveRefs) {
@@ -361,7 +339,8 @@ final void makeStringBlocks(boolean copyFromSystem) {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.897 -0500", hash_original_method = "148EA8945A31568904B22E1C4951294F", hash_generated_method = "39CF31C4D46770A3EC28E345B4DC4F39")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.897 -0500", hash_original_method = "148EA8945A31568904B22E1C4951294F", hash_generated_method = "39CF31C4D46770A3EC28E345B4DC4F39")
     
 final CharSequence getPooledString(int block, int id) {
         //System.out.println("Get pooled: block=" + block
@@ -381,6 +360,9 @@ final CharSequence getPooledString(int block, int id) {
      * @see #open(String, int)
      * @see #list
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.900 -0500", hash_original_method = "7E1B14522C484E4F1B470AEA16F877D6", hash_generated_method = "30526FA7EE5BA7ADC855EA97F46AE7D4")
     
 public final InputStream open(String fileName) throws IOException {
@@ -404,6 +386,7 @@ public final InputStream open(String fileName) throws IOException {
      * @see #open(String)
      * @see #list
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.902 -0500", hash_original_method = "EB9FEA0B2CEADB65FF0921C2B52A13F4", hash_generated_method = "4BBF30831C3143B01679ADF8D444356C")
     
 public final InputStream open(String fileName, int accessMode)
@@ -422,6 +405,9 @@ public final InputStream open(String fileName, int accessMode)
         throw new FileNotFoundException("Asset file: " + fileName);
     }
 
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.904 -0500", hash_original_method = "66D3D468B1706A8E526F268E61D6D3C7", hash_generated_method = "ECB3AB95CCCC59180AB77038F82E2B1F")
     
 public final AssetFileDescriptor openFd(String fileName)
@@ -437,10 +423,11 @@ public final AssetFileDescriptor openFd(String fileName)
         }
         throw new FileNotFoundException("Asset file: " + fileName);
     }
-
     
+    @DSComment("Low level access to application asset")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.101 -0400", hash_original_method = "BFE0DD4127D11EE8C7DC2AF7F1625EB3", hash_generated_method = "5671ABB042797CD529E276FD90C5DEDA")
-    @DSModeled(DSC.SAFE)
+    
     public final String[] list(String path) throws IOException {
     	String[] ret = {path};
     	return ret;
@@ -455,6 +442,7 @@ public final AssetFileDescriptor openFd(String fileName)
      * 
      * @see #open(String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.910 -0500", hash_original_method = "B416CA2D934FFC444AFFEA95F80C0673", hash_generated_method = "4BF8A2093F77A1D39FA6B70B0C2DDF96")
     
 public final InputStream openNonAsset(String fileName) throws IOException {
@@ -470,6 +458,7 @@ public final InputStream openNonAsset(String fileName) throws IOException {
      * 
      * @see #open(String, int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.913 -0500", hash_original_method = "6F98937B657C3DF287FD2A6608D5C403", hash_generated_method = "3CACD2BAF29F24FC8DFDD7EA79EBF8CA")
     
 public final InputStream openNonAsset(String fileName, int accessMode)
@@ -484,6 +473,7 @@ public final InputStream openNonAsset(String fileName, int accessMode)
      * @param cookie Identifier of the package to be opened.
      * @param fileName Name of the asset to retrieve.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.915 -0500", hash_original_method = "DECD09E6B1808DA43562160A03482F49", hash_generated_method = "E997C8EDB8BCF44311D659E44193E10E")
     
 public final InputStream openNonAsset(int cookie, String fileName)
@@ -499,6 +489,7 @@ public final InputStream openNonAsset(int cookie, String fileName)
      * @param fileName Name of the asset to retrieve.
      * @param accessMode Desired access mode for retrieving the data.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.918 -0500", hash_original_method = "5BC280B3003CA7B8CFB3A2FB67C4E385", hash_generated_method = "25718FA436B166B9973DFAB37FE16B1B")
     
 public final InputStream openNonAsset(int cookie, String fileName, int accessMode)
@@ -517,6 +508,7 @@ public final InputStream openNonAsset(int cookie, String fileName, int accessMod
         throw new FileNotFoundException("Asset absolute file: " + fileName);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.920 -0500", hash_original_method = "E6C638BB28F04E787E5711BF8F421102", hash_generated_method = "E3DA2407F76513DC937ED3FC52F924CB")
     
 public final AssetFileDescriptor openNonAssetFd(String fileName)
@@ -524,6 +516,7 @@ public final AssetFileDescriptor openNonAssetFd(String fileName)
         return openNonAssetFd(0, fileName);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.922 -0500", hash_original_method = "A0DC944B46306DDC2CA1031D9C43AC47", hash_generated_method = "8E660ED09152CAF6A634784FAF881D7E")
     
 public final AssetFileDescriptor openNonAssetFd(int cookie,
@@ -546,6 +539,9 @@ public final AssetFileDescriptor openNonAssetFd(int cookie,
      * 
      * @param fileName The name of the file to retrieve.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.924 -0500", hash_original_method = "602B0A8D272774ACD0101F14F2575F17", hash_generated_method = "24AC78525D5C95BFCD6A262F72B1E55A")
     
 public final XmlResourceParser openXmlResourceParser(String fileName)
@@ -559,6 +555,7 @@ public final XmlResourceParser openXmlResourceParser(String fileName)
      * @param cookie Identifier of the package to be opened.
      * @param fileName The name of the file to retrieve.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.926 -0500", hash_original_method = "06F5CBF51BDA69D9C47BB01131F079C4", hash_generated_method = "2B96438F6D4AB5642FC14F03C275F180")
     
 public final XmlResourceParser openXmlResourceParser(int cookie,
@@ -617,7 +614,8 @@ void xmlBlockGone(int id) {
         }
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.935 -0500", hash_original_method = "9AD5347899C2D862F4815C023E5977D1", hash_generated_method = "78A9B8EF59C085FBB43CBAAE822870BF")
+    /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.935 -0500", hash_original_method = "9AD5347899C2D862F4815C023E5977D1", hash_generated_method = "78A9B8EF59C085FBB43CBAAE822870BF")
     
 final int createTheme() {
         synchronized (this) {
@@ -672,7 +670,6 @@ protected void finalize() throws Throwable {
     	return getTaintInt();
     }
 
-
     /**
      * Add multiple sets of assets to the asset manager at once.  See
      * {@link #addAssetPath(String)} for more information.  Returns array of
@@ -708,7 +705,6 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Change the locale being used by this asset manager.  Not for use by
      * applications.
@@ -720,10 +716,7 @@ public final int[] addAssetPaths(String[] paths) {
     	//Formerly a native method
     	addTaint(locale.getTaint());
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.349 -0400", hash_original_method = "3CB696CCF0EE1BB70EEADB93E6432982", hash_generated_method = "2A1885B1024F713A5324E14BAEA805ED")
     public final String[] getLocales() {
     	String[] mockArray = {""};
@@ -762,7 +755,6 @@ public final int[] addAssetPaths(String[] paths) {
     	addTaint(majorVersion);
     }
 
-
     /**
      * Retrieve the resource identifier for the given resource name.
      */
@@ -777,32 +769,27 @@ public final int[] addAssetPaths(String[] paths) {
     	addTaint(defPackage.getTaint());
     	return getTaintInt();
     }
-
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.368 -0400", hash_original_method = "A5876C7E6082BC9F857AB889162EC8D3", hash_generated_method = "FBAAE168C828C7BA370F62A92E8BDE92")
-    @DSModeled(DSC.SAFE)
+    
     final String getResourceName(int resid) {
     	return "";
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.369 -0400", hash_original_method = "B7E19874BAD16ADDD401F7BE2B2EFFAD", hash_generated_method = "1B222EBFB81E92383980BFED3C95FEF1")
-    @DSModeled(DSC.SAFE)
+    
     final String getResourcePackageName(int resid) {
     	return "";
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.369 -0400", hash_original_method = "D3A87104246875F54A734A7CED9F3792", hash_generated_method = "FB0BED0BADF159555D7AAA9D63E79093")
-    @DSModeled(DSC.SAFE)
+    
     final String getResourceTypeName(int resid) {
     	return "";
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.370 -0400", hash_original_method = "7C2D2224C9B46B19401BE8615244E9F1", hash_generated_method = "DCC8904351055C288FCFF6D931A8C8F9")
-    @DSModeled(DSC.SAFE)
+    
     final String getResourceEntryName(int resid) {
     	return "";
     }
@@ -815,11 +802,9 @@ public final int[] addAssetPaths(String[] paths) {
     	addTaint(accessMode);
     	return getTaintInt();
     }
-
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.374 -0400", hash_original_method = "9CBF0316C59A074D9238537266A4CF39", hash_generated_method = "1E5C5B867FCBA6692FC4FC36ABE4480B")
-    @DSModeled(DSC.SAFE)
+    
     private final ParcelFileDescriptor openAssetFd(String fileName,
             long[] outOffsets) throws IOException {
     	return ParcelFileDescriptor.open(new File(fileName), ParcelFileDescriptor.MODE_READ_WRITE);
@@ -834,10 +819,7 @@ public final int[] addAssetPaths(String[] paths) {
     	addTaint(accessMode);
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.391 -0400", hash_original_method = "05F1691565177C2AFF700A7C71F6F6CD", hash_generated_method = "3A7AF2AA82D95CB2D761B5108753F113")
     private ParcelFileDescriptor openNonAssetFdNative(int cookie,
             String fileName, long[] outOffsets) throws IOException {
@@ -895,7 +877,6 @@ public final int[] addAssetPaths(String[] paths) {
     	return getTaintLong();
     }
 
-
     /** Returns true if the resource was found, filling in mRetStringBlock and
      *  mRetData. */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.059 -0500", hash_original_method = "27B70155371A7D816D4F089317C25CF6", hash_generated_method = "9613E116A4D58A04814824802D7E1A98")
@@ -923,12 +904,9 @@ public final int[] addAssetPaths(String[] paths) {
     	addTaint(resolve);
     	return getTaintInt();
     }
-
-
     
     public final class AssetInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.971 -0500", hash_original_field = "28DD184F1EEC9ABCE76F5B13E84E33BA", hash_generated_field = "8F8029B3259B8B1BA6498538453FCD52")
-
 
         private int mAsset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.973 -0500", hash_original_field = "CAB3DDEC49B3F58AA21EC9312CA21C26", hash_generated_field = "56354C84F68C232CB4A6660E662F1AD3")
@@ -944,6 +922,7 @@ private AssetInputStream(int asset)
             mAsset = asset;
             mLength = getAssetLength(asset);
         }
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:02.944 -0500", hash_original_method = "E464EBBB8C3DAC741E7C7914FE6096F4", hash_generated_method = "B70B280650FCD4984CEBBA2C295631C2")
         
 public final int getAssetInt() {
@@ -1015,7 +994,6 @@ protected void finalize() throws Throwable
         {
             close();
         }
-
         
     }
     /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.086 -0500", hash_original_method = "12B5557C9EEBFED6DAC54E4D9FC20DDD", hash_generated_method = "3587482D0B16DC1FDE364CD1782FA043")
@@ -1061,11 +1039,9 @@ protected void finalize() throws Throwable
     	addTaint(block);
     	return getTaintInt();
     }
-
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.442 -0400", hash_original_method = "4BCE1B9C1615D4EB059442B0FC3D8208", hash_generated_method = "B12B3AC485F057CA49E8D0EDA1BD9B08")
-    @DSModeled(DSC.SAFE)
+    
     public final String getCookieName(int cookie) {
     	return "";
     }
@@ -1084,7 +1060,6 @@ protected void finalize() throws Throwable
     	addTaint(theme);
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.142 -0500", hash_original_method = "F8A041F054DE87147DC380F35C857F31", hash_generated_method = "5F0B891DF945B3D6645BA50A72D74B67")
     
     private final int openXmlAssetNative(int cookie, String fileName){
@@ -1093,10 +1068,7 @@ protected void finalize() throws Throwable
     	addTaint(fileName.getTaint());
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-27 14:37:07.457 -0400", hash_original_method = "8CA605217ABF9ACD4B0F75B79941D8AD", hash_generated_method = "5F37EF7284C2ED80B62ED2FD114F081D")
     private final String[] getArrayStringResource(int arrayRes) {
     	String[] ret = {""};
@@ -1118,7 +1090,6 @@ protected void finalize() throws Throwable
     	return new int[]{getTaintInt(),};
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.157 -0500", hash_original_method = "0DE93EF32C53D091768788DCA0E281FD", hash_generated_method = "63B40292B395EEA932919999AB750BE0")
     
     private final void init(){
@@ -1130,7 +1101,6 @@ protected void finalize() throws Throwable
     private final void destroy(){
     	//Formerly a native method
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:03.163 -0500", hash_original_method = "8CCD44610E895D23EA7CFE3FA359ACA0", hash_generated_method = "7929C286026DADE24F3B7C87A664A348")
     

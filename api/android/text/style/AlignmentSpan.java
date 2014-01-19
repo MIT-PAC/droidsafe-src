@@ -16,7 +16,6 @@ public interface AlignmentSpan extends ParagraphStyle {
     implements AlignmentSpan, ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.409 -0500", hash_original_field = "82F9218670DD3C15B235603CB46CF954", hash_generated_field = "393B2049F7F85DEAC6B2663317C7A5DC")
 
-
         private  Layout.Alignment mAlignment;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.393 -0500", hash_original_method = "B952BF260E0BA0823EBE3ADE0B3C50C3", hash_generated_method = "F51E15A9742B5F41FCB69AD7FE8E34F2")
         
@@ -30,6 +29,7 @@ public Standard(Parcel src) {
             mAlignment = Layout.Alignment.valueOf(src.readString());
         }
         
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:08.399 -0500", hash_original_method = "2EF0C12246BCA507C6FF618C23AD3C6F", hash_generated_method = "B8C347D29B11B4668573B8FD35494FAE")
         
 public int getSpanTypeId() {

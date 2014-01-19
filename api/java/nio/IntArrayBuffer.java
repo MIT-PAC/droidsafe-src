@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 abstract class IntArrayBuffer extends IntBuffer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.776 -0500", hash_original_field = "078CF565A844D74D6949BBCFDBA079B2", hash_generated_field = "04E795690AE1E5BC2E4466B25302D831")
 
-
     protected  int[] backingArray;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.779 -0500", hash_original_field = "B7E810BF01B52122CB927525A0CA4721", hash_generated_field = "22BBBB3BDBDCD622FED3EBF1A70B4EC5")
-
 
     protected  int offset;
 
@@ -39,6 +33,7 @@ IntArrayBuffer(int capacity, int[] backingArray, int offset) {
         this.offset = offset;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.788 -0500", hash_original_method = "2EA67F38ECDA332174959B54F9DC216E", hash_generated_method = "3F10A0AB64322B81AB92E00508EB5FAB")
     
 @Override
@@ -49,6 +44,7 @@ IntArrayBuffer(int capacity, int[] backingArray, int offset) {
         return backingArray[offset + position++];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.792 -0500", hash_original_method = "BB46C2F433DB7E33613C9314C6AAA302", hash_generated_method = "AC450672EEB2AEF0658F2C7F93A558BE")
     
 @Override
@@ -57,6 +53,7 @@ IntArrayBuffer(int capacity, int[] backingArray, int offset) {
         return backingArray[offset + index];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:01.794 -0500", hash_original_method = "CF9BFE676211E932B27B1BA0A79794E4", hash_generated_method = "2116483C05D44AE48A7FD29B6A81A494")
     
 @Override
@@ -82,7 +79,6 @@ IntArrayBuffer(int capacity, int[] backingArray, int offset) {
     public final ByteOrder order() {
         return ByteOrder.nativeOrder();
     }
-
     
 }
 

@@ -32,22 +32,14 @@ import org.xml.sax.InputSource;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-
-
-
-
-
 public class Properties extends Hashtable<Object, Object> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.643 -0500", hash_original_field = "BA688B944BBA15F59D0A59A7FE9F7ACD", hash_generated_field = "B9B3DC636549D3041EBFB366A6464B2E")
-
 
     private static final long serialVersionUID = 4112578634029874840L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.647 -0500", hash_original_field = "394FA6EC18447760AEBCB3606F9106F9", hash_generated_field = "6EB68577AA63C8CE23A5572AC9077D85")
 
-
     private static final String PROP_DTD_NAME = "http://java.sun.com/dtd/properties.dtd";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.650 -0500", hash_original_field = "3B34675D0BD1B6C926F86DE4D2BA9D9C", hash_generated_field = "12D66A953921A104006A54797CCD01D0")
-
 
     private static final String PROP_DTD = "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
             + "    <!ELEMENT properties (comment?, entry*) >"
@@ -75,7 +67,6 @@ public class Properties extends Hashtable<Object, Object> {
     private static final int IGNORE = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.645 -0500", hash_original_field = "CEC094AA6BF918752009818D630EB1FD", hash_generated_field = "FD91B16F92409AD1E464978ACF6CCD28")
 
-
     private transient DocumentBuilder builder = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.652 -0500", hash_original_field = "ED6F441B204B59837D765FE7BF823FA6", hash_generated_field = "FFB6C63B9AE394F9A7BA81EBAD128C5B")
 
@@ -84,6 +75,8 @@ public class Properties extends Hashtable<Object, Object> {
     /**
      * Constructs a new {@code Properties} object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.658 -0500", hash_original_method = "15BC7402B615AC640D692CA8D591C86A", hash_generated_method = "7795BAC062AED72B959D89678A199367")
     
 public Properties() {
@@ -153,6 +146,9 @@ private void dumpString(StringBuilder buffer, String string, boolean key) {
      *            the name of the property to find.
      * @return the named property value, or {@code null} if it can't be found.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.666 -0500", hash_original_method = "B2B08C7B9AD3334D72416F92376E272C", hash_generated_method = "FE43F53EBFA7D65B5C53EC5509BBE58A")
     
 public String getProperty(String name) {
@@ -176,6 +172,9 @@ public String getProperty(String name) {
      *            the default value.
      * @return the named property value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.668 -0500", hash_original_method = "3601550743DD7ED6E54F365D9B667C39", hash_generated_method = "C6113C6A35092CBD196D8546F6153BFC")
     
 public String getProperty(String name, String defaultValue) {
@@ -252,6 +251,8 @@ private void listToAppendable(Appendable out) {
      * @param in the {@code InputStream}
      * @throws IOException
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.679 -0500", hash_original_method = "B8EDE929B09671D07A2F603EF776CD24", hash_generated_method = "ABC75A374DCCE012A8512AE368C0A34C")
     
 public synchronized void load(InputStream in) throws IOException {
@@ -454,6 +455,8 @@ public synchronized void load(InputStream in) throws IOException {
     /**
      * Returns all of the property names (keys) in this {@code Properties} object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.687 -0500", hash_original_method = "1BF2C237B8DD3958FB1B8B5C0AE1938E", hash_generated_method = "DF74DE310FA8CC69912084B9A763044F")
     
 public Enumeration<?> propertyNames() {
@@ -476,9 +479,7 @@ public Set<String> stringPropertyNames() {
         selectProperties(stringProperties, true);
         return Collections.unmodifiableSet(stringProperties.keySet());
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.432 -0400", hash_original_method = "A87BE62C7A489C0C3750546357B411C0", hash_generated_method = "0A8899B8A69A32A18E613C9F0DB4012D")
     private <K> void selectProperties(Hashtable<K, Object> selectProperties, final boolean isStringOnly) {
         addTaint(isStringOnly);
@@ -549,6 +550,7 @@ public Set<String> stringPropertyNames() {
      *            the value.
      * @return the old value mapped to the key, or {@code null}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.696 -0500", hash_original_method = "B5A66BBC4F63569C92BD357B6A0BCEAB", hash_generated_method = "56F4E85497B4F5EC660B941BA40CCE46")
     
 public Object setProperty(String name, String value) {
@@ -580,6 +582,7 @@ public synchronized void store(OutputStream out, String comment) throws IOExcept
      * @throws ClassCastException if a key or value is not a string
      * @since 1.6
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.702 -0500", hash_original_method = "8076CC1A9EBA7B35E4BEA25CCAC41B73", hash_generated_method = "525ADF1180D463C4ACA782A1639904CB")
     
 public synchronized void store(Writer writer, String comment) throws IOException {
@@ -604,9 +607,7 @@ public synchronized void store(Writer writer, String comment) throws IOException
         }
         writer.flush();
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.436 -0400", hash_original_method = "2CD21803BBD0B22DE3395585690DDBAE", hash_generated_method = "B1418958B0758A3E1EA0E924AE7F14B1")
     public synchronized void loadFromXML(InputStream in) throws IOException,
             InvalidPropertiesFormatException {
@@ -738,6 +739,7 @@ public void storeToXML(OutputStream os, String comment) throws IOException {
      *            write into the {@code OutputStream}.
      * @throws IOException if an error occurs during writing to the output.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:41.724 -0500", hash_original_method = "88C35F171CF08E9C818A3957B761A932", hash_generated_method = "314055A6A376FFCBC591266AF54683BD")
     
 public synchronized void storeToXML(OutputStream os, String comment,

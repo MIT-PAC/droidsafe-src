@@ -34,11 +34,6 @@ import com.android.internal.telephony.SmsStorageMonitor;
 import com.android.internal.telephony.SmsUsageMonitor;
 import com.android.internal.telephony.TelephonyProperties;
 
-
-
-
-
-
 public final class GsmSMSDispatcher extends SMSDispatcher {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.895 -0500", hash_original_method = "43CB38824F520614242805C962124F56", hash_generated_method = "50A51534287DE547B59C18626D20E481")
@@ -96,6 +91,7 @@ public GsmSMSDispatcher(PhoneBase phone, SmsStorageMonitor storageMonitor,
         mCm.unSetOnNewGsmBroadcastSms(this);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.865 -0500", hash_original_method = "1D516C6BB697A8ECCBFC751AA141CC3E", hash_generated_method = "650E0DB5BC6A30E56AA546FF5DC34AD3")
     
 @Override
@@ -179,6 +175,7 @@ private void handleStatusReport(AsyncResult ar) {
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.875 -0500", hash_original_method = "00DA5224E05DFE04589B7B4693E817E4", hash_generated_method = "D20BAA62740846AE547AB5BC137789AE")
     
 @Override
@@ -260,6 +257,7 @@ private void handleStatusReport(AsyncResult ar) {
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.878 -0500", hash_original_method = "3D7E3502DD1585858E097F3A6DC759F7", hash_generated_method = "90CF4B14C5C8C7F35A99A112035FA7E8")
     
 @Override
@@ -275,6 +273,7 @@ private void handleStatusReport(AsyncResult ar) {
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.881 -0500", hash_original_method = "5889D931B0AF2BA9EF13AED6A1D3F698", hash_generated_method = "618A7099CAD0C95BF9ECFB2329C8660C")
     
 @Override
@@ -297,7 +296,6 @@ private void handleStatusReport(AsyncResult ar) {
             boolean use7bitOnly) {
         return SmsMessage.calculateLength(messageBody, use7bitOnly);
     }
-
     
     private static final class SmsCbConcatInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.899 -0500", hash_original_field = "458D24E91CA1CE8B3C8055DB30AA0914", hash_generated_field = "F13EAF462BF75A9C18B71C5567248AEE")
@@ -305,14 +303,11 @@ private void handleStatusReport(AsyncResult ar) {
         private  SmsCbHeader mHeader;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.901 -0500", hash_original_field = "3653AEEB1B390AE55EB1D85E3D0E89C0", hash_generated_field = "5B8CD52C7682DA00C91E3E72EBFA9940")
 
-
         private  String mPlmn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.904 -0500", hash_original_field = "DD653ED27FEE3ABB69B8731CF5FBE1FA", hash_generated_field = "E1DF72766EAA7700CC09E2EF71762BF7")
 
-
         private  int mLac;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.906 -0500", hash_original_field = "3FDE358D194E184A7314E5F9932F2066", hash_generated_field = "6613038ECFEA58ECF70AB91998D5EB03")
-
 
         private  int mCid;
 
@@ -385,11 +380,11 @@ public boolean matchesLocation(String plmn, int lac, int cid) {
 
             return false;
         }
-
         
     }
 
     /** {@inheritDoc} */
+    @DSSink({DSSinkKind.SMS_MMS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:22.887 -0500", hash_original_method = "D46F86683A1628DBA1448E14FF571355", hash_generated_method = "02A01997163661965EC4C5CCA3EF5877")
     
 @Override

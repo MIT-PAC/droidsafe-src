@@ -7,18 +7,16 @@ import droidsafe.annotations.*;
 import java.util.HashMap;
 import java.util.Map;
 
-
-
-
 public class BasicHttpContext implements HttpContext {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.448 -0500", hash_original_field = "AE9AEAD8987EA62C0A77312800FC6E06", hash_generated_field = "D1460501CCEE3C619EE4C99664E2DBB5")
-
     
     private  HttpContext parentContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.450 -0500", hash_original_field = "CBF5F9A9A24239AF2E2DA4DE606EC2D7", hash_generated_field = "14270C32B91E233A04B6BA686361124C")
 
     private Map map = null;
     
+    @DSComment("edits networking object")
+    @DSSpec(DSCat.NETWORKING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:46.453 -0500", hash_original_method = "7A4905790D001081AE9E7E7092B16556", hash_generated_method = "12A7496AFEC164E290DB967A345FD4D7")
     
 public BasicHttpContext() {
@@ -72,7 +70,6 @@ public Object removeAttribute(final String id) {
             return null;
         }
     }
-
     
 }
 

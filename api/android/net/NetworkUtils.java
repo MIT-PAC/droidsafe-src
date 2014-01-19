@@ -12,64 +12,45 @@ import java.util.Collection;
 
 import android.util.Log;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class NetworkUtils {
-
-
-    @DSModeled(DSC.SAFE)
+    
     public static int enableInterface(String interfaceName) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1119625488 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1119625488;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int disableInterface(String interfaceName) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319418608 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_319418608;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int resetConnections(String interfaceName, int mask) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_255618748 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_255618748;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean runDhcp(String interfaceName, DhcpInfoInternal ipInfo) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1243915330 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1243915330;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean runDhcpRenew(String interfaceName, DhcpInfoInternal ipInfo) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1115115336 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1115115336;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean stopDhcp(String interfaceName) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2048450172 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2048450172;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static boolean releaseDhcpLease(String interfaceName) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_70583775 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_70583775;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static String getDhcpError() {
     	return new String();
     }
@@ -157,6 +138,7 @@ public static InetAddress numericToInetAddress(String addrString)
      * @param IP address which will be masked with specified prefixLength
      * @param prefixLength the prefixLength used to mask the IP
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.622 -0500", hash_original_method = "65C7A9BF428499CDC3CDD8BE5BFA9B7C", hash_generated_method = "95520860E69A928A2FA7A3D43EA79CF1")
     
 public static InetAddress getNetworkPart(InetAddress address, int prefixLength) {
@@ -271,7 +253,6 @@ public static String trimV4AddrZeros(String addr) {
         return result;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.569 -0500", hash_original_field = "8BDDD5DB6E447C5F0F3AC195BF790C52", hash_generated_field = "1105638891056CB5B9AE23205F9644BD")
-
 
     private static final String TAG = "NetworkUtils";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.580 -0500", hash_original_field = "AF5A4C356BA68EF6DCCBB0AB7A9A8046", hash_generated_field = "8527B95E11967191DF76627972EC8F1C")

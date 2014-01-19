@@ -31,7 +31,6 @@ import android.os.Handler;
 import android.os.Looper;
 import android.util.AttributeSet;
 
-
 import android.accounts.AccountManager;
 import android.accounts.IAccountManager;
 import android.app.ActivityManager;
@@ -85,8 +84,6 @@ import android.view.WindowManagerImpl;
 import android.view.accessibility.AccessibilityManager;
 import android.view.inputmethod.InputMethodManager;
 import android.view.textservice.TextServicesManager;
-
-
 
 public abstract class Context {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.822 -0500", hash_original_field = "B80BB7E1AAC59D39E6DD058233EE4B25", hash_generated_field = "E0534FAE410858BE0239A90CB81A3C3C")
@@ -258,8 +255,7 @@ public abstract class Context {
     
 	// Hook to match with value analsysis
 	public Set<IntentFilter> __ds__intentFilters = new HashSet<IntentFilter>();
-    
-@DSModeled(value = DSC.SAFE)
+
 	public Context() {
 		//Do Nothing
 	}
@@ -347,9 +343,8 @@ public void registerComponentCallbacks(ComponentCallbacks callback) {
 public void unregisterComponentCallbacks(ComponentCallbacks callback) {
         getApplicationContext().unregisterComponentCallbacks(callback);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     public final CharSequence getText(int resId) {
         String str = new String();
         str.addTaint(resId);
@@ -369,6 +364,7 @@ public void unregisterComponentCallbacks(ComponentCallbacks callback) {
      *
      * @param resId Resource id for the string
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.875 -0500", hash_original_method = "6096F9B7D678CAFA7D67C1784ABCB9A7", hash_generated_method = "D37D9DF864413A58CE69AFC7CD44E2C7")
     
 public final String getString(int resId) {
@@ -384,6 +380,7 @@ public final String getString(int resId) {
      * @param formatArgs The format arguments that will be used for substitution.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.877 -0500", hash_original_method = "524F00C5C13CBD3BD0D5C512A4C12294", hash_generated_method = "D6859AF8D80E850EE17858448765ABE4")
     
 public final String getString(int resId, Object... formatArgs) {
@@ -404,6 +401,7 @@ public abstract void setTheme(int resid);
 
     /** @hide Needed for some internal implementation...  not public because
      * you can't assume this actually means anything. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:29.881 -0500", hash_original_method = "50CDF7EE4EA4E2BC75FC99DEA1DDCB11", hash_generated_method = "1272D7E9D68672649ADFD8FAF1BD64C2")
     
 public int getThemeResId() {
@@ -1254,7 +1252,6 @@ public abstract void sendStickyOrderedBroadcast(Intent intent,
             Handler scheduler, int initialCode, String initialData,
             Bundle initialExtras);
 
-
     /**
      * Remove the data previously sent with {@link #sendStickyBroadcast},
      * so that it is as if the sticky broadcast had never happened.
@@ -1548,9 +1545,7 @@ public abstract void unbindService(ServiceConnection conn);
     
 public abstract boolean startInstrumentation(ComponentName className,
             String profileFile, Bundle arguments);
-
     
-    @DSModeled(DSC.SPEC)
     public Object getSystemService(String name) {
         switch (name) {
            
@@ -1742,7 +1737,6 @@ public abstract boolean startInstrumentation(ComponentName className,
                 manager.addTaint(getTaint());
                 return manager;
             }
-
             
             default: {
             }
@@ -2173,11 +2167,10 @@ public boolean isRestricted() {
     }
 	
 	// We pull out IntentFilters out of xml and register them with the appropriate subclasses of Context here
-	@DSModeled
+	
 	public void __ds__registerIntentFilter(IntentFilter intentFilter) {
 	this.__ds__intentFilters.add(intentFilter);
 	}
-    
     
 }
 

@@ -11,25 +11,22 @@ import java.util.Map;
 
 import org.apache.http.HttpHost;
 
-
-
-
 public final class SchemeRegistry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.022 -0500", hash_original_field = "937907C9E4279052DD4EE9715869156A", hash_generated_field = "F36240EAE5CF2A96AAAB44994667903B")
 
     private  Map<String,Scheme> registeredSchemes;
 
-
     /**
      * Creates a new, empty scheme registry.
      */
+    @DSComment("creates data structure")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.025 -0500", hash_original_method = "783AF87541D2DBDBA1743DA12D81CD53", hash_generated_method = "74AB894C18300FE3B23DF04436CBD8A2")
     
 public SchemeRegistry() {
         super();
         registeredSchemes = new LinkedHashMap<String,Scheme>();
     }
-
 
     /**
      * Obtains a scheme by name.
@@ -41,6 +38,7 @@ public SchemeRegistry() {
      * @throws IllegalStateException
      *          if the scheme with the given name is not registered
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.029 -0500", hash_original_method = "C5B073CA8B29C4A4D0086C8D16427838", hash_generated_method = "5DA1E242E556E78D5BAC6BD8379CF45C")
     
 public synchronized final Scheme getScheme(String name) {
@@ -51,7 +49,6 @@ public synchronized final Scheme getScheme(String name) {
         }
         return found;
     }
-
 
     /**
      * Obtains the scheme for a host.
@@ -64,6 +61,7 @@ public synchronized final Scheme getScheme(String name) {
      * @throws IllegalStateException
      *          if a scheme with the respective name is not registered
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.033 -0500", hash_original_method = "1246E5540B6FD28C8D868D100FFA2CE0", hash_generated_method = "0E6533C6226F3121B59638BF815FC1FD")
     
 public synchronized final Scheme getScheme(HttpHost host) {
@@ -73,7 +71,6 @@ public synchronized final Scheme getScheme(HttpHost host) {
         return getScheme(host.getSchemeName());
     }
 
-
     /**
      * Obtains a scheme by name, if registered.
      *
@@ -82,6 +79,7 @@ public synchronized final Scheme getScheme(HttpHost host) {
      * @return  the scheme, or
      *          <code>null</code> if there is none by this name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.036 -0500", hash_original_method = "CF0C42ED0F9F87284AAED270A8C47522", hash_generated_method = "9456CAAD0798ECC1328B3429BF803965")
     
 public synchronized final Scheme get(String name) {
@@ -94,7 +92,6 @@ public synchronized final Scheme get(String name) {
         return found;
     }
 
-
     /**
      * Registers a scheme.
      * The scheme can later be retrieved by its name
@@ -105,6 +102,9 @@ public synchronized final Scheme get(String name) {
      * @return  the scheme previously registered with that name, or
      *          <code>null</code> if none was registered
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.038 -0500", hash_original_method = "BF6DF8E3D28698AF7FF4E9FD5B4A484C", hash_generated_method = "254C69213B5D4D2353215375DE7E6B2C")
     
 public synchronized final Scheme register(Scheme sch) {
@@ -114,7 +114,6 @@ public synchronized final Scheme register(Scheme sch) {
         Scheme old = registeredSchemes.put(sch.getName(), sch);
         return old;
     }
-
 
     /**
      * Unregisters a scheme.
@@ -136,12 +135,12 @@ public synchronized final Scheme unregister(String name) {
         return gone;
     }
 
-
     /**
      * Obtains the names of the registered schemes in their default order.
      *
      * @return  List containing registered scheme names.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:30.043 -0500", hash_original_method = "AC70BADA49B0F71D218410F2BC1D1DD5", hash_generated_method = "60F1E62291485E559C9E3A6E4E1D94F2")
     
 public synchronized final List<String> getSchemeNames() {
@@ -163,7 +162,6 @@ public synchronized void setItems(final Map<String, Scheme> map) {
         registeredSchemes.clear();
         registeredSchemes.putAll(map);
     }
-
     
 }
 

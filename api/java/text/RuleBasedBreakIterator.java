@@ -6,9 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.icu.NativeBreakIterator;
 
-
-
-
 class RuleBasedBreakIterator extends BreakIterator {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.384 -0500", hash_original_method = "1D7663481F9CF836249C543E9EA9D4B8", hash_generated_method = "1D7663481F9CF836249C543E9EA9D4B8")
@@ -49,6 +46,7 @@ private void validateOffset(int offset) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.397 -0500", hash_original_method = "0709975D2E361F60AA4A842C629D2B9B", hash_generated_method = "AB6E4341DBCE2FE5ABA23D7BC63F2263")
     
 @Override public CharacterIterator getText() {
@@ -79,6 +77,7 @@ private void validateOffset(int offset) {
         return wrapped.previous();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.410 -0500", hash_original_method = "E75CFE1E66B7B743956F14CBE08A2F07", hash_generated_method = "D4C972EA16D357AF2BCE675368B46C21")
     
 @Override public void setText(CharacterIterator newText) {
@@ -129,7 +128,6 @@ private void validateOffset(int offset) {
         cloned.wrapped = (NativeBreakIterator) wrapped.clone();
         return cloned;
     }
-
     
 }
 

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public abstract class FileLock {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.920 -0500", hash_original_field = "606E91E177C017AB22115E5BAB9B1D1A", hash_generated_field = "D2F54CF06A6D02676AAD3B9CA4DD4532")
 
@@ -56,6 +51,7 @@ protected FileLock(FileChannel channel, long position, long size, boolean shared
      *
      * @return the channel.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.933 -0500", hash_original_method = "51CC76EF226D8C9ED837839CEF3A7EEC", hash_generated_method = "3B81DF277F91EAB739F4722133B81B97")
     
 public final FileChannel channel() {
@@ -67,6 +63,7 @@ public final FileChannel channel() {
      *
      * @return the lock position.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.935 -0500", hash_original_method = "B51039013FACF3B9BE83986840749101", hash_generated_method = "3A969B8CA48AACD49D61680D9270B0B9")
     
 public final long position() {
@@ -78,6 +75,7 @@ public final long position() {
      *
      * @return the size of the file lock in bytes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.938 -0500", hash_original_method = "EA3441215E7ACDF721D34D006EDC791B", hash_generated_method = "6880D4F7C4EA71C45FEAC7C1E3AC5719")
     
 public final long size() {
@@ -149,13 +147,13 @@ public abstract void release() throws IOException;
      *
      * @return the display string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:58.950 -0500", hash_original_method = "1F1F0B30DE920C1569E46FCBBEE46A56", hash_generated_method = "BA2B1869FB958D70BAED03A91339E6B1")
     
 @Override
     public final String toString() {
         return "FileLock[position=" + position + ", size=" + size + ", shared=" + shared + "]";
     }
-
     
 }
 

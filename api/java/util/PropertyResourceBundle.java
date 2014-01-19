@@ -8,14 +8,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.Reader;
 
-
-
-
-
-
 public class PropertyResourceBundle extends ResourceBundle {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.728 -0500", hash_original_field = "8C97A55243F1F4D2EF7A784DA96E106B", hash_generated_field = "8C97A55243F1F4D2EF7A784DA96E106B")
-
 
     Properties resources;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.743 -0500", hash_original_field = "975E55A4433F6ABC0D4D089A47474FE3", hash_generated_field = "975E55A4433F6ABC0D4D089A47474FE3")
@@ -23,10 +17,8 @@ public class PropertyResourceBundle extends ResourceBundle {
             Enumeration<String> local = getLocalKeys();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.745 -0500", hash_original_field = "FAE3DF1DF9E3B04E9DEEE6F9A562DFE9", hash_generated_field = "FAE3DF1DF9E3B04E9DEEE6F9A562DFE9")
 
-
             Enumeration<String> pEnum = parent.getKeys();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:04.748 -0500", hash_original_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F", hash_generated_field = "FF87A8DA236D1EFD9A42BCA9DA4A458F")
-
 
             String nextElement;
 
@@ -76,9 +68,8 @@ protected Set<String> handleKeySet(){
     private Enumeration<String> getLocalKeys() {
         return (Enumeration<String>) resources.propertyNames();
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:10.509 -0400", hash_original_method = "8070DEE7B7CBE3EB8E3AF8AF6FE9DBC6", hash_generated_method = "3D01932958A4F18257C01F21A74B1E7B")
     @Override
     public Enumeration<String> getKeys() {
@@ -147,7 +138,6 @@ public String nextElement() {
     public Object handleGetObject(String key) {
         return resources.get(key);
     }
-
     
     // orphaned legacy method
     public String nextElement() {

@@ -9,14 +9,8 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.io.ObjectStreamField;
 
-
-
-
-
-
 public class SimpleTimeZone extends TimeZone {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.939 -0500", hash_original_field = "66B1EAC7CE31864A5D82470EA5A5D79E", hash_generated_field = "1CF196C479DD1F282A55928D9D41E39D")
-
 
     private static final long serialVersionUID = -403250971215465050L;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.593 -0400", hash_original_field = "A16CDC7A98B9FE1707BCB38A5FD0B490", hash_generated_field = "3037D344D26C320D59D8AAFE3A431E48")
@@ -42,7 +36,6 @@ public class SimpleTimeZone extends TimeZone {
     public static final int WALL_TIME = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:00.055 -0500", hash_original_field = "44E97694732CF460E3F6B74D80B9EB36", hash_generated_field = "2894821EF324A43745E14FE4AD86DCFF")
 
-
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("dstSavings", int.class),
         new ObjectStreamField("endDay", int.class),
@@ -62,7 +55,6 @@ public class SimpleTimeZone extends TimeZone {
         new ObjectStreamField("useDaylight", boolean.class),
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.942 -0500", hash_original_field = "87D5609A01CDCA385278402CB3082C09", hash_generated_field = "02FD65C4AE6246DF84FF429CBB8EEA00")
-
 
     private int rawOffset;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:11.568 -0400", hash_original_field = "78B902B91A7DB6AE4440D916F8C1C0E1", hash_generated_field = "D96A347FAB9C04C4C794424684EFB084")
@@ -100,10 +92,8 @@ public class SimpleTimeZone extends TimeZone {
     private int endMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.963 -0500", hash_original_field = "17226682B482887BEDFA35680B73611D", hash_generated_field = "6E9DFCBD335172F280DBFDE8886FC716")
 
-
     private boolean useDaylight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.966 -0500", hash_original_field = "2F9AE701EB19A988F08B754E3473BD90", hash_generated_field = "5B4639FCCF517E827D012B95CA754FED")
-
 
     private int dstSavings = 3600000;
 
@@ -368,6 +358,7 @@ public SimpleTimeZone(int offset, String name, int startMonth,
                         && endTime == tz.endTime && endMode == tz.endMode && dstSavings == tz.dstSavings));
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.988 -0500", hash_original_method = "80F5C5F4A535ECB3386672D31D5CF9AA", hash_generated_method = "B689829CB1C604AC52A715A39828C8A4")
     
 @Override
@@ -378,6 +369,7 @@ public SimpleTimeZone(int offset, String name, int startMonth,
         return dstSavings;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.993 -0500", hash_original_method = "8DB3C09D8D79030897991A8AF2C3603A", hash_generated_method = "C6F92D3B6C143A636AE0517E2D0B92C8")
     
 @Override
@@ -510,6 +502,7 @@ public SimpleTimeZone(int offset, String name, int startMonth,
         return rawOffset + dstSavings;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.996 -0500", hash_original_method = "6DBE603182E450BA9A410285A6D6CE41", hash_generated_method = "70BEBAA8B2BA13FF2EADDA2F08EF85CA")
     
 @Override
@@ -523,6 +516,7 @@ public SimpleTimeZone(int offset, String name, int startMonth,
                 fields[3], fields[5]);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:59.999 -0500", hash_original_method = "D90129E49D21D0E2F7EA4F6539F9D2CB", hash_generated_method = "C17505E26981E9F2733690B104177769")
     
 @Override

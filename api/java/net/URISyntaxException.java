@@ -5,21 +5,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class URISyntaxException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.623 -0500", hash_original_field = "36BD0379ACF830B6786D2B8E93773859", hash_generated_field = "CB65BAFBA372A5B522C6FE0957B2DAA9")
-
 
     private static final long serialVersionUID = 2137979680897488891L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.626 -0500", hash_original_field = "5C462996083F0F42B19C9D5F27993F9B", hash_generated_field = "6283A1859476002FA59A8C77FB48608E")
 
-
     private String input;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.628 -0500", hash_original_field = "8BD524D6245D998B3BBC44EB9313082E", hash_generated_field = "56A277C77B76B31C1E1045C8C11CA802")
-
 
     private int index;
 
@@ -88,6 +81,7 @@ public URISyntaxException(String input, String reason) {
      *
      * @return the index of the syntax error.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.637 -0500", hash_original_method = "398BD1DDC3618561F914960ED7D21764", hash_generated_method = "96CCC69099797392A28F97F5383D17E0")
     
 public int getIndex() {
@@ -99,6 +93,7 @@ public int getIndex() {
      *
      * @return the string describing the syntax error.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.639 -0500", hash_original_method = "D4B65418D906ACD682013E7ACC1989F7", hash_generated_method = "69CA2D86010C04E3D461DAA6BA0538D6")
     
 public String getReason() {
@@ -110,6 +105,7 @@ public String getReason() {
      *
      * @return the string that caused the exception.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.641 -0500", hash_original_method = "DF4880B690A0BCFCB8F3C337A75DD5A0", hash_generated_method = "A86ADFB04EAC98F41A92AD9716876241")
     
 public String getInput() {
@@ -124,6 +120,7 @@ public String getInput() {
      * @return a sting containing information about the exception.
      * @see java.lang.Throwable#getMessage()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.644 -0500", hash_original_method = "2C0C7C544BFDCEB0F806A466417CE15E", hash_generated_method = "00B5136E5193B48EC240369BC34C9A9D")
     
 @Override

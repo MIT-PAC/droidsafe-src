@@ -17,39 +17,26 @@ import java.util.HashMap;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class EventLog {
-
     
-    @DSModeled(DSC.SAFE)
     public static int writeEvent(int tag, int value) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int writeEvent(int tag, long value) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int writeEvent(int tag, String str) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
     public static int writeEvent(int tag, Object... list) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void readEvents(int[] tags, Collection<Event> output) throws IOException {
     }
 
@@ -58,6 +45,7 @@ public class EventLog {
      * @param tag code to look up
      * @return the name of the tag, or null if no tag has that number
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.125 -0500", hash_original_method = "0174D1EFCDD533F8825A3612A3EF7C46", hash_generated_method = "D3EC0610E6DAE7C7CAA4131645980B8D")
     
 public static String getTagName(int tag) {
@@ -123,9 +111,7 @@ private static synchronized void readTagsFile() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.039 -0500", hash_original_field = "662231DFFFA9D09E53289EFEDAC9B83D", hash_generated_field = "DB25E28C44FF4AB3A8E349B062479A96")
 
-
     private static final String TAG = "EventLog";
-
     
     public static final class Event {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.056 -0500", hash_original_field = "14CD9DF7E7D1E41029226B0C7C19B7A1", hash_generated_field = "4E9207C020D4BC18685FE64EF1B701ED")
@@ -144,7 +130,6 @@ private static synchronized void readTagsFile() {
 
         private static final int NANOSECONDS_OFFSET = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.068 -0500", hash_original_field = "896A28DA2CBCBBE4ADFC99AFA03FD254", hash_generated_field = "D38325D4D2ABA5BC474228D155C874ED")
-
 
         private static final int PAYLOAD_START = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.071 -0500", hash_original_field = "293ED38A1626E543061B9A6C35235F6C", hash_generated_field = "61B24A61947EBA00F5F66CA42990D87B")
@@ -178,6 +163,7 @@ Event(byte[] data) {
         }
 
         /** @return the process ID which wrote the log entry */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.088 -0500", hash_original_method = "C727D17C1ABE4CA2F41D8D2314B99577", hash_generated_method = "FDD1482CDC79BC1B40E4331B4D7E9867")
         
 public int getProcessId() {
@@ -185,6 +171,7 @@ public int getProcessId() {
         }
 
         /** @return the thread ID which wrote the log entry */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.090 -0500", hash_original_method = "5C1055DF8325BC493282A721B537C094", hash_generated_method = "08F8DF8CC740175CED8E1D8B0FDA240C")
         
 public int getThreadId() {
@@ -192,6 +179,7 @@ public int getThreadId() {
         }
 
         /** @return the wall clock time when the entry was written */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.093 -0500", hash_original_method = "8DE4962A92E5344AF237DA513A746866", hash_generated_method = "5B0DCDF8FE42BF1B397F4D82DDFB0A1E")
         
 public long getTimeNanos() {
@@ -200,6 +188,7 @@ public long getTimeNanos() {
         }
 
         /** @return the type tag code of the entry */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.096 -0500", hash_original_method = "E731C73BB2559185B3FCAA3365113EC6", hash_generated_method = "FFCDF33F86204EE3A499675592AC033F")
         
 public int getTag() {
@@ -207,6 +196,7 @@ public int getTag() {
         }
 
         /** @return one of Integer, Long, String, null, or Object[] of same. */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.098 -0500", hash_original_method = "87D859F946E538D2E12E387EABE85774", hash_generated_method = "EC5AEE6DEFB579A24EA8C831D0FD9321")
         
 public synchronized Object getData() {
@@ -259,7 +249,6 @@ private Object decodeObject() {
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.041 -0500", hash_original_field = "C049034F8AEAD3BF2798F83997FBAB95", hash_generated_field = "0B4C2C031E06758D5179435B0B36BCEB")
-
 
     private static final String TAGS_FILE = "/system/etc/event-log-tags";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.043 -0500", hash_original_field = "09D2159057C7400DFB72AFE18B0F43F5", hash_generated_field = "48AFCC2BBA5F6385F51E6182D6069D57")

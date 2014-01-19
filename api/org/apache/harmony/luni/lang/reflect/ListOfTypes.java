@@ -8,15 +8,11 @@ import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
 
-
-
-
 public final class ListOfTypes {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.380 -0500", hash_original_field = "3F1F6030BCDD98A28C66A50CDE6FA707", hash_generated_field = "E5BC5D3021F6BC63E6401C0642F71BC4")
 
     public static final ListOfTypes EMPTY = new ListOfTypes(0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.382 -0500", hash_original_field = "25EE3D1DF3EFF447F1E23307BE5924F7", hash_generated_field = "8892A3AAA12E491FA3A203DD834955E2")
-
 
     private  ArrayList<Type> types;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.384 -0500", hash_original_field = "D770CE609AEA02FF918F433C4A25BBD4", hash_generated_field = "87D7847847236888863F03CF45EBFAF0")
@@ -53,6 +49,7 @@ int length() {
         return types.size();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:26.396 -0500", hash_original_method = "631AD2F872BA627B3C9B69A500832CF8", hash_generated_method = "7C8FA95CDCE8FEEFD2611EA1DB9E4457")
     
 public Type[] getResolvedTypes() {

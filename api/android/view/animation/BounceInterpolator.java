@@ -7,9 +7,6 @@ import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
 
-
-
-
 public class BounceInterpolator implements Interpolator {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.085 -0500", hash_original_method = "CF1B738C3C29A998D09201CEFD64B6C7", hash_generated_method = "D71225CF7859E1919935DA421FBB23A0")
@@ -28,6 +25,7 @@ public BounceInterpolator() {
     public BounceInterpolator(Context context, AttributeSet attrs) {
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:57.087 -0500", hash_original_method = "41D2E1F4122985CE507D75E33078C1B7", hash_generated_method = "90ED175F687447FA6DACA97109F45F44")
     
 public float getInterpolation(float t) {
@@ -43,7 +41,6 @@ public float getInterpolation(float t) {
         else if (t < 0.9644f) return bounce(t - 0.8526f) + 0.9f;
         else return bounce(t - 1.0435f) + 0.95f;
     }
-
     
 }
 

@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.975 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.975 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -71,7 +72,8 @@ return DESCRIPTOR;
      * command. Any response from the receiver must be sent through the
      * specified file descriptor.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.978 -0500", hash_original_method = "E57BFF56F043C94276BA34FADEBFD994", hash_generated_method = "996D6C3A80AF2A68707D3F0E18073DCB")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.978 -0500", hash_original_method = "E57BFF56F043C94276BA34FADEBFD994", hash_generated_method = "996D6C3A80AF2A68707D3F0E18073DCB")
             
 public void executeCommand(java.lang.String command, java.lang.String parameters, android.os.ParcelFileDescriptor descriptor) throws android.os.RemoteException
 {
@@ -176,7 +178,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.991 -0500", hash_original_method = "9A4A81A1599BFA8CB3FEFA1825B0BE90", hash_generated_method = "0E8C9F942AD6DA472ACCA6779E0F22A1")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.991 -0500", hash_original_method = "9A4A81A1599BFA8CB3FEFA1825B0BE90", hash_generated_method = "0E8C9F942AD6DA472ACCA6779E0F22A1")
             
 public void closeSystemDialogs(java.lang.String reason) throws android.os.RemoteException
 {
@@ -193,7 +196,8 @@ _data.recycle();
 /**
      * Called for wallpaper windows when their offsets change.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.994 -0500", hash_original_method = "430A5D0BAD2A6B0195ACDFD5A84BD8D5", hash_generated_method = "0E42ADD02C32455D8CB456CA337B1B1B")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.994 -0500", hash_original_method = "430A5D0BAD2A6B0195ACDFD5A84BD8D5", hash_generated_method = "0E42ADD02C32455D8CB456CA337B1B1B")
             
 public void dispatchWallpaperOffsets(float x, float y, float xStep, float yStep, boolean sync) throws android.os.RemoteException
 {
@@ -211,7 +215,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.998 -0500", hash_original_method = "97B5FF9971C1886E6FA32012B72AA491", hash_generated_method = "93F02765844CA4773F9254720CC2D84A")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.998 -0500", hash_original_method = "97B5FF9971C1886E6FA32012B72AA491", hash_generated_method = "93F02765844CA4773F9254720CC2D84A")
             
 public void dispatchWallpaperCommand(java.lang.String action, int x, int y, int z, android.os.Bundle extras, boolean sync) throws android.os.RemoteException
 {
@@ -262,7 +267,8 @@ _data.recycle();
 /**
      * System chrome visibility changes
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.004 -0500", hash_original_method = "DBF8D361CA4F63AA616D4F1E15B51426", hash_generated_method = "4B67386B05ADFA23F653F23655712DD8")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.004 -0500", hash_original_method = "DBF8D361CA4F63AA616D4F1E15B51426", hash_generated_method = "4B67386B05ADFA23F653F23655712DD8")
             
 public void dispatchSystemUiVisibilityChanged(int seq, int globalVisibility, int localValue, int localChanges) throws android.os.RemoteException
 {
@@ -308,7 +314,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.960 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:45.960 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

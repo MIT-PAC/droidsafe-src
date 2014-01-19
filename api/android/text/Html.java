@@ -40,11 +40,6 @@ import android.text.style.UnderlineSpan;
 
 import com.android.internal.util.XmlUtils;
 
-
-
-
-
-
 public class Html {
 
     /**
@@ -55,6 +50,8 @@ public class Html {
      *
      * <p>This uses TagSoup to handle real HTML, including all of the brokenness found in the wild.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.457 -0500", hash_original_method = "2170F2D984B5CE2ED3159C43C15AA321", hash_generated_method = "63BED86CB6FEA06941CEE8D4AD7409D4")
     
 public static Spanned fromHtml(String source) {
@@ -94,6 +91,8 @@ public static Spanned fromHtml(String source, ImageGetter imageGetter,
     /**
      * Returns an HTML representation of the provided Spanned text.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.469 -0500", hash_original_method = "55061C70DD51EC053B0AA41C4CB33E42", hash_generated_method = "0BF18BF8D881A0BF9F0DF169B9377AEC")
     
 public static String toHtml(Spanned text) {
@@ -348,22 +347,18 @@ private static void withinStyle(StringBuilder out, Spanned text,
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.455 -0500", hash_original_method = "488A9EC3609F7D856C4CDBBB151F13E2", hash_generated_method = "66BACEE4EF369FF07BE91C8A29315219")
     
 private Html() { }
-
     
     private static class HtmlParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.461 -0500", hash_original_field = "4CF8027A098BE602ACFE5727834EDCA4", hash_generated_field = "BAC597DD251A1106E8D35E0F6302B278")
 
         private static final HTMLSchema schema = new HTMLSchema();
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.650 -0400", hash_original_method = "2BD8172A597CA1F4EC32CC40B5134462", hash_generated_method = "2BD8172A597CA1F4EC32CC40B5134462")
         public HtmlParser ()
         {
             //Synthesized constructor
         }
     }
-
-
     
     public static interface ImageGetter {
         
@@ -618,16 +613,13 @@ private static int getHtmlColor(String color) {
       }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.492 -0500", hash_original_field = "ABE450B11CD8E0C578FDA20701DC957F", hash_generated_field = "86AF0AEED37DBA73030BAFAE6316F8A7")
 
-
     private static final float[] HEADER_SIZES = {
         1.5f, 1.4f, 1.3f, 1.2f, 1.1f, 1f,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.637 -0500", hash_original_field = "0A595EF804A27439EB351F6F0752C256", hash_generated_field = "B4FEF6E9838FF422A3FE4BD8FF30796B")
 
-
     private static HashMap<String,Integer> COLORS = buildColorMap();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.495 -0500", hash_original_field = "1AEA727B3BB073E5F13ED3E9E384638B", hash_generated_field = "5EB2E77F51594E2C1DE90F3545DAFA8A")
-
 
     private String mSource;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.497 -0500", hash_original_field = "DB7D7D8754E011EB4DD52281A8F9D500", hash_generated_field = "9F664E317A344F99238051D2F1903E54")
@@ -880,133 +872,96 @@ public void characters(char ch[], int start, int length) throws SAXException {
     
 public void ignorableWhitespace(char ch[], int start, int length) throws SAXException {
     }
-
     
     private static class Bold {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "360EF21B8D8783EFA444B4BE5FDC6AD7", hash_generated_method = "360EF21B8D8783EFA444B4BE5FDC6AD7")
         public Bold ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Italic {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.655 -0400", hash_original_method = "49A8CF03F12E3553DCC23BB27643EAFC", hash_generated_method = "49A8CF03F12E3553DCC23BB27643EAFC")
         public Italic ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Underline {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "84D51255F87B8DD26833841AC6851E69", hash_generated_method = "84D51255F87B8DD26833841AC6851E69")
         public Underline ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Big {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "273608B63D858A3552D83E6F68A870F3", hash_generated_method = "273608B63D858A3552D83E6F68A870F3")
         public Big ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Small {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "30BB2E22576FED131404001997B90E83", hash_generated_method = "30BB2E22576FED131404001997B90E83")
         public Small ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Monospace {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "9E34A0C6710AE2CB78083EA433BD9375", hash_generated_method = "9E34A0C6710AE2CB78083EA433BD9375")
         public Monospace ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Blockquote {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "8510635EE940E5512FA9DD7C2C1B8599", hash_generated_method = "8510635EE940E5512FA9DD7C2C1B8599")
         public Blockquote ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Super {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE", hash_generated_method = "7F9EC2B6EDB6C576D6E7F20FD0DA4CCE")
         public Super ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Sub {
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:36.656 -0400", hash_original_method = "35CBF4C3F1CE0FC70451AFA9D19DB301", hash_generated_method = "35CBF4C3F1CE0FC70451AFA9D19DB301")
         public Sub ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     private static class Font {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.611 -0500", hash_original_field = "8BCF8DD77ADDC3ED575CE3475F69B41B", hash_generated_field = "2C22DB162080CAE82C8D78A913DED9F7")
@@ -1022,11 +977,8 @@ public Font(String color, String face) {
             mColor = color;
             mFace = face;
         }
-
         
     }
-
-
     
     private static class Href {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.621 -0500", hash_original_field = "B7EDD7A2BA61A5CCE7B044868FD918E8", hash_generated_field = "2F16E5D3AF055919B45CF87232A38369")
@@ -1038,11 +990,8 @@ public Font(String color, String face) {
 public Href(String href) {
             mHref = href;
         }
-
         
     }
-
-
     
     private static class Header {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.630 -0500", hash_original_field = "C8DEDD237F9EE364033563355DA2A90C", hash_generated_field = "75109DE7AA3B41B03299C7AED8804A2F")
@@ -1054,10 +1003,10 @@ public Href(String href) {
 public Header(int level) {
             mLevel = level;
         }
-
         
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:15.581 -0500", hash_original_method = "D7C64873BD0FC0A0449628F53B089507", hash_generated_method = "45AC10770063FD8AACDBA2638FD23FD0")
     
 public void processingInstruction(String target, String data) throws SAXException {

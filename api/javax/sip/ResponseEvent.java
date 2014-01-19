@@ -8,11 +8,6 @@ import java.util.EventObject;
 
 import javax.sip.message.Response;
 
-
-
-
-
-
 public class ResponseEvent extends EventObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.132 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "D9FAD0C1386FC50E3C837906841C2A70")
 
@@ -34,24 +29,26 @@ public ResponseEvent(Object source, ClientTransaction clientTransaction,
         mClientTransaction = clientTransaction;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.141 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
     
 public Dialog getDialog() {
         return mDialog;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.143 -0500", hash_original_method = "00292A90D159CA5BE7BB594CFFCF61C9", hash_generated_method = "A01E97A361AA1C9AE35D701EE381576E")
     
 public Response getResponse() {
         return mResponse;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:04.145 -0500", hash_original_method = "00896F7299BD9459656811B60B06B2C6", hash_generated_method = "81AF1418326903D133D5A72B4179C35F")
     
 public ClientTransaction getClientTransaction(){
         return mClientTransaction;
     }
-
     
 }
 

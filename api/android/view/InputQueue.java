@@ -12,16 +12,10 @@ import droidsafe.runtime.DroidSafeAndroidRuntime;
 import android.os.MessageQueue;
 import android.util.Slog;
 
-
-
-
-
 public final class InputQueue {
     
     private static HashSet<InputChannel> channels = new HashSet<InputChannel>();
-
     
-    @DSModeled(DSC.BAN)
     private static void nativeRegisterInputChannel(InputChannel inputChannel,
             InputHandler inputHandler, MessageQueue messageQueue) {
         channels.add(inputChannel);
@@ -33,20 +27,14 @@ public final class InputQueue {
         dispatchKeyEvent(inputHandler, keyEvent, callback.mFinishedToken);
         dispatchMotionEvent(inputHandler, motionEvent, callback.mFinishedToken);
     }
-
     
-    @DSModeled(DSC.BAN)
     private static void nativeUnregisterInputChannel(InputChannel inputChannel) {
         channels.remove(inputChannel);
     }
-
     
-    @DSModeled(DSC.BAN)
     private static void nativeFinished(long finishedToken, boolean handled) {
     }
-
     
-    @DSModeled(DSC.SPEC)
     public static void registerInputChannel(InputChannel inputChannel, InputHandler inputHandler,
             MessageQueue messageQueue) {
         //DSFIXME: CODE0010: Possible callback registration function detected
@@ -62,9 +50,7 @@ public final class InputQueue {
 
         nativeRegisterInputChannel(inputChannel, inputHandler, messageQueue);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void unregisterInputChannel(InputChannel inputChannel) {
         if (inputChannel == null) {
             throw new IllegalArgumentException("inputChannel must not be null");
@@ -93,20 +79,16 @@ public final class InputQueue {
 
     private static final String TAG = "InputQueue";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.247 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
-
     
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.255 -0500", hash_original_field = "3892ABA92B7F95295E8CFDAE8B79791E", hash_generated_field = "BDCA99E42BC506D141E07BE230771AE3")
-
     
     private static final Object sLock = new Object();
-
     
     public static final class FinishedCallback {
         
         static HashMap<Long, FinishedCallback> callBackMap = new HashMap<Long, FinishedCallback>();
-
-        @DSModeled(DSC.SAFE)
+        
         public static FinishedCallback obtain(long finishedToken) {
             if (!callBackMap.containsKey(finishedToken)) {
                 FinishedCallback callback = new FinishedCallback();
@@ -116,7 +98,6 @@ public final class InputQueue {
             return callBackMap.get(finishedToken);
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.297 -0500", hash_original_field = "5A9C4804E43B1DA0BA241FB5470EF97E", hash_generated_field = "11EDD9B738A3761EEA6282CC3588BF9E")
-
         
         private FinishedCallback mRecycleNext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.300 -0500", hash_original_field = "67A0FC1AB73DFA1EF77B1023746AD614", hash_generated_field = "1C857E4F95050669EDA465BE12C181F0")
@@ -127,7 +108,6 @@ public final class InputQueue {
         
 private FinishedCallback() {
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.124 -0400", hash_original_method = "223A5774CCBBEE51AC57EA08FD2D5298", hash_generated_method = "258E1BCA7AF0C20AD74EDB6062C79320")
         public void finished(boolean handled) {
@@ -159,18 +139,14 @@ private FinishedCallback() {
         }
 
     }
-
-
     
     public static interface Callback {
         
         void onInputQueueCreated(InputQueue queue);
         
-        
         void onInputQueueDestroyed(InputQueue queue);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.252 -0500", hash_original_field = "9822897BD047FB46E3B13005AC739818", hash_generated_field = "9822897BD047FB46E3B13005AC739818")
-
 
      InputChannel mChannel;
     
@@ -182,6 +158,7 @@ public InputQueue(InputChannel channel) {
     }
     
     /** @hide */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:46.272 -0500", hash_original_method = "61914318E0BCFE3BB34C0890B61B6D95", hash_generated_method = "4041D8E4263F3B4F9618C753D89620DE")
     
 public InputChannel getInputChannel() {

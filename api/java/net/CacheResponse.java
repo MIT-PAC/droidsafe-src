@@ -9,13 +9,8 @@ import java.io.InputStream;
 import java.util.List;
 import java.util.Map;
 
-
-
-
-
 public abstract class CacheResponse {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:50.296 -0400", hash_original_method = "621EFF4ACAE6839C6F6B759A29E80397", hash_generated_method = "621EFF4ACAE6839C6F6B759A29E80397")
     public CacheResponse ()
     {
@@ -50,7 +45,6 @@ public abstract InputStream getBody() throws IOException;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:16.051 -0500", hash_original_method = "573CBFDFD5653531FB0C0AE5FEE8D961", hash_generated_method = "5A04DA33FF0AE30B4D87CD23D93A6522")
     
 public abstract Map<String, List<String>> getHeaders() throws IOException;
-
     
 }
 

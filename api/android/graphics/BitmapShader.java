@@ -5,22 +5,15 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class BitmapShader extends Shader {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeCreate(int native_bitmap, int shaderTileModeX,
             int shaderTileModeY) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativePostCreate(int native_shader, int native_bitmap,
             int shaderTileModeX, int shaderTileModeY) {
         return DSUtils.UNKNOWN_INT;
@@ -45,7 +38,6 @@ public BitmapShader(Bitmap bitmap, TileMode tileX, TileMode tileY) {
         native_instance = nativeCreate(b, tileX.nativeInt, tileY.nativeInt);
         native_shader = nativePostCreate(native_instance, b, tileX.nativeInt, tileY.nativeInt);
     }
-
     
 }
 

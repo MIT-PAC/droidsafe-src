@@ -11,9 +11,6 @@ import android.text.SpannableString;
 import android.text.SpannedString;
 import android.text.TextUtils;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Canvas {
@@ -37,71 +34,51 @@ protected static void checkRange(int length, int offset, int count) {
             throw new ArrayIndexOutOfBoundsException();
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static void freeCaches() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int initRaster(int nativeBitmapOrZero) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378610903 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_378610903;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setBitmap(int nativeCanvas, int bitmap) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_saveLayer(int nativeCanvas, RectF bounds,
                                                int paint, int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467194653 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_467194653;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_saveLayer(int nativeCanvas, float l,
                                                float t, float r, float b,
                                                int paint, int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430058921 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_430058921;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_saveLayerAlpha(int nativeCanvas,
                                                     RectF bounds, int alpha,
                                                     int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730328887 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1730328887;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int native_saveLayerAlpha(int nativeCanvas, float l,
                                                     float t, float r, float b,
                                                     int alpha, int layerFlags) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192671444 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1192671444;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_concat(int nCanvas, int nMatrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_setMatrix(int nCanvas, int nMatrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_clipRect(int nCanvas,
                                                   float left, float top,
                                                   float right, float bottom,
@@ -109,64 +86,48 @@ protected static void checkRange(int length, int offset, int count) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1065743384 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1065743384;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_clipPath(int nativeCanvas,
                                                   int nativePath,
                                                   int regionOp) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_2071424835 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_2071424835;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_clipRegion(int nativeCanvas,
                                                     int nativeRegion,
                                                     int regionOp) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1786500323 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1786500323;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeSetDrawFilter(int nativeCanvas,
                                                    int nativeFilter) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_getClipBounds(int nativeCanvas,
                                                        Rect bounds) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1373360843 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1373360843;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_getCTM(int canvas, int matrix) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      RectF rect,
                                                      int native_edgeType) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_522063304 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_522063304;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      int path,
                                                      int native_edgeType) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_643825593 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_643825593;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean native_quickReject(int nativeCanvas,
                                                      float left, float top,
                                                      float right, float bottom,
@@ -174,173 +135,123 @@ protected static void checkRange(int length, int offset, int count) {
                 boolean var84E2C64F38F78BA3EA5C905AB5A2DA27_1380645477 = DSUtils.UNKNOWN_BOOLEAN;
         return var84E2C64F38F78BA3EA5C905AB5A2DA27_1380645477;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawRGB(int nativeCanvas, int r, int g,
                                               int b) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawARGB(int nativeCanvas, int a, int r,
                                                int g, int b) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawColor(int nativeCanvas, int color) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawColor(int nativeCanvas, int color,
                                                 int mode) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPaint(int nativeCanvas, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawLine(int nativeCanvas, float startX,
                                                float startY, float stopX,
                                                float stopY, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawRect(int nativeCanvas, RectF rect,
                                                int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawRect(int nativeCanvas, float left,
                                                float top, float right,
                                                float bottom, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawOval(int nativeCanvas, RectF oval,
                                                int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawCircle(int nativeCanvas, float cx,
                                                  float cy, float radius,
                                                  int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawArc(int nativeCanvas, RectF oval,
                                               float startAngle, float sweep,
                                               boolean useCenter, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawRoundRect(int nativeCanvas,
                                                     RectF rect, float rx,
                                                     float ry, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPath(int nativeCanvas, int path,
                                                int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawBitmap(int nativeCanvas, int bitmap,
                                                  Rect src, Rect dst,
                                                  int nativePaintOrZero,
                                                  int screenDensity,
                                                  int bitmapDensity) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawBitmap(int nativeCanvas, int[] colors,
                                                 int offset, int stride, float x,
                                                  float y, int width, int height,
                                                  boolean hasAlpha,
                                                  int nativePaintOrZero) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDrawBitmapMatrix(int nCanvas, int nBitmap,
                                                       int nMatrix, int nPaint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDrawBitmapMesh(int nCanvas, int nBitmap,
                                                     int meshWidth, int meshHeight,
                                                     float[] verts, int vertOffset,
                                                     int[] colors, int colorOffset, int nPaint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDrawVertices(int nCanvas, int mode, int n,
                    float[] verts, int vertOffset, float[] texs, int texOffset,
                    int[] colors, int colorOffset, short[] indices,
                    int indexOffset, int indexCount, int nPaint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawText(int nativeCanvas, char[] text,
                                                int index, int count, float x,
                                                float y, int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawText(int nativeCanvas, String text,
                                                int start, int end, float x,
                                                float y, int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawTextRun(int nativeCanvas, String text,
             int start, int end, int contextStart, int contextEnd,
             float x, float y, int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawTextRun(int nativeCanvas, char[] text,
             int start, int count, int contextStart, int contextCount,
             float x, float y, int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPosText(int nativeCanvas,
                                                   char[] text, int index,
                                                   int count, float[] pos,
                                                   int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPosText(int nativeCanvas,
                                                   String text, float[] pos,
                                                   int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawTextOnPath(int nativeCanvas,
                                                      char[] text, int index,
                                                      int count, int path,
@@ -348,24 +259,18 @@ protected static void checkRange(int length, int offset, int count) {
                                                      float vOffset, int bidiFlags,
                                                      int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawTextOnPath(int nativeCanvas,
                                                      String text, int path,
                                                      float hOffset, 
                                                      float vOffset, 
                                                      int flags, int paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void native_drawPicture(int nativeCanvas,
                                                   int nativePicture) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void finalizer(int nativeCanvas) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.046 -0500", hash_original_field = "DE0993C64A5DCE6B04BA860BC13954B0", hash_generated_field = "560BA2CA377351903A6838650E1B66A9")
@@ -379,7 +284,6 @@ protected static void checkRange(int length, int offset, int count) {
     // (see SkCanvas.cpp, SkDraw.cpp)
     private static final int MAXMIMUM_BITMAP_SIZE = 32766;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.103 -0500", hash_original_field = "E60E36172E05957F55F145C2156155BA", hash_generated_field = "6C8DE3849C8C2C8F11FED5E72A54856F")
-
 
     /** restore the current matrix when restore() is called */
     public static final int MATRIX_SAVE_FLAG = 0x01;
@@ -405,7 +309,6 @@ protected static void checkRange(int length, int offset, int count) {
 
     private Bitmap  mBitmap;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.036 -0500", hash_original_field = "1809E3F3B0952C4944386BCDAFF81AC8", hash_generated_field = "04F9CD5B166F725F4476D4C3990647B3")
-
     
     // optional field set by the caller
     private DrawFilter mDrawFilter;
@@ -424,8 +327,9 @@ protected static void checkRange(int length, int offset, int count) {
     @SuppressWarnings({"UnusedDeclaration"})
     private  CanvasFinalizer mFinalizer;
     
-    @DSModeled(DSC.SAFE)
-	public Canvas() {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public Canvas() {
 		//Do Nothing
 	}
 
@@ -438,6 +342,8 @@ protected static void checkRange(int length, int offset, int count) {
      *
      * @param bitmap Specifies a mutable bitmap for the canvas to draw into.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.068 -0500", hash_original_method = "57E1F1C357DC29B7A94C226F5C3B5C9B", hash_generated_method = "9BFED6DEC7FF5091C599E38FA68AFF9D")
     
 public Canvas(Bitmap bitmap) {
@@ -470,6 +376,7 @@ Canvas(int nativeCanvas) {
      * 
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.073 -0500", hash_original_method = "B940DF21824B9124E6B753106E553281", hash_generated_method = "5BB6D3440A25548E93896CEA426595C1")
     
 @Deprecated
@@ -491,10 +398,10 @@ Canvas(int nativeCanvas) {
 public boolean isHardwareAccelerated() {
         return false;
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public void setBitmap(Bitmap bitmap) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void setBitmap(Bitmap bitmap) {
 		addTaint(bitmap.getTaint());
 		addTaint(bitmap.getDensity()); //getDensity will return a tainted value
 		/*
@@ -524,6 +431,7 @@ public boolean isHardwareAccelerated() {
      * 
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.079 -0500", hash_original_method = "85F5D8C713E0C3D78EE01CE144D393CD", hash_generated_method = "F813A2ECD65AA49F40CA21327D7699A1")
     
 public void setViewport(int width, int height) {
@@ -542,12 +450,13 @@ public void setViewport(int width, int height) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Returns the width of the current drawing layer
      *
      * @return the width of the current drawing layer
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.086 -0500", hash_original_method = "D4E7715F32876041521BE16EC8E1C0AC", hash_generated_method = "119E6F88A6022FFF8C0BCF10E5D283FB")
     
     public int getWidth(){
@@ -555,29 +464,26 @@ public void setViewport(int width, int height) {
     	return getTaintInt();
     }
 
-
     /**
      * Returns the height of the current drawing layer
      *
      * @return the height of the current drawing layer
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.090 -0500", hash_original_method = "E09BF3A531DEFF54888EDA3B98EB9CFF", hash_generated_method = "A50AB7B99158205015AA04248040D6D3")
     
     public int getHeight(){
     	//Formerly a native method
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
-	public int getDensity() {
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    public int getDensity() {
 		return getTaintInt();
 		//return mDensity;
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public void setDensity(int density) {
 		addTaint(density);  //Density is saved both here and in the bitmap
 		mBitmap.setDensity(density);  //setDensity will track the taint in the Bitmap object
@@ -603,6 +509,7 @@ public void setScreenDensity(int density) {
      * 
      * @see #getMaximumBitmapHeight() 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.099 -0500", hash_original_method = "E7FD28619D99C67895E6B54C83B12011", hash_generated_method = "5D274B8825E67B365D5115D71633CAE7")
     
 public int getMaximumBitmapWidth() {
@@ -616,11 +523,12 @@ public int getMaximumBitmapWidth() {
      * 
      * @see #getMaximumBitmapWidth() 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.100 -0500", hash_original_method = "F4D5E7FCD71CC06030F3DF600D5A4E91", hash_generated_method = "9340C6DCC529E409677A2F3455B2243D")
     
 public int getMaximumBitmapHeight() {
         return MAXMIMUM_BITMAP_SIZE;
-    } 
+    }
     
     /**
      * Saves the current matrix and clip onto a private stack. Subsequent
@@ -631,13 +539,14 @@ public int getMaximumBitmapHeight() {
      *
      * @return The value to pass to restoreToCount() to balance this save()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.119 -0500", hash_original_method = "F3B8683979D1D489E213BCC22FA3BBF8", hash_generated_method = "2B849F705D66B3344BB858C062FCF030")
     
     public int save(){
     	//Formerly a native method
     	return getTaintInt();
     }
-
     
     /**
      * Based on saveFlags, can save the current matrix and clip onto a private
@@ -650,6 +559,8 @@ public int getMaximumBitmapHeight() {
      *                  to save/restore
      * @return The value to pass to restoreToCount() to balance this save()
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.123 -0500", hash_original_method = "B3EA192DB08CDE7F222599E8EB46FFD6", hash_generated_method = "78CD894CA5CA8D178BBE65B05D1E4F9A")
     
     public int save(int saveFlags){
@@ -657,7 +568,6 @@ public int getMaximumBitmapHeight() {
     	addTaint(saveFlags);
     	return getTaintInt();
     }
-
 
     /**
      * This behaves the same as save(), but in addition it allocates an
@@ -728,9 +638,9 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
         return native_saveLayerAlpha(mNativeCanvas, left, top, right, bottom,
                                      alpha, saveFlags);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void restore() {
 	}
 
@@ -745,7 +655,6 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
     	return getTaintInt();
     }
 
-
     /**
      * Efficient way to pop any calls to save() that happened after the save
      * count reached saveCount. It is an error for saveCount to be less than 1.
@@ -759,24 +668,25 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
      *
      * @param saveCount The save level to restore to.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.143 -0500", hash_original_method = "5559D0B771CBEE6A1A38BCD3A9AC5162", hash_generated_method = "FFDE58BDE0F4E8A7BB6CEACB56352E98")
     
     public void restoreToCount(int saveCount){
     	//Formerly a native method
     	addTaint(saveCount);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
-	public void translate(float dx, float dy) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void translate(float dx, float dy) {
 		addTaint(dx);
 		addTaint(dy);
 	}
-
     
-    @DSModeled(DSC.SAFE)
-	public void scale(float sx, float sy) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void scale(float sx, float sy) {
 		addTaint(sx);
 		addTaint(sy);
 	}
@@ -789,6 +699,8 @@ public int saveLayerAlpha(float left, float top, float right, float bottom,
      * @param px The x-coord for the pivot point (unchanged by the scale)
      * @param py The y-coord for the pivot point (unchanged by the scale)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.152 -0500", hash_original_method = "FBE272FA12218448E57FDD0F51163D2E", hash_generated_method = "A90714BC8F2D627F45F2D7B13B278A01")
     
 public final void scale(float sx, float sy, float px, float py) {
@@ -796,10 +708,10 @@ public final void scale(float sx, float sy, float px, float py) {
         scale(sx, sy);
         translate(-px, -py);
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public void rotate(float degrees) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void rotate(float degrees) {
 		addTaint(degrees);
 	}
 
@@ -810,6 +722,8 @@ public final void scale(float sx, float sy, float px, float py) {
      * @param px The x-coord for the pivot point (unchanged by the rotation)
      * @param py The y-coord for the pivot point (unchanged by the rotation)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.158 -0500", hash_original_method = "96E9024A0524487F4C2E52375F89DAF2", hash_generated_method = "61DCE9732DA02773D3D2939E3FB0D6DE")
     
 public final void rotate(float degrees, float px, float py) {
@@ -831,11 +745,10 @@ public final void rotate(float degrees, float px, float py) {
     	addTaint(sx);
     	addTaint(sy);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
-	public void concat(Matrix matrix) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void concat(Matrix matrix) {
 		addTaint(matrix.native_instance);
     }
     
@@ -846,6 +759,7 @@ public final void rotate(float degrees, float px, float py) {
      * @param matrix The matrix to replace the current matrix with. If it is
      *               null, set the current matrix to identity.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.166 -0500", hash_original_method = "ABA89A91C9E394A5196A87FF36F2A069", hash_generated_method = "2D41CB2D2ED1123789F114F9CE5C1F8F")
     
 public void setMatrix(Matrix matrix) {
@@ -867,6 +781,7 @@ public void getMatrix(Matrix ctm) {
      * Return a new matrix with a copy of the canvas' current transformation
      * matrix.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.171 -0500", hash_original_method = "677F0589CC9DCD49ED4AD9753284FD1D", hash_generated_method = "0EFEA3854D4D1A1427D490C733F4434D")
     
 public final Matrix getMatrix() {
@@ -920,7 +835,6 @@ public boolean clipRect(Rect rect, Region.Op op) {
     	addTaint(rect.getTaint());
     	return getTaintBoolean();
     }
-
     
     /**
      * Intersect the current clip with the specified rectangle, which is
@@ -936,7 +850,6 @@ public boolean clipRect(Rect rect, Region.Op op) {
     	addTaint(rect.getTaint());
     	return getTaintBoolean();
     }
-
     
     /**
      * Modify the current clip with the specified rectangle, which is
@@ -985,7 +898,6 @@ public boolean clipRect(float left, float top, float right, float bottom,
     	addTaint(bottom);
     	return getTaintBoolean();
     }
-
     
     /**
      * Intersect the current clip with the specified rectangle, which is
@@ -1000,6 +912,8 @@ public boolean clipRect(float left, float top, float right, float bottom,
      *               clip
      * @return       true if the resulting clip is non-empty
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.192 -0500", hash_original_method = "C42EF88CC3B7717E7A29DDD6EED6CD2B", hash_generated_method = "D3A89CF00F564A9CFE02EBD6D8219414")
     
     public boolean clipRect(int left, int top,
@@ -1011,7 +925,6 @@ public boolean clipRect(float left, float top, float right, float bottom,
     	addTaint(bottom);
     	return getTaintBoolean();
     }
-
     
     /**
         * Modify the current clip with the specified path.
@@ -1071,12 +984,15 @@ public boolean clipRegion(Region region) {
         return clipRegion(region, Region.Op.INTERSECT);
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.203 -0500", hash_original_method = "7CFD876AAFB864AD7FF69DF25AA89EAD", hash_generated_method = "DB47B7D7BDB246B91136D3617D06EA7A")
     
 public DrawFilter getDrawFilter() {
         return mDrawFilter;
     }
     
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.205 -0500", hash_original_method = "68F6BB80C574F9A67A1BF360B92238CB", hash_generated_method = "CFC18FCAFAB562E5E19EA145E4E09CFB")
     
 public void setDrawFilter(DrawFilter filter) {
@@ -1173,6 +1089,7 @@ public boolean getClipBounds(Rect bounds) {
      *
      * @return the clip bounds, or [0, 0, 0, 0] if the clip is empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.222 -0500", hash_original_method = "081EA481AF3998560C2A7BDAF7DC2D73", hash_generated_method = "C7F3C9DD4F71BE5FE3E931C0C7EA11E6")
     
 public final Rect getClipBounds() {
@@ -1204,6 +1121,8 @@ public void drawRGB(int r, int g, int b) {
      * @param g green component (0..255) of the color to draw onto the canvas
      * @param b blue component (0..255) of the color to draw onto the canvas
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.227 -0500", hash_original_method = "9BFD91E842A11577904B0CB6F2A3F2B4", hash_generated_method = "25A3A58DABAB0A14F7BA58894D4CE78B")
     
 public void drawARGB(int a, int r, int g, int b) {
@@ -1216,6 +1135,8 @@ public void drawARGB(int a, int r, int g, int b) {
      *
      * @param color the color to draw onto the canvas
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.229 -0500", hash_original_method = "BF5E846D1EF3BCCEA205827104DDB3E8", hash_generated_method = "EE06CAAE9D24DA5976CF89E841300FAB")
     
 public void drawColor(int color) {
@@ -1242,6 +1163,8 @@ public void drawColor(int color, PorterDuff.Mode mode) {
      *
      * @param paint The paint used to draw onto the canvas
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.233 -0500", hash_original_method = "774CA3D90C36917005A085F0E322036A", hash_generated_method = "842D690B248E8ADCC5125F903224E558")
     
 public void drawPaint(Paint paint) {
@@ -1275,7 +1198,6 @@ public void drawPaint(Paint paint) {
     	addTaint(paint.getTaint());
     }
 
-
     /**
      * Helper for drawPoints() that assumes you want to draw the entire array
      */
@@ -1296,11 +1218,10 @@ public void drawPoints(float[] pts, Paint paint) {
     	addTaint(y);
     	addTaint(paint.getTaint());
     }
-
-
     
-    @DSModeled(DSC.SAFE)
-	public void drawLine(float startX, float startY, float stopX, float stopY,
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void drawLine(float startX, float startY, float stopX, float stopY,
             Paint paint) {
 		/*
 		 * This method calls a native method that draws to a native canvas which
@@ -1345,7 +1266,6 @@ public void drawPoints(float[] pts, Paint paint) {
     	addTaint(paint.getTaint());
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.251 -0500", hash_original_method = "C2DF9F5B70F03E16002905BD3365AB2E", hash_generated_method = "6BB9AF47E7A96C3EDD32940E0EDDF45D")
     
 public void drawLines(float[] pts, Paint paint) {
@@ -1372,12 +1292,13 @@ public void drawRect(RectF rect, Paint paint) {
      * @param r        The rectangle to be drawn.
      * @param paint    The paint used to draw the rectangle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.257 -0500", hash_original_method = "9CB801DBEAF645326E64FD8725588653", hash_generated_method = "ADA6219B535C173D2ADD2608EB80D68B")
     
 public void drawRect(Rect r, Paint paint) {
         drawRect(r.left, r.top, r.right, r.bottom, paint);
     }
-    
 
     /**
      * Draw the specified Rect using the specified paint. The rectangle will
@@ -1389,6 +1310,8 @@ public void drawRect(Rect r, Paint paint) {
      * @param bottom The bottom side of the rectangle to be drawn
      * @param paint  The paint used to draw the rect
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.259 -0500", hash_original_method = "CDE86729C0DE5B687E9F3D6C62C89CBA", hash_generated_method = "F9406D975293ED3CE5ED28AC7966047F")
     
 public void drawRect(float left, float top, float right, float bottom,
@@ -1396,9 +1319,9 @@ public void drawRect(float left, float top, float right, float bottom,
         native_drawRect(mNativeCanvas, left, top, right, bottom,
                         paint.mNativePaint);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void drawOval(RectF oval, Paint paint) {
 		addTaint(oval.getTaint());
 		addTaint(paint.getTaint());
@@ -1420,6 +1343,8 @@ public void drawRect(float left, float top, float right, float bottom,
      * @param radius The radius of the cirle to be drawn
      * @param paint  The paint used to draw the circle
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.263 -0500", hash_original_method = "6EC335AEB28EA1E608617532103E031D", hash_generated_method = "692344834A58C7F02E5722238C227FDE")
     
 public void drawCircle(float cx, float cy, float radius, Paint paint) {
@@ -1450,6 +1375,8 @@ public void drawCircle(float cx, float cy, float radius, Paint paint) {
                         close it if it is being stroked. This will draw a wedge
      * @param paint      The paint used to draw the arc
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.265 -0500", hash_original_method = "5411F007DFA413B9921CB5C131E7CB3B", hash_generated_method = "CE118D9220FDE4CED8F2CCAF3528CA51")
     
 public void drawArc(RectF oval, float startAngle, float sweepAngle,
@@ -1470,6 +1397,8 @@ public void drawArc(RectF oval, float startAngle, float sweepAngle,
      * @param ry    The y-radius of the oval used to round the corners
      * @param paint The paint used to draw the roundRect
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.267 -0500", hash_original_method = "41C1A121517CD12760C521BBD9AF1967", hash_generated_method = "AF18146D80DB438DD0A2F77C34F0CB67")
     
 public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
@@ -1479,9 +1408,9 @@ public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
         native_drawRoundRect(mNativeCanvas, rect, rx, ry,
                              paint.mNativePaint);
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void drawPath(Path path, Paint paint) {
 		addTaint(path.getTaint());
 		addTaint(paint.getTaint());
@@ -1506,9 +1435,9 @@ public void drawRoundRect(RectF rect, float rx, float ry, Paint paint) {
     
 public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     public void drawBitmap(Bitmap bitmap, float left, float top, Paint paint) {
 		addTaint(bitmap.getTaint());
 		addTaint(left);
@@ -1521,10 +1450,10 @@ public void drawPatch(Bitmap bitmap, byte[] chunks, RectF dst, Paint paint) {
                 bitmap.mDensity);
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public void drawBitmap(Bitmap bitmap, Rect src, RectF dst, Paint paint) {
 		addTaint(bitmap.getTaint());
 		addTaint(src.getTaint());
 		addTaint(dst.getTaint());
@@ -1633,6 +1562,8 @@ public void drawBitmap(int[] colors, int offset, int stride, int x, int y,
      * @param matrix The matrix used to transform the bitmap when it is drawn
      * @param paint  May be null. The paint used to draw the bitmap
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.289 -0500", hash_original_method = "EB6FF8B38000E2AA8E5468782EF53260", hash_generated_method = "E0067301BC4D95F1F82B6EFF8CAC0C89")
     
 public void drawBitmap(Bitmap bitmap, Matrix matrix, Paint paint) {
@@ -1751,6 +1682,8 @@ public void drawVertices(VertexMode mode, int vertexCount,
      * @param y     The y-coordinate of the origin of the text being drawn
      * @param paint The paint used for the text (e.g. color, size, style)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.306 -0500", hash_original_method = "B53D951EA30645908EAA0D773F3CD0B1", hash_generated_method = "CE07C6E1BD5141BE415BFA895FDEDA11")
     
 public void drawText(char[] text, int index, int count, float x, float y,
@@ -1772,6 +1705,8 @@ public void drawText(char[] text, int index, int count, float x, float y,
      * @param y     The y-coordinate of the origin of the text being drawn
      * @param paint The paint used for the text (e.g. color, size, style)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.308 -0500", hash_original_method = "5AF5477506B1C1EE3856DD0F624B5874", hash_generated_method = "A9F3EEEB2A8415737D8887B2A209059C")
     
 public void drawText(String text, float x, float y, Paint paint) {
@@ -1814,6 +1749,8 @@ public void drawText(String text, int start, int end, float x, float y,
      * @param y        The y-coordinate of origin for where to draw the text
      * @param paint The paint used for the text (e.g. color, size, style)
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.313 -0500", hash_original_method = "6FEFF94D9E21F991F21729F6F5F461A6", hash_generated_method = "31282EAB2BB247C7F5C281A556545124")
     
 public void drawText(CharSequence text, int start, int end, float x,
@@ -1930,7 +1867,6 @@ public void drawTextRun(CharSequence text, int start, int end,
             TemporaryBuffer.recycle(buf);
         }
     }
-
     
     private static class CanvasFinalizer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:20.055 -0500", hash_original_field = "9AEAAB458F04AA015A1FEC7988D58EFD", hash_generated_field = "2D4BC4BEF691AE213514DA2EF6E7568C")
@@ -1955,11 +1891,8 @@ public CanvasFinalizer(int nativeCanvas) {
                 super.finalize();
             }
         }
-
         
     }
-
-
     
     public enum EdgeType {
         BW(0),  
@@ -1974,7 +1907,6 @@ EdgeType(int nativeInt) {
 
         public  int nativeInt;
     }
-
     
     public enum VertexMode {
         TRIANGLES(0),
@@ -2159,7 +2091,6 @@ public void drawPicture(Picture picture, Rect dst) {
     	addTaint(screenDensity);
     	addTaint(bitmapDensity);
     }
-
     
 }
 

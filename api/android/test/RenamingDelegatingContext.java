@@ -20,22 +20,13 @@ import android.os.FileUtils;
 
 import com.google.android.collect.Sets;
 
-
-
-
-
-
 public class RenamingDelegatingContext extends ContextWrapper {
-
     
-    @DSModeled(DSC.BAN)
     public static <T extends ContentProvider> T providerWithRenamedContext(
             Class<T> contentProvider, Context c, String filePrefix) throws IllegalAccessException, InstantiationException {
         return providerWithRenamedContext(contentProvider, c, filePrefix, false);
     }
-
     
-    @DSModeled(DSC.BAN)
     public static <T extends ContentProvider> T providerWithRenamedContext(
             Class<T> contentProvider, Context c, String filePrefix,
             boolean allowAccessToExistingFilesAndDbs) throws IllegalAccessException, InstantiationException {
@@ -50,7 +41,6 @@ public class RenamingDelegatingContext extends ContextWrapper {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.561 -0500", hash_original_field = "276841D30372F31C614BEDC7C2DB0F3F", hash_generated_field = "25D64DDA3F3009238ABDBADB548AC0B2")
 
-
     private Context mFileContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.563 -0500", hash_original_field = "02F7230E3B151BE1BDE6BF00418690D1", hash_generated_field = "38B9F00B3B94348DD3ACD5CEC6A09DEE")
 
@@ -62,7 +52,6 @@ public class RenamingDelegatingContext extends ContextWrapper {
 
     private final Object mSync = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.570 -0500", hash_original_field = "9D48467151A424B3E3EF9ACC90242FD1", hash_generated_field = "E5CA7AE9199D32A37BD4AFE76E3BB38A")
-
 
     private Set<String> mDatabaseNames = Sets.newHashSet();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:46.572 -0500", hash_original_field = "FE1DBA3D9B039912878F17A7B1D23A01", hash_generated_field = "D758D404A6E30EDA7FC4BE6DA91D9289")
@@ -279,7 +268,6 @@ private String renamedFileName(String name) {
         }
         return mCacheDir;
     }
-
     
 }
 

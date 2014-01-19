@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.net.InetAddress;
 import java.net.SocketException;
 
-
-
-
-
-
 public class AudioStream extends RtpStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.050 -0500", hash_original_field = "D7D3A6F306950CEA4B6FC85D0247F3C1", hash_generated_field = "48FE1FD1A45DD00365BBA4B7AFE1C228")
 
@@ -51,6 +46,7 @@ public AudioStream(InetAddress address) throws SocketException {
     /**
      * Returns the joined {@link AudioGroup}.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.062 -0500", hash_original_method = "477F536A3076B0B10A19072AA2686CEC", hash_generated_method = "13763D327C25270880CF36A0BD0A059D")
     
 public AudioGroup getGroup() {
@@ -66,6 +62,8 @@ public AudioGroup getGroup() {
      * @throws IllegalStateException if the stream is not properly configured.
      * @see AudioGroup
      */
+    @DSComment("Audio call")
+    @DSSpec(DSCat.RTP_CALL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.064 -0500", hash_original_method = "119D45B9BF5FF64C97C7293B3DF5F7E3", hash_generated_method = "29ED583CFA904E738FF127CFB9F0B721")
     
 public void join(AudioGroup group) {
@@ -89,6 +87,7 @@ public void join(AudioGroup group) {
      *
      * @see #setCodec(AudioCodec)
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.066 -0500", hash_original_method = "477233579E49B9ACBFE0DA40A2D8DF9C", hash_generated_method = "5487DAF43AFC33675BBC0738CAC2EA16")
     
 public AudioCodec getCodec() {
@@ -120,6 +119,7 @@ public void setCodec(AudioCodec codec) {
      *
      * @see #setDtmfType(int)
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:22.071 -0500", hash_original_method = "67DA2B7B029AD6BDA2A522BA945FCCC7", hash_generated_method = "3C0067CBF059856A8FA81892062A2D81")
     
 public int getDtmfType() {
@@ -156,7 +156,6 @@ public void setDtmfType(int type) {
         }
         mDtmfType = type;
     }
-
     
 }
 

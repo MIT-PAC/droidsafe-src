@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public final class NdefMessage implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.048 -0500", hash_original_field = "43AA9F6BBA9861FD41265D3FF45443F3", hash_generated_field = "3835A2DFF1178D58B5296641A8C4E94F")
 
@@ -40,7 +36,6 @@ public final class NdefMessage implements Parcelable {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.053 -0500", hash_original_field = "F30AC1B8BF0B03F942659453F390F3D3", hash_generated_field = "E68F4FE3D834F8AC778DFF66AE2BFB1B")
 
-
     private  NdefRecord[] mRecords;
 
     /**
@@ -62,6 +57,8 @@ public NdefMessage(byte[] data) throws FormatException {
     /**
      * Create an NDEF message from NDEF records.
      */
+    @DSComment("data structure, except writeToParcel")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.058 -0500", hash_original_method = "E87B5EF1F7D5816785326D2A488F5505", hash_generated_method = "869C49A1D3186925B00FD1E1E8A1AABE")
     
 public NdefMessage(NdefRecord[] records) {
@@ -74,6 +71,9 @@ public NdefMessage(NdefRecord[] records) {
      *
      * @return array of zero or more NDEF records.
      */
+    @DSComment("data structure, except writeToParcel")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.060 -0500", hash_original_method = "482F2AD23FF4C5B364DE9FB97EDDBB64", hash_generated_method = "C7BB5CEF292B3E7C1A8B4DC36219E098")
     
 public NdefRecord[] getRecords() {
@@ -83,6 +83,7 @@ public NdefRecord[] getRecords() {
     /**
      * Returns a byte array representation of this entire NDEF message.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.063 -0500", hash_original_method = "8C1624491EC0DD58CFD007740FE405D8", hash_generated_method = "21C9C13EC9FAEFA5F55B3DC8AAE9AA07")
     
 public byte[] toByteArray() {
@@ -127,6 +128,7 @@ public byte[] toByteArray() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.068 -0500", hash_original_method = "C32A271878CC7CE5578073C85AE449D6", hash_generated_method = "F8DAC8176BF50F813F7DB70698DD1DD1")
     
 @Override

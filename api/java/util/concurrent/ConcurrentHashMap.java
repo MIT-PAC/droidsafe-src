@@ -17,11 +17,6 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.concurrent.locks.ReentrantLock;
 
-
-
-
-
-
 public class ConcurrentHashMap<K, V> extends AbstractMap<K, V> implements ConcurrentMap<K, V>, Serializable {
 
     /* ---------------- Small Utilities -------------- */
@@ -50,7 +45,6 @@ private static int hash(int h) {
     private static final long serialVersionUID = 7249069246763182397L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.145 -0500", hash_original_field = "5C6358F3EE542D2E9840880E94213970", hash_generated_field = "73D731B147597FD5BDB2BB8E9AD216B8")
 
-
     /* ---------------- Constants -------------- */
 
     /**
@@ -72,7 +66,6 @@ private static int hash(int h) {
     static final int MAX_SEGMENTS = 1 << 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.158 -0500", hash_original_field = "2AB727D902A76BDD93D9849A34A614E9", hash_generated_field = "7716F2D4D0784E4AF38900D3F3CFF51F")
 
-
     /**
      * Number of unsynchronized retries in size and containsValue
      * methods before resorting to locking. This is used to avoid
@@ -81,7 +74,6 @@ private static int hash(int h) {
      */
     static final int RETRIES_BEFORE_LOCK = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.161 -0500", hash_original_field = "4BE7BE92627D08015B3B3DAF23AD6BAD", hash_generated_field = "FB2EEE3C1CA932EB5B8A4D2B2897701A")
-
 
     /**
      * Mask value for indexing into segments. The upper bits of a
@@ -96,7 +88,6 @@ private static int hash(int h) {
      Segment<K,V>[] segments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.168 -0500", hash_original_field = "8E2B51CCF89ADF7243D25312F0ABCDAC", hash_generated_field = "B015B4740FB481B602A7C5EA08044E34")
 
-
     transient Set<K> keySet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.170 -0500", hash_original_field = "679197F35762BD01568998E78245F4E3", hash_generated_field = "8070B936D9AF3972F9E8198F31643848")
 
@@ -104,8 +95,6 @@ private static int hash(int h) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.172 -0500", hash_original_field = "66FC55BC3FE3DFC76C7BE5EAF459710C", hash_generated_field = "1963670AE696FF62CC56DF446CAA129C")
 
     transient Collection<V> values;
-
-
 
     /* ---------------- Public operations -------------- */
 
@@ -188,6 +177,8 @@ public ConcurrentHashMap(int initialCapacity, float loadFactor) {
      * @throws IllegalArgumentException if the initial capacity of
      * elements is negative.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.264 -0500", hash_original_method = "FC082FCC77B50E96B6B6DB58BAB97957", hash_generated_method = "1868059E578F334541C694CC2C8E1356")
     
 public ConcurrentHashMap(int initialCapacity) {
@@ -198,6 +189,8 @@ public ConcurrentHashMap(int initialCapacity) {
      * Creates a new, empty map with a default initial capacity (16),
      * load factor (0.75) and concurrencyLevel (16).
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.266 -0500", hash_original_method = "DFADDF9198F2268E7EB2B4F062BE54B9", hash_generated_method = "D67688F0DFF5DC08C72EB2B9294A3593")
     
 public ConcurrentHashMap() {
@@ -333,6 +326,7 @@ public int size() {
      *
      * @throws NullPointerException if the specified key is null
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.278 -0500", hash_original_method = "332CB84E85FBD8A2CB62BBB184B280CA", hash_generated_method = "7EE66C4B254D275ACADB7E36512FEADD")
     
 public V get(Object key) {
@@ -453,6 +447,7 @@ public boolean contains(Object value) {
      *         <tt>null</tt> if there was no mapping for <tt>key</tt>
      * @throws NullPointerException if the specified key or value is null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.289 -0500", hash_original_method = "7B5FF6221D53537744EF141B1F8CB9FD", hash_generated_method = "7BFA11D2C887423F4364FA64BC7ED080")
     
 public V put(K key, V value) {
@@ -469,6 +464,7 @@ public V put(K key, V value) {
      *         or <tt>null</tt> if there was no mapping for the key
      * @throws NullPointerException if the specified key or value is null
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.291 -0500", hash_original_method = "667464B5C7B8632F9930C4BABEB48EA8", hash_generated_method = "D7D1028C77FC31ED718B783FE3D514BB")
     
 public V putIfAbsent(K key, V value) {
@@ -561,10 +557,8 @@ public void clear() {
         for (int i = 0; i < segments.length; ++i)
             segments[i].clear();
     }
-
     
     static final class HashEntry<K,V> {
-
         
         @SuppressWarnings("unchecked")
         static final <K,V> HashEntry<K,V>[] newArray(int i) {
@@ -591,21 +585,16 @@ HashEntry(K key, int hash, HashEntry<K,V> next, V value) {
             this.next = next;
             this.value = value;
         }
-
         
     }
-
-
     
     static final class Segment<K,V> extends ReentrantLock implements Serializable {
-
         
         @SuppressWarnings("unchecked")
         static final <K,V> Segment<K,V>[] newArray(int i) {
             return new Segment[i];
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.199 -0500", hash_original_field = "59EB42CA6A147AD05286E3F96228C4D7", hash_generated_field = "63C62A82A3FF7049D8720153B66FBF4F")
-
 
         private static final long serialVersionUID = 2249069246763182397L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.201 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "A5A8CDA7B0601BDA04B06999B66113E1")
@@ -763,7 +752,6 @@ V replace(K key, int hash, V newValue) {
             }
         }
 
-
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.241 -0500", hash_original_method = "F92903F43B391F8F1B397027DA8E7AA9", hash_generated_method = "252CB8C489CE3EB2BCC28E983AD65EE7")
         
 V put(K key, int hash, V value, boolean onlyIfAbsent) {
@@ -919,8 +907,6 @@ void clear() {
             }
         }
     }
-
-
     
     abstract class HashIterator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.328 -0500", hash_original_field = "6D9B0937081A44F32DBD7158CFD76C24", hash_generated_field = "6D9B0937081A44F32DBD7158CFD76C24")
@@ -998,11 +984,8 @@ public void remove() {
             ConcurrentHashMap.this.remove(lastReturned.key);
             lastReturned = null;
         }
-
         
     }
-
-
     
     final class KeyIterator extends HashIterator implements Iterator<K>, Enumeration<K> {
         
@@ -1017,11 +1000,8 @@ public K next()        { return super.nextEntry().key; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.361 -0500", hash_original_method = "1473F8B0EF10582FE9B24F9D164CBEAD", hash_generated_method = "7817011C4BB28669D0A37EBAAFD7F6F4")
         
 public K nextElement() { return super.nextEntry().key; }
-
         
     }
-
-
     
     final class ValueIterator extends HashIterator implements Iterator<V>, Enumeration<V> {
         
@@ -1036,11 +1016,8 @@ public V next()        { return super.nextEntry().value; }
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.368 -0500", hash_original_method = "95D48303D225ADC424CB718F2FA08908", hash_generated_method = "8ACA7F961BC7A1ADC3E0C4C639563A1F")
         
 public V nextElement() { return super.nextEntry().value; }
-
         
     }
-
-
     
     final class WriteThroughEntry extends AbstractMap.SimpleEntry<K,V> {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.373 -0500", hash_original_method = "A56113014EC205E193BCD1C4F8B24855", hash_generated_method = "A56113014EC205E193BCD1C4F8B24855")
@@ -1058,6 +1035,7 @@ WriteThroughEntry(K k, V v) {
          * removed in which case the put will re-establish). We do not
          * and cannot guarantee more.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:14.376 -0500", hash_original_method = "38F302BB69197C5906EE6F553583F6F9", hash_generated_method = "00CFA85539CBE187D0B73C47ABC5E9F3")
         
 public V setValue(V value) {
@@ -1066,11 +1044,8 @@ public V setValue(V value) {
             ConcurrentHashMap.this.put(getKey(), value);
             return v;
         }
-
         
     }
-
-
     
     final class EntryIterator extends HashIterator implements Iterator<Entry<K,V>> {
         
@@ -1085,11 +1060,8 @@ public Map.Entry<K,V> next() {
             HashEntry<K,V> e = super.nextEntry();
             return new WriteThroughEntry(e.key, e.value);
         }
-
         
     }
-
-
     
     final class KeySet extends AbstractSet<K> {
         
@@ -1128,11 +1100,8 @@ public boolean remove(Object o) {
 public void clear() {
             ConcurrentHashMap.this.clear();
         }
-
         
     }
-
-
     
     final class Values extends AbstractCollection<V> {
         
@@ -1166,11 +1135,8 @@ public boolean contains(Object o) {
 public void clear() {
             ConcurrentHashMap.this.clear();
         }
-
         
     }
-
-
     
     final class EntrySet extends AbstractSet<Map.Entry<K,V>> {
         
@@ -1216,7 +1182,6 @@ public boolean isEmpty() {
 public void clear() {
             ConcurrentHashMap.this.clear();
         }
-
         
     }
 

@@ -6,12 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import libcore.math.MathUtils;
 
-
-
-
-
 final class RealToString {
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.672 -0500", hash_original_method = "30D5D492EADCC746F56566F6C51DBFB8", hash_generated_method = "6210D16B0A5F121D177C5A787BA02E44")
     
 public static RealToString getInstance() {
@@ -27,12 +24,11 @@ private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
         }
         return s;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.573 -0400", hash_original_field = "2D2E92A8D0328A9801B0413D209B9EF9", hash_generated_field = "9DCB2A0234839FFA438E5D31EF7751AF")
 
-    private static final ThreadLocal<RealToString> INSTANCE = new ThreadLocal<RealToString>() {        
-        @DSModeled(DSC.BAN)
+    private static final ThreadLocal<RealToString> INSTANCE = new ThreadLocal<RealToString>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:50.573 -0400", hash_original_method = "9364A7477DF2F9BBB2EF3C35EE7A5D92", hash_generated_method = "6879AD8D085EBF57CA55A5F59F935FBD")
         @Override
         protected RealToString initialValue() {
@@ -41,17 +37,13 @@ private static String resultOrSideEffect(AbstractStringBuilder sb, String s) {
             varB4EAC82CA7396A68D541C85D26508E83_488269211.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_488269211;
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.660 -0500", hash_original_field = "DDCFC4BA9A320738A311B6CDFAC04909", hash_generated_field = "CB87C311F6043A6FA9F065A81B47C7CD")
 
-
     private static final double invLogOfTenBaseTwo = Math.log(2.0) / Math.log(10.0);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.662 -0500", hash_original_field = "7B483AA2F3A8F35DB64B8F104D661A1E", hash_generated_field = "6D9BB978CBD3D3FD82983DAB50AF5B36")
-
 
     private int firstK;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.664 -0500", hash_original_field = "43D0909B7EC78B784A77E0B7A5D12574", hash_generated_field = "50690E06A9DD54E798BAB9384D861132")
@@ -277,7 +269,6 @@ private void freeFormat(AbstractStringBuilder sb, boolean positive) {
     	addTaint(isDenormalized);
     	addTaint(p);
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:31.705 -0500", hash_original_method = "6A17AA5B213AA1683132D90321A5CCE9", hash_generated_method = "6CC7C02F98A2E528A75F213DFC3EA7C7")
     

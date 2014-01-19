@@ -13,10 +13,6 @@ import java.util.Collection;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class RouteInfo implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.040 -0500", hash_original_method = "47DE57C9E0058D54F0DCCD6C2FCBB66B", hash_generated_method = "F7BB8525EDAD235BDEE16189A33C325D")
@@ -63,7 +59,6 @@ public static RouteInfo selectBestRoute(Collection<RouteInfo> routes, InetAddres
         }
         return bestRoute;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:19.239 -0400", hash_original_field = "021D8C9C5A7781A8A38C32808BDD3610", hash_generated_field = "128F0AA00E42EAC56D7B0EF75CE1AD19")
 
@@ -115,7 +110,6 @@ public RouteInfo[] newArray(int size) {
 
     private  InetAddress mGateway;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.030 -0500", hash_original_field = "5C871AF21542173A28C29252E3E74C6D", hash_generated_field = "37F4FF220768DADFAC04D15463D51A4A")
-
 
     private  boolean mIsDefault;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.032 -0500", hash_original_field = "CC3FF6C4EC784CE444E6560833F03CEC", hash_generated_field = "9DEB0F47D4D95D76C37945712CE421B8")
@@ -177,13 +171,14 @@ private boolean isDefault() {
         return val;
     }
 
-
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.049 -0500", hash_original_method = "1DFF4C9A700CC3886F6C70CFCDBFA85F", hash_generated_method = "AFA3FBEF4C70A0EA4281450697C789A6")
     
 public LinkAddress getDestination() {
         return mDestination;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:07.051 -0500", hash_original_method = "EBF08E83FF9E78B73EDA9A9990BB8494", hash_generated_method = "4C54B4C28077AFC9A5FA43B4F820BE9B")
     
 public InetAddress getGateway() {

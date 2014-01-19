@@ -14,8 +14,6 @@ import android.nfc.NdefMessage;
 import android.nfc.Tag;
 import android.os.RemoteException;
 
-
-
 public final class NdefFormatable extends BasicTagTechnology {
 
     /**
@@ -27,6 +25,7 @@ public final class NdefFormatable extends BasicTagTechnology {
      * @param tag an NDEF formatable tag
      * @return NDEF formatable object
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:49.188 -0500", hash_original_method = "EF1F12BA68C994020F7EF7C36B8754C4", hash_generated_method = "B8F9B487131DCE7A6B920461F97E95FD")
     
 public static NdefFormatable get(Tag tag) {

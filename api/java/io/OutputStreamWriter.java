@@ -12,20 +12,14 @@ import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
 import java.util.Arrays;
 
-
-
-
 public class OutputStreamWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.566 -0500", hash_original_field = "045D3F20D319391451B40CE63253C516", hash_generated_field = "FAC7CE5410064D378AF9E7B2309C5BE9")
-
 
     private  OutputStream out;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.568 -0500", hash_original_field = "35DE68BB49761C7459EF0234F6EAB1B7", hash_generated_field = "A07B3C678B690A0A298B0184B628874A")
 
-
     private CharsetEncoder encoder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.571 -0500", hash_original_field = "D75566C09E1648987D573E04AE908DE5", hash_generated_field = "A3FC74598F816F44A8E790B9843EEF7E")
-
 
     private ByteBuffer bytes = ByteBuffer.allocate(8192);
 
@@ -37,6 +31,8 @@ public class OutputStreamWriter extends Writer {
      * @param out
      *            the non-null target stream to write converted bytes to.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.574 -0500", hash_original_method = "8C206CCA706FC5574C37E56D894D8687", hash_generated_method = "842F6B6710D3A66CF876DB8E7DB54F66")
     
 public OutputStreamWriter(OutputStream out) {
@@ -86,6 +82,8 @@ public OutputStreamWriter(OutputStream out, final String enc)
      * @param cs
      *            the {@code Charset} that specifies the character encoding.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.580 -0500", hash_original_method = "8F31DE887FC24410EE09434FBA44CA21", hash_generated_method = "C388739C3AC44331B56B35FBA1B88BA7")
     
 public OutputStreamWriter(OutputStream out, Charset cs) {
@@ -106,6 +104,8 @@ public OutputStreamWriter(OutputStream out, Charset cs) {
      * @param enc
      *            the character encoder used for character conversion.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.583 -0500", hash_original_method = "C5AFC76AE8F04EED9C657E07A65429EA", hash_generated_method = "8CD38A4A4B1FF7E5F7207AD626AB27C7")
     
 public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
@@ -126,6 +126,8 @@ public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
      * @throws IOException
      *             if an error occurs while closing this writer.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.585 -0500", hash_original_method = "348EDF61477AE4A3DCAC4870D899F874", hash_generated_method = "5D0388D5AAD5F0793DE2F1E9322C0CED")
     
 @Override
@@ -149,6 +151,8 @@ public OutputStreamWriter(OutputStream out, CharsetEncoder enc) {
      * @throws IOException
      *             if an error occurs while flushing this writer.
      */
+    @DSComment("OutputStreamWrite class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.587 -0500", hash_original_method = "E89503CD667F6DF7A02E3D218DF666E8", hash_generated_method = "5472256256B480FB5B4336E5277791E6")
     
 @Override
@@ -236,6 +240,7 @@ private void checkStatus() throws IOException {
      * track of the String or Charset they passed in; this method may not return the same
      * name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:40.601 -0500", hash_original_method = "A69A1F1EB2BFDD0474AAD9460630967D", hash_generated_method = "0FF93F2101F36D1283DE60FF400C16CB")
     
 public String getEncoding() {
@@ -344,7 +349,6 @@ public String getEncoding() {
 @Override boolean checkError() {
         return out.checkError();
     }
-
     
 }
 

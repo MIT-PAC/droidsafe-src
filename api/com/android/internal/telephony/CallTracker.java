@@ -8,21 +8,14 @@ import android.os.AsyncResult;
 import android.os.Handler;
 import android.os.Message;
 
-
-
-
-
 public abstract class CallTracker extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.130 -0500", hash_original_field = "83EC3F78C66627469DFE7766D8BC2B63", hash_generated_field = "5105F543721DFE6C6FC4422BBF3A00CF")
-
 
     private static final boolean DBG_POLL = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.133 -0500", hash_original_field = "0ED71B911C6D069D7CFAAFAC303ABDB5", hash_generated_field = "3722F9939CFDCCF4951B6323D6314219")
 
-
     static final int POLL_DELAY_MSEC = 250;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.145 -0500", hash_original_field = "35D7B342920402EC5081A17E447E2E1B", hash_generated_field = "0AAB0D534F207DC90FD988BA80852530")
-
 
     protected static final int EVENT_POLL_CALLS_RESULT             = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.148 -0500", hash_original_field = "A405429CBFB45673FDA5E664C3325F24", hash_generated_field = "163FADEF9D457FD295F323F42C3B5123")
@@ -38,7 +31,6 @@ public abstract class CallTracker extends Handler {
 
     protected static final int EVENT_GET_LAST_CALL_FAIL_CAUSE      = 5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.158 -0500", hash_original_field = "A6A5E04ADE4C2BE6DC374568D9C63124", hash_generated_field = "3F4A13558D1AEA1280CB5BA444D5485E")
-
 
     protected static final int EVENT_SWITCH_RESULT                 = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.161 -0500", hash_original_field = "5FC7EADC7E6DC6ACD7505CB6DBB3197C", hash_generated_field = "A36C43879CD8A12D7585FFA07C09E465")
@@ -67,7 +59,6 @@ public abstract class CallTracker extends Handler {
     protected static final int EVENT_THREE_WAY_DIAL_L2_RESULT_CDMA = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.135 -0500", hash_original_field = "E53991F0939FF29C580B93BD06CE0AC9", hash_generated_field = "FD6602A5A7D30569DE1750B9B6FB9D72")
 
-
     protected int pendingOperations;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.138 -0500", hash_original_field = "CDF42ADC63460F76B52F6D43F4DA1257", hash_generated_field = "DBD10C1829EDDA3D610F0C4F9AFC36B9")
 
@@ -76,7 +67,6 @@ public abstract class CallTracker extends Handler {
 
     protected Message lastRelevantPoll;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.142 -0500", hash_original_field = "AD2081CF4152C993ABD262358732E864", hash_generated_field = "05962FE0A208085D4571A76418F3A959")
-
 
     public CommandsInterface cm;
     
@@ -134,6 +124,7 @@ protected void handleRadioAvailable() {
      * of getCurrentCalls() will be postponed until this
      * operation is also complete.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.195 -0500", hash_original_method = "91C44089CAD2AA24231C5131EC918B32", hash_generated_method = "01BAEF5CCE5CB24D1DB173014C73734F")
     
 protected Message
@@ -155,7 +146,6 @@ private boolean
                 pendingOperations);
         return pendingOperations == 0;
     }
-
 
     //***** Overridden from Handler
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:39.200 -0500", hash_original_method = "DC212188FEA96E721DB2AE6D44B077BD", hash_generated_method = "818083ABEAD9789AFFD0CD112BC340FC")

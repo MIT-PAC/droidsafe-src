@@ -5,21 +5,15 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public class ColorMatrixColorFilter extends ColorFilter {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeColorMatrixFilter(float[] array) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_207688702;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int nColorMatrixFilter(int nativeFilter, float[] array) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_221975373;
@@ -46,6 +40,8 @@ public ColorMatrixColorFilter(ColorMatrix matrix) {
      *              matrix. The first 20 entries of the array are copied into
      *              the filter. See ColorMatrix.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:25.297 -0500", hash_original_method = "2D0E3EA51658F535A9A5BDBE5AE078D8", hash_generated_method = "CE89804102EE885972F99614C40A8362")
     
 public ColorMatrixColorFilter(float[] array) {
@@ -55,7 +51,6 @@ public ColorMatrixColorFilter(float[] array) {
         native_instance = nativeColorMatrixFilter(array);
         nativeColorFilter = nColorMatrixFilter(native_instance, array);
     }
-
     
 }
 

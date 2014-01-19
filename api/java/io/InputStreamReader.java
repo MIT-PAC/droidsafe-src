@@ -12,25 +12,17 @@ import java.nio.charset.CoderResult;
 import java.nio.charset.CodingErrorAction;
 import java.util.Arrays;
 
-
-
-
-
-
 public class InputStreamReader extends Reader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.957 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "9DA78E40E39AA56A72373CEA8B1326DF")
 
     private InputStream in;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.959 -0500", hash_original_field = "C9198FC6CD0651265F41AA62AD6A1F5C", hash_generated_field = "C1BD264EA71B8905202FEFE2EB6106E5")
 
-
     private boolean endOfInput = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.961 -0500", hash_original_field = "EB8B81788E764E7EC09C99438B975CD8", hash_generated_field = "E190C0DE068854E0E786DAC309DED1B8")
 
-
     private CharsetDecoder decoder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.963 -0500", hash_original_field = "D75566C09E1648987D573E04AE908DE5", hash_generated_field = "C7ACDD8E59EDFE2B06C91B0B5639E9AE")
-
 
     private final ByteBuffer bytes = ByteBuffer.allocate(8192);
 
@@ -43,6 +35,8 @@ public class InputStreamReader extends Reader {
      * @param in
      *            the input stream from which to read characters.
      */
+    @DSComment("InputStreamReader class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.966 -0500", hash_original_method = "3590A2EED02D10C52AB0172AD4BE22C4", hash_generated_method = "2BA25DDC3C17AC85E8604B7021C53C69")
     
 public InputStreamReader(InputStream in) {
@@ -112,6 +106,8 @@ public InputStreamReader(InputStream in, CharsetDecoder dec) {
      * @param charset
      *            the Charset that defines the character converter
      */
+    @DSComment("InputStreamReader class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.975 -0500", hash_original_method = "F689BDB30C937E91D3C146F93A07A4B9", hash_generated_method = "25C9BE37F4F9559B696FB3861A4C24DF")
     
 public InputStreamReader(InputStream in, Charset charset) {
@@ -130,6 +126,8 @@ public InputStreamReader(InputStream in, Charset charset) {
      * @throws IOException
      *             if an error occurs attempting to close this reader.
      */
+    @DSComment("InputStreamReader class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.978 -0500", hash_original_method = "FE46DA5B445A82E67613621D1604074D", hash_generated_method = "64568DB66E5B89ACA9154E9C002982F9")
     
 @Override
@@ -152,6 +150,7 @@ public InputStreamReader(InputStream in, Charset charset) {
      * track of the String or Charset they passed in; this method may not return the same
      * name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:49.980 -0500", hash_original_method = "4B46B0B3D8C39E950459FB803D7FD65D", hash_generated_method = "1D58F563A49A07C6EFD3A0F1D5FF34D9")
     
 public String getEncoding() {
@@ -320,7 +319,6 @@ private boolean isOpen() {
             }
         }
     }
-
     
 }
 

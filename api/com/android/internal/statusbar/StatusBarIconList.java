@@ -9,12 +9,7 @@ import java.io.PrintWriter;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class StatusBarIconList implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:11.216 -0400", hash_original_field = "BF60B0A5C3E61C77F35261BE495B6655", hash_generated_field = "05AD09550D387B8CDEADEA4178378B19")
 
@@ -70,6 +65,7 @@ public void readFromParcel(Parcel in) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.342 -0500", hash_original_method = "65DAF69F4AC762C1C1797457361FBB3F", hash_generated_method = "01C81874D4F50459888BB3EFC45F1F84")
     
 public void writeToParcel(Parcel out, int flags) {
@@ -108,6 +104,7 @@ public void defineSlots(String[] slots) {
         mIcons = new StatusBarIcon[N];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.356 -0500", hash_original_method = "8024CC157D8FAF0FCD4261460DE3C083", hash_generated_method = "4314FCC74F7582E002F42C4C0A1A564A")
     
 public int getSlotIndex(String slot) {
@@ -126,6 +123,7 @@ public int size() {
         return mSlots.length;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.361 -0500", hash_original_method = "F5C28F866C5BC55B13E5B475658140A5", hash_generated_method = "97A2FE35DE66E9EA4C096B83F572B6F8")
     
 public void setIcon(int index, StatusBarIcon icon) {
@@ -138,18 +136,21 @@ public void removeIcon(int index) {
         mIcons[index] = null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.366 -0500", hash_original_method = "28B506564CF04E7E4762309FF5F1124B", hash_generated_method = "A60B3AB2417208200723EE294F60C28E")
     
 public String getSlot(int index) {
         return mSlots[index];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.368 -0500", hash_original_method = "6B1D8C3B652540022F161D426C6FAB9E", hash_generated_method = "F97DBB74E33C6A227E09F73DB1FDC795")
     
 public StatusBarIcon getIcon(int index) {
         return mIcons[index];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:55.370 -0500", hash_original_method = "3DC98D18577B41896086CB1A25B66967", hash_generated_method = "A22F67BD4610295A9B443E7F5CD2CB19")
     
 public int getViewIndex(int index) {

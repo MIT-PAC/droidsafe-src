@@ -9,7 +9,6 @@ import android.util.Log;
 public class Mesh extends BaseObj {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.420 -0500", hash_original_field = "228985299EC15EB3441845338D5404EE", hash_generated_field = "228985299EC15EB3441845338D5404EE")
 
-
     Allocation[] mVertexBuffers;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.423 -0500", hash_original_field = "C14CB5DE54A58C061EDE9BEC8FDDA8BC", hash_generated_field = "C14CB5DE54A58C061EDE9BEC8FDDA8BC")
 
@@ -28,6 +27,7 @@ Mesh(int id, RenderScript rs) {
     * @return number of allocations containing vertex data
     *
     **/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.429 -0500", hash_original_method = "EFFB20897006BD21D9CD85929E5DBB71", hash_generated_method = "108A7A742C93887BB574D24D333B8BE5")
     
 public int getVertexAllocationCount() {
@@ -41,6 +41,7 @@ public int getVertexAllocationCount() {
     * @return vertex data allocation at the given index
     *
     **/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.431 -0500", hash_original_method = "EA40159658251D040B5268F69F9B14EF", hash_generated_method = "16EA7DA0DB23193059F7E5C3711D2A0C")
     
 public Allocation getVertexAllocation(int slot) {
@@ -51,6 +52,7 @@ public Allocation getVertexAllocation(int slot) {
     * @return number of primitives or index sets in the mesh
     *
     **/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.433 -0500", hash_original_method = "428E6D74220E844332BAD2A4C35405F1", hash_generated_method = "71EC77A216CF591AAA20717175399221")
     
 public int getPrimitiveCount() {
@@ -66,6 +68,7 @@ public int getPrimitiveCount() {
     *         the index data is not specified explicitly
     *
     **/
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.435 -0500", hash_original_method = "08B7801C574B5FE1151D8579346309F3", hash_generated_method = "A1E590859719B375A7BCC1366CE95A40")
     
 public Allocation getIndexSetAllocation(int slot) {
@@ -116,7 +119,6 @@ public Primitive getPrimitive(int slot) {
             mPrimitives[i] = Primitive.values()[primitives[i]];
         }
     }
-
     
     public enum Primitive {
         POINT (0),
@@ -127,7 +129,6 @@ public Primitive getPrimitive(int slot) {
         TRIANGLE_FAN (5);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.414 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.417 -0500", hash_original_method = "46CFD72C86F0EF4DDDCAF5935C3616A1", hash_generated_method = "46CFD72C86F0EF4DDDCAF5935C3616A1")
             
@@ -135,7 +136,6 @@ Primitive(int id) {
             mID = id;
         }
     }
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.444 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
@@ -145,7 +145,6 @@ Primitive(int id) {
 
         int mUsage;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.461 -0500", hash_original_field = "E8E332765C92B2986C0EAE3D3BDB65E4", hash_generated_field = "E8E332765C92B2986C0EAE3D3BDB65E4")
-
 
         int mVertexTypeCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.463 -0500", hash_original_field = "539B737A39B7384A78AF1746E9278B0D", hash_generated_field = "539B737A39B7384A78AF1746E9278B0D")
@@ -176,6 +175,7 @@ public Builder(RenderScript rs, int usage) {
         * @return internal index of the last vertex buffer type added to
         *         builder
         **/
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.469 -0500", hash_original_method = "F2CC44AB8332A9CEBA185D757457B141", hash_generated_method = "AB6444224FCF13EB25D4DC9D3EE44929")
         
 public int getCurrentVertexTypeIndex() {
@@ -186,6 +186,7 @@ public int getCurrentVertexTypeIndex() {
         * @return internal index of the last index set added to the
         *         builder
         **/
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.471 -0500", hash_original_method = "390DA790368F4A077D3D7345AE862264", hash_generated_method = "3E79BFC79E6F8702652F2302554A8854")
         
 public int getCurrentIndexSetIndex() {
@@ -296,6 +297,7 @@ public Builder addIndexSetType(Element e, int size, Primitive p) {
             return this;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.487 -0500", hash_original_method = "A5F13BDB43E03AFA74C8CAC08DECE9D7", hash_generated_method = "A5F13BDB43E03AFA74C8CAC08DECE9D7")
         
 Type newType(Element e, int size) {
@@ -356,7 +358,6 @@ public Mesh create() {
 
             return newMesh;
         }
-
         
         class Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.448 -0500", hash_original_field = "905363B609753A7290BA348AA0EE865A", hash_generated_field = "905363B609753A7290BA348AA0EE865A")
@@ -381,14 +382,9 @@ public Mesh create() {
                 //Synthesized constructor
             }
 
-
         }
-
-
         
     }
-
-
     
     public static class AllocationBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.496 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
@@ -396,13 +392,11 @@ public Mesh create() {
         RenderScript mRS;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.505 -0500", hash_original_field = "E8E332765C92B2986C0EAE3D3BDB65E4", hash_generated_field = "E8E332765C92B2986C0EAE3D3BDB65E4")
 
-
         int mVertexTypeCount;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.507 -0500", hash_original_field = "539B737A39B7384A78AF1746E9278B0D", hash_generated_field = "539B737A39B7384A78AF1746E9278B0D")
 
         Entry[] mVertexTypes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.509 -0500", hash_original_field = "B9D0A03C9BDC29783A27CC44B9B1FABF", hash_generated_field = "B9D0A03C9BDC29783A27CC44B9B1FABF")
-
 
         Vector mIndexTypes;
 
@@ -419,6 +413,7 @@ public AllocationBuilder(RenderScript rs) {
         * @return internal index of the last vertex buffer type added to
         *         builder
         **/
+        @DSSource({DSSourceKind.LOCATION_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.514 -0500", hash_original_method = "F2CC44AB8332A9CEBA185D757457B141", hash_generated_method = "AB6444224FCF13EB25D4DC9D3EE44929")
         
 public int getCurrentVertexTypeIndex() {
@@ -429,6 +424,7 @@ public int getCurrentVertexTypeIndex() {
         * @return internal index of the last index set added to the
         *         builder
         **/
+        @DSSource({DSSourceKind.LOCATION_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.516 -0500", hash_original_method = "390DA790368F4A077D3D7345AE862264", hash_generated_method = "3E79BFC79E6F8702652F2302554A8854")
         
 public int getCurrentIndexSetIndex() {
@@ -533,7 +529,6 @@ public Mesh create() {
 
             return newMesh;
         }
-
         
         class Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.499 -0500", hash_original_field = "0A5181B731DCCB4745C5810BC91FA8CC", hash_generated_field = "0A5181B731DCCB4745C5810BC91FA8CC")
@@ -549,18 +544,12 @@ public Mesh create() {
                 //Synthesized constructor
             }
 
-
         }
-
-
         
     }
-
-
     
     public static class TriangleMeshBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.568 -0500", hash_original_field = "763DA14A918A15DB84400041DD8605D7", hash_generated_field = "43A680E9C8518C48BCC4E70F943AE42A")
-
 
         public static final int COLOR = 0x0001;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.570 -0500", hash_original_field = "C6BB4AF27C97402F33E80B9BB2F37B29", hash_generated_field = "6D62B99E0B040C5C3196106EE14343F8")
@@ -589,7 +578,6 @@ public Mesh create() {
         Element mElement;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.544 -0500", hash_original_field = "EEDC8AAF9952117629CEBEE39820FEB4", hash_generated_field = "EEDC8AAF9952117629CEBEE39820FEB4")
 
-
         float mNX = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.546 -0500", hash_original_field = "FBE457259607881D8AE24361D1690EC7", hash_generated_field = "FBE457259607881D8AE24361D1690EC7")
 
@@ -616,7 +604,6 @@ public Mesh create() {
 
         float mA = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.563 -0500", hash_original_field = "8C7E1C196B99C0E2B82C13F834059AE7", hash_generated_field = "8C7E1C196B99C0E2B82C13F834059AE7")
-
 
         int mVtxSize;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.565 -0500", hash_original_field = "4E5A87EA4636A8ACF68875B877F3A7B8", hash_generated_field = "4E5A87EA4636A8ACF68875B877F3A7B8")
@@ -832,6 +819,7 @@ public TriangleMeshBuilder addTriangle(int idx1, int idx2, int idx3) {
         *                             accessible memory
         *
         **/
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.599 -0500", hash_original_method = "2C3CCC3A0B0167433C5BE22C88A67CDC", hash_generated_method = "449300807E51E8F11A0B0C45F9B27BAA")
         
 public Mesh create(boolean uploadToBufferObject) {
@@ -880,8 +868,6 @@ public Mesh create(boolean uploadToBufferObject) {
             return sm;
         }
     }
-
-
     
 }
 

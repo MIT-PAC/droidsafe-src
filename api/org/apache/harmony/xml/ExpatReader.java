@@ -21,14 +21,8 @@ import org.xml.sax.SAXNotSupportedException;
 import org.xml.sax.XMLReader;
 import org.xml.sax.ext.LexicalHandler;
 
-
-
-
-
-
 public class ExpatReader implements XMLReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.909 -0500", hash_original_field = "D21F5EBFA260D1454028626166780495", hash_generated_field = "76D9E2DC4A0EBE3D6C94DF14707F99DB")
-
 
     private static final String LEXICAL_HANDLER_PROPERTY
             = "http://xml.org/sax/properties/lexical-handler";
@@ -44,7 +38,6 @@ public class ExpatReader implements XMLReader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.901 -0500", hash_original_field = "0A9AFAA2B0505C00F2ECAD506C3C72F7", hash_generated_field = "0A9AFAA2B0505C00F2ECAD506C3C72F7")
  LexicalHandler lexicalHandler;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.903 -0500", hash_original_field = "54A4A3EB19F42CDA073264FCAA27B260", hash_generated_field = "DA06DC238CFD0DC0251460B8E2E7F05F")
-
 
     private boolean processNamespaces = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.906 -0500", hash_original_field = "A9925B994A6A2A865685842891CFAB8B", hash_generated_field = "571B94DE5D091BD853A513AE92780624")
@@ -127,6 +120,7 @@ public void setFeature(String name, boolean value)
         throw new SAXNotRecognizedException(name);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.938 -0500", hash_original_method = "22B8A6F31FF28964E09EDBCB1671EC65", hash_generated_method = "BB7642854414D86C54BD9B612ABE13A9")
     
 public Object getProperty(String name)
@@ -142,6 +136,7 @@ public Object getProperty(String name)
         throw new SAXNotRecognizedException(name);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.940 -0500", hash_original_method = "77A0661FD735F31D3304DC28B022498D", hash_generated_method = "2F14B85BCBD4C184AFD8D71AE577AE76")
     
 public void setProperty(String name, Object value)
@@ -169,6 +164,7 @@ public void setEntityResolver(EntityResolver resolver) {
         this.entityResolver = resolver;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.945 -0500", hash_original_method = "3D81AADF9B7990F38C11DFC7B847459D", hash_generated_method = "21235A3EAE7DB933DABF4A20E9939299")
     
 public EntityResolver getEntityResolver() {
@@ -181,6 +177,7 @@ public void setDTDHandler(DTDHandler dtdHandler) {
         this.dtdHandler = dtdHandler;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.949 -0500", hash_original_method = "0F3DB0A89C47F7E5E68CDAECBE47BDA3", hash_generated_method = "59B05D24F37BFA393F25F99590382F55")
     
 public DTDHandler getDTDHandler() {
@@ -193,6 +190,7 @@ public void setContentHandler(ContentHandler handler) {
         this.contentHandler = handler;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.954 -0500", hash_original_method = "E04698427463FF6147E1A918B2D0CE2E", hash_generated_method = "EBED72EFADFDECD7CE352F24919248CE")
     
 public ContentHandler getContentHandler() {
@@ -205,6 +203,7 @@ public void setErrorHandler(ErrorHandler handler) {
         this.errorHandler = handler;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.958 -0500", hash_original_method = "96333264931FDEA89262C2A3168E5DDE", hash_generated_method = "DB848F72598F990979C28BB722D11B1F")
     
 public ErrorHandler getErrorHandler() {
@@ -217,6 +216,7 @@ public ErrorHandler getErrorHandler() {
      * @return the current lexical handler, or null if none has been registered
      * @see #setLexicalHandler
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.960 -0500", hash_original_method = "6DC1F08FFDA197EBCFE51BBDA6091085", hash_generated_method = "3FE1BA211FE1B97BC202645699DC16DB")
     
 public LexicalHandler getLexicalHandler() {
@@ -351,7 +351,6 @@ private void parse(InputStream in, String encoding, String publicId,
         );
         parser.parseDocument(in);
     }
-
     
     private static class Feature {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:24.912 -0500", hash_original_field = "7A51B37BA9FC508AEA058815F1BD52DE", hash_generated_field = "7A1D48E3BBF987F17CCDC77F6B0FAC95")
@@ -378,7 +377,6 @@ private void parse(InputStream in, String encoding, String publicId,
         private static final String EXTERNAL_PARAMETER_ENTITIES
                 = BASE_URI + "external-parameter-entities";
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:30.123 -0400", hash_original_method = "0B4D9136485558B251EF1E44EE499FB7", hash_generated_method = "0B4D9136485558B251EF1E44EE499FB7")
         public Feature ()
         {

@@ -29,21 +29,14 @@ import android.os.Handler;
 
 import com.google.android.collect.Lists;
 
-
-
-
-
-
 public class IsolatedContext extends ContextWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.912 -0500", hash_original_field = "D9EFC53032006A099035E3EBF749F453", hash_generated_field = "2ABF989C5B8F051BCBEE638ED1EA2586")
-
 
     private ContentResolver mResolver;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.914 -0500", hash_original_field = "639FEFC58440E914F62B80F18B61474A", hash_generated_field = "3DFFF263F722432AF9388693F146732E")
 
     private  MockAccountManager mMockAccountManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.917 -0500", hash_original_field = "3EB0E7D6038A5F0D982F7D563EC726AC", hash_generated_field = "B5CDB771BE958DF30918A2D1E28A95E3")
-
 
     private List<Intent> mBroadcastIntents = Lists.newArrayList();
 
@@ -57,6 +50,7 @@ public IsolatedContext(
     }
 
     /** Returns the list of intents that were broadcast since the last call to this method. */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.922 -0500", hash_original_method = "8549CC856014937B713ABF96571E7E0A", hash_generated_method = "2A73FC172E200058108D33F3AE070A5C")
     
 public List<Intent> getAndClearBroadcastIntents() {
@@ -65,6 +59,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return intents;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.924 -0500", hash_original_method = "DB3EFD57F21462C44953D7817E2D1D0B", hash_generated_method = "B6347C1215DB4B2D838F5B1C3CDF3164")
     
 @Override
@@ -74,6 +69,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return mResolver;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.926 -0500", hash_original_method = "D151ADEF319006893C279FF639241601", hash_generated_method = "8A89D3272220F379D194F3F66CA073FA")
     
 @Override
@@ -95,6 +91,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         // Ignore
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.933 -0500", hash_original_method = "8D436BAC12DD3DE12E9B49520E96DCDA", hash_generated_method = "FA0007733AD3841AD82594FBA54658F5")
     
 @Override
@@ -102,6 +99,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         mBroadcastIntents.add(intent);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.936 -0500", hash_original_method = "AE03E44313266CC18BE47C7921C18AFC", hash_generated_method = "0D6E3F74EAABEF09072148903B8F4E65")
     
 @Override
@@ -125,6 +123,7 @@ public List<Intent> getAndClearBroadcastIntents() {
         return PackageManager.PERMISSION_GRANTED;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.943 -0500", hash_original_method = "97D70C3E7E76864AF838B3F545C2E8EF", hash_generated_method = "2440E6E5B376D731C082D22B5AF4A5C1")
     
 @Override
@@ -136,13 +135,13 @@ public List<Intent> getAndClearBroadcastIntents() {
         return null;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.980 -0500", hash_original_method = "FE53204BB45F48ED45638BEC1B5AA1BA", hash_generated_method = "9CC56171776AE352EA27048C719E9A1D")
     
 @Override
     public File getFilesDir() {
         return new File("/dev/null");
     }
-
     
     private class MockAccountManager extends AccountManager {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.946 -0500", hash_original_method = "F50A3FB8A5B88C0A2467EC0285F6EC49", hash_generated_method = "6D3EC41A283C290B54F7875864260BCB")
@@ -158,6 +157,7 @@ public void addOnAccountsUpdatedListener(OnAccountsUpdateListener listener,
             // do nothing
         }
 
+        @DSSource({DSSourceKind.ACCOUNT_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.950 -0500", hash_original_method = "C22581F9BCE56EDC1300FA008A2943C3", hash_generated_method = "0ECA21841551971F4B68C27DD6CEE018")
         
 public Account[] getAccounts() {
@@ -179,11 +179,9 @@ public String blockingGetAuthToken(Account account, String authTokenType,
                 throws OperationCanceledException, IOException, AuthenticatorException {
             return null;
         }
-
         
         private class MockAccountManagerFuture<T> implements AccountManagerFuture<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.958 -0500", hash_original_field = "B4972089E9D9C3CEB68A460B623049F0", hash_generated_field = "B4972089E9D9C3CEB68A460B623049F0")
-
 
             T mResult;
 
@@ -211,6 +209,7 @@ public boolean isDone() {
                 return true;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.971 -0500", hash_original_method = "8CB724F1A3943B1995566F000F10E5F3", hash_generated_method = "669DF37826357FA0574D9A752FC1A20A")
             
 public T getResult()
@@ -218,21 +217,17 @@ public T getResult()
                 return mResult;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:43.973 -0500", hash_original_method = "810ADDF52164EBC63263CE769016F2A6", hash_generated_method = "33B1608B6E41D6AC01A736F8B51EA5EE")
             
 public T getResult(long timeout, TimeUnit unit)
                     throws OperationCanceledException, IOException, AuthenticatorException {
                 return getResult();
             }
-
             
         }
-
-
         
     }
-
-
     
 }
 

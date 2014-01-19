@@ -28,11 +28,6 @@ import android.view.WindowManager;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class PopupWindow {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.844 -0500", hash_original_field = "701591F0360276A28E327627FEB76715", hash_generated_field = "EC879018D8E62A80ED7D5976B9A1B7A2")
 
@@ -44,27 +39,23 @@ public class PopupWindow {
 
     public static final int INPUT_METHOD_NOT_NEEDED = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.933 -0500", hash_original_field = "9FE260B460E2BB7B31A6488C7DE8A4D7", hash_generated_field = "55669BF630688FDF9A58292DE30C4824")
-
     
     private static final int[] ABOVE_ANCHOR_STATE_SET = new int[] {
         com.android.internal.R.attr.state_above_anchor
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.852 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
     
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.854 -0500", hash_original_field = "83A062836C11DD52DC32F4325712F233", hash_generated_field = "3C750A4AE06B71AF3A05B7797C7182A4")
 
     private WindowManager mWindowManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.856 -0500", hash_original_field = "731D4FF487F586CBA45F6AF9BC0AC916", hash_generated_field = "182408C3124602AF2E2446547BFC5990")
-
     
     private boolean mIsShowing;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.858 -0500", hash_original_field = "85CF3D7C1422B3521D1680A0F9D316B2", hash_generated_field = "9700652AF3F2C5A2E0A0AFE403A12B64")
 
     private boolean mIsDropdown;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.860 -0500", hash_original_field = "A280952DD6B837BA6E44884878875510", hash_generated_field = "9EE0242EB014EEED0CD7F44EEE7EA48F")
-
 
     private View mContentView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.862 -0500", hash_original_field = "D74AA1A40F9547715935515E6E4885E3", hash_generated_field = "677D1CB7D78258D08289E18B4B225566")
@@ -108,10 +99,8 @@ public class PopupWindow {
     private boolean mNotTouchModal;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.890 -0500", hash_original_field = "DAD3E254CE9B6EB14C5F5887DE6B1D9F", hash_generated_field = "72A5C0221AA7C77012D45B0D5814CA05")
 
-
     private OnTouchListener mTouchInterceptor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.892 -0500", hash_original_field = "49C607A261C36ED620A93DA50B91053D", hash_generated_field = "E1584971BBD05AECB0B7B9F417D8A13C")
-
     
     private int mWidthMode;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.894 -0500", hash_original_field = "AF6410B200BC05DCA2CF0BE65165448A", hash_generated_field = "380984B6D3BA888BD05804A5D24041AE")
@@ -131,13 +120,11 @@ public class PopupWindow {
     private int mLastHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.904 -0500", hash_original_field = "D23E8AE5915E7E5B876DFDF4DB92A7B0", hash_generated_field = "3FD6DB919B847EDFE0B5956AF8A9BD61")
 
-
     private int mPopupWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.906 -0500", hash_original_field = "37FC35FE9758B11A847C155825325C05", hash_generated_field = "81FC9D55F4BDFA3779C66DE9184556C7")
 
     private int mPopupHeight;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.908 -0500", hash_original_field = "9C1449E8E0E043F6FA25FE8E63FF414E", hash_generated_field = "904FF38CA36EA4CCC3C2CCEC4DCDD3BD")
-
 
     private int[] mDrawingLocation = new int[2];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.911 -0500", hash_original_field = "0BC4AEC5360AE77A35764FA8927D9DD6", hash_generated_field = "E837BED31FD3509BD57D12D959724198")
@@ -147,7 +134,6 @@ public class PopupWindow {
 
     private Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.915 -0500", hash_original_field = "1414D97CE5ED674A74A05A07F83AE3BF", hash_generated_field = "0925F2C91F8CBA797C183309FA7634C5")
-
     
     private Drawable mBackground;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.917 -0500", hash_original_field = "4269741F761E423EA211C462AD050A9B", hash_generated_field = "E17C64A85543ECD9874F1E70F5E7D722")
@@ -158,13 +144,11 @@ public class PopupWindow {
     private Drawable mBelowAnchorBackgroundDrawable;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.921 -0500", hash_original_field = "F4B2ADC1C848EABB9ED10150CF9EAF1D", hash_generated_field = "0D6DFCDD3C93CA68BA06073646439B09")
 
-
     private boolean mAboveAnchor;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.923 -0500", hash_original_field = "4AF3A3DBE227F284DF0C57CC290F4807", hash_generated_field = "9BD03BD39A060D11ED1286EBFF9AC4DB")
 
     private int mWindowLayoutType = WindowManager.LayoutParams.TYPE_APPLICATION_PANEL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.926 -0500", hash_original_field = "C468C3A0691741B1E7D18572879CE879", hash_generated_field = "91E70DA930AA00EAD499671BBD6F37EB")
-
     
     private OnDismissListener mOnDismissListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.928 -0500", hash_original_field = "CC3ADF22EDFB5591EF2B18B9A6E29780", hash_generated_field = "2356D264A59ECD4DA5DAEA961FD9C071")
@@ -172,16 +156,14 @@ public class PopupWindow {
     private boolean mIgnoreCheekPress = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.931 -0500", hash_original_field = "4FD3C82C55184B42F7F8171EA4DB9804", hash_generated_field = "2D667A20717B87BB0939831DD6C37380")
 
-
     private int mAnimationStyle = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.935 -0500", hash_original_field = "05E211AF06F4F4DDD0130728FFB6A304", hash_generated_field = "841D2F2B9FEBE43FD9F75F29253325CB")
-
 
     private WeakReference<View> mAnchor;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.470 -0400", hash_original_field = "8AA9181EAEA04588ABD6B3AB55C1B57C", hash_generated_field = "2B651957906EF3EE2A8FF3D73794B10C")
 
-    private OnScrollChangedListener mOnScrollChangedListener = new OnScrollChangedListener() {        
-        @DSModeled(DSC.SAFE)
+    private OnScrollChangedListener mOnScrollChangedListener = new OnScrollChangedListener() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:13.470 -0400", hash_original_method = "8F0CC5ACEB252AEA9146DA3982ED4810", hash_generated_method = "7EF06A3B1EE135961B1267F768F6EA1D")
         public void onScrollChanged() {
             
@@ -193,17 +175,9 @@ public class PopupWindow {
                             mPopupView.getLayoutParams();
                 updateAboveAnchor(findDropDownPosition(anchor, p, mAnchorXoff, mAnchorYoff));
                 update(p.x, p.y, -1, -1, true);
-            } 
-            
-            
-            
-                    
-                            
-                    
-                    
+            }
                 
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:02.948 -0400", hash_original_field = "F170BC3F21E6816CF0857FF17CC3E8A8", hash_generated_field = "3E89D2F69E75793719092294948AC6C2")
@@ -240,6 +214,8 @@ public PopupWindow(Context context, AttributeSet attrs) {
      *
      * <p>The popup does provide a background.</p>
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.949 -0500", hash_original_method = "FAD82A2A4F32A008B236FC8E4F83669F", hash_generated_method = "B1C51459EF0A71358D06997A7FBC0604")
     
 public PopupWindow(Context context, AttributeSet attrs, int defStyle) {
@@ -251,6 +227,8 @@ public PopupWindow(Context context, AttributeSet attrs, int defStyle) {
      * 
      * <p>The popup does not provide a background.</p>
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.953 -0500", hash_original_method = "079F601C7A8694616AB9480B0999FF46", hash_generated_method = "39A7B7E503EB311EC20421F4E5732CDD")
     
 public PopupWindow(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
@@ -328,6 +306,8 @@ public PopupWindow() {
      *
      * @param contentView the popup's content
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.959 -0500", hash_original_method = "57135C41538C9CD08914B3D745201B31", hash_generated_method = "E0F06A0571E810AAF16232CFEE2A9725")
     
 public PopupWindow(View contentView) {
@@ -398,6 +378,9 @@ public PopupWindow(View contentView, int width, int height, boolean focusable) {
      *
      * @return the background drawable or null
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.969 -0500", hash_original_method = "63340AE07D2726BC056EFE5BE3E2FF29", hash_generated_method = "9FB8C8C54E4BA0866CDF1D4CECF45471")
     
 public Drawable getBackground() {
@@ -410,6 +393,8 @@ public Drawable getBackground() {
      *
      * @param background the popup's background
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.970 -0500", hash_original_method = "96D2484B6380046D33AB8470E20080B0", hash_generated_method = "A0DFB48E4CB1CF8D919A91C6F4B5587D")
     
 public void setBackgroundDrawable(Drawable background) {
@@ -421,6 +406,7 @@ public void setBackgroundDrawable(Drawable background) {
      *
      * @return the animation style to use the popup appears and disappears
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.973 -0500", hash_original_method = "41CA7DA63F7D92402D2B673FD03355D6", hash_generated_method = "CB1996CA776F9ADD4773CB78ECAEDAB9")
     
 public int getAnimationStyle() {
@@ -443,7 +429,6 @@ public int getAnimationStyle() {
 public void setIgnoreCheekPress() {
         mIgnoreCheekPress = true;
     }
-    
 
     /**
      * <p>Change the animation style resource for this popup.</p>
@@ -471,6 +456,9 @@ public void setAnimationStyle(int animationStyle) {
      *
      * @see #setContentView(android.view.View)
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.980 -0500", hash_original_method = "1FBDC8A7B1B2CCF1CAFCE9F94E1B072D", hash_generated_method = "0FD10DCF7ED5F1F6B15F07AF1CED9A3A")
     
 public View getContentView() {
@@ -488,6 +476,8 @@ public View getContentView() {
      * @see #getContentView()
      * @see #isShowing()
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.982 -0500", hash_original_method = "647C3E968C5C98ECF0A359511A938D87", hash_generated_method = "58745F4F8A05350F1F371C5ADBBFF03C")
     
 public void setContentView(View contentView) {
@@ -545,6 +535,8 @@ public boolean isFocusable() {
      * @see #isShowing() 
      * @see #update()
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.988 -0500", hash_original_method = "ABAB7A7DE4A915B0505D233953D72C47", hash_generated_method = "83E10BFF45FBA3B9C420966C45377BB9")
     
 public void setFocusable(boolean focusable) {
@@ -556,6 +548,9 @@ public void setFocusable(boolean focusable) {
      * 
      * @see #setInputMethodMode(int)
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.991 -0500", hash_original_method = "01F2BFCF39394BA4008813FFB1127C10", hash_generated_method = "EFBEC74DA9D23332CBF484E30669D202")
     
 public int getInputMethodMode() {
@@ -575,6 +570,8 @@ public int getInputMethodMode() {
      * @see #getInputMethodMode()
      * @see #update()
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.993 -0500", hash_original_method = "960CEBA1FA646F0DDCC5CA21C9FFA47A", hash_generated_method = "C1419FF2783E149D1243C2DB4AD458D9")
     
 public void setInputMethodMode(int mode) {
@@ -603,6 +600,7 @@ public void setSoftInputMode(int mode) {
      * @see #setSoftInputMode(int)
      * @see android.view.WindowManager.LayoutParams#softInputMode
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:07.997 -0500", hash_original_method = "76888AB414E08DF2E7D12678F406D7A5", hash_generated_method = "988402AC1498A99620921C5855E6C891")
     
 public int getSoftInputMode() {
@@ -637,6 +635,8 @@ public boolean isTouchable() {
      * @see #isShowing() 
      * @see #update()
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.002 -0500", hash_original_method = "BEB1F63A70D555DEE12C0C7D4BDF7831", hash_generated_method = "D04EC093C1107575A980DF4672B41956")
     
 public void setTouchable(boolean touchable) {
@@ -674,6 +674,8 @@ public boolean isOutsideTouchable() {
      * @see #isShowing() 
      * @see #update()
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.006 -0500", hash_original_method = "8E0154BCB2D650E765619E048D3C66EA", hash_generated_method = "9C3C87BFAD63146F8F41B4FE283570D0")
     
 public void setOutsideTouchable(boolean touchable) {
@@ -767,6 +769,7 @@ public boolean isSplitTouchEnabled() {
      * @param enabled true if the split touches should be enabled, false otherwise
      * @see #isSplitTouchEnabled()
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.019 -0500", hash_original_method = "8E279F2F2689369B00326EC855CADBF3", hash_generated_method = "BF1D833D1DD6753529547824DAB73425")
     
 public void setSplitTouchEnabled(boolean enabled) {
@@ -835,6 +838,7 @@ public void setWindowLayoutType(int layoutType) {
      * @return The layout type for this window.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.029 -0500", hash_original_method = "B0A202A53A476A9F6F2E7DEE1AC7BFD5", hash_generated_method = "502C134A193F17AF9D07CE99CBEE5CA6")
     
 public int getWindowLayoutType() {
@@ -846,6 +850,7 @@ public int getWindowLayoutType() {
      * other windows behind it.
      * @hide
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.032 -0500", hash_original_method = "B8930E34962345C50EA9D19D5D77CFE8", hash_generated_method = "EDD8C4CCC83997A190BF0831DB56D22D")
     
 public void setTouchModal(boolean touchModal) {
@@ -874,6 +879,8 @@ public void setTouchModal(boolean touchModal) {
      * {@link ViewGroup.LayoutParams#MATCH_PARENT}, or 0 to use the absolute
      * height.
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.033 -0500", hash_original_method = "756D1E68507199C9976BFEB56A60134A", hash_generated_method = "4406A74A8DE8C7CB5AB3641C0E54D25C")
     
 public void setWindowLayoutMode(int widthSpec, int heightSpec) {
@@ -888,6 +895,9 @@ public void setWindowLayoutMode(int widthSpec, int heightSpec) {
      *
      * @see #setHeight(int)
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.035 -0500", hash_original_method = "0304EDCF78FF45B68A7EB91BFEAAA2CD", hash_generated_method = "7B60B7C518DA05BF980E6A0812F1B814")
     
 public int getHeight() {
@@ -905,6 +915,8 @@ public int getHeight() {
      * @see #getHeight()
      * @see #isShowing() 
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.037 -0500", hash_original_method = "BA89F279BB207625BAE694FF1E8671B8", hash_generated_method = "93DE08FEA5F0FFD7F7B76EF121B3FDFA")
     
 public void setHeight(int height) {
@@ -918,6 +930,9 @@ public void setHeight(int height) {
      *
      * @see #setWidth(int) 
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.039 -0500", hash_original_method = "AA9BA105372BFC95AFBABED408315F5C", hash_generated_method = "76288D230877FA0A2BAF233CBE4CB19E")
     
 public int getWidth() {
@@ -935,6 +950,8 @@ public int getWidth() {
      * @see #getWidth()
      * @see #isShowing()
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.041 -0500", hash_original_method = "684C7FEA8A4B53DA843B69F25AEC8ECA", hash_generated_method = "35066D50A292592B544899DE8BE49678")
     
 public void setWidth(int width) {
@@ -946,6 +963,8 @@ public void setWidth(int width) {
      *
      * @return true if the popup is showing, false otherwise
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.043 -0500", hash_original_method = "2222AA4AEDF5C752B222A7F4E8915559", hash_generated_method = "2E0F6F1B588E696988D1DA04864ABA11")
     
 public boolean isShowing() {
@@ -966,6 +985,8 @@ public boolean isShowing() {
      * @param x the popup's x location offset
      * @param y the popup's y location offset
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.046 -0500", hash_original_method = "7355F7E30A53327DA70C15AA0141C8AD", hash_generated_method = "53DE9E76D5542F2E299C435ACCE475FA")
     
 public void showAtLocation(View parent, int gravity, int x, int y) {
@@ -1041,6 +1062,8 @@ public void showAsDropDown(View anchor) {
      *
      * @see #dismiss()
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.053 -0500", hash_original_method = "624B6ED3EB88D2A91AFF60DB37AE2E29", hash_generated_method = "10FF533197F45415A64AF110010A46C5")
     
 public void showAsDropDown(View anchor, int xoff, int yoff) {
@@ -1363,6 +1386,7 @@ private boolean findDropDownPosition(View anchor, WindowManager.LayoutParams p,
      * @return The maximum available height for the popup to be completely
      *         shown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.077 -0500", hash_original_method = "023150F59911D5483F51543A59288631", hash_generated_method = "7A444F5743BCCEE72E893C3DA5F59A87")
     
 public int getMaxAvailableHeight(View anchor) {
@@ -1380,6 +1404,7 @@ public int getMaxAvailableHeight(View anchor) {
      * @return The maximum available height for the popup to be completely
      *         shown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.079 -0500", hash_original_method = "782C0234D711C16ED6DF402CCEC14809", hash_generated_method = "D60B23B7F82B50B7961D9F761C3A96EA")
     
 public int getMaxAvailableHeight(View anchor, int yOffset) {
@@ -1403,6 +1428,7 @@ public int getMaxAvailableHeight(View anchor, int yOffset) {
      *         
      * @hide Pending API council approval.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.082 -0500", hash_original_method = "6127242297D2005B4B3434B0EF072B4C", hash_generated_method = "2880ACC0CCC6B66901713FDEAF235DBC")
     
 public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomDecorations) {
@@ -1437,6 +1463,8 @@ public int getMaxAvailableHeight(View anchor, int yOffset, boolean ignoreBottomD
      *
      * @see #showAsDropDown(android.view.View) 
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.084 -0500", hash_original_method = "206A53D80E1660978DCF21A355028E66", hash_generated_method = "CEC8DFB2A3209A7E61BF66F395830959")
     
 public void dismiss() {
@@ -1515,6 +1543,7 @@ public void update() {
      * @param width the new width
      * @param height the new height
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.091 -0500", hash_original_method = "99E415F6DCFBC1202511EEF5D071A55C", hash_generated_method = "B106EB6DEF9A73C69777BA1DD9BE350D")
     
 public void update(int width, int height) {
@@ -1534,6 +1563,9 @@ public void update(int width, int height) {
      * @param width the new width, can be -1 to ignore
      * @param height the new height, can be -1 to ignore
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.093 -0500", hash_original_method = "848B641343A16858C863B802CDF64CDF", hash_generated_method = "373ECA42D8F8D00000AD71E7C9CBB0B2")
     
 public void update(int x, int y, int width, int height) {
@@ -1553,6 +1585,7 @@ public void update(int x, int y, int width, int height) {
      * @param force reposition the window even if the specified position
      *              already seems to correspond to the LayoutParams
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.096 -0500", hash_original_method = "7F49F99468193710A8807FDE38269850", hash_generated_method = "397758BA0068FB838F5FDD2B9449A418")
     
 public void update(int x, int y, int width, int height, boolean force) {
@@ -1622,12 +1655,12 @@ public void update(int x, int y, int width, int height, boolean force) {
      * @param width the new width, can be -1 to ignore
      * @param height the new height, can be -1 to ignore
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.099 -0500", hash_original_method = "2E7624B1CB6DF9766B6E25C708FAA465", hash_generated_method = "4463EF16B0B7E42074A9ADB20C25917B")
     
 public void update(View anchor, int width, int height) {
         update(anchor, false, 0, 0, true, width, height);
     }
-
     
     private class PopupViewContainer extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.114 -0500", hash_original_field = "49D2493E4F7F43F338146BEAC3857EBA", hash_generated_field = "0B566BDBB758C900741C0BD882C918B7")
@@ -1654,6 +1687,7 @@ public PopupViewContainer(Context context) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.122 -0500", hash_original_method = "A2DD55E78C6B8B19849AEC8708A214E9", hash_generated_method = "664BD3635A69F63DA63D458E4E589915")
         
 @Override
@@ -1712,6 +1746,7 @@ public PopupViewContainer(Context context) {
             }
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.129 -0500", hash_original_method = "EB4F4EE30B31AEB9BDFF308A3D2D5CAC", hash_generated_method = "92046F7B9DC15AB1762CE271BC620B7E")
         
 @Override
@@ -1724,8 +1759,6 @@ public PopupViewContainer(Context context) {
             }
         }
     }
-
-
     
     public interface OnDismissListener {
         
@@ -1747,6 +1780,9 @@ public PopupViewContainer(Context context) {
      * @param width the new width, can be -1 to ignore
      * @param height the new height, can be -1 to ignore
      */
+    @DSComment("Popup Window, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:08.101 -0500", hash_original_method = "B8D2EE4CAAF22B5FC8CA5A06E5BF0669", hash_generated_method = "91609FE96C86FFA6D74A85BF08411CD6")
     
 public void update(View anchor, int xoff, int yoff, int width, int height) {

@@ -13,10 +13,6 @@ import java.util.concurrent.locks.ReentrantLock;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class SynchronousQueue<E> extends AbstractQueue<E> implements BlockingQueue<E>, java.io.Serializable {
 
     // Unsafe mechanics
@@ -328,7 +324,6 @@ public Iterator<E> iterator() {
 public Object[] toArray() {
         return EmptyArray.OBJECT; // android-changed
     }
-
     
     abstract static class Transferer {
         
@@ -353,11 +348,8 @@ public Object[] toArray() {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.955 -0500", hash_original_method = "BF5DAA3C17059334AA730DEFF3D7565C", hash_generated_method = "4BE78679C8E4E7D3A940B4FC71A6124B")
         
 abstract Object transfer(Object e, boolean timed, long nanos);
-
         
     }
-
-
     
     static final class TransferStack extends Transferer {
 
@@ -382,7 +374,6 @@ static SNode snode(SNode s, Object e, SNode next, int mode) {
             return s;
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:12.971 -0500", hash_original_field = "9A8DB646F04D020A52DB67C20C9E991B", hash_generated_field = "956BE152D8E472120194E1D9F8A9E6E2")
-
 
         /* Modes for SNodes, ORed together in node fields */
         /** Node represents an unfulfilled consumer */
@@ -409,7 +400,6 @@ static SNode snode(SNode s, Object e, SNode next, int mode) {
         {
             //Synthesized constructor
         }
-
         
         static final class SNode {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:13.008 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
@@ -697,8 +687,6 @@ void clean(SNode s) {
             }
         }
     }
-
-
     
     static final class TransferQueue extends Transferer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:13.118 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
@@ -755,7 +743,6 @@ void advanceTail(QNode t, QNode nt) {
             if (tail == t)
                 UNSAFE.compareAndSwapObject(this, tailOffset, t, nt);
         }
-
         
         static final class QNode {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:13.077 -0500", hash_original_field = "3CDC466E57A745145BB720535953BC43", hash_generated_field = "42C3BEC243DA1A57DFC4FB82C324F252")
@@ -1029,8 +1016,6 @@ void clean(QNode pred, QNode s) {
             }
         }
     }
-
-
     
     static class WaitQueue implements java.io.Serializable {
         
@@ -1040,10 +1025,7 @@ void clean(QNode pred, QNode s) {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     static class LifoWaitQueue extends WaitQueue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:13.195 -0500", hash_original_field = "EA76B80F9BB2344BFEDFCA74BB1F79C0", hash_generated_field = "80F144D9FAF7455012BBD899F5164ED8")
@@ -1056,8 +1038,6 @@ void clean(QNode pred, QNode s) {
             //Synthesized constructor
         }
     }
-
-
     
     static class FifoWaitQueue extends WaitQueue {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:13.200 -0500", hash_original_field = "FE0C5CE142410432BD37B9AE4A45B68F", hash_generated_field = "736A1D17D87D413A39676344D90E22F2")
@@ -1070,9 +1050,7 @@ void clean(QNode pred, QNode s) {
             //Synthesized constructor
         }
     }
-
-    
-        @DSModeled(DSC.SAFE)
+        
 @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:14.922 -0400", hash_original_method = "490A2A0CCABF1E39472F82358B033503", hash_generated_method = "84D7A76F162F1E3F50F4408A8B9D5B39")
     public <T> T[] toArray(T[] a) {
         addTaint(a[0].getTaint());

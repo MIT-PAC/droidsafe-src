@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public abstract class InputEvent implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.714 -0500", hash_original_field = "D353F508F6AA39751F118E1F09F69910", hash_generated_field = "62C44C836E8114E8865353F1FB18E80F")
 
@@ -65,6 +61,7 @@ public abstract int getDeviceId();
      * 
      * @return The device, or null if unknown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:48.724 -0500", hash_original_method = "65C564B77C92C924B4A35B510EAEB2C6", hash_generated_method = "D82E2F4292D188F31702A7D0E9F338EC")
     
 public final InputDevice getDevice() {

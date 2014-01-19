@@ -14,13 +14,7 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 import org.apache.harmony.security.utils.AlgNameMapper;
 
-
-
-
-
-
 public final class AlgorithmIdentifier {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.792 -0400", hash_original_field = "0379B40A69260257BE6FAF87FE8921A2", hash_generated_field = "D57B6C9D256FA01BB83ACCC1550296AC")
 
@@ -30,6 +24,7 @@ public final class AlgorithmIdentifier {
             setOptional(1); 
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.343 -0500", hash_original_method = "E5864BBB3AEA6202E3F7EB2686660296", hash_generated_method = "F48BB096D750A26B83F1E3FF6E75F89A")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -84,6 +79,7 @@ private AlgorithmIdentifier(String algorithm, byte[] parameters, byte[] encoding
     /**
      * Returns the value of algorithm field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.324 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
     
 public String getAlgorithm() {
@@ -95,6 +91,7 @@ public String getAlgorithm() {
      * its OID. If there is no the such correspondence,
      * algorithm OID is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.327 -0500", hash_original_method = "EFA02412B3D98573C0B83612EF561CD2", hash_generated_method = "AE7B7B5C4A50959248A1EE3D48EE12E6")
     
 public String getAlgorithmName() {
@@ -110,6 +107,7 @@ public String getAlgorithmName() {
     /**
      * Returns the value of parameters field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.329 -0500", hash_original_method = "360B58AAED509D402161560B83FBF1AD", hash_generated_method = "6CE288EFDC710AAF8CD7886B917F1DAC")
     
 public byte[] getParameters() {
@@ -119,6 +117,7 @@ public byte[] getParameters() {
     /**
      * Returns ASN.1 encoded form of this X.509 AlgorithmIdentifier value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:01.331 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "5349B65E746CD014BDA35ADFF927FD5B")
     
 public byte[] getEncoded() {

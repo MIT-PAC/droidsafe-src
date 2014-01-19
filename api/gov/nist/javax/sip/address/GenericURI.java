@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.address.URI;
 
-
-
-
-
-
 public class GenericURI extends NetObject implements javax.sip.address.URI {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.235 -0500", hash_original_field = "24D4A7F49E816212A3A357A842DB8672", hash_generated_field = "EC361B7FD77B4BC364A1EB7C2877B905")
 
@@ -99,6 +94,7 @@ public String toString() {
      *
      * @return the scheme paramter of the URI
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:34.274 -0500", hash_original_method = "C01635CAE84CEFF188CA85B1E841E2AF", hash_generated_method = "9D11AD0B611F352DC84C8E1A6B825617")
     
 public String getScheme() {

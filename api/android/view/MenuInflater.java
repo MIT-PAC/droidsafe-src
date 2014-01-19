@@ -20,11 +20,6 @@ import android.util.Xml;
 
 import com.android.internal.view.menu.MenuItemImpl;
 
-
-
-
-
-
 public class MenuInflater {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.620 -0500", hash_original_field = "2E94B53EF613A693B0996353437BBC3B", hash_generated_field = "D20A60ABCBBC55D65DAE10150B450C42")
 
@@ -40,20 +35,16 @@ public class MenuInflater {
     private static final String XML_ITEM = "item";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.631 -0500", hash_original_field = "7268E03A5340DB38AA6685B8AA605B67", hash_generated_field = "E013106922B0138DD6AA1961763950FB")
 
-
     private static final int NO_ID = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.633 -0500", hash_original_field = "D4148E18C49BEF6E1A417002BD55A8B1", hash_generated_field = "106DC72A08073671C77A7D24FBF7A3A9")
-
     
     private static final Class<?>[] ACTION_VIEW_CONSTRUCTOR_SIGNATURE = new Class[] {Context.class};
-
     
     private static class InflatedOnMenuItemClickListener implements MenuItem.OnMenuItemClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.656 -0500", hash_original_field = "567A69EE4C29AF43AB1D9BF04D5D198A", hash_generated_field = "4E7C1F29221D5B4F692E0E4123556FA9")
 
         private static final Class<?>[] PARAM_TYPES = new Class[] { MenuItem.class };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.658 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
         
         private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.660 -0500", hash_original_field = "1AE782A3C6D55F3EEA9985EDCF6719E3", hash_generated_field = "B855DD63C0CF0451E81317C9109F465D")
@@ -91,12 +82,9 @@ public boolean onMenuItemClick(MenuItem item) {
             }
         }
     }
-
-
     
     private class MenuState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.745 -0500", hash_original_field = "EFA4C4257EBC0424D12E4CA3BD548035", hash_generated_field = "9B0EAA24CB9224A5FE3BD9693FBF1290")
-
 
         private static final int defaultGroupId = NO_ID;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.748 -0500", hash_original_field = "0AC1A69E6C36BE0C0D1D684445FEB923", hash_generated_field = "B1A5636EE8810E13399D9A82AEDDE266")
@@ -143,7 +131,6 @@ public boolean onMenuItemClick(MenuItem item) {
         private boolean groupEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.688 -0500", hash_original_field = "A0BACE7E59AB4582BA54B215045A013B", hash_generated_field = "2DDEE577B276C7F743A05F54FF208655")
 
-
         private boolean itemAdded;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.691 -0500", hash_original_field = "41218F715048053EA7B7DEA2DC1E4E88", hash_generated_field = "045BA405BBFDE1B40EE9E7B189E29F11")
 
@@ -183,7 +170,6 @@ public boolean onMenuItemClick(MenuItem item) {
         private int itemShowAsAction;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.731 -0500", hash_original_field = "943DAF9E2911B8F5E67176DCC11C345B", hash_generated_field = "0C49E3693E6055829937C3C14EE98F30")
 
-
         private int itemActionViewLayout;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.735 -0500", hash_original_field = "3F0037EF5B0A04FB135A7D2F8740915E", hash_generated_field = "541C41A12EF0F2C226F6A51D065BFB05")
 
@@ -193,10 +179,8 @@ public boolean onMenuItemClick(MenuItem item) {
         private String itemActionProviderClassName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.740 -0500", hash_original_field = "9A1AED9E5EA23E6F3CD948C71CD78CDA", hash_generated_field = "9C1AB4FCB1E8B2C66FCDA272A8DBFF10")
 
-
         private String itemListenerMethodName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.742 -0500", hash_original_field = "D2E439CDBFBC4C391F160243777AEABD", hash_generated_field = "8A253EC0B6326CC8B14EFB449591E768")
-
         
         private ActionProvider itemActionProvider;
         
@@ -378,9 +362,7 @@ public SubMenu addSubMenuItem() {
 public boolean hasAddedItem() {
             return itemAdded;
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:43.617 -0400", hash_original_method = "20DE6E19862FEEC3F61B05674F46168C", hash_generated_method = "84DCB8177A79929D4BE13F6A57C95E12")
         @SuppressWarnings("unchecked")
         private <T> T newInstance(String className, Class<?>[] constructorSignature,
@@ -415,18 +397,14 @@ T var540C13E9E156B687226421B24F2DF178_1858135280 =             null;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.636 -0500", hash_original_field = "4F684130B0122F446A598AD4585A3D11", hash_generated_field = "C7B470A3C7B9F2492DB764AD9D747D63")
 
-
     private static final Class<?>[] ACTION_PROVIDER_CONSTRUCTOR_SIGNATURE = ACTION_VIEW_CONSTRUCTOR_SIGNATURE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.638 -0500", hash_original_field = "B67C5B388E9FA2DA18ED6D2A1AEFE8AC", hash_generated_field = "2E5F86E900916EB9BA1688830F2A5AD2")
-
 
     private  Object[] mActionViewConstructorArguments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.640 -0500", hash_original_field = "9A27EFFBDE324A6C3E883862F710B33A", hash_generated_field = "EF0AF7D7071FC85FAD372A0098884F5B")
 
-
     private  Object[] mActionProviderConstructorArguments;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.643 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 
@@ -435,6 +413,8 @@ T var540C13E9E156B687226421B24F2DF178_1858135280 =             null;
      * 
      * @see Activity#getMenuInflater()
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.645 -0500", hash_original_method = "DAFF641201C63E19412016666CD58FB3", hash_generated_method = "65FD16580DDB789B6A6181E83124E0D7")
     
 public MenuInflater(Context context) {
@@ -452,6 +432,8 @@ public MenuInflater(Context context) {
      * @param menu The Menu to inflate into. The items and submenus will be
      *            added to this Menu.
      */
+    @DSComment("Proper menu needs to be created/instantiated/inflated")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:13.649 -0500", hash_original_method = "7D92BCA17E1F22EC74058A02DB16DD4F", hash_generated_method = "8AC21FD0DA7ADD2076DB467059A78ACF")
     
 public void inflate(int menuRes, Menu menu) {

@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import javax.sip.address.URI;
 import javax.sip.header.ProxyAuthenticateHeader;
 
-
-
-
-
-
 public class ProxyAuthenticate extends AuthenticationHeader implements ProxyAuthenticateHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.165 -0500", hash_original_field = "E7F54878DCE0AAC522CC5C0A23B21F1D", hash_generated_field = "08ABAB95072FCF7B3E4A2200DCD67ACD")
 
@@ -32,6 +27,7 @@ public ProxyAuthenticate() {
      * @since 1.2 this method is deprecated, uri is not a valid paramter for this header
      * Fail silently for backwards compatibility
      */
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.171 -0500", hash_original_method = "415F36F94D5D5AF0B0B417563353646C", hash_generated_method = "9CD9E8CBB3E8DE9C3106F82ACE4168F0")
     
 public URI getURI() {

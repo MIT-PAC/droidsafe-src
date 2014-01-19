@@ -10,8 +10,6 @@ import java.text.ParseException;
 
 import javax.sip.header.ExtensionHeader;
 
-
-
 public class PCalledPartyID extends gov.nist.javax.sip.header.AddressParametersHeader implements PCalledPartyIDHeader, SIPHeaderNamesIms, ExtensionHeader {
 
     /**
@@ -55,6 +53,7 @@ public String encodeBody() {
         return retval.toString();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:56.653 -0500", hash_original_method = "4B92A49D74A1215E0C3EC12D290AF61B", hash_generated_method = "01B37E653FE76FEB916567082AAEE1D8")
     
 public void setValue(String value) throws ParseException {
@@ -62,7 +61,6 @@ public void setValue(String value) throws ParseException {
         throw new ParseException(value,0);
 
     }
-
     
 }
 

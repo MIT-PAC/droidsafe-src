@@ -15,11 +15,6 @@ import android.util.Log;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class StaticLayout extends Layout {
 
     /**
@@ -116,10 +111,8 @@ private static final boolean isIdeographic(char c, boolean includeNonStarters) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.881 -0500", hash_original_field = "D6967B60E1FA58F44D82FDF9A2E48DFA", hash_generated_field = "6CFCC815EA0D3325CF63B4F6F365477B")
 
-
     static final String TAG = "StaticLayout";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.987 -0500", hash_original_field = "E6CE03C5744B90BA483BE6BF0E85AD41", hash_generated_field = "CD7507056B56DB550B1D813FB4B3D98B")
-
 
     private static final int COLUMNS_NORMAL = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.990 -0500", hash_original_field = "4BC40476543CA50D93E7CE73D5E42064", hash_generated_field = "67237E10844A87633E2718F5190772DB")
@@ -148,7 +141,6 @@ private static final boolean isIdeographic(char c, boolean includeNonStarters) {
     private static final int ELLIPSIS_COUNT = 4;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.068 -0500", hash_original_field = "51ABBD2944D24467D63DD23BADE8CD8B", hash_generated_field = "E308275B4AE398B992072A6F7EA1A3C0")
 
-
     private static final int START_MASK = 0x1FFFFFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.073 -0500", hash_original_field = "2174DD8845E3505750875CAA65AA1573", hash_generated_field = "B97E7A8E8F664E1C1793F75E8020C7A1")
 
@@ -158,14 +150,11 @@ private static final boolean isIdeographic(char c, boolean includeNonStarters) {
     private static final int TAB_MASK   = 0x20000000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.081 -0500", hash_original_field = "523B437B66E94D47C6D3407D5611D3C9", hash_generated_field = "D5E340FF9F0E2C74F920DF02A6624213")
 
-
     private static final int TAB_INCREMENT = 20;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.085 -0500", hash_original_field = "7B7633C9DAA804E766870A7F68CC00F9", hash_generated_field = "7D1377BE9BFDAB86B8C4B5771EE6843C")
 
-
     private static final char CHAR_FIRST_CJK = '\u2E80';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.089 -0500", hash_original_field = "A14CDD9230DB60E88ABE4C9F804F5EE9", hash_generated_field = "487332DEC3D3C8842021C94862F5B4C7")
-
 
     private static final char CHAR_NEW_LINE = '\n';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.092 -0500", hash_original_field = "17C5CE82EBBF0C49BEADDDA71FDD500F", hash_generated_field = "6D0AB500D1767C0990B7C5EF6D2671B3")
@@ -194,10 +183,8 @@ private static final boolean isIdeographic(char c, boolean includeNonStarters) {
     private static final char CHAR_HYPHEN = '-';
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.119 -0500", hash_original_field = "D8513B6BE3009FCCA0FC34A40BACC2E9", hash_generated_field = "4115D5FCA00B16A69C97785E9691BDA9")
 
-
     private static final double EXTRA_ROUNDING = 0.5;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.122 -0500", hash_original_field = "84F6B10B43B3117DC17BB1EB6470391C", hash_generated_field = "2BF933DA0C369B3A13C810DDA18B4DC4")
-
 
     private static final String ELLIPSIS_NORMAL = "\u2026";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.125 -0500", hash_original_field = "785487AD3A5C29FA7A7900F14305BC5F", hash_generated_field = "EF1EE2AD82D24DCEF53A3F77F1F7B2B5")
@@ -205,13 +192,11 @@ private static final boolean isIdeographic(char c, boolean includeNonStarters) {
     private static final String ELLIPSIS_TWO_DOTS = "\u2025";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.128 -0500", hash_original_field = "1689EDD7BA3CB715680F4121375FF903", hash_generated_field = "033397B01596D864D5BF5FED2BB28EB2")
 
-
     private static final int CHAR_FIRST_HIGH_SURROGATE = 0xD800;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.130 -0500", hash_original_field = "148A98E230AF67FB3A3DEC9631590F0A", hash_generated_field = "45D09AEF41710114C8A584328D3831D7")
 
     private static final int CHAR_LAST_LOW_SURROGATE = 0xDFFF;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.976 -0500", hash_original_field = "FB98162853E5BA899583BAB7C75D9CFE", hash_generated_field = "45537663750337309A584754E1437CDD")
-
 
     private int mLineCount;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:37.690 -0400", hash_original_field = "A6796D45932911E4DA1D9D40D1BD23B8", hash_generated_field = "74C5EEEB9113B0F29D66E0A4983A6BC3")
@@ -227,7 +212,6 @@ private static final boolean isIdeographic(char c, boolean includeNonStarters) {
 
     private int mEllipsizedWidth;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.055 -0500", hash_original_field = "93B35D77625D289664F5134570D795DA", hash_generated_field = "26F954E05EF8E6C19C537B63E9266033")
-
 
     private int[] mLines;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:21.059 -0500", hash_original_field = "F0D18EECBAEED0ABEA4EDEFD4FF088CF", hash_generated_field = "7D53F177386EEFF604DBA9C007C99633")
@@ -969,6 +953,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
     // rather than relying on member functions.
     // The logic mirrors that of Layout.getLineForVertical
     // FIXME: It may be faster to do a linear search for layouts without many lines.
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.932 -0500", hash_original_method = "98509D881029C8DC6B023EB0DACF92F5", hash_generated_method = "F53DBA913D61B49EA41F8004ED6B9F9E")
     
 @Override
@@ -992,6 +977,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.935 -0500", hash_original_method = "DCA25DE9CB635243C23A0D258AEAA6C9", hash_generated_method = "DBF99941AFD07ECE9EB20238F6647D01")
     
 @Override
@@ -999,6 +985,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLineCount;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.938 -0500", hash_original_method = "79A8E86A0E5ABFEF4F09B2D188FA97FB", hash_generated_method = "DF1712773706137859E0420F519F2A9E")
     
 @Override
@@ -1011,6 +998,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return top;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.941 -0500", hash_original_method = "24456204DB122ABBCF95E31F6A475D1C", hash_generated_method = "D2DE19322D73F71BFD300DDCAFD0E6A7")
     
 @Override
@@ -1023,6 +1011,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return descent;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.944 -0500", hash_original_method = "839417F6B69B5423927C3B8DBF7A6F42", hash_generated_method = "1C7DBDDD96CC77377476DDC277ED0356")
     
 @Override
@@ -1030,6 +1019,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLines[mColumns * line + START] & START_MASK;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.949 -0500", hash_original_method = "4D44D66A6DA9E0A8739F807A61ABAF65", hash_generated_method = "078A7B8655668116004C7595BE8496CA")
     
 @Override
@@ -1051,6 +1041,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLineDirections[line];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.957 -0500", hash_original_method = "0410F05B3F48387C42DB277B8067D4A9", hash_generated_method = "C9A37F9D7E53BC032BE1989D8B7F43F3")
     
 @Override
@@ -1058,6 +1049,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mTopPadding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.960 -0500", hash_original_method = "A7597317BC8A3102F80AD4E9AD038652", hash_generated_method = "F0B9D53486F44C4D9B5E36E2D1B1C62A")
     
 @Override
@@ -1065,6 +1057,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mBottomPadding;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.963 -0500", hash_original_method = "7EEFC0E209C4C423B00930C7C3F48104", hash_generated_method = "C1E3F9252BF0D28F0902B9B7D4DBD456")
     
 @Override
@@ -1076,6 +1069,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLines[mColumns * line + ELLIPSIS_COUNT];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.966 -0500", hash_original_method = "3E84E442932041329DEDBD7573FAD5F7", hash_generated_method = "4D0CF81887F135F77C51603EC4C179F2")
     
 @Override
@@ -1087,6 +1081,7 @@ private void calculateEllipsis(int lineStart, int lineEnd,
         return mLines[mColumns * line + ELLIPSIS_START];
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:20.969 -0500", hash_original_method = "5CA9F8625BABB74DD57E485BAAAC3103", hash_generated_method = "466A36682DB1C1AD0B2234723777A380")
     
 @Override

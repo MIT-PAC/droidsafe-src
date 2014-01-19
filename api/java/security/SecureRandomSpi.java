@@ -6,18 +6,11 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.Serializable;
 
-
-
-
-
-
 public abstract class SecureRandomSpi implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.912 -0500", hash_original_field = "09DA6963E46782ECF8E5B84B67CF4091", hash_generated_field = "FD60E79FCEB20AD629BA66BEC1122BB3")
 
-
     private static final long serialVersionUID = -2991854161009191830L;
     
-    @DSModeled(DSC.SPEC)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:55.358 -0400", hash_original_method = "80C7AF93ECB1E3D5135CFB765D8A9626", hash_generated_method = "80C7AF93ECB1E3D5135CFB765D8A9626")
     public SecureRandomSpi ()
     {

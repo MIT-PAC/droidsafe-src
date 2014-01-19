@@ -14,11 +14,6 @@ import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 
-
-
-
-
-
 public final class HprofData {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.693 -0500", hash_original_field = "CCC3D06B79CAFED038554FC560DC20F2", hash_generated_field = "3F4204ABC43917BE7A39B6FD85E75A38")
 
@@ -52,6 +47,7 @@ public HprofData(Map<StackTrace, int[]> stackTraces) {
     /**
      * The start time in milliseconds of the last profiling period.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.710 -0500", hash_original_method = "CC766E32F9FC42071F3CC3CB88E9A18A", hash_generated_method = "5DFED02867B4C86DCD418B60AB8F7F67")
     
 public long getStartMillis() {
@@ -70,6 +66,7 @@ public void setStartMillis(long startMillis) {
     /**
      * Get the {@link BinaryHprof.ControlSettings} flags
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.714 -0500", hash_original_method = "292C3EF40E00AFB28AC60AF92A04DB70", hash_generated_method = "CC5C57694954790DFE0798B5EEEFB43F")
     
 public int getFlags() {
@@ -88,6 +85,7 @@ public void setFlags(int flags) {
     /**
      * Get the stack sampling depth
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.720 -0500", hash_original_method = "FBD5046615AAE9EDCC3CA2ADE86A92C3", hash_generated_method = "6ED96C446AA91DED02D62E1E51123207")
     
 public int getDepth() {
@@ -106,6 +104,7 @@ public void setDepth(int depth) {
     /**
      * Return an unmodifiable history of start and end thread events.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.724 -0500", hash_original_method = "8C7F14531209B0BE4CB8ACECEBC720CC", hash_generated_method = "3DDF55655FB376AF384993A7404EF90E")
     
 public List<ThreadEvent> getThreadHistory() {
@@ -115,6 +114,7 @@ public List<ThreadEvent> getThreadHistory() {
     /**
      * Return a new set containing the current sample data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.727 -0500", hash_original_method = "F4E32CE6895396BD588CC20D263E2FB4", hash_generated_method = "92D2F2509F3C364991DD4D5EE192C859")
     
 public Set<Sample> getSamples() {
@@ -182,10 +182,8 @@ public void addStackTrace(StackTrace stackTrace, int[] countCell) {
                                                + stackTrace.stackTraceId + ":\n" + stackTrace);
         }
     }
-
     
     public static enum ThreadEventType { START, END }
-
     
     public static final class ThreadEvent {
 
@@ -215,7 +213,6 @@ private static boolean equal(Object a, Object b) {
             return a == b || (a != null && a.equals(b));
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.601 -0500", hash_original_field = "2AA265C03E7586B6734354525F5AB544", hash_generated_field = "7D87225C2426FF111F6FEB910554E402")
-
 
         public  ThreadEventType type;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.604 -0500", hash_original_field = "00245E1AE29A0DD3B3A439E83E250472", hash_generated_field = "50DDAAE60FEC6646E9C40B14D16B89C4")
@@ -300,15 +297,11 @@ private ThreadEvent(ThreadEventType type, int threadId) {
             }
             throw new IllegalStateException(type.toString());
         }
-
         
     }
-
-
     
     public static final class StackTrace {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.645 -0500", hash_original_field = "6CD02BBE38AFAB80C88CFC5EE8CFD952", hash_generated_field = "4628C5C3D0941960F68046E7C771CD60")
-
 
         public  int stackTraceId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.648 -0500", hash_original_field = "21BB19B62D16F0B2F30983971184762D", hash_generated_field = "21BB19B62D16F0B2F30983971184762D")
@@ -335,12 +328,14 @@ public StackTrace(int stackTraceId, int threadId, StackTraceElement[] stackFrame
             this.stackFrames = stackFrames;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.658 -0500", hash_original_method = "904149F69266C7F1ED9811C71073DCCC", hash_generated_method = "B87E220E1B22B36F3EA17408C9656836")
         
 public int getThreadId() {
             return threadId;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.660 -0500", hash_original_method = "825D6A57778B026225A4AA6FF793AA6E", hash_generated_method = "E045C14A4037FAF0AFE26F96327575F2")
         
 public StackTraceElement[] getStackFrames() {
@@ -385,15 +380,11 @@ public StackTraceElement[] getStackFrames() {
                     + ", frames=" + frames + "]";
 
         }
-
         
     }
-
-
     
     public static final class Sample {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.675 -0500", hash_original_field = "E3CFE6D063747167045A230949FF33E5", hash_generated_field = "3CCE78B4D1712F23531BA45DE99ABF0D")
-
 
         public  StackTrace stackTrace;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.677 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "21B1DF5337CCD3E0731435FB1361ED67")
@@ -437,11 +428,8 @@ private Sample(StackTrace stackTrace, int count) {
 @Override public String toString() {
             return "Sample[count=" + count + " " + stackTrace + "]";
         }
-
         
     }
-
-
     
 }
 

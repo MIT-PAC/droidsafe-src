@@ -18,11 +18,6 @@ import android.util.SparseBooleanArray;
 
 import com.android.internal.util.Objects;
 
-
-
-
-
-
 public class NetworkStats implements Parcelable {
 
     /**
@@ -88,7 +83,6 @@ public NetworkStats[] newArray(int size) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.547 -0500", hash_original_field = "5B0A3D652BDC2FD591B15386E0FCB7E2", hash_generated_field = "56C3E2E054463240176F9B0485425365")
-
 
     /**
      * {@link SystemClock#elapsedRealtime()} timestamp when this data was
@@ -259,6 +253,7 @@ public Entry getValues(int i, Entry recycle) {
         return entry;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.625 -0500", hash_original_method = "F3360ADB8E6D37C5AD6714A1DBEA3C2C", hash_generated_method = "F44F4A0B4A98B76DEA0CDE08EBFF4E23")
     
 public long getElapsedRealtime() {
@@ -269,6 +264,7 @@ public long getElapsedRealtime() {
      * Return age of this {@link NetworkStats} object with respect to
      * {@link SystemClock#elapsedRealtime()}.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.627 -0500", hash_original_method = "A28F8D44EDD8B5977D1B4B03F62008BC", hash_generated_method = "B48C6C0687A68BA9FECD7017E68393C1")
     
 public long getElapsedRealtimeAge() {
@@ -403,6 +399,7 @@ public void spliceOperationsFrom(NetworkStats stats) {
     /**
      * Return list of unique interfaces known by this data structure.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.650 -0500", hash_original_method = "2B2C9B0B02A7A72C63A74815DF58D4A4", hash_generated_method = "D0A684448F4A184041D52DC630E31C37")
     
 public String[] getUniqueIfaces() {
@@ -418,6 +415,7 @@ public String[] getUniqueIfaces() {
     /**
      * Return list of unique UIDs known by this data structure.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.653 -0500", hash_original_method = "C948A3950E5BB6DBF87B62BBDA0B02C8", hash_generated_method = "289700DCF7DEB1D4337A3D8DA5CF897C")
     
 public int[] getUniqueUids() {
@@ -438,6 +436,7 @@ public int[] getUniqueUids() {
      * Return total bytes represented by this snapshot object, usually used when
      * checking if a {@link #subtract(NetworkStats)} delta passes a threshold.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.655 -0500", hash_original_method = "277B11F09A23B8E4B361A93BBF3584B2", hash_generated_method = "EA48C6FAC9BD27129C25513C89F6565F")
     
 public long getTotalBytes() {
@@ -513,7 +512,6 @@ private Entry getTotal(Entry recycle, HashSet<String> limitIface, int limitUid) 
         }
         return entry;
     }
-
     
     public static class Entry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.571 -0500", hash_original_field = "11FA7C89AB1E83290F062B1282182D77", hash_generated_field = "C6A1018CA8BDAC723763D450E0753839")
@@ -588,11 +586,8 @@ public Entry(String iface, int uid, int set, int tag, long rxBytes, long rxPacke
             builder.append(" operations=").append(operations);
             return builder.toString();
         }
-
         
     }
-
-
     
     public static class NonMonotonicException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.700 -0500", hash_original_field = "50C65BE719A65A1E61AB0B7C9118AB7E", hash_generated_field = "181F8009619333E411770D3E70DC8370")
@@ -623,7 +618,6 @@ public NonMonotonicException(
             this.leftIndex = leftIndex;
             this.rightIndex = rightIndex;
         }
-
         
     }
 
@@ -781,6 +775,7 @@ public NetworkStats withoutUid(int uid) {
         return stats;
     }
 
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:30.680 -0500", hash_original_method = "130412F853181F3DE6D8909F69FBB580", hash_generated_method = "CCA31CBF5ECA009EBA40D50E8332B6EC")
     
 public void dump(String prefix, PrintWriter pw) {

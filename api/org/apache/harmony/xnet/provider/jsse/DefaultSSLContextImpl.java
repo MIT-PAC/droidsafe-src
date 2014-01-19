@@ -19,11 +19,6 @@ import javax.net.ssl.KeyManagerFactory;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.TrustManagerFactory;
 
-
-
-
-
-
 public final class DefaultSSLContextImpl extends OpenSSLContextImpl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.088 -0500", hash_original_field = "597F586052EA4DB698A92860AAA2AFE9", hash_generated_field = "566D6B41A10785704C5DA62CA709142C")
 
@@ -46,6 +41,7 @@ public DefaultSSLContextImpl() throws GeneralSecurityException, IOException {
     }
 
     // TODO javax.net.ssl.keyStoreProvider system property
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.096 -0500", hash_original_method = "E512CF487829C633B2731FE964DEE240", hash_generated_method = "EAC19B8B4FD5A1F1B311A095D42F2FC7")
     
 KeyManager[] getKeyManagers () throws GeneralSecurityException, IOException {
@@ -83,6 +79,7 @@ KeyManager[] getKeyManagers () throws GeneralSecurityException, IOException {
     }
 
     // TODO javax.net.ssl.trustStoreProvider system property
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:10.099 -0500", hash_original_method = "06C43D579C0D6CACEEC14574641391C0", hash_generated_method = "91D2689A479083E2E70C28999FAAC745")
     
 TrustManager[] getTrustManagers() throws GeneralSecurityException, IOException {

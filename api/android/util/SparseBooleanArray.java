@@ -7,11 +7,6 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class SparseBooleanArray implements Cloneable {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.774 -0500", hash_original_method = "7DB5AA23E16883217822FBC6D13669D2", hash_generated_method = "FEB35469F5B9E3BA231D8C8D51EF0135")
@@ -37,7 +32,6 @@ private static int binarySearch(int[] a, int start, int len, int key) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.777 -0500", hash_original_field = "904D0E6EB4847EA02E1703FDE76AE0FF", hash_generated_field = "61AC896AB2732D0B3CF0262159DAE2AD")
 
-
     private int[] mKeys;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.779 -0500", hash_original_field = "FF832D89BB4EC5CEC764D0705C8FAD71", hash_generated_field = "A2C25611A545F26A4C8405C4B8B577DD")
 
@@ -48,6 +42,8 @@ private static int binarySearch(int[] a, int start, int len, int key) {
     /**
      * Creates a new SparseBooleanArray containing no mappings.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.743 -0500", hash_original_method = "8D15548F78BDFDD752295E5C53E86F2F", hash_generated_method = "FD0E59B07B790EDC107374FEA112EB18")
     
 public SparseBooleanArray() {
@@ -88,6 +84,8 @@ public SparseBooleanArray(int initialCapacity) {
      * Gets the boolean mapped from the specified key, or <code>false</code>
      * if no such mapping has been made.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.750 -0500", hash_original_method = "1186B1642AA4116A541B7A05AB024C1E", hash_generated_method = "0FEDDDB6F9337B15BB2F3966BD48B463")
     
 public boolean get(int key) {
@@ -130,6 +128,8 @@ public void delete(int key) {
      * replacing the previous mapping from the specified key if there
      * was one.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.757 -0500", hash_original_method = "D051F7BD1248EC7F2DE7541E7D2B2D2A", hash_generated_method = "F9EDD9A9F559A29A07E24C0A7E7E56D4")
     
 public void put(int key, boolean value) {
@@ -170,6 +170,8 @@ public void put(int key, boolean value) {
      * Returns the number of key-value mappings that this SparseBooleanArray
      * currently stores.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.759 -0500", hash_original_method = "9550C69BAA91C5298BA75D226127D5FF", hash_generated_method = "D1146B99C52208B28E4F9EC1242180A7")
     
 public int size() {
@@ -181,6 +183,8 @@ public int size() {
      * the key from the <code>index</code>th key-value mapping that this
      * SparseBooleanArray stores.  
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.761 -0500", hash_original_method = "A3423B1919CBB5E5DDAE8E35A522AED2", hash_generated_method = "C622C575F82B87F3E28E2B38FD9B52B9")
     
 public int keyAt(int index) {
@@ -192,6 +196,8 @@ public int keyAt(int index) {
      * the value from the <code>index</code>th key-value mapping that this
      * SparseBooleanArray stores.  
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.763 -0500", hash_original_method = "29A1BAF882E385B3C84A3B34D45CFC9E", hash_generated_method = "EDABA062039AF3E2B0A5DE4B7D150695")
     
 public boolean valueAt(int index) {
@@ -230,6 +236,8 @@ public int indexOfValue(boolean value) {
     /**
      * Removes all key-value mappings from this SparseBooleanArray.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.769 -0500", hash_original_method = "78B640B3511AD026106C387D36058FFC", hash_generated_method = "079CB038114B3C01EA312AE5CCEF3330")
     
 public void clear() {
@@ -240,6 +248,7 @@ public void clear() {
      * Puts a key/value pair into the array, optimizing for the case where
      * the key is greater than all existing keys in the array.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:22.772 -0500", hash_original_method = "1A2B721538032798B5FC0916FF4BED9A", hash_generated_method = "5433F58D420534600E60E5ABFAA91A90")
     
 public void append(int key, boolean value) {
@@ -267,7 +276,6 @@ public void append(int key, boolean value) {
         mValues[pos] = value;
         mSize = pos + 1;
     }
-
     
 }
 

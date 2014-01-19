@@ -13,13 +13,8 @@ import javax.net.ssl.SSLServerSocketFactory;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class SSLServerSocketFactoryImpl extends SSLServerSocketFactory {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.115 -0500", hash_original_field = "8EC89ADA2574F1DBC3DD4508F1BBC0BF", hash_generated_field = "D3BEC3280BC0116C55BDEA33933A255E")
-
 
     private SSLParametersImpl sslParameters;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.118 -0500", hash_original_field = "4B271BE77FE082BAEDB0CC3C06D67CEA", hash_generated_field = "2D5C9847E3AA9248107E9F6E4986B2D4")
@@ -55,6 +50,7 @@ protected SSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.ssl.SSLServerSocketFactory#getDefaultCipherSuites()
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.126 -0500", hash_original_method = "D2E4703F25DE73045253D43D661F8658", hash_generated_method = "F28A7F75D17BAB5AF6CF7A48106E8A68")
     
 @Override
@@ -68,6 +64,7 @@ protected SSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
     /**
      * @see javax.net.ssl.SSLServerSocketFactory#getSupportedCipherSuites()
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:19.129 -0500", hash_original_method = "107E6937D2B525F81A260013B97CF7D4", hash_generated_method = "ADFA088456815838E904E8BFB04AE9AA")
     
 @Override
@@ -90,7 +87,6 @@ protected SSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
         }
         return new SSLServerSocketImpl((SSLParametersImpl) sslParameters.clone());
     }
-
 
     /**
      * @see javax.net.ServerSocketFactory#createServerSocket(int)
@@ -135,7 +131,6 @@ protected SSLServerSocketFactoryImpl(SSLParametersImpl sslParameters) {
         return new SSLServerSocketImpl(port, backlog, iAddress,
                 (SSLParametersImpl) sslParameters.clone());
     }
-
     
 }
 

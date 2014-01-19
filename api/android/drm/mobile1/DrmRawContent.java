@@ -8,11 +8,6 @@ import java.io.BufferedInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
-
-
-
-
-
 public class DrmRawContent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.292 -0500", hash_original_field = "FAE08528D4AE89FDF2D83D608F2B7B1C", hash_generated_field = "29181C4D953A39C351B8C01664607777")
 
@@ -71,7 +66,6 @@ public class DrmRawContent {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.336 -0500", hash_original_field = "796FD106AB1D7F5DCE9144A88FC7E265", hash_generated_field = "ED45BCA90194A65359E902CD54F1901B")
 
     private int rawType;
-
     
     class DrmInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.354 -0500", hash_original_field = "FF1318BD7B381B7887A6EEC627EFEF6C", hash_generated_field = "61C76B683BBEFCB5006250611D355A94")
@@ -221,10 +215,8 @@ public long skip(long n) throws IOException {
 public void close() {
             isClosed = true;
         }
-
         
     }
-
 
     /**
      * Construct a DrmRawContent object.
@@ -278,6 +270,7 @@ public DrmRawContent(InputStream inRawdata, int len, String mimeTypeStr) throws 
      * @return the string of the rights issuer address,
      *         or null if no rights issuer.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.342 -0500", hash_original_method = "DA61D867171B37EBE3ABF3A7818C6279", hash_generated_method = "BAF945A948D601852002C1C4EF920F52")
     
 public String getRightsAddress() {
@@ -293,6 +286,7 @@ public String getRightsAddress() {
      *              #DRM_SEPARATE_DELIVERY
      *              #DRM_SEPARATE_DELIVERY_DM
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.344 -0500", hash_original_method = "D6292E91B10AADE74CDCC0EA78647873", hash_generated_method = "8C1C518EC52B312FC5111DD9711CC9DC")
     
 public int getRawType() {
@@ -306,6 +300,7 @@ public int getRawType() {
      *
      * @return the InputStream object of decrypted media content.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.346 -0500", hash_original_method = "3A81FD63CF04F4BFFAA8D4F0C3F30C0B", hash_generated_method = "2AE9C4F5192B4DE92A8493140C655329")
     
 public InputStream getContentInputStream(DrmRights rights) {
@@ -320,6 +315,7 @@ public InputStream getContentInputStream(DrmRights rights) {
      *
      * @return the decrypted media content type of this DRM content.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.349 -0500", hash_original_method = "B3F2608C469A4E7BAEFC0D100E327F2C", hash_generated_method = "778F2F03CD46113737D50AE1303EA88F")
     
 public String getContentType() {
@@ -334,6 +330,7 @@ public String getContentType() {
      * @return the length of the decrypted media content.
      *         #DRM_UNKNOWN_DATA_LEN if the length is unknown currently.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.351 -0500", hash_original_method = "1DD68310D2E0F74333AF2EE851C2CA4C", hash_generated_method = "C0DD457BF7036AEBC4EBBBFC588E6954")
     
 public int getContentLength(DrmRights rights) throws DrmException {
@@ -378,10 +375,7 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	addTaint(mimeType);
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.546 -0400", hash_original_method = "F8C7C9754DABA7F76C3A7CE0927D169C", hash_generated_method = "FB49DAE02267FB01D7F8074178E3812C")
     private String nativeGetRightsAddress() {
     	String s = new String();
@@ -406,7 +400,6 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	return getTaintInt();
     }
 
-
     /**
      * native method: get a piece of media content data.
      *
@@ -429,10 +422,7 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	addTaint(mediaOff);
     	return getTaintInt();
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 09:47:17.547 -0400", hash_original_method = "9C49D7586D5C53FF58306596D0BFC464", hash_generated_method = "3114617F023481A1F61CCC44387FD7A5")
     private String nativeGetContentType() {
     	String s = new String();
@@ -453,7 +443,6 @@ public int getContentLength(DrmRights rights) throws DrmException {
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * The finalizer of the DRMRawContent. Do some cleanup.

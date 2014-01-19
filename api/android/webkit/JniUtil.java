@@ -13,9 +13,6 @@ import android.net.Uri;
 import android.provider.Settings;
 import android.util.Log;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 class JniUtil {
@@ -38,6 +35,7 @@ protected static synchronized void setContext(Context context) {
         sContext = context.getApplicationContext();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.854 -0500", hash_original_method = "71DD9FA52CE59CC40EEE95C3BDF1AEDE", hash_generated_method = "EE27CEA95F159D07E0109EDDC7E481D6")
     
 protected static synchronized Context getContext() {
@@ -188,23 +186,19 @@ private static boolean canSatisfyMemoryAllocation(long bytesRequested) {
         long leftToAllocate = memInfo.availMem - memInfo.threshold;
         return !memInfo.lowMemory && bytesRequested < leftToAllocate;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeUseChromiumHttpStack() {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.836 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
 
     private static final String LOGTAG = "webkit";
-
     
     static {
         System.loadLibrary("webcore");
         System.loadLibrary("chromium_net");
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.841 -0500", hash_original_field = "EA5D9DBD6B32675A8D38DFDEA2CC60D6", hash_generated_field = "09C76BDC3F22F12D5D3EE075C4365D0C")
-
 
     // Used by the Chromium HTTP stack.
     private static String sDatabaseDirectory;
@@ -218,7 +212,6 @@ private static boolean canSatisfyMemoryAllocation(long bytesRequested) {
 
     private static Context sContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.861 -0500", hash_original_field = "81DC0344028916DF5E3ACF3104622976", hash_generated_field = "A5A05B8DD281F40CCF47CBF0390B00E3")
-
 
     private static final String ANDROID_CONTENT = "content:";
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:10.839 -0500", hash_original_method = "7797423382E6C41F3BC6877796CBF278", hash_generated_method = "9AE85924909E9A13CD3A5362A20BBAC1")

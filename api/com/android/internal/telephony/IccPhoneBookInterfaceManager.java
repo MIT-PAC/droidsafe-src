@@ -14,20 +14,14 @@ import android.os.Looper;
 import android.os.Message;
 import android.os.ServiceManager;
 
-
-
-
-
 public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.106 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
 
     protected static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.123 -0500", hash_original_field = "15D7ED0869755B209208299127695707", hash_generated_field = "1E8984E99524AF28D68E56356A817DB3")
 
-
     protected static final boolean ALLOW_SIM_OP_IN_UI_THREAD = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.125 -0500", hash_original_field = "36DCE9B307E8399E358F04CF1F23E76B", hash_generated_field = "B75ECFF18BE57F85BC7759CCE867BB30")
-
 
     protected static final int EVENT_GET_SIZE_DONE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.128 -0500", hash_original_field = "95DD1019701DAA926A9B3BD162D13FA0", hash_generated_field = "377496E733F7263CE55C3D4166BA075D")
@@ -37,7 +31,6 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
 
     protected static final int EVENT_UPDATE_DONE = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.108 -0500", hash_original_field = "4D74BFF297E0DF8FA98FF6D8A8DBA78C", hash_generated_field = "4FEA837943E73EF5CB83661843F1AD15")
-
 
     protected PhoneBase phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.110 -0500", hash_original_field = "55862F1A6AE254D83723842B05A3358C", hash_generated_field = "A9FC3B8D9025A6D655B1A245F81835AF")
@@ -65,7 +58,6 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             
             ar = (AsyncResult) msg.obj;
             
-            
             {
                 {
                     recordSize = (int[])ar.result;
@@ -74,20 +66,16 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                                     " #record " + recordSize[2]);
                 } 
                 notifyPending(ar);
-            } 
-            
+            }
             
             ar = (AsyncResult) msg.obj;
-            
             
             {
                 success = (ar.exception == null);
                 notifyPending(ar);
-            } 
-            
+            }
             
             ar = (AsyncResult)msg.obj;
-            
             
             {
                 {
@@ -100,15 +88,12 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
                     } 
                 } 
                 notifyPending(ar);
-            } 
+            }
             
             addTaint(msg.getTaint());
             
-            
         }
-
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:21.989 -0400", hash_original_method = "AEA2E9D2067E99FB1331FC981CC14937", hash_generated_method = "A9B77AF35C7BC8F11854E73C8BE49190")
         private void notifyPending(AsyncResult ar) {
             AtomicBoolean status = (AtomicBoolean) ar.userObj;
@@ -116,14 +101,7 @@ public abstract class IccPhoneBookInterfaceManager extends IIccPhoneBook.Stub {
             mLock.notifyAll();
             addTaint(ar.getTaint());
             
-            
-                
-            
-            
-            
-            
         }
-
         
 };
 
@@ -173,6 +151,7 @@ protected abstract void loge(String msg);
      * @param pin2 required to update EF_FDN, otherwise must be null
      * @return true for success
      */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.156 -0500", hash_original_method = "6BE84EAB1F25CDC10E8188E3A1C3A959", hash_generated_method = "7746946CCF90ACBA13801870D8B07536")
     
 public boolean
@@ -180,14 +159,12 @@ public boolean
             String oldTag, String oldPhoneNumber,
             String newTag, String newPhoneNumber, String pin2) {
 
-
         if (phone.getContext().checkCallingOrSelfPermission(
                 android.Manifest.permission.WRITE_CONTACTS)
             != PackageManager.PERMISSION_GRANTED) {
             throw new SecurityException(
                     "Requires android.permission.WRITE_CONTACTS permission");
         }
-
 
         if (DBG) logd("updateAdnRecordsInEfBySearch: efid=" + efid +
                 " ("+ oldTag + "," + oldPhoneNumber + ")"+ "==>" +
@@ -225,6 +202,7 @@ public boolean
      * @param pin2 required to update EF_FDN, otherwise must be null
      * @return true for success
      */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.158 -0500", hash_original_method = "102FC1C0583C00426ED85686CB9EA64E", hash_generated_method = "AD9ECC5986896ECA7D0ABA0605CAB7EB")
     
 public boolean
@@ -275,6 +253,7 @@ public abstract int[] getAdnRecordsSize(int efid);
      * @param efid the EF id of a ADN-like ICC
      * @return List of AdnRecord
      */
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:34.164 -0500", hash_original_method = "2EC5B47F5C71460FB1C246E071649E17", hash_generated_method = "14818A383B7131A42ED5AE36C068F8A8")
     
 public List<AdnRecord> getAdnRecordsInEf(int efid) {

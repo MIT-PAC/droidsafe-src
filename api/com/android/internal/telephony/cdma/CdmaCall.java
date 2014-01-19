@@ -13,11 +13,6 @@ import com.android.internal.telephony.Connection;
 import com.android.internal.telephony.DriverCall;
 import com.android.internal.telephony.Phone;
 
-
-
-
-
-
 public final class CdmaCall extends Call {
 
     /***************************** Class Methods *****************************/
@@ -38,13 +33,11 @@ static State
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.200 -0500", hash_original_field = "2814A276BAC6C190BAEC9128FA3036E9", hash_generated_field = "93F634A2071B9C2571F503F2B2EDDC64")
 
-
     /*package*/ ArrayList<Connection> connections = new ArrayList<Connection>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.202 -0500", hash_original_field = "B9A7F7508B0B5FA0BFE8695446A61CF7", hash_generated_field = "B9A7F7508B0B5FA0BFE8695446A61CF7")
  State state = State.IDLE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.205 -0500", hash_original_field = "3927F28CE0F1F17A9255E7EFC415C1BF", hash_generated_field = "3927F28CE0F1F17A9255E7EFC415C1BF")
  CdmaCallTracker owner;
-
 
     /****************************** Constructors *****************************/
     /*package*/
@@ -60,6 +53,7 @@ public void dispose() {
     }
 
     /************************** Overridden from Call *************************/
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.216 -0500", hash_original_method = "DA46D72C53A8C0722B0E4038E55B8A9F", hash_generated_method = "B2D46C83F0D5D8DC52CF45AA8A64DAEC")
     
 public List<Connection>
@@ -75,6 +69,7 @@ public State
         return state;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.220 -0500", hash_original_method = "3D84383237FBED33FD2CE3B737BA6B20", hash_generated_method = "547D71B78517F12CFEE316EB1FBD48D5")
     
 public Phone
@@ -153,7 +148,6 @@ void
         }
     }
 
-
     /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.237 -0500", hash_original_method = "1EA8F68D5A466EEC41832970B917D4DC", hash_generated_method = "1EA8F68D5A466EEC41832970B917D4DC")
     
 void
@@ -195,7 +189,6 @@ boolean
 
     //***** Called from CdmaCallTracker
 
-
     /**
      * Called when this Call is being hung up locally (eg, user pressed "end")
      * Note that at this point, the hangup request has been dispatched to the radio
@@ -231,7 +224,6 @@ void clearDisconnected() {
             state = State.IDLE;
         }
     }
-
     
 }
 

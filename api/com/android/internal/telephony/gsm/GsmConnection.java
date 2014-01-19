@@ -22,11 +22,6 @@ import com.android.internal.telephony.DriverCall;
 import com.android.internal.telephony.Phone;
 import com.android.internal.telephony.UUSInfo;
 
-
-
-
-
-
 public class GsmConnection extends Connection {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.325 -0500", hash_original_method = "BC145A1DE2472995676ED9A315FB0956", hash_generated_method = "2C7138DB4A9526DAF974103E40C81A8A")
@@ -61,13 +56,11 @@ static boolean
     static final int WAKE_LOCK_TIMEOUT_MILLIS = 60*1000;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.246 -0500", hash_original_field = "B6239D6F2AF1190D06AAF0170D315E18", hash_generated_field = "B6239D6F2AF1190D06AAF0170D315E18")
 
-
     GsmCallTracker owner;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.248 -0500", hash_original_field = "EC13D736730A652A8D5F62206A0EDCDD", hash_generated_field = "EC13D736730A652A8D5F62206A0EDCDD")
 
     GsmCall parent;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.251 -0500", hash_original_field = "815EECE17AF4BC840D4544A9ECB9EACD", hash_generated_field = "815EECE17AF4BC840D4544A9ECB9EACD")
-
 
     String address;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.253 -0500", hash_original_field = "F515901190E6B9979D62CEFE77655CD0", hash_generated_field = "F515901190E6B9979D62CEFE77655CD0")
@@ -83,7 +76,6 @@ static boolean
 
     boolean disconnected;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.261 -0500", hash_original_field = "8BD524D6245D998B3BBC44EB9313082E", hash_generated_field = "8BD524D6245D998B3BBC44EB9313082E")
-
 
     int index;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.263 -0500", hash_original_field = "88A71A811D0CFD868BD514D9A7A9DADE", hash_generated_field = "D3A438A68DF5311E0B9C48DC32212255")
@@ -117,7 +109,6 @@ static boolean
     int nextPostDialChar;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.279 -0500", hash_original_field = "846032E4A4EEA9EEF5F261B33CBAFAE8", hash_generated_field = "846032E4A4EEA9EEF5F261B33CBAFAE8")
 
-
     DisconnectCause cause = DisconnectCause.NOT_DISCONNECTED;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.281 -0500", hash_original_field = "12225F767E33A7C05BECAD37785471A6", hash_generated_field = "12225F767E33A7C05BECAD37785471A6")
 
@@ -130,10 +121,8 @@ static boolean
     UUSInfo uusInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.287 -0500", hash_original_field = "47D42CB1DCDC1AD18224D34E3D8719BD", hash_generated_field = "47D42CB1DCDC1AD18224D34E3D8719BD")
 
-
     Handler h;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.290 -0500", hash_original_field = "DD211FB7C7A1365A3C66A0CF1B432479", hash_generated_field = "FBF2003A3FDB636C3C20603FE4A47D62")
-
 
     private PowerManager.WakeLock mPartialWakeLock;
 
@@ -211,6 +200,7 @@ boolean
         return isIncoming == c.isMT && equalsHandlesNulls(address, cAddress);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.329 -0500", hash_original_method = "1A89DAB454CED0757504258169B34CDA", hash_generated_method = "9D79DFDD8EA73AA9BC42783E0AB77415")
     
 public String getAddress() {
@@ -223,24 +213,28 @@ public GsmCall getCall() {
         return parent;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.334 -0500", hash_original_method = "A8956DD6ACAC2731E62816490C646631", hash_generated_method = "A28981F024E432A69A5EE6C2C2A713AE")
     
 public long getCreateTime() {
         return createTime;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.336 -0500", hash_original_method = "540CF01EF64CF5C6BAC1246743ECA8F1", hash_generated_method = "F3878C4EA8EC161DB4C86B7EE0828514")
     
 public long getConnectTime() {
         return connectTime;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.338 -0500", hash_original_method = "D17BC9E58BABC2D5CE1B7492B59E2165", hash_generated_method = "B4593A4A250C143E07993447C4BE4305")
     
 public long getDisconnectTime() {
         return disconnectTime;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.341 -0500", hash_original_method = "BD4C2261BA208AFE25AC1FD20DCCA9E3", hash_generated_method = "CF314DE5EA8CCD1CF80C405480A4ED6D")
     
 public long getDurationMillis() {
@@ -253,6 +247,7 @@ public long getDurationMillis() {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.343 -0500", hash_original_method = "7462D7508B2729C8A635CC5C7FC6CE68", hash_generated_method = "A5156AEED4B42DB6AFD522974FEB6AFC")
     
 public long getHoldDurationMillis() {
@@ -532,7 +527,6 @@ boolean
                 ", isConnectingInOrOut=" + isConnectingInOrOut() +
                 ", changed=" + changed);
 
-
         if (wasConnectingInOrOut && !isConnectingInOrOut()) {
             onConnectedInOrOut();
         }
@@ -565,7 +559,8 @@ void
         onStartedHolding();
     }
 
-    /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.384 -0500", hash_original_method = "CA6F3BC3A0E7C25CF1D3A00C4B3FEC79", hash_generated_method = "CA6F3BC3A0E7C25CF1D3A00C4B3FEC79")
+    /*package*/ @DSSource({DSSourceKind.NETWORK_INFORMATION})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.384 -0500", hash_original_method = "CA6F3BC3A0E7C25CF1D3A00C4B3FEC79", hash_generated_method = "CA6F3BC3A0E7C25CF1D3A00C4B3FEC79")
     
 int
     getGSMIndex() throws CallStateException {
@@ -648,6 +643,7 @@ private boolean
         return true;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.394 -0500", hash_original_method = "0D579DEEA4ADF8476D536663A83CC650", hash_generated_method = "42A7DBBBB5A1243A18658BBC84FC9C4B")
     
 public String
@@ -736,7 +732,6 @@ private void
         }
     }
 
-
     /** "connecting" means "has never been ACTIVE" for both incoming
      *  and outgoing calls
      */
@@ -748,7 +743,6 @@ private boolean
             || parent.state == GsmCall.State.DIALING
             || parent.state == GsmCall.State.ALERTING;
     }
-
     
     class MyHandler extends Handler {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.309 -0500", hash_original_method = "2B93823BE9CDEC6A395C6867AE57FF4F", hash_generated_method = "2B93823BE9CDEC6A395C6867AE57FF4F")
@@ -771,7 +765,6 @@ public void
                     break;
             }
         }
-
         
     }
 
@@ -856,6 +849,7 @@ private void log(String msg) {
         Log.d(LOG_TAG, "[GSMConn] " + msg);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.420 -0500", hash_original_method = "B2C780D7BF03A84FC8B3CC6F33ADADA1", hash_generated_method = "3CE0451A12E5CCA47D0CDA3753FACBAF")
     
 @Override
@@ -863,6 +857,7 @@ private void log(String msg) {
         return numberPresentation;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:29.422 -0500", hash_original_method = "00708DAD150C484ADEE163A005CDF57B", hash_generated_method = "1542BF195939D818ECEF141CA5A831A7")
     
 @Override

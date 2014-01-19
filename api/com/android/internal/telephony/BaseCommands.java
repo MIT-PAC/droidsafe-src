@@ -17,10 +17,6 @@ import android.os.RegistrantList;
 import android.os.SystemProperties;
 import android.util.Log;
 
-
-
-
-
 public abstract class BaseCommands implements CommandsInterface {
 
     /**
@@ -124,7 +120,6 @@ public static int getLteOnCdmaModeStatic() {
     protected Object mStateMonitor = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.214 -0500", hash_original_field = "1CB89EEFBD296E089FCCDC957206C604", hash_generated_field = "CDE5DEB085980735E31C1C0C83621370")
 
-
     protected RegistrantList mRadioStateChangedRegistrants = new RegistrantList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.216 -0500", hash_original_field = "C2CA4D797AEC80D846F4A07D7CE6FEE7", hash_generated_field = "BBE48E2A62763F1E6595E3B9C75D6A71")
 
@@ -227,7 +222,6 @@ public static int getLteOnCdmaModeStatic() {
     protected RegistrantList mIccRefreshRegistrants = new RegistrantList();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.292 -0500", hash_original_field = "E3E80812CB41F37C58D020566F9CDD75", hash_generated_field = "AE6AD1CCCCF6C8652D606AE52E3DF80E")
 
-
     protected Registrant mGsmSmsRegistrant;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.295 -0500", hash_original_field = "E74C8014BFFEABCB71DEEA3E86343312", hash_generated_field = "7EF8A8757C74933479C641605220142B")
 
@@ -324,7 +318,6 @@ public RadioState getNvState() {
         return mNvState;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.353 -0500", hash_original_method = "BA48B5E0F5DAB3A06803759CD1341873", hash_generated_method = "7A303584A28E658A76CD96322DDF547F")
     
 public void registerForRadioStateChanged(Handler h, int what, Object obj) {
@@ -364,7 +357,6 @@ public void unregisterForOn(Handler h) {
             mOnRegistrants.remove(h);
         }
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.362 -0500", hash_original_method = "B002A9DBB8C7C11A31C2582BB5EE1874", hash_generated_method = "C7726F30C474FC3EAAA7933506E3EB84")
     
@@ -430,7 +422,6 @@ public void unregisterForOffOrNotAvailable(Handler h) {
             mOffOrNotAvailRegistrants.remove(h);
         }
     }
-
 
     /** Any transition into SIM_READY */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.376 -0500", hash_original_method = "CC4432751ADD65730712EA705F22C3CD", hash_generated_method = "A16E16A1FBA95A0B4FE5FE948D5FF540")
@@ -613,6 +604,7 @@ public void unregisterForIccStatusChanged(Handler h) {
         mIccStatusChangedRegistrants.remove(h);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.426 -0500", hash_original_method = "7CF6E9042288CF5BCC8A41B33E0FC1FA", hash_generated_method = "8A9CE8E0FEB30E7F93889ABE173AA674")
     
 public void setOnNewGsmSms(Handler h, int what, Object obj) {
@@ -625,6 +617,7 @@ public void unSetOnNewGsmSms(Handler h) {
         mGsmSmsRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.430 -0500", hash_original_method = "9A78052D6944BA613BED064A1FCE96FC", hash_generated_method = "5072ED8E2809C882E4B4734520124F94")
     
 public void setOnNewCdmaSms(Handler h, int what, Object obj) {
@@ -637,6 +630,7 @@ public void unSetOnNewCdmaSms(Handler h) {
         mCdmaSmsRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.435 -0500", hash_original_method = "33C97215793324BA09B0AC1C1CB62DDA", hash_generated_method = "11A15DB01F8A6CD391FAC008519C39E4")
     
 public void setOnNewGsmBroadcastSms(Handler h, int what, Object obj) {
@@ -649,6 +643,7 @@ public void unSetOnNewGsmBroadcastSms(Handler h) {
         mGsmBroadcastSmsRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.440 -0500", hash_original_method = "0C74AFDE10017540B93B7C27C178AD12", hash_generated_method = "278BBBC0C3B2693DA4CE2AAC2BEBE192")
     
 public void setOnSmsOnSim(Handler h, int what, Object obj) {
@@ -661,6 +656,7 @@ public void unSetOnSmsOnSim(Handler h) {
         mSmsOnSimRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.444 -0500", hash_original_method = "11EEFE2847E162D5587C8E576D844178", hash_generated_method = "820EBCD955DF448C45C04D082AE257F3")
     
 public void setOnSmsStatus(Handler h, int what, Object obj) {
@@ -673,6 +669,7 @@ public void unSetOnSmsStatus(Handler h) {
         mSmsStatusRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.449 -0500", hash_original_method = "BC3FAB2490D1A217545C1F22508EF51F", hash_generated_method = "3C713C1077BEAC63EC257A18D02233C7")
     
 public void setOnSignalStrengthUpdate(Handler h, int what, Object obj) {
@@ -685,6 +682,7 @@ public void unSetOnSignalStrengthUpdate(Handler h) {
         mSignalStrengthRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.453 -0500", hash_original_method = "B93626E61216BE05ADCBA600BD7F638F", hash_generated_method = "7D3F869E4AE96FB956A86EAB96F6CE0A")
     
 public void setOnNITZTime(Handler h, int what, Object obj) {
@@ -697,6 +695,7 @@ public void unSetOnNITZTime(Handler h) {
         mNITZTimeRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.458 -0500", hash_original_method = "B95EC97639ED908B13D752A2F13F6C7D", hash_generated_method = "15783340D84BC789875DBCC2E3364A31")
     
 public void setOnUSSD(Handler h, int what, Object obj) {
@@ -709,6 +708,7 @@ public void unSetOnUSSD(Handler h) {
         mUSSDRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.464 -0500", hash_original_method = "8D0E51584543A1B70BDE99B5C9D8170F", hash_generated_method = "DD88AA945A1267F0D66950D11ED3D2E6")
     
 public void setOnSuppServiceNotification(Handler h, int what, Object obj) {
@@ -721,6 +721,7 @@ public void unSetOnSuppServiceNotification(Handler h) {
         mSsnRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.469 -0500", hash_original_method = "6C58C9A1E016A05F52E2E9DA6EEAE5BF", hash_generated_method = "F0948E1A8A7F618E7CF726FFAB65C7D8")
     
 public void setOnCatSessionEnd(Handler h, int what, Object obj) {
@@ -733,6 +734,7 @@ public void unSetOnCatSessionEnd(Handler h) {
         mCatSessionEndRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.473 -0500", hash_original_method = "D06ACD9FCA890DD319CAD0E6F7424AE6", hash_generated_method = "92E4F86791108FA2AB4DE8A1EFB7717E")
     
 public void setOnCatProactiveCmd(Handler h, int what, Object obj) {
@@ -745,6 +747,7 @@ public void unSetOnCatProactiveCmd(Handler h) {
         mCatProCmdRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.478 -0500", hash_original_method = "C195D512833847BDA6BB456AF1EEA3B4", hash_generated_method = "46ED77C9C2412964492006229588D737")
     
 public void setOnCatEvent(Handler h, int what, Object obj) {
@@ -757,6 +760,7 @@ public void unSetOnCatEvent(Handler h) {
         mCatEventRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.482 -0500", hash_original_method = "F9248546B0B94A00BBD09A54A068232C", hash_generated_method = "AB3B1D5C6469D30F16E438DB10A01D83")
     
 public void setOnCatCallSetUp(Handler h, int what, Object obj) {
@@ -769,6 +773,7 @@ public void unSetOnCatCallSetUp(Handler h) {
         mCatCallSetUpRegistrant.clear();
     }
 
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.487 -0500", hash_original_method = "CEFBB5FD27FBF0DBAFAF8D4D6CE13FCD", hash_generated_method = "02E8EE35D254B0165E1B056E3BF6B1F0")
     
 public void setOnIccSmsFull(Handler h, int what, Object obj) {
@@ -787,12 +792,14 @@ public void registerForIccRefresh(Handler h, int what, Object obj) {
         Registrant r = new Registrant (h, what, obj);
         mIccRefreshRegistrants.add(r);
     }
+    @DSSink({DSSinkKind.PHONE_STATE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.494 -0500", hash_original_method = "EBD003897DB6B5AFBE1C90F6779BE273", hash_generated_method = "50B95FF2441D6D88A8B206D10A3BC957")
     
 public void setOnIccRefresh(Handler h, int what, Object obj) {
         registerForIccRefresh(h, what, obj);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.497 -0500", hash_original_method = "B609D137446E0B07BA45D584DFD22E03", hash_generated_method = "441724EA00247EEB399DE1687B50C7A8")
     
 public void setEmergencyCallbackMode(Handler h, int what, Object obj) {
@@ -810,6 +817,7 @@ public void unsetOnIccRefresh(Handler h) {
         unregisterForIccRefresh(h);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.504 -0500", hash_original_method = "8CCA793687CAB6E48BC4AA126090CB63", hash_generated_method = "4622101CA035E771C3B57A6127D6AC9C")
     
 public void setOnCallRing(Handler h, int what, Object obj) {
@@ -848,6 +856,7 @@ public void unregisterForInCallVoicePrivacyOff(Handler h){
         mVoicePrivacyOffRegistrants.remove(h);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.518 -0500", hash_original_method = "5582113CD84EF18DC77145673CEF3805", hash_generated_method = "B791666A4267DB82C747DB02074A7236")
     
 public void setOnRestrictedStateChanged(Handler h, int what, Object obj) {
@@ -893,6 +902,7 @@ public void registerForSignalInfo(Handler h, int what, Object obj) {
         mSignalInfoRegistrants.add(r);
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.535 -0500", hash_original_method = "023EEE600D5AEC21A0C3A38A31A02F7B", hash_generated_method = "9795762AA88F0000A40F81148EF3A043")
     
 public void setOnUnsolOemHookRaw(Handler h, int what, Object obj) {
@@ -1225,6 +1235,7 @@ protected void onRadioAvailable() {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:36.612 -0500", hash_original_method = "5CCABDB2C29BD5F7AE98CB3F70B855A8", hash_generated_method = "878B3C3B065232DBAD0E4007DC184F63")
     
 @Override

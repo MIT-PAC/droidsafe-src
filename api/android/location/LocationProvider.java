@@ -7,10 +7,6 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import android.os.RemoteException;
 
-
-
-
-
 public abstract class LocationProvider {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.735 -0500", hash_original_field = "CF63F24A50923DD5411A549B84491C0D", hash_generated_field = "E0555379B6CF7BCD06CEE07CE9475600")
 
@@ -21,7 +17,6 @@ public abstract class LocationProvider {
     static final String BAD_CHARS_REGEX = "[^a-zA-Z0-9]";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.744 -0500", hash_original_field = "C2D975D4DBF3A4FF5769108DF24F37FC", hash_generated_field = "7F47E89ED92EB0041561E3E6FDFC0CA8")
 
-
     public static final int OUT_OF_SERVICE = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.747 -0500", hash_original_field = "4A005E03634811A2A302FB3758AEAF29", hash_generated_field = "8FC12DE1A6F66422CA33C5DF3A2CD280")
 
@@ -30,7 +25,6 @@ public abstract class LocationProvider {
 
     public static final int AVAILABLE = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.739 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
-
 
     private  String mName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.742 -0500", hash_original_field = "50ECBA7D5C5287025A532B86729D1152", hash_generated_field = "172E00EA90AE9807366F5CA34B42799B")
@@ -59,6 +53,7 @@ public LocationProvider(String name, ILocationManager service) {
     /**
      * Returns the name of this provider.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.754 -0500", hash_original_method = "9194A7433912D38B9A3F1171AC921C56", hash_generated_method = "AD920925278DEAFAFBD283F9C2E39E5D")
     
 public String getName() {
@@ -151,6 +146,7 @@ public abstract boolean supportsBearing();
      * @return the power requirement for this provider, as one of the
      * constants Criteria.POWER_REQUIREMENT_*.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.774 -0500", hash_original_method = "2F50AAAB2647BF8230ECBEB434938FE5", hash_generated_method = "34DD62495694D40DE49D2D104CB0D3B2")
     
 public abstract int getPowerRequirement();
@@ -162,6 +158,7 @@ public abstract int getPowerRequirement();
      * location is only approximate then {@link Criteria#ACCURACY_COARSE}
      * is returned.
      */
+    @DSSource({DSSourceKind.LOCATION_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:00.776 -0500", hash_original_method = "DF70590EBA658BF9F5EE889268264DFA", hash_generated_method = "CD4BE7A1C5BB4B32874B2664C730697D")
     
 public abstract int getAccuracy();

@@ -29,7 +29,6 @@ public class Type extends BaseObj {
 
     Element mElement;
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.057 -0500", hash_original_method = "16C6269A6A80062F3C7B05511AF2EA14", hash_generated_method = "16C6269A6A80062F3C7B05511AF2EA14")
     
 Type(int id, RenderScript rs) {
@@ -41,6 +40,7 @@ Type(int id, RenderScript rs) {
      *
      * @return Element
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.039 -0500", hash_original_method = "4A983E462672C2EA1E6C39A6A01B91CB", hash_generated_method = "D36EAF357291305E00905E7D38FC8987")
     
 public Element getElement() {
@@ -52,6 +52,7 @@ public Element getElement() {
      *
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.041 -0500", hash_original_method = "B8C0887F5E9E541E727ECCD0086F5E5B", hash_generated_method = "C3E376CA9068FEA6A69EEB85328B8C4E")
     
 public int getX() {
@@ -63,6 +64,7 @@ public int getX() {
      *
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.044 -0500", hash_original_method = "5E9C3BBA0D7932B9CBA182F8B32036BC", hash_generated_method = "F0577C464B17A02017BA91EF44D925A3")
     
 public int getY() {
@@ -74,6 +76,7 @@ public int getY() {
      *
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.046 -0500", hash_original_method = "E315B95FC6DF6C1A4510539F8CFF9FC2", hash_generated_method = "61ABC746DD74FAB75CAB1606DF4A5A23")
     
 public int getZ() {
@@ -107,6 +110,7 @@ public boolean hasFaces() {
      *
      * @return int
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.052 -0500", hash_original_method = "48334469C8B133AB7598FD3FC5B4F37B", hash_generated_method = "07B3E2B76BEDBA594AEC525B81BB271B")
     
 public int getCount() {
@@ -174,7 +178,6 @@ void calcElementCount() {
         }
         calcElementCount();
     }
-
     
     public enum CubemapFace {
         POSITIVE_X (0),
@@ -191,7 +194,6 @@ void calcElementCount() {
         POSITVE_Z (4);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.033 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.035 -0500", hash_original_method = "7F0480675545CC5C5FE59A3A30729560", hash_generated_method = "7F0480675545CC5C5FE59A3A30729560")
             
@@ -199,7 +201,6 @@ CubemapFace(int id) {
             mID = id;
         }
     }
-
     
     public static class Builder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.063 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
@@ -221,7 +222,6 @@ CubemapFace(int id) {
 
         boolean mDimFaces;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:07.076 -0500", hash_original_field = "EC8CEE28EE8EC6C488BEE33A3E23406D", hash_generated_field = "EC8CEE28EE8EC6C488BEE33A3E23406D")
-
 
         Element mElement;
 
@@ -279,7 +279,6 @@ public Builder setFaces(boolean value) {
             return this;
         }
 
-
         /**
          * Validate structure and create a new type.
          *
@@ -319,11 +318,8 @@ public Type create() {
             t.calcElementCount();
             return t;
         }
-
         
     }
-
-
     
 }
 

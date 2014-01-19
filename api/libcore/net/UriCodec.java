@@ -9,10 +9,6 @@ import java.net.URISyntaxException;
 import java.nio.charset.Charset;
 import java.nio.charset.Charsets;
 
-
-
-
-
 public abstract class UriCodec {
 
     /**
@@ -114,7 +110,6 @@ private static void appendHex(StringBuilder sb, byte b) {
         sb.append(Byte.toHexString(b, true));
     }
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:24.874 -0400", hash_original_method = "4BF02B8F3FC732245257150462C2453A", hash_generated_method = "4BF02B8F3FC732245257150462C2453A")
     public UriCodec ()
     {
@@ -131,6 +126,7 @@ protected abstract boolean isRetained(char c);
     /**
      * Throws if {@code s} is invalid according to this encoder.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:30.376 -0500", hash_original_method = "F141B1647AA9A55C59B7CEA66DF70E00", hash_generated_method = "BE4A58F776D7DEFE3035FA9B3E9D24D3")
     
 public final String validate(String uri, int start, int end, String name)
@@ -226,7 +222,6 @@ public final void appendEncoded(StringBuilder builder, String s) {
 public final void appendPartiallyEncoded(StringBuilder builder, String s) {
         appendEncoded(builder, s, Charsets.UTF_8, true);
     }
-
     
 }
 

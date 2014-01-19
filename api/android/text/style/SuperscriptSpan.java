@@ -9,9 +9,6 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
 public class SuperscriptSpan extends MetricAffectingSpan implements ParcelableSpan {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.261 -0500", hash_original_method = "A61AB96C11E77F6A36ED29C74BA40E45", hash_generated_method = "6EE0CE501952DBEB85B46BB9AED51FBB")
     
@@ -23,6 +20,7 @@ public SuperscriptSpan() {
 public SuperscriptSpan(Parcel src) {
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:09.266 -0500", hash_original_method = "0CB176122CE000C44267FEA34CA341C1", hash_generated_method = "91E6AFFE86CFCB1F692992A9013714E2")
     
 public int getSpanTypeId() {
@@ -53,7 +51,6 @@ public void writeToParcel(Parcel dest, int flags) {
     public void updateMeasureState(TextPaint tp) {
         tp.baselineShift += (int) (tp.ascent() / 2);
     }
-
     
 }
 

@@ -13,11 +13,6 @@ import java.util.zip.GZIPInputStream;
 
 import com.android.internal.os.IDropBoxManagerService;
 
-
-
-
-
-
 public class DropBoxManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.339 -0500", hash_original_field = "D9B79A0164BB0C0D43E8BE0E50A07175", hash_generated_field = "7F88B1F6C3AA23682B73D2063D96AD46")
 
@@ -44,10 +39,8 @@ public class DropBoxManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.358 -0500", hash_original_field = "D910661ED5A65576B5BFD7269C64298B", hash_generated_field = "BF72FAE2E20FCDE1DA6F95CAA1981EAC")
 
     public static final String EXTRA_TIME = "time";
-
     
     public static class Entry implements Parcelable, Closeable {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.039 -0400", hash_original_field = "A8DC184895BB5B5BEE6BB5E9D72AA17F", hash_generated_field = "329A53A95C2F0B54BB6DBA5A539F5907")
 
@@ -75,7 +68,6 @@ public Entry createFromParcel(Parcel in) {
 
         private  long mTimeMillis;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.366 -0500", hash_original_field = "5D97F7C0534662C5183D05D4FFD1A145", hash_generated_field = "04254C7D5555806109D3DE22B9918A82")
-
 
         private  byte[] mData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.369 -0500", hash_original_field = "E57966AB286B8F6F75FB7E135DD8912B", hash_generated_field = "2EB80060CD9954C0E91A29E7A228F077")
@@ -175,16 +167,19 @@ public void close() {
         }
 
         /** @return the tag originally attached to the entry. */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.389 -0500", hash_original_method = "ED26754F6A82B43F30EAE698B7941323", hash_generated_method = "0B538D6B7E10340EACEB66882A3752E4")
         
 public String getTag() { return mTag; }
 
         /** @return time when the entry was originally created. */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.392 -0500", hash_original_method = "6C399926D10F83AEDA9A5ADCC6A5D3A1", hash_generated_method = "4EEBC7115EF2483FED0898219C32EC53")
         
 public long getTimeMillis() { return mTimeMillis; }
 
         /** @return flags describing the content returned by {@link #getInputStream()}. */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.394 -0500", hash_original_method = "DEBA147F1626153ABBF4AEA4FEEBC80F", hash_generated_method = "A232C7C0C5207087EB20025BE13ADFF2")
         
 public int getFlags() { return mFlags & ~IS_GZIPPED; }  // getInputStream() decompresses.
@@ -193,6 +188,7 @@ public int getFlags() { return mFlags & ~IS_GZIPPED; }  // getInputStream() deco
          * @param maxBytes of string to return (will truncate at this length).
          * @return the uncompressed text contents of the entry, null if the entry is not text.
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.397 -0500", hash_original_method = "5115D4296A1E9A49B9B7627B57AD3F2E", hash_generated_method = "0AE4E31616817EE423844A6965610297")
         
 public String getText(int maxBytes) {
@@ -218,6 +214,7 @@ public String getText(int maxBytes) {
         }
 
         /** @return the uncompressed contents of the entry, or null if the contents were lost */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.399 -0500", hash_original_method = "1138A2AC2CDA63F5FD2C1DAD635BB1B0", hash_generated_method = "4C74AC11C608A83FA2239CD66FDB48B6")
         
 public InputStream getInputStream() throws IOException {
@@ -238,6 +235,7 @@ public int describeContents() {
             return mFileDescriptor != null ? Parcelable.CONTENTS_FILE_DESCRIPTOR : 0;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.413 -0500", hash_original_method = "651672D7808B55AEFC112D3455309C97", hash_generated_method = "E49A12FEBDA90A9B384C764C321BA52B")
         
 public void writeToParcel(Parcel out, int flags) {
@@ -271,7 +269,6 @@ public void writeToParcel(Parcel out, int flags) {
 
     private  IDropBoxManagerService mService;
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.032 -0400", hash_original_method = "04B0A4DBB2EAE135AA112A8CAA9647B1", hash_generated_method = "56807A840D421C3846696C198899DDB8")
     public  DropBoxManager(IDropBoxManagerService service) {
         mService = service;
@@ -279,9 +276,7 @@ public void writeToParcel(Parcel out, int flags) {
         // ---------- Original Method ----------
         //mService = service;
     }
-
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:26.033 -0400", hash_original_method = "E688A3A6CCC118BEDB51FAABD6872F4D", hash_generated_method = "1D2825C63C164429C45D67692FE8B561")
     public DropBoxManager() {
         mService = null;
@@ -326,6 +321,7 @@ public void addData(String tag, byte[] data, int flags) {
      * @param flags describing the data
      * @throws IOException if the file can't be opened
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.429 -0500", hash_original_method = "BF97B72EB64F4DB129C9C48237659777", hash_generated_method = "FA73C886BED1C418635F13184FE537E3")
     
 public void addFile(String tag, File file, int flags) throws IOException {
@@ -348,6 +344,7 @@ public void addFile(String tag, File file, int flags) throws IOException {
      * @param tag that would be used in {@link #addText} or {@link #addFile}
      * @return whether events with that tag would be accepted
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:27.431 -0500", hash_original_method = "0FE06F2CE6966672337D3755F0FF0CD0", hash_generated_method = "8B784C203CC3281453FD048DD2F4F71B")
     
 public boolean isTagEnabled(String tag) {

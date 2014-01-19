@@ -10,13 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.security.ProviderException;
 
-
-
-
-
-
 public class RandomBitsSupplier implements SHA1_Data {
-
 
     /**
      * The method is called by provider to determine if a device is available.
@@ -26,7 +20,6 @@ public class RandomBitsSupplier implements SHA1_Data {
 static boolean isServiceAvailable() {
         return serviceAvailable;
     }
-
 
     /**
      * On platforms with "random" devices available,
@@ -47,7 +40,6 @@ private static synchronized byte[] getUnixDeviceRandom(int numBytes) {
             for ( ; ; ) {
 
                 bytesRead = fis.read(bytes, offset, numBytes-total);
-
 
                 // the below case should not occur because /dev/random or /dev/urandom is a special file
                 // hence, if it is happened there is some internal problem
@@ -83,6 +75,7 @@ private static synchronized byte[] getUnixDeviceRandom(int numBytes) {
      * @throws
      *       InvalidArgumentException - if numBytes <= 0
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:03.433 -0500", hash_original_method = "AC6ABEE79D7DD42398E45F6C2A11844E", hash_generated_method = "AD19D944B8C9506DD38C71483134531F")
     
 public static byte[] getRandomBits(int numBytes) {

@@ -9,11 +9,6 @@ import java.text.ParseException;
 import javax.sip.header.ExtensionHeader;
 import javax.sip.header.SIPETagHeader;
 
-
-
-
-
-
 public class SIPETag extends SIPHeader implements SIPETagHeader, ExtensionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.767 -0500", hash_original_field = "702FA41C4777CFB6AF46CBC82DDEACC3", hash_generated_field = "75F9A7A2BBA768EF1EE411D5045B2982")
 
@@ -37,7 +32,6 @@ public SIPETag( String tag ) throws ParseException {
         this.setETag( tag );
     }
 
-
     /**
      * Encode into canonical form.
      * @return String
@@ -52,6 +46,7 @@ public String encodeBody() {
      * get the priority value.
      * @return String
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.784 -0500", hash_original_method = "3D6890113704CA3A689BE5D16088DA64", hash_generated_method = "2E0243F57B8C17B52D83C43235A21586")
     
 public String getETag() {
@@ -78,6 +73,7 @@ public void setETag(String etag) throws ParseException {
      *
      * @see javax.sip.header.ExtensionHeader#setValue(java.lang.String)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:01.790 -0500", hash_original_method = "7CA3A2804F10C6CA29833F9AB88CD018", hash_generated_method = "D4C128CCE03C008F8438DF743A00115A")
     
 public void setValue(String value) throws ParseException {

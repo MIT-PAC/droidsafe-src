@@ -8,12 +8,7 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.os.PatternMatcher;
 
-
-
-
-
 public class PathPermission extends PatternMatcher {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:05.340 -0400", hash_original_field = "BF769DDFB95FE3C86E626C9171120430", hash_generated_field = "B147657571B9F640821DBBF9A7AC44F7")
 
@@ -55,18 +50,21 @@ public PathPermission(Parcel src) {
         mWritePermission = src.readString();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.988 -0500", hash_original_method = "5C94FD95ADD3C0054247C1BF6F500E4F", hash_generated_method = "51517C7BA362FC46CE56AE764CAB5F71")
     
 public String getReadPermission() {
         return mReadPermission;
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.990 -0500", hash_original_method = "7A0A16A9FA1EB10AD9D087C65A3EFFB1", hash_generated_method = "CC80FDFE5D30AF8A14D1012901637902")
     
 public String getWritePermission() {
         return mWritePermission;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:44.992 -0500", hash_original_method = "A803A7F07F4B7A6BE15492168684C07E", hash_generated_method = "397179D0EDBE16AA1688D152E8124F9C")
     
 public void writeToParcel(Parcel dest, int flags) {

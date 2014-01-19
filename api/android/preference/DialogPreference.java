@@ -21,16 +21,11 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
 
-
-
-
-
 public abstract class DialogPreference extends Preference implements DialogInterface.OnClickListener, DialogInterface.OnDismissListener, PreferenceManager.OnActivityDestroyListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.503 -0500", hash_original_field = "8230423D0C18E260F04D32D3976828DB", hash_generated_field = "42060B98383429459FECD4D4CDE8C54F")
 
     private AlertDialog.Builder mBuilder;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.505 -0500", hash_original_field = "72A15FBD3873FBDA3D83751971F82EDC", hash_generated_field = "97697297384E83403579647D80580C36")
-
     
     private CharSequence mDialogTitle;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.507 -0500", hash_original_field = "9FA66D5F15EAEFF1978682271355387D", hash_generated_field = "613703FDAE1B8EC965EFFFE3F7B81D89")
@@ -55,6 +50,8 @@ public abstract class DialogPreference extends Preference implements DialogInter
 
     private int mWhichButtonClicked;
     
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.524 -0500", hash_original_method = "0DCDE098692C34941ED8905F239ED21D", hash_generated_method = "9FB519AAD49C293A40F4A896BC0DE3D2")
     
 public DialogPreference(Context context, AttributeSet attrs, int defStyle) {
@@ -78,6 +75,8 @@ public DialogPreference(Context context, AttributeSet attrs, int defStyle) {
         
     }
 
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.526 -0500", hash_original_method = "60E52A3616503A9CD82A6F28FDC1EC0D", hash_generated_method = "1AE72C2BF0442FB74BBDF9A012285B7C")
     
 public DialogPreference(Context context, AttributeSet attrs) {
@@ -89,6 +88,8 @@ public DialogPreference(Context context, AttributeSet attrs) {
      * 
      * @param dialogTitle The title.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.528 -0500", hash_original_method = "6BB18A84F76469D7C771F36F9E0BA9AF", hash_generated_method = "4499718073750295EF21C14D591A3166")
     
 public void setDialogTitle(CharSequence dialogTitle) {
@@ -99,6 +100,7 @@ public void setDialogTitle(CharSequence dialogTitle) {
      * @see #setDialogTitle(CharSequence)
      * @param dialogTitleResId The dialog title as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.530 -0500", hash_original_method = "8574D5B6827EC6804865DBFE054A884D", hash_generated_method = "4E8E79E215EC0FE5D90C433D70740216")
     
 public void setDialogTitle(int dialogTitleResId) {
@@ -109,6 +111,7 @@ public void setDialogTitle(int dialogTitleResId) {
      * Returns the title to be shown on subsequent dialogs.
      * @return The title.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.533 -0500", hash_original_method = "883D8EFBB9B8BAD9BC22F78B210BA75B", hash_generated_method = "789B2BB66A051D6AFD7B079CFAFACE50")
     
 public CharSequence getDialogTitle() {
@@ -125,6 +128,8 @@ public CharSequence getDialogTitle() {
      * 
      * @param dialogMessage The message.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.535 -0500", hash_original_method = "C3473A1ED58058061356CFFBC848D9C9", hash_generated_method = "866171AC4067BF1163FB7CAFF4397B93")
     
 public void setDialogMessage(CharSequence dialogMessage) {
@@ -135,6 +140,7 @@ public void setDialogMessage(CharSequence dialogMessage) {
      * @see #setDialogMessage(CharSequence)
      * @param dialogMessageResId The dialog message as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.537 -0500", hash_original_method = "15D4845E464A684E3158A3E73E2FE949", hash_generated_method = "BECB971DB7AFE351A8835449841A42ED")
     
 public void setDialogMessage(int dialogMessageResId) {
@@ -145,6 +151,9 @@ public void setDialogMessage(int dialogMessageResId) {
      * Returns the message to be shown on subsequent dialogs.
      * @return The message.
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.539 -0500", hash_original_method = "1C9FE66F99F199ED8416C6E4CD3A4269", hash_generated_method = "7C0298DBAC939CDE7DE164ADCA75E342")
     
 public CharSequence getDialogMessage() {
@@ -168,6 +177,7 @@ public void setDialogIcon(Drawable dialogIcon) {
      * 
      * @param dialogIconRes The icon, as a resource ID.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.543 -0500", hash_original_method = "224A37AA492D9AAF37391FD4564E4780", hash_generated_method = "0ED369DE1047C065B81306A31F78F35B")
     
 public void setDialogIcon(int dialogIconRes) {
@@ -178,6 +188,7 @@ public void setDialogIcon(int dialogIconRes) {
      * Returns the icon to be shown on subsequent dialogs.
      * @return The icon, as a {@link Drawable}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.545 -0500", hash_original_method = "03DB966CB140533ECF1D4BDC15FA7B76", hash_generated_method = "A831F8DF920DAF30CD778C9659DD617D")
     
 public Drawable getDialogIcon() {
@@ -200,6 +211,7 @@ public void setPositiveButtonText(CharSequence positiveButtonText) {
      * @see #setPositiveButtonText(CharSequence)
      * @param positiveButtonTextResId The positive button text as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.549 -0500", hash_original_method = "B063A8AED375BD92CBE4E8D46785B0F8", hash_generated_method = "D23122B4456B0CF504FA6CEEC481A26B")
     
 public void setPositiveButtonText(int positiveButtonTextResId) {
@@ -212,6 +224,7 @@ public void setPositiveButtonText(int positiveButtonTextResId) {
      * 
      * @return The text of the positive button.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.552 -0500", hash_original_method = "82AFC23D5F7BC4989211310BE2784E8E", hash_generated_method = "9570F08916148C6D1E6AA2B557AAA692")
     
 public CharSequence getPositiveButtonText() {
@@ -234,6 +247,7 @@ public void setNegativeButtonText(CharSequence negativeButtonText) {
      * @see #setNegativeButtonText(CharSequence)
      * @param negativeButtonTextResId The negative button text as a resource.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.556 -0500", hash_original_method = "16BFB517EAB7183180ECF26DADA01F37", hash_generated_method = "DDB6230286F645E3F8E1F4373484F02E")
     
 public void setNegativeButtonText(int negativeButtonTextResId) {
@@ -246,6 +260,7 @@ public void setNegativeButtonText(int negativeButtonTextResId) {
      * 
      * @return The text of the negative button.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.558 -0500", hash_original_method = "AAC926564B2F61079BFED9FEE51EB7E4", hash_generated_method = "E912C00F40FCBB5603CDEF2B9B7448FD")
     
 public CharSequence getNegativeButtonText() {
@@ -259,6 +274,8 @@ public CharSequence getNegativeButtonText() {
      * @param dialogLayoutResId The layout resource ID to be inflated.
      * @see #setDialogMessage(CharSequence)
      */
+    @DSComment("Perference UI, only change preference is spec")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.560 -0500", hash_original_method = "6047D08B9E02F6650B39EE0CB2356C47", hash_generated_method = "677AEA0A04801B6C9A935B9A0B115BF5")
     
 public void setDialogLayoutResource(int dialogLayoutResId) {
@@ -271,6 +288,7 @@ public void setDialogLayoutResource(int dialogLayoutResId) {
      * 
      * @return The layout resource.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.562 -0500", hash_original_method = "6161E3D2B6291A2C05BBD55D42C3AED0", hash_generated_method = "80628F2AAEC739610AA687F4E15FD287")
     
 public int getDialogLayoutResource() {
@@ -370,6 +388,9 @@ private void requestInputMethod(Dialog dialog) {
      * @return The content View for the dialog.
      * @see #setLayoutResource(int)
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.576 -0500", hash_original_method = "30915DC6B0C7508CE694D92B8515D200", hash_generated_method = "4BBF0EB04B922814511B8C574D43549F")
     
 protected View onCreateDialogView() {
@@ -388,6 +409,8 @@ protected View onCreateDialogView() {
      * 
      * @param view The content View of the dialog, if it is custom.
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.578 -0500", hash_original_method = "5B74FDBCA1C0676CAF2A41085AFE51F9", hash_generated_method = "F9F79A99BEC07821AA52E5285769563E")
     
 protected void onBindDialogView(View view) {
@@ -411,12 +434,16 @@ protected void onBindDialogView(View view) {
         }
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.581 -0500", hash_original_method = "C7A96C6C4A9A6F7800567BF8395F95D4", hash_generated_method = "379F22A6A28C69498EDA226AE55127CF")
     
 public void onClick(DialogInterface dialog, int which) {
         mWhichButtonClicked = which;
     }
     
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.584 -0500", hash_original_method = "4F73C1927BDEFF08475C0DA03B2F2CFE", hash_generated_method = "58617F782952416B4E8F5CA68C72810B")
     
 public void onDismiss(DialogInterface dialog) {
@@ -434,6 +461,8 @@ public void onDismiss(DialogInterface dialog) {
      * @param positiveResult Whether the positive button was clicked (true), or
      *            the negative button was clicked or the dialog was canceled (false).
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.588 -0500", hash_original_method = "C2C4DECBB4816C085EA1FCA9996FF5B6", hash_generated_method = "EC8CB229192FDACB0A06D72365E9B447")
     
 protected void onDialogClosed(boolean positiveResult) {
@@ -444,6 +473,7 @@ protected void onDialogClosed(boolean positiveResult) {
      * 
      * @return The dialog, or null if a dialog is not being shown.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.591 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
     
 public Dialog getDialog() {
@@ -464,6 +494,9 @@ public void onActivityDestroy() {
         mDialog.dismiss();
     }
 
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.596 -0500", hash_original_method = "690D860013A43623DC1BE14E616673FB", hash_generated_method = "A36474BF7EB3EF505FDD40FD5D98B014")
     
 @Override
@@ -479,6 +512,8 @@ public void onActivityDestroy() {
         return myState;
     }
 
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.599 -0500", hash_original_method = "C506903F809F21792322FC067531E660", hash_generated_method = "235316BF207EBD7B35336C9EA423C5B4")
     
 @Override
@@ -495,10 +530,8 @@ public void onActivityDestroy() {
             showDialog(myState.dialogBundle);
         }
     }
-
     
     private static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.207 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -537,6 +570,7 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:25.608 -0500", hash_original_method = "85259FDDC0FCC1496FED09E1FEFE0DC2", hash_generated_method = "380749B2211E5B849DBB04E0D2BF9D8D")
         
 @Override
@@ -556,8 +590,6 @@ public SavedState(Parcelable superState) {
             }
         
     }
-
-
     
 }
 

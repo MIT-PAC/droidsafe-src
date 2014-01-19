@@ -10,10 +10,6 @@ import java.util.Locale;
 import libcore.icu.ICU;
 import libcore.icu.RuleBasedCollatorICU;
 
-
-
-
-
 public abstract class Collator implements Comparator<Object>, Cloneable {
 
     /**
@@ -21,6 +17,7 @@ public abstract class Collator implements Comparator<Object>, Cloneable {
      * are available.
      * <p>Note that Android does not support user-supplied locale service providers.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.156 -0500", hash_original_method = "079D2BDCF2543C9EF39D2D400341A9D8", hash_generated_method = "746A813ED9B4684977432502F2AA3677")
     
 public static Locale[] getAvailableLocales() {
@@ -32,6 +29,7 @@ public static Locale[] getAvailableLocales() {
      * {@code Locale}.
      * See "<a href="../util/Locale.html#default_locale">Be wary of the default locale</a>".
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.163 -0500", hash_original_method = "36423D53959653C2984C84B905F35ABE", hash_generated_method = "5922C2B7903C130A111FFD3F547D8C2C")
     
 public static Collator getInstance() {
@@ -41,6 +39,7 @@ public static Collator getInstance() {
     /**
      * Returns a {@code Collator} instance which is appropriate for {@code locale}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.166 -0500", hash_original_method = "FDDB3D7E9466CD25FA15155141F4B994", hash_generated_method = "8A20382FC64DCF44DF83452E25D2BB49")
     
 public static Collator getInstance(Locale locale) {
@@ -72,7 +71,6 @@ public static Collator getInstance(Locale locale) {
     public static final int IDENTICAL = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.133 -0500", hash_original_field = "571EB1F8C774D603CEDE0C031FD66C11", hash_generated_field = "571EB1F8C774D603CEDE0C031FD66C11")
 
-
     RuleBasedCollatorICU icuColl;
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.137 -0500", hash_original_method = "18D47750B740CE28B17D63629E2E6276", hash_generated_method = "18D47750B740CE28B17D63629E2E6276")
@@ -97,6 +95,7 @@ protected Collator() {
      * @return a shallow copy of this collator.
      * @see java.lang.Cloneable
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.142 -0500", hash_original_method = "2284DB2FEC4C2AB3A601FDA70F532028", hash_generated_method = "21F87DF2591203FC0F1B2A488AAA8A15")
     
 @Override
@@ -124,6 +123,7 @@ protected Collator() {
      * @throws ClassCastException
      *         if {@code object1} or {@code object2} is not a {@code String}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.146 -0500", hash_original_method = "7C02E06D11E019F44D80294CC033745E", hash_generated_method = "F85FDF97A13D35C0B3110E84B80DDE74")
     
 public int compare(Object object1, Object object2) {
@@ -203,6 +203,7 @@ public abstract CollationKey getCollationKey(String string);
      *         {@code CANONICAL_DECOMPOSITION}. {@code FULL_DECOMPOSITION} is
      *         not supported.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.161 -0500", hash_original_method = "80384F871328DEB63A40E323709EFE86", hash_generated_method = "5EEB3791091FB7072EEC245609772E7A")
     
 public int getDecomposition() {
@@ -215,6 +216,7 @@ public int getDecomposition() {
      * @return the strength value, either PRIMARY, SECONDARY, TERTIARY or
      *         IDENTICAL.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.169 -0500", hash_original_method = "1088192DB9E30CE77C93098214CBF249", hash_generated_method = "24992D02A8378C893C0606A884EC9451")
     
 public int getStrength() {
@@ -237,6 +239,7 @@ public int getStrength() {
      *            if the provided decomposition rule is not valid. This includes
      *            {@code FULL_DECOMPOSITION}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.174 -0500", hash_original_method = "B72BC12BA62E721E78973B8AD1CD75B5", hash_generated_method = "F1C2AFE44575D612EDDFFF43B6540109")
     
 public void setDecomposition(int value) {
@@ -252,6 +255,7 @@ public void setDecomposition(int value) {
      * @throws IllegalArgumentException
      *            if the provided strength value is not valid.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:02.176 -0500", hash_original_method = "EE6B9836B69B72CAEC3F00255CD1C53E", hash_generated_method = "70C8E85EC36DDE7A493D9EF302947660")
     
 public void setStrength(int value) {

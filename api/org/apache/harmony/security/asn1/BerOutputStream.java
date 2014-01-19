@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class BerOutputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:50.353 -0500", hash_original_field = "B26EA4441AC976CE9D513DB2C8639526", hash_generated_field = "8DF314849D9BDCEAE78F4B8DFF0C1E45")
 
@@ -23,7 +19,6 @@ public class BerOutputStream {
 
     public Object content;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.816 -0400", hash_original_method = "91962B6D78B996175B89159DB336CF3A", hash_generated_method = "91962B6D78B996175B89159DB336CF3A")
     public BerOutputStream ()
     {
@@ -232,7 +227,6 @@ public void getSetLength(ASN1Set set) {
 public void getSetOfLength(ASN1SetOf setOf) {
         throw new RuntimeException("Is not implemented yet"); //FIXME
     }
-
     
 }
 

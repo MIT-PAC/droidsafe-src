@@ -7,14 +7,8 @@ import droidsafe.annotations.*;
 import org.apache.http.ProtocolVersion;
 import org.apache.http.StatusLine;
 
-
-
-
-
-
 public class BasicStatusLine implements StatusLine, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.462 -0500", hash_original_field = "5C2189D2BE02C09FF0D009DED07099CB", hash_generated_field = "B0C987478D9E25110C6180A23291A8F7")
-
 
     /** The protocol version. */
     private  ProtocolVersion protoVersion;
@@ -57,6 +51,7 @@ public BasicStatusLine(final ProtocolVersion version, int statusCode,
     /**
      * @return the Status-Code
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.472 -0500", hash_original_method = "95EA9BAD16482D8308F9206838B315E7", hash_generated_method = "5DD64D66E1754A99091F8C05EA6F76CC")
     
 public int getStatusCode() {
@@ -66,6 +61,7 @@ public int getStatusCode() {
     /**
      * @return the HTTP-Version
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.474 -0500", hash_original_method = "428750DB8A2FD05AED2F69E1D46A4B0B", hash_generated_method = "D606DE127964866CAD801CD33EF92F81")
     
 public ProtocolVersion getProtocolVersion() {
@@ -75,6 +71,7 @@ public ProtocolVersion getProtocolVersion() {
     /**
      * @return the Reason-Phrase
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:48.476 -0500", hash_original_method = "F68F7EAA9CC529FF206693909CBAA2FE", hash_generated_method = "6BA049AAFCC9C116961789DBBA2FFEE4")
     
 public String getReasonPhrase() {
@@ -94,7 +91,6 @@ public String toString() {
 public Object clone() throws CloneNotSupportedException {
         return super.clone();
     }
-
     
 }
 

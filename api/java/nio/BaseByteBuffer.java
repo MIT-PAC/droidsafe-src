@@ -5,7 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
 abstract class BaseByteBuffer extends ByteBuffer {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.080 -0500", hash_original_method = "ACB8CCD9F99597647E3D3BC8A43B28AD", hash_generated_method = "559DEE476801E22FC8883C8995691F8A")
@@ -56,6 +55,7 @@ protected BaseByteBuffer(int capacity, MemoryBlock block) {
         return ShortToByteBufferAdapter.asShortBuffer(this);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.098 -0500", hash_original_method = "306435823B7F4BDA0B79FE4AAC38458D", hash_generated_method = "0D8064FA180AF944DF7C552568B33D2A")
     
 @Override
@@ -63,6 +63,7 @@ protected BaseByteBuffer(int capacity, MemoryBlock block) {
         return (char) getShort();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.101 -0500", hash_original_method = "DB5974BF42C2F1DAF0453A45ABD3A97B", hash_generated_method = "7FB28C5ADDAC33ED7A773252D79D32D1")
     
 @Override
@@ -70,6 +71,7 @@ protected BaseByteBuffer(int capacity, MemoryBlock block) {
         return (char) getShort(index);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.103 -0500", hash_original_method = "11E610FEEDDA6595692D69FA56D6E79E", hash_generated_method = "6E078F5B9ED8EEEF18F5993BDFD5E6D0")
     
 @Override
@@ -77,13 +79,13 @@ protected BaseByteBuffer(int capacity, MemoryBlock block) {
         return putShort((short) value);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:56.106 -0500", hash_original_method = "7A936B8362BD945536C67F821DC17E9C", hash_generated_method = "CF1CD0E1E4441B12731DCD15DED68162")
     
 @Override
     public ByteBuffer putChar(int index, char value) {
         return putShort(index, (short) value);
     }
-
     
 }
 

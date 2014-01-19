@@ -13,15 +13,10 @@ import android.os.ServiceManager;
 import android.os.SystemClock;
 import android.util.DisplayMetrics;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class Display {
-
     
-    @DSModeled(DSC.SAFE)
     static int getDisplayCount() {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086194105 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_2086194105;
@@ -38,9 +33,7 @@ static IWindowManager getWindowManager() {
             return sWindowManager;
         }
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClassInit() {
     }
 
@@ -64,7 +57,6 @@ public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHo
     public static final int DEFAULT_DISPLAY = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.339 -0500", hash_original_field = "5DD5AFB956F82E56442C6720CD888418", hash_generated_field = "3688F7B3534C6CD8F91C89CB5E40FE68")
 
-
     private static final Object sStaticInit = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.342 -0500", hash_original_field = "FF0D215A6350FF708FCE993AD427F9D1", hash_generated_field = "815F7815DE01033DD7A51FFFBC42763D")
 
@@ -73,7 +65,6 @@ public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHo
 
     private static IWindowManager sWindowManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.317 -0500", hash_original_field = "5EAC126C193FC41ACB184C1D10F2C250", hash_generated_field = "01AEB6BE7A1CFB44C6B781D7301EC317")
-
 
     private  CompatibilityInfoHolder mCompatibilityInfo;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.319 -0500", hash_original_field = "32484B09E23EA969F843AD1B3AF0B883", hash_generated_field = "C3D33931672C9997D02DE67B6B8FC170")
@@ -92,7 +83,6 @@ public static Display createCompatibleDisplay(int displayId, CompatibilityInfoHo
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.329 -0500", hash_original_field = "BC1908C6E1D0054138584C2D01126D3C", hash_generated_field = "BC1908C6E1D0054138584C2D01126D3C")
  float   mDpiY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.332 -0500", hash_original_field = "C2BAC675E69529ADCFDBC8F23A87249F", hash_generated_field = "538425559D2BF0F635F9288868FC8D78")
-
     
     private final Point mTmpPoint = new Point();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.334 -0500", hash_original_field = "1D8990DD0AE47C2EF8F82812E1AB1108", hash_generated_field = "3C9E4AC56655D3050A4B4F36D2BBE1DC")
@@ -128,6 +118,7 @@ Display(int display, CompatibilityInfoHolder compatInfo) {
      * Returns the index of this display.  This is currently undefined; do
      * not use.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.246 -0500", hash_original_method = "107F25776C4AB2DB96852EDD25D31975", hash_generated_method = "1C8EF4CE2343D615351A4D0090FBFC7B")
     
 public int getDisplayId() {
@@ -154,6 +145,8 @@ public int getDisplayId() {
      *
      * @param outSize A {@link Point} object to receive the size information.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.252 -0500", hash_original_method = "17F24EABE37BDCE44DDE55CD705BD7B9", hash_generated_method = "BC8EF3BA048941B41AD13CC2332CDB1B")
     
 public void getSize(Point outSize) {
@@ -216,6 +209,7 @@ public void getRectSize(Rect outSize) {
      * mostly for wallpapers.
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.260 -0500", hash_original_method = "404C4EF6FA3AD3B9975B754C597D6C0E", hash_generated_method = "A34A4080F73EE8B2B7760D3F3BCC074C")
     
 public int getMaximumSizeDimension() {
@@ -231,6 +225,9 @@ public int getMaximumSizeDimension() {
     /**
      * @deprecated Use {@link #getSize(Point)} instead.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.263 -0500", hash_original_method = "2F7FD849240377F4AD58DDE704C1CFAA", hash_generated_method = "BA73A9C9C8FCBA8528451F8212BABE9D")
     
 @Deprecated
@@ -248,6 +245,9 @@ public int getMaximumSizeDimension() {
     /**
      * @deprecated Use {@link #getSize(Point)} instead.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.265 -0500", hash_original_method = "60FBCC92DE8F9EC729264DB15D46C4E8", hash_generated_method = "5643E07DE3A1DF429C96D173AA292F28")
     
 @Deprecated
@@ -315,7 +315,6 @@ public int getRawWidth() {
     	return getTaintInt();
     }
 
-
     /**
      * Gets the raw height of the display, in pixels.
      * <p>
@@ -337,7 +336,6 @@ public int getRawHeight() {
     	//Formerly a native method
     	return getTaintInt();
     }
-
     
     /**
      * Returns the rotation of the screen from its "natural" orientation.
@@ -356,6 +354,9 @@ public int getRawHeight() {
      * 90 degrees clockwise and thus the returned value here will be
      * {@link Surface#ROTATION_90 Surface.ROTATION_90}.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.283 -0500", hash_original_method = "0627945D4A6FEA5F8EF1880CC4DB952B", hash_generated_method = "9F82DC778CFEFA13C888B6C1F98A1C59")
     
 public int getRotation() {
@@ -366,6 +367,9 @@ public int getRotation() {
      * @deprecated use {@link #getRotation}
      * @return orientation of this display.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.287 -0500", hash_original_method = "6E125A4EC20477CEC647612C37C0ECFE", hash_generated_method = "579A0203D6236D81664B553F26B2711E")
     
     @Deprecated
@@ -374,11 +378,13 @@ public int getRotation() {
     	return getTaintInt();
     }
 
-
     /**
      * Return the native pixel format of the display.  The returned value
      * may be one of the constants int {@link android.graphics.PixelFormat}.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.289 -0500", hash_original_method = "441029F9FCB9AB0438A81D4AE48234F0", hash_generated_method = "113D6BD2144B8B471B058272F811664F")
     
 public int getPixelFormat() {
@@ -388,6 +394,9 @@ public int getPixelFormat() {
     /**
      * Return the refresh rate of this display in frames per second.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.292 -0500", hash_original_method = "79009E426290AE6AA1C61D7B07738692", hash_generated_method = "915A0C2921F8E445C8BBB81C6178EFF8")
     
 public float getRefreshRate() {
@@ -408,6 +417,8 @@ public float getRefreshRate() {
      *
      * @param outMetrics A {@link DisplayMetrics} object to receive the metrics.
      */
+    @DSComment("only for display view")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:15.294 -0500", hash_original_method = "81980A722EF93A85BC60465488AFFEA3", hash_generated_method = "127EAF7824B13820ADCF3A73223C6D4F")
     
 public void getMetrics(DisplayMetrics outMetrics) {

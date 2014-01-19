@@ -12,33 +12,22 @@ import java.util.TreeMap;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class BackupHelperDispatcher {
-
     
-    @DSModeled(DSC.SAFE)
     private static int readHeader_native(Header h, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int skipChunk_native(FileDescriptor fd, int bytesToSkip) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int allocateHeader_native(Header h, FileDescriptor fd) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int writeHeader_native(Header h, FileDescriptor fd, int pos) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -47,7 +36,6 @@ public class BackupHelperDispatcher {
     private static final String TAG = "BackupHelperDispatcher";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.668 -0500", hash_original_field = "087B9083817AA3054FE76BD13CD55CBF", hash_generated_field = "087B9083817AA3054FE76BD13CD55CBF")
 
-
     TreeMap<String,BackupHelper> mHelpers = new TreeMap<String,BackupHelper>();
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.672 -0500", hash_original_method = "85B87DA3FD92CDAA8B7FFA5F20C0A756", hash_generated_method = "02FD004804F6626B90557A7727E0C650")
@@ -55,6 +43,7 @@ public class BackupHelperDispatcher {
 public BackupHelperDispatcher() {
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.674 -0500", hash_original_method = "A8E840254EBF3392B798809BE9F9086F", hash_generated_method = "79730BB33F60087E0AEB7F734D673C2E")
     
 public void addHelper(String keyPrefix, BackupHelper helper) {
@@ -124,7 +113,6 @@ private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
             throw new IOException("writeHeader_native failed (error " + err + ")");
         }
     }
-
     
     private static class Header {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.663 -0500", hash_original_field = "8D4654446C9DD3E766BE07B4267F3234", hash_generated_field = "8D4654446C9DD3E766BE07B4267F3234")
@@ -134,16 +122,15 @@ private void doOneBackup(ParcelFileDescriptor oldState, BackupDataOutput data,
 
         String keyPrefix;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:57.244 -0400", hash_original_method = "7DC9F4B0B6F0B6B866C998FD2825EB34", hash_generated_method = "7DC9F4B0B6F0B6B866C998FD2825EB34")
         public Header ()
         {
             //Synthesized constructor
         }
 
-
     }
 
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.683 -0500", hash_original_method = "5D2E23956580E2A3306D4050F8218E29", hash_generated_method = "C8CBD5B804A52AAF69F30F351ED21240")
     
 public void performRestore(BackupDataInput input, int appVersionCode,

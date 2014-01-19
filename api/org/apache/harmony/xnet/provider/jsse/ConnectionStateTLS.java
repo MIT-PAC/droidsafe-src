@@ -14,9 +14,6 @@ import javax.crypto.spec.IvParameterSpec;
 import javax.crypto.spec.SecretKeySpec;
 import javax.net.ssl.SSLProtocolException;
 
-
-
-
 public class ConnectionStateTLS extends ConnectionState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.173 -0500", hash_original_field = "4F425BFD35DE911FA82CD0B2BD6D4B47", hash_generated_field = "78310D04C76BEF7DDAAA4993644FDA12")
 
@@ -221,6 +218,7 @@ protected ConnectionStateTLS(SSLSessionImpl session) {
      * data structure for specified data of specified type.
      * @throws AlertException if alert was occurred.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.197 -0500", hash_original_method = "B9B8901A6530A5AA902AF1AE1DCFF588", hash_generated_method = "F8972AB866C91994CC0AFCC2BDFED45D")
     
 @Override
@@ -285,6 +283,7 @@ protected ConnectionStateTLS(SSLSessionImpl session) {
      * the Generic[Stream|Block]Cipher structure.
      * @throws AlertException if alert was occurred.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:11.201 -0500", hash_original_method = "A0319C4335A825139157822F68CBECCE", hash_generated_method = "ADE86886EFEDCE64F50DB21D25A6794B")
     
 @Override

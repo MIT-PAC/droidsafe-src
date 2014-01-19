@@ -12,12 +12,7 @@ import java.util.List;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class WifiP2pGroup implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:22.700 -0400", hash_original_field = "2D4DFD124864C66F2F83797BE326D45F", hash_generated_field = "32E89BB9B9BA18A350DF4B63B27D02B5")
 
@@ -61,7 +56,6 @@ public WifiP2pGroup[] newArray(int size) {
 
     private String mPassphrase;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.743 -0500", hash_original_field = "184B1D198467B8AE4B7F05E082D0D094", hash_generated_field = "5F89B7D413C8E14947C0E11B080C408D")
-
 
     private String mInterface;
 
@@ -157,6 +151,7 @@ public void setNetworkName(String networkName) {
      * Get the network name (SSID) of the group. Legacy Wi-Fi clients will discover
      * the p2p group using the network name.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.752 -0500", hash_original_method = "32FF89F2A0087E1C62BF10B34EF6D932", hash_generated_method = "DC64C8129674BFBBF94D2E6D1D3FC601")
     
 public String getNetworkName() {
@@ -185,6 +180,7 @@ public void setOwner(WifiP2pDevice device) {
     }
 
     /** Get the details of the group owner as a {@link WifiP2pDevice} object */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.761 -0500", hash_original_method = "64A8053D0F0646F5E4AC8BED59B588ED", hash_generated_method = "5357633E58BC1D89A5BD0F82B8A9A91C")
     
 public WifiP2pDevice getOwner() {
@@ -230,6 +226,7 @@ public boolean isClientListEmpty() {
     }
 
     /** Get the list of clients currently part of the p2p group */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.774 -0500", hash_original_method = "31A1E7A8626C889DB764B143F0123BF3", hash_generated_method = "9B9852E3DA294D7B9EA8E681DC06519D")
     
 public Collection<WifiP2pDevice> getClientList() {
@@ -248,6 +245,7 @@ public void setPassphrase(String passphrase) {
      * at the group owner. Legacy Wi-Fi clients will need this passphrase alongside
      * network name obtained from {@link #getNetworkName()} to join the group
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.778 -0500", hash_original_method = "5EB5F9BABC374AD0DE2453D35DFCC36C", hash_generated_method = "082E499D0A06290331D523961E75BF62")
     
 public String getPassphrase() {
@@ -262,6 +260,7 @@ public void setInterface(String intf) {
     }
 
     /** Get the interface name on which the group is created */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.782 -0500", hash_original_method = "3F43528BD183AE40A353AE75903024B0", hash_generated_method = "F000FE7FD11E62E37DE291D24E00E4C3")
     
 public String getInterface() {
@@ -290,6 +289,7 @@ public int describeContents() {
     }
 
     /** Implement the Parcelable interface */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:00.792 -0500", hash_original_method = "1E901056DDD7FF66FB9A75FE788910FD", hash_generated_method = "DDFCE07975622A7FED462B730D2753CC")
     
 public void writeToParcel(Parcel dest, int flags) {

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class TimerTask implements Runnable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.655 -0500", hash_original_field = "DA2A3FDBCC0B9B91674644DF55F373AF", hash_generated_field = "444D55F7E87A46DB2BC47514D8909813")
 
@@ -21,10 +17,8 @@ public abstract class TimerTask implements Runnable {
     long when;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.662 -0500", hash_original_field = "21C6B258F031958D40A6DAC5279E0EE8", hash_generated_field = "21C6B258F031958D40A6DAC5279E0EE8")
 
-
     long period;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.664 -0500", hash_original_field = "28408F90702CEE9413B76824113C0001", hash_generated_field = "28408F90702CEE9413B76824113C0001")
-
 
     boolean fixedRate;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.666 -0500", hash_original_field = "9BE5C059A85499BE0D59A5BA2926A280", hash_generated_field = "2A084075C1B0C69D6880285CCF039DBD")
@@ -34,6 +28,8 @@ public abstract class TimerTask implements Runnable {
     /**
      * Creates a new {@code TimerTask}.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.676 -0500", hash_original_method = "41AFEAE31E9AFC51442EB32F1B803F09", hash_generated_method = "878D1D0189BFD255ECF89AA7A788F34D")
     
 protected TimerTask() {
@@ -42,6 +38,7 @@ protected TimerTask() {
     /*
      * Method called from the Timer for synchronized getting of when field.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.669 -0500", hash_original_method = "61DD03075FF1927377D7CEC2AE97ED1A", hash_generated_method = "61DD03075FF1927377D7CEC2AE97ED1A")
     
 long getWhen() {
@@ -100,6 +97,7 @@ public boolean cancel() {
      *
      * @return the most recent execution time.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.681 -0500", hash_original_method = "BAEF9B11043548CD5E25A5F175F23300", hash_generated_method = "41489AE038F8D803A78678372C87C147")
     
 public long scheduledExecutionTime() {
@@ -115,7 +113,6 @@ public long scheduledExecutionTime() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:03.683 -0500", hash_original_method = "2C6A443C83148E86AAD705D9EE784F75", hash_generated_method = "5BBE1BCB74D1FAFBB58FE7F038D48F66")
     
 public abstract void run();
-
     
 }
 

@@ -15,11 +15,6 @@ import java.security.UnrecoverableKeyException;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public class KeyManagerFactory {
 
     /**
@@ -30,6 +25,7 @@ public class KeyManagerFactory {
      *
      * @return the default algorithm name.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.560 -0500", hash_original_method = "229F778B6859CA40FB26009475BD7F6B", hash_generated_method = "63A460C369E77C59BCBD879DCA470902")
     
 public static final String getDefaultAlgorithm() {
@@ -165,6 +161,7 @@ protected KeyManagerFactory(KeyManagerFactorySpi factorySpi, Provider provider,
      *
      * @return the name of the key management algorithm.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.580 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -176,6 +173,7 @@ public final String getAlgorithm() {
      *
      * @return the provider for this {@code KeyManagerFactory} instance.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.582 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -225,6 +223,7 @@ public final void init(ManagerFactoryParameters spec)
      *
      * @return a list of key managers.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.590 -0500", hash_original_method = "B9A1EAEE9A7433E4D131EF6C1483617B", hash_generated_method = "62540848042C144645818B31EA640557")
     
 public final KeyManager[] getKeyManagers() {

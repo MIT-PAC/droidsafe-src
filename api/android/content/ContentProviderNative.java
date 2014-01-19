@@ -24,10 +24,6 @@ import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
 import android.os.RemoteException;
 
-
-
-
-
 abstract public class ContentProviderNative extends Binder implements IContentProvider {
 
     /**
@@ -69,6 +65,7 @@ public ContentProviderNative()
     
 public abstract String getProviderName();
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.819 -0500", hash_original_method = "0A95D8923EFA335F625BF0735B390C42", hash_generated_method = "AFED6A10C7E4440D70A159C82A5CF166")
     
 @Override
@@ -302,6 +299,7 @@ public abstract String getProviderName();
         return super.onTransact(code, data, reply, flags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.822 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
     
 public IBinder asBinder()
@@ -312,7 +310,6 @@ public IBinder asBinder()
 
 final class ContentProviderProxy implements IContentProvider {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.861 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
-
 
     private IBinder mRemote;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.825 -0500", hash_original_method = "EBB42AB6A7E6F2E0E7C721E0ED401456", hash_generated_method = "2F7724BC4C6B37414550090DB5FADB68")
@@ -388,6 +385,7 @@ public Cursor query(Uri url, String[] projection, String selection,
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.833 -0500", hash_original_method = "53511528A81FA80D8FEA51649EBDE31C", hash_generated_method = "6B2DA9A83FE3405C85B6102340C33B28")
     
 public String getType(Uri url) throws RemoteException
@@ -410,6 +408,7 @@ public String getType(Uri url) throws RemoteException
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.836 -0500", hash_original_method = "357B46C024ADAE1E71A2CDEC64307714", hash_generated_method = "3B83266DA31C149887F8F13E7C2A007D")
     
 public Uri insert(Uri url, ContentValues values) throws RemoteException
@@ -433,6 +432,7 @@ public Uri insert(Uri url, ContentValues values) throws RemoteException
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.838 -0500", hash_original_method = "C992EC82CACE6E59D7619DBD9F314166", hash_generated_method = "86C371AE6D699DA73AD63E269B18E29F")
     
 public int bulkInsert(Uri url, ContentValues[] values) throws RemoteException {
@@ -455,6 +455,7 @@ public int bulkInsert(Uri url, ContentValues[] values) throws RemoteException {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.841 -0500", hash_original_method = "4CFA8AC0349C29482D059E42163688C7", hash_generated_method = "8DC4EEB9F8D52D3A30254780D02CB68F")
     
 public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> operations)
@@ -479,6 +480,7 @@ public ContentProviderResult[] applyBatch(ArrayList<ContentProviderOperation> op
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.843 -0500", hash_original_method = "171153BCF0A5412C89BF2E4EC609D033", hash_generated_method = "5C8070709BB28A5D99312FA9469146D5")
     
 public int delete(Uri url, String selection, String[] selectionArgs)
@@ -503,6 +505,7 @@ public int delete(Uri url, String selection, String[] selectionArgs)
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.846 -0500", hash_original_method = "7CDD92EB66B20F5C2AB905C31B15C465", hash_generated_method = "C8A1CC82D6DECDE778D7FB3F3E5FE80F")
     
 public int update(Uri url, ContentValues values, String selection,
@@ -528,6 +531,7 @@ public int update(Uri url, ContentValues values, String selection,
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.849 -0500", hash_original_method = "D396B7AA54F286AF30F0B787DF60D2FE", hash_generated_method = "DD9B26C743169F091BEDDD46CF13DB73")
     
 public ParcelFileDescriptor openFile(Uri url, String mode)
@@ -552,6 +556,7 @@ public ParcelFileDescriptor openFile(Uri url, String mode)
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.851 -0500", hash_original_method = "FE6B9D37BFC5622E35633D8C501B06FF", hash_generated_method = "E25E8E3933EE3308F7EDA48B470CC9C0")
     
 public AssetFileDescriptor openAssetFile(Uri url, String mode)
@@ -577,6 +582,7 @@ public AssetFileDescriptor openAssetFile(Uri url, String mode)
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.854 -0500", hash_original_method = "EF6BE11399C3C767419E53090230088A", hash_generated_method = "7145024D3C9510E43D3267FE81745750")
     
 public Bundle call(String method, String request, Bundle args)
@@ -601,6 +607,7 @@ public Bundle call(String method, String request, Bundle args)
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.856 -0500", hash_original_method = "395B2F944828CBA26EF4C9D4B93255E5", hash_generated_method = "6315E62F42A8D61198E1B399829F2B9B")
     
 public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteException
@@ -624,6 +631,7 @@ public String[] getStreamTypes(Uri url, String mimeTypeFilter) throws RemoteExce
         }
     }
 
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:36.859 -0500", hash_original_method = "9C6FC6B0610E79E726A369C065C9DA4C", hash_generated_method = "8898A77261B8F508B124E87D1F5EB3EE")
     
 public AssetFileDescriptor openTypedAssetFile(Uri url, String mimeType, Bundle opts)
@@ -649,7 +657,6 @@ public AssetFileDescriptor openTypedAssetFile(Uri url, String mimeType, Bundle o
             reply.recycle();
         }
     }
-
     
 }
 

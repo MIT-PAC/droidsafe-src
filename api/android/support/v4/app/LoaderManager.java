@@ -14,10 +14,6 @@ import android.support.v4.content.Loader;
 import android.support.v4.util.DebugUtils;
 import android.support.v4.util.SparseArrayCompat;
 
-
-
-
-
 public abstract class LoaderManager {
 
     /**
@@ -36,14 +32,10 @@ public static void enableDebugLogging(boolean enabled) {
     {
         //Synthesized constructor
     }
-
-
-    @DSModeled(DSC.SAFE)
+    
     public abstract <D> Loader<D> initLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
-
     
-    @DSModeled(DSC.SAFE)
     public abstract <D> Loader<D> restartLoader(int id, Bundle args,
             LoaderManager.LoaderCallbacks<D> callback);
 
@@ -56,9 +48,7 @@ public static void enableDebugLogging(boolean enabled) {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.011 -0500", hash_original_method = "305FA1A128F5C6D6A2790EF0EF873EFF", hash_generated_method = "F3E476E4573CA6AD6CCCCC8E642C0234")
     
 public abstract void destroyLoader(int id);
-
     
-    @DSModeled(DSC.SAFE)
     public abstract <D> Loader<D> getLoader(int id);
 
     /**
@@ -80,15 +70,12 @@ public abstract void dump(String prefix, FileDescriptor fd, PrintWriter writer, 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.019 -0500", hash_original_method = "59280299B88BC81400789A85A7BD24F4", hash_generated_method = "7382F36471B894939D64A76D9D5B0A22")
     
 public boolean hasRunningLoaders() { return false; }
-
     
     public interface LoaderCallbacks<D> {
         
         public Loader<D> onCreateLoader(int id, Bundle args);
-
         
         public void onLoadFinished(Loader<D> loader, D data);
-
         
         public void onLoaderReset(Loader<D> loader);
     }
@@ -115,10 +102,8 @@ class LoaderManagerImpl extends LoaderManager {
     final SparseArrayCompat<LoaderInfo> mInactiveLoaders = new SparseArrayCompat<LoaderInfo>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.033 -0500", hash_original_field = "7ECAB8F1DFD4D8C88111D51780B29562", hash_generated_field = "7ECAB8F1DFD4D8C88111D51780B29562")
 
-
      String mWho;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.036 -0500", hash_original_field = "DC6970CAF75184DB6DB1AAC52EA720C0", hash_generated_field = "DC6970CAF75184DB6DB1AAC52EA720C0")
-
 
     FragmentActivity mActivity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.038 -0500", hash_original_field = "8C92DC16A5D2F989C0A1D4375841DEF1", hash_generated_field = "8C92DC16A5D2F989C0A1D4375841DEF1")
@@ -131,7 +116,6 @@ class LoaderManagerImpl extends LoaderManager {
 
     boolean mRetainingStarted;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.045 -0500", hash_original_field = "70C1252034BC616F659C7E09E95F15EB", hash_generated_field = "70C1252034BC616F659C7E09E95F15EB")
-
     
     boolean mCreatingLoader;
     
@@ -184,7 +168,6 @@ void installLoader(LoaderInfo info) {
             info.start();
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.622 -0400", hash_original_method = "E04CC49F77F654C9D0B54FC39C94F2D8", hash_generated_method = "64016D29CF0C6B141E3BF1EE81760D88")
     @SuppressWarnings("unchecked")
@@ -233,7 +216,6 @@ Loader<D> var75A6A3900136EAA1B4E4C3D43F1802B1_113499934 =         (Loader<D>)inf
         //}
         //return (Loader<D>)info.mLoader;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.623 -0400", hash_original_method = "54BE8D79606278ABB814838D7A2BEC9C", hash_generated_method = "2CA272CFB086DF70C51212D303D48384")
     @SuppressWarnings("unchecked")
@@ -327,7 +309,6 @@ public void destroyLoader(int id) {
             mActivity.mFragments.startPendingDeferredFragments();
         }
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.625 -0400", hash_original_method = "01DF8472A2697DF2BC7C6D580583CD7C", hash_generated_method = "1E067CCEDD4E109AE10A13764B5BE719")
     @SuppressWarnings("unchecked")
@@ -483,7 +464,6 @@ void doDestroy() {
         sb.append("}}");
         return sb.toString();
     }
-
     
     final class LoaderInfo implements Loader.OnLoadCompleteListener<Object> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.047 -0500", hash_original_field = "9F66E723E60E4F10157FDA7C23C67293", hash_generated_field = "9F66E723E60E4F10157FDA7C23C67293")
@@ -526,7 +506,6 @@ void doDestroy() {
 
         boolean mListenerRegistered;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:33.075 -0500", hash_original_field = "48D26E3132EBDD98F32F802FBADD8F16", hash_generated_field = "48D26E3132EBDD98F32F802FBADD8F16")
-
 
         LoaderInfo mPendingLoader;
         
@@ -799,7 +778,6 @@ public void dump(String prefix, FileDescriptor fd, PrintWriter writer, String[] 
                 mPendingLoader.dump(prefix + "  ", fd, writer, args);
             }
         }
-
         
     }
 

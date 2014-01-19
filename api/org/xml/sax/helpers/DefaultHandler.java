@@ -16,18 +16,15 @@ import org.xml.sax.Locator;
 import org.xml.sax.SAXException;
 import org.xml.sax.SAXParseException;
 
-
-
-
-
 public class DefaultHandler implements EntityResolver, DTDHandler, ContentHandler, ErrorHandler {
     
+    @DSComment("No op default handler")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:44.326 -0400", hash_original_method = "C916F3EC761E0C154A1A9AFCDD294D40", hash_generated_method = "C916F3EC761E0C154A1A9AFCDD294D40")
     public DefaultHandler ()
     {
         //Synthesized constructor
     }
-
 
     ////////////////////////////////////////////////////////////////////
     // Default implementation of the EntityResolver interface.
@@ -61,13 +58,10 @@ public InputSource resolveEntity (String publicId, String systemId)
     {
     return null;
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Default implementation of DTDHandler interface.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Receive notification of a notation declaration.
@@ -91,7 +85,6 @@ public void notationDecl (String name, String publicId, String systemId)
     {
     // no op
     }
-
 
     /**
      * Receive notification of an unparsed entity declaration.
@@ -117,13 +110,10 @@ public void unparsedEntityDecl (String name, String publicId,
     {
     // no op
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Default implementation of ContentHandler interface.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Receive a Locator object for document events.
@@ -143,7 +133,6 @@ public void setDocumentLocator (Locator locator)
     // no op
     }
 
-
     /**
      * Receive notification of the beginning of the document.
      *
@@ -156,6 +145,8 @@ public void setDocumentLocator (Locator locator)
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#startDocument
      */
+    @DSComment("No op default handler")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.142 -0500", hash_original_method = "FAA725B72A2ADC391C781CAB49B849AD", hash_generated_method = "3955D568D23D91849FC2AFF57016EC23")
     
 public void startDocument ()
@@ -163,7 +154,6 @@ public void startDocument ()
     {
     // no op
     }
-
 
     /**
      * Receive notification of the end of the document.
@@ -177,6 +167,8 @@ public void startDocument ()
      *            wrapping another exception.
      * @see org.xml.sax.ContentHandler#endDocument
      */
+    @DSComment("No op default handler")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.144 -0500", hash_original_method = "08AD4CBC251CA96B103DE58FB6AA2921", hash_generated_method = "2E393C8D7D82B97D34D7D61966B266D5")
     
 public void endDocument ()
@@ -184,7 +176,6 @@ public void endDocument ()
     {
     // no op
     }
-
 
     /**
      * Receive notification of the start of a Namespace mapping.
@@ -207,7 +198,6 @@ public void startPrefixMapping (String prefix, String uri)
     // no op
     }
 
-
     /**
      * Receive notification of the end of a Namespace mapping.
      *
@@ -227,7 +217,6 @@ public void endPrefixMapping (String prefix)
     {
     // no op
     }
-
 
     /**
      * Receive notification of the start of an element.
@@ -261,7 +250,6 @@ public void startElement (String uri, String localName,
     // no op
     }
 
-
     /**
      * Receive notification of the end of an element.
      *
@@ -290,7 +278,6 @@ public void endElement (String uri, String localName, String qName)
     // no op
     }
 
-
     /**
      * Receive notification of character data inside an element.
      *
@@ -314,7 +301,6 @@ public void characters (char ch[], int start, int length)
     {
     // no op
     }
-
 
     /**
      * Receive notification of ignorable whitespace in element content.
@@ -340,7 +326,6 @@ public void ignorableWhitespace (char ch[], int start, int length)
     // no op
     }
 
-
     /**
      * Receive notification of a processing instruction.
      *
@@ -364,7 +349,6 @@ public void processingInstruction (String target, String data)
     // no op
     }
 
-
     /**
      * Receive notification of a skipped entity.
      *
@@ -385,13 +369,10 @@ public void skippedEntity (String name)
     {
     // no op
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Default implementation of the ErrorHandler interface.
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Receive notification of a parser warning.
@@ -415,7 +396,6 @@ public void warning (SAXParseException e)
     // no op
     }
 
-
     /**
      * Receive notification of a recoverable parser error.
      *
@@ -437,7 +417,6 @@ public void error (SAXParseException e)
     {
     // no op
     }
-
 
     /**
      * Report a fatal XML parsing error.
@@ -463,7 +442,6 @@ public void fatalError (SAXParseException e)
     {
     throw e;
     }
-
     
 }
 

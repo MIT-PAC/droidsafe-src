@@ -6,38 +6,26 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Map.Entry;
 
-
-
-
-
-
 public class NameValue extends GenericObject implements Entry<String,String> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.393 -0500", hash_original_field = "CAC38838BA3887D6B16433765E3B8569", hash_generated_field = "01B78AA1575EDF3A89DB226DD6F71B77")
-
 
     private static final long serialVersionUID = -1857729012596437950L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.396 -0500", hash_original_field = "E8ECD1D17AE0A3DC80CCB39F53B1EE67", hash_generated_field = "03D21DED07B953DE189DA542ACCA4795")
 
-
     protected boolean isQuotedString;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.398 -0500", hash_original_field = "F1443A6ABB9C123E20A8F3EE0D2B0167", hash_generated_field = "2074D0C8EACF17C06B998CAD345872CC")
-
 
     protected  boolean isFlagParameter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.401 -0500", hash_original_field = "9B5B4672FF037607BB8CCE0F5B6469A8", hash_generated_field = "A55DB8D30D61AD070DC11E077713D1B8")
 
-
     private String separator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.404 -0500", hash_original_field = "C468095960E8072B81063B29315D2A91", hash_generated_field = "2D87AB9C19BCCC29C070C92F351ED60D")
-
 
     private String quotes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.407 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
 
-
     private String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.409 -0500", hash_original_field = "01495BEB834F5098BB0B06183674C819", hash_generated_field = "D3245881F91753AD0C508E1E9B72D31F")
-
 
     private Object value;
 
@@ -112,12 +100,14 @@ public boolean isValueQuoted() {
         return isQuotedString;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.427 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
         return name;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.430 -0500", hash_original_method = "1D746EB97F79FD095C35B4AB5FADFB51", hash_generated_method = "B600D4AE03E87C6917A0B4A190B9AC7D")
     
 public Object getValueAsObject() {

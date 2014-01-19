@@ -8,17 +8,11 @@ import java.text.ParseException;
 
 import javax.sip.header.InReplyToHeader;
 
-
-
-
-
-
 public class InReplyTo extends SIPHeader implements InReplyToHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.019 -0500", hash_original_field = "AFF195C241CC5D9225281404651EAF7E", hash_generated_field = "62113CBAA9CAEBCC0941329C8D032899")
 
     private static final long serialVersionUID = 1682602905733508890L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.022 -0500", hash_original_field = "7C5A227E6B12204579E17E8F0B16DA14", hash_generated_field = "F2A7BDC27E688B3BD5C6A8CB27C2DD56")
-
 
     protected CallIdentifier callId;
 
@@ -48,6 +42,7 @@ public InReplyTo(CallIdentifier cid) {
      * @throws ParseException which signals that an error has been reached
      * unexpectedly while parsing the callId value.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.032 -0500", hash_original_method = "AFE760D92C6B99B9817A49FA1C34A82C", hash_generated_method = "9D8FE62A016C73753A52899DB31A0D65")
     
 public void setCallId(String callId) throws ParseException {
@@ -64,6 +59,7 @@ public void setCallId(String callId) throws ParseException {
      *
      * @return the String value of the Call-Id of this InReplyToHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.035 -0500", hash_original_method = "EA32F9E304DDFDAAFD9F10122A085C03", hash_generated_method = "A952B60519D5B869F2A62588038F424D")
     
 public String getCallId() {

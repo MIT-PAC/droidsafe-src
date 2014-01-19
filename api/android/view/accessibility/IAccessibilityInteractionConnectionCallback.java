@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.421 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.421 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -68,7 +69,8 @@ return DESCRIPTOR;
      * @param infos The result {@link AccessibilityNodeInfo}.
      * @param interactionId The interaction id to match the result with the request.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.424 -0500", hash_original_method = "93F6A64A2549612DC53BB1F2BE28FAF1", hash_generated_method = "2A90BD62D839D8F264F6A380942EE6E2")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.424 -0500", hash_original_method = "93F6A64A2549612DC53BB1F2BE28FAF1", hash_generated_method = "2A90BD62D839D8F264F6A380942EE6E2")
             
 public void setFindAccessibilityNodeInfoResult(android.view.accessibility.AccessibilityNodeInfo info, int interactionId) throws android.os.RemoteException
 {
@@ -95,7 +97,8 @@ _data.recycle();
      * @param infos The result {@link AccessibilityNodeInfo}s.
      * @param interactionId The interaction id to match the result with the request.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.427 -0500", hash_original_method = "B271FBE34B7884538110ED9E7BA40205", hash_generated_method = "0AE01A2B38FA14064E17F7E4D7609339")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.427 -0500", hash_original_method = "B271FBE34B7884538110ED9E7BA40205", hash_generated_method = "0AE01A2B38FA14064E17F7E4D7609339")
             
 public void setFindAccessibilityNodeInfosResult(java.util.List<android.view.accessibility.AccessibilityNodeInfo> infos, int interactionId) throws android.os.RemoteException
 {
@@ -116,7 +119,8 @@ _data.recycle();
      * @param Whether the action was performed.
      * @param interactionId The interaction id to match the result with the request.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.430 -0500", hash_original_method = "B361DB54FD06FE2AC0B3B6ED370A5CFC", hash_generated_method = "DD4DCF877B5EBF16DA1133726AD2C30E")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.430 -0500", hash_original_method = "B361DB54FD06FE2AC0B3B6ED370A5CFC", hash_generated_method = "DD4DCF877B5EBF16DA1133726AD2C30E")
             
 public void setPerformAccessibilityActionResult(boolean succeeded, int interactionId) throws android.os.RemoteException
 {
@@ -139,7 +143,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.406 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:53.406 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

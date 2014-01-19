@@ -9,10 +9,6 @@ import android.content.ClipDescription;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class DragEvent implements Parcelable {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.776 -0500", hash_original_method = "569150DCDE5FF4A4307956D9929DFF84", hash_generated_method = "F6882FAE21622A725E57F29349956DDE")
@@ -57,7 +53,6 @@ public static DragEvent obtain(DragEvent source) {
 
     private static final boolean TRACK_RECYCLED_LOCATION = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.745 -0500", hash_original_field = "F593DBD4ACC5DC484D76C0656C0FB27F", hash_generated_field = "632CD138CDBCADE9A63F9B23105E1648")
-
 
     private static final int MAX_RECYCLED = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.748 -0500", hash_original_field = "383C33CA63B8C16F39C24669AA7A3D08", hash_generated_field = "4D2E3DEDF37103D77BF3BB46692742C8")
@@ -116,7 +111,6 @@ public DragEvent[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.725 -0500", hash_original_field = "87F72266090A426F9B25050359B17309", hash_generated_field = "87F72266090A426F9B25050359B17309")
 
-
     int mAction;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:41.608 -0400", hash_original_field = "E47D03BC59EE2C8B3B45870BE85294FB", hash_generated_field = "8174733DF249E326666A04F4BE58CCC8")
 
@@ -137,7 +131,6 @@ public DragEvent[] newArray(int size) {
 
     boolean mDragResult;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.737 -0500", hash_original_field = "B7DB7C2351C1C66A5154246A77C78368", hash_generated_field = "71F519A9ECC78DE41D5510BA422E0931")
-
 
     private DragEvent mNext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.739 -0500", hash_original_field = "7CE140D407E955711B40F90DD17F57EA", hash_generated_field = "4E4D5EFD76E218484C8A2F86B097FF08")
@@ -178,6 +171,7 @@ private void init(int action, float x, float y, ClipDescription description, Cli
      *  <li>{@link #ACTION_DRAG_ENDED}</li>
      * </ul>
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.783 -0500", hash_original_method = "96C17C1FB3A34A2A0AFECF0EC83B48C2", hash_generated_method = "3FD23346F621B19DABA981ADACA3C8BB")
     
 public int getAction() {
@@ -189,6 +183,7 @@ public int getAction() {
      * {@link #ACTION_DRAG_LOCATION} or {@link #ACTION_DROP}.
      * @return The current drag point's Y coordinate
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.786 -0500", hash_original_method = "331663EFF3E2EE62701FDAFEDB013F35", hash_generated_method = "6E92D0D3651A85CBFB76060D665CCF84")
     
 public float getX() {
@@ -201,6 +196,7 @@ public float getX() {
      * {@link #ACTION_DROP}, or {@link #ACTION_DRAG_EXITED}.
      * @return The current drag point's Y coordinate
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.788 -0500", hash_original_method = "ABC228174E672AD41349CE6D52652626", hash_generated_method = "DF84925D9DB2351D8A1C69C6893F85C9")
     
 public float getY() {
@@ -214,6 +210,7 @@ public float getY() {
      * This method only returns valid data if the event action is {@link #ACTION_DROP}.
      * @return The ClipData sent to the system by startDrag().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.790 -0500", hash_original_method = "933F7F307168902744E3973968DC1B74", hash_generated_method = "06C0D9C1185621E3FE0DD17871D02B3B")
     
 public ClipData getClipData() {
@@ -230,6 +227,7 @@ public ClipData getClipData() {
      * This method returns valid data for all event actions.
      * @return The ClipDescription that was part of the ClipData sent to the system by startDrag().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.793 -0500", hash_original_method = "314798A5FB9D41875D673F25B7EDBA77", hash_generated_method = "B7BCB37D3E0A9F6D191656EC8A72E30C")
     
 public ClipDescription getClipDescription() {
@@ -246,6 +244,7 @@ public ClipDescription getClipDescription() {
      * </p>
      * @return The local state object sent to the system by startDrag().
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.796 -0500", hash_original_method = "37C7BCFB2F6F270ABDBD12EAE79514EC", hash_generated_method = "2C5442DD0A47910756BBEFB3CA8E58E7")
     
 public Object getLocalState() {
@@ -275,6 +274,7 @@ public Object getLocalState() {
      * {@link #ACTION_DRAG_ENDED}, or if the listener returned {@code false} in response to
      * {@link #ACTION_DROP}, then {@code false} is returned.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.798 -0500", hash_original_method = "137903529BA54F55A1080182FA7064FC", hash_generated_method = "97F7442FD18FEB387A847718DE981C8E")
     
 public boolean getResult() {
@@ -349,6 +349,7 @@ public int describeContents() {
      * @param dest A {@link android.os.Parcel} object in which to put the DragEvent object.
      * @param flags Flags to store in the Parcel.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:14.808 -0500", hash_original_method = "76A8906A7EAF6555F7630460CE48F340", hash_generated_method = "1EC937095A5650F0EC457B2A4B4DEA3C")
     
 public void writeToParcel(Parcel dest, int flags) {

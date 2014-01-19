@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public abstract class CollationKey implements Comparable<CollationKey> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.369 -0500", hash_original_field = "113A199BE68A5F67DC2655549852AA2D", hash_generated_field = "2D2DC69F3BF28B00B15BD37DFC141996")
 
@@ -36,6 +32,7 @@ public abstract int compareTo(CollationKey value);
      *
      * @return the source string of this collation key.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.377 -0500", hash_original_method = "CAA51A8D77816B9C71E897924204286F", hash_generated_method = "9B985589C949425CCB62BF63707CC1D4")
     
 public String getSourceString() {
@@ -50,7 +47,6 @@ public String getSourceString() {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:07.379 -0500", hash_original_method = "31E18643298D4EE9D64BE0AC906151D9", hash_generated_method = "3D52100227B2457DAC4556D4C4615F2D")
     
 public abstract byte[] toByteArray();
-
     
 }
 

@@ -9,9 +9,6 @@ import java.lang.reflect.Modifier;
 
 import dalvik.system.VMStack;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Unsafe {
@@ -20,6 +17,7 @@ public final class Unsafe {
      * Gets the unique instance of this class. This is only allowed in
      * very limited situations.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:53.644 -0500", hash_original_method = "74628BAB8E81DC2A00A81F4FA9A646FA", hash_generated_method = "30A6F9D65DD593CFCEB395F60D4C296F")
     
 public static Unsafe getUnsafe() {
@@ -34,23 +32,17 @@ public static Unsafe getUnsafe() {
 
         return THE_ONE;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static long objectFieldOffset0(Field field) {
                 long var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090 = DSUtils.UNKNOWN_LONG;
         return var0F5264038205EDFB1AC05FBB0E8C5E94_1351189090;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int arrayBaseOffset0(Class clazz) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1809733368;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static int arrayIndexScale0(Class clazz) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_714713006;
@@ -66,9 +58,8 @@ public static Unsafe getUnsafe() {
     
 private Unsafe() {}
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:03:23.181 -0400", hash_original_method = "826DF3AF2C82C95E7B53BC94C24540AA", hash_generated_method = "37509F27C578466D3CFFA3A1C5C8873A")
-	@DSModeled(DSC.SAFE)
+	
     public long objectFieldOffset(Field field) {
         addTaint(field.getTaint());
         if(Modifier.isStatic(field.getModifiers()))        
@@ -148,7 +139,6 @@ public int arrayIndexScale(Class clazz) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Performs a compare-and-set operation on a <code>long</code>
      * field within the given object.
@@ -172,7 +162,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(newValue);
     	return getTaintBoolean();
     }
-
 
     /**
      * Performs a compare-and-set operation on an <code>Object</code>
@@ -198,7 +187,6 @@ public int arrayIndexScale(Class clazz) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Gets an <code>int</code> field from the given object,
      * using <code>volatile</code> semantics.
@@ -215,7 +203,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(offset);
     	return getTaintInt();
     }
-
 
     /**
      * Stores an <code>int</code> field into the given object,
@@ -234,7 +221,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(newValue);
     }
 
-
     /**
      * Gets a <code>long</code> field from the given object,
      * using <code>volatile</code> semantics.
@@ -252,7 +238,6 @@ public int arrayIndexScale(Class clazz) {
     	return getTaintLong();
     }
 
-
     /**
      * Stores a <code>long</code> field into the given object,
      * using <code>volatile</code> semantics.
@@ -269,10 +254,7 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(offset);
     	addTaint(newValue);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.175 -0400", hash_original_method = "7F65AB78F7829D174777BA98D685A0A2", hash_generated_method = "8389F48CA8228ADA469FDA17F26377FB")
     public Object getObjectVolatile(Object obj, long offset) {
     	Object ret = new Object();
@@ -299,7 +281,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(newValue.getTaint());
     }
 
-
     /**
      * Gets an <code>int</code> field from the given object.
      *
@@ -315,7 +296,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(offset);
     	return getTaintInt();
     }
-
 
     /**
      * Stores an <code>int</code> field into the given object.
@@ -333,7 +313,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(newValue);
     }
 
-
     /**
      * Lazy set an int field.
      */
@@ -345,7 +324,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(offset);
     	addTaint(newValue);
     }
-
 
     /**
      * Gets a <code>long</code> field from the given object.
@@ -363,7 +341,6 @@ public int arrayIndexScale(Class clazz) {
     	return getTaintLong();
     }
 
-
     /**
      * Stores a <code>long</code> field into the given object.
      *
@@ -380,7 +357,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(newValue);
     }
 
-
     /**
      * Lazy set a long field.
      */
@@ -392,10 +368,7 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(offset);
     	addTaint(newValue);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:49.178 -0400", hash_original_method = "F008619F8920F7BD7FA02EADD68A4977", hash_generated_method = "67D30353ADFDF0D1EFF7C8039039B89C")
     public Object getObject(Object obj, long offset) {
     	Object ret = new Object();
@@ -420,7 +393,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(newValue.getTaint());
     }
 
-
     /**
      * Lazy set an object field.
      */
@@ -433,7 +405,6 @@ public int arrayIndexScale(Class clazz) {
     	addTaint(offset);
     	addTaint(newValue.getTaint());
     }
-
 
     /**
      * Parks the calling thread for the specified amount of time,

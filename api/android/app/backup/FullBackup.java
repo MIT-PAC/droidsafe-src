@@ -14,15 +14,10 @@ import libcore.io.Libcore;
 import android.os.ParcelFileDescriptor;
 import android.util.Log;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class FullBackup {
-
-
-    @DSModeled(DSC.SAFE)
+    
     static public int backupToTar(String packageName, String domain,
             String linkdomain, String rootpath, String path, BackupDataOutput output) {
         return DSUtils.UNKNOWN_INT;
@@ -54,6 +49,7 @@ public class FullBackup {
      *    to a location that is writeable by the caller, prefereably using an absolute path.
      * @throws IOException
      */
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.889 -0500", hash_original_method = "F9DFB08D12B24563CC8422B4E7125730", hash_generated_method = "961888451F126DE9730D91AC31697FB8")
     
 static public void restoreFile(ParcelFileDescriptor data,
@@ -126,7 +122,6 @@ static public void restoreFile(ParcelFileDescriptor data,
     static final String TAG = "FullBackup";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.852 -0500", hash_original_field = "E981F008616A41D7B878F9DA4901677A", hash_generated_field = "D9775026128515092C93F31EACE9EB8A")
 
-
     public static final String APK_TREE_TOKEN = "a";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.855 -0500", hash_original_field = "2A9E375BE89669169722BE08618E63CB", hash_generated_field = "90B28BE334297A0B3D32120A9059DEF3")
 
@@ -151,13 +146,11 @@ static public void restoreFile(ParcelFileDescriptor data,
     public static final String SHARED_STORAGE_TOKEN = "shared";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.871 -0500", hash_original_field = "9C21CE9E7A9A477D6B1975B75A5C889D", hash_generated_field = "7DCEEB367EE72AAAC7F240EC43FA960A")
 
-
     public static final String APPS_PREFIX = "apps/";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.874 -0500", hash_original_field = "C2C3EC43B5EFA052B973C553DE7E6945", hash_generated_field = "2192D0DEC5AD60E570C532207FF50390")
 
     public static final String SHARED_PREFIX = SHARED_STORAGE_TOKEN + "/";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.876 -0500", hash_original_field = "C1B1D83D86932E8CF5C70391F3C5801E", hash_generated_field = "0C934D4C26F9E2BF6DA50A8DB1E9BDFB")
-
 
     public static final String FULL_BACKUP_INTENT_ACTION = "fullback";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:46.879 -0500", hash_original_field = "E327DF17FB89028FE18E002BED29CDE7", hash_generated_field = "444C653AB98B9CF687C1840438401C92")

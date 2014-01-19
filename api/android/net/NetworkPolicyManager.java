@@ -19,11 +19,6 @@ import android.text.format.Time;
 
 import com.google.android.collect.Sets;
 
-
-
-
-
-
 public class NetworkPolicyManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.930 -0500", hash_original_method = "77147AB7B145CCCACC82E7FF3DD90629", hash_generated_method = "44F2D97812042A9A8E4208CD21B7BEEA")
@@ -40,6 +35,7 @@ public static NetworkPolicyManager getSystemService(Context context) {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.947 -0500", hash_original_method = "CBFD2FDBFDFB4EFA099581BCEB3F98CA", hash_generated_method = "DBBC21F33A5E90AF42C16BFD9569FBE9")
     
 public static long computeLastCycleBoundary(long currentTime, NetworkPolicy policy) {
@@ -68,6 +64,7 @@ public static long computeLastCycleBoundary(long currentTime, NetworkPolicy poli
     }
 
     /** {@hide} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.949 -0500", hash_original_method = "58D6599320C3CC8F75660ECB99865F1C", hash_generated_method = "D16F8CF340EEB741DE09FCD341171787")
     
 public static long computeNextCycleBoundary(long currentTime, NetworkPolicy policy) {
@@ -190,13 +187,11 @@ public static void dumpRules(PrintWriter fout, int rules) {
     public static final int RULE_REJECT_METERED = 0x1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.921 -0500", hash_original_field = "5776EC97A2E83F4CD8DD81625B380713", hash_generated_field = "F1EAF378337BFA0CCC51503439EDE9BF")
 
-
     private static final boolean ALLOW_PLATFORM_APP_POLICY = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.924 -0500", hash_original_field = "97DF16BECF25B69E02C72123DAFA1CF4", hash_generated_field = "7320E001215B3C746B3AE684FAAEC5AC")
 
     public static final String EXTRA_NETWORK_TEMPLATE = "android.net.NETWORK_TEMPLATE";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.926 -0500", hash_original_field = "90B1346F33E413533394FD996E7514F3", hash_generated_field = "99D41184207358A72CF865D27CF56B99")
-
 
     private INetworkPolicyManager mService;
 
@@ -208,13 +203,13 @@ public NetworkPolicyManager(INetworkPolicyManager service) {
         }
         mService = service;
     }
-
-    @DSModeled(DSC.BAN)
+    
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.493 -0400", hash_original_method = "BE20EED3085F3645396D71EF01AFD2C0", hash_generated_method = "D38E2F3C6BBCF7701EB83058FEF1E0DC")
     public  NetworkPolicyManager() {
     }
 
     /** {@hide} */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.933 -0500", hash_original_method = "6C9718C45778137F76C2603939413095", hash_generated_method = "19F3AF4D19ABDB345C0834A328796127")
     
 public void setNetworkPolicies(NetworkPolicy[] policies) {
@@ -225,6 +220,7 @@ public void setNetworkPolicies(NetworkPolicy[] policies) {
     }
 
     /** {@hide} */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.935 -0500", hash_original_method = "025521C078EE07825554E8E10F94F333", hash_generated_method = "A44435FCB6185608A5F722FE4A1B05ED")
     
 public NetworkPolicy[] getNetworkPolicies() {
@@ -241,6 +237,7 @@ public NetworkPolicy[] getNetworkPolicies() {
      * @param policy {@link #POLICY_NONE} or combination of flags like
      *            {@link #POLICY_REJECT_METERED_BACKGROUND}.
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.937 -0500", hash_original_method = "A06EA8E312C1B7FA5C4AC7FF7B993ED4", hash_generated_method = "3F0CBF10B537FF703B9F9E71A619BCFB")
     
 public void setUidPolicy(int uid, int policy) {
@@ -250,6 +247,7 @@ public void setUidPolicy(int uid, int policy) {
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.939 -0500", hash_original_method = "7AF3F24A0466D6FB5C5D518CC41F56AD", hash_generated_method = "F6E15D18BE3FD28ACAC69E0BB3285AFE")
     
 public int getUidPolicy(int uid) {

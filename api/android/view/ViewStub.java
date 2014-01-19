@@ -13,11 +13,6 @@ import android.util.AttributeSet;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public final class ViewStub extends View {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.926 -0500", hash_original_field = "F027C8324C9EA544A6DEF6F0954ED652", hash_generated_field = "BFA3E80188244F67D086E6C1264D1920")
 
@@ -27,10 +22,8 @@ public final class ViewStub extends View {
     private int mInflatedId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.930 -0500", hash_original_field = "F19710BC255E7367DD68F653C2AC6F4E", hash_generated_field = "925A912F414D892ECDB1D6C3C53B2B5D")
 
-
     private WeakReference<View> mInflatedViewRef;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.932 -0500", hash_original_field = "7E90D4FB095EBE65153FCE42EE9ED5C8", hash_generated_field = "C8623B9EF6EC871725D2916E9875638C")
-
 
     private OnInflateListener mInflateListener;
 
@@ -96,6 +89,7 @@ private void initialize(Context context) {
      * @see #setInflatedId(int)
      * @attr ref android.R.styleable#ViewStub_inflatedId
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.948 -0500", hash_original_method = "DD261735D727F86389B5178B589BDC0E", hash_generated_method = "1A746281F6C14FA67AE838E4653C504D")
     
 public int getInflatedId() {
@@ -130,6 +124,7 @@ public void setInflatedId(int inflatedId) {
      * @see #inflate()
      * @attr ref android.R.styleable#ViewStub_layout
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.953 -0500", hash_original_method = "027E5859DCA96FAAAAB58CE710A8870F", hash_generated_method = "472A3EA0671274E1B92DB17D195FE7E9")
     
 public int getLayoutResource() {
@@ -182,6 +177,7 @@ public void setLayoutResource(int layoutResource) {
      *
      * @see #inflate() 
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.965 -0500", hash_original_method = "8020455B6FCF7D6831D6E164290A9878", hash_generated_method = "D8DF3125A2A570AD87322216145036E2")
     
 @Override
@@ -208,6 +204,8 @@ public void setLayoutResource(int layoutResource) {
      * @return The inflated layout resource.
      *
      */
+    @DSComment("Normal UI operations")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:55.968 -0500", hash_original_method = "FA523E28924F274233340119C3A40101", hash_generated_method = "BD9E8BCBEC1864F20E904F304653A7C6")
     
 public View inflate() {
@@ -262,7 +260,6 @@ public View inflate() {
 public void setOnInflateListener(OnInflateListener inflateListener) {
         mInflateListener = inflateListener;
     }
-
     
     public static interface OnInflateListener {
         

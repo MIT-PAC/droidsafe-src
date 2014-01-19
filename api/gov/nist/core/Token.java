@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class Token {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.640 -0500", hash_original_field = "23C3E0283D4D235B339E995101067645", hash_generated_field = "C77B34F76A2CC5C947F29741403A7131")
 
@@ -22,11 +18,13 @@ public class Token {
     {
         //Synthesized constructor
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.646 -0500", hash_original_method = "F8E0993DCB6F03EA51553585BFE853D1", hash_generated_method = "533C8633E655E7579C5DD232FE33D589")
     
 public String getTokenValue() {
         return this.tokenValue;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.648 -0500", hash_original_method = "2E47E29049C2BF1025243EAE8896F2F1", hash_generated_method = "20EEA98441E03C0E3CC7D4750EB89469")
     
 public int getTokenType() {
@@ -37,7 +35,6 @@ public int getTokenType() {
 public String toString() {
         return "tokenValue = " + tokenValue + "/tokenType = " + tokenType;
     }
-
     
 }
 

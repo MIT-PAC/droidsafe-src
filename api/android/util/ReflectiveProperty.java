@@ -8,14 +8,8 @@ import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 
-
-
-
-
-
 class ReflectiveProperty<T, V> extends Property<T, V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.292 -0500", hash_original_field = "5F7B571BB99FA76816322B7587147DD0", hash_generated_field = "DCD45C1BFB57F61F4FD82A59CD9038F7")
-
 
     private static final String PREFIX_GET = "get";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.294 -0500", hash_original_field = "05E81A61077B470225BE76F3EB3480A6", hash_generated_field = "BEF88240E4DBFFAA180B73F2B3351672")
@@ -117,6 +111,7 @@ private boolean typesMatch(Class<V> valueType, Class getterType) {
         return true;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.311 -0500", hash_original_method = "9BC237A59BE2F86E825267381E38AEC8", hash_generated_method = "47F4B9026211DAFB20F708621F748541")
     
 @Override
@@ -140,6 +135,7 @@ private boolean typesMatch(Class<V> valueType, Class getterType) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:24.314 -0500", hash_original_method = "4070872B48CA952F40E8D9AD673A26AA", hash_generated_method = "CFEA08AC56501D6F20CDB2B045F6A76A")
     
 @Override

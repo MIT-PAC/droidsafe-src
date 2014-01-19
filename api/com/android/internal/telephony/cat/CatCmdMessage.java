@@ -7,13 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class CatCmdMessage implements Parcelable {
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.713 -0400", hash_original_field = "813EE9C3EA954A2ED8EA1B649296F1E1", hash_generated_field = "8249415CCA348F6779E9FD531D50B60E")
 
@@ -151,6 +145,7 @@ public AppInterface.CommandType getCmdType() {
         return AppInterface.CommandType.fromInt(mCmdDet.typeOfCommand);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.401 -0500", hash_original_method = "B2B8DF93D41CD214F77DE42BB625BB9F", hash_generated_method = "DCDBC063D5B5258CB417C095AA16E240")
     
 public Menu getMenu() {
@@ -175,12 +170,12 @@ public BrowserSettings getBrowserSettings() {
         return mBrowserSettings;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.410 -0500", hash_original_method = "7E3240C4BE07A52ADC96DFEAA4674C6F", hash_generated_method = "532037AD900501825AFB75B03F43FB35")
     
 public ToneSettings getToneSettings() {
         return mToneSettings;
     }
-
     
     public class BrowserSettings {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.365 -0500", hash_original_field = "1B433832A8D8C8722BF3FE2FD98C7841", hash_generated_field = "51C843584AF7FEEEC1BC36266893D9E3")
@@ -196,10 +191,7 @@ public ToneSettings getToneSettings() {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public class CallSettings {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:06.372 -0500", hash_original_field = "B2111E59C12A8525442758C5427A208C", hash_generated_field = "6B0A9871C084B1A19AD04EFDCF9D8F63")
@@ -214,7 +206,6 @@ public ToneSettings getToneSettings() {
         {
             //Synthesized constructor
         }
-
 
     }
 

@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import android.telephony.PhoneNumberUtils;
 
-
-
-
-
 public class CallForwardInfo {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:41.989 -0500", hash_original_field = "72D62D1933050B7AC2D9DFC43782C64E", hash_generated_field = "E9243AA6ACDC688110619DDCF59ACF0B")
 
@@ -36,6 +32,7 @@ public class CallForwardInfo {
         //Synthesized constructor
     } /* for CF no reply only */
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:42.005 -0500", hash_original_method = "EA7E7BF9BED1BC105930545F926483CA", hash_generated_method = "8A06A73622A06D35BA171B322B1FA264")
     
 public String toString() {
@@ -46,7 +43,6 @@ public String toString() {
             + timeSeconds + " seconds";
 
     }
-
     
 }
 

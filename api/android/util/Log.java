@@ -10,10 +10,6 @@ import java.net.UnknownHostException;
 
 import com.android.internal.os.RuntimeInit;
 
-
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public final class Log {
@@ -24,6 +20,9 @@ public final class Log {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.085 -0500", hash_original_method = "3D050B3246ABFA92814436071545CB13", hash_generated_method = "A1B3C1896BBBEB497B7178CE2AB2F833")
     
 public static int v(String tag, String msg) {
@@ -37,6 +36,9 @@ public static int v(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.088 -0500", hash_original_method = "6371CCA1AACEE15A82F0B64483CB973F", hash_generated_method = "A2C9957C0FB31C6DFA21C0116F594BB3")
     
 public static int v(String tag, String msg, Throwable tr) {
@@ -49,6 +51,9 @@ public static int v(String tag, String msg, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.091 -0500", hash_original_method = "AFD39BBB2869311A4545E6AF5E18494B", hash_generated_method = "0C5D5AC5212DF40B5E19C863CBCB39D4")
     
 public static int d(String tag, String msg) {
@@ -62,6 +67,9 @@ public static int d(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.093 -0500", hash_original_method = "4492C71DA07A18BB6C5A18B63CA7FEE4", hash_generated_method = "1A551339626D67B9608E3578A9C1C58D")
     
 public static int d(String tag, String msg, Throwable tr) {
@@ -74,6 +82,9 @@ public static int d(String tag, String msg, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.095 -0500", hash_original_method = "90D3F6175B896C0304A3EF3A595CA2C2", hash_generated_method = "738EAED8F13FB872BEC6302B30228D6D")
     
 public static int i(String tag, String msg) {
@@ -87,6 +98,9 @@ public static int i(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.097 -0500", hash_original_method = "D380393FD3C099B2671AFD42E854EB56", hash_generated_method = "5C503D9C65E03A67736F030C07E440ED")
     
 public static int i(String tag, String msg, Throwable tr) {
@@ -99,6 +113,9 @@ public static int i(String tag, String msg, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.100 -0500", hash_original_method = "BB8A0F0F374EC19DB78F36BE9CB1080F", hash_generated_method = "7631A992905D8C63EED62786A2C0603F")
     
 public static int w(String tag, String msg) {
@@ -112,14 +129,17 @@ public static int w(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.102 -0500", hash_original_method = "56EF6624BA8DC40BA895131478A46CEE", hash_generated_method = "B9EE69E711B13C584EF8EBF2A38ED5F5")
     
 public static int w(String tag, String msg, Throwable tr) {
         return println_native(LOG_ID_MAIN, WARN, tag, msg + '\n' + getStackTraceString(tr));
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
     public static boolean isLoggable(String tag, int level) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
@@ -130,6 +150,9 @@ public static int w(String tag, String msg, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param tr An exception to log
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.108 -0500", hash_original_method = "FC76D95DCCFE80C9D53EB09BCEAF8146", hash_generated_method = "3E09D34AC66462E0DA241E5B3631A611")
     
 public static int w(String tag, Throwable tr) {
@@ -142,6 +165,9 @@ public static int w(String tag, Throwable tr) {
      *        the class or activity where the log call occurs.
      * @param msg The message you would like logged.
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.110 -0500", hash_original_method = "CCAD4AAF1B926E5A09DC6FEC20772811", hash_generated_method = "CDD9A8498CAE7BCCD00E7EBAC1BC7B11")
     
 public static int e(String tag, String msg) {
@@ -155,6 +181,9 @@ public static int e(String tag, String msg) {
      * @param msg The message you would like logged.
      * @param tr An exception to log
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.112 -0500", hash_original_method = "0E0F39B47315805DA235DB6910E951BD", hash_generated_method = "E9C2958DD82B5B86E3A87143494051BA")
     
 public static int e(String tag, String msg, Throwable tr) {
@@ -182,6 +211,8 @@ public static int wtf(String tag, String msg) {
      * @param tag Used to identify the source of a log message.
      * @param tr An exception to log.
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.117 -0500", hash_original_method = "3EB47F02741364EE89C039A374330D1C", hash_generated_method = "B8CF05BFB9704480A0617E7DE2815CF3")
     
 public static int wtf(String tag, Throwable tr) {
@@ -195,6 +226,7 @@ public static int wtf(String tag, Throwable tr) {
      * @param msg The message you would like logged.
      * @param tr An exception to log.  May be null.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.119 -0500", hash_original_method = "181C11BE6032133F9C5410C68DB86F4F", hash_generated_method = "9436003A1F0DDF141A169F89BD484EDA")
     
 public static int wtf(String tag, String msg, Throwable tr) {
@@ -226,6 +258,9 @@ public static TerribleFailureHandler setWtfHandler(TerribleFailureHandler handle
      * Handy function to get a loggable stack trace from a Throwable
      * @param tr An exception to log
      */
+    @DSComment("Android logging subsystem")
+    @DSSpec(DSCat.LOGGING)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.125 -0500", hash_original_method = "7719F1A14DFF815E0B66B3EB7CF1C00E", hash_generated_method = "16AFC01DBED706B77B6A4AB015FDC5BD")
     
 public static String getStackTraceString(Throwable tr) {
@@ -257,14 +292,15 @@ public static String getStackTraceString(Throwable tr) {
      * @param msg The message you would like logged.
      * @return The number of bytes written.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.127 -0500", hash_original_method = "5FBBD39B6D46109F46B6F9786F21DE2B", hash_generated_method = "BA41CA312351027D578A271A03AF5AC6")
     
 public static int println(int priority, String tag, String msg) {
         return println_native(LOG_ID_MAIN, priority, tag, msg);
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int println_native(int bufID,
             int priority, String tag, String msg) {
         return DSUtils.UNKNOWN_INT;
@@ -272,17 +308,13 @@ public static int println(int priority, String tag, String msg) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.057 -0500", hash_original_field = "F56CF3B1687883ED2E2E2F2BEB496CD9", hash_generated_field = "183ECC1630CBD890D38268E5859FD6F6")
 
     public static final int VERBOSE = 2;
-
     
     private static class TerribleFailure extends Exception {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.072 -0500", hash_original_method = "0F8223B52B3C6FF6727F78AC7E36D4B8", hash_generated_method = "0F8223B52B3C6FF6727F78AC7E36D4B8")
         
 TerribleFailure(String msg, Throwable cause) { super(msg, cause); }
-
         
     }
-
-
     
     public interface TerribleFailureHandler {
         void onTerribleFailure(String tag, TerribleFailure what);
@@ -304,8 +336,8 @@ TerribleFailure(String msg, Throwable cause) { super(msg, cause); }
     public static final int ASSERT = 7;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.354 -0400", hash_original_field = "1A1695BDB6E58ED53BC49925AFADC824", hash_generated_field = "EB9AD5727A6FE358590060E6265767B7")
 
-    private static TerribleFailureHandler sWtfHandler = new TerribleFailureHandler() {  
-    	@DSModeled(DSC.BAN)
+    private static TerribleFailureHandler sWtfHandler = new TerribleFailureHandler() {
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:52.354 -0400", hash_original_method = "90BA23F8182E406DC4D5C312FC444694", hash_generated_method = "4C8A9452FEB3740EEFD06B4E1BFB8698")
         public void onTerribleFailure(String tag, TerribleFailure what) {
             
@@ -313,9 +345,7 @@ TerribleFailure(String msg, Throwable cause) { super(msg, cause); }
             addTaint(tag.getTaint());
             addTaint(what.getTaint());
             
-            
         }
-
         
 };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:20.129 -0500", hash_original_field = "83BD1ED71CEFBE3B95929AA2F3198EB2", hash_generated_field = "7E86192626B20953FA1B583614101236")

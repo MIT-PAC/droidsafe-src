@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import org.xml.sax.Locator;
 
-
-
-
-
-
 public class LocatorImpl implements Locator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.746 -0500", hash_original_field = "A787D4782D28CB658656F9CEA39140B8", hash_generated_field = "8C20C363CB97A5312B8A9E5F182DBDF4")
 
@@ -28,7 +23,6 @@ public class LocatorImpl implements Locator {
 
     private int columnNumber;
 
-
     /**
      * Zero-argument constructor.
      *
@@ -40,7 +34,6 @@ public class LocatorImpl implements Locator {
 public LocatorImpl ()
     {
     }
-
 
     /**
      * Copy constructor.
@@ -61,13 +54,10 @@ public LocatorImpl (Locator locator)
     setLineNumber(locator.getLineNumber());
     setColumnNumber(locator.getColumnNumber());
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Implementation of org.xml.sax.Locator
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Return the saved public identifier.
@@ -77,13 +67,13 @@ public LocatorImpl (Locator locator)
      * @see org.xml.sax.Locator#getPublicId
      * @see #setPublicId
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.729 -0500", hash_original_method = "C19BBE926A67132A1C6BC386100A3E69", hash_generated_method = "C2B64346C205A83C958059FEF62D1E97")
     
 public String getPublicId ()
     {
     return publicId;
     }
-
 
     /**
      * Return the saved system identifier.
@@ -93,13 +83,13 @@ public String getPublicId ()
      * @see org.xml.sax.Locator#getSystemId
      * @see #setSystemId
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.731 -0500", hash_original_method = "8088708D8DEEE6054468B7FD77400E50", hash_generated_method = "6A03DC8D49FB90AC37FD320CD622E272")
     
 public String getSystemId ()
     {
     return systemId;
     }
-
 
     /**
      * Return the saved line number (1-based).
@@ -108,13 +98,13 @@ public String getSystemId ()
      * @see org.xml.sax.Locator#getLineNumber
      * @see #setLineNumber
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.733 -0500", hash_original_method = "0B737233CC5342C14C595BEE1A87604B", hash_generated_method = "CF4B4A3CBEDDB2EC6C0EA97DADAE4C2D")
     
 public int getLineNumber ()
     {
     return lineNumber;
     }
-
 
     /**
      * Return the saved column number (1-based).
@@ -123,19 +113,17 @@ public int getLineNumber ()
      * @see org.xml.sax.Locator#getColumnNumber
      * @see #setColumnNumber
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:48.735 -0500", hash_original_method = "50401770B079F9FC2B373BD150CB3B15", hash_generated_method = "C1A663BB10572B3946B6C09784A7153B")
     
 public int getColumnNumber ()
     {
     return columnNumber;
     }
-
-
 
     ////////////////////////////////////////////////////////////////////
     // Setters for the properties (not in org.xml.sax.Locator)
     ////////////////////////////////////////////////////////////////////
-
 
     /**
      * Set the public identifier for this locator.
@@ -151,7 +139,6 @@ public void setPublicId (String publicId)
     this.publicId = publicId;
     }
 
-
     /**
      * Set the system identifier for this locator.
      *
@@ -166,7 +153,6 @@ public void setSystemId (String systemId)
     this.systemId = systemId;
     }
 
-
     /**
      * Set the line number for this locator (1-based).
      *
@@ -180,7 +166,6 @@ public void setLineNumber (int lineNumber)
     this.lineNumber = lineNumber;
     }
 
-
     /**
      * Set the column number for this locator (1-based).
      *
@@ -193,7 +178,6 @@ public void setColumnNumber (int columnNumber)
     {
     this.columnNumber = columnNumber;
     }
-
     
 }
 

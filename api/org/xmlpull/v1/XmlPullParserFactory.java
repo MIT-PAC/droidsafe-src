@@ -8,9 +8,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 
-
-
-
 public class XmlPullParserFactory {
 
     /**
@@ -20,6 +17,8 @@ public class XmlPullParserFactory {
      *
      * @return a new instance of a PullParserFactory, as returned by newInstance (null, null);
      */
+    @DSComment("no input, no suspicious activity to abstract method")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.125 -0500", hash_original_method = "FDB67D996B87AFA9828831030DD04774", hash_generated_method = "CF201CA93963A12DA7AA2B504A495C37")
     
 public static XmlPullParserFactory newInstance () throws XmlPullParserException {
@@ -128,12 +127,9 @@ public static XmlPullParserFactory newInstance (String classNames, Class context
      static Class referenceContextClass;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.084 -0500", hash_original_field = "A56E5319A37849D3B7C93AF58147B2AD", hash_generated_field = "C6E7862EC1172DC262780F881FC06DEC")
 
-
-
     public static final String PROPERTY_NAME =
         "org.xmlpull.v1.XmlPullParserFactory";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.086 -0500", hash_original_field = "00E0F3E761546C7AD8F0BF9B3886946B", hash_generated_field = "857B4961AF71D0398E9BF439994827F2")
-
 
     private static final String RESOURCE_NAME =
         "/META-INF/services/" + PROPERTY_NAME;
@@ -141,19 +137,16 @@ public static XmlPullParserFactory newInstance (String classNames, Class context
 
     //    "org.xmlpull.xpp3.XmlPullParser,org.kxml2.io.KXmlParser";
 
-
     protected ArrayList parserClasses;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.091 -0500", hash_original_field = "178D027C48D58C53B7F7DA305D8F3745", hash_generated_field = "4B69BDE61BD215652CA9D56912ECEE01")
 
     protected String classNamesLocation;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.093 -0500", hash_original_field = "2115E1EF8711BCAE252E39271BFFDEAD", hash_generated_field = "A56B50284BF3A9A7CDBB5BF303434496")
 
-
     protected ArrayList serializerClasses;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.096 -0500", hash_original_field = "1ED7D14D596CC9841E075441007F0AB6", hash_generated_field = "2433B5B679656583A2F6E8E5BB139F19")
 
     protected HashMap features = new HashMap();
-
 
     /**
      * Protected constructor to be called by factory implementations.
@@ -164,8 +157,6 @@ public static XmlPullParserFactory newInstance (String classNames, Class context
 protected XmlPullParserFactory() {
     }
 
-
-
     /**
      * Set the features to be set when XML Pull Parser is created by this factory.
      * <p><b>NOTE:</b> factory features are not used for XML Serializer.
@@ -174,12 +165,12 @@ protected XmlPullParserFactory() {
      * @param state if true feature will be set; if false will be ignored
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.102 -0500", hash_original_method = "37707163E7D75DA023F216E9B819E8F1", hash_generated_method = "4DDF60F750C5C1A768ACF458011AB841")
     
 public void setFeature(String name, boolean state) throws XmlPullParserException {
         features.put(name, state);
     }
-
 
     /**
      * Return the current value of the feature with given name.
@@ -206,6 +197,7 @@ public boolean getFeature (String name) {
      *    will provide support for XML namespaces;  false otherwise.
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.108 -0500", hash_original_method = "7D3BF21C0D11A10F81ABD73B19B61390", hash_generated_method = "6A0488D3310840EFAF8243BCE74765E0")
     
 public void setNamespaceAware(boolean awareness) {
@@ -227,7 +219,6 @@ public boolean isNamespaceAware() {
         return getFeature (XmlPullParser.FEATURE_PROCESS_NAMESPACES);
     }
 
-
     /**
      * Specifies that the parser produced by this factory will be validating
      * (it simply set feature XmlPullParser.FEATURE_VALIDATION to true or false).
@@ -237,6 +228,7 @@ public boolean isNamespaceAware() {
      * @param validating - if true the parsers created by this factory  must be validating.
      */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.113 -0500", hash_original_method = "756F754F40CB32AB0AD4E4D0A9342AA0", hash_generated_method = "5B60EDCCF8D221FF3AC4105A064D8592")
     
 public void setValidating(boolean validating) {
@@ -270,6 +262,8 @@ public boolean isValidating() {
      * requested configuration.
      */
 
+    @DSComment("no input, no suspicious activity and output is just an instance of a parser")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:12.119 -0500", hash_original_method = "0194E8A94417A2CEABB2D1EB1F726482", hash_generated_method = "C0016DE88A673311BBA5B3D10DAC16C8")
     
 public XmlPullParser newPullParser() throws XmlPullParserException {
@@ -303,7 +297,6 @@ public XmlPullParser newPullParser() throws XmlPullParserException {
 
         throw new XmlPullParserException ("could not create parser: "+issues);
     }
-
 
     /**
      * Creates a new instance of a XML Serializer.

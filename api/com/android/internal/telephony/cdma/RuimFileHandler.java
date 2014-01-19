@@ -9,11 +9,6 @@ import android.util.Log;
 
 import com.android.internal.telephony.IccFileHandler;
 
-
-
-
-
-
 public final class RuimFileHandler extends IccFileHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.370 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
@@ -61,6 +56,7 @@ protected void finalize() {
         super.handleMessage(msg);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:57.384 -0500", hash_original_method = "607B460DC742A6DBDB6C6AB4B03B96A2", hash_generated_method = "32779E0C05F7B98AC48AD904F7F2057A")
     
 protected String getEFPath(int efid) {

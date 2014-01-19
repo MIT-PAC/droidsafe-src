@@ -10,9 +10,9 @@ import android.view.accessibility.AccessibilityEvent;
 
 import com.android.internal.R;
 
-
-
 public class CheckBox extends CompoundButton {
+    @DSComment("CheckBox")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:59.727 -0500", hash_original_method = "07A60C33F591AF3364367476C757E191", hash_generated_method = "E6771C4C8CFC6F5CDC28750B50C2D1E4")
     
 public CheckBox(Context context) {
@@ -42,7 +42,6 @@ public CheckBox(Context context, AttributeSet attrs, int defStyle) {
             event.getText().add(mContext.getString(R.string.checkbox_not_checked));
         }
     }
-
     
 }
 

@@ -8,10 +8,6 @@ import org.w3c.dom.DOMException;
 import org.w3c.dom.Node;
 import org.w3c.dom.Text;
 
-
-
-
-
 public class TextImpl extends CharacterDataImpl implements Text {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.644 -0500", hash_original_method = "8FBFCF7E900515A865ACF1E6532A7BB4", hash_generated_method = "2093298397731365B7122E0DB320CD74")
@@ -20,6 +16,7 @@ public TextImpl(DocumentImpl document, String data) {
         super(document, data);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.646 -0500", hash_original_method = "F5AD87001A4CE84E4D3D0566BEEE7118", hash_generated_method = "C4C300E154A22FD56C473059949B5D44")
     
 @Override
@@ -27,6 +24,7 @@ public TextImpl(DocumentImpl document, String data) {
         return "#text";
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.648 -0500", hash_original_method = "C38FDDE6CC592E744EE6602E5FF8812E", hash_generated_method = "3E5F8D3FB7077ED3A914D5EEB7B1F1D4")
     
 @Override
@@ -61,6 +59,7 @@ public final boolean isElementContentWhitespace() {
         return false;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.656 -0500", hash_original_method = "9EC887BD47A703F2DBB656ECC04AC254", hash_generated_method = "8C16B1BE6EF7D54588CAB10C28EE03DD")
     
 public final String getWholeText() {
@@ -171,7 +170,6 @@ public final TextImpl minimize() {
         parent.removeChild(this);
         return previousText;
     }
-
     
 }
 

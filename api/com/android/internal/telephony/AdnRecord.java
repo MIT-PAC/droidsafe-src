@@ -12,10 +12,6 @@ import android.os.Parcelable;
 import android.telephony.PhoneNumberUtils;
 import android.text.TextUtils;
 
-
-
-
-
 public class AdnRecord implements Parcelable {
 
     /** Helper function for {@link #isEqual}. */
@@ -38,8 +34,6 @@ private static boolean stringCompareNullEqualsEmpty(String s1, String s2) {
     static final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.955 -0500", hash_original_field = "50FEE7B7F95E6475560FB7F5815BCD00", hash_generated_field = "1FF4CF0947FA8FD409EBE587CA87B949")
 
-
-
     //***** Constants
 
     // In an ADN record, everything but the alpha identifier
@@ -49,7 +43,6 @@ private static boolean stringCompareNullEqualsEmpty(String s1, String s2) {
 
     static final int MAX_NUMBER_SIZE_BYTES = 11;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.959 -0500", hash_original_field = "FD26004048B640359BE2CFDB35255847", hash_generated_field = "178455A461A7085A0DC6AC3C937704E0")
-
 
     static final int EXT_RECORD_LENGTH_BYTES = 13;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.961 -0500", hash_original_field = "685FB0C917533EF920925D7CC66A249D", hash_generated_field = "273358D45598A18A00C408E116FAEB82")
@@ -109,7 +102,6 @@ public AdnRecord[] newArray(int size) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.942 -0500", hash_original_field = "8258D0DD79FD51E01DCB0F44838DA6A0", hash_generated_field = "8258D0DD79FD51E01DCB0F44838DA6A0")
 
-
     String alphaTag = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.944 -0500", hash_original_field = "C5D9AA6EDF218E348AEF048EB45AD371", hash_generated_field = "C5D9AA6EDF218E348AEF048EB45AD371")
 
@@ -126,7 +118,6 @@ public AdnRecord[] newArray(int size) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.952 -0500", hash_original_field = "23F79AC71281FC94187158A5D1BA833B", hash_generated_field = "23F79AC71281FC94187158A5D1BA833B")
 
     int recordNumber;
-
 
     //***** Constructor
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:16.993 -0500", hash_original_method = "7045C9AFF2F4A7CC7D801D193F8DA208", hash_generated_method = "7B3C2EF083AA4C101D9EBF91F8EBFED7")
@@ -177,18 +168,21 @@ public AdnRecord(int efid, int recordNumber, String alphaTag, String number) {
 
     //***** Instance Methods
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.011 -0500", hash_original_method = "AC3A7A9E3A191B711B11224D0DA9AF99", hash_generated_method = "C6C026948750D4A59426CB675308E75D")
     
 public String getAlphaTag() {
         return alphaTag;
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.013 -0500", hash_original_method = "EC6570D4091CFB302FD4A14DB7A9F4B4", hash_generated_method = "AA38E8BCC0B9DD17DFD73F1A7E512151")
     
 public String getNumber() {
         return number;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.015 -0500", hash_original_method = "92D2F53049B5866D80AA794995783C1B", hash_generated_method = "58F920E22CF735F4E3FD4CB7C5603917")
     
 public String[] getEmails() {
@@ -201,6 +195,7 @@ public void setEmails(String[] emails) {
         this.emails = emails;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.020 -0500", hash_original_method = "68220200E4F2B5D293B76BDD34BEE487", hash_generated_method = "B5961EECC367908660F81F6106FD4E80")
     
 public String toString() {
@@ -252,6 +247,7 @@ public void writeToParcel(Parcel dest, int flags) {
      * @return hex byte[recordSize] to be written to EF record
      *          return null for wrong format of dialing number or tag
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:17.039 -0500", hash_original_method = "43E5A3A3017D389C996FCD504E7A9103", hash_generated_method = "E3F599972D04B8E5D7F86AB1411559E9")
     
 public byte[] buildAdnString(int recordSize) {
@@ -364,7 +360,6 @@ private void
 
             number = PhoneNumberUtils.calledPartyBCDToString(
                             record, footerOffset + 1, numberLength);
-
 
             extRecord = 0xff & record[record.length - 1];
 

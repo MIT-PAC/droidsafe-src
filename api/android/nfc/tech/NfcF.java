@@ -12,10 +12,6 @@ import android.nfc.Tag;
 import android.os.Bundle;
 import android.os.RemoteException;
 
-
-
-
-
 public final class NfcF extends BasicTagTechnology {
 
     /**
@@ -27,6 +23,7 @@ public final class NfcF extends BasicTagTechnology {
      * @param tag an NFC-F compatible tag
      * @return NFC-F object
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.296 -0500", hash_original_method = "01EE8F8F25FC85AEFD4590A65782423B", hash_generated_method = "65D8731C233C576499FFAA97AABF3A1E")
     
 public static NfcF get(Tag tag) {
@@ -47,7 +44,6 @@ public static NfcF get(Tag tag) {
 
     public static final String EXTRA_PMM = "pmm";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.291 -0500", hash_original_field = "C464B493AC4D8DC6313AA390DA7A6EC5", hash_generated_field = "8144AE907BE5B2181516DBD1D62E97D6")
-
 
     private byte[] mSystemCode = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.293 -0500", hash_original_field = "883831788F4B7782C6FB141F06D6641B", hash_generated_field = "D7A1C8F789011716682DAB2FCD913220")
@@ -73,6 +69,7 @@ public NfcF(Tag tag) throws RemoteException {
      *
      * @return System Code bytes
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.301 -0500", hash_original_method = "5593A08645ACC7B6D3C7AFEF98D893C4", hash_generated_method = "9CE4BDDFFE2865B8A00D5D4FDD81E27E")
     
 public byte[] getSystemCode() {
@@ -86,6 +83,7 @@ public byte[] getSystemCode() {
      *
      * @return Manufacturer bytes
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.303 -0500", hash_original_method = "674E72909806E7E1411B5B9E47606852", hash_generated_method = "A5414D0E37F77118EDF179C7B49BE366")
     
 public byte[] getManufacturer() {
@@ -112,6 +110,7 @@ public byte[] getManufacturer() {
      * @throws TagLostException if the tag leaves the field
      * @throws IOException if there is an I/O failure, or this operation is canceled
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.305 -0500", hash_original_method = "E43990821CE38E04B46B3E901EFDFA24", hash_generated_method = "CC13A29AED45E04C4807822531800242")
     
 public byte[] transceive(byte[] data) throws IOException {
@@ -122,6 +121,7 @@ public byte[] transceive(byte[] data) throws IOException {
      * Return the maximum number of bytes that can be sent with {@link #transceive}.
      * @return the maximum number of bytes that can be sent with {@link #transceive}.
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.307 -0500", hash_original_method = "CF96EF3BF3FCE4DA3D9E7FBB541AEB70", hash_generated_method = "ECC61C711C2C081CEFB91A790D67A4A8")
     
 public int getMaxTransceiveLength() {
@@ -142,6 +142,7 @@ public int getMaxTransceiveLength() {
      *
      * @param timeout timeout value in milliseconds
      */
+    @DSSink({DSSinkKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.309 -0500", hash_original_method = "D0C1DC7ECC9E082014D504E80FD68DDB", hash_generated_method = "1D0EF75D84E1BBF3CF36BCFF44B909AD")
     
 public void setTimeout(int timeout) {
@@ -162,6 +163,7 @@ public void setTimeout(int timeout) {
      *
      * @return timeout value in milliseconds
      */
+    @DSSource({DSSourceKind.NFC})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:48.312 -0500", hash_original_method = "BA26E553829B17341BEC1294BC995A3C", hash_generated_method = "26151274738C2CA4100F741611DC2854")
     
 public int getTimeout() {

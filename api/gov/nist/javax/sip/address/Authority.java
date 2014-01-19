@@ -7,13 +7,8 @@ import droidsafe.annotations.*;
 import gov.nist.core.Host;
 import gov.nist.core.HostPort;
 
-
-
-
-
 public class Authority extends NetObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.332 -0500", hash_original_field = "2808D63A626D8F55CDB4D64A62CA28FD", hash_generated_field = "392436036450DA670DF3C59C429C18F7")
-
 
     private static final long serialVersionUID = -3570349777347017894L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.335 -0500", hash_original_field = "9B4A41D1F947DB93B1E0620B59F0E903", hash_generated_field = "E3D0876BE26B08994B6482E2303E79F8")
@@ -80,6 +75,7 @@ public StringBuffer encode(StringBuffer buffer) {
      * get the hostPort member.
      * @return HostPort
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.355 -0500", hash_original_method = "96FAFC3A7A03957C239B3F2891116715", hash_generated_method = "66B95A06BB6FD14A22EE11841A58A7BA")
     
 public HostPort getHostPort() {
@@ -90,6 +86,7 @@ public HostPort getHostPort() {
      * get the userInfo memnber.
      * @return UserInfo
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.358 -0500", hash_original_method = "7432173A73E0C28FDB3243D392049BFB", hash_generated_method = "8BCB92082FFA243AA7AABD710317BC1C")
     
 public UserInfo getUserInfo() {
@@ -100,6 +97,7 @@ public UserInfo getUserInfo() {
          * Get password from the user info.
          * @return String
          */
+    @DSSource({DSSourceKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.361 -0500", hash_original_method = "0D75875975A37063C0158825ECC49152", hash_generated_method = "BCCE8CAF7F5F6EBEAEBBD075A79310D1")
     
 public String getPassword() {
@@ -113,6 +111,7 @@ public String getPassword() {
      * Get the user name if it exists.
      * @return String user or null if not set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.364 -0500", hash_original_method = "A937EFB3E6E8C8E07C44A0CAF1D94D2D", hash_generated_method = "AB2FC18E4D16E447486CDBD6A095E445")
     
 public String getUser() {
@@ -123,6 +122,7 @@ public String getUser() {
      * Get the host name.
      * @return Host (null if not set)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.366 -0500", hash_original_method = "36AABAF7F60E6F4B05DBAF6E2BFF1DAC", hash_generated_method = "EC9DA0703D9972DC95DD1470FBB68F79")
     
 public Host getHost() {
@@ -136,6 +136,7 @@ public Host getHost() {
      * Get the port.
      * @return int port (-1) if port is not set.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.369 -0500", hash_original_method = "94F38CD1718C7E4E03E245C5A4A2F71A", hash_generated_method = "C0DC8F0E1ADEB5F2A8C17E7DECC3518E")
     
 public int getPort() {
@@ -158,6 +159,7 @@ public void removePort() {
      * set the password.
      * @param passwd String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.374 -0500", hash_original_method = "8346E0D819EDE7DDC699DC8693996508", hash_generated_method = "E6592F8D679A0E97A10A91F11304BAA9")
     
 public void setPassword(String passwd) {
@@ -170,6 +172,7 @@ public void setPassword(String passwd) {
      * Set the user name of the userInfo member.
      * @param user String to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.377 -0500", hash_original_method = "0EF31135B34CFA44FF4FE8878DF2C9B5", hash_generated_method = "7C57FEA32B240121A672CFCAD2ACEA13")
     
 public void setUser(String user) {
@@ -182,6 +185,7 @@ public void setUser(String user) {
      * set the host.
      * @param host Host to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.379 -0500", hash_original_method = "201068C9F082E3325F0A6DFD9E3C4A4F", hash_generated_method = "69D3791AA41772A1BBF629F95249F05E")
     
 public void setHost(Host host) {
@@ -194,6 +198,7 @@ public void setHost(Host host) {
      * Set the port.
      * @param port int to set
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:33.382 -0500", hash_original_method = "3BD3C551AB75CBED14D6B43386D78BE7", hash_generated_method = "F0320919A80AD45DDC258DBC49E73887")
     
 public void setPort(int port) {

@@ -35,7 +35,6 @@ public static IMountShutdownObserver asInterface(IBinder obj) {
         }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.053 -0500", hash_original_field = "FE6431F007A319105110956C23CCDBD0", hash_generated_field = "BAAA97529B723D191501B7A68EA1668F")
 
-
         static final int TRANSACTION_onShutDownComplete = (IBinder.FIRST_CALL_TRANSACTION + 0);
 
         /** Construct the stub at attach it to the interface. */
@@ -45,6 +44,7 @@ public Stub() {
             this.attachInterface(this, DESCRIPTOR);
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.032 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
         
 public IBinder asBinder() {
@@ -68,6 +68,7 @@ public IBinder asBinder() {
                 return mRemote;
             }
 
+            @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.046 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor() {
@@ -80,6 +81,7 @@ public java.lang.String getInterfaceDescriptor() {
              * 
              * @param statusCode indicates success or failure of the shutdown.
              */
+            @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
             @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:35.049 -0500", hash_original_method = "A4221FE2747F2722CD7817ABD50D3BD6", hash_generated_method = "BEC0710E7388338BC63FD11CA7A05744")
             
 public void onShutDownComplete(int statusCode) throws RemoteException {
@@ -119,7 +121,6 @@ public void onShutDownComplete(int statusCode) throws RemoteException {
             return super.onTransact(code, data, reply, flags);
         }
     }
-
     
     public void onShutDownComplete(int statusCode) throws RemoteException;
 }

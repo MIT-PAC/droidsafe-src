@@ -56,13 +56,15 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.361 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.361 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
 return DESCRIPTOR;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.364 -0500", hash_original_method = "61E4C223B61A29BF238CCAEED9FB666D", hash_generated_method = "68C47669EBBB8A86344DC244C7B87A56")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.364 -0500", hash_original_method = "61E4C223B61A29BF238CCAEED9FB666D", hash_generated_method = "68C47669EBBB8A86344DC244C7B87A56")
             
 public void setTextBeforeCursor(java.lang.CharSequence textBeforeCursor, int seq) throws android.os.RemoteException
 {
@@ -83,7 +85,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.367 -0500", hash_original_method = "E90DAED888676008DD76042EEBD09DBD", hash_generated_method = "F42CE31ADEFF1FCC60A319BD0BA16688")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.367 -0500", hash_original_method = "E90DAED888676008DD76042EEBD09DBD", hash_generated_method = "F42CE31ADEFF1FCC60A319BD0BA16688")
             
 public void setTextAfterCursor(java.lang.CharSequence textAfterCursor, int seq) throws android.os.RemoteException
 {
@@ -104,7 +107,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.370 -0500", hash_original_method = "BCF4FD735627170346CED3C8D10DBFEA", hash_generated_method = "7BE7512EEB655FC523E5E553F84263CD")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.370 -0500", hash_original_method = "BCF4FD735627170346CED3C8D10DBFEA", hash_generated_method = "7BE7512EEB655FC523E5E553F84263CD")
             
 public void setCursorCapsMode(int capsMode, int seq) throws android.os.RemoteException
 {
@@ -119,7 +123,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.372 -0500", hash_original_method = "0B74B92A95EB945C25801EDA2492AD28", hash_generated_method = "96D47D46F24737C3D61338F51AF4B619")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.372 -0500", hash_original_method = "0B74B92A95EB945C25801EDA2492AD28", hash_generated_method = "96D47D46F24737C3D61338F51AF4B619")
             
 public void setExtractedText(android.view.inputmethod.ExtractedText extractedText, int seq) throws android.os.RemoteException
 {
@@ -140,7 +145,8 @@ finally {
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.375 -0500", hash_original_method = "1E92BEBD008B14D6DE8BD419DB2F2737", hash_generated_method = "0F177925B5B164C076612FD8F3FB568C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.375 -0500", hash_original_method = "1E92BEBD008B14D6DE8BD419DB2F2737", hash_generated_method = "0F177925B5B164C076612FD8F3FB568C")
             
 public void setSelectedText(java.lang.CharSequence selectedText, int seq) throws android.os.RemoteException
 {
@@ -175,7 +181,8 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.344 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:30.344 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {

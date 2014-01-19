@@ -12,11 +12,6 @@ import android.view.ViewGroup;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class RadioGroup extends LinearLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.152 -0500", hash_original_field = "C47AF993A50B19E53756FB24F9912A08", hash_generated_field = "0E60C492BFE4F917273C3792086EBFC2")
 
@@ -37,6 +32,8 @@ public class RadioGroup extends LinearLayout {
     /**
      * {@inheritDoc}
      */
+    @DSComment("RadioGroup")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.164 -0500", hash_original_method = "3F150AF0F79E2D2E674BD2F6CDCB9019", hash_generated_method = "CD607C8AACC191FD2EFAD1CBF0C9253E")
     
 public RadioGroup(Context context) {
@@ -136,6 +133,8 @@ private void init() {
      * @see #getCheckedRadioButtonId()
      * @see #clearCheck()
      */
+    @DSComment("RadioGroup")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.179 -0500", hash_original_method = "09268A2A1BCE88884506BAA643569A97", hash_generated_method = "18261EA61F80E2DD498F7E8562AA92D5")
     
 public void check(int id) {
@@ -182,6 +181,9 @@ private void setCheckedStateForView(int viewId, boolean checked) {
      * @see #check(int)
      * @see #clearCheck()
      */
+    @DSComment("RadioGroup")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.185 -0500", hash_original_method = "037226FCADAD9E6B157688A3599D3985", hash_generated_method = "CA799BFEF6959DBCC5E4B26BE6AA9F99")
     
 public int getCheckedRadioButtonId() {
@@ -240,7 +242,6 @@ public void setOnCheckedChangeListener(OnCheckedChangeListener listener) {
     protected LinearLayout.LayoutParams generateDefaultLayoutParams() {
         return new LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
     }
-
     
     public static class LayoutParams extends LinearLayout.LayoutParams {
         /**
@@ -255,6 +256,8 @@ public LayoutParams(Context c, AttributeSet attrs) {
         /**
          * {@inheritDoc}
          */
+        @DSComment("")
+        @DSSafe(DSCat.DATA_STRUCTURE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.202 -0500", hash_original_method = "979C42732F8B715475115A738CE7596D", hash_generated_method = "A7516D57E99F3298A4CB1C063C44A289")
         
 public LayoutParams(int w, int h) {
@@ -298,6 +301,7 @@ public LayoutParams(MarginLayoutParams source) {
          * @param widthAttr the width attribute to fetch
          * @param heightAttr the height attribute to fetch
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.213 -0500", hash_original_method = "B48B8CC58D894F8848FAA9A802B21490", hash_generated_method = "2926E02E4D8CFF91F30DF8B86F4F32D9")
         
 @Override
@@ -316,11 +320,8 @@ public LayoutParams(MarginLayoutParams source) {
                 height = WRAP_CONTENT;
             }
         }
-
         
     }
-
-
     
     private class CheckedStateTracker implements CompoundButton.OnCheckedChangeListener {
         
@@ -346,11 +347,8 @@ public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
             int id = buttonView.getId();
             setCheckedId(id);
         }
-
         
     }
-
-
     
     private class PassThroughHierarchyChangeListener implements ViewGroup.OnHierarchyChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:38.225 -0500", hash_original_field = "D01F937FCB17217561DE5F8FD1984593", hash_generated_field = "ADB5398B42E06BDFAAB3C7B984E67131")
@@ -399,11 +397,8 @@ public void onChildViewRemoved(View parent, View child) {
                 mOnHierarchyChangeListener.onChildViewRemoved(parent, child);
             }
         }
-
         
     }
-
-
     
     public interface OnCheckedChangeListener {
         

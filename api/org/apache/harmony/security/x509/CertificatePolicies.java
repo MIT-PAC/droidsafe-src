@@ -13,11 +13,6 @@ import org.apache.harmony.security.asn1.ASN1SequenceOf;
 import org.apache.harmony.security.asn1.ASN1Type;
 import org.apache.harmony.security.asn1.BerInputStream;
 
-
-
-
-
-
 public final class CertificatePolicies extends ExtensionValue {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.218 -0500", hash_original_method = "DC44CF52860484CAD2DBA77AF7318FF9", hash_generated_method = "BE5F1D718329979E0707634D244A77A5")
@@ -27,7 +22,6 @@ public static CertificatePolicies decode(byte[] encoding) throws IOException {
         cps.encoding = encoding;
         return cps;
     }
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.952 -0400", hash_original_field = "513989838E566B722E0AE48FE445DE0C", hash_generated_field = "C5B8ADE8005B79F0446643932F6EFA0A")
 
@@ -38,6 +32,7 @@ public static CertificatePolicies decode(byte[] encoding) throws IOException {
             return new CertificatePolicies((List<PolicyInformation>) in.content, in.getEncoded());
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.236 -0500", hash_original_method = "563F4100455C194AB82610E48FB026CF", hash_generated_method = "C22E0B5D2039FB737EDE953AC64BEACB")
         
 @Override public Collection getValues(Object object) {
@@ -69,6 +64,7 @@ private CertificatePolicies(List<PolicyInformation> policyInformations, byte[] e
     /**
      * Returns the values of policyInformation field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.223 -0500", hash_original_method = "183BA6590E2DC5B6BD268518AC8D5EF9", hash_generated_method = "11677BD68D1BD97D14F77EF37A9260A2")
     
 public List<PolicyInformation> getPolicyInformations() {
@@ -89,6 +85,7 @@ public CertificatePolicies addPolicyInformation(PolicyInformation policyInformat
     /**
      * Returns ASN.1 encoded form of this X.509 CertificatePolicies value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.228 -0500", hash_original_method = "8CF73AB8FE0E45F61A0A453F52513BE8", hash_generated_method = "552F71A862C62513AAC32037F4D2FC1B")
     
 @Override public byte[] getEncoded() {
@@ -98,6 +95,7 @@ public CertificatePolicies addPolicyInformation(PolicyInformation policyInformat
         return encoding;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:02.230 -0500", hash_original_method = "B37538291358B4289176EF26A3BFC720", hash_generated_method = "11675135B8D5FD981EE6CBC6E3BF12F5")
     
 @Override public void dumpValue(StringBuilder sb, String prefix) {

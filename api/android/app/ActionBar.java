@@ -15,10 +15,6 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.MarginLayoutParams;
 import android.widget.SpinnerAdapter;
 
-
-
-
-
 public abstract class ActionBar {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.384 -0500", hash_original_field = "9ECF20DEBE80BDF521AC23C2EC8ABFE5", hash_generated_field = "F325EF02C9FC2C1CC6B930C3BC286C7F")
 
@@ -45,7 +41,6 @@ public abstract class ActionBar {
 
     public static final int DISPLAY_SHOW_CUSTOM = 0x10;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:22:16.183 -0400", hash_original_method = "6A41438E0ABBC5F08FB907D4E02D20B4", hash_generated_method = "6A41438E0ABBC5F08FB907D4E02D20B4")
     public ActionBar ()
     {
@@ -400,6 +395,7 @@ public abstract void setBackgroundDrawable(Drawable d);
      *
      * @param d Background drawable for the stacked row
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.454 -0500", hash_original_method = "1C087D5A46FF67AB400586D7FD9EC5DB", hash_generated_method = "FD8BDE63083DE44785779942FF8E47A4")
     
 public void setStackedBackgroundDrawable(Drawable d) { }
@@ -412,6 +408,7 @@ public void setStackedBackgroundDrawable(Drawable d) { }
      *
      * @param d Background drawable for the split bar
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.456 -0500", hash_original_method = "195D6A86B8711735C7C3591D31E1AD73", hash_generated_method = "B27F4574AF521C2990817845AE4C0044")
     
 public void setSplitBackgroundDrawable(Drawable d) { }
@@ -605,7 +602,6 @@ public abstract Tab getTabAt(int index);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.495 -0500", hash_original_method = "E7B97750ADDF2C358CEEFC6FBEBBBE3C", hash_generated_method = "66954A658D61CD03E32EF234828E97B2")
     
 public abstract int getTabCount();
-
     
     public static abstract class Tab {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.520 -0500", hash_original_field = "08744EB4FDECE919536D545565C93AB6", hash_generated_field = "74326D0EB2E635FB68B20B0C678CCDFD")
@@ -791,8 +787,6 @@ public abstract Tab setContentDescription(CharSequence contentDesc);
         
 public abstract CharSequence getContentDescription();
     }
-
-
     
     public static class LayoutParams extends MarginLayoutParams {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.569 -0500", hash_original_field = "017EB0E7305475871AC6C45F0E01F5D9", hash_generated_field = "FAEF7A7065C713E6BE770418AEAE4491")
@@ -858,11 +852,8 @@ public LayoutParams(LayoutParams source) {
 public LayoutParams(ViewGroup.LayoutParams source) {
             super(source);
         }
-
         
     }
-
-
     
     public interface OnNavigationListener {
         
@@ -877,10 +868,8 @@ public LayoutParams(ViewGroup.LayoutParams source) {
     public interface TabListener {
         
         public void onTabSelected(Tab tab, FragmentTransaction ft);
-
         
         public void onTabUnselected(Tab tab, FragmentTransaction ft);
-
         
         public void onTabReselected(Tab tab, FragmentTransaction ft);
     }
@@ -954,6 +943,7 @@ public abstract void removeOnMenuVisibilityListener(OnMenuVisibilityListener lis
      *
      * @param enabled true to enable the home button, false to disable the home button.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.511 -0500", hash_original_method = "B663ADC8583DEAC97152A4FAD7E4AA4D", hash_generated_method = "624E1920DC02D43F6969E9B91FAA838A")
     
 public void setHomeButtonEnabled(boolean enabled) { }
@@ -967,6 +957,7 @@ public void setHomeButtonEnabled(boolean enabled) { }
      *
      * @return A themed Context for creating views
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:33.513 -0500", hash_original_method = "1844047509BF7744FF58A8E07C1F4469", hash_generated_method = "11CB943795DCD9E1EF76C82D67A0983E")
     
 public Context getThemedContext() { return null; }

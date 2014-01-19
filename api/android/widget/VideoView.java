@@ -27,10 +27,6 @@ import android.view.SurfaceView;
 import android.view.View;
 import android.widget.MediaController.MediaPlayerControl;
 
-
-
-
-
 public class VideoView extends SurfaceView implements MediaPlayerControl {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.657 -0500", hash_original_field = "AA32BA63E0527427A516BA30E06A641F", hash_generated_field = "6B005C8EBE8994279368951B4E210396")
 
@@ -132,7 +128,6 @@ public void onVideoSizeChanged(MediaPlayer mp, int width, int height) {
                     getHolder().setFixedSize(mVideoWidth, mVideoHeight);
                 }
             }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.146 -0400", hash_original_field = "6FA998399DAAAB96682C792379375439", hash_generated_field = "A6C46A6F86887F5A8FF30D809BE323AE")
@@ -199,7 +194,6 @@ public void onPrepared(MediaPlayer mp) {
                 }
             }
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.148 -0400", hash_original_field = "ED3CF789A31884E6ADAFA1D223558FAA", hash_generated_field = "2F31C8D08A7A8EEB4881A3B657E505CB")
@@ -217,7 +211,6 @@ public void onCompletion(MediaPlayer mp) {
                 mOnCompletionListener.onCompletion(mMediaPlayer);
             }
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.151 -0400", hash_original_field = "3E68D0EC14257091AA025E7697E4D6A5", hash_generated_field = "363D54F68F59F0A0A38E0ABC176EF573")
@@ -274,7 +267,6 @@ public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
             }
             return true;
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.152 -0400", hash_original_field = "586F4A1CD959A521D8527F9D0DB7C837", hash_generated_field = "C6CDD3D40A42176310D2EA261BFD0698")
@@ -285,7 +277,6 @@ public boolean onError(MediaPlayer mp, int framework_err, int impl_err) {
 public void onBufferingUpdate(MediaPlayer mp, int percent) {
             mCurrentBufferPercentage = percent;
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:08.155 -0400", hash_original_field = "95FF723B307E523297040401AEF7D7E6", hash_generated_field = "0369BDB4F6FE064FC2DACE8B422983D1")
@@ -325,7 +316,6 @@ public void surfaceDestroyed(SurfaceHolder holder)
             if (mMediaController != null) mMediaController.hide();
             release(true);
         }
-
         
 };
 
@@ -374,6 +364,8 @@ public VideoView(Context context, AttributeSet attrs, int defStyle) {
         setMeasuredDimension(width, height);
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.720 -0500", hash_original_method = "AA7DEE010D080A3F173498ECD8DB46CF", hash_generated_method = "E9CC7E6EBF385513B90CF1B2F81ABCBB")
     
 public int resolveAdjustedSize(int desiredSize, int measureSpec) {
@@ -419,12 +411,17 @@ private void initVideoView() {
         mTargetState  = STATE_IDLE;
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.724 -0500", hash_original_method = "FF7D3C0BAB1201EED63B4915116CA68A", hash_generated_method = "F35268F14E7AFAC02756F635A19682C9")
     
 public void setVideoPath(String path) {
         setVideoURI(Uri.parse(path));
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.726 -0500", hash_original_method = "145B809162AC001B5D3448C75D9513F9", hash_generated_method = "1B2C0DB4F375C7541DA23E33848CE746")
     
 public void setVideoURI(Uri uri) {
@@ -445,6 +442,8 @@ public void setVideoURI(Uri uri, Map<String, String> headers) {
         invalidate();
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.732 -0500", hash_original_method = "2BCECBBC48AF079CEFBE62EF5059D1F2", hash_generated_method = "E05A72D0E7393920D5A975CF90D0B5AA")
     
 public void stopPlayback() {
@@ -506,6 +505,8 @@ private void openVideo() {
         }
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.737 -0500", hash_original_method = "A95D4CD6952F3C4C3839054BE152713C", hash_generated_method = "5FDB60AB5E24EBE14C2EB94776D5E284")
     
 public void setMediaController(MediaController controller) {
@@ -586,6 +587,8 @@ private void release(boolean cleartargetstate) {
         }
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.796 -0500", hash_original_method = "4F4B3F8532DEC480E2D437E642010990", hash_generated_method = "E553B93678264A4E5026632917F84686")
     
 @Override
@@ -596,6 +599,8 @@ private void release(boolean cleartargetstate) {
         return false;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.798 -0500", hash_original_method = "8AF49D524D52FF5D4247E0FF5D02E5F0", hash_generated_method = "2DE181A73BF9DC78EE288FD4FF15E686")
     
 @Override
@@ -606,6 +611,8 @@ private void release(boolean cleartargetstate) {
         return false;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.801 -0500", hash_original_method = "91A873FF1F5486FD2484C66FB73721D3", hash_generated_method = "4393D6FDF2A3619228871AF0ED28A0A3")
     
 @Override
@@ -660,6 +667,8 @@ private void toggleMediaControlsVisiblity() {
         }
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.805 -0500", hash_original_method = "DCAF238577388FDC9C26BFC1EEC7C15B", hash_generated_method = "872BC7D9520AA3BF732701B75C4425C0")
     
 public void start() {
@@ -670,6 +679,8 @@ public void start() {
         mTargetState = STATE_PLAYING;
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.808 -0500", hash_original_method = "4E2568FAF00FE360235DA18D47EB8EFF", hash_generated_method = "4519A5D9FAF6948CEB46F9B582FE5A59")
     
 public void pause() {
@@ -682,12 +693,16 @@ public void pause() {
         mTargetState = STATE_PAUSED;
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.810 -0500", hash_original_method = "DB957E41439183A7A4B3F0D26130031C", hash_generated_method = "AB2D3051160285DD1D42A74A74F3CDD1")
     
 public void suspend() {
         release(false);
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.812 -0500", hash_original_method = "E6E0A392D25FFAD71752A274562CC374", hash_generated_method = "5A91188CDDB57ACD70BC432C1899287C")
     
 public void resume() {
@@ -695,6 +710,9 @@ public void resume() {
     }
 
     // cache duration as mDuration for faster access
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.814 -0500", hash_original_method = "C1F40EE967CAE2C17948E71A2C41731D", hash_generated_method = "A649601A52D505DD00BC0F60E29669E4")
     
 public int getDuration() {
@@ -709,6 +727,9 @@ public int getDuration() {
         return mDuration;
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.816 -0500", hash_original_method = "0795537A6D4F5DB67695C2A0F229C436", hash_generated_method = "2CB25376E75EBBD3D5C7ED29508C8590")
     
 public int getCurrentPosition() {
@@ -718,6 +739,8 @@ public int getCurrentPosition() {
         return 0;
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.818 -0500", hash_original_method = "3522617D91D50F05724CD0F38556C102", hash_generated_method = "9FCBC19A9A45945C24AEE48E956728DE")
     
 public void seekTo(int msec) {
@@ -729,12 +752,17 @@ public void seekTo(int msec) {
         }
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.821 -0500", hash_original_method = "E0052DEB6F83AF3161983588D34DAB58", hash_generated_method = "9D1BCED499AEC453514AD56256F0CA1A")
     
 public boolean isPlaying() {
         return isInPlaybackState() && mMediaPlayer.isPlaying();
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.823 -0500", hash_original_method = "FEBDDA350C03AAA5C15557B944427C9D", hash_generated_method = "58A79B210E234FAED8A0D28C0D1B6B1E")
     
 public int getBufferPercentage() {
@@ -753,18 +781,24 @@ private boolean isInPlaybackState() {
                 mCurrentState != STATE_PREPARING);
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.827 -0500", hash_original_method = "1DF27838EDEF437B2494B2DF149883EF", hash_generated_method = "72E89334CF9AAE1EC8E3E869548973AF")
     
 public boolean canPause() {
         return mCanPause;
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.829 -0500", hash_original_method = "B916F92CBCCEC1C42038C36AAFFAA2A8", hash_generated_method = "E94C9243E319F80C6BBAA81D8F9C6FFA")
     
 public boolean canSeekBackward() {
         return mCanSeekBack;
     }
 
+    @DSComment("VideoView, check callbacks modeled")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:55.832 -0500", hash_original_method = "7621B01EBEE0D0CEF34FD8A655C3B087", hash_generated_method = "DC022B91E8B1E2F38DF6961EC161DFE8")
     
 public boolean canSeekForward() {

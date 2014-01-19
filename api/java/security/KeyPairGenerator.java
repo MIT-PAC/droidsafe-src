@@ -8,11 +8,6 @@ import java.security.spec.AlgorithmParameterSpec;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
 
     /**
@@ -27,6 +22,9 @@ public abstract class KeyPairGenerator extends KeyPairGeneratorSpi {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.212 -0500", hash_original_method = "F934B6F8A166E3E18108E810D9639C1F", hash_generated_method = "498C56FA6C5428A7F1E055D14BB2280F")
     
 public static KeyPairGenerator getInstance(String algorithm)
@@ -62,6 +60,7 @@ public static KeyPairGenerator getInstance(String algorithm)
      *             if {@code algorithm} is {@code null}
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.215 -0500", hash_original_method = "216E11C78E57429304B7E0E6BDC67FF2", hash_generated_method = "25BFC7B93A0B1851F0DD18EA5DAC63C5")
     
 public static KeyPairGenerator getInstance(String algorithm, String provider)
@@ -91,6 +90,9 @@ public static KeyPairGenerator getInstance(String algorithm, String provider)
      *             if {@code algorithm} is {@code null}
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.217 -0500", hash_original_method = "D13E283A2C81D5C7579E7D4A3F04358E", hash_generated_method = "D8C2120FBD120C937F1BFCC4CC52137B")
     
 public static KeyPairGenerator getInstance(String algorithm,
@@ -144,6 +146,7 @@ protected KeyPairGenerator(String algorithm) {
      *
      * @return the name of the algorithm of this {@code KeyPairGenerator}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.209 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
     
 public String getAlgorithm() {
@@ -155,6 +158,7 @@ public String getAlgorithm() {
      *
      * @return the provider associated with this {@code KeyPairGenerator}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.221 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -185,6 +189,8 @@ public void initialize(int keysize) {
      * @throws InvalidAlgorithmParameterException
      *             if the specified parameters are not supported
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.226 -0500", hash_original_method = "505B12303F8A8E9420867471775AD0AC", hash_generated_method = "CDF5470CDAAD2CE83A02437AA9DE14B7")
     
 public void initialize(AlgorithmParameterSpec param)
@@ -200,12 +206,12 @@ public void initialize(AlgorithmParameterSpec param)
      *
      * @return a new unique {@code KeyPair} each time this method is called
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.228 -0500", hash_original_method = "0A0D3545CE028F03545250CE4A841A43", hash_generated_method = "2A27819E6CAA20B6BC98198F1A7390ED")
     
 public final KeyPair genKeyPair() {
         return generateKeyPair();
     }
-
     
     private static class KeyPairGeneratorImpl extends KeyPairGenerator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.240 -0500", hash_original_field = "3D7BD47EB27FD2510EA202B46FEDBCEC", hash_generated_field = "5688209BF362571C922D334A44DFEAF3")
@@ -248,7 +254,6 @@ private KeyPairGeneratorImpl(KeyPairGeneratorSpi keyPairGeneratorSpi,
                 throws InvalidAlgorithmParameterException {
             spiImpl.initialize(param, random);
         }
-
         
     }
 
@@ -260,6 +265,9 @@ private KeyPairGeneratorImpl(KeyPairGeneratorSpi keyPairGeneratorSpi,
      *
      * @return a new unique {@code KeyPair} each time this method is called
      */
+    @DSComment("no suspicious activity, just creates object")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.232 -0500", hash_original_method = "7972015D8BC3BAE6F8655706849D6EC4", hash_generated_method = "7416D4BAC31589F8D2E2893407C58F0D")
     
 @Override
@@ -276,6 +284,8 @@ private KeyPairGeneratorImpl(KeyPairGeneratorSpi keyPairGeneratorSpi,
      * @param random
      *            the source of randomness
      */
+    @DSComment("no suspicious activity")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:01.234 -0500", hash_original_method = "C1E2700C4D7C78BCD077B4B9FB70A89A", hash_generated_method = "78ADD1A0E8B1B61D568978291F6AA8B3")
     
 @Override

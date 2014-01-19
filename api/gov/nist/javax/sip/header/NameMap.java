@@ -27,11 +27,6 @@ import gov.nist.javax.sip.header.ims.ServiceRoute;
 
 import java.util.Hashtable;
 
-
-
-
-
-
 public class NameMap implements SIPHeaderNames, PackageNames {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.939 -0500", hash_original_method = "0CF4D79C066C097F21221FDB060FA4F8", hash_generated_method = "56033EF2E571984869A8811F671FA2EB")
@@ -42,6 +37,7 @@ protected static void putNameMap(String headerName, String className) {
             className);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.942 -0500", hash_original_method = "B248307A8F9E50DFEF49B17C8E17D951", hash_generated_method = "E563A0A86173E21089A84293AA15A801")
     
 public static Class getClassFromName(String headerName) {
@@ -64,6 +60,7 @@ public static Class getClassFromName(String headerName) {
     * Use this if you want to use the introspection-based methods.
     */
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.945 -0500", hash_original_method = "87CEA39C87C6E6A55E0C3E8D0DB070E7", hash_generated_method = "433F39090E4F70958D2750670C5A6784")
     
 public static void addExtensionHeader(
@@ -168,7 +165,6 @@ private static void initializeNameMap() {
 
         putNameMap(ALLOW_EVENTS, AllowEvents.class.getName()); //46
 
-
         // pmusgrave - extensions
         putNameMap(REFERRED_BY, "ReferredBy");
         putNameMap(SESSION_EXPIRES, "SessionExpires");
@@ -176,7 +172,6 @@ private static void initializeNameMap() {
         putNameMap(REPLACES, "Replaces");
         // jean deruelle
         putNameMap(JOIN, "Join");
-
 
         // IMS Specific headers.
 
@@ -203,8 +198,6 @@ private static void initializeNameMap() {
         putNameMap(ServiceRoute.NAME, ServiceRoute.class.getName());
 
         putNameMap(PVisitedNetworkID.NAME, PVisitedNetworkID.class.getName());
-
-
 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.936 -0500", hash_original_field = "96028DEAB127065E601657D11EE5475A", hash_generated_field = "531CBEFD115E0D8DD45BF7A253D5B3F3")

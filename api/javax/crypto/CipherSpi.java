@@ -13,10 +13,6 @@ import java.security.NoSuchAlgorithmException;
 import java.security.SecureRandom;
 import java.security.spec.AlgorithmParameterSpec;
 
-
-
-
-
 public abstract class CipherSpi {
 
     /**
@@ -292,6 +288,7 @@ protected abstract int engineUpdate(byte[] input, int inputOffset,
      * @throws ShortBufferException
      *             if the size of the {@code output} buffer is too small.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.486 -0500", hash_original_method = "A2736EFE3A54B9C2C8D99150445AC571", hash_generated_method = "5494D7FC63B418129C8C3F9728521910")
     
 protected int engineUpdate(ByteBuffer input, ByteBuffer output)
@@ -418,6 +415,7 @@ protected abstract int engineDoFinal(byte[] input, int inputOffset,
      *             if this cipher instance is not initialized for encryption or
      *             decryption.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.495 -0500", hash_original_method = "EB2370CFCF7CAD7D2D42FF2FD39E8FD0", hash_generated_method = "DE9670D093F36576A122315C9C27A377")
     
 protected int engineDoFinal(ByteBuffer input, ByteBuffer output)
@@ -474,6 +472,7 @@ protected int engineDoFinal(ByteBuffer input, ByteBuffer output)
      * @throws InvalidKeyException
      *             if this cipher instance cannot wrap this key.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.497 -0500", hash_original_method = "39FE6C15BFF89C7EBC497DBB2542410E", hash_generated_method = "A39FAFF0CA4B5C1E46D0446E9EDEBB62")
     
 protected byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKeyException {
@@ -503,6 +502,7 @@ protected byte[] engineWrap(Key key) throws IllegalBlockSizeException, InvalidKe
      *             if no provider can be found that can create a key of type
      *             {@code wrappedKeyType} for the {@code wrappedKeyAlgorithm}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.499 -0500", hash_original_method = "6B4157CFE5E357119D9C5A035C31A1F5", hash_generated_method = "EC8CF541C3B3A85029364FDDAEC36441")
     
 protected Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
@@ -528,7 +528,6 @@ protected Key engineUnwrap(byte[] wrappedKey, String wrappedKeyAlgorithm,
 protected int engineGetKeySize(Key key) throws InvalidKeyException {
         throw new UnsupportedOperationException();
     }
-
     
 }
 

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.IOException;
 
-
-
-
-
-
 public final class ASN1Implicit extends ASN1Type {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.429 -0500", hash_original_field = "4AD535DC1B971D46F1B734137C7FE502", hash_generated_field = "FC708BB1AC854A91B7DCE6A8ABC2B9F8")
 
@@ -121,6 +116,7 @@ public void encodeContent(BerOutputStream out) {
         type.encodeContent(out);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.454 -0500", hash_original_method = "142D84AECEAB554A6A5BF2DED12EF71F", hash_generated_method = "704B1343F6E9513417C3E1D1943893AB")
     
 public void setEncodingContent(BerOutputStream out) {

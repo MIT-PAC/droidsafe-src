@@ -13,10 +13,6 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.util.Log;
 
-
-
-
-
 public class LinkCapabilities implements Parcelable {
 
     /**
@@ -49,7 +45,8 @@ protected static void log(String s) {
 
     public static final Creator<LinkCapabilities> CREATOR =
         new Creator<LinkCapabilities>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.888 -0500", hash_original_method = "EE10B5AF562143A35856727EE7786CE8", hash_generated_method = "907427722BA360BB4F22035161CCA8EF")
+            @DSSink({DSSinkKind.NETWORK})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.888 -0500", hash_original_method = "EE10B5AF562143A35856727EE7786CE8", hash_generated_method = "907427722BA360BB4F22035161CCA8EF")
         
 public LinkCapabilities createFromParcel(Parcel in) {
                 LinkCapabilities capabilities = new LinkCapabilities();
@@ -131,6 +128,7 @@ public int size() {
      * @param key
      * @return the capability string
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.866 -0500", hash_original_method = "568005AD4EF2A886FBB9B820A5E2167C", hash_generated_method = "386973CB8BBD5465B8F7B1B19C249AA5")
     
 public String get(int key) {
@@ -143,6 +141,7 @@ public String get(int key) {
      * @param key
      * @param value
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.868 -0500", hash_original_method = "126A86B00CA0552F526F15B68A83F2ED", hash_generated_method = "7B3AB6A860409BD4AD0AC35129DC39E7")
     
 public void put(int key, String value) {
@@ -205,7 +204,6 @@ public Set<Integer> keySet() {
 public Collection<String> values() {
         return mCapabilities.values();
     }
-
     
     public static final class Key {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.797 -0500", hash_original_field = "8EECCF3DA1CE88C8CDE1B48E2D2B0766", hash_generated_field = "55E505A35A68C51C32DD8BDD97ADD9B0")
@@ -243,8 +241,6 @@ public Collection<String> values() {
         
 private Key() {}
     }
-
-
     
     public static final class Role {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:18.828 -0500", hash_original_field = "383C7B3696D501394562C4A1D8981CA7", hash_generated_field = "5C22EFDF94B8F9ADD88BC20D2726357A")

@@ -14,11 +14,6 @@ import org.apache.http.conn.routing.RouteTracker;
 import org.apache.http.params.HttpParams;
 import org.apache.http.protocol.HttpContext;
 
-
-
-
-
-
 public abstract class AbstractPoolEntry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.141 -0500", hash_original_field = "E40B74D82804A7A9813CCFFD83EFDC95", hash_generated_field = "6D2607DA479BDA11A25B13C47E7F0C5C")
 
@@ -38,7 +33,6 @@ public abstract class AbstractPoolEntry {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.150 -0500", hash_original_field = "F03334D6C9BF95AC15CF9711AE96481C", hash_generated_field = "178FE92301487BDC4E429ED14BD188F8")
 
     protected volatile RouteTracker tracker;
-
 
     /**
      * Creates a new pool entry.
@@ -66,6 +60,7 @@ protected AbstractPoolEntry(ClientConnectionOperator connOperator,
      * 
      * @return The state object
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:32.155 -0500", hash_original_method = "079ECF1B585CB82D2480C2A65F324FB6", hash_generated_method = "D182279B326BD725F747B0B0AAA3409A")
     
 public Object getState() {
@@ -128,7 +123,7 @@ public void open(HttpRoute route,
              route.getLocalAddress(),
              context, params);
 
-        RouteTracker localTracker = tracker; // capture volatile        
+        RouteTracker localTracker = tracker; // capture volatile
 
         // If this tracker was reset while connecting,
         // fail early.
@@ -143,7 +138,6 @@ public void open(HttpRoute route,
         }
 
     } // open
-
 
     /**
      * Tracks tunnelling of the connection to the target.
@@ -182,7 +176,6 @@ public void tunnelTarget(boolean secure, HttpParams params)
         this.tracker.tunnelTarget(secure);
 
     } // tunnelTarget
-
 
     /**
      * Tracks tunnelling of the connection to a chained proxy.
@@ -224,7 +217,6 @@ public void tunnelProxy(HttpHost next, boolean secure, HttpParams params)
         this.tracker.tunnelProxy(next, secure);
 
     } // tunnelProxy
-
 
     /**
      * Layers a protocol on top of an established tunnel.
@@ -273,7 +265,6 @@ public void layerProtocol(HttpContext context, HttpParams params)
 
     } // layerProtocol
 
-
     /**
      * Shuts down the entry.
      * 
@@ -285,7 +276,6 @@ public void layerProtocol(HttpContext context, HttpParams params)
 protected void shutdownEntry() { 
         tracker = null;
     }
-
     
 }
 

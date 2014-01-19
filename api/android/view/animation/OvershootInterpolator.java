@@ -8,10 +8,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-
-
-
-
 public class OvershootInterpolator implements Interpolator {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.407 -0500", hash_original_field = "8768F20F89FEA365257D9CA7103B2BB5", hash_generated_field = "D99941F5581612BAF56000DD0A59C563")
 
@@ -46,6 +42,7 @@ public OvershootInterpolator(Context context, AttributeSet attrs) {
         a.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.417 -0500", hash_original_method = "F21DD3F51BCD131DFD1A0AC343B5C733", hash_generated_method = "3DC77BA128FDB24C8E93C4EE335FD934")
     
 public float getInterpolation(float t) {
@@ -54,7 +51,6 @@ public float getInterpolation(float t) {
         t -= 1.0f;
         return t * t * ((mTension + 1) * t + mTension) + 1.0f;
     }
-
     
 }
 

@@ -9,14 +9,8 @@ import java.io.ObjectInput;
 import java.io.ObjectOutput;
 import java.util.SortedMap;
 
-
-
-
-
-
 class DefaultMapStorage extends AreaCodeMapStorageStrategy {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.276 -0500", hash_original_field = "2E090E0FDA3569C48E6CB697457074C8", hash_generated_field = "8F024CB0AD263019B845A09CCEFC6C3E")
-
 
   private int[] phoneNumberPrefixes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.278 -0500", hash_original_field = "CF80C9B5078DC8177B2555E30F0611BC", hash_generated_field = "11DEDEF7B2B3D57903FB4636F9144ACA")
@@ -34,14 +28,16 @@ public DefaultMapStorage() {}
     return false;
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.282 -0500", hash_original_method = "499E30A17B0C3429D0791D94BC3FA75F", hash_generated_method = "EFF44D4B0F50336CBC383D5F64CA9353")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.282 -0500", hash_original_method = "499E30A17B0C3429D0791D94BC3FA75F", hash_generated_method = "EFF44D4B0F50336CBC383D5F64CA9353")
     
 @Override
   public int getPrefix(int index) {
     return phoneNumberPrefixes[index];
   }
 
-  @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.285 -0500", hash_original_method = "9F6ED4FEDAB6F7BCB8C7B74F1377FE11", hash_generated_method = "203D35EEE8AB45A79E92B5EFACE487A0")
+  @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:06.285 -0500", hash_original_method = "9F6ED4FEDAB6F7BCB8C7B74F1377FE11", hash_generated_method = "203D35EEE8AB45A79E92B5EFACE487A0")
     
 @Override
   public String getDescription(int index) {
@@ -100,7 +96,6 @@ public DefaultMapStorage() {}
       objectOutput.writeInt(length);
     }
   }
-
     
 }
 

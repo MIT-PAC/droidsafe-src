@@ -9,13 +9,8 @@ import android.text.ParcelableSpan;
 import android.text.TextPaint;
 import android.text.TextUtils;
 
-
-
-
-
 public class ScaleXSpan extends MetricAffectingSpan implements ParcelableSpan {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.167 -0500", hash_original_field = "859F89A95EA81D453D987D576B8DE2B6", hash_generated_field = "F3DE0713F398F5B7918E6C35C0AAE054")
-
 
 	private  float mProportion;
 
@@ -31,6 +26,7 @@ public ScaleXSpan(Parcel src) {
         mProportion = src.readFloat();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.175 -0500", hash_original_method = "305A59DEF4DC94D07B224B5DAB862393", hash_generated_method = "454F15ABAB6AB97134EC46CE4EF196D1")
     
 public int getSpanTypeId() {
@@ -49,7 +45,8 @@ public void writeToParcel(Parcel dest, int flags) {
         dest.writeFloat(mProportion);
     }
 
-	@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.182 -0500", hash_original_method = "EC544E0B7E0BD00BAC5AC8960BBAB7C7", hash_generated_method = "47DD6B3C3E4ECDD728FA56F864D8EE6B")
+	@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:10.182 -0500", hash_original_method = "EC544E0B7E0BD00BAC5AC8960BBAB7C7", hash_generated_method = "47DD6B3C3E4ECDD728FA56F864D8EE6B")
     
 public float getScaleX() {
 		return mProportion;
@@ -68,7 +65,6 @@ public float getScaleX() {
 	public void updateMeasureState(TextPaint ds) {
 		ds.setTextScaleX(ds.getTextScaleX() * mProportion);
 	}
-
     
 }
 

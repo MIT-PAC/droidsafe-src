@@ -12,12 +12,8 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-
-
-
 public class MultiValueMapImpl<V> implements MultiValueMap<String, V>, Cloneable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.016 -0500", hash_original_field = "3B997311D3D318FE0ED78E80D905A3F0", hash_generated_field = "A182B7666DFBDE7AEB9947BAE926EB53")
-
 
     private static final long serialVersionUID = 4275505380960964605L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.014 -0500", hash_original_field = "FFACFEC1D816CE2FD3ED2B5D447867BF", hash_generated_field = "7CFE38AEC9CFBA4A360ACB9AB9A4320E")
@@ -31,6 +27,7 @@ public MultiValueMapImpl() {
 
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.021 -0500", hash_original_method = "015B36338D34B6EBF400464F225017F7", hash_generated_method = "A0EF9E4F18A993D8B1918CB90B56E3DE")
     
 public List<V> put(String key, V value) {
@@ -149,6 +146,7 @@ public List<V> get(Object key) {
         return map.get(key);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:52.053 -0500", hash_original_method = "23A91A040F7CE5CCEDDB4E75AB426F56", hash_generated_method = "A2C99B25153A12E1942A45EA141F9896")
     
 public List<V> put(String key, List<V> value) {

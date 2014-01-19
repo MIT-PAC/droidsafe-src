@@ -23,11 +23,6 @@ import android.view.textservice.TextServicesManager;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class SpellChecker implements SpellCheckerSessionListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.519 -0500", hash_original_field = "885BF3DCBEF5B9869B7208E79D6F77BF", hash_generated_field = "D3567E0D42B1F2B16C44D79D7255FBDE")
 
@@ -44,10 +39,8 @@ public class SpellChecker implements SpellCheckerSessionListener {
     private final static int SPELL_PAUSE_DURATION = 400;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.528 -0500", hash_original_field = "49AF0A2A014C0E7F98E27CA30429A8B6", hash_generated_field = "B044D5C32398EDC8D922234EFA4F1DF3")
 
-
     private  TextView mTextView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.530 -0500", hash_original_field = "39E84A66981E43B1DC94949150BE2F63", hash_generated_field = "39E84A66981E43B1DC94949150BE2F63")
-
 
     SpellCheckerSession mSpellCheckerSession;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.532 -0500", hash_original_field = "17C86C09C6C4D7B6E875B4525EC536C5", hash_generated_field = "17C86C09C6C4D7B6E875B4525EC536C5")
@@ -69,10 +62,8 @@ public class SpellChecker implements SpellCheckerSessionListener {
     private SpellParser[] mSpellParsers = new SpellParser[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.543 -0500", hash_original_field = "8AC04DAD49EFCDE7727923F9CA94D728", hash_generated_field = "2AB80C042BBE999CBCF902D21883708D")
 
-
     private int mSpanSequenceCounter = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.545 -0500", hash_original_field = "0400C5C553DC4CBF37271C21855854A7", hash_generated_field = "88175FFB524B6CC60F82A34D8C4EC643")
-
 
     private Locale mCurrentLocale;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.547 -0500", hash_original_field = "134C3C55F24C618FDDF57AD7DFB984D3", hash_generated_field = "6EF78397FF3909122D4E310EEBAF175E")
@@ -81,10 +72,8 @@ public class SpellChecker implements SpellCheckerSessionListener {
     private WordIterator mWordIterator;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.549 -0500", hash_original_field = "AF1217F2A0F182C8990DD16B7F790980", hash_generated_field = "1086F1F56F0517EEEF9DAE1810CF3039")
 
-
     private TextServicesManager mTextServicesManager;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.551 -0500", hash_original_field = "75D02CC5817A00C181F6E3BB0386AC2C", hash_generated_field = "C12CAE036558C1FAAF23655B9A008A09")
-
 
     private Runnable mSpellRunnable;
 
@@ -261,7 +250,6 @@ public void spellCheck(int start, int end) {
         spellParser.init(start, end);
         spellParser.parse();
     }
-
     
     private class SpellParser {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:16.593 -0500", hash_original_field = "676EE99A9776F8AE5800DDACE6182261", hash_generated_field = "82F647CE25A38C36E8A5E280A1933D4B")
@@ -401,9 +389,7 @@ public void parse() {
 
             spellCheck();
         }
-
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:05.317 -0400", hash_original_method = "0A3768DE6F2D0EE4EDD70A588C9E13B1", hash_generated_method = "F826D98320B305250B98F56F203BB81E")
         private <T> void removeSpansAt(Editable editable, int offset, T[] spans) {
             addTaint(spans[0].getTaint());
@@ -432,7 +418,6 @@ for(int i = 0;i < length;i++)
                 //editable.removeSpan(span);
             //}
         }
-
         
     }
 

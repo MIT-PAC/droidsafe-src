@@ -31,11 +31,6 @@ import com.android.i18n.phonenumbers.PhoneNumberUtil;
 import com.android.i18n.phonenumbers.PhoneNumberUtil.PhoneNumberFormat;
 import com.android.i18n.phonenumbers.Phonenumber.PhoneNumber;
 
-
-
-
-
-
 public class PhoneNumberUtils {
 
     /** True if c is ISO-LATIN characters 0-9 */
@@ -103,7 +98,6 @@ private static boolean
         return c == 'w'||c == 'W';
     }
 
-
     /** Returns true if ch is not dialable or alpha char */
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.358 -0500", hash_original_method = "85CF1420537B9541711C4FCF41BF1A25", hash_generated_method = "1F51162AE5FD7B556E7AFBCB3F1A3D3C")
     
@@ -119,6 +113,7 @@ private static boolean isSeparator(char ch) {
      * @return the phone number that would be called by the intent, or
      *         <code>null</code> if the number cannot be found.
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.363 -0500", hash_original_method = "E0640A2FD798FB776FD3E9A9E45506D7", hash_generated_method = "E3C6CFE82D3887F98159B08DA505B9A0")
     
 public static String getNumberFromIntent(Intent intent, Context context) {
@@ -497,7 +492,6 @@ public static boolean
             int effectiveALen = a.length() - numNonDialableCharsInA;
             int effectiveBLen = b.length() - numNonDialableCharsInB;
 
-
             // if the number of dialable chars in a and b match, but the matched chars < MIN_MATCH,
             // treat them as equal (i.e. 404-04 and 40404)
             if (effectiveALen == effectiveBLen && effectiveALen == matched) {
@@ -724,6 +718,7 @@ public static String
      *
      * Returns null if phoneNumber == null
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.430 -0500", hash_original_method = "D2BEAEC3FE32EF1C76508600B5DF4065", hash_generated_method = "88CDDE2AB55F2970EE715A7DD4A18D76")
     
 public static String
@@ -1010,6 +1005,8 @@ private static int
      * as far as we can tell on the device, suitable for use as an SMS
      * destination address.
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.466 -0500", hash_original_method = "A988E80FBF926E38476CB13622AE0017", hash_generated_method = "7C5E5705B6EC3452A5193A1A55FAF86A")
     
 public static boolean isWellFormedSmsAddress(String address) {
@@ -1059,6 +1056,7 @@ private static boolean isNonSeparator(String address) {
      *
      * Returns null if network portion is empty.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.480 -0500", hash_original_method = "AF7754C02AEA7A015FB424C581D10AD2", hash_generated_method = "FD9BF84B8C812B5C208BF3E65AA98275")
     
 public static byte[]
@@ -1071,6 +1069,7 @@ public static byte[]
      * Same as {@link #networkPortionToCalledPartyBCD}, but includes a
      * one-byte length prefix.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.484 -0500", hash_original_method = "53FAAB919D090E6E7EF0B0376A95BD6B", hash_generated_method = "A6151625BD87F00B194EBC8CCF6C1190")
     
 public static byte[]
@@ -1086,6 +1085,7 @@ public static byte[]
      *        if the dialing number starts with '+', set to international TOA
      * @return BCD byte array
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.487 -0500", hash_original_method = "46011790469F97E3B0CE4186D5C8E763", hash_generated_method = "235F8733C111298DA75197392233021F")
     
 public static byte[]
@@ -1142,6 +1142,8 @@ private static byte[]
      * @return A locally acceptable formatting of the input, or the raw input if
      *  formatting rules aren't known for the number
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.510 -0500", hash_original_method = "F559913F36966A96ABB20C01E67F5DD8", hash_generated_method = "AB4056F3A6E3A769AE23A235BAD6EBBE")
     
 public static String formatNumber(String source) {
@@ -1176,6 +1178,7 @@ public static String formatNumber(String source, int defaultFormattingType) {
      * @return The formatting type for the given locale, or FORMAT_UNKNOWN if the formatting
      * rules are not known for the given locale
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.516 -0500", hash_original_method = "2035A43BA247538550AB3B62E959FF45", hash_generated_method = "732EDFC543A716276529B9845579B8CC")
     
 public static int getFormatTypeForLocale(Locale locale) {
@@ -2129,6 +2132,7 @@ public static boolean isUriNumber(String number) {
      *
      * @hide
      */
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.655 -0500", hash_original_method = "F030E804700DAC1BD311652B4F54A186", hash_generated_method = "B84CFD60AD1D8FE61F8617DA040FF80B")
     
 public static String getUsernameFromUriNumber(String number) {
@@ -2512,7 +2516,6 @@ private static boolean checkPrefixIsIgnorable(final String str,
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.296 -0500", hash_original_field = "A6FB204819A8699A976195514879641E", hash_generated_field = "9592BDC3C222BAB87D6921536B386F02")
 
     public static final char PAUSE = ',';
-
     
     private static class CountryCallingCodeAndNewIndex {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.696 -0500", hash_original_field = "7A11634F20F39AF3448FB685B8352A3F", hash_generated_field = "3AFE52867FA7D6A4E2F06FCBB6E2D3AB")
@@ -2527,7 +2530,6 @@ public CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
             this.countryCallingCode = countryCode;
             this.newIndex = newIndex;
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.299 -0500", hash_original_field = "8D458F01853313ABEA98A88F7EE3478A", hash_generated_field = "B5DAD0C77E5093BF168B416C17DBD0D4")
@@ -2550,7 +2552,6 @@ public CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
     public static final int TOA_Unknown = 0x81;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.320 -0500", hash_original_field = "403F795B9AFF87DA5236729C537FAA39", hash_generated_field = "66F1D08002084ED372C413B449756379")
 
-
     static final String LOG_TAG = "PhoneNumberUtils";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.324 -0500", hash_original_field = "B2601CA7445F6BA19FA7884763D82281", hash_generated_field = "1A61763F9CABC9206BB5AE6E570AB8AE")
 
@@ -2560,7 +2561,6 @@ public CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
     private static final Pattern GLOBAL_PHONE_NUMBER_PATTERN =
             Pattern.compile("[\\+]?[0-9.-]+");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.495 -0500", hash_original_field = "DEA5E53A3DD9D15707DBB3267861907A", hash_generated_field = "75D48D38CDAAF3E8AF823720AEFD507B")
-
 
     /** The current locale is unknown, look for a country code or don't format */
     public static final int FORMAT_UNKNOWN = 0;
@@ -2599,7 +2599,6 @@ public CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
         "VI", // U.S. Virgin Islands
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.523 -0500", hash_original_field = "655910138B9EB02069D7FF3E386896BF", hash_generated_field = "97E60B6F9174D822AC0B50ACF1DFAB18")
-
 
     private static final int NANP_STATE_DIGIT = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.527 -0500", hash_original_field = "D24967CB28CFFB9B53B628032D4462C6", hash_generated_field = "D8B6E15CB39EE1B396190326022E5992")
@@ -2664,7 +2663,6 @@ public CountryCallingCodeAndNewIndex(int countryCode, int newIndex) {
 
     private static final int NANP_LENGTH = 10;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:51.682 -0500", hash_original_field = "38B80DF00A5A91E51BBE4E6988DE0AF9", hash_generated_field = "7BBE712A9274E1A48A8FA3DFB5721C10")
-
 
     //===== Beginning of utility methods used only in compareStrictly() ====
 

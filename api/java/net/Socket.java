@@ -12,10 +12,6 @@ import java.nio.channels.SocketChannel;
 
 import libcore.io.IoBridge;
 
-
-
-
-
 public class Socket {
 
     /**
@@ -41,14 +37,12 @@ public static synchronized void setSocketImplFactory(SocketImplFactory fac)
     private static SocketImplFactory factory;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.705 -0500", hash_original_field = "76382137C184A183F2BF2D8583A90AEC", hash_generated_field = "76382137C184A183F2BF2D8583A90AEC")
 
-
     @DSVAModeled
      SocketImpl impl;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.707 -0500", hash_original_field = "CA775536D3A7F4013C2E9C464BE24463", hash_generated_field = "EE0BB8F1739D62A5A5C8EDF7D478A66B")
 
     private  Proxy proxy;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.709 -0500", hash_original_field = "271B073974464C9D5A15CF255DE64C37", hash_generated_field = "FEFE85DE55A57D0EBA9EA9B6592B8458")
-
 
     volatile boolean isCreated = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.712 -0500", hash_original_field = "F9AB7682F64A4F93F6F4A7A435A5AA53", hash_generated_field = "AD4F2B698EC37BEC9EEE873CE57E921D")
@@ -68,10 +62,8 @@ public static synchronized void setSocketImplFactory(SocketImplFactory fac)
     private boolean isOutputShutdown = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.723 -0500", hash_original_field = "0B4773EA0A3167016F59761BAEB913EF", hash_generated_field = "A8E9D68398963C6A7BD51AC2BEC0E3CA")
 
-
     private InetAddress localAddress = Inet4Address.ANY;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.726 -0500", hash_original_field = "99DA49219FBE84DB37A0CF6E89AC6E90", hash_generated_field = "574736669071BAC15E2D1E76082A2D20")
-
 
     private final Object connectLock = new Object();
 
@@ -83,6 +75,8 @@ public static synchronized void setSocketImplFactory(SocketImplFactory fac)
      * @see SocketImplFactory
      * @see SocketImpl
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.729 -0500", hash_original_method = "DE6B6B5588954C6A35AB00A23B1617FE", hash_generated_method = "24D8AF97881FC81FD7824F1A915C2F48")
     
 public Socket() {
@@ -137,6 +131,8 @@ public Socket(Proxy proxy) {
      * @throws IOException
      *             if an error occurs while creating the socket.
      */
+    @DSComment("Connect to outside")
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.737 -0500", hash_original_method = "59B1F76D08717F2A7DB6178659D1BD4D", hash_generated_method = "6316CA7E40A21D61D9B9CAFA97BA22ED")
     
 public Socket(String dstName, int dstPort) throws UnknownHostException, IOException {
@@ -217,6 +213,8 @@ public Socket(String dstName, int dstPort, InetAddress localAddress, int localPo
      * @throws IOException
      *             if an error occurs while creating the socket.
      */
+    @DSComment("Connect to outside")
+    @DSSpec(DSCat.NETWORK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.747 -0500", hash_original_method = "A1767A7E1F84ED40BDB339014C4851EF", hash_generated_method = "80204189B6A824DCFD0C9110D1ADFD5C")
     
 public Socket(InetAddress dstAddress, int dstPort) throws IOException {
@@ -362,6 +360,8 @@ private void checkDestination(InetAddress destAddr, int dstPort) {
      * @throws IOException
      *             if an error occurs while closing the socket.
      */
+    @DSComment("no info leak")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.760 -0500", hash_original_method = "6609A304DB40C6FFC8F6AC783F01FDAC", hash_generated_method = "ED7C68A509180A9A266A476496F0821D")
     
 public synchronized void close() throws IOException {
@@ -375,6 +375,9 @@ public synchronized void close() throws IOException {
      * Returns the IP address of the target host this socket is connected to, or null if this
      * socket is not yet connected.
      */
+    @DSComment("potential info leak")
+    @DSSpec(DSCat.NETWORK)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.762 -0500", hash_original_method = "084821CC0A1E0331CE4D2BB5EC46E415", hash_generated_method = "035752FAFAA541B776502AEB7625AC4B")
     
 public InetAddress getInetAddress() {
@@ -392,6 +395,9 @@ public InetAddress getInetAddress() {
      *             if an error occurs while creating the input stream or the
      *             socket is in an invalid state.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.764 -0500", hash_original_method = "83F4AB21434B41B13879E1F39D268878", hash_generated_method = "6A888960A97927C9FE7BA113727A3BC0")
     
 public InputStream getInputStream() throws IOException {
@@ -405,6 +411,7 @@ public InputStream getInputStream() throws IOException {
     /**
      * Returns this socket's {@link SocketOptions#SO_KEEPALIVE} setting.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.767 -0500", hash_original_method = "CB6F12AE5628FD4A044BF4AD41BFB963", hash_generated_method = "B7F0F19C2A20C66ABC7FE8AC44F97F4C")
     
 public boolean getKeepAlive() throws SocketException {
@@ -416,6 +423,9 @@ public boolean getKeepAlive() throws SocketException {
      * Returns the local IP address this socket is bound to, or {@code InetAddress.ANY} if
      * the socket is unbound.
      */
+    @DSComment("potential info leak")
+    @DSSpec(DSCat.NETWORK)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.769 -0500", hash_original_method = "B81D9B2A12700622583B88DBCF07EC2E", hash_generated_method = "E7886D89DC17F90FB319BF6401B5F681")
     
 public InetAddress getLocalAddress() {
@@ -425,6 +435,9 @@ public InetAddress getLocalAddress() {
     /**
      * Returns the local port this socket is bound to, or -1 if the socket is unbound.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.772 -0500", hash_original_method = "F5BB694DF3469EBFBD82064FFB1FEAE0", hash_generated_method = "7757875108A58B1E253356DE798623DA")
     
 public int getLocalPort() {
@@ -442,6 +455,9 @@ public int getLocalPort() {
      *             if an error occurs while creating the output stream or the
      *             socket is in an invalid state.
      */
+    @DSComment("Method returns IO Object")
+    @DSSpec(DSCat.IO)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.774 -0500", hash_original_method = "0AB25EAA0774AA81766D4356986FC34F", hash_generated_method = "7FE0092975A1C779207A619656F7BC91")
     
 public OutputStream getOutputStream() throws IOException {
@@ -456,6 +472,9 @@ public OutputStream getOutputStream() throws IOException {
      * Returns the port number of the target host this socket is connected to, or 0 if this socket
      * is not yet connected.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.777 -0500", hash_original_method = "0A0FE55C893091E17125D546A7D59C8C", hash_generated_method = "2CD0DBDC8C6EBD34BBC1C81F3A3F646A")
     
 public int getPort() {
@@ -469,6 +488,9 @@ public int getPort() {
      * Returns this socket's {@link SocketOptions#SO_LINGER linger} timeout in seconds, or -1
      * for no linger (i.e. {@code close} will return immediately).
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.779 -0500", hash_original_method = "8044EC6E5CF2F698E1FE570A36824B05", hash_generated_method = "DD8C828A10DD4054CE1BA7E30D774692")
     
 public int getSoLinger() throws SocketException {
@@ -485,6 +507,7 @@ public int getSoLinger() throws SocketException {
     /**
      * Returns this socket's {@link SocketOptions#SO_RCVBUF receive buffer size}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.782 -0500", hash_original_method = "49326126DE06A7EC2CFFBD7B3A14AE31", hash_generated_method = "5B9B0491840E0351513757AA16652639")
     
 public synchronized int getReceiveBufferSize() throws SocketException {
@@ -495,6 +518,7 @@ public synchronized int getReceiveBufferSize() throws SocketException {
     /**
      * Returns this socket's {@link SocketOptions#SO_SNDBUF send buffer size}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.785 -0500", hash_original_method = "9FF5297C2B145A55844611E68CB98459", hash_generated_method = "65FD2B8459D30721899E91FB1B00707B")
     
 public synchronized int getSendBufferSize() throws SocketException {
@@ -505,6 +529,9 @@ public synchronized int getSendBufferSize() throws SocketException {
     /**
      * Returns this socket's {@link SocketOptions#SO_TIMEOUT receive timeout}.
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.788 -0500", hash_original_method = "7DAE79431B5F9BEF40635CDD183C2B59", hash_generated_method = "9E2A63F81E256F78F33E2AEA9CDD43C5")
     
 public synchronized int getSoTimeout() throws SocketException {
@@ -515,6 +542,9 @@ public synchronized int getSoTimeout() throws SocketException {
     /**
      * Returns this socket's {@code SocketOptions#TCP_NODELAY} setting.
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.790 -0500", hash_original_method = "3F059C4060D675A8035CAA8B5017EE1E", hash_generated_method = "028D8B84B7562641572ADBA47276ABA8")
     
 public boolean getTcpNoDelay() throws SocketException {
@@ -525,6 +555,7 @@ public boolean getTcpNoDelay() throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_KEEPALIVE} option.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.792 -0500", hash_original_method = "B94B1A38E8CA82DAB010EC0768F89732", hash_generated_method = "EF88431EFCC396F01C11E1AE35061AE8")
     
 public void setKeepAlive(boolean keepAlive) throws SocketException {
@@ -537,6 +568,7 @@ public void setKeepAlive(boolean keepAlive) throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_SNDBUF send buffer size}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.798 -0500", hash_original_method = "AEB667B5DBC425D73D37135566ECC286", hash_generated_method = "2BACDB608F27E2DA5EA3F1A1CC0AE41C")
     
 public synchronized void setSendBufferSize(int size) throws SocketException {
@@ -550,6 +582,7 @@ public synchronized void setSendBufferSize(int size) throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_SNDBUF receive buffer size}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.801 -0500", hash_original_method = "1376DE896B8682F991877B7A17C5B3A4", hash_generated_method = "E8C94E07AE5129400B83D2720335F5D5")
     
 public synchronized void setReceiveBufferSize(int size) throws SocketException {
@@ -564,6 +597,9 @@ public synchronized void setReceiveBufferSize(int size) throws SocketException {
      * Sets this socket's {@link SocketOptions#SO_LINGER linger} timeout in seconds.
      * If {@code on} is false, {@code timeout} is irrelevant.
      */
+    @DSComment("no info leak")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.803 -0500", hash_original_method = "89C38D96E5FBD4D1BD6CE4BD573A4473", hash_generated_method = "1A27C288186A15DD21BEFF577A37F9F2")
     
 public void setSoLinger(boolean on, int timeout) throws SocketException {
@@ -584,6 +620,9 @@ public void setSoLinger(boolean on, int timeout) throws SocketException {
      * Use 0 for no timeout.
      * To take effect, this option must be set before the blocking method was called.
      */
+    @DSComment("no info leak")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.805 -0500", hash_original_method = "EA919996CC1899AC4E781314DA47161A", hash_generated_method = "3DFB1A74D06365DC93C5D8EB35AF634C")
     
 public synchronized void setSoTimeout(int timeout) throws SocketException {
@@ -597,6 +636,9 @@ public synchronized void setSoTimeout(int timeout) throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#TCP_NODELAY} option.
      */
+    @DSComment("no info leak")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.808 -0500", hash_original_method = "04E6A4AAAA03D3C2F3E4334A66D2F7A1", hash_generated_method = "D3F378CA149CFF25D39A9240F7510EC4")
     
 public void setTcpNoDelay(boolean on) throws SocketException {
@@ -761,6 +803,7 @@ private void checkOpenAndCreate(boolean create) throws SocketException {
      * null if the socket is unbound. This is useful on multihomed
      * hosts.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.826 -0500", hash_original_method = "AE126A441E32CF7358FEDD7A95BAD391", hash_generated_method = "67B8A39634FC3A72D60F6B588EC9B04B")
     
 public SocketAddress getLocalSocketAddress() {
@@ -776,6 +819,7 @@ public SocketAddress getLocalSocketAddress() {
      *
      * @return the remote socket address and port.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.829 -0500", hash_original_method = "7C698472BF26D61A7917F4B5238C5FF7", hash_generated_method = "C1CDFAAC803588FC140B6196FA164411")
     
 public SocketAddress getRemoteSocketAddress() {
@@ -802,6 +846,8 @@ public boolean isBound() {
      *
      * @return {@code true} if the socket is connected, {@code false} otherwise.
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.833 -0500", hash_original_method = "B1255CDE181FFAAB8CB434FB98B99FFF", hash_generated_method = "04CA4546F9019A1940AA3235F1228ADE")
     
 public boolean isConnected() {
@@ -813,6 +859,8 @@ public boolean isConnected() {
      *
      * @return {@code true} if the socket is closed, {@code false} otherwise.
      */
+    @DSComment("no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.836 -0500", hash_original_method = "2EEDDDEB8BA1CD500E3647BC397BF54F", hash_generated_method = "10C0B8E2B9DF49DDBC078E9919A022F7")
     
 public boolean isClosed() {
@@ -833,6 +881,9 @@ public boolean isClosed() {
      *             if the socket is already bound or an error occurs while
      *             binding.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.839 -0500", hash_original_method = "9E3C378994EF9A4091E39D0FA34770F8", hash_generated_method = "D0C31E3A84FEA3EC846026D0B18E8F69")
     
 public void bind(SocketAddress localAddr) throws IOException {
@@ -879,6 +930,8 @@ public void bind(SocketAddress localAddr) throws IOException {
      *             if the socket is already connected or an error occurs while
      *             connecting.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.841 -0500", hash_original_method = "B2F3815725658D73C0532A54E6C164BA", hash_generated_method = "AE3DC0528EB0E6538EC2417B0369366A")
     
 public void connect(SocketAddress remoteAddr) throws IOException {
@@ -903,6 +956,8 @@ public void connect(SocketAddress remoteAddr) throws IOException {
      *             if the socket is already connected or an error occurs while
      *             connecting.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.844 -0500", hash_original_method = "45EED4DE787227F7BEC68E335C7AA6E7", hash_generated_method = "7616BDB1DAEC13E9767FAD09B4C3E893")
     
 public void connect(SocketAddress remoteAddr, int timeout) throws IOException {
@@ -980,6 +1035,7 @@ public boolean isOutputShutdown() {
     /**
      * Sets this socket's {@link SocketOptions#SO_REUSEADDR} option.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.851 -0500", hash_original_method = "6CEA4E5A53899EBE8D1FD08F2FE40675", hash_generated_method = "80DA433489B549F3E709FA7CC0A7329E")
     
 public void setReuseAddress(boolean reuse) throws SocketException {
@@ -990,6 +1046,7 @@ public void setReuseAddress(boolean reuse) throws SocketException {
     /**
      * Returns this socket's {@link SocketOptions#SO_REUSEADDR} setting.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.853 -0500", hash_original_method = "8D0919FD23B9A2472FC046E6B1704481", hash_generated_method = "0A7B1D300C8A9F490E2233B15EBFDDBE")
     
 public boolean getReuseAddress() throws SocketException {
@@ -1000,6 +1057,7 @@ public boolean getReuseAddress() throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#SO_OOBINLINE} option.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.856 -0500", hash_original_method = "8F9774180DF7F00524B2F69126E7F96E", hash_generated_method = "DCCB6A7C4144E7DA2F10891B3E3BDCC2")
     
 public void setOOBInline(boolean oobinline) throws SocketException {
@@ -1010,6 +1068,7 @@ public void setOOBInline(boolean oobinline) throws SocketException {
     /**
      * Returns this socket's {@link SocketOptions#SO_OOBINLINE} setting.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.859 -0500", hash_original_method = "A307BAC96AD0AD9185D724CFFBC60918", hash_generated_method = "2C6701919D054DEDDAF840C87A673ACC")
     
 public boolean getOOBInline() throws SocketException {
@@ -1020,6 +1079,7 @@ public boolean getOOBInline() throws SocketException {
     /**
      * Sets this socket's {@link SocketOptions#IP_TOS} value for every packet sent by this socket.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.862 -0500", hash_original_method = "50A48D0E3EC8A723BC37542164C52A31", hash_generated_method = "D137171BCE45E62FCA1247C4D17C5421")
     
 public void setTrafficClass(int value) throws SocketException {
@@ -1033,6 +1093,7 @@ public void setTrafficClass(int value) throws SocketException {
     /**
      * Returns this socket's {@see SocketOptions#IP_TOS} setting.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.865 -0500", hash_original_method = "D7C7CF134B3FE725817BA2C07D220760", hash_generated_method = "0FEBE53442BBF4E490F037E29AE5534D")
     
 public int getTrafficClass() throws SocketException {
@@ -1049,6 +1110,7 @@ public int getTrafficClass() throws SocketException {
      * @throws IOException
      *             if an error occurs while sending urgent data.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.867 -0500", hash_original_method = "CBFC447F34929AC991DFFA20015F8279", hash_generated_method = "E055261451665E01A23B7E558AE9D2A4")
     
 public void sendUrgentData(int value) throws IOException {
@@ -1082,6 +1144,7 @@ private void cacheLocalAddress() {
      * {@link java.nio.channels.ServerSocketChannel#accept} or
      * {@link java.nio.channels.SocketChannel#open}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.874 -0500", hash_original_method = "A7DB57A03C94477191BD1BBD8D530AC8", hash_generated_method = "A6C9D428F1F990500B452DA7CE711816")
     
 public SocketChannel getChannel() {
@@ -1091,6 +1154,7 @@ public SocketChannel getChannel() {
     /**
      * @hide internal use only
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.877 -0500", hash_original_method = "90C19CEBA6BBC20B430C1F399D6443A6", hash_generated_method = "22E2F6090640F07EEA0A28EA56ABF561")
     
 public FileDescriptor getFileDescriptor$() {
@@ -1110,6 +1174,7 @@ public FileDescriptor getFileDescriptor$() {
      * @param bandwidth
      *            the value representing the importance of high bandwidth.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:06.879 -0500", hash_original_method = "EE4DCDA11944F25F3B6AAA6A92D8AD2F", hash_generated_method = "F246F8DA4A0CBB54D188217F5E7B1DB3")
     
 public void setPerformancePreferences(int connectionTime, int latency, int bandwidth) {

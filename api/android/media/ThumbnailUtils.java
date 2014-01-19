@@ -20,10 +20,6 @@ import android.os.ParcelFileDescriptor;
 import android.provider.MediaStore.Images;
 import android.util.Log;
 
-
-
-
-
 public class ThumbnailUtils {
 
     /**
@@ -99,6 +95,9 @@ public static Bitmap createImageThumbnail(String filePath, int kind) {
      * @param filePath the path of video file
      * @param kind could be MINI_KIND or MICRO_KIND
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.758 -0500", hash_original_method = "3C5DBD92A3A305187D743DC871D6AE55", hash_generated_method = "0279A15AEFC098387B9E2647C88FBC69")
     
 public static Bitmap createVideoThumbnail(String filePath, int kind) {
@@ -148,6 +147,8 @@ public static Bitmap createVideoThumbnail(String filePath, int kind) {
      * @param width targeted width
      * @param height targeted height
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.761 -0500", hash_original_method = "04F11977515FDB4F5E012AC13A40882D", hash_generated_method = "1BAB2227279275269EDB0E4C6BD99FA5")
     
 public static Bitmap extractThumbnail(
@@ -478,7 +479,6 @@ private static void createThumbnailFromEXIF(String filePath, int targetSize,
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.730 -0500", hash_original_field = "9F89762DCCDF0C177AB5C7A4C4A847A1", hash_generated_field = "CC8569C5C144996C2C1B9BCC3DFD2CE0")
 
     private static final String TAG = "ThumbnailUtils";
-
     
     private static class SizedThumbnailBitmap {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.786 -0500", hash_original_field = "3F520D35D42F7D83BD963CE4801140CC", hash_generated_field = "06D73110F79B9622C1F4FE2AF624C5A7")
@@ -494,13 +494,11 @@ private static void createThumbnailFromEXIF(String filePath, int targetSize,
 
         public int mThumbnailHeight;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.264 -0400", hash_original_method = "00296400B022DD946E1008D4AF6645F7", hash_generated_method = "00296400B022DD946E1008D4AF6645F7")
         public SizedThumbnailBitmap ()
         {
             //Synthesized constructor
         }
-
 
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:32.732 -0500", hash_original_field = "B1B7B3AC5A1A6668790640899EDF81EB", hash_generated_field = "C3D7D5D0952213F1807F9BD3033D397E")

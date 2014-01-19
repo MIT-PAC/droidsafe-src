@@ -14,11 +14,6 @@ import java.util.Set;
 
 import org.apache.harmony.security.asn1.ObjectIdentifier;
 
-
-
-
-
-
 public class AlgNameMapper {
 
     /**
@@ -55,6 +50,7 @@ public static String map2AlgName(String oid) {
      * @param algName - alias
      * @return algorithm name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.853 -0500", hash_original_method = "313B623F7DAA498A73633C83991E4DA4", hash_generated_method = "4DEB350C63CA1737077538B01C67AD6E")
     
 public static String getStandardName(String algName) {

@@ -18,21 +18,14 @@ import android.widget.AdapterView;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
-
-
-
-
 public final class PreferenceScreen extends PreferenceGroup implements AdapterView.OnItemClickListener, DialogInterface.OnDismissListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.197 -0500", hash_original_field = "38ED67B5E11523BFFC80771D205161CE", hash_generated_field = "4B36ACD05D99FE341A50201EADA8B6CA")
 
-
     private ListAdapter mRootAdapter;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.199 -0500", hash_original_field = "0C87BCBAF0D95855709E5BEE2BDBA46D", hash_generated_field = "D9FAD0C1386FC50E3C837906841C2A70")
-
     
     private Dialog mDialog;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.201 -0500", hash_original_field = "564994122F8B404810DDCD714146F030", hash_generated_field = "7E41BBAA7AC45D61F96A7CC2A5AFF94F")
-
 
     private ListView mListView;
     
@@ -60,6 +53,7 @@ public PreferenceScreen(Context context, AttributeSet attrs) {
      * @return An adapter that provides the {@link Preference} contained in this
      *         {@link PreferenceScreen}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.206 -0500", hash_original_method = "452CFBAB5DCB1913FE2E0341A07BD40C", hash_generated_method = "65B49CE4E94CDE3F291232E69AC612B2")
     
 public ListAdapter getRootAdapter() {
@@ -151,6 +145,7 @@ public void onDismiss(DialogInterface dialog) {
      * This is useful for cases where we want to manipulate the dialog
      * as we would with any other activity or view.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.220 -0500", hash_original_method = "BFDF5D83CE787BE21817622D7064532F", hash_generated_method = "C71E5AB7F1A8C6EFC64CAA7F76F42BA5")
     
 public Dialog getDialog() {
@@ -210,10 +205,8 @@ public void onItemClick(AdapterView parent, View view, int position, long id) {
             showDialog(myState.dialogBundle);
         }
     }
-
     
     private static class SavedState extends BaseSavedState {
-
         
         @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:28.844 -0400", hash_original_field = "7DF6FB2587CB67E9544A859A8F6E8FF3", hash_generated_field = "263FCDD65C2156B1D1E1B4D9AE8D7FFA")
 
@@ -252,6 +245,7 @@ public SavedState(Parcelable superState) {
             super(superState);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:26.239 -0500", hash_original_method = "85259FDDC0FCC1496FED09E1FEFE0DC2", hash_generated_method = "380749B2211E5B849DBB04E0D2BF9D8D")
         
 @Override
@@ -271,8 +265,6 @@ public SavedState(Parcelable superState) {
             }
         
     }
-
-
     
 }
 

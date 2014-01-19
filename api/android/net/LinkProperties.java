@@ -14,19 +14,14 @@ import android.os.Parcel;
 import android.os.Parcelable;
 import android.text.TextUtils;
 
-
-
-
-
 public class LinkProperties implements Parcelable {
-
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:18.187 -0400", hash_original_field = "AD9F190960A42BD6F0B1EE16B7E966B8", hash_generated_field = "24691869BF8BBA8F28BDB834441D45F0")
 
     public static final Creator<LinkProperties> CREATOR =
         new Creator<LinkProperties>() {
-            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.518 -0500", hash_original_method = "0C82553AE9182D627E9FE9D3BDCCC2D2", hash_generated_method = "73ADAD9054D4C55BEF76FD0090C4909B")
+            @DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.518 -0500", hash_original_method = "0C82553AE9182D627E9FE9D3BDCCC2D2", hash_generated_method = "73ADAD9054D4C55BEF76FD0090C4909B")
         
 public LinkProperties createFromParcel(Parcel in) {
                 LinkProperties netProp = new LinkProperties();
@@ -65,7 +60,6 @@ public LinkProperties[] newArray(int size) {
             }
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.435 -0500", hash_original_field = "6D2C834A0EA52BA031060A9E0AEE620E", hash_generated_field = "6D2C834A0EA52BA031060A9E0AEE620E")
-
 
     String mIfaceName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.437 -0500", hash_original_field = "6771322879F7906B3F7AD27229E85E95", hash_generated_field = "00DE8BD688F501E4FB5528A63461C364")
@@ -107,12 +101,14 @@ public void setInterfaceName(String iface) {
         mIfaceName = iface;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.462 -0500", hash_original_method = "DE3FEB2907F1F43DDDDBA76FC2B5A592", hash_generated_method = "1DA011E06E890CC0B08EDA9D2E04B3A4")
     
 public String getInterfaceName() {
         return mIfaceName;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.464 -0500", hash_original_method = "873086E492F590532E0F956B14530004", hash_generated_method = "06EE9099A519E25577FA956415465BC4")
     
 public Collection<InetAddress> getAddresses() {
@@ -129,6 +125,7 @@ public void addLinkAddress(LinkAddress address) {
         if (address != null) mLinkAddresses.add(address);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.468 -0500", hash_original_method = "72D86E86409333B5516C160027F12741", hash_generated_method = "504621F62ACA4AD1A1978FBA0B60350C")
     
 public Collection<LinkAddress> getLinkAddresses() {
@@ -141,6 +138,7 @@ public void addDns(InetAddress dns) {
         if (dns != null) mDnses.add(dns);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.473 -0500", hash_original_method = "71F7664B03379576DA51ED6043500785", hash_generated_method = "4378836DA565501DC7A4094F3CC7B12F")
     
 public Collection<InetAddress> getDnses() {
@@ -152,6 +150,7 @@ public Collection<InetAddress> getDnses() {
 public void addRoute(RouteInfo route) {
         if (route != null) mRoutes.add(route);
     }
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.477 -0500", hash_original_method = "A7B26240781BB7C0E135CB45CD0D9800", hash_generated_method = "7304006BADE7268B32CBBD8D9383478F")
     
 public Collection<RouteInfo> getRoutes() {
@@ -163,6 +162,7 @@ public Collection<RouteInfo> getRoutes() {
 public void setHttpProxy(ProxyProperties proxy) {
         mHttpProxy = proxy;
     }
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.481 -0500", hash_original_method = "6E571D9EDF02B85B7F325367F981AC91", hash_generated_method = "7F76759BBD50EF4888FEB68C88524164")
     
 public ProxyProperties getHttpProxy() {
@@ -407,7 +407,6 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
         return result;
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.511 -0500", hash_original_method = "28ECE8095E829F4615B9B35514C29B36", hash_generated_method = "1267DE3E5DC0277251D36AC5E4F91E41")
     
 @Override
@@ -423,7 +422,6 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
                 + mRoutes.size() * 41
                 + ((null == mHttpProxy) ? 0 : mHttpProxy.hashCode()));
     }
-
     
     public static class CompareResult<T> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.446 -0500", hash_original_field = "89FDD408958B41DE9635DC5B20E2173D", hash_generated_field = "656FE863E184B8E40AE962362C5E65EA")
@@ -450,7 +448,6 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
             retVal += "]";
             return retVal;
         }
-
         
     }
 
@@ -458,6 +455,7 @@ public CompareResult<RouteInfo> compareRoutes(LinkProperties target) {
      * Implement the Parcelable interface.
      * @hide
      */
+    @DSSink({DSSinkKind.NETWORK})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:16.514 -0500", hash_original_method = "FA484CCA03B27F5C12EABAE629DE360A", hash_generated_method = "1F987581421EDEB082D3EE8ADDC317DA")
     
 public void writeToParcel(Parcel dest, int flags) {

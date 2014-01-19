@@ -5,21 +5,14 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class MaskFilter {
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_filter) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:24.387 -0500", hash_original_field = "1353DF0D3FEF59358BA81F3F4AC59875", hash_generated_field = "1353DF0D3FEF59358BA81F3F4AC59875")
 
     int native_instance;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:10.260 -0400", hash_original_method = "C1D6709FDC433FB6BE788CD4DDEC7BFF", hash_generated_method = "C1D6709FDC433FB6BE788CD4DDEC7BFF")
     public MaskFilter ()
     {
@@ -31,7 +24,6 @@ public class MaskFilter {
 protected void finalize() throws Throwable {
         nativeDestructor(native_instance);
     }
-
     
 }
 

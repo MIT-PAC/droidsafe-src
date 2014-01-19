@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.io.UnsupportedEncodingException;
 
-
-
-
-
-
 public class Base64 {
 
     //  --------------------------------------------------------
@@ -32,6 +27,8 @@ public class Base64 {
      * @throws IllegalArgumentException if the input contains
      * incorrect padding
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.839 -0500", hash_original_method = "D2F55864406EBEBDF4F8980B58236A85", hash_generated_method = "66ADEDD57E8DF67551C8904E7C1A8996")
     
 public static byte[] decode(String str, int flags) {
@@ -110,6 +107,8 @@ public static byte[] decode(byte[] input, int offset, int len, int flags) {
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.883 -0500", hash_original_method = "9F8B8F16A23EE15117AB1FE2B512CD16", hash_generated_method = "5678F807C5ED664186D0648015429F71")
     
 public static String encodeToString(byte[] input, int flags) {
@@ -153,6 +152,8 @@ public static String encodeToString(byte[] input, int offset, int len, int flags
      *               Passing {@code DEFAULT} results in output that
      *               adheres to RFC 2045.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.887 -0500", hash_original_method = "7D93E16B367D9ED35C3EE948B04BB0A6", hash_generated_method = "8EA208C8C2B286660EC1A107CC3ADB9E")
     
 public static byte[] encode(byte[] input, int flags) {
@@ -208,7 +209,6 @@ public static byte[] encode(byte[] input, int offset, int len, int flags) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.813 -0500", hash_original_field = "83EA75ECA2D71F21AD72E47BF00B465F", hash_generated_field = "F5A513FC09A88F617602B5914AAD8A90")
 
     public static final int DEFAULT = 0;
-
     
     static abstract class Coder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.828 -0500", hash_original_field = "DC78FA07CC10DBEB15408EF44F988DA2", hash_generated_field = "D105CC424D01A80053DB00A4050DABF0")
@@ -249,11 +249,8 @@ public abstract boolean process(byte[] input, int offset, int len, boolean finis
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.835 -0500", hash_original_method = "00005B72510A57CC06F375BAC4161ADC", hash_generated_method = "8FC7EA328F9FD1DA3A7C48BE37C3997A")
         
 public abstract int maxOutputSize(int len);
-
         
     }
-
-
     
     static class Decoder extends Coder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.849 -0500", hash_original_field = "4734027D7CB76D9F75A473B448E011A2", hash_generated_field = "C476360DF9D857A2925681052DA07C19")
@@ -310,7 +307,6 @@ public abstract int maxOutputSize(int len);
         private int value;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.865 -0500", hash_original_field = "8346BBC6668B394F591BA98D61419AC5", hash_generated_field = "B4B64C8D6FAE0E02F5E7C4A49CB38458")
 
-
          private int[] alphabet;
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.867 -0500", hash_original_method = "28200CA179B3214BB831C341BA07009C", hash_generated_method = "BFDC7A7997A76245AF50D66FA4CA33AE")
@@ -339,6 +335,7 @@ public int maxOutputSize(int len) {
          * @return true if the state machine is still healthy.  false if
          *         bad base-64 data has been detected in the input stream.
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.875 -0500", hash_original_method = "5E49CA254C7BA97645BE526448794F2D", hash_generated_method = "D0DA8E8FC33BE93729D64D25C1A83448")
         
 public boolean process(byte[] input, int offset, int len, boolean finish) {
@@ -518,8 +515,6 @@ public boolean process(byte[] input, int offset, int len, boolean finish) {
             return true;
         }
     }
-
-
     
     static class Encoder extends Coder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.898 -0500", hash_original_field = "32DE0AEE9A9AD44E0EAA72456C29CB84", hash_generated_field = "AEA37AD1BAA7CFE9FF857DBCC9155C6B")
@@ -543,7 +538,6 @@ public boolean process(byte[] input, int offset, int len, boolean finish) {
         };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.906 -0500", hash_original_field = "40F5D2974BD0024720371B89C57AA7FB", hash_generated_field = "3976D48215D9CD369B9FF1E7AF7204AD")
 
-
          private byte[] tail;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.907 -0500", hash_original_field = "7F978AE0FA51DCF6FD5C73F0C45A5FAC", hash_generated_field = "7F978AE0FA51DCF6FD5C73F0C45A5FAC")
  int tailLen;
@@ -551,7 +545,6 @@ public boolean process(byte[] input, int offset, int len, boolean finish) {
 
         private int count;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.912 -0500", hash_original_field = "959BD29AF9EB12C06F64B2F61624FED0", hash_generated_field = "4E0FC1C064D8F3218FE12A1DD5866176")
-
 
          public boolean do_padding;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.914 -0500", hash_original_field = "F60F42998F372F78CCD1317E069EF47C", hash_generated_field = "232A0ACDB2D945A1E8AF0B685CCC1422")
@@ -590,6 +583,7 @@ public int maxOutputSize(int len) {
             return len * 8/5 + 10;
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:23.930 -0500", hash_original_method = "551D84DD57FDEAF562D9C2C55207FB04", hash_generated_method = "E24CD75C7DBE44D1CE459EE219769AC3")
         
 public boolean process(byte[] input, int offset, int len, boolean finish) {

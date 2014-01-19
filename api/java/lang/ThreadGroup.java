@@ -11,10 +11,6 @@ import java.util.List;
 
 import libcore.util.CollectionUtils;
 
-
-
-
-
 public class ThreadGroup implements Thread.UncaughtExceptionHandler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.697 -0500", hash_original_field = "2F6F6F53954BBF04ADF16268DBF28916", hash_generated_field = "C469F1CA0F9CB15DC605ADF2C779CB30")
 
@@ -391,6 +387,7 @@ private int enumerateGeneric(Object[] enumeration, boolean recurse, int enumerat
      *
      * @see #setMaxPriority
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.741 -0500", hash_original_method = "DB664BE89D62AA134945B6EEF3A0CB00", hash_generated_method = "C38123077310F5EA1712336BF4D3A048")
     
 public final int getMaxPriority() {
@@ -402,6 +399,7 @@ public final int getMaxPriority() {
      *
      * @return the group's name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.743 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "CEAA3BC43A9BFF97F5638C3D9028D82D")
     
 public final String getName() {
@@ -414,6 +412,7 @@ public final String getName() {
      *
      * @return the parent
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.746 -0500", hash_original_method = "8A85A1BC7F9CDC3D0187C50787EE4700", hash_generated_method = "AE4706C9EC29F10794934D03E51214FB")
     
 public final ThreadGroup getParent() {
@@ -614,6 +613,7 @@ public final void setDaemon(boolean isDaemon) {
      *
      * @see #getMaxPriority
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.774 -0500", hash_original_method = "271C3F89CA43821F381115CC8E2996B2", hash_generated_method = "A3A7B44DACC9313045DB1F06D47411A5")
     
 public final void setMaxPriority(int newMax) {
@@ -734,6 +734,7 @@ public final void setMaxPriority(int newMax) {
      * @param t the Thread that terminated with an uncaught exception
      * @param e the uncaught exception itself
      */
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:26.790 -0500", hash_original_method = "1AEEC9D33E82C49A9FE6D436A43A8349", hash_generated_method = "91937A8B8B6096E808B5C7AF181B1ECB")
     
 public void uncaughtException(Thread t, Throwable e) {

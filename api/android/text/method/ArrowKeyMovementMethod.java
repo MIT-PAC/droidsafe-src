@@ -13,10 +13,6 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.TextView;
 
-
-
-
-
 public class ArrowKeyMovementMethod extends BaseMovementMethod implements MovementMethod {
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.988 -0500", hash_original_method = "10FB2C5181FC75DCDE827D6825AC823C", hash_generated_method = "3DF60ED1FB680D7B0FC31C6971FBC7AB")
     
@@ -41,6 +37,7 @@ private static int getPageHeight(TextView widget) {
         return widget.getGlobalVisibleRect(rect) ? rect.height() : 0;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.056 -0500", hash_original_method = "1DB0A35A4E73C95F823446362F035621", hash_generated_method = "7D06961535B06F9469B80E24BBEF2437")
     
 public static MovementMethod getInstance() {
@@ -52,13 +49,11 @@ public static MovementMethod getInstance() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.058 -0500", hash_original_field = "D9BC76BBD95C2B4D84D70C80192606E6", hash_generated_field = "C1D458E78FA0EB0FEAAB09CC3F93FF9B")
 
-
     private static final Object LAST_TAP_DOWN = new Object();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:01.061 -0500", hash_original_field = "78B60DB7CF60EF81374663AFB63ABCCA", hash_generated_field = "94586F1D0C81A1F26D9B8315CD4A2D36")
 
     private static ArrowKeyMovementMethod sInstance;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.894 -0400", hash_original_method = "4B84DCFAF96B2ABE0CEB1C58A836BE09", hash_generated_method = "4B84DCFAF96B2ABE0CEB1C58A836BE09")
     public ArrowKeyMovementMethod ()
     {

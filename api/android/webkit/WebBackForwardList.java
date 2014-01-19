@@ -7,21 +7,12 @@ import droidsafe.annotations.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 
-
-
-
-
-
 public class WebBackForwardList implements Cloneable, Serializable {
-
     
-    @DSModeled(DSC.SAFE)
     static synchronized void restoreIndex(int nativeFrame,
             int index) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeClose(int nativeFrame) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.270 -0500", hash_original_field = "9D5DB06DCD458CB1FB573ED28600B2B5", hash_generated_field = "0311A696B59887F86EF6109DBE0484CC")
@@ -53,6 +44,7 @@ WebBackForwardList(CallbackProxy proxy) {
      * empty.
      * @return The current history item.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.281 -0500", hash_original_method = "5230E69659F0505E7D194D2488C74C74", hash_generated_method = "7BBFD33178DD994229AB40FFBC0234D8")
     
 public synchronized WebHistoryItem getCurrentItem() {
@@ -64,6 +56,7 @@ public synchronized WebHistoryItem getCurrentItem() {
      * directly index into the array list.
      * @return The current index from 0...n or -1 if the list is empty.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.283 -0500", hash_original_method = "2A2A2AA161DBB8DEEC2045188BE5DE03", hash_generated_method = "F1A964DC93D525D9D154ED9C80DA7010")
     
 public synchronized int getCurrentIndex() {
@@ -75,6 +68,7 @@ public synchronized int getCurrentIndex() {
      * where 0 is the first item and n is the last item.
      * @param index The index to retrieve.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.285 -0500", hash_original_method = "D9B5D5CD50BAA8A173683EE2BD19F40F", hash_generated_method = "64C8E288184E57DD901465A7263B0696")
     
 public synchronized WebHistoryItem getItemAtIndex(int index) {
@@ -88,6 +82,7 @@ public synchronized WebHistoryItem getItemAtIndex(int index) {
      * Get the total size of the back/forward list.
      * @return The size of the list.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.287 -0500", hash_original_method = "7A631E875D902776AD0C3E21989EE281", hash_generated_method = "84328E53B827C13AB004DCEC859664E4")
     
 public synchronized int getSize() {
@@ -180,6 +175,7 @@ private synchronized void removeHistoryItem(int index) {
      * WebView. This creates a copy that should never be modified by any of the
      * webkit package classes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.301 -0500", hash_original_method = "26B3CB37F20A0B53C2CE3E9A4CAEEB23", hash_generated_method = "65C35583B33AC219F8D79447C6A677D0")
     
 protected synchronized WebBackForwardList clone() {
@@ -211,7 +207,6 @@ synchronized void setCurrentIndex(int newIndex) {
             mCallbackProxy.onIndexChanged(getItemAtIndex(newIndex), newIndex);
         }
     }
-
     
 }
 

@@ -11,12 +11,8 @@ import android.view.KeyEvent;
 import android.view.MotionEvent;
 import android.widget.TextView;
 
-
-
-
 public class BaseMovementMethod implements MovementMethod {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:39.048 -0400", hash_original_method = "1DE84F8ABE7124ECFD52F353C5E545C4", hash_generated_method = "1DE84F8ABE7124ECFD52F353C5E545C4")
     public BaseMovementMethod ()
     {
@@ -146,6 +142,7 @@ public class BaseMovementMethod implements MovementMethod {
      * @param event The key event.
      * @return The keyboard meta states used for movement.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.891 -0500", hash_original_method = "DBF5E10955F96650BAEE8C94618C2948", hash_generated_method = "10607B4D5EF2FBF5A3DD385D641184F5")
     
 protected int getMovementMetaState(Spannable buffer, KeyEvent event) {
@@ -749,7 +746,6 @@ protected boolean scrollLineEnd(TextView widget, Spannable buffer) {
         }
         return false;
     }
-
     
 }
 

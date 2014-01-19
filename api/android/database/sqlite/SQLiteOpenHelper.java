@@ -10,16 +10,11 @@ import android.database.DatabaseErrorHandler;
 import android.database.DefaultDatabaseErrorHandler;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 
-
-
-
-
 public abstract class SQLiteOpenHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.757 -0500", hash_original_field = "A23D65E3143183D79448273A64B01CB0", hash_generated_field = "073F4465324B7F9FFC720DD01EEA24AC")
 
     private static final String TAG = SQLiteOpenHelper.class.getSimpleName();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.760 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.762 -0500", hash_original_field = "ED29A5CAC2A4A14894CD28BA3B1CE29C", hash_generated_field = "886C24C67739C97CF77B8DD239E412F9")
@@ -33,7 +28,6 @@ public abstract class SQLiteOpenHelper {
     private  int mNewVersion;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.770 -0500", hash_original_field = "44FFBD8FF4418C357393646DA7699518", hash_generated_field = "949BF9C4D224A2E5EB02E79597DEC6F1")
 
-
     private SQLiteDatabase mDatabase = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.773 -0500", hash_original_field = "50E4E5297F01E9A67F4220A4CE962C4D", hash_generated_field = "F70ACE423FC74AA75F488787A63DC7D9")
 
@@ -42,7 +36,6 @@ public abstract class SQLiteOpenHelper {
 
     private  DatabaseErrorHandler mErrorHandler;
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:08.823 -0400", hash_original_method = "FA08D03545E9DF881DE2A492BC7B90D5", hash_generated_method = "5E6F83AB57D3846D72B269C6A4631576")
     public  SQLiteOpenHelper(Context context, String name, CursorFactory factory, int version) {
         this(context, name, factory, version, new DefaultDatabaseErrorHandler());
@@ -97,6 +90,7 @@ public SQLiteOpenHelper(Context context, String name, CursorFactory factory, int
      * Return the name of the SQLite database being opened, as given tp
      * the constructor.
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.784 -0500", hash_original_method = "68E7432F62212BC238811FF4144A34FC", hash_generated_method = "5602C287A4D1DDD5C592942E7AB5ECC4")
     
 public String getDatabaseName() {
@@ -122,6 +116,9 @@ public String getDatabaseName() {
      * @throws SQLiteException if the database cannot be opened for writing
      * @return a read/write database object valid until {@link #close} is called
      */
+    @DSComment("returned DB object")
+    @DSSpec(DSCat.DATABASE)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.787 -0500", hash_original_method = "907737C2FD1DDBAF11A72FCBC6C42218", hash_generated_method = "2232AC9EE8B6E44F14C198E6D8B3DC50")
     
 public synchronized SQLiteDatabase getWritableDatabase() {
@@ -211,6 +208,9 @@ public synchronized SQLiteDatabase getWritableDatabase() {
      * @return a database object valid until {@link #getWritableDatabase}
      *     or {@link #close} is called.
      */
+    @DSComment("returned DB object")
+    @DSSpec(DSCat.DATABASE)
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.791 -0500", hash_original_method = "2895B1DC2B2D9F1953E668AA67DA7E81", hash_generated_method = "CCD91013A9F1A17C4DECD1F769D86C56")
     
 public synchronized SQLiteDatabase getReadableDatabase() {
@@ -258,6 +258,8 @@ public synchronized SQLiteDatabase getReadableDatabase() {
     /**
      * Close any open database object.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:43.793 -0500", hash_original_method = "C09EB7B9D42A5A795555D7C9A56D8370", hash_generated_method = "7DAFEB4AF1658D891E4799A36032CC30")
     
 public synchronized void close() {

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class ExecutorCompletionService<V> implements CompletionService<V> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.867 -0500", hash_original_field = "1296BB6A213E3D505FD9E92D9FA2F1F3", hash_generated_field = "C344975DD4C90ADC5A05E9EE82CE3C44")
 
@@ -112,13 +108,13 @@ public Future<V> poll() {
         return completionQueue.poll();
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.906 -0500", hash_original_method = "68AEBC19C67278ADE553BA09F2BB4BEF", hash_generated_method = "4655BA2D85B4680614476EFDFD4C736E")
     
 public Future<V> poll(long timeout, TimeUnit unit)
             throws InterruptedException {
         return completionQueue.poll(timeout, unit);
     }
-
     
     private class QueueingFuture extends FutureTask<Void> {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.882 -0500", hash_original_field = "3345558731446CE3C4228BE1331CAFA9", hash_generated_field = "6A81C34C1728BCFC9614DD81361345B5")
@@ -133,11 +129,8 @@ QueueingFuture(RunnableFuture<V> task) {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:11.879 -0500", hash_original_method = "A6F9634D935F51A2E62823D21027F809", hash_generated_method = "FB66A4236DF9A288296DBF0A57E00B59")
         
 protected void done() { completionQueue.add(task); }
-
         
     }
-
-
     
 }
 

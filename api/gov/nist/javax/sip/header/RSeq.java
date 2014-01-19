@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.sip.InvalidArgumentException;
 
-
-
-
-
-
 public class RSeq extends SIPHeader implements javax.sip.header.RSeqHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.446 -0500", hash_original_field = "F8EF62319DC7554669434938D4737539", hash_generated_field = "0CC6639306B4D0AC114368BCCC7354B6")
 
@@ -30,12 +25,12 @@ public RSeq() {
      * @deprecated
      * @return the integer value of the Sequence number of the RSeqHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.455 -0500", hash_original_method = "39133A5DFA90BF891F6ADEE458981A87", hash_generated_method = "6D320E3A7100F3252D23482EE5ACC465")
     
 public int getSequenceNumber() {
         return (int)this.sequenceNumber;
     }
-
 
     /** Encode the body of this header (the stuff that follows headerName).
      * A.K.A headerValue.
@@ -46,6 +41,7 @@ protected String encodeBody() {
         return Long.toString(this.sequenceNumber);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.460 -0500", hash_original_method = "5EE204E642716446A9A561BAE9DA4271", hash_generated_method = "66986177B84CDF6993C8F18A16AD5904")
     
 public long getSeqNumber() {
@@ -67,6 +63,7 @@ public void setSeqNumber(long sequenceNumber) throws InvalidArgumentException {
      * @deprecated
      * @see javax.sip.header.RSeqHeader#setSequenceNumber(int)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:11.466 -0500", hash_original_method = "34CCD2A626C0B5A84694D440C0C4B269", hash_generated_method = "066CDF009BA94F3DCA7BF90AE5E40E39")
     
 public void setSequenceNumber(int sequenceNumber) throws InvalidArgumentException {

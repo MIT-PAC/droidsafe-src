@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public class PatternSyntaxException extends IllegalArgumentException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.724 -0500", hash_original_field = "E07B55B3020F8FAD3B89EE71263765D3", hash_generated_field = "95718108CDA06A2DD9B75CB57E0279C5")
-
 
     private static final long serialVersionUID = -3864639126226059218L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.727 -0500", hash_original_field = "6B6E3FF272BF9F88A097A817DC27AF69", hash_generated_field = "869DADF19D0CEFB2D948CD463462BCA0")
@@ -54,6 +48,7 @@ public PatternSyntaxException(String description, String pattern, int index) {
      * @return the regular expression.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.737 -0500", hash_original_method = "7A292BCA91A2C0FA8C2558D08D8D09A0", hash_generated_method = "1A9FDB8743C473586BF04DCAFF28A282")
     
 public String getPattern() {
@@ -67,6 +62,7 @@ public String getPattern() {
      *
      * @return the error message.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.740 -0500", hash_original_method = "103F1174601A04B5B5C014BF3A77F551", hash_generated_method = "3C2F0A3444D1C62640570528625D59B6")
     
 @Override
@@ -107,6 +103,7 @@ public String getPattern() {
      *
      * @return the description.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.742 -0500", hash_original_method = "B876CD4C2F9B0449C0BFBE53447962F9", hash_generated_method = "E4511326242349EB0FABB36392B66DEB")
     
 public String getDescription() {
@@ -120,6 +117,7 @@ public String getDescription() {
      * @return the index.
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:01.745 -0500", hash_original_method = "398BD1DDC3618561F914960ED7D21764", hash_generated_method = "96CCC69099797392A28F97F5383D17E0")
     
 public int getIndex() {

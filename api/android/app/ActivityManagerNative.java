@@ -33,10 +33,6 @@ import android.os.StrictMode;
 import android.text.TextUtils;
 import android.util.Singleton;
 
-
-
-
-
 public abstract class ActivityManagerNative extends Binder implements IActivityManager {
     /**
      * Cast a Binder object into an activity manager interface, generating
@@ -60,6 +56,7 @@ static public IActivityManager asInterface(IBinder obj) {
     /**
      * Retrieve the system's default/global activity manager.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.075 -0500", hash_original_method = "C581351462D87A5CA19EFFE73691D6B8", hash_generated_method = "8A940506F46A34A8E626D5A708A565C0")
     
 static public IActivityManager getDefault() {
@@ -106,8 +103,8 @@ static public void noteWakeupAlarm(PendingIntent ps) {
     static boolean sSystemReady = false;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.715 -0400", hash_original_field = "1DDB5338697F4F4D1F4EBEBCBCA04F09", hash_generated_field = "C4820EDCAE5178FFFBC23811D56B7F74")
 
-    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {  
-    	@DSModeled(DSC.BAN)
+    private static final Singleton<IActivityManager> gDefault = new Singleton<IActivityManager>() {
+    	
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:14.715 -0400", hash_original_method = "DB2B8F5A0363FA0CE3E5AA87CCE94A22", hash_generated_method = "C2B8BA082758343987D3AD39EBC6D0DC")
         protected IActivityManager create() {
             IActivityManager varB4EAC82CA7396A68D541C85D26508E83_1441821956 = null; 
@@ -117,17 +114,7 @@ static public void noteWakeupAlarm(PendingIntent ps) {
             varB4EAC82CA7396A68D541C85D26508E83_1441821956.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1441821956;
             
-            
-            
-                
-            
-            
-            
-                
-            
-            
         }
-
         
 };
 
@@ -137,6 +124,7 @@ public ActivityManagerNative() {
         attachInterface(this, descriptor);
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.117 -0500", hash_original_method = "796B52B1E8846F7CCEC22CD4B5B906A8", hash_generated_method = "3488280CD2BFAF139E54B711B498D7DC")
     
 public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
@@ -770,7 +758,6 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
             reply.writeInt(res ? 1 : 0);
             return true;
         }
-
 
         case FINISH_INSTRUMENTATION_TRANSACTION: {
             data.enforceInterface(IActivityManager.descriptor);
@@ -1601,6 +1588,7 @@ public boolean onTransact(int code, Parcel data, Parcel reply, int flags)
         return super.onTransact(code, data, reply, flags);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.121 -0500", hash_original_method = "2E6ED031FA2AB47CC2982E0232E351E2", hash_generated_method = "5E3B69CCD103133228ACADBBDEF1CE7E")
     
 public IBinder asBinder() {
@@ -1610,7 +1598,6 @@ public IBinder asBinder() {
 
 class ActivityManagerProxy implements IActivityManager {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.466 -0500", hash_original_field = "5AE257E0853836D9B54E1EF6497B909F", hash_generated_field = "5E1E2B7D69F0EB092684BFF6D1335CA5")
-
 
     private IBinder mRemote;
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.133 -0500", hash_original_method = "3287CA7C2EB4AADDF2EFFF2704D2BE9E", hash_generated_method = "2AFCACC011B87F16CE3E5DBD44A8D328")
@@ -1773,6 +1760,7 @@ public boolean startNextMatchingActivity(IBinder callingActivity,
         data.recycle();
         return result != 0;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.152 -0500", hash_original_method = "91E82D39E0DA0BAF3D9668B58FD8BE2D", hash_generated_method = "51169BDC420B5824522C25A41C863501")
     
 public boolean finishActivity(IBinder token, int resultCode, Intent resultData)
@@ -1795,6 +1783,7 @@ public boolean finishActivity(IBinder token, int resultCode, Intent resultData)
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.154 -0500", hash_original_method = "352728C633440E8BBFDE1A24B12C26C6", hash_generated_method = "B62F566EA6191E17DD5D58417ABC3A86")
     
 public void finishSubActivity(IBinder token, String resultWho, int requestCode) throws RemoteException
@@ -1810,6 +1799,7 @@ public void finishSubActivity(IBinder token, String resultWho, int requestCode) 
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.156 -0500", hash_original_method = "03769BB85CE515FA0FB5B3DCD0709D8A", hash_generated_method = "EBD20C3CB3741A00E25B4BB52DD4C52B")
     
 public boolean willActivityBeVisible(IBinder token) throws RemoteException {
@@ -1849,6 +1839,7 @@ public Intent registerReceiver(IApplicationThread caller, String packageName,
         data.recycle();
         return intent;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.161 -0500", hash_original_method = "CF62E9563222E9365AE1815E546E05AA", hash_generated_method = "9D8132934C9E78A1FAB10E2D09166DA2")
     
 public void unregisterReceiver(IIntentReceiver receiver) throws RemoteException
@@ -1904,6 +1895,7 @@ public void unbroadcastIntent(IApplicationThread caller, Intent intent) throws R
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.169 -0500", hash_original_method = "8BFF18A0F9A8EDDD76A319C280B21CDC", hash_generated_method = "71EA1218356A061D08BC661B923502E4")
     
 public void finishReceiver(IBinder who, int resultCode, String resultData, Bundle map, boolean abortBroadcast) throws RemoteException
@@ -1921,6 +1913,7 @@ public void finishReceiver(IBinder who, int resultCode, String resultData, Bundl
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.171 -0500", hash_original_method = "1E67E239E5F2A2540F1E032AB272605E", hash_generated_method = "EA72555927E01EA898A939D9CBED2222")
     
 public void attachApplication(IApplicationThread app) throws RemoteException
@@ -1934,6 +1927,7 @@ public void attachApplication(IApplicationThread app) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.173 -0500", hash_original_method = "BC9E49082B5DC06C707641FC7F3E31F5", hash_generated_method = "C4AF274E01F16C2E15FEE5C61403918D")
     
 public void activityIdle(IBinder token, Configuration config, boolean stopProfiling)
@@ -1955,6 +1949,7 @@ public void activityIdle(IBinder token, Configuration config, boolean stopProfil
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.176 -0500", hash_original_method = "4914FFC78B966DEBED0BDBFF9D70FB17", hash_generated_method = "9CD3224B1D071AAA439169947C7585BE")
     
 public void activityPaused(IBinder token) throws RemoteException
@@ -1968,6 +1963,7 @@ public void activityPaused(IBinder token) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.179 -0500", hash_original_method = "F5DE3AC45B6CCF74477AF45EB0878099", hash_generated_method = "9DC8D0810D62F08BFEA35F170093AD8B")
     
 public void activityStopped(IBinder token, Bundle state,
@@ -1990,6 +1986,7 @@ public void activityStopped(IBinder token, Bundle state,
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.181 -0500", hash_original_method = "CA8224B1DA5730B462FB3F604509C1DB", hash_generated_method = "61236843B328B325FAE671DD927736EC")
     
 public void activitySlept(IBinder token) throws RemoteException
@@ -2003,6 +2000,7 @@ public void activitySlept(IBinder token) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.183 -0500", hash_original_method = "9A100D49A0D535BB686DAA00CAC541FF", hash_generated_method = "B0BA2B4A67B7D2BDF7CAD1582569DB75")
     
 public void activityDestroyed(IBinder token) throws RemoteException
@@ -2016,6 +2014,7 @@ public void activityDestroyed(IBinder token) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.185 -0500", hash_original_method = "7637EF2082F6942F953796EFCEAA3730", hash_generated_method = "E7DD93FCECDCC75E479D760BCBD5BD9E")
     
 public String getCallingPackage(IBinder token) throws RemoteException
@@ -2031,6 +2030,7 @@ public String getCallingPackage(IBinder token) throws RemoteException
         reply.recycle();
         return res;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.189 -0500", hash_original_method = "0E9D91A20FCD3BCFB3517DB475147FAB", hash_generated_method = "07D579D01F63305F46471F956EBF6C71")
     
 public ComponentName getCallingActivity(IBinder token)
@@ -2046,6 +2046,7 @@ public ComponentName getCallingActivity(IBinder token)
         reply.recycle();
         return res;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.191 -0500", hash_original_method = "FAA1C4AE039868246AED533CDCA15CD7", hash_generated_method = "33FEE68D40695BAB97A161BE7E2D9B42")
     
 public List getTasks(int maxNum, int flags,
@@ -2108,6 +2109,7 @@ public ActivityManager.TaskThumbnails getTaskThumbnails(int id) throws RemoteExc
         reply.recycle();
         return bm;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.198 -0500", hash_original_method = "7671DD1471581027B2C414BE0E3CE4A6", hash_generated_method = "376D747FECE715D0D3E36318F8B06064")
     
 public List getServices(int maxNum, int flags) throws RemoteException {
@@ -2134,6 +2136,7 @@ public List getServices(int maxNum, int flags) throws RemoteException {
         reply.recycle();
         return list;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.201 -0500", hash_original_method = "2AE453A6460D5AF368C9AC4C4862314B", hash_generated_method = "FB1C94137333C6EB0EC2EF622F5A1CC2")
     
 public List<ActivityManager.ProcessErrorStateInfo> getProcessesInErrorState()
@@ -2149,6 +2152,7 @@ public List<ActivityManager.ProcessErrorStateInfo> getProcessesInErrorState()
         reply.recycle();
         return list;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.203 -0500", hash_original_method = "8E45CD57BE18A4B76C3A3E0DA22BC8B7", hash_generated_method = "F9F111955936ACAA4A27F65E3D7BD6E7")
     
 public List<ActivityManager.RunningAppProcessInfo> getRunningAppProcesses()
@@ -2164,6 +2168,7 @@ public List<ActivityManager.RunningAppProcessInfo> getRunningAppProcesses()
         reply.recycle();
         return list;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.206 -0500", hash_original_method = "2FAC851B003A84469F94E88A81DA29C3", hash_generated_method = "8009C1CF59D450A32EC4A3FCA71A848C")
     
 public List<ApplicationInfo> getRunningExternalApplications()
@@ -2193,6 +2198,7 @@ public void moveTaskToFront(int task, int flags) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.210 -0500", hash_original_method = "7FFB6E49EA553237E0A3F53A2CDFD87F", hash_generated_method = "47D437DB1433CBA7AA6FB6A58CAD958B")
     
 public void moveTaskToBack(int task) throws RemoteException
@@ -2206,6 +2212,7 @@ public void moveTaskToBack(int task) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.213 -0500", hash_original_method = "7F4F39C4D7AB58BCB5DB152705A9F80A", hash_generated_method = "4F4514F7088AFAFA7BCCC487E00AFDAE")
     
 public boolean moveActivityTaskToBack(IBinder token, boolean nonRoot)
@@ -2222,6 +2229,7 @@ public boolean moveActivityTaskToBack(IBinder token, boolean nonRoot)
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.215 -0500", hash_original_method = "48BD6DC2300FE39DD3A4B34C3DD91993", hash_generated_method = "3CE0B929E80B7D4E98E6181EB04B8C78")
     
 public void moveTaskBackwards(int task) throws RemoteException
@@ -2235,6 +2243,7 @@ public void moveTaskBackwards(int task) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.217 -0500", hash_original_method = "3FABC29A3C68690EBF6B4F44EE4A5D23", hash_generated_method = "70118195AF9E436ACA1AEC3E49413BD7")
     
 public int getTaskForActivity(IBinder token, boolean onlyRoot) throws RemoteException
@@ -2265,6 +2274,7 @@ public void finishOtherInstances(IBinder token, ComponentName className) throws 
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.222 -0500", hash_original_method = "4B3E31ABB8C007E1B3828F729DFD9393", hash_generated_method = "D6FCA294DB0614452B74E76AEC230237")
     
 public void reportThumbnail(IBinder token,
@@ -2307,6 +2317,7 @@ public ContentProviderHolder getContentProvider(IApplicationThread caller,
         reply.recycle();
         return cph;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.227 -0500", hash_original_method = "9C5D73DEFA4B6B21F8A4E01DC5E46521", hash_generated_method = "AB6A54884D76C8AFF4D66A6C2ECB16E9")
     
 public void publishContentProviders(IApplicationThread caller,
@@ -2338,6 +2349,7 @@ public void removeContentProvider(IApplicationThread caller,
         reply.recycle();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.233 -0500", hash_original_method = "E5355EA6A0F8270964E816C69524096C", hash_generated_method = "F267E26CC01122BD1644DC0D99ACCE18")
     
 public PendingIntent getRunningServiceControlPanel(ComponentName service)
@@ -2391,6 +2403,7 @@ public int stopService(IApplicationThread caller, Intent service,
         data.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.240 -0500", hash_original_method = "DB1BCCF2CB5E2532E24072B1F607F963", hash_generated_method = "184CE72473FFECB49C50B085FAAA5C0A")
     
 public boolean stopServiceToken(ComponentName className, IBinder token,
@@ -2408,6 +2421,7 @@ public boolean stopServiceToken(ComponentName className, IBinder token,
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.242 -0500", hash_original_method = "9DE0D26C134349F3DA011E11517F3FF5", hash_generated_method = "91C32DCC5A4085EAF8842C9D61455A8A")
     
 public void setServiceForeground(ComponentName className, IBinder token,
@@ -2451,6 +2465,7 @@ public int bindService(IApplicationThread caller, IBinder token,
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.247 -0500", hash_original_method = "E0BD37EB96539E724DE863D335954DC9", hash_generated_method = "D84E20B65F38C3185763843309B74848")
     
 public boolean unbindService(IServiceConnection connection) throws RemoteException
@@ -2467,6 +2482,7 @@ public boolean unbindService(IServiceConnection connection) throws RemoteExcepti
         return res;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.249 -0500", hash_original_method = "87A207496B270585D5EEA34C1AF57170", hash_generated_method = "4462F656EA9D5EA3D6CEFD3671508A7F")
     
 public void publishService(IBinder token,
@@ -2483,6 +2499,7 @@ public void publishService(IBinder token,
         reply.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.252 -0500", hash_original_method = "3796516624A8D493E471933ECF7A3CD3", hash_generated_method = "9B7ADC703FC69B21C751F2AC53DC023D")
     
 public void unbindFinished(IBinder token, Intent intent, boolean doRebind)
@@ -2499,6 +2516,7 @@ public void unbindFinished(IBinder token, Intent intent, boolean doRebind)
         reply.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.255 -0500", hash_original_method = "1CB80C62A00C622E35F1B57A132292E9", hash_generated_method = "C744915C87A8399243FE611DD2B06E2A")
     
 public void serviceDoneExecuting(IBinder token, int type, int startId,
@@ -2516,6 +2534,7 @@ public void serviceDoneExecuting(IBinder token, int type, int startId,
         reply.recycle();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.258 -0500", hash_original_method = "BEF476EE5F43517187661CDC39F2A448", hash_generated_method = "F04BC11BD4A3C58E2E735D8516BD4D8F")
     
 public IBinder peekService(Intent service, String resolvedType) throws RemoteException {
@@ -2532,6 +2551,7 @@ public IBinder peekService(Intent service, String resolvedType) throws RemoteExc
         return binder;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.260 -0500", hash_original_method = "7AACC08C389BEE0061373162626F356D", hash_generated_method = "AA1E44AD81B9EBF1F713ABE3C50DF127")
     
 public boolean bindBackupAgent(ApplicationInfo app, int backupRestoreMode)
@@ -2549,6 +2569,7 @@ public boolean bindBackupAgent(ApplicationInfo app, int backupRestoreMode)
         return success;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.262 -0500", hash_original_method = "ADE4561AB0FC3828104C329F05A9B88C", hash_generated_method = "AE2CC0186AD5952626B2A21B93B551E0")
     
 public void backupAgentCreated(String packageName, IBinder agent) throws RemoteException {
@@ -2596,6 +2617,7 @@ public boolean startInstrumentation(ComponentName className, String profileFile,
         return res;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.269 -0500", hash_original_method = "D76B5F1B397FC7028B59F12CA3604783", hash_generated_method = "831CB2DF12376D9F34A73FB6A38AD0FE")
     
 public void finishInstrumentation(IApplicationThread target,
@@ -2611,6 +2633,7 @@ public void finishInstrumentation(IApplicationThread target,
         data.recycle();
         reply.recycle();
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.272 -0500", hash_original_method = "E824FA9DB2D76671E24682EC782F4756", hash_generated_method = "C53BC202F00DE47F4553FC79728EB261")
     
 public Configuration getConfiguration() throws RemoteException
@@ -2638,6 +2661,7 @@ public void updateConfiguration(Configuration values) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.276 -0500", hash_original_method = "65FC5D17EF9FF3BF1BFFDA9CCA9A4BE1", hash_generated_method = "F777881CD8012569022FA00276F08A4E")
     
 public void setRequestedOrientation(IBinder token, int requestedOrientation)
@@ -2652,6 +2676,7 @@ public void setRequestedOrientation(IBinder token, int requestedOrientation)
         data.recycle();
         reply.recycle();
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.279 -0500", hash_original_method = "505D3FD7966F547E2BAA16E1C1C5F05B", hash_generated_method = "51F0A649D506FE11F1921666DDC0C743")
     
 public int getRequestedOrientation(IBinder token) throws RemoteException {
@@ -2666,6 +2691,7 @@ public int getRequestedOrientation(IBinder token) throws RemoteException {
         reply.recycle();
         return res;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.281 -0500", hash_original_method = "BCB55F79D75B3B83E49A75043EE249A9", hash_generated_method = "D465FE1761F65F48610E42731F8DE3FA")
     
 public ComponentName getActivityClassForToken(IBinder token)
@@ -2681,6 +2707,7 @@ public ComponentName getActivityClassForToken(IBinder token)
         reply.recycle();
         return res;
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.283 -0500", hash_original_method = "9BAE752D062408101ED2F689CF20DDD1", hash_generated_method = "9AB00211F8DE16970BC75A6AE4D33FDA")
     
 public String getPackageForToken(IBinder token) throws RemoteException
@@ -2726,6 +2753,7 @@ public IIntentSender getIntentSender(int type,
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.288 -0500", hash_original_method = "D459AA1ADAE84FC2B7BB3BA73C047FDB", hash_generated_method = "D4375A674D36D0888038D901E0F93F83")
     
 public void cancelIntentSender(IIntentSender sender) throws RemoteException {
@@ -2738,6 +2766,7 @@ public void cancelIntentSender(IIntentSender sender) throws RemoteException {
         data.recycle();
         reply.recycle();
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.291 -0500", hash_original_method = "1993496C4F183452017D412A9B9C5C29", hash_generated_method = "31E9ED2AC55D66C37B6ADA27E95A5895")
     
 public String getPackageForIntentSender(IIntentSender sender) throws RemoteException {
@@ -2752,6 +2781,7 @@ public String getPackageForIntentSender(IIntentSender sender) throws RemoteExcep
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.293 -0500", hash_original_method = "92B622DC0CB7ED23BB116E8953A0A90A", hash_generated_method = "519649B759E35D60ABAB5D3BD66EE75E")
     
 public void setProcessLimit(int max) throws RemoteException
@@ -2765,6 +2795,7 @@ public void setProcessLimit(int max) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.296 -0500", hash_original_method = "4FA932EFF1C9BAC6AA973FE979D6B75F", hash_generated_method = "4718294660A41020A8DF932AF6810FAA")
     
 public int getProcessLimit() throws RemoteException
@@ -2779,6 +2810,7 @@ public int getProcessLimit() throws RemoteException
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.299 -0500", hash_original_method = "16F5E36D0F576E8CD2EC3F6B33B5169D", hash_generated_method = "2CEDB496F05F3025442CAFEDCF4C7EBF")
     
 public void setProcessForeground(IBinder token, int pid,
@@ -2794,6 +2826,7 @@ public void setProcessForeground(IBinder token, int pid,
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.301 -0500", hash_original_method = "A50C503DC3495EB643680A38372DD1F5", hash_generated_method = "988DE3AF9052C29E28A1CA79D79CBC53")
     
 public int checkPermission(String permission, int pid, int uid)
@@ -2827,6 +2860,7 @@ public boolean clearApplicationUserData(final String packageName,
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.306 -0500", hash_original_method = "FEF4F93E5B02F55707A11B36638BBB59", hash_generated_method = "73713CA47397E1F3173A71D4BDA2FD89")
     
 public int checkUriPermission(Uri uri, int pid, int uid, int mode) 
@@ -2845,6 +2879,7 @@ public int checkUriPermission(Uri uri, int pid, int uid, int mode)
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.308 -0500", hash_original_method = "2CEB2CA82A36297F49BF5DB3286E579B", hash_generated_method = "36238974C39DB220B8B87329B97ADE4C")
     
 public void grantUriPermission(IApplicationThread caller, String targetPkg,
@@ -2876,6 +2911,7 @@ public void revokeUriPermission(IApplicationThread caller, Uri uri,
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.313 -0500", hash_original_method = "7FC96553233904C2463E3D793E528211", hash_generated_method = "5F7C42824C3701D02E2FF4F1809CFD34")
     
 public void showWaitingForDebugger(IApplicationThread who, boolean waiting)
@@ -2914,6 +2950,7 @@ public void unhandledBack() throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSource({DSSourceKind.FILE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.320 -0500", hash_original_method = "1E46E6C9628834765008140B25990D23", hash_generated_method = "18D16E4E177B0B2067F6418CF3382C1B")
     
 public ParcelFileDescriptor openContentUri(Uri uri) throws RemoteException
@@ -2955,6 +2992,7 @@ public void wakingUp() throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.327 -0500", hash_original_method = "482C4468B37AD6CEF12EA376A273F16E", hash_generated_method = "2339FA172703955859E86D89ED8B6C72")
     
 public void setDebugApp(
@@ -2972,6 +3010,7 @@ public void setDebugApp(
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.329 -0500", hash_original_method = "DE27B8A416D8E1FF87F079AFA1567A6E", hash_generated_method = "3ACD59FF7B5B9EB7552F81C8703912D9")
     
 public void setAlwaysFinish(boolean enabled) throws RemoteException
@@ -2985,6 +3024,7 @@ public void setAlwaysFinish(boolean enabled) throws RemoteException
         data.recycle();
         reply.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.332 -0500", hash_original_method = "D7DBDAD7386DC1F45D7A9AB12513A49B", hash_generated_method = "26BE99ACECD4E0EA0BCD87CF84C91C6D")
     
 public void setActivityController(IActivityController watcher) throws RemoteException
@@ -3006,6 +3046,7 @@ public void enterSafeMode() throws RemoteException {
         mRemote.transact(ENTER_SAFE_MODE_TRANSACTION, data, null, 0);
         data.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.336 -0500", hash_original_method = "72F87C80970F6885E4DCD6DA1B2F19E8", hash_generated_method = "4EE13C1336CE30525D9BEA2ED8C05ACC")
     
 public void noteWakeupAlarm(IIntentSender sender) throws RemoteException {
@@ -3015,6 +3056,7 @@ public void noteWakeupAlarm(IIntentSender sender) throws RemoteException {
         mRemote.transact(NOTE_WAKEUP_ALARM_TRANSACTION, data, null, 0);
         data.recycle();
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.338 -0500", hash_original_method = "DB2721BD1E4C8F1064AA0461CF2A490B", hash_generated_method = "32F32BB96BD635CBBC396DC1C80B41AA")
     
 public boolean killPids(int[] pids, String reason, boolean secure) throws RemoteException {
@@ -3030,6 +3072,7 @@ public boolean killPids(int[] pids, String reason, boolean secure) throws Remote
         reply.recycle();
         return res;
     }
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.341 -0500", hash_original_method = "9964526F9DDC53538E50ED934A9D4009", hash_generated_method = "2D2C2E747C0CAEAED410BDEE29095078")
     
 public void startRunning(String pkg, String cls, String action,
@@ -3106,6 +3149,7 @@ public void handleApplicationStrictModeViolation(IBinder app,
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.353 -0500", hash_original_method = "22BD8EFAE7A36DA76D8B0F7F297E970D", hash_generated_method = "8F1FAF094EF56C247B9502141663C8AC")
     
 public void signalPersistentProcesses(int sig) throws RemoteException {
@@ -3157,6 +3201,7 @@ public void forceStopPackage(String packageName) throws RemoteException {
         reply.recycle();
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.362 -0500", hash_original_method = "9F4AADDAC8F1648FD8C80C6B88BBF25F", hash_generated_method = "67AFF47CC06D6F34CDEA93F10A05684A")
     
 public ConfigurationInfo getDeviceConfigurationInfo() throws RemoteException
@@ -3198,6 +3243,7 @@ public boolean profileControl(String process, boolean start,
         return res;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.368 -0500", hash_original_method = "52F9DB0BA2A0AB8C52093D208807035C", hash_generated_method = "10DB8ACB7C4E4FFF9532DEBD64C42060")
     
 public boolean shutdown(int timeout) throws RemoteException
@@ -3304,6 +3350,7 @@ public void killApplicationWithUid(String pkg, int uid) throws RemoteException {
         reply.recycle();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.383 -0500", hash_original_method = "2A680A4513BB1B95074F3F876F148BA8", hash_generated_method = "7725D7EB0DD775714BB319F1A4313CC7")
     
 public void closeSystemDialogs(String reason) throws RemoteException {
@@ -3333,6 +3380,7 @@ public Debug.MemoryInfo[] getProcessMemoryInfo(int[] pids)
         return res;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.389 -0500", hash_original_method = "0F16B6E02208618C1D3EE91B8DD80482", hash_generated_method = "4E8A4E2393370FB729DD5C5CE187DB33")
     
 public void killApplicationProcess(String processName, int uid) throws RemoteException {
@@ -3347,6 +3395,7 @@ public void killApplicationProcess(String processName, int uid) throws RemoteExc
         reply.recycle();
     }
         
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.391 -0500", hash_original_method = "00D6B54E331AC7AA3DC1F40B928FA3FD", hash_generated_method = "4ABDA8315718740C30C9CA629C3F3EC0")
     
 public void overridePendingTransition(IBinder token, String packageName,
@@ -3390,6 +3439,7 @@ public void finishHeavyWeightApp() throws RemoteException {
         reply.recycle();
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.398 -0500", hash_original_method = "468B67BFEE008B6CDEC37F42802988FA", hash_generated_method = "27A6A19E407686D2F71BF3731645EEA7")
     
 public void setImmersive(IBinder token, boolean immersive)
@@ -3405,6 +3455,7 @@ public void setImmersive(IBinder token, boolean immersive)
         reply.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.400 -0500", hash_original_method = "12E814937BEB239BDABA8A5EE4F6D00D", hash_generated_method = "7BB0E7D7F06B43522E5214A4B7DBD2AF")
     
 public boolean isImmersive(IBinder token)
@@ -3436,6 +3487,7 @@ public boolean isTopActivityImmersive()
         return res;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.406 -0500", hash_original_method = "574D561A4B99545A454A313F9DD764D8", hash_generated_method = "5B9F8105EF348C596A8C08C01E787F17")
     
 public void crashApplication(int uid, int initialPid, String packageName,
@@ -3469,6 +3521,7 @@ public String getProviderMimeType(Uri uri)
         return res;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.410 -0500", hash_original_method = "A975CD5E1392FBC42C40F56501282DDB", hash_generated_method = "097A924FDB841126D8DD662446A4DC90")
     
 public IBinder newUriPermissionOwner(String name)
@@ -3485,6 +3538,7 @@ public IBinder newUriPermissionOwner(String name)
         return res;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.413 -0500", hash_original_method = "1C35FE424D422C73471D9ECEE35C4093", hash_generated_method = "BE1E547CC5E992ECED67809927EF5C00")
     
 public void grantUriPermissionFromOwner(IBinder owner, int fromUid, String targetPkg,
@@ -3524,6 +3578,7 @@ public void revokeUriPermissionFromOwner(IBinder owner, Uri uri,
         reply.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.418 -0500", hash_original_method = "3DAB9C9F42020370AD19E1FE0AC1BDCE", hash_generated_method = "C43930DD81EBDA1C763CA7A79D4CA4AB")
     
 public int checkGrantUriPermission(int callingUid, String targetPkg,
@@ -3605,6 +3660,7 @@ public int startActivitiesInPackage(int uid,
         return result;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.427 -0500", hash_original_method = "11A1C93F201BB77459CE48D94392036A", hash_generated_method = "AF3CCC5F379C0F42CFFD00514CEF58BB")
     
 public int getFrontActivityScreenCompatMode() throws RemoteException {
@@ -3619,6 +3675,7 @@ public int getFrontActivityScreenCompatMode() throws RemoteException {
         return mode;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.429 -0500", hash_original_method = "984BA2CED473A0F45E8080D25CCDF41F", hash_generated_method = "C3296E0F77F40F6E6606318EDFF532A8")
     
 public void setFrontActivityScreenCompatMode(int mode) throws RemoteException {
@@ -3632,6 +3689,7 @@ public void setFrontActivityScreenCompatMode(int mode) throws RemoteException {
         data.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.432 -0500", hash_original_method = "AFAFCB6FF2EC7CDD310E0CDC4C512BE7", hash_generated_method = "1A144DBBEF769BF5D6411ED467009DEF")
     
 public int getPackageScreenCompatMode(String packageName) throws RemoteException {
@@ -3647,6 +3705,7 @@ public int getPackageScreenCompatMode(String packageName) throws RemoteException
         return mode;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.435 -0500", hash_original_method = "5B0C9EEE90D8463E1DCC15B68E3829E8", hash_generated_method = "90C3D86F347D02DF7BDAE406677D5E80")
     
 public void setPackageScreenCompatMode(String packageName, int mode)
@@ -3662,6 +3721,7 @@ public void setPackageScreenCompatMode(String packageName, int mode)
         data.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.438 -0500", hash_original_method = "7AFCEC9BC7A2DAB54F3EFFA101044309", hash_generated_method = "6360384A022DFC80889E76D394FA0F78")
     
 public boolean getPackageAskScreenCompat(String packageName) throws RemoteException {
@@ -3677,6 +3737,7 @@ public boolean getPackageAskScreenCompat(String packageName) throws RemoteExcept
         return ask;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.440 -0500", hash_original_method = "8C9BAA94A3976358AA466F180A11AE45", hash_generated_method = "91D000CD5FD9C648433EC0BBB21D6EA8")
     
 public void setPackageAskScreenCompat(String packageName, boolean ask)
@@ -3692,6 +3753,7 @@ public void setPackageAskScreenCompat(String packageName, boolean ask)
         data.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.442 -0500", hash_original_method = "0A8E6FD2F20689E2107BCC0911A72467", hash_generated_method = "632B814E13FA08B8CC7A465855C4EC73")
     
 public boolean switchUser(int userid) throws RemoteException {
@@ -3707,6 +3769,7 @@ public boolean switchUser(int userid) throws RemoteException {
         return result;
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.445 -0500", hash_original_method = "4161F4F4B6F51E7616ED3E0F5DA99E10", hash_generated_method = "4EC4A1F7331DC312065289C1746843EF")
     
 public boolean removeSubTask(int taskId, int subTaskIndex) throws RemoteException {
@@ -3723,6 +3786,7 @@ public boolean removeSubTask(int taskId, int subTaskIndex) throws RemoteExceptio
         return result;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.447 -0500", hash_original_method = "D75556E86E98C9E69E5D8B6835FF1B1D", hash_generated_method = "BB34DC32D6BA2B37577D06D52C8F088B")
     
 public boolean removeTask(int taskId, int flags) throws RemoteException {
@@ -3739,6 +3803,7 @@ public boolean removeTask(int taskId, int flags) throws RemoteException {
         return result;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.449 -0500", hash_original_method = "AD040AF08607A87C88C9CB9BE1E3C408", hash_generated_method = "77109B1B8B5B93C0C959AE2857BA96C2")
     
 public void registerProcessObserver(IProcessObserver observer) throws RemoteException {
@@ -3752,6 +3817,7 @@ public void registerProcessObserver(IProcessObserver observer) throws RemoteExce
         reply.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.452 -0500", hash_original_method = "6FB2BE2D02A98F343D51290C94466533", hash_generated_method = "492A312F489C680220001A12E2E88CA7")
     
 public void unregisterProcessObserver(IProcessObserver observer) throws RemoteException {
@@ -3765,6 +3831,7 @@ public void unregisterProcessObserver(IProcessObserver observer) throws RemoteEx
         reply.recycle();
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.454 -0500", hash_original_method = "A45994938B7DA24AED12FFC5B3B3DD69", hash_generated_method = "8B167344CF31D72C87999BEDEA48C93A")
     
 public boolean isIntentSenderTargetedToPackage(IIntentSender sender) throws RemoteException {
@@ -3794,6 +3861,7 @@ public void updatePersistentConfiguration(Configuration values) throws RemoteExc
         reply.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:13.459 -0500", hash_original_method = "0E9D1ED4F0E7DC85612AA1E9A3EC65BE", hash_generated_method = "A8F1EB33A1B8095078FD616ADC2F6EAD")
     
 public long[] getProcessPss(int[] pids) throws RemoteException {
@@ -3834,7 +3902,6 @@ public void dismissKeyguardOnNextActivity() throws RemoteException {
         data.recycle();
         reply.recycle();
     }
-
     
 }
 

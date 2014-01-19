@@ -14,10 +14,6 @@ import android.content.res.TypedArray;
 import android.os.SystemClock;
 import android.util.AttributeSet;
 
-
-
-
-
 public class AnimationDrawable extends DrawableContainer implements Runnable, Animatable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.510 -0500", hash_original_field = "390BAAE1EB086EA47AF09FAEF9375540", hash_generated_field = "8C9FC3EF51CD1D7374A26DD8B125CA14")
 
@@ -29,6 +25,8 @@ public class AnimationDrawable extends DrawableContainer implements Runnable, An
 
     private boolean mMutated;
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.517 -0500", hash_original_method = "35EE0C4966C7CA57865D8E1E9DE06504", hash_generated_method = "C8B7DBD9573CE0FD586F1E926B12EEC4")
     
 public AnimationDrawable() {
@@ -46,6 +44,7 @@ private AnimationDrawable(AnimationState state, Resources res) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.519 -0500", hash_original_method = "F207A8C7EE9B62CDAD2CDEF6C9E1E05A", hash_generated_method = "8C07124F4B80241F4930CA719BD65812")
     
 @Override
@@ -125,6 +124,9 @@ public void run() {
     /**
      * @return The number of frames in the animation
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.532 -0500", hash_original_method = "078F231D1E4DEE307E947B896715B9FA", hash_generated_method = "5025FEE6B92BF88A77E6F8353AA4EAD6")
     
 public int getNumberOfFrames() {
@@ -134,6 +136,9 @@ public int getNumberOfFrames() {
     /**
      * @return The Drawable at the specified frame index
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.534 -0500", hash_original_method = "924497ADC8C942C05D9D7A5BCA11BCAD", hash_generated_method = "8BA7E4E455DA62781E9BC042F465DB3A")
     
 public Drawable getFrame(int index) {
@@ -144,6 +149,9 @@ public Drawable getFrame(int index) {
      * @return The duration in milliseconds of the frame at the 
      * specified index
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.537 -0500", hash_original_method = "F1980307C7F7FBBB813440E411F73714", hash_generated_method = "2059BCCA67A341C5AD3C2C8972CC3936")
     
 public int getDuration(int i) {
@@ -153,6 +161,8 @@ public int getDuration(int i) {
     /**
      * @return True of the animation will play once, false otherwise
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.539 -0500", hash_original_method = "F5C3EDF3EE4DBDBAFAA19B210BF98AFC", hash_generated_method = "4B6186B7C773DB7FC6E34728FC5E57A5")
     
 public boolean isOneShot() {
@@ -164,6 +174,9 @@ public boolean isOneShot() {
      * 
      * @param oneShot Pass true if the animation should only play once
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.541 -0500", hash_original_method = "E8F5482B51D48B1DAA2F24BE9877736B", hash_generated_method = "E0EBA634D159BA1B4DB52D6C94AA449F")
     
 public void setOneShot(boolean oneShot) {
@@ -176,6 +189,8 @@ public void setOneShot(boolean oneShot) {
      * @param frame The frame to add
      * @param duration How long in milliseconds the frame should appear
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.543 -0500", hash_original_method = "1C98A9B62B655827C0439A8A5D392C10", hash_generated_method = "9F147038D0E8ABB8C00272D61FE1F2AC")
     
 public void addFrame(Drawable frame, int duration) {
@@ -293,7 +308,6 @@ private void setFrame(int frame, boolean unschedule, boolean animate) {
         }
         return this;
     }
-
     
     private final static class AnimationState extends DrawableContainerState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:15.556 -0500", hash_original_field = "20D1C0D4800764C0753F9956F9F072EE", hash_generated_field = "8BD7F9CC97F6F0855D8F3C7E2109665D")
@@ -350,11 +364,8 @@ public void addFrame(Drawable dr, int dur) {
             System.arraycopy(mDurations, 0, newDurations, 0, oldSize);
             mDurations = newDurations;
         }
-
         
     }
-
-
     
 }
 

@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.util.Formatter;
 import java.util.Locale;
 
-
-
-
-
-
 public class PrintWriter extends Writer {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.496 -0500", hash_original_field = "EBCE22DD0E30FF0E4040ABB2E7F29C97", hash_generated_field = "8FF81F1EABE94AA2FE1148793CBBDC2D")
 
@@ -33,6 +28,8 @@ public class PrintWriter extends Writer {
      * @throws NullPointerException
      *             if {@code out} is {@code null}.
      */
+    @DSComment("PrintWriter class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.504 -0500", hash_original_method = "009ECF78166A7569006BEB577877B2F6", hash_generated_method = "016F1B5DF0E9611CE429BA74AC14E049")
     
 public PrintWriter(OutputStream out) {
@@ -69,6 +66,8 @@ public PrintWriter(OutputStream out, boolean autoFlush) {
      * @throws NullPointerException
      *             if {@code wr} is {@code null}.
      */
+    @DSComment("PrintWriter class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.510 -0500", hash_original_method = "7F68156580476879DAEA9DC9BCB75B06", hash_generated_method = "7254B85D902F7A0D22543F60341BFF81")
     
 public PrintWriter(Writer wr) {
@@ -89,6 +88,8 @@ public PrintWriter(Writer wr) {
      * @throws NullPointerException
      *             if {@code out} is {@code null}.
      */
+    @DSComment("PrintWriter class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.513 -0500", hash_original_method = "C1927249B88242DCE6CFA0FA4F3C29B3", hash_generated_method = "24E2FCE2F914460E15A5623901838257")
     
 public PrintWriter(Writer wr, boolean autoFlush) {
@@ -180,6 +181,8 @@ public PrintWriter(String fileName) throws FileNotFoundException {
      * @throws UnsupportedEncodingException
      *             if the encoding specified by {@code csn} is not supported.
      */
+    @DSComment("PrintWriter class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.524 -0500", hash_original_method = "75ACA8D301D7B4385F5F1D6D811FAD95", hash_generated_method = "299D4174F3DFC34A1C29CA836AC50A4D")
     
 public PrintWriter(String fileName, String csn)
@@ -224,6 +227,8 @@ protected void clearError() {
      * Closes this print writer. Flushes this writer and then closes the target.
      * If an I/O error occurs, this writer's error flag is set to {@code true}.
      */
+    @DSComment("PrintWriter class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.532 -0500", hash_original_method = "914ABB48E88E0FB5E2AF825917F549B2", hash_generated_method = "0DD80271147924135BA0F03FF3D404CE")
     
 @Override
@@ -245,6 +250,8 @@ protected void clearError() {
      * flushes the target. If an I/O error occurs, this writer's error
      * state is set to {@code true}.
      */
+    @DSComment("PrintWriter class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.534 -0500", hash_original_method = "3747E1B1C7FB1936BAC6943C89A67163", hash_generated_method = "6555AC8DF092B1F6499D2697C5833C35")
     
 @Override
@@ -430,6 +437,8 @@ public void print(float fnum) {
      *            the integer value to print to the target.
      * @see #print(String)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.556 -0500", hash_original_method = "7E641CDBDB4194A4ABD6D1C9C473BCDE", hash_generated_method = "926C6B4F4B203D16211A7DFF9C2165F3")
     
 public void print(int inum) {
@@ -456,6 +465,8 @@ public void print(long lnum) {
      *            the object to print to the target.
      * @see #print(String)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.560 -0500", hash_original_method = "649E6082D773CF70C752E5716C5CC7C1", hash_generated_method = "EAB1D91353181ABAEA72D7E1487AC34B")
     
 public void print(Object obj) {
@@ -473,6 +484,9 @@ public void print(Object obj) {
      *            the string to print to the target.
      * @see #write(int)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.563 -0500", hash_original_method = "28AE2923CB2E212C4A1D24DC5B3A947D", hash_generated_method = "36277E61AA4A266FE3AE5B9152D6A6DD")
     
 public void print(String str) {
@@ -486,6 +500,8 @@ public void print(String str) {
      *            the boolean value to print the target.
      * @see #print(String)
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.565 -0500", hash_original_method = "55BF6AEFB35D15A1E34ADB671F9CB185", hash_generated_method = "7C2EDF016FE2419B26B3D48D16F69833")
     
 public void print(boolean bool) {
@@ -495,6 +511,8 @@ public void print(boolean bool) {
     /**
      * Prints a newline. Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.568 -0500", hash_original_method = "F64EE4A89E44550272E2ED021897135C", hash_generated_method = "7F9921E118814F069608AD604993C5DF")
     
 public void println() {
@@ -510,6 +528,7 @@ public void println() {
      * Prints the string representation of the character array {@code chars} followed by a newline.
      * Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.570 -0500", hash_original_method = "C86060CC83A142ED26FEFD1C4AFF06F6", hash_generated_method = "401BCD9244EE35B0A776F2A2CEDD37CF")
     
 public void println(char[] chars) {
@@ -520,6 +539,7 @@ public void println(char[] chars) {
      * Prints the string representation of the char {@code c} followed by a newline.
      * Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.573 -0500", hash_original_method = "0AD803DE0349B67DF3766F5E61BB22D0", hash_generated_method = "82BB46696338001ACA80E01920212F73")
     
 public void println(char c) {
@@ -530,6 +550,7 @@ public void println(char c) {
      * Prints the string representation of the double {@code d} followed by a newline.
      * Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.576 -0500", hash_original_method = "1C71B315F5691439EEEA0D1A39435B84", hash_generated_method = "84BC8C6D54950BCAF58BC3BD27296799")
     
 public void println(double d) {
@@ -540,6 +561,7 @@ public void println(double d) {
      * Prints the string representation of the float {@code f} followed by a newline.
      * Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.578 -0500", hash_original_method = "303071589A63282B34174CD2B6A3FE64", hash_generated_method = "9D7FF09A264CAD926D6BBFC063392F4E")
     
 public void println(float f) {
@@ -550,6 +572,9 @@ public void println(float f) {
      * Prints the string representation of the int {@code i} followed by a newline.
      * Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.580 -0500", hash_original_method = "5AD4BE5FC276B9D22B3857BC3A21F6AF", hash_generated_method = "98B5DD023B996103C774771444368106")
     
 public void println(int i) {
@@ -560,6 +585,7 @@ public void println(int i) {
      * Prints the string representation of the long {@code l} followed by a newline.
      * Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.582 -0500", hash_original_method = "13C762985E9CE0F97BF4916754E07523", hash_generated_method = "82CA901E151A642E436F396BAF71A3BB")
     
 public void println(long l) {
@@ -571,6 +597,9 @@ public void println(long l) {
      * followed by a newline.
      * Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.584 -0500", hash_original_method = "1CC054989EBE4FE044F6C09E43625828", hash_generated_method = "0B5F9A06B0F5163B563B261D2A61BA8F")
     
 public void println(Object obj) {
@@ -588,6 +617,8 @@ public void println(Object obj) {
      *
      * <p>If an I/O error occurs, this writer's error flag is set to {@code true}.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.586 -0500", hash_original_method = "78EB2001D4D66C9EDDEA85708AB1EA5C", hash_generated_method = "B93838DE4CA8FEA833991BA73C84BE94")
     
 public void println(String str) {
@@ -601,6 +632,9 @@ public void println(String str) {
      * Prints the string representation of the boolean {@code b} followed by a newline.
      * Flushes this writer if the autoFlush flag is set to {@code true}.
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.589 -0500", hash_original_method = "63B90E61F0F8C1638BDCBB4A882302BD", hash_generated_method = "D2EE9655DC271F139DF31A427D683083")
     
 public void println(boolean b) {
@@ -624,6 +658,7 @@ protected void setError() {
      * @param buf
      *            the non-null array containing characters to write.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.594 -0500", hash_original_method = "A3159CA9C79B3AD467B0FCF29995C9CC", hash_generated_method = "332FA8CEBD234C482814A35911B9C13B")
     
 @Override
@@ -694,6 +729,9 @@ private final void doWrite(char[] buf, int offset, int count) {
      * @param str
      *            the non-null string containing the characters to write.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.604 -0500", hash_original_method = "CF32CDDE2940A658D82FD10746BC6D29", hash_generated_method = "FFEB530BBD04B1626761EF212111F721")
     
 @Override
@@ -715,6 +753,7 @@ private final void doWrite(char[] buf, int offset, int count) {
      *             if {@code offset < 0} or {@code count < 0}, or if {@code
      *             offset + count} is greater than the length of {@code str}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.607 -0500", hash_original_method = "63C99944EF00B97313C46973AD4FFC8C", hash_generated_method = "B2605DFCA974A1A538F9BAD52C8E3544")
     
 @Override
@@ -729,6 +768,7 @@ private final void doWrite(char[] buf, int offset, int count) {
      *            the character to append to the target.
      * @return this writer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:51.609 -0500", hash_original_method = "4FD83DFE8717316B104D560444A12EF3", hash_generated_method = "C3F32695E29C5D8F69A4DC79938AD393")
     
 @Override
@@ -790,7 +830,6 @@ private final void doWrite(char[] buf, int offset, int count) {
         write(output, 0, output.length());
         return this;
     }
-
     
 }
 

@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class InterfaceAddress {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.534 -0500", hash_original_method = "5E42B457EFC972934681320D52288B28", hash_generated_method = "CC498109EDA786AF03805FD940E7B974")
@@ -31,7 +27,6 @@ private static short countPrefixLength(Inet4Address mask) {
 
     private  InetAddress broadcastAddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.526 -0500", hash_original_field = "F05D18D1D3B9AB4289B6E58A48EDE89D", hash_generated_field = "70DE7742499AEA0A92EA72A6919A370C")
-
 
     private  short prefixLength;
 
@@ -106,6 +101,7 @@ InterfaceAddress(Inet6Address address, short prefixLength) {
     /**
      * Returns the InetAddress for this address.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.543 -0500", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "824B3030C6402BCEBDA9F70F4F75F58E")
     
 public InetAddress getAddress() {
@@ -115,6 +111,7 @@ public InetAddress getAddress() {
     /**
      * Returns the subnet-directed broadcast address if this is an IPv4 interface, null otherwise.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.546 -0500", hash_original_method = "CFDC66E7DE04051E5606E381D802784E", hash_generated_method = "28382B4EA9311AEBD96E8227D2E78F72")
     
 public InetAddress getBroadcast() {
@@ -126,12 +123,12 @@ public InetAddress getBroadcast() {
      * (In IPv4 parlance, this is known as the subnet mask,
      * but this method applies to IPv6 addresses too.)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:15.548 -0500", hash_original_method = "D89613E4F9F0153F2E4A2BF9077CFCE5", hash_generated_method = "9D16C80E8CA50D4C88AD9AD11B498561")
     
 public short getNetworkPrefixLength() {
         return prefixLength;
     }
-
     
 }
 

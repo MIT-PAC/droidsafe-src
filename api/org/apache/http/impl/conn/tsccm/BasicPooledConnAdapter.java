@@ -8,10 +8,6 @@ import org.apache.http.conn.ClientConnectionManager;
 import org.apache.http.impl.conn.AbstractPoolEntry;
 import org.apache.http.impl.conn.AbstractPooledConnAdapter;
 
-
-
-
-
 public class BasicPooledConnAdapter extends AbstractPooledConnAdapter {
 
     /**
@@ -28,7 +24,7 @@ protected BasicPooledConnAdapter(ThreadSafeClientConnManager tsccm,
         markReusable();
     }
 
-
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.695 -0500", hash_original_method = "278454090484FFAE87CB0693EDFEAA11", hash_generated_method = "7BE0FC895E550BB5A0B6208CB68CD71D")
     
 @Override
@@ -37,18 +33,17 @@ protected BasicPooledConnAdapter(ThreadSafeClientConnManager tsccm,
         return super.getManager();
     }
 
-
     /**
      * Obtains the pool entry.
      *
      * @return  the pool entry, or <code>null</code> if detached
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.697 -0500", hash_original_method = "4F37F2CEFFC0BA6EAEA2353029E03EE6", hash_generated_method = "131C894029FFCDCBAFAF169DB22826D9")
     
 protected AbstractPoolEntry getPoolEntry() {
         return super.poolEntry;
     }
-
 
     // non-javadoc, see base class
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:34.699 -0500", hash_original_method = "E23AB51D98F88854411B8A5D5ACA9D05", hash_generated_method = "E5A0A89C9C7CC29013B36BFA6AAB281F")
@@ -58,7 +53,6 @@ protected AbstractPoolEntry getPoolEntry() {
         // override needed only to make method visible in this package
         super.detach();
     }
-
     
 }
 

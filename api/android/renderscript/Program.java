@@ -24,7 +24,6 @@ public class Program extends BaseObj {
     static final int MAX_TEXTURE = 8;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.889 -0500", hash_original_field = "E747B09A0C364548DFA046F423E5DA3C", hash_generated_field = "E747B09A0C364548DFA046F423E5DA3C")
 
-
     Element mInputs[];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.891 -0500", hash_original_field = "C68FFFABB333621AA37308344C294A6F", hash_generated_field = "C68FFFABB333621AA37308344C294A6F")
 
@@ -41,13 +40,11 @@ public class Program extends BaseObj {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.900 -0500", hash_original_field = "54F2F4A2C4FE918D7E216DA83E4EE9FB", hash_generated_field = "54F2F4A2C4FE918D7E216DA83E4EE9FB")
 
     String mShader;
-
     
     public enum TextureType {
         TEXTURE_2D (0),
         TEXTURE_CUBE (1);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.877 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
-
 
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.880 -0500", hash_original_method = "890D2138B254D2C54059916FB254C211", hash_generated_method = "890D2138B254D2C54059916FB254C211")
@@ -56,7 +53,6 @@ TextureType(int id) {
             mID = id;
         }
     }
-
     
     enum ProgramParam {
         INPUT (0),
@@ -65,7 +61,6 @@ TextureType(int id) {
         TEXTURE_TYPE (3);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.883 -0500", hash_original_field = "0B53E374282B34FB268F3024A1E73BA5", hash_generated_field = "0B53E374282B34FB268F3024A1E73BA5")
 
-
         int mID;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.886 -0500", hash_original_method = "60C931298359B2F9C68AA0F85FB7A779", hash_generated_method = "60C931298359B2F9C68AA0F85FB7A779")
             
@@ -73,7 +68,6 @@ ProgramParam(int id) {
             mID = id;
         }
     }
-
     
     public static class BaseProgramBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.913 -0500", hash_original_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C", hash_generated_field = "AD6E2452AD39DF3B497ED4B7E83C4E0C")
@@ -109,7 +103,6 @@ ProgramParam(int id) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.934 -0500", hash_original_field = "54F2F4A2C4FE918D7E216DA83E4EE9FB", hash_generated_field = "54F2F4A2C4FE918D7E216DA83E4EE9FB")
 
         String mShader;
-
 
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.937 -0500", hash_original_method = "63AEAE3E9DFF86F82605C17C260A695A", hash_generated_method = "D5498AB755DACDC66346A1F33AFE7A20")
         
@@ -190,6 +183,7 @@ public BaseProgramBuilder setShader(Resources resources, int resourceID) {
          * Queries the index of the last added constant buffer type
          *
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.945 -0500", hash_original_method = "5F149B188E50B29E19B8539B65E14210", hash_generated_method = "528B82FBA1B420426E56DB2610D1E8A1")
         
 public int getCurrentConstantIndex() {
@@ -200,6 +194,7 @@ public int getCurrentConstantIndex() {
          * Queries the index of the last added texture type
          *
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:03.948 -0500", hash_original_method = "467C1DDFF09334AC57E34CD93B505419", hash_generated_method = "3ADD1F5602B19029B44DD6C0FFB64BB9")
         
 public int getCurrentTextureIndex() {
@@ -258,7 +253,6 @@ protected void initProgram(Program p) {
             p.mTextures = new TextureType[mTextureCount];
             System.arraycopy(mTextureTypes, 0, p.mTextures, 0, mTextureCount);
         }
-
         
     }
 

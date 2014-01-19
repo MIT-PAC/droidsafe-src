@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class AlteredCharSequence implements CharSequence, GetChars {
     /**
      * Create an AlteredCharSequence whose text (and possibly spans)
@@ -26,7 +22,6 @@ public static AlteredCharSequence make(CharSequence source, char[] sub,
             return new AlteredCharSequence(source, sub, substart, subend);
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.906 -0500", hash_original_field = "83A19D93B82C07A79F54E265C2077EC6", hash_generated_field = "D233E3389CE5D79EE6040D6A855ED4FF")
-
 
     private int mStart;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.911 -0500", hash_original_field = "6FAA56F5628A0F1DAAFED98EBDB1C99E", hash_generated_field = "EA295975CAF8E42F4C28A87EADB358DF")
@@ -65,17 +60,13 @@ public char charAt(int off) {
         else
             return mSource.charAt(off);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public int length() {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-
     
-    @DSModeled(DSC.SAFE)
     @Override
 	public CharSequence subSequence(int start, int end) {
 		// TODO Auto-generated method stub
@@ -93,17 +84,13 @@ public void getChars(int start, int end, char[] dest, int off) {
         if (start > end)
             System.arraycopy(mChars, start - mStart, dest, off, end - start);
     }
-
     
-    @DSModeled(DSC.SAFE)
 	public String toString() {
 		return new String();
 	}
-
     
     private static class AlteredSpanned extends AlteredCharSequence implements Spanned {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.876 -0500", hash_original_field = "4D9A388EBF42337B3D4B4C24F8CD74B1", hash_generated_field = "69C78554F8ABB9B2C492FD314F3ED2EE")
-
 
         private Spanned mSpanned;
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:03.854 -0500", hash_original_method = "C72F214965B45129737A1599B1B4D92F", hash_generated_method = "E4DB70EB53548839B4C3558844CE5BC4")
@@ -113,7 +100,6 @@ private AlteredSpanned(CharSequence source, char[] sub,
             super(source, sub, substart, subend);
             mSpanned = (Spanned) source;
         }
-
         
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:38.104 -0400", hash_original_method = "7BE4975DFF2DB3C2E9D70BFA875C8A2F", hash_generated_method = "7669DB773C32284CA01F520DC1554623")
         public <T> T[] getSpans(int start, int end, Class<T> kind) {
@@ -150,13 +136,8 @@ public int getSpanFlags(Object span) {
 public int nextSpanTransition(int start, int end, Class kind) {
             return mSpanned.nextSpanTransition(start, end, kind);
         }
-
         
     }
-
-
-    
-    
     
 }
 

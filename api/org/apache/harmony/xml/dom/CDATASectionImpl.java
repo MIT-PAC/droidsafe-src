@@ -7,10 +7,6 @@ import droidsafe.annotations.*;
 import org.w3c.dom.CDATASection;
 import org.w3c.dom.Node;
 
-
-
-
-
 public final class CDATASectionImpl extends TextImpl implements CDATASection {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.183 -0500", hash_original_method = "5E65B479C9B119188AACA9AAF7F8DB49", hash_generated_method = "AFD3A50430ED1CA556A0611F53BAAA83")
@@ -19,6 +15,7 @@ public CDATASectionImpl(DocumentImpl document, String data) {
         super(document, data);
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.185 -0500", hash_original_method = "C06D7633E1EEC458B6238549761E1C34", hash_generated_method = "F321466C3A77A64D1617E37B79310E8A")
     
 @Override
@@ -26,6 +23,7 @@ public CDATASectionImpl(DocumentImpl document, String data) {
         return "#cdata-section";
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:21.187 -0500", hash_original_method = "0AC4013C7F1EC92B6047139E15C869E6", hash_generated_method = "68DEE771A192EE03BAA5F3628D9AD8DB")
     
 @Override
@@ -78,7 +76,6 @@ public TextImpl replaceWithText() {
         parent.removeChild(this);
         return replacement;
     }
-
     
 }
 

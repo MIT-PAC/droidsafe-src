@@ -7,12 +7,7 @@ import droidsafe.annotations.*;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class SmsRawData implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:19.300 -0400", hash_original_field = "5F248018C4F105B9FC6BE9470BA097DB", hash_generated_field = "AED96BE50F57834351625E8AF71D8275")
 
@@ -45,6 +40,7 @@ public SmsRawData(byte[] data) {
         this.data = data;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.225 -0500", hash_original_method = "A347A6B90A5D4D940F0721005973D58D", hash_generated_method = "3C7438C8A4069E5C199E2D48F79B0806")
     
 public byte[] getBytes() {

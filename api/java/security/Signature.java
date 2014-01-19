@@ -13,11 +13,6 @@ import java.util.Set;
 
 import org.apache.harmony.security.fortress.Engine;
 
-
-
-
-
-
 public abstract class Signature extends SignatureSpi {
 
     /**
@@ -33,6 +28,7 @@ public abstract class Signature extends SignatureSpi {
      * @throws NullPointerException
      *             if {@code algorithm} is {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.515 -0500", hash_original_method = "4B1132236EA3658AFDF6AAF777F4DB3E", hash_generated_method = "0BC0646CA979D25936278C85621B3FDE")
     
 public static Signature getInstance(String algorithm)
@@ -70,6 +66,7 @@ public static Signature getInstance(String algorithm)
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null || provider.isEmpty()}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.517 -0500", hash_original_method = "38CF846AD141DABFC78B3F3A9BECF440", hash_generated_method = "84FE1D613CEABBA801933A3986010912")
     
 public static Signature getInstance(String algorithm, String provider)
@@ -103,6 +100,7 @@ public static Signature getInstance(String algorithm, String provider)
      *             if {@code algorithm} is {@code null}.
      * @throws IllegalArgumentException if {@code provider == null}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.521 -0500", hash_original_method = "BCEC0D04DA2EAAA5A150C425DE98380C", hash_generated_method = "C0DADB9B24DDAB04166766EA961722A3")
     
 public static Signature getInstance(String algorithm, Provider provider)
@@ -172,6 +170,7 @@ protected Signature(String algorithm) {
      *
      * @return the provider associated with this {@code Signature}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.526 -0500", hash_original_method = "4D6A4C5C7B57C5543A93E2FA43879F89", hash_generated_method = "443000CF13C77ABCABFC8B67E2DE556F")
     
 public final Provider getProvider() {
@@ -183,6 +182,7 @@ public final Provider getProvider() {
      *
      * @return the name of the algorithm of this {@code Signature}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.528 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "8A7AA6162519FFB2228039F3D6331CE9")
     
 public final String getAlgorithm() {
@@ -305,6 +305,7 @@ public final void initSign(PrivateKey privateKey, SecureRandom random)
      *             if this {@code Signature} instance is not initialized
      *             properly.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.541 -0500", hash_original_method = "1CBD4CB00E49A2B9C590273D2FD8D112", hash_generated_method = "F648DBF6812B9BBA3F208A1D567B6006")
     
 public final byte[] sign() throws SignatureException {
@@ -504,6 +505,7 @@ public final void update(ByteBuffer data) throws SignatureException {
      *
      * @return a printable representation for this {@code Signature}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.564 -0500", hash_original_method = "300ADD63628A84B0D8F725B1BA1E9A8E", hash_generated_method = "71DB550FD17BA8B81224C927B01BF247")
     
 @Override
@@ -526,11 +528,9 @@ private String stateToString(int state) {
             return "";
         }
     }
-
     
     private static class SignatureImpl extends Signature {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.586 -0500", hash_original_field = "0B9B4E0CF62C2D7B28F9A6A164E87098", hash_generated_field = "B117D5F80D09F234127E3A3393EBC255")
-
 
         private SignatureSpi spiImpl;
 
@@ -545,6 +545,7 @@ public SignatureImpl(SignatureSpi signatureSpi, Provider provider,
         }
 
         // engineSign() implementation
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.593 -0500", hash_original_method = "FFC69249636133C4828AD78F0F12AF56", hash_generated_method = "1273A7C32F2094A7E4A551B15E066CF5")
         
 @Override
@@ -624,7 +625,6 @@ public SignatureImpl(SignatureSpi signatureSpi, Provider provider,
             }
             throw new CloneNotSupportedException();
         }
-
         
     }
 
@@ -640,6 +640,7 @@ public SignatureImpl(SignatureSpi signatureSpi, Provider provider,
      *             be changed.
      * @deprecated Use {@link #setParameter(AlgorithmParameterSpec)}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.569 -0500", hash_original_method = "D52E00AF44B32CEF42E7B7F3CD02413C", hash_generated_method = "0B3D5C6F93B131A73FF182C690F84E67")
     
 @Deprecated
@@ -671,6 +672,7 @@ public final void setParameter(AlgorithmParameterSpec params)
      * @return the {@code AlgorithmParameters} of this {@link Signature}
      *         instance, maybe {@code null}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.578 -0500", hash_original_method = "8EDBC3AD900BE7B10A8F191CA049C5A8", hash_generated_method = "9ACC24FEBBF30B1B2321C458AD29DB35")
     
 public final AlgorithmParameters getParameters() {
@@ -689,6 +691,7 @@ public final AlgorithmParameters getParameters() {
      *             Signature} or an other error occures.
      * @deprecated There is no generally accepted parameter naming convention.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.581 -0500", hash_original_method = "3218EA86DC018EF694546DAFA3BC417D", hash_generated_method = "46BBC64E66C514E5E3B588FA2E97D22F")
     
 @Deprecated
@@ -697,6 +700,7 @@ public final AlgorithmParameters getParameters() {
         return engineGetParameter(param);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:54.583 -0500", hash_original_method = "31D01322C9910F836DA03F7FCF4D6261", hash_generated_method = "3129F61A1AC4738DC9444626172FE7E6")
     
 @Override

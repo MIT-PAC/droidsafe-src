@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public final class BlockGuard {
 
     /**
@@ -42,7 +38,6 @@ public static void setThreadPolicy(Policy policy) {
     // growing beyond just blocking/logging.
 
     public static final int DISALLOW_DISK_WRITE = 0x01;
-
     
     public static class BlockGuardPolicyException extends RuntimeException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.459 -0500", hash_original_field = "1AE9836DEC22F7D17F3EFC14412B9A1F", hash_generated_field = "22097F0CB35E769FF60D37AAB85D45C7")
@@ -70,18 +65,21 @@ public BlockGuardPolicyException(int policyState, int policyViolated, String mes
             fillInStackTrace();
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.473 -0500", hash_original_method = "7E4A409F6FF395255A09FF646F59C182", hash_generated_method = "4235463EF38A6E5A53221C97F7B2FC3E")
         
 public int getPolicy() {
             return mPolicyState;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.475 -0500", hash_original_method = "51330C8A3B9EAC192FDD6907E318F7AB", hash_generated_method = "0772710AB37BA670733FC3EE2AFCB5AF")
         
 public int getPolicyViolation() {
             return mPolicyViolated;
         }
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:39.478 -0500", hash_original_method = "AA2ABAF31AA2D7A8C7A88450DEB5E574", hash_generated_method = "115A7BE97D13DB5D0A3713B9F0FA2346")
         
 public String getMessage() {
@@ -94,22 +92,16 @@ public String getMessage() {
             return "policy=" + mPolicyState + " violation=" + mPolicyViolated +
                     (mMessage == null ? "" : (" msg=" + mMessage));
         }
-
         
     }
-
-
     
     public interface Policy {
         
         void onWriteToDisk();
-
         
         void onReadFromDisk();
-
         
         void onNetwork();
-
         
         int getPolicyMask();
     }
@@ -151,8 +143,8 @@ public int getPolicyMask() {
         };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.592 -0400", hash_original_field = "FA0644FE78DE29FC3B6373BBD0514481", hash_generated_field = "D74F07E1FC56C17661F0BEB3EE20011C")
 
-    private static ThreadLocal<Policy> threadPolicy = new ThreadLocal<Policy>() {        
-        @DSModeled(DSC.BAN)
+    private static ThreadLocal<Policy> threadPolicy = new ThreadLocal<Policy>() {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:35.592 -0400", hash_original_method = "DA8783B28EC2A21BB8B273AEAF0100E1", hash_generated_method = "FECE05391A71714F72ACFF49F2BE0BBC")
         @Override
         protected Policy initialValue() {
@@ -161,9 +153,7 @@ public int getPolicyMask() {
             varB4EAC82CA7396A68D541C85D26508E83_1583563944.addTaint(getTaint()); 
             return varB4EAC82CA7396A68D541C85D26508E83_1583563944;
             
-            
         }
-
         
 };
 

@@ -5,13 +5,8 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class LocalSocketAddress {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.193 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
-
 
     private  String name;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.195 -0500", hash_original_field = "97EEF6D093E8D4D72F6F6C736C241B6E", hash_generated_field = "8F55F62DFCC7A64A0BD865276D82A096")
@@ -47,6 +42,7 @@ public LocalSocketAddress(String name) {
      * Retrieves the string name of this address
      * @return string name
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.202 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName()
@@ -64,7 +60,6 @@ public String getName()
 public Namespace getNamespace() {
         return namespace;
     }
-
     
     public enum Namespace {
         ABSTRACT(0),
@@ -82,13 +77,13 @@ Namespace (int id) {
         /**
          * @return int constant shared with native code
          */
-        /*package*/ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.189 -0500", hash_original_method = "9E2F8CA3AB278410BC9A2501C7D5731F", hash_generated_method = "9E2F8CA3AB278410BC9A2501C7D5731F")
+        /*package*/ @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:21.189 -0500", hash_original_method = "9E2F8CA3AB278410BC9A2501C7D5731F", hash_generated_method = "9E2F8CA3AB278410BC9A2501C7D5731F")
             
 int getId() {
             return id;
         }
     }
-
     
 }
 

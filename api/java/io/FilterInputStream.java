@@ -5,8 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 public class FilterInputStream extends InputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.036 -0500", hash_original_field = "0A829BC26C36EAF422E245C1EC11D5B0", hash_generated_field = "6D3D0ED73C3C0D0A9AF6A684E0D210F5")
 
@@ -22,12 +20,16 @@ public class FilterInputStream extends InputStream {
      *
      * @param in the input stream to filter reads on.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.038 -0500", hash_original_method = "28F38498A0B180D5BCC888F2248F3934", hash_generated_method = "D28A4C86943E8574377DFF40EEBB983E")
     
 protected FilterInputStream(InputStream in) {
         this.in = in;
     }
 
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.040 -0500", hash_original_method = "0AD8415E97210126520B7235309B4152", hash_generated_method = "8E5606FF0A120193314716C29AE15BAC")
     
 @Override
@@ -41,6 +43,8 @@ protected FilterInputStream(InputStream in) {
      * @throws IOException
      *             if an error occurs while closing this stream.
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.043 -0500", hash_original_method = "8853C25F592811C3C813B7E0334D3C5F", hash_generated_method = "150283417C2E86293C532259A36378CD")
     
 @Override
@@ -97,6 +101,8 @@ protected FilterInputStream(InputStream in) {
      * @throws IOException
      *             if the stream is closed or another IOException occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.051 -0500", hash_original_method = "E44784058F4742ED0C6AEE646C9728C1", hash_generated_method = "6F8C3CEAFF598327D551893A3095CDD9")
     
 @Override
@@ -123,6 +129,8 @@ protected FilterInputStream(InputStream in) {
      * @throws IOException
      *             if this stream is closed or another I/O error occurs.
      */
+    @DSComment("Activity on IO class")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.054 -0500", hash_original_method = "77ABDF7CA6BAECB9E04E38AE745E4AA8", hash_generated_method = "595F6EE2F2435B28EBBB9F808779088C")
     
 @Override
@@ -160,13 +168,14 @@ protected FilterInputStream(InputStream in) {
      * @see #mark(int)
      * @see #reset()
      */
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:47.058 -0500", hash_original_method = "871C50CABEA9E636393963333B4BFE2A", hash_generated_method = "41FD1968033290FD52A55E2E96D53127")
     
 @Override
     public long skip(long byteCount) throws IOException {
         return in.skip(byteCount);
     }
-
     
 }
 

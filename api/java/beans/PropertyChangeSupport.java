@@ -18,11 +18,8 @@ import java.util.concurrent.CopyOnWriteArrayList;
 
 import libcore.util.Objects;
 
-
-
 public class PropertyChangeSupport implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.435 -0500", hash_original_field = "7F45435A85DB6970CD266585EE9099E0", hash_generated_field = "A48B1648CDA8E4C2690D9A8D916781AA")
-
 
     private static final long serialVersionUID = 6401253773779951803l;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.439 -0500", hash_original_field = "D7CED9D2EA315F5E04B6143AA1156FC3", hash_generated_field = "1971F9E630460B6A7EA7F81588D7F7D1")
@@ -33,7 +30,6 @@ public class PropertyChangeSupport implements Serializable {
         new ObjectStreamField("propertyChangeSupportSerializedDataVersion", int.class),
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.441 -0500", hash_original_field = "F055581026D36C36805717A9901B0CA0", hash_generated_field = "C4FC1B92735A56C9579E71916FC2FFF8")
-
 
     private transient Object sourceBean;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.444 -0500", hash_original_field = "9A03797089C5BCB294E29E999DE6BA13", hash_generated_field = "13B011C46465CF2D1279D361F5E6B98B")
@@ -169,6 +165,7 @@ public void addPropertyChangeListener(String propertyName, PropertyChangeListene
      * This includes both listeners subscribed to all property changes and
      * listeners subscribed to the named property only.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.462 -0500", hash_original_method = "00BBD2172CC9916DE5C9C28A0EEFE748", hash_generated_method = "BC5FA728DB99FC198A593276D73D77F1")
     
 public PropertyChangeListener[] getPropertyChangeListeners(String propertyName) {
@@ -321,6 +318,7 @@ public void addPropertyChangeListener(PropertyChangeListener listener) {
      * Returns all subscribers. This includes both listeners subscribed to all
      * property changes and listeners subscribed to a single property.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:52.483 -0500", hash_original_method = "20AEE88E0780907A1527FDFF7FD94398", hash_generated_method = "9A47B5F9519785DE53630EA3549CB4E8")
     
 public PropertyChangeListener[] getPropertyChangeListeners() {

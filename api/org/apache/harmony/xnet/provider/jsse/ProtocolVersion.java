@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Hashtable;
 
-
-
-
-
-
 public class ProtocolVersion {
 
     /**
@@ -34,6 +29,7 @@ public static boolean isSupported(byte[] version) {
      * @param version
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.605 -0500", hash_original_method = "A8DDB91344A4ACE1DED4563322A3ABB8", hash_generated_method = "43BB4B150DAB7AFC5D44C48D0A361465")
     
 public static ProtocolVersion getByVersion(byte[] version) {
@@ -66,6 +62,7 @@ public static boolean isSupported(String name) {
      * @param name
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.610 -0500", hash_original_method = "DE14D065BBEFBE848C75547EEBFDF97D", hash_generated_method = "E358A359DBE14FDA899A9321ACD7AC64")
     
 public static ProtocolVersion getByName(String name) {
@@ -78,6 +75,7 @@ public static ProtocolVersion getByName(String name) {
      * @param protocols
      * @return
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.612 -0500", hash_original_method = "EAFDD965F3CDE3FC6FA18BAFD86C981E", hash_generated_method = "EA93D29A9FC59AC3B22D5DA79A8A39CB")
     
 public static ProtocolVersion getLatestVersion(String[] protocols) {
@@ -105,7 +103,6 @@ public static ProtocolVersion getLatestVersion(String[] protocols) {
     public static final String[] supportedProtocols = new String[] { "TLSv1",
             "SSLv3" };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.600 -0500", hash_original_field = "E73A82414AF496D0C52CCA5E63946060", hash_generated_field = "AA8F7BF7FB4B29DFC759C981A9544153")
-
 
     private static Hashtable<String, ProtocolVersion> protocolsByName = new Hashtable<String, ProtocolVersion>(4);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:15.615 -0500", hash_original_field = "CC4DD00D70F9E1C365FD2AAFAF407F2F", hash_generated_field = "128736E5308FF81E6DD8DC58E7D8F4CC")

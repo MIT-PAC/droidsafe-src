@@ -10,11 +10,6 @@ import java.util.Date;
 import java.util.Formatter;
 import java.util.TimeZone;
 
-
-
-
-
-
 public final class ZoneInfo extends TimeZone {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.474 -0500", hash_original_method = "8870473B0F5D9FAFDE3FAA6E00691882", hash_generated_method = "724284E4D54CC069B48EAD49A7CB88A9")
@@ -34,30 +29,24 @@ private static String formatTime(int s, TimeZone tz) {
             MILLISECONDS_PER_DAY * (400 * 365 + 100 - 3);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.419 -0500", hash_original_field = "250C18EEBBFE5F3201D3213271C04184", hash_generated_field = "D229D7317C365A16CE1D72D8769A5141")
 
-
     private static final long UNIX_OFFSET = 62167219200000L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.422 -0500", hash_original_field = "A76D40A738D4783D216A16ABEEDD633E", hash_generated_field = "22BEEDA8661AC3FEFCC2DD0FB611C6E4")
-
 
     private static final int[] NORMAL = new int[] {
         0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.424 -0500", hash_original_field = "D46C758281F422324C6296A9A3248420", hash_generated_field = "B12F84DFBC4C3EA8E5351AA3B43B9A98")
 
-
     private static final int[] LEAP = new int[] {
         0, 31, 60, 91, 121, 152, 182, 213, 244, 274, 305, 335,
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.427 -0500", hash_original_field = "7603B6DD0497D2F7D1E30E40E4EDEBE2", hash_generated_field = "060566AE9D04406A02A61A31328950F2")
 
-
     private int mRawOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.429 -0500", hash_original_field = "CD047A63A42662BED002563DA8336949", hash_generated_field = "35AB18A3BDD75B1565BCF1FBB4FD4AC9")
 
-
     private  int mEarliestRawOffset;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.431 -0500", hash_original_field = "2685FF7F8B5474CF1A49F123DC2507C7", hash_generated_field = "2949F8E2C658E0F9BB6150829DB0F1FB")
-
 
     private  int[] mTransitions;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.433 -0500", hash_original_field = "BF45E09BFDBC088479B878A666455A43", hash_generated_field = "A77170E4D59B7DEF7933F555FC87B6C7")
@@ -138,6 +127,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         mEarliestRawOffset = earliestRawOffset * 1000;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.448 -0500", hash_original_method = "F24BAF6EEBE3E0E7B99D03D590A46295", hash_generated_method = "31D5D32B9F1208D7E5F4AB696CE56957")
     
 @Override
@@ -169,6 +159,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         return getOffset(calc);
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.450 -0500", hash_original_method = "1DD2E67C6E4C7148C355A1BA56BEEEAB", hash_generated_method = "3CD43BB900A7738114584B5B55E3F658")
     
 @Override
@@ -206,6 +197,7 @@ ZoneInfo(String name, int[] transitions, byte[] type, int[] gmtOffsets, byte[] i
         return mIsDsts[mTypes[transition] & 0xff] == 1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:29.455 -0500", hash_original_method = "87352764C6114566CFCD3A7F913CA653", hash_generated_method = "0BE2EC6C07866D6560B4FEC30DFB59A8")
     
 @Override public int getRawOffset() {

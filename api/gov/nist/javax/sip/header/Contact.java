@@ -13,11 +13,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.ContactHeader;
 
-
-
-
-
-
 public final class Contact extends AddressParametersHeader implements javax.sip.header.ContactHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.568 -0500", hash_original_field = "ED3D850F50B9048EB37C0F340B1A3ED3", hash_generated_field = "D5EF41A2EAE5A5CDE5AE467B71E69779")
 
@@ -54,6 +49,7 @@ public Contact() {
 
     /** Set a parameter.
     */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.598 -0500", hash_original_method = "610F5F9F0EA9EBC7B3CD81D4F6E695C1", hash_generated_method = "A31CA48CB3246B2754ABA1561DD7FF00")
     
 public void setParameter(String name, String value) throws ParseException {
@@ -106,6 +102,7 @@ protected StringBuffer encodeBody(StringBuffer buffer) {
     /** get the Contact list.
      * @return ContactList
      */
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.607 -0500", hash_original_method = "1B424E93D6F15660DA959554DF30A2C0", hash_generated_method = "D219FD0D6453B315E2C64EA0A7C7D040")
     
 public ContactList getContactList() {
@@ -115,6 +112,7 @@ public ContactList getContactList() {
     /** get the WildCardFlag field
      * @return boolean
      */
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.610 -0500", hash_original_method = "B792A1C78C2262E486AC16BC668CCB6D", hash_generated_method = "9CD570CA0BDFAB4911C9BACEDF3F5409")
     
 public boolean getWildCardFlag() {
@@ -124,6 +122,7 @@ public boolean getWildCardFlag() {
     /** get the address field.
      * @return Address
      */
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.613 -0500", hash_original_method = "569FFD65B001A83BF27BFBDAD6B4F486", hash_generated_method = "7A358BB5EB823E64AB634D23E3290BF0")
     
 public javax.sip.address.Address getAddress() {
@@ -134,6 +133,7 @@ public javax.sip.address.Address getAddress() {
     /** get the parameters List
      * @return NameValueList
      */
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.616 -0500", hash_original_method = "4240C3A651BA1AB39E9A42DB8D1F003A", hash_generated_method = "3105CA54F2A1ED06B119BFD769999773")
     
 public NameValueList getContactParms() {
@@ -143,6 +143,7 @@ public NameValueList getContactParms() {
     /** get Expires parameter.
      * @return the Expires parameter.
      */
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.619 -0500", hash_original_method = "96E910216AC02ADF852A54B56C70C152", hash_generated_method = "B739B0608DF04309A293C914C1A68108")
     
 public int getExpires() {
@@ -153,6 +154,7 @@ public int getExpires() {
     *@param expiryDeltaSeconds exipry time.
     */
 
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.622 -0500", hash_original_method = "C2F655E77754B7E4118A4EC585DCE004", hash_generated_method = "B4C1B6FA45BA3A94B39E44D305675F86")
     
 public void setExpires(int expiryDeltaSeconds) {
@@ -182,6 +184,7 @@ public void setContactList(ContactList cl) {
      * Set the wildCardFlag member
      * @param w boolean to set
      */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.632 -0500", hash_original_method = "967084D665F0048759202AF27AE04FCB", hash_generated_method = "BF131F906168D148B49ED9A46083C2DA")
     
 public void setWildCardFlag(boolean w) {
@@ -209,6 +212,7 @@ public void setAddress(javax.sip.address.Address address) {
      * set the Q-value parameter
      * @param qValue float to set
      */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.638 -0500", hash_original_method = "BB23584FB6F9D8E00697707A3889A96F", hash_generated_method = "B0152FDAFD3601EB2617913EB6BF3239")
     
 public void setQValue(float qValue) throws InvalidArgumentException {
@@ -261,12 +265,14 @@ public void removeSipInstanceParam() {
             parameters.delete(ParameterNames.SIP_INSTANCE);
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.657 -0500", hash_original_method = "EA50318741E259995DB1E983FC6CAFD1", hash_generated_method = "44B110862A0F1FA7C5F9067DEC3EA0D7")
     
 public String getSipInstanceParam() {
         return (String) parameters.getValue(ParameterNames.SIP_INSTANCE);
     }
 
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.660 -0500", hash_original_method = "B439361A999D0B73C2E9828E38E26B04", hash_generated_method = "A86F4E5B11E3A91B4CFB0111E4FB4EBC")
     
 public void setSipInstanceParam(String value) {
@@ -283,12 +289,14 @@ public void removePubGruuParam() {
             parameters.delete(ParameterNames.PUB_GRUU);
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.667 -0500", hash_original_method = "3B3B357FD219B3690182EE4F60CD3DC6", hash_generated_method = "120ABB33278EBBADA28E37C8A790DA63")
     
 public String getPubGruuParam() {
         return (String) parameters.getValue(ParameterNames.PUB_GRUU);
     }
 
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.670 -0500", hash_original_method = "E6BD4CB1D1049F858BE017703EF776B9", hash_generated_method = "5E1FCD4B5BB46C35AD55FCB721D7F36D")
     
 public void setPubGruuParam(String value)
@@ -306,12 +314,14 @@ public void removeTempGruuParam() {
             parameters.delete(ParameterNames.TEMP_GRUU);
     }
 
+    @DSSource({DSSourceKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.675 -0500", hash_original_method = "19861AEE803C91FE7A0A9CDBD1C78B9E", hash_generated_method = "4482E8A45131311BB6370A5E83AC275D")
     
 public String getTempGruuParam() {
         return (String) parameters.getValue(ParameterNames.TEMP_GRUU);
     }
 
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:02.678 -0500", hash_original_method = "64FD1572329B063AD4EC10A23207E509", hash_generated_method = "61570D90E2A5659220B872C46334CDA2")
     
 public void setTempGruuParam(String value)

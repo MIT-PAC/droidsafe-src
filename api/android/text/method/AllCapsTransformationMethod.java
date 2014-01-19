@@ -11,16 +11,11 @@ import android.content.Context;
 import android.graphics.Rect;
 import android.view.View;
 
-
-
-
-
 public class AllCapsTransformationMethod implements TransformationMethod2 {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.577 -0500", hash_original_field = "CB4660A21DBB0A940F639C69E46D7C67", hash_generated_field = "4F51E6D9C8017CC0D76D6E29A09B68C6")
 
     private static final String TAG = "AllCapsTransformationMethod";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.580 -0500", hash_original_field = "B372655E189CA31F1D74E7441882FA0E", hash_generated_field = "7A48C52BD142368ED44BC086FD9013A2")
-
 
     private boolean mEnabled;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.583 -0500", hash_original_field = "D959780368C6CA232CF8C3906CDDEDF3", hash_generated_field = "1A21143DB168F6FB0629A178DF0F089E")
@@ -33,6 +28,7 @@ public AllCapsTransformationMethod(Context context) {
         mLocale = context.getResources().getConfiguration().locale;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:27:57.589 -0500", hash_original_method = "78672DB29526C1EED454DBBBA0FA4686", hash_generated_method = "C508363441DE225DBCC5C9BABCF533DD")
     
 @Override

@@ -14,8 +14,6 @@ import android.os.ParcelFileDescriptor;
 import android.os.RemoteException;
 import android.os.SystemProperties;
 
-
-
 public class UsbManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.845 -0500", hash_original_method = "3527AD09EAC8F1A9B30738F109BFF0EB", hash_generated_method = "059160C4C1510BF56B72A4B251A799DF")
@@ -78,7 +76,6 @@ private static boolean propertyContainsFunction(String property, String function
     public static final String USB_FUNCTION_ACCESSORY = "accessory";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.807 -0500", hash_original_field = "825B239AE18DC9730F3190D34270FCC2", hash_generated_field = "5B148AA6DEC965746A1892CA1FEAF53B")
 
-
     public static final String EXTRA_DEVICE = "device";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.810 -0500", hash_original_field = "DFA52CB4FB7EAC8C51F5368D1BBF90B4", hash_generated_field = "89F4F27AA905841082E03C1C7E821929")
 
@@ -87,7 +84,6 @@ private static boolean propertyContainsFunction(String property, String function
 
     public static final String EXTRA_PERMISSION_GRANTED = "permission";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.815 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.818 -0500", hash_original_field = "ACA435D22738EE6933BB846E779503B1", hash_generated_field = "9FD6577446058467C3BAA1A318AD88B5")
@@ -104,7 +100,6 @@ public UsbManager(Context context, IUsbManager service) {
         mService = service;
     }
     
-    @DSModeled(DSC.BAN)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:14.023 -0400", hash_original_method = "68E88C1381A537FEBD5C1D01CC81CFD6", hash_generated_method = "0147BA6BA88EBD3825613E13FAA8DB75")
     public  UsbManager(Context context){
         mContext = context;
@@ -122,6 +117,7 @@ public UsbManager(Context context, IUsbManager service) {
      *
      * @return HashMap containing all connected USB devices.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.824 -0500", hash_original_method = "0C4F9A912AC5BE14CB67FA981035B977", hash_generated_method = "C3819C284A1846A974ABF59020995526")
     
 public HashMap<String,UsbDevice> getDeviceList() {
@@ -146,6 +142,7 @@ public HashMap<String,UsbDevice> getDeviceList() {
      * @param device the device to open
      * @return true if we successfully opened the device
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.826 -0500", hash_original_method = "8D8483424EA0CFD952FF0A230CCAC549", hash_generated_method = "B53D5A9E8934D850302B0FEB181A8863")
     
 public UsbDeviceConnection openDevice(UsbDevice device) {
@@ -172,6 +169,9 @@ public UsbDeviceConnection openDevice(UsbDevice device) {
      *
      * @return list of USB accessories, or null if none are attached.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.829 -0500", hash_original_method = "1BBBF6CC2C81B72139C0D4C7AF3A1618", hash_generated_method = "8AE4C903E8B822CEB6B3A1FC83A6DA3B")
     
 public UsbAccessory[] getAccessoryList() {
@@ -194,6 +194,9 @@ public UsbAccessory[] getAccessoryList() {
      * @param accessory the USB accessory to open
      * @return file descriptor, or null if the accessor could not be opened.
      */
+    @DSComment("Data serialization/deserialization")
+    @DSSpec(DSCat.SERIALIZATION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.831 -0500", hash_original_method = "E613A4CA88B6248C79E5606341D1D797", hash_generated_method = "96BFC0D30548295B2B07F5B529143609")
     
 public ParcelFileDescriptor openAccessory(UsbAccessory accessory) {
@@ -322,6 +325,7 @@ public boolean isFunctionEnabled(String function) {
      *
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.850 -0500", hash_original_method = "4ECB85B34540B5A01AD76105AF55C635", hash_generated_method = "E1BD1ECDEE3FC8FBA55FA007ED057722")
     
 public String getDefaultFunction() {
@@ -343,6 +347,7 @@ public String getDefaultFunction() {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.852 -0500", hash_original_method = "F2B908DC7033D00CDC14F7636607BD05", hash_generated_method = "4C84ADE51EAE7591BCDB7D4ADCD66F94")
     
 public void setCurrentFunction(String function, boolean makeDefault) {
@@ -360,6 +365,7 @@ public void setCurrentFunction(String function, boolean makeDefault) {
      *
      * {@hide}
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:50.855 -0500", hash_original_method = "4FECF17333249386DEF6A0E8A7778CCC", hash_generated_method = "CB6CB90A8AFCD1A94FFB84CAFEC78556")
     
 public void setMassStorageBackingFile(String path) {

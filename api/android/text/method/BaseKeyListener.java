@@ -15,10 +15,6 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.TextView;
 
-
-
-
-
 public abstract class BaseKeyListener extends MetaKeyKeyListener implements KeyListener {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.464 -0500", hash_original_method = "2C46F71A06421C2378BF9E5CFE2574AE", hash_generated_method = "7AE5698047C4FAB53B7E2B37A6289C2D")
@@ -44,7 +40,6 @@ static int makeTextContentType(Capitalize caps, boolean autoText) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:00.446 -0500", hash_original_field = "DF6FFF71E95A22B6D27B0C7B334C0DF0", hash_generated_field = "E30A96E800BF4F5D9EAF5982A378A4AE")
  static final Object OLD_SEL_START = new NoCopySpan.Concrete();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:38.945 -0400", hash_original_method = "457D2BEC00B20336593EA76F83128980", hash_generated_method = "457D2BEC00B20336593EA76F83128980")
     public BaseKeyListener ()
     {

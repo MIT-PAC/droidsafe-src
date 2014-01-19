@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.674 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.674 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -85,7 +86,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.680 -0500", hash_original_method = "E7C4C8F314E8672679C568D0825D3254", hash_generated_method = "3215EAB8093D18A7D87E0CE62AEF0813")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.680 -0500", hash_original_method = "E7C4C8F314E8672679C568D0825D3254", hash_generated_method = "3215EAB8093D18A7D87E0CE62AEF0813")
             
 public void open3(android.net.sip.SipProfile localProfile, android.app.PendingIntent incomingCallPendingIntent, android.net.sip.ISipSessionListener listener) throws android.os.RemoteException
 {
@@ -116,7 +118,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.683 -0500", hash_original_method = "11C5121FEB655A47409EC646A890496A", hash_generated_method = "54C8CF10E838E936E0CED90F0AED4598")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.683 -0500", hash_original_method = "11C5121FEB655A47409EC646A890496A", hash_generated_method = "54C8CF10E838E936E0CED90F0AED4598")
             
 public void close(java.lang.String localProfileUri) throws android.os.RemoteException
 {
@@ -133,7 +136,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.686 -0500", hash_original_method = "FBC917ADE8CAE7F46978ACA628A96132", hash_generated_method = "013959FAB3C71C100DE71A8E2F2EC91A")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.686 -0500", hash_original_method = "FBC917ADE8CAE7F46978ACA628A96132", hash_generated_method = "013959FAB3C71C100DE71A8E2F2EC91A")
             
 public boolean isOpened(java.lang.String localProfileUri) throws android.os.RemoteException
 {
@@ -153,7 +157,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.688 -0500", hash_original_method = "67FB649000A8E3225399989B6971A7C3", hash_generated_method = "66823868976E6F47A2048F65FC2AB494")
+@DSSink({DSSinkKind.NETWORK})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.688 -0500", hash_original_method = "67FB649000A8E3225399989B6971A7C3", hash_generated_method = "66823868976E6F47A2048F65FC2AB494")
             
 public boolean isRegistered(java.lang.String localProfileUri) throws android.os.RemoteException
 {
@@ -173,7 +178,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.692 -0500", hash_original_method = "753EF647FA2D09B8B52F7AF7FBE7B28C", hash_generated_method = "5AF6FCB7F7918D854A4B2167A1D43E50")
+@DSSink({DSSinkKind.VOIP})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.692 -0500", hash_original_method = "753EF647FA2D09B8B52F7AF7FBE7B28C", hash_generated_method = "5AF6FCB7F7918D854A4B2167A1D43E50")
             
 public void setRegistrationListener(java.lang.String localProfileUri, android.net.sip.ISipSessionListener listener) throws android.os.RemoteException
 {
@@ -191,7 +197,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.694 -0500", hash_original_method = "884EF6AD3F58ECAE9E178A4637675F76", hash_generated_method = "63CB4D273D5C406415DF5BEE7D5FA202")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.694 -0500", hash_original_method = "884EF6AD3F58ECAE9E178A4637675F76", hash_generated_method = "63CB4D273D5C406415DF5BEE7D5FA202")
             
 public android.net.sip.ISipSession createSession(android.net.sip.SipProfile localProfile, android.net.sip.ISipSessionListener listener) throws android.os.RemoteException
 {
@@ -218,7 +225,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.697 -0500", hash_original_method = "AF15C2C60DDB595D159C99B3CDBCD04B", hash_generated_method = "5EB7F08A050BA4192EC51B45DFCF949E")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.697 -0500", hash_original_method = "AF15C2C60DDB595D159C99B3CDBCD04B", hash_generated_method = "5EB7F08A050BA4192EC51B45DFCF949E")
             
 public android.net.sip.ISipSession getPendingSession(java.lang.String callId) throws android.os.RemoteException
 {
@@ -238,7 +246,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.700 -0500", hash_original_method = "F0BB67BE44FDDFE34D566FC500430FC5", hash_generated_method = "B89315912ABF913C6B140EFC729B5ABC")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.700 -0500", hash_original_method = "F0BB67BE44FDDFE34D566FC500430FC5", hash_generated_method = "B89315912ABF913C6B140EFC729B5ABC")
             
 public android.net.sip.SipProfile[] getListOfProfiles() throws android.os.RemoteException
 {
@@ -283,13 +292,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.659 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.659 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.664 -0500", hash_original_method = "FE937C92C259E3DD0303DBBADBB61C50", hash_generated_method = "C91F1075D4F0B43E02FD8966AEA2199E")
+@DSSink({DSSinkKind.NETWORK})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:27.664 -0500", hash_original_method = "FE937C92C259E3DD0303DBBADBB61C50", hash_generated_method = "C91F1075D4F0B43E02FD8966AEA2199E")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

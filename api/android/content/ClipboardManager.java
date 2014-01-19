@@ -12,8 +12,6 @@ import android.os.Message;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 
-
-
 public class ClipboardManager extends android.text.ClipboardManager {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.353 -0500", hash_original_method = "B823D91CB0BDECA7B94A432D3169CF0F", hash_generated_method = "E46EEAD91E5B0F8A4FFB94615D67E32E")
@@ -36,14 +34,11 @@ static private IClipboard getService() {
     private static IClipboard sService;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.344 -0500", hash_original_field = "1C8819E0457C61ABDAA5E1E45DE2C427", hash_generated_field = "3C04989ED0EDFEE643DF5780498583F4")
 
-
     static final int MSG_REPORT_PRIMARY_CLIP_CHANGED = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.333 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
 
-
     private  Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.336 -0500", hash_original_field = "69431F5030A8CFD222EF228DFCC7DF2C", hash_generated_field = "E56DE56B7E953844281AFE87E0843DAB")
-
 
     private final ArrayList<OnPrimaryClipChangedListener> mPrimaryClipChangedListeners
              = new ArrayList<OnPrimaryClipChangedListener>();
@@ -54,9 +49,7 @@ static private IClipboard getService() {
         public void dispatchPrimaryClipChanged() {
             mHandler.sendEmptyMessage(MSG_REPORT_PRIMARY_CLIP_CHANGED);
             
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:22.141 -0400", hash_original_field = "A7B290A804ED4D1BFB9EEF0AABB57AC2", hash_generated_field = "F325ACE86B0A208FFE07C888493706E5")
@@ -70,17 +63,12 @@ static private IClipboard getService() {
             
             addTaint(msg.getTaint());
             
-            
-                
-                    
-            
         }
-
         
 };
 
     //for getSystemService
-    @DSModeled(DSC.BAN)
+    
     public  ClipboardManager(Context context) {
         addTaint(context.getTaint());
         mContext = context;
@@ -101,6 +89,9 @@ static private IClipboard getService() {
      *
      * @param clip The clipped data item to set.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.358 -0500", hash_original_method = "9758ADBACC2D859F954394BF2EAF123A", hash_generated_method = "7679C6F41286656564D6FD1432FC95FC")
     
 public void setPrimaryClip(ClipData clip) {
@@ -113,6 +104,7 @@ public void setPrimaryClip(ClipData clip) {
     /**
      * Returns the current primary clip on the clipboard.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.361 -0500", hash_original_method = "50B348CB23C6EF42B3CBE9B194465F2B", hash_generated_method = "7DDDA0056751537DC044752D3DE1A34C")
     
 public ClipData getPrimaryClip() {
@@ -127,6 +119,7 @@ public ClipData getPrimaryClip() {
      * Returns a description of the current primary clip on the clipboard
      * but not a copy of its data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.363 -0500", hash_original_method = "678ECBBFE5F09A43CDAAF81F6FD5AC97", hash_generated_method = "CA11E7B1CBE4EC33585AD3095A9223D3")
     
 public ClipDescription getPrimaryClipDescription() {
@@ -184,6 +177,7 @@ public void removePrimaryClipChangedListener(OnPrimaryClipChangedListener what) 
      * @deprecated Use {@link #getPrimaryClip()} instead.  This retrieves
      * the primary clip and tries to coerce it to a string.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.372 -0500", hash_original_method = "D9D561BF0732BC43D4A46DB226A10D9C", hash_generated_method = "15ABA5238E08C544D4AF67B8DC71CA77")
     
 public CharSequence getText() {
@@ -193,7 +187,6 @@ public CharSequence getText() {
         }
         return null;
     }
-
     
     public interface OnPrimaryClipChangedListener {
         void onPrimaryClipChanged();
@@ -204,6 +197,7 @@ public CharSequence getText() {
      * creates a ClippedItem holding the given text and sets it as the
      * primary clip.  It has no label or icon.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:38.374 -0500", hash_original_method = "31E7EB6BE33A923560F7B9C2B2D8F3DA", hash_generated_method = "8F6424DC11A3E95CAE183109CBA05CFE")
     
 public void setText(CharSequence text) {

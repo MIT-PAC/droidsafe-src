@@ -20,16 +20,12 @@ import android.util.Xml;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 public class ColorStateList implements Parcelable {
 
     /**
      * Creates or retrieves a ColorStateList that always returns a single color.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.575 -0500", hash_original_method = "FCCF2821DEC9011A455F9F98CACE9BF9", hash_generated_method = "6429859492A4AC149B8E87DEC540F761")
     
 public static ColorStateList valueOf(int color) {
@@ -51,6 +47,7 @@ public static ColorStateList valueOf(int color) {
     /**
      * Create a ColorStateList from an XML document, given a set of {@link Resources}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.578 -0500", hash_original_method = "5986A0E2205D2782A4018155A452F4C2", hash_generated_method = "B6AA7295315B18C55E48EAB77A84A116")
     
 public static ColorStateList createFromXml(Resources r, XmlPullParser parser)
@@ -95,7 +92,6 @@ private static ColorStateList createFromXmlInner(Resources r, XmlPullParser pars
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.566 -0500", hash_original_field = "AA519415D3F808B36EDC91E01115D423", hash_generated_field = "41F1B900ACFD3D3CE9828C8FBA43A76D")
 
-
     private static final int[][] EMPTY = new int[][] { new int[0] };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.568 -0500", hash_original_field = "CFA1A0BCF45178ECF2FCC8D939250361", hash_generated_field = "63E4E9738983D663C4BF9E32C63A6A40")
 
@@ -124,7 +120,6 @@ public ColorStateList createFromParcel(Parcel source) {
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.559 -0500", hash_original_field = "8D7D8C0B29FD466C99A91A529FE41679", hash_generated_field = "7D52F505B14BC667C4ED1C5AB261B59A")
-
 
     private int[][] mStateSpecs;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.561 -0500", hash_original_field = "8BCB86BAF7C31D49B3DD83C851FBAC85", hash_generated_field = "53BCC056E3008A06A88375FEB8668D58")
@@ -283,6 +278,7 @@ public boolean isStateful() {
      *
      * @return the color associated with that set of states in this {@link ColorStateList}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.592 -0500", hash_original_method = "4327A241B2C451B5F5DDB6DF79352F03", hash_generated_method = "AF80748142B2E1C3FDE33ED320874FF5")
     
 public int getColorForState(int[] stateSet, int defaultColor) {
@@ -301,6 +297,9 @@ public int getColorForState(int[] stateSet, int defaultColor) {
      *
      * @return the default color in this {@link ColorStateList}.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:01.594 -0500", hash_original_method = "28A9CB761E85FC98D00C67A51FDC0266", hash_generated_method = "BD5C97F2F8B496BA1D776C974B2636D0")
     
 public int getDefaultColor() {

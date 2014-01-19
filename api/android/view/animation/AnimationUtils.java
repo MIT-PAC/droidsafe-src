@@ -16,12 +16,7 @@ import android.os.SystemClock;
 import android.util.AttributeSet;
 import android.util.Xml;
 
-
-
-
-
 public class AnimationUtils {
-
 
     /**
      * Returns the current animation time in milliseconds. This time should be used when invoking
@@ -33,6 +28,8 @@ public class AnimationUtils {
      *
      * @see android.os.SystemClock
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.803 -0500", hash_original_method = "A342CAA3729B80BF74C5D77B5CF79EC1", hash_generated_method = "21A5922E1D802850493459379CB374FB")
     
 public static long currentAnimationTimeMillis() {
@@ -47,6 +44,9 @@ public static long currentAnimationTimeMillis() {
      * @return The animation object reference by the specified id
      * @throws NotFoundException when the animation cannot be loaded
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.806 -0500", hash_original_method = "6C4C15BBA350A59BA813AA1FCD4C13A9", hash_generated_method = "964AEB68764DEFC476CB3B91239FBE82")
     
 public static Animation loadAnimation(Context context, int id)
@@ -123,6 +123,7 @@ private static Animation createAnimationFromXml(Context c, XmlPullParser parser,
 
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.814 -0500", hash_original_method = "964443399E2AD1454EB45E33276D0BAE", hash_generated_method = "33527BDB58F8A855DA6F244F1B62FF41")
     
 public static LayoutAnimationController loadLayoutAnimation(Context context, int id)
@@ -231,7 +232,6 @@ public static Animation makeOutAnimation(Context c, boolean toRight) {
         a.setStartTime(currentAnimationTimeMillis());
         return a;
     }
-
     
     /**
      * Make an animation for objects becoming visible. Uses a slide up and fade
@@ -258,6 +258,9 @@ public static Animation makeInChildBottomAnimation(Context c) {
      * @return The animation object reference by the specified id
      * @throws NotFoundException
      */
+    @DSComment("no actions/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:59.830 -0500", hash_original_method = "BDF8B873A1CA7BFCFC39306793FA91B3", hash_generated_method = "2826F5F26A01425B8BA48E1AC8D3ABDF")
     
 public static Interpolator loadInterpolator(Context context, int id) throws NotFoundException {
@@ -302,7 +305,6 @@ private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser p
             AttributeSet attrs = Xml.asAttributeSet(parser);
             
             String  name = parser.getName();
-    
             
             if (name.equals("linearInterpolator")) {
                 interpolator = new LinearInterpolator(c, attrs);
@@ -339,7 +341,7 @@ private static Interpolator createInterpolatorFromXml(Context c, XmlPullParser p
     private static final int SEQUENTIALLY = 1;
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:48.854 -0400", hash_original_method = "356F4D62C52EA54268D4026A2BB604AB", hash_generated_method = "356F4D62C52EA54268D4026A2BB604AB")
-    @DSModeled(DSC.SAFE)
+    
     public AnimationUtils ()
     {
         //Synthesized constructor

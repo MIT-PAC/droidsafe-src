@@ -20,10 +20,6 @@ import android.net.Uri;
 import android.util.AndroidException;
 import android.util.DisplayMetrics;
 
-
-
-
-
 public abstract class PackageManager {
 
     /**
@@ -330,7 +326,6 @@ public static int getAppId(int uid) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.463 -0500", hash_original_field = "9D8C65A65DFB11EB5F1C8D95F9EBB76C", hash_generated_field = "02264E29EDDF21634896C526056CF6FC")
 
     public static final int VERIFICATION_ALLOW_WITHOUT_SUFFICIENT = 2;
-
     
     public static class NameNotFoundException extends AndroidException {
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.247 -0500", hash_original_method = "4C893FF4D2386A2E528254CA81C36065", hash_generated_method = "A4B7D83CF9C65DC78B0AB4E6C5EB168F")
@@ -343,7 +338,6 @@ public NameNotFoundException() {
 public NameNotFoundException(String name) {
             super(name);
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.465 -0500", hash_original_field = "CCFBFC745ABB7C2724340B47DF729BDB", hash_generated_field = "AFA7425051348D7B510D3069205362D3")
@@ -558,6 +552,8 @@ public NameNotFoundException(String name) {
      * @see #GET_SIGNATURES
      * @see #GET_UNINSTALLED_PACKAGES
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.582 -0500", hash_original_method = "464828FC1398C3C4C0BF897023D8D8AE", hash_generated_method = "C85FB643A0DD80923535E9820CD8A70B")
     
 public abstract PackageInfo getPackageInfo(String packageName, int flags)
@@ -637,6 +633,8 @@ public abstract int[] getPackageGids(String packageName)
      * @return Returns a {@link PermissionInfo} containing information about the
      *         permission.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.594 -0500", hash_original_method = "FEE7B3AE6E33D87F7EC44197CD14A839", hash_generated_method = "EF8B02B62865ADA41229A23FD7E794ED")
     
 public abstract PermissionInfo getPermissionInfo(String name, int flags)
@@ -722,6 +720,8 @@ public abstract List<PermissionGroupInfo> getAllPermissionGroups(int flags);
      * @see #GET_SHARED_LIBRARY_FILES
      * @see #GET_UNINSTALLED_PACKAGES
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.604 -0500", hash_original_method = "BC9AFAA827FACCD234420D43BFB9185C", hash_generated_method = "DD1EE427C72C068D4C9362CB17337762")
     
 public abstract ApplicationInfo getApplicationInfo(String packageName,
@@ -747,6 +747,8 @@ public abstract ApplicationInfo getApplicationInfo(String packageName,
      * @see #GET_META_DATA
      * @see #GET_SHARED_LIBRARY_FILES
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.606 -0500", hash_original_method = "A7A64DAF504027462A462281F2A57199", hash_generated_method = "5D6C6A69E2318B84E7D342B9CA736A86")
     
 public abstract ActivityInfo getActivityInfo(ComponentName component,
@@ -772,6 +774,8 @@ public abstract ActivityInfo getActivityInfo(ComponentName component,
      * @see #GET_META_DATA
      * @see #GET_SHARED_LIBRARY_FILES
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.608 -0500", hash_original_method = "AC7597D9AF7B23F2C69CB3E0E4C5F422", hash_generated_method = "53D61C52E89C1A31BA42D85832A47C6E")
     
 public abstract ActivityInfo getReceiverInfo(ComponentName component,
@@ -860,6 +864,8 @@ public abstract ProviderInfo getProviderInfo(ComponentName component,
      * @see #GET_UNINSTALLED_PACKAGES
      *
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.616 -0500", hash_original_method = "FA1B431E409D0CEBDA67D49CD96B6226", hash_generated_method = "FF5C1A475B9D4AB3AE6455D48622DBCA")
     
 public abstract List<PackageInfo> getInstalledPackages(int flags);
@@ -1007,6 +1013,8 @@ public abstract int checkSignatures(int uid1, int uid2);
      * @return Returns an array of one or more packages assigned to the user
      * id, or null if there are no known packages with the given id.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.631 -0500", hash_original_method = "FBF5DCDA76A13D456CBE8F7D4CE9606E", hash_generated_method = "EE782B19013D9795425A64880C5DC15D")
     
 public abstract String[] getPackagesForUid(int uid);
@@ -1064,6 +1072,8 @@ public abstract int getUidForSharedUser(String sharedUserName)
      * @see #GET_SHARED_LIBRARY_FILES
      * @see #GET_UNINSTALLED_PACKAGES
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.639 -0500", hash_original_method = "0EF671D59959154E932606B082795085", hash_generated_method = "AB25EF080EDD746CC72BE67538DB52F0")
     
 public abstract List<ApplicationInfo> getInstalledApplications(int flags);
@@ -1098,6 +1108,8 @@ public abstract FeatureInfo[] getSystemAvailableFeatures();
      * @return Returns true if the devices supports the feature, else
      * false.
      */
+    @DSComment("Harvesting information")
+    @DSSpec(DSCat.SECURITY)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.646 -0500", hash_original_method = "3F5FA907E64458BDAFAB8FAA52A8060B", hash_generated_method = "1E5DF90F32E531BB12B17463418AFB39")
     
 public abstract boolean hasSystemFeature(String name);
@@ -1130,6 +1142,8 @@ public abstract boolean hasSystemFeature(String name);
      * @see #GET_INTENT_FILTERS
      * @see #GET_RESOLVED_FILTER
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.648 -0500", hash_original_method = "F6A86927E121727A272A21E3DCB3FFA7", hash_generated_method = "24F8D6ED87140E52CAC24061BD991ACF")
     
 public abstract ResolveInfo resolveActivity(Intent intent, int flags);
@@ -1152,6 +1166,8 @@ public abstract ResolveInfo resolveActivity(Intent intent, int flags);
      * @see #GET_INTENT_FILTERS
      * @see #GET_RESOLVED_FILTER
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.651 -0500", hash_original_method = "AC20BF243DC1E97601026E9C98F03F62", hash_generated_method = "C4F29DC65152E729E3C95F54803E2EAD")
     
 public abstract List<ResolveInfo> queryIntentActivities(Intent intent,
@@ -1186,6 +1202,8 @@ public abstract List<ResolveInfo> queryIntentActivities(Intent intent,
      * @see #GET_INTENT_FILTERS
      * @see #GET_RESOLVED_FILTER
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.653 -0500", hash_original_method = "099B8C4BBE89493F7A2B2E31EEAEAC98", hash_generated_method = "19A8CF45393648CDF25A2ECB49123DD1")
     
 public abstract List<ResolveInfo> queryIntentActivityOptions(
@@ -1205,6 +1223,8 @@ public abstract List<ResolveInfo> queryIntentActivityOptions(
      * @see #GET_INTENT_FILTERS
      * @see #GET_RESOLVED_FILTER
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.656 -0500", hash_original_method = "C9789E62C2B0ECACDA7566685357EDFA", hash_generated_method = "E4D896A1CCA98D8A619A8D0BD53A0BEA")
     
 public abstract List<ResolveInfo> queryBroadcastReceivers(Intent intent,
@@ -1243,6 +1263,8 @@ public abstract ResolveInfo resolveService(Intent intent, int flags);
      * @see #GET_INTENT_FILTERS
      * @see #GET_RESOLVED_FILTER
      */
+    @DSComment("IO movement methodName")
+    @DSSpec(DSCat.IO_ACTION_METHOD)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.660 -0500", hash_original_method = "6046BD374D0552ADD26D23F3BAFC67FA", hash_generated_method = "9793BAA82160C6E08F5D0DE99F42FDC0")
     
 public abstract List<ResolveInfo> queryIntentServices(Intent intent,
@@ -1361,6 +1383,8 @@ public abstract Drawable getDrawable(String packageName, int resid,
      *
      * @see #getActivityIcon(Intent)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.674 -0500", hash_original_method = "EA2EDB5C6BA981BD61C45ACED3124C72", hash_generated_method = "8CCFA0CD700316E0128637C662938FB1")
     
 public abstract Drawable getActivityIcon(ComponentName activityName)
@@ -1429,6 +1453,8 @@ public abstract Drawable getApplicationIcon(ApplicationInfo info);
      *
      * @see #getApplicationIcon(ApplicationInfo)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.683 -0500", hash_original_method = "EE5F31B7588978F62B92A22FA544772B", hash_generated_method = "3924CFBDD036383EE621CCED3E85ACEE")
     
 public abstract Drawable getApplicationIcon(String packageName)
@@ -1450,6 +1476,8 @@ public abstract Drawable getApplicationIcon(String packageName)
      *
      * @see #getActivityLogo(Intent)
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.685 -0500", hash_original_method = "72D3EAA688209A6C3C5E937519CB7B0F", hash_generated_method = "9382884CF2E513573715BE86B21B024F")
     
 public abstract Drawable getActivityLogo(ComponentName activityName)
@@ -1565,6 +1593,8 @@ public abstract XmlResourceParser getXml(String packageName, int resid,
      * it could not be found for any reason.
      * @param info The application to get the label of
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.700 -0500", hash_original_method = "9CBEA3BF0AE7CFAA4440ABBDDD974B55", hash_generated_method = "5E9D06E583A54C2826BDD24E952441E9")
     
 public abstract CharSequence getApplicationLabel(ApplicationInfo info);
@@ -1654,6 +1684,7 @@ public abstract Resources getResourcesForApplication(String appPackageName)
      * @see #GET_SIGNATURES
      *
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.709 -0500", hash_original_method = "DBC2C646566E0B22A2FF91F44F8D10B2", hash_generated_method = "EE2A120389E314C8CE9A5487ED80AEB5")
     
 public PackageInfo getPackageArchiveInfo(String archiveFilePath, int flags) {
@@ -1901,6 +1932,7 @@ public abstract void freeStorage(long freeStorageSize, IntentSender pi);
      *
      * @hide
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.735 -0500", hash_original_method = "A38939ED73318CA6F17E3B37317BE946", hash_generated_method = "86C2BCA14B7A84F49DE215D13AAF3C1D")
     
 public abstract void getPackageSizeInfo(String packageName,
@@ -2062,11 +2094,12 @@ public abstract int getPreferredActivities(List<IntentFilter> outFilters,
      *                 whatever was set in it's manifest (or enabled, by default).
      * @param flags Optional behavior flags: {@link #DONT_KILL_APP} or 0.
      */
+    @DSComment("Request/Change/Listen Android Manger")
+    @DSSpec(DSCat.ANDROID_MANAGER)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:57.754 -0500", hash_original_method = "66AA009103186E72165D0D729D621664", hash_generated_method = "DCE099311250D0226A7819B73DA59F90")
     
 public abstract void setComponentEnabledSetting(ComponentName componentName,
             int newState, int flags);
-
 
     /**
      * Return the the enabled setting for a package component (activity,

@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
-
 public final class ObjectIdentifier {
 
     /**
@@ -118,6 +113,7 @@ public ObjectIdentifier(int[] oid, String name, Object oidGroup) {
      *
      * @return oid
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.689 -0500", hash_original_method = "30E83D32FBE8DF043D06124E9715286A", hash_generated_method = "8A71FF49FA15C11307B74CA6B18B0ECC")
     
 public int[] getOid() {
@@ -129,6 +125,7 @@ public int[] getOid() {
      *
      * @return name
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.692 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -140,6 +137,7 @@ public String getName() {
      *
      * @return group
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:55.694 -0500", hash_original_method = "FA340579AD853DABC65F97F27C820CE8", hash_generated_method = "84E594EDE61A2569C84F479C2E3C43BC")
     
 public Object getGroup() {
@@ -210,7 +208,6 @@ public int hashCode() {
         }
         return hash;
     }
-
     
 }
 

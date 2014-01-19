@@ -8,10 +8,6 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.util.AttributeSet;
 
-
-
-
-
 public class AlphaAnimation extends Animation {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.147 -0500", hash_original_field = "5EA400953DB057E41C35C06D13F9FFDA", hash_generated_field = "8F4B3BC969A678303075525E27D7DA3B")
 
@@ -47,6 +43,8 @@ public AlphaAnimation(Context context, AttributeSet attrs) {
      *        fully opaque and 0.0 means fully transparent.
      * @param toAlpha Ending alpha value for the animation.
      */
+    @DSComment("no action/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:56.155 -0500", hash_original_method = "DFFB255DB5DD71C3FC3D40107483D6B8", hash_generated_method = "4BCF8AF3DDE5297D42D5A4574268EB47")
     
 public AlphaAnimation(float fromAlpha, float toAlpha) {
@@ -88,7 +86,6 @@ public AlphaAnimation(float fromAlpha, float toAlpha) {
     public boolean hasAlpha() {
         return true;
     }
-
     
 }
 

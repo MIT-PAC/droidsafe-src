@@ -8,12 +8,7 @@ import android.graphics.Bitmap;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class Item implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:20.389 -0400", hash_original_field = "222EFCE28F204A0D4C7EF9490F5602EB", hash_generated_field = "D69DEFD9515459FCA84CC8CDF18F4564")
 
@@ -62,6 +57,7 @@ public int describeContents() {
         return 0;
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:05.287 -0500", hash_original_method = "9F06F16F0F60B4944A559AD32B259BAF", hash_generated_method = "EC9E64B4C9825D0A89B1890A1618171D")
     
 public void writeToParcel(Parcel dest, int flags) {

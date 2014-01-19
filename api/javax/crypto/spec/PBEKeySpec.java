@@ -9,13 +9,8 @@ import java.util.Arrays;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 public class PBEKeySpec implements KeySpec {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.941 -0500", hash_original_field = "21BCD293DE862031F898430214E88677", hash_generated_field = "E9D3F141738563A4D1D32A99D6434F98")
-
 
     private char[] password;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.943 -0500", hash_original_field = "E37DC2BC2509FBBDB9429277FE4D77AB", hash_generated_field = "8E8CA6A0D4A78C798E95C91BD86EA51C")
@@ -34,6 +29,8 @@ public class PBEKeySpec implements KeySpec {
      * @param password
      *            the password.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.951 -0500", hash_original_method = "2E3022EA9F0D00958A95EEBC25ADD120", hash_generated_method = "6FBFE97612C133168C998DD2B51C9462")
     
 public PBEKeySpec(char[] password) {
@@ -66,6 +63,8 @@ public PBEKeySpec(char[] password) {
      *             if the salt is empty, iteration count is zero or negative or
      *             the key length is zero or negative.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.954 -0500", hash_original_method = "3A4DB6943FB30203AAE55BF43F989AF0", hash_generated_method = "58A36CBF0329AE3E528072CFA778039D")
     
 public PBEKeySpec(char[] password, byte[] salt, int iterationCount,
@@ -152,6 +151,7 @@ public final void clearPassword() {
      * @throws IllegalStateException
      *             if the password has been cleared before.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.963 -0500", hash_original_method = "E0FB32D7B704A3B37DF97B967BD643AC", hash_generated_method = "6991C49CA9449698DA2A16935CA87A4F")
     
 public final char[] getPassword() {
@@ -169,6 +169,7 @@ public final char[] getPassword() {
      * @return a copy of the salt of this key specification or null if none is
      *         specified.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.965 -0500", hash_original_method = "D4AADBC0A48F11BB68A855C1713E52DB", hash_generated_method = "0E7B09CAEB809E4021BE343FCDF48F32")
     
 public final byte[] getSalt() {
@@ -185,6 +186,7 @@ public final byte[] getSalt() {
      *
      * @return the iteration count of this key specification.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.967 -0500", hash_original_method = "3E24EA64DC831AAEDCCD9EAD88FFC369", hash_generated_method = "91F578D92BF081EAB616F85199D7317E")
     
 public final int getIterationCount() {
@@ -196,12 +198,12 @@ public final int getIterationCount() {
      *
      * @return the desired key length of the derived key.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:54.969 -0500", hash_original_method = "20994892EFF6499C10F6429275E73A4B", hash_generated_method = "2C94C7878846EF7E42066740DB0FDC88")
     
 public final int getKeyLength() {
         return keyLength;
     }
-
     
 }
 

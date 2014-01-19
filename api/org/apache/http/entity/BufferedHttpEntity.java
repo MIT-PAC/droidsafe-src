@@ -12,14 +12,8 @@ import java.io.OutputStream;
 import org.apache.http.HttpEntity;
 import org.apache.http.util.EntityUtils;
 
-
-
-
-
-
 public class BufferedHttpEntity extends HttpEntityWrapper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.391 -0500", hash_original_field = "3923F3F9F9ECABE8D28493E863FC2CD8", hash_generated_field = "67DBC7965A32AEE1CAB7B25294021930")
-
       
     private  byte[] buffer;
       
@@ -34,6 +28,7 @@ public BufferedHttpEntity(final HttpEntity entity) throws IOException {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.396 -0500", hash_original_method = "26AA3A162E430A9FEBBBBE7476A32626", hash_generated_method = "FE7798FDA94ED939F34AA0192E837B3C")
     
 public long getContentLength() {
@@ -44,6 +39,7 @@ public long getContentLength() {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.399 -0500", hash_original_method = "C66624A0F56D5B3373911F6483E82581", hash_generated_method = "92D13803F2C5D004E4F8464E7AD317ED")
     
 public InputStream getContent() throws IOException {
@@ -75,7 +71,6 @@ public boolean isChunked() {
 public boolean isRepeatable() {
         return true;
     }
-
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.406 -0500", hash_original_method = "6978AFF2D6BA6FB48D86DE86B3A93492", hash_generated_method = "C76A5C9ECA2850EB6E2362D1F4C588D4")
     
@@ -90,14 +85,12 @@ public void writeTo(final OutputStream outstream) throws IOException {
         }
     }
 
-
     // non-javadoc, see interface HttpEntity
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:45.408 -0500", hash_original_method = "298A03178432926E5E6E7F0EA9A50E03", hash_generated_method = "391960D0CDAF5FB656465768F0570EFD")
     
 public boolean isStreaming() {
         return (buffer == null) && wrappedEntity.isStreaming();
     }
-
     
 }
 

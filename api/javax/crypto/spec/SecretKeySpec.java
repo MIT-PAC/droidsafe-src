@@ -10,11 +10,6 @@ import java.util.Arrays;
 
 import javax.crypto.SecretKey;
 
-
-
-
-
-
 public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.342 -0500", hash_original_field = "CF2978D77A300F2288929DE02B014AE5", hash_generated_field = "DA1718E019BA5BA63D43B50C98DB7BC3")
 
@@ -22,7 +17,6 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
     // for details see HARMONY-233
     private static final long serialVersionUID = 6577238317307289933L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.344 -0500", hash_original_field = "874EBF47D328D135486F03BCE6DDD19A", hash_generated_field = "AEF19C0A7530E140588DCBA91FF66D28")
-
 
     private  byte[] key;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.346 -0500", hash_original_field = "1DDAED4286CC7F9A2BC49502885440CE", hash_generated_field = "40E4722A302366B2A43F1CD6C99E2454")
@@ -41,6 +35,8 @@ public class SecretKeySpec implements SecretKey, KeySpec, Serializable {
      *             if the key data or the algorithm name is null or if the key
      *             data is empty.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.348 -0500", hash_original_method = "46BCBD91E8C2018C32B65BFBDD14DAE3", hash_generated_method = "94EDA31E0B802545D5ED76E97A38F3EB")
     
 public SecretKeySpec(byte[] key, String algorithm) {
@@ -79,6 +75,8 @@ public SecretKeySpec(byte[] key, String algorithm) {
      * @throws ArrayIndexOutOfBoundsException
      *             if <code>offset</code> or <code>len</code> is negative.
      */
+    @DSComment("not data related")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.351 -0500", hash_original_method = "97539A44FE944982691962B490B5A049", hash_generated_method = "CBFA8797FEE471D07D72810BCB736253")
     
 public SecretKeySpec(byte[] key, int offset, int len, String algorithm) {
@@ -107,6 +105,7 @@ public SecretKeySpec(byte[] key, int offset, int len, String algorithm) {
      *
      * @return the algorithm name.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.353 -0500", hash_original_method = "545C988DDCCD8AD6AA15877CD458F7D6", hash_generated_method = "09B8CB0F05513E7BA5A386900D5BF6E6")
     
 public String getAlgorithm() {
@@ -118,6 +117,7 @@ public String getAlgorithm() {
      *
      * @return the format name "RAW".
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.356 -0500", hash_original_method = "DA06499CB28B740B0D3C21B02311BB46", hash_generated_method = "FEA02E291B25C9E5FCD19EC4D87B562C")
     
 public String getFormat() {
@@ -129,6 +129,7 @@ public String getFormat() {
      *
      * @return the encoded form of this secret key.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:55.358 -0500", hash_original_method = "3F6C1397C7B2518265F6653D66E9AC87", hash_generated_method = "556F207E69FF8E135FD4E6DBE9F6BD56")
     
 public byte[] getEncoded() {

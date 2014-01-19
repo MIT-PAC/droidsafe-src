@@ -167,7 +167,6 @@ static public Font create(RenderScript rs, Resources res, String familyName, Sty
     private static final String[] sSansNames = {
         "sans-serif", "arial", "helvetica", "tahoma", "verdana"
     };
-
     
     private static class FontFamily {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.189 -0500", hash_original_field = "C468A34F5DD151632BC543C242FE3020", hash_generated_field = "C468A34F5DD151632BC543C242FE3020")
@@ -186,17 +185,13 @@ static public Font create(RenderScript rs, Resources res, String familyName, Sty
 
         String mBoldItalicFileName;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-08-09 14:02:43.961 -0400", hash_original_method = "4B1D119D7774A95910A46246D7100E2A", hash_generated_method = "4B1D119D7774A95910A46246D7100E2A")
         public FontFamily ()
         {
             //Synthesized constructor
         }
 
-
     }
-
-
     
     public enum Style {
         NORMAL,
@@ -206,19 +201,16 @@ static public Font create(RenderScript rs, Resources res, String familyName, Sty
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.184 -0500", hash_original_field = "4AA04C324C03CE2E0B67DE0D97E5571F", hash_generated_field = "956EE2129D0161C6B10DC2012BE919B2")
 
-
     private static final String[] sSerifNames = {
         "serif", "times", "times new roman", "palatino", "georgia", "baskerville",
         "goudy", "fantasy", "cursive", "ITC Stone Serif"
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.186 -0500", hash_original_field = "55AB6F7A69D23ED44A1D56A18EEE5F4C", hash_generated_field = "61C4C302027A48126C97C1452FCD5ED2")
 
-
     private static final String[] sMonoNames = {
         "monospace", "courier", "courier new", "monaco"
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:11.201 -0500", hash_original_field = "1BFAC93E3D4355E44267B1E6BC887866", hash_generated_field = "6636438EA6751E60F063FC76FE98D8F6")
-
 
     private static Map<String, FontFamily> sFontFamilyMap;
 

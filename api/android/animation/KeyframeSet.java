@@ -11,10 +11,6 @@ import android.animation.Keyframe.FloatKeyframe;
 import android.animation.Keyframe.IntKeyframe;
 import android.animation.Keyframe.ObjectKeyframe;
 
-
-
-
-
 class KeyframeSet {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.542 -0500", hash_original_method = "AAE32451AFD18788305E3C8FCF2CE3C6", hash_generated_method = "7EF47ED3CA2E73D7E42BACC53843916D")
@@ -103,10 +99,8 @@ public static KeyframeSet ofObject(Object... values) {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.527 -0500", hash_original_field = "546EF363B5340CFFE8BC4CB61B7D7CDB", hash_generated_field = "546EF363B5340CFFE8BC4CB61B7D7CDB")
 
-
     int mNumKeyframes;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.529 -0500", hash_original_field = "F25CCAD87898D140299C8AD61CC00E6F", hash_generated_field = "F25CCAD87898D140299C8AD61CC00E6F")
-
 
     Keyframe mFirstKeyframe;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.531 -0500", hash_original_field = "FAFDAB3E74D0E176CA60E56E1C9BCFAE", hash_generated_field = "FAFDAB3E74D0E176CA60E56E1C9BCFAE")
@@ -121,7 +115,6 @@ public static KeyframeSet ofObject(Object... values) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.537 -0500", hash_original_field = "FEF5736B09891D2FD2D8C1BD6C28F3AE", hash_generated_field = "FEF5736B09891D2FD2D8C1BD6C28F3AE")
 
     TypeEvaluator mEvaluator;
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.539 -0500", hash_original_method = "AC41B3CB583B4F8C00E3AFE9CCF7C554", hash_generated_method = "7CE58B4892DAD9148932B79E498396E5")
     
@@ -174,6 +167,7 @@ public void setEvaluator(TypeEvaluator evaluator) {
      * @param fraction The elapsed fraction of the animation
      * @return The animated value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:33.558 -0500", hash_original_method = "80AFA2A1CA8ECB40318B145A78C4EE8C", hash_generated_method = "6940ECE9C3DDAB44C2862351E8E2A045")
     
 public Object getValue(float fraction) {
@@ -239,7 +233,6 @@ public Object getValue(float fraction) {
         }
         return returnVal;
     }
-
     
 }
 

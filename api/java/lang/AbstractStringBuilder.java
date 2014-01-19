@@ -9,25 +9,17 @@ import java.util.Arrays;
 
 import libcore.util.EmptyArray;
 
-
-
-
-
 abstract class AbstractStringBuilder {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.701 -0500", hash_original_field = "F46BD29C6E17578C395874054BC81C6E", hash_generated_field = "737C5532807A143D11A79A7148513E52")
-
 
     static final int INITIAL_CAPACITY = 16;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.704 -0500", hash_original_field = "CA3CEF12FBB39E8368D4DC357E1B2764", hash_generated_field = "C068225E28B5BE74066BE5338158F76B")
 
-
     private char[] value;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.706 -0500", hash_original_field = "B83BF7ED7F5719DA923E1BC0AC69952B", hash_generated_field = "82CC849FCF58347832EA6BB917282DBE")
 
-
     private int count;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.708 -0500", hash_original_field = "34293CAAA37E17C8FA8487D55D95082F", hash_generated_field = "208F8AA93D19EFFECF64F85E89AD016E")
-
 
     private boolean shared;
 
@@ -58,6 +50,7 @@ AbstractStringBuilder(String string) {
     /*
      * Returns the character array.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.711 -0500", hash_original_method = "CA36BDE7C01AB0B5E4CF30DF6E006183", hash_generated_method = "2BE9E3503687526A3D670895B26B03C2")
     
 final char[] getValue() {
@@ -585,6 +578,7 @@ final void reverse0() {
      *             if {@code index} is negative or greater than or equal to the
      *             current {@link #length()}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.792 -0500", hash_original_method = "5EFF2E769F54F3F7450C4FCC35538F65", hash_generated_method = "F067C6081462E0F84A1EDCC6EEF7313A")
     
 public void setCharAt(int index, char ch) {
@@ -670,6 +664,7 @@ public String substring(int start) {
      *             if {@code start} is negative, greater than {@code end} or if
      *             {@code end} is greater than the current {@link #length()}.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:27.801 -0500", hash_original_method = "7121FB14814A84CA4ADE1E9CCF3D54F6", hash_generated_method = "51605E837F8A436C0F718178ED9E3C0E")
     
 public String substring(int start, int end) {

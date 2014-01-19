@@ -14,10 +14,6 @@ import java.text.DateFormatSymbols;
 import libcore.icu.ICU;
 import libcore.icu.LocaleData;
 
-
-
-
-
 public abstract class Calendar implements Serializable, Cloneable, Comparable<Calendar> {
 
     /**
@@ -25,6 +21,7 @@ public abstract class Calendar implements Serializable, Cloneable, Comparable<Ca
      * are available.
      * <p>Note that Android does not support user-supplied locale service providers.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.813 -0500", hash_original_method = "41105D11003C45662A0CC60EBB418302", hash_generated_method = "7EE9909FB376311AA4F87EC76340BBEE")
     
 public static synchronized Locale[] getAvailableLocales() {
@@ -38,6 +35,9 @@ public static synchronized Locale[] getAvailableLocales() {
      * @return a {@code Calendar} subclass instance set to the current date and time in
      *         the default {@code Timezone}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.820 -0500", hash_original_method = "13DC520F4333E665034B03AB416FC5C0", hash_generated_method = "797174B25A8DDE1C62252B85466EB816")
     
 public static synchronized Calendar getInstance() {
@@ -52,6 +52,7 @@ public static synchronized Calendar getInstance() {
      *            the locale to use.
      * @return a {@code Calendar} subclass instance set to the current date and time.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.823 -0500", hash_original_method = "691484FDA756A7151BBC682C05DB892E", hash_generated_method = "D23801B3F583C8565835C978CAC9E4FD")
     
 public static synchronized Calendar getInstance(Locale locale) {
@@ -67,6 +68,9 @@ public static synchronized Calendar getInstance(Locale locale) {
      * @return a {@code Calendar} subclass instance set to the current date and time in
      *         the specified timezone.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.826 -0500", hash_original_method = "8659E4BE21B4ECA0C79A0D434746E08E", hash_generated_method = "8FB50815B1A4F787597CC8F8F4F87772")
     
 public static synchronized Calendar getInstance(TimeZone timezone) {
@@ -84,6 +88,9 @@ public static synchronized Calendar getInstance(TimeZone timezone) {
      * @return a {@code Calendar} subclass instance set to the current date and time in
      *         the specified timezone.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.829 -0500", hash_original_method = "1579030499B60D9EDE224A7FC4647CD2", hash_generated_method = "C8EA010EC7DFE5460AEC766482B2448D")
     
 public static synchronized Calendar getInstance(TimeZone timezone, Locale locale) {
@@ -111,7 +118,6 @@ private static void insertValuesInMap(Map<String, Integer> map, String[] values)
         }
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.625 -0500", hash_original_field = "4D8674EA548BD96F53EEDAA50DD1693D", hash_generated_field = "AF2E0A30DAA7888473F4B1DB6F9AB4E7")
-
 
     private static final long serialVersionUID = -1807547505821590642L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.653 -0500", hash_original_field = "96E737BC3A857442BE698F2E08262213", hash_generated_field = "18EBE6A0EA775581ADAF9A3A3B4BDF43")
@@ -248,14 +254,12 @@ private static void insertValuesInMap(Map<String, Integer> map, String[] values)
     public static final int LONG = 2;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.768 -0500", hash_original_field = "77F0167C8F21E8A84D31FA574DA522BF", hash_generated_field = "E98760CF948389324CD259C52EDE02C8")
 
-
     private static final String[] FIELD_NAMES = { "ERA", "YEAR", "MONTH",
             "WEEK_OF_YEAR", "WEEK_OF_MONTH", "DAY_OF_MONTH", "DAY_OF_YEAR",
             "DAY_OF_WEEK", "DAY_OF_WEEK_IN_MONTH", "AM_PM", "HOUR",
             "HOUR_OF_DAY", "MINUTE", "SECOND", "MILLISECOND",
             "ZONE_OFFSET", "DST_OFFSET" };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.908 -0500", hash_original_field = "AD47366764E5EFE3ABD0A29CF4241015", hash_generated_field = "38D65C9058142C88025F5AD8AC8D9090")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("areFieldsSet", boolean.class),
@@ -287,26 +291,20 @@ private static void insertValuesInMap(Map<String, Integer> map, String[] values)
     protected long time;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.639 -0500", hash_original_field = "81133861F580AD70A5F1D94554D53510", hash_generated_field = "8B06B22BB0D98B206D493E4536EE7432")
 
-
     transient int lastTimeFieldSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.642 -0500", hash_original_field = "1B46E0681663B26D10B6CA3A39018DC5", hash_generated_field = "FB479690428AB835107C0237892E7931")
-
 
     transient int lastDateFieldSet;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.644 -0500", hash_original_field = "F0C116C55DD7FB6180ECBEE0F0E0E9C6", hash_generated_field = "EAF178494884F790222D5DEEC0D047C3")
 
-
     private boolean lenient;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.646 -0500", hash_original_field = "D591572ED5B5BFDC9D565131C6CF2690", hash_generated_field = "AB58B3610E0723B715410016290F0168")
-
 
     private int firstDayOfWeek;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.649 -0500", hash_original_field = "5741E746E11541D804E4C7F4ECAFBD07", hash_generated_field = "B89C77A3F2A82BA7436489590490B056")
 
-
     private int minimalDaysInFirstWeek;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.651 -0500", hash_original_field = "879C1DD31D1F7B98FA691304642E4912", hash_generated_field = "05D717DFC6EF8897D7D254757AEA2790")
-
 
     private TimeZone zone;
 
@@ -346,7 +344,6 @@ protected Calendar(TimeZone timezone, Locale locale) {
         setMinimalDaysInFirstWeek(localeData.minimalDaysInFirstWeek.intValue());
     }
 
-
     /**
      * Adds the specified amount to a {@code Calendar} field.
      *
@@ -358,6 +355,8 @@ protected Calendar(TimeZone timezone, Locale locale) {
      *                if {@code field} is {@code DST_OFFSET} or {@code
      *                ZONE_OFFSET}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.779 -0500", hash_original_method = "1B9CB183169BC098F5BE7A4F2BEC8165", hash_generated_method = "6DCB531333EC528588018EC7E90A2656")
     
 public abstract void add(int field, int value);
@@ -374,6 +373,8 @@ public abstract void add(int field, int value);
      *                if the time is not set and the time cannot be computed
      *                from the current field values.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.782 -0500", hash_original_method = "3DBAFBF02CB3C60196FBCDD8387C90F7", hash_generated_method = "946A7264FDC9C4B4729C2B236470BDD9")
     
 public boolean after(Object calendar) {
@@ -395,6 +396,8 @@ public boolean after(Object calendar) {
      *                if the time is not set and the time cannot be computed
      *                from the current field values.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.784 -0500", hash_original_method = "AB514F7047FACF0A18BC971364ADD066", hash_generated_method = "9A9B7F62422D6C2D080C1E4DE5B2DE1C")
     
 public boolean before(Object calendar) {
@@ -408,6 +411,8 @@ public boolean before(Object calendar) {
      * Clears all of the fields of this {@code Calendar}. All fields are initialized to
      * zero.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.787 -0500", hash_original_method = "A9FFD41082BBDB8FD2EC401621467C0D", hash_generated_method = "C60FBC917B126A90B6D04D03036D7F06")
     
 public final void clear() {
@@ -439,6 +444,9 @@ public final void clear(int field) {
      *
      * @see java.lang.Cloneable
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.792 -0500", hash_original_method = "84D98F75151E4961D0916EA8CB3E0C38", hash_generated_method = "9F925B1A9D8B19359C917CFA9357F831")
     
 @Override
@@ -503,6 +511,8 @@ protected abstract void computeTime();
      * @return {@code true} if the specified object is equal to this {@code Calendar}, {@code false}
      *         otherwise.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.803 -0500", hash_original_method = "A4F7F4EE453A4994C5225BE31C26C1E8", hash_generated_method = "7E273282EEB021C923521D39C6D143FA")
     
 @Override
@@ -537,6 +547,9 @@ protected abstract void computeTime();
      *                if the field is not inside the range of possible fields.
      *                The range is starting at 0 up to {@code FIELD_COUNT}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.805 -0500", hash_original_method = "E826346499B559368BF751B42F34C786", hash_generated_method = "BFD89F8C941521842F808A630258D5A2")
     
 public int get(int field) {
@@ -551,6 +564,9 @@ public int get(int field) {
      *            the field.
      * @return the maximum value of the specified field.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.808 -0500", hash_original_method = "424E8E96F9A12B00FD5C6FDA146C325F", hash_generated_method = "EB24B22066B0F5278E4EF0DBD545A1BC")
     
 public int getActualMaximum(int field) {
@@ -578,6 +594,9 @@ public int getActualMaximum(int field) {
      *            the field.
      * @return the minimum value of the specified field.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.810 -0500", hash_original_method = "598A84D60F29BB97F62226BCCD8A7F9E", hash_generated_method = "3204F8E5882D21531F11D7461CBACF1A")
     
 public int getActualMinimum(int field) {
@@ -603,6 +622,7 @@ public int getActualMinimum(int field) {
      *
      * @return the first day of the week.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.815 -0500", hash_original_method = "2210DC8BCE617C61AD2F9503CE7923B1", hash_generated_method = "B7D3E606B6C61019423BEA5BE2438F0B")
     
 public int getFirstDayOfWeek() {
@@ -631,6 +651,8 @@ public abstract int getGreatestMinimum(int field);
      *            the field number.
      * @return the smallest maximum value of the specified field.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.831 -0500", hash_original_method = "5BA3EE65DFA41B110C1BA06A0C25C5CB", hash_generated_method = "6FF57DECEF69A4263E77462366234388")
     
 public abstract int getLeastMaximum(int field);
@@ -643,6 +665,8 @@ public abstract int getLeastMaximum(int field);
      *            the field.
      * @return the greatest maximum value of the specified field.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.834 -0500", hash_original_method = "3355B4B72CA8380FA4AE226D96B7F07A", hash_generated_method = "14D647A704686C1BC12D163BEC0AF438")
     
 public abstract int getMaximum(int field);
@@ -652,6 +676,7 @@ public abstract int getMaximum(int field);
      *
      * @return the minimal days in the first week of the year.
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.836 -0500", hash_original_method = "104647FF062CF5167F06DB549E6DD4EB", hash_generated_method = "84FFD4E08543D1852F52CF39C905704A")
     
 public int getMinimalDaysInFirstWeek() {
@@ -679,6 +704,9 @@ public abstract int getMinimum(int field);
      *                if the time is not set and the time cannot be computed
      *                from the current field values.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.841 -0500", hash_original_method = "0D972793C1A81D3B5C0D23389B920FB5", hash_generated_method = "04B7220A597D699C98A15AA207DDB442")
     
 public final Date getTime() {
@@ -694,6 +722,9 @@ public final Date getTime() {
      *                if the time is not set and the time cannot be computed
      *                from the current field values.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.844 -0500", hash_original_method = "1B58DB6425011C7C1965B5C43056D530", hash_generated_method = "28EF64564E32533BE41A42298042EDE5")
     
 public long getTimeInMillis() {
@@ -709,6 +740,9 @@ public long getTimeInMillis() {
      *
      * @return the {@code TimeZone} used by this {@code Calendar}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.846 -0500", hash_original_method = "A62BA7A8B3AE52F44B15929DB0809596", hash_generated_method = "524E7797970F542E897CBB3E44B0D9E1")
     
 public TimeZone getTimeZone() {
@@ -789,6 +823,8 @@ public final boolean isSet(int field) {
      * @param value
      *            the amount to add.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.859 -0500", hash_original_method = "F5FA416393576D1F9DD8BCE9349020A6", hash_generated_method = "8E0B2441A103EF5E775007B523F1529E")
     
 public void roll(int field, int value) {
@@ -822,6 +858,8 @@ public abstract void roll(int field, boolean increment);
      * @param value
      *            the value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.864 -0500", hash_original_method = "41A9E001F522D5852F11FBD319F3A5A6", hash_generated_method = "EEB5FE9A242FA94FDA1DF2E8AE027E44")
     
 public void set(int field, int value) {
@@ -850,6 +888,9 @@ public void set(int field, int value) {
      * @param day
      *            the day of the month.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.866 -0500", hash_original_method = "E11C90BCB39036715964798223610892", hash_generated_method = "382574715A132933C4F1A96C29BAB6FE")
     
 public final void set(int year, int month, int day) {
@@ -873,6 +914,7 @@ public final void set(int year, int month, int day) {
      * @param minute
      *            the minute.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.869 -0500", hash_original_method = "B4EBEBE6ED320058BB13C1E33AF949E4", hash_generated_method = "396504D08E42B024F7F32C7E28DC7024")
     
 public final void set(int year, int month, int day, int hourOfDay,
@@ -899,6 +941,7 @@ public final void set(int year, int month, int day, int hourOfDay,
      * @param second
      *            the second.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.872 -0500", hash_original_method = "071B019FF423902B33C61C7D7703D8F0", hash_generated_method = "02E66189939C24081396104958954FC7")
     
 public final void set(int year, int month, int day, int hourOfDay,
@@ -926,6 +969,8 @@ public void setFirstDayOfWeek(int value) {
      * @param value
      *            a boolean value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.876 -0500", hash_original_method = "769D5CCA341B85723A2FDFB2D353BC44", hash_generated_method = "D8A4E2565741252BEA897243BCA0D17F")
     
 public void setLenient(boolean value) {
@@ -950,6 +995,9 @@ public void setMinimalDaysInFirstWeek(int value) {
      * @param date
      *            a {@code Date} object.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.881 -0500", hash_original_method = "8326734B6F30C707435A4BD203126230", hash_generated_method = "89DD3665E4887379FA91D0FAB7FFB3C5")
     
 public final void setTime(Date date) {
@@ -962,6 +1010,8 @@ public final void setTime(Date date) {
      * @param milliseconds
      *            the time as the number of milliseconds since Jan. 1, 1970.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.883 -0500", hash_original_method = "2FA47445AF3A8C90A658A67E45128F41", hash_generated_method = "D037828412FE9050EB1010FB3CDF0A1B")
     
 public void setTimeInMillis(long milliseconds) {
@@ -989,6 +1039,9 @@ public void setTimeZone(TimeZone timezone) {
     /**
      * Returns the string representation of this {@code Calendar}.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.889 -0500", hash_original_method = "FE2881479678F103D2A9794655ED1F87", hash_generated_method = "A659789D7AE8DD5BFBBF07EE83CBBA9B")
     
 @Override
@@ -1029,6 +1082,8 @@ public void setTimeZone(TimeZone timezone) {
      *             if the argument does not include a valid time
      *             value.
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.891 -0500", hash_original_method = "91CA2BBC83B63568E9D66A64F5127506", hash_generated_method = "EC897AD1DDC3949600B2A9BBD5059FBE")
     
 public int compareTo(Calendar anotherCalendar) {
@@ -1062,6 +1117,9 @@ public int compareTo(Calendar anotherCalendar) {
      * @throws IllegalArgumentException if {@code field} or {@code style} is invalid
      * @since 1.6
      */
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.894 -0500", hash_original_method = "3943CE5519C03267AB2522359CAFDF8D", hash_generated_method = "E0B67D2751957E12D0908AF0B49A4D74")
     
 public String getDisplayName(int field, int style, Locale locale) {
@@ -1111,6 +1169,7 @@ private String[] getDisplayNameArray(int field, int style, Locale locale) {
      * @throws IllegalArgumentException if {@code field} or {@code style} is invalid
      * @since 1.6
      */
+    @DSSource({DSSourceKind.CALENDAR_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:38.902 -0500", hash_original_method = "9C5842A520266160609E6030F348A85B", hash_generated_method = "C9AA05DC71F66EAFB20EC782FFDCC03C")
     
 public Map<String, Integer> getDisplayNames(int field, int style, Locale locale) {

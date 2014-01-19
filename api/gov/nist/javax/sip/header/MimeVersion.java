@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.MimeVersionHeader;
 
-
-
-
-
-
 public class MimeVersion extends SIPHeader implements MimeVersionHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.505 -0500", hash_original_field = "92C18D4F59E10A12C6BBAA4B905B9A56", hash_generated_field = "55326010FCF59323AF113A86CEA19744")
 
@@ -37,6 +32,7 @@ public MimeVersion() {
      *
      * @return the Minor version of this MimeVersionHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.519 -0500", hash_original_method = "D7FCE27D9AEC3742DED8FD71AF804648", hash_generated_method = "5ABAC1D53954C5C5EDCF99CD1BE52D9D")
     
 public int getMinorVersion() {
@@ -48,6 +44,7 @@ public int getMinorVersion() {
     *
     * @return the Major version of this MimeVersionHeader
     */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:00.522 -0500", hash_original_method = "634F243B87354520E8F28C8C2539E93B", hash_generated_method = "B50B28C1BC552998DA3C64871DFDF459")
     
 public int getMajorVersion() {

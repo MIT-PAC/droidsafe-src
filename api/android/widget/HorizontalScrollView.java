@@ -25,16 +25,11 @@ import android.view.accessibility.AccessibilityEvent;
 import android.view.accessibility.AccessibilityNodeInfo;
 import android.view.animation.AnimationUtils;
 
-
-
-
-
 public class HorizontalScrollView extends FrameLayout {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.232 -0500", hash_original_field = "3FD9DE2E7ACDE8FAD0D5A8751E971404", hash_generated_field = "4083FF51B3491C57DFF4E035C0066C80")
 
     private static final int ANIMATED_SCROLL_GAP = ScrollView.ANIMATED_SCROLL_GAP;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.234 -0500", hash_original_field = "C9A08FFD1AE29B036C2442D3086782D5", hash_generated_field = "49356EE5727E8BD04682A1AF4FB39A2B")
-
 
     private static final float MAX_SCROLL_FACTOR = ScrollView.MAX_SCROLL_FACTOR;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.274 -0500", hash_original_field = "394D213079DFA0C7024EC13F5673BC94", hash_generated_field = "E2DAEB44FC73F85759FCDB42BA10BD3A")
@@ -42,11 +37,8 @@ public class HorizontalScrollView extends FrameLayout {
     private static final int INVALID_POINTER = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.236 -0500", hash_original_field = "D9542227DCB2FC07C7FAE482DB504F32", hash_generated_field = "507FF60BF6AED501221786F4F9B1C4CE")
 
-
-
     private long mLastScroll;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.238 -0500", hash_original_field = "1732EB32F2D77CCA26590AEEA670A175", hash_generated_field = "A498F2A4744F31D22F9C4ABEBB254F2F")
-
 
     private final Rect mTempRect = new Rect();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.240 -0500", hash_original_field = "63F6CA74EEC786DAEE7A49BF47815C33", hash_generated_field = "7106C69F4E49AB9D7F59F38965DF6036")
@@ -82,7 +74,6 @@ public class HorizontalScrollView extends FrameLayout {
     private boolean mSmoothScrollingEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.261 -0500", hash_original_field = "D11C33EFD56B37B918E01A200C446C59", hash_generated_field = "3B323323DD6A6BF972666D993592C670")
 
-
     private int mTouchSlop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.263 -0500", hash_original_field = "0DAB51CD5AD14EAFA0DBAE048171A484", hash_generated_field = "7DBE1A18599B8760DC9B67AAFE3499E3")
 
@@ -92,7 +83,6 @@ public class HorizontalScrollView extends FrameLayout {
     private int mMaximumVelocity;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.267 -0500", hash_original_field = "3140A319F32CA873045621864B655537", hash_generated_field = "7B0107E1CAE9FFC281D766335539D7C4")
 
-
     private int mOverscrollDistance;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.269 -0500", hash_original_field = "F239C82AEB45C28104273F86A78E6F04", hash_generated_field = "06022A8A798B4C892D35D0FFB16D2FDF")
 
@@ -101,12 +91,16 @@ public class HorizontalScrollView extends FrameLayout {
 
     private int mActivePointerId = INVALID_POINTER;
 
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.276 -0500", hash_original_method = "D579CCE5E39252987369F5EF7BC67FC0", hash_generated_method = "D2A1ED907989CB8AE7E671C6AA739D41")
     
 public HorizontalScrollView(Context context) {
         this(context, null);
     }
 
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.279 -0500", hash_original_method = "7F7EA51B0CF52F1D171B225CFAE9439C", hash_generated_method = "2B72C29D39762F5873CF99AA0C283574")
     
 public HorizontalScrollView(Context context, AttributeSet attrs) {
@@ -127,6 +121,7 @@ public HorizontalScrollView(Context context, AttributeSet attrs, int defStyle) {
         a.recycle();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.284 -0500", hash_original_method = "041555434146A9B8485461655BD1A318", hash_generated_method = "336DE90073D98B769C28AFCA6BC51D35")
     
 @Override
@@ -143,6 +138,7 @@ public HorizontalScrollView(Context context, AttributeSet attrs, int defStyle) {
         return 1.0f;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.287 -0500", hash_original_method = "AC1CCEB780F155A105BA88465002385B", hash_generated_method = "3BFAA2C78CD446355B6C0774F9BC879B")
     
 @Override
@@ -165,12 +161,12 @@ public HorizontalScrollView(Context context, AttributeSet attrs, int defStyle) {
      * @return The maximum amount this scroll view will scroll in response to
      *   an arrow event.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.289 -0500", hash_original_method = "F72D9B4700B8FCB550AB26E9792E603C", hash_generated_method = "9F4D0E6F3D1198C699BE79EBF1321D8D")
     
 public int getMaxScrollAmount() {
         return (int) (MAX_SCROLL_FACTOR * (mRight - mLeft));
     }
-
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.292 -0500", hash_original_method = "02BBAF53D85E267FB240E2D4309C877F", hash_generated_method = "A421A744020FEE9AE61BC6A77CA31282")
     
@@ -268,6 +264,8 @@ public boolean isFillViewport() {
      *
      * @attr ref android.R.styleable#HorizontalScrollView_fillViewport
      */
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.308 -0500", hash_original_method = "D2588C7F74D0E18DF5DFA629FE7BF270", hash_generated_method = "A64DADFD660136638B7F706FF35E5E5A")
     
 public void setFillViewport(boolean fillViewport) {
@@ -296,6 +294,8 @@ public void setSmoothScrollingEnabled(boolean smoothScrollingEnabled) {
         mSmoothScrollingEnabled = smoothScrollingEnabled;
     }
 
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.315 -0500", hash_original_method = "1306D2831DF4DA9A5EDAD3DA6127274D", hash_generated_method = "50396C5A815C0E92BC03BEF384D611DA")
     
 @Override
@@ -1149,6 +1149,8 @@ public final void smoothScrollBy(int dx, int dy) {
      * @param x the position where to scroll on the X axis
      * @param y the position where to scroll on the Y axis
      */
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.388 -0500", hash_original_method = "EED648F6788EFF0F67B65ABAA0DE4CF2", hash_generated_method = "100B355DE0AE23DDEE74EF5E482D3B12")
     
 public final void smoothScrollTo(int x, int y) {
@@ -1397,7 +1399,6 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         super.requestChildFocus(child, focused);
     }
 
-
     /**
      * When looking for focus in children of a scroll view, need to be a little
      * more careful not to give focus to something that is scrolled off screen.
@@ -1447,6 +1448,8 @@ protected int computeScrollDeltaToGetChildRectOnScreen(Rect rect) {
         return scrollToChildRect(rectangle, immediate);
     }
 
+    @DSComment("GUI ScrollView")
+    @DSSafe(DSCat.GUI)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.419 -0500", hash_original_method = "31751D7E496E2D7BD9B4D4E94AD28515", hash_generated_method = "B7E248DB0C1A99B91CE46EBF969ED5CA")
     
 @Override
@@ -1560,6 +1563,7 @@ public void fling(int velocityX) {
         }
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.434 -0500", hash_original_method = "7D7EAD2993C7155FA8CA9421487AA499", hash_generated_method = "98703A791FF13BE76E446A202C89DD6C")
     
 @Override
@@ -1577,6 +1581,7 @@ public void fling(int velocityX) {
         super.setOverScrollMode(mode);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:00.437 -0500", hash_original_method = "63AFEEC895B9671DC479FE83536227D7", hash_generated_method = "036084862698F19C6CD580366D263CE4")
     
 @SuppressWarnings({"SuspiciousNameCombination"})

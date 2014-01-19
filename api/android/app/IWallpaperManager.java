@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.447 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.447 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -65,7 +66,8 @@ return DESCRIPTOR;
 /**
      * Set the wallpaper.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.449 -0500", hash_original_method = "A86853855F485A45409B5851C15136DA", hash_generated_method = "358203C68684C748CAD4B3C3A20A7E17")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.449 -0500", hash_original_method = "A86853855F485A45409B5851C15136DA", hash_generated_method = "358203C68684C748CAD4B3C3A20A7E17")
             
 public android.os.ParcelFileDescriptor setWallpaper(java.lang.String name) throws android.os.RemoteException
 {
@@ -93,7 +95,8 @@ return _result;
 /**
      * Set the live wallpaper.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.452 -0500", hash_original_method = "F8F13C3B79CD3BDF3EEC6AE5D63F1210", hash_generated_method = "BD8CE49075D6B659CC1813F4F0CCE9A2")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.452 -0500", hash_original_method = "F8F13C3B79CD3BDF3EEC6AE5D63F1210", hash_generated_method = "BD8CE49075D6B659CC1813F4F0CCE9A2")
             
 public void setWallpaperComponent(android.content.ComponentName name) throws android.os.RemoteException
 {
@@ -119,7 +122,8 @@ _data.recycle();
 /**
      * Get the wallpaper.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.455 -0500", hash_original_method = "438F4BB728C29A51E9B9DDAAE8D525D7", hash_generated_method = "079612FD76595469F2FEDAAE1DD72C2C")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.455 -0500", hash_original_method = "438F4BB728C29A51E9B9DDAAE8D525D7", hash_generated_method = "079612FD76595469F2FEDAAE1DD72C2C")
             
 public android.os.ParcelFileDescriptor getWallpaper(android.app.IWallpaperManagerCallback cb, android.os.Bundle outParams) throws android.os.RemoteException
 {
@@ -150,7 +154,8 @@ return _result;
 /**
      * Get information about a live wallpaper.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.458 -0500", hash_original_method = "9B56268755DBFDA825B02C32BA1C078F", hash_generated_method = "11C58279F9A2C4BEF9D4534BED3B2A07")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.458 -0500", hash_original_method = "9B56268755DBFDA825B02C32BA1C078F", hash_generated_method = "11C58279F9A2C4BEF9D4534BED3B2A07")
             
 public android.app.WallpaperInfo getWallpaperInfo() throws android.os.RemoteException
 {
@@ -197,7 +202,8 @@ _data.recycle();
      * Sets the dimension hint for the wallpaper. These hints indicate the desired
      * minimum width and height for the wallpaper.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.462 -0500", hash_original_method = "10583B77FC48A46EC6D3FAECAF53B276", hash_generated_method = "2C5D90E398A884CB3A2C483A0FFA9A24")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.462 -0500", hash_original_method = "10583B77FC48A46EC6D3FAECAF53B276", hash_generated_method = "2C5D90E398A884CB3A2C483A0FFA9A24")
             
 public void setDimensionHints(int width, int height) throws android.os.RemoteException
 {
@@ -218,7 +224,8 @@ _data.recycle();
 /**
      * Returns the desired minimum width for the wallpaper.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.465 -0500", hash_original_method = "D73A3C3086936198B4BDC06D8C79FD67", hash_generated_method = "FB2152EAE42BAC16633B9EDD01B67D9A")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.465 -0500", hash_original_method = "D73A3C3086936198B4BDC06D8C79FD67", hash_generated_method = "FB2152EAE42BAC16633B9EDD01B67D9A")
             
 public int getWidthHint() throws android.os.RemoteException
 {
@@ -240,7 +247,8 @@ return _result;
 /**
      * Returns the desired minimum height for the wallpaper.
      */
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.467 -0500", hash_original_method = "113ADBD0B4965B1159BBDE4A892B50AA", hash_generated_method = "0AB0D46FE47B512ADFC4D41C9769F035")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.467 -0500", hash_original_method = "113ADBD0B4965B1159BBDE4A892B50AA", hash_generated_method = "0AB0D46FE47B512ADFC4D41C9769F035")
             
 public int getHeightHint() throws android.os.RemoteException
 {
@@ -282,13 +290,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.431 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.431 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.436 -0500", hash_original_method = "ED4FBCDB03B60258A0C28E74BE982E49", hash_generated_method = "4BFA58A0EFA54922AF4F9C4A420F9527")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:35:21.436 -0500", hash_original_method = "ED4FBCDB03B60258A0C28E74BE982E49", hash_generated_method = "4BFA58A0EFA54922AF4F9C4A420F9527")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {

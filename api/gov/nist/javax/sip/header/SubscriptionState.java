@@ -9,11 +9,6 @@ import java.text.ParseException;
 import javax.sip.InvalidArgumentException;
 import javax.sip.header.SubscriptionStateHeader;
 
-
-
-
-
-
 public class SubscriptionState extends ParametersHeader implements SubscriptionStateHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.891 -0500", hash_original_field = "FC6F73D4FCCE146C2D665D958140F476", hash_generated_field = "144874CA1FE0DC42636F7A1FA58F02E8")
 
@@ -63,6 +58,7 @@ public void setExpires(int expires) throws InvalidArgumentException {
      *
      * @return the expires value of the SubscriptionStateHeader.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.912 -0500", hash_original_method = "47881175D7C463BCCB25030D767AD658", hash_generated_method = "C2DB0E96C56A45B14BA4BCD03EAE8F48")
     
 public int getExpires() {
@@ -92,6 +88,7 @@ public void setRetryAfter(int retryAfter) throws InvalidArgumentException {
      *
      * @return the retry after value of the SubscriptionStateHeader.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.918 -0500", hash_original_method = "8B40198517FC200CD43F6E0235CB55DB", hash_generated_method = "97B3E052FF156B2FAC86954C12C54635")
     
 public int getRetryAfter() {
@@ -104,6 +101,7 @@ public int getRetryAfter() {
      * @return the comment of this SubscriptionStateHeader, return null if no reason code
      * is available.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.920 -0500", hash_original_method = "307A7F7469164C10B67FE98D6B3BB448", hash_generated_method = "9FDDDDDB1BCB6B405B64EFFCB7D3083A")
     
 public String getReasonCode() {
@@ -132,6 +130,7 @@ public void setReasonCode(String reasonCode) throws ParseException {
      *
      * @return the state of this SubscriptionStateHeader.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:05.927 -0500", hash_original_method = "B507B0FDA436CA05802CD34EFC971C76", hash_generated_method = "06A5D9D137B27B4E68453D4FAD90CDBF")
     
 public String getState() {

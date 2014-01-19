@@ -9,11 +9,6 @@ import java.io.ObjectInputStream;
 import java.io.Serializable;
 import java.io.StreamCorruptedException;
 
-
-
-
-
-
 public final class MathContext implements Serializable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.323 -0500", hash_original_field = "D6C5EC8C483A1D8D440F91E4C407CE00", hash_generated_field = "AE26DFE059ADEEF6717365717079903C")
 
@@ -141,6 +136,7 @@ private void checkValid() {
      *
      * @return the precision.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.357 -0500", hash_original_method = "71BCDCF9E73C85D95AB18BEF6635FA18", hash_generated_method = "A8933D1A9891189E4D69EEFC50A2F6A3")
     
 public int getPrecision() {
@@ -163,6 +159,7 @@ public int getPrecision() {
      *
      * @return the rounding mode.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:34.359 -0500", hash_original_method = "665DD451D3753ACD20842BCA4E3EB32E", hash_generated_method = "6D523F860AF5DA84DA6E20F0C7E0AAFA")
     
 public RoundingMode getRoundingMode() {

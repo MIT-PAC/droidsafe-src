@@ -6,10 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Arrays;
 
-
-
-
-
 public abstract class LongBuffer extends Buffer implements Comparable<LongBuffer> {
 
     /**
@@ -233,6 +229,7 @@ public abstract long get();
      * @exception BufferUnderflowException
      *                if {@code dst.length} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.413 -0500", hash_original_method = "D4B2A0425DC120EC01BAEA51D6880E08", hash_generated_method = "FB57FEAA659B88E7B68C17793F0541F1")
     
 public LongBuffer get(long[] dst) {
@@ -258,6 +255,7 @@ public LongBuffer get(long[] dst) {
      * @exception BufferUnderflowException
      *                if {@code longCount} is greater than {@code remaining()}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.416 -0500", hash_original_method = "22F3DDD60BBBE627A1DDE8F148E9CD33", hash_generated_method = "E4E1AB0551FD8F7547378AA85A60AA0C")
     
 public LongBuffer get(long[] dst, int dstOffset, int longCount) {
@@ -423,6 +421,7 @@ public final LongBuffer put(long[] src) {
      * @exception ReadOnlyBufferException
      *                if no changes may be made to the contents of this buffer.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.444 -0500", hash_original_method = "B57657AA1D79DC46C889A6E8179D7A18", hash_generated_method = "A42CE20F6CCDAFADB828534D5EAB68CB")
     
 public LongBuffer put(long[] src, int srcOffset, int longCount) {
@@ -503,7 +502,6 @@ public abstract LongBuffer put(int index, long l);
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:55.451 -0500", hash_original_method = "9887614DC21CB1EE57B05B261C33E0E7", hash_generated_method = "133C5A8A8A658D91F61868C12755449D")
     
 public abstract LongBuffer slice();
-
     
 }
 

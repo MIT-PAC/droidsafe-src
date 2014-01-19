@@ -16,10 +16,6 @@ import android.content.pm.PackageManager.NameNotFoundException;
 import android.os.Build;
 import android.support.v4.content.IntentCompat;
 
-
-
-
-
 public class TaskStackBuilder implements Iterable<Intent> {
 
     /**
@@ -39,10 +35,8 @@ public static TaskStackBuilder from(Context context) {
     private static final String TAG = "TaskStackBuilder";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:35.998 -0500", hash_original_field = "DD3D72FB3D8C9697701A72C43B04CE74", hash_generated_field = "8F241A3DA7B9032F5DEC6E91DB25C831")
 
-
     private static  TaskStackBuilderImpl IMPL;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.003 -0500", hash_original_field = "8770BD76093914B97223896100B825B8", hash_generated_field = "FC01997BAF44874B9D67B78786DC6A66")
-
 
     private final ArrayList<Intent> mIntents = new ArrayList<Intent>();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.005 -0500", hash_original_field = "6422EBFFB4888C62FCF44F316AAE5124", hash_generated_field = "F1E42593D394BEE701B8AB827039C816")
@@ -145,11 +139,9 @@ public Intent getIntent(int index) {
 public Iterator<Intent> iterator() {
         return mIntents.iterator();
     }
-
     
     static class TaskStackBuilderImplBase implements TaskStackBuilderImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.732 -0400", hash_original_method = "A4B09A1D14221C9A079C3523AB777622", hash_generated_method = "A4B09A1D14221C9A079C3523AB777622")
         public TaskStackBuilderImplBase ()
         {
@@ -163,15 +155,11 @@ public PendingIntent getPendingIntent(Context context, Intent[] intents, int req
             topIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
             return PendingIntent.getActivity(context, requestCode, topIntent, flags);
         }
-
         
     }
-
-
     
     static class TaskStackBuilderImplHoneycomb implements TaskStackBuilderImpl {
         
-        @DSModeled(DSC.SAFE)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:32.733 -0400", hash_original_method = "A254BA88AEF3ECF74695EB22288FD591", hash_generated_method = "A254BA88AEF3ECF74695EB22288FD591")
         public TaskStackBuilderImplHoneycomb ()
         {
@@ -186,11 +174,8 @@ public PendingIntent getPendingIntent(Context context, Intent[] intents, int req
             return TaskStackBuilderHoneycomb.getActivitiesPendingIntent(context, requestCode,
                     intents, flags);
         }
-
         
     }
-
-
     
     interface TaskStackBuilderImpl {
         PendingIntent getPendingIntent(Context context, Intent[] intents, int requestCode,
@@ -235,6 +220,7 @@ public void startActivities() {
      *              intent that can be supplied when the actual send happens.
      * @return The obtained PendingIntent
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:36.029 -0500", hash_original_method = "FE33C851237F987FCB25B803437FFC5D", hash_generated_method = "0A082087623AB090B12B8EB856C90EF0")
     
 public PendingIntent getPendingIntent(int requestCode, int flags) {

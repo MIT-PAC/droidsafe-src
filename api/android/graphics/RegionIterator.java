@@ -5,31 +5,21 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class RegionIterator {
-
     
-    @DSModeled(DSC.SAFE)
     private static int nativeConstructor(int native_region) {
         return DSUtils.UNKNOWN_INT;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static void nativeDestructor(int native_iter) {
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static boolean nativeNext(int native_iter, Rect r) {
         return DSUtils.UNKNOWN_BOOLEAN;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:07.013 -0500", hash_original_field = "3718B7AC5E828F6E59131B9828863051", hash_generated_field = "E1D7CD06343707E8A73E705F1CEC05A1")
-
     
     private  int mNativeIter;
 
@@ -65,7 +55,6 @@ public final boolean next(Rect r) {
 protected void finalize() throws Throwable {
         nativeDestructor(mNativeIter);
     }
-
     
 }
 

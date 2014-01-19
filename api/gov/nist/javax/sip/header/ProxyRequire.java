@@ -8,11 +8,6 @@ import java.text.ParseException;
 
 import javax.sip.header.ProxyRequireHeader;
 
-
-
-
-
-
 public class ProxyRequire extends SIPHeader implements ProxyRequireHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.624 -0500", hash_original_field = "1E87E4F799B2271111225028953CC6D5", hash_generated_field = "EA994B24C6A518D84FF4C741C559C547")
 
@@ -71,6 +66,7 @@ public void setOptionTag(String optionTag) throws ParseException {
      *
      * @return the string that identifies the option tag value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:54:55.644 -0500", hash_original_method = "CE304AE728C556B979775346D4C5B456", hash_generated_method = "3633D701492785C9119138C7D9BDC157")
     
 public String getOptionTag() {

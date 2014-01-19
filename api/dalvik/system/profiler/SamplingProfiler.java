@@ -12,11 +12,6 @@ import java.util.Set;
 import java.util.Timer;
 import java.util.TimerTask;
 
-
-
-
-
-
 public final class SamplingProfiler {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.015 -0500", hash_original_method = "E43429358514D6D4B0CC42164635A3D5", hash_generated_method = "5333A58376E57A2EF0CC34755B4EA12E")
@@ -191,6 +186,7 @@ public void shutdown() {
      * shut down, in order to access the data. If the profiler is
      * restarted, there is no thread safe way to access the data.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.060 -0500", hash_original_method = "ED23570BD9F6C6F13BA5A80428CD13EC", hash_generated_method = "0B0D6C138CB6BCA4E38BFCCEE6C7339E")
     
 public HprofData getHprofData() {
@@ -199,7 +195,6 @@ public HprofData getHprofData() {
         }
         return hprofData;
     }
-
     
     private static class ArrayThreadSet implements ThreadSet {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.023 -0500", hash_original_field = "4014BA6F6D360F06086C9315C721E47C", hash_generated_field = "8B8AD11FAF84DF554AF601CECEC03259")
@@ -218,11 +213,8 @@ public ArrayThreadSet(Thread... threads) {
 public Thread[] threads() {
             return threads;
         }
-
         
     }
-
-
     
     private static class ThreadGroupThreadSet implements ThreadSet {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.036 -0500", hash_original_field = "0F98259F009594C0EAECD9C2806ED897", hash_generated_field = "D74D206E5EAABCB0D7E64D0C4C1175DD")
@@ -276,22 +268,17 @@ public Thread[] threads() {
             lastThread = threadCount;
             return threads;
         }
-
         
     }
-
-
     
     private class Sampler extends TimerTask {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.064 -0500", hash_original_field = "CB4F0C1A424F33342F6A2D8F6FC06C55", hash_generated_field = "91757D5DBCDAA06E67EF5972E830A2B9")
-
 
         private boolean stop;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.066 -0500", hash_original_field = "B0899FB375A0A57065DA66B38777B6C0", hash_generated_field = "BD6E6476D8652DE9C3E25371CF8C1362")
 
         private boolean stopped;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:40.068 -0500", hash_original_field = "368CA83D68B4BBE7822EC5ED4529AC7E", hash_generated_field = "194CA93403950BFAA6E74788498143CF")
-
 
         private Thread timerThread;
         
@@ -449,11 +436,8 @@ private void addEndThread(Thread thread) {
             HprofData.ThreadEvent event = HprofData.ThreadEvent.end(threadId);
             hprofData.addThreadEvent(event);
         }
-
         
     }
-
-
     
     public static interface ThreadSet {
         

@@ -56,7 +56,8 @@ public android.os.IBinder asBinder()
 {
 return mRemote;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.450 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.450 -0500", hash_original_method = "3362E889B22D3412E9E5749AB1353327", hash_generated_method = "EC5547681CA8A7D03904A2398DFFE30D")
             
 public java.lang.String getInterfaceDescriptor()
 {
@@ -66,7 +67,8 @@ return DESCRIPTOR;
 // for AppWidgetHost
 //
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.453 -0500", hash_original_method = "59E8482C0D9C34A101A9985C5633A3F9", hash_generated_method = "36025A2ABF14911B84816C57839B1FEB")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.453 -0500", hash_original_method = "59E8482C0D9C34A101A9985C5633A3F9", hash_generated_method = "36025A2ABF14911B84816C57839B1FEB")
             
 public int[] startListening(com.android.internal.appwidget.IAppWidgetHost host, java.lang.String packageName, int hostId, java.util.List<android.widget.RemoteViews> updatedViews) throws android.os.RemoteException
 {
@@ -89,7 +91,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.457 -0500", hash_original_method = "E86DF44A4F83B33A3FFA45572028DB31", hash_generated_method = "4A31A60B2239AF844AE581371FD4925F")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.457 -0500", hash_original_method = "E86DF44A4F83B33A3FFA45572028DB31", hash_generated_method = "4A31A60B2239AF844AE581371FD4925F")
             
 public void stopListening(int hostId) throws android.os.RemoteException
 {
@@ -106,7 +109,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.459 -0500", hash_original_method = "597322E1017D219F30C8DD7C81B9A0DB", hash_generated_method = "55FFC6FCD04B7B814745A5967177D9AD")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.459 -0500", hash_original_method = "597322E1017D219F30C8DD7C81B9A0DB", hash_generated_method = "55FFC6FCD04B7B814745A5967177D9AD")
             
 public int allocateAppWidgetId(java.lang.String packageName, int hostId) throws android.os.RemoteException
 {
@@ -127,7 +131,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.462 -0500", hash_original_method = "DBA0AF54C13F068397071FB7900C0CF7", hash_generated_method = "BB76DC6C090FDBA20CC305881F49369C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.462 -0500", hash_original_method = "DBA0AF54C13F068397071FB7900C0CF7", hash_generated_method = "BB76DC6C090FDBA20CC305881F49369C")
             
 public void deleteAppWidgetId(int appWidgetId) throws android.os.RemoteException
 {
@@ -144,7 +149,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.465 -0500", hash_original_method = "708471E5CC5B872F46398A80A1AD2740", hash_generated_method = "8E709EBAF907DA0C65E7EE6418702CBD")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.465 -0500", hash_original_method = "708471E5CC5B872F46398A80A1AD2740", hash_generated_method = "8E709EBAF907DA0C65E7EE6418702CBD")
             
 public void deleteHost(int hostId) throws android.os.RemoteException
 {
@@ -177,7 +183,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.471 -0500", hash_original_method = "D0DD0FB2C94CCD7AB044CBAB2624A902", hash_generated_method = "72C594FC501B751DF5B9BA7321AA3BE0")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.471 -0500", hash_original_method = "D0DD0FB2C94CCD7AB044CBAB2624A902", hash_generated_method = "72C594FC501B751DF5B9BA7321AA3BE0")
             
 public android.widget.RemoteViews getAppWidgetViews(int appWidgetId) throws android.os.RemoteException
 {
@@ -206,7 +213,8 @@ return _result;
 // for AppWidgetManager
 //
 
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.473 -0500", hash_original_method = "9C748B9C4D2399A263A93F9188EA36B7", hash_generated_method = "AF5159DBB6DBE4B00887F347C6DDB032")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.473 -0500", hash_original_method = "9C748B9C4D2399A263A93F9188EA36B7", hash_generated_method = "AF5159DBB6DBE4B00887F347C6DDB032")
             
 public void updateAppWidgetIds(int[] appWidgetIds, android.widget.RemoteViews views) throws android.os.RemoteException
 {
@@ -230,7 +238,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.477 -0500", hash_original_method = "DB0AA9ACAC8009AACE5E703FC0AE247A", hash_generated_method = "38F76D25405AE5B06D97065AA4F88D22")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.477 -0500", hash_original_method = "DB0AA9ACAC8009AACE5E703FC0AE247A", hash_generated_method = "38F76D25405AE5B06D97065AA4F88D22")
             
 public void partiallyUpdateAppWidgetIds(int[] appWidgetIds, android.widget.RemoteViews views) throws android.os.RemoteException
 {
@@ -284,7 +293,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.483 -0500", hash_original_method = "44B39EC2C960D8569FAA473100E620C4", hash_generated_method = "9AF63FB6DE7E9262A5542F555D84471C")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.483 -0500", hash_original_method = "44B39EC2C960D8569FAA473100E620C4", hash_generated_method = "9AF63FB6DE7E9262A5542F555D84471C")
             
 public void notifyAppWidgetViewDataChanged(int[] appWidgetIds, int viewId) throws android.os.RemoteException
 {
@@ -321,7 +331,8 @@ _data.recycle();
 }
 return _result;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.489 -0500", hash_original_method = "E92A6C4C68CBA0593E24127FB7BCD9B8", hash_generated_method = "271BC2D418C7CD87B889D6A7E4793803")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.489 -0500", hash_original_method = "E92A6C4C68CBA0593E24127FB7BCD9B8", hash_generated_method = "271BC2D418C7CD87B889D6A7E4793803")
             
 public android.appwidget.AppWidgetProviderInfo getAppWidgetInfo(int appWidgetId) throws android.os.RemoteException
 {
@@ -419,7 +430,8 @@ _reply.recycle();
 _data.recycle();
 }
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.501 -0500", hash_original_method = "348F8C28338B91239F488723D790F7C3", hash_generated_method = "175D98C0F60357CA31A8253B33A5214E")
+@DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
+            @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.501 -0500", hash_original_method = "348F8C28338B91239F488723D790F7C3", hash_generated_method = "175D98C0F60357CA31A8253B33A5214E")
             
 public int[] getAppWidgetIds(android.content.ComponentName provider) throws android.os.RemoteException
 {
@@ -495,13 +507,15 @@ public Stub()
 {
 this.attachInterface(this, DESCRIPTOR);
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.432 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
+@DSSource({DSSourceKind.NETWORK_INFORMATION})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.432 -0500", hash_original_method = "7D02DBE97AD2CBB8160830C3A5F89A61", hash_generated_method = "A79E347C5D485D9B79CCCDADB15E402D")
         
 public android.os.IBinder asBinder()
 {
 return this;
 }
-@DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.437 -0500", hash_original_method = "58E2E5121AA0A4D493DD4D8F67A175F9", hash_generated_method = "FBE56DA644216D9701740185883E7003")
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+        @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:27.437 -0500", hash_original_method = "58E2E5121AA0A4D493DD4D8F67A175F9", hash_generated_method = "FBE56DA644216D9701740185883E7003")
         
 @Override public boolean onTransact(int code, android.os.Parcel data, android.os.Parcel reply, int flags) throws android.os.RemoteException
 {
@@ -749,9 +763,6 @@ return super.onTransact(code, data, reply, flags);
 }
 }
 
-
-
-
 public int[] startListening(com.android.internal.appwidget.IAppWidgetHost host, java.lang.String packageName, int hostId, java.util.List<android.widget.RemoteViews> updatedViews) throws android.os.RemoteException;
 public void stopListening(int hostId) throws android.os.RemoteException;
 public int allocateAppWidgetId(java.lang.String packageName, int hostId) throws android.os.RemoteException;
@@ -759,9 +770,6 @@ public void deleteAppWidgetId(int appWidgetId) throws android.os.RemoteException
 public void deleteHost(int hostId) throws android.os.RemoteException;
 public void deleteAllHosts() throws android.os.RemoteException;
 public android.widget.RemoteViews getAppWidgetViews(int appWidgetId) throws android.os.RemoteException;
-
-
-
 
 public void updateAppWidgetIds(int[] appWidgetIds, android.widget.RemoteViews views) throws android.os.RemoteException;
 public void partiallyUpdateAppWidgetIds(int[] appWidgetIds, android.widget.RemoteViews views) throws android.os.RemoteException;

@@ -12,12 +12,7 @@ import java.net.UnknownHostException;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class LinkAddress implements Parcelable {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:17.999 -0400", hash_original_field = "B0BE06D5C388ED18692D43797B3D4462", hash_generated_field = "8FA213B8981AE83560DF995BD24C9D6A")
 
@@ -110,6 +105,7 @@ public LinkAddress(InterfaceAddress interfaceAddress) {
     /**
      * Returns the InetAddress for this address.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.551 -0500", hash_original_method = "F0319BA9B19AC93124B00C2891893A52", hash_generated_method = "824B3030C6402BCEBDA9F70F4F75F58E")
     
 public InetAddress getAddress() {
@@ -119,6 +115,7 @@ public InetAddress getAddress() {
     /**
      * Get network prefix length
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:36:20.553 -0500", hash_original_method = "2E2106DAF5193DB540436A7E1AE68959", hash_generated_method = "7335CB03B4DBBE641112BD64B8954681")
     
 public int getNetworkPrefixLength() {

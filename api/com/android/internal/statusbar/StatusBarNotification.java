@@ -8,10 +8,6 @@ import android.app.Notification;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-
-
-
-
 public class StatusBarNotification implements Parcelable {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.649 -0500", hash_original_field = "C6224E3C9D94042A9DD9B0F771EC88D2", hash_generated_field = "2B49EDD295535B580853723C924CA12C")
 
@@ -45,7 +41,6 @@ public StatusBarNotification[] newArray(int size)
         }
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.659 -0500", hash_original_field = "742D0CCB1EAA4E727F9FCD5430AF1837", hash_generated_field = "276A3FDBDB0E5004A69EB76E3522B712")
-
 
     public String pkg;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.662 -0500", hash_original_field = "53E65FEF28E32C7EDCD1B07B4F5A0DE3", hash_generated_field = "FA0A3841DE31A9B4AD2F31B3665056D8")
@@ -111,6 +106,7 @@ public void readFromParcel(Parcel in) {
         this.notification = new Notification(in);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:53.687 -0500", hash_original_method = "E1CEBE0CBC31424403A596077856AB81", hash_generated_method = "5E58725AD437561CE4D0AEEC7340B390")
     
 public void writeToParcel(Parcel out, int flags) {

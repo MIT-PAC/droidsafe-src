@@ -18,29 +18,20 @@ import java.net.URLConnection;
 
 import libcore.net.UriCodec;
 
-
-
-
-
 public class FileURLConnection extends URLConnection {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.733 -0500", hash_original_field = "90A7C14E9FDE747EFC2F1C95E470FF1A", hash_generated_field = "90A7C14E9FDE747EFC2F1C95E470FF1A")
-
 
     String fileName;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.736 -0500", hash_original_field = "B25CAE9BF82BA95FEFAA4B1FEB647560", hash_generated_field = "2E5ED6972CC94407ADA802F01B2A91D3")
 
-
     private InputStream is;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.738 -0500", hash_original_field = "D3B99DC683EC7129FDE7A2B083451139", hash_generated_field = "99508BAC072434E4BF52703BB1174C03")
-
 
     private int length = -1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.741 -0500", hash_original_field = "573F3B96CAE1F14BBB393D8A61A5FCF9", hash_generated_field = "3949ABAC0B1DE58EC6BD730E294BB79C")
 
-
     private boolean isDir;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.743 -0500", hash_original_field = "F5BE3F21BE616634ABE5A879B8634A13", hash_generated_field = "96BA6FFE95348C93D489804764910CBE")
-
 
     private FilePermission permission;
 
@@ -93,6 +84,7 @@ public FileURLConnection(URL url) {
      *
      * @see #getContentType()
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.751 -0500", hash_original_method = "686027F78C1D594BA8DD041F116549D4", hash_generated_method = "4491F4E7160E2DD1A82D3BE7C3F4358F")
     
 @Override
@@ -113,6 +105,7 @@ public FileURLConnection(URL url) {
      *
      * @return the content type
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.753 -0500", hash_original_method = "72F889733CD7FE79958D9F6D8BD5D3FB", hash_generated_method = "F09D5D637327E65D0812C66AE5A178F1")
     
 @Override
@@ -181,6 +174,7 @@ private InputStream getDirectoryListing(File f) {
      * @throws IOException
      *             if an IO error occurs
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.758 -0500", hash_original_method = "632E8A34CACC91F3F004CEC65E6938CD", hash_generated_method = "ED2775841B5F9FBCF8526B5C47FF6631")
     
 @Override
@@ -201,6 +195,7 @@ private InputStream getDirectoryListing(File f) {
      * @throws IOException
      *             if an IO exception occurs while creating the permission.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:37.761 -0500", hash_original_method = "FD3C5E750D9B5BE3AE6CD98B1BC8C55C", hash_generated_method = "DC376D2D4AD943413E6FE605E18999B5")
     
 @Override
@@ -214,7 +209,6 @@ private InputStream getDirectoryListing(File f) {
         }
         return permission;
     }
-
     
 }
 

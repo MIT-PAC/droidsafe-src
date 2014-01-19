@@ -5,17 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class UndeclaredThrowableException extends RuntimeException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.142 -0500", hash_original_field = "E7E12866610474314368CE3B05D11CFF", hash_generated_field = "D26E659D3C6F2BAC21FB5EA803CB906E")
 
-
     private static final long serialVersionUID = 330127114055056639L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.144 -0500", hash_original_field = "78087893AB98A2D25C5062009414C591", hash_generated_field = "BF3D8746B5EF92EBFB7AAFB8779CD82F")
-
 
     private Throwable undeclaredThrowable;
 
@@ -57,6 +51,7 @@ public UndeclaredThrowableException(Throwable exception,
      *
      * @return the undeclared, checked exception that occurred
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.151 -0500", hash_original_method = "01FF2A365C1FC09F8BDCAF7FAA2D9177", hash_generated_method = "AAE8EA3B94CC171AA0A6A12A9BF21D1D")
     
 public Throwable getUndeclaredThrowable() {
@@ -69,6 +64,7 @@ public Throwable getUndeclaredThrowable() {
      *
      * @return the undeclared, checked exception that occurred
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:12.154 -0500", hash_original_method = "1E11CE865934C875382AA6A691DB2EF1", hash_generated_method = "493C3D310278EA30F486DA9AAD65DAC5")
     
 @Override

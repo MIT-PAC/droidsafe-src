@@ -35,10 +35,6 @@ import libcore.io.Memory;
 import libcore.io.StructAddrinfo;
 import dalvik.system.BlockGuard;
 
-
-
-
-
 public class InetAddress implements Serializable {
 
     /**
@@ -73,6 +69,9 @@ private static InetAddress[] bytesToInetAddresses(byte[][] rawAddresses, String 
      * @return the array of addresses associated with the specified host.
      * @throws UnknownHostException if the address lookup fails.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.221 -0500", hash_original_method = "FB551EC28630FE6F0C2EF7814F81623E", hash_generated_method = "ACE15F490E4BD0A3B86FEF53D4EFC7AC")
     
 public static InetAddress[] getAllByName(String host) throws UnknownHostException {
@@ -158,6 +157,9 @@ private static InetAddress parseNumericAddressNoThrow(String address) {
      * @throws UnknownHostException
      *             if the address lookup fails.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.235 -0500", hash_original_method = "DD1533442534100575D70C182ADE1C96", hash_generated_method = "042C59E72021E1834F301CC5C89036C8")
     
 public static InetAddress getByName(String host) throws UnknownHostException {
@@ -201,6 +203,9 @@ public static InetAddress getByName(String host) throws UnknownHostException {
      * @throws UnknownHostException
      *             if the address lookup fails.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.245 -0500", hash_original_method = "E79319E7983FFD892480819C6E838DC2", hash_generated_method = "42A32443A0500AD60A3EF761DA43EF92")
     
 public static InetAddress getLocalHost() throws UnknownHostException {
@@ -326,6 +331,7 @@ private static InetAddress[] loopbackAddresses() {
      * @since 1.7
      * @hide 1.7
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.269 -0500", hash_original_method = "7F38E98A384441E9C595E5B09E3332A9", hash_generated_method = "2684BAE775A83394D81BEA27B9D16514")
     
 public static InetAddress getLoopbackAddress() {
@@ -336,6 +342,7 @@ public static InetAddress getLoopbackAddress() {
      * Equivalent to {@code getByAddress(null, ipAddress)}. Handy for addresses with
      * no associated hostname.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.307 -0500", hash_original_method = "62A7C11189E68648BE032AAAC357AEAD", hash_generated_method = "6640896F14B26720B73658FB0E72D38B")
     
 public static InetAddress getByAddress(byte[] ipAddress) throws UnknownHostException {
@@ -358,6 +365,9 @@ public static InetAddress getByAddress(byte[] ipAddress) throws UnknownHostExcep
      *
      * @throws UnknownHostException if {@code ipAddress} is null or the wrong length.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.309 -0500", hash_original_method = "AB1313B483280B6D95EFD60881636E2E", hash_generated_method = "B1DCEB660FD15C7469EB114D8BBE6FC4")
     
 public static InetAddress getByAddress(String hostName, byte[] ipAddress) throws UnknownHostException {
@@ -426,13 +436,11 @@ private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
     private static final AddressCache addressCache = new AddressCache();
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.198 -0500", hash_original_field = "C90A358F9020B90EC2F318C027EBE50C", hash_generated_field = "D810DA6D1E5ECCA9B74B4757EAD39B08")
 
-
     private static final long serialVersionUID = 3286316764910316507L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.208 -0500", hash_original_field = "848C801A8B22D5A47B6F2AACCDFAF7C4", hash_generated_field = "119C92FDA430C8C47E72137BCDA943A4")
 
     public static final InetAddress UNSPECIFIED = new InetAddress(AF_UNSPEC, null, null);
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.323 -0500", hash_original_field = "9BC29E296D6746AF176C53F70F3E06D8", hash_generated_field = "550C29BECD712FE70617B34B15180466")
-
 
     private static final ObjectStreamField[] serialPersistentFields = {
         new ObjectStreamField("address", int.class),
@@ -441,14 +449,11 @@ private static byte[] ipv4MappedToIPv4(byte[] mappedAddress) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.200 -0500", hash_original_field = "C09CA1CD37DDEDAAB2023089C696B143", hash_generated_field = "630495C0099FA460C912B67A0FCAD3C7")
 
-
     private int family;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.203 -0500", hash_original_field = "90EA25AB4D338372155DC6F7EC59D04E", hash_generated_field = "90EA25AB4D338372155DC6F7EC59D04E")
 
-
     byte[] ipaddress;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.205 -0500", hash_original_field = "1B7A53B08CE768344D84B69A12503624", hash_generated_field = "1B7A53B08CE768344D84B69A12503624")
-
 
     @DSVAModeled
     String hostName;
@@ -475,6 +480,8 @@ InetAddress(int family, byte[] ipaddress, String hostName) {
      *            the object to be tested for equality.
      * @return {@code true} if both objects are equal, {@code false} otherwise.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.213 -0500", hash_original_method = "3AAFCD043D3971ACCC1BC5F122FB0BE0", hash_generated_method = "D103773655A1C519BA125A1827E9D90D")
     
 @Override
@@ -492,6 +499,9 @@ InetAddress(int family, byte[] ipaddress, String hostName) {
      *
      * @return the address in form of a byte array.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.215 -0500", hash_original_method = "0983A0B23668071C038C0A3F8002A354", hash_generated_method = "E4CE6EB2E4BD87D82969FEB5079B693F")
     
 public byte[] getAddress() {
@@ -501,6 +511,9 @@ public byte[] getAddress() {
     /**
      * Returns the numeric representation of this IP address (such as "127.0.0.1").
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.237 -0500", hash_original_method = "A1139ABF91D0374599D7EB888F5DB646", hash_generated_method = "ADD427568CF99A3804F95D4B04F03648")
     
 public String getHostAddress() {
@@ -512,6 +525,9 @@ public String getHostAddress() {
      * fully-qualified name. If the IP address could not be resolved, the numeric representation
      * is returned instead (see {@link #getHostAddress}).
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.240 -0500", hash_original_method = "4F443763E78EE7A4BDC306A79DFCDBBC", hash_generated_method = "80EA9719894A32DCFA351AE0D9464A70")
     
 public String getHostName() {
@@ -528,6 +544,7 @@ public String getHostName() {
     /**
      * Returns the fully qualified hostname corresponding to this IP address.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.242 -0500", hash_original_method = "A5A62CAEFD7FCA56AB200DB74BB59546", hash_generated_method = "F3D2F0697947A3C6FDC2EB20AA874985")
     
 public String getCanonicalHostName() {
@@ -598,6 +615,8 @@ public boolean isLinkLocalAddress() {
      *
      * <p>The only valid IPv6 loopback address is {@code ::1}.
      */
+    @DSComment("Data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:10.276 -0500", hash_original_method = "F4A838CB0E6897A23081D395162E9DA1", hash_generated_method = "97876E1C76DBC2E80931734755B0C9C6")
     
 public boolean isLoopbackAddress() {
@@ -736,9 +755,7 @@ public boolean isSiteLocalAddress() {
 public boolean isReachable(int timeout) throws IOException {
         return isReachable(null, 0, timeout);
     }
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-12 11:02:49.773 -0400", hash_original_method = "A1A0F0207714140D12E9E4AE2187615D", hash_generated_method = "DA703A9943F73B00CF0C811D2AFDC4FE")
     public boolean isReachable(NetworkInterface networkInterface, final int ttl, final int timeout) throws IOException {
         addTaint(timeout);

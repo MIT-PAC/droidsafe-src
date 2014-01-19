@@ -15,16 +15,11 @@ import org.apache.http.client.CookieStore;
 import org.apache.http.cookie.Cookie;
 import org.apache.http.cookie.CookieIdentityComparator;
 
-
-
-
 public class BasicCookieStore implements CookieStore {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.540 -0500", hash_original_field = "857FB572661B8DF2EA46EDCCE0F39FF4", hash_generated_field = "889AFA10BF8703D281158D946DEF0E23")
 
-
     private  ArrayList<Cookie> cookies;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.542 -0500", hash_original_field = "530902EC2CBE0E7B976D4A090E07685B", hash_generated_field = "7D5FE1B394E08AAC5030ED65F9BDE34B")
-
 
     private  Comparator<Cookie> cookieComparator;
     
@@ -94,6 +89,7 @@ public synchronized void addCookies(Cookie[] cookies) {
      * 
      * @return an array of {@link Cookie cookies}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:39.553 -0500", hash_original_method = "4518D291A6406FB94614916CA57C71BE", hash_generated_method = "B03207FF93EBC9252776C36B81C2329D")
     
 public synchronized List<Cookie> getCookies() {
@@ -139,7 +135,6 @@ public synchronized boolean clearExpired(final Date date) {
 public synchronized void clear() {
         cookies.clear();
     }
-
     
 }
 

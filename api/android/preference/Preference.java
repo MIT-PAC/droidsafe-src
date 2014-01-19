@@ -28,17 +28,11 @@ import android.widget.TextView;
 
 import com.android.internal.util.CharSequences;
 
-
-
-
-
-
 public class Preference implements Comparable<Preference>, OnDependencyChangeListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.720 -0500", hash_original_field = "4E4404212112BADDA1CC62CB0E3D8ABF", hash_generated_field = "2E41574F494D78468755ADDE8E4C30A4")
 
     public static final int DEFAULT_ORDER = Integer.MAX_VALUE;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.722 -0500", hash_original_field = "B997E37019471EC8FC5B98148C7A8AD7", hash_generated_field = "C458E619396054F78BC926FB81B4386D")
-
 
     private Context mContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.724 -0500", hash_original_field = "F44A9B2F698C7B96C36DE45B8F61794D", hash_generated_field = "13262EB3751B753EEB3302EF75D8B1E5")
@@ -48,14 +42,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
 
     private long mId;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.728 -0500", hash_original_field = "109327E014DA9E51667A6D43C3A98441", hash_generated_field = "B2CD75E86D570A2CCE7E2BC973BD4ACD")
-
     
     private OnPreferenceChangeListener mOnChangeListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.730 -0500", hash_original_field = "F4FC708BB66F0FF2E3CCB64DA416E3AE", hash_generated_field = "03339AEC23A0F6C8C8113E6F7DC55FB5")
 
     private OnPreferenceClickListener mOnClickListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.732 -0500", hash_original_field = "97665F9B90D8994894F926AD6A1AFAE9", hash_generated_field = "4DBBABE4B5343924D877A673E4358521")
-
 
     private int mOrder = DEFAULT_ORDER;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.734 -0500", hash_original_field = "8C445459F9A68BF8713F87AC9D695E47", hash_generated_field = "ECAB18871B55104BACD4283C12B1074D")
@@ -110,7 +102,6 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
 
     private boolean mShouldDisableView = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.770 -0500", hash_original_field = "E4558ED1225E38531819A9EC48B8C136", hash_generated_field = "2628AFC967B4980D202AAA14C9F08E6C")
-
     
     private int mLayoutResId = com.android.internal.R.layout.preference;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.772 -0500", hash_original_field = "4AC3CA97CE19C44928B883B97A51E139", hash_generated_field = "03CE89F32EE4B5097448BE77263408B4")
@@ -120,15 +111,12 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
 
     private boolean mHasSpecifiedLayout = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.776 -0500", hash_original_field = "211CC0C05C9CD7BEB76E30B2F3EE9682", hash_generated_field = "AC60A661DDD5C1ADBF7F01BD463F7E24")
-
     
     private OnPreferenceChangeInternalListener mListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.778 -0500", hash_original_field = "C5F654B79522D99E090B49A6FA824C31", hash_generated_field = "B4077C41DC030C953102067792AA61E0")
-
     
     private List<Preference> mDependents;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.780 -0500", hash_original_field = "9D46E1ABF6612B5F9CED8668A15F4930", hash_generated_field = "5E4C3692572C298E63D6463802841D4E")
-
     
     private boolean mBaseMethodCalled;
 
@@ -153,6 +141,8 @@ public class Preference implements Comparable<Preference>, OnDependencyChangeLis
      *            resource.
      * @see #Preference(Context, AttributeSet)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.791 -0500", hash_original_method = "9CEB9C34CAA8ECAB230B50A0542D61B3", hash_generated_method = "000D059B42087389D9BE4CD3D6DCF262")
     
 public Preference(Context context, AttributeSet attrs, int defStyle) {
@@ -243,6 +233,8 @@ public Preference(Context context, AttributeSet attrs, int defStyle) {
      *            preference.
      * @see #Preference(Context, AttributeSet, int)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.794 -0500", hash_original_method = "48043D3D24F48A6FD06B47A9624983D0", hash_generated_method = "23860A147BB626AC23BB2A2C8C09CC36")
     
 public Preference(Context context, AttributeSet attrs) {
@@ -254,6 +246,8 @@ public Preference(Context context, AttributeSet attrs) {
      * 
      * @param context The Context in which to store Preference values.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.796 -0500", hash_original_method = "B50FF766B3A35A641C8DC6BF5214AE70", hash_generated_method = "18004333E93059D421AF667C5C189CC7")
     
 public Preference(Context context) {
@@ -285,6 +279,8 @@ protected Object onGetDefaultValue(TypedArray a, int index) {
      * 
      * @param intent The intent associated with this Preference.
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.800 -0500", hash_original_method = "BB18D5EDF68F7EDDF74E48FAF30F475E", hash_generated_method = "E43DA065A725F698C123B5D95D83823C")
     
 public void setIntent(Intent intent) {
@@ -296,6 +292,9 @@ public void setIntent(Intent intent) {
      * 
      * @return The {@link Intent} last set via {@link #setIntent(Intent)} or XML. 
      */
+    @DSComment("Potential intent to trigger other processing")
+    @DSSpec(DSCat.INTENT_EXCHANGE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.802 -0500", hash_original_method = "AD027B7B58A4A2F151CC138FB7B23244", hash_generated_method = "7CE6D2E5920E17BB1B744A5090D635BC")
     
 public Intent getIntent() {
@@ -318,6 +317,7 @@ public void setFragment(String fragment) {
      *
      * @return The fragment class name last set via {@link #setFragment} or XML.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.807 -0500", hash_original_method = "133D42C98C64EF6757CE3D375E2E1FA7", hash_generated_method = "48BD9FA22DC9C706CFE51067C173AE37")
     
 public String getFragment() {
@@ -329,6 +329,7 @@ public String getFragment() {
      * a new Bundle if there currently isn't one.  You can use this to get and
      * set individual extra key/value pairs.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.809 -0500", hash_original_method = "F77D5C181034415714B081995209DE64", hash_generated_method = "AD974921E74D2D2EF84D10B8C4570AB3")
     
 public Bundle getExtras() {
@@ -362,6 +363,8 @@ public Bundle peekExtras() {
      *            a {@link View}.
      * @see #setWidgetLayoutResource(int)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.813 -0500", hash_original_method = "528C4C3ACF7780A9B6B960E406A0977A", hash_generated_method = "0B264C8E20F4ED3ABF3FD5A4D24DF0F1")
     
 public void setLayoutResource(int layoutResId) {
@@ -378,6 +381,7 @@ public void setLayoutResource(int layoutResId) {
      * 
      * @return The layout resource ID.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.816 -0500", hash_original_method = "A2555092F113429083F033F36B8E024F", hash_generated_method = "FDE313E76D9F921BBA81E10B3B11308E")
     
 public int getLayoutResource() {
@@ -394,6 +398,8 @@ public int getLayoutResource() {
      *            main layout.
      * @see #setLayoutResource(int)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.818 -0500", hash_original_method = "2204831C4D4DE968C9A72D9D306DDD8C", hash_generated_method = "1C5CAF5977AB804A1CDBD707DF56BB5B")
     
 public void setWidgetLayoutResource(int widgetLayoutResId) {
@@ -409,6 +415,7 @@ public void setWidgetLayoutResource(int widgetLayoutResId) {
      * 
      * @return The layout resource ID.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.820 -0500", hash_original_method = "6D000A2827FAFE2A1A87DD4A065ACF04", hash_generated_method = "EB11702AE005F39C88EDA3AA29841887")
     
 public int getWidgetLayoutResource() {
@@ -428,6 +435,7 @@ public int getWidgetLayoutResource() {
      * @see #onCreateView(ViewGroup)
      * @see #onBindView(View)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.822 -0500", hash_original_method = "10F5B4A945AE227B9B33457223123B2A", hash_generated_method = "DAA4ED66700C6E6E567467C24C079A20")
     
 public View getView(View convertView, ViewGroup parent) {
@@ -451,13 +459,15 @@ public View getView(View convertView, ViewGroup parent) {
      * @return The View that displays this Preference.
      * @see #onBindView(View)
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.825 -0500", hash_original_method = "DD0E6DF051F4F0779DD2D5F6BCD064A5", hash_generated_method = "C02ED4A6CFE31824138A3968323BAB68")
     
 protected View onCreateView(ViewGroup parent) {
         final LayoutInflater layoutInflater =
             (LayoutInflater) mContext.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
         
-        final View layout = layoutInflater.inflate(mLayoutResId, parent, false); 
+        final View layout = layoutInflater.inflate(mLayoutResId, parent, false);
         
         final ViewGroup widgetFrame = (ViewGroup) layout
                 .findViewById(com.android.internal.R.id.widget_frame);
@@ -482,6 +492,8 @@ protected View onCreateView(ViewGroup parent) {
      * @param view The View that shows this Preference.
      * @see #onCreateView(ViewGroup)
      */
+    @DSComment("normal android callback")
+    @DSSafe(DSCat.ANDROID_CALLBACK)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.828 -0500", hash_original_method = "D65593443BAE954E876A7311E3E1909A", hash_generated_method = "2049DCCD9868B9DF313E0ACA1A095BF8")
     
 protected void onBindView(View view) {
@@ -571,6 +583,7 @@ public void setOrder(int order) {
      * @return The order of this Preference.
      * @see #setOrder(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.835 -0500", hash_original_method = "BE8C43C510B8AF8546FEBBAA3EF0F0B1", hash_generated_method = "1910514B82CFF79E9C692B005D1B90F5")
     
 public int getOrder() {
@@ -585,6 +598,8 @@ public int getOrder() {
      * 
      * @param title The title for this Preference.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.837 -0500", hash_original_method = "B4BEC153E73D566AEC40ED844297CB0F", hash_generated_method = "284FCF2293D68D214B8F1E0343747F63")
     
 public void setTitle(CharSequence title) {
@@ -601,6 +616,9 @@ public void setTitle(CharSequence title) {
      * @see #setTitle(CharSequence)
      * @param titleResId The title as a resource ID.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.839 -0500", hash_original_method = "4E4A93A9A53A92BE0779D6D57BF6863D", hash_generated_method = "33703268DB5598045A51C7BA745C2ABE")
     
 public void setTitle(int titleResId) {
@@ -615,6 +633,7 @@ public void setTitle(int titleResId) {
      * @return The title resource.
      * @see #setTitle(int)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.841 -0500", hash_original_method = "9778C1A15B3D4EC3FC935EB49323C011", hash_generated_method = "B69AF063920EC97F42893C35BA0013BF")
     
 public int getTitleRes() {
@@ -627,6 +646,9 @@ public int getTitleRes() {
      * @return The title.
      * @see #setTitle(CharSequence)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.843 -0500", hash_original_method = "7D691BCB64236E7B5AF8F6CB0399C091", hash_generated_method = "E948C46F1704FC1F24545ED5A725BEE6")
     
 public CharSequence getTitle() {
@@ -670,6 +692,7 @@ public void setIcon(int iconResId) {
      * @return The icon.
      * @see #setIcon(Drawable)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.850 -0500", hash_original_method = "ED78DC4ED6B2C6A65EDA3016CC1C1C4D", hash_generated_method = "6C812A8AFFF88933D7DE0B3F72902750")
     
 public Drawable getIcon() {
@@ -682,6 +705,9 @@ public Drawable getIcon() {
      * @return The summary.
      * @see #setSummary(CharSequence)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.852 -0500", hash_original_method = "485EE2482F168D23B57BE8096AF663D1", hash_generated_method = "677F753FFE8DC3E647B643F7E060A784")
     
 public CharSequence getSummary() {
@@ -693,6 +719,8 @@ public CharSequence getSummary() {
      * 
      * @param summary The summary for the preference.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.854 -0500", hash_original_method = "9397E34A85A0111B42F6FFB9A2837DEB", hash_generated_method = "473E4AE991A26B165213F8390D5E8AF8")
     
 public void setSummary(CharSequence summary) {
@@ -708,6 +736,9 @@ public void setSummary(CharSequence summary) {
      * @see #setSummary(CharSequence)
      * @param summaryResId The summary as a resource.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.856 -0500", hash_original_method = "7AEFEE5A5E2C81392912FC13D133C130", hash_generated_method = "5E42DB8EFDCE67E38657239ACF0C48B4")
     
 public void setSummary(int summaryResId) {
@@ -720,6 +751,8 @@ public void setSummary(int summaryResId) {
      * 
      * @param enabled Set true to enable it.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.858 -0500", hash_original_method = "86021B1A0572E898D2D9C9D290D998FE", hash_generated_method = "FA9F63693562FFB49973E403F14AB0DB")
     
 public void setEnabled(boolean enabled) {
@@ -738,6 +771,8 @@ public void setEnabled(boolean enabled) {
      * 
      * @return True if this Preference is enabled, false otherwise.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.860 -0500", hash_original_method = "1BB77BECC2C1296C251576AD714A96C1", hash_generated_method = "018EE9CBA359FF017D55A2A512F7D1DB")
     
 public boolean isEnabled() {
@@ -749,6 +784,8 @@ public boolean isEnabled() {
      * 
      * @param selectable Set true to make it selectable.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.862 -0500", hash_original_method = "7EEA4953639C86CA9F36ABED9565FC6D", hash_generated_method = "4990506D4E6F7CDBADB4A361C356D63C")
     
 public void setSelectable(boolean selectable) {
@@ -792,6 +829,7 @@ public void setShouldDisableView(boolean shouldDisableView) {
      * @see #setShouldDisableView(boolean)
      * @return True if it should disable the view. 
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.869 -0500", hash_original_method = "465C9050F708FCF1A73506501FE4644E", hash_generated_method = "74900F9D9BB1276C31D10EF468A92710")
     
 public boolean getShouldDisableView() {
@@ -804,6 +842,7 @@ public boolean getShouldDisableView() {
      * 
      * @return A unique ID for this Preference.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.871 -0500", hash_original_method = "6AF16C815DE6FE4144432EF99CDC825B", hash_generated_method = "6AF16C815DE6FE4144432EF99CDC825B")
     
 long getId() {
@@ -843,6 +882,9 @@ public void setKey(String key) {
      * 
      * @return The key.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.877 -0500", hash_original_method = "E0CEA0C6ABDC55C32B991C1D155B5E3E", hash_generated_method = "514BD3D6C2A52F2979AA1634D452B51C")
     
 public String getKey() {
@@ -883,6 +925,8 @@ public boolean hasKey() {
      * 
      * @return True if it is persistent.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.883 -0500", hash_original_method = "45C46AF35C2A296F9912D410933691CF", hash_generated_method = "7D1AC7F421553CAEC34BD93E0A58BCF7")
     
 public boolean isPersistent() {
@@ -911,6 +955,8 @@ protected boolean shouldPersist() {
      * 
      * @param persistent Set true if it should store its value(s) into the {@link SharedPreferences}.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.887 -0500", hash_original_method = "9780EA334E29D2930E2D9A0F1CB4087F", hash_generated_method = "1BADDA72E3D941D0CD81C8195DF48043")
     
 public void setPersistent(boolean persistent) {
@@ -925,6 +971,8 @@ public void setPersistent(boolean persistent) {
      * @return True if the user value should be set as the preference
      *         value (and persisted).
      */
+    @DSComment("potential callback called inside method")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.890 -0500", hash_original_method = "4367E5B2EAD1BB8898BD88F610DDAF7D", hash_generated_method = "1CFD0B3B4276F8625AC51F1A7A0055E7")
     
 protected boolean callChangeListener(Object newValue) {
@@ -1035,6 +1083,9 @@ public boolean onKey(View v, int keyCode, KeyEvent event) {
      * 
      * @return The Context of this Preference.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.905 -0500", hash_original_method = "4F4EBC54D108D66F416C93B46580E117", hash_generated_method = "BA026F6873AF9B17E96AB49AFB6CEE03")
     
 public Context getContext() {
@@ -1058,6 +1109,9 @@ public Context getContext() {
      *         value(s), or null if it isn't attached to a Preference hierarchy.
      * @see #getEditor()
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.908 -0500", hash_original_method = "8BF68140BB0364C46F5E3D57D69A6DB5", hash_generated_method = "F09B3CE58B6C7368086BB1A9CBCCC878")
     
 public SharedPreferences getSharedPreferences() {
@@ -1180,6 +1234,7 @@ protected void notifyHierarchyChanged() {
      * 
      * @return The {@link PreferenceManager}.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.924 -0500", hash_original_method = "002FC5CEE5BE5B5D1FE36CEDBC1DEB65", hash_generated_method = "382F54BC2EA5B48270515EF5C19C4292")
     
 public PreferenceManager getPreferenceManager() {
@@ -1306,6 +1361,7 @@ private void unregisterDependent(Preference dependent) {
      * @param disableDependents Whether this Preference should disable
      *            its dependents.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.942 -0500", hash_original_method = "02C347ADE8272FB6E630575816981A99", hash_generated_method = "3CD58C0767C66BB2C78AE785B9A4A21B")
     
 public void notifyDependencyChange(boolean disableDependents) {
@@ -1358,6 +1414,8 @@ public boolean shouldDisableDependents() {
      * 
      * @param dependencyKey The key of the Preference that this depends on.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.949 -0500", hash_original_method = "FBFB05D545147227A8E2F6FCFC356242", hash_generated_method = "EB89BD73E9FDB2DD6ECAD76363778369")
     
 public void setDependency(String dependencyKey) {
@@ -1375,6 +1433,9 @@ public void setDependency(String dependencyKey) {
      * @return The key of the dependency.
      * @see #setDependency(String)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.951 -0500", hash_original_method = "664EA11E01CF3C90DB639CBF1F232407", hash_generated_method = "0A8A561C4DC78501D4E9364ECA5686F1")
     
 public String getDependency() {
@@ -1399,6 +1460,8 @@ protected void onPrepareForRemoval() {
      * 
      * @param defaultValue The default value.
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.955 -0500", hash_original_method = "EC5991F73564EC767E73B865F0A17074", hash_generated_method = "32F2679AD66EFBC2B9E7D62D9292FDAA")
     
 public void setDefaultValue(Object defaultValue) {
@@ -1469,6 +1532,9 @@ private void tryCommit(SharedPreferences.Editor editor) {
      *         will be a batch commit later.)
      * @see #getPersistedString(String)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.964 -0500", hash_original_method = "386F50F42D6EB5DC2DA2887FAD5D9C7B", hash_generated_method = "9B5C087D3CC87E17EBE1A4FFD846B271")
     
 protected boolean persistString(String value) {
@@ -1500,6 +1566,9 @@ protected boolean persistString(String value) {
      *         value.
      * @see #persistString(String)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.967 -0500", hash_original_method = "5E73C8E580A094A1DF5E2EFDD3570FC9", hash_generated_method = "E35762D31C01EBAE27AC52B743D4B6E5")
     
 protected String getPersistedString(String defaultReturnValue) {
@@ -1559,6 +1628,7 @@ protected boolean persistStringSet(Set<String> values) {
      * 
      * @hide Pending API approval
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.971 -0500", hash_original_method = "D996103FD4641487F9C96461E983EA55", hash_generated_method = "9D17569A567BB978CC9AF1A28894AB12")
     
 protected Set<String> getPersistedStringSet(Set<String> defaultReturnValue) {
@@ -1579,6 +1649,9 @@ protected Set<String> getPersistedStringSet(Set<String> defaultReturnValue) {
      * @see #persistString(String)
      * @see #getPersistedInt(int)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.974 -0500", hash_original_method = "EDA708B947224EBF19ED1E56671C9A01", hash_generated_method = "C6CF3BE0CD44CFED540A3FE2F6F1B49E")
     
 protected boolean persistInt(int value) {
@@ -1607,6 +1680,9 @@ protected boolean persistInt(int value) {
      * @see #getPersistedString(String)
      * @see #persistInt(int)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.976 -0500", hash_original_method = "7BDEA34D831595E2EEF9485CF72F7029", hash_generated_method = "ED812736F4232F4563D76E0A11BFF95D")
     
 protected int getPersistedInt(int defaultReturnValue) {
@@ -1627,6 +1703,9 @@ protected int getPersistedInt(int defaultReturnValue) {
      * @see #persistString(String)
      * @see #getPersistedFloat(float)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.978 -0500", hash_original_method = "554687CB7FDF3E22A2095D4942A8012F", hash_generated_method = "8D8B99361E8FBA88C3FBCC687A73E535")
     
 protected boolean persistFloat(float value) {
@@ -1655,6 +1734,9 @@ protected boolean persistFloat(float value) {
      * @see #getPersistedString(String)
      * @see #persistFloat(float)
      */
+    @DSComment("data structure only")
+    @DSSafe(DSCat.DATA_STRUCTURE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.980 -0500", hash_original_method = "AB28180DBEC7B1C710871982C247343B", hash_generated_method = "C14C4F30708100AD8A65453B873E4A92")
     
 protected float getPersistedFloat(float defaultReturnValue) {
@@ -1675,6 +1757,7 @@ protected float getPersistedFloat(float defaultReturnValue) {
      * @see #persistString(String)
      * @see #getPersistedLong(long)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.982 -0500", hash_original_method = "C10CC879E3FA9306B83F34EDB87FCEA5", hash_generated_method = "066C0693A0144A1C9EA7DFD81EDA5690")
     
 protected boolean persistLong(long value) {
@@ -1703,6 +1786,7 @@ protected boolean persistLong(long value) {
      * @see #getPersistedString(String)
      * @see #persistLong(long)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.985 -0500", hash_original_method = "88751F99C7941FFB817628D8E528076A", hash_generated_method = "6FD11895B9D9D7E45E61BC3B2E9939B4")
     
 protected long getPersistedLong(long defaultReturnValue) {
@@ -1723,6 +1807,7 @@ protected long getPersistedLong(long defaultReturnValue) {
      * @see #persistString(String)
      * @see #getPersistedBoolean(boolean)
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.987 -0500", hash_original_method = "D20BDAFE65F5D54A08F0A9EE0DEAC992", hash_generated_method = "2B56D21A4DDF4A28AB2E22C2FCE4645A")
     
 protected boolean persistBoolean(boolean value) {
@@ -1751,6 +1836,7 @@ protected boolean persistBoolean(boolean value) {
      * @see #getPersistedString(String)
      * @see #persistBoolean(boolean)
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:27.994 -0500", hash_original_method = "8F28A5D05D1E365FD2C0E61AA71BE94D", hash_generated_method = "A69AD180BCA808EE251BD0CFB76FB46D")
     
 protected boolean getPersistedBoolean(boolean defaultReturnValue) {
@@ -1785,6 +1871,7 @@ boolean hasSpecifiedLayout() {
      *         preference. By default, this is the title and summary
      *         (concatenated with a space).
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.001 -0500", hash_original_method = "7FA40EC09188F6F1BEA3B1B94241EA4A", hash_generated_method = "947B58C801820171EA581B26A56F9CCF")
     
 StringBuilder getFilterableStringBuilder() {
@@ -1902,11 +1989,9 @@ void dispatchRestoreInstanceState(Bundle container) {
             }
         }
     }
-
     
     public static class BaseSavedState extends AbsSavedState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.029 -0500", hash_original_field = "36945CEB7F71B305AA42039BECC3DF22", hash_generated_field = "1603EC57FF7A24DE0B9CE75D44794F2A")
-
         
         public static final Parcelable.Creator<BaseSavedState> CREATOR =
                 new Parcelable.Creator<BaseSavedState>() {
@@ -1918,12 +2003,16 @@ void dispatchRestoreInstanceState(Bundle container) {
                 return new BaseSavedState[size];
             }
         };
+        @DSComment("Data serialization/deserialization")
+        @DSSpec(DSCat.SERIALIZATION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.017 -0500", hash_original_method = "0710B1BECA4AE2A64DE9C58BFD4A1161", hash_generated_method = "A170B20D980951FCD7B625137DF8A752")
         
 public BaseSavedState(Parcel source) {
             super(source);
         }
 
+        @DSComment("Data serialization/deserialization")
+        @DSSpec(DSCat.SERIALIZATION)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:32:28.020 -0500", hash_original_method = "C61013DFD638DC996F3EF4CC52F40C74", hash_generated_method = "47DE192996C36408BDAA9BA55ED90871")
         
 public BaseSavedState(Parcelable superState) {
@@ -1940,8 +2029,6 @@ public BaseSavedState(Parcelable superState) {
             }
         
     }
-
-
     
     public interface OnPreferenceChangeListener {
         
@@ -1956,7 +2043,6 @@ public BaseSavedState(Parcelable superState) {
     interface OnPreferenceChangeInternalListener {
         
         void onPreferenceChange(Preference preference);
-        
         
         void onPreferenceHierarchyChange(Preference preference);
     }

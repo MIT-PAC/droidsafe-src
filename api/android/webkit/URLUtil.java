@@ -13,10 +13,6 @@ import android.net.Uri;
 import android.net.WebAddress;
 import android.util.Log;
 
-
-
-
-
 public final class URLUtil {
 
     /**
@@ -89,6 +85,7 @@ public static String composeSearchUrl(String inQuery, String template,
         return buffer.toString();
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.678 -0500", hash_original_method = "8240A7F17F78A2DDA242E2A49435C8A8", hash_generated_method = "98776632F03E8705A784C45EDDAD7964")
     
 public static byte[] decode(byte[] url) throws IllegalArgumentException {
@@ -271,6 +268,8 @@ public static boolean isContentUrl(String url) {
     /**
      * @return True iff the url is valid.
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.712 -0500", hash_original_method = "2527411CED96FFEC1D8C9EE305F559EE", hash_generated_method = "E404149FB48C572109BCE8D35AB2AA48")
     
 public static boolean isValidUrl(String url) {
@@ -421,7 +420,6 @@ static String parseContentDisposition(String contentDisposition) {
         return null;
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.661 -0500", hash_original_field = "CF5103981B618784F76950E4558FDBCC", hash_generated_field = "061362C112C980EB4954480FBAFBE378")
-
 
     private static final String LOGTAG = "webkit";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:01.663 -0500", hash_original_field = "8FEE478141829863F395EE3520B21B0F", hash_generated_field = "E575175BEB352DC9B9221FF58DCC2B7E")

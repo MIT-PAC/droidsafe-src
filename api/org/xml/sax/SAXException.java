@@ -5,22 +5,16 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SAXException extends Exception {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.841 -0500", hash_original_field = "2CBC6074DF6BD2C2AC2A7CA4BC170BEC", hash_generated_field = "D119ECBE245114B57E6DAA6B4729E50B")
 
     // Internal state.
     //////////////////////////////////////////////////////////////////////
 
-
     /**
      * @serial The embedded exception if tunnelling, or null.
      */
     private Exception exception;
-
 
     /**
      * Create a new SAXException.
@@ -31,7 +25,6 @@ public SAXException ()
     {
     this.exception = null;
     }
-
 
     /**
      * Create a new SAXException.
@@ -44,7 +37,6 @@ public SAXException (String message) {
     super(message);
     this.exception = null;
     }
-
 
     /**
      * Create a new SAXException wrapping an existing exception.
@@ -61,7 +53,6 @@ public SAXException (Exception e)
     {
     this.exception = e;
     }
-
 
     /**
      * Create a new SAXException from an existing exception.
@@ -80,7 +71,6 @@ public SAXException (String message, Exception e)
     this.exception = e;
     }
 
-
     /**
      * Return a detail message for this exception.
      *
@@ -90,6 +80,9 @@ public SAXException (String message, Exception e)
      *
      * @return The error or warning message.
      */
+    @DSComment("no input, no suspicious activity and just exception")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.835 -0500", hash_original_method = "7F1A7B3B4DC8BE54F069CECA78CE108B", hash_generated_method = "12DA191F9DBC64AF796DE8AD6D0DE39C")
     
 public String getMessage ()
@@ -103,19 +96,18 @@ public String getMessage ()
     }
     }
 
-
     /**
      * Return the embedded exception, if any.
      *
      * @return The embedded exception, or null if there is none.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.837 -0500", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "98F36C2AFC36910DAB242F709A323B7F")
     
 public Exception getException ()
     {
     return exception;
     }
-
 
     /**
      * Override toString to pick up any embedded exception.
@@ -132,7 +124,6 @@ public String toString ()
         return super.toString();
     }
     }
-
     
 }
 

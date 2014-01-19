@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.EventObject;
 
-
-
-
-
-
 public class SSLSessionBindingEvent extends EventObject {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.673 -0500", hash_original_field = "BF45F7481B8091DE3CBF80E94F7F940B", hash_generated_field = "531F96E2AEBFB44CD229EC4CB1F012B0")
-
 
     private  String name;
 
@@ -38,6 +32,7 @@ public SSLSessionBindingEvent(SSLSession session, String name) {
      *
      * @return the name of the binding.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.679 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "50860709F8CC9FE19B604881E59FBA54")
     
 public String getName() {
@@ -51,12 +46,12 @@ public String getName() {
      * @return the session to which the binding is added or from which it is
      *         removed.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:02:02.681 -0500", hash_original_method = "C5768F99D51ECCDFF4B75CB996C2544E", hash_generated_method = "D7052E91E04E03382DA1AE832DDB434D")
     
 public SSLSession getSession() {
         return (SSLSession) this.source;
     }
-
     
 }
 

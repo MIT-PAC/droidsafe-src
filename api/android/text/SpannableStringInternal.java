@@ -8,11 +8,6 @@ import java.lang.reflect.Array;
 
 import com.android.internal.util.ArrayUtils;
 
-
-
-
-
-
 abstract class SpannableStringInternal {
 
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.111 -0500", hash_original_method = "6B7A1DDF85ADC183B3426DC1B4007521", hash_generated_method = "47901FCF4C66D2137EBF33493DFF4299")
@@ -23,7 +18,6 @@ private static String region(int start, int end) {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.127 -0500", hash_original_field = "41605FD9568522F1EC6EA33C9F0B24F1", hash_generated_field = "1908F7E294A3EABBA82B230EE13B1975")
  static final Object[] EMPTY = new Object[0];
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.130 -0500", hash_original_field = "27A41ADDFF59BC8B58A601456818918E", hash_generated_field = "D858CF53160507E553F41D31EE5B91B4")
-
 
     private static final int START = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.133 -0500", hash_original_field = "540ED2104944C8092BBE8BC3BA882B55", hash_generated_field = "8419802F1C9707D8A0E8B46456CF017D")
@@ -36,7 +30,6 @@ private static String region(int start, int end) {
 
     private static final int COLUMNS = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.117 -0500", hash_original_field = "5C1E1D7AA24FFCA320ADE83B66FB0AC4", hash_generated_field = "2EBA23F479A3FA4159B4CC40D57E4F25")
-
 
     private String mText;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.119 -0500", hash_original_field = "CEB48CD34EDA945F7544A85E8671F5CB", hash_generated_field = "64DC9467A0917D43133A286556BA813F")
@@ -80,6 +73,8 @@ SpannableStringInternal(CharSequence source,
         }
     }
 
+    @DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.069 -0500", hash_original_method = "9A68249D01A4FE1CBD4D535668FCEB6F", hash_generated_method = "65B805BA188437A52E59B7D842E00788")
     
 public final int length() {
@@ -91,10 +86,10 @@ public final int length() {
 public final char charAt(int i) {
         return mText.charAt(i);
     }
-
     
-    @DSModeled(DSC.SAFE)
-	public final String toString() {
+	@DSComment("From safe class list")
+    @DSSafe(DSCat.SAFE_LIST)
+    public final String toString() {
         return new String();
     }
 
@@ -106,7 +101,8 @@ public final void getChars(int start, int end, char[] dest, int off) {
         mText.getChars(start, end, dest, off);
     }
 
-    /* package */ @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.082 -0500", hash_original_method = "7B198AB61B6B726FF2E2996AF3FF95CD", hash_generated_method = "7B198AB61B6B726FF2E2996AF3FF95CD")
+    /* package */ @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.082 -0500", hash_original_method = "7B198AB61B6B726FF2E2996AF3FF95CD", hash_generated_method = "7B198AB61B6B726FF2E2996AF3FF95CD")
     
 void setSpan(Object what, int start, int end, int flags) {
         int nstart = start;
@@ -200,6 +196,7 @@ void removeSpan(Object what) {
         }
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.088 -0500", hash_original_method = "2C34546685C4DD853C66A09CEFBD0C65", hash_generated_method = "49A5A83F9D601DCC21A804366460C069")
     
 public int getSpanStart(Object what) {
@@ -216,6 +213,7 @@ public int getSpanStart(Object what) {
         return -1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.091 -0500", hash_original_method = "D299E1841C6A6AC66FA9181AA7F112ED", hash_generated_method = "5F80416C7EB9B0125A02073DF204AAD9")
     
 public int getSpanEnd(Object what) {
@@ -232,6 +230,7 @@ public int getSpanEnd(Object what) {
         return -1;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:07.093 -0500", hash_original_method = "0BC2A6452DDDFB33D1E74093A43A22EC", hash_generated_method = "6EB8AB2A3F9A018CE5A37968A4FC11D4")
     
 public int getSpanFlags(Object what) {
@@ -247,9 +246,8 @@ public int getSpanFlags(Object what) {
 
         return 0; 
     }
-
     
-    @DSModeled(DSC.SAFE)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-18 10:21:37.792 -0400", hash_original_method = "A79E5C3938B902091EA5DB757C342E2D", hash_generated_method = "8B11A1D83B40723E850120BF22A1B3F9")
     public <T> T[] getSpans(int queryStart, int queryEnd, Class<T> kind) {
         addTaint(kind.getTaint());

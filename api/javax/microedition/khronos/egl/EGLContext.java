@@ -6,13 +6,9 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.microedition.khronos.opengles.GL;
 
-
-
-
-
-
 public abstract class EGLContext {
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:57.229 -0500", hash_original_method = "A38BB8AE655083CDE71FC7D7CD4EC6EF", hash_generated_method = "C154498B914B890373921455D4329D8F")
     
 public static EGL getEGL() {
@@ -22,7 +18,6 @@ public static EGL getEGL() {
 
     private static final EGL EGL_INSTANCE = new com.google.android.gles_jni.EGLImpl();
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:17.456 -0400", hash_original_method = "08AE013F5F70C27B6C3BCCA082C95AAF", hash_generated_method = "08AE013F5F70C27B6C3BCCA082C95AAF")
     public EGLContext ()
     {

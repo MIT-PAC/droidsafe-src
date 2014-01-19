@@ -14,10 +14,6 @@ import java.util.Map;
 import libcore.util.EmptyArray;
 import dalvik.system.VMStack;
 
-
-
-
-
 public class Thread implements Runnable {
 
     /**
@@ -37,6 +33,8 @@ public static int activeCount() {
      *
      * @return the current Thread.
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.575 -0500", hash_original_method = "E6DEC3347F951D8CF63DAEF794A9852A", hash_generated_method = "A6E83BE8198CFD257937EA056A110E8E")
     
 public static Thread currentThread() {
@@ -75,6 +73,7 @@ public static int enumerate(Thread[] threads) {
     /**
      * Returns a map of all the currently live threads to their stack traces.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.586 -0500", hash_original_method = "D98109DB19C89E6A58A3F60993E1DFAD", hash_generated_method = "33347C70C21C4214A33F263633907A41")
     
 public static Map<Thread, StackTraceElement[]> getAllStackTraces() {
@@ -149,14 +148,13 @@ public static void setDefaultUncaughtExceptionHandler(UncaughtExceptionHandler h
      *             it was sleeping
      * @see Thread#interrupt()
      */
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.656 -0500", hash_original_method = "6EAEFD6D0AE091A9829D7DAE1948EA2E", hash_generated_method = "321DA4B5D3B0E5CF8FEB944014F5F83B")
     
 public static void sleep(long time) throws InterruptedException {
         Thread.sleep(time, 0);
     }
-
     
-    @DSModeled(DSC.SPEC)
     public static void sleep(long millis, int nanos) throws InterruptedException {
         if (DroidSafeAndroidRuntime.control) {
             InterruptedException ex = new InterruptedException();
@@ -171,6 +169,7 @@ public static void sleep(long time) throws InterruptedException {
      * Causes the calling Thread to yield execution time to another Thread that
      * is ready to run. The actual scheduling is implementation-dependent.
      */
+    @DSSafe(DSCat.OS_GENERAL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.674 -0500", hash_original_method = "20B3C869DA440A74B56436DD2A7E18B0", hash_generated_method = "ECC5CEEE91AB0DE77B9F3B933211D215")
     
 public static void yield() {
@@ -265,6 +264,8 @@ public static boolean holdsLock(Object object) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.540 -0500", hash_original_method = "A2846A412942D9A4A6734B659C3C08EA", hash_generated_method = "F8D663241D3BE03836B5B656811F626F")
     
 public Thread() {
@@ -283,6 +284,8 @@ public Thread() {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
+    @DSComment("callback needs to be called")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.543 -0500", hash_original_method = "FFE43BBD5535897A2D4ADC63E06A2D0F", hash_generated_method = "F90C5CD5D3864819E1DE105AE256BFEE")
     
 public Thread(Runnable runnable) {
@@ -303,6 +306,8 @@ public Thread(Runnable runnable) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
+    @DSComment("callback needs to be called")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.545 -0500", hash_original_method = "BDCA95CAB999722EC25DF6B8E927C95F", hash_generated_method = "C26ED3CEB33006056E94A062350A3BCD")
     
 public Thread(Runnable runnable, String threadName) {
@@ -325,6 +330,8 @@ public Thread(Runnable runnable, String threadName) {
      * @see java.lang.Runnable
      *
      */
+    @DSComment("No action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.548 -0500", hash_original_method = "ACB5E26D2EF52FBACC4A4E78EC843CDD", hash_generated_method = "58CB3772237497BCBEE9592D7AAEB7D0")
     
 public Thread(String threadName) {
@@ -373,6 +380,8 @@ public Thread(ThreadGroup group, Runnable runnable) {
      * @see java.lang.ThreadGroup
      * @see java.lang.Runnable
      */
+    @DSComment("callback needs to be called")
+    @DSSpec(DSCat.TO_MODEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.555 -0500", hash_original_method = "492306C5FED9EC58991A5E8736E27F15", hash_generated_method = "35FB1A83520105B4AC877538231D0DE7")
     
 public Thread(ThreadGroup group, Runnable runnable, String threadName) {
@@ -569,6 +578,9 @@ public final void checkAccess() {
      * @see java.lang.ClassLoader
      * @see #getContextClassLoader()
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.588 -0500", hash_original_method = "D65A36EB6AF7077545898D8D2274216D", hash_generated_method = "9633C94A47589C7321EE60A6609E480C")
     
 public ClassLoader getContextClassLoader() {
@@ -583,6 +595,9 @@ public ClassLoader getContextClassLoader() {
      *
      * @return the thread's ID.
      */
+    @DSComment("final method& no activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.592 -0500", hash_original_method = "AC34FCBA00CFFBED3290FFC752B7D422", hash_generated_method = "50A1BB2B1F2164322D909F16E85CDE7D")
     
 public long getId() {
@@ -594,6 +609,9 @@ public long getId() {
      *
      * @return the Thread's name
      */
+    @DSComment("final method& no activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.595 -0500", hash_original_method = "7070E6AABEDCBA653834DDC8CF79A47C", hash_generated_method = "CEAA3BC43A9BFF97F5638C3D9028D82D")
     
 public final String getName() {
@@ -606,6 +624,7 @@ public final String getName() {
      * @return the Thread's priority
      * @see Thread#setPriority
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.597 -0500", hash_original_method = "0FA6C5514FC3354D3A5FFA078FF2070D", hash_generated_method = "B4B45689BCD450DB4D8629E0D5D6C977")
     
 public final int getPriority() {
@@ -615,6 +634,9 @@ public final int getPriority() {
     /**
      * Returns an array of {@link StackTraceElement} representing the current thread's stack.
      */
+    @DSComment("final method& no activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.601 -0500", hash_original_method = "105ECA4B48BD428C2A4BFADC722280E4", hash_generated_method = "8A75AE8A4C2C212F1BC7525D22936731")
     
 public StackTraceElement[] getStackTrace() {
@@ -653,6 +675,9 @@ public State getState() {
      *
      * @return the Thread's ThreadGroup
      */
+    @DSComment("not sensitive/not an action")
+    @DSSafe(DSCat.SAFE_OTHERS)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.606 -0500", hash_original_method = "00D5D6D0C2A305848EB6704B96DA1F7A", hash_generated_method = "0B8E8EA57C4B96EC813031BA186E9BBC")
     
 public final ThreadGroup getThreadGroup() {
@@ -704,6 +729,8 @@ public UncaughtExceptionHandler getUncaughtExceptionHandler() {
      * @see Thread#interrupted
      * @see Thread#isInterrupted
      */
+    @DSComment("final method, no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.610 -0500", hash_original_method = "17DDF3808A6EBB129363B48719FB5512", hash_generated_method = "7822AB2F5B34D299297A20478B751727")
     
 public void interrupt() {
@@ -728,6 +755,8 @@ public void interrupt() {
      * @return a <code>boolean</code> indicating the liveness of the Thread
      * @see Thread#start
      */
+    @DSComment("final method& no activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.615 -0500", hash_original_method = "FDF1C6D176BF98E9EEA025E5AC84BE96", hash_generated_method = "CB4A29BEF9B271FCE21030FDC66920A9")
     
 public final boolean isAlive() {
@@ -759,6 +788,8 @@ public final boolean isDaemon() {
      * @see Thread#interrupt
      * @see Thread#interrupted
      */
+    @DSComment("final method& no activity")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.620 -0500", hash_original_method = "8001B196EB7A1BAE7873C2E86818FA5F", hash_generated_method = "2AF4AEBD2944FF117BD9F1C74E068B54")
     
 public boolean isInterrupted() {
@@ -779,6 +810,8 @@ public boolean isInterrupted() {
      * @see Object#notifyAll
      * @see java.lang.ThreadDeath
      */
+    @DSComment("final method, no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.623 -0500", hash_original_method = "39C10B080916DB467DF3B4EA48EC57E3", hash_generated_method = "3FB6E060663F198EA4B377511A51CAB1")
     
 public final void join() throws InterruptedException {
@@ -805,6 +838,8 @@ public final void join() throws InterruptedException {
      * @see Object#notifyAll
      * @see java.lang.ThreadDeath
      */
+    @DSComment("final method, no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.625 -0500", hash_original_method = "4A31F3D41623AEE48E003D8DCAD5BFFA", hash_generated_method = "540E6A7CA91480A038EDD83504FD7594")
     
 public final void join(long millis) throws InterruptedException {
@@ -902,6 +937,8 @@ public void run() {
      * @param cl The context ClassLoader
      * @see #getContextClassLoader()
      */
+    @DSComment("Refelction/class loader")
+    @DSBan(DSCat.REFLECTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.635 -0500", hash_original_method = "93EFC46ED375C1C54A6285C5204CF25C", hash_generated_method = "0A82B7E807F0644939A2807629211C77")
     
 public void setContextClassLoader(ClassLoader cl) {
@@ -916,6 +953,8 @@ public void setContextClassLoader(ClassLoader cl) {
      *            indicates whether the Thread should be daemon or not
      * @see Thread#isDaemon
      */
+    @DSComment("final method, no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.638 -0500", hash_original_method = "9670EAA0D97E9800D90F260AB00393C1", hash_generated_method = "14B2B7EDA10E99D7B0B1219AC06E26A8")
     
 public final void setDaemon(boolean isDaemon) {
@@ -977,6 +1016,8 @@ public final void popInterruptAction$(Runnable interruptAction) {
      * @param threadName the new name for the Thread
      * @see Thread#getName
      */
+    @DSComment("final method, no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.648 -0500", hash_original_method = "52D88413A8A1215EC9D935022AA7508F", hash_generated_method = "59AE00DD9E6ADCB1B134A709A30DEF72")
     
 public final void setName(String threadName) {
@@ -1005,6 +1046,8 @@ public final void setName(String threadName) {
      *             less than Thread.MIN_PRIORITY
      * @see Thread#getPriority
      */
+    @DSComment("final method, no action")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.651 -0500", hash_original_method = "A91023FCF06B8647A6CEF3B99492A3A2", hash_generated_method = "C1A06B2E3C98AFF5EF465F8F6420E8E7")
     
 public final void setPriority(int priority) {
@@ -1048,6 +1091,8 @@ public void setUncaughtExceptionHandler(UncaughtExceptionHandler handler) {
      *
      * @see Thread#run
      */
+    @DSComment("Thread starting")
+    @DSSpec(DSCat.OS_LOW_LEVEL)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.661 -0500", hash_original_method = "389CF6E0D3A08F228CF4E4A156CC86D9", hash_generated_method = "4B5E86BEBB59EC254CCB9739B41E550A")
     
 public synchronized void start() {
@@ -1074,7 +1119,6 @@ public synchronized void start() {
     public final void stop() {
         stop(new ThreadDeath());
     }
-
     
     private static class ParkState {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:56:16.477 -0500", hash_original_field = "B6FEEFB1323BD524F78EBED48725C001", hash_generated_field = "5F7B3D5520F70EA2E650375F945D4166")
@@ -1087,15 +1131,12 @@ public synchronized void start() {
 
         private static final int PARKED = 3;
         
-        @DSModeled(DSC.BAN)
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:24:48.471 -0400", hash_original_method = "13ABD2C1475A75B421FFE7ADB6CF97D6", hash_generated_method = "13ABD2C1475A75B421FFE7ADB6CF97D6")
         public ParkState ()
         {
             //Synthesized constructor
         }
     }
-
-
     
     public enum State {
         NEW,
@@ -1105,7 +1146,6 @@ public synchronized void start() {
         TIMED_WAITING,
         TERMINATED
     }
-
     
     public static interface UncaughtExceptionHandler {
         

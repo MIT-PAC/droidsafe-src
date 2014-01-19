@@ -12,13 +12,8 @@ import java.util.Arrays;
 
 import libcore.io.Streams;
 
-
-
-
-
 public class InflaterInputStream extends FilterInputStream {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.025 -0500", hash_original_field = "86AF9D144AB13FC6B685B7332D58DC58", hash_generated_field = "A60956B00A99CF9DF92AF09280C120E9")
-
 
     static final int BUF_SIZE = 512;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.013 -0500", hash_original_field = "91462E289D2F6E91C1C1F707980A1ADD", hash_generated_field = "1E4B81450D564B8A8EB02BC28E6E6C0F")
@@ -32,13 +27,11 @@ public class InflaterInputStream extends FilterInputStream {
     protected int len;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.020 -0500", hash_original_field = "0B6D06FC66AB1A3316E7702989E3F923", hash_generated_field = "0B6D06FC66AB1A3316E7702989E3F923")
 
-
     boolean closed;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.023 -0500", hash_original_field = "F63D5C2A3218247517725999753A7A52", hash_generated_field = "F63D5C2A3218247517725999753A7A52")
 
     boolean eof;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.027 -0500", hash_original_field = "7E70FEE52575958CC96A2F34CB55F620", hash_generated_field = "7E70FEE52575958CC96A2F34CB55F620")
-
 
     int nativeEndBufSize = 0;
 
@@ -51,6 +44,8 @@ public class InflaterInputStream extends FilterInputStream {
      * @param is
      *            the {@code InputStream} to read data from.
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.030 -0500", hash_original_method = "E5B01AC162409617460AC7C3F79F7BB2", hash_generated_method = "8799600FD8890367D6AA1EAF5709AAD6")
     
 public InflaterInputStream(InputStream is) {
@@ -66,6 +61,8 @@ public InflaterInputStream(InputStream is) {
      * @param inflater
      *            the specific {@code Inflater} for decompressing data.
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.033 -0500", hash_original_method = "FFCF6E0CDA6D7391850CE9D2857BF932", hash_generated_method = "AF318CFBAC8C7A87DD8058BBAD45CBFC")
     
 public InflaterInputStream(InputStream is, Inflater inflater) {
@@ -120,6 +117,8 @@ public InflaterInputStream(InputStream is, Inflater inflater, int bsize) {
      *
      * @return Number of uncompressed bytes read
      */
+    @DSComment("zip/io")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.043 -0500", hash_original_method = "DE515D2D289FDA03BF01DDF0E0AD6AE1", hash_generated_method = "24C747E38DD44413DDF0B87FFC31A7EB")
     
 @Override
@@ -241,6 +240,8 @@ protected void fill() throws IOException {
      * @throws IOException
      *             If an error occurs closing the input stream.
      */
+    @DSComment("No action/impact")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:57:33.053 -0500", hash_original_method = "EA60532C802B6FAE0DE9014BA74F497F", hash_generated_method = "4D5EC13FAA0FD03AE14A617945F59CAE")
     
 @Override

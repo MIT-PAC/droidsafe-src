@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class FactoryConfigurationError extends Error {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.287 -0500", hash_original_field = "2CBC6074DF6BD2C2AC2A7CA4BC170BEC", hash_generated_field = "70BD42A5533D521458BB067703B0D3E8")
 
@@ -38,7 +34,6 @@ public FactoryConfigurationError(String msg) {
         super(msg);
         this.exception = null;
     }
-
 
     /**
      * Create a new <code>FactoryConfigurationError</code> with a
@@ -71,7 +66,6 @@ public FactoryConfigurationError(Exception e, String msg) {
         this.exception = e;
     }
 
-
     /**
      * Return the message (if any) for this error . If there is no
      * message for the exception and there is an encapsulated
@@ -82,6 +76,7 @@ public FactoryConfigurationError(Exception e, String msg) {
      * @return The error message.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.301 -0500", hash_original_method = "3CFCD04CF304E9364ADFC7DBDB377B80", hash_generated_method = "65176D00D2CAACC6AEEBD824B6D2D655")
     
 public String getMessage () {
@@ -101,12 +96,12 @@ public String getMessage () {
      * @return The encapsulated exception, or null if there is none.
      */
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:58.303 -0500", hash_original_method = "DEACD8BC5F5C015493740DB375DC8E7E", hash_generated_method = "98F36C2AFC36910DAB242F709A323B7F")
     
 public Exception getException () {
         return exception;
     }
-
     
 }
 

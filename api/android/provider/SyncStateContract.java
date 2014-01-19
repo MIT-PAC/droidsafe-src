@@ -14,10 +14,6 @@ import android.net.Uri;
 import android.os.RemoteException;
 import android.util.Pair;
 
-
-
-
-
 public class SyncStateContract {
     
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:30.727 -0400", hash_original_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47", hash_generated_method = "57D9D9CBA9A7CAF29AF0EFFDD8322E47")
@@ -25,7 +21,6 @@ public class SyncStateContract {
     {
         //Synthesized constructor
     }
-
 
     public static class Constants implements Columns {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.579 -0500", hash_original_field = "651555897195CAF1D909B047C60B8BCF", hash_generated_field = "FA8A31E4C831AAEF706E8EC3EE0F6F62")
@@ -38,8 +33,6 @@ public class SyncStateContract {
             //Synthesized constructor
         }
     }
-
-
     
     public static final class Helpers {
 
@@ -53,6 +46,7 @@ public class SyncStateContract {
          * @throws RemoteException if there is a failure communicating with the remote
          * {@link android.content.ContentProvider}
          */
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.590 -0500", hash_original_method = "5BAEEA9617C0AA3B35E4E6BB2B33ED19", hash_generated_method = "6A48469F02BB96E63D13AB49D1B5431B")
         
 public static byte[] get(ContentProviderClient provider, Uri uri,
@@ -85,6 +79,7 @@ public static byte[] get(ContentProviderClient provider, Uri uri,
          * @throws RemoteException if there is a failure communicating with the remote
          * {@link android.content.ContentProvider}
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.592 -0500", hash_original_method = "7175BBC1400E9B9ACF4AC9D742700EC1", hash_generated_method = "2A3FEA68CF5F65D576C531538A0704F2")
         
 public static void set(ContentProviderClient provider, Uri uri,
@@ -107,6 +102,7 @@ public static Uri insert(ContentProviderClient provider, Uri uri,
             return provider.insert(uri, values);
         }
 
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.597 -0500", hash_original_method = "6B723E445C051D3A95A305F12C554D39", hash_generated_method = "5365CA6B8E077F8FB400EE376B2EA021")
         
 public static void update(ContentProviderClient provider, Uri uri, byte[] data)
@@ -116,6 +112,7 @@ public static void update(ContentProviderClient provider, Uri uri, byte[] data)
             provider.update(uri, values, null, null);
         }
 
+        @DSSource({DSSourceKind.FILE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:33:55.600 -0500", hash_original_method = "59C36C2A4187FE21080DCE61B12EC2C5", hash_generated_method = "0FCB2EFB8728B15169BFE14097E5AA6A")
         
 public static Pair<Uri, byte[]> getWithUri(ContentProviderClient provider, Uri uri,
@@ -194,16 +191,12 @@ public static ContentProviderOperation newUpdateOperation(Uri uri, byte[] data) 
             //Synthesized constructor
         }
     }
-
-
     
     public interface Columns extends BaseColumns {
         
         public static final String ACCOUNT_NAME = "account_name";
-
         
         public static final String ACCOUNT_TYPE = "account_type";
-
         
         public static final String DATA = "data";
     }

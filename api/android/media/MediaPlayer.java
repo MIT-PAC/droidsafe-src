@@ -24,9 +24,6 @@ import android.util.Log;
 import android.view.Surface;
 import android.view.SurfaceHolder;
 
-
-
-
 import droidsafe.helpers.DSUtils;
 
 public class MediaPlayer {
@@ -42,6 +39,9 @@ public class MediaPlayer {
      * @param uri the Uri from which to get the datasource
      * @return a MediaPlayer object, or null if creation failed
      */
+    @DSComment("Media source is remote")
+    @DSSpec(DSCat.INTERNET)
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.637 -0500", hash_original_method = "88A45C64C97A87F55B3C35AEDBC4AEE9", hash_generated_method = "54928E1D9B77BF22D6A2D9FC63E0FB4A")
     
 public static MediaPlayer create(Context context, Uri uri) {
@@ -100,6 +100,8 @@ public static MediaPlayer create(Context context, Uri uri, SurfaceHolder holder)
      *              the resource to use as the datasource
      * @return a MediaPlayer object, or null if creation failed
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.643 -0500", hash_original_method = "1847FF960BCBE3D985D6E04CB323491E", hash_generated_method = "DF793324D9BE34784BB9E5DC61A87520")
     
 public static MediaPlayer create(Context context, int resid) {
@@ -124,14 +126,10 @@ public static MediaPlayer create(Context context, int resid) {
         }
         return null;
     }
-
     
-    @DSModeled(DSC.SAFE)
     private static final void native_init() {
     }
-
     
-    @DSModeled(DSC.SAFE)
     public static int native_pullBatteryData(Parcel reply) {
                 int varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814873156 = DSUtils.UNKNOWN_INT;
         return varFA7153F7ED1CB6C0FCF2FFB2FAC21748_1814873156;
@@ -172,7 +170,6 @@ private static void postEventFromNative(Object mediaplayer_ref,
 
     public static final boolean BYPASS_METADATA_FILTER = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.597 -0500", hash_original_field = "739379B9AAF735D2681CAD67704A9686", hash_generated_field = "8BF0B63CF7DC67F5CB722C0B4A64DFA2")
-
 
     private final static String TAG = "MediaPlayer";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.599 -0500", hash_original_field = "20E745C649C92FB4F897B08A70A91034", hash_generated_field = "19F3745DB30ADAF56D8234C37E7E1A86")
@@ -260,7 +257,6 @@ private static void postEventFromNative(Object mediaplayer_ref,
     public static final int MEDIA_INFO_METADATA_UPDATE = 802;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.601 -0500", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
 
-
     private int mNativeContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.604 -0500", hash_original_field = "5DE561E5C08686952994313D287A7260", hash_generated_field = "E4C872FF50935D400555417B96D7DB8B")
 
@@ -285,34 +281,26 @@ private static void postEventFromNative(Object mediaplayer_ref,
     private boolean mStayAwake;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.886 -0500", hash_original_field = "C7D5F5974B7D55BD6A40A9DEFCD5C541", hash_generated_field = "A2852387273CF168455EF7C99DC77C4A")
 
-
     private OnPreparedListener mOnPreparedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.893 -0500", hash_original_field = "06A6FF6127C3C38B2E227EA62CA452A2", hash_generated_field = "EC9BCCBF3C86489E298221F5D4476C58")
-
 
     private OnCompletionListener mOnCompletionListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.900 -0500", hash_original_field = "6A14E1C8B44382DB3357EF024F3AE973", hash_generated_field = "0091D0B159C1300DEBA144C3752FC48B")
 
-
     private OnBufferingUpdateListener mOnBufferingUpdateListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.907 -0500", hash_original_field = "AE19EBFFFE42A7CFBB4350CE68358C91", hash_generated_field = "2403596CEA6AA0A7A2E7B136A5284A81")
-
 
     private OnSeekCompleteListener mOnSeekCompleteListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.915 -0500", hash_original_field = "0B03AF7448EFC1D254247AF351562B3C", hash_generated_field = "8E3213E6DC01DA241A4C3F8027EB24E5")
 
-
     private OnVideoSizeChangedListener mOnVideoSizeChangedListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.922 -0500", hash_original_field = "5C497D2165BB1CA9A5FD8691837D33C9", hash_generated_field = "CF913FD08AF8A12FA8042BA315C5F119")
-
 
     private OnTimedTextListener mOnTimedTextListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.936 -0500", hash_original_field = "C38C52334F0DC8BAE5DDF67054F8F272", hash_generated_field = "16CDD39A55F7F6321E357628DB75DCA6")
 
-
     private OnErrorListener mOnErrorListener;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.961 -0500", hash_original_field = "31E70E6AB1204402EDA8B1303830B586", hash_generated_field = "1D3DA06942FC758771FAEF9EA193F57C")
-
 
     private OnInfoListener mOnInfoListener;
 
@@ -323,6 +311,8 @@ private static void postEventFromNative(Object mediaplayer_ref,
      * to free the resources. If not released, too many MediaPlayer instances may
      * result in an exception.</p>
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.620 -0500", hash_original_method = "2C929CFD6011D1A8428ADCC5A270A92B", hash_generated_method = "16B7B2D5FA47F9A8C49D18D274F85689")
     
 public MediaPlayer() {
@@ -352,7 +342,6 @@ public MediaPlayer() {
     	//Formerly a native method
     	addTaint(surface.getTaint());
     }
-
 
     /**
      * Create a request parcel which can be routed to the native media
@@ -441,6 +430,7 @@ public void setDisplay(SurfaceHolder sh) {
      * @param surface The {@link Surface} to be used for the video portion of
      * the media.
      */
+    @DSSink({DSSinkKind.LOG})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.635 -0500", hash_original_method = "E1CEE3A46E058530408C5094E8A255A4", hash_generated_method = "CE38D253EE5685E066E66777FBFC0052")
     
 public void setSurface(Surface surface) {
@@ -520,6 +510,9 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      * @param path the path of the file, or the http/rtsp URL of the stream you want to play
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("Reaching to files/URI")
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.652 -0500", hash_original_method = "70B5385C7A556D37595F97E42F2F2DFE", hash_generated_method = "6626A2BDF4397DFEA415ACCA7CB59089")
     
     public void setDataSource(String path)
@@ -527,7 +520,6 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
     	//Formerly a native method
     	addTaint(path.getTaint());
     }
-
 
     /**
      * Sets the data source (file-path or http/rtsp URL) to use.
@@ -537,6 +529,7 @@ public void setDataSource(Context context, Uri uri, Map<String, String> headers)
      * @throws IllegalStateException if it is called in an invalid state
      * @hide pending API council
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.655 -0500", hash_original_method = "21A95B4BC3854510C509CF1B7B37D46D", hash_generated_method = "77957DCFCCF9D67F2710FFEB1E1A6307")
     
 public void setDataSource(String path, Map<String, String> headers)
@@ -570,7 +563,6 @@ public void setDataSource(String path, Map<String, String> headers)
     	addTaint(values[0].getTaint());
     }
 
-
     /**
      * Sets the data source (FileDescriptor) to use. It is the caller's responsibility
      * to close the file descriptor. It is safe to do so as soon as this call returns.
@@ -578,6 +570,9 @@ public void setDataSource(String path, Map<String, String> headers)
      * @param fd the FileDescriptor for the file you want to play
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("Reaching to files/URI")
+    @DSSpec(DSCat.IO)
+    @DSSink({DSSinkKind.FILE})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.662 -0500", hash_original_method = "67ED0EB071685F0AFDAFB2EFB1BC8776", hash_generated_method = "E3CC19B9EAB5FBB628ECA65729102A6F")
     
 public void setDataSource(FileDescriptor fd)
@@ -596,6 +591,8 @@ public void setDataSource(FileDescriptor fd)
      * @param length the length in bytes of the data to be played
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("Reaching to files/URI")
+    @DSSpec(DSCat.IO)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.666 -0500", hash_original_method = "CF807E4C5554BB2848F7651782391DCD", hash_generated_method = "ABE27D0C9FE0AA103EA081E4FA884B12")
     
     public void setDataSource(FileDescriptor fd, long offset, long length)
@@ -606,7 +603,6 @@ public void setDataSource(FileDescriptor fd)
     	addTaint(length);
     }
 
-
     /**
      * Prepares the player for playback, synchronously.
      *
@@ -616,12 +612,13 @@ public void setDataSource(FileDescriptor fd)
      *
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.669 -0500", hash_original_method = "BE634EB7B5A47DD549B3D4698CE7CD0F", hash_generated_method = "972B65EE06DAE4FE0CB9C8995A2A0788")
     
     public void prepare() throws IOException, IllegalStateException{
     	//Formerly a native method
     }
-
 
     /**
      * Prepares the player for playback, asynchronously.
@@ -639,7 +636,6 @@ public void setDataSource(FileDescriptor fd)
     	//Formerly a native method
     }
 
-
     /**
      * Starts or resumes playback. If playback had previously been paused,
      * playback will continue from where it was paused. If playback had
@@ -648,6 +644,8 @@ public void setDataSource(FileDescriptor fd)
      *
      * @throws IllegalStateException if it is called in an invalid state
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.676 -0500", hash_original_method = "40DE58868CCCFC32104AEA08DBC3B0CD", hash_generated_method = "DFF14EA76743D54BC360A3F44818B943")
     
 public  void start() throws IllegalStateException {
@@ -661,13 +659,14 @@ public  void start() throws IllegalStateException {
     	//Formerly a native method
     }
 
-
     /**
      * Stops playback after playback has been stopped or paused.
      *
      * @throws IllegalStateException if the internal player engine has not been
      * initialized.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.681 -0500", hash_original_method = "09E3A57706D9EF8F79E07C48FA7F3A4D", hash_generated_method = "F22CE3D6933C89833361E940C5BF78A8")
     
 public void stop() throws IllegalStateException {
@@ -681,13 +680,14 @@ public void stop() throws IllegalStateException {
     	//Formerly a native method
     }
 
-
     /**
      * Pauses playback. Call start() to resume.
      *
      * @throws IllegalStateException if the internal player engine has not been
      * initialized.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.688 -0500", hash_original_method = "857D1517B1757951DF038ED3088FF3B2", hash_generated_method = "03A1A3D932EC3E3AE69969FBABFA6F3C")
     
 public void pause() throws IllegalStateException {
@@ -700,7 +700,6 @@ public void pause() throws IllegalStateException {
     private void _pause() throws IllegalStateException{
     	//Formerly a native method
     }
-
 
     /**
      * Set the low-level power management behavior for this MediaPlayer.  This
@@ -719,6 +718,7 @@ public void pause() throws IllegalStateException {
      * @param mode    the power/wake mode to set
      * @see android.os.PowerManager
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.694 -0500", hash_original_method = "2C98FD0B2087D81FFC1D38F1403791EF", hash_generated_method = "F56733D416E412CF850F20FF00920AD5")
     
 public void setWakeMode(Context context, int mode) {
@@ -799,7 +799,6 @@ private void updateSurfaceScreenOn() {
     	return getTaintInt();
     }
 
-
     /**
      * Returns the height of the video.
      *
@@ -816,19 +815,19 @@ private void updateSurfaceScreenOn() {
     	return getTaintInt();
     }
 
-
     /**
      * Checks whether the MediaPlayer is playing.
      *
      * @return true if currently playing, false otherwise
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.712 -0500", hash_original_method = "F383FE244E24C0C545B5D975B4462316", hash_generated_method = "AE8AFBA8F320061FEDF7FC75CB1400FF")
     
     public boolean isPlaying(){
     	//Formerly a native method
     	return getTaintBoolean();
     }
-
 
     /**
      * Seeks to specified time position.
@@ -837,6 +836,8 @@ private void updateSurfaceScreenOn() {
      * @throws IllegalStateException if the internal player engine has not been
      * initialized
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.717 -0500", hash_original_method = "97A3BCAAD25A5F0CCA6DBA135F05FFD4", hash_generated_method = "619D78BA95B04D04B7764ECEACAE3BF8")
     
     public void seekTo(int msec) throws IllegalStateException{
@@ -844,12 +845,13 @@ private void updateSurfaceScreenOn() {
     	addTaint(msec);
     }
 
-
     /**
      * Gets the current playback position.
      *
      * @return the current position in milliseconds
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.721 -0500", hash_original_method = "540585A22AA6C1E9C18EA05D71ACEBDE", hash_generated_method = "BF21B840E4AAAC6665C172E56A7F131C")
     
     public int getCurrentPosition(){
@@ -857,19 +859,19 @@ private void updateSurfaceScreenOn() {
     	return getTaintInt();
     }
 
-
     /**
      * Gets the duration of the file.
      *
      * @return the duration in milliseconds
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.725 -0500", hash_original_method = "5FCC06EDC9BF2D1AEA92A44CF2A2F31E", hash_generated_method = "2FC17533677ADF0C26434C75FB5C9069")
     
     public int getDuration(){
     	//Formerly a native method
     	return getTaintInt();
     }
-
 
     /**
      * Gets the media metadata.
@@ -976,6 +978,8 @@ public int setMetadataFilter(Set<Integer> allow, Set<Integer> block) {
      * may be expected when unnecessary multiple instances are used
      * at the same time.
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.733 -0500", hash_original_method = "40ADFE91226CE43AA5B2CBEBA3591229", hash_generated_method = "3B1709695F4492C6A125DDC174E4F177")
     
 public void release() {
@@ -998,12 +1002,13 @@ public void release() {
     	//Formerly a native method
     }
 
-
     /**
      * Resets the MediaPlayer to its uninitialized state. After calling
      * this method, you will have to initialize it again by setting the
      * data source and calling prepare().
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.739 -0500", hash_original_method = "0163217153F6E824039D5121A760EBE0", hash_generated_method = "469D9FA20EF1D0738AB1606E178B89CF")
     
 public void reset() {
@@ -1019,7 +1024,6 @@ public void reset() {
     	//Formerly a native method
     }
 
-
     /**
      * Sets the audio stream type for this MediaPlayer. See {@link AudioManager}
      * for a list of stream types. Must call this method before prepare() or
@@ -1029,6 +1033,8 @@ public void reset() {
      * @param streamtype the audio stream type
      * @see android.media.AudioManager
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.747 -0500", hash_original_method = "7EA0CD9F896B971C851CD4CA96BFE5FA", hash_generated_method = "CD4A30775F2D640F0E5D728EB6B56B0A")
     
     public void setAudioStreamType(int streamtype){
@@ -1036,19 +1042,19 @@ public void reset() {
     	addTaint(streamtype);
     }
 
-
     /**
      * Sets the player to be looping or non-looping.
      *
      * @param looping whether to loop or not
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.750 -0500", hash_original_method = "4C3A78CA2E07F71A05B213D4CFF64128", hash_generated_method = "9A99D137708EEDC801722D00FF2A4F76")
     
     public void setLooping(boolean looping){
     	//Formerly a native method
     	addTaint(looping);
     }
-
 
     /**
      * Checks whether the MediaPlayer is looping or non-looping.
@@ -1062,7 +1068,6 @@ public void reset() {
     	return getTaintBoolean();
     }
 
-
     /**
      * Sets the volume on this player.
      * This API is recommended for balancing the output of audio streams
@@ -1075,6 +1080,8 @@ public void reset() {
      * @param leftVolume left volume scalar
      * @param rightVolume right volume scalar
      */
+    @DSComment("not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.758 -0500", hash_original_method = "BE4EAA7A7DB479C280C8B84C90E58238", hash_generated_method = "89EBEFD4DBA8777486B4ED42D974F9F4")
     
     public void setVolume(float leftVolume, float rightVolume){
@@ -1082,10 +1089,7 @@ public void reset() {
     	addTaint(leftVolume);
     	addTaint(rightVolume);
     }
-
-
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:13:36.387 -0400", hash_original_method = "E7BF05B3622AAF2F5F3BF2C4557A0B3B", hash_generated_method = "BE7FFC2E098F8066660793B3DA145138")
     public Bitmap getFrameAt(int msec) throws IllegalStateException {
         Bitmap bm = new Bitmap();
@@ -1115,8 +1119,6 @@ public void reset() {
     	//Formerly a native method
     	addTaint(sessionId);
     }
-
-
     
     private class EventHandler extends Handler {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.867 -0500", hash_original_field = "65FD88AA6A32847BBC1610BA37C74F17", hash_generated_field = "8CCD253E1D8FDE10357015F7795C2D1A")
@@ -1209,11 +1211,8 @@ public EventHandler(MediaPlayer mp, Looper looper) {
                 return;
             }
         }
-
         
     }
-
-
     
     public interface OnPreparedListener
     {
@@ -1276,7 +1275,6 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     	return getTaintInt();
     }
 
-
     /**
      * Attaches an auxiliary effect to the player. A typical auxiliary effect is a reverberation
      * effect which can be applied on any sound source that directs a certain amount of its
@@ -1298,7 +1296,6 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     	addTaint(effectId);
     }
 
-
     // There are currently no defined keys usable from Java with get*Parameter.
     // But if any keys are defined, the order must be kept in sync with include/media/mediaplayer.h.
     // private static final int KEY_PARAMETER_... = ...;
@@ -1319,7 +1316,6 @@ public EventHandler(MediaPlayer mp, Looper looper) {
     	return getTaintBoolean();
     }
 
-
     /**
      * Sets the parameter indicated by key.
      * @param key key indicates the parameter to be set.
@@ -1327,6 +1323,7 @@ public EventHandler(MediaPlayer mp, Looper looper) {
      * @return true if the parameter is set successfully, false otherwise
      * {@hide}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.785 -0500", hash_original_method = "007895DA6F9E8604D81FFE810C3D87FB", hash_generated_method = "1E40FE01B4028E74216A34A4D71B06A4")
     
 public boolean setParameter(int key, String value) {
@@ -1348,6 +1345,7 @@ public boolean setParameter(int key, String value) {
      * @return true if the parameter is set successfully, false otherwise
      * {@hide}
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.788 -0500", hash_original_method = "42E72BE22D4EC0A8F92EA2FFF9A1B8CD", hash_generated_method = "53FA53BACD5928D4D57808F15F48B7F4")
     
 public boolean setParameter(int key, int value) {
@@ -1371,7 +1369,6 @@ public boolean setParameter(int key, int value) {
     	addTaint(reply.getTaint());
     }
 
-
     /**
      * Gets the value of the parameter indicated by key.
      * The caller is responsible for recycling the returned parcel.
@@ -1379,6 +1376,7 @@ public boolean setParameter(int key, int value) {
      * @return value of the parameter.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.794 -0500", hash_original_method = "5EBE9A62BAE86EE2E5C065958EFCD9CF", hash_generated_method = "A628E7F322598BE5B924C7FD36DB3FD5")
     
 public Parcel getParcelParameter(int key) {
@@ -1393,6 +1391,7 @@ public Parcel getParcelParameter(int key) {
      * @return value of the parameter.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.796 -0500", hash_original_method = "E362F946FCE7F90CCCD629666B73E43A", hash_generated_method = "CDC35BE7FB4BB10283A6011E5EE96090")
     
 public String getStringParameter(int key) {
@@ -1409,6 +1408,7 @@ public String getStringParameter(int key) {
      * @return value of the parameter.
      * {@hide}
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:25.798 -0500", hash_original_method = "6CEECAB43DB86BAC5EC65D39A3A924D5", hash_generated_method = "FE648F3532CBCB21B22D30390105E7D4")
     
 public int getIntParameter(int key) {
@@ -1438,7 +1438,6 @@ public int getIntParameter(int key) {
     	addTaint(level);
     }
 
-
     /**
      * @param request Parcel destinated to the media player. The
      *                Interface token must be set to the IMediaPlayer
@@ -1454,8 +1453,6 @@ public int getIntParameter(int key) {
     	addTaint(reply.getTaint());
     	return getTaintInt();
     }
-
-
 
     /**
      * @param update_only If true fetch only the set of metadata that have
@@ -1481,7 +1478,6 @@ public int getIntParameter(int key) {
     	addTaint(reply.getTaint());
     	return getTaintBoolean();
     }
-
 
     /**
      * @param request Parcel with the 2 serialized lists of allowed
@@ -1510,7 +1506,6 @@ public int getIntParameter(int key) {
     private final void native_finalize(){
     	//Formerly a native method
     }
-
 
     /**
      * @param index The index of the text track to be turned on.

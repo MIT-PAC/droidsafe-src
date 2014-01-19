@@ -44,11 +44,6 @@ import com.android.internal.telephony.ServiceStateTracker;
 import com.android.internal.telephony.TelephonyIntents;
 import com.android.internal.telephony.TelephonyProperties;
 
-
-
-
-
-
 public class CdmaServiceStateTracker extends ServiceStateTracker {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.395 -0500", hash_original_field = "DB10E3AE28CC9996A816C3CCD7216A83", hash_generated_field = "37C2AB96DD7CCDC96FF809DAC1A6D712")
 
@@ -69,7 +64,6 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
 
     private static final String WAKELOCK_TAG = "ServiceStateTracker";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.397 -0500", hash_original_field = "F2FC592D71DA2BCBED04F0F797B7B907", hash_generated_field = "F2FC592D71DA2BCBED04F0F797B7B907")
-
 
     CDMAPhone phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.399 -0500", hash_original_field = "1A281DAC68E94EBC3C9265E4C6804ABC", hash_generated_field = "1A281DAC68E94EBC3C9265E4C6804ABC")
@@ -96,7 +90,6 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
 
     protected int newNetworkType = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.425 -0500", hash_original_field = "D158F8D61C2C829B4D18E614B1356A2E", hash_generated_field = "608A719DA0321C304B26B483F08AA8A5")
-
 
     private boolean mCdmaRoaming = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.428 -0500", hash_original_field = "6B45D71C85146A160D302F25109C9229", hash_generated_field = "08036C3C13314229BA2FC25470511F82")
@@ -155,7 +148,6 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     protected String mCurPlmn = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.471 -0500", hash_original_field = "F939B70A20B3468E438996CCAF7003FB", hash_generated_field = "B709DEC8C3A1F430EB7B11AA6EE2EC2C")
 
-
     protected String mMdn;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.473 -0500", hash_original_field = "4EE910A79952F9BBA4D8D5717133AD29", hash_generated_field = "9E7F4F352D9BD51BA557A4D6106F3396")
 
@@ -174,7 +166,6 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     protected boolean mIsMinInfoReady = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.485 -0500", hash_original_field = "E1AB6AC5AF5D528FBDB49F75729E1E0C", hash_generated_field = "D6E8E3B7AD5D24A742CC13AA70A64F63")
 
-
     private boolean isEriTextLoaded = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.487 -0500", hash_original_field = "6E8D6E0E3221FE67C705760F8E221A5A", hash_generated_field = "EBB4A27CD6CDA92F928E719D02425A52")
 
@@ -184,15 +175,14 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
     private String mRegistrationDeniedReason;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.491 -0500", hash_original_field = "00C84AE608A40C700303777F958158E6", hash_generated_field = "CC964D293F1703643DB273FCC0901562")
 
-
     private ContentResolver cr;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.493 -0500", hash_original_field = "7446650635EB4A76D52B07A96F8B248F", hash_generated_field = "7317EA2E3861B648BD5D2085310B5F7A")
 
     private String currentCarrier = null;
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.329 -0400", hash_original_field = "11E7010812F1C4E8B149974C6F93DD15", hash_generated_field = "3DB856DB274FA4CFDAF726CF9C6DE586")
 
-    private ContentObserver mAutoTimeObserver = new ContentObserver(new Handler()) {        
-        @DSModeled(DSC.BAN)
+    private ContentObserver mAutoTimeObserver = new ContentObserver(new Handler()) {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.329 -0400", hash_original_method = "6B8D04F75A24E09E038AB230F1FA031E", hash_generated_method = "172CE0A53ECBD305539544F2E56D2E30")
         @Override
         public void onChange(boolean selfChange) {
@@ -201,16 +191,13 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             revertToNitzTime();
             addTaint(selfChange);
             
-            
-            
         }
-
         
 };
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.330 -0400", hash_original_field = "5FB03C4834787FF054B0ABAC3DB94EDA", hash_generated_field = "46087C315DFAC870959E9567F3E3929A")
 
-    private ContentObserver mAutoTimeZoneObserver = new ContentObserver(new Handler()) {        
-        @DSModeled(DSC.BAN)
+    private ContentObserver mAutoTimeZoneObserver = new ContentObserver(new Handler()) {
+        
         @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:14:27.330 -0400", hash_original_method = "8FD17110C48D1CBE2477FC41B8E67E94", hash_generated_method = "937331EFFBE00AA83A94C8B5D850F5AD")
         @Override
         public void onChange(boolean selfChange) {
@@ -219,10 +206,7 @@ public class CdmaServiceStateTracker extends ServiceStateTracker {
             revertToNitzTimeZone();
             addTaint(selfChange);
             
-            
-            
         }
-
         
 };
 
@@ -593,6 +577,7 @@ public void unregisterForSubscriptionInfoReady(Handler h) {
         mCurPlmn = plmn;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.540 -0500", hash_original_method = "A0DE0F5E4F4D4787509D60C270D17835", hash_generated_method = "7FA214E5FB8E9E7053C952EA5299E35F")
     
 @Override
@@ -705,7 +690,6 @@ protected void handlePollStateResultMessage(int what, AsyncResult ar){
             mRoamingIndicator = roamingIndicator;
             mIsInPrl = (systemIsInPrl == 0) ? false : true;
             mDefaultRoamingIndicator = defaultRoamingIndicator;
-
 
             // Values are -1 if not available.
             newCellLoc.setCellLocationData(baseStationId, baseStationLatitude,
@@ -934,6 +918,7 @@ protected void
         }
     }
 
+    @DSSink({DSSinkKind.SYSTEM_SETTINGS})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.561 -0500", hash_original_method = "E69BA838DECF1BB5E62D048E955B2CB0", hash_generated_method = "D0E1FD49E7000B511C47ACF7A9BBA81E")
     
 protected void fixTimeZone(String isoCountryCode) {
@@ -1217,7 +1202,6 @@ protected void
         }
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.579 -0500", hash_original_method = "DF77DC7CB442AC6CF875159BD0FE26E0", hash_generated_method = "027838B01D156C7FE146C47532DEE3FD")
     
 protected int radioTechnologyToDataServiceState(int code) {
@@ -1267,6 +1251,7 @@ protected int
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.584 -0500", hash_original_method = "2F7466C178280C26D6BC47DE1AFB7432", hash_generated_method = "217989B846BC1E6D9596FA84326A7747")
     
 public int getCurrentDataConnectionState() {
@@ -1336,7 +1321,6 @@ private
 
         return cdmaRoaming && !(equalsOnsl || equalsOnss);
     }
-
 
     /**
      * nitzReceiveTime is time_t that the NITZ time was posted
@@ -1663,12 +1647,14 @@ public boolean isConcurrentVoiceAndDataAllowed() {
         return false;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.631 -0500", hash_original_method = "A5028D79B927656E45CDFA536F16F5AB", hash_generated_method = "CE380CEB9E020089119AC26C1416B42D")
     
 public String getMdnNumber() {
         return mMdn;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.634 -0500", hash_original_method = "133C132C72A1734541959456CF27FF0A", hash_generated_method = "8F59A7ACCE96A294389A5DCD933FC017")
     
 public String getCdmaMin() {
@@ -1676,6 +1662,7 @@ public String getCdmaMin() {
     }
 
     /** Returns null if NV is not yet ready */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.636 -0500", hash_original_method = "B5AD5686CB21B47DB5A2223CCDBB4F42", hash_generated_method = "7DD390FA72255EC2B3B0362AC1AB9654")
     
 public String getPrlVersion() {
@@ -1685,6 +1672,7 @@ public String getPrlVersion() {
     /**
      * Returns IMSI as MCC + MNC + MIN
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.640 -0500", hash_original_method = "B26D3610EF4478BB5ED2ADA9EDE43E3B", hash_generated_method = "8C7D47A97C60077F792C3402BD9CD63E")
     
 String getImsi() {
@@ -1713,6 +1701,7 @@ public boolean isMinInfoReady() {
     /**
      * Returns OTASP_UNKNOWN, OTASP_NEEDED or OTASP_NOT_NEEDED
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:53.648 -0500", hash_original_method = "0E452BF490F5457F3887197BA13C1AF4", hash_generated_method = "0E452BF490F5457F3887197BA13C1AF4")
     
 int getOtasp() {

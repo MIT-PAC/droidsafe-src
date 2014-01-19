@@ -18,10 +18,6 @@ import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.TextView;
 
-
-
-
-
 public class ListMenuItemView extends LinearLayout implements MenuView.ItemView {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.255 -0500", hash_original_field = "53B00E23D91B0BDBA59BEB68DD2FF51B", hash_generated_field = "F05248E8BF4768CA949BBA4F641B42C3")
 
@@ -30,7 +26,6 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
 
     private MenuItemImpl mItemData;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.260 -0500", hash_original_field = "069158469BB60C88A2C4A541C6AFB8D2", hash_generated_field = "411E3339296CF54457E86988903AF1A7")
- 
     
     private ImageView mIconView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.263 -0500", hash_original_field = "E360002A71982849632CAD48DFDDC3F3", hash_generated_field = "1E1826A601ADC976D83D58732642409A")
@@ -46,7 +41,6 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
 
     private TextView mShortcutView;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.274 -0500", hash_original_field = "1414D97CE5ED674A74A05A07F83AE3BF", hash_generated_field = "0925F2C91F8CBA797C183309FA7634C5")
-
     
     private Drawable mBackground;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.276 -0500", hash_original_field = "12897BEF89A4C72FECFFDFE7F1200971", hash_generated_field = "E1363564E2F8BE551770EA738359CA9A")
@@ -59,15 +53,12 @@ public class ListMenuItemView extends LinearLayout implements MenuView.ItemView 
 
     private boolean mPreserveIconSpacing;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.284 -0500", hash_original_field = "22F461EF8744442EF12B7F711AEC30B1", hash_generated_field = "184D07E5D4523A6E0D44D4B7FCCF9501")
-
     
     private int mMenuType;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.287 -0500", hash_original_field = "B03B4DAE3F576B7166425BEE37B96C5E", hash_generated_field = "CBB0EE0A851756643DA52E1D33B6B161")
-
     
     private LayoutInflater mInflater;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.290 -0500", hash_original_field = "346196818A9B2A3ADB36739C20BD24C8", hash_generated_field = "341BE8DFD6FC410A2B4B3CF1435D4B11")
-
 
     private boolean mForceShowIcon;
 
@@ -146,12 +137,14 @@ public void setTitle(CharSequence title) {
         }
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.309 -0500", hash_original_method = "F39E0849ABCF707480ABC0B9D2EE2311", hash_generated_method = "B0B9AF9FA2DDD827E4877533896893E2")
     
 public MenuItemImpl getItemData() {
         return mItemData;
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.313 -0500", hash_original_method = "10ED998AF45E09E3692DBD756F730611", hash_generated_method = "088A0999FBE652B72E59CAA6A3812BA2")
     
 public void setCheckable(boolean checkable) {
@@ -162,7 +155,7 @@ public void setCheckable(boolean checkable) {
         // Depending on whether its exclusive check or not, the checkbox or
         // radio button will be the one in use (and the other will be otherCompoundButton)
         final CompoundButton compoundButton;
-        final CompoundButton otherCompoundButton; 
+        final CompoundButton otherCompoundButton;
 
         if (mItemData.isExclusiveCheckable()) {
             if (mRadioButton == null) {
@@ -196,6 +189,7 @@ public void setCheckable(boolean checkable) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.316 -0500", hash_original_method = "1046275995CFEC2A71A54D8E1F9C97CC", hash_generated_method = "9CDEE5FCF8D835063BD3B1E6EF07C449")
     
 public void setChecked(boolean checked) {
@@ -216,6 +210,7 @@ public void setChecked(boolean checked) {
         compoundButton.setChecked(checked);
     }
 
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.318 -0500", hash_original_method = "4983CC204EB78339386267D8C73D5694", hash_generated_method = "ED46BFB4DF5F65769866569317E67734")
     
 public void setShortcut(boolean showShortcut, char shortcutKey) {
@@ -231,6 +226,7 @@ public void setShortcut(boolean showShortcut, char shortcutKey) {
         }
     }
     
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:59:38.320 -0500", hash_original_method = "19EB37BE18B7BC088A147E31A5EAA2CE", hash_generated_method = "1A97A7AF0D3F0302F262777608BAACE8")
     
 public void setIcon(Drawable icon) {

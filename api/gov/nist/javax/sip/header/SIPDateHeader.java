@@ -8,11 +8,6 @@ import java.util.Calendar;
 
 import javax.sip.header.DateHeader;
 
-
-
-
-
-
 public class SIPDateHeader extends SIPHeader implements DateHeader {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.181 -0500", hash_original_field = "867FE7EF03E7B156FD30B8EA4DEB76C9", hash_generated_field = "FB9F215913247CD3C2C1FF9CAC7EC54C")
 
@@ -54,6 +49,7 @@ public void setDate(SIPDate d) {
      *
      * @param dat the Calendar object date of this header.
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.197 -0500", hash_original_method = "593883A7F1E198F7FABAA636FE37D3D4", hash_generated_method = "6A81C750B533B547AC7FCB58B010ACF5")
     
 public void setDate(Calendar dat) {
@@ -67,6 +63,7 @@ public void setDate(Calendar dat) {
      *
      * @return the Calendar object representing the date of DateHeader
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:55:03.199 -0500", hash_original_method = "8348440FA7E2BF46CE5F14E959934430", hash_generated_method = "8D897808B9E217D79B1C7FE59F59028A")
     
 public Calendar getDate() {

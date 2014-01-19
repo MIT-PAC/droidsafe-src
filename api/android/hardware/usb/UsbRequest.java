@@ -7,21 +7,14 @@ import android.util.Log;
 import droidsafe.annotations.*;
 import java.nio.ByteBuffer;
 
-
-
-
-
-
 public class UsbRequest {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.306 -0500", hash_original_field = "0A666047707090CD02214402D36F11D4", hash_generated_field = "3C8DCB2CD5AFF3FA01F8DBE0209B4F99")
-
 
     private static final String TAG = "UsbRequest";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.309 -0500", hash_original_field = "A4A4998D7B0D1DA56BE7F415CF4F3BBD", hash_generated_field = "0A3F8EE607897645EB2EE30B6939205B")
 
     private int mNativeContext;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.311 -0500", hash_original_field = "C5ED3A9B7C6D24194D51BC689B4B6561", hash_generated_field = "51493E5AC33E198B7B9441D1D3BB0C49")
-
 
     private UsbEndpoint mEndpoint;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.314 -0500", hash_original_field = "FB05545F4651BAFFFA13E88DBDCA5C94", hash_generated_field = "FABD0AE272C28D49511B5C6B44D8F85C")
@@ -83,6 +76,7 @@ public void close() {
      *
      * @return the request's endpoint
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.331 -0500", hash_original_method = "11B9FE3CCFCADE645E006FF088DA13C2", hash_generated_method = "ADFFE8A8AC04ADC6B04E795AB85C6E96")
     
 public UsbEndpoint getEndpoint() {
@@ -98,6 +92,7 @@ public UsbEndpoint getEndpoint() {
      *
      * @return the client data for the request
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:51.333 -0500", hash_original_method = "B71E58093DB1269AF1945AD07DDB8F74", hash_generated_method = "DD564BC4489E431F910BDF304B9F4280")
     
 public Object getClientData() {

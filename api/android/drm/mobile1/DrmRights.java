@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class DrmRights {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.939 -0500", hash_original_field = "9BDD951244E4CF6DEE203A9AC46C635C", hash_generated_field = "B09DC62ED5056D05FD7AAC60079335E1")
 
@@ -32,7 +28,6 @@ public class DrmRights {
 
     private String roId = "";
 
-
     /**
      * Construct the DrmRights.
      */
@@ -48,6 +43,7 @@ public DrmRights() {
      *
      * @return a DrmConstraint instance.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:30:01.959 -0500", hash_original_method = "152D385AF6C62DBFBF9806B7902609F0", hash_generated_method = "97530809ED3CB6B37BD2280AD1BC2044")
     
 public DrmConstraintInfo getConstraint(int permission) {
@@ -82,7 +78,6 @@ public boolean consumeRights(int permission) {
         return true;
     }
 
-
     /**
      * native method: get the constraint information of the given permission.
      *
@@ -100,7 +95,6 @@ public boolean consumeRights(int permission) {
     	addTaint(constraint.getTaint());
     	return getTaintInt();
     }
-
 
     /**
      * native method: consume the rights of the given permission.

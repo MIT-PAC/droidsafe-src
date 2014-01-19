@@ -9,11 +9,6 @@ import java.io.IOException;
 import org.apache.harmony.security.asn1.ASN1OctetString;
 import org.apache.harmony.security.utils.Array;
 
-
-
-
-
-
 public final class SubjectKeyIdentifier extends ExtensionValue {
 
     /**
@@ -41,6 +36,7 @@ public SubjectKeyIdentifier(byte[] keyIdentifier) {
         this.keyIdentifier = keyIdentifier;
     }
 
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:57.115 -0500", hash_original_method = "17F99A1E4EF8655788B38E4E26DB47E6", hash_generated_method = "38288AA2E9620D0D5ABDEDEE6B2C8B72")
     
 @Override public byte[] getEncoded() {
@@ -57,7 +53,6 @@ public SubjectKeyIdentifier(byte[] keyIdentifier) {
         sb.append(Array.toString(keyIdentifier, prefix));
         sb.append(prefix).append("]\n");
     }
-
     
 }
 

@@ -29,10 +29,6 @@ import android.os.ParcelFileDescriptor;
 import android.text.TextUtils;
 import android.util.Log;
 
-
-
-
-
 public class DatabaseUtils {
 
     /**
@@ -339,6 +335,8 @@ public static void appendEscapedSQLString(StringBuilder sb, String sqlString) {
     /**
      * SQL-escape a string.
      */
+    @DSComment("Utility function")
+    @DSSafe(DSCat.UTIL_FUNCTION)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.290 -0500", hash_original_method = "7552DB2CB2D2F1A34A98DAA2372BF735", hash_generated_method = "AF0FA82A7D6CD7394EBC331BCBC5D65F")
     
 public static String sqlEscapeString(String value) {
@@ -390,6 +388,7 @@ public static String concatenateWhere(String a, String b) {
      * @param name
      * @return the collation key
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.298 -0500", hash_original_method = "2277D1FB24406F696FA05FFD0730F1E8", hash_generated_method = "ADC942F1075E4624D53E8C7FC47A2431")
     
 public static String getCollationKey(String name) {
@@ -406,6 +405,7 @@ public static String getCollationKey(String name) {
      * @param name
      * @return the collation key in hex format
      */
+    @DSSource({DSSourceKind.DATABASE_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.301 -0500", hash_original_method = "3EFAF0E286C0E5ABBA5F444CC372591A", hash_generated_method = "95EF173F526EFF87C03956708A63348D")
     
 public static String getHexCollationKey(String name) {
@@ -453,6 +453,7 @@ public static void dumpCursor(Cursor cursor) {
      * @param cursor the cursor to print
      * @param stream the stream to print to
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.313 -0500", hash_original_method = "01F1FC91F82BFD6DF4E4443B37052042", hash_generated_method = "168BE30C6BAF90C59363528B60B8C592")
     
 public static void dumpCursor(Cursor cursor, PrintStream stream) {
@@ -524,6 +525,7 @@ public static void dumpCurrentRow(Cursor cursor) {
      * @param cursor the cursor to print
      * @param stream the stream to print to
      */
+    @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.324 -0500", hash_original_method = "D0996D4DFB9F5585E3927B19545BE3E4", hash_generated_method = "BA24E7C3A8B18A175AD4E4B71A2B86FC")
     
 public static void dumpCurrentRow(Cursor cursor, PrintStream stream) {
@@ -1089,7 +1091,6 @@ public static String[] appendSelectionArgs(String[] originalValues, String[] new
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.227 -0500", hash_original_field = "AC243BB121DEEDBC2ED7D027B8D07447", hash_generated_field = "1FE3C375C216F1A5BEF4D0C706AC2FD3")
 
     private static final String TAG = "DatabaseUtils";
-
     
     public static class InsertHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.419 -0500", hash_original_field = "BFE8FED17723302566445D7C51E513E3", hash_generated_field = "65A2F50AB6F61733B444F32A68BCAC15")
@@ -1239,6 +1240,7 @@ private synchronized long insertInternal(ContentValues values, boolean allowRepl
          * @param key the column name
          * @return the index of the column
          */
+        @DSSource({DSSourceKind.DATABASE_INFORMATION})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.437 -0500", hash_original_method = "2FE6EA3004F5838FAFB27DD4EF6900C7", hash_generated_method = "F083CAABF23AF09216F669BFCD72D367")
         
 public int getColumnIndex(String key) {
@@ -1256,6 +1258,7 @@ public int getColumnIndex(String key) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.440 -0500", hash_original_method = "898F1EFFAEB546E6A9657A001F4AE1E8", hash_generated_method = "F9C40C81C68344DF4C359DF8BF2FBEE9")
         
 public void bind(int index, double value) {
@@ -1268,6 +1271,7 @@ public void bind(int index, double value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.442 -0500", hash_original_method = "85D356AA3C69D35869973C25B38955EB", hash_generated_method = "51159D6A6BCA645A9FECFE7044BCE2E6")
         
 public void bind(int index, float value) {
@@ -1280,6 +1284,7 @@ public void bind(int index, float value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.444 -0500", hash_original_method = "76F2FAC154909632438A49671F5D33A8", hash_generated_method = "9398ED4569F070ECF144AEEF7742700F")
         
 public void bind(int index, long value) {
@@ -1292,6 +1297,7 @@ public void bind(int index, long value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.446 -0500", hash_original_method = "A73EABD891E538A0A03C5C4A49C29503", hash_generated_method = "1A141A934B3EFEF0FC0BE64726DE55FA")
         
 public void bind(int index, int value) {
@@ -1304,6 +1310,7 @@ public void bind(int index, int value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.449 -0500", hash_original_method = "D4E75DDD13795169D0FEAC83726F0F45", hash_generated_method = "C7371512E5E8EE49D9DEB2147152339E")
         
 public void bind(int index, boolean value) {
@@ -1315,6 +1322,7 @@ public void bind(int index, boolean value) {
          * without a matching execute() must have already have been called.
          * @param index the index of the slot to which to bind
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.452 -0500", hash_original_method = "27990C90801E0788D0DEC119EA5D904E", hash_generated_method = "D44D088758A5484E469199565F51B0BB")
         
 public void bindNull(int index) {
@@ -1327,6 +1335,7 @@ public void bindNull(int index) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.454 -0500", hash_original_method = "B7B8BDC3019EC6DD4050CE3C3C2D0B33", hash_generated_method = "F7A9BFB62194C0AAA6AC372A893B199F")
         
 public void bind(int index, byte[] value) {
@@ -1343,6 +1352,7 @@ public void bind(int index, byte[] value) {
          * @param index the index of the slot to which to bind
          * @param value the value to bind
          */
+        @DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.457 -0500", hash_original_method = "70AF33973781662CA48B1120B9D51D5F", hash_generated_method = "3AA8A3379FD3EF5E8F74AFA39939EA2C")
         
 public void bind(int index, String value) {
@@ -1474,13 +1484,11 @@ public void close() {
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.229 -0500", hash_original_field = "81DD852ECBE07BA98A61C8F3D0C85F01", hash_generated_field = "58EDF43BA541A4D47EECFEC3901C7AED")
 
-
     private static final boolean DEBUG = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.232 -0500", hash_original_field = "745FE27F6621B49CB7F0165D799C0855", hash_generated_field = "626038DAE6BB26944A3CF12B5D6F74EE")
 
     private static final boolean LOCAL_LOGV = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.234 -0500", hash_original_field = "060FF946F44F82F24E670763EBDB7BBF", hash_generated_field = "A9BB21413E0B9FDB529AF62765E841A5")
-
 
     private static final String[] countProjection = new String[]{"count(*)"};
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.237 -0500", hash_original_field = "6ABE43256BEF3B310419381B16620618", hash_generated_field = "4648C235C26E35A03693F2CCB0369012")
@@ -1514,7 +1522,6 @@ public void close() {
 
     public static final int STATEMENT_OTHER = 99;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:28:38.308 -0500", hash_original_field = "30509007D4B85CC0C448607239B0E0D3", hash_generated_field = "64EC00AB4BE1B864318AEBC676ADD327")
-
 
     private static Collator mColl = null;
     

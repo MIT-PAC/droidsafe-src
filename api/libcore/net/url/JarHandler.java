@@ -10,13 +10,8 @@ import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLStreamHandler;
 
-
-
-
-
 public class JarHandler extends URLStreamHandler {
     
-    @DSModeled(DSC.SAFE)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:26.324 -0400", hash_original_method = "0A284EE1D1173C3D5D1EE186B211FF85", hash_generated_method = "0A284EE1D1173C3D5D1EE186B211FF85")
     public JarHandler ()
     {
@@ -108,7 +103,6 @@ public class JarHandler extends URLStreamHandler {
         }
         return sb.toString();
     }
-
     
 }
 

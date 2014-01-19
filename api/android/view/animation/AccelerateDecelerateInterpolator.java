@@ -7,10 +7,9 @@ import droidsafe.annotations.*;
 import android.content.Context;
 import android.util.AttributeSet;
 
-
-
-
 public class AccelerateDecelerateInterpolator implements Interpolator {
+    @DSComment("no action/not sensitive")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.452 -0500", hash_original_method = "9170BAC272EC23921BC06B3298E3C672", hash_generated_method = "65309E801988EB5B5C1DA6EA7DC295CB")
     
 public AccelerateDecelerateInterpolator() {
@@ -22,12 +21,12 @@ public AccelerateDecelerateInterpolator() {
     public AccelerateDecelerateInterpolator(Context context, AttributeSet attrs) {
     }
     
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:29:58.457 -0500", hash_original_method = "4CDEA74C9486F5AA77C068C7B6F2D062", hash_generated_method = "B03B14BDE8ABC1D6FE5605D5C32C941D")
     
 public float getInterpolation(float input) {
         return (float)(Math.cos((input + 1) * Math.PI) / 2.0f) + 0.5f;
     }
-
     
 }
 

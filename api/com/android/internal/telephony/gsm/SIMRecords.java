@@ -27,25 +27,17 @@ import com.android.internal.telephony.MccTable;
 import com.android.internal.telephony.PhoneBase;
 import com.android.internal.telephony.SmsMessageBase;
 
-
-
-
-
-
 public class SIMRecords extends IccRecords {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.231 -0500", hash_original_field = "28DECCA9F494133CD6F61BCA99A50ECA", hash_generated_field = "BD940BC52C3AB14198F71CB81F0E8FEB")
 
     protected static final String LOG_TAG = "GSM";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.233 -0500", hash_original_field = "F003A67298FEA5C7DE4698E0CE8A0AED", hash_generated_field = "B1BDA8481E03A540852BC755DA2091B9")
 
-
     private static final boolean CRASH_RIL = false;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.237 -0500", hash_original_field = "95D5733A0C83DB3D047D109C028C9F02", hash_generated_field = "5F5E7D64B04175B8FA820B2440F700FC")
 
-
     protected static final boolean DBG = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.271 -0500", hash_original_field = "FF9D2AABA00294FFD3F1031D7F44FFEF", hash_generated_field = "4BC8C664721513107BEE5A19549F8DCC")
-
 
     // Bitmasks for SPN display rules.
     static final int SPN_RULE_SHOW_SPN  = 0x01;
@@ -83,7 +75,6 @@ public class SIMRecords extends IccRecords {
 
     private static final int CPHS_SST_MBN_ENABLED = 0x30;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.301 -0500", hash_original_field = "A681E352E0DA24A188F01FFE9600E712", hash_generated_field = "CA9D8FD5F6DA4FDAFDD2818A884111C6")
-
 
     private static final int EVENT_SIM_READY = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.304 -0500", hash_original_field = "10087FBC454048F6857D29E457AA7109", hash_generated_field = "C65DF4AD1462685EBC499AE583280BAA")
@@ -169,7 +160,6 @@ public class SIMRecords extends IccRecords {
     private static final int EVENT_GET_CSP_CPHS_DONE = 33;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.375 -0500", hash_original_field = "B9ECAB4950A7427602CA16ED0EC47A6E", hash_generated_field = "7E3BF9E363667067579B2DD88404B9BE")
 
-
     private static final String[] MCCMNC_CODES_HAVING_3DIGITS_MNC = {
         "405025", "405026", "405027", "405028", "405029", "405030", "405031", "405032",
         "405033", "405034", "405035", "405036", "405037", "405038", "405039", "405040",
@@ -188,15 +178,11 @@ public class SIMRecords extends IccRecords {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.239 -0500", hash_original_field = "3D45F4DC7928ADFBE49F3906732C5FDD", hash_generated_field = "3D45F4DC7928ADFBE49F3906732C5FDD")
 
-
     VoiceMailConstants mVmConfig;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.241 -0500", hash_original_field = "1D5FAB34B5B1DFA2FF0C72EB8EB1417D", hash_generated_field = "1D5FAB34B5B1DFA2FF0C72EB8EB1417D")
 
-
-
     SpnOverride mSpnOverride;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.243 -0500", hash_original_field = "1B2A50BA8BC9B280A0E4FF57E262E0FD", hash_generated_field = "C8FB6D75F33BBB165F89E1184AF1DAB5")
-
 
     private String imsi;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.245 -0500", hash_original_field = "942C9EFD2090625730E786516C1A092C", hash_generated_field = "F3670A331578D3C800D2A8879CDAE6A2")
@@ -213,12 +199,10 @@ public class SIMRecords extends IccRecords {
     boolean mCspPlmnEnabled = true;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.254 -0500", hash_original_field = "531BEBDA8DE453FA3ED736DAC070C337", hash_generated_field = "531BEBDA8DE453FA3ED736DAC070C337")
 
-
     byte[] efMWIS = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.256 -0500", hash_original_field = "F7BA255CC3AE0058E8CFC095600F245B", hash_generated_field = "F7BA255CC3AE0058E8CFC095600F245B")
 
     byte[] efCPHS_MWI =null;
-
     
     private enum Get_Spn_Fsm_State {
         IDLE,               
@@ -235,18 +219,14 @@ public class SIMRecords extends IccRecords {
     byte[] mEfCfis = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.263 -0500", hash_original_field = "677DC81727BE9252421E71F32EAE57E6", hash_generated_field = "677DC81727BE9252421E71F32EAE57E6")
 
-
-
     int spnDisplayCondition;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.265 -0500", hash_original_field = "9CBD8D86B3B910D521D7CFC4F4B05AE6", hash_generated_field = "9CBD8D86B3B910D521D7CFC4F4B05AE6")
 
     ArrayList<String> spdiNetworks = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.266 -0500", hash_original_field = "FC170B0C5C20481C238409EFCB48A036", hash_generated_field = "FC170B0C5C20481C238409EFCB48A036")
 
-
     String pnnHomeName = null;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.268 -0500", hash_original_field = "433C8C040DD36FD17B8409B23AF92316", hash_generated_field = "433C8C040DD36FD17B8409B23AF92316")
-
 
     UsimServiceTable mUsimServiceTable;
 
@@ -322,12 +302,12 @@ protected void onRadioOffOrNotAvailable() {
         recordsRequested = false;
     }
 
-
     //***** Public Methods
 
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.387 -0500", hash_original_method = "3D26DD60574339032566256F631F5DB8", hash_generated_method = "30902BBBDE8901613FD04AFCBCDF5D8D")
     
 @Override
@@ -335,12 +315,14 @@ protected void onRadioOffOrNotAvailable() {
         return imsi;
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.390 -0500", hash_original_method = "9D42E73ED1AA846035EF94EBFAAEA8F6", hash_generated_method = "F1138A33B43D1F97901AB603D4F79F76")
     
 public String getMsisdnNumber() {
         return msisdn;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.393 -0500", hash_original_method = "F96F62208A76C85F8691E193053EFC74", hash_generated_method = "92490C5A0963DA62E05967DBBA236143")
     
 @Override
@@ -373,19 +355,20 @@ public void setMsisdnNumber(String alphaTag, String number,
 
         if(DBG) log("Set MSISDN: " + msisdnTag + " " + /*msisdn*/ "xxxxxxx");
 
-
         AdnRecord adn = new AdnRecord(msisdnTag, msisdn);
 
         new AdnRecordLoader(phone).updateEF(adn, EF_MSISDN, EF_EXT1, 1, null,
                 obtainMessage(EVENT_SET_MSISDN_DONE, onComplete));
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.398 -0500", hash_original_method = "E32EFED28CC433860D178485CFB4EEE4", hash_generated_method = "1B4AFE5064CD03ADA2B3761686668224")
     
 public String getMsisdnAlphaTag() {
         return msisdnTag;
     }
 
+    @DSSource({DSSourceKind.UNIQUE_IDENTIFIER})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.400 -0500", hash_original_method = "77FFC0D98CD3CB2629C7F6A7D27E6FFF", hash_generated_method = "CFF64DE092E5BFF9A940C028E585122B")
     
 public String getVoiceMailNumber() {
@@ -451,6 +434,7 @@ public void setVoiceMailNumber(String alphaTag, String voiceNumber,
         }
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.405 -0500", hash_original_method = "5A91F4662DCD8CEE6B5E6A046B7A4ABC", hash_generated_method = "6D7368A0D77DC432B7AD7E84B26C6DBA")
     
 public String getVoiceMailAlphaTag()
@@ -527,6 +511,7 @@ public void
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.410 -0500", hash_original_method = "2A8D94361FF074096EDCA291A7FA986D", hash_generated_method = "11A08D604E28D1B060A36949FF3CD94A")
     
 @Override
@@ -605,6 +590,7 @@ public void onRefresh(boolean fileChanged, int[] fileList) {
     /**
      * {@inheritDoc}
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.418 -0500", hash_original_method = "7E03E5ED77A0C757F38448793B936037", hash_generated_method = "AAE9B0A11E77036A447B96185EFC9D28")
     
 @Override
@@ -896,7 +882,6 @@ public void handleMessage(Message msg) {
 
             break;
 
-
             case EVENT_GET_AD_DONE:
                 try {
                     isRecordLoadResponse = true;
@@ -1046,7 +1031,6 @@ public void handleMessage(Message msg) {
             case EVENT_MARK_SMS_READ_DONE:
                 Log.i("ENF", "marked read: sms " + msg.arg1);
                 break;
-
 
             case EVENT_SMS_ON_SIM:
                 isRecordLoadResponse = false;
@@ -1322,7 +1306,6 @@ private void handleSms(byte[] ba) {
         }
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.444 -0500", hash_original_method = "AAB2EB039B628CD9C66D57B4359C7EA6", hash_generated_method = "6DB8CC3865EAE6752FC24EB5A8D7D9B8")
     
 private void handleSmses(ArrayList messages) {
@@ -1414,7 +1397,6 @@ private void setSpnFromConfig(String carrier) {
         }
     }
 
-
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.453 -0500", hash_original_method = "0A1C3646AC6E538340751C4EFB011D4A", hash_generated_method = "64200EBB6E30D739BD0576D48D1DFDB7")
     
 private void setVoiceMailByCountry (String spn) {
@@ -1468,7 +1450,6 @@ protected void fetchSimRecords() {
         iccFh.loadEFLinearFixed(EF_MWIS, 1, obtainMessage(EVENT_GET_MWIS_DONE));
         recordsToLoad++;
 
-
         // Also load CPHS-style voice mail indicator, which stores
         // the same info as EF[MWIS]. If both exist, both are updated
         // but the EF[MWIS] data is preferred
@@ -1484,7 +1465,6 @@ protected void fetchSimRecords() {
         recordsToLoad++;
         iccFh.loadEFTransparent(EF_CFF_CPHS, obtainMessage(EVENT_GET_CFF_DONE));
         recordsToLoad++;
-
 
         getSpnFsm(true, null);
 
@@ -1530,6 +1510,7 @@ protected void fetchSimRecords() {
      *
      * If the SPN is not found on the SIM, the rule is always PLMN_ONLY.
      */
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:33.464 -0500", hash_original_method = "409DDAA47064BEED68B0319934A64CD2", hash_generated_method = "06A868A91D8AC4D7D5B235F1B42741D9")
     
 @Override

@@ -25,14 +25,8 @@ import android.view.View.OnClickListener;
 
 import com.android.internal.R;
 
-
-
-
-
-
 public class QuickContactBadge extends ImageView implements OnClickListener {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.347 -0500", hash_original_field = "27BCF70A1D5953A27BE74D341A1C5C80", hash_generated_field = "533A8CEF6E142EBAC7E1B5A17091F7F2")
-
 
     static final private int TOKEN_EMAIL_LOOKUP = 0;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.350 -0500", hash_original_field = "5A3D584F9C103021F883B59FDF59126A", hash_generated_field = "45AD8A525F8FF7B24545C8B3C30D66FD")
@@ -46,7 +40,6 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
     static final private int TOKEN_PHONE_LOOKUP_AND_TRIGGER = 3;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.356 -0500", hash_original_field = "0A3E5422D2A4B80E8F0E74830879F83A", hash_generated_field = "5BC314B31DAFB4D3E62E31C0091F16E8")
 
-
     static final String[] EMAIL_LOOKUP_PROJECTION = new String[] {
         RawContacts.CONTACT_ID,
         Contacts.LOOKUP_KEY,
@@ -58,7 +51,6 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
 
     static final int EMAIL_LOOKUP_STRING_COLUMN_INDEX = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.363 -0500", hash_original_field = "18F5B7D24E8A4EB535164650222ADAB6", hash_generated_field = "2D7D54E80205345029A67BDDBE6A6EED")
-
 
     static final String[] PHONE_LOOKUP_PROJECTION = new String[] {
         PhoneLookup._ID,
@@ -89,7 +81,6 @@ public class QuickContactBadge extends ImageView implements OnClickListener {
 
     private Drawable mDefaultAvatar;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.345 -0500", hash_original_field = "FCCFBB00D8C29CFECD897F798EB835CA", hash_generated_field = "30C77D2B5C142799143EDF40257BBF81")
-
 
     protected String[] mExcludeMimes = null;
 
@@ -129,7 +120,6 @@ public QuickContactBadge(Context context, AttributeSet attrs, int defStyle) {
             invalidate();
         }
     }
-
     
     private class QueryHandler extends AsyncQueryHandler {
 
@@ -196,11 +186,11 @@ public QueryHandler(ContentResolver cr) {
                 getContext().startActivity(intent);
             }
         }
-
         
     }
 
     /** This call has no effect anymore, as there is only one QuickContact mode */
+    @DSSink({DSSinkKind.CONTACT_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.381 -0500", hash_original_method = "02B3BF267746F04A443A6F33FDD49C50", hash_generated_method = "8DE5AB9FAD140791B6E1A06A3AED821B")
     
 @SuppressWarnings("unused")
@@ -265,6 +255,8 @@ public void setImageToDefault() {
      * @param contactUri Either a {@link Contacts#CONTENT_URI} or
      *            {@link Contacts#CONTENT_LOOKUP_URI} style URI.
      */
+    @DSComment("Contact manipulation UI")
+    @DSSpec(DSCat.CONTACT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.390 -0500", hash_original_method = "F07B10D1C60A4CC654BA1655A0E456BD", hash_generated_method = "E2C6A43B359882336153206DBEED5B85")
     
 public void assignContactUri(Uri contactUri) {
@@ -306,6 +298,8 @@ public void assignContactFromEmail(String emailAddress, boolean lazyLookup) {
      * @param lazyLookup If this is true, the lookup query will not be performed
      * until this view is clicked.
      */
+    @DSComment("Contact manipulation UI")
+    @DSSpec(DSCat.CONTACT)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:31:29.395 -0500", hash_original_method = "615886346605DCC8A37347200BE80EDB", hash_generated_method = "1929BA143A9C517068A4599A02DEEDF6")
     
 public void assignContactFromPhone(String phoneNumber, boolean lazyLookup) {

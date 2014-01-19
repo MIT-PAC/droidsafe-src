@@ -5,16 +5,11 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SAXParseException extends SAXException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.712 -0500", hash_original_field = "A787D4782D28CB658656F9CEA39140B8", hash_generated_field = "9DD9CD005E725BEEDBF254E32B2B5068")
 
     // Internal state.
     //////////////////////////////////////////////////////////////////////
-
 
     /**
      * @serial The public identifier, or null.
@@ -30,12 +25,10 @@ public class SAXParseException extends SAXException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.719 -0500", hash_original_field = "F263E7F3EAE507C61D41B748F7D1E575", hash_generated_field = "26A7E6694FD33EFB482AC4BA7726E9A4")
 
     private int columnNumber;
-
     
     //////////////////////////////////////////////////////////////////////
     // Constructors.
     //////////////////////////////////////////////////////////////////////
-
 
     /**
      * Create a new SAXParseException from a message and a Locator.
@@ -60,7 +53,6 @@ public SAXParseException (String message, Locator locator) {
         init(null, null, -1, -1);
     }
     }
-
 
     /**
      * Wrap an existing exception in a SAXParseException.
@@ -89,7 +81,6 @@ public SAXParseException (String message, Locator locator,
         init(null, null, -1, -1);
     }
     }
-
 
     /**
      * Create a new SAXParseException.
@@ -120,7 +111,6 @@ public SAXParseException (String message, String publicId, String systemId,
     super(message);
     init(publicId, systemId, lineNumber, columnNumber);
     }
-
 
     /**
      * Create a new SAXParseException with an embedded exception.
@@ -155,7 +145,6 @@ public SAXParseException (String message, String publicId, String systemId,
     init(publicId, systemId, lineNumber, columnNumber);
     }
 
-
     /**
      * Internal initialization method.
      *
@@ -177,7 +166,6 @@ private void init (String publicId, String systemId,
     this.columnNumber = columnNumber;
     }
 
-
     /**
      * Get the public identifier of the entity where the exception occurred.
      *
@@ -185,13 +173,13 @@ private void init (String publicId, String systemId,
      *         if none is available.
      * @see org.xml.sax.Locator#getPublicId
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.703 -0500", hash_original_method = "651ECBF976325F0553967BB40DF656D7", hash_generated_method = "93CEEA8F06811EE984FFEB8045EEB99E")
     
 public String getPublicId ()
     {
     return this.publicId;
     }
-
 
     /**
      * Get the system identifier of the entity where the exception occurred.
@@ -203,13 +191,13 @@ public String getPublicId ()
      *         if none is available.
      * @see org.xml.sax.Locator#getSystemId
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.705 -0500", hash_original_method = "600C253C44A23EDB0A978A11FA5F90C2", hash_generated_method = "665B4042BCE9D5C07F91DFF6CDCAB816")
     
 public String getSystemId ()
     {
     return this.systemId;
     }
-
 
     /**
      * The line number of the end of the text where the exception occurred.
@@ -220,13 +208,13 @@ public String getSystemId ()
      *         if none is available.
      * @see org.xml.sax.Locator#getLineNumber
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.707 -0500", hash_original_method = "1D6EF9406E829BF96953F811A8A7C017", hash_generated_method = "C5B2B0FEC1C110E78B13FD01138817F0")
     
 public int getLineNumber ()
     {
     return this.lineNumber;
     }
-
 
     /**
      * The column number of the end of the text where the exception occurred.
@@ -237,13 +225,13 @@ public int getLineNumber ()
      *         if none is available.
      * @see org.xml.sax.Locator#getColumnNumber
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:49.709 -0500", hash_original_method = "0DEBF9F56751828220A5A7801C031403", hash_generated_method = "1ADEC4DF9A60350C6C9CDE6811890075")
     
 public int getColumnNumber ()
     {
     return this.columnNumber;
     }
-
     
 }
 

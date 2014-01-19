@@ -12,10 +12,6 @@ import android.database.sqlite.SQLiteOpenHelper;
 import android.net.Uri;
 import android.text.TextUtils;
 
-
-
-
-
 public class SearchRecentSuggestionsProvider extends ContentProvider {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.273 -0500", hash_original_field = "99D462A983ED8807DC3FD5EF474B4F2C", hash_generated_field = "B0E1D7C3FF742238FED651F73F9C940A")
 
@@ -62,21 +58,17 @@ public class SearchRecentSuggestionsProvider extends ContentProvider {
 
     private SQLiteOpenHelper mOpenHelper;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.303 -0500", hash_original_field = "EDAEBB8E2B258706A464C373C3F3FEF0", hash_generated_field = "474B06C5F572DACCF7230DB8072DB33C")
-
     
     private Uri mSuggestionsUri;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.305 -0500", hash_original_field = "F8487BE5320E665AECB6706984C45078", hash_generated_field = "2FC625BBB545DBD2933174B07F6C1795")
 
     private UriMatcher mUriMatcher;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.307 -0500", hash_original_field = "15C04798C042CAF231F2A354D2CDE48B", hash_generated_field = "BC8EF6A22053F5C6D2A036FACDF0B4A4")
-
     
     private String mSuggestSuggestionClause;
-
     
     private static class DatabaseHelper extends SQLiteOpenHelper {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.312 -0500", hash_original_field = "DFB46BFB455BC2DB80FA7B3ECF0B7992", hash_generated_field = "E37741801665C28F1D0231A69288300D")
-
         
         private int mNewVersion;
         
@@ -113,21 +105,22 @@ public DatabaseHelper(Context context, int newVersion) {
             db.execSQL("DROP TABLE IF EXISTS suggestions");
             onCreate(db);
         }
-
         
     }
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:34:28.309 -0500", hash_original_field = "30277FB1D57ED24A73776A5B7FAA67C0", hash_generated_field = "A57E41BCBB900DBD0AC3878DC7781CBD")
 
     private String[] mSuggestionProjection;
     
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.785 -0400", hash_original_method = "0A26B49425F8122D436D3AFA62ACEDE1", hash_generated_method = "0A26B49425F8122D436D3AFA62ACEDE1")
     public SearchRecentSuggestionsProvider ()
     {
         //Synthesized constructor
     }
-
-
-    @DSModeled(DSC.SAFE)
+    
+    @DSComment("no security concern")
+    @DSSafe(DSCat.SAFE_OTHERS)
     @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:23:01.789 -0400", hash_original_method = "E16CA3DFE54EBEC32586C921FDE66A1B", hash_generated_method = "9FEFF2961B2F4BBD03A4AA7D913329B1")
     protected void setupSuggestions(String authority, int mode) {
         if(TextUtils.isEmpty(authority) || 

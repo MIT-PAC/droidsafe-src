@@ -5,10 +5,6 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
-
-
 public class SmsResponse {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.288 -0500", hash_original_field = "E6F7BFC22487D00A28F9E36C2AA573F1", hash_generated_field = "E6F7BFC22487D00A28F9E36C2AA573F1")
 
@@ -28,6 +24,7 @@ public SmsResponse(int messageRef, String ackPdu, int errorCode) {
         this.errorCode = errorCode;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:19.298 -0500", hash_original_method = "713734C16C162CC185BDF9249475CA58", hash_generated_method = "B5147131D2C4BB90C91C47A69831E916")
     
 public String toString() {
@@ -37,7 +34,6 @@ public String toString() {
                         + "}";
         return ret;
     }
-
     
 }
 

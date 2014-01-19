@@ -6,14 +6,8 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import javax.net.ssl.SSLException;
 
-
-
-
-
-
 public class AlertException extends RuntimeException {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.414 -0500", hash_original_field = "93BAD4977ECA98BFF8CF4CFAAEAFE6D7", hash_generated_field = "49414C5F100260BFB79C458FA4822DE5")
-
 
     private static final long serialVersionUID = -4448327177165687581L;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.416 -0500", hash_original_field = "6E497387AC14EA196BB0BE1BDE11805E", hash_generated_field = "C530EE3CBD485644D7525A400EA925B6")
@@ -44,6 +38,7 @@ protected AlertException(byte description, SSLException reason) {
      *
      * @return the reason of alert.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.423 -0500", hash_original_method = "5B702ECC4BAE0D4CD4DED59A097CDBFC", hash_generated_method = "30CB20ECF89290BA04D7334DD1E64E5F")
     
 protected SSLException getReason() {
@@ -56,6 +51,7 @@ protected SSLException getReason() {
      * @return alert description code from {@link AlertProtocol}
      * @see AlertProtocol for more information about possible reason codes.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:01:18.425 -0500", hash_original_method = "4016638ED8025AA5C043B11675AF3321", hash_generated_method = "406210F086F3DA6DDF270588E443BAA5")
     
 protected byte getDescriptionCode() {

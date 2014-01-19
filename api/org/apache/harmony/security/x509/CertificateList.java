@@ -11,13 +11,7 @@ import org.apache.harmony.security.asn1.BerInputStream;
 import org.apache.harmony.security.asn1.BitString;
 import org.apache.harmony.security.utils.Array;
 
-
-
-
-
-
 public final class CertificateList {
-
     
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:28.934 -0400", hash_original_field = "736366582672C5EC0590C01C14D1FD1B", hash_generated_field = "CEEF377160D4527069F2AE9EE6F61908")
 
@@ -26,6 +20,7 @@ public final class CertificateList {
                 {TBSCertList.ASN1, AlgorithmIdentifier.ASN1,
                     ASN1BitString.getInstance()}) {
 
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.105 -0500", hash_original_method = "AC0862005B3ED7BF3B72B40A50B20B3D", hash_generated_method = "C342C60F682D5F653B2D4FBE56952277")
         
 @Override protected Object getDecodedObject(BerInputStream in) {
@@ -84,6 +79,7 @@ private CertificateList(TBSCertList tbsCertList,
     /**
      * Returns the value of tbsCertList field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.094 -0500", hash_original_method = "C6096C9759CF7088E874A2A2D3801E56", hash_generated_method = "1CEA433A40B3D8623CD847992ADF5C8F")
     
 public TBSCertList getTbsCertList() {
@@ -93,6 +89,7 @@ public TBSCertList getTbsCertList() {
     /**
      * Returns the value of signatureValue field of the structure.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.096 -0500", hash_original_method = "FD6792B7396143D84E51253527677292", hash_generated_method = "9BB6F5653A95BBE1BAA5CA0C7E370DD2")
     
 public byte[] getSignatureValue() {
@@ -114,6 +111,7 @@ public byte[] getSignatureValue() {
     /**
      * Returns ASN.1 encoded form of this X.509 TBSCertList value.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:58.101 -0500", hash_original_method = "32DCE62651649D85CD3AB4D018999455", hash_generated_method = "B8502A287DD409B99C7907A12406E14B")
     
 public byte[] getEncoded() {

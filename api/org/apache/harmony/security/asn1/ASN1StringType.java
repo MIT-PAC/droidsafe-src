@@ -7,11 +7,6 @@ import droidsafe.annotations.*;
 import java.io.IOException;
 import java.nio.charset.Charsets;
 
-
-
-
-
-
 public abstract class ASN1StringType extends ASN1Type {
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.890 -0500", hash_original_field = "A89249C0DB33716E14D2EC6C52F43AA9", hash_generated_field = "984AE0F2D8C4D8BA4C7B183A8976F815")
 
@@ -21,30 +16,25 @@ public abstract class ASN1StringType extends ASN1Type {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.893 -0500", hash_original_field = "BC1D2F4F52649BE6BF8DB654BD8CC32D", hash_generated_field = "46FCF84077C5B6BDE8192C5E63FCFA67")
 
-
     public static final ASN1StringType IA5STRING = new ASN1StringType(
             TAG_IA5STRING) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.896 -0500", hash_original_field = "AA5B1153CC892E195321875E6BD00676", hash_generated_field = "66D25C1EA76D6D409D30D03BF74F1CFE")
-
 
     public static final ASN1StringType GENERALSTRING = new ASN1StringType(
             TAG_GENERALSTRING) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.899 -0500", hash_original_field = "DA26F9B7CD0D683F9B9C17F8B107F97D", hash_generated_field = "B89ED27D3783F77EA167D653EB03C9B5")
 
-
     public static final ASN1StringType PRINTABLESTRING = new ASN1StringType(
             TAG_PRINTABLESTRING) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.902 -0500", hash_original_field = "213723189950C2853220016AF99EA289", hash_generated_field = "B293D72E13A2C763BCC69EF45A60C3AE")
 
-
     public static final ASN1StringType TELETEXSTRING = new ASN1StringType(
             TAG_TELETEXSTRING) {
     };
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.905 -0500", hash_original_field = "1E59FC96DA1E52DA4699ED3D3103D637", hash_generated_field = "B02FC64488CFAC76F7DB04EA74E308B7")
-
 
     public static final ASN1StringType UNIVERSALSTRING = new ASN1StringType(
             TAG_UNIVERSALSTRING) {
@@ -52,6 +42,7 @@ public abstract class ASN1StringType extends ASN1Type {
     @DSGeneratedField(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-06-28 14:15:33.642 -0400", hash_original_field = "4C261A036B603BB0A966CDA0E25AA46C", hash_generated_field = "8325E7625E0332A172357D8E029897AE")
 
     public static final ASN1StringType UTF8STRING = new ASN1StringType(TAG_UTF8STRING) {
+        @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
         @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.908 -0500", hash_original_method = "8F8B3D16DE176F56B0B78AD50FD6AF2B", hash_generated_method = "CAA4C189C585C3F94A2B1E85AD51AE97")
         
 @Override public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -100,6 +91,7 @@ public Object decode(BerInputStream in) throws IOException {
     /**
      * Extracts String object from BER input stream.
      */
+    @DSSource({DSSourceKind.SENSITIVE_UNCATEGORIZED})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 13:00:52.922 -0500", hash_original_method = "2F8FDB092DEF849FEC2EBC30268CC3AE", hash_generated_method = "498C7F4DEDB3DA422A8089786F26B7DF")
     
 public Object getDecodedObject(BerInputStream in) throws IOException {
@@ -120,10 +112,9 @@ public void encodeASN(BerOutputStream out) {
 public void encodeContent(BerOutputStream out) {
         out.encodeString();
     }
-
-    
-        @DSModeled(DSC.SAFE)
-@DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.425 -0400", hash_original_method = "138CA2E3F6E6A00430513A77732291AD", hash_generated_method = "BFBE76DFFA47FA40E7E1BFB51B23707F")
+        
+@DSSink({DSSinkKind.SENSITIVE_UNCATEGORIZED})
+    @DSGenerator(tool_name = "Doppelganger", tool_version = "0.4.2", generated_on = "2013-07-17 10:25:27.425 -0400", hash_original_method = "138CA2E3F6E6A00430513A77732291AD", hash_generated_method = "BFBE76DFFA47FA40E7E1BFB51B23707F")
     public void setEncodingContent(BerOutputStream out) {
         addTaint(out.getTaint());
         byte[] bytes = ((String) out.content).getBytes(Charsets.UTF_8);

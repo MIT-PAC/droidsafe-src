@@ -5,14 +5,10 @@ import droidsafe.runtime.*;
 import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 
-
-
 import droidsafe.helpers.DSUtils;
 
 public class DashPathEffect extends PathEffect {
-
     
-    @DSModeled(DSC.SPEC)
     private static int nativeCreate(float intervals[], float phase) {
         return DSUtils.UNKNOWN_INT;
     }
@@ -38,7 +34,6 @@ public DashPathEffect(float intervals[], float phase) {
         }
         native_instance = nativeCreate(intervals, phase);
     }
-
     
 }
 

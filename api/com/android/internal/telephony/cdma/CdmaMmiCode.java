@@ -16,13 +16,7 @@ import android.os.Message;
 import com.android.internal.telephony.CommandException;
 import com.android.internal.telephony.MmiCode;
 
-
-
-
-
-
 public final class CdmaMmiCode extends Handler implements MmiCode {
-
 
     // Public Class methods
 
@@ -75,7 +69,6 @@ private static String
     static final String LOG_TAG = "CDMA_MMI";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.524 -0500", hash_original_field = "508EDED9B330FEB251BB9AFD01FC4828", hash_generated_field = "81F5AEFC46706CB75B91FC49E2FBC5D1")
 
-
     // From TS 22.030 6.5.2
     static final String ACTION_REGISTER = "**";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.526 -0500", hash_original_field = "A5BE53B19A33B16E1807824A89B907AF", hash_generated_field = "F24A24DD4B537B4770521D463804E4D1")
@@ -83,15 +76,12 @@ private static String
     static final String SC_PUK          = "05";
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.528 -0500", hash_original_field = "EAC576E559D59F0C7D0950B0EFCE6458", hash_generated_field = "A94BA604FE3CDE84F64462E973B833FB")
 
-
     static final int EVENT_SET_COMPLETE = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.551 -0500", hash_original_field = "D220AC52D8D11EFA84907D82D31BF91B", hash_generated_field = "1B64CFB800A067861DC4A66690D66019")
-
 
     static Pattern sPatternSuppService = Pattern.compile(
         "((\\*|#|\\*#|\\*\\*|##)(\\d{2,3})(\\*([^*#]*)(\\*([^*#]*)(\\*([^*#]*)(\\*([^*#]*))?)?)?)?#)(.*)");
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.553 -0500", hash_original_field = "B70DD7A805C09DAF4B85DF3F2AA1E1D2", hash_generated_field = "7CA15DFCD577D5C84BA78A4189BC0E2C")
-
 
     static final int MATCH_GROUP_POUND_STRING = 1;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.557 -0500", hash_original_field = "3A1ADB951719F3F4638A18B5533A24F9", hash_generated_field = "F4DF33F7D8D6D17C4F4FEA7F8C1A94D0")
@@ -117,13 +107,11 @@ private static String
     static final int MATCH_GROUP_DIALING_NUMBER = 12;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.530 -0500", hash_original_field = "F2FC592D71DA2BCBED04F0F797B7B907", hash_generated_field = "F2FC592D71DA2BCBED04F0F797B7B907")
 
-
     CDMAPhone phone;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.532 -0500", hash_original_field = "571FE4403DDA9BF54693EBF4F0D6639D", hash_generated_field = "571FE4403DDA9BF54693EBF4F0D6639D")
 
     Context context;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.534 -0500", hash_original_field = "F0D53334D1D58D4E79746838A9C851E9", hash_generated_field = "F0D53334D1D58D4E79746838A9C851E9")
-
 
     String action;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.536 -0500", hash_original_field = "1F12170F3EB5D5C8E81971C7E7A70DEB", hash_generated_field = "1F12170F3EB5D5C8E81971C7E7A70DEB")
@@ -149,7 +137,6 @@ private static String
     String pwd;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.547 -0500", hash_original_field = "1C260AF567CCE39E2DADC6C6A5D564F0", hash_generated_field = "1C260AF567CCE39E2DADC6C6A5D564F0")
 
-
     State state = State.PENDING;
 @DSGeneratedField(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.549 -0500", hash_original_field = "422FD4BFD34A850AED895188AD7E511B", hash_generated_field = "422FD4BFD34A850AED895188AD7E511B")
 
@@ -174,6 +161,7 @@ public State
         return state;
     }
 
+    @DSSource({DSSourceKind.NETWORK_INFORMATION})
     @DSGenerator(tool_name = "Doppelganger", tool_version = "2.0", generated_on = "2013-12-30 12:58:59.583 -0500", hash_original_method = "570FEAA437E41D0252DA00ACF07950A0", hash_generated_method = "5CEF4B02F22CFEE27A7F9878596252B0")
     
 public CharSequence

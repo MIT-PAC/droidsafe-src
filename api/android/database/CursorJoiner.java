@@ -6,11 +6,6 @@ import droidsafe.helpers.*;
 import droidsafe.annotations.*;
 import java.util.Iterator;
 
-
-
-
-
-
 public final class CursorJoiner implements Iterator<CursorJoiner.Result>, Iterable<CursorJoiner.Result> {
 
     /**
@@ -88,7 +83,6 @@ private static int compareStrings(String... values) {
 
     private String[] mValues;
     
-    @DSModeled(DSC.SAFE)
     public CursorJoiner(
             Cursor cursorLeft, String[] columnNamesLeft,
             Cursor cursorRight, String[] columnNamesRight) {
@@ -112,9 +106,7 @@ private static int compareStrings(String... values) {
         mValues = new String[mColumnsLeft.length * 2];
         */
     }
-
     
-    @DSModeled(DSC.SAFE)
     public Iterator iterator() {
         return this;
     }
@@ -134,9 +126,7 @@ private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
         }
         return columns;
     }
-
     
-    @DSModeled(DSC.SAFE)
     public boolean hasNext() {
         /* 
         if (mCompareResultIsValid) {
@@ -158,9 +148,7 @@ private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
     	return mCursorLeft.isLast() || !mCursorRight.isLast() || 
     			!mCursorLeft.isAfterLast() || !mCursorRight.isAfterLast();
     }
-
     
-    @DSModeled(DSC.SAFE)
     //public Result next() {
     public Result next() {
         /* GITI DSModeled:  For modeling purposes, we probably do not care what the result returned
@@ -182,26 +170,21 @@ private int[] buildColumnIndiciesArray(Cursor cursor, String[] columnNames) {
 public void remove() {
         throw new UnsupportedOperationException("not implemented");
     }
-
     
-    @DSModeled(DSC.BAN)
     private void incrementCursors() {
        mCursorLeft.moveToNext();
        mCursorRight.moveToNext();
     }
-
     
     public enum Result {
         RIGHT,
         LEFT,
         BOTH;
         
-        @DSModeled(DSC.SAFE)
         Result() {
         	
         }
     }
-
     
 }
 
