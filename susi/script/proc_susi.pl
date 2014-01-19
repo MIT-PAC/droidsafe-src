@@ -24,6 +24,7 @@ my @catHash = ();
 
 while(<IFILE>) {
     next if ($_ !~ /^\</);
+    next if ($_ !~ />/);
     next if (/^\s*$/);
     s/android\.permission\.[A-Z_]+//g;
     #print;
